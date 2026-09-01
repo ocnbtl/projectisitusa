@@ -21,7 +21,7 @@ import {
 
 export const USFS_CURRENT_PLANTS_SOURCE_ID = "usfs-current-invasive-plants" as const;
 export const USFS_CURRENT_PLANTS_ADAPTER_ID = "usfs-current-invasive-plants-targeted" as const;
-export const USFS_CURRENT_PLANTS_ADAPTER_VERSION = "1.0.0" as const;
+export const USFS_CURRENT_PLANTS_ADAPTER_VERSION = "1.1.0" as const;
 export const USFS_CURRENT_PLANTS_LAYER_URL =
   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0" as const;
 export const USFS_CURRENT_PLANTS_QUERY_URL = `${USFS_CURRENT_PLANTS_LAYER_URL}/query` as const;
@@ -43,6 +43,7 @@ type TargetedParameters = {
   catalogResponseSha256: string;
   minimumRequestIntervalMs: 1000;
   maxResponseBytes: number;
+  objectIdsPerRequest: number;
   targets: TargetMapping[];
   candidatePairs: string[];
 };
@@ -111,6 +112,7 @@ function parseParameters(context: SourceAdapterContext) {
   assert(parameters.layerUrl === USFS_CURRENT_PLANTS_LAYER_URL, "USFS targeted layer URL differs.");
   assert(parameters.minimumRequestIntervalMs === 1000, "USFS targeted rate limit differs.");
   assert(Number.isInteger(parameters.maxResponseBytes) && parameters.maxResponseBytes > 0, "USFS response budget is invalid.");
+  assert(Number.isInteger(parameters.objectIdsPerRequest) && parameters.objectIdsPerRequest >= 1 && parameters.objectIdsPerRequest <= 100, "USFS object-id request chunk size is invalid.");
   assert(Array.isArray(parameters.targets) && parameters.targets.length > 0, "USFS targeted adapter has no targets.");
   assert(Array.isArray(parameters.candidatePairs), "USFS targeted candidate pairs are missing.");
   const requestedKeys = [...context.requestedPairs].map(pairKey).sort(compareText);
@@ -182,10 +184,20 @@ function buildQueryUrl(objectIds: number[]) {
   return url.toString();
 }
 
+export function chunkUsfsCurrentPlantObjectIds(objectIds: number[], chunkSize: number) {
+  assert(Number.isInteger(chunkSize) && chunkSize >= 1 && chunkSize <= 100, "USFS object-id request chunk size is invalid.");
+  const unique = [...new Set(objectIds)].sort((left, right) => left - right);
+  const chunks: number[][] = [];
+  for (let index = 0; index < unique.length; index += chunkSize) {
+    chunks.push(unique.slice(index, index + chunkSize));
+  }
+  return chunks;
+}
+
 async function fetchSnapshot(url: string, maxResponseBytes: number) {
   const retrievedAt = new Date().toISOString();
   const response = await fetch(url, {
-    headers: { "user-agent": "Project-Isitusa-USFS-targeted/1.0" },
+    headers: { "user-agent": "Project-Isitusa-USFS-targeted/1.1" },
     signal: AbortSignal.timeout(60_000),
   });
   assert(response.ok, `USFS targeted request returned HTTP ${response.status}.`);
@@ -258,7 +270,7 @@ function assertionAndReview(input: {
   countyLegalName: string;
   stateName: string;
   topologySha256: string;
-  queryUrl: string;
+  queryUrls: string[];
   completedAt: string;
 }) {
   const coordinates = input.features.flatMap(geometryCoordinates);
@@ -290,7 +302,7 @@ function assertionAndReview(input: {
     evidence_kind: "occurrence",
     scope: "point",
     source_record_id: `usfs-current-invasive-plants:${sha256(`${objectIds.join(",")}\n`)}`,
-    source_url: input.queryUrl,
+    source_url: input.queryUrls[0],
     source_record_date: new Date(sourceDates.at(-1)!).toISOString(),
     retrieved_at: input.completedAt,
     taxon_match: {
@@ -322,6 +334,7 @@ function assertionAndReview(input: {
       `Stable source OBJECTIDs: ${objectIds.join(", ")}.`,
       `All source coordinate SHA-256: ${coordinateHash}.`,
       `County topology SHA-256: ${input.topologySha256}.`,
+      `Targeted query URL SHA-256 values: ${input.queryUrls.map((value) => sha256(value)).join(", ")}.`,
     ],
   };
   const review: EvidenceReviewEvent = {
@@ -361,21 +374,42 @@ export async function runUsfsCurrentPlantsTargeted(context: SourceAdapterContext
   assert(context.sourceId === USFS_CURRENT_PLANTS_SOURCE_ID, "USFS targeted adapter received the wrong source.");
   const parameters = parseParameters(context);
   const objectIds = [...new Set(parameters.targets.flatMap((target) => target.objectIds))].sort((left, right) => left - right);
-  const queryUrl = buildQueryUrl(objectIds);
-  const first = await fetchSnapshot(queryUrl, parameters.maxResponseBytes);
-  await new Promise((resolve) => setTimeout(resolve, parameters.minimumRequestIntervalMs));
-  const second = await fetchSnapshot(queryUrl, parameters.maxResponseBytes);
-  const firstFeatures = [...(first.parsed.features ?? [])].sort((left, right) => left.attributes.objectid - right.attributes.objectid);
-  const secondFeatures = [...(second.parsed.features ?? [])].sort((left, right) => left.attributes.objectid - right.attributes.objectid);
-  assert(stableJson(firstFeatures.map(canonicalFeature)) === stableJson(secondFeatures.map(canonicalFeature)), "USFS targeted features changed between the stable double fetch.");
-  const completedAt = second.retrievedAt;
+  const chunks = chunkUsfsCurrentPlantObjectIds(objectIds, parameters.objectIdsPerRequest);
+  const artifacts: SourceAdapterResult["artifacts"] = [];
+  const upstreamRequests: SourceAdapterResult["upstreamRequests"] = [];
   const featureById = new Map<number, UsfsFeature>();
+  const queryUrlByObjectId = new Map<number, string>();
   let duplicateRecordCount = 0;
-  for (const featureValue of secondFeatures) {
-    const objectId = featureValue.attributes?.objectid;
-    assert(Number.isInteger(objectId) && objectId > 0, "USFS targeted feature lacks a valid objectid.");
-    if (featureById.has(objectId)) duplicateRecordCount += 1;
-    else featureById.set(objectId, featureValue);
+  let completedAt = context.runStartedAt;
+  for (let index = 0; index < chunks.length; index += 1) {
+    const chunk = chunks[index];
+    const queryUrl = buildQueryUrl(chunk);
+    const first = await fetchSnapshot(queryUrl, parameters.maxResponseBytes);
+    await new Promise((resolve) => setTimeout(resolve, parameters.minimumRequestIntervalMs));
+    const second = await fetchSnapshot(queryUrl, parameters.maxResponseBytes);
+    const firstFeatures = [...(first.parsed.features ?? [])].sort((left, right) => left.attributes.objectid - right.attributes.objectid);
+    const secondFeatures = [...(second.parsed.features ?? [])].sort((left, right) => left.attributes.objectid - right.attributes.objectid);
+    assert(stableJson(firstFeatures.map(canonicalFeature)) === stableJson(secondFeatures.map(canonicalFeature)), `USFS targeted chunk ${index + 1} changed between the stable double fetch.`);
+    completedAt = second.retrievedAt;
+    const label = String(index + 1).padStart(4, "0");
+    artifacts.push(
+      { filename: `usfs-current-invasive-plants-${label}-before.json`, mediaType: "application/json", contents: first.contents },
+      { filename: `usfs-current-invasive-plants-${label}-after.json`, mediaType: "application/json", contents: second.contents },
+    );
+    upstreamRequests.push(
+      { url: queryUrl, status: first.response.status, retrievedAt: first.retrievedAt, recordCount: firstFeatures.length },
+      { url: queryUrl, status: second.response.status, retrievedAt: second.retrievedAt, recordCount: secondFeatures.length },
+    );
+    for (const objectId of chunk) queryUrlByObjectId.set(objectId, queryUrl);
+    for (const featureValue of secondFeatures) {
+      const objectId = featureValue.attributes?.objectid;
+      assert(Number.isInteger(objectId) && objectId > 0, "USFS targeted feature lacks a valid objectid.");
+      if (featureById.has(objectId)) duplicateRecordCount += 1;
+      else featureById.set(objectId, featureValue);
+    }
+    if (index + 1 < chunks.length) {
+      await new Promise((resolve) => setTimeout(resolve, parameters.minimumRequestIntervalMs));
+    }
   }
   const { counties, features: countyFeatures, topologySha256 } = loadCountyFeatures(context);
   const state = getStateDefinition(context.stateCode);
@@ -421,6 +455,10 @@ export async function runUsfsCurrentPlantsTargeted(context: SourceAdapterContext
     }
     let assertion: RunEvidenceAssertionEvent | null = null;
     if (accepted.length > 0) {
+      const queryUrls = [...new Set(target.objectIds
+        .map((objectId) => queryUrlByObjectId.get(objectId))
+        .filter((value): value is string => Boolean(value)))].sort(compareText);
+      assert(queryUrls.length > 0, `USFS target ${target.pairKey} lacks query lineage.`);
       const evidence = assertionAndReview({
         context,
         target,
@@ -430,7 +468,7 @@ export async function runUsfsCurrentPlantsTargeted(context: SourceAdapterContext
         countyLegalName: county.legalName,
         stateName: state.stateName,
         topologySha256,
-        queryUrl,
+        queryUrls,
         completedAt,
       });
       assertion = evidence.assertion;
@@ -457,7 +495,9 @@ export async function runUsfsCurrentPlantsTargeted(context: SourceAdapterContext
       recorded_at: completedAt,
       assertion_event_ids: assertion ? [assertion.eventId] : [],
       rejection_ids: pairRejectionIds.sort(compareText),
-      query_urls: [queryUrl],
+      query_urls: [...new Set(target.objectIds
+        .map((objectId) => queryUrlByObjectId.get(objectId))
+        .filter((value): value is string => Boolean(value)))].sort(compareText),
       notes: assertion
         ? ["A stable targeted official source record passed exact taxon, date, identity, and full-geometry county witness gates."]
         : [
@@ -473,14 +513,8 @@ export async function runUsfsCurrentPlantsTargeted(context: SourceAdapterContext
     reviews,
     rejections,
     outcomes,
-    artifacts: [
-      { filename: "usfs-current-invasive-plants-before.json", mediaType: "application/json", contents: first.contents },
-      { filename: "usfs-current-invasive-plants-after.json", mediaType: "application/json", contents: second.contents },
-    ],
-    upstreamRequests: [
-      { url: queryUrl, status: first.response.status, retrievedAt: first.retrievedAt, recordCount: firstFeatures.length },
-      { url: queryUrl, status: second.response.status, retrievedAt: second.retrievedAt, recordCount: secondFeatures.length },
-    ],
+    artifacts,
+    upstreamRequests,
     candidateRecordCount: featureById.size,
     duplicateRecordCount,
     errors: [],

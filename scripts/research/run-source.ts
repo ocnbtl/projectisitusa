@@ -90,6 +90,7 @@ type CandidateFile = {
     catalogResponseSha256: string;
     minimumRequestIntervalMs: 1000;
     maxResponseBytes: number;
+    objectIdsPerRequest?: number;
     targets: Array<{
       pairKey: string;
       countyFips: string;
@@ -720,10 +721,14 @@ async function main() {
         }
       : options.sourceId === usfsCurrentInvasivePlantsTargetedAdapter.sourceId
         ? {
-            providerNetworkRequests: 2,
+            providerNetworkRequests:
+              2 * Math.ceil(
+                new Set(candidateFile.usfsPilot?.targets.flatMap((target) => target.objectIds) ?? []).size /
+                  (candidateFile.usfsPilot?.objectIdsPerRequest ?? 100),
+              ),
             requestSequence: [
-              "GET the selected official ArcGIS object identities with full geometry",
-              "GET the same selected object identities again after the registered interval",
+              "GET each bounded chunk of selected official ArcGIS object identities with full geometry",
+              "GET every chunk again after the registered interval",
             ],
             stabilityGate: "Both retained responses must normalize to identical ordered features.",
             additionalRequests: 0,

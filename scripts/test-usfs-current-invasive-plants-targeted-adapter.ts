@@ -7,6 +7,7 @@ import { feature } from "topojson-client";
 
 import {
   USFS_CURRENT_PLANTS_LAYER_URL,
+  chunkUsfsCurrentPlantObjectIds,
   runUsfsCurrentPlantsTargeted,
 } from "./research/adapters/usfs-current-invasive-plants-targeted";
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
@@ -76,6 +77,7 @@ function contextFor(countyFips: string): SourceAdapterContext {
       catalogResponseSha256: "a".repeat(64),
       minimumRequestIntervalMs: 1000,
       maxResponseBytes: 1_048_576,
+      objectIdsPerRequest: 100,
       targets: [{
         pairKey,
         countyFips,
@@ -105,6 +107,7 @@ async function runWithBody(context: SourceAdapterContext, body: string) {
 }
 
 async function main() {
+  assert.deepEqual(chunkUsfsCurrentPlantObjectIds([4, 2, 4, 1, 3], 2), [[1, 2], [3, 4]]);
   const accepted = await runWithBody(
     contextFor("41017"),
     responseBody(3, "Cytisus scoparius", center[0], center[1]),
@@ -118,6 +121,7 @@ async function main() {
   assert.equal(accepted.assertions[0].claim_type, "recorded-present");
   assert.equal(accepted.assertions[0].scope, "point");
   assert.equal(accepted.artifacts.length, 2);
+  assert.equal(accepted.artifacts[0].filename, "usfs-current-invasive-plants-0001-before.json");
   assert.equal(accepted.upstreamRequests.length, 2);
 
   const rejected = await runWithBody(
