@@ -1,26 +1,26 @@
 # Wyoming Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-09-01T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `846`
+- Verified present: `885`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `10378`
-- Not researched: `46368`
-- Determination coverage: `1.47%`
-- Research coverage: `19.49%`
-- Explicit outcome coverage: `19.4888%`
-- Applicable protocol cells: `190`
+- Not researched: `46329`
+- Determination coverage: `1.54%`
+- Research coverage: `19.56%`
+- Explicit outcome coverage: `19.5565%`
+- Applicable protocol cells: `194`
 - Current complete protocol cells: `58`
-- Protocol completion: `37.37%`
-- Current protocol completion: `30.53%`
-- Evidence records: `863`
-- Research runs: `30`
+- Protocol completion: `36.60%`
+- Current protocol completion: `29.90%`
+- Evidence records: `902`
+- Research runs: `31`
 - Rejection records: `25`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rock pigeon (`columba-livia`) | wildlife | 18 | 0 | 1 |
+| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 15 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 11 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 9 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 23 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 23 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 23 | 2 |
@@ -53,10 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cedar wattle (`acacia-elata`) | plants | 0 | 23 | 0 |
 | Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 23 | 0 |
 | New Zealand burr (`acaena-magellanica`) | plants | 0 | 23 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 23 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 23 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 23 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 23 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-09-01T04:03:29.049Z | 39 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

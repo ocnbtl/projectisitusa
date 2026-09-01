@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-wy-route-start-tranche-acquisition-20260901-r1",
+  "evaluatedAt": "2026-09-01T04:14:12.875Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded Wyoming tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-wy-route-start-tranche-selection-20260831-r1.json",
+    "evaluationSha256": "572c08437b6fadc33d71521cb22de70f711df2e254d9b47b6e968d532d22e874",
+    "method": "A fresh full retained-input replay after the Oregon integration ranked Wyoming first with 39 net-new pairs.",
+    "remainingNationalBbsNetPairsBeforeWyoming": 663,
+    "wyomingGrossPairs": 39,
+    "wyomingAlreadyPresentPairs": 0,
+    "wyomingNetNewPairs": 39,
+    "wyomingCountyCount": 17,
+    "stateAcceptedRows": 174,
+    "selectedSupportingRows": 174
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-wy-route-start-tranche-v1.json",
+    "planSha256": "ab3f7039f56bed66d6757e9eba8b32f9a0e5df3f489cf1e44bce789431c5bed9",
+    "selectedPairSha256": "2dd0adddee8e7609487752fbee6e82c63fd36456d1d3a05d1434cc87d40ba427",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "planningCommit": "bed70209f25ea6dd1d1ad863cf18eb4e89d9ad3d",
+    "runCommit": "b3d2f5a823e72c8be61ee1ffd7342bce3b64cd38",
+    "coverageIndexCommit": "2f2387aa7633e745ff436b3175bc54d1c8b284f7",
+    "sourceCoverageIndexId": "source-coverage-431277e24a2d794e1c06",
+    "sourceCoverageIndexSha256": "1f798a32f2ac26d339a656d22cff78f25605fe975802cbb58b2a812a8855d00a",
+    "semanticDryRun": {
+      "result": "pass-after-correcting-future-start-input",
+      "baseSha": "bed70209f25ea6dd1d1ad863cf18eb4e89d9ad3d",
+      "initialRejectedStart": "2026-09-01T04:03:00.000Z",
+      "initialRejection": "run start was later than current host time, rejected before acquisition",
+      "acceptedStart": "2026-09-01T04:02:30.000Z",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 39,
+      "expectedSuccessfulProviderGets": 5,
+      "maximumProviderAttempts": 15,
+      "requestTimeoutMilliseconds": 180000,
+      "parameterHash": "42bc53f06fe08a87a486df9c02d17a81b2a99c43fac325d96da5540dd059144b"
+    }
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterOregon": 885,
+    "netNewPairsBeforeWyoming": 663,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260901T040230Z__usgs-bbs__42bc53f06fe0",
+    "receiptPath": "src/data/research/runs/20260901T040230Z__usgs-bbs__42bc53f06fe0/receipt.json",
+    "receiptSha256": "37b22e6d1e278453e59808cdfef2d1cfde152d1ee94e9d23c0ec8db4c000b337",
+    "assertionsSha256": "614cd208800b2634d242c496bc0a2340676e4e590648aa7a94ae9ce4b10fdaca",
+    "reviewsSha256": "86538a66be24f944faecc61e87b70724fdc2c277d1dc1cedd43db6fde1ee0560",
+    "outcomesSha256": "a511fc0b19bac8c1d6939e45eaa3e310d2f655e1d3982b1aad1f9dbb7bf53f6b",
+    "status": "complete",
+    "codeCommit": "bed70209f25ea6dd1d1ad863cf18eb4e89d9ad3d",
+    "startedAt": "2026-09-01T04:02:30.000Z",
+    "finishedAt": "2026-09-01T04:03:29.049Z",
+    "requestedPairs": 39,
+    "candidateRecords": 174,
+    "assertionEvents": 39,
+    "reviewEvents": 39,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 39,
+    "successfulFinalResponses": 5,
+    "providerAttempts": 5,
+    "transientFailures": [],
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/wy-standard-stop1-detections.json",
+        "bytes": 57131,
+        "sha256": "9775bee66b323f2b228e22bb6806bbf896ad5960467d0bb8e87f252e793e19f1"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "baselineProjectionAsOf": "2026-08-29",
+    "compilationCutoff": "2026-09-01",
+    "reason": "The immutable run began on 2026-09-01 UTC. The projection uses the run's truthful UTC date and does not backdate the evidence."
+  },
+  "wyomingMovement": {
+    "fullCountySpeciesDenominator": 57592,
+    "affectedCountyCount": 17,
+    "baseline": {
+      "verifiedPresent": 846,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 10378,
+      "notResearched": 46368,
+      "explicitOutcomePairCount": 11224,
+      "evidenceRecordCount": 863,
+      "researchRunCount": 30
+    },
+    "final": {
+      "verifiedPresent": 885,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 10378,
+      "notResearched": 46329,
+      "explicitOutcomePairCount": 11263,
+      "evidenceRecordCount": 902,
+      "researchRunCount": 31,
+      "conflicts": 0,
+      "summarySha256": "a9c3d01579db7f55a5463baf48120abc19c1808166575b52d16fed0ff26d11f0"
+    },
+    "delta": {
+      "verifiedPresent": 39,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -39,
+      "explicitOutcomePairCount": 39,
+      "evidenceRecordCount": 39,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 5,
+      "passer-domesticus": 14,
+      "streptopelia-decaocto": 8,
+      "sturnus-vulgaris": 12
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195921,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314212,
+      "immutableResearchRuns": 1429,
+      "assertionEvents": 309815,
+      "pairOutcomes": 1721601
+    },
+    "expectedAfterWyoming": {
+      "verifiedPresent": 195960,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314173,
+      "immutableResearchRuns": 1430,
+      "assertionEvents": 309854,
+      "pairOutcomes": 1721640
+    },
+    "delta": {
+      "verifiedPresent": 39,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -39,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 39,
+      "pairOutcomes": 39
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 39 planned equals 39 accepted plus 0 rejected",
+    "wyomingDenominatorConservation": "pass: 57,592 before and after",
+    "nationalDenominatorConservation": "pending cumulative readiness generation",
+    "netUniqueMovement": "pass: all 39 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS header retry, body retry, timeout, semantics, and exhaustion tests",
+    "immutableRunValidation": "pass: accepted valid bundle and rejected future-start, duplicate-ID, bad-reference, schema, geography, state-scope, below-gate, parameter-hash, and unreviewed-evidence fixtures",
+    "sourceCoverage": "pass: 1,430 current hash-reconciled entries across 29 sources",
+    "stateProjectionIntegrity": "pass: all 51 tracked state projections validated; targeted Wyoming two-pass compile was byte-stable",
+    "projectionByteStability": "pass: two independent Wyoming compiles were byte-identical across 29 files",
+    "publication": "pending cumulative readiness, integrity, type, lint, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderAttempts": 5,
+    "successfulRunFinalProviderResponses": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "Wyoming remains a research-only bounded tranche and is not certified.",
+    "The jurisdiction evidence registry remains empty pending required human approval for any exact negative assertions.",
+    "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+    "The application and data release decisions remain owned by the production launch gate."
+  ],
+  "nextAction": "Commit the deterministic Wyoming projection and this evaluation, regenerate the cumulative publication manifest and readiness dashboard, run the full local release gates, then enter the formal production launch gate."
+}

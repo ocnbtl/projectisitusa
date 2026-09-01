@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "WY",
-  "asOf": "2026-08-29",
-  "generatedAt": "2026-08-29T00:00:00.000Z",
+  "asOf": "2026-09-01",
+  "generatedAt": "2026-09-01T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 155,
+    "applicableSpeciesCount": 159,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2349,
+    "unknownSpeciesCount": 2345,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 102,
+    "derivedApplicableSpeciesCount": 106,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 488,
+    "boundedAcquisitionSpeciesCount": 492,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 57592,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 846,
+    "verifiedPresent": 885,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 10378,
-    "notResearched": 46368,
-    "determinationCoveragePercent": 1.47,
-    "researchCoveragePercent": 19.49,
-    "explicitOutcomePairCount": 11224,
-    "explicitOutcomeCoveragePercent": 19.4888,
+    "notResearched": 46329,
+    "determinationCoveragePercent": 1.54,
+    "researchCoveragePercent": 19.56,
+    "explicitOutcomePairCount": 11263,
+    "explicitOutcomeCoveragePercent": 19.5565,
     "conflictCount": 0,
-    "evidenceRecordCount": 863,
+    "evidenceRecordCount": 902,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 863,
+    "runEvidenceRecordCount": 902,
     "rejectionRecordCount": 25,
-    "researchRunCount": 30,
+    "researchRunCount": 31,
     "boundedAcquisition": {
-      "speciesCount": 488,
-      "totalPairs": 11224,
-      "verifiedPresent": 846,
+      "speciesCount": 492,
+      "totalPairs": 11316,
+      "verifiedPresent": 885,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 10378,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 11224,
-      "explicitOutcomeCoveragePercent": 100
+      "notResearched": 53,
+      "researchCoveragePercent": 99.53,
+      "explicitOutcomePairs": 11263,
+      "explicitOutcomeCoveragePercent": 99.5316
     }
   },
   "migrationCandidates": {
@@ -333,9 +333,9 @@
       "authority": "U.S. Geological Survey",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-01T04:03:29.049Z",
+      "evidencePairCount": 39,
+      "screenedSpeciesCount": 4
     },
     {
       "id": "neon-tall",
@@ -372,17 +372,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1952,
-    "applicableCells": 190,
-    "notApplicableCells": 1762,
+    "totalCells": 1968,
+    "applicableCells": 194,
+    "notApplicableCells": 1774,
     "completeCells": 71,
-    "incompleteCells": 119,
+    "incompleteCells": 123,
     "blockedCells": 0,
     "currentCells": 58,
     "staleCells": 13,
-    "undatedCells": 119,
-    "applicableCompletionPercent": 37.37,
-    "currentCompletePercent": 30.53,
+    "undatedCells": 123,
+    "applicableCompletionPercent": 36.6,
+    "currentCompletePercent": 29.9,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 31,
     "regulatedAndHighCurrentCompletePercent": 88.57,
@@ -408,9 +408,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 8,
+        "applicableCells": 12,
         "currentCompleteCells": 5,
-        "currentCompletePercent": 62.5
+        "currentCompletePercent": 41.67
       }
     ],
     "priorityCompletion": [
@@ -428,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 129,
+        "applicableCells": 133,
         "currentCompleteCells": 27,
-        "currentCompletePercent": 20.93
+        "currentCompletePercent": 20.3
       },
       {
         "priority": "baseline",
@@ -448,7 +448,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 155,
+        "applicableCells": 159,
         "currentCompleteCells": 36,
         "processed": false
       },
@@ -461,6 +461,54 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "columba-livia",
+      "commonName": "Rock pigeon",
+      "scientificName": "Columba livia",
+      "category": "wildlife",
+      "notResearchedCountyCount": 18,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 18001
+    },
+    {
+      "speciesId": "streptopelia-decaocto",
+      "commonName": "Eurasian collared dove",
+      "scientificName": "Streptopelia decaocto",
+      "category": "wildlife",
+      "notResearchedCountyCount": 15,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 15001
+    },
+    {
+      "speciesId": "sturnus-vulgaris",
+      "commonName": "European Starling",
+      "scientificName": "Sturnus vulgaris",
+      "category": "wildlife",
+      "notResearchedCountyCount": 11,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 11001
+    },
+    {
+      "speciesId": "passer-domesticus",
+      "commonName": "House sparrow",
+      "scientificName": "Passer domesticus",
+      "category": "wildlife",
+      "notResearchedCountyCount": 9,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 9001
+    },
     {
       "speciesId": "emerald-ash-borer",
       "commonName": "Emerald Ash Borer",
@@ -1459,46 +1507,6 @@
       "speciesId": "calyptocarpus-vialis",
       "commonName": "Straggler daisy",
       "scientificName": "Calyptocarpus vialis",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 23,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 230
-    },
-    {
-      "speciesId": "cardamine-hirsuta",
-      "commonName": "Hairy bittercress",
-      "scientificName": "Cardamine hirsuta",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 23,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 230
-    },
-    {
-      "speciesId": "cardiospermum-halicacabum",
-      "commonName": "Balloon vine",
-      "scientificName": "Cardiospermum halicacabum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 23,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 230
-    },
-    {
-      "speciesId": "carduus-pycnocephalus",
-      "commonName": "Italian plumeless thistle",
-      "scientificName": "Carduus pycnocephalus",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 23,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 230
-    },
-    {
-      "speciesId": "castanea-sativa",
-      "commonName": "European chestnut",
-      "scientificName": "Castanea sativa",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 23,
