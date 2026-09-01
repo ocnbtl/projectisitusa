@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-wa-route-start-tranche-acquisition-20260901-r1",
+  "evaluatedAt": "2026-09-01T06:40:18.537Z",
+  "status": "locally-verified-bounded-positive-evidence-integration",
+  "objective": "Acquire, validate, index, and compile the selected Washington USGS BBS route-start tranche without weakening evidence semantics or crossing protected release boundaries.",
+  "implementation": {
+    "primaryMode": "DATA PIPELINE / GENERATED DATA",
+    "projectOverlay": "PROJECT ISITUSA",
+    "riskFlags": [
+      "GENERATED OR PUBLISHED DATA",
+      "EXTERNAL SIDE EFFECTS"
+    ],
+    "externalActionsExcluded": [
+      "No push or remote repository mutation",
+      "No application deployment",
+      "No R2 upload or pointer promotion",
+      "No R2 deletion"
+    ]
+  },
+  "sourceAndPlan": {
+    "sourceId": "usgs-bbs",
+    "authority": "U.S. Geological Survey",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-wa-route-start-tranche-v1.json",
+    "planSha256": "6ae36b9ee036ca2df617394c332207e556235bae3ac4ceb845a0412c166f178f",
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-wa-route-start-tranche-selection-20260901-r1.json",
+    "planCommit": "a1968ba5737c67404aa079baf92d053674aed98a",
+    "candidatePairs": 37,
+    "affectedCounties": 19,
+    "expectedSupportingRows": 74,
+    "expectedNetNewPairs": 37
+  },
+  "resourceGuard": {
+    "availableMemoryPercentBeforeSemanticDryRun": 22.381,
+    "requiredOperationalRamReservePercent": 10,
+    "decision": "GO for one sequential bounded acquisition."
+  },
+  "semanticDryRun": {
+    "result": "pass",
+    "baseSha": "a1968ba5737c67404aa079baf92d053674aed98a",
+    "startedAt": "2026-09-01T06:35:30Z",
+    "networkRequestsIssued": 0,
+    "candidatePairs": 37,
+    "candidateFileSha256": "6ae36b9ee036ca2df617394c332207e556235bae3ac4ceb845a0412c166f178f",
+    "expectedSuccessfulProviderGets": 5,
+    "maximumProviderAttempts": 15,
+    "requestTimeoutMilliseconds": 180000,
+    "parameterHash": "b2c95976591cb60ee7a4d735c8d977dd0362a1ba4687b4aaa1247cb30ea0cf95",
+    "expectedRunPath": "src/data/research/runs/20260901T063530Z__usgs-bbs__b2c95976591c"
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairs": 962,
+    "netNewPairs": 586,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "negativeEvidence": false
+  },
+  "immutableRun": {
+    "runId": "20260901T063530Z__usgs-bbs__b2c95976591c",
+    "receiptPath": "src/data/research/runs/20260901T063530Z__usgs-bbs__b2c95976591c/receipt.json",
+    "receiptSha256": "b924c2167cd8327740e8f1bd3be653d7c624ab23c4bc0e7a772efb677cf6397b",
+    "assertionsSha256": "4b08418d9d72bd3bafb935a897cdf4ee5843f68883d8d08040956171343e0f79",
+    "reviewsSha256": "8c2a6c392b60cb43a598fd502fa9329f551cc8d850c1963fc1cff3f1db30a36f",
+    "outcomesSha256": "da98c1318073da8c6d11762629fbcae665c408cc87cf72baa43f04c5ea3ee554",
+    "status": "complete",
+    "codeCommit": "a1968ba5737c67404aa079baf92d053674aed98a",
+    "startedAt": "2026-09-01T06:35:30Z",
+    "finishedAt": "2026-09-01T06:36:42.569Z",
+    "requestedPairs": 37,
+    "candidateRecords": 74,
+    "assertionEvents": 37,
+    "reviewEvents": 37,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 37,
+    "successfulFinalResponses": 5,
+    "deviations": [],
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/wa-standard-stop1-detections.json",
+        "bytes": 26843,
+        "sha256": "d2c1e36ed67370c6cdbb43caae3bf05b556fda765eb53dbbf82c3b1e3ad60c8a"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "compilerAsOf": "2026-09-01",
+    "latestAcceptedEventAt": "2026-09-01T06:36:42.569Z",
+    "decision": "The complete Washington run is inside the explicit September 1 cutoff."
+  },
+  "washingtonMovement": {
+    "before": {
+      "countySpeciesDenominator": 97656,
+      "verifiedPresent": 3582,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 15840,
+      "notResearched": 78234,
+      "explicitOutcomePairCount": 19422,
+      "evidenceRecordCount": 8833,
+      "researchRunCount": 32,
+      "conflicts": 0
+    },
+    "after": {
+      "countySpeciesDenominator": 97656,
+      "verifiedPresent": 3619,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 15840,
+      "notResearched": 78197,
+      "explicitOutcomePairCount": 19459,
+      "evidenceRecordCount": 8870,
+      "researchRunCount": 33,
+      "conflicts": 0
+    },
+    "delta": {
+      "verifiedPresent": 37,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -37,
+      "explicitOutcomePairCount": 37,
+      "evidenceRecordCount": 37,
+      "researchRunCount": 1,
+      "conflicts": 0
+    },
+    "selectedPairFinalStatus": { "verifiedPresent": 37, "other": 0 }
+  },
+  "nationalMovement": {
+    "before": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195998,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314135
+    },
+    "after": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 196035,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314098
+    },
+    "delta": {
+      "verifiedPresent": 37,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -37
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 37 planned equals 37 accepted plus 0 rejected",
+    "washingtonDenominatorConservation": "pass: 97,656 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after, with 37 verified-present gain and 37 not-researched reduction",
+    "netUniqueMovement": "pass: all 37 pairs moved from not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS route-start adapter tests",
+    "sourceCoverage": "pass: 1,432 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Washington compiles were byte-identical across 45 files",
+    "stateProjectionGate": "pass: all 51 configured state projections remained valid",
+    "release": "pending cumulative integrity, type, lint, build, manifest, readiness, and separate release authority"
+  },
+  "functionalPreservation": [
+    {
+      "contract": "Unknown is not absence",
+      "status": "PRESERVED",
+      "evidence": "No verified-absent or not-detected movement occurred."
+    },
+    {
+      "contract": "Positive BBS evidence remains point scoped",
+      "status": "PRESERVED",
+      "evidence": "All 37 assertions are recorded-present survey detections with point scope and route-start county receipts."
+    },
+    {
+      "contract": "Deterministic generated projections",
+      "status": "PRESERVED",
+      "evidence": "Two September 1 Washington compiles were byte-identical across 45 files."
+    },
+    {
+      "contract": "Protected external release state",
+      "status": "PRESERVED",
+      "evidence": "No push, deployment, R2 upload, pointer promotion, or deletion occurred."
+    }
+  ],
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "The accumulated main push requires direct current-chat approval after the final local commit range is known.",
+    "R2 publication remains a separate guarded action and is not authorized by this evaluation.",
+    "Local compilation does not prove a deployed or live production state."
+  ],
+  "nextAction": "Commit the Washington generated projection and this evaluation, then run the cumulative local release gates without pushing or mutating R2."
+}

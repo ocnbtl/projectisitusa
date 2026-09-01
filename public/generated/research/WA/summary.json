@@ -2,8 +2,8 @@
   "schemaVersion": 4,
   "stateCode": "WA",
   "stateName": "Washington",
-  "asOf": "2026-08-29",
-  "generatedAt": "2026-08-29T00:00:00.000Z",
+  "asOf": "2026-09-01",
+  "generatedAt": "2026-09-01T00:00:00.000Z",
   "sourceSnapshotDate": "2026-07-11T20:29:35.732Z",
   "scope": {
     "publicationMode": "research-only",
@@ -13,14 +13,14 @@
     "applicabilityAsOf": "2026-08-05",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 303,
+    "applicableSpeciesCount": 307,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2201,
+    "unknownSpeciesCount": 2197,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 145,
-    "derivedApplicableSpeciesCount": 158,
+    "derivedApplicableSpeciesCount": 162,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 505,
+    "boundedAcquisitionSpeciesCount": 509,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,19 +33,19 @@
     "defaultStatus": "not-researched",
     "denominator": 2504,
     "countyEquivalentCount": 39,
-    "derivedApplicableSpeciesCount": 158,
+    "derivedApplicableSpeciesCount": 162,
     "counts": {
-      "applicable": 303,
+      "applicable": 307,
       "not-applicable": 0,
       "researched-unresolved": 195,
       "researched-blocked": 7,
       "partially-researched": 0,
-      "not-researched": 1999,
+      "not-researched": 1995,
       "blocked": 0
     },
     "fullyAccountedSpeciesCount": 505,
-    "partiallyAccountedSpeciesCount": 0,
-    "untouchedSpeciesCount": 1999,
+    "partiallyAccountedSpeciesCount": 4,
+    "untouchedSpeciesCount": 1995,
     "fullCatalogResearchAccounted": false,
     "overrides": [
       {
@@ -1347,6 +1347,16 @@
         "blockedCountyCount": 0,
         "accountedCountyCount": 39,
         "notResearchedCountyCount": 0
+      },
+      {
+        "speciesId": "columba-livia",
+        "status": "applicable",
+        "applicabilityStatus": "applicable",
+        "applicabilityBasis": "accepted-reviewed-presence",
+        "researchedCountyCount": 4,
+        "blockedCountyCount": 0,
+        "accountedCountyCount": 4,
+        "notResearchedCountyCount": 35
       },
       {
         "speciesId": "commelina-benghalensis",
@@ -3589,6 +3599,16 @@
         "notResearchedCountyCount": 0
       },
       {
+        "speciesId": "passer-domesticus",
+        "status": "applicable",
+        "applicabilityStatus": "applicable",
+        "applicabilityBasis": "accepted-reviewed-presence",
+        "researchedCountyCount": 13,
+        "blockedCountyCount": 0,
+        "accountedCountyCount": 13,
+        "notResearchedCountyCount": 26
+      },
+      {
         "speciesId": "paulownia-tomentosa",
         "status": "applicable",
         "applicabilityStatus": "applicable",
@@ -4549,6 +4569,16 @@
         "notResearchedCountyCount": 0
       },
       {
+        "speciesId": "streptopelia-decaocto",
+        "status": "applicable",
+        "applicabilityStatus": "applicable",
+        "applicabilityBasis": "accepted-reviewed-presence",
+        "researchedCountyCount": 6,
+        "blockedCountyCount": 0,
+        "accountedCountyCount": 6,
+        "notResearchedCountyCount": 33
+      },
+      {
         "speciesId": "striga-asiatica",
         "status": "researched-unresolved",
         "applicabilityStatus": "unknown",
@@ -4557,6 +4587,16 @@
         "blockedCountyCount": 0,
         "accountedCountyCount": 39,
         "notResearchedCountyCount": 0
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "status": "applicable",
+        "applicabilityStatus": "applicable",
+        "applicabilityBasis": "accepted-reviewed-presence",
+        "researchedCountyCount": 14,
+        "blockedCountyCount": 0,
+        "accountedCountyCount": 14,
+        "notResearchedCountyCount": 25
       },
       {
         "speciesId": "sudden-oak-death",
@@ -5100,9 +5140,9 @@
       }
     ],
     "applicabilityDecisionCounts": {
-      "applicable": 303,
+      "applicable": 307,
       "not-applicable": 0,
-      "unknown": 2201,
+      "unknown": 2197,
       "blocked": 0
     }
   },
@@ -5113,32 +5153,32 @@
     "resolvablePairCount": 97656,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 3582,
+    "verifiedPresent": 3619,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 15840,
-    "notResearched": 78234,
-    "determinationCoveragePercent": 3.67,
-    "researchCoveragePercent": 19.89,
-    "explicitOutcomePairCount": 19422,
-    "explicitOutcomeCoveragePercent": 19.8882,
+    "notResearched": 78197,
+    "determinationCoveragePercent": 3.71,
+    "researchCoveragePercent": 19.93,
+    "explicitOutcomePairCount": 19459,
+    "explicitOutcomeCoveragePercent": 19.9261,
     "conflictCount": 0,
-    "evidenceRecordCount": 8833,
+    "evidenceRecordCount": 8870,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 8833,
+    "runEvidenceRecordCount": 8870,
     "rejectionRecordCount": 1288,
-    "researchRunCount": 32,
+    "researchRunCount": 33,
     "boundedAcquisition": {
-      "speciesCount": 505,
-      "totalPairs": 19695,
-      "verifiedPresent": 3582,
+      "speciesCount": 509,
+      "totalPairs": 19851,
+      "verifiedPresent": 3619,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 15840,
-      "notResearched": 273,
-      "researchCoveragePercent": 98.61,
-      "explicitOutcomePairs": 19422,
-      "explicitOutcomeCoveragePercent": 98.6139
+      "notResearched": 392,
+      "researchCoveragePercent": 98.03,
+      "explicitOutcomePairs": 19459,
+      "explicitOutcomeCoveragePercent": 98.0253
     }
   },
   "counties": [
@@ -5150,25 +5190,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 64,
+      "verifiedPresent": 67,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 434,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2003,
+      "researchCoveragePercent": 20.01,
+      "explicitOutcomePairs": 501,
+      "explicitOutcomeCoveragePercent": 20.008,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 64,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 67,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 434,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 8,
+        "researchCoveragePercent": 98.43,
+        "explicitOutcomePairs": 501,
+        "explicitOutcomeCoveragePercent": 98.4283
       }
     },
     {
@@ -5179,25 +5219,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 87,
+      "verifiedPresent": 89,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 411,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2004,
+      "researchCoveragePercent": 19.97,
+      "explicitOutcomePairs": 500,
+      "explicitOutcomeCoveragePercent": 19.9681,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 87,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 89,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 411,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 9,
+        "researchCoveragePercent": 98.23,
+        "explicitOutcomePairs": 500,
+        "explicitOutcomeCoveragePercent": 98.2318
       }
     },
     {
@@ -5217,16 +5257,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 91,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 407,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5237,25 +5277,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 89,
+      "verifiedPresent": 92,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 409,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2003,
+      "researchCoveragePercent": 20.01,
+      "explicitOutcomePairs": 501,
+      "explicitOutcomeCoveragePercent": 20.008,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 89,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 92,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 409,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 8,
+        "researchCoveragePercent": 98.43,
+        "explicitOutcomePairs": 501,
+        "explicitOutcomeCoveragePercent": 98.4283
       }
     },
     {
@@ -5266,25 +5306,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 91,
+      "verifiedPresent": 92,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 407,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 91,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 92,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 407,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -5295,25 +5335,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 105,
+      "verifiedPresent": 106,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 393,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 105,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 106,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 393,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -5333,16 +5373,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 78,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 420,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5362,16 +5402,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 84,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 414,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5391,16 +5431,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 44,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 454,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5420,16 +5460,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 54,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 444,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5449,16 +5489,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 39,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 459,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5469,25 +5509,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 47,
+      "verifiedPresent": 50,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 451,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2003,
+      "researchCoveragePercent": 20.01,
+      "explicitOutcomePairs": 501,
+      "explicitOutcomeCoveragePercent": 20.008,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 47,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 50,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 451,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 8,
+        "researchCoveragePercent": 98.43,
+        "explicitOutcomePairs": 501,
+        "explicitOutcomeCoveragePercent": 98.4283
       }
     },
     {
@@ -5498,25 +5538,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 61,
+      "verifiedPresent": 65,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 437,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2002,
+      "researchCoveragePercent": 20.05,
+      "explicitOutcomePairs": 502,
+      "explicitOutcomeCoveragePercent": 20.0479,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 61,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 65,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 437,
         "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "researchCoveragePercent": 98.62,
+        "explicitOutcomePairs": 502,
+        "explicitOutcomeCoveragePercent": 98.6248
       }
     },
     {
@@ -5527,25 +5567,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 77,
+      "verifiedPresent": 80,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 421,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2003,
+      "researchCoveragePercent": 20.01,
+      "explicitOutcomePairs": 501,
+      "explicitOutcomeCoveragePercent": 20.008,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 77,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 80,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 421,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 8,
+        "researchCoveragePercent": 98.43,
+        "explicitOutcomePairs": 501,
+        "explicitOutcomeCoveragePercent": 98.4283
       }
     },
     {
@@ -5565,16 +5605,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 83,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 415,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5594,16 +5634,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 60,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 438,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5614,25 +5654,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 190,
+      "verifiedPresent": 191,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 308,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 190,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 191,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 308,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -5652,16 +5692,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 73,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 425,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5672,25 +5712,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 102,
+      "verifiedPresent": 105,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 396,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2003,
+      "researchCoveragePercent": 20.01,
+      "explicitOutcomePairs": 501,
+      "explicitOutcomeCoveragePercent": 20.008,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 102,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 105,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 396,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 8,
+        "researchCoveragePercent": 98.43,
+        "explicitOutcomePairs": 501,
+        "explicitOutcomeCoveragePercent": 98.4283
       }
     },
     {
@@ -5710,16 +5750,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 151,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 347,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5739,16 +5779,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 92,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 406,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5759,25 +5799,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 56,
+      "verifiedPresent": 57,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 442,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 56,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 57,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 442,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -5788,25 +5828,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 63,
+      "verifiedPresent": 64,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 435,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 63,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 64,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 435,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -5826,16 +5866,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 96,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 402,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5846,25 +5886,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 92,
+      "verifiedPresent": 93,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 406,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 92,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 93,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 406,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -5884,16 +5924,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 91,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 407,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5913,16 +5953,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 137,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 361,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5942,16 +5982,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 127,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 371,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -5971,16 +6011,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 102,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 396,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -6000,16 +6040,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 92,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 406,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -6020,25 +6060,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 104,
+      "verifiedPresent": 105,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 394,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 104,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 105,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 394,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -6058,16 +6098,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 111,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 387,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -6078,25 +6118,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 88,
+      "verifiedPresent": 89,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 410,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 88,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 89,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 410,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -6116,16 +6156,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 93,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 405,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -6145,16 +6185,16 @@
       "explicitOutcomePairs": 498,
       "explicitOutcomeCoveragePercent": 19.8882,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
+        "speciesCount": 509,
+        "totalPairs": 509,
         "verifiedPresent": 77,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 421,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
+        "notResearched": 11,
+        "researchCoveragePercent": 97.84,
         "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "explicitOutcomeCoveragePercent": 97.8389
       }
     },
     {
@@ -6165,25 +6205,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 116,
+      "verifiedPresent": 118,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 382,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2004,
+      "researchCoveragePercent": 19.97,
+      "explicitOutcomePairs": 500,
+      "explicitOutcomeCoveragePercent": 19.9681,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 116,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 118,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 382,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 9,
+        "researchCoveragePercent": 98.23,
+        "explicitOutcomePairs": 500,
+        "explicitOutcomeCoveragePercent": 98.2318
       }
     },
     {
@@ -6194,25 +6234,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 116,
+      "verifiedPresent": 117,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 382,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2005,
+      "researchCoveragePercent": 19.93,
+      "explicitOutcomePairs": 499,
+      "explicitOutcomeCoveragePercent": 19.9281,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 116,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 117,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 382,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 10,
+        "researchCoveragePercent": 98.04,
+        "explicitOutcomePairs": 499,
+        "explicitOutcomeCoveragePercent": 98.0354
       }
     },
     {
@@ -6223,25 +6263,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 154,
+      "verifiedPresent": 156,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 344,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2004,
+      "researchCoveragePercent": 19.97,
+      "explicitOutcomePairs": 500,
+      "explicitOutcomeCoveragePercent": 19.9681,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 154,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 156,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 344,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 9,
+        "researchCoveragePercent": 98.23,
+        "explicitOutcomePairs": 500,
+        "explicitOutcomeCoveragePercent": 98.2318
       }
     },
     {
@@ -6252,25 +6292,25 @@
       "resolvablePairs": 2504,
       "notApplicablePairs": 0,
       "blockedPairs": 0,
-      "verifiedPresent": 105,
+      "verifiedPresent": 108,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 393,
-      "notResearched": 2006,
-      "researchCoveragePercent": 19.89,
-      "explicitOutcomePairs": 498,
-      "explicitOutcomeCoveragePercent": 19.8882,
+      "notResearched": 2003,
+      "researchCoveragePercent": 20.01,
+      "explicitOutcomePairs": 501,
+      "explicitOutcomeCoveragePercent": 20.008,
       "boundedAcquisition": {
-        "speciesCount": 505,
-        "totalPairs": 505,
-        "verifiedPresent": 105,
+        "speciesCount": 509,
+        "totalPairs": 509,
+        "verifiedPresent": 108,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 393,
-        "notResearched": 7,
-        "researchCoveragePercent": 98.61,
-        "explicitOutcomePairs": 498,
-        "explicitOutcomeCoveragePercent": 98.6139
+        "notResearched": 8,
+        "researchCoveragePercent": 98.43,
+        "explicitOutcomePairs": 501,
+        "explicitOutcomeCoveragePercent": 98.4283
       }
     }
   ],
@@ -6531,9 +6571,9 @@
       "authority": "U.S. Geological Survey",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-01T06:36:42.569Z",
+      "evidencePairCount": 37,
+      "screenedSpeciesCount": 4
     },
     {
       "id": "neon-tall",
@@ -6636,6 +6676,54 @@
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [],
       "priorityScore": 39000
+    },
+    {
+      "speciesId": "columba-livia",
+      "commonName": "Rock pigeon",
+      "scientificName": "Columba livia",
+      "category": "wildlife",
+      "notResearchedCountyCount": 35,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 35001
+    },
+    {
+      "speciesId": "streptopelia-decaocto",
+      "commonName": "Eurasian collared dove",
+      "scientificName": "Streptopelia decaocto",
+      "category": "wildlife",
+      "notResearchedCountyCount": 33,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 33001
+    },
+    {
+      "speciesId": "passer-domesticus",
+      "commonName": "House sparrow",
+      "scientificName": "Passer domesticus",
+      "category": "wildlife",
+      "notResearchedCountyCount": 26,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 26001
+    },
+    {
+      "speciesId": "sturnus-vulgaris",
+      "commonName": "European Starling",
+      "scientificName": "Sturnus vulgaris",
+      "category": "wildlife",
+      "notResearchedCountyCount": 25,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 25001
     },
     {
       "speciesId": "emerald-ash-borer",
