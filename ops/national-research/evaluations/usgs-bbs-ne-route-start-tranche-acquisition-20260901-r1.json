@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ne-route-start-tranche-acquisition-20260901-r1",
+  "evaluatedAt": "2026-09-01T05:33:00.000Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded Nebraska tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence with no negative inference.",
+  "implementation": {
+    "primaryMode": "DATA PIPELINE / GENERATED DATA",
+    "projectOverlay": "PROJECT ISITUSA",
+    "riskFlags": ["GENERATED OR PUBLISHED DATA"],
+    "externalActionsExcluded": [
+      "No push or remote repository mutation",
+      "No application deployment",
+      "No R2 upload or pointer promotion",
+      "No R2 deletion"
+    ]
+  },
+  "sourceAndPlan": {
+    "sourceId": "usgs-bbs",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-ne-route-start-tranche-v1.json",
+    "planSha256": "ad4ec75998e1f72949465a3bb5c9c22c85b93400a18e8b88dde4b09dd3a07f62",
+    "selectedPairSha256": "d99c21e43e2fac9e10ad9180413eb9f3fd2221fe3c41eb0ecf95ebf5303ddf95",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "planningCommit": "cb1b5092b88dd4883a39f052c0818c3ef617eb39",
+    "runCommit": "5b65010e9",
+    "coverageIndexCommit": "fa8dcafe9",
+    "sourceCoverageIndexId": "source-coverage-4244c15d3c91cec974be",
+    "sourceCoverageIndexSha256": "f1553ac2286a03dccb8eeaabd58305047567303a54e02c8a78b85f8daaee1dcb"
+  },
+  "resourceGuard": {
+    "measuredAt": "2026-09-01T05:26:41.691Z",
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 8332615680,
+    "availableMemoryPercent": 24.91,
+    "requiredOperationalRamReservePercent": 10,
+    "decision": "GO for one sequential bounded acquisition."
+  },
+  "semanticDryRun": {
+    "result": "pass",
+    "baseSha": "cb1b5092b88dd4883a39f052c0818c3ef617eb39",
+    "startedAt": "2026-09-01T05:25:30.000Z",
+    "networkRequestsIssued": 0,
+    "candidatePairs": 38,
+    "expectedSuccessfulProviderGets": 5,
+    "maximumProviderAttempts": 15,
+    "requestTimeoutMilliseconds": 180000,
+    "parameterHash": "f2c683c9ff26aa9940a8a8ceb552c91186af79fbd163dd623defe4c82da9e8b0",
+    "expectedRunPath": "src/data/research/runs/20260901T052530Z__usgs-bbs__f2c683c9ff26"
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterWyoming": 924,
+    "netNewPairsBeforeNebraska": 624,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260901T052530Z__usgs-bbs__f2c683c9ff26",
+    "receiptPath": "src/data/research/runs/20260901T052530Z__usgs-bbs__f2c683c9ff26/receipt.json",
+    "receiptSha256": "327ec61198e9cc941cb750b48836612bcd9c0769028e8c6a4054b712754c5dd3",
+    "assertionsSha256": "d9990df1aa4ec16041ca5af22ffbd5d3be623bdb1cd521ad87cd9f8703c0aa5f",
+    "reviewsSha256": "75ff74603a089c11543aeaf4965aea657867cda9a26a921643aba815ab498056",
+    "outcomesSha256": "c2b77e12a5d9eff0b626b8b6fa305bd828e38da30e2b6d59b33d89c11c7ebd1a",
+    "status": "complete",
+    "codeCommit": "cb1b5092b88dd4883a39f052c0818c3ef617eb39",
+    "startedAt": "2026-09-01T05:25:30.000Z",
+    "finishedAt": "2026-09-01T05:27:26.374Z",
+    "requestedPairs": 38,
+    "candidateRecords": 62,
+    "assertionEvents": 38,
+    "reviewEvents": 38,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 38,
+    "successfulFinalResponses": 5,
+    "deviations": [],
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/ne-standard-stop1-detections.json",
+        "bytes": 23206,
+        "sha256": "ff5321452151ccdd46fcf680e9c2c9227ffa53d85694c3c6929d20766380a48d"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "baselineProjectionAsOf": "2026-08-29",
+    "compilationCutoff": "2026-09-01",
+    "reason": "The immutable run began on 2026-09-01 UTC, so the projection uses that truthful UTC date."
+  },
+  "nebraskaMovement": {
+    "fullCountySpeciesDenominator": 232872,
+    "affectedCountyCount": 28,
+    "baseline": {
+      "verifiedPresent": 2005,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 41147,
+      "notResearched": 189720,
+      "explicitOutcomePairCount": 43152,
+      "evidenceRecordCount": 2519,
+      "researchRunCount": 24
+    },
+    "final": {
+      "verifiedPresent": 2043,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 41147,
+      "notResearched": 189682,
+      "explicitOutcomePairCount": 43190,
+      "evidenceRecordCount": 2557,
+      "researchRunCount": 25,
+      "conflicts": 0,
+      "summarySha256": "ab6d66d6408b80040d23e19b2692ed4b5a3f674cb1ee030a91ca62df7ba23af7"
+    },
+    "delta": {
+      "verifiedPresent": 38,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -38,
+      "explicitOutcomePairCount": 38,
+      "evidenceRecordCount": 38,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 1,
+      "passer-domesticus": 15,
+      "streptopelia-decaocto": 13,
+      "sturnus-vulgaris": 9
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195960,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314173,
+      "immutableResearchRuns": 1430,
+      "assertionEvents": 309854,
+      "pairOutcomes": 1721640
+    },
+    "expectedAfterNebraska": {
+      "verifiedPresent": 195998,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314135,
+      "immutableResearchRuns": 1431,
+      "assertionEvents": 309892,
+      "pairOutcomes": 1721678
+    },
+    "delta": {
+      "verifiedPresent": 38,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -38,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 38,
+      "pairOutcomes": 38
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 38 planned equals 38 accepted plus 0 rejected",
+    "nebraskaDenominatorConservation": "pass: 232,872 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after, with 38 verified-present gain and 38 not-researched reduction",
+    "netUniqueMovement": "pass: all 38 pairs moved from not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS adapter tests",
+    "immutableRunValidation": "pass: accepted valid bundle and rejected invalid lineage, schema, identity, geography, and review fixtures",
+    "sourceCoverage": "pass: 1,431 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Nebraska compiles were byte-identical across 99 files",
+    "sharedCompatibilityProtection": "pass: Nebraska remained research-only and protected shared compatibility outputs did not change",
+    "release": "pending cumulative integrity, type, lint, build, manifest, readiness, and separate release authority"
+  },
+  "functionalPreservation": [
+    {
+      "contract": "Evidence semantics",
+      "status": "PRESERVED",
+      "evidence": "All 38 assertions are recorded-present survey detections; no absence or non-detection assertion was emitted."
+    },
+    {
+      "contract": "Append-only run lineage",
+      "status": "PRESERVED",
+      "evidence": "The new immutable run references committed planning code and hash-pinned source, plan, artifact, and output identities."
+    },
+    {
+      "contract": "Research-only publication boundary",
+      "status": "PRESERVED",
+      "evidence": "The verifier confirmed protected shared compatibility outputs did not change."
+    }
+  ],
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "Nebraska remains a research-only bounded tranche and is not certified.",
+    "The local branch now extends the safeguarded unpushed release; no push will be attempted without a new direct exact approval for the final intended commit range.",
+    "The application and data release decisions remain separate from this implementation evaluation."
+  ],
+  "nextAction": "Commit the deterministic Nebraska projection and this evaluation, regenerate the cumulative publication manifest and readiness dashboard, then run the full local release gates without pushing, deploying, or promoting R2."
+}
