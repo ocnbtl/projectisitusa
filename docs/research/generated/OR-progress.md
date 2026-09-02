@@ -1,26 +1,26 @@
 # Oregon Research Progress
 
-Generated: `2026-09-01T00:00:00.000Z`
+Generated: `2026-09-02T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `3007`
+- Verified present: `3611`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `13032`
-- Not researched: `74069`
-- Determination coverage: `3.38%`
-- Research coverage: `17.83%`
-- Explicit outcome coverage: `17.8326%`
-- Applicable protocol cells: `321`
+- Researched unresolved: `12951`
+- Not researched: `73546`
+- Determination coverage: `4.05%`
+- Research coverage: `18.41%`
+- Explicit outcome coverage: `18.4128%`
+- Applicable protocol cells: `394`
 - Current complete protocol cells: `100`
-- Protocol completion: `35.20%`
-- Current protocol completion: `31.15%`
-- Evidence records: `3273`
-- Research runs: `27`
+- Protocol completion: `28.68%`
+- Current protocol completion: `25.38%`
+- Evidence records: `3877`
+- Research runs: `29`
 - Rejection records: `205`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 36 | 0 | 0 |
-| Orange eye butterflybush (`buddleja-davidii`) | plants | 36 | 0 | 0 |
-| Yellow star-thistle (`centaurea-solstitialis`) | plants | 36 | 0 | 0 |
-| Rush skeletonweed (`chondrilla-juncea`) | plants | 36 | 0 | 0 |
-| Evergreen clematis (`clematis-vitalba`) | plants | 36 | 0 | 0 |
-| French broom (`genista-monspessulana`) | plants | 36 | 0 | 0 |
-| Atlantic ivy (`hedera-hibernica`) | plants | 36 | 0 | 0 |
-| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 36 | 0 | 0 |
-| Meadow hawkweed (`hieracium-caespitosum`) | plants | 36 | 0 | 0 |
-| English holly (`ilex-aquifolium`) | plants | 36 | 0 | 0 |
-| Himalayan Balsam (`impatiens-glandulifera`) | plants | 36 | 0 | 0 |
-| Dyer's woad (`isatis-tinctoria`) | plants | 36 | 0 | 0 |
-| Broadleaved pepperweed (`lepidium-latifolium`) | plants | 36 | 0 | 0 |
-| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 36 | 0 | 0 |
-| Dalmatian Toadflax (`linaria-dalmatica`) | plants | 36 | 0 | 0 |
-| Scotch Thistle (`onopordum-acanthium`) | plants | 36 | 0 | 0 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 36 | 0 | 0 |
-| Cutleaf blackberry (`rubus-laciniatus`) | plants | 36 | 0 | 0 |
-| Spanish broom (`spartium-junceum`) | plants | 36 | 0 | 0 |
 | Saltcedar (`tamarix-ramosissima`) | plants | 36 | 0 | 0 |
-| Common gorse (`ulex-europaeus`) | plants | 36 | 0 | 0 |
-| Slender false brome (`brachypodium-sylvaticum`) | plants | 35 | 0 | 1 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 35 | 0 | 1 |
-| Diffuse Knapweed (`centaurea-diffusa`) | plants | 35 | 0 | 1 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 35 | 0 | 1 |
+| Barbed goatgrass (`aegilops-triuncialis`) | plants | 35 | 0 | 1 |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 35 | 0 | 1 |
+| Crested wheatgrass (`agropyron-cristatum`) | plants | 35 | 0 | 1 |
+| Pale madwort (`alyssum-alyssoides`) | plants | 35 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 35 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 35 | 0 | 1 |
+| Crossflower (`chorispora-tenella`) | plants | 35 | 0 | 1 |
+| Rock pigeon (`columba-livia`) | wildlife | 35 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 35 | 0 | 1 |
+| Striated broom (`cytisus-striatus`) | plants | 35 | 0 | 1 |
+| Moleplant (`euphorbia-lathyris`) | plants | 35 | 0 | 1 |
+| Sweet fennel (`foeniculum-vulgare`) | plants | 35 | 0 | 1 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 35 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 35 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 35 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 35 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 35 | 0 | 1 |
+| Pennyroyal (`mentha-pulegium`) | plants | 35 | 0 | 1 |
+| Evergreen bugloss (`pentaglottis-sempervirens`) | plants | 35 | 0 | 1 |
+| Lesser Celandine (`ranunculus-ficaria`) | plants | 35 | 0 | 1 |
+| Dog rose (`rosa-canina`) | plants | 35 | 0 | 1 |
+| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 35 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 35 | 0 | 1 |
+| Spanish broom (`spartium-junceum`) | plants | 35 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,7 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 15 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
-| USFS Current Invasive Plant Locations | operational | 2026-08-27T23:47:39.915Z | 15 | 12 |
+| USFS Current Invasive Plant Locations | operational | 2026-09-02T00:30:23.505Z | 619 | 121 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2721 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 212 | 114 |
