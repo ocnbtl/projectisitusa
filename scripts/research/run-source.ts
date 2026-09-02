@@ -14,6 +14,10 @@ import { z } from "zod";
 import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specimens";
 import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
 import { aphisHoneyBeeSurveyAdapter } from "./adapters/aphis-honey-bee-survey";
+import {
+  eddMapsSnapshotReplayAdapter,
+  EDDMAPS_SNAPSHOT_PATH,
+} from "./adapters/eddmaps-snapshot-replay";
 import { usfsCurrentInvasivePlantsTargetedAdapter } from "./adapters/usfs-current-invasive-plants-targeted";
 import {
   type BbsPilotPlan,
@@ -97,6 +101,22 @@ type CandidateFile = {
       speciesId: string;
       scientificName: string;
       objectIds: number[];
+    }>;
+  };
+  eddmapsReplay?: {
+    mode: "committed-snapshot-replay";
+    snapshotPath: typeof EDDMAPS_SNAPSHOT_PATH;
+    snapshotSha256: string;
+    snapshotDate: string;
+    citation: string;
+    officialUseBasisUrls: string[];
+    targets: Array<{
+      pairKey: string;
+      countyFips: string;
+      speciesId: string;
+      scientificName: string;
+      snapshotSpeciesId: string;
+      subjectId: number;
     }>;
   };
   bbsPilot?: BbsPilotPlan;
@@ -403,6 +423,9 @@ function runTimestamp(value: string) {
 }
 
 function resolveAdapter(sourceId: string): ResearchSourceAdapter {
+  if (sourceId === eddMapsSnapshotReplayAdapter.sourceId) {
+    return eddMapsSnapshotReplayAdapter;
+  }
   if (sourceId === gbifPreservedSpecimensAdapter.sourceId) {
     return gbifPreservedSpecimensAdapter;
   }
@@ -430,6 +453,22 @@ function buildParameters(
   const state = getStateDefinition(stateCode);
   if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state ${stateCode}.`);
   const candidatePairs = canonicalCandidatePairKeys(requestedPairs);
+  if (sourceId === eddMapsSnapshotReplayAdapter.sourceId) {
+    if (!candidateFile.eddmapsReplay || candidateFile.sourceId !== sourceId) {
+      throw new Error("EDDMapS research requires its committed snapshot replay plan.");
+    }
+    const selected = new Set(candidatePairs);
+    const targets = candidateFile.eddmapsReplay.targets.filter((target) => selected.has(target.pairKey));
+    if (targets.length !== candidatePairs.length) {
+      throw new Error("EDDMapS replay identities do not cover every selected candidate pair.");
+    }
+    return {
+      stateCode,
+      ...candidateFile.eddmapsReplay,
+      targets,
+      candidatePairs,
+    };
+  }
   if (sourceId === gbifPreservedSpecimensAdapter.sourceId) {
     return {
       stateCode,
@@ -628,6 +667,9 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
+      ? [path.join(ROOT, EDDMAPS_SNAPSHOT_PATH)]
+      : []),
     ...(options.taxonomyCache ? [options.taxonomyCache] : []),
   ]);
   persistAttemptTelemetry({ status: "committed-input-snapshot-verified" });
@@ -737,6 +779,13 @@ async function main() {
             stabilityGate: "Both retained responses must normalize to identical ordered features.",
             additionalRequests: 0,
           }
+        : options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
+          ? {
+              providerNetworkRequests: 0,
+              replaySource: EDDMAPS_SNAPSHOT_PATH,
+              stabilityGate: "The committed snapshot bytes must match the plan SHA-256.",
+              additionalRequests: 0,
+            }
         : options.sourceId === usgsBbsRouteStartAdapter.sourceId
           ? {
               providerNetworkRequests: 5,

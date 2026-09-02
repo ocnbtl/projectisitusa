@@ -16,7 +16,19 @@
       "refreshCadenceDays": 90,
       "status": "operational",
       "adapter": "scripts/import-eddmaps.ts",
-      "caveat": "Occurrence evidence only. Missing rows do not support absence or non-detection, and the legacy bounded merge cannot be subtracted safely without a full source-family rebuild."
+      "caveat": "Verifier-reviewed or expert positive county aggregates support historical recorded presence only. Individual occurrence identities and dates are absent from the retained aggregate. Missing rows do not support absence or non-detection, and the legacy bounded merge cannot be subtracted safely without a full source-family rebuild.",
+      "researchAdapter": {
+        "id": "eddmaps-snapshot-replay",
+        "module": "scripts/research/adapters/eddmaps-snapshot-replay.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/eddmaps-snapshot-replay-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact committed EDDMapS snapshot species identity and subject ID must map to exactly one current Project Isitusa catalog taxon. Missing, changed, ambiguous, and unmapped identities are rejected.",
+        "geographyMatchingPolicy": "Exact five-digit positive aggregate county FIPS must match one active registry county equivalent in the requested state. Coordinates and automatic retired-geography crosswalks are prohibited.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "usgs-nas",
