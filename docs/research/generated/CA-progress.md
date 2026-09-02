@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `6874`
+- Verified present: `10671`
 - Verified absent: `58`
 - Not detected: `0`
-- Researched unresolved: `23058`
-- Not researched: `115242`
-- Determination coverage: `4.77%`
-- Research coverage: `20.65%`
-- Explicit outcome coverage: `20.6497%`
-- Applicable protocol cells: `487`
-- Current complete protocol cells: `181`
-- Protocol completion: `39.84%`
-- Current protocol completion: `37.17%`
-- Evidence records: `29874`
-- Research runs: `29`
+- Researched unresolved: `21349`
+- Not researched: `113154`
+- Determination coverage: `7.39%`
+- Research coverage: `22.09%`
+- Explicit outcome coverage: `22.0874%`
+- Applicable protocol cells: `507`
+- Current complete protocol cells: `185`
+- Protocol completion: `39.05%`
+- Current protocol completion: `36.49%`
+- Evidence records: `33671`
+- Research runs: `30`
 - Rejection records: `2587`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,37 +32,37 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Cootamundra wattle (`acacia-baileyana`) | plants | 57 | 0 | 1 |
-| Silver wattle (`acacia-dealbata`) | plants | 57 | 0 | 1 |
-| Hollyhock (`alcea-rosea`) | plants | 57 | 0 | 1 |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 57 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 57 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 57 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 57 | 0 | 1 |
-| Compact brome (`bromus-madritensis`) | plants | 57 | 0 | 1 |
-| Red valerian (`centranthus-ruber`) | plants | 57 | 0 | 1 |
-| Big chickweed (`cerastium-fontanum-ssp-vulgare`) | plants | 57 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 57 | 0 | 1 |
 | Rock pigeon (`columba-livia`) | wildlife | 57 | 0 | 1 |
-| Perennial veldtgrass (`ehrharta-calycina`) | plants | 57 | 0 | 1 |
-| Musky stork's bill (`erodium-moschatum`) | plants | 57 | 0 | 1 |
-| Goldentop grass (`lamarckia-aurea`) | plants | 57 | 0 | 1 |
-| Common nipplewort (`lapsana-communis`) | plants | 57 | 0 | 1 |
-| Cheeseweed mallow (`malva-parviflora`) | plants | 57 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 57 | 0 | 1 |
-| Pennyroyal (`mentha-pulegium`) | plants | 57 | 0 | 1 |
-| Bermuda buttercup (`oxalis-pes-caprae`) | plants | 57 | 0 | 1 |
-| Yellow glandweed (`parentucellia-viscosa`) | plants | 57 | 0 | 1 |
-| Silversheath knotweed (`polygonum-argyrocoleon`) | plants | 57 | 0 | 1 |
-| Beardless rabbitsfoot grass (`polypogon-viridis`) | plants | 57 | 0 | 1 |
-| Charlock mustard (`sinapis-arvensis`) | plants | 57 | 0 | 1 |
-| Rose clover (`trifolium-hirtum`) | plants | 57 | 0 | 1 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 56 | 0 | 1 |
+| Common lilac (`syringa-vulgaris`) | plants | 56 | 0 | 1 |
+| Meadow knapweed (`centaurea-debeauxii`) | plants | 55 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 55 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 47 | 0 | 1 |
+| North Africa grass (`ventenata-dubia`) | plants | 47 | 0 | 1 |
+| Cootamundra wattle (`acacia-baileyana`) | plants | 45 | 0 | 1 |
+| Desert wheatgrass (`agropyron-desertorum`) | plants | 45 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 44 | 0 | 1 |
+| Common nipplewort (`lapsana-communis`) | plants | 43 | 0 | 1 |
+| Athel tamarisk (`tamarix-aphylla`) | plants | 43 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 42 | 0 | 1 |
+| Perennial veldtgrass (`ehrharta-calycina`) | plants | 42 | 0 | 1 |
+| Common mediterranean grass (`schismus-barbatus`) | plants | 42 | 0 | 1 |
+| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 40 | 0 | 1 |
+| Common Tansy (`tanacetum-vulgare`) | plants | 40 | 0 | 1 |
+| Asian mustard (`brassica-tournefortii`) | plants | 39 | 0 | 1 |
+| Yellow glandweed (`parentucellia-viscosa`) | plants | 39 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 39 | 0 | 1 |
+| Crested wheatgrass (`agropyron-cristatum`) | plants | 38 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 38 | 0 | 1 |
+| Mexican fan palm (`washingtonia-robusta`) | plants | 38 | 0 | 1 |
+| Silversheath knotweed (`polygonum-argyrocoleon`) | plants | 36 | 0 | 1 |
+| Castor Bean (`ricinus-communis`) | plants | 36 | 0 | 1 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:24:24.780Z | 3797 | 336 |
 | USGS NAS | operational | 2026-07-16T09:29:00.000Z | 87 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
