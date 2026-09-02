@@ -710,6 +710,10 @@ async function main() {
 
   if (options.semanticDryRun) {
     const candidateFile = readJson<CandidateFile>(options.candidateFile);
+    const selectedUsfsParameters = parameters as {
+      objectIdsPerRequest?: number;
+      targets?: Array<{ objectIds: number[] }>;
+    };
     const expectedProviderRequests = options.sourceId === aphisHoneyBeeSurveyAdapter.sourceId
       ? {
           providerNetworkRequests: 2,
@@ -723,8 +727,8 @@ async function main() {
         ? {
             providerNetworkRequests:
               2 * Math.ceil(
-                new Set(candidateFile.usfsPilot?.targets.flatMap((target) => target.objectIds) ?? []).size /
-                  (candidateFile.usfsPilot?.objectIdsPerRequest ?? 100),
+                new Set(selectedUsfsParameters.targets?.flatMap((target) => target.objectIds) ?? []).size /
+                  (selectedUsfsParameters.objectIdsPerRequest ?? 100),
               ),
             requestSequence: [
               "GET each bounded chunk of selected official ArcGIS object identities with full geometry",
