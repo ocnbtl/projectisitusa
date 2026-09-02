@@ -4,6 +4,7 @@ import {
   mkdirSync,
   mkdtempSync,
   readFileSync,
+  readdirSync,
   renameSync,
   rmSync,
   writeFileSync,
@@ -39,7 +40,7 @@ import type {
 } from "@/lib/research/types";
 import {
   assertRunStartNotFuture,
-  listImmutableResearchRuns,
+  loadImmutableResearchRun,
   sha256,
   stableJson,
 } from "@/lib/research/run-files";
@@ -619,17 +620,32 @@ function selectCandidates(
     });
   }
 
-  const completedPairs = new Set(
-    listImmutableResearchRuns(ROOT)
-      .flatMap((bundle) => bundle.outcomes)
-      .filter(
-        (outcome) =>
-          outcome.state_code === stateCode &&
-          outcome.source_id === sourceId &&
-          outcome.scope_complete,
-      )
-      .map((outcome) => `${outcome.county_fips}:${outcome.species_id}`),
-  );
+  const completedPairs = new Set<string>();
+  const runsDirectory = path.join(RESEARCH_DIR, "runs");
+  if (existsSync(runsDirectory)) {
+    const runDirectories = readdirSync(runsDirectory, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory() && !entry.name.startsWith(".pending-research-run-"))
+      .map((entry) => entry.name)
+      .sort(compareText);
+    for (const runDirectory of runDirectories) {
+      const absoluteRunDirectory = path.join(runsDirectory, runDirectory);
+      const receiptPath = path.join(absoluteRunDirectory, "receipt.json");
+      if (!existsSync(receiptPath)) continue;
+      const receipt = readJson<ImmutableResearchRunReceipt>(receiptPath);
+      if (
+        receipt.source_id !== sourceId ||
+        receipt.requested_scope.state_code !== stateCode
+      ) {
+        continue;
+      }
+      const bundle = loadImmutableResearchRun(ROOT, absoluteRunDirectory);
+      for (const outcome of bundle.outcomes) {
+        if (outcome.scope_complete) {
+          completedPairs.add(`${outcome.county_fips}:${outcome.species_id}`);
+        }
+      }
+    }
+  }
   const pending = candidates.filter(
     (entry) => !completedPairs.has(`${entry.countyFips}:${entry.speciesId}`),
   );
