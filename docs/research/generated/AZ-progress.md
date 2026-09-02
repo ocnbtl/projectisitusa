@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `1028`
+- Verified present: `1443`
 - Verified absent: `15`
 - Not detected: `0`
-- Researched unresolved: `6517`
+- Researched unresolved: `6102`
 - Not researched: `30000`
-- Determination coverage: `2.78%`
+- Determination coverage: `3.88%`
 - Research coverage: `20.13%`
 - Explicit outcome coverage: `20.1278%`
-- Applicable protocol cells: `264`
-- Current complete protocol cells: `123`
-- Protocol completion: `51.52%`
-- Current protocol completion: `46.59%`
-- Evidence records: `5610`
-- Research runs: `30`
+- Applicable protocol cells: `317`
+- Current complete protocol cells: `125`
+- Protocol completion: `43.53%`
+- Current protocol completion: `39.43%`
+- Evidence records: `6025`
+- Research runs: `31`
 - Rejection records: `978`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,17 +37,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 1 |
-| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 15 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 1 |
-| Littlebell (`ipomoea-triloba`) | plants | 0 | 15 | 1 |
-| Dyer's woad (`isatis-tinctoria`) | plants | 0 | 15 | 1 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 15 | 1 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 1 |
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 1 |
-| Harmal peganum (`peganum-harmala`) | plants | 0 | 15 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 1 |
-| Siberian Elm (`ulmus-pumila`) | plants | 0 | 15 | 1 |
 | Silver fir (`abies-alba`) | plants | 0 | 15 | 0 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 15 | 0 |
 | Cedar wattle (`acacia-elata`) | plants | 0 | 15 | 0 |
@@ -57,12 +51,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 15 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 15 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 15 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 15 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 15 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 15 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 15 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 15 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 15 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T08:52:10.135Z | 415 | 159 |
 | USGS NAS | operational | 2026-07-16T09:29:00.000Z | 29 | 6 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `885`
+- Verified present: `1652`
 - Verified absent: `23`
 - Not detected: `0`
-- Researched unresolved: `10378`
+- Researched unresolved: `9611`
 - Not researched: `46306`
-- Determination coverage: `1.58%`
+- Determination coverage: `2.91%`
 - Research coverage: `19.60%`
 - Explicit outcome coverage: `19.5965%`
-- Applicable protocol cells: `194`
-- Current complete protocol cells: `58`
-- Protocol completion: `36.60%`
-- Current protocol completion: `29.90%`
-- Evidence records: `925`
-- Research runs: `32`
+- Applicable protocol cells: `239`
+- Current complete protocol cells: `61`
+- Protocol completion: `30.96%`
+- Current protocol completion: `25.52%`
+- Evidence records: `1692`
+- Research runs: `33`
 - Rejection records: `25`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,7 +46,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 23 | 2 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 23 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 23 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 23 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 23 | 2 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 23 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 0 | 23 | 1 |
@@ -57,12 +56,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cedar wattle (`acacia-elata`) | plants | 0 | 23 | 0 |
 | Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 23 | 0 |
 | New Zealand burr (`acaena-magellanica`) | plants | 0 | 23 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 23 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T08:48:13.862Z | 767 | 121 |
 | USGS NAS | operational | 2026-07-16T09:29:04.000Z | 14 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

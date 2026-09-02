@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `1145`
+- Verified present: `1588`
 - Verified absent: `14`
 - Not detected: `0`
-- Researched unresolved: `5381`
+- Researched unresolved: `4938`
 - Not researched: `28516`
-- Determination coverage: `3.31%`
+- Determination coverage: `4.57%`
 - Research coverage: `18.66%`
 - Explicit outcome coverage: `18.6559%`
-- Applicable protocol cells: `263`
-- Current complete protocol cells: `86`
-- Protocol completion: `37.64%`
-- Current protocol completion: `32.70%`
-- Evidence records: `1396`
-- Research runs: `27`
+- Applicable protocol cells: `282`
+- Current complete protocol cells: `89`
+- Protocol completion: `36.17%`
+- Current protocol completion: `31.56%`
+- Evidence records: `1839`
+- Research runs: `28`
 - Rejection records: `120`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,12 +39,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 14 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 14 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 14 | 2 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 14 | 1 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 14 | 1 |
-| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 14 | 1 |
-| Amur Honeysuckle (`lonicera-maackii`) | plants | 0 | 14 | 1 |
 | Punktree (`melaleuca-quinquenervia`) | plants | 0 | 14 | 1 |
-| Japanese Stiltgrass (`microstegium-vimineum`) | plants | 0 | 14 | 1 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 14 | 0 |
 | Cedar wattle (`acacia-elata`) | plants | 0 | 14 | 0 |
 | Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 14 | 0 |
@@ -57,12 +52,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 14 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 14 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 14 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 14 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 14 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 14 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 14 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 14 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T08:51:36.035Z | 443 | 135 |
 | USGS NAS | operational | 2026-07-16T09:29:04.000Z | 24 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

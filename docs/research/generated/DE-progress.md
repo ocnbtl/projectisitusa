@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `3`
 - County-species pairs: `7512`
-- Verified present: `240`
+- Verified present: `483`
 - Verified absent: `3`
 - Not detected: `0`
-- Researched unresolved: `1143`
-- Not researched: `6126`
-- Determination coverage: `3.23%`
-- Research coverage: `18.45%`
-- Explicit outcome coverage: `18.4505%`
-- Applicable protocol cells: `242`
-- Current complete protocol cells: `78`
-- Protocol completion: `37.60%`
-- Current protocol completion: `32.23%`
-- Evidence records: `289`
-- Research runs: `34`
+- Researched unresolved: `909`
+- Not researched: `6117`
+- Determination coverage: `6.47%`
+- Research coverage: `18.57%`
+- Explicit outcome coverage: `18.5703%`
+- Applicable protocol cells: `290`
+- Current complete protocol cells: `81`
+- Protocol completion: `32.41%`
+- Current protocol completion: `27.93%`
+- Evidence records: `532`
+- Research runs: `35`
 - Rejection records: `85`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,35 +34,35 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 3 | 0 | 1 |
 | Mile-a-minute (`mikania-micrantha`) | plants | 3 | 0 | 1 |
-| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 3 | 0 | 1 |
-| Wartremoving herb (`murdannia-keisak`) | plants | 3 | 0 | 1 |
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 3 | 0 | 1 |
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 3 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 3 | 0 | 1 |
-| Common Periwinkle (`vinca-minor`) | plants | 3 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 3 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 3 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 3 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 3 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 3 | 2 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 3 | 1 |
-| Morrow's Honeysuckle (`lonicera-morrowii`) | plants | 0 | 3 | 1 |
-| Moneywort (`lysimachia-nummularia`) | plants | 0 | 3 | 1 |
 | Punktree (`melaleuca-quinquenervia`) | plants | 0 | 3 | 1 |
-| Callery Pear (`pyrus-calleryana`) | plants | 0 | 3 | 1 |
-| Chinese Wisteria (`wisteria-sinensis`) | plants | 0 | 3 | 1 |
 | Silver fir (`abies-alba`) | plants | 0 | 3 | 0 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 3 | 0 |
 | Cedar wattle (`acacia-elata`) | plants | 0 | 3 | 0 |
 | Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 3 | 0 |
 | New Zealand burr (`acaena-magellanica`) | plants | 0 | 3 | 0 |
 | Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 3 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 3 | 0 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 3 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 3 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 3 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 3 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 3 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 3 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 3 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T08:56:07.788Z | 243 | 124 |
 | USGS NAS | operational | 2026-07-16T09:29:00.000Z | 13 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

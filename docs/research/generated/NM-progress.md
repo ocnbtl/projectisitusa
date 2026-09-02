@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `1038`
+- Verified present: `2205`
 - Verified absent: `33`
 - Not detected: `0`
-- Researched unresolved: `15066`
+- Researched unresolved: `13899`
 - Not researched: `66495`
-- Determination coverage: `1.30%`
+- Determination coverage: `2.71%`
 - Research coverage: `19.53%`
 - Explicit outcome coverage: `19.5288%`
-- Applicable protocol cells: `217`
-- Current complete protocol cells: `59`
-- Protocol completion: `33.18%`
-- Current protocol completion: `27.19%`
-- Evidence records: `1078`
-- Research runs: `26`
+- Applicable protocol cells: `287`
+- Current complete protocol cells: `62`
+- Protocol completion: `26.13%`
+- Current protocol completion: `21.60%`
+- Evidence records: `2245`
+- Research runs: `27`
 - Rejection records: `116`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,7 +43,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 33 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 33 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 33 | 2 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 33 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 33 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 0 | 33 | 1 |
 | Hydrilla (`hydrilla`) | plants | 0 | 33 | 1 |
@@ -57,12 +56,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 33 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 33 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 33 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 33 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T08:45:23.530Z | 1167 | 184 |
 | USGS NAS | operational | 2026-07-16T09:29:03.000Z | 6 | 2 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

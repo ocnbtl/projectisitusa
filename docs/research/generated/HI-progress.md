@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `524`
+- Verified present: `614`
 - Verified absent: `5`
 - Not detected: `0`
-- Researched unresolved: `1876`
-- Not researched: `10115`
-- Determination coverage: `4.23%`
-- Research coverage: `19.21%`
-- Explicit outcome coverage: `19.2093%`
-- Applicable protocol cells: `268`
+- Researched unresolved: `1790`
+- Not researched: `10111`
+- Determination coverage: `4.94%`
+- Research coverage: `19.24%`
+- Explicit outcome coverage: `19.2412%`
+- Applicable protocol cells: `289`
 - Current complete protocol cells: `81`
-- Protocol completion: `35.07%`
-- Current protocol completion: `30.22%`
-- Evidence records: `666`
-- Research runs: `28`
+- Protocol completion: `32.53%`
+- Current protocol completion: `28.03%`
+- Evidence records: `756`
+- Research runs: `29`
 - Rejection records: `1052`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,9 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Spanish broom (`spartium-junceum`) | plants | 5 | 0 | 1 |
 | Diamond burbark (`triumfetta-rhomboidea`) | plants | 5 | 0 | 1 |
-| Caesarweed (`urena-lobata`) | plants | 5 | 0 | 1 |
+| Spanish broom (`spartium-junceum`) | plants | 4 | 0 | 1 |
+| Caesarweed (`urena-lobata`) | plants | 2 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 5 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 5 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 5 | 2 |
@@ -62,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T08:57:15.129Z | 90 | 52 |
 | USGS NAS | operational | 2026-07-16T09:29:00.000Z | 20 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

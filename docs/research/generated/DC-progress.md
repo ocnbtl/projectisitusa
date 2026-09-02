@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `1`
 - County-species pairs: `2504`
-- Verified present: `204`
+- Verified present: `244`
 - Verified absent: `1`
 - Not detected: `0`
-- Researched unresolved: `230`
-- Not researched: `2069`
-- Determination coverage: `8.19%`
-- Research coverage: `17.37%`
-- Explicit outcome coverage: `17.3722%`
-- Applicable protocol cells: `286`
-- Current complete protocol cells: `45`
-- Protocol completion: `20.28%`
-- Current protocol completion: `15.73%`
-- Evidence records: `208`
-- Research runs: `35`
+- Researched unresolved: `196`
+- Not researched: `2063`
+- Determination coverage: `9.78%`
+- Research coverage: `17.61%`
+- Explicit outcome coverage: `17.6118%`
+- Applicable protocol cells: `317`
+- Current complete protocol cells: `60`
+- Protocol completion: `23.03%`
+- Current protocol completion: `18.93%`
+- Evidence records: `248`
+- Research runs: `36`
 - Rejection records: `97`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,7 +33,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 1 | 0 | 1 |
-| Chocolate Vine (`akebia-quinata`) | plants | 1 | 0 | 1 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 1 | 0 | 1 |
 | Capeweed (`arctotheca-calendula`) | plants | 1 | 0 | 1 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 1 | 0 | 1 |
@@ -45,24 +44,25 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 1 | 0 | 1 |
 | Southern threecornerjack (`emex-australis`) | plants | 1 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 1 | 0 | 1 |
-| Winged Burning Bush (`euonymus-alatus`) | plants | 1 | 0 | 1 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 1 | 0 | 1 |
 | Professor-weed (`galega-officinalis`) | plants | 1 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 1 | 0 | 1 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 1 | 0 | 1 |
 | Swamp morning-glory (`ipomoea-aquatica`) | plants | 1 | 0 | 1 |
 | Asian marshweed (`limnophila-sessiliflora`) | plants | 1 | 0 | 1 |
 | African boxthorn (`lycium-ferocissimum`) | plants | 1 | 0 | 1 |
 | Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 1 | 0 | 1 |
 | Mile-a-minute (`mikania-micrantha`) | plants | 1 | 0 | 1 |
-| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 1 | 0 | 1 |
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 1 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 1 | 0 | 1 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 1 | 0 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 1 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 1 | 2 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T08:57:48.676Z | 40 | 40 |
 | USGS NAS | operational | 2026-07-16T09:29:00.000Z | 5 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
