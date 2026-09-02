@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260902T234744Z__inaturalist-research-grade__ec06866455ac",
+  "status": "complete",
+  "started_at": "2026-09-02T23:47:44.479Z",
+  "finished_at": "2026-09-02T23:47:57.308Z",
+  "actor_type": "adapter",
+  "actor_id": "inaturalist-gbif-research-grade@1.0.0",
+  "source_id": "inaturalist-research-grade",
+  "source_registry_hash": "5be5ce629ec6569f4df57cfe2f491e81c3bc37046e160c6a71f0a9c0012934d3",
+  "adapter_id": "inaturalist-gbif-research-grade",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "f599edaeb662f6f647306d760306f3bed1bc10625bbb50ab1267a3a58e3dfa37",
+  "code_commit": "ed4e6a6379a97e4eb2b3a3b175b91b272fc35186",
+  "parameter_hash": "ec06866455ac59c87414b79c8c8b4c94d46104181412cf4b5bb1aa085d41ba92",
+  "parameters": {
+    "stateCode": "DE",
+    "stateProvince": "Delaware",
+    "candidateLimit": 30,
+    "candidatePairs": [
+      "10001:aedes-albopictus",
+      "10001:anolis-sagrei",
+      "10001:coccinella-septempunctata",
+      "10001:columba-livia",
+      "10001:linepithema-humile",
+      "10001:passer-domesticus",
+      "10001:pieris-rapae",
+      "10001:solenopsis-invicta",
+      "10001:streptopelia-decaocto",
+      "10001:sturnus-vulgaris",
+      "10003:aedes-albopictus",
+      "10003:anolis-sagrei",
+      "10003:coccinella-septempunctata",
+      "10003:columba-livia",
+      "10003:linepithema-humile",
+      "10003:passer-domesticus",
+      "10003:pieris-rapae",
+      "10003:solenopsis-invicta",
+      "10003:streptopelia-decaocto",
+      "10003:sturnus-vulgaris",
+      "10005:aedes-albopictus",
+      "10005:anolis-sagrei",
+      "10005:coccinella-septempunctata",
+      "10005:columba-livia",
+      "10005:linepithema-humile",
+      "10005:passer-domesticus",
+      "10005:pieris-rapae",
+      "10005:solenopsis-invicta",
+      "10005:streptopelia-decaocto",
+      "10005:sturnus-vulgaris"
+    ],
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode",
+      "http://creativecommons.org/licenses/by-nc/4.0/legalcode"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "DE",
+    "county_fips": [
+      "10001",
+      "10003",
+      "10005"
+    ],
+    "species_ids": [
+      "aedes-albopictus",
+      "anolis-sagrei",
+      "coccinella-septempunctata",
+      "columba-livia",
+      "linepithema-humile",
+      "passer-domesticus",
+      "pieris-rapae",
+      "solenopsis-invicta",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "10001:aedes-albopictus",
+      "10001:anolis-sagrei",
+      "10001:coccinella-septempunctata",
+      "10001:columba-livia",
+      "10001:linepithema-humile",
+      "10001:passer-domesticus",
+      "10001:pieris-rapae",
+      "10001:solenopsis-invicta",
+      "10001:streptopelia-decaocto",
+      "10001:sturnus-vulgaris",
+      "10003:aedes-albopictus",
+      "10003:anolis-sagrei",
+      "10003:coccinella-septempunctata",
+      "10003:columba-livia",
+      "10003:linepithema-humile",
+      "10003:passer-domesticus",
+      "10003:pieris-rapae",
+      "10003:solenopsis-invicta",
+      "10003:streptopelia-decaocto",
+      "10003:sturnus-vulgaris",
+      "10005:aedes-albopictus",
+      "10005:anolis-sagrei",
+      "10005:coccinella-septempunctata",
+      "10005:columba-livia",
+      "10005:linepithema-humile",
+      "10005:passer-domesticus",
+      "10005:pieris-rapae",
+      "10005:solenopsis-invicta",
+      "10005:streptopelia-decaocto",
+      "10005:sturnus-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Aedes+albopictus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:44.838Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1651430&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:45.305Z",
+      "record_count": 63
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Anolis+sagrei&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:45.827Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:46.278Z",
+      "record_count": 8
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Coccinella+septempunctata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:46.590Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4990191&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:47.174Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4990191&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:48.169Z",
+      "record_count": 147
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Columba+livia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:48.890Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:49.386Z",
+      "record_count": 117
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Linepithema+humile&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:49.702Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1316908&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:50.194Z",
+      "record_count": 0
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Passer+domesticus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:50.404Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:51.020Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:51.705Z",
+      "record_count": 132
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Pieris+rapae&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:52.334Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1920496&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:52.929Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1920496&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:53.560Z",
+      "record_count": 240
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Solenopsis+invicta&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:54.085Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5035230&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:54.552Z",
+      "record_count": 0
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Streptopelia+decaocto&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:54.784Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495696&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:55.241Z",
+      "record_count": 2
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Sturnus+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:55.467Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:56.036Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:56.796Z",
+      "record_count": 83
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-aedes-albopictus-000000.json.gz",
+      "sha256": "4adc45a8011aa9b61682cd44991c54a8d5a66b194112df88c8f10bde7d7b9bda",
+      "bytes": 19909,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-anolis-sagrei-000000.json.gz",
+      "sha256": "9c8712070957ebcbf9c804f228745d8f9542fbb3a2d54acf3f05593993267f00",
+      "bytes": 4737,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-coccinella-septempunctata-000000.json.gz",
+      "sha256": "267e802278b78a233fb868e0ac6b10f6d55f7de4aa60c854a41afe5284fa7fd8",
+      "bytes": 73455,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-coccinella-septempunctata-000300.json.gz",
+      "sha256": "749b49e3df9306b36fe0a83ea20f160004272ce882f38335c0c8e21e2d4dbc60",
+      "bytes": 33879,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-columba-livia-000000.json.gz",
+      "sha256": "0353cb4140e1c51d60b3cee38a88f1a96e998a16d4a336e328f7b8e607788cdb",
+      "bytes": 37486,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-linepithema-humile-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-passer-domesticus-000000.json.gz",
+      "sha256": "969fdb12e7bd7f139ae4269c37223384dc231a7f8dc74b5b18a469557efa04e8",
+      "bytes": 81284,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-passer-domesticus-000300.json.gz",
+      "sha256": "e3d06cc6dd68decea4caa2d1c798102fddac87b6638f5ab6187f7011d9dc0c78",
+      "bytes": 33960,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-pieris-rapae-000000.json.gz",
+      "sha256": "65f884678f7d7a2196335f79b85ca151b122c8d7ac56430b7989f211d629fff1",
+      "bytes": 81872,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-pieris-rapae-000300.json.gz",
+      "sha256": "fa1cac17a3a809b574c81bfd625b0472972603457b62bcb00a16d42eece1089f",
+      "bytes": 64798,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-solenopsis-invicta-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+      "sha256": "1fb30b5362264cd5f849f326f8b3dc4d92994b8884e143ba270f2bf83f5fc214",
+      "bytes": 2385,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-sturnus-vulgaris-000000.json.gz",
+      "sha256": "c21eb02a65550b957b5141633b5149372cc320adc852bd68ce96d85b044bce32",
+      "bytes": 82572,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-occurrences-sturnus-vulgaris-000300.json.gz",
+      "sha256": "ca3707426c3bdc5123c9b2ccf04ed1f16a1572f00035afa91ce08f9fc9d5127c",
+      "bytes": 26317,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-aedes-albopictus.json.gz",
+      "sha256": "688e9df5eb48724cac2482df0b56ddef5424bf1d1fd2d4358d0c3d76a6ac816c",
+      "bytes": 283,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-anolis-sagrei.json.gz",
+      "sha256": "368a235a1a12954831c1d24d09475e6095d44f197595133d28a8b7da7a854b54",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-coccinella-septempunctata.json.gz",
+      "sha256": "bf8557b684b1c747fd218fe478b8e4349b2a9f0093fef58c3ae7ab6c6143b293",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-columba-livia.json.gz",
+      "sha256": "65641895f736571db77aca202385aec5c3933cf2db106f8aa626365f1c3717bc",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-linepithema-humile.json.gz",
+      "sha256": "78755168d127f9643b9ad6354de9fe7b006533d3ca319aebfe03979d3ec99328",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-passer-domesticus.json.gz",
+      "sha256": "e3b9e7c9f4a7ba24b9b29592826c513d2abe83c9ab4eae103f27c45c2805d59b",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-pieris-rapae.json.gz",
+      "sha256": "fa3767ef880333ab7f4028289c5c981d9dbe5085340ce7fcd548aa1b1a87fccc",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-solenopsis-invicta.json.gz",
+      "sha256": "8b7e96e14d9c5b13984a2d50517796717ebc5a82c547ce4429cbc3fa8501a550",
+      "bytes": 285,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+      "sha256": "deef24d263ca5487a73188954214cd855e467b353b82cfaad3ca6bfeabdbc35b",
+      "bytes": 288,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/artifacts/gbif-species-match-sturnus-vulgaris.json.gz",
+      "sha256": "1393243d6a16652d0bcce5d68487a927921daa3d80d685e60a01f04b3173c8cc",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/assertions.ndjson",
+      "sha256": "d30cc97c8e1cf16fbce6e898d126116d4e4ff0a1cd25262938b328ba637add8b",
+      "bytes": 48977,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/reviews.ndjson",
+      "sha256": "e24d5361756ae5f02efbec4c620a69085b9726b8c411d211d3660b08cfeac333",
+      "bytes": 23039,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/rejections.ndjson",
+      "sha256": "ec3667a40d4bd69ad72ffb055cc240b36dd6055166cb271ab03c1aeeb994e629",
+      "bytes": 56725,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234744Z__inaturalist-research-grade__ec06866455ac/outcomes.ndjson",
+      "sha256": "1ff0572ac447e23c74b655e61f721a63fcedc8a4ad56e5aae158dfcbbf43fcda",
+      "bytes": 47981,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 30,
+    "candidate_records": 1992,
+    "assertion_events": 22,
+    "review_events": 22,
+    "rejection_records": 79,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 30
+  },
+  "errors": [],
+  "known_caveats": [
+    "Licensed community-reviewed occurrence evidence distributed through the provider-recommended weekly GBIF dataset. Research Grade, taxonomy, public geography, and licenses can change after the retained run snapshot. Missing records never support absence or non-detection."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source inaturalist-research-grade --state DE --candidate-file src/data/research/national-acquisition-plans/inaturalist-gbif-de-20260902-r1.json --output-root src/data/research/runs --pairs 10001:aedes-albopictus,10001:anolis-sagrei,10001:coccinella-septempunctata,10001:columba-livia,10001:linepithema-humile,10001:passer-domesticus,10001:pieris-rapae,10001:solenopsis-invicta,10001:streptopelia-decaocto,10001:sturnus-vulgaris,10003:aedes-albopictus,10003:anolis-sagrei,10003:coccinella-septempunctata,10003:columba-livia,10003:linepithema-humile,10003:passer-domesticus,10003:pieris-rapae,10003:solenopsis-invicta,10003:streptopelia-decaocto,10003:sturnus-vulgaris,10005:aedes-albopictus,10005:anolis-sagrei,10005:coccinella-septempunctata,10005:columba-livia,10005:linepithema-humile,10005:passer-domesticus,10005:pieris-rapae,10005:solenopsis-invicta,10005:streptopelia-decaocto,10005:sturnus-vulgaris"
+}
