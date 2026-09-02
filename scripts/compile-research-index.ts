@@ -39,7 +39,7 @@ import {
   replaceStatePresenceFromResearch,
   serializePresenceOutsideState,
 } from "@/lib/research/compatibility-projection";
-import { listImmutableResearchRuns, readNdjson as readRunNdjson } from "@/lib/research/run-files";
+import { loadImmutableResearchRun, readNdjson as readRunNdjson } from "@/lib/research/run-files";
 import { selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
 import {
   buildProtocolCellProjection,
@@ -175,6 +175,26 @@ function writeJson(filepath: string, value: unknown, pretty = false) {
   writeFileSync(filepath, `${JSON.stringify(value, null, pretty ? 2 : 0)}\n`);
 }
 
+function listImmutableResearchRunsForState(stateCode: string) {
+  const runsDirectory = path.join(ROOT, "src/data/research/runs");
+  if (!existsSync(runsDirectory)) return [];
+  return readdirSync(runsDirectory, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && !entry.name.startsWith(".pending-research-run-"))
+    .map((entry) => entry.name)
+    .sort()
+    .filter((directory) => {
+      const receiptPath = path.join(runsDirectory, directory, "receipt.json");
+      if (!existsSync(receiptPath)) {
+        throw new Error(`Research run ${directory} is missing receipt.json.`);
+      }
+      const receipt = readJson<{ requested_scope?: { state_code?: string } }>(receiptPath);
+      return receipt.requested_scope?.state_code === stateCode;
+    })
+    .map((directory) =>
+      loadImmutableResearchRun(ROOT, path.join(runsDirectory, directory)),
+    );
+}
+
 const stateRegistry = readJson<StateRegistryFile>(path.join(ROOT, "src/data/research/state-registry.json"));
 const jurisdiction = stateRegistry.jurisdictions.find((entry) => entry.stateCode === STATE_CODE);
 if (!jurisdiction?.nationalV1Scope) {
@@ -205,7 +225,7 @@ const {
   applicability,
 });
 const immutableRuns = selectImmutableResearchRunsForState(
-  listImmutableResearchRuns(ROOT),
+  listImmutableResearchRunsForState(STATE_CODE),
   STATE_CODE,
   AS_OF,
 );
