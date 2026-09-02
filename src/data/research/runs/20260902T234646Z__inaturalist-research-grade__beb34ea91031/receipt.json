@@ -1,0 +1,895 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260902T234646Z__inaturalist-research-grade__beb34ea91031",
+  "status": "complete",
+  "started_at": "2026-09-02T23:46:46.727Z",
+  "finished_at": "2026-09-02T23:47:28.602Z",
+  "actor_type": "adapter",
+  "actor_id": "inaturalist-gbif-research-grade@1.0.0",
+  "source_id": "inaturalist-research-grade",
+  "source_registry_hash": "5be5ce629ec6569f4df57cfe2f491e81c3bc37046e160c6a71f0a9c0012934d3",
+  "adapter_id": "inaturalist-gbif-research-grade",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "f599edaeb662f6f647306d760306f3bed1bc10625bbb50ab1267a3a58e3dfa37",
+  "code_commit": "7568bc250ea7894f75650fa2bd7ef29e3f6a7f43",
+  "parameter_hash": "beb34ea910310a4ce633ec0e9f7fdb012a115ef0ba2ccf176f7412bb56c6c917",
+  "parameters": {
+    "stateCode": "HI",
+    "stateProvince": "Hawaii",
+    "candidateLimit": 50,
+    "candidatePairs": [
+      "15001:aedes-albopictus",
+      "15001:anolis-sagrei",
+      "15001:coccinella-septempunctata",
+      "15001:columba-livia",
+      "15001:linepithema-humile",
+      "15001:passer-domesticus",
+      "15001:pieris-rapae",
+      "15001:solenopsis-invicta",
+      "15001:streptopelia-decaocto",
+      "15001:sturnus-vulgaris",
+      "15003:aedes-albopictus",
+      "15003:anolis-sagrei",
+      "15003:coccinella-septempunctata",
+      "15003:columba-livia",
+      "15003:linepithema-humile",
+      "15003:passer-domesticus",
+      "15003:pieris-rapae",
+      "15003:solenopsis-invicta",
+      "15003:streptopelia-decaocto",
+      "15003:sturnus-vulgaris",
+      "15005:aedes-albopictus",
+      "15005:anolis-sagrei",
+      "15005:coccinella-septempunctata",
+      "15005:columba-livia",
+      "15005:linepithema-humile",
+      "15005:passer-domesticus",
+      "15005:pieris-rapae",
+      "15005:solenopsis-invicta",
+      "15005:streptopelia-decaocto",
+      "15005:sturnus-vulgaris",
+      "15007:aedes-albopictus",
+      "15007:anolis-sagrei",
+      "15007:coccinella-septempunctata",
+      "15007:columba-livia",
+      "15007:linepithema-humile",
+      "15007:passer-domesticus",
+      "15007:pieris-rapae",
+      "15007:solenopsis-invicta",
+      "15007:streptopelia-decaocto",
+      "15007:sturnus-vulgaris",
+      "15009:aedes-albopictus",
+      "15009:anolis-sagrei",
+      "15009:coccinella-septempunctata",
+      "15009:columba-livia",
+      "15009:linepithema-humile",
+      "15009:passer-domesticus",
+      "15009:pieris-rapae",
+      "15009:solenopsis-invicta",
+      "15009:streptopelia-decaocto",
+      "15009:sturnus-vulgaris"
+    ],
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode",
+      "http://creativecommons.org/licenses/by-nc/4.0/legalcode"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "HI",
+    "county_fips": [
+      "15001",
+      "15003",
+      "15005",
+      "15007",
+      "15009"
+    ],
+    "species_ids": [
+      "aedes-albopictus",
+      "anolis-sagrei",
+      "coccinella-septempunctata",
+      "columba-livia",
+      "linepithema-humile",
+      "passer-domesticus",
+      "pieris-rapae",
+      "solenopsis-invicta",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "15001:aedes-albopictus",
+      "15001:anolis-sagrei",
+      "15001:coccinella-septempunctata",
+      "15001:columba-livia",
+      "15001:linepithema-humile",
+      "15001:passer-domesticus",
+      "15001:pieris-rapae",
+      "15001:solenopsis-invicta",
+      "15001:streptopelia-decaocto",
+      "15001:sturnus-vulgaris",
+      "15003:aedes-albopictus",
+      "15003:anolis-sagrei",
+      "15003:coccinella-septempunctata",
+      "15003:columba-livia",
+      "15003:linepithema-humile",
+      "15003:passer-domesticus",
+      "15003:pieris-rapae",
+      "15003:solenopsis-invicta",
+      "15003:streptopelia-decaocto",
+      "15003:sturnus-vulgaris",
+      "15005:aedes-albopictus",
+      "15005:anolis-sagrei",
+      "15005:coccinella-septempunctata",
+      "15005:columba-livia",
+      "15005:linepithema-humile",
+      "15005:passer-domesticus",
+      "15005:pieris-rapae",
+      "15005:solenopsis-invicta",
+      "15005:streptopelia-decaocto",
+      "15005:sturnus-vulgaris",
+      "15007:aedes-albopictus",
+      "15007:anolis-sagrei",
+      "15007:coccinella-septempunctata",
+      "15007:columba-livia",
+      "15007:linepithema-humile",
+      "15007:passer-domesticus",
+      "15007:pieris-rapae",
+      "15007:solenopsis-invicta",
+      "15007:streptopelia-decaocto",
+      "15007:sturnus-vulgaris",
+      "15009:aedes-albopictus",
+      "15009:anolis-sagrei",
+      "15009:coccinella-septempunctata",
+      "15009:columba-livia",
+      "15009:linepithema-humile",
+      "15009:passer-domesticus",
+      "15009:pieris-rapae",
+      "15009:solenopsis-invicta",
+      "15009:streptopelia-decaocto",
+      "15009:sturnus-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Aedes+albopictus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:47.084Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1651430&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:47.618Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1651430&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:48.633Z",
+      "record_count": 175
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Anolis+sagrei&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:49.366Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:49.954Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:50.591Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:51.478Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=900",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:52.121Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=1200",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:52.794Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=1500",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:53.532Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=1800",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:54.284Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=2100",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:54.851Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=2400",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:55.558Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=2700",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:56.203Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=3000",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:56.807Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=3300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:57.406Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=3600",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:58.085Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=3900",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:58.776Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=4200",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:59.311Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=4500",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:46:59.950Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=4800",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:00.539Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=5100",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:01.190Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=5400",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:03.875Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=5700",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:04.870Z",
+      "record_count": 209
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Coccinella+septempunctata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:05.618Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4990191&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:10.642Z",
+      "record_count": 231
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Columba+livia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:11.604Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:12.051Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:12.665Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:13.711Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=900",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:14.423Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=1200",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:15.134Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=1500",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:15.813Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=1800",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:16.521Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=2100",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:17.069Z",
+      "record_count": 60
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Linepithema+humile&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:17.301Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1316908&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:17.754Z",
+      "record_count": 15
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Passer+domesticus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:18.005Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:18.568Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:19.176Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:20.260Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=900",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:20.945Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=1200",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:21.678Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=1500",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:22.358Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=1800",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:23.028Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=2100",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:23.706Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=2400",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:24.403Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=2700",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:24.979Z",
+      "record_count": 225
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Pieris+rapae&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:25.317Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1920496&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:26.030Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1920496&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:26.573Z",
+      "record_count": 48
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Solenopsis+invicta&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:26.810Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5035230&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:27.248Z",
+      "record_count": 0
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Streptopelia+decaocto&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:27.497Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495696&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:27.913Z",
+      "record_count": 0
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Sturnus+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:28.181Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:47:28.602Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-aedes-albopictus-000000.json.gz",
+      "sha256": "d6aee9f0ab38e9d2239e9f99cdb59fd2fe1d9f5a4ed09a5bc05294cf4bd50e27",
+      "bytes": 85782,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-aedes-albopictus-000300.json.gz",
+      "sha256": "9c69b755e5841d666bfda899341687950c25fde043bef43a9dc59327da69f508",
+      "bytes": 56031,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-000000.json.gz",
+      "sha256": "803d1f80611ef169189dbea9a31abec9f859df43f6c38ec469835d4c76da1bc7",
+      "bytes": 86265,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-000300.json.gz",
+      "sha256": "eeec56805930d6f1002dfb79d454bf2b15a43fe94acd63fde559ba5fd521d720",
+      "bytes": 85590,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-000600.json.gz",
+      "sha256": "312d7642b5fe1b4db7cbf2b79525ff1397465a5ef473cfce490b5c65d645741c",
+      "bytes": 83953,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-000900.json.gz",
+      "sha256": "d32e657918319e4a235495497608d31354a506fcee7895f2e1fa85cbaa216185",
+      "bytes": 80643,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-001200.json.gz",
+      "sha256": "4bebed7d540255a2330b2e4b4baec936ad80fd14c679fac6720a9963e3b9d8c9",
+      "bytes": 83158,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-001500.json.gz",
+      "sha256": "8fecbfee806902affecaa1831527503d25ce4726aae1daa1131bf1ea679c8801",
+      "bytes": 84394,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-001800.json.gz",
+      "sha256": "6a5b8e2b40ecd7f234035391316c067d208b10bb2b50fcfb06202a7afd4089b8",
+      "bytes": 80708,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-002100.json.gz",
+      "sha256": "c88431e3fea40494c3cc2805b72332aa7d149f0402db4cee9e71bdbb461df1c8",
+      "bytes": 79271,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-002400.json.gz",
+      "sha256": "752804dbd60f3b55583fe4a70f1d333698e76288fe71f0aea25cf95153d3fa93",
+      "bytes": 83909,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-002700.json.gz",
+      "sha256": "13add26cf58d866a7070683e621189704fe95de6360b9b26cd3f35a04a4d57bb",
+      "bytes": 78863,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-003000.json.gz",
+      "sha256": "da54b3956c9b24c2a9edd504cd907361aea6b47dfadec42cbca71ff9a63d525e",
+      "bytes": 80627,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-003300.json.gz",
+      "sha256": "e2b0f37a7ebe1b35a5703963f039a53770420072aa191ac3621c6c83037dec30",
+      "bytes": 80966,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-003600.json.gz",
+      "sha256": "6032c936460a6cac7c96ccec9b8b714453b84485f72dd73cb9925a2e58320cd2",
+      "bytes": 84032,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-003900.json.gz",
+      "sha256": "13c4a10e358875a47a48268849e22c8741e76820c299f54960a703e85e182e81",
+      "bytes": 85723,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-004200.json.gz",
+      "sha256": "29ddccaaf17437aa57381c1e7f1bacc166fd1c4647ca83a8a1301f6bff88cf7d",
+      "bytes": 84267,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-004500.json.gz",
+      "sha256": "51da8bb7b757eb49acbb51be6d90e556b1647fcb48c6b3100bc7ce42802544ee",
+      "bytes": 85437,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-004800.json.gz",
+      "sha256": "32d3ad8c32c7e654a639ea6f2974f8ca77ce11a81a1f072f8941ea835c2b5f0b",
+      "bytes": 84923,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-005100.json.gz",
+      "sha256": "2366bb37aebf1af92ab7ac48439d928fff19e2dd27baa078462ec3f72aab6d85",
+      "bytes": 80663,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-005400.json.gz",
+      "sha256": "92c64ca18e79f5f370684eafb147fccfdf54f600462e10091bcd186d6f71af5b",
+      "bytes": 84463,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-anolis-sagrei-005700.json.gz",
+      "sha256": "f8d202e84ed47dd716ae201ad9a0582ba9f0425786e135ba8855e9475ed0db4d",
+      "bytes": 54421,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-coccinella-septempunctata-000000.json.gz",
+      "sha256": "915900f66a05a7385ea95f2e0674b7ee28583ab93444cc626f364c9c82e04922",
+      "bytes": 72182,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-000000.json.gz",
+      "sha256": "697deecc487380a0eed078db600670e12b1afc4e602e2f0e07d94b8b1bfe153f",
+      "bytes": 78529,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-000300.json.gz",
+      "sha256": "4ad0882657ddd6357e04b44f1b237f4af8ffb5c49339a2b70057c7a876a30e8a",
+      "bytes": 78303,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-000600.json.gz",
+      "sha256": "c7bf40d65c2504ac85ad6498cbf490aa791116e5b4c2bf3378b58e52d1b61593",
+      "bytes": 80571,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-000900.json.gz",
+      "sha256": "d771f6307b9cd59022c1800600fb78d050f7482ef9087a00e70158738db7aae4",
+      "bytes": 79850,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-001200.json.gz",
+      "sha256": "cf767d5541761abf4438bd699bbf4881118b52db510664bf3199805cf57c8af2",
+      "bytes": 80711,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-001500.json.gz",
+      "sha256": "996bda1c837a92798c11fa28d4bfea610d38d012bbbe611f53aa870077b60324",
+      "bytes": 87243,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-001800.json.gz",
+      "sha256": "ed39a3e79a8942015e1d3ad3fdc2db0b64178e7fb1dac8005fc2fabf4af609e7",
+      "bytes": 80748,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-columba-livia-002100.json.gz",
+      "sha256": "d0062685f2b57ac3edc4b8588edc07869fb9c903ded293550040297ad3f922ea",
+      "bytes": 19864,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-linepithema-humile-000000.json.gz",
+      "sha256": "b35783d7bcb07176b7eb145e275f80ef6f5b00f009f6dbbf6712505350583d1b",
+      "bytes": 7276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-000000.json.gz",
+      "sha256": "410dcf0b3a982dd5b370db76f229883eb9ee3b5f8bedb11105fda5170d4bd235",
+      "bytes": 82761,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-000300.json.gz",
+      "sha256": "760d964d4970160b8c506d1e6c9a523af3166b9996b819d49a4298bf3b6bdd58",
+      "bytes": 83233,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-000600.json.gz",
+      "sha256": "9031661116e943806a276f70b1c4ea114245352d1076b8405c2bc3b2e119048d",
+      "bytes": 85436,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-000900.json.gz",
+      "sha256": "60ec7f0cbd6765e5d27dd3e0aa9cdbe1920641478a1613c53c3635091ba9e49f",
+      "bytes": 84047,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-001200.json.gz",
+      "sha256": "8a446e74d8d8f60eb6db526cc35bbb055f24626fc0487cf43dcca8b57c741d95",
+      "bytes": 78640,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-001500.json.gz",
+      "sha256": "f6cd8463ff49b61f1d2aa150ade7e0e0b4cfa7c993cf5eb45dcde92c8a281b37",
+      "bytes": 82072,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-001800.json.gz",
+      "sha256": "336af7d2af23f075e9640a305f860d2085f25f49cefdfc292886fbc741061407",
+      "bytes": 79830,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-002100.json.gz",
+      "sha256": "980f4fe56753de5951bf431e291553c2c8ff7ba5724ee62fcf031d572edea4b5",
+      "bytes": 85395,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-002400.json.gz",
+      "sha256": "153778cf8b17d31d9c83f90cff215d3753abead178068c31965a8a851ebef2b3",
+      "bytes": 82712,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-passer-domesticus-002700.json.gz",
+      "sha256": "f446fdebc263b6952e62a01dffe4d1aa9d0f9184fc48d54e491270562b3d223b",
+      "bytes": 63213,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-pieris-rapae-000000.json.gz",
+      "sha256": "9fd714ae05cea1b30715f20c753ba6a67852a7ad28cd3740ba368eae9462cdf1",
+      "bytes": 85760,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-pieris-rapae-000300.json.gz",
+      "sha256": "c4b85d974eaa40b38f4d16d7516c1f6629ee4af0e4c7f910f5c547ebd82c6752",
+      "bytes": 15159,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-solenopsis-invicta-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-occurrences-sturnus-vulgaris-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-aedes-albopictus.json.gz",
+      "sha256": "688e9df5eb48724cac2482df0b56ddef5424bf1d1fd2d4358d0c3d76a6ac816c",
+      "bytes": 283,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-anolis-sagrei.json.gz",
+      "sha256": "368a235a1a12954831c1d24d09475e6095d44f197595133d28a8b7da7a854b54",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-coccinella-septempunctata.json.gz",
+      "sha256": "bf8557b684b1c747fd218fe478b8e4349b2a9f0093fef58c3ae7ab6c6143b293",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-columba-livia.json.gz",
+      "sha256": "65641895f736571db77aca202385aec5c3933cf2db106f8aa626365f1c3717bc",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-linepithema-humile.json.gz",
+      "sha256": "78755168d127f9643b9ad6354de9fe7b006533d3ca319aebfe03979d3ec99328",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-passer-domesticus.json.gz",
+      "sha256": "e3b9e7c9f4a7ba24b9b29592826c513d2abe83c9ab4eae103f27c45c2805d59b",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-pieris-rapae.json.gz",
+      "sha256": "fa3767ef880333ab7f4028289c5c981d9dbe5085340ce7fcd548aa1b1a87fccc",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-solenopsis-invicta.json.gz",
+      "sha256": "8b7e96e14d9c5b13984a2d50517796717ebc5a82c547ce4429cbc3fa8501a550",
+      "bytes": 285,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+      "sha256": "deef24d263ca5487a73188954214cd855e467b353b82cfaad3ca6bfeabdbc35b",
+      "bytes": 288,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/artifacts/gbif-species-match-sturnus-vulgaris.json.gz",
+      "sha256": "1393243d6a16652d0bcce5d68487a927921daa3d80d685e60a01f04b3173c8cc",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/assertions.ndjson",
+      "sha256": "b7679967c448b3963e197d227d4b07b6363a3bbdc002724b13a8476f2e4e82d8",
+      "bytes": 57752,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/reviews.ndjson",
+      "sha256": "ca5c66c97d66f1977cda3b8599e08d849c33d2179262f89e022edc633ec8aef8",
+      "bytes": 27226,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/rejections.ndjson",
+      "sha256": "13653b0f8549e80b73e407a094fcb5a26e63f691996e08f893615a57966e39b2",
+      "bytes": 271263,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234646Z__inaturalist-research-grade__beb34ea91031/outcomes.ndjson",
+      "sha256": "7e67e24b6eceb97bd5755f785157af54657e423a886368a2aba3d28c338e8136",
+      "bytes": 248388,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 50,
+    "candidate_records": 12063,
+    "assertion_events": 26,
+    "review_events": 26,
+    "rejection_records": 383,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 50
+  },
+  "errors": [],
+  "known_caveats": [
+    "Licensed community-reviewed occurrence evidence distributed through the provider-recommended weekly GBIF dataset. Research Grade, taxonomy, public geography, and licenses can change after the retained run snapshot. Missing records never support absence or non-detection."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source inaturalist-research-grade --state HI --candidate-file src/data/research/national-acquisition-plans/inaturalist-gbif-hi-20260902-r1.json --output-root src/data/research/runs --pairs 15001:aedes-albopictus,15001:anolis-sagrei,15001:coccinella-septempunctata,15001:columba-livia,15001:linepithema-humile,15001:passer-domesticus,15001:pieris-rapae,15001:solenopsis-invicta,15001:streptopelia-decaocto,15001:sturnus-vulgaris,15003:aedes-albopictus,15003:anolis-sagrei,15003:coccinella-septempunctata,15003:columba-livia,15003:linepithema-humile,15003:passer-domesticus,15003:pieris-rapae,15003:solenopsis-invicta,15003:streptopelia-decaocto,15003:sturnus-vulgaris,15005:aedes-albopictus,15005:anolis-sagrei,15005:coccinella-septempunctata,15005:columba-livia,15005:linepithema-humile,15005:passer-domesticus,15005:pieris-rapae,15005:solenopsis-invicta,15005:streptopelia-decaocto,15005:sturnus-vulgaris,15007:aedes-albopictus,15007:anolis-sagrei,15007:coccinella-septempunctata,15007:columba-livia,15007:linepithema-humile,15007:passer-domesticus,15007:pieris-rapae,15007:solenopsis-invicta,15007:streptopelia-decaocto,15007:sturnus-vulgaris,15009:aedes-albopictus,15009:anolis-sagrei,15009:coccinella-septempunctata,15009:columba-livia,15009:linepithema-humile,15009:passer-domesticus,15009:pieris-rapae,15009:solenopsis-invicta,15009:streptopelia-decaocto,15009:sturnus-vulgaris"
+}
