@@ -16,7 +16,7 @@ const APPROVAL_RECEIPT_PATH =
   "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-receipt-20260901-r1.json";
 const RUN_PREFIX = "20260901T191653000Z__";
 const CODE_COMMIT = "4a62ada07ca93cce47befe6eb047273de452f55f";
-const AS_OF = "2026-09-01";
+const AS_OF = "2026-09-02";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -91,11 +91,11 @@ const nationalCounts = summaries.reduce(
   },
 );
 const expectedNationalCounts = {
-  verifiedPresent: 196039,
+  verifiedPresent: 197075,
   verifiedAbsent: 3143,
   notDetected: 254,
-  researchedUnresolved: 1362119,
-  notResearched: 6311021,
+  researchedUnresolved: 1361858,
+  notResearched: 6310246,
   conflicts: 0,
   fullCountySpeciesDenominator: 7872576,
   countyEquivalentCount: 3144,
