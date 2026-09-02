@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "jurisdiction-wide-eradication-candidate-audit-20260902-r1",
+  "evaluatedAt": "2026-09-02T00:35:07.184Z",
+  "evaluatedAgainstCommit": "0bc12f1892f0890fe904907c19dfef8eec297e6a",
+  "mode": "zero-assertion-current-conflict-audit",
+  "status": "closed-no-approvable-current-absence-candidate",
+  "objective": "Find a new exact-catalog, explicit, current jurisdiction-wide eradication determination that can move county-species pairs to verified-absent without treating silence, non-detection, historical eradication, or incomplete geography as current absence.",
+  "policy": {
+    "required": [
+      "exact Project Isitusa catalog taxon",
+      "named authoritative publisher",
+      "explicit complete jurisdiction scope",
+      "current or bounded valid-through time scope",
+      "no exclusions",
+      "no later or undated accepted presence conflict",
+      "human approval before any parent determination or child absence assertion"
+    ],
+    "sourceSilenceCreatesAbsence": false,
+    "historicalEradicationAloneCreatesCurrentAbsence": false,
+    "laterOrUndatedPresenceBlocksCurrentAbsence": true
+  },
+  "candidates": [
+    {
+      "candidateId": "monterey-county-hydrilla",
+      "speciesId": "hydrilla",
+      "scientificName": "Hydrilla verticillata",
+      "jurisdictionLevel": "county",
+      "countyFips": "06053",
+      "officialSourceUrl": "https://www.countyofmonterey.gov/?NavID=2539",
+      "priorDiscoveryPath": "ops/national-research/evaluations/authoritative-county-absence-source-discovery-20260819-r1.json",
+      "currentDisplayStatus": "verified-present",
+      "blockingEvidence": {
+        "sourceId": "usda-nrcs-plants",
+        "scope": "county",
+        "observedAt": null,
+        "reason": "The accepted county-level presence record is undated, so it conflicts with a current eradication determination until independently resolved."
+      },
+      "decision": "blocked-current-presence-conflict",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "candidateId": "monterey-county-diffuse-knapweed",
+      "speciesId": "centaurea-diffusa",
+      "scientificName": "Centaurea diffusa",
+      "jurisdictionLevel": "county",
+      "countyFips": "06053",
+      "officialSourceUrl": "https://www.countyofmonterey.gov/?NavID=2539",
+      "priorDiscoveryPath": "ops/national-research/evaluations/authoritative-county-absence-source-discovery-20260819-r1.json",
+      "currentDisplayStatus": "verified-present",
+      "blockingEvidence": {
+        "sourceId": "gbif-preserved-specimens",
+        "scope": "point",
+        "latestAcceptedObservedAt": "2007-06-01",
+        "reason": "Accepted county occurrence evidence extends beyond the cited 2005 eradication report, creating a direct later-presence conflict."
+      },
+      "decision": "blocked-later-presence-conflict",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "candidateId": "new-world-screwworm-united-states",
+      "speciesId": "cochliomyia-hominivorax",
+      "scientificName": "Cochliomyia hominivorax",
+      "jurisdictionLevel": "nation",
+      "jurisdictionId": "US-national-v1",
+      "targetCountyCount": 3144,
+      "catalogMatch": "exact",
+      "historicalEradicationSource": {
+        "publisher": "USDA Animal and Plant Health Inspection Service",
+        "url": "https://www.aphis.usda.gov/livestock-poultry-disease/cattle/ticks/screwworm",
+        "lastModified": "2026-07-24",
+        "statement": "The page describes 1966 eradication from the United States and elimination of the 2017 Florida Keys outbreak."
+      },
+      "laterOfficialContradictions": [
+        {
+          "url": "https://www.aphis.usda.gov/news/agency-announcements/usda-confirms-presence-new-world-screwworm-united-states",
+          "authorityDate": "2026-06-03",
+          "countyFips": "48507",
+          "countyName": "Zavala",
+          "result": "APHIS confirmed New World screwworm in a bovine in the United States."
+        },
+        {
+          "url": "https://www.aphis.usda.gov/news/agency-announcements/animal-health-officials-respond-second-detection-new-world-screwworm",
+          "authorityDate": "2026-06-05",
+          "countyFips": "48507",
+          "countyName": "Zavala",
+          "result": "APHIS confirmed a second U.S. detection."
+        },
+        {
+          "url": "https://www.aphis.usda.gov/news/agency-announcements/usda-confirms-two-additional-cases-new-world-screwworm-united-states",
+          "authorityDate": "2026-06-08",
+          "countyFips": [
+            "48003",
+            "48283"
+          ],
+          "countyName": [
+            "Andrews",
+            "La Salle"
+          ],
+          "result": "APHIS confirmed two additional U.S. cases."
+        }
+      ],
+      "currentMatrixAudit": {
+        "verifiedPresent": 0,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": 3144,
+        "acceptedPresenceConflictCount": 0,
+        "qualification": "The local matrix has not yet integrated the newer official detections; that omission cannot override the official contradiction."
+      },
+      "decision": "blocked-later-official-us-presence",
+      "projectedAbsencePairs": 0,
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "candidateId": "plum-pox-united-states",
+      "sourceScientificName": "Plum pox virus",
+      "officialSourceUrl": "https://www.aphis.usda.gov/plant-pests-diseases/plum-pox",
+      "officialResult": "APHIS states that plum pox was eradicated from the United States.",
+      "catalogMatch": "missing",
+      "decision": "blocked-no-exact-catalog-taxon",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "candidateId": "pink-bollworm-united-states",
+      "sourceScientificName": "Pectinophora gossypiella",
+      "officialSourceUrl": "https://www.aphis.usda.gov/plant-pests-diseases/cotton-pests",
+      "officialResult": "APHIS states that pink bollworm was eradicated from commercial cotton in the United States.",
+      "catalogMatch": "missing",
+      "scopeQualification": "The statement is limited to commercial cotton even if the taxon is later added to the catalog.",
+      "decision": "blocked-no-exact-catalog-taxon-and-bounded-habitat-scope",
+      "absenceAssertionsCreated": 0
+    }
+  ],
+  "outcome": {
+    "candidateCount": 5,
+    "approvableCurrentAbsenceCandidates": 0,
+    "approvalRequestCreated": false,
+    "parentJurisdictionRecordsCreated": 0,
+    "assertionEventsCreated": 0,
+    "reviewEventsCreated": 0,
+    "generatedProjectionMutations": 0,
+    "matrixPairsMoved": 0,
+    "conclusion": "No new current verified-absence batch is defensible from this audit. Presence contradictions and catalog/scope failures remain explicit blockers."
+  },
+  "externalMutations": {
+    "providerPosts": 0,
+    "r2Mutations": 0,
+    "deployments": 0,
+    "pushes": 0
+  }
+}
