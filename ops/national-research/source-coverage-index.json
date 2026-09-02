@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-06822ad716d315365209",
-  "generatedFromCommit": "0f83804dbb4cf6d3e65a9787728abe5268e52ea7",
+  "indexId": "source-coverage-c738c449a52a4b31a5b6",
+  "generatedFromCommit": "5875ce4b4247b010a199d72bd822a78b1df0b3f3",
   "sourceRegistryPath": "src/data/research/source-registry.json",
   "sourceRegistrySha256": "2bbe18fb1b9775942366c212807fe38bbf2bb77c628c1d39e75cc3f6adad9142",
-  "runReceiptDigestSha256": "9d9bf78c8a863cc989110b47a23e4dffccd938f8cb3107399267fb4283ba2ce6",
-  "runCount": 1531,
+  "runReceiptDigestSha256": "198fadb5401872617bbc045070ff64dd2f7abf58f7abbe4c2f6d462f3b73adaa",
+  "runCount": 1532,
   "sourceCount": 34,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -108,13 +108,13 @@
     {
       "sourceId": "eddmaps",
       "coverageState": "covered-by-immutable-runs",
-      "runCount": 39,
-      "completeRuns": 39,
+      "runCount": 40,
+      "completeRuns": 40,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 63672,
-      "scopeCompletePairs": 63672,
-      "latestFinishedAt": "2026-09-02T08:51:36.035Z"
+      "requestedPairs": 64087,
+      "scopeCompletePairs": 64087,
+      "latestFinishedAt": "2026-09-02T08:52:10.135Z"
     },
     {
       "sourceId": "eddmaps-alipc",
@@ -47853,6 +47853,37 @@
       "outcomesPath": "src/data/research/runs/20260902T085136Z__eddmaps__a4bfb181564d/outcomes.ndjson",
       "outcomesSha256": "bcf1629dbbf8675ea12d60a8328346788f50ce32a4f92ffd08d0c3b00e65991d",
       "outcomesBytes": 288600
+    },
+    {
+      "coverageKey": "3532e7a0a6091b7475a7e52fb3278516b0b12fe2157f3c9ff0f50031d7129098",
+      "queryKey": "dba9961627a41a10e14be361ee62a945daee3f66cd230676c3e2005d40bda068",
+      "runId": "20260902T085210Z__eddmaps__cb55197ad33c",
+      "receiptPath": "src/data/research/runs/20260902T085210Z__eddmaps__cb55197ad33c/receipt.json",
+      "receiptSha256": "a110b7dca2cab8c56f201e48c3519e9a41ba5170c5180d8afbaa3b4269b33926",
+      "sourceId": "eddmaps",
+      "sourceRegistryHash": "2bbe18fb1b9775942366c212807fe38bbf2bb77c628c1d39e75cc3f6adad9142",
+      "adapterId": "eddmaps-snapshot-replay",
+      "adapterVersion": "1.0.0",
+      "parameterHash": "cb55197ad33c777bd53f76b661f6ee262b4d2e98af9e3cf5a2ba3e7938236646",
+      "requestedScopeSha256": "d1c1286f90fc92a4116742d6d828fbc57582f5b8cd6319c549d6f8c743808b73",
+      "status": "complete",
+      "startedAt": "2026-09-02T08:52:10.114Z",
+      "finishedAt": "2026-09-02T08:52:10.135Z",
+      "refreshCadenceDays": 90,
+      "freshnessDeadline": "2026-12-01T08:52:10.135Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 415,
+      "outcomePairs": 415,
+      "scopeCompletePairs": 415,
+      "outcomeStatusCounts": {
+        "evidence-found": 415,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260902T085210Z__eddmaps__cb55197ad33c/outcomes.ndjson",
+      "outcomesSha256": "55b12728f2eae925fbbfeb5a69b2130f81c85f8461a4584cfee852d80e6acbca",
+      "outcomesBytes": 270037
     }
   ]
 }
