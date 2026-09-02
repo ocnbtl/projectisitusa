@@ -71,7 +71,7 @@ export const UsfsCurrentInvasivePlantsPreflightSchema = z.object({
     caveat: z.string().min(1),
     targetedAdapter: z.object({
       adapterId: z.literal("usfs-current-invasive-plants-targeted"),
-      adapterVersion: z.literal("1.0.0"),
+      adapterVersion: z.enum(["1.0.0", "1.1.0"]),
       modulePath: z.literal("scripts/research/adapters/usfs-current-invasive-plants-targeted.ts"),
       moduleSha256: Sha256Schema,
       parameterSchemaPath: z.literal("src/data/research/schemas/usfs-current-invasive-plants-targeted-parameters.schema.json"),
@@ -425,7 +425,7 @@ async function main() {
   assert(typeof source.caveat === "string" && source.caveat, "USFS source caveat is missing.");
   const registeredAdapter = source.researchAdapter as Record<string, unknown> | undefined;
   assert(registeredAdapter?.id === "usfs-current-invasive-plants-targeted", "USFS targeted adapter is not registered.");
-  assert(stableJson(registeredAdapter.allowedVersions) === stableJson(["1.0.0"]), "USFS targeted adapter version differs.");
+  assert(stableJson(registeredAdapter.allowedVersions) === stableJson(["1.0.0", "1.1.0"]), "USFS targeted adapter version differs.");
   const adapterPath = path.join(root, "scripts/research/adapters/usfs-current-invasive-plants-targeted.ts");
   const parameterSchemaPath = path.join(root, "src/data/research/schemas/usfs-current-invasive-plants-targeted-parameters.schema.json");
   const pilotPlanPath = path.join(root, "src/data/research/national-acquisition-plans/usfs-current-invasive-plants-or-pilot-v1.json");
@@ -702,7 +702,7 @@ async function main() {
       caveat: source.caveat,
       targetedAdapter: {
         adapterId: "usfs-current-invasive-plants-targeted",
-        adapterVersion: "1.0.0",
+        adapterVersion: "1.1.0",
         modulePath: "scripts/research/adapters/usfs-current-invasive-plants-targeted.ts",
         moduleSha256: sha256(adapterBytes),
         parameterSchemaPath: "src/data/research/schemas/usfs-current-invasive-plants-targeted-parameters.schema.json",
