@@ -229,7 +229,7 @@ export function replayEddMapsSnapshot(context: SourceAdapterContext): SourceAdap
       recorded_at: completedAt,
       assertion_event_ids: [eventId],
       rejection_ids: [],
-      query_urls: [],
+      query_urls: [sourceUrl],
       notes: ["A retained positive aggregate matched the requested pair; no negative inference was made."],
     };
     assertions.push(assertion);

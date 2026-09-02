@@ -58,7 +58,7 @@ assert.equal(result.assertions[0]?.source_record_date, null);
 assert.equal(result.assertions[0]?.claim_type, "recorded-present");
 assert.equal(result.reviews[0]?.publication_eligible, true);
 assert.equal(result.outcomes[0]?.status, "evidence-found");
-assert.deepEqual(result.outcomes[0]?.query_urls, []);
+assert.deepEqual(result.outcomes[0]?.query_urls, ["https://www.eddmaps.org/species/subject.cfm?sub=2792"]);
 assert.equal(result.artifacts.length, 1);
 assert.equal(EDDMAPS_REPLAY_ADAPTER_ID, "eddmaps-snapshot-replay");
 assert.equal(EDDMAPS_REPLAY_ADAPTER_VERSION, "1.0.0");

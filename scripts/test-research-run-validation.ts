@@ -8,7 +8,10 @@ import {
   listImmutableResearchRuns,
   sha256,
 } from "@/lib/research/run-files";
-import { validateResearchRunInMemory } from "@/lib/research/validate-run";
+import {
+  isCommittedSnapshotReplayReceipt,
+  validateResearchRunInMemory,
+} from "@/lib/research/validate-run";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -32,6 +35,30 @@ const registry = JSON.parse(
 ) as ResearchSourceRegistry;
 const source = registry.sources.find((entry) => entry.id === bundle.receipt.source_id);
 assert(source, "The research run validator source fixture is missing.");
+assert(
+  isCommittedSnapshotReplayReceipt({
+    source_id: "eddmaps",
+    adapter_id: "eddmaps-snapshot-replay",
+    parameters: {
+      mode: "committed-snapshot-replay",
+      snapshotPath: "src/data/source/eddmaps-snapshot.json",
+      snapshotSha256: "1".repeat(64),
+    },
+  }),
+  "The exact committed EDDMapS replay contract was not recognized.",
+);
+assert(
+  !isCommittedSnapshotReplayReceipt({
+    source_id: "eddmaps",
+    adapter_id: "eddmaps-snapshot-replay",
+    parameters: {
+      mode: "committed-snapshot-replay",
+      snapshotPath: "src/data/source/another-snapshot.json",
+      snapshotSha256: "1".repeat(64),
+    },
+  }),
+  "A different snapshot path was incorrectly recognized as the committed replay contract.",
+);
 const outputContents = new Map(
   ["assertions.ndjson", "reviews.ndjson", "rejections.ndjson", "outcomes.ndjson"].map(
     (filename) => [

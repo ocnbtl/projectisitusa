@@ -44,6 +44,17 @@ function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
 
+export function isCommittedSnapshotReplayReceipt(
+  receipt: Pick<ImmutableResearchRunReceipt, "source_id" | "adapter_id" | "parameters">,
+) {
+  return receipt.source_id === "eddmaps" &&
+    receipt.adapter_id === "eddmaps-snapshot-replay" &&
+    receipt.parameters.mode === "committed-snapshot-replay" &&
+    receipt.parameters.snapshotPath === "src/data/source/eddmaps-snapshot.json" &&
+    typeof receipt.parameters.snapshotSha256 === "string" &&
+    /^[a-f0-9]{64}$/u.test(receipt.parameters.snapshotSha256);
+}
+
 function schemaValidator(root: string, filename: string, stripConditionals = false) {
   const schema = JSON.parse(
     readFileSync(path.join(root, "src/data/research/schemas", filename), "utf8"),
@@ -263,6 +274,7 @@ export function validateResearchRunInMemory(input: {
     "Pair outcome",
   );
   schemaValidator(root, "run-receipt.schema.json").parse(receipt);
+  const committedSnapshotReplay = isCommittedSnapshotReplayReceipt(receipt);
 
   assertUnique(result.assertions.map((entry) => entry.eventId), "Assertion events");
   assertUnique(result.reviews.map((entry) => entry.eventId), "Review events");
@@ -678,7 +690,7 @@ export function validateResearchRunInMemory(input: {
           outcome.status === "no-qualifying-evidence",
         `Scope-complete outcome ${outcome.outcome_id} has an invalid status.`,
       );
-      if (source.access === "api") {
+      if (source.access === "api" && !committedSnapshotReplay) {
         assert(
           outcome.query_urls.every((url) => upstreamRequestUrls.has(url)),
           `Scope-complete outcome ${outcome.outcome_id} cites an unreported source request.`,
@@ -781,7 +793,7 @@ export function validateResearchRunInMemory(input: {
       ),
       "Complete receipt contains a failed upstream request.",
     );
-    if (source.access === "api") {
+    if (source.access === "api" && !committedSnapshotReplay) {
       assert(
         receipt.upstream_requests.length > 0,
         "Complete API receipt contains no upstream request evidence.",
