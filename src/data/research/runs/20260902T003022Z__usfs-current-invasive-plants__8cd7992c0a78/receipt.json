@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260902T003022Z__usfs-current-invasive-plants__8cd7992c0a78",
+  "status": "complete",
+  "started_at": "2026-09-02T00:30:22.196Z",
+  "finished_at": "2026-09-02T00:30:23.505Z",
+  "actor_type": "adapter",
+  "actor_id": "usfs-current-invasive-plants-targeted@1.1.0",
+  "source_id": "usfs-current-invasive-plants",
+  "source_registry_hash": "09b26ff9f6c65ca89b06c6ea73ae27883ceeea12dbb836921ebae3f008a72b5c",
+  "adapter_id": "usfs-current-invasive-plants-targeted",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "3c569007e8b3fdef4d0eef9cef7e94cb3a990a7a0c6abb15d2c35fa621a537e3",
+  "code_commit": "2ba41cd88bf62e6bdecb0a0e2d17ea19bb973db4",
+  "parameter_hash": "8cd7992c0a78c47b948d6bd798f6c323a08b6cbcc381c25fc56fc95382bdc777",
+  "parameters": {
+    "stateCode": "OR",
+    "catalogResponseSha256": "e5ccff191b1a43ac29d328e6e3b5bfb8b575ff9127263e6864acaa0118acb321",
+    "layerUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0",
+    "maxResponseBytes": 52428800,
+    "minimumRequestIntervalMs": 1000,
+    "mode": "targeted-stable-positive-witness",
+    "objectIdsPerRequest": 100,
+    "preflightEvaluationId": "usfs-current-invasive-plants-national-preflight-20260902-r1",
+    "providerDeclaredRefreshDate": "2026-08-30",
+    "targets": [
+      {
+        "countyFips": "41033",
+        "objectIds": [
+          46339,
+          120277,
+          173044,
+          204270,
+          220523,
+          298822,
+          311702,
+          376482,
+          409876,
+          510648,
+          555791,
+          683723,
+          721548,
+          835815,
+          891255
+        ],
+        "pairKey": "41033:taeniatherum-caput-medusae",
+        "scientificName": "Taeniatherum caput-medusae",
+        "speciesId": "taeniatherum-caput-medusae"
+      }
+    ],
+    "candidatePairs": [
+      "41033:taeniatherum-caput-medusae"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "OR",
+    "county_fips": [
+      "41033"
+    ],
+    "species_ids": [
+      "taeniatherum-caput-medusae"
+    ],
+    "pair_keys": [
+      "41033:taeniatherum-caput-medusae"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=46339%2C120277%2C173044%2C204270%2C220523%2C298822%2C311702%2C376482%2C409876%2C510648%2C555791%2C683723%2C721548%2C835815%2C891255&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-02T00:30:22.197Z",
+      "record_count": 15
+    },
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=46339%2C120277%2C173044%2C204270%2C220523%2C298822%2C311702%2C376482%2C409876%2C510648%2C555791%2C683723%2C721548%2C835815%2C891255&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-02T00:30:23.505Z",
+      "record_count": 15
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260902T003022Z__usfs-current-invasive-plants__8cd7992c0a78/artifacts/usfs-current-invasive-plants-0001-before.json",
+      "sha256": "eec6912c75ea17eae97476a54c120db8ce4d619a5af8b94b15c7550997fa1206",
+      "bytes": 33661,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260902T003022Z__usfs-current-invasive-plants__8cd7992c0a78/artifacts/usfs-current-invasive-plants-0001-after.json",
+      "sha256": "eec6912c75ea17eae97476a54c120db8ce4d619a5af8b94b15c7550997fa1206",
+      "bytes": 33661,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260902T003022Z__usfs-current-invasive-plants__8cd7992c0a78/assertions.ndjson",
+      "sha256": "b92772a5145593bdc9ba43dafef8cd93022bde3a9b6f58c2f0649fc1404a4fbe",
+      "bytes": 3590,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T003022Z__usfs-current-invasive-plants__8cd7992c0a78/reviews.ndjson",
+      "sha256": "7377a849588abd9fa61478c2dfc8493f9341b1bb717e60cd96304ba0c96bc9ec",
+      "bytes": 1134,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T003022Z__usfs-current-invasive-plants__8cd7992c0a78/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T003022Z__usfs-current-invasive-plants__8cd7992c0a78/outcomes.ndjson",
+      "sha256": "c622addd9a9abba687d6454ca74bb4bfd9fae6abe52d8315bcc7b19f7289dd36",
+      "bytes": 1289,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 15,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Occurrence evidence is limited to represented Forest Service lands."
+  ],
+  "source_warnings": [
+    "USFS current invasive-plant rows support recorded presence on represented Forest Service lands only.",
+    "Targeted selection and source silence create no absence or non-detection claim.",
+    "0 selected object records failed one or more conservative publication gates."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usfs-current-invasive-plants --state OR --candidate-file src/data/research/national-acquisition-plans/usfs-current-invasive-plants-or-scale-20260902-r1.json --output-root src/data/research/runs --pairs 41033:taeniatherum-caput-medusae"
+}
