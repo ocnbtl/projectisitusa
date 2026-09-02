@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-e02bef2561a1daf103ce",
-  "generatedFromCommit": "5d7ba33e398a26f4a24ad1662ffb915f02ec894e",
+  "indexId": "source-coverage-28b4b4fd75954c4c31ae",
+  "generatedFromCommit": "653a298695de0a0a4d6a13fc7298182fde6597e1",
   "sourceRegistryPath": "src/data/research/source-registry.json",
   "sourceRegistrySha256": "09b26ff9f6c65ca89b06c6ea73ae27883ceeea12dbb836921ebae3f008a72b5c",
-  "runReceiptDigestSha256": "4d7b5522d1e1fb451093bc8dba68774bd3315031a03bc137951e0feb7295b578",
-  "runCount": 1489,
+  "runReceiptDigestSha256": "9f61d273cbd84529fbf7a788c51e27d0f9eae0d878a87bef3f0500896cd020cb",
+  "runCount": 1490,
   "sourceCount": 34,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -273,13 +273,13 @@
     {
       "sourceId": "usfs-current-invasive-plants",
       "coverageState": "covered-by-immutable-runs",
-      "runCount": 4,
-      "completeRuns": 4,
+      "runCount": 5,
+      "completeRuns": 5,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 1052,
-      "scopeCompletePairs": 1052,
-      "latestFinishedAt": "2026-09-02T00:44:52.568Z"
+      "requestedPairs": 1163,
+      "scopeCompletePairs": 1163,
+      "latestFinishedAt": "2026-09-02T02:42:29.381Z"
     },
     {
       "sourceId": "usfs-fia-invasive-plants",
@@ -46551,6 +46551,37 @@
       "outcomesPath": "src/data/research/runs/20260902T004350Z__usfs-current-invasive-plants__f6ee20d31423/outcomes.ndjson",
       "outcomesSha256": "043e685c344b33f05a6365f7f88d3fde75faa48179c0403019b1a3c6483a7882",
       "outcomesBytes": 2795199
+    },
+    {
+      "coverageKey": "b652238dc58c5764eea6126a3c84bac4e2dba106b68c05bf2b91148c919e6414",
+      "queryKey": "c65c9cd1b7374455671ab1cb7c63e4ccb49a6c70f8214d32f30d78629aae1319",
+      "runId": "20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a",
+      "receiptPath": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/receipt.json",
+      "receiptSha256": "f522341b25de5c33f6fae44a272956a3685a7eb170a4a21dd57beff145b3b5bb",
+      "sourceId": "usfs-current-invasive-plants",
+      "sourceRegistryHash": "09b26ff9f6c65ca89b06c6ea73ae27883ceeea12dbb836921ebae3f008a72b5c",
+      "adapterId": "usfs-current-invasive-plants-targeted",
+      "adapterVersion": "1.1.0",
+      "parameterHash": "81f8a2af7b5a9bebc33969ff23aee2c1df98761d82bff19fd6d1798a9f08ac5d",
+      "requestedScopeSha256": "b92a4ebb31911f901d24d66e9a6943aad1ce9510edc5ec10da1537417224be8a",
+      "status": "complete",
+      "startedAt": "2026-09-02T02:41:47.187Z",
+      "finishedAt": "2026-09-02T02:42:29.381Z",
+      "refreshCadenceDays": 90,
+      "freshnessDeadline": "2026-12-01T02:42:29.381Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 111,
+      "outcomePairs": 111,
+      "scopeCompletePairs": 111,
+      "outcomeStatusCounts": {
+        "evidence-found": 111,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/outcomes.ndjson",
+      "outcomesSha256": "7c38c2ea4aeec7468efde3962e7a421da8a0e6131aa8b48a96a4e320cd614d10",
+      "outcomesBytes": 227702
     }
   ]
 }
