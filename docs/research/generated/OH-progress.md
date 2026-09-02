@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `88`
 - County-species pairs: `220352`
-- Verified present: `6832`
+- Verified present: `9558`
 - Verified absent: `88`
 - Not detected: `44`
-- Researched unresolved: `34455`
-- Not researched: `178933`
-- Determination coverage: `3.14%`
+- Researched unresolved: `31740`
+- Not researched: `178922`
+- Determination coverage: `4.38%`
 - Research coverage: `18.80%`
-- Explicit outcome coverage: `18.7967%`
-- Applicable protocol cells: `304`
-- Current complete protocol cells: `134`
-- Protocol completion: `48.36%`
-- Current protocol completion: `44.08%`
-- Evidence records: `8452`
-- Research runs: `29`
+- Explicit outcome coverage: `18.8017%`
+- Applicable protocol cells: `337`
+- Current complete protocol cells: `139`
+- Protocol completion: `45.10%`
+- Current protocol completion: `41.25%`
+- Evidence records: `11178`
+- Research runs: `30`
 - Rejection records: `2312`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,8 +33,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Rock pigeon (`columba-livia`) | wildlife | 85 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 66 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 54 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 60 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 49 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 88 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 88 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 88 | 1 |
@@ -62,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:30:45.652Z | 2726 | 174 |
 | USGS NAS | operational | 2026-07-16T09:29:03.000Z | 260 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

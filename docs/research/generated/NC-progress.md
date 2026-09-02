@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `8110`
+- Verified present: `9688`
 - Verified absent: `100`
 - Not detected: `0`
-- Researched unresolved: `38332`
-- Not researched: `203858`
-- Determination coverage: `3.28%`
+- Researched unresolved: `36755`
+- Not researched: `203857`
+- Determination coverage: `3.91%`
 - Research coverage: `18.59%`
-- Explicit outcome coverage: `18.5871%`
-- Applicable protocol cells: `363`
-- Current complete protocol cells: `126`
-- Protocol completion: `38.29%`
-- Current protocol completion: `34.71%`
-- Evidence records: `11368`
-- Research runs: `27`
+- Explicit outcome coverage: `18.5875%`
+- Applicable protocol cells: `383`
+- Current complete protocol cells: `129`
+- Protocol completion: `37.08%`
+- Current protocol completion: `33.68%`
+- Evidence records: `12946`
+- Research runs: `28`
 - Rejection records: `589`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,7 +34,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Rock pigeon (`columba-livia`) | wildlife | 99 | 0 | 1 |
 | House sparrow (`passer-domesticus`) | wildlife | 82 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 77 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 76 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 100 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 100 | 1 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 100 | 0 |
@@ -62,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:34:40.603Z | 1578 | 212 |
 | USGS NAS | operational | 2026-07-16T09:29:02.000Z | 31 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

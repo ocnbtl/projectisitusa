@@ -11,12 +11,12 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 256,
+    "applicableSpeciesCount": 275,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2248,
+    "unknownSpeciesCount": 2229,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 203,
+    "derivedApplicableSpeciesCount": 222,
     "resolvedStateSpeciesDecisionCount": 2504,
     "boundedAcquisitionSpeciesCount": 470,
     "defaultApplicability": "unknown",
@@ -33,28 +33,28 @@
     "resolvablePairCount": 207832,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 5733,
+    "verifiedPresent": 6965,
     "verifiedAbsent": 83,
     "notDetected": 26,
-    "researchedUnresolved": 32875,
+    "researchedUnresolved": 31643,
     "notResearched": 169115,
-    "determinationCoveragePercent": 2.8,
+    "determinationCoveragePercent": 3.39,
     "researchCoveragePercent": 18.63,
     "explicitOutcomePairCount": 38717,
     "explicitOutcomeCoveragePercent": 18.629,
     "conflictCount": 0,
-    "evidenceRecordCount": 8486,
+    "evidenceRecordCount": 9718,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 8486,
+    "runEvidenceRecordCount": 9718,
     "rejectionRecordCount": 1221,
-    "researchRunCount": 29,
+    "researchRunCount": 30,
     "boundedAcquisition": {
       "speciesCount": 470,
       "totalPairs": 39010,
-      "verifiedPresent": 5733,
+      "verifiedPresent": 6965,
       "verifiedAbsent": 83,
       "notDetected": 26,
-      "researchedUnresolved": 32875,
+      "researchedUnresolved": 31643,
       "notResearched": 293,
       "researchCoveragePercent": 99.25,
       "explicitOutcomePairs": 38717,
@@ -83,9 +83,9 @@
       "authority": "University of Georgia Center for Invasive Species and Ecosystem Health",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-02T03:36:43.598Z",
+      "evidencePairCount": 1232,
+      "screenedSpeciesCount": 161
     },
     {
       "id": "usgs-nas",
@@ -423,16 +423,16 @@
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
     "totalCells": 1880,
-    "applicableCells": 291,
-    "notApplicableCells": 1589,
-    "completeCells": 133,
-    "incompleteCells": 157,
+    "applicableCells": 310,
+    "notApplicableCells": 1570,
+    "completeCells": 140,
+    "incompleteCells": 169,
     "blockedCells": 1,
-    "currentCells": 120,
+    "currentCells": 127,
     "staleCells": 13,
-    "undatedCells": 158,
-    "applicableCompletionPercent": 45.7,
-    "currentCompletePercent": 41.24,
+    "undatedCells": 170,
+    "applicableCompletionPercent": 45.16,
+    "currentCompletePercent": 40.97,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -446,21 +446,21 @@
       },
       {
         "category": "insects",
-        "applicableCells": 26,
+        "applicableCells": 27,
         "currentCompleteCells": 17,
-        "currentCompletePercent": 65.38
+        "currentCompletePercent": 62.96
       },
       {
         "category": "plants",
-        "applicableCells": 240,
-        "currentCompleteCells": 88,
-        "currentCompletePercent": 36.67
+        "applicableCells": 257,
+        "currentCompleteCells": 94,
+        "currentCompletePercent": 36.58
       },
       {
         "category": "wildlife",
-        "applicableCells": 8,
-        "currentCompleteCells": 4,
-        "currentCompletePercent": 50
+        "applicableCells": 9,
+        "currentCompleteCells": 5,
+        "currentCompletePercent": 55.56
       }
     ],
     "priorityCompletion": [
@@ -478,9 +478,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 230,
-        "currentCompleteCells": 72,
-        "currentCompletePercent": 31.3
+        "applicableCells": 249,
+        "currentCompleteCells": 79,
+        "currentCompletePercent": 31.73
       },
       {
         "priority": "baseline",
@@ -498,8 +498,8 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 256,
-        "currentCompleteCells": 99,
+        "applicableCells": 275,
+        "currentCompleteCells": 106,
         "processed": false
       },
       {
@@ -1010,16 +1010,6 @@
       "priorityScore": 830
     },
     {
-      "speciesId": "aralia-elata",
-      "commonName": "Japanese angelica tree",
-      "scientificName": "Aralia elata",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 83,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 830
-    },
-    {
       "speciesId": "arctotheca-calendula",
       "commonName": "Capeweed",
       "scientificName": "Arctotheca calendula",
@@ -1524,6 +1514,16 @@
       "commonName": "Sweet orange scab",
       "scientificName": "Elsinoe australis",
       "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 83,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 830
+    },
+    {
+      "speciesId": "emex-australis",
+      "commonName": "Southern threecornerjack",
+      "scientificName": "Emex australis",
+      "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 83,
       "missingProtocolSourceIds": [],

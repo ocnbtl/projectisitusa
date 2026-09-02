@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `83`
 - County-species pairs: `207832`
-- Verified present: `5733`
+- Verified present: `6965`
 - Verified absent: `83`
 - Not detected: `26`
-- Researched unresolved: `32875`
+- Researched unresolved: `31643`
 - Not researched: `169115`
-- Determination coverage: `2.80%`
+- Determination coverage: `3.39%`
 - Research coverage: `18.63%`
 - Explicit outcome coverage: `18.6290%`
-- Applicable protocol cells: `291`
-- Current complete protocol cells: `120`
-- Protocol completion: `45.70%`
-- Current protocol completion: `41.24%`
-- Evidence records: `8486`
-- Research runs: `29`
+- Applicable protocol cells: `310`
+- Current complete protocol cells: `127`
+- Protocol completion: `45.16%`
+- Current protocol completion: `40.97%`
+- Evidence records: `9718`
+- Research runs: `30`
 - Rejection records: `1221`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -62,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:36:43.598Z | 1232 | 161 |
 | USGS NAS | operational | 2026-07-16T09:29:02.000Z | 302 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

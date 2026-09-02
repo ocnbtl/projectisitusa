@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `72`
 - County-species pairs: `180288`
-- Verified present: `5102`
+- Verified present: `6595`
 - Verified absent: `72`
-- Not detected: `38`
-- Researched unresolved: `28396`
-- Not researched: `146680`
-- Determination coverage: `2.87%`
-- Research coverage: `18.64%`
-- Explicit outcome coverage: `18.6413%`
-- Applicable protocol cells: `274`
-- Current complete protocol cells: `120`
-- Protocol completion: `48.54%`
-- Current protocol completion: `43.80%`
-- Evidence records: `9399`
-- Research runs: `28`
+- Not detected: `29`
+- Researched unresolved: `26924`
+- Not researched: `146668`
+- Determination coverage: `3.70%`
+- Research coverage: `18.65%`
+- Explicit outcome coverage: `18.6479%`
+- Applicable protocol cells: `298`
+- Current complete protocol cells: `127`
+- Protocol completion: `46.98%`
+- Current protocol completion: `42.62%`
+- Evidence records: `10892`
+- Research runs: `29`
 - Rejection records: `1050`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,9 +33,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 71 | 0 | 1 |
-| Rock pigeon (`columba-livia`) | wildlife | 65 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 50 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 46 | 0 | 1 |
+| Rock pigeon (`columba-livia`) | wildlife | 60 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 49 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 40 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 72 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 72 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 72 | 1 |
@@ -62,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:35:56.715Z | 1493 | 174 |
 | USGS NAS | operational | 2026-07-16T09:29:04.000Z | 281 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

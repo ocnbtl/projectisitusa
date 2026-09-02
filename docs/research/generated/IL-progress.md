@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `9122`
+- Verified present: `10789`
 - Verified absent: `102`
-- Not detected: `10`
-- Researched unresolved: `38487`
-- Not researched: `207687`
-- Determination coverage: `3.61%`
-- Research coverage: `18.68%`
-- Explicit outcome coverage: `18.6842%`
-- Applicable protocol cells: `326`
-- Current complete protocol cells: `130`
-- Protocol completion: `43.87%`
-- Current protocol completion: `39.88%`
-- Evidence records: `11643`
-- Research runs: `29`
+- Not detected: `8`
+- Researched unresolved: `36833`
+- Not researched: `207676`
+- Determination coverage: `4.26%`
+- Research coverage: `18.69%`
+- Explicit outcome coverage: `18.6885%`
+- Applicable protocol cells: `352`
+- Current complete protocol cells: `137`
+- Protocol completion: `42.61%`
+- Current protocol completion: `38.92%`
+- Evidence records: `13310`
+- Research runs: `30`
 - Rejection records: `1543`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,10 +33,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Mute Swan (`cygnus-olor`) | wildlife | 101 | 0 | 1 |
-| Rock pigeon (`columba-livia`) | wildlife | 100 | 0 | 1 |
+| Rock pigeon (`columba-livia`) | wildlife | 98 | 0 | 1 |
 | Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 91 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 73 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 58 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 67 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 55 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 102 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 102 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 102 | 1 |
@@ -62,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:33:57.795Z | 1667 | 177 |
 | USGS NAS | operational | 2026-07-16T09:29:01.000Z | 256 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

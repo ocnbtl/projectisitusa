@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `5604`
+- Verified present: `9129`
 - Verified absent: `92`
 - Not detected: `0`
-- Researched unresolved: `37889`
-- Not researched: `186783`
-- Determination coverage: `2.47%`
+- Researched unresolved: `34371`
+- Not researched: `186776`
+- Determination coverage: `4.00%`
 - Research coverage: `18.92%`
-- Explicit outcome coverage: `18.9197%`
-- Applicable protocol cells: `285`
-- Current complete protocol cells: `145`
-- Protocol completion: `55.44%`
-- Current protocol completion: `50.88%`
-- Evidence records: `7292`
-- Research runs: `29`
+- Explicit outcome coverage: `18.9228%`
+- Applicable protocol cells: `321`
+- Current complete protocol cells: `153`
+- Protocol completion: `51.71%`
+- Current protocol completion: `47.66%`
+- Evidence records: `10817`
+- Research runs: `30`
 - Rejection records: `1049`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,12 +33,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Rock pigeon (`columba-livia`) | wildlife | 85 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 68 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 54 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 64 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 51 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 92 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 92 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 92 | 1 |
-| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 92 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 92 | 1 |
 | Silver fir (`abies-alba`) | plants | 0 | 92 | 0 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 92 | 0 |
@@ -50,19 +49,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 92 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 92 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 92 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 92 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 92 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 92 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 92 | 0 |
-| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 0 | 92 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 92 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 92 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 92 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 92 | 0 |
+| Rockroot (`agdestis-clematidea`) | plants | 0 | 92 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:30:02.233Z | 3525 | 196 |
 | USGS NAS | operational | 2026-07-16T09:29:01.000Z | 153 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

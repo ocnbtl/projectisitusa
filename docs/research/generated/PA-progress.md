@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `8184`
+- Verified present: `9314`
 - Verified absent: `67`
 - Not detected: `10`
-- Researched unresolved: `23612`
-- Not researched: `135895`
-- Determination coverage: `4.92%`
-- Research coverage: `19.00%`
-- Explicit outcome coverage: `18.9983%`
-- Applicable protocol cells: `359`
-- Current complete protocol cells: `120`
-- Protocol completion: `37.05%`
-- Current protocol completion: `33.43%`
-- Evidence records: `14875`
-- Research runs: `28`
+- Researched unresolved: `22495`
+- Not researched: `135882`
+- Determination coverage: `5.59%`
+- Research coverage: `19.01%`
+- Explicit outcome coverage: `19.0060%`
+- Applicable protocol cells: `367`
+- Current complete protocol cells: `123`
+- Protocol completion: `37.06%`
+- Current protocol completion: `33.51%`
+- Evidence records: `16005`
+- Research runs: `29`
 - Rejection records: `1209`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,9 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 61 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 46 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 46 | 0 | 1 |
+| Rock pigeon (`columba-livia`) | wildlife | 60 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 40 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 40 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 67 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 67 | 2 |
@@ -62,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T03:38:11.745Z | 1130 | 169 |
 | USGS NAS | operational | 2026-07-16T09:29:03.000Z | 273 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
