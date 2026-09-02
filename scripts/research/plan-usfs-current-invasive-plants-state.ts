@@ -69,6 +69,7 @@ type Preflight = {
 };
 
 type PlannerArguments = {
+  planId: string;
   stateCode: string;
   evaluatedAt: string;
   outputPath: string;
@@ -120,6 +121,7 @@ function parseArguments(argv: string[]): PlannerArguments {
   }
   const supported = new Set([
     "state",
+    "plan-id",
     "evaluated-at",
     "output",
     "preflight",
@@ -134,6 +136,10 @@ function parseArguments(argv: string[]): PlannerArguments {
   assert(getStateDefinition(stateCode)?.nationalV1Scope, `Unknown national-v1 state ${stateCode || "missing"}.`);
   const evaluatedAt = new Date(values.get("evaluated-at") ?? "").toISOString();
   assert(Date.parse(evaluatedAt) <= Date.now(), "--evaluated-at cannot be in the future.");
+  const evaluatedDate = evaluatedAt.slice(0, 10).replaceAll("-", "");
+  const planId = validatePlannerPlanId(
+    values.get("plan-id") ?? `usfs-current-invasive-plants-${stateCode.toLowerCase()}-scale-${evaluatedDate}-r1`,
+  );
   const outputPath = path.resolve(ROOT, values.get("output") ?? "");
   const preflightPath = path.resolve(
     ROOT,
@@ -152,6 +158,7 @@ function parseArguments(argv: string[]): PlannerArguments {
   assert(Number.isInteger(featuresPerRequest) && featuresPerRequest >= 1 && featuresPerRequest <= 500, "--features-per-request must be from 1 through 500.");
   assert(Number.isInteger(requestIntervalMs) && requestIntervalMs >= 1000, "--request-interval-ms must be at least 1000.");
   return {
+    planId,
     stateCode,
     evaluatedAt,
     outputPath,
@@ -161,6 +168,14 @@ function parseArguments(argv: string[]): PlannerArguments {
     featuresPerRequest,
     requestIntervalMs,
   };
+}
+
+export function validatePlannerPlanId(value: string) {
+  assert(
+    /^[a-z0-9][a-z0-9-]{2,127}$/u.test(value),
+    "--plan-id must contain 3 through 128 lowercase letters, digits, or hyphens.",
+  );
+  return value;
 }
 
 export function stratifiedObjectIds(objectIds: number[], maximum: number) {
@@ -391,10 +406,9 @@ async function main() {
       .sort(compareText)
       .map((status) => [status, targets.filter((entry) => entry.baselineStatus === status).length]),
   );
-  const evaluatedDate = options.evaluatedAt.slice(0, 10).replaceAll("-", "");
   const plan = {
     schemaVersion: 1,
-    planId: `usfs-current-invasive-plants-${options.stateCode.toLowerCase()}-scale-${evaluatedDate}-r1`,
+    planId: options.planId,
     sourceId: USFS_CURRENT_PLANTS_SOURCE_ID,
     stateCode: options.stateCode,
     generatedAt: new Date().toISOString(),
