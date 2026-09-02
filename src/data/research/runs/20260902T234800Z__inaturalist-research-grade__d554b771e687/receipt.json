@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260902T234800Z__inaturalist-research-grade__d554b771e687",
+  "status": "complete",
+  "started_at": "2026-09-02T23:48:00.156Z",
+  "finished_at": "2026-09-02T23:48:32.165Z",
+  "actor_type": "adapter",
+  "actor_id": "inaturalist-gbif-research-grade@1.0.0",
+  "source_id": "inaturalist-research-grade",
+  "source_registry_hash": "5be5ce629ec6569f4df57cfe2f491e81c3bc37046e160c6a71f0a9c0012934d3",
+  "adapter_id": "inaturalist-gbif-research-grade",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "f599edaeb662f6f647306d760306f3bed1bc10625bbb50ab1267a3a58e3dfa37",
+  "code_commit": "b13e80e2dbeb8c659481c05b265d879522c3459a",
+  "parameter_hash": "d554b771e687390e4a7041336929f1b4b2168f1418cbb5e9b2e82f05c546cc0f",
+  "parameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 10,
+    "candidatePairs": [
+      "11001:aedes-albopictus",
+      "11001:anolis-sagrei",
+      "11001:coccinella-septempunctata",
+      "11001:columba-livia",
+      "11001:linepithema-humile",
+      "11001:passer-domesticus",
+      "11001:pieris-rapae",
+      "11001:solenopsis-invicta",
+      "11001:streptopelia-decaocto",
+      "11001:sturnus-vulgaris"
+    ],
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode",
+      "http://creativecommons.org/licenses/by-nc/4.0/legalcode"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "aedes-albopictus",
+      "anolis-sagrei",
+      "coccinella-septempunctata",
+      "columba-livia",
+      "linepithema-humile",
+      "passer-domesticus",
+      "pieris-rapae",
+      "solenopsis-invicta",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "11001:aedes-albopictus",
+      "11001:anolis-sagrei",
+      "11001:coccinella-septempunctata",
+      "11001:columba-livia",
+      "11001:linepithema-humile",
+      "11001:passer-domesticus",
+      "11001:pieris-rapae",
+      "11001:solenopsis-invicta",
+      "11001:streptopelia-decaocto",
+      "11001:sturnus-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Aedes+albopictus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:00.515Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1651430&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:05.689Z",
+      "record_count": 126
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Anolis+sagrei&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:06.632Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:09.109Z",
+      "record_count": 3
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Coccinella+septempunctata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:09.325Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4990191&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:09.929Z",
+      "record_count": 193
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Columba+livia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:10.655Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:11.257Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:11.832Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:12.975Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=900",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:13.735Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=1200",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:14.354Z",
+      "record_count": 254
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Linepithema+humile&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:14.681Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1316908&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:15.092Z",
+      "record_count": 0
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Passer+domesticus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:15.372Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:16.023Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:16.771Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:17.888Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=900",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:18.742Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=1200",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:19.518Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=1500",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:20.327Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=1800",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:21.056Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=2100",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:21.731Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5231190&limit=300&offset=2400",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:22.236Z",
+      "record_count": 211
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Pieris+rapae&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:22.466Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1920496&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:23.164Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=1920496&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:23.799Z",
+      "record_count": 219
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Solenopsis+invicta&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:24.327Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=5035230&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:24.750Z",
+      "record_count": 0
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Streptopelia+decaocto&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:25.025Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495696&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:25.471Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Sturnus+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:25.711Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:26.308Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:27.313Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:28.399Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=900",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:29.308Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=1200",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:30.130Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=1500",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:30.862Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=1800",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:31.526Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=2100",
+      "status": 200,
+      "retrieved_at": "2026-09-02T23:48:32.042Z",
+      "record_count": 104
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-aedes-albopictus-000000.json.gz",
+      "sha256": "18711f02b3d90e194f046b393cb794ed3976aa089b0b24fc3d4bdebdc9d1f291",
+      "bytes": 38214,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-anolis-sagrei-000000.json.gz",
+      "sha256": "0563066fb118a4c3e28ce8c93e1541954dcd03fa1eab5ccfbef684e9dd51bfe6",
+      "bytes": 2916,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-coccinella-septempunctata-000000.json.gz",
+      "sha256": "8f92002af7ea5261dbe2f2024242fb040b7ff7e4882acf3dda690cd9f12d1b5f",
+      "bytes": 56586,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-columba-livia-000000.json.gz",
+      "sha256": "677b05067e0cd21c16f109fb6dff44bcb0f28b155a8c7805156412f0b4a18e21",
+      "bytes": 84440,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-columba-livia-000300.json.gz",
+      "sha256": "274c2e78de73077f5db6cec3d3ce33c10878f1d39a9609a4ced2935d8af8d074",
+      "bytes": 84696,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-columba-livia-000600.json.gz",
+      "sha256": "32b1de18d2f1356cc072090e2b927878f0c2d823b53fbd11c649e661cd241ca7",
+      "bytes": 88203,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-columba-livia-000900.json.gz",
+      "sha256": "2fd233c0bd80d556bfa770caed8131ccb933a7640b27c23909a90f1aff7d906a",
+      "bytes": 92935,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-columba-livia-001200.json.gz",
+      "sha256": "b7b481933db4b99e742959b22850ee9a35ebe2e6827efc13f9e3f7b700268c64",
+      "bytes": 73088,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-linepithema-humile-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-000000.json.gz",
+      "sha256": "3a263c9568f3b517b8caf27931601c437a3193ef54722fdc4ae9db4ff93ae275",
+      "bytes": 82234,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-000300.json.gz",
+      "sha256": "251c4c2b4a3bc5cbd1e92a9fa350ff1aa118ffbabd980ff3e75e6ca925af1d4a",
+      "bytes": 81858,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-000600.json.gz",
+      "sha256": "4a0c318f5618e60306e14ff726471eef09422a93659d0dfa4384df3ed472b158",
+      "bytes": 81615,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-000900.json.gz",
+      "sha256": "1528b66cadaaebbc4e80b9147fed97078834ccf0b2ecbc4351abdc85b4576652",
+      "bytes": 88474,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-001200.json.gz",
+      "sha256": "f9e30f51c722869cbab890fafc9b787478e8d35f1450ed7329e005c6f062cee0",
+      "bytes": 87838,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-001500.json.gz",
+      "sha256": "12b2b5746d1dfebebf4bd55dcd59128e514ad01ef403830e7231b6bba06622a0",
+      "bytes": 85721,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-001800.json.gz",
+      "sha256": "1a46ddc1e9b2c62f914455ea243a61d57c1697a861fe08b174d146d18562db7c",
+      "bytes": 86552,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-002100.json.gz",
+      "sha256": "c1f72b86ae1f5446a3b03766e462bd597f581b5ac0b56f280ea583d35da51932",
+      "bytes": 78321,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-passer-domesticus-002400.json.gz",
+      "sha256": "7372dbc826654d09ec90845a37766a21a7230807495653bd034a1c4cb569bab4",
+      "bytes": 54692,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-pieris-rapae-000000.json.gz",
+      "sha256": "fef29949c6f97cf60cbe326ea47d583240be0a44f18dd469db1a160f4f19982d",
+      "bytes": 87529,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-pieris-rapae-000300.json.gz",
+      "sha256": "e15ec6fd640973ec826d8dcab7b592b008798128ad366ab381222810a7d6ae99",
+      "bytes": 63471,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-solenopsis-invicta-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+      "sha256": "9ed2a751e5f446841ae787baaeb0ed4cfc1264847a2882fd46dc08a807a20c61",
+      "bytes": 2151,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-000000.json.gz",
+      "sha256": "0dbd587b564147e6f5fff323e819580630928b25eaf0cd67e4cae8d7fe701424",
+      "bytes": 87073,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-000300.json.gz",
+      "sha256": "e8f6a2122147ea1bc4f65f369ba09b27fa3ed15a60c68f1772f8879ff64ab398",
+      "bytes": 81963,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-000600.json.gz",
+      "sha256": "f0f6ed398648b8dd713a2739606191c21c37bbd6297b5715037aeb1d54393838",
+      "bytes": 84018,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-000900.json.gz",
+      "sha256": "a0878b98569f4e84dabc71d71acf4f9fdeafbe0ec5a08ea6073a20947b7b0395",
+      "bytes": 87038,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-001200.json.gz",
+      "sha256": "eb5ef70e11e30026954e7d04fa912905aa95d750d6342643f6769738ff5159d0",
+      "bytes": 88575,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-001500.json.gz",
+      "sha256": "54b70662efc5b2829ca988e8bd51beaa5a2a97db4570b7cf950de85007c28602",
+      "bytes": 88600,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-001800.json.gz",
+      "sha256": "2a76403e47fb2971b55352c1ecc0c551404502a2bba6ee9bbece47672fa4a6c3",
+      "bytes": 82654,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-occurrences-sturnus-vulgaris-002100.json.gz",
+      "sha256": "e170efd39b44e6da3a44878a7bfa1f49f7809ba4f2befe5c83b61b423a2f6c38",
+      "bytes": 31101,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-aedes-albopictus.json.gz",
+      "sha256": "688e9df5eb48724cac2482df0b56ddef5424bf1d1fd2d4358d0c3d76a6ac816c",
+      "bytes": 283,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-anolis-sagrei.json.gz",
+      "sha256": "368a235a1a12954831c1d24d09475e6095d44f197595133d28a8b7da7a854b54",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-coccinella-septempunctata.json.gz",
+      "sha256": "bf8557b684b1c747fd218fe478b8e4349b2a9f0093fef58c3ae7ab6c6143b293",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-columba-livia.json.gz",
+      "sha256": "65641895f736571db77aca202385aec5c3933cf2db106f8aa626365f1c3717bc",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-linepithema-humile.json.gz",
+      "sha256": "78755168d127f9643b9ad6354de9fe7b006533d3ca319aebfe03979d3ec99328",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-passer-domesticus.json.gz",
+      "sha256": "e3b9e7c9f4a7ba24b9b29592826c513d2abe83c9ab4eae103f27c45c2805d59b",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-pieris-rapae.json.gz",
+      "sha256": "fa3767ef880333ab7f4028289c5c981d9dbe5085340ce7fcd548aa1b1a87fccc",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-solenopsis-invicta.json.gz",
+      "sha256": "8b7e96e14d9c5b13984a2d50517796717ebc5a82c547ce4429cbc3fa8501a550",
+      "bytes": 285,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+      "sha256": "deef24d263ca5487a73188954214cd855e467b353b82cfaad3ca6bfeabdbc35b",
+      "bytes": 288,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/artifacts/gbif-species-match-sturnus-vulgaris.json.gz",
+      "sha256": "1393243d6a16652d0bcce5d68487a927921daa3d80d685e60a01f04b3173c8cc",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/assertions.ndjson",
+      "sha256": "0e5e19997fdc4bff57bd2be3c6d0f91f17196ddc4a6f6cf675d9b956ea2900e2",
+      "bytes": 15898,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/reviews.ndjson",
+      "sha256": "cf196d24c81cbe85e9f9ac6532e3c957847587934919262ff1f0db51a519dd09",
+      "bytes": 7329,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/rejections.ndjson",
+      "sha256": "6fe6e47c76c0078ab4a8448d8f89cc3e910572c547b1acde68754aece732a4e6",
+      "bytes": 231854,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T234800Z__inaturalist-research-grade__d554b771e687/outcomes.ndjson",
+      "sha256": "dc3b9cc90e578fe61db9b9a559a51fa57873ae410604d41cac0e27d21b90bad0",
+      "bytes": 40253,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 10,
+    "candidate_records": 7111,
+    "assertion_events": 7,
+    "review_events": 7,
+    "rejection_records": 312,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 10
+  },
+  "errors": [],
+  "known_caveats": [
+    "Licensed community-reviewed occurrence evidence distributed through the provider-recommended weekly GBIF dataset. Research Grade, taxonomy, public geography, and licenses can change after the retained run snapshot. Missing records never support absence or non-detection."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source inaturalist-research-grade --state DC --candidate-file src/data/research/national-acquisition-plans/inaturalist-gbif-dc-20260902-r1.json --output-root src/data/research/runs --pairs 11001:aedes-albopictus,11001:anolis-sagrei,11001:coccinella-septempunctata,11001:columba-livia,11001:linepithema-humile,11001:passer-domesticus,11001:pieris-rapae,11001:solenopsis-invicta,11001:streptopelia-decaocto,11001:sturnus-vulgaris"
+}
