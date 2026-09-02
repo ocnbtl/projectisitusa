@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `10835`
+- Verified present: `11831`
 - Verified absent: `254`
 - Not detected: `0`
-- Researched unresolved: `107913`
-- Not researched: `517014`
-- Determination coverage: `1.74%`
-- Research coverage: `18.71%`
-- Explicit outcome coverage: `18.7105%`
-- Applicable protocol cells: `385`
+- Researched unresolved: `109073`
+- Not researched: `514858`
+- Determination coverage: `1.90%`
+- Research coverage: `19.05%`
+- Explicit outcome coverage: `19.0495%`
+- Applicable protocol cells: `390`
 - Current complete protocol cells: `118`
-- Protocol completion: `34.03%`
-- Current protocol completion: `30.65%`
-- Evidence records: `13540`
-- Research runs: `29`
-- Rejection records: `587`
+- Protocol completion: `33.59%`
+- Current protocol completion: `30.26%`
+- Evidence records: `14536`
+- Research runs: `30`
+- Rejection records: `1573`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,10 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 246 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 227 | 0 | 1 |
-| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 225 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 188 | 0 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 254 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 254 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 254 | 1 |
@@ -57,6 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 254 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 254 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 254 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 254 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 254 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 254 | 0 |
+| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T19:49:49.664Z | 996 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-28T03:14:22.605Z | 116 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

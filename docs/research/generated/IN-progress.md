@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `9129`
+- Verified present: `9384`
 - Verified absent: `92`
 - Not detected: `0`
-- Researched unresolved: `34371`
-- Not researched: `186776`
-- Determination coverage: `4.00%`
-- Research coverage: `18.92%`
-- Explicit outcome coverage: `18.9228%`
-- Applicable protocol cells: `321`
+- Researched unresolved: `34868`
+- Not researched: `186024`
+- Determination coverage: `4.11%`
+- Research coverage: `19.25%`
+- Explicit outcome coverage: `19.2492%`
+- Applicable protocol cells: `326`
 - Current complete protocol cells: `153`
-- Protocol completion: `51.71%`
-- Current protocol completion: `47.66%`
-- Evidence records: `10817`
-- Research runs: `30`
-- Rejection records: `1049`
+- Protocol completion: `50.92%`
+- Current protocol completion: `46.93%`
+- Evidence records: `11072`
+- Research runs: `31`
+- Rejection records: `1431`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,9 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 85 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 64 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 51 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 92 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 92 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 92 | 1 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 92 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 92 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 92 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 92 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 92 | 0 |
+| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 92 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T20:08:44.119Z | 255 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T00:15:56.433Z | 69 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 302,
+    "applicableSpeciesCount": 307,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2202,
+    "unknownSpeciesCount": 2197,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 87,
-    "derivedApplicableSpeciesCount": 215,
+    "derivedApplicableSpeciesCount": 220,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 473,
+    "boundedAcquisitionSpeciesCount": 479,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 220352,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 9558,
+    "verifiedPresent": 9840,
     "verifiedAbsent": 88,
     "notDetected": 44,
-    "researchedUnresolved": 31740,
-    "notResearched": 178922,
-    "determinationCoveragePercent": 4.38,
-    "researchCoveragePercent": 18.8,
-    "explicitOutcomePairCount": 41430,
-    "explicitOutcomeCoveragePercent": 18.8017,
+    "researchedUnresolved": 32180,
+    "notResearched": 178200,
+    "determinationCoveragePercent": 4.51,
+    "researchCoveragePercent": 19.13,
+    "explicitOutcomePairCount": 42043,
+    "explicitOutcomeCoveragePercent": 19.0799,
     "conflictCount": 0,
-    "evidenceRecordCount": 11178,
+    "evidenceRecordCount": 11460,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11178,
-    "rejectionRecordCount": 2312,
-    "researchRunCount": 30,
+    "runEvidenceRecordCount": 11460,
+    "rejectionRecordCount": 2896,
+    "researchRunCount": 31,
     "boundedAcquisition": {
-      "speciesCount": 473,
-      "totalPairs": 41624,
-      "verifiedPresent": 9558,
+      "speciesCount": 479,
+      "totalPairs": 42152,
+      "verifiedPresent": 9840,
       "verifiedAbsent": 88,
       "notDetected": 44,
-      "researchedUnresolved": 31740,
-      "notResearched": 194,
-      "researchCoveragePercent": 99.53,
-      "explicitOutcomePairs": 41430,
-      "explicitOutcomeCoveragePercent": 99.5339
+      "researchedUnresolved": 32180,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 42043,
+      "explicitOutcomeCoveragePercent": 99.7414
     }
   },
   "migrationCandidates": {
@@ -313,9 +313,9 @@
       "authority": "iNaturalist",
       "tier": "community-occurrence",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-02T20:12:08.846Z",
+      "evidencePairCount": 282,
+      "screenedSpeciesCount": 10
     },
     {
       "id": "water-quality-portal",
@@ -422,17 +422,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1892,
-    "applicableCells": 337,
-    "notApplicableCells": 1555,
+    "totalCells": 1916,
+    "applicableCells": 342,
+    "notApplicableCells": 1574,
     "completeCells": 152,
-    "incompleteCells": 184,
+    "incompleteCells": 189,
     "blockedCells": 1,
     "currentCells": 139,
     "staleCells": 13,
-    "undatedCells": 185,
-    "applicableCompletionPercent": 45.1,
-    "currentCompletePercent": 41.25,
+    "undatedCells": 190,
+    "applicableCompletionPercent": 44.44,
+    "currentCompletePercent": 40.64,
     "regulatedAndHighApplicableCells": 73,
     "regulatedAndHighCurrentCompleteCells": 73,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -446,9 +446,9 @@
       },
       {
         "category": "insects",
-        "applicableCells": 27,
+        "applicableCells": 30,
         "currentCompleteCells": 16,
-        "currentCompletePercent": 59.26
+        "currentCompletePercent": 53.33
       },
       {
         "category": "plants",
@@ -458,9 +458,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 8,
+        "applicableCells": 10,
         "currentCompleteCells": 5,
-        "currentCompletePercent": 62.5
+        "currentCompletePercent": 50
       }
     ],
     "priorityCompletion": [
@@ -478,9 +478,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 238,
+        "applicableCells": 243,
         "currentCompleteCells": 53,
-        "currentCompletePercent": 22.27
+        "currentCompletePercent": 21.81
       },
       {
         "priority": "baseline",
@@ -498,7 +498,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 302,
+        "applicableCells": 307,
         "currentCompleteCells": 118,
         "processed": false
       },
@@ -511,42 +511,6 @@
     ]
   },
   "nextQueue": [
-    {
-      "speciesId": "columba-livia",
-      "commonName": "Rock pigeon",
-      "scientificName": "Columba livia",
-      "category": "wildlife",
-      "notResearchedCountyCount": 85,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 85001
-    },
-    {
-      "speciesId": "sturnus-vulgaris",
-      "commonName": "European Starling",
-      "scientificName": "Sturnus vulgaris",
-      "category": "wildlife",
-      "notResearchedCountyCount": 60,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 60001
-    },
-    {
-      "speciesId": "passer-domesticus",
-      "commonName": "House sparrow",
-      "scientificName": "Passer domesticus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 49,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 49001
-    },
     {
       "speciesId": "anarsia-lineatella",
       "commonName": "Peach twig borer",
@@ -1520,6 +1484,36 @@
       "commonName": "Pale cyst nematode",
       "scientificName": "Globodera pallida",
       "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 88,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 880
+    },
+    {
+      "speciesId": "globodera-rostochiensis",
+      "commonName": "Yellow potato cyst nematode",
+      "scientificName": "Globodera rostochiensis",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 88,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 880
+    },
+    {
+      "speciesId": "glyceria-maxima",
+      "commonName": "Reed mannagrass",
+      "scientificName": "Glyceria maxima",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 88,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 880
+    },
+    {
+      "speciesId": "heliotropium-amplexicaule",
+      "commonName": "Clasping heliotrope",
+      "scientificName": "Heliotropium amplexicaule",
+      "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 88,
       "missingProtocolSourceIds": [],

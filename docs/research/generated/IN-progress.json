@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 286,
+    "applicableSpeciesCount": 291,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2218,
+    "unknownSpeciesCount": 2213,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 103,
-    "derivedApplicableSpeciesCount": 183,
+    "derivedApplicableSpeciesCount": 188,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 476,
+    "boundedAcquisitionSpeciesCount": 482,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 230368,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 9129,
+    "verifiedPresent": 9384,
     "verifiedAbsent": 92,
     "notDetected": 0,
-    "researchedUnresolved": 34371,
-    "notResearched": 186776,
-    "determinationCoveragePercent": 4,
-    "researchCoveragePercent": 18.92,
-    "explicitOutcomePairCount": 43592,
-    "explicitOutcomeCoveragePercent": 18.9228,
+    "researchedUnresolved": 34868,
+    "notResearched": 186024,
+    "determinationCoveragePercent": 4.11,
+    "researchCoveragePercent": 19.25,
+    "explicitOutcomePairCount": 44344,
+    "explicitOutcomeCoveragePercent": 19.2492,
     "conflictCount": 0,
-    "evidenceRecordCount": 10817,
+    "evidenceRecordCount": 11072,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 10817,
-    "rejectionRecordCount": 1049,
-    "researchRunCount": 30,
+    "runEvidenceRecordCount": 11072,
+    "rejectionRecordCount": 1431,
+    "researchRunCount": 31,
     "boundedAcquisition": {
-      "speciesCount": 476,
-      "totalPairs": 43792,
-      "verifiedPresent": 9129,
+      "speciesCount": 482,
+      "totalPairs": 44344,
+      "verifiedPresent": 9384,
       "verifiedAbsent": 92,
       "notDetected": 0,
-      "researchedUnresolved": 34371,
-      "notResearched": 200,
-      "researchCoveragePercent": 99.54,
-      "explicitOutcomePairs": 43592,
-      "explicitOutcomeCoveragePercent": 99.5433
+      "researchedUnresolved": 34868,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 44344,
+      "explicitOutcomeCoveragePercent": 100
     }
   },
   "migrationCandidates": {
@@ -313,9 +313,9 @@
       "authority": "iNaturalist",
       "tier": "community-occurrence",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-02T20:08:44.119Z",
+      "evidencePairCount": 255,
+      "screenedSpeciesCount": 10
     },
     {
       "id": "water-quality-portal",
@@ -422,17 +422,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1904,
-    "applicableCells": 321,
-    "notApplicableCells": 1583,
+    "totalCells": 1928,
+    "applicableCells": 326,
+    "notApplicableCells": 1602,
     "completeCells": 166,
-    "incompleteCells": 155,
+    "incompleteCells": 160,
     "blockedCells": 0,
     "currentCells": 153,
     "staleCells": 13,
-    "undatedCells": 155,
-    "applicableCompletionPercent": 51.71,
-    "currentCompletePercent": 47.66,
+    "undatedCells": 160,
+    "applicableCompletionPercent": 50.92,
+    "currentCompletePercent": 46.93,
     "regulatedAndHighApplicableCells": 87,
     "regulatedAndHighCurrentCompleteCells": 86,
     "regulatedAndHighCurrentCompletePercent": 98.85,
@@ -446,9 +446,9 @@
       },
       {
         "category": "insects",
-        "applicableCells": 25,
+        "applicableCells": 28,
         "currentCompleteCells": 16,
-        "currentCompletePercent": 64
+        "currentCompletePercent": 57.14
       },
       {
         "category": "plants",
@@ -458,9 +458,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 11,
+        "applicableCells": 13,
         "currentCompleteCells": 8,
-        "currentCompletePercent": 72.73
+        "currentCompletePercent": 61.54
       }
     ],
     "priorityCompletion": [
@@ -478,9 +478,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 208,
+        "applicableCells": 213,
         "currentCompleteCells": 54,
-        "currentCompletePercent": 25.96
+        "currentCompletePercent": 25.35
       },
       {
         "priority": "baseline",
@@ -498,7 +498,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 286,
+        "applicableCells": 291,
         "currentCompleteCells": 131,
         "processed": false
       },
@@ -511,42 +511,6 @@
     ]
   },
   "nextQueue": [
-    {
-      "speciesId": "columba-livia",
-      "commonName": "Rock pigeon",
-      "scientificName": "Columba livia",
-      "category": "wildlife",
-      "notResearchedCountyCount": 85,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 85001
-    },
-    {
-      "speciesId": "sturnus-vulgaris",
-      "commonName": "European Starling",
-      "scientificName": "Sturnus vulgaris",
-      "category": "wildlife",
-      "notResearchedCountyCount": 64,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 64001
-    },
-    {
-      "speciesId": "passer-domesticus",
-      "commonName": "House sparrow",
-      "scientificName": "Passer domesticus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 51,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 51001
-    },
     {
       "speciesId": "aspidiotus-duplex",
       "commonName": "Camphor scale",
@@ -1519,6 +1483,36 @@
       "speciesId": "eremochloa-ophiuroides",
       "commonName": "Centipede grass",
       "scientificName": "Eremochloa ophiuroides",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 92,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 920
+    },
+    {
+      "speciesId": "euonymus-fortunei-var-radicans",
+      "commonName": "Winter creeper",
+      "scientificName": "Euonymus fortunei var. radicans",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 92,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 920
+    },
+    {
+      "speciesId": "euphorbia-terracina",
+      "commonName": "Geraldton carnation weed",
+      "scientificName": "Euphorbia terracina",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 92,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 920
+    },
+    {
+      "speciesId": "ficus-pumila",
+      "commonName": "Climbingfig",
+      "scientificName": "Ficus pumila",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 92,

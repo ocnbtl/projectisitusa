@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `9688`
+- Verified present: `10134`
 - Verified absent: `100`
 - Not detected: `0`
-- Researched unresolved: `36755`
-- Not researched: `203857`
-- Determination coverage: `3.91%`
-- Research coverage: `18.59%`
-- Explicit outcome coverage: `18.5875%`
-- Applicable protocol cells: `383`
+- Researched unresolved: `37166`
+- Not researched: `203000`
+- Determination coverage: `4.09%`
+- Research coverage: `18.93%`
+- Explicit outcome coverage: `18.9297%`
+- Applicable protocol cells: `389`
 - Current complete protocol cells: `129`
-- Protocol completion: `37.08%`
-- Current protocol completion: `33.68%`
-- Evidence records: `12946`
-- Research runs: `28`
-- Rejection records: `589`
+- Protocol completion: `36.50%`
+- Current protocol completion: `33.16%`
+- Evidence records: `13392`
+- Research runs: `29`
+- Rejection records: `1277`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,9 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 99 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 82 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 76 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 100 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 100 | 1 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 100 | 0 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 100 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 100 | 0 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 100 | 0 |
+| Bentgrass (`agrostis-castellana`) | plants | 0 | 100 | 0 |
+| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 100 | 0 |
+| Cultivated garlic (`allium-sativum`) | plants | 0 | 100 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T20:06:56.060Z | 446 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T03:32:06.989Z | 42 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
