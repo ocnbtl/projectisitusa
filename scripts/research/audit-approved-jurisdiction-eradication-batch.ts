@@ -91,11 +91,11 @@ const nationalCounts = summaries.reduce(
   },
 );
 const expectedNationalCounts = {
-  verifiedPresent: 197075,
+  verifiedPresent: 225989,
   verifiedAbsent: 3143,
-  notDetected: 254,
-  researchedUnresolved: 1361858,
-  notResearched: 6310246,
+  notDetected: 239,
+  researchedUnresolved: 1335416,
+  notResearched: 6307789,
   conflicts: 0,
   fullCountySpeciesDenominator: 7872576,
   countyEquivalentCount: 3144,
