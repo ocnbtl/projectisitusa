@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `3913`
+- Verified present: `5101`
 - Verified absent: `38`
 - Not detected: `0`
-- Researched unresolved: `15723`
-- Not researched: `77982`
-- Determination coverage: `4.05%`
-- Research coverage: `20.15%`
-- Explicit outcome coverage: `20.1462%`
-- Applicable protocol cells: `374`
-- Current complete protocol cells: `182`
-- Protocol completion: `52.14%`
-- Current protocol completion: `48.66%`
-- Evidence records: `9203`
-- Research runs: `36`
+- Researched unresolved: `14908`
+- Not researched: `77609`
+- Determination coverage: `5.26%`
+- Research coverage: `20.53%`
+- Explicit outcome coverage: `20.5282%`
+- Applicable protocol cells: `387`
+- Current complete protocol cells: `183`
+- Protocol completion: `50.65%`
+- Current protocol completion: `47.29%`
+- Evidence records: `10391`
+- Research runs: `37`
 - Rejection records: `1288`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,37 +32,37 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Atlantic ivy (`hedera-hibernica`) | plants | 39 | 0 | 0 |
-| Saltcedar (`tamarix-ramosissima`) | plants | 39 | 0 | 0 |
-| Bristly dogstail grass (`cynosurus-echinatus`) | plants | 38 | 0 | 1 |
-| Japanese rose (`kerria-japonica`) | plants | 38 | 0 | 1 |
-| Common balm (`melissa-officinalis`) | plants | 38 | 0 | 1 |
-| Japanese sweet coltsfoot (`petasites-japonicus`) | plants | 38 | 0 | 1 |
-| Prickly Russian thistle (`salsola-tragus`) | plants | 38 | 0 | 1 |
-| Common borage (`borago-officinalis`) | plants | 37 | 0 | 1 |
-| Common nipplewort (`lapsana-communis`) | plants | 37 | 0 | 1 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 38 | 0 | 1 |
 | Wall-lettuce (`mycelis-muralis`) | plants | 37 | 0 | 1 |
-| Bulbous bluegrass (`poa-bulbosa`) | plants | 37 | 0 | 1 |
-| Yellow Salsify (`tragopogon-dubius`) | plants | 37 | 0 | 1 |
-| Greater burdock (`arctium-lappa`) | plants | 36 | 0 | 1 |
+| Japanese sweet coltsfoot (`petasites-japonicus`) | plants | 37 | 0 | 1 |
 | Wall hawkweed (`hieracium-murorum`) | plants | 36 | 0 | 1 |
 | Mouseear hawkweed (`hieracium-pilosella`) | plants | 36 | 0 | 1 |
-| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 35 | 0 | 1 |
+| Japanese rose (`kerria-japonica`) | plants | 36 | 0 | 1 |
 | Rock pigeon (`columba-livia`) | wildlife | 35 | 0 | 1 |
-| Field Sowthistle (`sonchus-arvensis`) | plants | 35 | 0 | 1 |
-| Perennial cornflower (`centaurea-montana`) | plants | 34 | 0 | 1 |
-| Tall hawkweed (`hieracium-piloselloides`) | plants | 34 | 0 | 1 |
-| Cherry laurel (`prunus-laurocerasus`) | plants | 34 | 0 | 1 |
-| Climbing Nightshade (`solanum-dulcamara`) | plants | 34 | 0 | 1 |
-| European mountain ash (`sorbus-aucuparia`) | plants | 34 | 0 | 1 |
 | Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 33 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 32 | 0 | 1 |
+| Perennial cornflower (`centaurea-montana`) | plants | 32 | 0 | 1 |
+| Bristly dogstail grass (`cynosurus-echinatus`) | plants | 32 | 0 | 1 |
+| Tall hawkweed (`hieracium-piloselloides`) | plants | 32 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 28 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 27 | 0 | 1 |
+| Meadow knapweed (`centaurea-debeauxii`) | plants | 27 | 0 | 1 |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 26 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 26 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 25 | 0 | 1 |
+| Cherry laurel (`prunus-laurocerasus`) | plants | 25 | 0 | 1 |
+| Common Periwinkle (`vinca-minor`) | plants | 22 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 20 | 0 | 1 |
+| Common comfrey (`symphytum-officinale`) | plants | 20 | 0 | 1 |
+| Common nipplewort (`lapsana-communis`) | plants | 19 | 0 | 1 |
+| Woodland ragwort (`senecio-sylvaticus`) | plants | 18 | 0 | 1 |
+| English holly (`ilex-aquifolium`) | plants | 17 | 0 | 1 |
+| Prickly Russian thistle (`salsola-tragus`) | plants | 17 | 0 | 1 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:28:19.326Z | 1188 | 211 |
 | USGS NAS | operational | 2026-07-16T09:29:04.000Z | 119 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

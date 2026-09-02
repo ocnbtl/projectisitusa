@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `3641`
+- Verified present: `5035`
 - Verified absent: `46`
 - Not detected: `0`
-- Researched unresolved: `17657`
+- Researched unresolved: `16263`
 - Not researched: `93840`
-- Determination coverage: `3.20%`
+- Determination coverage: `4.41%`
 - Research coverage: `18.53%`
 - Explicit outcome coverage: `18.5304%`
-- Applicable protocol cells: `342`
-- Current complete protocol cells: `78`
-- Protocol completion: `26.61%`
-- Current protocol completion: `22.81%`
-- Evidence records: `3987`
-- Research runs: `29`
+- Applicable protocol cells: `377`
+- Current complete protocol cells: `80`
+- Protocol completion: `24.67%`
+- Current protocol completion: `21.22%`
+- Evidence records: `5381`
+- Research runs: `30`
 - Rejection records: `44`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -55,14 +55,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 46 | 0 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 46 | 0 |
 | Bentgrass (`agrostis-castellana`) | plants | 0 | 46 | 0 |
-| Redtop (`agrostis-gigantea`) | plants | 0 | 46 | 0 |
 | Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 46 | 0 |
+| Shellplant (`alpinia-zerumbet`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:25:27.541Z | 1394 | 208 |
 | USGS NAS | operational | 2026-07-16T09:29:03.000Z | 52 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

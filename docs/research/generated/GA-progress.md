@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `4729`
+- Verified present: `7660`
 - Verified absent: `159`
 - Not detected: `0`
-- Researched unresolved: `69365`
+- Researched unresolved: `66434`
 - Not researched: `323883`
-- Determination coverage: `1.23%`
+- Determination coverage: `1.96%`
 - Research coverage: `18.65%`
 - Explicit outcome coverage: `18.6502%`
-- Applicable protocol cells: `356`
-- Current complete protocol cells: `123`
-- Protocol completion: `38.20%`
-- Current protocol completion: `34.55%`
-- Evidence records: `7736`
-- Research runs: `29`
+- Applicable protocol cells: `382`
+- Current complete protocol cells: `126`
+- Protocol completion: `36.39%`
+- Current protocol completion: `32.98%`
+- Evidence records: `10667`
+- Research runs: `30`
 - Rejection records: `451`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,7 +44,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 159 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 159 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 159 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 159 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 159 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 159 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 159 | 0 |
@@ -55,14 +54,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 159 | 0 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 159 | 0 |
 | Bentgrass (`agrostis-castellana`) | plants | 0 | 159 | 0 |
-| Chocolate Vine (`akebia-quinata`) | plants | 0 | 159 | 0 |
 | Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 159 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 0 | 159 | 0 |
+| Shellplant (`alpinia-zerumbet`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:17:19.113Z | 2931 | 220 |
 | USGS NAS | operational | 2026-07-16T09:29:00.000Z | 153 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

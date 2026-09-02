@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `2010`
+- Verified present: `3344`
 - Verified absent: `44`
 - Not detected: `0`
-- Researched unresolved: `19550`
+- Researched unresolved: `18216`
 - Not researched: `88572`
-- Determination coverage: `1.86%`
+- Determination coverage: `3.08%`
 - Research coverage: `19.61%`
 - Explicit outcome coverage: `19.6086%`
-- Applicable protocol cells: `264`
-- Current complete protocol cells: `85`
-- Protocol completion: `37.12%`
-- Current protocol completion: `32.20%`
-- Evidence records: `2587`
-- Research runs: `25`
+- Applicable protocol cells: `292`
+- Current complete protocol cells: `88`
+- Protocol completion: `34.59%`
+- Current protocol completion: `30.14%`
+- Evidence records: `3921`
+- Research runs: `26`
 - Rejection records: `352`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,27 +42,27 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 44 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 44 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 44 | 2 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 44 | 1 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 44 | 1 |
-| White bryony (`bryonia-alba`) | plants | 0 | 44 | 1 |
-| Red star-thistle (`centaurea-calcitrapa`) | plants | 0 | 44 | 1 |
-| Meadow knapweed (`centaurea-debeauxii`) | plants | 0 | 44 | 1 |
-| Scotch broom (`cytisus-scoparius`) | plants | 0 | 44 | 1 |
-| Common viper's bugloss (`echium-vulgare`) | plants | 0 | 44 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 0 | 44 | 1 |
-| Tall hawkweed (`hieracium-piloselloides`) | plants | 0 | 44 | 1 |
 | Hydrilla (`hydrilla`) | plants | 0 | 44 | 1 |
-| Black henbane (`hyoscyamus-niger`) | plants | 0 | 44 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 44 | 1 |
-| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 0 | 44 | 1 |
-| Matgrass (`nardus-stricta`) | plants | 0 | 44 | 1 |
-| Mediterranean sage (`salvia-aethiopis`) | plants | 0 | 44 | 1 |
+| Silver fir (`abies-alba`) | plants | 0 | 44 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 44 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 44 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 44 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 44 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 44 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 44 | 0 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 44 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 44 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 44 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 44 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 44 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:26:09.540Z | 1334 | 133 |
 | USGS NAS | operational | 2026-07-16T09:29:01.000Z | 35 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

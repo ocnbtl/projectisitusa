@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `3722`
+- Verified present: `5025`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `12933`
-- Not researched: `73453`
-- Determination coverage: `4.17%`
-- Research coverage: `18.52%`
-- Explicit outcome coverage: `18.5159%`
-- Applicable protocol cells: `399`
-- Current complete protocol cells: `100`
-- Protocol completion: `28.32%`
-- Current protocol completion: `25.06%`
-- Evidence records: `3988`
-- Research runs: `30`
+- Researched unresolved: `12562`
+- Not researched: `72521`
+- Determination coverage: `5.61%`
+- Research coverage: `19.55%`
+- Explicit outcome coverage: `19.5498%`
+- Applicable protocol cells: `412`
+- Current complete protocol cells: `104`
+- Protocol completion: `28.40%`
+- Current protocol completion: `25.24%`
+- Evidence records: `5291`
+- Research runs: `31`
 - Rejection records: `205`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,37 +32,37 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Saltcedar (`tamarix-ramosissima`) | plants | 36 | 0 | 0 |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 35 | 0 | 1 |
-| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 35 | 0 | 1 |
-| Pale madwort (`alyssum-alyssoides`) | plants | 35 | 0 | 1 |
-| Greater burdock (`arctium-lappa`) | plants | 35 | 0 | 1 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 35 | 0 | 1 |
-| Crossflower (`chorispora-tenella`) | plants | 35 | 0 | 1 |
 | Rock pigeon (`columba-livia`) | wildlife | 35 | 0 | 1 |
-| Moleplant (`euphorbia-lathyris`) | plants | 35 | 0 | 1 |
-| Atlantic ivy (`hedera-hibernica`) | plants | 35 | 0 | 1 |
-| European stickseed (`lappula-squarrosa`) | plants | 35 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 35 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 35 | 0 | 1 |
-| Pennyroyal (`mentha-pulegium`) | plants | 35 | 0 | 1 |
-| Anise (`myrrhis-odorata`) | plants | 35 | 0 | 1 |
-| Evergreen bugloss (`pentaglottis-sempervirens`) | plants | 35 | 0 | 1 |
-| Dog rose (`rosa-canina`) | plants | 35 | 0 | 1 |
 | German knotgrass (`scleranthus-annuus`) | plants | 35 | 0 | 1 |
-| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 35 | 0 | 1 |
-| Golden clover (`trifolium-aureum`) | plants | 35 | 0 | 1 |
-| Crested wheatgrass (`agropyron-cristatum`) | plants | 34 | 0 | 1 |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 34 | 0 | 1 |
-| Rattlesnake brome (`bromus-briziformis`) | plants | 34 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 34 | 0 | 1 |
-| Lesser knapweed (`centaurea-nigra`) | plants | 34 | 0 | 1 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 34 | 0 | 1 |
+| Mouseear hawkweed (`hieracium-pilosella`) | plants | 34 | 0 | 1 |
+| Evergreen bugloss (`pentaglottis-sempervirens`) | plants | 34 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 33 | 0 | 1 |
+| Striated broom (`cytisus-striatus`) | plants | 33 | 0 | 1 |
+| Moleplant (`euphorbia-lathyris`) | plants | 33 | 0 | 1 |
+| Common dandelion (`taraxacum-officinale-ssp-officinale`) | plants | 33 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 32 | 0 | 1 |
+| Anise (`myrrhis-odorata`) | plants | 32 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 30 | 0 | 1 |
+| Wall-lettuce (`mycelis-muralis`) | plants | 30 | 0 | 1 |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 29 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 29 | 0 | 1 |
+| Golden clover (`trifolium-aureum`) | plants | 29 | 0 | 1 |
+| European beachgrass (`ammophila-arenaria`) | plants | 28 | 0 | 1 |
+| Spanish broom (`spartium-junceum`) | plants | 28 | 0 | 1 |
+| Himalayan Balsam (`impatiens-glandulifera`) | plants | 27 | 0 | 1 |
+| Lesser Celandine (`ranunculus-ficaria`) | plants | 27 | 0 | 1 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 27 | 0 | 1 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 26 | 0 | 1 |
+| Perennial cornflower (`centaurea-montana`) | plants | 26 | 0 | 1 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:26:51.358Z | 1303 | 210 |
 | USGS NAS | operational | 2026-07-16T09:29:03.000Z | 59 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

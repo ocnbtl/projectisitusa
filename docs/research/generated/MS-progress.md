@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `3777`
+- Verified present: `5241`
 - Verified absent: `82`
 - Not detected: `5`
-- Researched unresolved: `34184`
+- Researched unresolved: `32720`
 - Not researched: `167280`
-- Determination coverage: `1.88%`
+- Determination coverage: `2.59%`
 - Research coverage: `18.53%`
 - Explicit outcome coverage: `18.5304%`
-- Applicable protocol cells: `330`
-- Current complete protocol cells: `111`
-- Protocol completion: `37.58%`
-- Current protocol completion: `33.64%`
-- Evidence records: `6137`
-- Research runs: `27`
+- Applicable protocol cells: `360`
+- Current complete protocol cells: `115`
+- Protocol completion: `35.56%`
+- Current protocol completion: `31.94%`
+- Evidence records: `7601`
+- Research runs: `28`
 - Rejection records: `609`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -55,14 +55,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 82 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 82 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 82 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 82 | 0 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 82 | 0 |
+| Bentgrass (`agrostis-castellana`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:24:46.121Z | 1464 | 189 |
 | USGS NAS | operational | 2026-07-16T09:29:02.000Z | 87 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

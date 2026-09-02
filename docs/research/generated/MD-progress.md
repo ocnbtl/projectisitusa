@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `24`
 - County-species pairs: `60096`
-- Verified present: `626`
+- Verified present: `2482`
 - Verified absent: `24`
 - Not detected: `0`
-- Researched unresolved: `10606`
+- Researched unresolved: `8750`
 - Not researched: `48840`
-- Determination coverage: `1.08%`
+- Determination coverage: `4.17%`
 - Research coverage: `18.73%`
 - Explicit outcome coverage: `18.7300%`
-- Applicable protocol cells: `173`
-- Current complete protocol cells: `90`
-- Protocol completion: `59.54%`
-- Current protocol completion: `52.02%`
-- Evidence records: `919`
-- Research runs: `26`
+- Applicable protocol cells: `314`
+- Current complete protocol cells: `94`
+- Protocol completion: `34.08%`
+- Current protocol completion: `29.94%`
+- Evidence records: `2775`
+- Research runs: `27`
 - Rejection records: `286`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,7 +38,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Punktree (`melaleuca-quinquenervia`) | plants | 0 | 24 | 1 |
 | Silver fir (`abies-alba`) | plants | 0 | 24 | 0 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 24 | 0 |
-| Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 24 | 0 |
 | Cedar wattle (`acacia-elata`) | plants | 0 | 24 | 0 |
 | Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 24 | 0 |
 | New Zealand burr (`acaena-magellanica`) | plants | 0 | 24 | 0 |
@@ -57,12 +56,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 24 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 24 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 24 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 24 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:18:44.937Z | 1856 | 215 |
 | USGS NAS | operational | 2026-07-16T09:29:01.000Z | 9 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

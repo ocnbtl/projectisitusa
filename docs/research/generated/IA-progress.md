@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `1713`
+- Verified present: `5810`
 - Verified absent: `99`
 - Not detected: `9`
-- Researched unresolved: `44412`
+- Researched unresolved: `40315`
 - Not researched: `201663`
-- Determination coverage: `0.73%`
+- Determination coverage: `2.38%`
 - Research coverage: `18.65%`
 - Explicit outcome coverage: `18.6502%`
-- Applicable protocol cells: `209`
-- Current complete protocol cells: `112`
-- Protocol completion: `59.81%`
-- Current protocol completion: `53.59%`
-- Evidence records: `2079`
-- Research runs: `28`
+- Applicable protocol cells: `261`
+- Current complete protocol cells: `117`
+- Protocol completion: `49.81%`
+- Current protocol completion: `44.83%`
+- Evidence records: `6176`
+- Research runs: `29`
 - Rejection records: `115`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -50,19 +50,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 99 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 99 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 99 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 99 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 99 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 99 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 99 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 99 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 99 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 99 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 99 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:15:24.298Z | 4097 | 158 |
 | USGS NAS | operational | 2026-07-16T09:29:01.000Z | 44 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

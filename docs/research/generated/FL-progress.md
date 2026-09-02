@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `5570`
+- Verified present: `7306`
 - Verified absent: `67`
 - Not detected: `0`
-- Researched unresolved: `27059`
+- Researched unresolved: `25323`
 - Not researched: `135072`
-- Determination coverage: `3.36%`
+- Determination coverage: `4.39%`
 - Research coverage: `19.49%`
 - Explicit outcome coverage: `19.4888%`
-- Applicable protocol cells: `381`
-- Current complete protocol cells: `134`
-- Protocol completion: `38.58%`
-- Current protocol completion: `35.17%`
-- Evidence records: `16245`
-- Research runs: `26`
+- Applicable protocol cells: `396`
+- Current complete protocol cells: `140`
+- Protocol completion: `38.64%`
+- Current protocol completion: `35.35%`
+- Evidence records: `17981`
+- Research runs: `27`
 - Rejection records: `4485`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,7 +34,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 67 | 2 |
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 67 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 67 | 2 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 67 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 1 |
@@ -57,12 +56,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 67 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 67 | 0 |
+| Bentgrass (`agrostis-castellana`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:21:51.461Z | 1736 | 228 |
 | USGS NAS | operational | 2026-07-16T09:29:00.000Z | 175 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |

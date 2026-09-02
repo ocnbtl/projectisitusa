@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `4291`
+- Verified present: `5950`
 - Verified absent: `55`
 - Not detected: `23`
-- Researched unresolved: `21151`
+- Researched unresolved: `19492`
 - Not researched: `112200`
-- Determination coverage: `3.16%`
+- Determination coverage: `4.36%`
 - Research coverage: `18.53%`
 - Explicit outcome coverage: `18.5304%`
-- Applicable protocol cells: `291`
-- Current complete protocol cells: `94`
-- Protocol completion: `36.77%`
-- Current protocol completion: `32.30%`
-- Evidence records: `5763`
-- Research runs: `26`
+- Applicable protocol cells: `310`
+- Current complete protocol cells: `97`
+- Protocol completion: `35.48%`
+- Current protocol completion: `31.29%`
+- Evidence records: `7422`
+- Research runs: `27`
 - Rejection records: `145`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -47,7 +47,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 55 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 55 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 55 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 55 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 55 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 55 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 55 | 0 |
@@ -57,12 +56,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 55 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 55 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 55 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 55 | 0 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
-| EDDMaps | operational | not run | 0 | 0 |
+| EDDMaps | operational | 2026-09-02T06:24:04.139Z | 1659 | 166 |
 | USGS NAS | operational | 2026-07-16T09:29:04.000Z | 16 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
