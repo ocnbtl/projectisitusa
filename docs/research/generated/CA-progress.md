@@ -1,26 +1,26 @@
 # California Research Progress
 
-Generated: `2026-09-01T00:00:00.000Z`
+Generated: `2026-09-02T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `6383`
+- Verified present: `6815`
 - Verified absent: `58`
 - Not detected: `0`
-- Researched unresolved: `23266`
-- Not researched: `115525`
-- Determination coverage: `4.43%`
-- Research coverage: `20.45%`
-- Explicit outcome coverage: `20.4549%`
-- Applicable protocol cells: `405`
-- Current complete protocol cells: `180`
-- Protocol completion: `47.65%`
-- Current protocol completion: `44.44%`
-- Evidence records: `29383`
-- Research runs: `27`
+- Researched unresolved: `23086`
+- Not researched: `115273`
+- Determination coverage: `4.73%`
+- Research coverage: `20.63%`
+- Explicit outcome coverage: `20.6284%`
+- Applicable protocol cells: `478`
+- Current complete protocol cells: `181`
+- Protocol completion: `40.59%`
+- Current protocol completion: `37.87%`
+- Evidence records: `29815`
+- Research runs: `28`
 - Rejection records: `2587`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Hollyhock (`alcea-rosea`) | plants | 57 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 57 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 57 | 0 | 1 |
+| Compact brome (`bromus-madritensis`) | plants | 57 | 0 | 1 |
+| Red valerian (`centranthus-ruber`) | plants | 57 | 0 | 1 |
+| Big chickweed (`cerastium-fontanum-ssp-vulgare`) | plants | 57 | 0 | 1 |
 | Rock pigeon (`columba-livia`) | wildlife | 57 | 0 | 1 |
-| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 40 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 36 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 30 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 58 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 58 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 58 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 58 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 58 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 58 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 58 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 58 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 58 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 58 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 58 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 58 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 58 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 58 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 58 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 58 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 58 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 58 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 58 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 58 | 0 |
+| Perennial veldtgrass (`ehrharta-calycina`) | plants | 57 | 0 | 1 |
+| Musky stork's bill (`erodium-moschatum`) | plants | 57 | 0 | 1 |
+| Goldentop grass (`lamarckia-aurea`) | plants | 57 | 0 | 1 |
+| Cheeseweed mallow (`malva-parviflora`) | plants | 57 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 57 | 0 | 1 |
+| Pennyroyal (`mentha-pulegium`) | plants | 57 | 0 | 1 |
+| Silversheath knotweed (`polygonum-argyrocoleon`) | plants | 57 | 0 | 1 |
+| Beardless rabbitsfoot grass (`polypogon-viridis`) | plants | 57 | 0 | 1 |
+| Feverfew (`tanacetum-parthenium`) | plants | 57 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 57 | 0 | 1 |
+| Rose clover (`trifolium-hirtum`) | plants | 57 | 0 | 1 |
+| Desert wheatgrass (`agropyron-desertorum`) | plants | 56 | 0 | 1 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 56 | 0 | 1 |
+| Australian saltbush (`atriplex-semibaccata`) | plants | 56 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 56 | 0 | 1 |
+| Purple false brome (`brachypodium-distachyon`) | plants | 56 | 0 | 1 |
+| Bristly dogstail grass (`cynosurus-echinatus`) | plants | 56 | 0 | 1 |
+| Cape-ivy (`delairea-odorata`) | plants | 56 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,7 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 71 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 51 | 34 |
-| USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
+| USFS Current Invasive Plant Locations | operational | 2026-09-02T00:44:52.568Z | 432 | 123 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4616 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1923 | 189 |
