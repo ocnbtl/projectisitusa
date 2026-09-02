@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-01",
+  "updatedAt": "2026-09-02",
   "sources": [
     {
       "id": "eddmaps",
@@ -517,7 +517,19 @@
       "refreshCadenceDays": 90,
       "status": "operational",
       "adapter": "scripts/import-inaturalist-alabama-research-grade.ts",
-      "caveat": "Community-reviewed occurrence evidence only. Research Grade and taxonomy can change."
+      "caveat": "Licensed community-reviewed occurrence evidence distributed through the provider-recommended weekly GBIF dataset. Research Grade, taxonomy, public geography, and licenses can change after the retained run snapshot. Missing records never support absence or non-detection.",
+      "researchAdapter": {
+        "id": "inaturalist-gbif-research-grade",
+        "module": "scripts/research/adapters/inaturalist-gbif-research-grade.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/inaturalist-gbif-research-grade-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact GBIF species match with confidence at least 95 and exact canonical binomial agreement between the current Project Isitusa catalog and the licensed weekly iNaturalist Research Grade dataset.",
+        "geographyMatchingPolicy": "Exact GBIF-interpreted GADM level-1 state and level-2 county-equivalent names must resolve to one active registered county equivalent. Records require public coordinates, reported uncertainty at most 10000 meters, and no contradictory geospatial issue. Project Isitusa does not assign counties from raw coordinates in this adapter.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 2.5
+      }
     },
     {
       "id": "water-quality-portal",

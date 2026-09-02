@@ -20,6 +20,10 @@ import {
 } from "./adapters/eddmaps-snapshot-replay";
 import { usfsCurrentInvasivePlantsTargetedAdapter } from "./adapters/usfs-current-invasive-plants-targeted";
 import {
+  INATURALIST_GBIF_DATASET_KEY,
+  inaturalistGbifResearchGradeAdapter,
+} from "./adapters/inaturalist-gbif-research-grade";
+import {
   type BbsPilotPlan,
   usgsBbsRouteStartAdapter,
 } from "./adapters/usgs-bbs-route-start";
@@ -118,6 +122,17 @@ type CandidateFile = {
       snapshotSpeciesId: string;
       subjectId: number;
     }>;
+  };
+  inaturalistGbif?: {
+    mode: "weekly-gbif-dataset-snapshot";
+    datasetKey: typeof INATURALIST_GBIF_DATASET_KEY;
+    datasetDoi: "10.15468/ab3s5x";
+    datasetPublishedAt: string;
+    expectedCrawlId: number;
+    expectedLastParsed: string;
+    maximumCoordinateUncertaintyMeters: number;
+    allowedLicenses: string[];
+    snapshotIdentitySha256: string;
   };
   bbsPilot?: BbsPilotPlan;
 };
@@ -441,6 +456,9 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
     return usgsBbsRouteStartAdapter;
   }
+  if (sourceId === inaturalistGbifResearchGradeAdapter.sourceId) {
+    return inaturalistGbifResearchGradeAdapter;
+  }
   throw new Error(`No registered runner implementation exists for ${sourceId}.`);
 }
 
@@ -530,6 +548,26 @@ function buildParameters(
       stateCode,
       ...candidateFile.bbsPilot,
       candidatePairs,
+    };
+  }
+  if (sourceId === inaturalistGbifResearchGradeAdapter.sourceId) {
+    if (!candidateFile.inaturalistGbif || candidateFile.sourceId !== sourceId) {
+      throw new Error("iNaturalist research requires its committed weekly GBIF snapshot plan.");
+    }
+    return {
+      stateCode,
+      stateProvince: state.sourceStateNames.gbif,
+      candidateLimit: requestedPairs.length,
+      candidatePairs,
+      basisOfRecord: "HUMAN_OBSERVATION",
+      occurrenceStatus: "PRESENT",
+      minimumMatchConfidence: 95,
+      pageLimit: 300,
+      datasetKey: candidateFile.inaturalistGbif.datasetKey,
+      expectedCrawlId: candidateFile.inaturalistGbif.expectedCrawlId,
+      expectedLastParsed: candidateFile.inaturalistGbif.expectedLastParsed,
+      maximumCoordinateUncertaintyMeters: candidateFile.inaturalistGbif.maximumCoordinateUncertaintyMeters,
+      allowedLicenses: candidateFile.inaturalistGbif.allowedLicenses,
     };
   }
   throw new Error(`No parameter builder exists for ${sourceId}.`);
