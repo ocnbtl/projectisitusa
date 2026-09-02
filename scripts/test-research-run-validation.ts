@@ -1,11 +1,11 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type { ResearchSourceRegistry } from "@/lib/research/types";
 import {
   assertRunStartNotFuture,
-  listImmutableResearchRuns,
+  loadImmutableResearchRun,
   sha256,
 } from "@/lib/research/run-files";
 import {
@@ -28,8 +28,13 @@ function expectFailure(action: () => void, label: string) {
 }
 
 const root = process.cwd();
-const bundle = listImmutableResearchRuns(root)[0];
-assert(bundle, "The research run validator fixture is missing.");
+const runsDirectory = path.join(root, "src/data/research/runs");
+const fixtureDirectory = readdirSync(runsDirectory, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory() && !entry.name.startsWith(".pending-research-run-"))
+  .map((entry) => entry.name)
+  .sort()[0];
+assert(fixtureDirectory, "The research run validator fixture is missing.");
+const bundle = loadImmutableResearchRun(root, path.join(runsDirectory, fixtureDirectory));
 const registry = JSON.parse(
   readFileSync(path.join(root, "src/data/research/source-registry.json"), "utf8"),
 ) as ResearchSourceRegistry;
