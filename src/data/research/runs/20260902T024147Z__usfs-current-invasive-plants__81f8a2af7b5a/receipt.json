@@ -1,0 +1,1506 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a",
+  "status": "complete",
+  "started_at": "2026-09-02T02:41:47.187Z",
+  "finished_at": "2026-09-02T02:42:29.381Z",
+  "actor_type": "adapter",
+  "actor_id": "usfs-current-invasive-plants-targeted@1.1.0",
+  "source_id": "usfs-current-invasive-plants",
+  "source_registry_hash": "09b26ff9f6c65ca89b06c6ea73ae27883ceeea12dbb836921ebae3f008a72b5c",
+  "adapter_id": "usfs-current-invasive-plants-targeted",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "3c569007e8b3fdef4d0eef9cef7e94cb3a990a7a0c6abb15d2c35fa621a537e3",
+  "code_commit": "a33668e9d55c294caafa75c70bf04bbf4996a7bd",
+  "parameter_hash": "81f8a2af7b5a9bebc33969ff23aee2c1df98761d82bff19fd6d1798a9f08ac5d",
+  "parameters": {
+    "stateCode": "OR",
+    "catalogResponseSha256": "e5ccff191b1a43ac29d328e6e3b5bfb8b575ff9127263e6864acaa0118acb321",
+    "layerUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0",
+    "maxResponseBytes": 52428800,
+    "minimumRequestIntervalMs": 1000,
+    "mode": "targeted-stable-positive-witness",
+    "objectIdsPerRequest": 100,
+    "preflightEvaluationId": "usfs-current-invasive-plants-national-preflight-20260902-r1",
+    "providerDeclaredRefreshDate": "2026-08-30",
+    "targets": [
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          313376,
+          419866,
+          433837,
+          758412,
+          846070
+        ],
+        "pairKey": "41039:cytisus-striatus",
+        "scientificName": "Cytisus striatus",
+        "speciesId": "cytisus-striatus"
+      },
+      {
+        "countyFips": "41041",
+        "objectIds": [
+          108516,
+          155003,
+          180833,
+          470233,
+          784947
+        ],
+        "pairKey": "41041:dianthus-armeria",
+        "scientificName": "Dianthus armeria",
+        "speciesId": "dianthus-armeria"
+      },
+      {
+        "countyFips": "41063",
+        "objectIds": [
+          25142,
+          301885,
+          419129,
+          710771,
+          747956
+        ],
+        "pairKey": "41063:iris-pseudacorus",
+        "scientificName": "Iris pseudacorus",
+        "speciesId": "iris-pseudacorus"
+      },
+      {
+        "countyFips": "41037",
+        "objectIds": [
+          346494,
+          417302,
+          697637,
+          745278
+        ],
+        "pairKey": "41037:centaurea-solstitialis",
+        "scientificName": "Centaurea solstitialis",
+        "speciesId": "centaurea-solstitialis"
+      },
+      {
+        "countyFips": "41037",
+        "objectIds": [
+          61965,
+          316258,
+          692108,
+          910872
+        ],
+        "pairKey": "41037:iris-pseudacorus",
+        "scientificName": "Iris pseudacorus",
+        "speciesId": "iris-pseudacorus"
+      },
+      {
+        "countyFips": "41001",
+        "objectIds": [
+          411156,
+          821645,
+          910365
+        ],
+        "pairKey": "41001:lotus-corniculatus",
+        "scientificName": "Lotus corniculatus",
+        "speciesId": "lotus-corniculatus"
+      },
+      {
+        "countyFips": "41005",
+        "objectIds": [
+          187391,
+          642592,
+          669008
+        ],
+        "pairKey": "41005:sorbus-aucuparia",
+        "scientificName": "Sorbus aucuparia",
+        "speciesId": "sorbus-aucuparia"
+      },
+      {
+        "countyFips": "41017",
+        "objectIds": [
+          194671,
+          320355,
+          567143
+        ],
+        "pairKey": "41017:solanum-dulcamara",
+        "scientificName": "Solanum dulcamara",
+        "speciesId": "solanum-dulcamara"
+      },
+      {
+        "countyFips": "41031",
+        "objectIds": [
+          462120,
+          462162,
+          518203
+        ],
+        "pairKey": "41031:brachypodium-sylvaticum",
+        "scientificName": "Brachypodium sylvaticum",
+        "speciesId": "brachypodium-sylvaticum"
+      },
+      {
+        "countyFips": "41047",
+        "objectIds": [
+          51621,
+          91995,
+          427747
+        ],
+        "pairKey": "41047:centaurea-debeauxii",
+        "scientificName": "Centaurea debeauxii",
+        "speciesId": "centaurea-debeauxii"
+      },
+      {
+        "countyFips": "41001",
+        "objectIds": [
+          545828,
+          918532
+        ],
+        "pairKey": "41001:cytisus-scoparius",
+        "scientificName": "Cytisus scoparius",
+        "speciesId": "cytisus-scoparius"
+      },
+      {
+        "countyFips": "41011",
+        "objectIds": [
+          187205,
+          220880
+        ],
+        "pairKey": "41011:centaurea-stoebe-ssp-micranthos",
+        "scientificName": "Centaurea stoebe ssp. micranthos",
+        "speciesId": "centaurea-stoebe-ssp-micranthos"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          414630,
+          934014
+        ],
+        "pairKey": "41019:vinca-minor",
+        "scientificName": "Vinca minor",
+        "speciesId": "vinca-minor"
+      },
+      {
+        "countyFips": "41023",
+        "objectIds": [
+          463876,
+          691016
+        ],
+        "pairKey": "41023:agropyron-cristatum",
+        "scientificName": "Agropyron cristatum",
+        "speciesId": "agropyron-cristatum"
+      },
+      {
+        "countyFips": "41027",
+        "objectIds": [
+          677757,
+          917977
+        ],
+        "pairKey": "41027:potentilla-recta",
+        "scientificName": "Potentilla recta",
+        "speciesId": "potentilla-recta"
+      },
+      {
+        "countyFips": "41031",
+        "objectIds": [
+          169203,
+          753734
+        ],
+        "pairKey": "41031:centaurea-solstitialis",
+        "scientificName": "Centaurea solstitialis",
+        "speciesId": "centaurea-solstitialis"
+      },
+      {
+        "countyFips": "41033",
+        "objectIds": [
+          415732,
+          654354
+        ],
+        "pairKey": "41033:brachypodium-sylvaticum",
+        "scientificName": "Brachypodium sylvaticum",
+        "speciesId": "brachypodium-sylvaticum"
+      },
+      {
+        "countyFips": "41033",
+        "objectIds": [
+          756841,
+          803488
+        ],
+        "pairKey": "41033:clematis-vitalba",
+        "scientificName": "Clematis vitalba",
+        "speciesId": "clematis-vitalba"
+      },
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          226504,
+          809138
+        ],
+        "pairKey": "41039:centaurea-montana",
+        "scientificName": "Centaurea montana",
+        "speciesId": "centaurea-montana"
+      },
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          129891,
+          302752
+        ],
+        "pairKey": "41039:crataegus-monogyna",
+        "scientificName": "Crataegus monogyna",
+        "speciesId": "crataegus-monogyna"
+      },
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          388421,
+          882962
+        ],
+        "pairKey": "41039:scleranthus-annuus",
+        "scientificName": "Scleranthus annuus",
+        "speciesId": "scleranthus-annuus"
+      },
+      {
+        "countyFips": "41041",
+        "objectIds": [
+          909358,
+          925751
+        ],
+        "pairKey": "41041:tanacetum-vulgare",
+        "scientificName": "Tanacetum vulgare",
+        "speciesId": "tanacetum-vulgare"
+      },
+      {
+        "countyFips": "41045",
+        "objectIds": [
+          80752,
+          402667
+        ],
+        "pairKey": "41045:onopordum-acanthium",
+        "scientificName": "Onopordum acanthium",
+        "speciesId": "onopordum-acanthium"
+      },
+      {
+        "countyFips": "41071",
+        "objectIds": [
+          365246,
+          547848
+        ],
+        "pairKey": "41071:holcus-mollis",
+        "scientificName": "Holcus mollis",
+        "speciesId": "holcus-mollis"
+      },
+      {
+        "countyFips": "41071",
+        "objectIds": [
+          157514,
+          816708
+        ],
+        "pairKey": "41071:vulpia-myuros",
+        "scientificName": "Vulpia myuros",
+        "speciesId": "vulpia-myuros"
+      },
+      {
+        "countyFips": "41001",
+        "objectIds": [
+          103114
+        ],
+        "pairKey": "41001:thinopyrum-intermedium",
+        "scientificName": "Thinopyrum intermedium",
+        "speciesId": "thinopyrum-intermedium"
+      },
+      {
+        "countyFips": "41001",
+        "objectIds": [
+          45417
+        ],
+        "pairKey": "41001:ventenata-dubia",
+        "scientificName": "Ventenata dubia",
+        "speciesId": "ventenata-dubia"
+      },
+      {
+        "countyFips": "41005",
+        "objectIds": [
+          53086
+        ],
+        "pairKey": "41005:digitalis-purpurea",
+        "scientificName": "Digitalis purpurea",
+        "speciesId": "digitalis-purpurea"
+      },
+      {
+        "countyFips": "41005",
+        "objectIds": [
+          557621
+        ],
+        "pairKey": "41005:hieracium-pilosella",
+        "scientificName": "Hieracium pilosella",
+        "speciesId": "hieracium-pilosella"
+      },
+      {
+        "countyFips": "41005",
+        "objectIds": [
+          164029
+        ],
+        "pairKey": "41005:vinca-minor",
+        "scientificName": "Vinca minor",
+        "speciesId": "vinca-minor"
+      },
+      {
+        "countyFips": "41013",
+        "objectIds": [
+          409898
+        ],
+        "pairKey": "41013:cynosurus-echinatus",
+        "scientificName": "Cynosurus echinatus",
+        "speciesId": "cynosurus-echinatus"
+      },
+      {
+        "countyFips": "41013",
+        "objectIds": [
+          341776
+        ],
+        "pairKey": "41013:lepidium-campestre",
+        "scientificName": "Lepidium campestre",
+        "speciesId": "lepidium-campestre"
+      },
+      {
+        "countyFips": "41013",
+        "objectIds": [
+          180803
+        ],
+        "pairKey": "41013:rubus-laciniatus",
+        "scientificName": "Rubus laciniatus",
+        "speciesId": "rubus-laciniatus"
+      },
+      {
+        "countyFips": "41015",
+        "objectIds": [
+          824886
+        ],
+        "pairKey": "41015:centaurea-diffusa",
+        "scientificName": "Centaurea diffusa",
+        "speciesId": "centaurea-diffusa"
+      },
+      {
+        "countyFips": "41015",
+        "objectIds": [
+          723072
+        ],
+        "pairKey": "41015:vinca-minor",
+        "scientificName": "Vinca minor",
+        "speciesId": "vinca-minor"
+      },
+      {
+        "countyFips": "41017",
+        "objectIds": [
+          779975
+        ],
+        "pairKey": "41017:aegilops-cylindrica",
+        "scientificName": "Aegilops cylindrica",
+        "speciesId": "aegilops-cylindrica"
+      },
+      {
+        "countyFips": "41017",
+        "objectIds": [
+          322900
+        ],
+        "pairKey": "41017:brachypodium-sylvaticum",
+        "scientificName": "Brachypodium sylvaticum",
+        "speciesId": "brachypodium-sylvaticum"
+      },
+      {
+        "countyFips": "41017",
+        "objectIds": [
+          773372
+        ],
+        "pairKey": "41017:tribulus-terrestris",
+        "scientificName": "Tribulus terrestris",
+        "speciesId": "tribulus-terrestris"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          219695
+        ],
+        "pairKey": "41019:buddleja-davidii",
+        "scientificName": "Buddleja davidii",
+        "speciesId": "buddleja-davidii"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          460037
+        ],
+        "pairKey": "41019:centaurea-jacea",
+        "scientificName": "Centaurea jacea",
+        "speciesId": "centaurea-jacea"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          380195
+        ],
+        "pairKey": "41019:centaurea-montana",
+        "scientificName": "Centaurea montana",
+        "speciesId": "centaurea-montana"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          418152
+        ],
+        "pairKey": "41019:foeniculum-vulgare",
+        "scientificName": "Foeniculum vulgare",
+        "speciesId": "foeniculum-vulgare"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          571170
+        ],
+        "pairKey": "41019:genista-monspessulana",
+        "scientificName": "Genista monspessulana",
+        "speciesId": "genista-monspessulana"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          698546
+        ],
+        "pairKey": "41019:prunus-laurocerasus",
+        "scientificName": "Prunus laurocerasus",
+        "speciesId": "prunus-laurocerasus"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          555958
+        ],
+        "pairKey": "41019:salsola-tragus",
+        "scientificName": "Salsola tragus",
+        "speciesId": "salsola-tragus"
+      },
+      {
+        "countyFips": "41023",
+        "objectIds": [
+          829709
+        ],
+        "pairKey": "41023:chenopodium-album",
+        "scientificName": "Chenopodium album",
+        "speciesId": "chenopodium-album"
+      },
+      {
+        "countyFips": "41023",
+        "objectIds": [
+          524614
+        ],
+        "pairKey": "41023:cynosurus-echinatus",
+        "scientificName": "Cynosurus echinatus",
+        "speciesId": "cynosurus-echinatus"
+      },
+      {
+        "countyFips": "41023",
+        "objectIds": [
+          497209
+        ],
+        "pairKey": "41023:trifolium-aureum",
+        "scientificName": "Trifolium aureum",
+        "speciesId": "trifolium-aureum"
+      },
+      {
+        "countyFips": "41027",
+        "objectIds": [
+          860835
+        ],
+        "pairKey": "41027:linaria-dalmatica",
+        "scientificName": "Linaria dalmatica",
+        "speciesId": "linaria-dalmatica"
+      },
+      {
+        "countyFips": "41027",
+        "objectIds": [
+          549528
+        ],
+        "pairKey": "41027:lotus-corniculatus",
+        "scientificName": "Lotus corniculatus",
+        "speciesId": "lotus-corniculatus"
+      },
+      {
+        "countyFips": "41027",
+        "objectIds": [
+          439825
+        ],
+        "pairKey": "41027:mycelis-muralis",
+        "scientificName": "Mycelis muralis",
+        "speciesId": "mycelis-muralis"
+      },
+      {
+        "countyFips": "41029",
+        "objectIds": [
+          730726
+        ],
+        "pairKey": "41029:hieracium-caespitosum",
+        "scientificName": "Hieracium caespitosum",
+        "speciesId": "hieracium-caespitosum"
+      },
+      {
+        "countyFips": "41029",
+        "objectIds": [
+          39965
+        ],
+        "pairKey": "41029:spartium-junceum",
+        "scientificName": "Spartium junceum",
+        "speciesId": "spartium-junceum"
+      },
+      {
+        "countyFips": "41031",
+        "objectIds": [
+          425350
+        ],
+        "pairKey": "41031:chondrilla-juncea",
+        "scientificName": "Chondrilla juncea",
+        "speciesId": "chondrilla-juncea"
+      },
+      {
+        "countyFips": "41031",
+        "objectIds": [
+          557880
+        ],
+        "pairKey": "41031:cynosurus-echinatus",
+        "scientificName": "Cynosurus echinatus",
+        "speciesId": "cynosurus-echinatus"
+      },
+      {
+        "countyFips": "41031",
+        "objectIds": [
+          421445
+        ],
+        "pairKey": "41031:senecio-sylvaticus",
+        "scientificName": "Senecio sylvaticus",
+        "speciesId": "senecio-sylvaticus"
+      },
+      {
+        "countyFips": "41033",
+        "objectIds": [
+          934471
+        ],
+        "pairKey": "41033:genista-monspessulana",
+        "scientificName": "Genista monspessulana",
+        "speciesId": "genista-monspessulana"
+      },
+      {
+        "countyFips": "41033",
+        "objectIds": [
+          51184
+        ],
+        "pairKey": "41033:vinca-minor",
+        "scientificName": "Vinca minor",
+        "speciesId": "vinca-minor"
+      },
+      {
+        "countyFips": "41035",
+        "objectIds": [
+          330800
+        ],
+        "pairKey": "41035:centaurea-debeauxii",
+        "scientificName": "Centaurea debeauxii",
+        "speciesId": "centaurea-debeauxii"
+      },
+      {
+        "countyFips": "41035",
+        "objectIds": [
+          289522
+        ],
+        "pairKey": "41035:chondrilla-juncea",
+        "scientificName": "Chondrilla juncea",
+        "speciesId": "chondrilla-juncea"
+      },
+      {
+        "countyFips": "41035",
+        "objectIds": [
+          449150
+        ],
+        "pairKey": "41035:hieracium-aurantiacum",
+        "scientificName": "Hieracium aurantiacum",
+        "speciesId": "hieracium-aurantiacum"
+      },
+      {
+        "countyFips": "41035",
+        "objectIds": [
+          51324
+        ],
+        "pairKey": "41035:tanacetum-parthenium",
+        "scientificName": "Tanacetum parthenium",
+        "speciesId": "tanacetum-parthenium"
+      },
+      {
+        "countyFips": "41037",
+        "objectIds": [
+          365936
+        ],
+        "pairKey": "41037:elymus-repens",
+        "scientificName": "Elymus repens",
+        "speciesId": "elymus-repens"
+      },
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          308749
+        ],
+        "pairKey": "41039:chenopodium-album",
+        "scientificName": "Chenopodium album",
+        "speciesId": "chenopodium-album"
+      },
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          341808
+        ],
+        "pairKey": "41039:clematis-vitalba",
+        "scientificName": "Clematis vitalba",
+        "speciesId": "clematis-vitalba"
+      },
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          635516
+        ],
+        "pairKey": "41039:myrrhis-odorata",
+        "scientificName": "Myrrhis odorata",
+        "speciesId": "myrrhis-odorata"
+      },
+      {
+        "countyFips": "41039",
+        "objectIds": [
+          483728
+        ],
+        "pairKey": "41039:ranunculus-ficaria",
+        "scientificName": "Ranunculus ficaria",
+        "speciesId": "ranunculus-ficaria"
+      },
+      {
+        "countyFips": "41041",
+        "objectIds": [
+          399768
+        ],
+        "pairKey": "41041:centaurea-solstitialis",
+        "scientificName": "Centaurea solstitialis",
+        "speciesId": "centaurea-solstitialis"
+      },
+      {
+        "countyFips": "41041",
+        "objectIds": [
+          255527
+        ],
+        "pairKey": "41041:genista-monspessulana",
+        "scientificName": "Genista monspessulana",
+        "speciesId": "genista-monspessulana"
+      },
+      {
+        "countyFips": "41043",
+        "objectIds": [
+          592144
+        ],
+        "pairKey": "41043:chondrilla-juncea",
+        "scientificName": "Chondrilla juncea",
+        "speciesId": "chondrilla-juncea"
+      },
+      {
+        "countyFips": "41043",
+        "objectIds": [
+          723205
+        ],
+        "pairKey": "41043:ilex-aquifolium",
+        "scientificName": "Ilex aquifolium",
+        "speciesId": "ilex-aquifolium"
+      },
+      {
+        "countyFips": "41043",
+        "objectIds": [
+          375047
+        ],
+        "pairKey": "41043:taeniatherum-caput-medusae",
+        "scientificName": "Taeniatherum caput-medusae",
+        "speciesId": "taeniatherum-caput-medusae"
+      },
+      {
+        "countyFips": "41045",
+        "objectIds": [
+          281139
+        ],
+        "pairKey": "41045:leucanthemum-vulgare",
+        "scientificName": "Leucanthemum vulgare",
+        "speciesId": "leucanthemum-vulgare"
+      },
+      {
+        "countyFips": "41045",
+        "objectIds": [
+          103114
+        ],
+        "pairKey": "41045:thinopyrum-intermedium",
+        "scientificName": "Thinopyrum intermedium",
+        "speciesId": "thinopyrum-intermedium"
+      },
+      {
+        "countyFips": "41045",
+        "objectIds": [
+          227656
+        ],
+        "pairKey": "41045:tragopogon-dubius",
+        "scientificName": "Tragopogon dubius",
+        "speciesId": "tragopogon-dubius"
+      },
+      {
+        "countyFips": "41047",
+        "objectIds": [
+          314469
+        ],
+        "pairKey": "41047:alliaria-petiolata",
+        "scientificName": "Alliaria petiolata",
+        "speciesId": "alliaria-petiolata"
+      },
+      {
+        "countyFips": "41047",
+        "objectIds": [
+          293410
+        ],
+        "pairKey": "41047:hieracium-aurantiacum",
+        "scientificName": "Hieracium aurantiacum",
+        "speciesId": "hieracium-aurantiacum"
+      },
+      {
+        "countyFips": "41047",
+        "objectIds": [
+          19864
+        ],
+        "pairKey": "41047:ilex-aquifolium",
+        "scientificName": "Ilex aquifolium",
+        "speciesId": "ilex-aquifolium"
+      },
+      {
+        "countyFips": "41049",
+        "objectIds": [
+          412198
+        ],
+        "pairKey": "41049:hieracium-caespitosum",
+        "scientificName": "Hieracium caespitosum",
+        "speciesId": "hieracium-caespitosum"
+      },
+      {
+        "countyFips": "41051",
+        "objectIds": [
+          771774
+        ],
+        "pairKey": "41051:centaurea-diffusa",
+        "scientificName": "Centaurea diffusa",
+        "speciesId": "centaurea-diffusa"
+      },
+      {
+        "countyFips": "41051",
+        "objectIds": [
+          532192
+        ],
+        "pairKey": "41051:hieracium-aurantiacum",
+        "scientificName": "Hieracium aurantiacum",
+        "speciesId": "hieracium-aurantiacum"
+      },
+      {
+        "countyFips": "41051",
+        "objectIds": [
+          191436
+        ],
+        "pairKey": "41051:hieracium-pilosella",
+        "scientificName": "Hieracium pilosella",
+        "speciesId": "hieracium-pilosella"
+      },
+      {
+        "countyFips": "41057",
+        "objectIds": [
+          781247
+        ],
+        "pairKey": "41057:bromus-hordeaceus",
+        "scientificName": "Bromus hordeaceus",
+        "speciesId": "bromus-hordeaceus"
+      },
+      {
+        "countyFips": "41057",
+        "objectIds": [
+          298564
+        ],
+        "pairKey": "41057:clematis-vitalba",
+        "scientificName": "Clematis vitalba",
+        "speciesId": "clematis-vitalba"
+      },
+      {
+        "countyFips": "41057",
+        "objectIds": [
+          50174
+        ],
+        "pairKey": "41057:prunus-laurocerasus",
+        "scientificName": "Prunus laurocerasus",
+        "speciesId": "prunus-laurocerasus"
+      },
+      {
+        "countyFips": "41057",
+        "objectIds": [
+          750488
+        ],
+        "pairKey": "41057:solanum-dulcamara",
+        "scientificName": "Solanum dulcamara",
+        "speciesId": "solanum-dulcamara"
+      },
+      {
+        "countyFips": "41059",
+        "objectIds": [
+          535291
+        ],
+        "pairKey": "41059:cynosurus-echinatus",
+        "scientificName": "Cynosurus echinatus",
+        "speciesId": "cynosurus-echinatus"
+      },
+      {
+        "countyFips": "41059",
+        "objectIds": [
+          652091
+        ],
+        "pairKey": "41059:lepidium-latifolium",
+        "scientificName": "Lepidium latifolium",
+        "speciesId": "lepidium-latifolium"
+      },
+      {
+        "countyFips": "41059",
+        "objectIds": [
+          703650
+        ],
+        "pairKey": "41059:leucanthemum-vulgare",
+        "scientificName": "Leucanthemum vulgare",
+        "speciesId": "leucanthemum-vulgare"
+      },
+      {
+        "countyFips": "41059",
+        "objectIds": [
+          797002
+        ],
+        "pairKey": "41059:tanacetum-vulgare",
+        "scientificName": "Tanacetum vulgare",
+        "speciesId": "tanacetum-vulgare"
+      },
+      {
+        "countyFips": "41063",
+        "objectIds": [
+          656493
+        ],
+        "pairKey": "41063:centaurea-debeauxii",
+        "scientificName": "Centaurea debeauxii",
+        "speciesId": "centaurea-debeauxii"
+      },
+      {
+        "countyFips": "41063",
+        "objectIds": [
+          226078
+        ],
+        "pairKey": "41063:sonchus-arvensis",
+        "scientificName": "Sonchus arvensis",
+        "speciesId": "sonchus-arvensis"
+      },
+      {
+        "countyFips": "41065",
+        "objectIds": [
+          487080
+        ],
+        "pairKey": "41065:digitalis-purpurea",
+        "scientificName": "Digitalis purpurea",
+        "speciesId": "digitalis-purpurea"
+      },
+      {
+        "countyFips": "41069",
+        "objectIds": [
+          667790
+        ],
+        "pairKey": "41069:crataegus-monogyna",
+        "scientificName": "Crataegus monogyna",
+        "speciesId": "crataegus-monogyna"
+      },
+      {
+        "countyFips": "41069",
+        "objectIds": [
+          627923
+        ],
+        "pairKey": "41069:cynosurus-echinatus",
+        "scientificName": "Cynosurus echinatus",
+        "speciesId": "cynosurus-echinatus"
+      },
+      {
+        "countyFips": "41071",
+        "objectIds": [
+          254443
+        ],
+        "pairKey": "41071:brachypodium-sylvaticum",
+        "scientificName": "Brachypodium sylvaticum",
+        "speciesId": "brachypodium-sylvaticum"
+      },
+      {
+        "countyFips": "41071",
+        "objectIds": [
+          224987
+        ],
+        "pairKey": "41071:vinca-minor",
+        "scientificName": "Vinca minor",
+        "speciesId": "vinca-minor"
+      },
+      {
+        "countyFips": "41001",
+        "objectIds": [
+          518492
+        ],
+        "pairKey": "41001:lathyrus-latifolius",
+        "scientificName": "Lathyrus latifolius",
+        "speciesId": "lathyrus-latifolius"
+      },
+      {
+        "countyFips": "41017",
+        "objectIds": [
+          926577
+        ],
+        "pairKey": "41017:daucus-carota",
+        "scientificName": "Daucus carota",
+        "speciesId": "daucus-carota"
+      },
+      {
+        "countyFips": "41019",
+        "objectIds": [
+          557471
+        ],
+        "pairKey": "41019:populus-alba",
+        "scientificName": "Populus alba",
+        "speciesId": "populus-alba"
+      },
+      {
+        "countyFips": "41023",
+        "objectIds": [
+          390544
+        ],
+        "pairKey": "41023:agrostis-gigantea",
+        "scientificName": "Agrostis gigantea",
+        "speciesId": "agrostis-gigantea"
+      },
+      {
+        "countyFips": "41023",
+        "objectIds": [
+          598778
+        ],
+        "pairKey": "41023:iris-pseudacorus",
+        "scientificName": "Iris pseudacorus",
+        "speciesId": "iris-pseudacorus"
+      },
+      {
+        "countyFips": "41027",
+        "objectIds": [
+          843376
+        ],
+        "pairKey": "41027:convolvulus-arvensis",
+        "scientificName": "Convolvulus arvensis",
+        "speciesId": "convolvulus-arvensis"
+      },
+      {
+        "countyFips": "41031",
+        "objectIds": [
+          862587
+        ],
+        "pairKey": "41031:arctium-minus",
+        "scientificName": "Arctium minus",
+        "speciesId": "arctium-minus"
+      },
+      {
+        "countyFips": "41031",
+        "objectIds": [
+          62377
+        ],
+        "pairKey": "41031:conium-maculatum",
+        "scientificName": "Conium maculatum",
+        "speciesId": "conium-maculatum"
+      },
+      {
+        "countyFips": "41033",
+        "objectIds": [
+          746453
+        ],
+        "pairKey": "41033:dianthus-armeria",
+        "scientificName": "Dianthus armeria",
+        "speciesId": "dianthus-armeria"
+      },
+      {
+        "countyFips": "41033",
+        "objectIds": [
+          95230
+        ],
+        "pairKey": "41033:myriophyllum-aquaticum",
+        "scientificName": "Myriophyllum aquaticum",
+        "speciesId": "myriophyllum-aquaticum"
+      },
+      {
+        "countyFips": "41043",
+        "objectIds": [
+          48304
+        ],
+        "pairKey": "41043:ipomoea-purpurea",
+        "scientificName": "Ipomoea purpurea",
+        "speciesId": "ipomoea-purpurea"
+      },
+      {
+        "countyFips": "41057",
+        "objectIds": [
+          726195
+        ],
+        "pairKey": "41057:lactuca-serriola",
+        "scientificName": "Lactuca serriola",
+        "speciesId": "lactuca-serriola"
+      },
+      {
+        "countyFips": "41061",
+        "objectIds": [
+          114766
+        ],
+        "pairKey": "41061:hypochaeris-radicata",
+        "scientificName": "Hypochaeris radicata",
+        "speciesId": "hypochaeris-radicata"
+      },
+      {
+        "countyFips": "41065",
+        "objectIds": [
+          748327
+        ],
+        "pairKey": "41065:ligustrum-vulgare",
+        "scientificName": "Ligustrum vulgare",
+        "speciesId": "ligustrum-vulgare"
+      }
+    ],
+    "candidatePairs": [
+      "41001:cytisus-scoparius",
+      "41001:lathyrus-latifolius",
+      "41001:lotus-corniculatus",
+      "41001:thinopyrum-intermedium",
+      "41001:ventenata-dubia",
+      "41005:digitalis-purpurea",
+      "41005:hieracium-pilosella",
+      "41005:sorbus-aucuparia",
+      "41005:vinca-minor",
+      "41011:centaurea-stoebe-ssp-micranthos",
+      "41013:cynosurus-echinatus",
+      "41013:lepidium-campestre",
+      "41013:rubus-laciniatus",
+      "41015:centaurea-diffusa",
+      "41015:vinca-minor",
+      "41017:aegilops-cylindrica",
+      "41017:brachypodium-sylvaticum",
+      "41017:daucus-carota",
+      "41017:solanum-dulcamara",
+      "41017:tribulus-terrestris",
+      "41019:buddleja-davidii",
+      "41019:centaurea-jacea",
+      "41019:centaurea-montana",
+      "41019:foeniculum-vulgare",
+      "41019:genista-monspessulana",
+      "41019:populus-alba",
+      "41019:prunus-laurocerasus",
+      "41019:salsola-tragus",
+      "41019:vinca-minor",
+      "41023:agropyron-cristatum",
+      "41023:agrostis-gigantea",
+      "41023:chenopodium-album",
+      "41023:cynosurus-echinatus",
+      "41023:iris-pseudacorus",
+      "41023:trifolium-aureum",
+      "41027:convolvulus-arvensis",
+      "41027:linaria-dalmatica",
+      "41027:lotus-corniculatus",
+      "41027:mycelis-muralis",
+      "41027:potentilla-recta",
+      "41029:hieracium-caespitosum",
+      "41029:spartium-junceum",
+      "41031:arctium-minus",
+      "41031:brachypodium-sylvaticum",
+      "41031:centaurea-solstitialis",
+      "41031:chondrilla-juncea",
+      "41031:conium-maculatum",
+      "41031:cynosurus-echinatus",
+      "41031:senecio-sylvaticus",
+      "41033:brachypodium-sylvaticum",
+      "41033:clematis-vitalba",
+      "41033:dianthus-armeria",
+      "41033:genista-monspessulana",
+      "41033:myriophyllum-aquaticum",
+      "41033:vinca-minor",
+      "41035:centaurea-debeauxii",
+      "41035:chondrilla-juncea",
+      "41035:hieracium-aurantiacum",
+      "41035:tanacetum-parthenium",
+      "41037:centaurea-solstitialis",
+      "41037:elymus-repens",
+      "41037:iris-pseudacorus",
+      "41039:centaurea-montana",
+      "41039:chenopodium-album",
+      "41039:clematis-vitalba",
+      "41039:crataegus-monogyna",
+      "41039:cytisus-striatus",
+      "41039:myrrhis-odorata",
+      "41039:ranunculus-ficaria",
+      "41039:scleranthus-annuus",
+      "41041:centaurea-solstitialis",
+      "41041:dianthus-armeria",
+      "41041:genista-monspessulana",
+      "41041:tanacetum-vulgare",
+      "41043:chondrilla-juncea",
+      "41043:ilex-aquifolium",
+      "41043:ipomoea-purpurea",
+      "41043:taeniatherum-caput-medusae",
+      "41045:leucanthemum-vulgare",
+      "41045:onopordum-acanthium",
+      "41045:thinopyrum-intermedium",
+      "41045:tragopogon-dubius",
+      "41047:alliaria-petiolata",
+      "41047:centaurea-debeauxii",
+      "41047:hieracium-aurantiacum",
+      "41047:ilex-aquifolium",
+      "41049:hieracium-caespitosum",
+      "41051:centaurea-diffusa",
+      "41051:hieracium-aurantiacum",
+      "41051:hieracium-pilosella",
+      "41057:bromus-hordeaceus",
+      "41057:clematis-vitalba",
+      "41057:lactuca-serriola",
+      "41057:prunus-laurocerasus",
+      "41057:solanum-dulcamara",
+      "41059:cynosurus-echinatus",
+      "41059:lepidium-latifolium",
+      "41059:leucanthemum-vulgare",
+      "41059:tanacetum-vulgare",
+      "41061:hypochaeris-radicata",
+      "41063:centaurea-debeauxii",
+      "41063:iris-pseudacorus",
+      "41063:sonchus-arvensis",
+      "41065:digitalis-purpurea",
+      "41065:ligustrum-vulgare",
+      "41069:crataegus-monogyna",
+      "41069:cynosurus-echinatus",
+      "41071:brachypodium-sylvaticum",
+      "41071:holcus-mollis",
+      "41071:vinca-minor",
+      "41071:vulpia-myuros"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "OR",
+    "county_fips": [
+      "41001",
+      "41005",
+      "41011",
+      "41013",
+      "41015",
+      "41017",
+      "41019",
+      "41023",
+      "41027",
+      "41029",
+      "41031",
+      "41033",
+      "41035",
+      "41037",
+      "41039",
+      "41041",
+      "41043",
+      "41045",
+      "41047",
+      "41049",
+      "41051",
+      "41057",
+      "41059",
+      "41061",
+      "41063",
+      "41065",
+      "41069",
+      "41071"
+    ],
+    "species_ids": [
+      "aegilops-cylindrica",
+      "agropyron-cristatum",
+      "agrostis-gigantea",
+      "alliaria-petiolata",
+      "arctium-minus",
+      "brachypodium-sylvaticum",
+      "bromus-hordeaceus",
+      "buddleja-davidii",
+      "centaurea-debeauxii",
+      "centaurea-diffusa",
+      "centaurea-jacea",
+      "centaurea-montana",
+      "centaurea-solstitialis",
+      "centaurea-stoebe-ssp-micranthos",
+      "chenopodium-album",
+      "chondrilla-juncea",
+      "clematis-vitalba",
+      "conium-maculatum",
+      "convolvulus-arvensis",
+      "crataegus-monogyna",
+      "cynosurus-echinatus",
+      "cytisus-scoparius",
+      "cytisus-striatus",
+      "daucus-carota",
+      "dianthus-armeria",
+      "digitalis-purpurea",
+      "elymus-repens",
+      "foeniculum-vulgare",
+      "genista-monspessulana",
+      "hieracium-aurantiacum",
+      "hieracium-caespitosum",
+      "hieracium-pilosella",
+      "holcus-mollis",
+      "hypochaeris-radicata",
+      "ilex-aquifolium",
+      "ipomoea-purpurea",
+      "iris-pseudacorus",
+      "lactuca-serriola",
+      "lathyrus-latifolius",
+      "lepidium-campestre",
+      "lepidium-latifolium",
+      "leucanthemum-vulgare",
+      "ligustrum-vulgare",
+      "linaria-dalmatica",
+      "lotus-corniculatus",
+      "mycelis-muralis",
+      "myriophyllum-aquaticum",
+      "myrrhis-odorata",
+      "onopordum-acanthium",
+      "populus-alba",
+      "potentilla-recta",
+      "prunus-laurocerasus",
+      "ranunculus-ficaria",
+      "rubus-laciniatus",
+      "salsola-tragus",
+      "scleranthus-annuus",
+      "senecio-sylvaticus",
+      "solanum-dulcamara",
+      "sonchus-arvensis",
+      "sorbus-aucuparia",
+      "spartium-junceum",
+      "taeniatherum-caput-medusae",
+      "tanacetum-parthenium",
+      "tanacetum-vulgare",
+      "thinopyrum-intermedium",
+      "tragopogon-dubius",
+      "tribulus-terrestris",
+      "trifolium-aureum",
+      "ventenata-dubia",
+      "vinca-minor",
+      "vulpia-myuros"
+    ],
+    "pair_keys": [
+      "41001:cytisus-scoparius",
+      "41001:lathyrus-latifolius",
+      "41001:lotus-corniculatus",
+      "41001:thinopyrum-intermedium",
+      "41001:ventenata-dubia",
+      "41005:digitalis-purpurea",
+      "41005:hieracium-pilosella",
+      "41005:sorbus-aucuparia",
+      "41005:vinca-minor",
+      "41011:centaurea-stoebe-ssp-micranthos",
+      "41013:cynosurus-echinatus",
+      "41013:lepidium-campestre",
+      "41013:rubus-laciniatus",
+      "41015:centaurea-diffusa",
+      "41015:vinca-minor",
+      "41017:aegilops-cylindrica",
+      "41017:brachypodium-sylvaticum",
+      "41017:daucus-carota",
+      "41017:solanum-dulcamara",
+      "41017:tribulus-terrestris",
+      "41019:buddleja-davidii",
+      "41019:centaurea-jacea",
+      "41019:centaurea-montana",
+      "41019:foeniculum-vulgare",
+      "41019:genista-monspessulana",
+      "41019:populus-alba",
+      "41019:prunus-laurocerasus",
+      "41019:salsola-tragus",
+      "41019:vinca-minor",
+      "41023:agropyron-cristatum",
+      "41023:agrostis-gigantea",
+      "41023:chenopodium-album",
+      "41023:cynosurus-echinatus",
+      "41023:iris-pseudacorus",
+      "41023:trifolium-aureum",
+      "41027:convolvulus-arvensis",
+      "41027:linaria-dalmatica",
+      "41027:lotus-corniculatus",
+      "41027:mycelis-muralis",
+      "41027:potentilla-recta",
+      "41029:hieracium-caespitosum",
+      "41029:spartium-junceum",
+      "41031:arctium-minus",
+      "41031:brachypodium-sylvaticum",
+      "41031:centaurea-solstitialis",
+      "41031:chondrilla-juncea",
+      "41031:conium-maculatum",
+      "41031:cynosurus-echinatus",
+      "41031:senecio-sylvaticus",
+      "41033:brachypodium-sylvaticum",
+      "41033:clematis-vitalba",
+      "41033:dianthus-armeria",
+      "41033:genista-monspessulana",
+      "41033:myriophyllum-aquaticum",
+      "41033:vinca-minor",
+      "41035:centaurea-debeauxii",
+      "41035:chondrilla-juncea",
+      "41035:hieracium-aurantiacum",
+      "41035:tanacetum-parthenium",
+      "41037:centaurea-solstitialis",
+      "41037:elymus-repens",
+      "41037:iris-pseudacorus",
+      "41039:centaurea-montana",
+      "41039:chenopodium-album",
+      "41039:clematis-vitalba",
+      "41039:crataegus-monogyna",
+      "41039:cytisus-striatus",
+      "41039:myrrhis-odorata",
+      "41039:ranunculus-ficaria",
+      "41039:scleranthus-annuus",
+      "41041:centaurea-solstitialis",
+      "41041:dianthus-armeria",
+      "41041:genista-monspessulana",
+      "41041:tanacetum-vulgare",
+      "41043:chondrilla-juncea",
+      "41043:ilex-aquifolium",
+      "41043:ipomoea-purpurea",
+      "41043:taeniatherum-caput-medusae",
+      "41045:leucanthemum-vulgare",
+      "41045:onopordum-acanthium",
+      "41045:thinopyrum-intermedium",
+      "41045:tragopogon-dubius",
+      "41047:alliaria-petiolata",
+      "41047:centaurea-debeauxii",
+      "41047:hieracium-aurantiacum",
+      "41047:ilex-aquifolium",
+      "41049:hieracium-caespitosum",
+      "41051:centaurea-diffusa",
+      "41051:hieracium-aurantiacum",
+      "41051:hieracium-pilosella",
+      "41057:bromus-hordeaceus",
+      "41057:clematis-vitalba",
+      "41057:lactuca-serriola",
+      "41057:prunus-laurocerasus",
+      "41057:solanum-dulcamara",
+      "41059:cynosurus-echinatus",
+      "41059:lepidium-latifolium",
+      "41059:leucanthemum-vulgare",
+      "41059:tanacetum-vulgare",
+      "41061:hypochaeris-radicata",
+      "41063:centaurea-debeauxii",
+      "41063:iris-pseudacorus",
+      "41063:sonchus-arvensis",
+      "41065:digitalis-purpurea",
+      "41065:ligustrum-vulgare",
+      "41069:crataegus-monogyna",
+      "41069:cynosurus-echinatus",
+      "41071:brachypodium-sylvaticum",
+      "41071:holcus-mollis",
+      "41071:vinca-minor",
+      "41071:vulpia-myuros"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=19864%2C25142%2C39965%2C45417%2C48304%2C50174%2C51184%2C51324%2C51621%2C53086%2C61965%2C62377%2C80752%2C91995%2C95230%2C103114%2C108516%2C114766%2C129891%2C155003%2C157514%2C164029%2C169203%2C180803%2C180833%2C187205%2C187391%2C191436%2C194671%2C219695%2C220880%2C224987%2C226078%2C226504%2C227656%2C254443%2C255527%2C281139%2C289522%2C293410%2C298564%2C301885%2C302752%2C308749%2C313376%2C314469%2C316258%2C320355%2C322900%2C330800%2C341776%2C341808%2C346494%2C365246%2C365936%2C375047%2C380195%2C388421%2C390544%2C399768%2C402667%2C409898%2C411156%2C412198%2C414630%2C415732%2C417302%2C418152%2C419129%2C419866%2C421445%2C425350%2C427747%2C433837%2C439825%2C449150%2C460037%2C462120%2C462162%2C463876%2C470233%2C483728%2C487080%2C497209%2C518203%2C518492%2C524614%2C532192%2C535291%2C545828%2C547848%2C549528%2C555958%2C557471%2C557621%2C557880%2C567143%2C571170%2C592144%2C598778&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-02T02:42:25.595Z",
+      "record_count": 100
+    },
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=19864%2C25142%2C39965%2C45417%2C48304%2C50174%2C51184%2C51324%2C51621%2C53086%2C61965%2C62377%2C80752%2C91995%2C95230%2C103114%2C108516%2C114766%2C129891%2C155003%2C157514%2C164029%2C169203%2C180803%2C180833%2C187205%2C187391%2C191436%2C194671%2C219695%2C220880%2C224987%2C226078%2C226504%2C227656%2C254443%2C255527%2C281139%2C289522%2C293410%2C298564%2C301885%2C302752%2C308749%2C313376%2C314469%2C316258%2C320355%2C322900%2C330800%2C341776%2C341808%2C346494%2C365246%2C365936%2C375047%2C380195%2C388421%2C390544%2C399768%2C402667%2C409898%2C411156%2C412198%2C414630%2C415732%2C417302%2C418152%2C419129%2C419866%2C421445%2C425350%2C427747%2C433837%2C439825%2C449150%2C460037%2C462120%2C462162%2C463876%2C470233%2C483728%2C487080%2C497209%2C518203%2C518492%2C524614%2C532192%2C535291%2C545828%2C547848%2C549528%2C555958%2C557471%2C557621%2C557880%2C567143%2C571170%2C592144%2C598778&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-02T02:42:27.050Z",
+      "record_count": 100
+    },
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=627923%2C635516%2C642592%2C652091%2C654354%2C656493%2C667790%2C669008%2C677757%2C691016%2C692108%2C697637%2C698546%2C703650%2C710771%2C723072%2C723205%2C726195%2C730726%2C745278%2C746453%2C747956%2C748327%2C750488%2C753734%2C756841%2C758412%2C771774%2C773372%2C779975%2C781247%2C784947%2C797002%2C803488%2C809138%2C816708%2C821645%2C824886%2C829709%2C843376%2C846070%2C860835%2C862587%2C882962%2C909358%2C910365%2C910872%2C917977%2C918532%2C925751%2C926577%2C934014%2C934471&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-02T02:42:28.258Z",
+      "record_count": 53
+    },
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=627923%2C635516%2C642592%2C652091%2C654354%2C656493%2C667790%2C669008%2C677757%2C691016%2C692108%2C697637%2C698546%2C703650%2C710771%2C723072%2C723205%2C726195%2C730726%2C745278%2C746453%2C747956%2C748327%2C750488%2C753734%2C756841%2C758412%2C771774%2C773372%2C779975%2C781247%2C784947%2C797002%2C803488%2C809138%2C816708%2C821645%2C824886%2C829709%2C843376%2C846070%2C860835%2C862587%2C882962%2C909358%2C910365%2C910872%2C917977%2C918532%2C925751%2C926577%2C934014%2C934471&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-02T02:42:29.381Z",
+      "record_count": 53
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/artifacts/usfs-current-invasive-plants-0001-before.json",
+      "sha256": "c005dcbf5b23d58529698119e7c2bae1dd4b22e4870798cd1686792077073eaf",
+      "bytes": 187371,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/artifacts/usfs-current-invasive-plants-0001-after.json",
+      "sha256": "c005dcbf5b23d58529698119e7c2bae1dd4b22e4870798cd1686792077073eaf",
+      "bytes": 187371,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/artifacts/usfs-current-invasive-plants-0002-before.json",
+      "sha256": "d97bd37b311bd9b89c6b46d57be048267e7d0c855040162ff1169e8cd509eb91",
+      "bytes": 80600,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/artifacts/usfs-current-invasive-plants-0002-after.json",
+      "sha256": "d97bd37b311bd9b89c6b46d57be048267e7d0c855040162ff1169e8cd509eb91",
+      "bytes": 80600,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/assertions.ndjson",
+      "sha256": "629678484cdd9cd6709c4912c37c208f50a140889394a2e1fcb9211403ee0441",
+      "bytes": 446399,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/reviews.ndjson",
+      "sha256": "5b013276e5a810664172646faa1f06e6bc7018513f1550c7d8562d9a31e7c026",
+      "bytes": 124958,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260902T024147Z__usfs-current-invasive-plants__81f8a2af7b5a/outcomes.ndjson",
+      "sha256": "7c38c2ea4aeec7468efde3962e7a421da8a0e6131aa8b48a96a4e320cd614d10",
+      "bytes": 227702,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 111,
+    "candidate_records": 153,
+    "assertion_events": 111,
+    "review_events": 111,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 111
+  },
+  "errors": [],
+  "known_caveats": [
+    "Occurrence evidence is limited to represented Forest Service lands."
+  ],
+  "source_warnings": [
+    "USFS current invasive-plant rows support recorded presence on represented Forest Service lands only.",
+    "Targeted selection and source silence create no absence or non-detection claim.",
+    "0 selected object records failed one or more conservative publication gates."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usfs-current-invasive-plants --state OR --candidate-file src/data/research/national-acquisition-plans/usfs-current-invasive-plants-or-complete-20260902-r1.json --output-root src/data/research/runs --pairs 41001:cytisus-scoparius,41001:lathyrus-latifolius,41001:lotus-corniculatus,41001:thinopyrum-intermedium,41001:ventenata-dubia,41005:digitalis-purpurea,41005:hieracium-pilosella,41005:sorbus-aucuparia,41005:vinca-minor,41011:centaurea-stoebe-ssp-micranthos,41013:cynosurus-echinatus,41013:lepidium-campestre,41013:rubus-laciniatus,41015:centaurea-diffusa,41015:vinca-minor,41017:aegilops-cylindrica,41017:brachypodium-sylvaticum,41017:daucus-carota,41017:solanum-dulcamara,41017:tribulus-terrestris,41019:buddleja-davidii,41019:centaurea-jacea,41019:centaurea-montana,41019:foeniculum-vulgare,41019:genista-monspessulana,41019:populus-alba,41019:prunus-laurocerasus,41019:salsola-tragus,41019:vinca-minor,41023:agropyron-cristatum,41023:agrostis-gigantea,41023:chenopodium-album,41023:cynosurus-echinatus,41023:iris-pseudacorus,41023:trifolium-aureum,41027:convolvulus-arvensis,41027:linaria-dalmatica,41027:lotus-corniculatus,41027:mycelis-muralis,41027:potentilla-recta,41029:hieracium-caespitosum,41029:spartium-junceum,41031:arctium-minus,41031:brachypodium-sylvaticum,41031:centaurea-solstitialis,41031:chondrilla-juncea,41031:conium-maculatum,41031:cynosurus-echinatus,41031:senecio-sylvaticus,41033:brachypodium-sylvaticum,41033:clematis-vitalba,41033:dianthus-armeria,41033:genista-monspessulana,41033:myriophyllum-aquaticum,41033:vinca-minor,41035:centaurea-debeauxii,41035:chondrilla-juncea,41035:hieracium-aurantiacum,41035:tanacetum-parthenium,41037:centaurea-solstitialis,41037:elymus-repens,41037:iris-pseudacorus,41039:centaurea-montana,41039:chenopodium-album,41039:clematis-vitalba,41039:crataegus-monogyna,41039:cytisus-striatus,41039:myrrhis-odorata,41039:ranunculus-ficaria,41039:scleranthus-annuus,41041:centaurea-solstitialis,41041:dianthus-armeria,41041:genista-monspessulana,41041:tanacetum-vulgare,41043:chondrilla-juncea,41043:ilex-aquifolium,41043:ipomoea-purpurea,41043:taeniatherum-caput-medusae,41045:leucanthemum-vulgare,41045:onopordum-acanthium,41045:thinopyrum-intermedium,41045:tragopogon-dubius,41047:alliaria-petiolata,41047:centaurea-debeauxii,41047:hieracium-aurantiacum,41047:ilex-aquifolium,41049:hieracium-caespitosum,41051:centaurea-diffusa,41051:hieracium-aurantiacum,41051:hieracium-pilosella,41057:bromus-hordeaceus,41057:clematis-vitalba,41057:lactuca-serriola,41057:prunus-laurocerasus,41057:solanum-dulcamara,41059:cynosurus-echinatus,41059:lepidium-latifolium,41059:leucanthemum-vulgare,41059:tanacetum-vulgare,41061:hypochaeris-radicata,41063:centaurea-debeauxii,41063:iris-pseudacorus,41063:sonchus-arvensis,41065:digitalis-purpurea,41065:ligustrum-vulgare,41069:crataegus-monogyna,41069:cynosurus-echinatus,41071:brachypodium-sylvaticum,41071:holcus-mollis,41071:vinca-minor,41071:vulpia-myuros"
+}
