@@ -7,20 +7,20 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `3620`
+- Verified present: `3913`
 - Verified absent: `38`
 - Not detected: `0`
-- Researched unresolved: `15840`
-- Not researched: `78158`
-- Determination coverage: `3.75%`
-- Research coverage: `19.97%`
-- Explicit outcome coverage: `19.9660%`
-- Applicable protocol cells: `343`
+- Researched unresolved: `15723`
+- Not researched: `77982`
+- Determination coverage: `4.05%`
+- Research coverage: `20.15%`
+- Explicit outcome coverage: `20.1462%`
+- Applicable protocol cells: `374`
 - Current complete protocol cells: `182`
-- Protocol completion: `56.85%`
-- Current protocol completion: `53.06%`
-- Evidence records: `8910`
-- Research runs: `35`
+- Protocol completion: `52.14%`
+- Current protocol completion: `48.66%`
+- Evidence records: `9203`
+- Research runs: `36`
 - Rejection records: `1288`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 39 | 0 | 0 |
 | Atlantic ivy (`hedera-hibernica`) | plants | 39 | 0 | 0 |
-| Meadow hawkweed (`hieracium-caespitosum`) | plants | 39 | 0 | 0 |
-| English holly (`ilex-aquifolium`) | plants | 39 | 0 | 0 |
-| Dalmatian Toadflax (`linaria-dalmatica`) | plants | 39 | 0 | 0 |
-| Bulbous bluegrass (`poa-bulbosa`) | plants | 39 | 0 | 0 |
 | Saltcedar (`tamarix-ramosissima`) | plants | 39 | 0 | 0 |
+| Bristly dogstail grass (`cynosurus-echinatus`) | plants | 38 | 0 | 1 |
+| Japanese rose (`kerria-japonica`) | plants | 38 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 38 | 0 | 1 |
+| Japanese sweet coltsfoot (`petasites-japonicus`) | plants | 38 | 0 | 1 |
+| Prickly Russian thistle (`salsola-tragus`) | plants | 38 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 37 | 0 | 1 |
+| Common nipplewort (`lapsana-communis`) | plants | 37 | 0 | 1 |
+| Wall-lettuce (`mycelis-muralis`) | plants | 37 | 0 | 1 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 37 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 37 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 36 | 0 | 1 |
+| Wall hawkweed (`hieracium-murorum`) | plants | 36 | 0 | 1 |
+| Mouseear hawkweed (`hieracium-pilosella`) | plants | 36 | 0 | 1 |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 35 | 0 | 1 |
 | Rock pigeon (`columba-livia`) | wildlife | 35 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 35 | 0 | 1 |
+| Perennial cornflower (`centaurea-montana`) | plants | 34 | 0 | 1 |
+| Tall hawkweed (`hieracium-piloselloides`) | plants | 34 | 0 | 1 |
+| Cherry laurel (`prunus-laurocerasus`) | plants | 34 | 0 | 1 |
+| Climbing Nightshade (`solanum-dulcamara`) | plants | 34 | 0 | 1 |
+| European mountain ash (`sorbus-aucuparia`) | plants | 34 | 0 | 1 |
 | Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 33 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 26 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 25 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 39 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 39 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 39 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 39 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 39 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 39 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 39 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 39 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 39 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 39 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 39 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 39 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 39 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 39 | 0 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 32 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,7 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 9 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
-| USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
+| USFS Current Invasive Plant Locations | operational | 2026-09-02T02:55:02.388Z | 293 | 76 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2557 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1317 | 192 |
