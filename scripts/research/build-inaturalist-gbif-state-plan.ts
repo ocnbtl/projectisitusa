@@ -53,7 +53,7 @@ const SNAPSHOT = {
   datasetMetadataModifiedAt: "2026-08-28T15:11:51.543-04:00",
   recordsCreatedThrough: "2026-08-24T15:00:17-07:00",
   expectedCrawlId: 605,
-  expectedLastParsed: "2026-08-29T01:09:50.488-04:00",
+  expectedLastParsed: "2026-08-29T05:09:50.488Z",
   maximumCoordinateUncertaintyMeters: 10_000,
   allowedLicenses: [
     "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
