@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/cpnwh-preserved-specimens-parameters.schema.json",
+  "title": "CPNWH retained preserved-specimen witness parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stateCode",
+    "mode",
+    "datasetUrl",
+    "usagePolicyUrl",
+    "datasetLastModified",
+    "datasetEtag",
+    "archiveBytes",
+    "archiveSha256",
+    "occurrenceBytes",
+    "occurrenceSha256",
+    "archiveAcquiredAt",
+    "preflightEvaluationId",
+    "targetPairSetSha256",
+    "targets",
+    "candidatePairs"
+  ],
+  "properties": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "mode": { "const": "retained-archive-witnesses" },
+    "datasetUrl": { "const": "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip" },
+    "usagePolicyUrl": { "const": "https://www.pnwherbaria.org/data/datausagepolicy.php" },
+    "datasetLastModified": { "const": "Thu, 04 Jun 2026 19:05:39 GMT" },
+    "datasetEtag": { "const": "\"2045cebe-65454012e379b\"" },
+    "archiveBytes": { "const": 541445822 },
+    "archiveSha256": { "const": "cfb9ae60c2780734426367fd5371baa2262ac97b25214b33ba07f04a5d6e4180" },
+    "occurrenceBytes": { "const": 2132017127 },
+    "occurrenceSha256": { "const": "2e089934fd1d9d1c9791f793593b5f2e4af8006fdd1c44196b14bd2b8194d8b5" },
+    "archiveAcquiredAt": { "type": "string", "format": "date-time" },
+    "preflightEvaluationId": { "type": "string", "pattern": "^cpnwh-preserved-specimens-preflight-[0-9]{8}-r[0-9]+$" },
+    "targetPairSetSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "pairKey",
+          "recordId",
+          "occurrenceId",
+          "countyFips",
+          "stateCode",
+          "sourceState",
+          "sourceCounty",
+          "speciesId",
+          "scientificName",
+          "eventDate",
+          "year",
+          "institutionCode",
+          "collectionCode",
+          "catalogNumber",
+          "license"
+        ],
+        "properties": {
+          "pairKey": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
+          "recordId": { "type": "string", "pattern": "^[0-9]+$" },
+          "occurrenceId": { "type": "string", "minLength": 20 },
+          "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+          "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "sourceState": { "type": "string", "minLength": 1 },
+          "sourceCounty": { "type": "string", "minLength": 1 },
+          "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "scientificName": { "type": "string", "minLength": 1 },
+          "eventDate": { "type": "string", "minLength": 1 },
+          "year": { "type": "integer", "minimum": 1500, "maximum": 2026 },
+          "institutionCode": { "type": "string" },
+          "collectionCode": { "type": "string" },
+          "catalogNumber": { "type": "string" },
+          "license": { "const": "https://creativecommons.org/publicdomain/zero/1.0/" }
+        }
+      }
+    },
+    "candidatePairs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" }
+    }
+  }
+}

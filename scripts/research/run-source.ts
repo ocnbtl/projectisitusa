@@ -22,6 +22,10 @@ import {
 import { usfsCurrentInvasivePlantsTargetedAdapter } from "./adapters/usfs-current-invasive-plants-targeted";
 import { blmAimTerrestrialInvasivePlantsAdapter } from "./adapters/blm-aim-terrestrial-invasive-plants";
 import {
+  cpnwhPreservedSpecimensAdapter,
+  type CpnwhTarget,
+} from "./adapters/cpnwh-preserved-specimens";
+import {
   INATURALIST_GBIF_DATASET_KEY,
   inaturalistGbifResearchGradeAdapter,
 } from "./adapters/inaturalist-gbif-research-grade";
@@ -128,6 +132,21 @@ type CandidateFile = {
       sourceCountyName: string;
       sourceStateCode: string;
     }>;
+  };
+  cpnwh?: {
+    mode: "retained-archive-witnesses";
+    datasetUrl: string;
+    usagePolicyUrl: string;
+    datasetLastModified: string;
+    datasetEtag: string;
+    archiveBytes: number;
+    archiveSha256: string;
+    occurrenceBytes: number;
+    occurrenceSha256: string;
+    archiveAcquiredAt: string;
+    preflightEvaluationId: string;
+    targetPairSetSha256: string;
+    targets: CpnwhTarget[];
   };
   eddmapsReplay?: {
     mode: "committed-snapshot-replay";
@@ -478,6 +497,9 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === blmAimTerrestrialInvasivePlantsAdapter.sourceId) {
     return blmAimTerrestrialInvasivePlantsAdapter;
   }
+  if (sourceId === cpnwhPreservedSpecimensAdapter.sourceId) {
+    return cpnwhPreservedSpecimensAdapter;
+  }
   if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
     return usgsBbsRouteStartAdapter;
   }
@@ -577,6 +599,23 @@ function buildParameters(
     return {
       stateCode,
       ...candidateFile.blmAim,
+      targets,
+      candidatePairs,
+    };
+  }
+  if (sourceId === cpnwhPreservedSpecimensAdapter.sourceId) {
+    if (!candidateFile.cpnwh || candidateFile.sourceId !== sourceId) {
+      throw new Error("CPNWH preserved-specimen research requires its committed retained-archive plan.");
+    }
+    const selected = new Set(candidatePairs);
+    const targets = candidateFile.cpnwh.targets.filter((target) => selected.has(target.pairKey));
+    if (targets.length !== candidatePairs.length) {
+      throw new Error("CPNWH retained witness identities do not cover every selected candidate pair.");
+    }
+    return {
+      stateCode,
+      ...candidateFile.cpnwh,
+      targetPairSetSha256: sha256(candidatePairs.join("\n")),
       targets,
       candidatePairs,
     };
@@ -890,6 +929,13 @@ async function main() {
                 "GET and verify unchanged official ArcGIS layer metadata after acquisition",
               ],
               stabilityGate: "Layer last-edit identity and metadata must remain unchanged, and both retained responses for every chunk must normalize identically.",
+              additionalRequests: 0,
+            }
+        : options.sourceId === cpnwhPreservedSpecimensAdapter.sourceId
+          ? {
+              providerNetworkRequests: 0,
+              replaySource: "Retained CPNWH witness rows selected by the committed complete-archive preflight.",
+              stabilityGate: "The committed archive, occurrence, target-pair, and witness identities must match the sealed plan.",
               additionalRequests: 0,
             }
         : options.sourceId === eddMapsSnapshotReplayAdapter.sourceId

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-02",
+  "updatedAt": "2026-09-03",
   "sources": [
     {
       "id": "eddmaps",
@@ -426,6 +426,35 @@
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       }
+    },
+    {
+      "id": "cpnwh-preserved-specimens",
+      "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
+      "aliases": ["CPNWH Darwin Core Archive", "Pacific Northwest Herbaria specimen records"],
+      "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
+      "tier": "academic",
+      "homepage": "https://www.pnwherbaria.org/",
+      "access": "download",
+      "geographicScope": ["United States", "Pacific Northwest"],
+      "evidenceCapabilities": ["recorded-present"],
+      "negativeSemantics": "none",
+      "refreshCadenceDays": 180,
+      "dataFreshThrough": "2026-06-04",
+      "status": "operational",
+      "adapter": null,
+      "researchAdapter": {
+        "id": "cpnwh-preserved-specimens-snapshot",
+        "module": "scripts/research/adapters/cpnwh-preserved-specimens.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/cpnwh-preserved-specimens-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
+        "geographyMatchingPolicy": "Explicit provider state and county-equivalent text must resolve uniquely to an active national-v1 county-equivalent registry entry. Missing, retired, unknown, and ambiguous county names are rejected; coordinates are not used.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      },
+      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
     },
     {
       "id": "gbif-preserved-specimens",
