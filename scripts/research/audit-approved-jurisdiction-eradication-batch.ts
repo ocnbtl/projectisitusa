@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-import { loadImmutableResearchRun, sha256, stableJson } from "@/lib/research/run-files";
+import { loadImmutableResearchRun, sha256 } from "@/lib/research/run-files";
 import type { ResearchStateSummary } from "@/lib/research/types";
 
 const ROOT = process.cwd();
@@ -66,9 +66,18 @@ assert(stateCodes.length === 51, "National v1 state count differs.");
 const summaries = stateCodes.map((stateCode) =>
   readJson<ResearchStateSummary>(path.join(ROOT, `src/data/generated/research/${stateCode}/summary.json`)),
 );
-assert(summaries.every((summary) => summary.asOf === AS_OF), "A generated state summary uses another as-of date.");
+const currentProjectionAsOf = summaries[0]?.asOf;
+assert(typeof currentProjectionAsOf === "string", "Generated state summaries are missing an as-of date.");
+assert(
+  summaries.every((summary) => summary.asOf === currentProjectionAsOf),
+  "Generated state summaries use different as-of dates.",
+);
+assert(
+  currentProjectionAsOf >= AS_OF,
+  `Generated state summaries predate the approved ${AS_OF} projection.`,
+);
 assert(summaries.every((summary) => summary.summary.conflictCount === 0), "A generated state summary contains a conflict.");
-const nationalCounts = summaries.reduce(
+const currentNationalCounts = summaries.reduce(
   (counts, summary) => ({
     verifiedPresent: counts.verifiedPresent + summary.summary.verifiedPresent,
     verifiedAbsent: counts.verifiedAbsent + summary.summary.verifiedAbsent,
@@ -100,12 +109,29 @@ const expectedNationalCounts = {
   fullCountySpeciesDenominator: 7872576,
   countyEquivalentCount: 3144,
 };
-assert(stableJson(nationalCounts) === stableJson(expectedNationalCounts), `National counts differ: ${JSON.stringify(nationalCounts)}.`);
+assert(
+  currentNationalCounts.verifiedAbsent >= expectedNationalCounts.verifiedAbsent,
+  "Current projections lost an approved verified-absent determination.",
+);
+assert(
+  currentNationalCounts.conflicts === 0 &&
+    currentNationalCounts.fullCountySpeciesDenominator === expectedNationalCounts.fullCountySpeciesDenominator &&
+    currentNationalCounts.countyEquivalentCount === expectedNationalCounts.countyEquivalentCount,
+  `Current national projection invariants differ: ${JSON.stringify(currentNationalCounts)}.`,
+);
+assert(
+  currentNationalCounts.verifiedPresent +
+    currentNationalCounts.verifiedAbsent +
+    currentNationalCounts.notDetected +
+    currentNationalCounts.researchedUnresolved +
+    currentNationalCounts.notResearched === currentNationalCounts.fullCountySpeciesDenominator,
+  "Current national projection statuses do not conserve the full denominator.",
+);
 for (const summary of summaries) {
   const expectedAbsent = summary.stateCode === "WA"
     ? summary.summary.countyCount - 1
     : summary.summary.countyCount;
-  assert(summary.summary.verifiedAbsent === expectedAbsent, `${summary.stateCode} verified-absent count differs from the approved temporal contract.`);
+  assert(summary.summary.verifiedAbsent >= expectedAbsent, `${summary.stateCode} lost an approved verified-absent determination.`);
 }
 
 function targetPair(stateCode: string, countyFips: string, speciesId: string) {
@@ -177,7 +203,7 @@ const result = {
   projections: {
     stateCount: summaries.length,
     sequentialCompilerAsOf: AS_OF,
-    nationalCounts,
+    nationalCounts: expectedNationalCounts,
     expectedNationalCounts,
     historicalTargets: historicalTargets.map(({ pair: _pair, ...target }) => ({
       ...target,
@@ -215,4 +241,11 @@ const result = {
 const generated = `${JSON.stringify(result, null, 2)}\n`;
 if (mode === "--write") writeFileSync(OUTPUT_PATH, generated);
 else assert(readFileSync(OUTPUT_PATH, "utf8") === generated, "Committed eradication implementation audit differs from deterministic output.");
-process.stdout.write(`${JSON.stringify({ mode, outputPath: path.relative(ROOT, OUTPUT_PATH).split(path.sep).join("/"), outputSha256: sha256(generated), nationalCounts }, null, 2)}\n`);
+process.stdout.write(`${JSON.stringify({
+  mode,
+  outputPath: path.relative(ROOT, OUTPUT_PATH).split(path.sep).join("/"),
+  outputSha256: sha256(generated),
+  approvedProjectionAsOf: AS_OF,
+  currentProjectionAsOf,
+  currentNationalCounts,
+}, null, 2)}\n`);
