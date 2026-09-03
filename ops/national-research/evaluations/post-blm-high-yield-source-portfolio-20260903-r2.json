@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "post-blm-high-yield-source-portfolio-20260903-r2",
+  "evaluatedAt": "2026-09-03T17:16:55.091Z",
+  "status": "new-lanes-executed-below-threshold-or-durably-blocked",
+  "objective": "Continue cumulative high-yield county-species determination work after the r1 portfolio without replaying completed source snapshots, padding progress with low-yield tranches, or weakening evidence semantics.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseline": {
+    "commit": "fccb1fce1d0324de1491a651efe985b85f411efb",
+    "totalCountySpeciesPairs": 7872576,
+    "verifiedPresent": 276608,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 279751,
+    "notDetected": 236,
+    "researchedUnresolved": 1314212,
+    "notResearched": 6278377,
+    "conflicts": 0,
+    "coveragePercent": 3.553487448,
+    "historicalFixedBaseline": {
+      "commit": "f08cf185b1ee7291c827083181bb7ae76700166c",
+      "totalUniqueDeterminations": 200218,
+      "gainAtEvaluationStart": 79533
+    }
+  },
+  "yieldPolicy": {
+    "stretchTargetNetDeterminations": 25000,
+    "checkpointNetDeterminations": 5000,
+    "substantialMinimumNetDeterminations": 10000,
+    "conditionalSourceMinimumNetPairs": 2000,
+    "interpretation": "Every yield is an exact county-species set difference against the pinned current research projection. Records, requests, gross pairs, source screens, and unresolved/non-detected outcomes are not determinations. Below-gate sources are not combined to manufacture a GO decision."
+  },
+  "priorPortfolio": {
+    "path": "ops/national-research/evaluations/post-blm-high-yield-source-portfolio-20260903-r1.json",
+    "replayed": false,
+    "continuedFromItsBlockedOrExhaustedState": true
+  },
+  "implementedAnalysisTools": [
+    {
+      "path": "scripts/research/preflight-blm-nisims.ts",
+      "purpose": "Deterministically validate the provider archive, require positive percent cover and exact taxonomy, resolve each centroid inside its declared state, subtract current verified-present pairs, reject verified-absent conflicts, and hash gross/overlap/net pair sets."
+    },
+    {
+      "path": "scripts/research/preflight-gbif-ipams-national.ts",
+      "purpose": "Extend the historical Alabama-only IPAMS audit to the entire retained archive, require region-applicable nonnative status and exact taxonomy, double-check source county against topology, subtract current verified-present pairs, measure prior IPAMS screens, and hash gross/overlap/net pair sets."
+    }
+  ],
+  "lanes": [
+    {
+      "sourceId": "blm-nisims",
+      "source": "BLM National Invasive Species Information Management System - Plants",
+      "authority": "Bureau of Land Management via USGS ScienceBase and GBIF-US IPT",
+      "disposition": "no-go-below-yield-threshold",
+      "newToResearchRegistry": true,
+      "datasetIdentity": {
+        "scienceBaseItemId": "6488f699d34ef77fcafe446f",
+        "datasetKey": "cc63e998-fe1b-468d-94f1-6afcf494d0e4",
+        "doi": "10.15468/y4xndh",
+        "archiveUrl": "https://ipt.gbif.us/archive.do?r=blm_nisims",
+        "archiveFilename": "dwca-blm_nisims-v1.2.zip",
+        "lastModified": "2023-01-04T17:25:43Z",
+        "license": "CC0-1.0"
+      },
+      "retainedPreflightArtifacts": {
+        "archiveBytes": 7449124,
+        "archiveSha256": "60f8d6e8974b3b95e89e8d291db3cd1472548c18e85f8c3f3468abcd7c3d726c",
+        "occurrenceBytes": 54516023,
+        "occurrenceSha256": "8544e613a4f835c7c59cde648435cb59ab06512fded53b77fb0e234cc9123523",
+        "emlSha256": "bca5abb478b269331aa4a9e2a7aaa528f5834009b57f10ef9d1bb66d06a001e8",
+        "metaSha256": "6acfaedea65ff8ff2ec9cc02be54cf1e1d9456faedabb757f9cc492d147196c5"
+      },
+      "exactMeasurement": {
+        "sourceRows": 101203,
+        "sourceTaxa": 320,
+        "exactCatalogTaxa": 184,
+        "acceptedMappedRecords": 69973,
+        "grossUniqueCountySpeciesPairs": 2095,
+        "existingVerifiedPresentOverlaps": 1893,
+        "verifiedAbsentConflicts": 0,
+        "sameSourceSnapshotCompletedOverlaps": 0,
+        "withinPlanDuplicates": 67878,
+        "netEligiblePairs": 202,
+        "grossPairSetSha256": "d145ba67734bb920e104a790b1dcea7b14588cc459e08a3fe3439d77e49f7ff1",
+        "presentOverlapSetSha256": "bb6d229fdb8a1b397091ed0fbb541d2df11758139ee2af1bd22a410f5765881c",
+        "netEligiblePairSetSha256": "c06b14633e17865d3a059ca1daef6d6b3ba6245b5d38701308909bce79e38383"
+      },
+      "semantics": "Only HumanObservation rows explicitly marked present with percent cover greater than zero, introduced establishment, an exact unambiguous catalog name, stable occurrence identity, valid event date, and one county centroid inside the declared state qualified. Zero-cover and absent rows created no determination or non-detection.",
+      "blockers": [
+        "Only 202 exact net pairs remain after subtracting 1893 existing verified-present pairs.",
+        "The snapshot covers observations through 2019-01-30 and NISIMS was retired in favor of VMAP; no public current national VMAP infestation export was found."
+      ],
+      "replayCommand": "$env:ISITUSA_BASELINE_COMMIT='fccb1fce1d0324de1491a651efe985b85f411efb'; C:/Code/tools/node-v22.23.2-win-x64/node.exe --import tsx scripts/research/preflight-blm-nisims.ts --source-directory C:/Users/Ocean/AppData/Local/Temp/isitusa-nisims-preflight-v1.2"
+    },
+    {
+      "sourceId": "gbif-ipams",
+      "source": "Invasive Plant Atlas of the MidSouth",
+      "authority": "Mississippi State University Geosystems Research Institute via GBIF-US IPT",
+      "disposition": "no-go-below-yield-threshold",
+      "newToResearchRegistry": false,
+      "newScope": "Full national archive residual after the previously completed Alabama-only source screen",
+      "datasetIdentity": {
+        "datasetKey": "d587c7e5-d442-437a-a6d7-d1a78ecf2300",
+        "doi": "10.15468/3j3ueb",
+        "archiveUrl": "https://ipt.gbif.us/archive.do?r=ipams",
+        "archiveFilename": "dwca-ipams-v1.4.zip",
+        "lastModified": "2020-07-31T18:39:03Z",
+        "license": "CC0-1.0"
+      },
+      "retainedPreflightArtifacts": {
+        "archiveBytes": 898409,
+        "archiveSha256": "d9fed59d6b61541b9234c330990703fc823ad0a919acf8b2639f19a0b9a64e4b",
+        "occurrenceBytes": 12884816,
+        "occurrenceSha256": "57e011f88799e68e903c9999665da0ce76b069e8abb62adab93ead1f95795d7e",
+        "emlSha256": "1bf923fffc81199623492d9a22b63348b1fb265d4ebf6fc83dfa32fa43fd86f9",
+        "metaSha256": "deab7d2648df646fb121272f66917d1787ed96d884e85a3ea704baa62d2a468d"
+      },
+      "exactMeasurement": {
+        "sourceRows": 12273,
+        "sourceTaxa": 262,
+        "exactCatalogTaxa": 191,
+        "acceptedMappedRecords": 11203,
+        "grossUniqueCountySpeciesPairs": 3215,
+        "existingVerifiedPresentOverlaps": 2900,
+        "verifiedAbsentConflicts": 0,
+        "sameSourceSnapshotCompletedOverlaps": 305,
+        "withinPlanDuplicates": 7988,
+        "netEligiblePairs": 315,
+        "grossPairSetSha256": "604048cc6021cf80c250232041d3ebfb14b96fb061c7cb8a7940d1ddf086f521",
+        "presentOverlapSetSha256": "0281f818f7db26afd2888f9de17bb0a3c5c6cfee666124e4124e8c68cada6384",
+        "sameSourceOverlapSetSha256": "ca6a42c61dd7f4ba1316b8ae35de2235a88180ab37b39d9b05f61dd9135a15bd",
+        "netEligiblePairSetSha256": "f0f11d53077aa71dc15ee4c7e890ece2feb1dd90c4dc6539240b0e3020c3e9f4"
+      },
+      "stateResidualHighlights": {
+        "MS": 171,
+        "TX": 33,
+        "LA": 22,
+        "MO": 12,
+        "TN": 12,
+        "AR": 9,
+        "VA": 9
+      },
+      "semantics": "Only human observations whose establishmentMeans explicitly says nonnative in the record's Alaska, Hawaii, or lower-conterminous region, with an exact unambiguous catalog name, stable identity, valid event date, and agreement between source county and coordinate-derived county, qualified.",
+      "blocker": "The entire archive leaves only 315 exact net pairs; Alabama contributes zero net pairs and was not replayed.",
+      "replayCommand": "$env:ISITUSA_BASELINE_COMMIT='fccb1fce1d0324de1491a651efe985b85f411efb'; C:/Code/tools/node-v22.23.2-win-x64/node.exe --import tsx scripts/research/preflight-gbif-ipams-national.ts --source-directory C:/Users/Ocean/AppData/Local/Temp/isitusa-ipams-preflight-v1.4"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "source": "USGS Breeding Bird Survey 2026 release retained residual",
+      "disposition": "no-go-exhausted-below-yield-threshold",
+      "completedCoverage": {
+        "stateRuns": 16,
+        "assertions": 882,
+        "uniqueCountySpeciesPairs": 882,
+        "rejections": 0
+      },
+      "fullRetainedArtifactReplay": {
+        "archiveRows": 4551591,
+        "acceptedPositiveStandardRunStop1Rows": 5322,
+        "grossUniqueCountySpeciesPairs": 1548,
+        "existingVerifiedPresentOverlaps": 1401,
+        "verifiedAbsentConflicts": 0,
+        "priorBbsScreenedResidualPairs": 0,
+        "netEligiblePairs": 147,
+        "netStatuses": {
+          "researchedUnresolved": 147
+        }
+      },
+      "blocker": "The 147-pair residual is the ceiling of the complete retained release, not a partial tranche."
+    },
+    {
+      "sourceId": "npspecies",
+      "source": "National Park Service NPSpecies",
+      "authority": "National Park Service",
+      "disposition": "no-go-no-admissible-county-geography",
+      "newToResearchRegistry": true,
+      "boundedSample": {
+        "parkUnits": ["INDU", "GRSM", "ACAD", "OLYM", "EVER", "ROMO", "YELL", "SAGU", "CUVA", "DEWA"],
+        "rows": 52624,
+        "responseBytes": 23913058,
+        "exactCatalogRows": 1991,
+        "strictAcceptedRows": 1413,
+        "uniqueParkSpeciesTargets": 1412,
+        "admissibleCountySpeciesPairs": 0
+      },
+      "acceptanceScreen": "Approved, Present, Non-native, not Cultivated, exact current-catalog scientific name, and stable row ID.",
+      "blocker": "The official JSON schema, all sampled rows, and the current XLSX export expose park UnitCode but no county, FIPS, coordinates, locality, or geometry. Park presence cannot be promoted to every intersecting county.",
+      "representativeHashes": {
+        "induJsonSha256": "ed5f5abc1294b0d763e151e1f5892f50c05f107430c13c75ea2d875e2f9bb385",
+        "grsmJsonSha256": "33635ac753de58357045d9a4869d0c3f43a5f8b2774212cb8a2984460a394f1d",
+        "induXlsxSha256": "866d02a3e499fb8e4baa4b4cdfe8a480fcc382765b9f1ff2aa6cb5bce90bd4e5"
+      }
+    },
+    {
+      "sourceId": "usfws-region7-alaska-nonnative-plants-2025",
+      "source": "USFWS Region 7 Alaska Nonnative Plant Surveys - 2025 Survey Data",
+      "disposition": "no-go-positive-ceiling-below-yield-threshold",
+      "newToResearchRegistry": true,
+      "datasetIdentity": {
+        "datasetKey": "6e93498d-2585-4d2d-818a-81cb368c1165",
+        "doi": "10.15468/zef7dp",
+        "archiveUrl": "https://ipt.gbif.us/archive.do?r=usfwsr7-alaska-nonnative-plant-surveys-2025",
+        "archiveFilename": "dwca-usfwsr7-alaska-nonnative-plant-surveys-2025-v1.21.zip",
+        "lastModified": "2026-07-22T21:28:06Z",
+        "license": "CC0-1.0"
+      },
+      "retainedPreflightArtifacts": {
+        "archiveBytes": 10050463,
+        "archiveSha256": "dd235d6cb85a280c486127a077caf4fa967bb88a2d20a4d854251a84ccc9665d",
+        "occurrenceBytes": 49975860,
+        "occurrenceSha256": "163c8d150792a890e2ca0366a2b4bdcd9498b6d4f26bdc57386446cbaefa080c"
+      },
+      "completeOccurrenceCensus": {
+        "rows": 19813,
+        "presentPositiveRows": 269,
+        "positiveTaxa": 37,
+        "positiveSurveySites": 91,
+        "absentRows": 19544,
+        "positiveRowCeiling": 269
+      },
+      "semantics": "Only the 269 explicit present rows with percent cover above zero could support presence. The 19544 absent rows are inferred non-detections at bounded survey sites and cannot establish county absence; no absence or non-detection assertions were created.",
+      "blocker": "Even before taxonomy, geography, deduplication, and existing-presence subtraction, the positive-row ceiling is 269."
+    },
+    {
+      "sourceId": "niiss",
+      "source": "National Institute of Invasive Species Science database",
+      "disposition": "blocked-dead-provider-resource",
+      "newToResearchRegistry": true,
+      "catalogRecord": "https://agdatacommons.nal.usda.gov/articles/dataset/National_Institute_of_Invasive_Species_Science_NIISS_database/24661326",
+      "documentedResource": "http://www.pikapartners.org/cwis438/Browse/BrowseData.php?WebSiteID=1",
+      "boundedCheck": "The catalog's sole query/download resource redirects to HTTPS and then returns HTTP 404.",
+      "changedConditionRequired": "A revived provider endpoint or an immutable downloadable archive with record identity and admissible county/FIPS or coordinates."
+    },
+    {
+      "sourceId": "gbif-blm-national-landscape-monitoring-framework",
+      "datasetKey": "84c00a71-0735-4a47-bf55-8556dcafa5c2",
+      "doi": "10.15468/cbfpbk",
+      "disposition": "no-go-duplicate-older-provider-surface",
+      "finding": "The metadata explicitly identifies the data as BLM Assessment, Inventory, and Monitoring Plant Census occurrences. This is the same logical BLM AIM program already completed from the current ArcGIS provider surface, not an independent source. The older 2023 archive was not replayed or counted."
+    }
+  ],
+  "antiDuplication": {
+    "pinnedStartCommit": "fccb1fce1d0324de1491a651efe985b85f411efb",
+    "completedSourceSnapshotPairsReplayed": false,
+    "priorPortfolioLanesReexecuted": false,
+    "existingPresenceSubtractedFromExactMeasuredYield": true,
+    "sameSourceIpamsScreensMeasuredSeparately": true,
+    "blmAimArchiveRecognizedAsDuplicateLineage": true,
+    "absenceAssertionsCreated": 0,
+    "notDetectedAssertionsCreated": 0,
+    "sourceSilencePromoted": false
+  },
+  "result": {
+    "newEvidenceAssertions": 0,
+    "newUniqueDeterminations": 0,
+    "finalVerifiedPresent": 276608,
+    "finalVerifiedAbsent": 3143,
+    "finalTotalUniqueDeterminations": 279751,
+    "historicalGainFromFixedBaseline": 79533,
+    "checkpointReached": false,
+    "substantialMinimumReached": false,
+    "stretchTargetReached": false,
+    "reason": "Every newly discovered or residual lane was either below the 2000-pair conditional gate, lacked admissible county geography, was a duplicate provider surface, or had no live provider resource. Integrating the 202-pair NISIMS, 315-pair IPAMS, 147-pair BBS, or at-most-269-row USFWS Alaska fragments would violate the no-padding rule and would not remedy throughput."
+  },
+  "nextUnlocks": [
+    "Authorize an authenticated GBIF occurrence download for the exact eBird dataset/taxa/counties, or supply an already-created immutable download archive.",
+    "Obtain iMapInvasives written permission for immutable response retention and redistribution of derived county-species pairs.",
+    "Locate a current public national BLM VMAP infestation export with stable record identity and county/FIPS or admissible coordinates.",
+    "Revisit NPSpecies only if NPS publishes county/FIPS or exact permissible coordinates on the same park-species evidence record."
+  ],
+  "externalMutations": {
+    "pushes": 0,
+    "deployments": 0,
+    "r2Mutations": 0,
+    "providerWrites": 0,
+    "providerJobsCreated": 0
+  }
+}

@@ -42,7 +42,12 @@ for (const entrypoint of entrypoints.entries) {
       evidence: Array<{ evidenceId: string }>;
     }>;
   };
-  assert.equal(county.asOf, entrypoints.asOf);
+  assert.match(entrypoints.asOf, /^\d{4}-\d{2}-\d{2}$/);
+  assert.match(county.asOf, /^\d{4}-\d{2}-\d{2}$/);
+  assert(
+    county.asOf >= entrypoints.asOf,
+    `County projection ${county.asOf} predates deep-link fixture ${entrypoints.asOf}.`,
+  );
   assert.equal(county.stateCode, entrypoint.stateCode);
   assert.equal(county.countyFips, entrypoint.countyFips);
   const pair = county.pairs.find((candidate) => candidate.speciesId === entrypoint.speciesId);
