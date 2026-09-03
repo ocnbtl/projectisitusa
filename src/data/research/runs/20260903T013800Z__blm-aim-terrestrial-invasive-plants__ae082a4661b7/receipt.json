@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7",
+  "status": "complete",
+  "started_at": "2026-09-03T01:38:00.699Z",
+  "finished_at": "2026-09-03T01:38:03.026Z",
+  "actor_type": "adapter",
+  "actor_id": "blm-aim-terrestrial-invasive-plants-targeted@1.0.0",
+  "source_id": "blm-aim-terrestrial-invasive-plants",
+  "source_registry_hash": "88ea3f05a5909f3eab29e03974c3f2cc1d88980f34557cdc9e6255589e47757b",
+  "adapter_id": "blm-aim-terrestrial-invasive-plants-targeted",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5df27205627dad786abf5b2ebdf8f017a50555924ce7c8347b3a295d1c756ff4",
+  "code_commit": "683dc0614a39108a9a686ca2acbee2d7e69fa6cb",
+  "parameter_hash": "ae082a4661b74cfec647049cd2e9ecb24875c70f84996af97b54a481f874a05c",
+  "parameters": {
+    "stateCode": "TX",
+    "mode": "targeted-stable-positive-witness",
+    "layerUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+    "layerLastEditMs": 1780348225269,
+    "preflightEvaluationId": "blm-aim-terrestrial-invasive-plants-preflight-20260902-r1",
+    "positiveWhereClause": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+    "minimumRequestIntervalMs": 1000,
+    "maxResponseBytes": 5242880,
+    "objectIdsPerRequest": 100,
+    "targets": [
+      {
+        "pairKey": "48375:salsola-tragus",
+        "countyFips": "48375",
+        "speciesId": "salsola-tragus",
+        "scientificName": "Salsola tragus",
+        "objectId": 2066,
+        "sourceRecordCount": 21,
+        "sourceCountyName": "Potter",
+        "sourceStateCode": "TX"
+      }
+    ],
+    "candidatePairs": [
+      "48375:salsola-tragus"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "TX",
+    "county_fips": [
+      "48375"
+    ],
+    "species_ids": [
+      "salsola-tragus"
+    ],
+    "pair_keys": [
+      "48375:salsola-tragus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6?f=json",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:38:00.700Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6/query?f=json&objectIds=2066&outFields=OBJECTID%2CPrimaryKey%2CPlotID%2CState%2CSpecies%2CScientificName%2CDateVisited%2CAH_SpeciesCover%2CAH_SpeciesCover_n%2CGrowthHabit%2CDuration%2CNonnative%2CNoxious%2CInvasive%2CSG_Group%2CCommonName%2CCountyName%2CCOUNTY_FIPS%2CSTATE_FIPS%2CFIPS%2CDateLoadedInDb%2CDBKey%2CViewOBJECTID%2CGlobalID%2CCurrentPLANTSCode&returnGeometry=false&orderByFields=OBJECTID+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:38:00.851Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6/query?f=json&objectIds=2066&outFields=OBJECTID%2CPrimaryKey%2CPlotID%2CState%2CSpecies%2CScientificName%2CDateVisited%2CAH_SpeciesCover%2CAH_SpeciesCover_n%2CGrowthHabit%2CDuration%2CNonnative%2CNoxious%2CInvasive%2CSG_Group%2CCommonName%2CCountyName%2CCOUNTY_FIPS%2CSTATE_FIPS%2CFIPS%2CDateLoadedInDb%2CDBKey%2CViewOBJECTID%2CGlobalID%2CCurrentPLANTSCode&returnGeometry=false&orderByFields=OBJECTID+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:38:01.967Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6?f=json",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:38:03.026Z",
+      "record_count": 1
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/artifacts/blm-aim-layer-metadata-before.json",
+      "sha256": "bc2c86343e85be3fce11f19857ea6646fdffb5639701fe52327ebcee0ee602de",
+      "bytes": 13831,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/artifacts/blm-aim-0001-before.json",
+      "sha256": "32b22ab77e8f372cf47c0b9e579d9ed9d9e5f5b55df4503be7b1cc571abede97",
+      "bytes": 4466,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/artifacts/blm-aim-0001-after.json",
+      "sha256": "32b22ab77e8f372cf47c0b9e579d9ed9d9e5f5b55df4503be7b1cc571abede97",
+      "bytes": 4466,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/artifacts/blm-aim-layer-metadata-after.json",
+      "sha256": "bc2c86343e85be3fce11f19857ea6646fdffb5639701fe52327ebcee0ee602de",
+      "bytes": 13831,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/assertions.ndjson",
+      "sha256": "4f552c6f6123c66157cf14e9d72dff37609ed2ad7cd61fcf63952eba6dae1bcd",
+      "bytes": 2719,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/reviews.ndjson",
+      "sha256": "f65fc1ab075ea2d0421ce49a970fac3430f65d1a3bbf6416fa0fe2277a64d80b",
+      "bytes": 1171,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013800Z__blm-aim-terrestrial-invasive-plants__ae082a4661b7/outcomes.ndjson",
+      "sha256": "6868a4aa101ee054da0ad80ff4362a6fc504d9494102647b4142e951312b8c75",
+      "bytes": 1192,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive invasive-plant cover at an AIM plot supports historical recorded presence at that sampled BLM location only. Missing, zero-cover, unmatched, and rejected rows are source silence and never support county absence or survey non-detection."
+  ],
+  "source_warnings": [
+    "BLM AIM plot detections support recorded presence only on sampled BLM lands.",
+    "Source silence, zero cover, and rejected records never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source blm-aim-terrestrial-invasive-plants --state TX --candidate-file ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-tx-20260902-r1.json --output-root src/data/research/runs --pairs 48375:salsola-tragus"
+}
