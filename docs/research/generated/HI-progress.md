@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `614`
+- Verified present: `640`
 - Verified absent: `5`
 - Not detected: `0`
-- Researched unresolved: `1790`
-- Not researched: `10111`
-- Determination coverage: `4.94%`
-- Research coverage: `19.24%`
-- Explicit outcome coverage: `19.2412%`
-- Applicable protocol cells: `289`
+- Researched unresolved: `1809`
+- Not researched: `10066`
+- Determination coverage: `5.15%`
+- Research coverage: `19.60%`
+- Explicit outcome coverage: `19.6006%`
+- Applicable protocol cells: `296`
 - Current complete protocol cells: `81`
-- Protocol completion: `32.53%`
-- Current protocol completion: `28.03%`
-- Evidence records: `756`
-- Research runs: `29`
-- Rejection records: `1052`
+- Protocol completion: `31.76%`
+- Current protocol completion: `27.36%`
+- Evidence records: `782`
+- Research runs: `30`
+- Rejection records: `1435`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:47:28.602Z | 26 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

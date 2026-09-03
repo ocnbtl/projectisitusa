@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `5101`
+- Verified present: `5277`
 - Verified absent: `38`
 - Not detected: `0`
-- Researched unresolved: `14908`
-- Not researched: `77609`
-- Determination coverage: `5.26%`
-- Research coverage: `20.53%`
-- Explicit outcome coverage: `20.5282%`
-- Applicable protocol cells: `387`
+- Researched unresolved: `15040`
+- Not researched: `77301`
+- Determination coverage: `5.44%`
+- Research coverage: `20.84%`
+- Explicit outcome coverage: `20.8436%`
+- Applicable protocol cells: `390`
 - Current complete protocol cells: `183`
-- Protocol completion: `50.65%`
-- Current protocol completion: `47.29%`
-- Evidence records: `10391`
-- Research runs: `37`
-- Rejection records: `1288`
+- Protocol completion: `50.26%`
+- Current protocol completion: `46.92%`
+- Evidence records: `10567`
+- Research runs: `38`
+- Rejection records: `1883`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -38,8 +38,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Wall hawkweed (`hieracium-murorum`) | plants | 36 | 0 | 1 |
 | Mouseear hawkweed (`hieracium-pilosella`) | plants | 36 | 0 | 1 |
 | Japanese rose (`kerria-japonica`) | plants | 36 | 0 | 1 |
-| Rock pigeon (`columba-livia`) | wildlife | 35 | 0 | 1 |
-| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 33 | 0 | 1 |
 | Perennial cornflower (`centaurea-montana`) | plants | 32 | 0 | 1 |
 | Bristly dogstail grass (`cynosurus-echinatus`) | plants | 32 | 0 | 1 |
 | Tall hawkweed (`hieracium-piloselloides`) | plants | 32 | 0 | 1 |
@@ -48,15 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Meadow knapweed (`centaurea-debeauxii`) | plants | 27 | 0 | 1 |
 | Bishop's Goutweed (`aegopodium-podagraria`) | plants | 26 | 0 | 1 |
 | Common balm (`melissa-officinalis`) | plants | 26 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 25 | 0 | 1 |
 | Cherry laurel (`prunus-laurocerasus`) | plants | 25 | 0 | 1 |
 | Common Periwinkle (`vinca-minor`) | plants | 22 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 20 | 0 | 1 |
 | Common comfrey (`symphytum-officinale`) | plants | 20 | 0 | 1 |
 | Common nipplewort (`lapsana-communis`) | plants | 19 | 0 | 1 |
 | Woodland ragwort (`senecio-sylvaticus`) | plants | 18 | 0 | 1 |
 | English holly (`ilex-aquifolium`) | plants | 17 | 0 | 1 |
 | Prickly Russian thistle (`salsola-tragus`) | plants | 17 | 0 | 1 |
+| European mountain ash (`sorbus-aucuparia`) | plants | 17 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 15 | 0 | 1 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 15 | 0 | 1 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 14 | 0 | 1 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:36:37.863Z | 176 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-09-01T06:36:42.569Z | 37 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

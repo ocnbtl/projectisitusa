@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `3846`
+- Verified present: `4059`
 - Verified absent: `93`
 - Not detected: `0`
-- Researched unresolved: `39344`
-- Not researched: `189589`
-- Determination coverage: `1.69%`
-- Research coverage: `18.59%`
-- Explicit outcome coverage: `18.5866%`
-- Applicable protocol cells: `246`
+- Researched unresolved: `39930`
+- Not researched: `188790`
+- Determination coverage: `1.78%`
+- Research coverage: `18.93%`
+- Explicit outcome coverage: `18.9297%`
+- Applicable protocol cells: `250`
 - Current complete protocol cells: `91`
-- Protocol completion: `42.28%`
-- Current protocol completion: `36.99%`
-- Evidence records: `4453`
-- Research runs: `27`
-- Rejection records: `299`
+- Protocol completion: `41.60%`
+- Current protocol completion: `36.40%`
+- Evidence records: `4666`
+- Research runs: `28`
+- Rejection records: `536`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,10 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 92 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 84 | 0 | 1 |
-| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 80 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 78 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 93 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 93 | 2 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 93 | 2 |
@@ -57,6 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 93 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 93 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 93 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 93 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 93 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 93 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 93 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:09:24.646Z | 213 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-09-01T05:27:26.374Z | 38 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

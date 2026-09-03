@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-31",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 256,
+    "applicableSpeciesCount": 259,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2248,
+    "unknownSpeciesCount": 2245,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 124,
-    "derivedApplicableSpeciesCount": 132,
+    "derivedApplicableSpeciesCount": 135,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 503,
+    "boundedAcquisitionSpeciesCount": 508,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 160256,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 4083,
+    "verifiedPresent": 4316,
     "verifiedAbsent": 64,
     "notDetected": 0,
-    "researchedUnresolved": 27849,
-    "notResearched": 128260,
-    "determinationCoveragePercent": 2.59,
-    "researchCoveragePercent": 19.97,
-    "explicitOutcomePairCount": 31996,
-    "explicitOutcomeCoveragePercent": 19.9656,
+    "researchedUnresolved": 28132,
+    "notResearched": 127744,
+    "determinationCoveragePercent": 2.73,
+    "researchCoveragePercent": 20.29,
+    "explicitOutcomePairCount": 32512,
+    "explicitOutcomeCoveragePercent": 20.2875,
     "conflictCount": 0,
-    "evidenceRecordCount": 11004,
+    "evidenceRecordCount": 11237,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11004,
-    "rejectionRecordCount": 1797,
-    "researchRunCount": 36,
+    "runEvidenceRecordCount": 11237,
+    "rejectionRecordCount": 1986,
+    "researchRunCount": 37,
     "boundedAcquisition": {
-      "speciesCount": 503,
-      "totalPairs": 32192,
-      "verifiedPresent": 4083,
+      "speciesCount": 508,
+      "totalPairs": 32512,
+      "verifiedPresent": 4316,
       "verifiedAbsent": 64,
       "notDetected": 0,
-      "researchedUnresolved": 27849,
-      "notResearched": 196,
-      "researchCoveragePercent": 99.39,
-      "explicitOutcomePairs": 31996,
-      "explicitOutcomeCoveragePercent": 99.3912
+      "researchedUnresolved": 28132,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 32512,
+      "explicitOutcomeCoveragePercent": 100
     }
   },
   "migrationCandidates": {
@@ -313,9 +313,9 @@
       "authority": "iNaturalist",
       "tier": "community-occurrence",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-02T23:22:25.227Z",
+      "evidencePairCount": 233,
+      "screenedSpeciesCount": 10
     },
     {
       "id": "water-quality-portal",
@@ -422,17 +422,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2012,
-    "applicableCells": 291,
-    "notApplicableCells": 1721,
+    "totalCells": 2032,
+    "applicableCells": 294,
+    "notApplicableCells": 1738,
     "completeCells": 167,
-    "incompleteCells": 111,
+    "incompleteCells": 114,
     "blockedCells": 13,
     "currentCells": 167,
     "staleCells": 0,
-    "undatedCells": 124,
-    "applicableCompletionPercent": 57.39,
-    "currentCompletePercent": 57.39,
+    "undatedCells": 127,
+    "applicableCompletionPercent": 56.8,
+    "currentCompletePercent": 56.8,
     "regulatedAndHighApplicableCells": 110,
     "regulatedAndHighCurrentCompleteCells": 110,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -446,9 +446,9 @@
       },
       {
         "category": "insects",
-        "applicableCells": 23,
+        "applicableCells": 25,
         "currentCompleteCells": 16,
-        "currentCompletePercent": 69.57
+        "currentCompletePercent": 64
       },
       {
         "category": "plants",
@@ -458,9 +458,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 10,
+        "applicableCells": 11,
         "currentCompleteCells": 6,
-        "currentCompletePercent": 60
+        "currentCompletePercent": 54.55
       }
     ],
     "priorityCompletion": [
@@ -478,9 +478,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 155,
+        "applicableCells": 158,
         "currentCompleteCells": 44,
-        "currentCompletePercent": 28.39
+        "currentCompletePercent": 27.85
       },
       {
         "priority": "baseline",
@@ -498,7 +498,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 256,
+        "applicableCells": 259,
         "currentCompleteCells": 145,
         "processed": false
       },
@@ -511,54 +511,6 @@
     ]
   },
   "nextQueue": [
-    {
-      "speciesId": "columba-livia",
-      "commonName": "Rock pigeon",
-      "scientificName": "Columba livia",
-      "category": "wildlife",
-      "notResearchedCountyCount": 62,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 62001
-    },
-    {
-      "speciesId": "streptopelia-decaocto",
-      "commonName": "Eurasian collared dove",
-      "scientificName": "Streptopelia decaocto",
-      "category": "wildlife",
-      "notResearchedCountyCount": 47,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 47001
-    },
-    {
-      "speciesId": "sturnus-vulgaris",
-      "commonName": "European Starling",
-      "scientificName": "Sturnus vulgaris",
-      "category": "wildlife",
-      "notResearchedCountyCount": 47,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 47001
-    },
-    {
-      "speciesId": "passer-domesticus",
-      "commonName": "House sparrow",
-      "scientificName": "Passer domesticus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 40,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 40001
-    },
     {
       "speciesId": "aspidiotus-duplex",
       "commonName": "Camphor scale",
@@ -832,6 +784,16 @@
       "commonName": "Largeleaf maidenhair",
       "scientificName": "Adiantum macrophyllum",
       "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 640
+    },
+    {
+      "speciesId": "aedes-albopictus",
+      "commonName": "Asian Tiger Mosquito",
+      "scientificName": "Aedes albopictus",
+      "category": "insects",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 64,
       "missingProtocolSourceIds": [],
@@ -1531,6 +1493,36 @@
       "speciesId": "cyclospermum-leptophyllum",
       "commonName": "Marsh parsley",
       "scientificName": "Cyclospermum leptophyllum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 640
+    },
+    {
+      "speciesId": "cydalima-perspectalis",
+      "commonName": "Box Tree Moth",
+      "scientificName": "Cydalima perspectalis",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 640
+    },
+    {
+      "speciesId": "cyperus-entrerianus",
+      "commonName": "Woodrush flatsedge",
+      "scientificName": "Cyperus entrerianus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 640
+    },
+    {
+      "speciesId": "cyperus-rotundus",
+      "commonName": "Purple Nutsedge",
+      "scientificName": "Cyperus rotundus",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 64,

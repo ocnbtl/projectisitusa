@@ -10,18 +10,18 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Verified present: `0`
 - Verified absent: `9`
 - Not detected: `0`
-- Researched unresolved: `4248`
-- Not researched: `18279`
+- Researched unresolved: `4329`
+- Not researched: `18198`
 - Determination coverage: `0.04%`
-- Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8898%`
+- Research coverage: `19.25%`
+- Explicit outcome coverage: `19.2492%`
 - Applicable protocol cells: `140`
 - Current complete protocol cells: `120`
 - Protocol completion: `85.71%`
 - Current protocol completion: `85.71%`
 - Evidence records: `9`
-- Research runs: `27`
-- Rejection records: `5959`
+- Research runs: `28`
+- Rejection records: `6482`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:46:43.969Z | 0 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

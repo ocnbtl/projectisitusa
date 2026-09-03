@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 377,
+    "applicableSpeciesCount": 380,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2127,
+    "unknownSpeciesCount": 2124,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 324,
+    "derivedApplicableSpeciesCount": 327,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 540,
+    "boundedAcquisitionSpeciesCount": 545,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 90144,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 5025,
+    "verifiedPresent": 5198,
     "verifiedAbsent": 36,
     "notDetected": 0,
-    "researchedUnresolved": 12562,
-    "notResearched": 72521,
-    "determinationCoveragePercent": 5.61,
-    "researchCoveragePercent": 19.55,
-    "explicitOutcomePairCount": 17623,
-    "explicitOutcomeCoveragePercent": 19.5498,
+    "researchedUnresolved": 12671,
+    "notResearched": 72239,
+    "determinationCoveragePercent": 5.81,
+    "researchCoveragePercent": 19.86,
+    "explicitOutcomePairCount": 17905,
+    "explicitOutcomeCoveragePercent": 19.8627,
     "conflictCount": 0,
-    "evidenceRecordCount": 5291,
+    "evidenceRecordCount": 5464,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 5291,
-    "rejectionRecordCount": 205,
-    "researchRunCount": 31,
+    "runEvidenceRecordCount": 5464,
+    "rejectionRecordCount": 441,
+    "researchRunCount": 32,
     "boundedAcquisition": {
-      "speciesCount": 540,
-      "totalPairs": 19440,
-      "verifiedPresent": 5025,
+      "speciesCount": 545,
+      "totalPairs": 19620,
+      "verifiedPresent": 5198,
       "verifiedAbsent": 36,
       "notDetected": 0,
-      "researchedUnresolved": 12562,
-      "notResearched": 1817,
-      "researchCoveragePercent": 90.65,
-      "explicitOutcomePairs": 17623,
-      "explicitOutcomeCoveragePercent": 90.6533
+      "researchedUnresolved": 12671,
+      "notResearched": 1715,
+      "researchCoveragePercent": 91.26,
+      "explicitOutcomePairs": 17905,
+      "explicitOutcomeCoveragePercent": 91.2589
     }
   },
   "migrationCandidates": {
@@ -313,9 +313,9 @@
       "authority": "iNaturalist",
       "tier": "community-occurrence",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-02T23:38:49.254Z",
+      "evidencePairCount": 173,
+      "screenedSpeciesCount": 10
     },
     {
       "id": "water-quality-portal",
@@ -422,17 +422,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2160,
-    "applicableCells": 412,
-    "notApplicableCells": 1748,
+    "totalCells": 2180,
+    "applicableCells": 415,
+    "notApplicableCells": 1765,
     "completeCells": 117,
-    "incompleteCells": 295,
+    "incompleteCells": 298,
     "blockedCells": 0,
     "currentCells": 104,
     "staleCells": 13,
-    "undatedCells": 295,
-    "applicableCompletionPercent": 28.4,
-    "currentCompletePercent": 25.24,
+    "undatedCells": 298,
+    "applicableCompletionPercent": 28.19,
+    "currentCompletePercent": 25.06,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -446,9 +446,9 @@
       },
       {
         "category": "insects",
-        "applicableCells": 24,
+        "applicableCells": 26,
         "currentCompleteCells": 15,
-        "currentCompletePercent": 62.5
+        "currentCompletePercent": 57.69
       },
       {
         "category": "plants",
@@ -458,9 +458,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 10,
+        "applicableCells": 11,
         "currentCompleteCells": 6,
-        "currentCompletePercent": 60
+        "currentCompletePercent": 54.55
       }
     ],
     "priorityCompletion": [
@@ -478,9 +478,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 351,
+        "applicableCells": 354,
         "currentCompleteCells": 59,
-        "currentCompletePercent": 16.81
+        "currentCompletePercent": 16.67
       },
       {
         "priority": "baseline",
@@ -498,7 +498,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 377,
+        "applicableCells": 380,
         "currentCompleteCells": 82,
         "processed": false
       },
@@ -516,18 +516,6 @@
       "commonName": "Barbed goatgrass",
       "scientificName": "Aegilops triuncialis",
       "category": "plants",
-      "notResearchedCountyCount": 35,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 35001
-    },
-    {
-      "speciesId": "columba-livia",
-      "commonName": "Rock pigeon",
-      "scientificName": "Columba livia",
-      "category": "wildlife",
       "notResearchedCountyCount": 35,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -932,18 +920,6 @@
       "priorityScore": 23001
     },
     {
-      "speciesId": "sturnus-vulgaris",
-      "commonName": "European Starling",
-      "scientificName": "Sturnus vulgaris",
-      "category": "wildlife",
-      "notResearchedCountyCount": 23,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 23001
-    },
-    {
       "speciesId": "foeniculum-vulgare",
       "commonName": "Sweet fennel",
       "scientificName": "Foeniculum vulgare",
@@ -980,34 +956,10 @@
       "priorityScore": 22001
     },
     {
-      "speciesId": "passer-domesticus",
-      "commonName": "House sparrow",
-      "scientificName": "Passer domesticus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 22,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 22001
-    },
-    {
       "speciesId": "rosa-canina",
       "commonName": "Dog rose",
       "scientificName": "Rosa canina",
       "category": "plants",
-      "notResearchedCountyCount": 22,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 22001
-    },
-    {
-      "speciesId": "streptopelia-decaocto",
-      "commonName": "Eurasian collared dove",
-      "scientificName": "Streptopelia decaocto",
-      "category": "wildlife",
       "notResearchedCountyCount": 22,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -1712,6 +1664,48 @@
         "usfs-afpe"
       ],
       "priorityScore": 361
+    },
+    {
+      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
+      "commonName": "Butternut Canker Fungus",
+      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 36,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 361
+    },
+    {
+      "speciesId": "abies-alba",
+      "commonName": "Silver fir",
+      "scientificName": "Abies alba",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 36,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 360
+    },
+    {
+      "speciesId": "abutilon-hirtum",
+      "commonName": "Florida keys indian mallow",
+      "scientificName": "Abutilon hirtum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 36,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 360
+    },
+    {
+      "speciesId": "acacia-elata",
+      "commonName": "Cedar wattle",
+      "scientificName": "Acacia elata",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 36,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 360
     }
   ]
 }

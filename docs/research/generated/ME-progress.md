@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `1735`
+- Verified present: `1816`
 - Verified absent: `16`
 - Not detected: `0`
-- Researched unresolved: `5721`
-- Not researched: `32592`
-- Determination coverage: `4.37%`
-- Research coverage: `18.65%`
-- Explicit outcome coverage: `18.6502%`
-- Applicable protocol cells: `269`
+- Researched unresolved: `5784`
+- Not researched: `32448`
+- Determination coverage: `4.57%`
+- Research coverage: `19.01%`
+- Explicit outcome coverage: `19.0096%`
+- Applicable protocol cells: `276`
 - Current complete protocol cells: `110`
-- Protocol completion: `45.72%`
-- Current protocol completion: `40.89%`
-- Evidence records: `2132`
-- Research runs: `27`
-- Rejection records: `120`
+- Protocol completion: `44.57%`
+- Current protocol completion: `39.86%`
+- Evidence records: `2213`
+- Research runs: `28`
+- Rejection records: `292`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 16 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 16 | 0 |
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 16 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 16 | 0 |
+| Asian Tiger Mosquito (`aedes-albopictus`) | insects | 0 | 16 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:43:24.372Z | 81 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

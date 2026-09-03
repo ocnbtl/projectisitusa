@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `3564`
+- Verified present: `3729`
 - Verified absent: `56`
 - Not detected: `0`
-- Researched unresolved: `23692`
-- Not researched: `112912`
-- Determination coverage: `2.58%`
-- Research coverage: `19.48%`
-- Explicit outcome coverage: `19.4774%`
-- Applicable protocol cells: `278`
+- Researched unresolved: `23991`
+- Not researched: `112448`
+- Determination coverage: `2.70%`
+- Research coverage: `19.81%`
+- Explicit outcome coverage: `19.8083%`
+- Applicable protocol cells: `281`
 - Current complete protocol cells: `72`
-- Protocol completion: `30.58%`
-- Current protocol completion: `25.90%`
-- Evidence records: `3667`
-- Research runs: `32`
-- Rejection records: `79`
+- Protocol completion: `30.25%`
+- Current protocol completion: `25.62%`
+- Evidence records: `3832`
+- Research runs: `33`
+- Rejection records: `137`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,10 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 53 | 0 | 1 |
-| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 50 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 42 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 39 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 56 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 56 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 56 | 2 |
@@ -57,6 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 56 | 0 |
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 56 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 56 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 56 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 56 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 56 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 56 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:34:50.177Z | 165 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T06:23:03.717Z | 40 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

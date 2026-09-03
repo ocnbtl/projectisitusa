@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `5025`
+- Verified present: `5198`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `12562`
-- Not researched: `72521`
-- Determination coverage: `5.61%`
-- Research coverage: `19.55%`
-- Explicit outcome coverage: `19.5498%`
-- Applicable protocol cells: `412`
+- Researched unresolved: `12671`
+- Not researched: `72239`
+- Determination coverage: `5.81%`
+- Research coverage: `19.86%`
+- Explicit outcome coverage: `19.8627%`
+- Applicable protocol cells: `415`
 - Current complete protocol cells: `104`
-- Protocol completion: `28.40%`
-- Current protocol completion: `25.24%`
-- Evidence records: `5291`
-- Research runs: `31`
-- Rejection records: `205`
+- Protocol completion: `28.19%`
+- Current protocol completion: `25.06%`
+- Evidence records: `5464`
+- Research runs: `32`
+- Rejection records: `441`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -33,7 +33,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 35 | 0 | 1 |
-| Rock pigeon (`columba-livia`) | wildlife | 35 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 35 | 0 | 1 |
 | German knotgrass (`scleranthus-annuus`) | plants | 35 | 0 | 1 |
 | Atlantic ivy (`hedera-hibernica`) | plants | 34 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Saltcedar (`tamarix-ramosissima`) | plants | 27 | 0 | 1 |
 | Brownray knapweed (`centaurea-jacea`) | plants | 26 | 0 | 1 |
 | Perennial cornflower (`centaurea-montana`) | plants | 26 | 0 | 1 |
+| French broom (`genista-monspessulana`) | plants | 26 | 0 | 1 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:38:49.254Z | 173 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-31T06:48:37.753Z | 39 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `83`
 - County-species pairs: `207832`
-- Verified present: `6965`
+- Verified present: `7246`
 - Verified absent: `83`
 - Not detected: `26`
-- Researched unresolved: `31643`
-- Not researched: `169115`
-- Determination coverage: `3.39%`
-- Research coverage: `18.63%`
-- Explicit outcome coverage: `18.6290%`
-- Applicable protocol cells: `310`
+- Researched unresolved: `32071`
+- Not researched: `168406`
+- Determination coverage: `3.53%`
+- Research coverage: `18.97%`
+- Explicit outcome coverage: `18.9701%`
+- Applicable protocol cells: `314`
 - Current complete protocol cells: `127`
-- Protocol completion: `45.16%`
-- Current protocol completion: `40.97%`
-- Evidence records: `9718`
-- Research runs: `30`
-- Rejection records: `1221`
+- Protocol completion: `44.59%`
+- Current protocol completion: `40.45%`
+- Evidence records: `9999`
+- Research runs: `31`
+- Rejection records: `1728`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -33,9 +33,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Mute Swan (`cygnus-olor`) | wildlife | 82 | 0 | 1 |
-| Rock pigeon (`columba-livia`) | wildlife | 79 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 67 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 65 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 83 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 83 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 83 | 1 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 83 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 83 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 83 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 83 | 0 |
+| Asian Tiger Mosquito (`aedes-albopictus`) | insects | 0 | 83 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 83 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:11:32.364Z | 281 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T07:51:11.455Z | 39 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

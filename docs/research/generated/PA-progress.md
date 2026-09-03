@@ -7,21 +7,21 @@ Generated: `2026-09-02T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `9314`
+- Verified present: `9590`
 - Verified absent: `67`
 - Not detected: `10`
-- Researched unresolved: `22495`
-- Not researched: `135882`
-- Determination coverage: `5.59%`
-- Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0060%`
-- Applicable protocol cells: `367`
+- Researched unresolved: `22761`
+- Not researched: `135340`
+- Determination coverage: `5.76%`
+- Research coverage: `19.33%`
+- Explicit outcome coverage: `19.3291%`
+- Applicable protocol cells: `372`
 - Current complete protocol cells: `123`
-- Protocol completion: `37.06%`
-- Current protocol completion: `33.51%`
-- Evidence records: `16005`
-- Research runs: `29`
-- Rejection records: `1209`
+- Protocol completion: `36.56%`
+- Current protocol completion: `33.06%`
+- Evidence records: `16281`
+- Research runs: `30`
+- Rejection records: `1638`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,9 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 60 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 40 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 40 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 67 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 67 | 2 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 67 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 67 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 67 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 67 | 0 |
+| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-02T23:17:33.580Z | 276 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T22:51:01.436Z | 48 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
