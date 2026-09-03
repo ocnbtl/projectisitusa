@@ -328,6 +328,34 @@
       }
     },
     {
+      "id": "blm-aim-terrestrial-invasive-plants",
+      "label": "BLM AIM Terrestrial Invasive Plant Indicators",
+      "aliases": ["BLM Assessment, Inventory, and Monitoring terrestrial species indicators"],
+      "authority": "U.S. Bureau of Land Management",
+      "tier": "official-national",
+      "homepage": "https://gbp-blm-egis.hub.arcgis.com/datasets/blm-national-aim-terrestrial-species-indicators-public/about",
+      "access": "arcgis",
+      "geographicScope": ["Sampled BLM lands in the United States"],
+      "evidenceCapabilities": ["recorded-present"],
+      "negativeSemantics": "none",
+      "refreshCadenceDays": 90,
+      "status": "operational",
+      "adapter": null,
+      "caveat": "Positive invasive-plant cover at an AIM plot supports historical recorded presence at that sampled BLM location only. Missing, zero-cover, unmatched, and rejected rows are source silence and never support county absence or survey non-detection.",
+      "researchAdapter": {
+        "id": "blm-aim-terrestrial-invasive-plants-targeted",
+        "module": "scripts/research/adapters/blm-aim-terrestrial-invasive-plants.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/blm-aim-terrestrial-invasive-plants-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "The retained provider ScientificName must exactly match one Project Isitusa catalog binomial after Unicode, whitespace, and case normalization. Informal taxa, higher taxa, ambiguous names, and unmatched names never publish.",
+        "geographyMatchingPolicy": "The provider State, STATE_FIPS, COUNTY_FIPS, full FIPS, and CountyName must all agree with one active county equivalent. Coordinates, contradictory fields, retired geography, and automatic crosswalks are prohibited.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
+    },
+    {
       "id": "usfs-current-invasive-plants",
       "label": "USFS Current Invasive Plant Locations",
       "aliases": [],

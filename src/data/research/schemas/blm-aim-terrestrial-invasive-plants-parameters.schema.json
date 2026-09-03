@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/blm-aim-terrestrial-invasive-plants-parameters.schema.json",
+  "title": "BLM AIM targeted invasive-plant positive-witness parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stateCode",
+    "mode",
+    "layerUrl",
+    "layerLastEditMs",
+    "preflightEvaluationId",
+    "positiveWhereClause",
+    "minimumRequestIntervalMs",
+    "maxResponseBytes",
+    "objectIdsPerRequest",
+    "targets",
+    "candidatePairs"
+  ],
+  "properties": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "mode": { "const": "targeted-stable-positive-witness" },
+    "layerUrl": { "const": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6" },
+    "layerLastEditMs": { "type": "integer", "minimum": 1 },
+    "preflightEvaluationId": { "type": "string", "pattern": "^blm-aim-terrestrial-invasive-plants-preflight-[0-9]{8}-r[0-9]+$" },
+    "positiveWhereClause": { "const": "Invasive='Invasive' AND AH_SpeciesCover_n > 0" },
+    "minimumRequestIntervalMs": { "const": 1000 },
+    "maxResponseBytes": { "type": "integer", "minimum": 1024, "maximum": 52428800 },
+    "objectIdsPerRequest": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "pairKey",
+          "countyFips",
+          "speciesId",
+          "scientificName",
+          "objectId",
+          "sourceRecordCount",
+          "sourceCountyName",
+          "sourceStateCode"
+        ],
+        "properties": {
+          "pairKey": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
+          "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+          "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "scientificName": { "type": "string", "minLength": 1 },
+          "objectId": { "type": "integer", "minimum": 1 },
+          "sourceRecordCount": { "type": "integer", "minimum": 1 },
+          "sourceCountyName": { "type": "string", "minLength": 1 },
+          "sourceStateCode": { "type": "string", "pattern": "^[A-Z]{2}$" }
+        }
+      }
+    },
+    "candidatePairs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" }
+    }
+  }
+}

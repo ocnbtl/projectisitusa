@@ -20,6 +20,7 @@ import {
   EDDMAPS_SNAPSHOT_PATH,
 } from "./adapters/eddmaps-snapshot-replay";
 import { usfsCurrentInvasivePlantsTargetedAdapter } from "./adapters/usfs-current-invasive-plants-targeted";
+import { blmAimTerrestrialInvasivePlantsAdapter } from "./adapters/blm-aim-terrestrial-invasive-plants";
 import {
   INATURALIST_GBIF_DATASET_KEY,
   inaturalistGbifResearchGradeAdapter,
@@ -106,6 +107,26 @@ type CandidateFile = {
       speciesId: string;
       scientificName: string;
       objectIds: number[];
+    }>;
+  };
+  blmAim?: {
+    mode: "targeted-stable-positive-witness";
+    layerUrl: string;
+    layerLastEditMs: number;
+    preflightEvaluationId: string;
+    positiveWhereClause: string;
+    minimumRequestIntervalMs: 1000;
+    maxResponseBytes: number;
+    objectIdsPerRequest?: number;
+    targets: Array<{
+      pairKey: string;
+      countyFips: string;
+      speciesId: string;
+      scientificName: string;
+      objectId: number;
+      sourceRecordCount: number;
+      sourceCountyName: string;
+      sourceStateCode: string;
     }>;
   };
   eddmapsReplay?: {
@@ -454,6 +475,9 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === usfsCurrentInvasivePlantsTargetedAdapter.sourceId) {
     return usfsCurrentInvasivePlantsTargetedAdapter;
   }
+  if (sourceId === blmAimTerrestrialInvasivePlantsAdapter.sourceId) {
+    return blmAimTerrestrialInvasivePlantsAdapter;
+  }
   if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
     return usgsBbsRouteStartAdapter;
   }
@@ -537,6 +561,22 @@ function buildParameters(
     return {
       stateCode,
       ...candidateFile.usfsPilot,
+      targets,
+      candidatePairs,
+    };
+  }
+  if (sourceId === blmAimTerrestrialInvasivePlantsAdapter.sourceId) {
+    if (!candidateFile.blmAim || candidateFile.sourceId !== sourceId) {
+      throw new Error("BLM AIM invasive-plant research requires its committed targeted plan.");
+    }
+    const selected = new Set(candidatePairs);
+    const targets = candidateFile.blmAim.targets.filter((target) => selected.has(target.pairKey));
+    if (targets.length !== candidatePairs.length) {
+      throw new Error("BLM AIM targeted identities do not cover every selected candidate pair.");
+    }
+    return {
+      stateCode,
+      ...candidateFile.blmAim,
       targets,
       candidatePairs,
     };
@@ -810,6 +850,10 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectIds: number[] }>;
     };
+    const selectedBlmParameters = parameters as {
+      objectIdsPerRequest?: number;
+      targets?: Array<{ objectId: number }>;
+    };
     const expectedProviderRequests = options.sourceId === aphisHoneyBeeSurveyAdapter.sourceId
       ? {
           providerNetworkRequests: 2,
@@ -833,6 +877,21 @@ async function main() {
             stabilityGate: "Both retained responses must normalize to identical ordered features.",
             additionalRequests: 0,
           }
+        : options.sourceId === blmAimTerrestrialInvasivePlantsAdapter.sourceId
+          ? {
+              providerNetworkRequests:
+                2 + 2 * Math.ceil(
+                  new Set(selectedBlmParameters.targets?.map((target) => target.objectId) ?? []).size /
+                    (selectedBlmParameters.objectIdsPerRequest ?? 100),
+                ),
+              requestSequence: [
+                "GET and seal official ArcGIS layer metadata before acquisition",
+                "GET each bounded chunk of selected positive plot OBJECTIDs twice",
+                "GET and verify unchanged official ArcGIS layer metadata after acquisition",
+              ],
+              stabilityGate: "Layer last-edit identity and metadata must remain unchanged, and both retained responses for every chunk must normalize identically.",
+              additionalRequests: 0,
+            }
         : options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
           ? {
               providerNetworkRequests: 0,
