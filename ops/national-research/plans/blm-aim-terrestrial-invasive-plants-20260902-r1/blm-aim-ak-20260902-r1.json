@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "planId": "blm-aim-ak-20260902-r1",
+  "sourceId": "blm-aim-terrestrial-invasive-plants",
+  "stateCode": "AK",
+  "generatedAt": "2026-09-03T01:29:35.555Z",
+  "evaluatedAt": "2026-09-03T01:29:15.268Z",
+  "dStartCommit": "2af3b94876b64a192d739daf355073fac2775852",
+  "candidates": [
+    {
+      "sourceId": "blm-aim-terrestrial-invasive-plants",
+      "speciesId": "alopecurus-pratensis",
+      "countyFips": "02020"
+    },
+    {
+      "sourceId": "blm-aim-terrestrial-invasive-plants",
+      "speciesId": "rumex-acetosa",
+      "countyFips": "02020"
+    }
+  ],
+  "blmAim": {
+    "mode": "targeted-stable-positive-witness",
+    "layerUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+    "layerLastEditMs": 1780348225269,
+    "preflightEvaluationId": "blm-aim-terrestrial-invasive-plants-preflight-20260902-r1",
+    "positiveWhereClause": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+    "minimumRequestIntervalMs": 1000,
+    "maxResponseBytes": 5242880,
+    "objectIdsPerRequest": 100,
+    "targets": [
+      {
+        "pairKey": "02020:alopecurus-pratensis",
+        "countyFips": "02020",
+        "speciesId": "alopecurus-pratensis",
+        "scientificName": "Alopecurus pratensis",
+        "objectId": 366723,
+        "sourceRecordCount": 1,
+        "sourceCountyName": "Anchorage Municipality",
+        "sourceStateCode": "AK"
+      },
+      {
+        "pairKey": "02020:rumex-acetosa",
+        "countyFips": "02020",
+        "speciesId": "rumex-acetosa",
+        "scientificName": "Rumex acetosa",
+        "objectId": 366724,
+        "sourceRecordCount": 1,
+        "sourceCountyName": "Anchorage Municipality",
+        "sourceStateCode": "AK"
+      }
+    ]
+  },
+  "accounting": {
+    "sourceSnapshotIdentity": {
+      "layerUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+      "layerLastEditMs": 1780348225269,
+      "positiveWhereClause": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+      "groupingFields": [
+        "FIPS",
+        "STATE_FIPS",
+        "COUNTY_FIPS",
+        "CountyName",
+        "State",
+        "ScientificName"
+      ],
+      "witnessSelection": "minimum OBJECTID per exact provider group"
+    },
+    "sourceSnapshotIdentitySha256": "aac37c90a95c1137de5a7ed4694eec9eafce1e0bc2f66f6a685b5b586e9a2cee",
+    "scopeFingerprint": "b85e1f4bb9d896ef83e9e2bffe26b4270250cf853c64619de38ecbade0018ae1",
+    "selectedPairSetSha256": "29f1e2d160fb40af3924c8458011b32b325747fb54ab0e74543977bcdd9324e1",
+    "sourceGroupPageArtifacts": [
+      {
+        "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6/query?f=json&where=Invasive%3D%27Invasive%27+AND+AH_SpeciesCover_n+%3E+0+AND+STATE_FIPS%3D%2702%27&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22OBJECTID%22%2C%22outStatisticFieldName%22%3A%22record_count%22%7D%2C%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22OBJECTID%22%2C%22outStatisticFieldName%22%3A%22min_objectid%22%7D%5D&groupByFieldsForStatistics=FIPS%2CSTATE_FIPS%2CCOUNTY_FIPS%2CCountyName%2CState%2CScientificName&orderByFields=FIPS+ASC%2CScientificName+ASC%2CState+ASC%2CCountyName+ASC&returnGeometry=false&resultRecordCount=2000&resultOffset=0",
+        "retrievedAt": "2026-09-03T01:29:30.018Z",
+        "sha256": "5226e5ec30033b2f5ebf856bc5e9e552a04bc5c5e934857749954f02bd9d6ad6",
+        "bytes": 3936,
+        "groupCount": 13,
+        "sourceRecordCount": 19
+      }
+    ],
+    "rawProviderRecordsConsidered": 19,
+    "rawProviderGroupsConsidered": 13,
+    "exactCatalogTaxonGroups": 9,
+    "geographyResolvedGroups": 9,
+    "grossUniqueCountySpeciesPairs": 9,
+    "pairsAlreadyInDStart": 7,
+    "pairsAlreadyVerifiedPresent": 7,
+    "pairsAlreadyVerifiedAbsent": 0,
+    "sameSourceSameSnapshotCompletedOverlaps": 0,
+    "unexecutedPriorPlanOverlaps": 0,
+    "sameSnapshotRejectedOverlaps": 0,
+    "partialRetryEligiblePairs": 0,
+    "withinSourceDuplicateGroupsCollapsed": 0,
+    "withinPlanDuplicates": 0,
+    "rejectedProviderGroups": {
+      "invalidSourceIdentity": 0,
+      "unmatchedOrAmbiguousCatalogTaxon": 4,
+      "unresolvedOrContradictoryGeography": 0
+    },
+    "remainingNetEligiblePairCount": 2,
+    "projectedAcceptedDeterminationCount": 2,
+    "projectedYieldConfidence": "high for the sealed selected OBJECTIDs; every target has an exact positive grouped source witness and current D_start exclusion",
+    "estimatedAcquisitionRequests": 4,
+    "estimatedAcquisitionBytesUpperBound": 20971520,
+    "estimatedAcquisitionElapsedMinutes": 1,
+    "estimatedCostUsd": 0,
+    "currentDisplayStatusCounts": {
+      "not-researched": 2,
+      "verified-present": 7
+    }
+  },
+  "assertions": {
+    "selectedPairsIntersectDStart": 0,
+    "selectedTriplesIntersectRComplete": 0,
+    "selectedPairsIntersectPriorPlans": 0,
+    "selectedPairsIntersectRejectedSet": 0,
+    "selectedPairDuplicateCount": 0,
+    "sourceSilenceCreatesAbsence": false,
+    "sourceSilenceCreatesNonDetection": false,
+    "acceptedClaim": "historical recorded presence from one retained positive invasive-cover BLM AIM plot record"
+  }
+}

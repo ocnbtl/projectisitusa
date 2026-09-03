@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "source-expansion-preflights-20260902-r1",
+  "evaluatedAt": "2026-09-03T01:29:15.268Z",
+  "dStart": {
+    "commit": "f2ec0f05850bbf37dfac654ed96622c429526b1c",
+    "verifiedPresent": 273796,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 276939,
+    "source": "ops/national-research/readiness-dashboard.json"
+  },
+  "yieldGate": {
+    "goMinimumNetPairs": 5000,
+    "conditionalGoMinimumNetPairs": 2000,
+    "noGoBelowNetPairs": 2000
+  },
+  "results": [
+    {
+      "sourceId": "blm-aim-terrestrial-invasive-plants",
+      "sourceFamilyNewness": "new registered official source family",
+      "authority": "U.S. Bureau of Land Management",
+      "provider": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+      "disposition": "conditional-go",
+      "netEligiblePairs": 2426,
+      "yieldBasis": "Complete grouped positive-provider surface with exact catalog, active-county geography, current D_start, completed-run, prior-plan, and rejection-set subtraction.",
+      "durableEvaluation": "ops/national-research/evaluations/blm-aim-terrestrial-invasive-plants-preflight-20260902-r1.json",
+      "decision": "Execute all 15 exact anti-dup state plans because the source exceeds the conditional threshold, has explicit positive cover, exact county FIPS, public unauthenticated access, and zero monetary cost."
+    },
+    {
+      "sourceId": "usfs-ids",
+      "sourceFamilyNewness": "existing source family; national points and generalized-area contract would be new",
+      "authority": "USDA Forest Service",
+      "provider": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer",
+      "disposition": "no-go",
+      "measuredSampleFeatures": 4850,
+      "measuredUniquePairs": 611,
+      "measuredDStartOverlap": 186,
+      "measuredNetPairs": 425,
+      "estimatedNetPairs": 511,
+      "confidence": "medium for point estimate; high for no-go classification",
+      "taxonomyAuthority": {
+        "url": "https://www.fs.usda.gov/foresthealth/technology/docs/DCA_List.xlsx",
+        "sha256": "b0d5f6436597b1ae6ed822bf1b0e20335ff45d8a509782a8d8f5f9d93ca6cb34",
+        "exactCatalogTaxa": 24
+      },
+      "blockers": [
+        "Estimated net yield is below the 2000-pair conditional threshold.",
+        "The dynamic point and area layers require a new sealed national adapter and explicit derived-product attribution notices.",
+        "Host fields cannot be promoted as host occurrence, and source silence cannot create absence or non-detection."
+      ]
+    },
+    {
+      "sourceId": "sernec",
+      "sourceFamilyNewness": "existing source family; per-collection Darwin Core archive contract would be new",
+      "authority": "SERNEC academic aggregator with collection-level publishers",
+      "provider": "https://sernecportal.org/portal/collections/datasets/datapublisher.php",
+      "disposition": "no-go",
+      "archiveCount": 124,
+      "licenseInventory": {
+        "cc0": 59,
+        "ccByNc30": 64,
+        "ccBy30": 1
+      },
+      "boundedSample": {
+        "archives": 8,
+        "rows": 6428,
+        "acceptedRecords": 790,
+        "uniquePairs": 425,
+        "dStartOverlap": 231,
+        "netPairs": 194
+      },
+      "projectedAllLicenseNetPairs": 3007,
+      "projectedUnambiguouslyRetainableCc0NetPairs": 1431,
+      "confidence": "low; the eight complete archives were small and not a stratified national sample",
+      "blockers": [
+        "The currently unambiguous CC0 subset projects below the 2000-pair conditional threshold.",
+        "Portal-wide policy asks users not to redistribute occurrence data while the repository is public.",
+        "Non-CC0 raw archive retention and derived redistribution require written clarification or a private immutable artifact contract."
+      ]
+    },
+    {
+      "sourceId": "usfs-laurel-wilt",
+      "sourceFamilyNewness": "existing source family; current county snapshot contract would be new",
+      "authority": "Georgia Forestry Commission hosted ArcGIS layer, corroborated by USDA Forest Service materials",
+      "provider": "https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1",
+      "disposition": "no-go",
+      "positiveCountyRows": 333,
+      "dStartOverlap": 283,
+      "netEligiblePairs": 50,
+      "verifiedAbsentConflicts": 0,
+      "blockers": [
+        "Exact net yield is below the 2000-pair conditional threshold.",
+        "Layer terms and copyright fields do not document reuse or raw-response retention permission.",
+        "Records contain no taxon or method field, so disease-label to catalog-synonym mapping needs a curated decision.",
+        "Null or default not-yet-detected rows cannot support absence."
+      ]
+    }
+  ],
+  "decisionSummary": {
+    "executedSourceIds": ["blm-aim-terrestrial-invasive-plants"],
+    "noGoSourceIds": ["usfs-ids", "sernec", "usfs-laurel-wilt"],
+    "reason": "BLM AIM is the only evaluated source above the current conditional execution threshold. The other candidates are recorded as durable no-go lanes so later rounds do not repeat the same research without a changed snapshot, rights posture, or yield basis."
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "blm-aim-terrestrial-invasive-plants-preflight-20260902-r1",
+  "sourceId": "blm-aim-terrestrial-invasive-plants",
+  "evaluatedAt": "2026-09-03T01:29:15.268Z",
+  "generatedAt": "2026-09-03T01:29:50.310Z",
+  "dStart": {
+    "commit": "2af3b94876b64a192d739daf355073fac2775852",
+    "verifiedPresent": 273796,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 276939,
+    "source": "ops/national-research/readiness-dashboard.json"
+  },
+  "sourceSnapshotIdentity": {
+    "layerUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+    "layerLastEditMs": 1780348225269,
+    "positiveWhereClause": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+    "groupingFields": [
+      "FIPS",
+      "STATE_FIPS",
+      "COUNTY_FIPS",
+      "CountyName",
+      "State",
+      "ScientificName"
+    ],
+    "witnessSelection": "minimum OBJECTID per exact provider group"
+  },
+  "sourceSnapshotIdentitySha256": "aac37c90a95c1137de5a7ed4694eec9eafce1e0bc2f66f6a685b5b586e9a2cee",
+  "metadataBefore": {
+    "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6?f=json",
+    "retrievedAt": "2026-09-03T01:29:29.403Z",
+    "sha256": "bc2c86343e85be3fce11f19857ea6646fdffb5639701fe52327ebcee0ee602de",
+    "bytes": 13831
+  },
+  "metadataAfter": {
+    "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6?f=json",
+    "retrievedAt": "2026-09-03T01:29:50.260Z",
+    "sha256": "bc2c86343e85be3fce11f19857ea6646fdffb5639701fe52327ebcee0ee602de",
+    "bytes": 13831
+  },
+  "geographicScope": [
+    "AK",
+    "AZ",
+    "CA",
+    "CO",
+    "ID",
+    "MT",
+    "NV",
+    "NM",
+    "ND",
+    "OR",
+    "SD",
+    "TX",
+    "UT",
+    "WA",
+    "WY"
+  ],
+  "positiveGate": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+  "accounting": {
+    "rawProviderRecordsConsidered": 92885,
+    "rawProviderGroupsConsidered": 6120,
+    "exactCatalogTaxonGroups": 5009,
+    "geographyResolvedGroups": 4897,
+    "withinSourceDuplicateGroupsCollapsed": 0,
+    "dStartOverlap": 2471,
+    "sameSourceSameSnapshotCompletedOverlap": 0,
+    "unexecutedPriorPlanOverlap": 0,
+    "sameSnapshotRejectedOverlap": 0,
+    "netEligiblePairs": 2426,
+    "estimatedPlannerRequests": 17,
+    "measuredPlannerBytes": 1163572,
+    "estimatedAcquisitionRequests": 96,
+    "estimatedCostUsd": 0
+  },
+  "disposition": "conditional-go",
+  "dispositionRule": "GO >= 5000 net unique pairs; conditional GO 2000-4999; no-go below 2000 or when semantics/access are unusable.",
+  "decision": "Execute because the official structured source clears the conditional threshold, uses exact county FIPS and exact catalog taxa, and has zero monetary cost.",
+  "stateEvaluations": [
+    {
+      "stateCode": "AK",
+      "stateFips": "02",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-ak-20260902-r1.json",
+      "rawProviderRecords": 19,
+      "rawProviderGroups": 13,
+      "exactCatalogTaxonGroups": 9,
+      "geographyResolvedGroups": 9,
+      "grossUniquePairs": 9,
+      "determinedOverlap": 7,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 2,
+      "selectedPairSetSha256": "29f1e2d160fb40af3924c8458011b32b325747fb54ab0e74543977bcdd9324e1",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 4,
+        "unresolvedOrContradictoryGeography": 0
+      }
+    },
+    {
+      "stateCode": "AZ",
+      "stateFips": "04",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-az-20260902-r1.json",
+      "rawProviderRecords": 1945,
+      "rawProviderGroups": 238,
+      "exactCatalogTaxonGroups": 204,
+      "geographyResolvedGroups": 203,
+      "grossUniquePairs": 203,
+      "determinedOverlap": 90,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 113,
+      "selectedPairSetSha256": "0c2cc1f12cf7a0a7d30a0a6542e573fe694ef9a48b3f2673428ec573c520df34",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 34,
+        "unresolvedOrContradictoryGeography": 1
+      }
+    },
+    {
+      "stateCode": "CA",
+      "stateFips": "06",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-ca-20260902-r1.json",
+      "rawProviderRecords": 6453,
+      "rawProviderGroups": 450,
+      "exactCatalogTaxonGroups": 408,
+      "geographyResolvedGroups": 393,
+      "grossUniquePairs": 393,
+      "determinedOverlap": 305,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 88,
+      "selectedPairSetSha256": "35bd7c6f1c4022db84ea2deaca2cbafe55f9e4da5ecc71c73ef3b77109580aa3",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 42,
+        "unresolvedOrContradictoryGeography": 15
+      }
+    },
+    {
+      "stateCode": "CO",
+      "stateFips": "08",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-co-20260902-r1.json",
+      "rawProviderRecords": 7098,
+      "rawProviderGroups": 684,
+      "exactCatalogTaxonGroups": 499,
+      "geographyResolvedGroups": 499,
+      "grossUniquePairs": 499,
+      "determinedOverlap": 254,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 245,
+      "selectedPairSetSha256": "a20484033a6f70c3625bdd10d11156b0f5a198c140c4908e1c07f371181a3541",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 185,
+        "unresolvedOrContradictoryGeography": 0
+      }
+    },
+    {
+      "stateCode": "ID",
+      "stateFips": "16",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-id-20260902-r1.json",
+      "rawProviderRecords": 11550,
+      "rawProviderGroups": 908,
+      "exactCatalogTaxonGroups": 773,
+      "geographyResolvedGroups": 754,
+      "grossUniquePairs": 754,
+      "determinedOverlap": 361,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 393,
+      "selectedPairSetSha256": "e15001a49b07757fb5ef7383981d0d1ad36e2bc98705085043c28ee454b319f4",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 135,
+        "unresolvedOrContradictoryGeography": 19
+      }
+    },
+    {
+      "stateCode": "MT",
+      "stateFips": "30",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-mt-20260902-r1.json",
+      "rawProviderRecords": 7497,
+      "rawProviderGroups": 878,
+      "exactCatalogTaxonGroups": 712,
+      "geographyResolvedGroups": 710,
+      "grossUniquePairs": 710,
+      "determinedOverlap": 306,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 404,
+      "selectedPairSetSha256": "999a92de55610d40d148b9dc0b0b07aac92dc6506d882562376cb58e134520fd",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 166,
+        "unresolvedOrContradictoryGeography": 2
+      }
+    },
+    {
+      "stateCode": "NV",
+      "stateFips": "32",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-nv-20260902-r1.json",
+      "rawProviderRecords": 20083,
+      "rawProviderGroups": 472,
+      "exactCatalogTaxonGroups": 368,
+      "geographyResolvedGroups": 346,
+      "grossUniquePairs": 346,
+      "determinedOverlap": 164,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 182,
+      "selectedPairSetSha256": "8edf2fac453c2a008717522b7703f0588db10cc005a713f3f6b2249240e2b215",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 104,
+        "unresolvedOrContradictoryGeography": 22
+      }
+    },
+    {
+      "stateCode": "NM",
+      "stateFips": "35",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-nm-20260902-r1.json",
+      "rawProviderRecords": 1338,
+      "rawProviderGroups": 235,
+      "exactCatalogTaxonGroups": 188,
+      "geographyResolvedGroups": 171,
+      "grossUniquePairs": 171,
+      "determinedOverlap": 71,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 100,
+      "selectedPairSetSha256": "d65b37479de0777f865dfca02eb0d0bfd1e713ef97636ca6cc3df4b5e42e7999",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 47,
+        "unresolvedOrContradictoryGeography": 17
+      }
+    },
+    {
+      "stateCode": "ND",
+      "stateFips": "38",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-nd-20260902-r1.json",
+      "rawProviderRecords": 129,
+      "rawProviderGroups": 36,
+      "exactCatalogTaxonGroups": 29,
+      "geographyResolvedGroups": 29,
+      "grossUniquePairs": 29,
+      "determinedOverlap": 9,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 20,
+      "selectedPairSetSha256": "4914eb456ee0a1bab93401b35ec90c31a25aad637f52ab8eb324dc427e8d1856",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 7,
+        "unresolvedOrContradictoryGeography": 0
+      }
+    },
+    {
+      "stateCode": "OR",
+      "stateFips": "41",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-or-20260902-r1.json",
+      "rawProviderRecords": 14469,
+      "rawProviderGroups": 426,
+      "exactCatalogTaxonGroups": 373,
+      "geographyResolvedGroups": 368,
+      "grossUniquePairs": 368,
+      "determinedOverlap": 247,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 121,
+      "selectedPairSetSha256": "76e1f5b944b26f03dcf9bc2c99a8cb6aad4a0990c3192b71ad4d82233204e69c",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 53,
+        "unresolvedOrContradictoryGeography": 5
+      }
+    },
+    {
+      "stateCode": "SD",
+      "stateFips": "46",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-sd-20260902-r1.json",
+      "rawProviderRecords": 1201,
+      "rawProviderGroups": 182,
+      "exactCatalogTaxonGroups": 161,
+      "geographyResolvedGroups": 161,
+      "grossUniquePairs": 161,
+      "determinedOverlap": 51,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 110,
+      "selectedPairSetSha256": "627e66193f1da2fea7a2fee6e294497fbeb4394c3ba1eda18792a7e253ae0766",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 21,
+        "unresolvedOrContradictoryGeography": 0
+      }
+    },
+    {
+      "stateCode": "TX",
+      "stateFips": "48",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-tx-20260902-r1.json",
+      "rawProviderRecords": 37,
+      "rawProviderGroups": 6,
+      "exactCatalogTaxonGroups": 3,
+      "geographyResolvedGroups": 3,
+      "grossUniquePairs": 3,
+      "determinedOverlap": 2,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 1,
+      "selectedPairSetSha256": "47691578101cf7144c426e8bcbd8e4efa5fc61e7c968654abcc534d0c2d5675d",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 3,
+        "unresolvedOrContradictoryGeography": 0
+      }
+    },
+    {
+      "stateCode": "UT",
+      "stateFips": "49",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-ut-20260902-r1.json",
+      "rawProviderRecords": 8464,
+      "rawProviderGroups": 627,
+      "exactCatalogTaxonGroups": 466,
+      "geographyResolvedGroups": 457,
+      "grossUniquePairs": 457,
+      "determinedOverlap": 211,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 246,
+      "selectedPairSetSha256": "661a0c8c16e744d82f0c1abb82b809572929c1f47aadcb6ae02fd081b969eee5",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 161,
+        "unresolvedOrContradictoryGeography": 9
+      }
+    },
+    {
+      "stateCode": "WA",
+      "stateFips": "53",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-wa-20260902-r1.json",
+      "rawProviderRecords": 4881,
+      "rawProviderGroups": 321,
+      "exactCatalogTaxonGroups": 292,
+      "geographyResolvedGroups": 270,
+      "grossUniquePairs": 270,
+      "determinedOverlap": 152,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 118,
+      "selectedPairSetSha256": "7bd9491fd4f6c27a82ec8bc095717998c0e99380209e35e6036517b880e337bf",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 29,
+        "unresolvedOrContradictoryGeography": 22
+      }
+    },
+    {
+      "stateCode": "WY",
+      "stateFips": "56",
+      "planPath": "ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-wy-20260902-r1.json",
+      "rawProviderRecords": 7721,
+      "rawProviderGroups": 644,
+      "exactCatalogTaxonGroups": 524,
+      "geographyResolvedGroups": 524,
+      "grossUniquePairs": 524,
+      "determinedOverlap": 241,
+      "sameSnapshotCompleteOverlap": 0,
+      "priorPlanOverlap": 0,
+      "rejectedOverlap": 0,
+      "selectedNetEligiblePairs": 283,
+      "selectedPairSetSha256": "f562887fe6fab877a915f9434557635a58e020c94d5fc55e6c322025199f3641",
+      "rejectionCounts": {
+        "invalidSourceIdentity": 0,
+        "unmatchedOrAmbiguousCatalogTaxon": 120,
+        "unresolvedOrContradictoryGeography": 0
+      }
+    }
+  ],
+  "semanticGuards": {
+    "presenceOnly": true,
+    "sourceSilenceCreatesAbsence": false,
+    "sourceSilenceCreatesNonDetection": false,
+    "zeroCoverCreatesNegativeEvidence": false,
+    "contradictoryGeographyPublishes": false,
+    "exactCatalogBinomialRequired": true,
+    "retainedWitnessRequired": true
+  }
+}

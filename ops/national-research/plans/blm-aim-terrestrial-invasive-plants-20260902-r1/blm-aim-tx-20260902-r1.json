@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "planId": "blm-aim-tx-20260902-r1",
+  "sourceId": "blm-aim-terrestrial-invasive-plants",
+  "stateCode": "TX",
+  "generatedAt": "2026-09-03T01:29:48.558Z",
+  "evaluatedAt": "2026-09-03T01:29:15.268Z",
+  "dStartCommit": "2af3b94876b64a192d739daf355073fac2775852",
+  "candidates": [
+    {
+      "sourceId": "blm-aim-terrestrial-invasive-plants",
+      "speciesId": "salsola-tragus",
+      "countyFips": "48375"
+    }
+  ],
+  "blmAim": {
+    "mode": "targeted-stable-positive-witness",
+    "layerUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+    "layerLastEditMs": 1780348225269,
+    "preflightEvaluationId": "blm-aim-terrestrial-invasive-plants-preflight-20260902-r1",
+    "positiveWhereClause": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+    "minimumRequestIntervalMs": 1000,
+    "maxResponseBytes": 5242880,
+    "objectIdsPerRequest": 100,
+    "targets": [
+      {
+        "pairKey": "48375:salsola-tragus",
+        "countyFips": "48375",
+        "speciesId": "salsola-tragus",
+        "scientificName": "Salsola tragus",
+        "objectId": 2066,
+        "sourceRecordCount": 21,
+        "sourceCountyName": "Potter",
+        "sourceStateCode": "TX"
+      }
+    ]
+  },
+  "accounting": {
+    "sourceSnapshotIdentity": {
+      "layerUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+      "layerLastEditMs": 1780348225269,
+      "positiveWhereClause": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+      "groupingFields": [
+        "FIPS",
+        "STATE_FIPS",
+        "COUNTY_FIPS",
+        "CountyName",
+        "State",
+        "ScientificName"
+      ],
+      "witnessSelection": "minimum OBJECTID per exact provider group"
+    },
+    "sourceSnapshotIdentitySha256": "aac37c90a95c1137de5a7ed4694eec9eafce1e0bc2f66f6a685b5b586e9a2cee",
+    "scopeFingerprint": "cd561e35727e3c53d97f6657d04febc034cfa983aa0cf239f5536d40e600042d",
+    "selectedPairSetSha256": "47691578101cf7144c426e8bcbd8e4efa5fc61e7c968654abcc534d0c2d5675d",
+    "sourceGroupPageArtifacts": [
+      {
+        "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6/query?f=json&where=Invasive%3D%27Invasive%27+AND+AH_SpeciesCover_n+%3E+0+AND+STATE_FIPS%3D%2748%27&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22OBJECTID%22%2C%22outStatisticFieldName%22%3A%22record_count%22%7D%2C%7B%22statisticType%22%3A%22min%22%2C%22onStatisticField%22%3A%22OBJECTID%22%2C%22outStatisticFieldName%22%3A%22min_objectid%22%7D%5D&groupByFieldsForStatistics=FIPS%2CSTATE_FIPS%2CCOUNTY_FIPS%2CCountyName%2CState%2CScientificName&orderByFields=FIPS+ASC%2CScientificName+ASC%2CState+ASC%2CCountyName+ASC&returnGeometry=false&resultRecordCount=2000&resultOffset=0",
+        "retrievedAt": "2026-09-03T01:29:47.712Z",
+        "sha256": "0fdc877fe33a89a82a944ed38874e6e1413701241f99c2e4a76240dda68d93a6",
+        "bytes": 2448,
+        "groupCount": 6,
+        "sourceRecordCount": 37
+      }
+    ],
+    "rawProviderRecordsConsidered": 37,
+    "rawProviderGroupsConsidered": 6,
+    "exactCatalogTaxonGroups": 3,
+    "geographyResolvedGroups": 3,
+    "grossUniqueCountySpeciesPairs": 3,
+    "pairsAlreadyInDStart": 2,
+    "pairsAlreadyVerifiedPresent": 2,
+    "pairsAlreadyVerifiedAbsent": 0,
+    "sameSourceSameSnapshotCompletedOverlaps": 0,
+    "unexecutedPriorPlanOverlaps": 0,
+    "sameSnapshotRejectedOverlaps": 0,
+    "partialRetryEligiblePairs": 0,
+    "withinSourceDuplicateGroupsCollapsed": 0,
+    "withinPlanDuplicates": 0,
+    "rejectedProviderGroups": {
+      "invalidSourceIdentity": 0,
+      "unmatchedOrAmbiguousCatalogTaxon": 3,
+      "unresolvedOrContradictoryGeography": 0
+    },
+    "remainingNetEligiblePairCount": 1,
+    "projectedAcceptedDeterminationCount": 1,
+    "projectedYieldConfidence": "high for the sealed selected OBJECTIDs; every target has an exact positive grouped source witness and current D_start exclusion",
+    "estimatedAcquisitionRequests": 4,
+    "estimatedAcquisitionBytesUpperBound": 20971520,
+    "estimatedAcquisitionElapsedMinutes": 1,
+    "estimatedCostUsd": 0,
+    "currentDisplayStatusCounts": {
+      "not-researched": 1,
+      "verified-present": 2
+    }
+  },
+  "assertions": {
+    "selectedPairsIntersectDStart": 0,
+    "selectedTriplesIntersectRComplete": 0,
+    "selectedPairsIntersectPriorPlans": 0,
+    "selectedPairsIntersectRejectedSet": 0,
+    "selectedPairDuplicateCount": 0,
+    "sourceSilenceCreatesAbsence": false,
+    "sourceSilenceCreatesNonDetection": false,
+    "acceptedClaim": "historical recorded presence from one retained positive invasive-cover BLM AIM plot record"
+  }
+}
