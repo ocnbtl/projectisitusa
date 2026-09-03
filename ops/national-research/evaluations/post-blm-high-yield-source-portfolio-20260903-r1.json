@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "post-blm-high-yield-source-portfolio-20260903-r1",
+  "evaluatedAt": "2026-09-03T04:54:41.594Z",
+  "status": "all-material-lanes-executed-exhausted-or-durably-blocked",
+  "objective": "Pursue cumulative net-new unique county-species determinations after the BLM AIM tranche without replaying completed source snapshots or weakening presence, absence, non-detection, applicability, freshness, or evidence-retention semantics.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseline": {
+    "commit": "1a7e43efe1ae9b4406d4347978fa7d4f4101b966",
+    "totalCountySpeciesPairs": 7872576,
+    "verifiedPresent": 276608,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 279751,
+    "notDetected": 236,
+    "researchedUnresolved": 1314212,
+    "notResearched": 6278377,
+    "conflicts": 0,
+    "coveragePercent": 3.553487448,
+    "historicalFixedBaseline": {
+      "commit": "f08cf185b1ee7291c827083181bb7ae76700166c",
+      "totalUniqueDeterminations": 200218,
+      "gainAtEvaluationStart": 79533
+    }
+  },
+  "yieldPolicy": {
+    "stretchTargetNetDeterminations": 25000,
+    "checkpointNetDeterminations": 5000,
+    "substantialMinimumNetDeterminations": 10000,
+    "conditionalSourceMinimumNetPairs": 2000,
+    "interpretation": "Thresholds apply to exact set-difference movement, not records, requests, projected rows, assertions, reviews, or files. Below-target closure is allowed only after every legitimate high-yield lane is executed, exhausted, or durably blocked."
+  },
+  "antiDuplication": {
+    "pinnedStartCommit": "1a7e43efe1ae9b4406d4347978fa7d4f4101b966",
+    "completedBlmAimTrancheReplayed": false,
+    "completedSourceSnapshotPairsReplayed": false,
+    "existingPresenceSubtractedFromEveryMeasuredYield": true,
+    "absenceAssertionsCreated": 0,
+    "notDetectedAssertionsCreated": 0,
+    "sourceSilencePromoted": false
+  },
+  "lanes": [
+    {
+      "sourceId": "gbif-ebird",
+      "source": "EOD - eBird Observation Dataset through GBIF",
+      "authority": "Cornell Lab of Ornithology and GBIF",
+      "disposition": "blocked-provider-bulk-access",
+      "materiality": {
+        "exactCatalogBirdSpecies": 10,
+        "theoreticalUndeterminedCeiling": 24250,
+        "qualification": "The ceiling is not a yield claim; it is the sum of currently undetermined county pairs for the ten exact catalog bird taxa."
+      },
+      "datasetIdentity": {
+        "datasetKey": "4fa7b334-ce0d-4e88-aaae-2e0c138d049e",
+        "title": "EOD - eBird Observation Dataset",
+        "doi": "10.15468/aomfnb",
+        "license": "CC BY 4.0",
+        "publicationDate": "2025-08-07T20:00:00-04:00",
+        "registryModified": "2025-10-29T07:01:37.872-04:00",
+        "registeredArchiveUrl": "https://hosted-datasets.gbif.org/eBird/2024-eBird-dwca-1.0.zip",
+        "registeredAlternative": "https://ebird.org/science/download-ebird-data-products"
+      },
+      "boundedChecks": {
+        "representativeRecord": {
+          "gbifId": "5681157720",
+          "species": "Sturnus vulgaris",
+          "eventDate": "2024-01-14",
+          "datasetCrawlId": 24,
+          "lastParsed": "2026-07-18",
+          "license": "CC BY 4.0",
+          "countyIdentity": "GBIF-interpreted GADM level 2"
+        },
+        "registeredArchiveHttpStatus": 404,
+        "registeredArchiveDirectoryHttpStatus": 404,
+        "occurrenceApiResult": "rate-limited during the bounded GADM hierarchy and facet preflight",
+        "publicMonthlySnapshot": {
+          "snapshot": "occurrence/2026-09-01",
+          "parquetObjects": 9898,
+          "bytes": 285323189332,
+          "gibibytes": 265.73,
+          "partitionFinding": "A sampled Parquet object contained mixed dataset keys, countries, and species keys, so the eBird dataset filter cannot prune to a bounded source slice."
+        }
+      },
+      "blockers": [
+        "The ordinary occurrence API is not an acceptable bulk path for thousands of county-taxon queries and returned the provider's explicit too-many-requests response.",
+        "The current registry still advertises a Darwin Core archive that returns HTTP 404.",
+        "Cornell's alternative bulk download is controlled access and is not available in the current execution context.",
+        "Scanning a mixed 265.73 GiB public monthly snapshot is not safe under the current yellow resource tier.",
+        "An authenticated GBIF download would create a provider job and requires account authority that was not supplied."
+      ],
+      "changedConditionRequired": "A working immutable dataset-specific archive, user-authorized authenticated GBIF download, or another bounded provider-native bulk contract."
+    },
+    {
+      "sourceId": "imapinvasives",
+      "source": "iMapInvasives public confirmed-present ArcGIS layer",
+      "disposition": "no-go-rights-and-snapshot-identity",
+      "boundedSample": {
+        "providerTaxa": 1345,
+        "exactCatalogMatches": 730,
+        "sampleTaxa": 50,
+        "mappedUniquePairs": 1160,
+        "baselineOverlap": 756,
+        "netPairs": 404
+      },
+      "projection": {
+        "mappedPairs": 16936,
+        "netPairsPointEstimate": 5898,
+        "sensitivityRange": [2849, 8948],
+        "confidence": "moderate"
+      },
+      "blockers": [
+        "Portal terms permit several non-commercial informational, research, conservation, and land-management uses but state that hosting changed in April 2026 and the terms are pending update.",
+        "The public repository requires an unambiguous retained-artifact and derived-redistribution posture; the current terms do not supply it.",
+        "The ArcGIS layer exposes no release identifier and the durability of presence_id is undocumented; a count, max-modified, ordered-page-hash pre/post seal would still need an approved snapshot contract."
+      ],
+      "changedConditionRequired": "Written permission covering immutable raw-response retention and redistribution of derived county-species presence pairs, plus an approved snapshot-identity contract."
+    },
+    {
+      "sourceId": "water-quality-portal",
+      "source": "Water Quality Portal biological results",
+      "authority": "National Water Quality Monitoring Council",
+      "disposition": "no-go-below-yield-threshold",
+      "geographyFinding": "The biological result profile omits county FIPS, but the companion Station service returns explicit CountryCode, StateCode, and CountyCode for MonitoringLocationIdentifier. A compliant implementation would join by exact site ID and would not derive counties from coordinates.",
+      "domainSnapshot": {
+        "url": "https://www.waterqualitydata.us/Codes/subjecttaxonomicname?pagesize=100000&pagenumber=1&mimeType=json",
+        "recordCount": 20129,
+        "responseBytes": 1065920,
+        "sha256": "0daa66b4f86876f9f7e528effb776f84bd7e452fe17b23a357bd144de4eded9d"
+      },
+      "completeStationSurface": {
+        "catalogAquaticOrWetlandTaxa": 271,
+        "exactProviderEnumeratedTaxa": 71,
+        "successfulTaxonQueries": 71,
+        "stationCountySpeciesPairs": 2071,
+        "baselineOverlap": 1319,
+        "netUpperBound": 752,
+        "taxaWithNonzeroUpperBound": 39,
+        "responseBytes": 1874143,
+        "qualification": "Station membership is only an upper bound because the station response cannot itself prove a positive, final or accepted Count result. Non-enumerated taxa are provider-domain exclusions, not biological absence."
+      },
+      "positiveResultSample": {
+        "taxa": [
+          "Dreissena polymorpha",
+          "Corbicula fluminea",
+          "Cyprinus carpio",
+          "Myriophyllum spicatum",
+          "Potamogeton crispus",
+          "Daphnia lumholtzi",
+          "Hypophthalmichthys molitrix",
+          "Neogobius melanostomus"
+        ],
+        "downloadedCsvBytes": 17135371,
+        "acceptedPositiveCountySpeciesPairs": 1216,
+        "baselineOverlap": 756,
+        "netPairs": 460,
+        "acceptanceRules": [
+          "Exact SubjectTaxonomicName",
+          "ActivityMediaName Biological",
+          "CharacteristicName Count with count unit",
+          "blank unidentified-species and detection-condition fields",
+          "ResultStatusIdentifier Final or Accepted",
+          "finite ResultMeasureValue greater than zero",
+          "exact MonitoringLocationIdentifier join to an active US county FIPS from Station metadata"
+        ]
+      },
+      "changedConditionRequired": "A materially expanded provider surface measuring at least 2000 net positive pairs against a new pinned baseline."
+    },
+    {
+      "sourceId": "pest-tracker-napis",
+      "source": "USDA APHIS PPQ CAPS Pest Tracker and NAPIS",
+      "disposition": "no-go-below-yield-and-retention-rights",
+      "completeLatestMapCensus": {
+        "pestIndexTaxa": 606,
+        "mappedTaxa": 138,
+        "exactCatalogMatches": 37,
+        "positiveCountySpeciesPairs": 437,
+        "baselineOverlap": 255,
+        "netPairs": 182,
+        "verifiedAbsentConflicts": 0,
+        "pestIndexSha256": "90db31923bc96ad6f14b61c57b02fc8052100c62cb3bff484001bc0a234d3a45",
+        "orderedLatestMapAggregateSha256": "c6192e0c69817094f638814baa84d78e2e7f9f4a64a1a6432613e772aa5c2e01"
+      },
+      "semantics": "Only Found, Established by Survey, Established by Consensus, and Being Eradicated were positive candidates. Not Found is non-detection, not verified absence; No Survey, Data Entered, Eradicated, and interceptions were excluded.",
+      "blockers": [
+        "The exact latest-map net is far below the conditional threshold.",
+        "NAPIS raw access is login-gated and its documented sharing posture requires PPQ or state-owner permission for raw, processed, or summary data.",
+        "Public maps expose mutable aggregate status without observation IDs, exact dates, methods, diagnostics, or a release identifier."
+      ],
+      "changedConditionRequired": "Written APHIS/NAPIS permission for immutable retention and derived redistribution plus a materially larger exact measured net surface."
+    },
+    {
+      "sourceId": "scan-ecdysis",
+      "source": "SCAN/Ecdysis Symbiota portal archives",
+      "disposition": "no-go-below-yield-and-portal-policy",
+      "boundedSample": {
+        "cc0Archives": 8,
+        "availableCc0Archives": 89,
+        "rows": 343750,
+        "exactCatalogTaxa": 1417,
+        "uniquePairs": 178,
+        "baselineOverlap": 33,
+        "netPairs": 145
+      },
+      "projection": {
+        "netPairsRange": [1150, 1613]
+      },
+      "blockers": [
+        "Projected net yield remains below the 2000 conditional threshold.",
+        "Portal policy asks users not to redistribute occurrence data without collection-owner permission despite archive-level CC0 metadata."
+      ],
+      "changedConditionRequired": "Collection-owner permission or a revised portal policy, and an exact measured retainable surface above the conditional gate."
+    },
+    {
+      "sourceId": "mycoportal",
+      "source": "MyCoPortal Symbiota archives",
+      "disposition": "no-go-below-yield-and-portal-policy",
+      "boundedSample": {
+        "cc0Archives": 8,
+        "availableCc0Archives": 40,
+        "rows": 126892,
+        "exactCatalogTaxa": 712,
+        "uniquePairs": 72,
+        "baselineOverlap": 1,
+        "netPairs": 71
+      },
+      "projection": {
+        "netPairsRange": [355, 1121]
+      },
+      "blockers": [
+        "Projected net yield remains below the 2000 conditional threshold.",
+        "Portal policy asks users not to redistribute occurrence data without collection-owner permission despite archive-level CC0 metadata."
+      ],
+      "changedConditionRequired": "Collection-owner permission or a revised portal policy, and an exact measured retainable surface above the conditional gate."
+    },
+    {
+      "sourceId": "gbif-coordinate-specimens-residual",
+      "disposition": "no-go-below-yield-threshold",
+      "residualRowsWithBlankCountyAndCoordinates": 1404,
+      "qualification": "This is an upper bound before geography, taxonomy, quality, conflict, and baseline-overlap filtering."
+    },
+    {
+      "sourceId": "aphis-honey-bee-survey",
+      "disposition": "no-go-below-yield-threshold",
+      "retainedRows": 12704,
+      "positiveMappedPairUpperBound": 1849,
+      "baselineOverlap": 62,
+      "netUpperBound": 1787,
+      "qualification": "The upper bound is already below the 2000 conditional gate."
+    }
+  ],
+  "previouslyDurableNoGoOrExhaustedLanesNotReplayed": [
+    "BLM AIM completed tranche",
+    "USFS Insect and Disease Survey",
+    "USFS Current invasive plants",
+    "SERNEC retained CC0 surface",
+    "USFS Laurel Wilt",
+    "same-snapshot iNaturalist residual",
+    "EDDMapS",
+    "retained iDigBio",
+    "FIA analysis",
+    "old Alabama iNaturalist pilot",
+    "identical GBIF and USDA NRCS snapshots",
+    "jurisdiction-wide eradication audit"
+  ],
+  "result": {
+    "newEvidenceAssertions": 0,
+    "newUniqueDeterminations": 0,
+    "finalVerifiedPresent": 276608,
+    "finalVerifiedAbsent": 3143,
+    "finalTotalUniqueDeterminations": 279751,
+    "historicalGainFromFixedBaseline": 79533,
+    "checkpointReached": false,
+    "substantialMinimumReached": false,
+    "stretchTargetReached": false,
+    "reason": "No evaluated source both cleared the 2000-pair conditional gate and satisfied current access, retention, redistribution, snapshot-identity, geography, and evidence-semantic requirements. Creating a small below-gate tranche would not remedy the project's throughput problem and would consume integration effort while the material lanes remain blocked."
+  },
+  "nextUnlocks": [
+    "Authorize an authenticated GBIF occurrence download for the exact eBird dataset/taxa/counties, or supply an already-created immutable download archive.",
+    "Obtain iMapInvasives written permission for immutable response retention and redistribution of derived county-species pairs.",
+    "Re-run WQP only after its domain or station surface changes enough to measure at least 2000 net positive candidates against a newly pinned baseline."
+  ],
+  "externalMutations": {
+    "pushes": 0,
+    "deployments": 0,
+    "r2Mutations": 0,
+    "providerWrites": 0,
+    "providerJobsCreated": 0
+  }
+}
