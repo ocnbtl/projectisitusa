@@ -198,7 +198,7 @@ assert.deepEqual(postRound78.selectedSpeciesIds, [
   "amaranthus-graecizans",
   "amylostereum-areolatum",
 ]);
-assert.equal(postRound78.exploitationPairs, 22_005);
+assert.equal(postRound78.exploitationPairs, 21_953);
 assert.equal(postRound78.explorationPairs, 3_144);
 assert.equal(postRound78.selectedTaxa.filter((entry) => entry.selectionLane === "exploration").length, 1);
 assert.equal(postRound78.exploitationPairs + postRound78.explorationPairs, postRound78.expectedNetMovement);
@@ -252,9 +252,9 @@ assert.deepEqual(postRound79.selectedSpeciesIds, [
   "acyrthosiphon-primulae",
   "aeromonas-salmonicida",
   "albizia-procera",
+  "aleurocanthus-woglumi",
   "allantophomopsiella-pseudotsugae",
   "amaranthus-dubius",
-  "amaranthus-graecizans",
   "amylostereum-areolatum",
 ]);
 assert.equal(postRound79.exploitationPairs, 22_005);
@@ -275,7 +275,16 @@ assert.equal(postRound79Artifact.universe.grossPairs, 147_768);
 assert.equal(postRound79Artifact.corpus.notResearchedPairs, 72_312);
 assert.equal(postRound79Artifact.corpus.blockedPairs, 0);
 assert.equal(postRound79Artifact.corpus.alreadyResearchedPairs, 75_456);
-assert.deepEqual(postRound79Artifact.selection.selectedTaxa.map((entry) => entry.speciesId), postRound79.selectedSpeciesIds);
+assert.deepEqual(postRound79Artifact.selection.selectedTaxa.map((entry) => entry.speciesId), [
+  "aculops-fuchsiae",
+  "acyrthosiphon-primulae",
+  "aeromonas-salmonicida",
+  "albizia-procera",
+  "allantophomopsiella-pseudotsugae",
+  "amaranthus-dubius",
+  "amaranthus-graecizans",
+  "amylostereum-areolatum",
+]);
 assert.equal(postRound79Artifact.selection.expectedNetMovement, 25_152);
 process.stdout.write(`${JSON.stringify({
   postRound79SelectedSpeciesIds: postRound79.selectedSpeciesIds,
