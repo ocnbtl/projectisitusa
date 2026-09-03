@@ -42,7 +42,7 @@ function context(): SourceAdapterContext {
       targets: [{
         pairKey,
         recordId: "12345",
-        occurrenceId: "1782a7d3-38cc-4a21-bf01-ab0ff6befa9f",
+        occurrenceId: "r6uETbHoHus8nP2sOipCTo6BL4qadIivSFRj",
         countyFips: "53001",
         stateCode: "WA",
         sourceState: "Washington",
@@ -78,7 +78,7 @@ async function main() {
     assert.equal(result.outcomes[0].status, "evidence-found");
     assert.equal(result.outcomes[0].scope_complete, true);
     assert.equal(result.assertions[0].claim_type, "recorded-present");
-    assert.equal(result.assertions[0].source_record_id, "cpnwh:1782a7d3-38cc-4a21-bf01-ab0ff6befa9f");
+    assert.equal(result.assertions[0].source_record_id, "cpnwh:r6uETbHoHus8nP2sOipCTo6BL4qadIivSFRj");
     assert.equal(result.assertions[0].source_record_date, "2024-06-01");
     assert.equal(result.assertions[0].geography_match.source_county, "Adams");
     assert.equal(result.upstreamRequests.length, 0);
@@ -92,6 +92,11 @@ async function main() {
     const target = (invalid.parameters.targets as Array<Record<string, unknown>>)[0];
     target.license = "";
     await assert.rejects(() => runCpnwhPreservedSpecimens(invalid), /license differs/u);
+
+    const unsafeIdentity = context();
+    unsafeIdentity.parameters.targetPairSetSha256 = hash;
+    ((unsafeIdentity.parameters.targets as Array<Record<string, unknown>>)[0]).occurrenceId = "unsafe occurrence identity with spaces";
+    await assert.rejects(() => runCpnwhPreservedSpecimens(unsafeIdentity), /occurrence ID is invalid/u);
   } finally {
     globalThis.fetch = originalFetch;
   }

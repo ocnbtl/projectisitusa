@@ -62,7 +62,7 @@
         "properties": {
           "pairKey": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
           "recordId": { "type": "string", "pattern": "^[0-9]+$" },
-          "occurrenceId": { "type": "string", "minLength": 20 },
+          "occurrenceId": { "type": "string", "minLength": 20, "maxLength": 200, "pattern": "^[A-Za-z0-9:._{}/-]+$" },
           "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
           "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
           "sourceState": { "type": "string", "minLength": 1 },

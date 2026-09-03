@@ -107,7 +107,7 @@ function validateTarget(context: SourceAdapterContext, target: CpnwhTarget, acti
   assert(target.sourceState.trim().length > 0 && target.sourceCounty.trim().length > 0, `CPNWH source geography is missing for ${target.pairKey}.`);
   assert(activeCountyFips.has(target.countyFips), `CPNWH target county is inactive for ${target.pairKey}.`);
   assert(/^\d+$/u.test(target.recordId), `CPNWH portal record ID is invalid for ${target.pairKey}.`);
-  assert(/^\{?[0-9a-f-]{20,}\}?$/iu.test(target.occurrenceId), `CPNWH occurrence ID is invalid for ${target.pairKey}.`);
+  assert(/^[A-Za-z0-9:._{}\/-]{20,200}$/u.test(target.occurrenceId), `CPNWH occurrence ID is invalid for ${target.pairKey}.`);
   assert(target.license === CPNWH_CC0_LICENSE, `CPNWH witness license differs for ${target.pairKey}.`);
   assert(Number.isInteger(target.year) && target.year >= 1500 && target.year <= 2026, `CPNWH event year is invalid for ${target.pairKey}.`);
   assert(target.eventDate.trim().length > 0, `CPNWH event date is missing for ${target.pairKey}.`);
@@ -139,7 +139,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: CpnwhTar
     claim_type: "recorded-present",
     evidence_kind: "occurrence",
     scope: "point",
-    source_record_id: `cpnwh:${target.occurrenceId.toLocaleLowerCase("en-US")}`,
+    source_record_id: `cpnwh:${target.occurrenceId}`,
     source_url: CPNWH_DATASET_URL,
     source_record_date: target.eventDate,
     retrieved_at: archiveAcquiredAt,
