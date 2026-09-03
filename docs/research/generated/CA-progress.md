@@ -1,27 +1,27 @@
 # California Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `10671`
+- Verified present: `10771`
 - Verified absent: `58`
 - Not detected: `0`
-- Researched unresolved: `21349`
-- Not researched: `113154`
-- Determination coverage: `7.39%`
-- Research coverage: `22.09%`
-- Explicit outcome coverage: `22.0874%`
-- Applicable protocol cells: `507`
+- Researched unresolved: `21441`
+- Not researched: `112962`
+- Determination coverage: `7.46%`
+- Research coverage: `22.22%`
+- Explicit outcome coverage: `22.2196%`
+- Applicable protocol cells: `535`
 - Current complete protocol cells: `185`
-- Protocol completion: `39.05%`
-- Current protocol completion: `36.49%`
-- Evidence records: `33671`
-- Research runs: `30`
-- Rejection records: `2587`
+- Protocol completion: `37.01%`
+- Current protocol completion: `34.58%`
+- Evidence records: `33771`
+- Research runs: `32`
+- Rejection records: `2661`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 57 | 0 | 1 |
+| Chickpea milkvetch (`astragalus-cicer`) | plants | 57 | 0 | 1 |
+| Darwin's berberis (`berberis-darwinii`) | plants | 57 | 0 | 1 |
+| Corn brome (`bromus-squarrosus`) | plants | 57 | 0 | 1 |
 | Rock pigeon (`columba-livia`) | wildlife | 57 | 0 | 1 |
+| Dovefoot Geranium (`geranium-molle`) | plants | 57 | 0 | 1 |
+| Seaside barley (`hordeum-marinum`) | plants | 57 | 0 | 1 |
+| Stinking willie (`jacobaea-vulgaris`) | plants | 57 | 0 | 1 |
+| English walnut (`juglans-regia`) | plants | 57 | 0 | 1 |
+| Garden lettuce (`lactuca-sativa`) | plants | 57 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 57 | 0 | 1 |
+| Holly oak (`quercus-ilex`) | plants | 57 | 0 | 1 |
+| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 57 | 0 | 1 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 56 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 56 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 56 | 0 | 1 |
+| Hairypink (`petrorhagia-dubia`) | plants | 56 | 0 | 1 |
+| German knotgrass (`scleranthus-annuus`) | plants | 56 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 56 | 0 | 1 |
+| Spleen amaranth (`amaranthus-dubius`) | plants | 55 | 0 | 1 |
 | Meadow knapweed (`centaurea-debeauxii`) | plants | 55 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 55 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 55 | 0 | 1 |
-| Black mustard (`brassica-nigra`) | plants | 47 | 0 | 1 |
-| North Africa grass (`ventenata-dubia`) | plants | 47 | 0 | 1 |
-| Cootamundra wattle (`acacia-baileyana`) | plants | 45 | 0 | 1 |
-| Desert wheatgrass (`agropyron-desertorum`) | plants | 45 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 44 | 0 | 1 |
-| Common nipplewort (`lapsana-communis`) | plants | 43 | 0 | 1 |
-| Athel tamarisk (`tamarix-aphylla`) | plants | 43 | 0 | 1 |
-| Hollyhock (`alcea-rosea`) | plants | 42 | 0 | 1 |
-| Perennial veldtgrass (`ehrharta-calycina`) | plants | 42 | 0 | 1 |
-| Common mediterranean grass (`schismus-barbatus`) | plants | 42 | 0 | 1 |
-| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 40 | 0 | 1 |
-| Common Tansy (`tanacetum-vulgare`) | plants | 40 | 0 | 1 |
-| Asian mustard (`brassica-tournefortii`) | plants | 39 | 0 | 1 |
-| Yellow glandweed (`parentucellia-viscosa`) | plants | 39 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 39 | 0 | 1 |
-| Crested wheatgrass (`agropyron-cristatum`) | plants | 38 | 0 | 1 |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 38 | 0 | 1 |
-| Mexican fan palm (`washingtonia-robusta`) | plants | 38 | 0 | 1 |
-| Silversheath knotweed (`polygonum-argyrocoleon`) | plants | 36 | 0 | 1 |
-| Castor Bean (`ricinus-communis`) | plants | 36 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 55 | 0 | 1 |
+| Pale madwort (`alyssum-alyssoides`) | plants | 54 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 71 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 51 | 34 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:19.724Z | 88 | 46 |
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:52:26.773Z | 491 | 138 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4616 | 316 |
@@ -85,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-03T00:02:44.303Z | 12 | 3 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T01:38:39.542Z | 69 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

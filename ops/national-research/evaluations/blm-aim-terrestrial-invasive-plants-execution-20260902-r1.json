@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "blm-aim-terrestrial-invasive-plants-execution-20260902-r1",
+  "evaluatedAt": "2026-09-03T01:51:45.161Z",
+  "status": "integrated-below-checkpoint-after-executing-the-only-eligible-source",
+  "objective": "Increase exact unique county-species determinations without rerunning completed research, inflating progress with raw volume, or weakening evidence semantics.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseline": {
+    "commit": "f2ec0f05850bbf37dfac654ed96622c429526b1c",
+    "totalCountySpeciesPairs": 7872576,
+    "verifiedPresent": 273796,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 276939,
+    "notDetected": 236,
+    "researchedUnresolved": 1314102,
+    "notResearched": 6281299,
+    "conflicts": 0,
+    "coveragePercent": 3.517769
+  },
+  "yieldPolicy": {
+    "stretchTargetNetDeterminations": 25000,
+    "checkpointNetDeterminations": 5000,
+    "substantialMinimumNetDeterminations": 10000,
+    "conditionalSourceMinimumNetPairs": 2000,
+    "interpretation": "Thresholds apply to exact set-difference movement, not assertions, queries, rows, reviews, or files. A below-target result is retained only after all named high-yield lanes are executed, exhausted, or durably blocked."
+  },
+  "sourcePreflight": {
+    "evaluationPath": "ops/national-research/evaluations/source-expansion-preflights-20260902-r1.json",
+    "executed": [
+      {
+        "sourceId": "blm-aim-terrestrial-invasive-plants",
+        "disposition": "conditional-go",
+        "netEligiblePairs": 2426
+      }
+    ],
+    "notExecuted": [
+      {
+        "sourceId": "usfs-ids",
+        "disposition": "no-go",
+        "estimatedNetPairs": 511,
+        "changedConditionRequired": "A materially broader eligible snapshot or adapter contract that measures at least 2000 net pairs."
+      },
+      {
+        "sourceId": "sernec",
+        "disposition": "no-go",
+        "projectedUnambiguouslyRetainableCc0NetPairs": 1431,
+        "changedConditionRequired": "Written redistribution and raw-retention permission or a new measured CC0 surface above the conditional gate."
+      },
+      {
+        "sourceId": "usfs-laurel-wilt",
+        "disposition": "no-go",
+        "netEligiblePairs": 50,
+        "changedConditionRequired": "Documented reuse terms, curated disease-to-taxon mapping, and a materially larger eligible snapshot."
+      },
+      {
+        "sourceId": "inaturalist-research-grade",
+        "disposition": "no-go-no-fresh-snapshot",
+        "providerDatasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+        "liveCrawlId": 605,
+        "liveSampleRecordKey": 5938027305,
+        "liveSampleRecordLastParsed": "2026-08-29T05:53:51.661Z",
+        "previouslyProcessedCrawlId": 605,
+        "remainingSameSnapshotPairs": 622,
+        "changedConditionRequired": "A newer provider crawl or a separately justified checkpointable acquisition contract with at least 2000 net eligible pairs. Do not rerun the 28395 scope-complete pairs."
+      }
+    ]
+  },
+  "blmExecution": {
+    "preflightPath": "ops/national-research/evaluations/blm-aim-terrestrial-invasive-plants-preflight-20260902-r1.json",
+    "sourceSnapshotIdentitySha256": "aac37c90a95c1137de5a7ed4694eec9eafce1e0bc2f66f6a685b5b586e9a2cee",
+    "sourceLayerLastEditMs": 1780348225269,
+    "positiveGate": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+    "statePlans": 15,
+    "states": [
+      { "stateCode": "AK", "acceptedPairs": 2 },
+      { "stateCode": "AZ", "acceptedPairs": 113 },
+      { "stateCode": "CA", "acceptedPairs": 88 },
+      { "stateCode": "CO", "acceptedPairs": 245 },
+      { "stateCode": "ID", "acceptedPairs": 393 },
+      { "stateCode": "MT", "acceptedPairs": 404 },
+      { "stateCode": "ND", "acceptedPairs": 20 },
+      { "stateCode": "NM", "acceptedPairs": 100 },
+      { "stateCode": "NV", "acceptedPairs": 182 },
+      { "stateCode": "OR", "acceptedPairs": 121 },
+      { "stateCode": "SD", "acceptedPairs": 110 },
+      { "stateCode": "TX", "acceptedPairs": 1 },
+      { "stateCode": "UT", "acceptedPairs": 246 },
+      { "stateCode": "WA", "acceptedPairs": 118 },
+      { "stateCode": "WY", "acceptedPairs": 283 }
+    ],
+    "requestedUniquePairs": 2426,
+    "acceptedAssertionEvents": 2426,
+    "reviewEvents": 2426,
+    "rejections": 0,
+    "errors": 0,
+    "completeRuns": 15,
+    "antiDupIntersections": {
+      "baselineDeterminations": 0,
+      "completedSameSourceSnapshot": 0,
+      "unexecutedPriorPlans": 0,
+      "sameSnapshotRejections": 0,
+      "withinPlanDuplicates": 0
+    },
+    "semanticGuards": {
+      "presenceOnly": true,
+      "sourceSilenceCreatesAbsence": false,
+      "sourceSilenceCreatesNonDetection": false,
+      "zeroCoverCreatesNegativeEvidence": false,
+      "exactCatalogBinomialRequired": true,
+      "exactCountyFipsAndStateRequired": true,
+      "retainedWitnessRequired": true
+    }
+  },
+  "integration": {
+    "asOfDate": "2026-09-03",
+    "asOfReason": "All new immutable runs were created after 2026-09-03T00:00:00Z. The compiler was advanced to the truthful UTC evidence date instead of backdating runs.",
+    "totalCountySpeciesPairs": 7872576,
+    "verifiedPresent": 276608,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 279751,
+    "notDetected": 236,
+    "researchedUnresolved": 1314212,
+    "notResearched": 6278377,
+    "conflicts": 0,
+    "coveragePercent": 3.553487,
+    "exactNetDeterminationDelta": 2812,
+    "deltaAttribution": {
+      "currentBlmRuns": 2426,
+      "previouslyCommittedInaturalistRunsFirstEligibleOn2026-09-03": 386,
+      "unattributed": 0
+    },
+    "cumulativeInterpretation": "All 2812 pairs are in D_end minus D_start. The 386 iNaturalist pairs were already committed but excluded from the 2026-09-02 projection by the UTC cutoff; they are not rerun research and are counted exactly once here."
+  },
+  "buildEvidence": {
+    "sourceRegistryCount": 35,
+    "immutableRunCount": 1611,
+    "researchIndex": {
+      "stateCount": 51,
+      "pairStatuses": 1669442,
+      "outcomes": 1824401,
+      "coverageMetrics": 1071,
+      "firstAttempt": "failed-resource-limit-default-heap",
+      "firstAttemptError": "JavaScript heap out of memory near the default 3.5 GB limit",
+      "retry": "passed-with-node-max-old-space-size-8192"
+    }
+  },
+  "targetAssessment": {
+    "checkpointReached": false,
+    "stretchTargetReached": false,
+    "result": "The exact gain of 2812 is below the 5000 checkpoint and 25000 stretch target. It is retained because BLM AIM was the only named lane above the 2000 conditional gate and was fully executed; the other four lanes were measured as no-go, stale, or rights-blocked rather than rerun."
+  },
+  "externalMutations": {
+    "pushes": 0,
+    "deployments": 0,
+    "r2Mutations": 0,
+    "providerWrites": 0
+  }
+}

@@ -1,26 +1,26 @@
 # North Dakota Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `1682`
+- Verified present: `1702`
 - Verified absent: `53`
 - Not detected: `0`
-- Researched unresolved: `23334`
-- Not researched: `107643`
-- Determination coverage: `1.31%`
-- Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8898%`
-- Applicable protocol cells: `189`
+- Researched unresolved: `23331`
+- Not researched: `107626`
+- Determination coverage: `1.32%`
+- Research coverage: `18.90%`
+- Explicit outcome coverage: `18.9026%`
+- Applicable protocol cells: `202`
 - Current complete protocol cells: `89`
-- Protocol completion: `53.97%`
-- Current protocol completion: `47.09%`
-- Evidence records: `2060`
-- Research runs: `31`
+- Protocol completion: `50.50%`
+- Current protocol completion: `44.06%`
+- Evidence records: `2080`
+- Research runs: `32`
 - Rejection records: `189`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Pale madwort (`alyssum-alyssoides`) | plants | 52 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 52 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 52 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 52 | 0 | 1 |
+| Roundfruit rush (`juncus-compressus`) | plants | 52 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 52 | 0 | 1 |
+| Clasping pepperweed (`lepidium-perfoliatum`) | plants | 52 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 52 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 52 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 52 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 51 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 51 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 50 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 53 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 53 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 53 | 1 |
@@ -44,19 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 53 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 53 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 53 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 53 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 53 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 53 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 53 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 53 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 53 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 53 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 53 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 53 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 53 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 53 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 53 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 53 | 0 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 2 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 19 | 33 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:37:00.283Z | 20 | 16 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 987 | 316 |

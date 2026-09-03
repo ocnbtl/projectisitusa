@@ -1,27 +1,27 @@
 # Florida Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `7306`
+- Verified present: `7607`
 - Verified absent: `67`
 - Not detected: `0`
-- Researched unresolved: `25323`
-- Not researched: `135072`
-- Determination coverage: `4.39%`
-- Research coverage: `19.49%`
-- Explicit outcome coverage: `19.4888%`
-- Applicable protocol cells: `396`
+- Researched unresolved: `25558`
+- Not researched: `134536`
+- Determination coverage: `4.57%`
+- Research coverage: `19.81%`
+- Explicit outcome coverage: `19.8083%`
+- Applicable protocol cells: `404`
 - Current complete protocol cells: `140`
-- Protocol completion: `38.64%`
-- Current protocol completion: `35.35%`
-- Evidence records: `17981`
-- Research runs: `27`
-- Rejection records: `4485`
+- Protocol completion: `37.87%`
+- Current protocol completion: `34.65%`
+- Evidence records: `18282`
+- Research runs: `29`
+- Rejection records: `5119`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 126 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 535 | 49 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3770 | 316 |
@@ -85,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-03T00:05:12.114Z | 301 | 8 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

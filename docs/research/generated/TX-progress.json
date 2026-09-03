@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "TX",
-  "asOf": "2026-09-02",
-  "generatedAt": "2026-09-02T00:00:00.000Z",
+  "asOf": "2026-09-03",
+  "generatedAt": "2026-09-03T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 355,
+    "applicableSpeciesCount": 356,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2149,
+    "unknownSpeciesCount": 2148,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 302,
+    "derivedApplicableSpeciesCount": 303,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 477,
+    "boundedAcquisitionSpeciesCount": 478,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 636016,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 11831,
+    "verifiedPresent": 11832,
     "verifiedAbsent": 254,
     "notDetected": 0,
     "researchedUnresolved": 109073,
-    "notResearched": 514858,
+    "notResearched": 514857,
     "determinationCoveragePercent": 1.9,
     "researchCoveragePercent": 19.05,
-    "explicitOutcomePairCount": 121158,
-    "explicitOutcomeCoveragePercent": 19.0495,
+    "explicitOutcomePairCount": 121159,
+    "explicitOutcomeCoveragePercent": 19.0497,
     "conflictCount": 0,
-    "evidenceRecordCount": 14536,
+    "evidenceRecordCount": 14537,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 14536,
+    "runEvidenceRecordCount": 14537,
     "rejectionRecordCount": 1573,
-    "researchRunCount": 30,
+    "researchRunCount": 31,
     "boundedAcquisition": {
-      "speciesCount": 477,
-      "totalPairs": 121158,
-      "verifiedPresent": 11831,
+      "speciesCount": 478,
+      "totalPairs": 121412,
+      "verifiedPresent": 11832,
       "verifiedAbsent": 254,
       "notDetected": 0,
       "researchedUnresolved": 109073,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 121158,
-      "explicitOutcomeCoveragePercent": 100
+      "notResearched": 253,
+      "researchCoveragePercent": 99.79,
+      "explicitOutcomePairs": 121159,
+      "explicitOutcomeCoveragePercent": 99.7916
     }
   },
   "migrationCandidates": {
@@ -226,6 +226,16 @@
       "lastRunAt": "2026-07-26T13:44:30.000Z",
       "evidencePairCount": 445,
       "screenedSpeciesCount": 37
+    },
+    {
+      "id": "blm-aim-terrestrial-invasive-plants",
+      "label": "BLM AIM Terrestrial Invasive Plant Indicators",
+      "authority": "U.S. Bureau of Land Management",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-03T01:38:03.026Z",
+      "evidencePairCount": 1,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "usfs-current-invasive-plants",
@@ -422,17 +432,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1908,
-    "applicableCells": 390,
-    "notApplicableCells": 1518,
+    "totalCells": 1912,
+    "applicableCells": 391,
+    "notApplicableCells": 1521,
     "completeCells": 131,
-    "incompleteCells": 259,
+    "incompleteCells": 260,
     "blockedCells": 0,
     "currentCells": 118,
     "staleCells": 13,
-    "undatedCells": 259,
-    "applicableCompletionPercent": 33.59,
-    "currentCompletePercent": 30.26,
+    "undatedCells": 260,
+    "applicableCompletionPercent": 33.5,
+    "currentCompletePercent": 30.18,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -452,9 +462,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 320,
+        "applicableCells": 321,
         "currentCompleteCells": 76,
-        "currentCompletePercent": 23.75
+        "currentCompletePercent": 23.68
       },
       {
         "category": "wildlife",
@@ -478,9 +488,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 329,
+        "applicableCells": 330,
         "currentCompleteCells": 70,
-        "currentCompletePercent": 21.28
+        "currentCompletePercent": 21.21
       },
       {
         "priority": "baseline",
@@ -498,7 +508,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 355,
+        "applicableCells": 356,
         "currentCompleteCells": 96,
         "processed": false
       },
@@ -511,6 +521,18 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "salsola-tragus",
+      "commonName": "Prickly Russian thistle",
+      "scientificName": "Salsola tragus",
+      "category": "plants",
+      "notResearchedCountyCount": 253,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 253001
+    },
     {
       "speciesId": "cryphonectria-parasitica",
       "commonName": "Chestnut Blight",
@@ -1507,16 +1529,6 @@
       "speciesId": "kochia-scoparia",
       "commonName": "Common kochia",
       "scientificName": "Kochia scoparia",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 254,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 2540
-    },
-    {
-      "speciesId": "lilium-regale",
-      "commonName": "Regal lily",
-      "scientificName": "Lilium regale",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 254,

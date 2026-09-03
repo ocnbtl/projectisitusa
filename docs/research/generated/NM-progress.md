@@ -1,26 +1,26 @@
 # New Mexico Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `2372`
+- Verified present: `2472`
 - Verified absent: `33`
 - Not detected: `0`
-- Researched unresolved: `14029`
-- Not researched: `66198`
-- Determination coverage: `2.91%`
-- Research coverage: `19.89%`
-- Explicit outcome coverage: `19.8882%`
-- Applicable protocol cells: `296`
-- Current complete protocol cells: `62`
-- Protocol completion: `25.34%`
-- Current protocol completion: `20.95%`
-- Evidence records: `2412`
-- Research runs: `28`
+- Researched unresolved: `14012`
+- Not researched: `66115`
+- Determination coverage: `3.03%`
+- Research coverage: `19.99%`
+- Explicit outcome coverage: `19.9886%`
+- Applicable protocol cells: `320`
+- Current complete protocol cells: `63`
+- Protocol completion: `23.75%`
+- Current protocol completion: `19.69%`
+- Evidence records: `2512`
+- Research runs: `29`
 - Rejection records: `496`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Compact brome (`bromus-madritensis`) | plants | 32 | 0 | 1 |
+| Moleplant (`euphorbia-lathyris`) | plants | 32 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 32 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 32 | 0 | 1 |
+| Anise (`myrrhis-odorata`) | plants | 32 | 0 | 1 |
+| Silver cinquefoil (`potentilla-argentea`) | plants | 32 | 0 | 1 |
+| French tamarisk (`tamarix-gallica`) | plants | 32 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 32 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 31 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 31 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 31 | 0 | 1 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 31 | 0 | 1 |
+| London rocket (`sisymbrium-irio`) | plants | 29 | 0 | 1 |
+| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 29 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 28 | 0 | 1 |
+| Common mediterranean grass (`schismus-barbatus`) | plants | 28 | 0 | 1 |
+| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 28 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 28 | 0 | 1 |
+| Threadstem carpetweed (`mollugo-cerviana`) | plants | 27 | 0 | 1 |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 26 | 0 | 1 |
+| Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 24 | 0 | 1 |
+| Prickly Russian thistle (`salsola-tragus`) | plants | 16 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 33 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 33 | 2 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 33 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 33 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 33 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 33 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 33 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 33 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 33 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 33 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 33 | 2 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 33 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 0 | 33 | 1 |
-| Hydrilla (`hydrilla`) | plants | 0 | 33 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 0 | 33 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 33 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 33 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 33 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 33 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 33 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 33 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 33 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 33 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 33 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 33 | 0 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 11 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 70 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:37:05.423Z | 100 | 32 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 948 | 316 |

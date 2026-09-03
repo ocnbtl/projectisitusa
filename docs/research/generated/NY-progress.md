@@ -1,27 +1,27 @@
 # New York Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `7801`
+- Verified present: `7874`
 - Verified absent: `62`
 - Not detected: `10`
-- Researched unresolved: `21002`
-- Not researched: `126373`
-- Determination coverage: `5.06%`
-- Research coverage: `18.60%`
-- Explicit outcome coverage: `18.5993%`
-- Applicable protocol cells: `370`
+- Researched unresolved: `21220`
+- Not researched: `126082`
+- Determination coverage: `5.11%`
+- Research coverage: `18.79%`
+- Explicit outcome coverage: `18.7867%`
+- Applicable protocol cells: `374`
 - Current complete protocol cells: `108`
-- Protocol completion: `32.70%`
-- Current protocol completion: `29.19%`
-- Evidence records: `8923`
-- Research runs: `28`
-- Rejection records: `903`
+- Protocol completion: `32.35%`
+- Current protocol completion: `28.88%`
+- Evidence records: `8996`
+- Research runs: `30`
+- Rejection records: `1055`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -33,7 +33,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Rock pigeon (`columba-livia`) | wildlife | 56 | 0 | 1 |
-| House sparrow (`passer-domesticus`) | wildlife | 43 | 0 | 1 |
 | European Starling (`sturnus-vulgaris`) | wildlife | 42 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 62 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 62 | 2 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 62 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 62 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 62 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 62 | 0 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 374 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 494 | 33 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4441 | 316 |
@@ -85,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | not run | 0 | 0 |
+| iNaturalist Research Grade observations | operational | 2026-09-03T00:15:03.082Z | 73 | 6 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T01:17:47.603Z | 45 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

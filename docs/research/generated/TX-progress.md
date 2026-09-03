@@ -1,26 +1,26 @@
 # Texas Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `11831`
+- Verified present: `11832`
 - Verified absent: `254`
 - Not detected: `0`
 - Researched unresolved: `109073`
-- Not researched: `514858`
+- Not researched: `514857`
 - Determination coverage: `1.90%`
 - Research coverage: `19.05%`
-- Explicit outcome coverage: `19.0495%`
-- Applicable protocol cells: `390`
+- Explicit outcome coverage: `19.0497%`
+- Applicable protocol cells: `391`
 - Current complete protocol cells: `118`
-- Protocol completion: `33.59%`
-- Current protocol completion: `30.26%`
-- Evidence records: `14536`
-- Research runs: `30`
+- Protocol completion: `33.50%`
+- Current protocol completion: `30.18%`
+- Evidence records: `14537`
+- Research runs: `31`
 - Rejection records: `1573`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Prickly Russian thistle (`salsola-tragus`) | plants | 253 | 0 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 254 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 254 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 254 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 254 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 254 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 254 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 64 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 445 | 37 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:38:03.026Z | 1 | 1 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5251 | 316 |

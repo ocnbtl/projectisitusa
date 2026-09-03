@@ -1,26 +1,26 @@
 # Alaska Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `1062`
+- Verified present: `1064`
 - Verified absent: `30`
 - Not detected: `0`
 - Researched unresolved: `13518`
-- Not researched: `60510`
-- Determination coverage: `1.45%`
+- Not researched: `60508`
+- Determination coverage: `1.46%`
 - Research coverage: `19.45%`
-- Explicit outcome coverage: `19.4489%`
-- Applicable protocol cells: `208`
+- Explicit outcome coverage: `19.4515%`
+- Applicable protocol cells: `210`
 - Current complete protocol cells: `110`
-- Protocol completion: `52.88%`
-- Current protocol completion: `52.88%`
-- Evidence records: `1252`
-- Research runs: `31`
+- Protocol completion: `52.38%`
+- Current protocol completion: `52.38%`
+- Evidence records: `1254`
+- Research runs: `32`
 - Rejection records: `2194`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 29 | 0 | 1 |
+| Garden sorrel (`rumex-acetosa`) | plants | 29 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 30 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 30 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 30 | 1 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 30 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 30 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 30 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 30 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 30 | 0 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 1 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 21 | 34 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:35:22.239Z | 2 | 2 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 314 | 316 |

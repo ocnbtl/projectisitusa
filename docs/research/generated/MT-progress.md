@@ -1,26 +1,26 @@
 # Montana Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `3729`
+- Verified present: `4133`
 - Verified absent: `56`
 - Not detected: `0`
-- Researched unresolved: `23991`
-- Not researched: `112448`
-- Determination coverage: `2.70%`
-- Research coverage: `19.81%`
-- Explicit outcome coverage: `19.8083%`
-- Applicable protocol cells: `281`
-- Current complete protocol cells: `72`
-- Protocol completion: `30.25%`
-- Current protocol completion: `25.62%`
-- Evidence records: `3832`
-- Research runs: `33`
+- Researched unresolved: `23912`
+- Not researched: `112123`
+- Determination coverage: `2.99%`
+- Research coverage: `20.04%`
+- Explicit outcome coverage: `20.0401%`
+- Applicable protocol cells: `334`
+- Current complete protocol cells: `74`
+- Protocol completion: `26.05%`
+- Current protocol completion: `22.16%`
+- Evidence records: `4236`
+- Research runs: `34`
 - Rejection records: `137`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 56 | 2 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 56 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 56 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 56 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 56 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 56 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 56 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 56 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 56 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 56 | 2 |
-| Giant Hogweed (`giant-hogweed`) | plants | 0 | 56 | 1 |
-| Hydrilla (`hydrilla`) | plants | 0 | 56 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 0 | 56 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 56 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 56 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 56 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 56 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 56 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 56 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 56 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 56 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 56 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 56 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 56 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 56 | 0 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 55 | 0 | 1 |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 55 | 0 | 1 |
+| Garden orache (`atriplex-hortensis`) | plants | 55 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 55 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 55 | 0 | 1 |
+| White Sweet Clover (`melilotus-albus`) | plants | 55 | 0 | 1 |
+| Field forget-me-not (`myosotis-arvensis`) | plants | 55 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 55 | 0 | 1 |
+| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 55 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 55 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 55 | 0 | 1 |
+| Patience dock (`rumex-patientia`) | plants | 55 | 0 | 1 |
+| Grass-like starwort (`stellaria-graminea`) | plants | 55 | 0 | 1 |
+| Common Speedwell (`veronica-officinalis`) | plants | 55 | 0 | 1 |
+| Brome fescue (`vulpia-bromoides`) | plants | 55 | 0 | 1 |
+| Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 54 | 0 | 1 |
+| Chickpea milkvetch (`astragalus-cicer`) | plants | 54 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 54 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 54 | 0 | 1 |
+| Crossflower (`chorispora-tenella`) | plants | 54 | 0 | 1 |
+| Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 54 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 54 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 54 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 54 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 54 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 4 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 239 | 68 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:55.073Z | 404 | 88 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2066 | 316 |

@@ -1,26 +1,26 @@
 # Oregon Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `5198`
+- Verified present: `5319`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `12671`
-- Not researched: `72239`
-- Determination coverage: `5.81%`
-- Research coverage: `19.86%`
-- Explicit outcome coverage: `19.8627%`
-- Applicable protocol cells: `415`
+- Researched unresolved: `12655`
+- Not researched: `72134`
+- Determination coverage: `5.94%`
+- Research coverage: `19.98%`
+- Explicit outcome coverage: `19.9791%`
+- Applicable protocol cells: `447`
 - Current complete protocol cells: `104`
-- Protocol completion: `28.19%`
-- Current protocol completion: `25.06%`
-- Evidence records: `5464`
-- Research runs: `32`
+- Protocol completion: `26.17%`
+- Current protocol completion: `23.27%`
+- Evidence records: `5585`
+- Research runs: `33`
 - Rejection records: `441`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 35 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 35 | 0 | 1 |
+| Colonial bentgrass (`agrostis-capillaris`) | plants | 35 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 35 | 0 | 1 |
+| Bur chervil (`anthriscus-caucalis`) | plants | 35 | 0 | 1 |
+| German-madwort (`asperugo-procumbens`) | plants | 35 | 0 | 1 |
+| Compact brome (`bromus-madritensis`) | plants | 35 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 35 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 35 | 0 | 1 |
+| Ballmustard (`neslia-paniculata`) | plants | 35 | 0 | 1 |
+| Sainfoin legume (`onobrychis-viciifolia`) | plants | 35 | 0 | 1 |
+| Dog's-tongue (`pseudelephantopus-spicatus`) | plants | 35 | 0 | 1 |
+| Birdeye pearlwort (`sagina-procumbens`) | plants | 35 | 0 | 1 |
 | German knotgrass (`scleranthus-annuus`) | plants | 35 | 0 | 1 |
+| White mustard (`sinapis-alba`) | plants | 35 | 0 | 1 |
+| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 35 | 0 | 1 |
+| Twolobe speedwell (`veronica-biloba`) | plants | 35 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 34 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 34 | 0 | 1 |
 | Atlantic ivy (`hedera-hibernica`) | plants | 34 | 0 | 1 |
 | Mouseear hawkweed (`hieracium-pilosella`) | plants | 34 | 0 | 1 |
+| Mouse barley (`hordeum-murinum`) | plants | 34 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 34 | 0 | 1 |
 | Evergreen bugloss (`pentaglottis-sempervirens`) | plants | 34 | 0 | 1 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 33 | 0 | 1 |
+| Ripgut brome (`bromus-diandrus`) | plants | 33 | 0 | 1 |
 | Striated broom (`cytisus-striatus`) | plants | 33 | 0 | 1 |
-| Moleplant (`euphorbia-lathyris`) | plants | 33 | 0 | 1 |
-| Common dandelion (`taraxacum-officinale-ssp-officinale`) | plants | 33 | 0 | 1 |
-| Greater burdock (`arctium-lappa`) | plants | 32 | 0 | 1 |
-| Anise (`myrrhis-odorata`) | plants | 32 | 0 | 1 |
-| European stickseed (`lappula-squarrosa`) | plants | 30 | 0 | 1 |
-| Wall-lettuce (`mycelis-muralis`) | plants | 30 | 0 | 1 |
-| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 29 | 0 | 1 |
-| Lesser knapweed (`centaurea-nigra`) | plants | 29 | 0 | 1 |
-| Golden clover (`trifolium-aureum`) | plants | 29 | 0 | 1 |
-| European beachgrass (`ammophila-arenaria`) | plants | 28 | 0 | 1 |
-| Spanish broom (`spartium-junceum`) | plants | 28 | 0 | 1 |
-| Himalayan Balsam (`impatiens-glandulifera`) | plants | 27 | 0 | 1 |
-| Lesser Celandine (`ranunculus-ficaria`) | plants | 27 | 0 | 1 |
-| Saltcedar (`tamarix-ramosissima`) | plants | 27 | 0 | 1 |
-| Brownray knapweed (`centaurea-jacea`) | plants | 26 | 0 | 1 |
-| Perennial cornflower (`centaurea-montana`) | plants | 26 | 0 | 1 |
-| French broom (`genista-monspessulana`) | plants | 26 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 15 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:37:50.685Z | 121 | 51 |
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:42:29.381Z | 730 | 129 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2721 | 316 |

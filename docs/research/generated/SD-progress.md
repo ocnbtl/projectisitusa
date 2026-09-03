@@ -1,26 +1,26 @@
 # South Dakota Research Progress
 
-Generated: `2026-09-02T00:00:00.000Z`
+Generated: `2026-09-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `66`
 - County-species pairs: `165264`
-- Verified present: `1433`
+- Verified present: `1543`
 - Verified absent: `66`
 - Not detected: `0`
-- Researched unresolved: `29719`
-- Not researched: `134046`
-- Determination coverage: `0.91%`
-- Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8898%`
-- Applicable protocol cells: `209`
-- Current complete protocol cells: `87`
-- Protocol completion: `41.63%`
-- Current protocol completion: `41.63%`
-- Evidence records: `1619`
-- Research runs: `27`
+- Researched unresolved: `29686`
+- Not researched: `133969`
+- Determination coverage: `0.97%`
+- Research coverage: `18.94%`
+- Explicit outcome coverage: `18.9364%`
+- Applicable protocol cells: `248`
+- Current complete protocol cells: `90`
+- Protocol completion: `36.29%`
+- Current protocol completion: `36.29%`
+- Evidence records: `1729`
+- Research runs: `28`
 - Rejection records: `195`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 66 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 66 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 66 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 66 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 66 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 66 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 66 | 1 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 66 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 66 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 66 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 66 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 66 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 66 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 66 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 66 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 66 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 66 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 66 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 66 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 66 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 66 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 66 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 66 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 66 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 66 | 0 |
+| Mugwort (`artemisia-vulgaris`) | plants | 65 | 0 | 1 |
+| Corn brome (`bromus-squarrosus`) | plants | 65 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 65 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 65 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 65 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 65 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 65 | 0 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 65 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 65 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 65 | 0 | 1 |
+| Silver cinquefoil (`potentilla-argentea`) | plants | 65 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 65 | 0 | 1 |
+| Maidenstears (`silene-vulgaris`) | plants | 65 | 0 | 1 |
+| Common Tansy (`tanacetum-vulgare`) | plants | 65 | 0 | 1 |
+| Salsify (`tragopogon-porrifolius`) | plants | 65 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 64 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 64 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 64 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 64 | 0 | 1 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 64 | 0 | 1 |
+| Roundfruit rush (`juncus-compressus`) | plants | 64 | 0 | 1 |
+| Dalmatian Toadflax (`linaria-dalmatica`) | plants | 64 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 64 | 0 | 1 |
+| Prickly Russian thistle (`salsola-tragus`) | plants | 64 | 0 | 1 |
+| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 64 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 14 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 30 | 33 |
+| BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:37:57.834Z | 110 | 55 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 624 | 316 |
