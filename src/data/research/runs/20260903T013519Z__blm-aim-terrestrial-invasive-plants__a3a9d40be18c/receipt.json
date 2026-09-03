@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c",
+  "status": "complete",
+  "started_at": "2026-09-03T01:35:19.777Z",
+  "finished_at": "2026-09-03T01:35:22.239Z",
+  "actor_type": "adapter",
+  "actor_id": "blm-aim-terrestrial-invasive-plants-targeted@1.0.0",
+  "source_id": "blm-aim-terrestrial-invasive-plants",
+  "source_registry_hash": "88ea3f05a5909f3eab29e03974c3f2cc1d88980f34557cdc9e6255589e47757b",
+  "adapter_id": "blm-aim-terrestrial-invasive-plants-targeted",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5df27205627dad786abf5b2ebdf8f017a50555924ce7c8347b3a295d1c756ff4",
+  "code_commit": "ffcbb25c63d4cbd66c55409155b4e4f8eeee44bf",
+  "parameter_hash": "a3a9d40be18ca74a9d9cea57de6857a3074f63fda13231bc90576e25c0c82d4b",
+  "parameters": {
+    "stateCode": "AK",
+    "mode": "targeted-stable-positive-witness",
+    "layerUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+    "layerLastEditMs": 1780348225269,
+    "preflightEvaluationId": "blm-aim-terrestrial-invasive-plants-preflight-20260902-r1",
+    "positiveWhereClause": "Invasive='Invasive' AND AH_SpeciesCover_n > 0",
+    "minimumRequestIntervalMs": 1000,
+    "maxResponseBytes": 5242880,
+    "objectIdsPerRequest": 100,
+    "targets": [
+      {
+        "pairKey": "02020:alopecurus-pratensis",
+        "countyFips": "02020",
+        "speciesId": "alopecurus-pratensis",
+        "scientificName": "Alopecurus pratensis",
+        "objectId": 366723,
+        "sourceRecordCount": 1,
+        "sourceCountyName": "Anchorage Municipality",
+        "sourceStateCode": "AK"
+      },
+      {
+        "pairKey": "02020:rumex-acetosa",
+        "countyFips": "02020",
+        "speciesId": "rumex-acetosa",
+        "scientificName": "Rumex acetosa",
+        "objectId": 366724,
+        "sourceRecordCount": 1,
+        "sourceCountyName": "Anchorage Municipality",
+        "sourceStateCode": "AK"
+      }
+    ],
+    "candidatePairs": [
+      "02020:alopecurus-pratensis",
+      "02020:rumex-acetosa"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "AK",
+    "county_fips": [
+      "02020"
+    ],
+    "species_ids": [
+      "alopecurus-pratensis",
+      "rumex-acetosa"
+    ],
+    "pair_keys": [
+      "02020:alopecurus-pratensis",
+      "02020:rumex-acetosa"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6?f=json",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:35:19.779Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6/query?f=json&objectIds=366723%2C366724&outFields=OBJECTID%2CPrimaryKey%2CPlotID%2CState%2CSpecies%2CScientificName%2CDateVisited%2CAH_SpeciesCover%2CAH_SpeciesCover_n%2CGrowthHabit%2CDuration%2CNonnative%2CNoxious%2CInvasive%2CSG_Group%2CCommonName%2CCountyName%2CCOUNTY_FIPS%2CSTATE_FIPS%2CFIPS%2CDateLoadedInDb%2CDBKey%2CViewOBJECTID%2CGlobalID%2CCurrentPLANTSCode&returnGeometry=false&orderByFields=OBJECTID+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:35:20.050Z",
+      "record_count": 2
+    },
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6/query?f=json&objectIds=366723%2C366724&outFields=OBJECTID%2CPrimaryKey%2CPlotID%2CState%2CSpecies%2CScientificName%2CDateVisited%2CAH_SpeciesCover%2CAH_SpeciesCover_n%2CGrowthHabit%2CDuration%2CNonnative%2CNoxious%2CInvasive%2CSG_Group%2CCommonName%2CCountyName%2CCOUNTY_FIPS%2CSTATE_FIPS%2CFIPS%2CDateLoadedInDb%2CDBKey%2CViewOBJECTID%2CGlobalID%2CCurrentPLANTSCode&returnGeometry=false&orderByFields=OBJECTID+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:35:21.186Z",
+      "record_count": 2
+    },
+    {
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6?f=json",
+      "status": 200,
+      "retrieved_at": "2026-09-03T01:35:22.239Z",
+      "record_count": 1
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/artifacts/blm-aim-layer-metadata-before.json",
+      "sha256": "bc2c86343e85be3fce11f19857ea6646fdffb5639701fe52327ebcee0ee602de",
+      "bytes": 13831,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/artifacts/blm-aim-0001-before.json",
+      "sha256": "d4ab9cd35be8ab2b465dab6df53217f9a8fd570b13062aa40582108b1da79d2e",
+      "bytes": 5158,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/artifacts/blm-aim-0001-after.json",
+      "sha256": "d4ab9cd35be8ab2b465dab6df53217f9a8fd570b13062aa40582108b1da79d2e",
+      "bytes": 5158,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/artifacts/blm-aim-layer-metadata-after.json",
+      "sha256": "bc2c86343e85be3fce11f19857ea6646fdffb5639701fe52327ebcee0ee602de",
+      "bytes": 13831,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/assertions.ndjson",
+      "sha256": "9c7cfa169fb01cbc7451283be95208c22e544a8975611797c53ed5dc74983577",
+      "bytes": 5517,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/reviews.ndjson",
+      "sha256": "2846ea74e14fb76c4e27a283717c5acb932b5305fff08a231b37a2a431fbc71e",
+      "bytes": 2347,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T013519Z__blm-aim-terrestrial-invasive-plants__a3a9d40be18c/outcomes.ndjson",
+      "sha256": "b5bf2613216879052ed1eed3e52a39c9fcc7893768bdef164d19a3f88407b6e4",
+      "bytes": 2411,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive invasive-plant cover at an AIM plot supports historical recorded presence at that sampled BLM location only. Missing, zero-cover, unmatched, and rejected rows are source silence and never support county absence or survey non-detection."
+  ],
+  "source_warnings": [
+    "BLM AIM plot detections support recorded presence only on sampled BLM lands.",
+    "Source silence, zero cover, and rejected records never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source blm-aim-terrestrial-invasive-plants --state AK --candidate-file ops/national-research/plans/blm-aim-terrestrial-invasive-plants-20260902-r1/blm-aim-ak-20260902-r1.json --output-root src/data/research/runs --pairs 02020:alopecurus-pratensis,02020:rumex-acetosa"
+}
