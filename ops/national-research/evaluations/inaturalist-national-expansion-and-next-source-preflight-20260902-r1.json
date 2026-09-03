@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "inaturalist-national-expansion-and-next-source-preflight-20260902-r1",
+  "evaluatedAt": "2026-09-03T00:32:48.176Z",
+  "baselineCommit": "17d71e7ba559df78d83991b5da5cae628f50f5ab",
+  "evaluatedAgainstCommit": "335c8c5365f3bd7e6b7b6a6a08e0aed838426b2d",
+  "status": "integrated-below-target-with-measured-residuals-and-next-source-go",
+  "objective": "Make cumulative, non-duplicative county-species determination progress, quantify net matrix movement rather than raw processing volume, and preserve durable next-source and blocker decisions when the 10000-pair stretch target is not reached.",
+  "campaign": {
+    "sourceId": "inaturalist-research-grade",
+    "providerDatasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "providerCrawlId": 605,
+    "providerLastParsed": "2026-08-29T05:09:50.488Z",
+    "immutableRunsCommitted": 41,
+    "completeRuns": 41,
+    "requestedUniqueScopePairs": 14711,
+    "pairOutcomes": 14711,
+    "acceptedAssertionEvents": 5485,
+    "noQualifyingEvidenceOutcomes": 9226,
+    "errorCount": 0,
+    "compilerDeduplicatedOverlaps": 449,
+    "netNewVerifiedPresentDeterminations": 5036,
+    "rawAssertionYieldPercent": 37.285025,
+    "netDeterminationYieldPercent": 34.232887,
+    "interpretation": "The 5036 count is the exact baseline-to-current matrix delta. It excludes repeated assertions and is cumulative progress rather than repeated research volume."
+  },
+  "matrix": {
+    "baseline": {
+      "verifiedPresent": 268760,
+      "verifiedAbsent": 3143,
+      "determinations": 271903,
+      "coveragePercent": 3.4538,
+      "notDetected": 236,
+      "researchedUnresolved": 1307498,
+      "notResearched": 6292939,
+      "conflicts": 0
+    },
+    "current": {
+      "verifiedPresent": 273796,
+      "verifiedAbsent": 3143,
+      "determinations": 276939,
+      "coveragePercent": 3.517769,
+      "notDetected": 236,
+      "researchedUnresolved": 1314102,
+      "notResearched": 6281299,
+      "conflicts": 0
+    },
+    "delta": {
+      "verifiedPresent": 5036,
+      "verifiedAbsent": 0,
+      "determinations": 5036,
+      "coveragePercentagePoints": 0.063969,
+      "notDetected": 0,
+      "researchedUnresolved": 6604,
+      "notResearched": -11640,
+      "conflicts": 0
+    }
+  },
+  "plannedScopeReconciliation": {
+    "statePlans": 51,
+    "fullyCompleteStatePlans": 48,
+    "totalPlannedPairs": 29017,
+    "scopeCompletePairs": 28395,
+    "remainingPairs": 622,
+    "remainingStates": [
+      {
+        "stateCode": "CA",
+        "plannedPairs": 498,
+        "completePairs": 165,
+        "remainingPairs": 333,
+        "remainingBySpecies": {
+          "coccinella-septempunctata": 58,
+          "linepithema-humile": 58,
+          "pieris-rapae": 58,
+          "columba-livia": 57,
+          "streptopelia-decaocto": 40,
+          "sturnus-vulgaris": 32,
+          "passer-domesticus": 30
+        }
+      },
+      {
+        "stateCode": "FL",
+        "plannedPairs": 603,
+        "completePairs": 536,
+        "remainingPairs": 67,
+        "remainingBySpecies": {
+          "anolis-sagrei": 67
+        }
+      },
+      {
+        "stateCode": "NY",
+        "plannedPairs": 575,
+        "completePairs": 353,
+        "remainingPairs": 222,
+        "remainingBySpecies": {
+          "coccinella-septempunctata": 62,
+          "pieris-rapae": 62,
+          "columba-livia": 56,
+          "sturnus-vulgaris": 42
+        }
+      }
+    ]
+  },
+  "measuredBlockers": [
+    {
+      "blockerId": "inaturalist-volume-tail",
+      "classification": "provider-volume-and-rate-limit",
+      "evidence": "Whole-state Florida and New York attempts did not finish inside a 10-minute execution cap. Lower-volume taxon partitions completed and were retained atomically; the incomplete whole-state attempts created no run bundle. Provider count preflights also returned intermittent HTTP 429 responses.",
+      "remainingScopePairs": 622,
+      "safeNextAction": "Resume only the listed species partitions with checkpointable or provider-download acquisition. Do not rerun any of the 28395 scope-complete pairs."
+    },
+    {
+      "blockerId": "negative-determination-scarcity",
+      "classification": "evidence-semantics",
+      "evidence": "No new source reviewed in this round supported current countywide verified absence. Source silence and non-detection remain ineligible for verified-absent.",
+      "safeNextAction": "Keep negative work protocol-qualified and fail closed; pursue explicit current eradication or complete-jurisdiction determinations separately."
+    }
+  ],
+  "nextSourcePreflights": [
+    {
+      "candidateId": "blm-aim-terrestrial-invasive-plants",
+      "decision": "go-bounded-adapter-spike",
+      "publisher": "Bureau of Land Management",
+      "catalogUrl": "https://catalog.data.gov/dataset/blm-natl-aim-terrestrial-species-indicators-public",
+      "serviceUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_Natl_AIM_Terrestrial_Species_Indicators_Public/FeatureServer/6",
+      "arcgisItemId": "78f6cacb78814ad895312715ef12ecd3",
+      "sourceFamilyPresentInRegistry": false,
+      "stateScope": [
+        "AK",
+        "AZ",
+        "CA",
+        "CO",
+        "ID",
+        "MT",
+        "ND",
+        "NM",
+        "NV",
+        "OR",
+        "SD",
+        "TX",
+        "UT",
+        "WA",
+        "WY"
+      ],
+      "positiveGate": "Invasive = Invasive AND AH_SpeciesCover_n > 0",
+      "stableRecordLocator": "itemId/layerId/GlobalID",
+      "positiveRows": 92885,
+      "distinctPositiveFipsTaxonGroups": 6016,
+      "boundedSampleGroups": 344,
+      "sampleAcceptedExactPairs": 263,
+      "sampleAlreadyVerifiedPresent": 140,
+      "sampleNetUndeterminedPairs": 123,
+      "sampleTaxonRejections": 68,
+      "sampleGeographyRejections": 13,
+      "projectedNetNewVerifiedPresent": 2060,
+      "projectionIsAcceptanceCount": false,
+      "evidenceSemantics": "Point-sampled historical recorded-present only; zero hits and source silence support neither absence nor non-detection.",
+      "snapshotRequirements": "Seal item ID, layer 6, lastEditDate, provider count, OBJECTID-ordered pages, raw hashes, and before/after metadata checks because the service is mutable and not versioned."
+    },
+    {
+      "candidateId": "usgs-pseudogymnoascus-destructans-2013-2020",
+      "decision": "protocol-go-retention-and-publication-no-go-pending-rights-resolution",
+      "publisher": "U.S. Geological Survey National Wildlife Health Center",
+      "landingPage": "https://www.usgs.gov/data/pseudogymnoascus-destructans-detections-us-county-2013-2020",
+      "doi": "10.5066/P9MONOPJ",
+      "scienceBaseItemId": "608325dbd34efe46ec0a1fbc",
+      "sourceFamilyPresentInRegistry": false,
+      "qualifyingStatus": "Pd not detected",
+      "assertionSemantics": "not-detected at a sampled location-redacted winter hibernaculum in the named county on the stated date",
+      "supportsVerifiedAbsence": false,
+      "alabamaSamplePairs": 3,
+      "alabamaSampleNetNewNotDetected": 3,
+      "rightsBlocker": "The official landing/catalog metadata says CC0 or public domain, while embedded FGDC metadata says contributing-agency permission should be requested. Do not retain or redistribute the raw CSV until this conflict is resolved.",
+      "safeNextAction": "Resolve rights with USGS, then implement only exact active-survey, exact-county, dated Pd-not-detected semantics; reject passive, ambiguous, state-only, or retired geography rows."
+    }
+  ],
+  "externalMutations": {
+    "providerPosts": 0,
+    "r2Mutations": 0,
+    "deployments": 0,
+    "pushes": 0
+  }
+}
