@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `2006`
+- Verified present: `2120`
 - Verified absent: `23`
 - Not detected: `0`
-- Researched unresolved: `9669`
-- Not researched: `45894`
-- Determination coverage: `3.52%`
-- Research coverage: `20.31%`
-- Explicit outcome coverage: `20.3118%`
-- Applicable protocol cells: `287`
+- Researched unresolved: `9659`
+- Not researched: `45790`
+- Determination coverage: `3.72%`
+- Research coverage: `20.49%`
+- Explicit outcome coverage: `20.4924%`
+- Applicable protocol cells: `320`
 - Current complete protocol cells: `62`
-- Protocol completion: `26.13%`
-- Current protocol completion: `21.60%`
-- Evidence records: `2046`
-- Research runs: `35`
+- Protocol completion: `23.44%`
+- Current protocol completion: `19.38%`
+- Evidence records: `2160`
+- Research runs: `36`
 - Rejection records: `81`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 22 | 0 | 1 |
-| Meadow brome (`bromus-commutatus`) | plants | 22 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 22 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 22 | 0 | 1 |
+| Garden orache (`atriplex-hortensis`) | plants | 22 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 22 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 22 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 22 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 22 | 0 | 1 |
 | Perennial cornflower (`centaurea-montana`) | plants | 22 | 0 | 1 |
+| Snow in summer (`cerastium-tomentosum`) | plants | 22 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 22 | 0 | 1 |
+| Golden chamomile (`cota-tinctoria`) | plants | 22 | 0 | 1 |
 | Wilman lovegrass (`eragrostis-superba`) | plants | 22 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 22 | 0 | 1 |
+| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 22 | 0 | 1 |
 | Common nipplewort (`lapsana-communis`) | plants | 22 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 22 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 22 | 0 | 1 |
 | Sweet alyssum (`lobularia-maritima`) | plants | 22 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 22 | 0 | 1 |
-| Field forget-me-not (`myosotis-arvensis`) | plants | 22 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 22 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 22 | 0 | 1 |
+| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 22 | 0 | 1 |
+| Opium poppy (`papaver-somniferum`) | plants | 22 | 0 | 1 |
 | Little spurflower (`plectranthus-parviflorus`) | plants | 22 | 0 | 1 |
-| Garden sorrel (`rumex-acetosa`) | plants | 22 | 0 | 1 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 22 | 0 | 1 |
-| Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 21 | 0 | 1 |
+| Russian wildrye (`psathyrostachys-juncea`) | plants | 22 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 21 | 0 | 1 |
 | Mat amaranth (`amaranthus-blitoides`) | plants | 21 | 0 | 1 |
-| Gold-of-pleasure (`camelina-sativa`) | plants | 21 | 0 | 1 |
-| Rough Bluegrass (`poa-trivialis`) | plants | 21 | 0 | 1 |
-| Dog's-tongue (`pseudelephantopus-spicatus`) | plants | 21 | 0 | 1 |
-| Cutleaf vipergrass (`scorzonera-laciniata`) | plants | 21 | 0 | 1 |
-| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 21 | 0 | 1 |
-| Twolobe speedwell (`veronica-biloba`) | plants | 21 | 0 | 1 |
-| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 20 | 0 | 1 |
-| Rattlesnake brome (`bromus-briziformis`) | plants | 20 | 0 | 1 |
-| Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 20 | 0 | 1 |
-| Bachelor's button (`gypsophila-paniculata`) | plants | 20 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 767 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:17.062Z | 114 | 66 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 13 | 90 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "cpnwh-preserved-specimens-execution-20260903-r1",
+  "evaluatedAt": "2026-09-03T22:57:01.710Z",
+  "status": "integrated-substantial-minimum-cleared",
+  "objective": "Produce cumulative, exact, net-new county-species determinations without replaying completed work, weakening evidence semantics, or counting raw source volume as progress.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseline": {
+    "commit": "4c1582fffd2410692c8642f81f3c25e0c7099162",
+    "fullCountySpeciesDenominator": 7872576,
+    "verifiedPresent": 276608,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 279751,
+    "notDetected": 236,
+    "researchedUnresolved": 1314212,
+    "notResearched": 6278377,
+    "conflicts": 0,
+    "coveragePercent": 3.553487448,
+    "recordedDeterminedPairSetSha256": "2d84da8de57c2904ee63a55ba9c4d4e18e3941506e10643c1493fb5d33b3b5c2",
+    "independentlyRecomputedPairKeySha256": "50a1841bdf52c43d0c8a25ef34fbca0224eb03802adfc8178368ff976cae16ac"
+  },
+  "yieldPolicy": {
+    "stretchTargetNetDeterminations": 25000,
+    "checkpointNetDeterminations": 5000,
+    "substantialMinimumNetDeterminations": 10000,
+    "conditionalSourceMinimumNetPairs": 2000,
+    "interpretation": "Thresholds apply only to exact set-difference movement in unique county-species determinations. Rows, requests, assertions, reviews, files, and already-determined overlaps do not count."
+  },
+  "sourcePreflight": {
+    "evaluationPath": "ops/national-research/evaluations/cpnwh-preserved-specimens-preflight-20260903-r1.json",
+    "datasetUrl": "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip",
+    "usagePolicyUrl": "https://www.pnwherbaria.org/data/datausagepolicy.php",
+    "archive": {
+      "bytes": 541445822,
+      "sha256": "cfb9ae60c2780734426367fd5371baa2262ac97b25214b33ba07f04a5d6e4180",
+      "lastModified": "Thu, 04 Jun 2026 19:05:39 GMT",
+      "etag": "\"2045cebe-65454012e379b\"",
+      "acquiredAt": "2026-09-03T22:18:31.985Z",
+      "retainedLocalPath": "C:/Users/Ocean/AppData/Local/Temp/isitusa-cpnwh-preflight-20260903/CPNWH_DwCA.zip"
+    },
+    "occurrenceTable": {
+      "bytes": 2132017127,
+      "sha256": "2e089934fd1d9d1c9791f793593b5f2e4af8006fdd1c44196b14bd2b8194d8b5"
+    },
+    "sourceRows": 3266234,
+    "acceptedUniqueRecords": 84858,
+    "grossUniquePairs": 25482,
+    "existingVerifiedPresentOverlaps": 13970,
+    "verifiedAbsentConflicts": 0,
+    "withinPlanDuplicates": 59376,
+    "netEligiblePairs": 11512,
+    "netEligiblePairSetSha256": "cb83afc680fccd566d4bbbd749712206b01f26cafe89bb71f0a6e2c45b70b2f3",
+    "preflightElapsedMs": 50434
+  },
+  "execution": {
+    "inputCommit": "63b613b67530734719f7068d0ac7e6b34b58d4df",
+    "startedAt": "2026-09-03T22:46:31.636Z",
+    "finishedAt": "2026-09-03T22:48:17.062Z",
+    "statePlanCount": 49,
+    "completeRuns": 49,
+    "requestedUniquePairs": 11512,
+    "acceptedAssertionEvents": 11512,
+    "reviewEvents": 11512,
+    "completePairOutcomes": 11512,
+    "rejections": 0,
+    "errors": 0,
+    "upstreamRequests": 0,
+    "retainedRunFiles": 343,
+    "retainedRunBytes": 55822464,
+    "retainedArtifactBytes": 795539,
+    "largestStateYields": [
+      { "stateCode": "WA", "acceptedPairs": 3293 },
+      { "stateCode": "OR", "acceptedPairs": 2560 },
+      { "stateCode": "ID", "acceptedPairs": 2113 },
+      { "stateCode": "MT", "acceptedPairs": 1603 }
+    ],
+    "semanticGuards": {
+      "presenceOnly": true,
+      "preservedSpecimenBasisRequired": true,
+      "cc0RecordLicenseRequired": true,
+      "stableRecordAndOccurrenceIdentityRequired": true,
+      "exactCatalogSpeciesBinomialRequired": true,
+      "sourceSpeciesRankAndBlankQualifierRequired": true,
+      "exactActiveCountyAliasRequired": true,
+      "cultivatedOrCaptiveTextRejected": true,
+      "sourceSilenceCreatesAbsence": false,
+      "sourceSilenceCreatesNonDetection": false,
+      "coordinatesUsedForCountyAssignment": false
+    }
+  },
+  "integration": {
+    "asOfDate": "2026-09-03",
+    "fullCountySpeciesDenominator": 7872576,
+    "verifiedPresent": 288120,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 291263,
+    "notDetected": 236,
+    "researchedUnresolved": 1311986,
+    "notResearched": 6269091,
+    "conflicts": 0,
+    "coveragePercent": 3.699716586,
+    "exactNetDeterminationDelta": 11512,
+    "verifiedPresentDelta": 11512,
+    "verifiedAbsentDelta": 0,
+    "researchedUnresolvedDelta": -2226,
+    "notResearchedDelta": -9286,
+    "determinationCoveragePointDelta": 0.146229138,
+    "determinedPairKeySha256": "b01a0a42e4938ac918f0974df267b8c56f1bb9b8baa068f0c5f769f8a394c445",
+    "exactSetDifferenceAudit": {
+      "addedPairs": 11512,
+      "removedPairs": 0,
+      "statusChangedPairs": 0,
+      "addedPairsOutsidePlan": 0,
+      "plannedPairsNotAdded": 0,
+      "addedNonPresentPairs": 0
+    },
+    "historicalFixedBaseline": {
+      "commit": "f08cf185b1ee7291c827083181bb7ae76700166c",
+      "totalUniqueDeterminations": 200218,
+      "gainBeforeThisExecution": 79533,
+      "gainIncludingThisExecution": 91045
+    },
+    "cumulativeInterpretation": "This execution adds exactly 11512 new pair keys to the 279751-pair current baseline. It does not re-count the prior 79533-pair gain since f08cf185; cumulative gain since that fixed historical baseline is now 91045."
+  },
+  "sourcePortfolioDisposition": [
+    {
+      "sourceId": "cpnwh-preserved-specimens",
+      "disposition": "executed",
+      "measuredNetPairs": 11512,
+      "reason": "Complete immutable CC0 archive and strict retained-witness contract cleared the substantial minimum."
+    },
+    {
+      "sourceId": "inaturalist-direct",
+      "disposition": "no-go-without-export-authorization",
+      "measuredChangeSignal": "409403 observations updated since the prior archive window",
+      "reason": "The live API is mutable and exposes no updated-before boundary; provider guidance directs bulk use above 10000 records to exports or the weekly archive, whose current 26.399 GiB URL is mutable.",
+      "changedConditionRequired": "Authorize and seal an iNaturalist export or immutable weekly archive identity before integration."
+    },
+    {
+      "sourceId": "usfs-ids",
+      "disposition": "no-go-unchanged",
+      "estimatedNetPairs": 511,
+      "reason": "Latest survey year remains 2025 and the DCA workbook remains byte-identical to the prior sealed snapshot."
+    },
+    {
+      "sourceId": "usfs-laurel-wilt",
+      "disposition": "no-go-below-gate",
+      "grossPositiveCounties": 333,
+      "reason": "Unchanged source, sub-2000 gross ceiling, and unresolved reuse and taxon-mapping conditions."
+    },
+    {
+      "sourceId": "sernec",
+      "disposition": "no-go-rights-unchanged",
+      "reason": "The portal remains technically queryable but the raw-retention and redistribution policy does not support the required immutable publication contract."
+    },
+    {
+      "sourceId": "usa-npn",
+      "disposition": "no-go-semantic-mismatch",
+      "reason": "The screened interface did not provide the wild-versus-cultivated and research-grade semantics required for this presence contract."
+    },
+    {
+      "sourceId": "usfs-r03",
+      "disposition": "no-go-duplicate-source-family",
+      "reason": "The regional layer duplicates the already-processed national USFS NRIS source; its residual nonplant tail is below the conditional gate."
+    },
+    {
+      "sourceId": "neon",
+      "disposition": "no-go-access-and-scale",
+      "reason": "Current API access returned 403 and the approximately 47-site footprint cannot credibly clear the national substantial-progress gate."
+    },
+    {
+      "sourceId": "imapinvasives",
+      "disposition": "no-go-rights-and-snapshot-identity",
+      "estimatedNetPairRange": [2849, 8948],
+      "reason": "Potential yield is material but redistribution rights and an immutable snapshot identity were not established."
+    }
+  ],
+  "requestAndByteAccounting": {
+    "cpnwhDiscovery": {
+      "responses": 24,
+      "responseBodyBytes": 3794501,
+      "measuredResponseWallSeconds": 5.160671,
+      "timingQualification": "Four parse GETs lacked individual timing."
+    },
+    "cpnwhArchiveAcquisition": {
+      "getRequests": 1,
+      "headRequests": 1,
+      "responseBodyBytes": 541445822
+    },
+    "cpnwhKnownBodyBytesTotal": 545240323,
+    "usfsExploration": {
+      "attempts": 50,
+      "measuredResponses": 49,
+      "responseBodyBytes": 1118142,
+      "measuredWallSeconds": 45.3
+    },
+    "sernecExploration": {
+      "getRequests": 3,
+      "responseBodyBytes": 151358,
+      "measuredWallSeconds": 0.311104
+    },
+    "qualification": "Only durably consolidated measurements are reported. Provider writes and job submissions were zero."
+  },
+  "buildEvidence": {
+    "sourceRegistryCount": 36,
+    "immutableRunCount": 1660,
+    "cpnwhCoverage": {
+      "runCount": 49,
+      "completeRuns": 49,
+      "partialRuns": 0,
+      "failedRuns": 0,
+      "requestedPairs": 11512,
+      "scopeCompletePairs": 11512
+    }
+  },
+  "targetAssessment": {
+    "checkpointReached": true,
+    "substantialMinimumReached": true,
+    "stretchTargetReached": false,
+    "thresholdClearedBy": 1512,
+    "result": "The exact unique determination gain is 11512. It clears the 5000 checkpoint and 10000 substantial minimum, while remaining below the 25000 stretch target."
+  },
+  "externalMutations": {
+    "pushes": 0,
+    "deployments": 0,
+    "r2Mutations": 0,
+    "providerWrites": 0
+  }
+}

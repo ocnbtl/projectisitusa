@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `5433`
+- Verified present: `5446`
 - Verified absent: `82`
 - Not detected: `5`
-- Researched unresolved: `33266`
-- Not researched: `166542`
+- Researched unresolved: `33258`
+- Not researched: `166537`
 - Determination coverage: `2.69%`
 - Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8898%`
-- Applicable protocol cells: `369`
+- Explicit outcome coverage: `18.8922%`
+- Applicable protocol cells: `374`
 - Current complete protocol cells: `115`
-- Protocol completion: `34.69%`
-- Current protocol completion: `31.17%`
-- Evidence records: `7793`
-- Research runs: `29`
+- Protocol completion: `34.22%`
+- Current protocol completion: `30.75%`
+- Evidence records: `7806`
+- Research runs: `30`
 - Rejection records: `754`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 81 | 0 | 1 |
+| Swordfern (`macrothelypteris-torresiana`) | plants | 81 | 0 | 1 |
+| Low mallow (`malva-pusilla`) | plants | 81 | 0 | 1 |
+| White Sweet Clover (`melilotus-albus`) | plants | 81 | 0 | 1 |
+| Grass-like starwort (`stellaria-graminea`) | plants | 81 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 82 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 82 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 82 | 1 |
@@ -52,11 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 82 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 82 | 0 |
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 82 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 82 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 82 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 82 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 82 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2445 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:21.727Z | 13 | 12 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 779 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

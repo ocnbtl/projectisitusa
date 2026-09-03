@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `133`
 - County-species pairs: `333032`
-- Verified present: `14540`
+- Verified present: `14546`
 - Verified absent: `133`
 - Not detected: `0`
-- Researched unresolved: `48369`
-- Not researched: `269990`
+- Researched unresolved: `48367`
+- Not researched: `269986`
 - Determination coverage: `4.41%`
 - Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9297%`
-- Applicable protocol cells: `380`
+- Explicit outcome coverage: `18.9309%`
+- Applicable protocol cells: `384`
 - Current complete protocol cells: `130`
-- Protocol completion: `37.63%`
-- Current protocol completion: `34.21%`
-- Evidence records: `17720`
-- Research runs: `28`
+- Protocol completion: `37.24%`
+- Current protocol completion: `33.85%`
+- Evidence records: `17726`
+- Research runs: `29`
 - Rejection records: `2627`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 132 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 132 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 132 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 132 | 0 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 133 | 2 |
 | Silver fir (`abies-alba`) | plants | 0 | 133 | 0 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 133 | 0 |
@@ -53,10 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 133 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 133 | 0 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 133 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 133 | 0 |
-| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 133 | 0 |
-| Shellplant (`alpinia-zerumbet`) | plants | 0 | 133 | 0 |
-| Brazilian joyweed (`alternanthera-brasiliana`) | plants | 0 | 133 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 9716 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:05.477Z | 6 | 6 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1613 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

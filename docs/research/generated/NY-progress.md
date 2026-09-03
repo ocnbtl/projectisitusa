@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `7874`
+- Verified present: `7929`
 - Verified absent: `62`
 - Not detected: `10`
-- Researched unresolved: `21220`
-- Not researched: `126082`
-- Determination coverage: `5.11%`
-- Research coverage: `18.79%`
-- Explicit outcome coverage: `18.7867%`
-- Applicable protocol cells: `374`
+- Researched unresolved: `21211`
+- Not researched: `126036`
+- Determination coverage: `5.15%`
+- Research coverage: `18.82%`
+- Explicit outcome coverage: `18.8163%`
+- Applicable protocol cells: `413`
 - Current complete protocol cells: `108`
-- Protocol completion: `32.35%`
-- Current protocol completion: `28.88%`
-- Evidence records: `8996`
-- Research runs: `30`
+- Protocol completion: `29.30%`
+- Current protocol completion: `26.15%`
+- Evidence records: `9051`
+- Research runs: `31`
 - Rejection records: `1055`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rock pigeon (`columba-livia`) | wildlife | 56 | 0 | 1 |
-| European Starling (`sturnus-vulgaris`) | wildlife | 42 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 62 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 62 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 62 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 62 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 62 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 62 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 62 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 62 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 62 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 62 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 62 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 62 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 62 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 62 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 62 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 62 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 62 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 62 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 62 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 62 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 62 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 62 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 62 | 0 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 61 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 61 | 0 | 1 |
+| Lawndaisy (`bellis-perennis`) | plants | 61 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 61 | 0 | 1 |
+| Hammer sedge (`carex-hirta`) | plants | 61 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 61 | 0 | 1 |
+| European centaury (`centaurium-erythraea`) | plants | 61 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 61 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 61 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 61 | 0 | 1 |
+| Smooth hawksbeard (`crepis-capillaris`) | plants | 61 | 0 | 1 |
+| Great globethistle (`echinops-sphaerocephalus`) | plants | 61 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 61 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 61 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 61 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 61 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 61 | 0 | 1 |
+| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 61 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 61 | 0 | 1 |
+| Austrian pine (`pinus-nigra`) | plants | 61 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 61 | 0 | 1 |
+| Silver cinquefoil (`potentilla-argentea`) | plants | 61 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 61 | 0 | 1 |
+| Sour cherry (`prunus-cerasus`) | plants | 61 | 0 | 1 |
+| Lesser Celandine (`ranunculus-ficaria`) | plants | 61 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4441 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:41.348Z | 55 | 47 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 650 | 116 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

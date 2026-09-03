@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6070`
+- Verified present: `6106`
 - Verified absent: `99`
 - Not detected: `9`
-- Researched unresolved: `40946`
-- Not researched: `200772`
-- Determination coverage: `2.49%`
-- Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0096%`
-- Applicable protocol cells: `269`
+- Researched unresolved: `40938`
+- Not researched: `200744`
+- Determination coverage: `2.50%`
+- Research coverage: `19.02%`
+- Explicit outcome coverage: `19.0209%`
+- Applicable protocol cells: `295`
 - Current complete protocol cells: `117`
-- Protocol completion: `48.33%`
-- Current protocol completion: `43.49%`
-- Evidence records: `6436`
-- Research runs: `30`
+- Protocol completion: `44.07%`
+- Current protocol completion: `39.66%`
+- Evidence records: `6472`
+- Research runs: `31`
 - Rejection records: `316`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Black mustard (`brassica-nigra`) | plants | 98 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 98 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 98 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 98 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 98 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 98 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 98 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 98 | 0 | 1 |
+| High mallow (`malva-sylvestris`) | plants | 98 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 98 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 98 | 0 | 1 |
+| Lady's Thumb (`persicaria-maculosa`) | plants | 98 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 98 | 0 | 1 |
+| Foxtail millet (`setaria-italica`) | plants | 98 | 0 | 1 |
+| Climbing Nightshade (`solanum-dulcamara`) | plants | 98 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 98 | 0 | 1 |
+| Narrowleaf Cattail (`typha-angustifolia`) | plants | 98 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 97 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 97 | 0 | 1 |
+| Common lilac (`syringa-vulgaris`) | plants | 97 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 97 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 96 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 99 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 99 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 99 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 99 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 99 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 99 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 99 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 99 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 99 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 99 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 99 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 99 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 99 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 99 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 99 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 99 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 99 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 99 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 99 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 99 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 99 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 99 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 99 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 99 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 99 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 921 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:53.324Z | 36 | 30 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 297 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

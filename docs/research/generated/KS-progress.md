@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `105`
 - County-species pairs: `262920`
-- Verified present: `6563`
+- Verified present: `6582`
 - Verified absent: `105`
 - Not detected: `26`
-- Researched unresolved: `43181`
-- Not researched: `213045`
+- Researched unresolved: `43171`
+- Not researched: `213036`
 - Determination coverage: `2.54%`
 - Research coverage: `18.97%`
-- Explicit outcome coverage: `18.9696%`
-- Applicable protocol cells: `291`
-- Current complete protocol cells: `106`
-- Protocol completion: `40.89%`
-- Current protocol completion: `36.43%`
-- Evidence records: `7747`
-- Research runs: `30`
+- Explicit outcome coverage: `18.9731%`
+- Applicable protocol cells: `301`
+- Current complete protocol cells: `107`
+- Protocol completion: `39.87%`
+- Current protocol completion: `35.55%`
+- Evidence records: `7766`
+- Research runs: `31`
 - Rejection records: `694`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Smooth Brome (`bromus-inermis`) | plants | 104 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 104 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 104 | 0 | 1 |
+| Mexican groundcherry (`physalis-philadelphica`) | plants | 104 | 0 | 1 |
+| Narrowleaf Cattail (`typha-angustifolia`) | plants | 104 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 103 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 103 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 105 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 105 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 105 | 1 |
@@ -50,13 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 105 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 105 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 105 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 105 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 105 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 105 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 105 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 105 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 105 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 105 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4550 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:02.414Z | 19 | 17 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 592 | 130 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

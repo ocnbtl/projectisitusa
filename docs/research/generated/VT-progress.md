@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `1659`
+- Verified present: `1662`
 - Verified absent: `14`
 - Not detected: `0`
 - Researched unresolved: `4993`
-- Not researched: `28390`
-- Determination coverage: `4.77%`
+- Not researched: `28387`
+- Determination coverage: `4.78%`
 - Research coverage: `19.02%`
-- Explicit outcome coverage: `19.0153%`
-- Applicable protocol cells: `289`
+- Explicit outcome coverage: `19.0238%`
+- Applicable protocol cells: `292`
 - Current complete protocol cells: `89`
-- Protocol completion: `35.29%`
-- Current protocol completion: `30.80%`
-- Evidence records: `1910`
-- Research runs: `29`
+- Protocol completion: `34.93%`
+- Current protocol completion: `30.48%`
+- Evidence records: `1913`
+- Research runs: `30`
 - Rejection records: `171`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,6 +33,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Pale swallow-wort (`vincetoxicum-rossicum`) | plants | 14 | 0 | 1 |
+| Japanese maple (`acer-palmatum`) | plants | 13 | 0 | 1 |
+| Birdeye pearlwort (`sagina-procumbens`) | plants | 13 | 0 | 1 |
+| Maidenstears (`silene-vulgaris`) | plants | 13 | 0 | 1 |
 | Common Carp (`cyprinus-carpio`) | wildlife | 12 | 0 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 14 | 2 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 14 | 2 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 14 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 14 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 14 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 14 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 14 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 861 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:07.586Z | 3 | 3 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 125 | 108 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

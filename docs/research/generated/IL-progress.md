@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `11108`
+- Verified present: `11140`
 - Verified absent: `102`
 - Not detected: `8`
-- Researched unresolved: `37335`
-- Not researched: `206855`
-- Determination coverage: `4.39%`
-- Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0100%`
-- Applicable protocol cells: `356`
-- Current complete protocol cells: `137`
-- Protocol completion: `42.13%`
-- Current protocol completion: `38.48%`
-- Evidence records: `13629`
-- Research runs: `31`
+- Researched unresolved: `37325`
+- Not researched: `206833`
+- Determination coverage: `4.40%`
+- Research coverage: `19.02%`
+- Explicit outcome coverage: `19.0186%`
+- Applicable protocol cells: `376`
+- Current complete protocol cells: `138`
+- Protocol completion: `40.16%`
+- Current protocol completion: `36.70%`
+- Evidence records: `13661`
+- Research runs: `32`
 - Rejection records: `2122`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Japanese brome (`bromus-japonicus`) | plants | 101 | 0 | 1 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 101 | 0 | 1 |
 | Mute Swan (`cygnus-olor`) | wildlife | 101 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 101 | 0 | 1 |
+| Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 101 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 101 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 101 | 0 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 101 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 101 | 0 | 1 |
+| European white waterlily (`nymphaea-alba`) | plants | 101 | 0 | 1 |
+| Blue panicum (`panicum-antidotale`) | plants | 101 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 101 | 0 | 1 |
+| Giant Foxtail (`setaria-faberi`) | plants | 101 | 0 | 1 |
+| Climbing Nightshade (`solanum-dulcamara`) | plants | 101 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 101 | 0 | 1 |
+| Common Periwinkle (`vinca-minor`) | plants | 101 | 0 | 1 |
+| Sweet violet (`viola-odorata`) | plants | 101 | 0 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 100 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 100 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 100 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 102 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 102 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 102 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 102 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 102 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 102 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 102 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 102 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 102 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 102 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 102 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 102 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 102 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 102 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 102 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 102 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 102 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 102 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 102 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 102 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 102 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 102 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 102 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 102 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7702 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:58.173Z | 32 | 28 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1019 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-31",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 263,
+    "applicableSpeciesCount": 266,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2241,
+    "unknownSpeciesCount": 2238,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 82,
-    "derivedApplicableSpeciesCount": 181,
+    "derivedApplicableSpeciesCount": 184,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 479,
+    "boundedAcquisitionSpeciesCount": 482,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 7512,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 505,
+    "verifiedPresent": 509,
     "verifiedAbsent": 3,
     "notDetected": 0,
-    "researchedUnresolved": 914,
-    "notResearched": 6090,
-    "determinationCoveragePercent": 6.76,
-    "researchCoveragePercent": 18.93,
-    "explicitOutcomePairCount": 1422,
-    "explicitOutcomeCoveragePercent": 18.9297,
+    "researchedUnresolved": 913,
+    "notResearched": 6087,
+    "determinationCoveragePercent": 6.82,
+    "researchCoveragePercent": 18.97,
+    "explicitOutcomePairCount": 1425,
+    "explicitOutcomeCoveragePercent": 18.9696,
     "conflictCount": 0,
-    "evidenceRecordCount": 554,
+    "evidenceRecordCount": 558,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 554,
+    "runEvidenceRecordCount": 558,
     "rejectionRecordCount": 164,
-    "researchRunCount": 36,
+    "researchRunCount": 37,
     "boundedAcquisition": {
-      "speciesCount": 479,
-      "totalPairs": 1437,
-      "verifiedPresent": 505,
+      "speciesCount": 482,
+      "totalPairs": 1446,
+      "verifiedPresent": 509,
       "verifiedAbsent": 3,
       "notDetected": 0,
-      "researchedUnresolved": 914,
-      "notResearched": 15,
-      "researchCoveragePercent": 98.96,
-      "explicitOutcomePairs": 1422,
-      "explicitOutcomeCoveragePercent": 98.9562
+      "researchedUnresolved": 913,
+      "notResearched": 21,
+      "researchCoveragePercent": 98.55,
+      "explicitOutcomePairs": 1425,
+      "explicitOutcomeCoveragePercent": 98.5477
     }
   },
   "migrationCandidates": {
@@ -268,6 +268,16 @@
       "screenedSpeciesCount": 316
     },
     {
+      "id": "cpnwh-preserved-specimens",
+      "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
+      "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": "2026-09-03T22:46:44.763Z",
+      "evidencePairCount": 4,
+      "screenedSpeciesCount": 4
+    },
+    {
       "id": "gbif-preserved-specimens",
       "label": "GBIF preserved specimen records",
       "authority": "Global Biodiversity Information Facility",
@@ -432,17 +442,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1916,
-    "applicableCells": 298,
-    "notApplicableCells": 1618,
+    "totalCells": 1928,
+    "applicableCells": 301,
+    "notApplicableCells": 1627,
     "completeCells": 94,
-    "incompleteCells": 204,
+    "incompleteCells": 207,
     "blockedCells": 0,
     "currentCells": 81,
     "staleCells": 13,
-    "undatedCells": 204,
-    "applicableCompletionPercent": 31.54,
-    "currentCompletePercent": 27.18,
+    "undatedCells": 207,
+    "applicableCompletionPercent": 31.23,
+    "currentCompletePercent": 26.91,
     "regulatedAndHighApplicableCells": 66,
     "regulatedAndHighCurrentCompleteCells": 38,
     "regulatedAndHighCurrentCompletePercent": 57.58,
@@ -462,9 +472,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 239,
+        "applicableCells": 242,
         "currentCompleteCells": 61,
-        "currentCompletePercent": 25.52
+        "currentCompletePercent": 25.21
       },
       {
         "category": "wildlife",
@@ -488,9 +498,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 206,
+        "applicableCells": 209,
         "currentCompleteCells": 43,
-        "currentCompletePercent": 20.87
+        "currentCompletePercent": 20.57
       },
       {
         "priority": "baseline",
@@ -508,7 +518,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 263,
+        "applicableCells": 266,
         "currentCompleteCells": 59,
         "processed": false
       },
@@ -580,6 +590,42 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 3001
+    },
+    {
+      "speciesId": "crataegus-monogyna",
+      "commonName": "Oneseed hawthorn",
+      "scientificName": "Crataegus monogyna",
+      "category": "plants",
+      "notResearchedCountyCount": 2,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 2001
+    },
+    {
+      "speciesId": "lycium-barbarum",
+      "commonName": "Matrimony vine",
+      "scientificName": "Lycium barbarum",
+      "category": "plants",
+      "notResearchedCountyCount": 2,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 2001
+    },
+    {
+      "speciesId": "typha-angustifolia",
+      "commonName": "Narrowleaf Cattail",
+      "scientificName": "Typha angustifolia",
+      "category": "plants",
+      "notResearchedCountyCount": 2,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 2001
     },
     {
       "speciesId": "anarsia-lineatella",
@@ -1512,36 +1558,6 @@
       "speciesId": "dianthus-barbatus",
       "commonName": "Sweetwilliam",
       "scientificName": "Dianthus barbatus",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 3,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 30
-    },
-    {
-      "speciesId": "diaphorina-citri",
-      "commonName": "Asian citrus psyllid",
-      "scientificName": "Diaphorina citri",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 3,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 30
-    },
-    {
-      "speciesId": "digitaria-violascens",
-      "commonName": "Violet crabgrass",
-      "scientificName": "Digitaria violascens",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 3,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 30
-    },
-    {
-      "speciesId": "dioscorea-oppositifolia",
-      "commonName": "Chinese yam",
-      "scientificName": "Dioscorea oppositifolia",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 3,

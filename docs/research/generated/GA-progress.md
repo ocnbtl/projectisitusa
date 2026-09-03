@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `8113`
+- Verified present: `8143`
 - Verified absent: `159`
 - Not detected: `0`
-- Researched unresolved: `67412`
-- Not researched: `322452`
-- Determination coverage: `2.08%`
+- Researched unresolved: `67392`
+- Not researched: `322442`
+- Determination coverage: `2.09%`
 - Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0096%`
-- Applicable protocol cells: `391`
+- Explicit outcome coverage: `19.0121%`
+- Applicable protocol cells: `402`
 - Current complete protocol cells: `126`
-- Protocol completion: `35.55%`
-- Current protocol completion: `32.23%`
-- Evidence records: `11120`
-- Research runs: `31`
+- Protocol completion: `34.58%`
+- Current protocol completion: `31.34%`
+- Evidence records: `11150`
+- Research runs: `32`
 - Rejection records: `954`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 158 | 0 | 1 |
+| Corn chamomile (`anthemis-arvensis`) | plants | 158 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 158 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 158 | 0 | 1 |
+| Sweet fennel (`foeniculum-vulgare`) | plants | 158 | 0 | 1 |
+| Swordfern (`macrothelypteris-torresiana`) | plants | 158 | 0 | 1 |
+| Sprawling signalgrass (`urochloa-reptans`) | plants | 158 | 0 | 1 |
+| Purpletop vervain (`verbena-bonariensis`) | plants | 158 | 0 | 1 |
+| Turk's turbin (`clerodendrum-indicum`) | plants | 157 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 159 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 159 | 1 |
 | Silver fir (`abies-alba`) | plants | 0 | 159 | 0 |
@@ -48,15 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 159 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 159 | 0 |
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 159 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 159 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 159 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 159 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 159 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 159 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 159 | 0 |
-| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 159 | 0 |
-| European Alder (`alnus-glutinosa`) | plants | 0 | 159 | 0 |
-| Shellplant (`alpinia-zerumbet`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2019 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:49.018Z | 30 | 28 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1188 | 159 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

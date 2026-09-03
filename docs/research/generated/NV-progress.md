@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `1418`
+- Verified present: `1546`
 - Verified absent: `17`
 - Not detected: `0`
-- Researched unresolved: `7268`
-- Not researched: `33865`
-- Determination coverage: `3.37%`
-- Research coverage: `20.44%`
-- Explicit outcome coverage: `20.4449%`
-- Applicable protocol cells: `312`
-- Current complete protocol cells: `87`
-- Protocol completion: `32.05%`
-- Current protocol completion: `27.88%`
-- Evidence records: `1759`
-- Research runs: `30`
+- Researched unresolved: `7238`
+- Not researched: `33767`
+- Determination coverage: `3.67%`
+- Research coverage: `20.68%`
+- Explicit outcome coverage: `20.6752%`
+- Applicable protocol cells: `361`
+- Current complete protocol cells: `88`
+- Protocol completion: `27.98%`
+- Current protocol completion: `24.38%`
+- Evidence records: `1887`
+- Research runs: `31`
 - Rejection records: `251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Barbed goatgrass (`aegilops-triuncialis`) | plants | 16 | 0 | 1 |
+| Desert wheatgrass (`agropyron-desertorum`) | plants | 16 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 16 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 16 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 16 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 16 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 16 | 0 | 1 |
 | Big quakinggrass (`briza-maxima`) | plants | 16 | 0 | 1 |
-| Littlepod False Flax (`camelina-microcarpa`) | plants | 16 | 0 | 1 |
 | Longbeak stork's bill (`erodium-botrys`) | plants | 16 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 16 | 0 | 1 |
+| Petty spurge (`euphorbia-peplus`) | plants | 16 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 16 | 0 | 1 |
+| Shortpod mustard (`hirschfeldia-incana`) | plants | 16 | 0 | 1 |
 | Mouse barley (`hordeum-murinum`) | plants | 16 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 16 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 16 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 16 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 16 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 16 | 0 | 1 |
 | Cheeseweed mallow (`malva-parviflora`) | plants | 16 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 16 | 0 | 1 |
-| Threadstem carpetweed (`mollugo-cerviana`) | plants | 16 | 0 | 1 |
-| Changing forget-me-not (`myosotis-discolor`) | plants | 16 | 0 | 1 |
-| Athel tamarisk (`tamarix-aphylla`) | plants | 16 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 15 | 0 | 1 |
-| Soft brome (`bromus-hordeaceus`) | plants | 15 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 15 | 0 | 1 |
-| White Sweet Clover (`melilotus-albus`) | plants | 15 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 15 | 0 | 1 |
-| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 15 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 15 | 0 | 1 |
-| Rattlesnake brome (`bromus-briziformis`) | plants | 14 | 0 | 1 |
-| Arabian schismus (`schismus-arabicus`) | plants | 14 | 0 | 1 |
-| Common mediterranean grass (`schismus-barbatus`) | plants | 14 | 0 | 1 |
-| Sainfoin legume (`onobrychis-viciifolia`) | plants | 13 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 12 | 0 | 1 |
-| Pale madwort (`alyssum-alyssoides`) | plants | 10 | 0 | 1 |
-| Compact brome (`bromus-madritensis`) | plants | 10 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 16 | 0 | 1 |
+| Silversheath knotweed (`polygonum-argyrocoleon`) | plants | 16 | 0 | 1 |
+| Sweet cherry (`prunus-avium`) | plants | 16 | 0 | 1 |
+| European black currant (`ribes-nigrum`) | plants | 16 | 0 | 1 |
+| Cutleaf vipergrass (`scorzonera-laciniata`) | plants | 16 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 609 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:39.133Z | 128 | 81 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 54 | 118 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

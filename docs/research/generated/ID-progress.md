@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `3938`
+- Verified present: `6051`
 - Verified absent: `44`
 - Not detected: `0`
-- Researched unresolved: `18303`
-- Not researched: `87891`
-- Determination coverage: `3.61%`
-- Research coverage: `20.23%`
-- Explicit outcome coverage: `20.2267%`
-- Applicable protocol cells: `341`
+- Researched unresolved: `17813`
+- Not researched: `86268`
+- Determination coverage: `5.53%`
+- Research coverage: `21.70%`
+- Explicit outcome coverage: `21.6998%`
+- Applicable protocol cells: `570`
 - Current complete protocol cells: `90`
-- Protocol completion: `30.21%`
-- Current protocol completion: `26.39%`
-- Evidence records: `4515`
-- Research runs: `28`
+- Protocol completion: `18.07%`
+- Current protocol completion: `15.79%`
+- Evidence records: `6628`
+- Research runs: `29`
 - Rejection records: `444`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Bur chervil (`anthriscus-caucalis`) | plants | 43 | 0 | 1 |
-| Common Barberry (`berberis-vulgaris`) | plants | 43 | 0 | 1 |
-| Poverty brome (`bromus-sterilis`) | plants | 43 | 0 | 1 |
-| Small geranium (`geranium-pusillum`) | plants | 43 | 0 | 1 |
-| Mouse barley (`hordeum-murinum`) | plants | 43 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 43 | 0 | 1 |
-| Sweet alyssum (`lobularia-maritima`) | plants | 43 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 43 | 0 | 1 |
-| Sainfoin legume (`onobrychis-viciifolia`) | plants | 43 | 0 | 1 |
-| Little spurflower (`plectranthus-parviflorus`) | plants | 43 | 0 | 1 |
-| Sweet cherry (`prunus-avium`) | plants | 43 | 0 | 1 |
-| Cherry plum (`prunus-cerasifera`) | plants | 43 | 0 | 1 |
-| Fireweed groundsel (`senecio-linearifolius`) | plants | 43 | 0 | 1 |
-| Golden clover (`trifolium-aureum`) | plants | 43 | 0 | 1 |
-| Wand mullein (`verbascum-virgatum`) | plants | 43 | 0 | 1 |
-| Common Speedwell (`veronica-officinalis`) | plants | 43 | 0 | 1 |
-| Corn brome (`bromus-squarrosus`) | plants | 42 | 0 | 1 |
-| German-madwort (`asperugo-procumbens`) | plants | 41 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 41 | 0 | 1 |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 40 | 0 | 1 |
-| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 40 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 38 | 0 | 1 |
-| Crossflower (`chorispora-tenella`) | plants | 38 | 0 | 1 |
-| Brome fescue (`vulpia-bromoides`) | plants | 38 | 0 | 1 |
-| European stickseed (`lappula-squarrosa`) | plants | 37 | 0 | 1 |
+| Fernleaf yarrow (`achillea-filipendulina`) | plants | 43 | 0 | 1 |
+| Noble yarrow (`achillea-nobilis`) | plants | 43 | 0 | 1 |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 43 | 0 | 1 |
+| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 43 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 43 | 0 | 1 |
+| Golden-tuft alyssum (`aurinia-saxatilis`) | plants | 43 | 0 | 1 |
+| Slender oat (`avena-barbata`) | plants | 43 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 43 | 0 | 1 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 43 | 0 | 1 |
+| Bighead knapweed (`centaurea-macrocephala`) | plants | 43 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 43 | 0 | 1 |
+| Greater knapweed (`centaurea-scabiosa`) | plants | 43 | 0 | 1 |
+| Snow in summer (`cerastium-tomentosum`) | plants | 43 | 0 | 1 |
+| Marsh thistle (`cirsium-palustre`) | plants | 43 | 0 | 1 |
+| Coriander (`coriandrum-sativum`) | plants | 43 | 0 | 1 |
+| Palay rubbervine (`cryptostegia-grandiflora`) | plants | 43 | 0 | 1 |
+| Variable flatsedge (`cyperus-difformis`) | plants | 43 | 0 | 1 |
+| Paradise plant (`daphne-mezereum`) | plants | 43 | 0 | 1 |
+| Maiden pink (`dianthus-deltoides`) | plants | 43 | 0 | 1 |
+| Thymeleaf dragonhead (`dracocephalum-thymiflorum`) | plants | 43 | 0 | 1 |
+| Great globethistle (`echinops-sphaerocephalus`) | plants | 43 | 0 | 1 |
+| Asian waterwort (`elatine-ambigua`) | plants | 43 | 0 | 1 |
+| Moleplant (`euphorbia-lathyris`) | plants | 43 | 0 | 1 |
+| Bukhara fleeceflower (`fallopia-baldschuanica`) | plants | 43 | 0 | 1 |
+| Queen of the meadow (`filipendula-ulmaria`) | plants | 43 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1726 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:55.514Z | 2113 | 395 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 189 | 106 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

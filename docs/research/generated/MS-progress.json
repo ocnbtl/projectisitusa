@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 334,
+    "applicableSpeciesCount": 339,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2170,
+    "unknownSpeciesCount": 2165,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 281,
+    "derivedApplicableSpeciesCount": 286,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 473,
+    "boundedAcquisitionSpeciesCount": 478,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 205328,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 5433,
+    "verifiedPresent": 5446,
     "verifiedAbsent": 82,
     "notDetected": 5,
-    "researchedUnresolved": 33266,
-    "notResearched": 166542,
+    "researchedUnresolved": 33258,
+    "notResearched": 166537,
     "determinationCoveragePercent": 2.69,
     "researchCoveragePercent": 18.89,
-    "explicitOutcomePairCount": 38786,
-    "explicitOutcomeCoveragePercent": 18.8898,
+    "explicitOutcomePairCount": 38791,
+    "explicitOutcomeCoveragePercent": 18.8922,
     "conflictCount": 0,
-    "evidenceRecordCount": 7793,
+    "evidenceRecordCount": 7806,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 7793,
+    "runEvidenceRecordCount": 7806,
     "rejectionRecordCount": 754,
-    "researchRunCount": 29,
+    "researchRunCount": 30,
     "boundedAcquisition": {
-      "speciesCount": 473,
-      "totalPairs": 38786,
-      "verifiedPresent": 5433,
+      "speciesCount": 478,
+      "totalPairs": 39196,
+      "verifiedPresent": 5446,
       "verifiedAbsent": 82,
       "notDetected": 5,
-      "researchedUnresolved": 33266,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 38786,
-      "explicitOutcomeCoveragePercent": 100
+      "researchedUnresolved": 33258,
+      "notResearched": 405,
+      "researchCoveragePercent": 98.97,
+      "explicitOutcomePairs": 38791,
+      "explicitOutcomeCoveragePercent": 98.9667
     }
   },
   "migrationCandidates": {
@@ -268,6 +268,16 @@
       "screenedSpeciesCount": 316
     },
     {
+      "id": "cpnwh-preserved-specimens",
+      "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
+      "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": "2026-09-03T22:47:21.727Z",
+      "evidencePairCount": 13,
+      "screenedSpeciesCount": 12
+    },
+    {
       "id": "gbif-preserved-specimens",
       "label": "GBIF preserved specimen records",
       "authority": "Global Biodiversity Information Facility",
@@ -432,17 +442,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1892,
-    "applicableCells": 369,
-    "notApplicableCells": 1523,
+    "totalCells": 1912,
+    "applicableCells": 374,
+    "notApplicableCells": 1538,
     "completeCells": 128,
-    "incompleteCells": 241,
+    "incompleteCells": 246,
     "blockedCells": 0,
     "currentCells": 115,
     "staleCells": 13,
-    "undatedCells": 241,
-    "applicableCompletionPercent": 34.69,
-    "currentCompletePercent": 31.17,
+    "undatedCells": 246,
+    "applicableCompletionPercent": 34.22,
+    "currentCompletePercent": 30.75,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -462,9 +472,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 308,
+        "applicableCells": 313,
         "currentCompleteCells": 80,
-        "currentCompletePercent": 25.97
+        "currentCompletePercent": 25.56
       },
       {
         "category": "wildlife",
@@ -488,9 +498,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 308,
+        "applicableCells": 313,
         "currentCompleteCells": 67,
-        "currentCompletePercent": 21.75
+        "currentCompletePercent": 21.41
       },
       {
         "priority": "baseline",
@@ -508,7 +518,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 334,
+        "applicableCells": 339,
         "currentCompleteCells": 93,
         "processed": false
       },
@@ -521,6 +531,66 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "lolium-multiflorum",
+      "commonName": "Annual ryegrass",
+      "scientificName": "Lolium multiflorum",
+      "category": "plants",
+      "notResearchedCountyCount": 81,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 81001
+    },
+    {
+      "speciesId": "macrothelypteris-torresiana",
+      "commonName": "Swordfern",
+      "scientificName": "Macrothelypteris torresiana",
+      "category": "plants",
+      "notResearchedCountyCount": 81,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 81001
+    },
+    {
+      "speciesId": "malva-pusilla",
+      "commonName": "Low mallow",
+      "scientificName": "Malva pusilla",
+      "category": "plants",
+      "notResearchedCountyCount": 81,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 81001
+    },
+    {
+      "speciesId": "melilotus-albus",
+      "commonName": "White Sweet Clover",
+      "scientificName": "Melilotus albus",
+      "category": "plants",
+      "notResearchedCountyCount": 81,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 81001
+    },
+    {
+      "speciesId": "stellaria-graminea",
+      "commonName": "Grass-like starwort",
+      "scientificName": "Stellaria graminea",
+      "category": "plants",
+      "notResearchedCountyCount": 81,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 81001
+    },
     {
       "speciesId": "emerald-ash-borer",
       "commonName": "Emerald Ash Borer",
@@ -1473,56 +1543,6 @@
       "speciesId": "indigofera-tinctoria",
       "commonName": "True indigo",
       "scientificName": "Indigofera tinctoria",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 82,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 820
-    },
-    {
-      "speciesId": "kochia-scoparia",
-      "commonName": "Common kochia",
-      "scientificName": "Kochia scoparia",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 82,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 820
-    },
-    {
-      "speciesId": "koelreuteria-paniculata",
-      "commonName": "Goldenrain Tree",
-      "scientificName": "Koelreuteria paniculata",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 82,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 820
-    },
-    {
-      "speciesId": "lepidium-latifolium",
-      "commonName": "Broadleaved pepperweed",
-      "scientificName": "Lepidium latifolium",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 82,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 820
-    },
-    {
-      "speciesId": "lepidium-ruderale",
-      "commonName": "Roadside pepperweed",
-      "scientificName": "Lepidium ruderale",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 82,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 820
-    },
-    {
-      "speciesId": "lilium-regale",
-      "commonName": "Regal lily",
-      "scientificName": "Lilium regale",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 82,

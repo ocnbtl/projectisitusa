@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 307,
+    "applicableSpeciesCount": 326,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2197,
+    "unknownSpeciesCount": 2178,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 87,
-    "derivedApplicableSpeciesCount": 220,
+    "derivedApplicableSpeciesCount": 239,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 479,
+    "boundedAcquisitionSpeciesCount": 497,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 220352,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 9915,
+    "verifiedPresent": 9944,
     "verifiedAbsent": 88,
     "notDetected": 44,
-    "researchedUnresolved": 32105,
-    "notResearched": 178200,
-    "determinationCoveragePercent": 4.54,
-    "researchCoveragePercent": 19.13,
-    "explicitOutcomePairCount": 42152,
-    "explicitOutcomeCoveragePercent": 19.1294,
+    "researchedUnresolved": 32097,
+    "notResearched": 178179,
+    "determinationCoveragePercent": 4.55,
+    "researchCoveragePercent": 19.14,
+    "explicitOutcomePairCount": 42173,
+    "explicitOutcomeCoveragePercent": 19.1389,
     "conflictCount": 0,
-    "evidenceRecordCount": 11535,
+    "evidenceRecordCount": 11564,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11535,
+    "runEvidenceRecordCount": 11564,
     "rejectionRecordCount": 3154,
-    "researchRunCount": 32,
+    "researchRunCount": 33,
     "boundedAcquisition": {
-      "speciesCount": 479,
-      "totalPairs": 42152,
-      "verifiedPresent": 9915,
+      "speciesCount": 497,
+      "totalPairs": 43736,
+      "verifiedPresent": 9944,
       "verifiedAbsent": 88,
       "notDetected": 44,
-      "researchedUnresolved": 32105,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 42152,
-      "explicitOutcomeCoveragePercent": 100
+      "researchedUnresolved": 32097,
+      "notResearched": 1563,
+      "researchCoveragePercent": 96.43,
+      "explicitOutcomePairs": 42173,
+      "explicitOutcomeCoveragePercent": 96.4263
     }
   },
   "migrationCandidates": {
@@ -268,6 +268,16 @@
       "screenedSpeciesCount": 316
     },
     {
+      "id": "cpnwh-preserved-specimens",
+      "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
+      "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": "2026-09-03T22:47:43.426Z",
+      "evidencePairCount": 29,
+      "screenedSpeciesCount": 26
+    },
+    {
       "id": "gbif-preserved-specimens",
       "label": "GBIF preserved specimen records",
       "authority": "Global Biodiversity Information Facility",
@@ -432,17 +442,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1916,
-    "applicableCells": 342,
-    "notApplicableCells": 1574,
-    "completeCells": 152,
-    "incompleteCells": 189,
+    "totalCells": 1988,
+    "applicableCells": 361,
+    "notApplicableCells": 1627,
+    "completeCells": 153,
+    "incompleteCells": 207,
     "blockedCells": 1,
-    "currentCells": 139,
+    "currentCells": 140,
     "staleCells": 13,
-    "undatedCells": 190,
-    "applicableCompletionPercent": 44.44,
-    "currentCompletePercent": 40.64,
+    "undatedCells": 208,
+    "applicableCompletionPercent": 42.38,
+    "currentCompletePercent": 38.78,
     "regulatedAndHighApplicableCells": 73,
     "regulatedAndHighCurrentCompleteCells": 73,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -462,9 +472,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 285,
-        "currentCompleteCells": 107,
-        "currentCompletePercent": 37.54
+        "applicableCells": 304,
+        "currentCompleteCells": 108,
+        "currentCompletePercent": 35.53
       },
       {
         "category": "wildlife",
@@ -488,9 +498,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 243,
-        "currentCompleteCells": 53,
-        "currentCompletePercent": 21.81
+        "applicableCells": 262,
+        "currentCompleteCells": 54,
+        "currentCompletePercent": 20.61
       },
       {
         "priority": "baseline",
@@ -508,8 +518,8 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 307,
-        "currentCompleteCells": 118,
+        "applicableCells": 326,
+        "currentCompleteCells": 119,
         "processed": false
       },
       {
@@ -521,6 +531,222 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "barbarea-vulgaris",
+      "commonName": "Yellow Rocket",
+      "scientificName": "Barbarea vulgaris",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "chenopodium-album",
+      "commonName": "Lambsquarters",
+      "scientificName": "Chenopodium album",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "lepidium-draba",
+      "commonName": "Whitetop",
+      "scientificName": "Lepidium draba",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "malva-neglecta",
+      "commonName": "Common Mallow",
+      "scientificName": "Malva neglecta",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "medicago-sativa",
+      "commonName": "Alfalfa",
+      "scientificName": "Medicago sativa",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "microthlaspi-perfoliatum",
+      "commonName": "Claspleaf pennycress",
+      "scientificName": "Microthlaspi perfoliatum",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "poa-bulbosa",
+      "commonName": "Bulbous bluegrass",
+      "scientificName": "Poa bulbosa",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "poa-compressa",
+      "commonName": "Canada bluegrass",
+      "scientificName": "Poa compressa",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "poa-trivialis",
+      "commonName": "Rough Bluegrass",
+      "scientificName": "Poa trivialis",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "potentilla-recta",
+      "commonName": "Sulphur Cinquefoil",
+      "scientificName": "Potentilla recta",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "prunus-mahaleb",
+      "commonName": "Mahaleb cherry",
+      "scientificName": "Prunus mahaleb",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "solanum-dulcamara",
+      "commonName": "Climbing Nightshade",
+      "scientificName": "Solanum dulcamara",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "sonchus-arvensis",
+      "commonName": "Field Sowthistle",
+      "scientificName": "Sonchus arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "thlaspi-arvense",
+      "commonName": "Field Pennycress",
+      "scientificName": "Thlaspi arvense",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "vinca-minor",
+      "commonName": "Common Periwinkle",
+      "scientificName": "Vinca minor",
+      "category": "plants",
+      "notResearchedCountyCount": 87,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 87001
+    },
+    {
+      "speciesId": "bromus-inermis",
+      "commonName": "Smooth Brome",
+      "scientificName": "Bromus inermis",
+      "category": "plants",
+      "notResearchedCountyCount": 86,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 86001
+    },
+    {
+      "speciesId": "hypericum-perforatum",
+      "commonName": "Common St. John's Wort",
+      "scientificName": "Hypericum perforatum",
+      "category": "plants",
+      "notResearchedCountyCount": 86,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 86001
+    },
+    {
+      "speciesId": "pastinaca-sativa",
+      "commonName": "Wild Parsnip",
+      "scientificName": "Pastinaca sativa",
+      "category": "plants",
+      "notResearchedCountyCount": 86,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 86001
+    },
     {
       "speciesId": "anarsia-lineatella",
       "commonName": "Peach twig borer",
@@ -1343,186 +1569,6 @@
       "speciesId": "elaeagnus-pungens",
       "commonName": "Thorny olive",
       "scientificName": "Elaeagnus pungens",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "elsinoe-australis",
-      "commonName": "Sweet orange scab",
-      "scientificName": "Elsinoe australis",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "emex-australis",
-      "commonName": "Southern threecornerjack",
-      "scientificName": "Emex australis",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "emex-spinosa",
-      "commonName": "Spiny threecornerjack",
-      "scientificName": "Emex spinosa",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "eragrostis-japonica",
-      "commonName": "Pond lovegrass",
-      "scientificName": "Eragrostis japonica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "eragrostis-minor",
-      "commonName": "Little lovegrass",
-      "scientificName": "Eragrostis minor",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "eremochloa-ophiuroides",
-      "commonName": "Centipede grass",
-      "scientificName": "Eremochloa ophiuroides",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "euphorbia-terracina",
-      "commonName": "Geraldton carnation weed",
-      "scientificName": "Euphorbia terracina",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "ficus-carica",
-      "commonName": "Edible fig",
-      "scientificName": "Ficus carica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "ficus-pumila",
-      "commonName": "Climbingfig",
-      "scientificName": "Ficus pumila",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "fimbristylis-schoenoides",
-      "commonName": "Ditch fimbry",
-      "scientificName": "Fimbristylis schoenoides",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "firmiana-simplex",
-      "commonName": "Chinese parasoltree",
-      "scientificName": "Firmiana simplex",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "galium-divaricatum",
-      "commonName": "Lamarck's bedstraw",
-      "scientificName": "Galium divaricatum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "gamochaeta-simplicicaulis",
-      "commonName": "Simple-stem everlasting",
-      "scientificName": "Gamochaeta simplicicaulis",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "glebionis-segetum",
-      "commonName": "Corndaisy",
-      "scientificName": "Glebionis segetum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "globodera-pallida",
-      "commonName": "Pale cyst nematode",
-      "scientificName": "Globodera pallida",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "globodera-rostochiensis",
-      "commonName": "Yellow potato cyst nematode",
-      "scientificName": "Globodera rostochiensis",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "glyceria-maxima",
-      "commonName": "Reed mannagrass",
-      "scientificName": "Glyceria maxima",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 88,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 880
-    },
-    {
-      "speciesId": "heliotropium-amplexicaule",
-      "commonName": "Clasping heliotrope",
-      "scientificName": "Heliotropium amplexicaule",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 88,

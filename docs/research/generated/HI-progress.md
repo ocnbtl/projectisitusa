@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `640`
+- Verified present: `688`
 - Verified absent: `5`
 - Not detected: `0`
-- Researched unresolved: `1809`
-- Not researched: `10066`
-- Determination coverage: `5.15%`
-- Research coverage: `19.60%`
-- Explicit outcome coverage: `19.6006%`
-- Applicable protocol cells: `296`
+- Researched unresolved: `1806`
+- Not researched: `10021`
+- Determination coverage: `5.54%`
+- Research coverage: `19.96%`
+- Explicit outcome coverage: `19.9601%`
+- Applicable protocol cells: `335`
 - Current complete protocol cells: `81`
-- Protocol completion: `31.76%`
-- Current protocol completion: `27.36%`
-- Evidence records: `782`
-- Research runs: `30`
+- Protocol completion: `28.06%`
+- Current protocol completion: `24.18%`
+- Evidence records: `830`
+- Research runs: `31`
 - Rejection records: `1435`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Diamond burbark (`triumfetta-rhomboidea`) | plants | 5 | 0 | 1 |
-| Spanish broom (`spartium-junceum`) | plants | 4 | 0 | 1 |
-| Caesarweed (`urena-lobata`) | plants | 2 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 5 | 2 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 5 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 5 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 5 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 5 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 5 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 5 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 5 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 5 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 5 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 2 |
-| Silver fir (`abies-alba`) | plants | 0 | 5 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 5 | 0 |
-| Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 5 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 5 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 5 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 5 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 5 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 5 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 5 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 5 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 5 | 0 |
+| Green wattle (`acacia-decurrens`) | plants | 4 | 0 | 1 |
+| Rough maidenhair (`adiantum-hispidulum`) | plants | 4 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 4 | 0 | 1 |
+| Coral vine (`antigonon-leptopus`) | plants | 4 | 0 | 1 |
+| Napoleon's plume (`bauhinia-monandra`) | plants | 4 | 0 | 1 |
+| Pitted beardgrass (`bothriochloa-pertusa`) | plants | 4 | 0 | 1 |
+| Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 4 | 0 | 1 |
+| Blood red tassel flower (`calliandra-haematocephala`) | plants | 4 | 0 | 1 |
+| Madagascar periwinkle (`catharanthus-roseus`) | plants | 4 | 0 | 1 |
+| Stickbush (`clerodendrum-chinense`) | plants | 4 | 0 | 1 |
+| Coconut palm (`cocos-nucifera`) | plants | 4 | 0 | 1 |
+| Japanese cedar (`cryptomeria-japonica`) | plants | 4 | 0 | 1 |
+| Florida tasselflower (`emilia-fosbergii`) | plants | 4 | 0 | 1 |
+| Swampmahogany (`eucalyptus-robusta`) | plants | 4 | 0 | 1 |
+| Indiantree spurge (`euphorbia-tirucalli`) | plants | 4 | 0 | 1 |
+| White garland-lily (`hedychium-coronarium`) | plants | 4 | 0 | 1 |
+| Oceanblue morning-glory (`ipomoea-indica`) | plants | 4 | 0 | 1 |
+| Broadleaf rush (`juncus-planifolius`) | plants | 4 | 0 | 1 |
+| Cathedral bells (`kalanchoe-pinnata`) | plants | 4 | 0 | 1 |
+| Wild bushbean (`macroptilium-lathyroides`) | plants | 4 | 0 | 1 |
+| Madagascar olive (`noronhia-emarginata`) | plants | 4 | 0 | 1 |
+| Old world adderstongue (`ophioglossum-pendulum`) | plants | 4 | 0 | 1 |
+| Panama crowngrass (`paspalum-fimbriatum`) | plants | 4 | 0 | 1 |
+| Purple granadilla (`passiflora-edulis`) | plants | 4 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 416 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:51.083Z | 48 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 46 | 120 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

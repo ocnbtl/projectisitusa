@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `1642`
+- Verified present: `1716`
 - Verified absent: `15`
 - Not detected: `0`
-- Researched unresolved: `6138`
-- Not researched: `29765`
-- Determination coverage: `4.41%`
-- Research coverage: `20.75%`
-- Explicit outcome coverage: `20.7535%`
-- Applicable protocol cells: `357`
+- Researched unresolved: `6127`
+- Not researched: `29702`
+- Determination coverage: `4.61%`
+- Research coverage: `20.92%`
+- Explicit outcome coverage: `20.9212%`
+- Applicable protocol cells: `406`
 - Current complete protocol cells: `126`
-- Protocol completion: `38.94%`
-- Current protocol completion: `35.29%`
-- Evidence records: `6224`
-- Research runs: `33`
+- Protocol completion: `34.24%`
+- Current protocol completion: `31.03%`
+- Evidence records: `6298`
+- Research runs: `34`
 - Rejection records: `1075`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Crested wheatgrass (`agropyron-cristatum`) | plants | 14 | 0 | 1 |
+| Desert wheatgrass (`agropyron-desertorum`) | plants | 14 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 14 | 0 | 1 |
+| Barbados aloe (`aloe-vera`) | plants | 14 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 14 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 14 | 0 | 1 |
 | Bur chervil (`anthriscus-caucalis`) | plants | 14 | 0 | 1 |
+| Bluegreen saltbush (`atriplex-nummularia`) | plants | 14 | 0 | 1 |
+| Peregrine saltbush (`atriplex-suberecta`) | plants | 14 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 14 | 0 | 1 |
 | Common borage (`borago-officinalis`) | plants | 14 | 0 | 1 |
 | Paperflower (`bougainvillea-glabra`) | plants | 14 | 0 | 1 |
+| Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 14 | 0 | 1 |
 | Buffelgrass (`cenchrus-ciliaris`) | plants | 14 | 0 | 1 |
 | Perennial cornflower (`centaurea-montana`) | plants | 14 | 0 | 1 |
 | Turk's turbin (`clerodendrum-indicum`) | plants | 14 | 0 | 1 |
+| Australian waterbuttons (`cotula-australis`) | plants | 14 | 0 | 1 |
+| Variable flatsedge (`cyperus-difformis`) | plants | 14 | 0 | 1 |
+| Asian ponysfoot (`dichondra-micrantha`) | plants | 14 | 0 | 1 |
+| River redgum (`eucalyptus-camaldulensis`) | plants | 14 | 0 | 1 |
 | Moleplant (`euphorbia-lathyris`) | plants | 14 | 0 | 1 |
+| Chinese banyan (`ficus-microcarpa`) | plants | 14 | 0 | 1 |
 | Mouse barley (`hordeum-murinum`) | plants | 14 | 0 | 1 |
+| Lesser Swinecress (`lepidium-didymum`) | plants | 14 | 0 | 1 |
 | Clasping pepperweed (`lepidium-perfoliatum`) | plants | 14 | 0 | 1 |
-| Wimmera ryegrass (`lolium-rigidum`) | plants | 14 | 0 | 1 |
-| Staggerweed (`stachys-arvensis`) | plants | 14 | 0 | 1 |
-| African mustard (`strigosella-africana`) | plants | 14 | 0 | 1 |
-| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 14 | 0 | 1 |
-| Soft brome (`bromus-hordeaceus`) | plants | 13 | 0 | 1 |
-| Crossflower (`chorispora-tenella`) | plants | 13 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 13 | 0 | 1 |
-| Brome fescue (`vulpia-bromoides`) | plants | 13 | 0 | 1 |
-| Threadstem carpetweed (`mollugo-cerviana`) | plants | 12 | 0 | 1 |
-| Big quakinggrass (`briza-maxima`) | plants | 11 | 0 | 1 |
-| Common pricklypear (`opuntia-monacantha`) | plants | 11 | 0 | 1 |
-| Pepperweed (`lepidium-apetalum`) | plants | 9 | 0 | 1 |
-| Arabian schismus (`schismus-arabicus`) | plants | 9 | 0 | 1 |
-| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 8 | 0 | 1 |
-| Herb sophia (`descurainia-sophia`) | plants | 7 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 707 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:38.114Z | 74 | 58 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 321 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

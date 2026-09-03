@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `7607`
+- Verified present: `7643`
 - Verified absent: `67`
 - Not detected: `0`
-- Researched unresolved: `25558`
-- Not researched: `134536`
-- Determination coverage: `4.57%`
-- Research coverage: `19.81%`
-- Explicit outcome coverage: `19.8083%`
-- Applicable protocol cells: `404`
+- Researched unresolved: `25547`
+- Not researched: `134511`
+- Determination coverage: `4.60%`
+- Research coverage: `19.82%`
+- Explicit outcome coverage: `19.8232%`
+- Applicable protocol cells: `427`
 - Current complete protocol cells: `140`
-- Protocol completion: `37.87%`
-- Current protocol completion: `34.65%`
-- Evidence records: `18282`
-- Research runs: `29`
+- Protocol completion: `35.83%`
+- Current protocol completion: `32.79%`
+- Evidence records: `18318`
+- Research runs: `30`
 - Rejection records: `5119`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| White moneywort (`alysicarpus-vaginalis`) | plants | 66 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 66 | 0 | 1 |
+| Burmese fishtail palm (`caryota-mitis`) | plants | 66 | 0 | 1 |
+| Madagascar periwinkle (`catharanthus-roseus`) | plants | 66 | 0 | 1 |
+| Javanese glorybower (`clerodendrum-speciosissimum`) | plants | 66 | 0 | 1 |
+| Tickclover (`desmodium-incanum`) | plants | 66 | 0 | 1 |
+| Whitesnow (`drymaria-cordata`) | plants | 66 | 0 | 1 |
+| Florida tasselflower (`emilia-fosbergii`) | plants | 66 | 0 | 1 |
+| Japanese lovegrass (`eragrostis-tenella`) | plants | 66 | 0 | 1 |
+| Mile a minute vine (`ipomoea-cairica`) | plants | 66 | 0 | 1 |
+| Oceanblue morning-glory (`ipomoea-indica`) | plants | 66 | 0 | 1 |
+| Torpedo grass (`panicum-repens`) | plants | 66 | 0 | 1 |
+| Cape leadwort (`plumbago-auriculata`) | plants | 66 | 0 | 1 |
+| Cretan brake (`pteris-cretica`) | plants | 66 | 0 | 1 |
+| Flamevine (`pyrostegia-venusta`) | plants | 66 | 0 | 1 |
+| Castor Bean (`ricinus-communis`) | plants | 66 | 0 | 1 |
+| Fountainbush (`russelia-equisetiformis`) | plants | 66 | 0 | 1 |
+| Earleaf nightshade (`solanum-mauritianum`) | plants | 66 | 0 | 1 |
+| Cowpea witchweed (`striga-gesnerioides`) | plants | 66 | 0 | 1 |
+| Tropical almond (`terminalia-catappa`) | plants | 66 | 0 | 1 |
+| Jamaican feverplant (`tribulus-cistoides`) | plants | 66 | 0 | 1 |
+| Coral vine (`antigonon-leptopus`) | plants | 65 | 0 | 1 |
+| Mountain ebony (`bauhinia-variegata`) | plants | 65 | 0 | 1 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 67 | 2 |
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 67 | 2 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 67 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 67 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 67 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 67 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 67 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 67 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 67 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 67 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 67 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 67 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 67 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 67 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 67 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 67 | 0 |
-| Calamus (`acorus-calamus`) | plants | 0 | 67 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 67 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 67 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 67 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 67 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3770 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:46.819Z | 36 | 34 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1488 | 170 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

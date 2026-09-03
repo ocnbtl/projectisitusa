@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260903T224633Z__cpnwh-preserved-specimens__2c3fc0bcc069",
+  "status": "complete",
+  "started_at": "2026-09-03T22:46:33.816Z",
+  "finished_at": "2026-09-03T22:46:33.817Z",
+  "actor_type": "adapter",
+  "actor_id": "cpnwh-preserved-specimens-snapshot@1.0.0",
+  "source_id": "cpnwh-preserved-specimens",
+  "source_registry_hash": "ca54f6367f524bd9577f02cd3b094f6a02b6b6dc382e40d04cf82db41d9e79a7",
+  "adapter_id": "cpnwh-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "55473433282b1cf36badf70fecc770ff19307d041757e70d328785b61714c73e",
+  "code_commit": "63b613b67530734719f7068d0ac7e6b34b58d4df",
+  "parameter_hash": "2c3fc0bcc069089d15b1134fa00874cb0adbfd78cf5d1f50a87cdd91509e319e",
+  "parameters": {
+    "stateCode": "AL",
+    "mode": "retained-archive-witnesses",
+    "datasetUrl": "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip",
+    "usagePolicyUrl": "https://www.pnwherbaria.org/data/datausagepolicy.php",
+    "datasetLastModified": "Thu, 04 Jun 2026 19:05:39 GMT",
+    "datasetEtag": "\"2045cebe-65454012e379b\"",
+    "archiveBytes": 541445822,
+    "archiveSha256": "cfb9ae60c2780734426367fd5371baa2262ac97b25214b33ba07f04a5d6e4180",
+    "occurrenceBytes": 2132017127,
+    "occurrenceSha256": "2e089934fd1d9d1c9791f793593b5f2e4af8006fdd1c44196b14bd2b8194d8b5",
+    "archiveAcquiredAt": "2026-09-03T22:18:31.985Z",
+    "preflightEvaluationId": "cpnwh-preserved-specimens-preflight-20260903-r1",
+    "targetPairSetSha256": "f35e10515b3698bfe5727c16ce9592b9f099b391850418a1dc59d1129ad0a126",
+    "targets": [
+      {
+        "pairKey": "01107:echinochloa-colona",
+        "recordId": "2850201",
+        "occurrenceId": "64760c04-a491-40a0-88e4-2f89ff8e1226",
+        "countyFips": "01107",
+        "stateCode": "AL",
+        "sourceState": "Alabama",
+        "sourceCounty": "Pickens",
+        "speciesId": "echinochloa-colona",
+        "scientificName": "Echinochloa colona",
+        "eventDate": "2008-10-21",
+        "year": 2008,
+        "institutionCode": "",
+        "collectionCode": "",
+        "catalogNumber": "165191",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "candidatePairs": [
+      "01107:echinochloa-colona"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01107"
+    ],
+    "species_ids": [
+      "echinochloa-colona"
+    ],
+    "pair_keys": [
+      "01107:echinochloa-colona"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260903T224633Z__cpnwh-preserved-specimens__2c3fc0bcc069/artifacts/cpnwh-source-identity.json",
+      "sha256": "02a409646d94e6685ca90da98527325881e833c3cb3f91082d6fe40294d3e240",
+      "bytes": 732,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224633Z__cpnwh-preserved-specimens__2c3fc0bcc069/artifacts/cpnwh-retained-witnesses.json.gz",
+      "sha256": "526a61d884ee88bbf19f90074c161f012cde14a78171168702fce823f20764a9",
+      "bytes": 303,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260903T224633Z__cpnwh-preserved-specimens__2c3fc0bcc069/assertions.ndjson",
+      "sha256": "cd808234aa09ccbb0d220d01dc166c6e848cb2a69f43102cd766866c8d48cc0e",
+      "bytes": 2249,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224633Z__cpnwh-preserved-specimens__2c3fc0bcc069/reviews.ndjson",
+      "sha256": "e85fba1af378c60b3ffe71b4f049448b01a4d1abdb80f46645d50bbc1ebe4cf1",
+      "bytes": 1093,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224633Z__cpnwh-preserved-specimens__2c3fc0bcc069/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224633Z__cpnwh-preserved-specimens__2c3fc0bcc069/outcomes.ndjson",
+      "sha256": "6a31650bc68c65bacd44fc3232a3205b6faacc171be74318e68f555b248fc65b",
+      "bytes": 721,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "CPNWH physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source cpnwh-preserved-specimens --state AL --candidate-file ops/national-research/plans/cpnwh-preserved-specimens-20260903-r1/cpnwh-al-20260903-r1.json --output-root src/data/research/runs --pairs 01107:echinochloa-colona"
+}

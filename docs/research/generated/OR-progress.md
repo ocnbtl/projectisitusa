@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `5319`
+- Verified present: `7879`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `12655`
-- Not researched: `72134`
-- Determination coverage: `5.94%`
-- Research coverage: `19.98%`
-- Explicit outcome coverage: `19.9791%`
-- Applicable protocol cells: `447`
-- Current complete protocol cells: `104`
-- Protocol completion: `26.17%`
-- Current protocol completion: `23.27%`
-- Evidence records: `5585`
-- Research runs: `33`
+- Researched unresolved: `12228`
+- Not researched: `70001`
+- Determination coverage: `8.78%`
+- Research coverage: `22.35%`
+- Explicit outcome coverage: `22.3454%`
+- Applicable protocol cells: `764`
+- Current complete protocol cells: `105`
+- Protocol completion: `15.45%`
+- Current protocol completion: `13.74%`
+- Evidence records: `8145`
+- Research runs: `34`
 - Rejection records: `441`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Green wattle (`acacia-decurrens`) | plants | 35 | 0 | 1 |
+| Sydney golden wattle (`acacia-longifolia`) | plants | 35 | 0 | 1 |
+| Asian copperleaf (`acalypha-australis`) | plants | 35 | 0 | 1 |
+| Fernleaf yarrow (`achillea-filipendulina`) | plants | 35 | 0 | 1 |
+| Sneezeweed (`achillea-ptarmica`) | plants | 35 | 0 | 1 |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 35 | 0 | 1 |
-| Colonial bentgrass (`agrostis-capillaris`) | plants | 35 | 0 | 1 |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 35 | 0 | 1 |
-| Bur chervil (`anthriscus-caucalis`) | plants | 35 | 0 | 1 |
-| German-madwort (`asperugo-procumbens`) | plants | 35 | 0 | 1 |
-| Compact brome (`bromus-madritensis`) | plants | 35 | 0 | 1 |
-| Wall bedstraw (`galium-parisiense`) | plants | 35 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 35 | 0 | 1 |
-| Ballmustard (`neslia-paniculata`) | plants | 35 | 0 | 1 |
-| Sainfoin legume (`onobrychis-viciifolia`) | plants | 35 | 0 | 1 |
-| Dog's-tongue (`pseudelephantopus-spicatus`) | plants | 35 | 0 | 1 |
-| Birdeye pearlwort (`sagina-procumbens`) | plants | 35 | 0 | 1 |
-| German knotgrass (`scleranthus-annuus`) | plants | 35 | 0 | 1 |
-| White mustard (`sinapis-alba`) | plants | 35 | 0 | 1 |
-| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 35 | 0 | 1 |
-| Twolobe speedwell (`veronica-biloba`) | plants | 35 | 0 | 1 |
-| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 34 | 0 | 1 |
-| Bachelor's button (`gypsophila-paniculata`) | plants | 34 | 0 | 1 |
-| Atlantic ivy (`hedera-hibernica`) | plants | 34 | 0 | 1 |
-| Mouseear hawkweed (`hieracium-pilosella`) | plants | 34 | 0 | 1 |
-| Mouse barley (`hordeum-murinum`) | plants | 34 | 0 | 1 |
-| Whitetop (`lepidium-draba`) | plants | 34 | 0 | 1 |
-| Evergreen bugloss (`pentaglottis-sempervirens`) | plants | 34 | 0 | 1 |
-| Ripgut brome (`bromus-diandrus`) | plants | 33 | 0 | 1 |
-| Striated broom (`cytisus-striatus`) | plants | 33 | 0 | 1 |
+| Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 35 | 0 | 1 |
+| Love-lies-bleeding (`amaranthus-caudatus`) | plants | 35 | 0 | 1 |
+| Red amaranth (`amaranthus-cruentus`) | plants | 35 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 35 | 0 | 1 |
+| Chickpea milkvetch (`astragalus-cicer`) | plants | 35 | 0 | 1 |
+| Common Barberry (`berberis-vulgaris`) | plants | 35 | 0 | 1 |
+| Purple false brome (`brachypodium-distachyon`) | plants | 35 | 0 | 1 |
+| Heath false brome (`brachypodium-pinnatum`) | plants | 35 | 0 | 1 |
+| Pot marigold (`calendula-officinalis`) | plants | 35 | 0 | 1 |
+| Canterbury bells (`campanula-medium`) | plants | 35 | 0 | 1 |
+| Curly plumeless thistle (`carduus-crispus`) | plants | 35 | 0 | 1 |
+| Japanese sedge (`carex-kobomugi`) | plants | 35 | 0 | 1 |
+| Hottentot fig (`carpobrotus-edulis`) | plants | 35 | 0 | 1 |
+| Greater knapweed (`centaurea-scabiosa`) | plants | 35 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 35 | 0 | 1 |
+| Spadeleaf (`centella-asiatica`) | plants | 35 | 0 | 1 |
+| Snow in summer (`cerastium-tomentosum`) | plants | 35 | 0 | 1 |
+| Radiate fingergrass (`chloris-radiata`) | plants | 35 | 0 | 1 |
+| Asthmaweed (`conyza-floribunda`) | plants | 35 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:42:29.381Z | 730 | 129 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2721 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:47.806Z | 2560 | 553 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 212 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `11832`
+- Verified present: `11882`
 - Verified absent: `254`
 - Not detected: `0`
-- Researched unresolved: `109073`
-- Not researched: `514857`
-- Determination coverage: `1.90%`
+- Researched unresolved: `109051`
+- Not researched: `514829`
+- Determination coverage: `1.91%`
 - Research coverage: `19.05%`
-- Explicit outcome coverage: `19.0497%`
-- Applicable protocol cells: `391`
+- Explicit outcome coverage: `19.0541%`
+- Applicable protocol cells: `416`
 - Current complete protocol cells: `118`
-- Protocol completion: `33.50%`
-- Current protocol completion: `30.18%`
-- Evidence records: `14537`
-- Research runs: `31`
+- Protocol completion: `31.49%`
+- Current protocol completion: `28.37%`
+- Evidence records: `14587`
+- Research runs: `32`
 - Rejection records: `1573`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 253 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 253 | 0 | 1 |
+| Buffelgrass (`cenchrus-ciliaris`) | plants | 253 | 0 | 1 |
+| Yellow star-thistle (`centaurea-solstitialis`) | plants | 253 | 0 | 1 |
+| Chilean jessamine (`cestrum-parqui`) | plants | 253 | 0 | 1 |
+| Coriander (`coriandrum-sativum`) | plants | 253 | 0 | 1 |
+| Angleton bluestem (`dichanthium-aristatum`) | plants | 253 | 0 | 1 |
+| Silky bluestem (`dichanthium-sericeum`) | plants | 253 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 253 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 253 | 0 | 1 |
+| Yellow glandweed (`parentucellia-viscosa`) | plants | 253 | 0 | 1 |
+| Harmal peganum (`peganum-harmala`) | plants | 253 | 0 | 1 |
+| Lady's Thumb (`persicaria-maculosa`) | plants | 253 | 0 | 1 |
+| Silversheath knotweed (`polygonum-argyrocoleon`) | plants | 253 | 0 | 1 |
+| Annual bastardcabbage (`rapistrum-rugosum`) | plants | 253 | 0 | 1 |
 | Prickly Russian thistle (`salsola-tragus`) | plants | 253 | 0 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 254 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 254 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 254 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 254 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 254 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 254 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 254 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 254 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 254 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 254 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 254 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 254 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 254 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 254 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 254 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 254 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 254 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 254 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 254 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 254 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 254 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 254 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 254 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 254 | 0 |
+| Cutleaf vipergrass (`scorzonera-laciniata`) | plants | 253 | 0 | 1 |
+| Blessed milkthistle (`silybum-marianum`) | plants | 253 | 0 | 1 |
+| Sorghum (`sorghum-bicolor`) | plants | 253 | 0 | 1 |
+| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 253 | 0 | 1 |
+| Puncturevine (`tribulus-terrestris`) | plants | 253 | 0 | 1 |
+| Purpletop vervain (`verbena-bonariensis`) | plants | 253 | 0 | 1 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 252 | 0 | 1 |
+| French tamarisk (`tamarix-gallica`) | plants | 252 | 0 | 1 |
+| Cheeseweed mallow (`malva-parviflora`) | plants | 251 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5251 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:01.161Z | 50 | 44 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1013 | 142 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

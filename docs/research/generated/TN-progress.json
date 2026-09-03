@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 321,
+    "applicableSpeciesCount": 327,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2183,
+    "unknownSpeciesCount": 2177,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 268,
+    "derivedApplicableSpeciesCount": 274,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 472,
+    "boundedAcquisitionSpeciesCount": 478,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 237880,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 7831,
+    "verifiedPresent": 7845,
     "verifiedAbsent": 95,
     "notDetected": 8,
-    "researchedUnresolved": 36906,
-    "notResearched": 193040,
-    "determinationCoveragePercent": 3.33,
+    "researchedUnresolved": 36898,
+    "notResearched": 193034,
+    "determinationCoveragePercent": 3.34,
     "researchCoveragePercent": 18.85,
-    "explicitOutcomePairCount": 44840,
-    "explicitOutcomeCoveragePercent": 18.8498,
+    "explicitOutcomePairCount": 44846,
+    "explicitOutcomeCoveragePercent": 18.8524,
     "conflictCount": 0,
-    "evidenceRecordCount": 10168,
+    "evidenceRecordCount": 10182,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 10168,
+    "runEvidenceRecordCount": 10182,
     "rejectionRecordCount": 746,
-    "researchRunCount": 29,
+    "researchRunCount": 30,
     "boundedAcquisition": {
-      "speciesCount": 472,
-      "totalPairs": 44840,
-      "verifiedPresent": 7831,
+      "speciesCount": 478,
+      "totalPairs": 45410,
+      "verifiedPresent": 7845,
       "verifiedAbsent": 95,
       "notDetected": 8,
-      "researchedUnresolved": 36906,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 44840,
-      "explicitOutcomeCoveragePercent": 100
+      "researchedUnresolved": 36898,
+      "notResearched": 564,
+      "researchCoveragePercent": 98.76,
+      "explicitOutcomePairs": 44846,
+      "explicitOutcomeCoveragePercent": 98.758
     }
   },
   "migrationCandidates": {
@@ -268,6 +268,16 @@
       "screenedSpeciesCount": 316
     },
     {
+      "id": "cpnwh-preserved-specimens",
+      "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
+      "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": "2026-09-03T22:47:59.085Z",
+      "evidencePairCount": 14,
+      "screenedSpeciesCount": 13
+    },
+    {
       "id": "gbif-preserved-specimens",
       "label": "GBIF preserved specimen records",
       "authority": "Global Biodiversity Information Facility",
@@ -432,17 +442,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1888,
-    "applicableCells": 356,
-    "notApplicableCells": 1532,
+    "totalCells": 1912,
+    "applicableCells": 362,
+    "notApplicableCells": 1550,
     "completeCells": 139,
-    "incompleteCells": 217,
+    "incompleteCells": 223,
     "blockedCells": 0,
     "currentCells": 126,
     "staleCells": 13,
-    "undatedCells": 217,
-    "applicableCompletionPercent": 39.04,
-    "currentCompletePercent": 35.39,
+    "undatedCells": 223,
+    "applicableCompletionPercent": 38.4,
+    "currentCompletePercent": 34.81,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -462,9 +472,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 299,
+        "applicableCells": 305,
         "currentCompleteCells": 93,
-        "currentCompletePercent": 31.1
+        "currentCompletePercent": 30.49
       },
       {
         "category": "wildlife",
@@ -488,9 +498,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 295,
+        "applicableCells": 301,
         "currentCompleteCells": 78,
-        "currentCompletePercent": 26.44
+        "currentCompletePercent": 25.91
       },
       {
         "priority": "baseline",
@@ -508,7 +518,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 321,
+        "applicableCells": 327,
         "currentCompleteCells": 104,
         "processed": false
       },
@@ -521,6 +531,78 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "anthemis-arvensis",
+      "commonName": "Corn chamomile",
+      "scientificName": "Anthemis arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 94,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 94001
+    },
+    {
+      "speciesId": "barbarea-vulgaris",
+      "commonName": "Yellow Rocket",
+      "scientificName": "Barbarea vulgaris",
+      "category": "plants",
+      "notResearchedCountyCount": 94,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 94001
+    },
+    {
+      "speciesId": "lepidium-campestre",
+      "commonName": "Cream-anther field pepperwort",
+      "scientificName": "Lepidium campestre",
+      "category": "plants",
+      "notResearchedCountyCount": 94,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 94001
+    },
+    {
+      "speciesId": "microthlaspi-perfoliatum",
+      "commonName": "Claspleaf pennycress",
+      "scientificName": "Microthlaspi perfoliatum",
+      "category": "plants",
+      "notResearchedCountyCount": 94,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 94001
+    },
+    {
+      "speciesId": "scleranthus-annuus",
+      "commonName": "German knotgrass",
+      "scientificName": "Scleranthus annuus",
+      "category": "plants",
+      "notResearchedCountyCount": 94,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 94001
+    },
+    {
+      "speciesId": "veronica-hederifolia",
+      "commonName": "Ivyleaf Speedwell",
+      "scientificName": "Veronica hederifolia",
+      "category": "plants",
+      "notResearchedCountyCount": 94,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 94001
+    },
     {
       "speciesId": "anarsia-lineatella",
       "commonName": "Peach twig borer",
@@ -1461,66 +1543,6 @@
       "speciesId": "hibiscus-mutabilis",
       "commonName": "Dixie rosemallow",
       "scientificName": "Hibiscus mutabilis",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 95,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 950
-    },
-    {
-      "speciesId": "hieracium-aurantiacum",
-      "commonName": "Orange Hawkweed",
-      "scientificName": "Hieracium aurantiacum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 95,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 950
-    },
-    {
-      "speciesId": "hydrocharis-morsus-ranae",
-      "commonName": "Common frogbit",
-      "scientificName": "Hydrocharis morsus-ranae",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 95,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 950
-    },
-    {
-      "speciesId": "hygrophila-polysperma",
-      "commonName": "Indian swampweed",
-      "scientificName": "Hygrophila polysperma",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 95,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 950
-    },
-    {
-      "speciesId": "hypochaeris-glabra",
-      "commonName": "Smooth cat's ear",
-      "scientificName": "Hypochaeris glabra",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 95,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 950
-    },
-    {
-      "speciesId": "impatiens-glandulifera",
-      "commonName": "Himalayan Balsam",
-      "scientificName": "Impatiens glandulifera",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 95,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 950
-    },
-    {
-      "speciesId": "ipomoea-aquatica",
-      "commonName": "Swamp morning-glory",
-      "scientificName": "Ipomoea aquatica",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 95,

@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 256,
+    "applicableSpeciesCount": 266,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2248,
+    "unknownSpeciesCount": 2238,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 203,
+    "derivedApplicableSpeciesCount": 213,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 475,
+    "boundedAcquisitionSpeciesCount": 482,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 262920,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 6563,
+    "verifiedPresent": 6582,
     "verifiedAbsent": 105,
     "notDetected": 26,
-    "researchedUnresolved": 43181,
-    "notResearched": 213045,
+    "researchedUnresolved": 43171,
+    "notResearched": 213036,
     "determinationCoveragePercent": 2.54,
     "researchCoveragePercent": 18.97,
-    "explicitOutcomePairCount": 49875,
-    "explicitOutcomeCoveragePercent": 18.9696,
+    "explicitOutcomePairCount": 49884,
+    "explicitOutcomeCoveragePercent": 18.9731,
     "conflictCount": 0,
-    "evidenceRecordCount": 7747,
+    "evidenceRecordCount": 7766,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 7747,
+    "runEvidenceRecordCount": 7766,
     "rejectionRecordCount": 694,
-    "researchRunCount": 30,
+    "researchRunCount": 31,
     "boundedAcquisition": {
-      "speciesCount": 475,
-      "totalPairs": 49875,
-      "verifiedPresent": 6563,
+      "speciesCount": 482,
+      "totalPairs": 50610,
+      "verifiedPresent": 6582,
       "verifiedAbsent": 105,
       "notDetected": 26,
-      "researchedUnresolved": 43181,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 49875,
-      "explicitOutcomeCoveragePercent": 100
+      "researchedUnresolved": 43171,
+      "notResearched": 726,
+      "researchCoveragePercent": 98.57,
+      "explicitOutcomePairs": 49884,
+      "explicitOutcomeCoveragePercent": 98.5655
     }
   },
   "migrationCandidates": {
@@ -268,6 +268,16 @@
       "screenedSpeciesCount": 316
     },
     {
+      "id": "cpnwh-preserved-specimens",
+      "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
+      "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": "2026-09-03T22:47:02.414Z",
+      "evidencePairCount": 19,
+      "screenedSpeciesCount": 17
+    },
+    {
       "id": "gbif-preserved-specimens",
       "label": "GBIF preserved specimen records",
       "authority": "Global Biodiversity Information Facility",
@@ -432,17 +442,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1900,
-    "applicableCells": 291,
-    "notApplicableCells": 1609,
-    "completeCells": 119,
-    "incompleteCells": 172,
+    "totalCells": 1928,
+    "applicableCells": 301,
+    "notApplicableCells": 1627,
+    "completeCells": 120,
+    "incompleteCells": 181,
     "blockedCells": 0,
-    "currentCells": 106,
+    "currentCells": 107,
     "staleCells": 13,
-    "undatedCells": 172,
-    "applicableCompletionPercent": 40.89,
-    "currentCompletePercent": 36.43,
+    "undatedCells": 181,
+    "applicableCompletionPercent": 39.87,
+    "currentCompletePercent": 35.55,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -462,9 +472,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 231,
-        "currentCompleteCells": 69,
-        "currentCompletePercent": 29.87
+        "applicableCells": 241,
+        "currentCompleteCells": 70,
+        "currentCompletePercent": 29.05
       },
       {
         "category": "wildlife",
@@ -488,9 +498,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 230,
-        "currentCompleteCells": 58,
-        "currentCompletePercent": 25.22
+        "applicableCells": 240,
+        "currentCompleteCells": 59,
+        "currentCompletePercent": 24.58
       },
       {
         "priority": "baseline",
@@ -508,8 +518,8 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 256,
-        "currentCompleteCells": 84,
+        "applicableCells": 266,
+        "currentCompleteCells": 85,
         "processed": false
       },
       {
@@ -521,6 +531,90 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "bromus-inermis",
+      "commonName": "Smooth Brome",
+      "scientificName": "Bromus inermis",
+      "category": "plants",
+      "notResearchedCountyCount": 104,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 104001
+    },
+    {
+      "speciesId": "malva-neglecta",
+      "commonName": "Common Mallow",
+      "scientificName": "Malva neglecta",
+      "category": "plants",
+      "notResearchedCountyCount": 104,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 104001
+    },
+    {
+      "speciesId": "medicago-sativa",
+      "commonName": "Alfalfa",
+      "scientificName": "Medicago sativa",
+      "category": "plants",
+      "notResearchedCountyCount": 104,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 104001
+    },
+    {
+      "speciesId": "physalis-philadelphica",
+      "commonName": "Mexican groundcherry",
+      "scientificName": "Physalis philadelphica",
+      "category": "plants",
+      "notResearchedCountyCount": 104,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 104001
+    },
+    {
+      "speciesId": "typha-angustifolia",
+      "commonName": "Narrowleaf Cattail",
+      "scientificName": "Typha angustifolia",
+      "category": "plants",
+      "notResearchedCountyCount": 104,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 104001
+    },
+    {
+      "speciesId": "bromus-japonicus",
+      "commonName": "Japanese brome",
+      "scientificName": "Bromus japonicus",
+      "category": "plants",
+      "notResearchedCountyCount": 103,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 103001
+    },
+    {
+      "speciesId": "tragopogon-dubius",
+      "commonName": "Yellow Salsify",
+      "scientificName": "Tragopogon dubius",
+      "category": "plants",
+      "notResearchedCountyCount": 103,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 103001
+    },
     {
       "speciesId": "aspidiotus-duplex",
       "commonName": "Camphor scale",
@@ -1058,16 +1152,6 @@
       "priorityScore": 1050
     },
     {
-      "speciesId": "avena-sativa",
-      "commonName": "Common oat",
-      "scientificName": "Avena sativa",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 105,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1050
-    },
-    {
       "speciesId": "avena-sterilis",
       "commonName": "Animated oat",
       "scientificName": "Avena sterilis",
@@ -1471,66 +1555,6 @@
       "speciesId": "deparia-petersenii",
       "commonName": "Japanese false spleenwort",
       "scientificName": "Deparia petersenii",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 105,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1050
-    },
-    {
-      "speciesId": "dianthus-barbatus",
-      "commonName": "Sweetwilliam",
-      "scientificName": "Dianthus barbatus",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 105,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1050
-    },
-    {
-      "speciesId": "diaphorina-citri",
-      "commonName": "Asian citrus psyllid",
-      "scientificName": "Diaphorina citri",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 105,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1050
-    },
-    {
-      "speciesId": "digitaria-violascens",
-      "commonName": "Violet crabgrass",
-      "scientificName": "Digitaria violascens",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 105,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1050
-    },
-    {
-      "speciesId": "dioscorea-oppositifolia",
-      "commonName": "Chinese yam",
-      "scientificName": "Dioscorea oppositifolia",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 105,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1050
-    },
-    {
-      "speciesId": "draba-verna",
-      "commonName": "Spring draba",
-      "scientificName": "Draba verna",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 105,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1050
-    },
-    {
-      "speciesId": "duchesnea-indica",
-      "commonName": "India mockstrawberry",
-      "scientificName": "Duchesnea indica",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 105,

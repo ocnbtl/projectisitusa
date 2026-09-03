@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `88`
 - County-species pairs: `220352`
-- Verified present: `9915`
+- Verified present: `9944`
 - Verified absent: `88`
 - Not detected: `44`
-- Researched unresolved: `32105`
-- Not researched: `178200`
-- Determination coverage: `4.54%`
-- Research coverage: `19.13%`
-- Explicit outcome coverage: `19.1294%`
-- Applicable protocol cells: `342`
-- Current complete protocol cells: `139`
-- Protocol completion: `44.44%`
-- Current protocol completion: `40.64%`
-- Evidence records: `11535`
-- Research runs: `32`
+- Researched unresolved: `32097`
+- Not researched: `178179`
+- Determination coverage: `4.55%`
+- Research coverage: `19.14%`
+- Explicit outcome coverage: `19.1389%`
+- Applicable protocol cells: `361`
+- Current complete protocol cells: `140`
+- Protocol completion: `42.38%`
+- Current protocol completion: `38.78%`
+- Evidence records: `11564`
+- Research runs: `33`
 - Rejection records: `3154`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 87 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 87 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 87 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 87 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 87 | 0 | 1 |
+| Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 87 | 0 | 1 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 87 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 87 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 87 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 87 | 0 | 1 |
+| Mahaleb cherry (`prunus-mahaleb`) | plants | 87 | 0 | 1 |
+| Climbing Nightshade (`solanum-dulcamara`) | plants | 87 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 87 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 87 | 0 | 1 |
+| Common Periwinkle (`vinca-minor`) | plants | 87 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 86 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 86 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 86 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 88 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 88 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 88 | 1 |
@@ -39,24 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Silver fir (`abies-alba`) | plants | 0 | 88 | 0 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 88 | 0 |
 | Cedar wattle (`acacia-elata`) | plants | 0 | 88 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 88 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 88 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 88 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 88 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 88 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 88 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 88 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 88 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 88 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 88 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 88 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 88 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 88 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 88 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 88 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 88 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 88 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 88 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5286 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:43.426Z | 29 | 26 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 690 | 154 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

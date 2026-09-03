@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `2728`
+- Verified present: `2907`
 - Verified absent: `29`
 - Not detected: `0`
-- Researched unresolved: `11839`
-- Not researched: `58020`
-- Determination coverage: `3.80%`
-- Research coverage: `20.10%`
-- Explicit outcome coverage: `20.1003%`
-- Applicable protocol cells: `349`
+- Researched unresolved: `11826`
+- Not researched: `57854`
+- Determination coverage: `4.04%`
+- Research coverage: `20.33%`
+- Explicit outcome coverage: `20.3289%`
+- Applicable protocol cells: `403`
 - Current complete protocol cells: `71`
-- Protocol completion: `24.07%`
-- Current protocol completion: `20.34%`
-- Evidence records: `2797`
-- Research runs: `33`
+- Protocol completion: `20.84%`
+- Current protocol completion: `17.62%`
+- Evidence records: `2976`
+- Research runs: `34`
 - Rejection records: `139`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Rattlesnake brome (`bromus-briziformis`) | plants | 28 | 0 | 1 |
-| Soft brome (`bromus-hordeaceus`) | plants | 28 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 28 | 0 | 1 |
+| Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 28 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 28 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 28 | 0 | 1 |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 28 | 0 | 1 |
+| Garden orache (`atriplex-hortensis`) | plants | 28 | 0 | 1 |
+| Peregrine saltbush (`atriplex-suberecta`) | plants | 28 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 28 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 28 | 0 | 1 |
 | Corn brome (`bromus-squarrosus`) | plants | 28 | 0 | 1 |
 | Poverty brome (`bromus-sterilis`) | plants | 28 | 0 | 1 |
+| Snow in summer (`cerastium-tomentosum`) | plants | 28 | 0 | 1 |
+| Rose (`cotoneaster-salicifolius`) | plants | 28 | 0 | 1 |
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 28 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 28 | 0 | 1 |
-| Dalmatian Toadflax (`linaria-dalmatica`) | plants | 28 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 28 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 28 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 28 | 0 | 1 |
-| Red catchfly (`silene-dioica`) | plants | 28 | 0 | 1 |
-| London rocket (`sisymbrium-irio`) | plants | 28 | 0 | 1 |
-| Climbing Nightshade (`solanum-dulcamara`) | plants | 28 | 0 | 1 |
-| Athel tamarisk (`tamarix-aphylla`) | plants | 28 | 0 | 1 |
-| Salsify (`tragopogon-porrifolius`) | plants | 28 | 0 | 1 |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 27 | 0 | 1 |
-| Black mustard (`brassica-nigra`) | plants | 27 | 0 | 1 |
-| Meadow brome (`bromus-commutatus`) | plants | 27 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 27 | 0 | 1 |
-| Common nipplewort (`lapsana-communis`) | plants | 27 | 0 | 1 |
-| Whitetop (`lepidium-draba`) | plants | 27 | 0 | 1 |
-| Gardencress pepperweed (`lepidium-sativum`) | plants | 27 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 27 | 0 | 1 |
-| Cheeseweed mallow (`malva-parviflora`) | plants | 27 | 0 | 1 |
-| Arabian schismus (`schismus-arabicus`) | plants | 27 | 0 | 1 |
+| Annual wallrocket (`diplotaxis-muralis`) | plants | 28 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 28 | 0 | 1 |
+| Petty spurge (`euphorbia-peplus`) | plants | 28 | 0 | 1 |
+| Small geranium (`geranium-pusillum`) | plants | 28 | 0 | 1 |
+| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 28 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 28 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 28 | 0 | 1 |
+| Threadstem carpetweed (`mollugo-cerviana`) | plants | 28 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 28 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 28 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1375 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:03.267Z | 179 | 97 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 36 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

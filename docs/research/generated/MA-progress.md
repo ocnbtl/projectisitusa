@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `2579`
+- Verified present: `2603`
 - Verified absent: `14`
 - Not detected: `0`
 - Researched unresolved: `4029`
-- Not researched: `28434`
-- Determination coverage: `7.40%`
-- Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8898%`
-- Applicable protocol cells: `349`
+- Not researched: `28410`
+- Determination coverage: `7.47%`
+- Research coverage: `18.96%`
+- Explicit outcome coverage: `18.9582%`
+- Applicable protocol cells: `369`
 - Current complete protocol cells: `86`
-- Protocol completion: `28.37%`
-- Current protocol completion: `24.64%`
-- Evidence records: `2645`
-- Research runs: `35`
+- Protocol completion: `26.83%`
+- Current protocol completion: `23.31%`
+- Evidence records: `2669`
+- Research runs: `36`
 - Rejection records: `572`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Pale madwort (`alyssum-alyssoides`) | plants | 13 | 0 | 1 |
+| Prickly sedge (`carex-spicata`) | plants | 13 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 13 | 0 | 1 |
+| Smooth hawksbeard (`crepis-capillaris`) | plants | 13 | 0 | 1 |
+| Maiden pink (`dianthus-deltoides`) | plants | 13 | 0 | 1 |
+| False baby's breath (`galium-mollugo`) | plants | 13 | 0 | 1 |
+| Lesser Swinecress (`lepidium-didymum`) | plants | 13 | 0 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 13 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 13 | 0 | 1 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 13 | 0 | 1 |
+| White willow (`salix-alba`) | plants | 13 | 0 | 1 |
+| Weeping willow (`salix-babylonica`) | plants | 13 | 0 | 1 |
+| Hooked bristlegrass (`setaria-verticillata`) | plants | 13 | 0 | 1 |
+| Sweet William catchfly (`silene-armeria`) | plants | 13 | 0 | 1 |
+| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 13 | 0 | 1 |
+| Grass-like starwort (`stellaria-graminea`) | plants | 13 | 0 | 1 |
+| Common lilac (`syringa-vulgaris`) | plants | 13 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 12 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 12 | 0 | 1 |
+| Climbing Nightshade (`solanum-dulcamara`) | plants | 11 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 14 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 14 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 14 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 14 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 14 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 14 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 14 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 14 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 14 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 14 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 14 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 14 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 14 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 14 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 14 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 14 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 14 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 14 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 14 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 14 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 14 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 14 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 14 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 14 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1801 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:08.880Z | 24 | 20 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 200 | 98 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

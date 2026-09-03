@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `1064`
+- Verified present: `1122`
 - Verified absent: `30`
 - Not detected: `0`
-- Researched unresolved: `13518`
-- Not researched: `60508`
-- Determination coverage: `1.46%`
-- Research coverage: `19.45%`
-- Explicit outcome coverage: `19.4515%`
-- Applicable protocol cells: `210`
-- Current complete protocol cells: `110`
-- Protocol completion: `52.38%`
-- Current protocol completion: `52.38%`
-- Evidence records: `1254`
-- Research runs: `32`
+- Researched unresolved: `13504`
+- Not researched: `60464`
+- Determination coverage: `1.53%`
+- Research coverage: `19.51%`
+- Explicit outcome coverage: `19.5101%`
+- Applicable protocol cells: `235`
+- Current complete protocol cells: `111`
+- Protocol completion: `47.23%`
+- Current protocol completion: `47.23%`
+- Evidence records: `1312`
+- Research runs: `33`
 - Rejection records: `2194`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 29 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 29 | 0 | 1 |
+| Lawndaisy (`bellis-perennis`) | plants | 29 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 29 | 0 | 1 |
+| Simons' cotoneaster (`cotoneaster-simonsii`) | plants | 29 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 29 | 0 | 1 |
+| Purple foxglove (`digitalis-purpurea`) | plants | 29 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 29 | 0 | 1 |
+| Splitlip hempnettle (`galeopsis-bifida`) | plants | 29 | 0 | 1 |
+| Tall hawkweed (`hieracium-piloselloides`) | plants | 29 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 29 | 0 | 1 |
+| Purple toadflax (`linaria-purpurea`) | plants | 29 | 0 | 1 |
+| Big trefoil (`lotus-uliginosus`) | plants | 29 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 29 | 0 | 1 |
+| Wall-lettuce (`mycelis-muralis`) | plants | 29 | 0 | 1 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 29 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 29 | 0 | 1 |
+| Rugosa rose (`rosa-rugosa`) | plants | 29 | 0 | 1 |
 | Garden sorrel (`rumex-acetosa`) | plants | 29 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 30 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 30 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 30 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 30 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 30 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 30 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 30 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 30 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 30 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 30 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 30 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 30 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 30 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 30 | 0 |
-| Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 30 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 30 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 30 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 30 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 30 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 30 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 30 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 30 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 30 | 0 |
+| Common lilac (`syringa-vulgaris`) | plants | 29 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 28 | 0 | 1 |
+| Max chrysanthemum (`leucanthemum-maximum`) | plants | 28 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 28 | 0 | 1 |
+| Thymeleaf Speedwell (`veronica-serpyllifolia`) | plants | 28 | 0 | 1 |
+| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 27 | 0 | 1 |
+| European mountain ash (`sorbus-aucuparia`) | plants | 27 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 314 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:31.637Z | 58 | 39 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 87 | 150 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

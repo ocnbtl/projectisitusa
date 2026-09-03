@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `3437`
+- Verified present: `3444`
 - Verified absent: `21`
 - Not detected: `0`
 - Researched unresolved: `6496`
-- Not researched: `42630`
-- Determination coverage: `6.58%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9297%`
-- Applicable protocol cells: `341`
+- Not researched: `42623`
+- Determination coverage: `6.59%`
+- Research coverage: `18.94%`
+- Explicit outcome coverage: `18.9430%`
+- Applicable protocol cells: `348`
 - Current complete protocol cells: `122`
-- Protocol completion: `39.59%`
-- Current protocol completion: `35.78%`
-- Evidence records: `4936`
-- Research runs: `35`
+- Protocol completion: `38.79%`
+- Current protocol completion: `35.06%`
+- Evidence records: `4943`
+- Research runs: `36`
 - Rejection records: `997`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 20 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 20 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 20 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 20 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 20 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 20 | 0 | 1 |
+| Golden clover (`trifolium-aureum`) | plants | 20 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 21 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 21 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 21 | 1 |
@@ -50,13 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 21 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 21 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 21 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 21 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 21 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 21 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 21 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 21 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 21 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 21 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2243 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:34.877Z | 7 | 7 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 523 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

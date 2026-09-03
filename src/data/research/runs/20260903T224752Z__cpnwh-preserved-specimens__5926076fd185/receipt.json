@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260903T224752Z__cpnwh-preserved-specimens__5926076fd185",
+  "status": "complete",
+  "started_at": "2026-09-03T22:47:52.659Z",
+  "finished_at": "2026-09-03T22:47:52.660Z",
+  "actor_type": "adapter",
+  "actor_id": "cpnwh-preserved-specimens-snapshot@1.0.0",
+  "source_id": "cpnwh-preserved-specimens",
+  "source_registry_hash": "ca54f6367f524bd9577f02cd3b094f6a02b6b6dc382e40d04cf82db41d9e79a7",
+  "adapter_id": "cpnwh-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "55473433282b1cf36badf70fecc770ff19307d041757e70d328785b61714c73e",
+  "code_commit": "63b613b67530734719f7068d0ac7e6b34b58d4df",
+  "parameter_hash": "5926076fd185808ff0001f88c516bd2737e4f1af63b5622f6a61ba78522124ee",
+  "parameters": {
+    "stateCode": "RI",
+    "mode": "retained-archive-witnesses",
+    "datasetUrl": "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip",
+    "usagePolicyUrl": "https://www.pnwherbaria.org/data/datausagepolicy.php",
+    "datasetLastModified": "Thu, 04 Jun 2026 19:05:39 GMT",
+    "datasetEtag": "\"2045cebe-65454012e379b\"",
+    "archiveBytes": 541445822,
+    "archiveSha256": "cfb9ae60c2780734426367fd5371baa2262ac97b25214b33ba07f04a5d6e4180",
+    "occurrenceBytes": 2132017127,
+    "occurrenceSha256": "2e089934fd1d9d1c9791f793593b5f2e4af8006fdd1c44196b14bd2b8194d8b5",
+    "archiveAcquiredAt": "2026-09-03T22:18:31.985Z",
+    "preflightEvaluationId": "cpnwh-preserved-specimens-preflight-20260903-r1",
+    "targetPairSetSha256": "6666844f152ec658fe3544a1086ddfff558cafb40c8c1e6d3942a33b61d61137",
+    "targets": [
+      {
+        "pairKey": "44007:euonymus-alatus",
+        "recordId": "4372410",
+        "occurrenceId": "{EA80EA78-E035-4234-874D-025B6BD95A5A}",
+        "countyFips": "44007",
+        "stateCode": "RI",
+        "sourceState": "Rhode Island",
+        "sourceCounty": "Providence",
+        "speciesId": "euonymus-alatus",
+        "scientificName": "Euonymus alatus",
+        "eventDate": "2016-10-14",
+        "year": 2016,
+        "institutionCode": "",
+        "collectionCode": "",
+        "catalogNumber": "OSC-V-256958",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "pairKey": "44007:solanum-dulcamara",
+        "recordId": "4169853",
+        "occurrenceId": "012ac8cd-08e1-4432-86c1-9c86aea06e25",
+        "countyFips": "44007",
+        "stateCode": "RI",
+        "sourceState": "Rhode Island",
+        "sourceCounty": "Providence",
+        "speciesId": "solanum-dulcamara",
+        "scientificName": "Solanum dulcamara",
+        "eventDate": "1997-09-11",
+        "year": 1997,
+        "institutionCode": "",
+        "collectionCode": "",
+        "catalogNumber": "348782",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "pairKey": "44009:fallopia-sachalinensis",
+        "recordId": "4771713",
+        "occurrenceId": "ae99a4bd-88d1-4726-bb65-83fcca3bd70e",
+        "countyFips": "44009",
+        "stateCode": "RI",
+        "sourceState": "Rhode Island",
+        "sourceCounty": "Washington",
+        "speciesId": "fallopia-sachalinensis",
+        "scientificName": "Fallopia sachalinensis",
+        "eventDate": "2002-08-28",
+        "year": 2002,
+        "institutionCode": "",
+        "collectionCode": "",
+        "catalogNumber": "360855",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "candidatePairs": [
+      "44007:euonymus-alatus",
+      "44007:solanum-dulcamara",
+      "44009:fallopia-sachalinensis"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "RI",
+    "county_fips": [
+      "44007",
+      "44009"
+    ],
+    "species_ids": [
+      "euonymus-alatus",
+      "fallopia-sachalinensis",
+      "solanum-dulcamara"
+    ],
+    "pair_keys": [
+      "44007:euonymus-alatus",
+      "44007:solanum-dulcamara",
+      "44009:fallopia-sachalinensis"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260903T224752Z__cpnwh-preserved-specimens__5926076fd185/artifacts/cpnwh-source-identity.json",
+      "sha256": "476af61c24dc78f68e8795bf3113a775fb79c2603eae233c707121ce31295348",
+      "bytes": 732,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224752Z__cpnwh-preserved-specimens__5926076fd185/artifacts/cpnwh-retained-witnesses.json.gz",
+      "sha256": "77757605116348fa09914d170fe7a603c193eb02f6f624430866e9bea4a0431c",
+      "bytes": 508,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260903T224752Z__cpnwh-preserved-specimens__5926076fd185/assertions.ndjson",
+      "sha256": "a5e92f8b795688ebd57771bb14cc2cf6410ce7ce72c3c6ace72033c1b2e93b3b",
+      "bytes": 6781,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224752Z__cpnwh-preserved-specimens__5926076fd185/reviews.ndjson",
+      "sha256": "f068127d01cb48998b4c1c33572395b7f028f9a803fb17412dc39e10d87eb99d",
+      "bytes": 3279,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224752Z__cpnwh-preserved-specimens__5926076fd185/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224752Z__cpnwh-preserved-specimens__5926076fd185/outcomes.ndjson",
+      "sha256": "ab2a5cd0e56e742cd4a3dbc9ebf01ca3b9dcc64b8f02fc0d4799898b91e0e87f",
+      "bytes": 2163,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "CPNWH physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source cpnwh-preserved-specimens --state RI --candidate-file ops/national-research/plans/cpnwh-preserved-specimens-20260903-r1/cpnwh-ri-20260903-r1.json --output-root src/data/research/runs --pairs 44007:euonymus-alatus,44007:solanum-dulcamara,44009:fallopia-sachalinensis"
+}

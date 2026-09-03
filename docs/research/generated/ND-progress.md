@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `1702`
+- Verified present: `1737`
 - Verified absent: `53`
 - Not detected: `0`
-- Researched unresolved: `23331`
-- Not researched: `107626`
-- Determination coverage: `1.32%`
-- Research coverage: `18.90%`
-- Explicit outcome coverage: `18.9026%`
-- Applicable protocol cells: `202`
-- Current complete protocol cells: `89`
-- Protocol completion: `50.50%`
-- Current protocol completion: `44.06%`
-- Evidence records: `2080`
-- Research runs: `32`
+- Researched unresolved: `23324`
+- Not researched: `107598`
+- Determination coverage: `1.35%`
+- Research coverage: `18.92%`
+- Explicit outcome coverage: `18.9237%`
+- Applicable protocol cells: `225`
+- Current complete protocol cells: `90`
+- Protocol completion: `45.78%`
+- Current protocol completion: `40.00%`
+- Evidence records: `2115`
+- Research runs: `33`
 - Rejection records: `189`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Crested wheatgrass (`agropyron-cristatum`) | plants | 52 | 0 | 1 |
 | Pale madwort (`alyssum-alyssoides`) | plants | 52 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 52 | 0 | 1 |
 | Absinthium (`artemisia-absinthium`) | plants | 52 | 0 | 1 |
+| Chickpea milkvetch (`astragalus-cicer`) | plants | 52 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 52 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 52 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 52 | 0 | 1 |
 | Littlepod False Flax (`camelina-microcarpa`) | plants | 52 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 52 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 52 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 52 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 52 | 0 | 1 |
+| Common barley (`hordeum-vulgare`) | plants | 52 | 0 | 1 |
 | Roundfruit rush (`juncus-compressus`) | plants | 52 | 0 | 1 |
 | European stickseed (`lappula-squarrosa`) | plants | 52 | 0 | 1 |
 | Clasping pepperweed (`lepidium-perfoliatum`) | plants | 52 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 52 | 0 | 1 |
-| Field Sowthistle (`sonchus-arvensis`) | plants | 52 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 52 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 51 | 0 | 1 |
-| Yellow Salsify (`tragopogon-dubius`) | plants | 51 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 50 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 53 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 53 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 53 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 53 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 53 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 53 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 53 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 53 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 53 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 53 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 53 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 53 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 52 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 52 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 52 | 0 | 1 |
+| Annual canarygrass (`phalaris-canariensis`) | plants | 52 | 0 | 1 |
+| Russian wildrye (`psathyrostachys-juncea`) | plants | 52 | 0 | 1 |
+| Austrian yellowcress (`rorippa-austriaca`) | plants | 52 | 0 | 1 |
+| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 52 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 51 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 987 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:28.494Z | 35 | 30 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 175 | 123 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

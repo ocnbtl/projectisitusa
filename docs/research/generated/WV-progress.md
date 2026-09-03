@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `6138`
+- Verified present: `6147`
 - Verified absent: `55`
 - Not detected: `23`
 - Researched unresolved: `19799`
-- Not researched: `111705`
+- Not researched: `111696`
 - Determination coverage: `4.50%`
-- Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8898%`
-- Applicable protocol cells: `318`
+- Research coverage: `18.90%`
+- Explicit outcome coverage: `18.8963%`
+- Applicable protocol cells: `326`
 - Current complete protocol cells: `97`
-- Protocol completion: `34.59%`
-- Current protocol completion: `30.50%`
-- Evidence records: `7610`
-- Research runs: `28`
+- Protocol completion: `33.74%`
+- Current protocol completion: `29.75%`
+- Evidence records: `7619`
+- Research runs: `29`
 - Rejection records: `216`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Smooth Brome (`bromus-inermis`) | plants | 54 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 54 | 0 | 1 |
+| Smooth hawksbeard (`crepis-capillaris`) | plants | 54 | 0 | 1 |
+| Common nipplewort (`lapsana-communis`) | plants | 54 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 54 | 0 | 1 |
+| Field forget-me-not (`myosotis-arvensis`) | plants | 54 | 0 | 1 |
+| Maidenstears (`silene-vulgaris`) | plants | 54 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 53 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 55 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 55 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 55 | 2 |
@@ -49,14 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 55 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 55 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 55 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 55 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 55 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 55 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 55 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 55 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 55 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 55 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 55 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3089 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:14.994Z | 9 | 8 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 810 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

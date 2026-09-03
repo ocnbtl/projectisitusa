@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260903T224807Z__cpnwh-preserved-specimens__d3aca5b25c06",
+  "status": "complete",
+  "started_at": "2026-09-03T22:48:07.585Z",
+  "finished_at": "2026-09-03T22:48:07.586Z",
+  "actor_type": "adapter",
+  "actor_id": "cpnwh-preserved-specimens-snapshot@1.0.0",
+  "source_id": "cpnwh-preserved-specimens",
+  "source_registry_hash": "ca54f6367f524bd9577f02cd3b094f6a02b6b6dc382e40d04cf82db41d9e79a7",
+  "adapter_id": "cpnwh-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "55473433282b1cf36badf70fecc770ff19307d041757e70d328785b61714c73e",
+  "code_commit": "63b613b67530734719f7068d0ac7e6b34b58d4df",
+  "parameter_hash": "d3aca5b25c063fa8f18560b1390539f24fdcfe10fd667fdac027e02944b86ab0",
+  "parameters": {
+    "stateCode": "VT",
+    "mode": "retained-archive-witnesses",
+    "datasetUrl": "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip",
+    "usagePolicyUrl": "https://www.pnwherbaria.org/data/datausagepolicy.php",
+    "datasetLastModified": "Thu, 04 Jun 2026 19:05:39 GMT",
+    "datasetEtag": "\"2045cebe-65454012e379b\"",
+    "archiveBytes": 541445822,
+    "archiveSha256": "cfb9ae60c2780734426367fd5371baa2262ac97b25214b33ba07f04a5d6e4180",
+    "occurrenceBytes": 2132017127,
+    "occurrenceSha256": "2e089934fd1d9d1c9791f793593b5f2e4af8006fdd1c44196b14bd2b8194d8b5",
+    "archiveAcquiredAt": "2026-09-03T22:18:31.985Z",
+    "preflightEvaluationId": "cpnwh-preserved-specimens-preflight-20260903-r1",
+    "targetPairSetSha256": "0e1d37b89899b913b5607c8f8c47e4f7d8d05f5e5802d47859126a5d8378a2a2",
+    "targets": [
+      {
+        "pairKey": "50015:acer-palmatum",
+        "recordId": "2352474",
+        "occurrenceId": "5bc0f825-7bba-4e4c-8342-237c36556249",
+        "countyFips": "50015",
+        "stateCode": "VT",
+        "sourceState": "Vermont",
+        "sourceCounty": "Lamoille",
+        "speciesId": "acer-palmatum",
+        "scientificName": "Acer palmatum",
+        "eventDate": "1968-05-15",
+        "year": 1968,
+        "institutionCode": "",
+        "collectionCode": "",
+        "catalogNumber": "36",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "pairKey": "50017:sagina-procumbens",
+        "recordId": "2155738",
+        "occurrenceId": "6895063f-e48f-4c8d-a398-38ff271fd874",
+        "countyFips": "50017",
+        "stateCode": "VT",
+        "sourceState": "Vermont",
+        "sourceCounty": "Orange",
+        "speciesId": "sagina-procumbens",
+        "scientificName": "Sagina procumbens",
+        "eventDate": "1891-07-29",
+        "year": 1891,
+        "institutionCode": "",
+        "collectionCode": "",
+        "catalogNumber": "2593",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "pairKey": "50017:silene-vulgaris",
+        "recordId": "959063",
+        "occurrenceId": "8fd95853-39bc-4fd6-a858-8fac04bc1db9",
+        "countyFips": "50017",
+        "stateCode": "VT",
+        "sourceState": "Vermont",
+        "sourceCounty": "Orange",
+        "speciesId": "silene-vulgaris",
+        "scientificName": "Silene vulgaris",
+        "eventDate": "1947-08-27",
+        "year": 1947,
+        "institutionCode": "",
+        "collectionCode": "",
+        "catalogNumber": "108636",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "candidatePairs": [
+      "50015:acer-palmatum",
+      "50017:sagina-procumbens",
+      "50017:silene-vulgaris"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "VT",
+    "county_fips": [
+      "50015",
+      "50017"
+    ],
+    "species_ids": [
+      "acer-palmatum",
+      "sagina-procumbens",
+      "silene-vulgaris"
+    ],
+    "pair_keys": [
+      "50015:acer-palmatum",
+      "50017:sagina-procumbens",
+      "50017:silene-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260903T224807Z__cpnwh-preserved-specimens__d3aca5b25c06/artifacts/cpnwh-source-identity.json",
+      "sha256": "9914b4a3640a66c3dd8580dea3d8fd70a02c3c55cfdb57e699e03031096e27dc",
+      "bytes": 732,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224807Z__cpnwh-preserved-specimens__d3aca5b25c06/artifacts/cpnwh-retained-witnesses.json.gz",
+      "sha256": "ab994ec37652b9cf2df177c2c09584e934f18bacaeaba43d57950f6893e4a9a7",
+      "bytes": 478,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260903T224807Z__cpnwh-preserved-specimens__d3aca5b25c06/assertions.ndjson",
+      "sha256": "06918c2e9939ea170a0824275199d49c8a2998c929cbe9328922e66703076b12",
+      "bytes": 6712,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224807Z__cpnwh-preserved-specimens__d3aca5b25c06/reviews.ndjson",
+      "sha256": "dc2162fa2db196e0fa353ffbbadff25a3b79ee0f24bc93966ce97afdd8a20606",
+      "bytes": 3270,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224807Z__cpnwh-preserved-specimens__d3aca5b25c06/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260903T224807Z__cpnwh-preserved-specimens__d3aca5b25c06/outcomes.ndjson",
+      "sha256": "faa849120269a042696b1611b43917e104addd8355e936d2748be2ace6ac58b7",
+      "bytes": 2154,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "CPNWH physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source cpnwh-preserved-specimens --state VT --candidate-file ops/national-research/plans/cpnwh-preserved-specimens-20260903-r1/cpnwh-vt-20260903-r1.json --output-root src/data/research/runs --pairs 50015:acer-palmatum,50017:sagina-procumbens,50017:silene-vulgaris"
+}

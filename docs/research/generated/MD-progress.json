@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-05",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 287,
+    "applicableSpeciesCount": 292,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2217,
+    "unknownSpeciesCount": 2212,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 70,
-    "derivedApplicableSpeciesCount": 217,
+    "derivedApplicableSpeciesCount": 222,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 478,
+    "boundedAcquisitionSpeciesCount": 482,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 60096,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 2613,
+    "verifiedPresent": 2620,
     "verifiedAbsent": 24,
     "notDetected": 0,
-    "researchedUnresolved": 8835,
-    "notResearched": 48624,
-    "determinationCoveragePercent": 4.39,
-    "researchCoveragePercent": 19.09,
-    "explicitOutcomePairCount": 11472,
-    "explicitOutcomeCoveragePercent": 19.0895,
+    "researchedUnresolved": 8833,
+    "notResearched": 48619,
+    "determinationCoveragePercent": 4.4,
+    "researchCoveragePercent": 19.1,
+    "explicitOutcomePairCount": 11477,
+    "explicitOutcomeCoveragePercent": 19.0978,
     "conflictCount": 0,
-    "evidenceRecordCount": 2906,
+    "evidenceRecordCount": 2913,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 2906,
+    "runEvidenceRecordCount": 2913,
     "rejectionRecordCount": 943,
-    "researchRunCount": 28,
+    "researchRunCount": 29,
     "boundedAcquisition": {
-      "speciesCount": 478,
-      "totalPairs": 11472,
-      "verifiedPresent": 2613,
+      "speciesCount": 482,
+      "totalPairs": 11568,
+      "verifiedPresent": 2620,
       "verifiedAbsent": 24,
       "notDetected": 0,
-      "researchedUnresolved": 8835,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 11472,
-      "explicitOutcomeCoveragePercent": 100
+      "researchedUnresolved": 8833,
+      "notResearched": 91,
+      "researchCoveragePercent": 99.21,
+      "explicitOutcomePairs": 11477,
+      "explicitOutcomeCoveragePercent": 99.2133
     }
   },
   "migrationCandidates": {
@@ -268,6 +268,16 @@
       "screenedSpeciesCount": 316
     },
     {
+      "id": "cpnwh-preserved-specimens",
+      "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
+      "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": "2026-09-03T22:47:10.945Z",
+      "evidencePairCount": 7,
+      "screenedSpeciesCount": 5
+    },
+    {
       "id": "gbif-preserved-specimens",
       "label": "GBIF preserved specimen records",
       "authority": "Global Biodiversity Information Facility",
@@ -432,17 +442,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1912,
-    "applicableCells": 322,
-    "notApplicableCells": 1590,
+    "totalCells": 1928,
+    "applicableCells": 327,
+    "notApplicableCells": 1601,
     "completeCells": 107,
-    "incompleteCells": 215,
+    "incompleteCells": 220,
     "blockedCells": 0,
     "currentCells": 94,
     "staleCells": 13,
-    "undatedCells": 215,
-    "applicableCompletionPercent": 33.23,
-    "currentCompletePercent": 29.19,
+    "undatedCells": 220,
+    "applicableCompletionPercent": 32.72,
+    "currentCompletePercent": 28.75,
     "regulatedAndHighApplicableCells": 54,
     "regulatedAndHighCurrentCompleteCells": 49,
     "regulatedAndHighCurrentCompletePercent": 90.74,
@@ -462,9 +472,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 264,
+        "applicableCells": 269,
         "currentCompleteCells": 73,
-        "currentCompletePercent": 27.65
+        "currentCompletePercent": 27.14
       },
       {
         "category": "wildlife",
@@ -488,9 +498,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 242,
+        "applicableCells": 247,
         "currentCompleteCells": 43,
-        "currentCompletePercent": 17.77
+        "currentCompletePercent": 17.41
       },
       {
         "priority": "baseline",
@@ -508,7 +518,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 287,
+        "applicableCells": 292,
         "currentCompleteCells": 72,
         "processed": false
       },
@@ -521,6 +531,54 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "barbarea-vulgaris",
+      "commonName": "Yellow Rocket",
+      "scientificName": "Barbarea vulgaris",
+      "category": "plants",
+      "notResearchedCountyCount": 23,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 23001
+    },
+    {
+      "speciesId": "centaurium-pulchellum",
+      "commonName": "Branched centaury",
+      "scientificName": "Centaurium pulchellum",
+      "category": "plants",
+      "notResearchedCountyCount": 23,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 23001
+    },
+    {
+      "speciesId": "salix-babylonica",
+      "commonName": "Weeping willow",
+      "scientificName": "Salix babylonica",
+      "category": "plants",
+      "notResearchedCountyCount": 23,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 23001
+    },
+    {
+      "speciesId": "juncus-compressus",
+      "commonName": "Roundfruit rush",
+      "scientificName": "Juncus compressus",
+      "category": "plants",
+      "notResearchedCountyCount": 22,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 22001
+    },
     {
       "speciesId": "aspidiotus-duplex",
       "commonName": "Camphor scale",
@@ -1403,16 +1461,6 @@
       "priorityScore": 240
     },
     {
-      "speciesId": "duchesnea-indica",
-      "commonName": "India mockstrawberry",
-      "scientificName": "Duchesnea indica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 24,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 240
-    },
-    {
       "speciesId": "eichhornia-azurea",
       "commonName": "Anchored water hyacinth",
       "scientificName": "Eichhornia azurea",
@@ -1496,36 +1544,6 @@
       "speciesId": "erysimum-repandum",
       "commonName": "Spreading wallflower",
       "scientificName": "Erysimum repandum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 24,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 240
-    },
-    {
-      "speciesId": "euonymus-fortunei-var-radicans",
-      "commonName": "Winter creeper",
-      "scientificName": "Euonymus fortunei var. radicans",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 24,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 240
-    },
-    {
-      "speciesId": "euphorbia-terracina",
-      "commonName": "Geraldton carnation weed",
-      "scientificName": "Euphorbia terracina",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 24,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 240
-    },
-    {
-      "speciesId": "ficus-carica",
-      "commonName": "Edible fig",
-      "scientificName": "Ficus carica",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 24,

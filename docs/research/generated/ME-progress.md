@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `1816`
+- Verified present: `1826`
 - Verified absent: `16`
 - Not detected: `0`
 - Researched unresolved: `5784`
-- Not researched: `32448`
-- Determination coverage: `4.57%`
-- Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0096%`
-- Applicable protocol cells: `276`
+- Not researched: `32438`
+- Determination coverage: `4.60%`
+- Research coverage: `19.03%`
+- Explicit outcome coverage: `19.0345%`
+- Applicable protocol cells: `286`
 - Current complete protocol cells: `110`
-- Protocol completion: `44.57%`
-- Current protocol completion: `39.86%`
-- Evidence records: `2213`
-- Research runs: `28`
+- Protocol completion: `43.01%`
+- Current protocol completion: `38.46%`
+- Evidence records: `2223`
+- Research runs: `29`
 - Rejection records: `292`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Quackgrass (`elymus-repens`) | plants | 15 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 15 | 0 | 1 |
+| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 15 | 0 | 1 |
+| Fall dandelion (`leontodon-autumnalis`) | plants | 15 | 0 | 1 |
+| Austrian pine (`pinus-nigra`) | plants | 15 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 15 | 0 | 1 |
+| Garden sorrel (`rumex-acetosa`) | plants | 15 | 0 | 1 |
+| Nightflowering silene (`silene-noctiflora`) | plants | 15 | 0 | 1 |
+| False spiraea (`sorbaria-sorbifolia`) | plants | 15 | 0 | 1 |
+| Common Tansy (`tanacetum-vulgare`) | plants | 15 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 16 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 16 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 16 | 1 |
@@ -47,16 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 16 | 0 |
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 16 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 16 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 16 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 16 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 16 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 16 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 16 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 16 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 16 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 16 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 16 | 0 |
-| Asian Tiger Mosquito (`aedes-albopictus`) | insects | 0 | 16 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1137 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:13.171Z | 10 | 10 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 214 | 133 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `7831`
+- Verified present: `7845`
 - Verified absent: `95`
 - Not detected: `8`
-- Researched unresolved: `36906`
-- Not researched: `193040`
-- Determination coverage: `3.33%`
+- Researched unresolved: `36898`
+- Not researched: `193034`
+- Determination coverage: `3.34%`
 - Research coverage: `18.85%`
-- Explicit outcome coverage: `18.8498%`
-- Applicable protocol cells: `356`
+- Explicit outcome coverage: `18.8524%`
+- Applicable protocol cells: `362`
 - Current complete protocol cells: `126`
-- Protocol completion: `39.04%`
-- Current protocol completion: `35.39%`
-- Evidence records: `10168`
-- Research runs: `29`
+- Protocol completion: `38.40%`
+- Current protocol completion: `34.81%`
+- Evidence records: `10182`
+- Research runs: `30`
 - Rejection records: `746`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Corn chamomile (`anthemis-arvensis`) | plants | 94 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 94 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 94 | 0 | 1 |
+| Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 94 | 0 | 1 |
+| German knotgrass (`scleranthus-annuus`) | plants | 94 | 0 | 1 |
+| Ivyleaf Speedwell (`veronica-hederifolia`) | plants | 94 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 95 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 95 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 95 | 1 |
@@ -51,12 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 95 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 95 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 95 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 95 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 95 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 95 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 95 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 95 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 95 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4318 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:59.085Z | 14 | 13 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1054 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

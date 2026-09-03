@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `6473`
+- Verified present: `6510`
 - Verified absent: `75`
 - Not detected: `0`
-- Researched unresolved: `29227`
-- Not researched: `152025`
-- Determination coverage: `3.49%`
-- Research coverage: `19.05%`
-- Explicit outcome coverage: `19.0495%`
-- Applicable protocol cells: `351`
+- Researched unresolved: `29212`
+- Not researched: `152003`
+- Determination coverage: `3.51%`
+- Research coverage: `19.06%`
+- Explicit outcome coverage: `19.0612%`
+- Applicable protocol cells: `372`
 - Current complete protocol cells: `128`
-- Protocol completion: `40.17%`
-- Current protocol completion: `36.47%`
-- Evidence records: `9788`
-- Research runs: `32`
+- Protocol completion: `37.90%`
+- Current protocol completion: `34.41%`
+- Evidence records: `9825`
+- Research runs: `33`
 - Rejection records: `632`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Lambsquarters (`chenopodium-album`) | plants | 74 | 0 | 1 |
+| Ricefield flatsedge (`cyperus-iria`) | plants | 74 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 74 | 0 | 1 |
+| Dovefoot Geranium (`geranium-molle`) | plants | 74 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 74 | 0 | 1 |
+| Lesser Swinecress (`lepidium-didymum`) | plants | 74 | 0 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 74 | 0 | 1 |
+| Wartremoving herb (`murdannia-keisak`) | plants | 74 | 0 | 1 |
+| Poet's narcissus (`narcissus-poeticus`) | plants | 74 | 0 | 1 |
+| Apple of Peru (`nicandra-physalodes`) | plants | 74 | 0 | 1 |
+| White willow (`salix-alba`) | plants | 74 | 0 | 1 |
+| German knotgrass (`scleranthus-annuus`) | plants | 74 | 0 | 1 |
+| Sorghum (`sorghum-bicolor`) | plants | 74 | 0 | 1 |
+| French tamarisk (`tamarix-gallica`) | plants | 74 | 0 | 1 |
+| Puncturevine (`tribulus-terrestris`) | plants | 74 | 0 | 1 |
+| Purpletop vervain (`verbena-bonariensis`) | plants | 74 | 0 | 1 |
+| Common Periwinkle (`vinca-minor`) | plants | 74 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 73 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 72 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 75 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 75 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 75 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 75 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 75 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 75 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 75 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 75 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 75 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 75 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 75 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 75 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 75 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 75 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 75 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 75 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 75 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 75 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 75 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 75 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 75 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 75 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 75 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4459 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:36.035Z | 37 | 31 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1201 | 154 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

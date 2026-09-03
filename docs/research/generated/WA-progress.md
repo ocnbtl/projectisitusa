@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `5395`
+- Verified present: `8688`
 - Verified absent: `38`
 - Not detected: `0`
-- Researched unresolved: `15019`
-- Not researched: `77204`
-- Determination coverage: `5.56%`
-- Research coverage: `20.94%`
-- Explicit outcome coverage: `20.9429%`
-- Applicable protocol cells: `417`
-- Current complete protocol cells: `183`
-- Protocol completion: `47.00%`
-- Current protocol completion: `43.88%`
-- Evidence records: `10685`
-- Research runs: `39`
+- Researched unresolved: `14355`
+- Not researched: `74575`
+- Determination coverage: `8.94%`
+- Research coverage: `23.64%`
+- Explicit outcome coverage: `23.6350%`
+- Applicable protocol cells: `728`
+- Current complete protocol cells: `184`
+- Protocol completion: `27.06%`
+- Current protocol completion: `25.27%`
+- Evidence records: `13978`
+- Research runs: `40`
 - Rejection records: `1883`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 38 | 0 | 1 |
-| Ripgut brome (`bromus-diandrus`) | plants | 38 | 0 | 1 |
-| Atlantic ivy (`hedera-hibernica`) | plants | 38 | 0 | 1 |
-| Mouse barley (`hordeum-murinum`) | plants | 38 | 0 | 1 |
-| Field forget-me-not (`myosotis-arvensis`) | plants | 38 | 0 | 1 |
-| Changing forget-me-not (`myosotis-discolor`) | plants | 38 | 0 | 1 |
-| Silver cinquefoil (`potentilla-argentea`) | plants | 38 | 0 | 1 |
-| Garden sorrel (`rumex-acetosa`) | plants | 38 | 0 | 1 |
-| Patience dock (`rumex-patientia`) | plants | 38 | 0 | 1 |
-| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 38 | 0 | 1 |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 37 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 37 | 0 | 1 |
-| Wall-lettuce (`mycelis-muralis`) | plants | 37 | 0 | 1 |
-| Japanese sweet coltsfoot (`petasites-japonicus`) | plants | 37 | 0 | 1 |
-| Pale madwort (`alyssum-alyssoides`) | plants | 36 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 36 | 0 | 1 |
-| Littlepod False Flax (`camelina-microcarpa`) | plants | 36 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 36 | 0 | 1 |
-| Wall hawkweed (`hieracium-murorum`) | plants | 36 | 0 | 1 |
-| Mouseear hawkweed (`hieracium-pilosella`) | plants | 36 | 0 | 1 |
-| Japanese rose (`kerria-japonica`) | plants | 36 | 0 | 1 |
-| Sweet alyssum (`lobularia-maritima`) | plants | 36 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 36 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 36 | 0 | 1 |
-| Clasping pepperweed (`lepidium-perfoliatum`) | plants | 35 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 38 | 0 | 1 |
+| Threecorner leek (`allium-triquetrum`) | plants | 38 | 0 | 1 |
+| Joseph's-coat (`amaranthus-tricolor`) | plants | 38 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 38 | 0 | 1 |
+| Downy birch (`betula-pubescens`) | plants | 38 | 0 | 1 |
+| Cabbage (`brassica-oleracea`) | plants | 38 | 0 | 1 |
+| Compact brome (`bromus-madritensis`) | plants | 38 | 0 | 1 |
+| Japanese sedge (`carex-kobomugi`) | plants | 38 | 0 | 1 |
+| Prickly sedge (`carex-spicata`) | plants | 38 | 0 | 1 |
+| Caraway (`carum-carvi`) | plants | 38 | 0 | 1 |
+| Silverleaf cotoneaster (`cotoneaster-pannosus`) | plants | 38 | 0 | 1 |
+| Rose (`cotoneaster-salicifolius`) | plants | 38 | 0 | 1 |
+| Striated broom (`cytisus-striatus`) | plants | 38 | 0 | 1 |
+| Pricklyburr (`datura-inoxia`) | plants | 38 | 0 | 1 |
+| Threespike goosegrass (`eleusine-tristachya`) | plants | 38 | 0 | 1 |
+| Latin American fleabane (`erigeron-karvinskianus`) | plants | 38 | 0 | 1 |
+| Longbeak stork's bill (`erodium-botrys`) | plants | 38 | 0 | 1 |
+| Musky stork's bill (`erodium-moschatum`) | plants | 38 | 0 | 1 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 38 | 0 | 1 |
+| Gallant Soldier (`galinsoga-parviflora`) | plants | 38 | 0 | 1 |
+| Bloody geranium (`geranium-sanguineum`) | plants | 38 | 0 | 1 |
+| Saltlover (`halogeton-glomeratus`) | plants | 38 | 0 | 1 |
+| Canary Island St. Johnswort (`hypericum-canariense`) | plants | 38 | 0 | 1 |
+| Globe candytuft (`iberis-umbellata`) | plants | 38 | 0 | 1 |
+| Balfour's touch-me-not (`impatiens-balfourii`) | plants | 38 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:55:02.388Z | 293 | 76 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2557 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:09.895Z | 3293 | 493 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1317 | 192 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

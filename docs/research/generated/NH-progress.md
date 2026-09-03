@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `1201`
+- Verified present: `1215`
 - Verified absent: `10`
 - Not detected: `0`
-- Researched unresolved: `3529`
-- Not researched: `20300`
-- Determination coverage: `4.84%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9297%`
-- Applicable protocol cells: `276`
+- Researched unresolved: `3528`
+- Not researched: `20287`
+- Determination coverage: `4.89%`
+- Research coverage: `18.98%`
+- Explicit outcome coverage: `18.9816%`
+- Applicable protocol cells: `289`
 - Current complete protocol cells: `82`
-- Protocol completion: `34.42%`
-- Current protocol completion: `29.71%`
-- Evidence records: `1219`
-- Research runs: `36`
+- Protocol completion: `32.87%`
+- Current protocol completion: `28.37%`
+- Evidence records: `1233`
+- Research runs: `37`
 - Rejection records: `125`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 9 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 9 | 0 | 1 |
+| Paradise plant (`daphne-mezereum`) | plants | 9 | 0 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 9 | 0 | 1 |
+| Wall-lettuce (`mycelis-muralis`) | plants | 9 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 9 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 9 | 0 | 1 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 9 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 9 | 0 | 1 |
+| Climbing Nightshade (`solanum-dulcamara`) | plants | 9 | 0 | 1 |
+| Common lilac (`syringa-vulgaris`) | plants | 9 | 0 | 1 |
+| Common Speedwell (`veronica-officinalis`) | plants | 9 | 0 | 1 |
+| Common Periwinkle (`vinca-minor`) | plants | 9 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 10 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 10 | 2 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 10 | 2 |
@@ -44,19 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cedar wattle (`acacia-elata`) | plants | 0 | 10 | 0 |
 | Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 10 | 0 |
 | New Zealand burr (`acaena-magellanica`) | plants | 0 | 10 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 10 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 10 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 10 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 10 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 10 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 10 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 10 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 10 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 10 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 10 | 0 |
-| Calamus (`acorus-calamus`) | plants | 0 | 10 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 10 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 10 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 700 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:32.788Z | 14 | 14 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 70 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

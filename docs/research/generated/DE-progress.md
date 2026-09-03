@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `3`
 - County-species pairs: `7512`
-- Verified present: `505`
+- Verified present: `509`
 - Verified absent: `3`
 - Not detected: `0`
-- Researched unresolved: `914`
-- Not researched: `6090`
-- Determination coverage: `6.76%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9297%`
-- Applicable protocol cells: `298`
+- Researched unresolved: `913`
+- Not researched: `6087`
+- Determination coverage: `6.82%`
+- Research coverage: `18.97%`
+- Explicit outcome coverage: `18.9696%`
+- Applicable protocol cells: `301`
 - Current complete protocol cells: `81`
-- Protocol completion: `31.54%`
-- Current protocol completion: `27.18%`
-- Evidence records: `554`
-- Research runs: `36`
+- Protocol completion: `31.23%`
+- Current protocol completion: `26.91%`
+- Evidence records: `558`
+- Research runs: `37`
 - Rejection records: `164`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,6 +37,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 3 | 0 | 1 |
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 3 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 3 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 2 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 2 | 0 | 1 |
+| Narrowleaf Cattail (`typha-angustifolia`) | plants | 2 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 3 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 3 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 3 | 2 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 3 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 3 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 3 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 3 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 3 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 3 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 124 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:44.763Z | 4 | 4 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 53 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

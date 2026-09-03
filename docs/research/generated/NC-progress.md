@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `10134`
+- Verified present: `10153`
 - Verified absent: `100`
 - Not detected: `0`
-- Researched unresolved: `37166`
-- Not researched: `203000`
+- Researched unresolved: `37160`
+- Not researched: `202987`
 - Determination coverage: `4.09%`
 - Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9297%`
-- Applicable protocol cells: `389`
+- Explicit outcome coverage: `18.9349%`
+- Applicable protocol cells: `401`
 - Current complete protocol cells: `129`
-- Protocol completion: `36.50%`
-- Current protocol completion: `33.16%`
-- Evidence records: `13392`
-- Research runs: `29`
+- Protocol completion: `35.41%`
+- Current protocol completion: `32.17%`
+- Evidence records: `13411`
+- Research runs: `30`
 - Rejection records: `1277`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 99 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 99 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 99 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 99 | 0 | 1 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 99 | 0 | 1 |
+| Mouseear hawkweed (`hieracium-pilosella`) | plants | 99 | 0 | 1 |
+| Wartremoving herb (`murdannia-keisak`) | plants | 99 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 99 | 0 | 1 |
+| Sweet William catchfly (`silene-armeria`) | plants | 99 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 99 | 0 | 1 |
+| Seashore vervain (`verbena-litoralis`) | plants | 99 | 0 | 1 |
+| Narrowleaf Cattail (`typha-angustifolia`) | plants | 98 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 100 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 100 | 1 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 100 | 0 |
@@ -45,18 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 100 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 100 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 100 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 100 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 100 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 100 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 100 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 100 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 100 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 100 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 100 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 100 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 100 | 0 |
-| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 100 | 0 |
-| Cultivated garlic (`allium-sativum`) | plants | 0 | 100 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 6455 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:26.395Z | 19 | 18 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1134 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

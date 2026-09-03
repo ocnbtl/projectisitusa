@@ -7,10 +7,10 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `15302`
+- Verified present: `15303`
 - Verified absent: `67`
 - Not detected: `9`
-- Researched unresolved: `98455`
+- Researched unresolved: `98454`
 - Not researched: `53935`
 - Determination coverage: `9.16%`
 - Research coverage: `67.85%`
@@ -19,8 +19,8 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Current complete protocol cells: `1349`
 - Protocol completion: `9.43%`
 - Current protocol completion: `9.34%`
-- Evidence records: `53897`
-- Research runs: `69`
+- Evidence records: `53898`
+- Research runs: `70`
 - Rejection records: `6368`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | 2026-06-16T03:44:13.025Z | 7 | 3 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2008 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:33.817Z | 1 | 1 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 6653 | 1016 |
 | GBIF coordinate-resolved preserved specimen records | operational | 2026-07-06T22:47:17.903Z | 904 | 68 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-06-26T11:22:25.724Z | 308 | 61 |

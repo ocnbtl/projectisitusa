@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `83`
 - County-species pairs: `207832`
-- Verified present: `7246`
+- Verified present: `7297`
 - Verified absent: `83`
 - Not detected: `26`
-- Researched unresolved: `32071`
-- Not researched: `168406`
-- Determination coverage: `3.53%`
-- Research coverage: `18.97%`
-- Explicit outcome coverage: `18.9701%`
-- Applicable protocol cells: `314`
+- Researched unresolved: `32065`
+- Not researched: `168361`
+- Determination coverage: `3.55%`
+- Research coverage: `18.99%`
+- Explicit outcome coverage: `18.9918%`
+- Applicable protocol cells: `349`
 - Current complete protocol cells: `127`
-- Protocol completion: `44.59%`
-- Current protocol completion: `40.45%`
-- Evidence records: `9999`
-- Research runs: `31`
+- Protocol completion: `40.11%`
+- Current protocol completion: `36.39%`
+- Evidence records: `10050`
+- Research runs: `32`
 - Rejection records: `1728`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 82 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 82 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 82 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 82 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 82 | 0 | 1 |
+| Marsh thistle (`cirsium-palustre`) | plants | 82 | 0 | 1 |
 | Mute Swan (`cygnus-olor`) | wildlife | 82 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 83 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 83 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 83 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 83 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 83 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 83 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 83 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 83 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 83 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 83 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 83 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 83 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 83 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 83 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 83 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 83 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 83 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 83 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 83 | 0 |
-| Calamus (`acorus-calamus`) | plants | 0 | 83 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 83 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 83 | 0 |
-| Asian Tiger Mosquito (`aedes-albopictus`) | insects | 0 | 83 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 83 | 0 |
+| Annual wallrocket (`diplotaxis-muralis`) | plants | 82 | 0 | 1 |
+| Perennial wallrocket (`diplotaxis-tenuifolia`) | plants | 82 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 82 | 0 | 1 |
+| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 82 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 82 | 0 | 1 |
+| Tall hawkweed (`hieracium-piloselloides`) | plants | 82 | 0 | 1 |
+| Elecampane inula (`inula-helenium`) | plants | 82 | 0 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 82 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 82 | 0 | 1 |
+| Sweet alyssum (`lobularia-maritima`) | plants | 82 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 82 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 82 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 82 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 82 | 0 | 1 |
+| Pestilence wort (`petasites-hybridus`) | plants | 82 | 0 | 1 |
+| Solidstem burnet saxifrage (`pimpinella-saxifraga`) | plants | 82 | 0 | 1 |
+| Maidenstears (`silene-vulgaris`) | plants | 82 | 0 | 1 |
+| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 82 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4011 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:15.280Z | 51 | 39 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1229 | 141 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

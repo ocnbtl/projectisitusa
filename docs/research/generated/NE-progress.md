@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `4059`
+- Verified present: `4081`
 - Verified absent: `93`
 - Not detected: `0`
-- Researched unresolved: `39930`
-- Not researched: `188790`
-- Determination coverage: `1.78%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9297%`
-- Applicable protocol cells: `250`
-- Current complete protocol cells: `91`
-- Protocol completion: `41.60%`
-- Current protocol completion: `36.40%`
-- Evidence records: `4666`
-- Research runs: `28`
+- Researched unresolved: `39925`
+- Not researched: `188773`
+- Determination coverage: `1.79%`
+- Research coverage: `18.94%`
+- Explicit outcome coverage: `18.9370%`
+- Applicable protocol cells: `267`
+- Current complete protocol cells: `92`
+- Protocol completion: `39.33%`
+- Current protocol completion: `34.46%`
+- Evidence records: `4688`
+- Research runs: `29`
 - Rejection records: `536`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 92 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 92 | 0 | 1 |
+| Ferngrass (`catapodium-rigidum`) | plants | 92 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 92 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 92 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 92 | 0 | 1 |
+| Nightflowering silene (`silene-noctiflora`) | plants | 92 | 0 | 1 |
+| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 92 | 0 | 1 |
+| Common lilac (`syringa-vulgaris`) | plants | 92 | 0 | 1 |
+| Intermediate wheatgrass (`thinopyrum-intermedium`) | plants | 92 | 0 | 1 |
+| Puncturevine (`tribulus-terrestris`) | plants | 92 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 91 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 91 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 91 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 93 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 93 | 2 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 93 | 2 |
@@ -43,20 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 93 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 93 | 2 |
 | Punktree (`melaleuca-quinquenervia`) | plants | 0 | 93 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 93 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 93 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 93 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 93 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 93 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 93 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 93 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 93 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 93 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 93 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 93 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 93 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 93 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 93 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1483 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:30.566Z | 22 | 19 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 399 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

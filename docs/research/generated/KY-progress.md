@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `8604`
+- Verified present: `8622`
 - Verified absent: `120`
 - Not detected: `12`
-- Researched unresolved: `47904`
-- Not researched: `243840`
-- Determination coverage: `2.90%`
+- Researched unresolved: `47900`
+- Not researched: `243826`
+- Determination coverage: `2.91%`
 - Research coverage: `18.85%`
-- Explicit outcome coverage: `18.8498%`
-- Applicable protocol cells: `349`
+- Explicit outcome coverage: `18.8545%`
+- Applicable protocol cells: `362`
 - Current complete protocol cells: `126`
-- Protocol completion: `39.83%`
-- Current protocol completion: `36.10%`
-- Evidence records: `10688`
-- Research runs: `29`
+- Protocol completion: `38.40%`
+- Current protocol completion: `34.81%`
+- Evidence records: `10706`
+- Research runs: `30`
 - Rejection records: `637`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 119 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 119 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 119 | 0 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 119 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 119 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 119 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 119 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 119 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 119 | 0 | 1 |
+| Mahaleb cherry (`prunus-mahaleb`) | plants | 119 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 119 | 0 | 1 |
+| Ivyleaf Speedwell (`veronica-hederifolia`) | plants | 119 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 118 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 120 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 120 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 120 | 1 |
@@ -44,19 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 120 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 120 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 120 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 120 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 120 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 120 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 120 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 120 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 120 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 120 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 120 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 120 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 120 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 120 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 120 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 120 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5533 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:04.598Z | 18 | 16 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1023 | 144 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

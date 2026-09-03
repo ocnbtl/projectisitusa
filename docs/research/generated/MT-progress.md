@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `4133`
+- Verified present: `5736`
 - Verified absent: `56`
 - Not detected: `0`
-- Researched unresolved: `23912`
-- Not researched: `112123`
-- Determination coverage: `2.99%`
-- Research coverage: `20.04%`
-- Explicit outcome coverage: `20.0401%`
-- Applicable protocol cells: `334`
+- Researched unresolved: `23646`
+- Not researched: `110786`
+- Determination coverage: `4.13%`
+- Research coverage: `20.99%`
+- Explicit outcome coverage: `20.9936%`
+- Applicable protocol cells: `460`
 - Current complete protocol cells: `74`
-- Protocol completion: `26.05%`
-- Current protocol completion: `22.16%`
-- Evidence records: `4236`
-- Research runs: `34`
+- Protocol completion: `18.91%`
+- Current protocol completion: `16.09%`
+- Evidence records: `5839`
+- Research runs: `35`
 - Rejection records: `137`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Water foxtail (`alopecurus-geniculatus`) | plants | 55 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 55 | 0 | 1 |
-| Garden orache (`atriplex-hortensis`) | plants | 55 | 0 | 1 |
-| Rampion bellflower (`campanula-rapunculoides`) | plants | 55 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 55 | 0 | 1 |
-| White Sweet Clover (`melilotus-albus`) | plants | 55 | 0 | 1 |
-| Field forget-me-not (`myosotis-arvensis`) | plants | 55 | 0 | 1 |
-| True forget-me-not (`myosotis-scorpioides`) | plants | 55 | 0 | 1 |
-| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 55 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 55 | 0 | 1 |
-| Rough Bluegrass (`poa-trivialis`) | plants | 55 | 0 | 1 |
-| Patience dock (`rumex-patientia`) | plants | 55 | 0 | 1 |
-| Grass-like starwort (`stellaria-graminea`) | plants | 55 | 0 | 1 |
-| Common Speedwell (`veronica-officinalis`) | plants | 55 | 0 | 1 |
-| Brome fescue (`vulpia-bromoides`) | plants | 55 | 0 | 1 |
-| Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 54 | 0 | 1 |
-| Chickpea milkvetch (`astragalus-cicer`) | plants | 54 | 0 | 1 |
-| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 54 | 0 | 1 |
-| Gold-of-pleasure (`camelina-sativa`) | plants | 54 | 0 | 1 |
-| Crossflower (`chorispora-tenella`) | plants | 54 | 0 | 1 |
-| Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 54 | 0 | 1 |
-| Common dogmustard (`erucastrum-gallicum`) | plants | 54 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 54 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 54 | 0 | 1 |
-| Proso millet (`panicum-miliaceum`) | plants | 54 | 0 | 1 |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 55 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 55 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 55 | 0 | 1 |
+| Corn chamomile (`anthemis-arvensis`) | plants | 55 | 0 | 1 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 55 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 55 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 55 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 55 | 0 | 1 |
+| Evergreen clematis (`clematis-vitalba`) | plants | 55 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 55 | 0 | 1 |
+| Smooth hawksbeard (`crepis-capillaris`) | plants | 55 | 0 | 1 |
+| Purple foxglove (`digitalis-purpurea`) | plants | 55 | 0 | 1 |
+| Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 55 | 0 | 1 |
+| Red hempnettle (`galeopsis-ladanum`) | plants | 55 | 0 | 1 |
+| Gallant Soldier (`galinsoga-parviflora`) | plants | 55 | 0 | 1 |
+| Mammoth wildrye (`leymus-racemosus`) | plants | 55 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 55 | 0 | 1 |
+| Moneywort (`lysimachia-nummularia`) | plants | 55 | 0 | 1 |
+| High mallow (`malva-sylvestris`) | plants | 55 | 0 | 1 |
+| Changing forget-me-not (`myosotis-discolor`) | plants | 55 | 0 | 1 |
+| Raceme catnip (`nepeta-racemosa`) | plants | 55 | 0 | 1 |
+| Blindeyes (`papaver-dubium`) | plants | 55 | 0 | 1 |
+| Opium poppy (`papaver-somniferum`) | plants | 55 | 0 | 1 |
+| Solidstem burnet saxifrage (`pimpinella-saxifraga`) | plants | 55 | 0 | 1 |
+| Weld (`reseda-luteola`) | plants | 55 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2066 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:23.862Z | 1603 | 269 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 104 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

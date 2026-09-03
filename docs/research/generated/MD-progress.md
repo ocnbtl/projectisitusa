@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `24`
 - County-species pairs: `60096`
-- Verified present: `2613`
+- Verified present: `2620`
 - Verified absent: `24`
 - Not detected: `0`
-- Researched unresolved: `8835`
-- Not researched: `48624`
-- Determination coverage: `4.39%`
-- Research coverage: `19.09%`
-- Explicit outcome coverage: `19.0895%`
-- Applicable protocol cells: `322`
+- Researched unresolved: `8833`
+- Not researched: `48619`
+- Determination coverage: `4.40%`
+- Research coverage: `19.10%`
+- Explicit outcome coverage: `19.0978%`
+- Applicable protocol cells: `327`
 - Current complete protocol cells: `94`
-- Protocol completion: `33.23%`
-- Current protocol completion: `29.19%`
-- Evidence records: `2906`
-- Research runs: `28`
+- Protocol completion: `32.72%`
+- Current protocol completion: `28.75%`
+- Evidence records: `2913`
+- Research runs: `29`
 - Rejection records: `943`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 23 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 23 | 0 | 1 |
+| Weeping willow (`salix-babylonica`) | plants | 23 | 0 | 1 |
+| Roundfruit rush (`juncus-compressus`) | plants | 22 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 24 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 24 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 24 | 2 |
@@ -53,10 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 24 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 24 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 24 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 24 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 24 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 24 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 24 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 89 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:10.945Z | 7 | 5 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 261 | 110 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

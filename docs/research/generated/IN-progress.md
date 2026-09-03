@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `9384`
+- Verified present: `9435`
 - Verified absent: `92`
 - Not detected: `0`
-- Researched unresolved: `34868`
-- Not researched: `186024`
-- Determination coverage: `4.11%`
-- Research coverage: `19.25%`
-- Explicit outcome coverage: `19.2492%`
-- Applicable protocol cells: `326`
+- Researched unresolved: `34854`
+- Not researched: `185987`
+- Determination coverage: `4.14%`
+- Research coverage: `19.27%`
+- Explicit outcome coverage: `19.2653%`
+- Applicable protocol cells: `356`
 - Current complete protocol cells: `153`
-- Protocol completion: `50.92%`
-- Current protocol completion: `46.93%`
-- Evidence records: `11072`
-- Research runs: `31`
+- Protocol completion: `46.63%`
+- Current protocol completion: `42.98%`
+- Evidence records: `11123`
+- Research runs: `32`
 - Rejection records: `1431`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 92 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 92 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 92 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 92 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 92 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 92 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 92 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 92 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 92 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 92 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 92 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 92 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 92 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 92 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 92 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 92 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 92 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 92 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 92 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 92 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 92 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 92 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 92 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 92 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 92 | 0 |
+| Horseradish (`armoracia-rusticana`) | plants | 91 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 91 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 91 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 91 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 91 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 91 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 91 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 91 | 0 | 1 |
+| Small geranium (`geranium-pusillum`) | plants | 91 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 91 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 91 | 0 | 1 |
+| German iris (`iris-germanica`) | plants | 91 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 91 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 91 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 91 | 0 | 1 |
+| Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 91 | 0 | 1 |
+| Poet's narcissus (`narcissus-poeticus`) | plants | 91 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 91 | 0 | 1 |
+| Marshpepper knotweed (`persicaria-hydropiper`) | plants | 91 | 0 | 1 |
+| Mexican groundcherry (`physalis-philadelphica`) | plants | 91 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 91 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 91 | 0 | 1 |
+| Ashy cinquefoil (`potentilla-inclinata`) | plants | 91 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 91 | 0 | 1 |
+| Sour cherry (`prunus-cerasus`) | plants | 91 | 0 | 1 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3937 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:00.272Z | 51 | 43 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1015 | 164 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

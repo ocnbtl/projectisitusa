@@ -7,20 +7,20 @@ Generated: `2026-09-03T00:00:00.000Z`
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `5238`
+- Verified present: `5271`
 - Verified absent: `46`
 - Not detected: `0`
-- Researched unresolved: `16474`
-- Not researched: `93426`
-- Determination coverage: `4.59%`
-- Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8898%`
-- Applicable protocol cells: `386`
+- Researched unresolved: `16455`
+- Not researched: `93412`
+- Determination coverage: `4.62%`
+- Research coverage: `18.90%`
+- Explicit outcome coverage: `18.9019%`
+- Applicable protocol cells: `399`
 - Current complete protocol cells: `80`
-- Protocol completion: `24.09%`
-- Current protocol completion: `20.73%`
-- Evidence records: `5584`
-- Research runs: `31`
+- Protocol completion: `23.31%`
+- Current protocol completion: `20.05%`
+- Evidence records: `5617`
+- Research runs: `32`
 - Rejection records: `276`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Tea (`camellia-sinensis`) | plants | 45 | 0 | 1 |
+| Spadeleaf (`centella-asiatica`) | plants | 45 | 0 | 1 |
+| Ricefield flatsedge (`cyperus-iria`) | plants | 45 | 0 | 1 |
+| Sweet fennel (`foeniculum-vulgare`) | plants | 45 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 45 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 45 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 45 | 0 | 1 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 45 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 45 | 0 | 1 |
+| German knotgrass (`scleranthus-annuus`) | plants | 45 | 0 | 1 |
+| French tamarisk (`tamarix-gallica`) | plants | 45 | 0 | 1 |
+| Seashore vervain (`verbena-litoralis`) | plants | 45 | 0 | 1 |
+| Weeping willow (`salix-babylonica`) | plants | 44 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 46 | 2 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 46 | 2 |
 | Silver fir (`abies-alba`) | plants | 0 | 46 | 0 |
@@ -44,19 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 46 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 46 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 46 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 46 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 46 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 46 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 46 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 46 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 46 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 46 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 46 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 46 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 46 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 46 | 0 |
-| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 46 | 0 |
-| Shellplant (`alpinia-zerumbet`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -81,6 +81,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2977 | 316 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:54.805Z | 33 | 32 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 156 | 107 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
