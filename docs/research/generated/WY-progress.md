@@ -1,26 +1,26 @@
 # Wyoming Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `2120`
+- Verified present: `2294`
 - Verified absent: `23`
 - Not detected: `0`
-- Researched unresolved: `9659`
-- Not researched: `45790`
-- Determination coverage: `3.72%`
-- Research coverage: `20.49%`
-- Explicit outcome coverage: `20.4924%`
-- Applicable protocol cells: `320`
+- Researched unresolved: `9643`
+- Not researched: `45632`
+- Determination coverage: `4.02%`
+- Research coverage: `20.77%`
+- Explicit outcome coverage: `20.7668%`
+- Applicable protocol cells: `352`
 - Current complete protocol cells: `62`
-- Protocol completion: `23.44%`
-- Current protocol completion: `19.38%`
-- Evidence records: `2160`
-- Research runs: `36`
+- Protocol completion: `21.31%`
+- Current protocol completion: `17.61%`
+- Evidence records: `2334`
+- Research runs: `38`
 - Rejection records: `81`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Hollyhock (`alcea-rosea`) | plants | 22 | 0 | 1 |
-| Water foxtail (`alopecurus-geniculatus`) | plants | 22 | 0 | 1 |
 | Garden orache (`atriplex-hortensis`) | plants | 22 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 22 | 0 | 1 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 22 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 22 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 22 | 0 | 1 |
 | Rampion bellflower (`campanula-rapunculoides`) | plants | 22 | 0 | 1 |
-| Siberian peashrub (`caragana-arborescens`) | plants | 22 | 0 | 1 |
+| Ferngrass (`catapodium-rigidum`) | plants | 22 | 0 | 1 |
 | Perennial cornflower (`centaurea-montana`) | plants | 22 | 0 | 1 |
+| Greater knapweed (`centaurea-scabiosa`) | plants | 22 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 22 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 22 | 0 | 1 |
-| Golden chamomile (`cota-tinctoria`) | plants | 22 | 0 | 1 |
+| Maiden pink (`dianthus-deltoides`) | plants | 22 | 0 | 1 |
+| Great globethistle (`echinops-sphaerocephalus`) | plants | 22 | 0 | 1 |
 | Wilman lovegrass (`eragrostis-superba`) | plants | 22 | 0 | 1 |
-| Black bindweed (`fallopia-convolvulus`) | plants | 22 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 22 | 0 | 1 |
 | Marsh cudweed (`gnaphalium-uliginosum`) | plants | 22 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 22 | 0 | 1 |
 | Common nipplewort (`lapsana-communis`) | plants | 22 | 0 | 1 |
 | Whitetop (`lepidium-draba`) | plants | 22 | 0 | 1 |
+| Purpleanther field pepperweed (`lepidium-heterophyllum`) | plants | 22 | 0 | 1 |
+| Mammoth wildrye (`leymus-racemosus`) | plants | 22 | 0 | 1 |
 | Sweet alyssum (`lobularia-maritima`) | plants | 22 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 22 | 0 | 1 |
-| True forget-me-not (`myosotis-scorpioides`) | plants | 22 | 0 | 1 |
-| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 22 | 0 | 1 |
-| Opium poppy (`papaver-somniferum`) | plants | 22 | 0 | 1 |
-| Little spurflower (`plectranthus-parviflorus`) | plants | 22 | 0 | 1 |
-| Russian wildrye (`psathyrostachys-juncea`) | plants | 22 | 0 | 1 |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 21 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 21 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 22 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 22 | 0 | 1 |
+| Cheeseweed mallow (`malva-parviflora`) | plants | 22 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 767 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:17.062Z | 114 | 66 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:29.185Z | 173 | 85 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:52:03.309Z | 1 | 1 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 13 | 90 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

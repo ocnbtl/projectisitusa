@@ -1,26 +1,26 @@
 # Arizona Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `1716`
+- Verified present: `1868`
 - Verified absent: `15`
 - Not detected: `0`
-- Researched unresolved: `6127`
-- Not researched: `29702`
-- Determination coverage: `4.61%`
-- Research coverage: `20.92%`
-- Explicit outcome coverage: `20.9212%`
-- Applicable protocol cells: `406`
+- Researched unresolved: `6104`
+- Not researched: `29573`
+- Determination coverage: `5.01%`
+- Research coverage: `21.26%`
+- Explicit outcome coverage: `21.2646%`
+- Applicable protocol cells: `460`
 - Current complete protocol cells: `126`
-- Protocol completion: `34.24%`
-- Current protocol completion: `31.03%`
-- Evidence records: `6298`
-- Research runs: `34`
+- Protocol completion: `30.22%`
+- Current protocol completion: `27.39%`
+- Evidence records: `6450`
+- Research runs: `36`
 - Rejection records: `1075`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Crested wheatgrass (`agropyron-cristatum`) | plants | 14 | 0 | 1 |
-| Desert wheatgrass (`agropyron-desertorum`) | plants | 14 | 0 | 1 |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 14 | 0 | 1 |
+| Red beadtree (`adenanthera-pavonina`) | plants | 14 | 0 | 1 |
+| Sisal hemp (`agave-sisalana`) | plants | 14 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 14 | 0 | 1 |
 | Barbados aloe (`aloe-vera`) | plants | 14 | 0 | 1 |
-| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 14 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 14 | 0 | 1 |
 | Bur chervil (`anthriscus-caucalis`) | plants | 14 | 0 | 1 |
 | Bluegreen saltbush (`atriplex-nummularia`) | plants | 14 | 0 | 1 |
+| Australian saltbush (`atriplex-semibaccata`) | plants | 14 | 0 | 1 |
 | Peregrine saltbush (`atriplex-suberecta`) | plants | 14 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 14 | 0 | 1 |
 | Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 14 | 0 | 1 |
 | Common borage (`borago-officinalis`) | plants | 14 | 0 | 1 |
 | Paperflower (`bougainvillea-glabra`) | plants | 14 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 14 | 0 | 1 |
+| Rattlesnake brome (`bromus-briziformis`) | plants | 14 | 0 | 1 |
 | Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 14 | 0 | 1 |
-| Buffelgrass (`cenchrus-ciliaris`) | plants | 14 | 0 | 1 |
+| Indian shot (`canna-indica`) | plants | 14 | 0 | 1 |
+| Beach sheoak (`casuarina-equisetifolia`) | plants | 14 | 0 | 1 |
+| Madagascar periwinkle (`catharanthus-roseus`) | plants | 14 | 0 | 1 |
+| Mission grass (`cenchrus-polystachios`) | plants | 14 | 0 | 1 |
+| Crimson fountaingrass (`cenchrus-setaceus`) | plants | 14 | 0 | 1 |
 | Perennial cornflower (`centaurea-montana`) | plants | 14 | 0 | 1 |
 | Turk's turbin (`clerodendrum-indicum`) | plants | 14 | 0 | 1 |
 | Australian waterbuttons (`cotula-australis`) | plants | 14 | 0 | 1 |
-| Variable flatsedge (`cyperus-difformis`) | plants | 14 | 0 | 1 |
-| Asian ponysfoot (`dichondra-micrantha`) | plants | 14 | 0 | 1 |
-| River redgum (`eucalyptus-camaldulensis`) | plants | 14 | 0 | 1 |
-| Moleplant (`euphorbia-lathyris`) | plants | 14 | 0 | 1 |
-| Chinese banyan (`ficus-microcarpa`) | plants | 14 | 0 | 1 |
-| Mouse barley (`hordeum-murinum`) | plants | 14 | 0 | 1 |
-| Lesser Swinecress (`lepidium-didymum`) | plants | 14 | 0 | 1 |
-| Clasping pepperweed (`lepidium-perfoliatum`) | plants | 14 | 0 | 1 |
+| Common brassbuttons (`cotula-coronopifolia`) | plants | 14 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 707 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:38.114Z | 74 | 58 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:18.638Z | 142 | 95 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:58.027Z | 10 | 10 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 321 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

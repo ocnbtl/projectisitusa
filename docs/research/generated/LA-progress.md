@@ -1,26 +1,26 @@
 # Louisiana Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `8330`
+- Verified present: `8402`
 - Verified absent: `64`
 - Not detected: `0`
-- Researched unresolved: `21934`
-- Not researched: `129928`
-- Determination coverage: `5.24%`
-- Research coverage: `18.92%`
-- Explicit outcome coverage: `18.9247%`
-- Applicable protocol cells: `434`
+- Researched unresolved: `21915`
+- Not researched: `129875`
+- Determination coverage: `5.28%`
+- Research coverage: `18.96%`
+- Explicit outcome coverage: `18.9578%`
+- Applicable protocol cells: `458`
 - Current complete protocol cells: `111`
-- Protocol completion: `28.57%`
-- Current protocol completion: `25.58%`
-- Evidence records: `11368`
-- Research runs: `29`
+- Protocol completion: `27.07%`
+- Current protocol completion: `24.24%`
+- Evidence records: `11440`
+- Research runs: `31`
 - Rejection records: `1896`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,24 +39,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Bushkiller (`cayratia-japonica`) | plants | 63 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 63 | 0 | 1 |
 | Crossflower (`chorispora-tenella`) | plants | 63 | 0 | 1 |
+| Japanese cedar (`cryptomeria-japonica`) | plants | 63 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 63 | 0 | 1 |
+| Variable flatsedge (`cyperus-difformis`) | plants | 63 | 0 | 1 |
+| Fimbry (`fimbristylis-littoralis`) | plants | 63 | 0 | 1 |
 | Sweet fennel (`foeniculum-vulgare`) | plants | 63 | 0 | 1 |
+| Gray everlasting (`gamochaeta-coarctata`) | plants | 63 | 0 | 1 |
 | Common barley (`hordeum-vulgare`) | plants | 63 | 0 | 1 |
+| Largeleaf marshpennywort (`hydrocotyle-bowlesioides`) | plants | 63 | 0 | 1 |
 | Lawn marshpennywort (`hydrocotyle-sibthorpioides`) | plants | 63 | 0 | 1 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 63 | 0 | 1 |
 | Trailing shrubverbena (`lantana-montevidensis`) | plants | 63 | 0 | 1 |
+| Sweet bay (`laurus-nobilis`) | plants | 63 | 0 | 1 |
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 63 | 0 | 1 |
 | California privet (`ligustrum-ovalifolium`) | plants | 63 | 0 | 1 |
-| Swordfern (`macrothelypteris-torresiana`) | plants | 63 | 0 | 1 |
+| Sweet alyssum (`lobularia-maritima`) | plants | 63 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 63 | 0 | 1 |
-| Wartremoving herb (`murdannia-keisak`) | plants | 63 | 0 | 1 |
+| Pitscale grass (`mnesithea-granularis`) | plants | 63 | 0 | 1 |
 | Changing forget-me-not (`myosotis-discolor`) | plants | 63 | 0 | 1 |
-| Torpedo grass (`panicum-repens`) | plants | 63 | 0 | 1 |
-| Annual bastardcabbage (`rapistrum-rugosum`) | plants | 63 | 0 | 1 |
-| Lily of the valley vine (`salpichroa-origanifolia`) | plants | 63 | 0 | 1 |
-| Water spangles (`salvinia-minima`) | plants | 63 | 0 | 1 |
-| Blessed milkthistle (`silybum-marianum`) | plants | 63 | 0 | 1 |
-| White mustard (`sinapis-alba`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7190 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:06.695Z | 64 | 49 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:56.109Z | 44 | 31 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:35.316Z | 28 | 20 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 734 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

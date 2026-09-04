@@ -1,26 +1,26 @@
 # Vermont Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `1662`
+- Verified present: `1712`
 - Verified absent: `14`
 - Not detected: `0`
-- Researched unresolved: `4993`
-- Not researched: `28387`
-- Determination coverage: `4.78%`
-- Research coverage: `19.02%`
-- Explicit outcome coverage: `19.0238%`
-- Applicable protocol cells: `292`
+- Researched unresolved: `4991`
+- Not researched: `28339`
+- Determination coverage: `4.92%`
+- Research coverage: `19.16%`
+- Explicit outcome coverage: `19.1608%`
+- Applicable protocol cells: `322`
 - Current complete protocol cells: `89`
-- Protocol completion: `34.93%`
-- Current protocol completion: `30.48%`
-- Evidence records: `1913`
-- Research runs: `30`
+- Protocol completion: `31.68%`
+- Current protocol completion: `27.64%`
+- Evidence records: `1963`
+- Research runs: `32`
 - Rejection records: `171`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,29 +34,29 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Pale swallow-wort (`vincetoxicum-rossicum`) | plants | 14 | 0 | 1 |
 | Japanese maple (`acer-palmatum`) | plants | 13 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 13 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 13 | 0 | 1 |
+| Caraway (`carum-carvi`) | plants | 13 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 13 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 13 | 0 | 1 |
+| Petty spurge (`euphorbia-peplus`) | plants | 13 | 0 | 1 |
+| Elecampane inula (`inula-helenium`) | plants | 13 | 0 | 1 |
+| Onerow yellowcress (`nasturtium-microphyllum`) | plants | 13 | 0 | 1 |
+| Starry Stonewort (`nitellopsis-obtusa`) | plants | 13 | 0 | 1 |
+| European white waterlily (`nymphaea-alba`) | plants | 13 | 0 | 1 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 13 | 0 | 1 |
+| Garden sorrel (`rumex-acetosa`) | plants | 13 | 0 | 1 |
 | Birdeye pearlwort (`sagina-procumbens`) | plants | 13 | 0 | 1 |
-| Maidenstears (`silene-vulgaris`) | plants | 13 | 0 | 1 |
+| White willow (`salix-alba`) | plants | 13 | 0 | 1 |
+| Laurel willow (`salix-pentandra`) | plants | 13 | 0 | 1 |
+| Foxtail millet (`setaria-italica`) | plants | 13 | 0 | 1 |
+| Red catchfly (`silene-dioica`) | plants | 13 | 0 | 1 |
+| European mountain ash (`sorbus-aucuparia`) | plants | 13 | 0 | 1 |
+| Red Sandspurry (`spergularia-rubra`) | plants | 13 | 0 | 1 |
+| Rock dandelion (`taraxacum-erythrospermum`) | plants | 13 | 0 | 1 |
+| Common Speedwell (`veronica-officinalis`) | plants | 13 | 0 | 1 |
 | Common Carp (`cyprinus-carpio`) | wildlife | 12 | 0 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 14 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 14 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 14 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 14 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 14 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 14 | 1 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 14 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 14 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 14 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 14 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 14 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 14 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 14 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 14 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 14 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 14 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 14 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 14 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 14 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 14 | 0 |
+| Mugwort (`artemisia-vulgaris`) | plants | 12 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 861 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:07.586Z | 3 | 3 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:17.485Z | 41 | 28 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:52.304Z | 9 | 6 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 125 | 108 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

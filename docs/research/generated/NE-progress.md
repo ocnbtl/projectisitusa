@@ -1,26 +1,26 @@
 # Nebraska Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `4081`
+- Verified present: `4207`
 - Verified absent: `93`
 - Not detected: `0`
-- Researched unresolved: `39925`
-- Not researched: `188773`
-- Determination coverage: `1.79%`
-- Research coverage: `18.94%`
-- Explicit outcome coverage: `18.9370%`
-- Applicable protocol cells: `267`
+- Researched unresolved: `39910`
+- Not researched: `188662`
+- Determination coverage: `1.85%`
+- Research coverage: `18.98%`
+- Explicit outcome coverage: `18.9847%`
+- Applicable protocol cells: `309`
 - Current complete protocol cells: `92`
-- Protocol completion: `39.33%`
-- Current protocol completion: `34.46%`
-- Evidence records: `4688`
-- Research runs: `29`
+- Protocol completion: `33.98%`
+- Current protocol completion: `29.77%`
+- Evidence records: `4814`
+- Research runs: `31`
 - Rejection records: `536`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 92 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 92 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 92 | 0 | 1 |
-| Ferngrass (`catapodium-rigidum`) | plants | 92 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 92 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 92 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 92 | 0 | 1 |
+| Chinese catalpa (`catalpa-ovata`) | plants | 92 | 0 | 1 |
+| Brown flatsedge (`cyperus-fuscus`) | plants | 92 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 92 | 0 | 1 |
+| Yellow spring bedstraw (`galium-verum`) | plants | 92 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 92 | 0 | 1 |
 | Flower of an hour (`hibiscus-trionum`) | plants | 92 | 0 | 1 |
+| Roundfruit rush (`juncus-compressus`) | plants | 92 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 92 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 92 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 92 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 92 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 92 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 92 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 92 | 0 | 1 |
 | Nightflowering silene (`silene-noctiflora`) | plants | 92 | 0 | 1 |
-| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 92 | 0 | 1 |
+| Sorghum (`sorghum-bicolor`) | plants | 92 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 92 | 0 | 1 |
-| Intermediate wheatgrass (`thinopyrum-intermedium`) | plants | 92 | 0 | 1 |
-| Puncturevine (`tribulus-terrestris`) | plants | 92 | 0 | 1 |
-| Black bindweed (`fallopia-convolvulus`) | plants | 91 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 91 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 91 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 93 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 93 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 93 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 93 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 93 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 93 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 93 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 93 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 93 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 93 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 93 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 91 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 91 | 0 | 1 |
+| Ferngrass (`catapodium-rigidum`) | plants | 91 | 0 | 1 |
+| Crossflower (`chorispora-tenella`) | plants | 91 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1483 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:30.566Z | 22 | 19 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:28.448Z | 122 | 56 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:05.736Z | 4 | 4 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 399 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

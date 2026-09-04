@@ -1,26 +1,26 @@
 # Minnesota Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `87`
 - County-species pairs: `217848`
-- Verified present: `6128`
+- Verified present: `6175`
 - Verified absent: `87`
 - Not detected: `17`
-- Researched unresolved: `35034`
-- Not researched: `176582`
-- Determination coverage: `2.85%`
-- Research coverage: `18.94%`
-- Explicit outcome coverage: `18.9426%`
-- Applicable protocol cells: `291`
+- Researched unresolved: `35033`
+- Not researched: `176536`
+- Determination coverage: `2.87%`
+- Research coverage: `18.96%`
+- Explicit outcome coverage: `18.9637%`
+- Applicable protocol cells: `309`
 - Current complete protocol cells: `116`
-- Protocol completion: `44.33%`
-- Current protocol completion: `39.86%`
-- Evidence records: `7838`
-- Research runs: `31`
+- Protocol completion: `41.75%`
+- Current protocol completion: `37.54%`
+- Evidence records: `7885`
+- Research runs: `33`
 - Rejection records: `2176`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 86 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 86 | 0 | 1 |
 | Yellow Rocket (`barbarea-vulgaris`) | plants | 86 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 86 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 86 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 86 | 0 | 1 |
 | Hairy cupgrass (`eriochloa-villosa`) | plants | 86 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 86 | 0 | 1 |
-| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 86 | 0 | 1 |
+| European larch (`larix-decidua`) | plants | 86 | 0 | 1 |
 | Dalmatian Toadflax (`linaria-dalmatica`) | plants | 86 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 86 | 0 | 1 |
+| Marshpepper knotweed (`persicaria-hydropiper`) | plants | 86 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 86 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 86 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 86 | 0 | 1 |
 | European bird cherry (`prunus-padus`) | plants | 86 | 0 | 1 |
-| Prickly Russian thistle (`salsola-tragus`) | plants | 86 | 0 | 1 |
+| White willow (`salix-alba`) | plants | 86 | 0 | 1 |
+| Water spangles (`salvinia-minima`) | plants | 86 | 0 | 1 |
 | Giant Foxtail (`setaria-faberi`) | plants | 86 | 0 | 1 |
-| Climbing Nightshade (`solanum-dulcamara`) | plants | 86 | 0 | 1 |
+| Red catchfly (`silene-dioica`) | plants | 86 | 0 | 1 |
+| Nightflowering silene (`silene-noctiflora`) | plants | 86 | 0 | 1 |
+| Irish potato (`solanum-tuberosum`) | plants | 86 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 86 | 0 | 1 |
 | European mountain ash (`sorbus-aucuparia`) | plants | 86 | 0 | 1 |
 | Grass-like starwort (`stellaria-graminea`) | plants | 86 | 0 | 1 |
 | Field Pennycress (`thlaspi-arvense`) | plants | 86 | 0 | 1 |
-| Yellow Salsify (`tragopogon-dubius`) | plants | 86 | 0 | 1 |
-| Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 85 | 0 | 1 |
-| Flower of an hour (`hibiscus-trionum`) | plants | 84 | 0 | 1 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 82 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 87 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 87 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 87 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 87 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2278 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:17.474Z | 31 | 24 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:11.480Z | 40 | 19 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:48.955Z | 7 | 5 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 864 | 132 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

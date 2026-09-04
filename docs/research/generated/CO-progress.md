@@ -1,26 +1,26 @@
 # Colorado Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `4638`
+- Verified present: `4902`
 - Verified absent: `64`
 - Not detected: `0`
-- Researched unresolved: `28080`
-- Not researched: `127474`
-- Determination coverage: `2.93%`
-- Research coverage: `20.46%`
-- Explicit outcome coverage: `20.4560%`
-- Applicable protocol cells: `365`
+- Researched unresolved: `28039`
+- Not researched: `127251`
+- Determination coverage: `3.10%`
+- Research coverage: `20.60%`
+- Explicit outcome coverage: `20.5952%`
+- Applicable protocol cells: `409`
 - Current complete protocol cells: `169`
-- Protocol completion: `46.30%`
-- Current protocol completion: `46.30%`
-- Evidence records: `11559`
-- Research runs: `39`
+- Protocol completion: `41.32%`
+- Current protocol completion: `41.32%`
+- Evidence records: `11823`
+- Research runs: `41`
 - Rejection records: `1986`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Desert wheatgrass (`agropyron-desertorum`) | plants | 63 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 63 | 0 | 1 |
-| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 63 | 0 | 1 |
+| Colonial bentgrass (`agrostis-capillaris`) | plants | 63 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 63 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 63 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 63 | 0 | 1 |
 | Italian bugloss (`anchusa-azurea`) | plants | 63 | 0 | 1 |
 | Greater burdock (`arctium-lappa`) | plants | 63 | 0 | 1 |
-| Brown mustard (`brassica-juncea`) | plants | 63 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 63 | 0 | 1 |
-| Rampion bellflower (`campanula-rapunculoides`) | plants | 63 | 0 | 1 |
+| Rattlesnake brome (`bromus-briziformis`) | plants | 63 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 63 | 0 | 1 |
+| Poverty brome (`bromus-sterilis`) | plants | 63 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 63 | 0 | 1 |
+| Ferngrass (`catapodium-rigidum`) | plants | 63 | 0 | 1 |
+| Golden chamomile (`cota-tinctoria`) | plants | 63 | 0 | 1 |
+| Smooth hawksbeard (`crepis-capillaris`) | plants | 63 | 0 | 1 |
 | Kenilworth ivy (`cymbalaria-muralis`) | plants | 63 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 63 | 0 | 1 |
 | Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 63 | 0 | 1 |
+| Petty spurge (`euphorbia-peplus`) | plants | 63 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 63 | 0 | 1 |
 | Red Fescue (`festuca-rubra`) | plants | 63 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 63 | 0 | 1 |
 | Marsh cudweed (`gnaphalium-uliginosum`) | plants | 63 | 0 | 1 |
-| Rose natal grass (`melinis-repens`) | plants | 63 | 0 | 1 |
-| Field forget-me-not (`myosotis-arvensis`) | plants | 63 | 0 | 1 |
-| White willow (`salix-alba`) | plants | 63 | 0 | 1 |
-| French tamarisk (`tamarix-gallica`) | plants | 63 | 0 | 1 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 63 | 0 | 1 |
-| Common Periwinkle (`vinca-minor`) | plants | 63 | 0 | 1 |
-| German-madwort (`asperugo-procumbens`) | plants | 62 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 62 | 0 | 1 |
-| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 62 | 0 | 1 |
+| Common barley (`hordeum-vulgare`) | plants | 63 | 0 | 1 |
+| Roundfruit rush (`juncus-compressus`) | plants | 63 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1024 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:42.550Z | 77 | 51 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:23.957Z | 263 | 106 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:03.236Z | 1 | 1 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1367 | 186 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

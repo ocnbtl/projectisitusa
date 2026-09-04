@@ -1,26 +1,26 @@
 # Tennessee Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `7845`
+- Verified present: `7909`
 - Verified absent: `95`
 - Not detected: `8`
-- Researched unresolved: `36898`
-- Not researched: `193034`
-- Determination coverage: `3.34%`
-- Research coverage: `18.85%`
-- Explicit outcome coverage: `18.8524%`
-- Applicable protocol cells: `362`
+- Researched unresolved: `36881`
+- Not researched: `192987`
+- Determination coverage: `3.36%`
+- Research coverage: `18.87%`
+- Explicit outcome coverage: `18.8721%`
+- Applicable protocol cells: `398`
 - Current complete protocol cells: `126`
-- Protocol completion: `38.40%`
-- Current protocol completion: `34.81%`
-- Evidence records: `10182`
-- Research runs: `30`
+- Protocol completion: `34.92%`
+- Current protocol completion: `31.66%`
+- Evidence records: `10246`
+- Research runs: `32`
 - Rejection records: `746`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 94 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 94 | 0 | 1 |
 | Corn chamomile (`anthemis-arvensis`) | plants | 94 | 0 | 1 |
 | Yellow Rocket (`barbarea-vulgaris`) | plants | 94 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 94 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 94 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 94 | 0 | 1 |
+| Canada Thistle (`cirsium-arvense`) | plants | 94 | 0 | 1 |
+| Chinese fir (`cunninghamia-lanceolata`) | plants | 94 | 0 | 1 |
+| Variable flatsedge (`cyperus-difformis`) | plants | 94 | 0 | 1 |
+| Ricefield flatsedge (`cyperus-iria`) | plants | 94 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 94 | 0 | 1 |
+| Gallant Soldier (`galinsoga-parviflora`) | plants | 94 | 0 | 1 |
 | Cream-anther field pepperwort (`lepidium-campestre`) | plants | 94 | 0 | 1 |
+| White Sweet Clover (`melilotus-albus`) | plants | 94 | 0 | 1 |
 | Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 94 | 0 | 1 |
+| Changing forget-me-not (`myosotis-discolor`) | plants | 94 | 0 | 1 |
+| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 94 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 94 | 0 | 1 |
+| Canada bluegrass (`poa-compressa`) | plants | 94 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 94 | 0 | 1 |
+| Weeping willow (`salix-babylonica`) | plants | 94 | 0 | 1 |
 | German knotgrass (`scleranthus-annuus`) | plants | 94 | 0 | 1 |
-| Ivyleaf Speedwell (`veronica-hederifolia`) | plants | 94 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 95 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 95 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 95 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 95 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 95 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 95 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 95 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 95 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 95 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 95 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 95 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 95 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 95 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 95 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 95 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 95 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 95 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 95 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 95 | 0 |
+| Nightflowering silene (`silene-noctiflora`) | plants | 94 | 0 | 1 |
+| Maidenstears (`silene-vulgaris`) | plants | 94 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4318 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:59.085Z | 14 | 13 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:06.641Z | 48 | 38 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:39.796Z | 16 | 12 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1054 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

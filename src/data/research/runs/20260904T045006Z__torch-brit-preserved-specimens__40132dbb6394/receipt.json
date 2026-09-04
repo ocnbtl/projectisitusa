@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T045006Z__torch-brit-preserved-specimens__40132dbb6394",
+  "status": "complete",
+  "started_at": "2026-09-04T04:50:06.080Z",
+  "finished_at": "2026-09-04T04:50:06.081Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "40132dbb639454b6773dd36e9604c98aca1e3b5ee9245e2be423c5a4dbdf2487",
+  "parameters": {
+    "stateCode": "DE",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "b02a10369e55236debcdc6e93574e3e9b49068f1f622195a57825c87c503d429",
+    "targets": [
+      {
+        "pairKey": "10001:silene-latifolia",
+        "recordId": "30405729",
+        "occurrenceId": "b49e74b7-bf39-4e67-9266-2bb955f856f7",
+        "countyFips": "10001",
+        "stateCode": "DE",
+        "sourceState": "Delaware",
+        "sourceCounty": "Kent",
+        "speciesId": "silene-latifolia",
+        "scientificName": "Silene latifolia",
+        "eventDate": "1968-07-13",
+        "year": 1968,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT793784",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=30405729"
+      }
+    ],
+    "candidatePairs": [
+      "10001:silene-latifolia"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "DE",
+    "county_fips": [
+      "10001"
+    ],
+    "species_ids": [
+      "silene-latifolia"
+    ],
+    "pair_keys": [
+      "10001:silene-latifolia"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T045006Z__torch-brit-preserved-specimens__40132dbb6394/artifacts/torch-brit-source-identity.json",
+      "sha256": "b9cbcdf17b2d6fa4277a2f5077de1936eb4488fecfdfeb8df61dc0a7039b9d0d",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045006Z__torch-brit-preserved-specimens__40132dbb6394/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "d2672052a021a8a5f9cc49a07ebd11974274bbd9fa90e4589b9d150423e397fb",
+      "bytes": 390,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T045006Z__torch-brit-preserved-specimens__40132dbb6394/assertions.ndjson",
+      "sha256": "bcd638b31af3f7ee19a2f6b25c1ed12f29b78034e560cb4426d9ed812f459c0c",
+      "bytes": 2294,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045006Z__torch-brit-preserved-specimens__40132dbb6394/reviews.ndjson",
+      "sha256": "11bbd4dc0b16837e0af76147df761cd3500262a1ef522dcbee0fb2823f0ae02d",
+      "bytes": 1114,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045006Z__torch-brit-preserved-specimens__40132dbb6394/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045006Z__torch-brit-preserved-specimens__40132dbb6394/outcomes.ndjson",
+      "sha256": "e617db79baf59b12ee3894e7b9ab70424f5a541499f951b6a08fda2cc281b376",
+      "bytes": 743,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state DE --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-de-20260904-r1.json --output-root src/data/research/runs --pairs 10001:silene-latifolia"
+}

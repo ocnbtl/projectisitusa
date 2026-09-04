@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T045146Z__torch-brit-preserved-specimens__147658725984",
+  "status": "complete",
+  "started_at": "2026-09-04T04:51:46.594Z",
+  "finished_at": "2026-09-04T04:51:46.595Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "147658725984877fd58939000a8a4e63fd99250092c8e9af3df880540eb1af30",
+  "parameters": {
+    "stateCode": "UT",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "b83abd522f6e5fab1a3411b6b035127e3a34d8903ade4fa15f4e2b47e3f50c18",
+    "targets": [
+      {
+        "pairKey": "49039:acer-pseudoplatanus",
+        "recordId": "31066798",
+        "occurrenceId": "ab6079ab-417c-40aa-88e9-463c63d67415",
+        "countyFips": "49039",
+        "stateCode": "UT",
+        "sourceState": "Utah",
+        "sourceCounty": "Sanpete",
+        "speciesId": "acer-pseudoplatanus",
+        "scientificName": "Acer pseudoplatanus",
+        "eventDate": "1979-07-16",
+        "year": 1979,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT584109",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=31066798"
+      }
+    ],
+    "candidatePairs": [
+      "49039:acer-pseudoplatanus"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "UT",
+    "county_fips": [
+      "49039"
+    ],
+    "species_ids": [
+      "acer-pseudoplatanus"
+    ],
+    "pair_keys": [
+      "49039:acer-pseudoplatanus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T045146Z__torch-brit-preserved-specimens__147658725984/artifacts/torch-brit-source-identity.json",
+      "sha256": "990541d696f4625ff0ebbad03a7295f9c86555b09da769c6331790947f18f850",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045146Z__torch-brit-preserved-specimens__147658725984/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "20e247fd7aa424a161f82982cf284b51d597f4531c1eb3dd39e2cedefe2cfa1f",
+      "bytes": 387,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T045146Z__torch-brit-preserved-specimens__147658725984/assertions.ndjson",
+      "sha256": "de403fa8f19dcccc172ccc6c00615669b2fdc058d422109884ae7978d5431079",
+      "bytes": 2302,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045146Z__torch-brit-preserved-specimens__147658725984/reviews.ndjson",
+      "sha256": "b50a8ef728702f43e65045258b414c38d645a7a6aba5fa6cf6f8e7b784f1ff7f",
+      "bytes": 1117,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045146Z__torch-brit-preserved-specimens__147658725984/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045146Z__torch-brit-preserved-specimens__147658725984/outcomes.ndjson",
+      "sha256": "cca41d8f86c947ed5149271245c5c65afdfc6c0fa945a7c0bebc5927a0883dad",
+      "bytes": 746,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state UT --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-ut-20260904-r1.json --output-root src/data/research/runs --pairs 49039:acer-pseudoplatanus"
+}

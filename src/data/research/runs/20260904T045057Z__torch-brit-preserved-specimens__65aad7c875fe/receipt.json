@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T045057Z__torch-brit-preserved-specimens__65aad7c875fe",
+  "status": "complete",
+  "started_at": "2026-09-04T04:50:57.416Z",
+  "finished_at": "2026-09-04T04:50:57.417Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "65aad7c875fee2a783a146ef2199f33fa5eaf059c1b620155310d38d1a5c24fc",
+  "parameters": {
+    "stateCode": "MT",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "c2931f2c9902f1c35fb54d68ef19fa1a024da0ae1c16704988e190525b211a8a",
+    "targets": [
+      {
+        "pairKey": "30093:vaccaria-hispanica",
+        "recordId": "31442634",
+        "occurrenceId": "49cf21c8-886a-4382-9637-b2c6176b0282",
+        "countyFips": "30093",
+        "stateCode": "MT",
+        "sourceState": "Montana",
+        "sourceCounty": "Silver Bow",
+        "speciesId": "vaccaria-hispanica",
+        "scientificName": "Vaccaria hispanica",
+        "eventDate": "1985-08",
+        "year": 1985,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT713111",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=31442634"
+      }
+    ],
+    "candidatePairs": [
+      "30093:vaccaria-hispanica"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MT",
+    "county_fips": [
+      "30093"
+    ],
+    "species_ids": [
+      "vaccaria-hispanica"
+    ],
+    "pair_keys": [
+      "30093:vaccaria-hispanica"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T045057Z__torch-brit-preserved-specimens__65aad7c875fe/artifacts/torch-brit-source-identity.json",
+      "sha256": "47f3a1899c6b986e81e6dec42cbf48def80e9fd501c17eb31a63a6361b639eac",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045057Z__torch-brit-preserved-specimens__65aad7c875fe/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "b578a4f8367d50f89d080add6261368842fac7a6c8be0b56199036614f349379",
+      "bytes": 390,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T045057Z__torch-brit-preserved-specimens__65aad7c875fe/assertions.ndjson",
+      "sha256": "a19ada3b9fac3291388f0096b0a668aa64ede6f5bd75615af1984aa0aeb266bf",
+      "bytes": 2299,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045057Z__torch-brit-preserved-specimens__65aad7c875fe/reviews.ndjson",
+      "sha256": "f7fc751fca51fb1908930b487857975091ae8715875920b35053eaee576f0b78",
+      "bytes": 1116,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045057Z__torch-brit-preserved-specimens__65aad7c875fe/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045057Z__torch-brit-preserved-specimens__65aad7c875fe/outcomes.ndjson",
+      "sha256": "fdf3938e0b83cb5859c3ebe8854c96e533151e23b1a283c065c2be260bab9d81",
+      "bytes": 745,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state MT --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-mt-20260904-r1.json --output-root src/data/research/runs --pairs 30093:vaccaria-hispanica"
+}

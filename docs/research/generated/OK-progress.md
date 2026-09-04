@@ -1,26 +1,26 @@
 # Oklahoma Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `77`
 - County-species pairs: `192808`
-- Verified present: `4159`
+- Verified present: `4761`
 - Verified absent: `77`
 - Not detected: `0`
-- Researched unresolved: `32197`
-- Not researched: `156375`
-- Determination coverage: `2.20%`
-- Research coverage: `18.90%`
-- Explicit outcome coverage: `18.8960%`
-- Applicable protocol cells: `311`
-- Current complete protocol cells: `110`
-- Protocol completion: `39.55%`
-- Current protocol completion: `35.37%`
-- Evidence records: `4410`
-- Research runs: `29`
+- Researched unresolved: `31945`
+- Not researched: `156025`
+- Determination coverage: `2.51%`
+- Research coverage: `19.08%`
+- Explicit outcome coverage: `19.0775%`
+- Applicable protocol cells: `407`
+- Current complete protocol cells: `111`
+- Protocol completion: `30.47%`
+- Current protocol completion: `27.27%`
+- Evidence records: `5012`
+- Research runs: `31`
 - Rejection records: `237`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Spiny amaranth (`amaranthus-spinosus`) | plants | 76 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 76 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 76 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 76 | 0 | 1 |
+| Ripgut brome (`bromus-diandrus`) | plants | 76 | 0 | 1 |
+| Artist's pallet (`caladium-bicolor`) | plants | 76 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 76 | 0 | 1 |
+| Jack bean (`canavalia-ensiformis`) | plants | 76 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 76 | 0 | 1 |
+| Woolly distaff thistle (`carthamus-lanatus`) | plants | 76 | 0 | 1 |
+| Chinese catalpa (`catalpa-ovata`) | plants | 76 | 0 | 1 |
+| Yellow star-thistle (`centaurea-solstitialis`) | plants | 76 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 76 | 0 | 1 |
+| Bristly dogstail grass (`cynosurus-echinatus`) | plants | 76 | 0 | 1 |
+| Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 76 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 76 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 76 | 0 | 1 |
-| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 76 | 0 | 1 |
-| Common lilac (`syringa-vulgaris`) | plants | 76 | 0 | 1 |
-| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 76 | 0 | 1 |
-| French tamarisk (`tamarix-gallica`) | plants | 76 | 0 | 1 |
-| Rock dandelion (`taraxacum-erythrospermum`) | plants | 76 | 0 | 1 |
-| Puncturevine (`tribulus-terrestris`) | plants | 76 | 0 | 1 |
-| Flower of an hour (`hibiscus-trionum`) | plants | 75 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 77 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 77 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 77 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 77 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 77 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 77 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 77 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 77 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 77 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 77 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 77 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 77 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 77 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 77 | 0 |
+| Sweet fennel (`foeniculum-vulgare`) | plants | 76 | 0 | 1 |
+| Dovefoot Geranium (`geranium-molle`) | plants | 76 | 0 | 1 |
+| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 76 | 0 | 1 |
+| Common barley (`hordeum-vulgare`) | plants | 76 | 0 | 1 |
+| Garden lettuce (`lactuca-sativa`) | plants | 76 | 0 | 1 |
+| Pepperweed (`lepidium-apetalum`) | plants | 76 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 76 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 76 | 0 | 1 |
+| Boston ivy (`parthenocissus-tricuspidata`) | plants | 76 | 0 | 1 |
+| Hairypink (`petrorhagia-dubia`) | plants | 76 | 0 | 1 |
+| Mugo pine (`pinus-mugo`) | plants | 76 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1186 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:45.603Z | 18 | 17 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:49.078Z | 96 | 62 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:21.244Z | 506 | 166 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 133 | 141 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

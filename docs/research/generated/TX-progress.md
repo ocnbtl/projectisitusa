@@ -1,26 +1,26 @@
 # Texas Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `11882`
+- Verified present: `15154`
 - Verified absent: `254`
 - Not detected: `0`
-- Researched unresolved: `109051`
-- Not researched: `514829`
-- Determination coverage: `1.91%`
-- Research coverage: `19.05%`
-- Explicit outcome coverage: `19.0541%`
-- Applicable protocol cells: `416`
-- Current complete protocol cells: `118`
-- Protocol completion: `31.49%`
-- Current protocol completion: `28.37%`
-- Evidence records: `14587`
-- Research runs: `32`
+- Researched unresolved: `107504`
+- Not researched: `513104`
+- Determination coverage: `2.42%`
+- Research coverage: `19.33%`
+- Explicit outcome coverage: `19.3253%`
+- Applicable protocol cells: `677`
+- Current complete protocol cells: `120`
+- Protocol completion: `19.65%`
+- Current protocol completion: `17.73%`
+- Evidence records: `17859`
+- Research runs: `34`
 - Rejection records: `1573`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 253 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 253 | 0 | 1 |
-| Buffelgrass (`cenchrus-ciliaris`) | plants | 253 | 0 | 1 |
-| Yellow star-thistle (`centaurea-solstitialis`) | plants | 253 | 0 | 1 |
+| Fernleaf yarrow (`achillea-filipendulina`) | plants | 253 | 0 | 1 |
+| Bluemink (`ageratum-houstonianum`) | plants | 253 | 0 | 1 |
+| Smooth joyweed (`alternanthera-paronychioides`) | plants | 253 | 0 | 1 |
+| Love-lies-bleeding (`amaranthus-caudatus`) | plants | 253 | 0 | 1 |
+| Italian bugloss (`anchusa-azurea`) | plants | 253 | 0 | 1 |
+| Asparagus fern (`asparagus-densiflorus`) | plants | 253 | 0 | 1 |
+| Crested philippine violet (`barleria-cristata`) | plants | 253 | 0 | 1 |
+| Butterfly tree (`bauhinia-purpurea`) | plants | 253 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 253 | 0 | 1 |
+| Cabbage (`brassica-oleracea`) | plants | 253 | 0 | 1 |
+| Asian mustard (`brassica-tournefortii`) | plants | 253 | 0 | 1 |
+| Poverty brome (`bromus-sterilis`) | plants | 253 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 253 | 0 | 1 |
+| Creeping inchplant (`callisia-repens`) | plants | 253 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 253 | 0 | 1 |
+| Indian shot (`canna-indica`) | plants | 253 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 253 | 0 | 1 |
+| Day jessamine (`cestrum-diurnum`) | plants | 253 | 0 | 1 |
 | Chilean jessamine (`cestrum-parqui`) | plants | 253 | 0 | 1 |
-| Coriander (`coriandrum-sativum`) | plants | 253 | 0 | 1 |
-| Angleton bluestem (`dichanthium-aristatum`) | plants | 253 | 0 | 1 |
-| Silky bluestem (`dichanthium-sericeum`) | plants | 253 | 0 | 1 |
-| Common flax (`linum-usitatissimum`) | plants | 253 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 253 | 0 | 1 |
-| Yellow glandweed (`parentucellia-viscosa`) | plants | 253 | 0 | 1 |
-| Harmal peganum (`peganum-harmala`) | plants | 253 | 0 | 1 |
-| Lady's Thumb (`persicaria-maculosa`) | plants | 253 | 0 | 1 |
-| Silversheath knotweed (`polygonum-argyrocoleon`) | plants | 253 | 0 | 1 |
-| Annual bastardcabbage (`rapistrum-rugosum`) | plants | 253 | 0 | 1 |
-| Prickly Russian thistle (`salsola-tragus`) | plants | 253 | 0 | 1 |
-| Cutleaf vipergrass (`scorzonera-laciniata`) | plants | 253 | 0 | 1 |
-| Blessed milkthistle (`silybum-marianum`) | plants | 253 | 0 | 1 |
-| Sorghum (`sorghum-bicolor`) | plants | 253 | 0 | 1 |
-| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 253 | 0 | 1 |
-| Puncturevine (`tribulus-terrestris`) | plants | 253 | 0 | 1 |
-| Purpletop vervain (`verbena-bonariensis`) | plants | 253 | 0 | 1 |
-| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 252 | 0 | 1 |
-| French tamarisk (`tamarix-gallica`) | plants | 252 | 0 | 1 |
-| Cheeseweed mallow (`malva-parviflora`) | plants | 251 | 0 | 1 |
+| Rose glorybower (`clerodendrum-bungei`) | plants | 253 | 0 | 1 |
+| Turk's turbin (`clerodendrum-indicum`) | plants | 253 | 0 | 1 |
+| Job's tears (`coix-lacryma-jobi`) | plants | 253 | 0 | 1 |
+| Silver july croton (`croton-argenteus`) | plants | 253 | 0 | 1 |
+| Hedgehog gourd (`cucumis-dipsaceus`) | plants | 253 | 0 | 1 |
+| Garden cucumber (`cucumis-sativus`) | plants | 253 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5251 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:01.161Z | 50 | 44 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:09.693Z | 727 | 257 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:43.419Z | 2545 | 441 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1013 | 142 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

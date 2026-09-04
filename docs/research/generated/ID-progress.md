@@ -1,26 +1,26 @@
 # Idaho Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `6051`
+- Verified present: `6204`
 - Verified absent: `44`
 - Not detected: `0`
-- Researched unresolved: `17813`
-- Not researched: `86268`
-- Determination coverage: `5.53%`
-- Research coverage: `21.70%`
-- Explicit outcome coverage: `21.6998%`
-- Applicable protocol cells: `570`
+- Researched unresolved: `17784`
+- Not researched: `86144`
+- Determination coverage: `5.67%`
+- Research coverage: `21.81%`
+- Explicit outcome coverage: `21.8124%`
+- Applicable protocol cells: `577`
 - Current complete protocol cells: `90`
-- Protocol completion: `18.07%`
-- Current protocol completion: `15.79%`
-- Evidence records: `6628`
-- Research runs: `29`
+- Protocol completion: `17.85%`
+- Current protocol completion: `15.60%`
+- Evidence records: `6781`
+- Research runs: `31`
 - Rejection records: `444`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,7 +39,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dill (`anethum-graveolens`) | plants | 43 | 0 | 1 |
 | Golden-tuft alyssum (`aurinia-saxatilis`) | plants | 43 | 0 | 1 |
 | Slender oat (`avena-barbata`) | plants | 43 | 0 | 1 |
+| Cabbage (`brassica-oleracea`) | plants | 43 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 43 | 0 | 1 |
+| Ferngrass (`catapodium-rigidum`) | plants | 43 | 0 | 1 |
 | Brownray knapweed (`centaurea-jacea`) | plants | 43 | 0 | 1 |
 | Bighead knapweed (`centaurea-macrocephala`) | plants | 43 | 0 | 1 |
 | Lesser knapweed (`centaurea-nigra`) | plants | 43 | 0 | 1 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Great globethistle (`echinops-sphaerocephalus`) | plants | 43 | 0 | 1 |
 | Asian waterwort (`elatine-ambigua`) | plants | 43 | 0 | 1 |
 | Moleplant (`euphorbia-lathyris`) | plants | 43 | 0 | 1 |
-| Bukhara fleeceflower (`fallopia-baldschuanica`) | plants | 43 | 0 | 1 |
-| Queen of the meadow (`filipendula-ulmaria`) | plants | 43 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1726 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:55.514Z | 2113 | 395 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:41.720Z | 145 | 93 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:21.287Z | 8 | 8 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 189 | 106 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T045102Z__torch-brit-preserved-specimens__d4f00b809f23",
+  "status": "complete",
+  "started_at": "2026-09-04T04:51:02.758Z",
+  "finished_at": "2026-09-04T04:51:02.759Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "d4f00b809f2322e19e02699a78c954410b0db03cee4dce06dab1faade28371ed",
+  "parameters": {
+    "stateCode": "ND",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "3091e0e398afa548a36897c21c7b59893c881310912de33dcfa016382b92f099",
+    "targets": [
+      {
+        "pairKey": "38005:fagopyrum-esculentum",
+        "recordId": "24929129",
+        "occurrenceId": "ed031ea3-575e-4428-bd7a-fdd8d95dac1f",
+        "countyFips": "38005",
+        "stateCode": "ND",
+        "sourceState": "North Dakota",
+        "sourceCounty": "Benson",
+        "speciesId": "fagopyrum-esculentum",
+        "scientificName": "Fagopyrum esculentum",
+        "eventDate": "1899-07-17",
+        "year": 1899,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT387624",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=24929129"
+      },
+      {
+        "pairKey": "38011:neslia-paniculata",
+        "recordId": "32848906",
+        "occurrenceId": "25cb7495-4ba5-4ab4-9a80-61b491706a18",
+        "countyFips": "38011",
+        "stateCode": "ND",
+        "sourceState": "North Dakota",
+        "sourceCounty": "Bowman",
+        "speciesId": "neslia-paniculata",
+        "scientificName": "Neslia paniculata",
+        "eventDate": "2022-05-28",
+        "year": 2022,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT1062795",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=32848906"
+      }
+    ],
+    "candidatePairs": [
+      "38005:fagopyrum-esculentum",
+      "38011:neslia-paniculata"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "ND",
+    "county_fips": [
+      "38005",
+      "38011"
+    ],
+    "species_ids": [
+      "fagopyrum-esculentum",
+      "neslia-paniculata"
+    ],
+    "pair_keys": [
+      "38005:fagopyrum-esculentum",
+      "38011:neslia-paniculata"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T045102Z__torch-brit-preserved-specimens__d4f00b809f23/artifacts/torch-brit-source-identity.json",
+      "sha256": "1480b14629d6b26f6118c063e5400677a759e5f3fee914632d7bdd459893ace7",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045102Z__torch-brit-preserved-specimens__d4f00b809f23/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "65c73613011c2a07feb1d63509693cdede118732ac69adaf59e0f11cc2352d1e",
+      "bytes": 507,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T045102Z__torch-brit-preserved-specimens__d4f00b809f23/assertions.ndjson",
+      "sha256": "18104a7e4c2fb1ddcd09f34693e3447364f0fbc8e5cdea3100b14ab6a4b2b3a6",
+      "bytes": 4616,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045102Z__torch-brit-preserved-specimens__d4f00b809f23/reviews.ndjson",
+      "sha256": "9cf26308d1e1765b454cc47a08e8affe587b90d15b3bc91e6f690fe539cc6cb8",
+      "bytes": 2233,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045102Z__torch-brit-preserved-specimens__d4f00b809f23/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045102Z__torch-brit-preserved-specimens__d4f00b809f23/outcomes.ndjson",
+      "sha256": "7b0fc529cb94007912b474d75a29acf9c97dd29c9e0e6ee35249d3847bd7964b",
+      "bytes": 1491,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state ND --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-nd-20260904-r1.json --output-root src/data/research/runs --pairs 38005:fagopyrum-esculentum,38011:neslia-paniculata"
+}

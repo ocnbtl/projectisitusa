@@ -1,26 +1,26 @@
 # Utah Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `2907`
+- Verified present: `3326`
 - Verified absent: `29`
 - Not detected: `0`
-- Researched unresolved: `11826`
-- Not researched: `57854`
-- Determination coverage: `4.04%`
-- Research coverage: `20.33%`
-- Explicit outcome coverage: `20.3289%`
-- Applicable protocol cells: `403`
-- Current complete protocol cells: `71`
-- Protocol completion: `20.84%`
-- Current protocol completion: `17.62%`
-- Evidence records: `2976`
-- Research runs: `34`
+- Researched unresolved: `11782`
+- Not researched: `57479`
+- Determination coverage: `4.62%`
+- Research coverage: `20.85%`
+- Explicit outcome coverage: `20.8453%`
+- Applicable protocol cells: `474`
+- Current complete protocol cells: `72`
+- Protocol completion: `17.93%`
+- Current protocol completion: `15.19%`
+- Evidence records: `3395`
+- Research runs: `36`
 - Rejection records: `139`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| European water plantain (`alisma-plantago-aquatica`) | plants | 28 | 0 | 1 |
+| Japanese maple (`acer-palmatum`) | plants | 28 | 0 | 1 |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 28 | 0 | 1 |
+| Fernleaf yarrow (`achillea-filipendulina`) | plants | 28 | 0 | 1 |
 | Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 28 | 0 | 1 |
-| Water foxtail (`alopecurus-geniculatus`) | plants | 28 | 0 | 1 |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 28 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 28 | 0 | 1 |
-| Garden orache (`atriplex-hortensis`) | plants | 28 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 28 | 0 | 1 |
+| Australian saltbush (`atriplex-semibaccata`) | plants | 28 | 0 | 1 |
 | Peregrine saltbush (`atriplex-suberecta`) | plants | 28 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 28 | 0 | 1 |
+| Lawndaisy (`bellis-perennis`) | plants | 28 | 0 | 1 |
 | Common borage (`borago-officinalis`) | plants | 28 | 0 | 1 |
-| Corn brome (`bromus-squarrosus`) | plants | 28 | 0 | 1 |
-| Poverty brome (`bromus-sterilis`) | plants | 28 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 28 | 0 | 1 |
+| Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 28 | 0 | 1 |
+| Madagascar periwinkle (`catharanthus-roseus`) | plants | 28 | 0 | 1 |
+| Crimson fountaingrass (`cenchrus-setaceus`) | plants | 28 | 0 | 1 |
+| Greater knapweed (`centaurea-scabiosa`) | plants | 28 | 0 | 1 |
+| Red valerian (`centranthus-ruber`) | plants | 28 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 28 | 0 | 1 |
 | Rose (`cotoneaster-salicifolius`) | plants | 28 | 0 | 1 |
-| Smooth hawksbeard (`crepis-capillaris`) | plants | 28 | 0 | 1 |
-| Annual wallrocket (`diplotaxis-muralis`) | plants | 28 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 28 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 28 | 0 | 1 |
+| Maiden pink (`dianthus-deltoides`) | plants | 28 | 0 | 1 |
+| Clammy goosefoot (`dysphania-pumilio`) | plants | 28 | 0 | 1 |
+| Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 28 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 28 | 0 | 1 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 28 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 28 | 0 | 1 |
-| Small geranium (`geranium-pusillum`) | plants | 28 | 0 | 1 |
-| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 28 | 0 | 1 |
-| Bachelor's button (`gypsophila-paniculata`) | plants | 28 | 0 | 1 |
-| Annual ryegrass (`lolium-multiflorum`) | plants | 28 | 0 | 1 |
-| Threadstem carpetweed (`mollugo-cerviana`) | plants | 28 | 0 | 1 |
-| True forget-me-not (`myosotis-scorpioides`) | plants | 28 | 0 | 1 |
-| Proso millet (`panicum-miliaceum`) | plants | 28 | 0 | 1 |
-| Rough Bluegrass (`poa-trivialis`) | plants | 28 | 0 | 1 |
+| Sweet fennel (`foeniculum-vulgare`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1375 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:03.267Z | 179 | 97 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:12.175Z | 418 | 157 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:46.595Z | 1 | 1 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 36 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

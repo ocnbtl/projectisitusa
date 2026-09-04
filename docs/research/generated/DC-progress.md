@@ -1,6 +1,6 @@
 # District of Columbia Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 179 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | not run | 0 | 0 |
+| New York Botanical Garden preserved specimens | operational | not run | 0 | 0 |
+| TORCH BRIT preserved specimens | operational | not run | 0 | 0 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 12 | 85 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

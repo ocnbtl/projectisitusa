@@ -1,26 +1,26 @@
 # North Carolina Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `10153`
+- Verified present: `10285`
 - Verified absent: `100`
 - Not detected: `0`
-- Researched unresolved: `37160`
-- Not researched: `202987`
-- Determination coverage: `4.09%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9349%`
-- Applicable protocol cells: `401`
+- Researched unresolved: `37124`
+- Not researched: `202891`
+- Determination coverage: `4.15%`
+- Research coverage: `18.97%`
+- Explicit outcome coverage: `18.9732%`
+- Applicable protocol cells: `456`
 - Current complete protocol cells: `129`
-- Protocol completion: `35.41%`
-- Current protocol completion: `32.17%`
-- Evidence records: `13411`
-- Research runs: `30`
+- Protocol completion: `31.14%`
+- Current protocol completion: `28.29%`
+- Evidence records: `13543`
+- Research runs: `32`
 - Rejection records: `1277`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 99 | 0 | 1 |
-| Meadow brome (`bromus-commutatus`) | plants | 99 | 0 | 1 |
+| Japanese maple (`acer-palmatum`) | plants | 99 | 0 | 1 |
+| Colonial bentgrass (`agrostis-capillaris`) | plants | 99 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 99 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 99 | 0 | 1 |
+| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 99 | 0 | 1 |
+| Horseradish (`armoracia-rusticana`) | plants | 99 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 99 | 0 | 1 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 99 | 0 | 1 |
-| Red Fescue (`festuca-rubra`) | plants | 99 | 0 | 1 |
-| Meadow hawkweed (`hieracium-caespitosum`) | plants | 99 | 0 | 1 |
+| Spadeleaf (`centella-asiatica`) | plants | 99 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 99 | 0 | 1 |
+| Canada Thistle (`cirsium-arvense`) | plants | 99 | 0 | 1 |
+| Japanese cedar (`cryptomeria-japonica`) | plants | 99 | 0 | 1 |
+| Chinese fir (`cunninghamia-lanceolata`) | plants | 99 | 0 | 1 |
+| Ricefield flatsedge (`cyperus-iria`) | plants | 99 | 0 | 1 |
+| Jamaican crabgrass (`digitaria-horizontalis`) | plants | 99 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 99 | 0 | 1 |
+| Madwoman's milk (`euphorbia-helioscopia`) | plants | 99 | 0 | 1 |
+| Moleplant (`euphorbia-lathyris`) | plants | 99 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 99 | 0 | 1 |
+| Sweet fennel (`foeniculum-vulgare`) | plants | 99 | 0 | 1 |
+| Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 99 | 0 | 1 |
+| False baby's breath (`galium-mollugo`) | plants | 99 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 99 | 0 | 1 |
 | Mouseear hawkweed (`hieracium-pilosella`) | plants | 99 | 0 | 1 |
-| Wartremoving herb (`murdannia-keisak`) | plants | 99 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 99 | 0 | 1 |
-| Sweet William catchfly (`silene-armeria`) | plants | 99 | 0 | 1 |
-| Yellow Salsify (`tragopogon-dubius`) | plants | 99 | 0 | 1 |
-| Seashore vervain (`verbena-litoralis`) | plants | 99 | 0 | 1 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 98 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 100 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 100 | 1 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 100 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 100 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 100 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 100 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 100 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 100 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 100 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 100 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 100 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 100 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 100 | 0 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 99 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 6455 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:26.395Z | 19 | 18 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:23.243Z | 107 | 83 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:00.116Z | 25 | 12 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1134 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

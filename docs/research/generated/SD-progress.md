@@ -1,26 +1,26 @@
 # South Dakota Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `66`
 - County-species pairs: `165264`
-- Verified present: `1585`
+- Verified present: `1640`
 - Verified absent: `66`
 - Not detected: `0`
-- Researched unresolved: `29675`
-- Not researched: `133938`
-- Determination coverage: `1.00%`
-- Research coverage: `18.96%`
-- Explicit outcome coverage: `18.9551%`
-- Applicable protocol cells: `262`
+- Researched unresolved: `29667`
+- Not researched: `133891`
+- Determination coverage: `1.03%`
+- Research coverage: `18.98%`
+- Explicit outcome coverage: `18.9836%`
+- Applicable protocol cells: `283`
 - Current complete protocol cells: `90`
-- Protocol completion: `34.35%`
-- Current protocol completion: `34.35%`
-- Evidence records: `1771`
-- Research runs: `29`
+- Protocol completion: `31.80%`
+- Current protocol completion: `31.80%`
+- Evidence records: `1826`
+- Research runs: `31`
 - Rejection records: `195`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Crested wheatgrass (`agropyron-cristatum`) | plants | 65 | 0 | 1 |
-| European water plantain (`alisma-plantago-aquatica`) | plants | 65 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 65 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 65 | 0 | 1 |
 | Mugwort (`artemisia-vulgaris`) | plants | 65 | 0 | 1 |
 | Chickpea milkvetch (`astragalus-cicer`) | plants | 65 | 0 | 1 |
 | Yellow Rocket (`barbarea-vulgaris`) | plants | 65 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 65 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 65 | 0 | 1 |
+| Dane's blood (`campanula-glomerata`) | plants | 65 | 0 | 1 |
 | Rampion bellflower (`campanula-rapunculoides`) | plants | 65 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 65 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 65 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 65 | 0 | 1 |
+| Caraway (`carum-carvi`) | plants | 65 | 0 | 1 |
+| Black henbane (`hyoscyamus-niger`) | plants | 65 | 0 | 1 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 65 | 0 | 1 |
-| European stickseed (`lappula-squarrosa`) | plants | 65 | 0 | 1 |
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 65 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 65 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 65 | 0 | 1 |
 | White Sweet Clover (`melilotus-albus`) | plants | 65 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 65 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 65 | 0 | 1 |
 | Rough Bluegrass (`poa-trivialis`) | plants | 65 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 65 | 0 | 1 |
 | Sulphur Cinquefoil (`potentilla-recta`) | plants | 65 | 0 | 1 |
-| Common Tansy (`tanacetum-vulgare`) | plants | 65 | 0 | 1 |
-| Intermediate wheatgrass (`thinopyrum-intermedium`) | plants | 65 | 0 | 1 |
-| Salsify (`tragopogon-porrifolius`) | plants | 65 | 0 | 1 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 65 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 64 | 0 | 1 |
-| Meadow brome (`bromus-commutatus`) | plants | 64 | 0 | 1 |
-| Herb sophia (`descurainia-sophia`) | plants | 64 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 64 | 0 | 1 |
+| Nightflowering silene (`silene-noctiflora`) | plants | 65 | 0 | 1 |
+| Sorghum (`sorghum-bicolor`) | plants | 65 | 0 | 1 |
+| French tamarisk (`tamarix-gallica`) | plants | 65 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 624 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:56.922Z | 42 | 35 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:03.703Z | 51 | 40 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:37.153Z | 4 | 4 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 62 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

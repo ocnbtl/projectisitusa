@@ -1,26 +1,26 @@
 # Rhode Island Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `719`
+- Verified present: `739`
 - Verified absent: `5`
 - Not detected: `0`
 - Researched unresolved: `1539`
-- Not researched: `10257`
-- Determination coverage: `5.78%`
-- Research coverage: `18.08%`
-- Explicit outcome coverage: `18.0751%`
-- Applicable protocol cells: `286`
+- Not researched: `10237`
+- Determination coverage: `5.94%`
+- Research coverage: `18.23%`
+- Explicit outcome coverage: `18.2348%`
+- Applicable protocol cells: `305`
 - Current complete protocol cells: `55`
-- Protocol completion: `23.78%`
-- Current protocol completion: `19.23%`
-- Evidence records: `729`
-- Research runs: `36`
+- Protocol completion: `22.30%`
+- Current protocol completion: `18.03%`
+- Evidence records: `749`
+- Research runs: `38`
 - Rejection records: `271`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 367 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:52.660Z | 3 | 3 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:58.104Z | 17 | 17 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:30.801Z | 3 | 3 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 48 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

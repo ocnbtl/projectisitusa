@@ -1,26 +1,26 @@
 # Virginia Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `133`
 - County-species pairs: `333032`
-- Verified present: `14546`
+- Verified present: `14632`
 - Verified absent: `133`
 - Not detected: `0`
-- Researched unresolved: `48367`
-- Not researched: `269986`
-- Determination coverage: `4.41%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9309%`
-- Applicable protocol cells: `384`
+- Researched unresolved: `48359`
+- Not researched: `269908`
+- Determination coverage: `4.43%`
+- Research coverage: `18.95%`
+- Explicit outcome coverage: `18.9543%`
+- Applicable protocol cells: `427`
 - Current complete protocol cells: `130`
-- Protocol completion: `37.24%`
-- Current protocol completion: `33.85%`
-- Evidence records: `17726`
-- Research runs: `29`
+- Protocol completion: `33.49%`
+- Current protocol completion: `30.44%`
+- Evidence records: `17812`
+- Research runs: `31`
 - Rejection records: `2627`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 132 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 132 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 132 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 132 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 132 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 132 | 0 | 1 |
+| European chickweed (`cerastium-pumilum`) | plants | 132 | 0 | 1 |
+| Canada Thistle (`cirsium-arvense`) | plants | 132 | 0 | 1 |
+| Ricefield flatsedge (`cyperus-iria`) | plants | 132 | 0 | 1 |
+| Gulf cockspur grass (`echinochloa-crus-pavonis`) | plants | 132 | 0 | 1 |
+| Moleplant (`euphorbia-lathyris`) | plants | 132 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 132 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 132 | 0 | 1 |
+| Yellow spring bedstraw (`galium-verum`) | plants | 132 | 0 | 1 |
+| Gray everlasting (`gamochaeta-coarctata`) | plants | 132 | 0 | 1 |
+| Dyer's greenweed (`genista-tinctoria`) | plants | 132 | 0 | 1 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 132 | 0 | 1 |
+| Mouseear hawkweed (`hieracium-pilosella`) | plants | 132 | 0 | 1 |
 | Whitetop (`lepidium-draba`) | plants | 132 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 132 | 0 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 133 | 2 |
-| Silver fir (`abies-alba`) | plants | 0 | 133 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 133 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 133 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 133 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 133 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 133 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 133 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 133 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 133 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 133 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 133 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 133 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 133 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 133 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 133 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 133 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 133 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 133 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 133 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 133 | 0 |
+| Common flax (`linum-usitatissimum`) | plants | 132 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 132 | 0 | 1 |
+| Moneywort (`lysimachia-nummularia`) | plants | 132 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 132 | 0 | 1 |
+| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 132 | 0 | 1 |
+| Bulbous canarygrass (`phalaris-aquatica`) | plants | 132 | 0 | 1 |
+| White willow (`salix-alba`) | plants | 132 | 0 | 1 |
+| Nightflowering silene (`silene-noctiflora`) | plants | 132 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 9716 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:05.477Z | 6 | 6 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:15.182Z | 66 | 45 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:49.315Z | 20 | 8 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1613 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,26 +1,26 @@
 # New Mexico Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `2494`
+- Verified present: `2675`
 - Verified absent: `33`
 - Not detected: `0`
-- Researched unresolved: `14006`
-- Not researched: `66099`
-- Determination coverage: `3.06%`
-- Research coverage: `20.01%`
-- Explicit outcome coverage: `20.0080%`
-- Applicable protocol cells: `331`
+- Researched unresolved: `13975`
+- Not researched: `65949`
+- Determination coverage: `3.28%`
+- Research coverage: `20.19%`
+- Explicit outcome coverage: `20.1895%`
+- Applicable protocol cells: `370`
 - Current complete protocol cells: `63`
-- Protocol completion: `22.96%`
-- Current protocol completion: `19.03%`
-- Evidence records: `2534`
-- Research runs: `30`
+- Protocol completion: `20.54%`
+- Current protocol completion: `17.03%`
+- Evidence records: `2715`
+- Research runs: `32`
 - Rejection records: `496`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Desert wheatgrass (`agropyron-desertorum`) | plants | 32 | 0 | 1 |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 32 | 0 | 1 |
+| Crested wheatgrass (`agropyron-cristatum`) | plants | 32 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 32 | 0 | 1 |
-| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 32 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 32 | 0 | 1 |
+| Australian saltbush (`atriplex-semibaccata`) | plants | 32 | 0 | 1 |
+| Pitted beardgrass (`bothriochloa-pertusa`) | plants | 32 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 32 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 32 | 0 | 1 |
 | Compact brome (`bromus-madritensis`) | plants | 32 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 32 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 32 | 0 | 1 |
+| Greenleaf ticktrefoil (`desmodium-intortum`) | plants | 32 | 0 | 1 |
+| Perennial wallrocket (`diplotaxis-tenuifolia`) | plants | 32 | 0 | 1 |
 | Moleplant (`euphorbia-lathyris`) | plants | 32 | 0 | 1 |
 | Bachelor's button (`gypsophila-paniculata`) | plants | 32 | 0 | 1 |
-| Cheeseweed mallow (`malva-parviflora`) | plants | 32 | 0 | 1 |
-| White Sweet Clover (`melilotus-albus`) | plants | 32 | 0 | 1 |
+| Mouse barley (`hordeum-murinum`) | plants | 32 | 0 | 1 |
+| Common barley (`hordeum-vulgare`) | plants | 32 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 32 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 32 | 0 | 1 |
+| Low mallow (`malva-pusilla`) | plants | 32 | 0 | 1 |
+| Guineagrass (`megathyrsus-maximus`) | plants | 32 | 0 | 1 |
 | Anise (`myrrhis-odorata`) | plants | 32 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 32 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 32 | 0 | 1 |
-| French tamarisk (`tamarix-gallica`) | plants | 32 | 0 | 1 |
-| Intermediate wheatgrass (`thinopyrum-intermedium`) | plants | 32 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 32 | 0 | 1 |
-| Salsify (`tragopogon-porrifolius`) | plants | 32 | 0 | 1 |
-| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 31 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 31 | 0 | 1 |
-| European stickseed (`lappula-squarrosa`) | plants | 31 | 0 | 1 |
-| Whitetop (`lepidium-draba`) | plants | 31 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 31 | 0 | 1 |
-| Saltcedar (`tamarix-ramosissima`) | plants | 31 | 0 | 1 |
-| Herb sophia (`descurainia-sophia`) | plants | 28 | 0 | 1 |
-| Common mediterranean grass (`schismus-barbatus`) | plants | 28 | 0 | 1 |
-| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 28 | 0 | 1 |
+| Arabian schismus (`schismus-arabicus`) | plants | 32 | 0 | 1 |
+| Cutleaf vipergrass (`scorzonera-laciniata`) | plants | 32 | 0 | 1 |
+| Hooked bristlegrass (`setaria-verticillata`) | plants | 32 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 948 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:37.078Z | 22 | 20 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:36.771Z | 178 | 82 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:13.690Z | 3 | 3 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 44 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

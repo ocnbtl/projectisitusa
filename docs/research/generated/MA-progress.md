@@ -1,26 +1,26 @@
 # Massachusetts Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `2603`
+- Verified present: `2816`
 - Verified absent: `14`
 - Not detected: `0`
-- Researched unresolved: `4029`
-- Not researched: `28410`
-- Determination coverage: `7.47%`
-- Research coverage: `18.96%`
-- Explicit outcome coverage: `18.9582%`
-- Applicable protocol cells: `369`
+- Researched unresolved: `4027`
+- Not researched: `28199`
+- Determination coverage: `8.07%`
+- Research coverage: `19.56%`
+- Explicit outcome coverage: `19.5601%`
+- Applicable protocol cells: `463`
 - Current complete protocol cells: `86`
-- Protocol completion: `26.83%`
-- Current protocol completion: `23.31%`
-- Evidence records: `2669`
-- Research runs: `36`
+- Protocol completion: `21.38%`
+- Current protocol completion: `18.57%`
+- Evidence records: `2882`
+- Research runs: `38`
 - Rejection records: `572`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Pale madwort (`alyssum-alyssoides`) | plants | 13 | 0 | 1 |
-| Prickly sedge (`carex-spicata`) | plants | 13 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 13 | 0 | 1 |
+| Corn chamomile (`anthemis-arvensis`) | plants | 13 | 0 | 1 |
+| Woolly burdock (`arctium-tomentosum`) | plants | 13 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 13 | 0 | 1 |
+| Bloodflower (`asclepias-curassavica`) | plants | 13 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 13 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 13 | 0 | 1 |
+| Turkish wartycabbage (`bunias-orientalis`) | plants | 13 | 0 | 1 |
+| Heather (`calluna-vulgaris`) | plants | 13 | 0 | 1 |
+| Chinese catalpa (`catalpa-ovata`) | plants | 13 | 0 | 1 |
+| Perennial cornflower (`centaurea-montana`) | plants | 13 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 13 | 0 | 1 |
-| Smooth hawksbeard (`crepis-capillaris`) | plants | 13 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 13 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 13 | 0 | 1 |
+| Japanese cedar (`cryptomeria-japonica`) | plants | 13 | 0 | 1 |
 | Maiden pink (`dianthus-deltoides`) | plants | 13 | 0 | 1 |
+| Clammy goosefoot (`dysphania-pumilio`) | plants | 13 | 0 | 1 |
+| Petty spurge (`euphorbia-peplus`) | plants | 13 | 0 | 1 |
+| Red hempnettle (`galeopsis-ladanum`) | plants | 13 | 0 | 1 |
 | False baby's breath (`galium-mollugo`) | plants | 13 | 0 | 1 |
-| Lesser Swinecress (`lepidium-didymum`) | plants | 13 | 0 | 1 |
-| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 13 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 13 | 0 | 1 |
-| Bulbous bluegrass (`poa-bulbosa`) | plants | 13 | 0 | 1 |
-| White willow (`salix-alba`) | plants | 13 | 0 | 1 |
-| Weeping willow (`salix-babylonica`) | plants | 13 | 0 | 1 |
-| Hooked bristlegrass (`setaria-verticillata`) | plants | 13 | 0 | 1 |
-| Sweet William catchfly (`silene-armeria`) | plants | 13 | 0 | 1 |
-| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 13 | 0 | 1 |
-| Grass-like starwort (`stellaria-graminea`) | plants | 13 | 0 | 1 |
-| Common lilac (`syringa-vulgaris`) | plants | 13 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 12 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 12 | 0 | 1 |
-| Climbing Nightshade (`solanum-dulcamara`) | plants | 11 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 14 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 14 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 14 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 14 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 14 | 2 |
+| Dyer's greenweed (`genista-tinctoria`) | plants | 13 | 0 | 1 |
+| Red alga (`heterosiphonia-japonica`) | plants | 13 | 0 | 1 |
+| Tall hawkweed (`hieracium-piloselloides`) | plants | 13 | 0 | 1 |
+| Black henbane (`hyoscyamus-niger`) | plants | 13 | 0 | 1 |
+| European larch (`larix-decidua`) | plants | 13 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1801 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:08.880Z | 24 | 20 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:58.514Z | 168 | 87 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:38.391Z | 45 | 31 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 200 | 98 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

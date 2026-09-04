@@ -1,26 +1,26 @@
 # Hawaii Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `688`
+- Verified present: `846`
 - Verified absent: `5`
 - Not detected: `0`
-- Researched unresolved: `1806`
-- Not researched: `10021`
-- Determination coverage: `5.54%`
-- Research coverage: `19.96%`
-- Explicit outcome coverage: `19.9601%`
-- Applicable protocol cells: `335`
+- Researched unresolved: `1799`
+- Not researched: `9870`
+- Determination coverage: `6.80%`
+- Research coverage: `21.17%`
+- Explicit outcome coverage: `21.1661%`
+- Applicable protocol cells: `441`
 - Current complete protocol cells: `81`
-- Protocol completion: `28.06%`
-- Current protocol completion: `24.18%`
-- Evidence records: `830`
-- Research runs: `31`
+- Protocol completion: `21.32%`
+- Current protocol completion: `18.37%`
+- Evidence records: `988`
+- Research runs: `33`
 - Rejection records: `1435`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,29 +34,29 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Diamond burbark (`triumfetta-rhomboidea`) | plants | 5 | 0 | 1 |
 | Green wattle (`acacia-decurrens`) | plants | 4 | 0 | 1 |
-| Rough maidenhair (`adiantum-hispidulum`) | plants | 4 | 0 | 1 |
+| Golden trumpet (`allamanda-cathartica`) | plants | 4 | 0 | 1 |
+| Giant taro (`alocasia-macrorrhizos`) | plants | 4 | 0 | 1 |
+| Barbados aloe (`aloe-vera`) | plants | 4 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 4 | 0 | 1 |
 | Coral vine (`antigonon-leptopus`) | plants | 4 | 0 | 1 |
-| Napoleon's plume (`bauhinia-monandra`) | plants | 4 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 4 | 0 | 1 |
+| Australian saltbush (`atriplex-semibaccata`) | plants | 4 | 0 | 1 |
+| Brazilian begonia (`begonia-hirtella`) | plants | 4 | 0 | 1 |
+| Javanese bishopwood (`bischofia-javanica`) | plants | 4 | 0 | 1 |
 | Pitted beardgrass (`bothriochloa-pertusa`) | plants | 4 | 0 | 1 |
+| Smokebush (`buddleja-madagascariensis`) | plants | 4 | 0 | 1 |
 | Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 4 | 0 | 1 |
-| Blood red tassel flower (`calliandra-haematocephala`) | plants | 4 | 0 | 1 |
+| Roostertree (`calotropis-procera`) | plants | 4 | 0 | 1 |
+| Burmese fishtail palm (`caryota-mitis`) | plants | 4 | 0 | 1 |
+| River sheoak (`casuarina-cunninghamiana`) | plants | 4 | 0 | 1 |
 | Madagascar periwinkle (`catharanthus-roseus`) | plants | 4 | 0 | 1 |
+| Elephant grass (`cenchrus-purpureus`) | plants | 4 | 0 | 1 |
+| Swollen fingergrass (`chloris-barbata`) | plants | 4 | 0 | 1 |
 | Stickbush (`clerodendrum-chinense`) | plants | 4 | 0 | 1 |
+| Natal glorybower (`clerodendrum-glabrum`) | plants | 4 | 0 | 1 |
 | Coconut palm (`cocos-nucifera`) | plants | 4 | 0 | 1 |
-| Japanese cedar (`cryptomeria-japonica`) | plants | 4 | 0 | 1 |
-| Florida tasselflower (`emilia-fosbergii`) | plants | 4 | 0 | 1 |
-| Swampmahogany (`eucalyptus-robusta`) | plants | 4 | 0 | 1 |
-| Indiantree spurge (`euphorbia-tirucalli`) | plants | 4 | 0 | 1 |
-| White garland-lily (`hedychium-coronarium`) | plants | 4 | 0 | 1 |
-| Oceanblue morning-glory (`ipomoea-indica`) | plants | 4 | 0 | 1 |
-| Broadleaf rush (`juncus-planifolius`) | plants | 4 | 0 | 1 |
-| Cathedral bells (`kalanchoe-pinnata`) | plants | 4 | 0 | 1 |
-| Wild bushbean (`macroptilium-lathyroides`) | plants | 4 | 0 | 1 |
-| Madagascar olive (`noronhia-emarginata`) | plants | 4 | 0 | 1 |
-| Old world adderstongue (`ophioglossum-pendulum`) | plants | 4 | 0 | 1 |
-| Panama crowngrass (`paspalum-fimbriatum`) | plants | 4 | 0 | 1 |
-| Purple granadilla (`passiflora-edulis`) | plants | 4 | 0 | 1 |
+| Asian nakedwood (`colubrina-asiatica`) | plants | 4 | 0 | 1 |
+| Cape province pygmyweed (`crassula-multicava`) | plants | 4 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 416 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:51.083Z | 48 | 40 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:35.415Z | 152 | 120 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:15.718Z | 6 | 6 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 46 | 120 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

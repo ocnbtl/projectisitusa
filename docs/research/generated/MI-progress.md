@@ -1,26 +1,26 @@
 # Michigan Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `83`
 - County-species pairs: `207832`
-- Verified present: `7297`
+- Verified present: `7394`
 - Verified absent: `83`
 - Not detected: `26`
-- Researched unresolved: `32065`
-- Not researched: `168361`
-- Determination coverage: `3.55%`
-- Research coverage: `18.99%`
-- Explicit outcome coverage: `18.9918%`
-- Applicable protocol cells: `349`
-- Current complete protocol cells: `127`
-- Protocol completion: `40.11%`
-- Current protocol completion: `36.39%`
-- Evidence records: `10050`
-- Research runs: `32`
+- Researched unresolved: `32057`
+- Not researched: `168272`
+- Determination coverage: `3.60%`
+- Research coverage: `19.03%`
+- Explicit outcome coverage: `19.0346%`
+- Applicable protocol cells: `379`
+- Current complete protocol cells: `128`
+- Protocol completion: `37.20%`
+- Current protocol completion: `33.77%`
+- Evidence records: `10147`
+- Research runs: `34`
 - Rejection records: `1728`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Sycamore Maple (`acer-pseudoplatanus`) | plants | 82 | 0 | 1 |
-| European white birch (`betula-pendula`) | plants | 82 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 82 | 0 | 1 |
+| European beachgrass (`ammophila-arenaria`) | plants | 82 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 82 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 82 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 82 | 0 | 1 |
+| Diffuse Knapweed (`centaurea-diffusa`) | plants | 82 | 0 | 1 |
 | Lesser knapweed (`centaurea-nigra`) | plants | 82 | 0 | 1 |
 | Celandine (`chelidonium-majus`) | plants | 82 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 82 | 0 | 1 |
-| Marsh thistle (`cirsium-palustre`) | plants | 82 | 0 | 1 |
 | Mute Swan (`cygnus-olor`) | wildlife | 82 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 82 | 0 | 1 |
 | Perennial wallrocket (`diplotaxis-tenuifolia`) | plants | 82 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 82 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 82 | 0 | 1 |
-| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 82 | 0 | 1 |
 | Flower of an hour (`hibiscus-trionum`) | plants | 82 | 0 | 1 |
 | Tall hawkweed (`hieracium-piloselloides`) | plants | 82 | 0 | 1 |
 | Elecampane inula (`inula-helenium`) | plants | 82 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 82 | 0 | 1 |
+| Common nipplewort (`lapsana-communis`) | plants | 82 | 0 | 1 |
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 82 | 0 | 1 |
 | Common flax (`linum-usitatissimum`) | plants | 82 | 0 | 1 |
 | Sweet alyssum (`lobularia-maritima`) | plants | 82 | 0 | 1 |
 | Common Mallow (`malva-neglecta`) | plants | 82 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 82 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 82 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 82 | 0 | 1 |
-| Pestilence wort (`petasites-hybridus`) | plants | 82 | 0 | 1 |
-| Solidstem burnet saxifrage (`pimpinella-saxifraga`) | plants | 82 | 0 | 1 |
-| Maidenstears (`silene-vulgaris`) | plants | 82 | 0 | 1 |
-| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 82 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4011 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:15.280Z | 51 | 39 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:07.388Z | 88 | 38 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:46.564Z | 9 | 9 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1229 | 141 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

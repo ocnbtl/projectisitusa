@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "retained-herbarium-preserved-specimens-execution-20260904-r1",
+  "evaluatedAt": "2026-09-04T05:01:56.176Z",
+  "status": "integrated-substantial-minimum-cleared",
+  "objective": "Produce cumulative, exact, net-new county-species determinations without replaying completed work, weakening evidence semantics, or counting raw source volume as progress.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseline": {
+    "commit": "b5000c373eaa575095a481a06eef12e833ce55ee",
+    "fullCountySpeciesDenominator": 7872576,
+    "verifiedPresent": 288120,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 291263,
+    "notDetected": 236,
+    "researchedUnresolved": 1311986,
+    "notResearched": 6269091,
+    "conflicts": 0,
+    "coveragePercent": 3.699716586,
+    "determinedPairSetSha256": "b01a0a42e4938ac918f0974df267b8c56f1bb9b8baa068f0c5f769f8a394c445"
+  },
+  "yieldPolicy": {
+    "stretchTargetNetDeterminations": 25000,
+    "substantialMinimumNetDeterminations": 10000,
+    "goSourceMinimumNetPairs": 5000,
+    "conditionalBundleMinimumNetPairs": 2000,
+    "interpretation": "Thresholds apply only to exact set-difference movement in unique county-species determinations. Rows, requests, assertions, reviews, files, and already-determined overlaps do not count."
+  },
+  "sourcePreflight": [
+    {
+      "sourceId": "nybg-preserved-specimens",
+      "evaluationPath": "ops/national-research/evaluations/nybg-preserved-specimens-preflight-20260904-r1.json",
+      "disposition": "go-and-executed",
+      "datasetVersion": "1.103",
+      "publicationDate": "2026-08-25",
+      "archiveBytes": 736185551,
+      "archiveSha256": "84a5f69d746f1ec44fa89c63a9baf0fc5cb923dbb9330f91b6ac8660b159a483",
+      "occurrenceBytes": 3243235286,
+      "occurrenceSha256": "69c609fcb3da364149784f9afa9b78a6be61b95318b8e7e768244c1bebc35154",
+      "sourceRows": 4923280,
+      "acceptedUniqueRecords": 31187,
+      "grossUniquePairs": 20875,
+      "existingVerifiedPresentOverlaps": 12809,
+      "verifiedAbsentConflicts": 0,
+      "netEligiblePairs": 8066,
+      "netEligiblePairSetSha256": "71de00778290b49b5d1efc75ed3131fe2148915ccafcd69b088b0116c2a2f78c",
+      "preflightElapsedMs": 82401
+    },
+    {
+      "sourceId": "torch-brit-preserved-specimens",
+      "evaluationPath": "ops/national-research/evaluations/torch-brit-preserved-specimens-preflight-20260904-r1.json",
+      "disposition": "conditional-bundled-and-executed",
+      "datasetVersion": "2026-09-03",
+      "publicationDate": "2026-09-03",
+      "archiveBytes": 130383123,
+      "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+      "occurrenceBytes": 539901972,
+      "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+      "sourceRows": 775785,
+      "acceptedUniqueRecords": 13140,
+      "grossUniquePairs": 8488,
+      "existingVerifiedPresentOverlaps": 4363,
+      "verifiedAbsentConflicts": 0,
+      "rawNetEligiblePairsAtBaseline": 4125,
+      "nybgCrossSourceOverlapsExcluded": 347,
+      "selectedResidualPairs": 3778,
+      "selectedResidualPairSetSha256": "5e38cf7a01ff7a31abf739fd9d7d3c823975ed2e08340228e7985b57c0925cdf",
+      "preflightElapsedMs": 17508
+    }
+  ],
+  "execution": {
+    "inputCommit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+    "startedAt": "2026-09-04T04:47:10.543Z",
+    "finishedAt": "2026-09-04T04:52:03.309Z",
+    "statePlanCount": 97,
+    "completeRuns": 97,
+    "requestedUniquePairs": 11844,
+    "acceptedAssertionEvents": 11844,
+    "reviewEvents": 11844,
+    "completePairOutcomes": 11844,
+    "rejections": 0,
+    "errors": 0,
+    "upstreamRequests": 0,
+    "combinedNewPairSetSha256": "d071291aa0aa76e260d00508db92afa3169929dd52f2a02288a15598483b6b81",
+    "sources": [
+      {
+        "sourceId": "nybg-preserved-specimens",
+        "completeRuns": 49,
+        "acceptedPairs": 8066,
+        "startedAt": "2026-09-04T04:47:10.543Z",
+        "finishedAt": "2026-09-04T04:49:29.185Z",
+        "largestStateYields": [
+          { "stateCode": "NY", "acceptedPairs": 1372 },
+          { "stateCode": "TX", "acceptedPairs": 727 },
+          { "stateCode": "NJ", "acceptedPairs": 559 },
+          { "stateCode": "UT", "acceptedPairs": 418 },
+          { "stateCode": "MD", "acceptedPairs": 411 }
+        ]
+      },
+      {
+        "sourceId": "torch-brit-preserved-specimens",
+        "completeRuns": 48,
+        "acceptedPairs": 3778,
+        "startedAt": "2026-09-04T04:49:49.753Z",
+        "finishedAt": "2026-09-04T04:52:03.309Z",
+        "largestStateYields": [
+          { "stateCode": "TX", "acceptedPairs": 2545 },
+          { "stateCode": "OK", "acceptedPairs": 506 },
+          { "stateCode": "AR", "acceptedPairs": 90 },
+          { "stateCode": "KY", "acceptedPairs": 76 },
+          { "stateCode": "CA", "acceptedPairs": 74 }
+        ]
+      }
+    ],
+    "semanticGuards": {
+      "presenceOnly": true,
+      "preservedSpecimenBasisRequired": true,
+      "cc0DatasetOrRecordLicenseRequired": true,
+      "stableRecordAndOccurrenceIdentityRequired": true,
+      "exactCatalogSpeciesBinomialRequired": true,
+      "sourceSpeciesRankAndBlankQualifierRequired": true,
+      "exactActiveCountyAliasRequired": true,
+      "cultivatedOrCaptiveTextRejected": true,
+      "sourceSilenceCreatesAbsence": false,
+      "sourceSilenceCreatesNonDetection": false,
+      "coordinatesUsedForCountyAssignment": false
+    }
+  },
+  "integration": {
+    "asOfDate": "2026-09-04",
+    "fullCountySpeciesDenominator": 7872576,
+    "verifiedPresent": 299964,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 303107,
+    "notDetected": 236,
+    "researchedUnresolved": 1308779,
+    "notResearched": 6260454,
+    "conflicts": 0,
+    "coveragePercent": 3.850162895,
+    "exactNetDeterminationDelta": 11844,
+    "verifiedPresentDelta": 11844,
+    "verifiedAbsentDelta": 0,
+    "researchedUnresolvedDelta": -3207,
+    "notResearchedDelta": -8637,
+    "determinationCoveragePointDelta": 0.150446309,
+    "exactSetDifferenceAudit": {
+      "addedPairs": 11844,
+      "removedPairs": 0,
+      "statusChangedPairs": 0,
+      "addedPairsOutsidePlan": 0,
+      "plannedPairsNotAdded": 0,
+      "addedNonPresentPairs": 0,
+      "crossSourceDuplicatesRemovedBeforeExecution": 347
+    },
+    "historicalFixedBaseline": {
+      "commit": "f08cf185b1ee7291c827083181bb7ae76700166c",
+      "totalUniqueDeterminations": 200218,
+      "gainBeforeThisExecution": 91045,
+      "gainIncludingThisExecution": 102889
+    },
+    "cumulativeInterpretation": "This execution adds exactly 11844 new pair keys to the 291263-pair current baseline. It does not re-count the prior 91045-pair gain since f08cf185; cumulative gain since that fixed historical baseline is now 102889."
+  },
+  "sourcePortfolioDisposition": [
+    {
+      "sourceId": "nybg-preserved-specimens",
+      "disposition": "executed",
+      "measuredNetPairs": 8066,
+      "reason": "The versioned official CC0 archive, complete strict preflight, and retained witnesses cleared the source GO threshold."
+    },
+    {
+      "sourceId": "torch-brit-preserved-specimens",
+      "disposition": "executed-conditional-bundle",
+      "measuredRawNetPairs": 4125,
+      "crossSourcePairsExcluded": 347,
+      "measuredResidualNetPairs": 3778,
+      "reason": "The CC0 BRIT archive remained below the standalone GO threshold but above the conditional threshold and combined with NYBG to clear the execution minimum."
+    },
+    {
+      "sourceId": "seinet-regional-herbaria",
+      "disposition": "no-go-below-gate-and-rights-constrained",
+      "sampleExactNetPairs": 498,
+      "optimisticProjectedFullNetPairs": 4410,
+      "reason": "The bounded sample and optimistic projection did not clear the 5000 GO threshold; the export omitted the cultivated flag, most records were CC BY-NC, and the portal asks users not to redistribute data."
+    },
+    {
+      "sourceId": "mich-university-of-michigan-herbarium",
+      "disposition": "conditional-not-executed",
+      "proxyPointEstimateNetPairs": 9913,
+      "estimatedNetPairRange": [4190, 15844],
+      "reason": "The official IPT archive is CC BY-NC 4.0 and exact yield and required field completeness were not established without a 272 MB acquisition; publication compatibility remains unresolved."
+    },
+    {
+      "sourceId": "cch2-compatible-subset",
+      "disposition": "no-go-now",
+      "centralEstimatedNetPairs": 1287,
+      "estimatedNetPairRange": [576, 2211],
+      "wholeSourceEstimatedNetPairs": 4473,
+      "reason": "The compatible CC0 and CC BY subset did not clear the source GO threshold, 47 of 66 packages were BY-NC, and the portal asks users not to redistribute data."
+    }
+  ],
+  "requestAndByteAccounting": {
+    "mainSourceAcquisition": {
+      "getRequests": 4,
+      "headRequests": 2,
+      "responseBodyBytes": 1602759569,
+      "qualification": "NYBG ignored a one-byte Range probe and returned the complete 736185551-byte archive; that transfer and the subsequent retained archive acquisition are both counted."
+    },
+    "seinetExploration": {
+      "getRequests": 43,
+      "headRequests": 10,
+      "responseBodyBytes": 21739385,
+      "measuredWallSeconds": 5.701
+    },
+    "michExploration": {
+      "requests": 33,
+      "responseBodyBytes": 16177884,
+      "measuredWallSeconds": 6.049
+    },
+    "cch2Exploration": {
+      "requests": 140,
+      "responseBodyBytes": 24962013,
+      "measuredWallSeconds": 11.440789,
+      "parseSeconds": 2.327,
+      "peakRssBytes": 185462784
+    },
+    "readOnlyPublicVerification": {
+      "getRequests": 4,
+      "responseBodyBytes": 3831902,
+      "qualification": "Public checks were read-only and did not alter the stale production research pointer."
+    },
+    "executionUpstreamRequests": 0,
+    "providerWrites": 0
+  },
+  "buildEvidence": {
+    "sourceRegistryCount": 38,
+    "immutableRunCount": 1757,
+    "newRunCount": 97,
+    "newRunFiles": 679,
+    "newRunOutputAndArtifactBytes": 49964592,
+    "newRetainedArtifactBytes": 974520,
+    "nybgCoverage": {
+      "runCount": 49,
+      "completeRuns": 49,
+      "requestedPairs": 8066,
+      "scopeCompletePairs": 8066
+    },
+    "torchBritCoverage": {
+      "runCount": 48,
+      "completeRuns": 48,
+      "requestedPairs": 3778,
+      "scopeCompletePairs": 3778
+    }
+  },
+  "targetAssessment": {
+    "substantialMinimumReached": true,
+    "stretchTargetReached": false,
+    "thresholdClearedBy": 1844,
+    "stretchTargetShortfall": 13156,
+    "result": "The exact unique determination gain is 11844. It clears the 10000 substantial minimum while remaining below the 25000 stretch target because the other screened lanes were below threshold or lacked publication-compatible rights and exact field-complete yield evidence."
+  },
+  "externalMutations": {
+    "pushes": 0,
+    "deployments": 0,
+    "r2Mutations": 0,
+    "providerWrites": 0
+  }
+}

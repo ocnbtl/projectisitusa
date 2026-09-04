@@ -1,26 +1,26 @@
 # Florida Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `7643`
+- Verified present: `7990`
 - Verified absent: `67`
 - Not detected: `0`
-- Researched unresolved: `25547`
-- Not researched: `134511`
-- Determination coverage: `4.60%`
-- Research coverage: `19.82%`
-- Explicit outcome coverage: `19.8232%`
-- Applicable protocol cells: `427`
-- Current complete protocol cells: `140`
-- Protocol completion: `35.83%`
-- Current protocol completion: `32.79%`
-- Evidence records: `18318`
-- Research runs: `30`
+- Researched unresolved: `25502`
+- Not researched: `134209`
+- Determination coverage: `4.80%`
+- Research coverage: `20.00%`
+- Explicit outcome coverage: `20.0032%`
+- Applicable protocol cells: `581`
+- Current complete protocol cells: `142`
+- Protocol completion: `26.68%`
+- Current protocol completion: `24.44%`
+- Evidence records: `18665`
+- Research runs: `32`
 - Rejection records: `5119`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Sisal hemp (`agave-sisalana`) | plants | 66 | 0 | 1 |
+| Bluemink (`ageratum-houstonianum`) | plants | 66 | 0 | 1 |
+| Woman's tongue (`albizia-lebbeck`) | plants | 66 | 0 | 1 |
+| Tall albizia (`albizia-procera`) | plants | 66 | 0 | 1 |
 | White moneywort (`alysicarpus-vaginalis`) | plants | 66 | 0 | 1 |
-| Woodland bittercress (`cardamine-flexuosa`) | plants | 66 | 0 | 1 |
+| Elegant dutchman's pipe (`aristolochia-elegans`) | plants | 66 | 0 | 1 |
+| Common bamboo (`bambusa-vulgaris`) | plants | 66 | 0 | 1 |
+| Crested philippine violet (`barleria-cristata`) | plants | 66 | 0 | 1 |
+| Clubed begonia (`begonia-cucullata`) | plants | 66 | 0 | 1 |
+| Javanese bishopwood (`bischofia-javanica`) | plants | 66 | 0 | 1 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 66 | 0 | 1 |
+| Paperflower (`bougainvillea-glabra`) | plants | 66 | 0 | 1 |
+| Angel's tears (`brugmansia-suaveolens`) | plants | 66 | 0 | 1 |
+| Smokebush (`buddleja-madagascariensis`) | plants | 66 | 0 | 1 |
+| Natal plum (`carissa-macrocarpa`) | plants | 66 | 0 | 1 |
 | Burmese fishtail palm (`caryota-mitis`) | plants | 66 | 0 | 1 |
-| Madagascar periwinkle (`catharanthus-roseus`) | plants | 66 | 0 | 1 |
-| Javanese glorybower (`clerodendrum-speciosissimum`) | plants | 66 | 0 | 1 |
-| Tickclover (`desmodium-incanum`) | plants | 66 | 0 | 1 |
-| Whitesnow (`drymaria-cordata`) | plants | 66 | 0 | 1 |
-| Florida tasselflower (`emilia-fosbergii`) | plants | 66 | 0 | 1 |
-| Japanese lovegrass (`eragrostis-tenella`) | plants | 66 | 0 | 1 |
-| Mile a minute vine (`ipomoea-cairica`) | plants | 66 | 0 | 1 |
-| Oceanblue morning-glory (`ipomoea-indica`) | plants | 66 | 0 | 1 |
-| Torpedo grass (`panicum-repens`) | plants | 66 | 0 | 1 |
-| Cape leadwort (`plumbago-auriculata`) | plants | 66 | 0 | 1 |
-| Cretan brake (`pteris-cretica`) | plants | 66 | 0 | 1 |
-| Flamevine (`pyrostegia-venusta`) | plants | 66 | 0 | 1 |
-| Castor Bean (`ricinus-communis`) | plants | 66 | 0 | 1 |
-| Fountainbush (`russelia-equisetiformis`) | plants | 66 | 0 | 1 |
-| Earleaf nightshade (`solanum-mauritianum`) | plants | 66 | 0 | 1 |
-| Cowpea witchweed (`striga-gesnerioides`) | plants | 66 | 0 | 1 |
-| Tropical almond (`terminalia-catappa`) | plants | 66 | 0 | 1 |
-| Jamaican feverplant (`tribulus-cistoides`) | plants | 66 | 0 | 1 |
-| Coral vine (`antigonon-leptopus`) | plants | 65 | 0 | 1 |
-| Mountain ebony (`bauhinia-variegata`) | plants | 65 | 0 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 67 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 67 | 2 |
+| Apple blossom (`cassia-javanica`) | plants | 66 | 0 | 1 |
+| Night jessamine (`cestrum-nocturnum`) | plants | 66 | 0 | 1 |
+| Chilean jessamine (`cestrum-parqui`) | plants | 66 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 66 | 0 | 1 |
+| Tall windmill grass (`chloris-elata`) | plants | 66 | 0 | 1 |
+| Natal glorybower (`clerodendrum-glabrum`) | plants | 66 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 66 | 0 | 1 |
+| Redflower ragleaf (`crassocephalum-crepidioides`) | plants | 66 | 0 | 1 |
+| Japanese cedar (`cryptomeria-japonica`) | plants | 66 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3770 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:46.819Z | 36 | 34 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:29.775Z | 282 | 168 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:09.387Z | 65 | 50 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1488 | 170 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

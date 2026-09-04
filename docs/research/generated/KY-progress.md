@@ -1,26 +1,26 @@
 # Kentucky Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `8622`
+- Verified present: `8750`
 - Verified absent: `120`
 - Not detected: `12`
-- Researched unresolved: `47900`
-- Not researched: `243826`
-- Determination coverage: `2.91%`
-- Research coverage: `18.85%`
-- Explicit outcome coverage: `18.8545%`
-- Applicable protocol cells: `362`
+- Researched unresolved: `47854`
+- Not researched: `243744`
+- Determination coverage: `2.95%`
+- Research coverage: `18.88%`
+- Explicit outcome coverage: `18.8818%`
+- Applicable protocol cells: `404`
 - Current complete protocol cells: `126`
-- Protocol completion: `38.40%`
-- Current protocol completion: `34.81%`
-- Evidence records: `10706`
-- Research runs: `30`
+- Protocol completion: `34.41%`
+- Current protocol completion: `31.19%`
+- Evidence records: `10834`
+- Research runs: `32`
 - Rejection records: `637`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 119 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 119 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 119 | 0 | 1 |
-| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 119 | 0 | 1 |
+| Japanese maple (`acer-palmatum`) | plants | 119 | 0 | 1 |
+| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 119 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 119 | 0 | 1 |
+| Narrowleaf bittercress (`cardamine-impatiens`) | plants | 119 | 0 | 1 |
+| Japanese dogwood (`cornus-kousa`) | plants | 119 | 0 | 1 |
+| Pricklyburr (`datura-inoxia`) | plants | 119 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 119 | 0 | 1 |
+| German iris (`iris-germanica`) | plants | 119 | 0 | 1 |
+| Japanese rose (`kerria-japonica`) | plants | 119 | 0 | 1 |
+| Yellow archangel (`lamium-galeobdolon`) | plants | 119 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 119 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 119 | 0 | 1 |
+| Matrimony vine (`lycium-barbarum`) | plants | 119 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 119 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 119 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 119 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 119 | 0 | 1 |
 | Wild Parsnip (`pastinaca-sativa`) | plants | 119 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 119 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 119 | 0 | 1 |
-| Mahaleb cherry (`prunus-mahaleb`) | plants | 119 | 0 | 1 |
-| Yellow Salsify (`tragopogon-dubius`) | plants | 119 | 0 | 1 |
-| Ivyleaf Speedwell (`veronica-hederifolia`) | plants | 119 | 0 | 1 |
-| Wall bedstraw (`galium-parisiense`) | plants | 118 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 120 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 120 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 120 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 120 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 120 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 120 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 120 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 120 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 120 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 120 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 120 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 120 | 0 |
+| Marshpepper knotweed (`persicaria-hydropiper`) | plants | 119 | 0 | 1 |
+| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 119 | 0 | 1 |
+| Lady's Thumb (`persicaria-maculosa`) | plants | 119 | 0 | 1 |
+| Norway spruce (`picea-abies`) | plants | 119 | 0 | 1 |
+| Castor Bean (`ricinus-communis`) | plants | 119 | 0 | 1 |
+| White willow (`salix-alba`) | plants | 119 | 0 | 1 |
+| Laurel willow (`salix-pentandra`) | plants | 119 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5533 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:04.598Z | 18 | 16 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:53.024Z | 52 | 26 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:32.835Z | 76 | 60 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1023 | 144 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

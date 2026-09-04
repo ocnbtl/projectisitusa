@@ -1,26 +1,26 @@
 # New Jersey Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `3444`
+- Verified present: `4014`
 - Verified absent: `21`
 - Not detected: `0`
-- Researched unresolved: `6496`
-- Not researched: `42623`
-- Determination coverage: `6.59%`
-- Research coverage: `18.94%`
-- Explicit outcome coverage: `18.9430%`
-- Applicable protocol cells: `348`
-- Current complete protocol cells: `122`
-- Protocol completion: `38.79%`
-- Current protocol completion: `35.06%`
-- Evidence records: `4943`
-- Research runs: `36`
+- Researched unresolved: `6412`
+- Not researched: `42137`
+- Determination coverage: `7.67%`
+- Research coverage: `19.87%`
+- Explicit outcome coverage: `19.8673%`
+- Applicable protocol cells: `535`
+- Current complete protocol cells: `124`
+- Protocol completion: `25.61%`
+- Current protocol completion: `23.18%`
+- Evidence records: `5513`
+- Research runs: `38`
 - Rejection records: `997`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 20 | 0 | 1 |
-| Lesser knapweed (`centaurea-nigra`) | plants | 20 | 0 | 1 |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 20 | 0 | 1 |
+| Colonial bentgrass (`agrostis-capillaris`) | plants | 20 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 20 | 0 | 1 |
+| Italian bugloss (`anchusa-azurea`) | plants | 20 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 20 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 20 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 20 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 20 | 0 | 1 |
+| Rattlesnake brome (`bromus-briziformis`) | plants | 20 | 0 | 1 |
+| Heather (`calluna-vulgaris`) | plants | 20 | 0 | 1 |
+| Narrowleaf bittercress (`cardamine-impatiens`) | plants | 20 | 0 | 1 |
+| Prickly sedge (`carex-spicata`) | plants | 20 | 0 | 1 |
+| Woolly distaff thistle (`carthamus-lanatus`) | plants | 20 | 0 | 1 |
+| Diffuse Knapweed (`centaurea-diffusa`) | plants | 20 | 0 | 1 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 20 | 0 | 1 |
+| Yellow star-thistle (`centaurea-solstitialis`) | plants | 20 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 20 | 0 | 1 |
 | Celandine (`chelidonium-majus`) | plants | 20 | 0 | 1 |
-| Red Fescue (`festuca-rubra`) | plants | 20 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 20 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 20 | 0 | 1 |
-| Golden clover (`trifolium-aureum`) | plants | 20 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 21 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 21 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 21 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 21 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 21 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 21 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 21 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 21 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 21 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 21 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 21 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 21 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 21 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 21 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 21 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 21 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 21 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 21 | 0 |
+| Marsh thistle (`cirsium-palustre`) | plants | 20 | 0 | 1 |
+| Coriander (`coriandrum-sativum`) | plants | 20 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 20 | 0 | 1 |
+| Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 20 | 0 | 1 |
+| Chinese hound's tongue (`cynoglossum-amabile`) | plants | 20 | 0 | 1 |
+| Variable flatsedge (`cyperus-difformis`) | plants | 20 | 0 | 1 |
+| Brown flatsedge (`cyperus-fuscus`) | plants | 20 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2243 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:34.877Z | 7 | 7 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:33.881Z | 559 | 236 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:10.855Z | 11 | 10 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 523 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

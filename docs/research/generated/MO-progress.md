@@ -1,26 +1,26 @@
 # Missouri Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `8144`
+- Verified present: `8211`
 - Verified absent: `115`
 - Not detected: `0`
-- Researched unresolved: `46382`
-- Not researched: `233319`
-- Determination coverage: `2.87%`
-- Research coverage: `18.98%`
-- Explicit outcome coverage: `18.9752%`
-- Applicable protocol cells: `355`
-- Current complete protocol cells: `119`
-- Protocol completion: `37.18%`
-- Current protocol completion: `33.52%`
-- Evidence records: `9100`
-- Research runs: `30`
+- Researched unresolved: `46365`
+- Not researched: `233269`
+- Determination coverage: `2.89%`
+- Research coverage: `18.99%`
+- Explicit outcome coverage: `18.9926%`
+- Applicable protocol cells: `384`
+- Current complete protocol cells: `120`
+- Protocol completion: `34.64%`
+- Current protocol completion: `31.25%`
+- Evidence records: `9167`
+- Research runs: `32`
 - Rejection records: `1467`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 114 | 0 | 1 |
+| Colonial bentgrass (`agrostis-capillaris`) | plants | 114 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 114 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 114 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 114 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 114 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 114 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 114 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 114 | 0 | 1 |
 | Small geranium (`geranium-pusillum`) | plants | 114 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 114 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 114 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 114 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 114 | 0 | 1 |
 | Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 114 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 114 | 0 | 1 |
+| Apple of Peru (`nicandra-physalodes`) | plants | 114 | 0 | 1 |
+| Lady's Thumb (`persicaria-maculosa`) | plants | 114 | 0 | 1 |
+| Annual canarygrass (`phalaris-canariensis`) | plants | 114 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 114 | 0 | 1 |
 | Bulbous bluegrass (`poa-bulbosa`) | plants | 114 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 114 | 0 | 1 |
-| Giant Foxtail (`setaria-faberi`) | plants | 114 | 0 | 1 |
-| Yellow Salsify (`tragopogon-dubius`) | plants | 114 | 0 | 1 |
-| Puncturevine (`tribulus-terrestris`) | plants | 114 | 0 | 1 |
-| Littlepod False Flax (`camelina-microcarpa`) | plants | 113 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 113 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 115 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 115 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 115 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 115 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 115 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 115 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 115 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 115 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 115 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 115 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 115 | 0 |
+| Sour cherry (`prunus-cerasus`) | plants | 114 | 0 | 1 |
+| White willow (`salix-alba`) | plants | 114 | 0 | 1 |
+| Maidenstears (`silene-vulgaris`) | plants | 114 | 0 | 1 |
+| Climbing Nightshade (`solanum-dulcamara`) | plants | 114 | 0 | 1 |
+| Sorghum (`sorghum-bicolor`) | plants | 114 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5427 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:19.533Z | 25 | 23 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:14.166Z | 46 | 33 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:52.132Z | 21 | 16 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 695 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

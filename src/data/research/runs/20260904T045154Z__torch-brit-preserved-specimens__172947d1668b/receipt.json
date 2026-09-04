@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T045154Z__torch-brit-preserved-specimens__172947d1668b",
+  "status": "complete",
+  "started_at": "2026-09-04T04:51:54.714Z",
+  "finished_at": "2026-09-04T04:51:54.715Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "172947d1668bc295dccbbeed5be0f0d5c423dd830ffb9c0b6b7a1fd1eb26b471",
+  "parameters": {
+    "stateCode": "WA",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "c1d47511015ccb7e9b8e84cc0e399f60b83f1e5cf3392ea5f5bc2512353036ba",
+    "targets": [
+      {
+        "pairKey": "53033:acer-palmatum",
+        "recordId": "31066641",
+        "occurrenceId": "6d3f02ed-088e-4c9f-a81e-4b04a0b377e5",
+        "countyFips": "53033",
+        "stateCode": "WA",
+        "sourceState": "Washington",
+        "sourceCounty": "King",
+        "speciesId": "acer-palmatum",
+        "scientificName": "Acer palmatum",
+        "eventDate": "2012-07-17",
+        "year": 2012,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT584069",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=31066641"
+      },
+      {
+        "pairKey": "53033:cornus-kousa",
+        "recordId": "31067282",
+        "occurrenceId": "8c97c631-f495-46e5-a292-76dfc8578bad",
+        "countyFips": "53033",
+        "stateCode": "WA",
+        "sourceState": "Washington",
+        "sourceCounty": "King",
+        "speciesId": "cornus-kousa",
+        "scientificName": "Cornus kousa",
+        "eventDate": "1945-10-04",
+        "year": 1945,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT586198",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=31067282"
+      },
+      {
+        "pairKey": "53061:silene-gallica",
+        "recordId": "30405330",
+        "occurrenceId": "6aca8a61-9661-424c-8dc0-efda7c8cb7bf",
+        "countyFips": "53061",
+        "stateCode": "WA",
+        "sourceState": "Washington",
+        "sourceCounty": "Snohomish",
+        "speciesId": "silene-gallica",
+        "scientificName": "Silene gallica",
+        "eventDate": "1927-05",
+        "year": 1927,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT793391",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=30405330"
+      }
+    ],
+    "candidatePairs": [
+      "53033:acer-palmatum",
+      "53033:cornus-kousa",
+      "53061:silene-gallica"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WA",
+    "county_fips": [
+      "53033",
+      "53061"
+    ],
+    "species_ids": [
+      "acer-palmatum",
+      "cornus-kousa",
+      "silene-gallica"
+    ],
+    "pair_keys": [
+      "53033:acer-palmatum",
+      "53033:cornus-kousa",
+      "53061:silene-gallica"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T045154Z__torch-brit-preserved-specimens__172947d1668b/artifacts/torch-brit-source-identity.json",
+      "sha256": "ff71f1d690acc7b2ea910f5520217bea7df3bfa7246b219a1a208daf71c9c073",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045154Z__torch-brit-preserved-specimens__172947d1668b/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "fd3e47662ac82054cf5d74db0efbb099018ab044d996465c8b632bb912be429d",
+      "bytes": 576,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T045154Z__torch-brit-preserved-specimens__172947d1668b/assertions.ndjson",
+      "sha256": "aab5c72a1741e1670ab9e8b56eafb313486ed54543ad3cb589f27dd36322ca19",
+      "bytes": 6860,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045154Z__torch-brit-preserved-specimens__172947d1668b/reviews.ndjson",
+      "sha256": "4221831a495b279639b10b9c80f9c7678b3d21edd45fc5db92a2c825039c2b1c",
+      "bytes": 3333,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045154Z__torch-brit-preserved-specimens__172947d1668b/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045154Z__torch-brit-preserved-specimens__172947d1668b/outcomes.ndjson",
+      "sha256": "265cce4f9d42551d25b75e4a0dc4b9c667645af0006d1faf7e93c0bc84430926",
+      "bytes": 2220,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state WA --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-wa-20260904-r1.json --output-root src/data/research/runs --pairs 53033:acer-palmatum,53033:cornus-kousa,53061:silene-gallica"
+}

@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T044949Z__torch-brit-preserved-specimens__6ee7478360d8",
+  "status": "complete",
+  "started_at": "2026-09-04T04:49:49.753Z",
+  "finished_at": "2026-09-04T04:49:49.754Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "6ee7478360d87edd70df776934a9e3e3b89981241dfaa27d570ab3cb19e3d876",
+  "parameters": {
+    "stateCode": "AK",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "5e0f8c17a9de3d5601409e2d87b577720eb69a928cf8c3788f60fb8254bbe97c",
+    "targets": [
+      {
+        "pairKey": "02122:lappula-squarrosa",
+        "recordId": "31443848",
+        "occurrenceId": "7ada6dfa-3a86-402f-913a-703e7be47ca5",
+        "countyFips": "02122",
+        "stateCode": "AK",
+        "sourceState": "Alaska",
+        "sourceCounty": "Kenai Peninsula",
+        "speciesId": "lappula-squarrosa",
+        "scientificName": "Lappula squarrosa",
+        "eventDate": "1962-07-01",
+        "year": 1962,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT725918",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=31443848"
+      },
+      {
+        "pairKey": "02122:spergularia-rubra",
+        "recordId": "31442607",
+        "occurrenceId": "9993521b-860f-4561-b0cf-0401391c45d6",
+        "countyFips": "02122",
+        "stateCode": "AK",
+        "sourceState": "Alaska",
+        "sourceCounty": "Kenai Peninsula",
+        "speciesId": "spergularia-rubra",
+        "scientificName": "Spergularia rubra",
+        "eventDate": "1962-07-03",
+        "year": 1962,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT713106",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=31442607"
+      }
+    ],
+    "candidatePairs": [
+      "02122:lappula-squarrosa",
+      "02122:spergularia-rubra"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "AK",
+    "county_fips": [
+      "02122"
+    ],
+    "species_ids": [
+      "lappula-squarrosa",
+      "spergularia-rubra"
+    ],
+    "pair_keys": [
+      "02122:lappula-squarrosa",
+      "02122:spergularia-rubra"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T044949Z__torch-brit-preserved-specimens__6ee7478360d8/artifacts/torch-brit-source-identity.json",
+      "sha256": "51a635117b3d0d134f64cc5b914171a1205961563ad2509065a7feb285a3fc32",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044949Z__torch-brit-preserved-specimens__6ee7478360d8/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "9aa9c7e9599adbbe8d8873a7936baa9f7aca83d67d0bb9ed309ba978e7bf331e",
+      "bytes": 482,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T044949Z__torch-brit-preserved-specimens__6ee7478360d8/assertions.ndjson",
+      "sha256": "d6c2479f0f5fa028e6dd560253f2cdb2beda0ab9a33ee11a517eba14bac72682",
+      "bytes": 4612,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044949Z__torch-brit-preserved-specimens__6ee7478360d8/reviews.ndjson",
+      "sha256": "ad52dc42be201ffab2fbc81d67f5283df5da3593aebbb9a26b536d17d881d09e",
+      "bytes": 2230,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044949Z__torch-brit-preserved-specimens__6ee7478360d8/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044949Z__torch-brit-preserved-specimens__6ee7478360d8/outcomes.ndjson",
+      "sha256": "36d2313dce72217932d63ce8eae7cd76a9d769209e0febbac3978e36ba7db501",
+      "bytes": 1488,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state AK --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-ak-20260904-r1.json --output-root src/data/research/runs --pairs 02122:lappula-squarrosa,02122:spergularia-rubra"
+}

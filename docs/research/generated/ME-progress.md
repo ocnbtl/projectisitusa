@@ -1,26 +1,26 @@
 # Maine Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `1826`
+- Verified present: `1972`
 - Verified absent: `16`
 - Not detected: `0`
-- Researched unresolved: `5784`
-- Not researched: `32438`
-- Determination coverage: `4.60%`
-- Research coverage: `19.03%`
-- Explicit outcome coverage: `19.0345%`
-- Applicable protocol cells: `286`
+- Researched unresolved: `5781`
+- Not researched: `32295`
+- Determination coverage: `4.96%`
+- Research coverage: `19.39%`
+- Explicit outcome coverage: `19.3915%`
+- Applicable protocol cells: `360`
 - Current complete protocol cells: `110`
-- Protocol completion: `43.01%`
-- Current protocol completion: `38.46%`
-- Evidence records: `2223`
-- Research runs: `29`
+- Protocol completion: `34.17%`
+- Current protocol completion: `30.56%`
+- Evidence records: `2369`
+- Research runs: `31`
 - Rejection records: `292`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Quackgrass (`elymus-repens`) | plants | 15 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 15 | 0 | 1 |
-| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 15 | 0 | 1 |
-| Fall dandelion (`leontodon-autumnalis`) | plants | 15 | 0 | 1 |
-| Austrian pine (`pinus-nigra`) | plants | 15 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 15 | 0 | 1 |
-| Garden sorrel (`rumex-acetosa`) | plants | 15 | 0 | 1 |
-| Nightflowering silene (`silene-noctiflora`) | plants | 15 | 0 | 1 |
-| False spiraea (`sorbaria-sorbifolia`) | plants | 15 | 0 | 1 |
-| Common Tansy (`tanacetum-vulgare`) | plants | 15 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 16 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 16 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 16 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 16 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 16 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 16 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 16 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 16 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 16 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 16 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 16 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 16 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 16 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 16 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 16 | 0 |
+| Pale madwort (`alyssum-alyssoides`) | plants | 15 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 15 | 0 | 1 |
+| Corn chamomile (`anthemis-arvensis`) | plants | 15 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 15 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 15 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 15 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 15 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 15 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 15 | 0 | 1 |
+| Hammer sedge (`carex-hirta`) | plants | 15 | 0 | 1 |
+| Caraway (`carum-carvi`) | plants | 15 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 15 | 0 | 1 |
+| Paradise plant (`daphne-mezereum`) | plants | 15 | 0 | 1 |
+| Maiden pink (`dianthus-deltoides`) | plants | 15 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 15 | 0 | 1 |
+| Black henbane (`hyoscyamus-niger`) | plants | 15 | 0 | 1 |
+| Sweet alyssum (`lobularia-maritima`) | plants | 15 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 15 | 0 | 1 |
+| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 15 | 0 | 1 |
+| Hyssop loosestrife (`lythrum-hyssopifolia`) | plants | 15 | 0 | 1 |
+| High mallow (`malva-sylvestris`) | plants | 15 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 15 | 0 | 1 |
+| Purple moorgrass (`molinia-caerulea`) | plants | 15 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 15 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 15 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1137 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:13.171Z | 10 | 10 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:04.366Z | 138 | 80 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:43.763Z | 8 | 7 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 214 | 133 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

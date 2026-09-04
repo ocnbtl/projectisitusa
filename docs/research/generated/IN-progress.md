@@ -1,26 +1,26 @@
 # Indiana Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `9435`
+- Verified present: `9640`
 - Verified absent: `92`
 - Not detected: `0`
-- Researched unresolved: `34854`
-- Not researched: `185987`
-- Determination coverage: `4.14%`
-- Research coverage: `19.27%`
-- Explicit outcome coverage: `19.2653%`
-- Applicable protocol cells: `356`
+- Researched unresolved: `34819`
+- Not researched: `185817`
+- Determination coverage: `4.22%`
+- Research coverage: `19.34%`
+- Explicit outcome coverage: `19.3391%`
+- Applicable protocol cells: `423`
 - Current complete protocol cells: `153`
-- Protocol completion: `46.63%`
-- Current protocol completion: `42.98%`
-- Evidence records: `11123`
-- Research runs: `32`
+- Protocol completion: `39.24%`
+- Current protocol completion: `36.17%`
+- Evidence records: `11328`
+- Research runs: `34`
 - Rejection records: `1431`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Horseradish (`armoracia-rusticana`) | plants | 91 | 0 | 1 |
-| Black mustard (`brassica-nigra`) | plants | 91 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 91 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 91 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 91 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 91 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 91 | 0 | 1 |
+| European beachgrass (`ammophila-arenaria`) | plants | 91 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 91 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 91 | 0 | 1 |
+| Poverty brome (`bromus-sterilis`) | plants | 91 | 0 | 1 |
+| Angel's tears (`brugmansia-suaveolens`) | plants | 91 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 91 | 0 | 1 |
+| Caraway (`carum-carvi`) | plants | 91 | 0 | 1 |
 | Branched centaury (`centaurium-pulchellum`) | plants | 91 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 91 | 0 | 1 |
-| Red Fescue (`festuca-rubra`) | plants | 91 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 91 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 91 | 0 | 1 |
+| Rockspray cotoneaster (`cotoneaster-horizontalis`) | plants | 91 | 0 | 1 |
+| Jamaican crabgrass (`digitaria-horizontalis`) | plants | 91 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 91 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 91 | 0 | 1 |
+| Petty spurge (`euphorbia-peplus`) | plants | 91 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 91 | 0 | 1 |
+| Gallant Soldier (`galinsoga-parviflora`) | plants | 91 | 0 | 1 |
 | Wall bedstraw (`galium-parisiense`) | plants | 91 | 0 | 1 |
-| Small geranium (`geranium-pusillum`) | plants | 91 | 0 | 1 |
-| Flower of an hour (`hibiscus-trionum`) | plants | 91 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 91 | 0 | 1 |
+| Elecampane inula (`inula-helenium`) | plants | 91 | 0 | 1 |
 | German iris (`iris-germanica`) | plants | 91 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 91 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 91 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 91 | 0 | 1 |
-| Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 91 | 0 | 1 |
-| Poet's narcissus (`narcissus-poeticus`) | plants | 91 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 91 | 0 | 1 |
-| Marshpepper knotweed (`persicaria-hydropiper`) | plants | 91 | 0 | 1 |
-| Mexican groundcherry (`physalis-philadelphica`) | plants | 91 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 91 | 0 | 1 |
-| Rough Bluegrass (`poa-trivialis`) | plants | 91 | 0 | 1 |
-| Ashy cinquefoil (`potentilla-inclinata`) | plants | 91 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 91 | 0 | 1 |
-| Sour cherry (`prunus-cerasus`) | plants | 91 | 0 | 1 |
+| European larch (`larix-decidua`) | plants | 91 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 91 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3937 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:00.272Z | 51 | 43 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:47.526Z | 200 | 111 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:26.801Z | 5 | 3 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1015 | 164 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

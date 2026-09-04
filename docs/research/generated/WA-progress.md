@@ -1,26 +1,26 @@
 # Washington Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `8688`
+- Verified present: `8722`
 - Verified absent: `38`
 - Not detected: `0`
-- Researched unresolved: `14355`
-- Not researched: `74575`
-- Determination coverage: `8.94%`
-- Research coverage: `23.64%`
-- Explicit outcome coverage: `23.6350%`
-- Applicable protocol cells: `728`
+- Researched unresolved: `14348`
+- Not researched: `74548`
+- Determination coverage: `8.97%`
+- Research coverage: `23.66%`
+- Explicit outcome coverage: `23.6627%`
+- Applicable protocol cells: `729`
 - Current complete protocol cells: `184`
-- Protocol completion: `27.06%`
-- Current protocol completion: `25.27%`
-- Evidence records: `13978`
-- Research runs: `40`
+- Protocol completion: `27.02%`
+- Current protocol completion: `25.24%`
+- Evidence records: `14012`
+- Research runs: `42`
 - Rejection records: `1883`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,6 +42,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese sedge (`carex-kobomugi`) | plants | 38 | 0 | 1 |
 | Prickly sedge (`carex-spicata`) | plants | 38 | 0 | 1 |
 | Caraway (`carum-carvi`) | plants | 38 | 0 | 1 |
+| Japanese dogwood (`cornus-kousa`) | plants | 38 | 0 | 1 |
 | Silverleaf cotoneaster (`cotoneaster-pannosus`) | plants | 38 | 0 | 1 |
 | Rose (`cotoneaster-salicifolius`) | plants | 38 | 0 | 1 |
 | Striated broom (`cytisus-striatus`) | plants | 38 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Saltlover (`halogeton-glomeratus`) | plants | 38 | 0 | 1 |
 | Canary Island St. Johnswort (`hypericum-canariense`) | plants | 38 | 0 | 1 |
 | Globe candytuft (`iberis-umbellata`) | plants | 38 | 0 | 1 |
-| Balfour's touch-me-not (`impatiens-balfourii`) | plants | 38 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2557 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:09.895Z | 3293 | 493 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:20.330Z | 31 | 23 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:54.715Z | 3 | 3 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1317 | 192 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

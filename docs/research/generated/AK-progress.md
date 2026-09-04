@@ -1,26 +1,26 @@
 # Alaska Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `1122`
+- Verified present: `1132`
 - Verified absent: `30`
 - Not detected: `0`
-- Researched unresolved: `13504`
-- Not researched: `60464`
-- Determination coverage: `1.53%`
-- Research coverage: `19.51%`
-- Explicit outcome coverage: `19.5101%`
-- Applicable protocol cells: `235`
+- Researched unresolved: `13503`
+- Not researched: `60455`
+- Determination coverage: `1.55%`
+- Research coverage: `19.52%`
+- Explicit outcome coverage: `19.5221%`
+- Applicable protocol cells: `238`
 - Current complete protocol cells: `111`
-- Protocol completion: `47.23%`
-- Current protocol completion: `47.23%`
-- Evidence records: `1312`
-- Research runs: `33`
+- Protocol completion: `46.64%`
+- Current protocol completion: `46.64%`
+- Evidence records: `1322`
+- Research runs: `35`
 - Rejection records: `2194`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,7 +38,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Simons' cotoneaster (`cotoneaster-simonsii`) | plants | 29 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 29 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 29 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 29 | 0 | 1 |
 | Splitlip hempnettle (`galeopsis-bifida`) | plants | 29 | 0 | 1 |
 | Tall hawkweed (`hieracium-piloselloides`) | plants | 29 | 0 | 1 |
 | Cream-anther field pepperwort (`lepidium-campestre`) | plants | 29 | 0 | 1 |
@@ -49,14 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Bulbous bluegrass (`poa-bulbosa`) | plants | 29 | 0 | 1 |
 | Canada bluegrass (`poa-compressa`) | plants | 29 | 0 | 1 |
 | Rugosa rose (`rosa-rugosa`) | plants | 29 | 0 | 1 |
-| Garden sorrel (`rumex-acetosa`) | plants | 29 | 0 | 1 |
+| Red Sandspurry (`spergularia-rubra`) | plants | 29 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 29 | 0 | 1 |
+| Field Pennycress (`thlaspi-arvense`) | plants | 29 | 0 | 1 |
 | Meadow foxtail (`alopecurus-pratensis`) | plants | 28 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 28 | 0 | 1 |
 | Max chrysanthemum (`leucanthemum-maximum`) | plants | 28 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 28 | 0 | 1 |
+| Rough Bluegrass (`poa-trivialis`) | plants | 28 | 0 | 1 |
 | Thymeleaf Speedwell (`veronica-serpyllifolia`) | plants | 28 | 0 | 1 |
-| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 27 | 0 | 1 |
-| European mountain ash (`sorbus-aucuparia`) | plants | 27 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 314 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:31.637Z | 58 | 39 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:10.544Z | 8 | 5 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:49.754Z | 2 | 2 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 87 | 150 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T045203Z__torch-brit-preserved-specimens__a247310042aa",
+  "status": "complete",
+  "started_at": "2026-09-04T04:52:03.308Z",
+  "finished_at": "2026-09-04T04:52:03.309Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "a247310042aa41de0a42a2d0ecb4f45b54b37c1f41130cf13ccf53d90c1ff2ec",
+  "parameters": {
+    "stateCode": "WY",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "15ecce6f6b34dfb61a10e55682c2d5d802a067da7c6fcd3c1a844e48f820f025",
+    "targets": [
+      {
+        "pairKey": "56019:pastinaca-sativa",
+        "recordId": "30669279",
+        "occurrenceId": "58cd44df-81f5-41a8-ab1b-16ff7e242594",
+        "countyFips": "56019",
+        "stateCode": "WY",
+        "sourceState": "Wyoming",
+        "sourceCounty": "Johnson",
+        "speciesId": "pastinaca-sativa",
+        "scientificName": "Pastinaca sativa",
+        "eventDate": "1977-08-07",
+        "year": 1977,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT840014",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=30669279"
+      }
+    ],
+    "candidatePairs": [
+      "56019:pastinaca-sativa"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WY",
+    "county_fips": [
+      "56019"
+    ],
+    "species_ids": [
+      "pastinaca-sativa"
+    ],
+    "pair_keys": [
+      "56019:pastinaca-sativa"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T045203Z__torch-brit-preserved-specimens__a247310042aa/artifacts/torch-brit-source-identity.json",
+      "sha256": "740cc94af3a511d628e92d1b5d617dde8836ebac86c859ee33ededa5f198722c",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045203Z__torch-brit-preserved-specimens__a247310042aa/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "c9e7d0e99c224c0e17b087b49cef1d6a25e696abee35dbb331fa77028549f9cb",
+      "bytes": 390,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T045203Z__torch-brit-preserved-specimens__a247310042aa/assertions.ndjson",
+      "sha256": "5ede7c4674bb3be7c63ff6f0414d90b5717b326ee00ca7dd77fe1fa4b4a09599",
+      "bytes": 2296,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045203Z__torch-brit-preserved-specimens__a247310042aa/reviews.ndjson",
+      "sha256": "d491d53b285ef7e18c75f52c184a72a75cf1af016a08f9ebe84157f23953e123",
+      "bytes": 1114,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045203Z__torch-brit-preserved-specimens__a247310042aa/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045203Z__torch-brit-preserved-specimens__a247310042aa/outcomes.ndjson",
+      "sha256": "404c619c25a55c30cfce2ce64958a4b977015524ce9f11c6b6666ddfaea4dc92",
+      "bytes": 743,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state WY --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-wy-20260904-r1.json --output-root src/data/research/runs --pairs 56019:pastinaca-sativa"
+}

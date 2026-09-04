@@ -1,26 +1,26 @@
 # Kansas Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `105`
 - County-species pairs: `262920`
-- Verified present: `6582`
+- Verified present: `6769`
 - Verified absent: `105`
 - Not detected: `26`
-- Researched unresolved: `43171`
-- Not researched: `213036`
-- Determination coverage: `2.54%`
-- Research coverage: `18.97%`
-- Explicit outcome coverage: `18.9731%`
-- Applicable protocol cells: `301`
+- Researched unresolved: `43147`
+- Not researched: `212873`
+- Determination coverage: `2.61%`
+- Research coverage: `19.04%`
+- Explicit outcome coverage: `19.0351%`
+- Applicable protocol cells: `373`
 - Current complete protocol cells: `107`
-- Protocol completion: `39.87%`
-- Current protocol completion: `35.55%`
-- Evidence records: `7766`
-- Research runs: `31`
+- Protocol completion: `32.17%`
+- Current protocol completion: `28.69%`
+- Evidence records: `7953`
+- Research runs: `33`
 - Rejection records: `694`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Smooth Brome (`bromus-inermis`) | plants | 104 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 104 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 104 | 0 | 1 |
+| Pale madwort (`alyssum-alyssoides`) | plants | 104 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 104 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 104 | 0 | 1 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 104 | 0 | 1 |
+| Corn brome (`bromus-squarrosus`) | plants | 104 | 0 | 1 |
+| Chinese catalpa (`catalpa-ovata`) | plants | 104 | 0 | 1 |
+| Yellow star-thistle (`centaurea-solstitialis`) | plants | 104 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 104 | 0 | 1 |
+| Brown flatsedge (`cyperus-fuscus`) | plants | 104 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 104 | 0 | 1 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 104 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 104 | 0 | 1 |
+| Gallant Soldier (`galinsoga-parviflora`) | plants | 104 | 0 | 1 |
+| German iris (`iris-germanica`) | plants | 104 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 104 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 104 | 0 | 1 |
+| Corn poppy (`papaver-rhoeas`) | plants | 104 | 0 | 1 |
+| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 104 | 0 | 1 |
+| Lady's Thumb (`persicaria-maculosa`) | plants | 104 | 0 | 1 |
+| Kiss me over the garden gate (`persicaria-orientalis`) | plants | 104 | 0 | 1 |
 | Mexican groundcherry (`physalis-philadelphica`) | plants | 104 | 0 | 1 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 104 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 103 | 0 | 1 |
-| Yellow Salsify (`tragopogon-dubius`) | plants | 103 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 105 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 105 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 105 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 105 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 105 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 105 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 105 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 105 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 105 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 105 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 105 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 105 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 105 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 105 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 105 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 105 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 105 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 105 | 0 |
+| Austrian pine (`pinus-nigra`) | plants | 104 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 104 | 0 | 1 |
+| Nanking cherry (`prunus-tomentosa`) | plants | 104 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4550 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:02.414Z | 19 | 17 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:50.252Z | 173 | 84 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:29.769Z | 14 | 13 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 592 | 130 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

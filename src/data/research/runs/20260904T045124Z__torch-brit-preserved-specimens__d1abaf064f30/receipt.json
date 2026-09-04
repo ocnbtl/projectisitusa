@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T045124Z__torch-brit-preserved-specimens__d1abaf064f30",
+  "status": "complete",
+  "started_at": "2026-09-04T04:51:24.264Z",
+  "finished_at": "2026-09-04T04:51:24.265Z",
+  "actor_type": "adapter",
+  "actor_id": "torch-brit-preserved-specimens-snapshot@1.0.0",
+  "source_id": "torch-brit-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "torch-brit-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "d1abaf064f30959776c7d5ff491a4947bb01672cb16a1dc461d36d750256db95",
+  "parameters": {
+    "stateCode": "OR",
+    "mode": "retained-archive-witnesses",
+    "profile": "torch-brit",
+    "datasetUrl": "https://portal.torcherbaria.org/portal/content/dwca/BRIT-BRIT_DwC-A.zip",
+    "metadataUrl": "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370",
+    "usagePolicyUrl": "https://portal.torcherbaria.org/portal/includes/usagepolicy.php",
+    "datasetVersion": "2026-09-03",
+    "publicationDate": "2026-09-03",
+    "datasetLastModified": "Thu, 03 Sep 2026 16:50:07 GMT",
+    "datasetEtag": "\"7c57d13-65a96f1b83eed\"",
+    "archiveBytes": 130383123,
+    "archiveSha256": "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf",
+    "occurrenceBytes": 539901972,
+    "occurrenceSha256": "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+    "archiveAcquiredAt": "2026-09-04T04:08:03.000Z",
+    "preflightEvaluationId": "torch-brit-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "b54221a30569843e24a24d21009d0eeb975ba14bb46fc1eb8e649f50af742ffd",
+    "targets": [
+      {
+        "pairKey": "41027:stellaria-graminea",
+        "recordId": "30406872",
+        "occurrenceId": "9382d293-9805-4177-9b8e-04297306bb85",
+        "countyFips": "41027",
+        "stateCode": "OR",
+        "sourceState": "Oregon",
+        "sourceCounty": "Hood River",
+        "speciesId": "stellaria-graminea",
+        "scientificName": "Stellaria graminea",
+        "eventDate": "1895-07-29",
+        "year": 1895,
+        "institutionCode": "BRIT",
+        "collectionCode": "BRIT",
+        "catalogNumber": "BRIT794903",
+        "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "rightsHolder": "Botanical Research Institute of Texas",
+        "references": "https://portal.torcherbaria.org/portal/collections/individual/index.php?occid=30406872"
+      }
+    ],
+    "candidatePairs": [
+      "41027:stellaria-graminea"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "OR",
+    "county_fips": [
+      "41027"
+    ],
+    "species_ids": [
+      "stellaria-graminea"
+    ],
+    "pair_keys": [
+      "41027:stellaria-graminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T045124Z__torch-brit-preserved-specimens__d1abaf064f30/artifacts/torch-brit-source-identity.json",
+      "sha256": "f3f57782e0bd238e0b3b210b3d9f7e04e3723a802d981c463dbb8698aced4507",
+      "bytes": 952,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045124Z__torch-brit-preserved-specimens__d1abaf064f30/artifacts/torch-brit-retained-witnesses.json.gz",
+      "sha256": "d840ca624f5efc9de3a8c4fcda52e348f215b7b15872ba5fb5e41c6504f3257b",
+      "bytes": 395,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T045124Z__torch-brit-preserved-specimens__d1abaf064f30/assertions.ndjson",
+      "sha256": "2b5e5c3455703e802a74c803d53e48cec6f44cfc6d70c003080f58fb8136a213",
+      "bytes": 2304,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045124Z__torch-brit-preserved-specimens__d1abaf064f30/reviews.ndjson",
+      "sha256": "3bab21e66e75386146a4a094535a59c040a07517cf5d6f0d1b7915c5a7476636",
+      "bytes": 1116,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045124Z__torch-brit-preserved-specimens__d1abaf064f30/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T045124Z__torch-brit-preserved-specimens__d1abaf064f30/outcomes.ndjson",
+      "sha256": "145092a7e4228bb128b0158129af43b716c7e02a226ef6e471d40e3975f380cc",
+      "bytes": 745,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Each accepted row must also carry CC0. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "TORCH BRIT physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source torch-brit-preserved-specimens --state OR --candidate-file ops/national-research/plans/torch-brit-preserved-specimens-20260904-r1/torch-brit-preserved-specimens-or-20260904-r1.json --output-root src/data/research/runs --pairs 41027:stellaria-graminea"
+}

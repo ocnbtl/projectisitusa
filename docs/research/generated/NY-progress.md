@@ -1,26 +1,26 @@
 # New York Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `7929`
+- Verified present: `9309`
 - Verified absent: `62`
 - Not detected: `10`
-- Researched unresolved: `21211`
-- Not researched: `126036`
-- Determination coverage: `5.15%`
-- Research coverage: `18.82%`
-- Explicit outcome coverage: `18.8163%`
-- Applicable protocol cells: `413`
-- Current complete protocol cells: `108`
-- Protocol completion: `29.30%`
-- Current protocol completion: `26.15%`
-- Evidence records: `9051`
-- Research runs: `31`
+- Researched unresolved: `21082`
+- Not researched: `124785`
+- Determination coverage: `6.04%`
+- Research coverage: `19.62%`
+- Explicit outcome coverage: `19.6222%`
+- Applicable protocol cells: `704`
+- Current complete protocol cells: `110`
+- Protocol completion: `17.47%`
+- Current protocol completion: `15.63%`
+- Evidence records: `10431`
+- Research runs: `33`
 - Rejection records: `1055`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 61 | 0 | 1 |
+| Rosary Pea (`abrus-precatorius`) | plants | 61 | 0 | 1 |
+| Japanese maple (`acer-palmatum`) | plants | 61 | 0 | 1 |
+| Sneezeweed (`achillea-ptarmica`) | plants | 61 | 0 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 61 | 0 | 1 |
+| Barbed goatgrass (`aegilops-triuncialis`) | plants | 61 | 0 | 1 |
+| Barbados aloe (`aloe-vera`) | plants | 61 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 61 | 0 | 1 |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 61 | 0 | 1 |
+| Red amaranth (`amaranthus-cruentus`) | plants | 61 | 0 | 1 |
+| European beachgrass (`ammophila-arenaria`) | plants | 61 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 61 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 61 | 0 | 1 |
+| Bloodflower (`asclepias-curassavica`) | plants | 61 | 0 | 1 |
 | Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 61 | 0 | 1 |
-| Lawndaisy (`bellis-perennis`) | plants | 61 | 0 | 1 |
-| Rampion bellflower (`campanula-rapunculoides`) | plants | 61 | 0 | 1 |
-| Hammer sedge (`carex-hirta`) | plants | 61 | 0 | 1 |
-| Lesser knapweed (`centaurea-nigra`) | plants | 61 | 0 | 1 |
-| European centaury (`centaurium-erythraea`) | plants | 61 | 0 | 1 |
-| Branched centaury (`centaurium-pulchellum`) | plants | 61 | 0 | 1 |
-| Celandine (`chelidonium-majus`) | plants | 61 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 61 | 0 | 1 |
-| Smooth hawksbeard (`crepis-capillaris`) | plants | 61 | 0 | 1 |
-| Great globethistle (`echinops-sphaerocephalus`) | plants | 61 | 0 | 1 |
-| Red Fescue (`festuca-rubra`) | plants | 61 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 61 | 0 | 1 |
-| Matrimony vine (`lycium-barbarum`) | plants | 61 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 61 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 61 | 0 | 1 |
-| Woodland forget-me-not (`myosotis-sylvatica`) | plants | 61 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 61 | 0 | 1 |
-| Austrian pine (`pinus-nigra`) | plants | 61 | 0 | 1 |
-| Rough Bluegrass (`poa-trivialis`) | plants | 61 | 0 | 1 |
-| Silver cinquefoil (`potentilla-argentea`) | plants | 61 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 61 | 0 | 1 |
-| Sour cherry (`prunus-cerasus`) | plants | 61 | 0 | 1 |
-| Lesser Celandine (`ranunculus-ficaria`) | plants | 61 | 0 | 1 |
+| Lipsticktree (`bixa-orellana`) | plants | 61 | 0 | 1 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 61 | 0 | 1 |
+| Slender false brome (`brachypodium-sylvaticum`) | plants | 61 | 0 | 1 |
+| Cabbage (`brassica-oleracea`) | plants | 61 | 0 | 1 |
+| Corn brome (`bromus-squarrosus`) | plants | 61 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 61 | 0 | 1 |
+| Turkish wartycabbage (`bunias-orientalis`) | plants | 61 | 0 | 1 |
+| Pigeonpea (`cajanus-cajan`) | plants | 61 | 0 | 1 |
+| Pot marigold (`calendula-officinalis`) | plants | 61 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 61 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 61 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4441 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:41.348Z | 55 | 47 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:43.196Z | 1372 | 404 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:16.144Z | 8 | 7 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 650 | 116 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T044713Z__nybg-preserved-specimens__09978db67833",
+  "status": "complete",
+  "started_at": "2026-09-04T04:47:13.054Z",
+  "finished_at": "2026-09-04T04:47:13.055Z",
+  "actor_type": "adapter",
+  "actor_id": "nybg-preserved-specimens-snapshot@1.0.0",
+  "source_id": "nybg-preserved-specimens",
+  "source_registry_hash": "6273a63234d096750b3bafbefd563ce4ffbbc3e43f6ef191c4c3c096828123bc",
+  "adapter_id": "nybg-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "5a3a02dc57d168ab2653812500ec392541f48e6385ce794d5e64a61acb721d7f",
+  "code_commit": "90b82540551b3f4625662fb75b2b1ccba4239684",
+  "parameter_hash": "09978db67833594d60c5bc6aebe980d3613020366915133a8f5cc04d70874ea1",
+  "parameters": {
+    "stateCode": "AL",
+    "mode": "retained-archive-witnesses",
+    "profile": "nybg",
+    "datasetUrl": "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences",
+    "metadataUrl": "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences",
+    "usagePolicyUrl": "https://sweetgum.nybg.org/science/digital-collections/",
+    "datasetVersion": "1.103",
+    "publicationDate": "2026-08-25",
+    "datasetLastModified": "Tue, 25 Aug 2026 05:05:10 GMT",
+    "datasetEtag": null,
+    "archiveBytes": 736185551,
+    "archiveSha256": "84a5f69d746f1ec44fa89c63a9baf0fc5cb923dbb9330f91b6ac8660b159a483",
+    "occurrenceBytes": 3243235286,
+    "occurrenceSha256": "69c609fcb3da364149784f9afa9b78a6be61b95318b8e7e768244c1bebc35154",
+    "archiveAcquiredAt": "2026-09-04T04:13:16.000Z",
+    "preflightEvaluationId": "nybg-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "15db567268d433f1be51d463a35a779eeb54b312858471d77d1c294703cda7ea",
+    "targets": [
+      {
+        "pairKey": "01093:echinochloa-colona",
+        "recordId": "88ed5d3d-10a7-4759-b0a2-de93ead345d8",
+        "occurrenceId": "88ed5d3d-10a7-4759-b0a2-de93ead345d8",
+        "countyFips": "01093",
+        "stateCode": "AL",
+        "sourceState": "Alabama",
+        "sourceCounty": "Marion Co.",
+        "speciesId": "echinochloa-colona",
+        "scientificName": "Echinochloa colona",
+        "eventDate": "2008-10-21",
+        "year": 2008,
+        "institutionCode": "NY",
+        "collectionCode": "NY",
+        "catalogNumber": "1697445",
+        "rightsHolder": "The New York Botanical Garden",
+        "references": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=1025180"
+      }
+    ],
+    "candidatePairs": [
+      "01093:echinochloa-colona"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01093"
+    ],
+    "species_ids": [
+      "echinochloa-colona"
+    ],
+    "pair_keys": [
+      "01093:echinochloa-colona"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T044713Z__nybg-preserved-specimens__09978db67833/artifacts/nybg-source-identity.json",
+      "sha256": "67317c1bc3588c16543ba799fb4bd0f185de12436cfe1ecd3edb75029fa540d0",
+      "bytes": 862,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044713Z__nybg-preserved-specimens__09978db67833/artifacts/nybg-retained-witnesses.json.gz",
+      "sha256": "e06f2a44697eb2b3f6037db7a69e08b6662ed8902ccec486c7f2d58cbf2ec5bb",
+      "bytes": 353,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T044713Z__nybg-preserved-specimens__09978db67833/assertions.ndjson",
+      "sha256": "59999805aceeb69e9c2c2da9e6b84903599e3412948cb697d3e04daac549b809",
+      "bytes": 2332,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044713Z__nybg-preserved-specimens__09978db67833/reviews.ndjson",
+      "sha256": "9cc723378bd38e8d3b667d1fc2f532c4bae609fff5520f9e58ea5fd7dbb9fc51",
+      "bytes": 1086,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044713Z__nybg-preserved-specimens__09978db67833/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T044713Z__nybg-preserved-specimens__09978db67833/outcomes.ndjson",
+      "sha256": "2625232dc3698c30aca2a2bd16c2a832e712f87b1fe556d53da632a977f19c79",
+      "bytes": 709,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "NYBG physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source nybg-preserved-specimens --state AL --candidate-file ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-al-20260904-r1.json --output-root src/data/research/runs --pairs 01093:echinochloa-colona"
+}

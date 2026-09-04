@@ -1,26 +1,26 @@
 # West Virginia Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `6147`
+- Verified present: `6202`
 - Verified absent: `55`
 - Not detected: `23`
-- Researched unresolved: `19799`
-- Not researched: `111696`
-- Determination coverage: `4.50%`
-- Research coverage: `18.90%`
-- Explicit outcome coverage: `18.8963%`
-- Applicable protocol cells: `326`
+- Researched unresolved: `19789`
+- Not researched: `111651`
+- Determination coverage: `4.54%`
+- Research coverage: `18.93%`
+- Explicit outcome coverage: `18.9290%`
+- Applicable protocol cells: `359`
 - Current complete protocol cells: `97`
-- Protocol completion: `33.74%`
-- Current protocol completion: `29.75%`
-- Evidence records: `7619`
-- Research runs: `29`
+- Protocol completion: `30.64%`
+- Current protocol completion: `27.02%`
+- Evidence records: `7674`
+- Research runs: `31`
 - Rejection records: `216`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 54 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 54 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 54 | 0 | 1 |
 | Smooth Brome (`bromus-inermis`) | plants | 54 | 0 | 1 |
 | Celandine (`chelidonium-majus`) | plants | 54 | 0 | 1 |
-| Smooth hawksbeard (`crepis-capillaris`) | plants | 54 | 0 | 1 |
+| Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 54 | 0 | 1 |
+| Gallant Soldier (`galinsoga-parviflora`) | plants | 54 | 0 | 1 |
+| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 54 | 0 | 1 |
 | Common nipplewort (`lapsana-communis`) | plants | 54 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 54 | 0 | 1 |
-| Field forget-me-not (`myosotis-arvensis`) | plants | 54 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 54 | 0 | 1 |
+| White Sweet Clover (`melilotus-albus`) | plants | 54 | 0 | 1 |
+| Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 54 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 54 | 0 | 1 |
+| Blindeyes (`papaver-dubium`) | plants | 54 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 54 | 0 | 1 |
+| Norway spruce (`picea-abies`) | plants | 54 | 0 | 1 |
+| Scots pine (`pinus-sylvestris`) | plants | 54 | 0 | 1 |
+| Sour cherry (`prunus-cerasus`) | plants | 54 | 0 | 1 |
+| Giant Foxtail (`setaria-faberi`) | plants | 54 | 0 | 1 |
 | Maidenstears (`silene-vulgaris`) | plants | 54 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 53 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 55 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 55 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 55 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 55 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 55 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 55 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 55 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 55 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 55 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 55 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 55 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 55 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 55 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 55 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 55 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 55 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 55 | 0 |
+| Grass-like starwort (`stellaria-graminea`) | plants | 54 | 0 | 1 |
+| Yellow Salsify (`tragopogon-dubius`) | plants | 54 | 0 | 1 |
+| Ivyleaf Speedwell (`veronica-hederifolia`) | plants | 54 | 0 | 1 |
+| Common Speedwell (`veronica-officinalis`) | plants | 54 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 53 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3089 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:14.994Z | 9 | 8 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:26.102Z | 51 | 40 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:52:00.518Z | 4 | 4 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 810 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

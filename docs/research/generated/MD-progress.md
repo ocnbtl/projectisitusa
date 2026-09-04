@@ -1,26 +1,26 @@
 # Maryland Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `24`
 - County-species pairs: `60096`
-- Verified present: `2620`
+- Verified present: `3037`
 - Verified absent: `24`
 - Not detected: `0`
-- Researched unresolved: `8833`
-- Not researched: `48619`
-- Determination coverage: `4.40%`
-- Research coverage: `19.10%`
-- Explicit outcome coverage: `19.0978%`
-- Applicable protocol cells: `327`
+- Researched unresolved: `8640`
+- Not researched: `48395`
+- Determination coverage: `5.09%`
+- Research coverage: `19.47%`
+- Explicit outcome coverage: `19.4705%`
+- Applicable protocol cells: `440`
 - Current complete protocol cells: `94`
-- Protocol completion: `32.72%`
-- Current protocol completion: `28.75%`
-- Evidence records: `2913`
-- Research runs: `29`
+- Protocol completion: `24.32%`
+- Current protocol completion: `21.36%`
+- Evidence records: `3330`
+- Research runs: `31`
 - Rejection records: `943`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 23 | 0 | 1 |
-| Branched centaury (`centaurium-pulchellum`) | plants | 23 | 0 | 1 |
-| Weeping willow (`salix-babylonica`) | plants | 23 | 0 | 1 |
-| Roundfruit rush (`juncus-compressus`) | plants | 22 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 24 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 24 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 24 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 24 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 24 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 24 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 24 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 24 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 24 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 24 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 24 | 0 |
-| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 24 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 24 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 24 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 24 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 24 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 24 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 24 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 24 | 0 |
-| Calamus (`acorus-calamus`) | plants | 0 | 24 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 24 | 0 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 23 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 23 | 0 | 1 |
+| Bur chervil (`anthriscus-caucalis`) | plants | 23 | 0 | 1 |
+| Common bamboo (`bambusa-vulgaris`) | plants | 23 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 23 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 23 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 23 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 23 | 0 | 1 |
+| Hammer sedge (`carex-hirta`) | plants | 23 | 0 | 1 |
+| Caraway (`carum-carvi`) | plants | 23 | 0 | 1 |
+| European chickweed (`cerastium-pumilum`) | plants | 23 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 23 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 23 | 0 | 1 |
+| Sweet fennel (`foeniculum-vulgare`) | plants | 23 | 0 | 1 |
+| Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 23 | 0 | 1 |
+| Wall bedstraw (`galium-parisiense`) | plants | 23 | 0 | 1 |
+| Small geranium (`geranium-pusillum`) | plants | 23 | 0 | 1 |
+| Mouseear hawkweed (`hieracium-pilosella`) | plants | 23 | 0 | 1 |
+| Common barley (`hordeum-vulgare`) | plants | 23 | 0 | 1 |
+| Black henbane (`hyoscyamus-niger`) | plants | 23 | 0 | 1 |
+| Garden lettuce (`lactuca-sativa`) | plants | 23 | 0 | 1 |
+| Fall dandelion (`leontodon-autumnalis`) | plants | 23 | 0 | 1 |
+| Gardencress pepperweed (`lepidium-sativum`) | plants | 23 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 23 | 0 | 1 |
+| Crown mayweed (`matricaria-chamomilla`) | plants | 23 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 89 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:10.945Z | 7 | 5 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:01.660Z | 411 | 209 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:40.943Z | 6 | 5 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 261 | 110 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

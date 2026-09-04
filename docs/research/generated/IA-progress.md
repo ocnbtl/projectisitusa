@@ -1,26 +1,26 @@
 # Iowa Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6106`
+- Verified present: `6174`
 - Verified absent: `99`
 - Not detected: `9`
-- Researched unresolved: `40938`
-- Not researched: `200744`
-- Determination coverage: `2.50%`
-- Research coverage: `19.02%`
-- Explicit outcome coverage: `19.0209%`
-- Applicable protocol cells: `295`
-- Current complete protocol cells: `117`
-- Protocol completion: `44.07%`
-- Current protocol completion: `39.66%`
-- Evidence records: `6472`
-- Research runs: `31`
+- Researched unresolved: `40918`
+- Not researched: `200696`
+- Determination coverage: `2.53%`
+- Research coverage: `19.04%`
+- Explicit outcome coverage: `19.0402%`
+- Applicable protocol cells: `317`
+- Current complete protocol cells: `118`
+- Protocol completion: `41.32%`
+- Current protocol completion: `37.22%`
+- Evidence records: `6540`
+- Research runs: `33`
 - Rejection records: `316`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 98 | 0 | 1 |
+| Yellow Rocket (`barbarea-vulgaris`) | plants | 98 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 98 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 98 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 98 | 0 | 1 |
 | Rampion bellflower (`campanula-rapunculoides`) | plants | 98 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 98 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 98 | 0 | 1 |
+| Diffuse Knapweed (`centaurea-diffusa`) | plants | 98 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 98 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 98 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 98 | 0 | 1 |
+| Yellow spring bedstraw (`galium-verum`) | plants | 98 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 98 | 0 | 1 |
 | Common Mallow (`malva-neglecta`) | plants | 98 | 0 | 1 |
 | High mallow (`malva-sylvestris`) | plants | 98 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 98 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 98 | 0 | 1 |
+| White Sweet Clover (`melilotus-albus`) | plants | 98 | 0 | 1 |
+| Marshpepper knotweed (`persicaria-hydropiper`) | plants | 98 | 0 | 1 |
 | Lady's Thumb (`persicaria-maculosa`) | plants | 98 | 0 | 1 |
 | Sulphur Cinquefoil (`potentilla-recta`) | plants | 98 | 0 | 1 |
+| Laurel willow (`salix-pentandra`) | plants | 98 | 0 | 1 |
 | Foxtail millet (`setaria-italica`) | plants | 98 | 0 | 1 |
+| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 98 | 0 | 1 |
 | Climbing Nightshade (`solanum-dulcamara`) | plants | 98 | 0 | 1 |
 | Field Sowthistle (`sonchus-arvensis`) | plants | 98 | 0 | 1 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 98 | 0 | 1 |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 97 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 97 | 0 | 1 |
-| Common lilac (`syringa-vulgaris`) | plants | 97 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 97 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 96 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 99 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 99 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 99 | 1 |
+| Grass-like starwort (`stellaria-graminea`) | plants | 98 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 921 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:53.324Z | 36 | 30 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:38.474Z | 61 | 34 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:18.968Z | 7 | 6 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 297 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

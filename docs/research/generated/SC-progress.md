@@ -1,26 +1,26 @@
 # South Carolina Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `5271`
+- Verified present: `5349`
 - Verified absent: `46`
 - Not detected: `0`
-- Researched unresolved: `16455`
-- Not researched: `93412`
-- Determination coverage: `4.62%`
-- Research coverage: `18.90%`
-- Explicit outcome coverage: `18.9019%`
-- Applicable protocol cells: `399`
+- Researched unresolved: `16435`
+- Not researched: `93354`
+- Determination coverage: `4.68%`
+- Research coverage: `18.95%`
+- Explicit outcome coverage: `18.9523%`
+- Applicable protocol cells: `439`
 - Current complete protocol cells: `80`
-- Protocol completion: `23.31%`
-- Current protocol completion: `20.05%`
-- Evidence records: `5617`
-- Research runs: `32`
+- Protocol completion: `21.18%`
+- Current protocol completion: `18.22%`
+- Evidence records: `5695`
+- Research runs: `34`
 - Rejection records: `276`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 45 | 0 | 1 |
+| Mugwort (`artemisia-vulgaris`) | plants | 45 | 0 | 1 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 45 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 45 | 0 | 1 |
 | Tea (`camellia-sinensis`) | plants | 45 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 45 | 0 | 1 |
 | Spadeleaf (`centella-asiatica`) | plants | 45 | 0 | 1 |
-| Ricefield flatsedge (`cyperus-iria`) | plants | 45 | 0 | 1 |
-| Sweet fennel (`foeniculum-vulgare`) | plants | 45 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 45 | 0 | 1 |
+| Ethiopian rattlebox (`crotalaria-brevidens`) | plants | 45 | 0 | 1 |
+| Chinese lovegrass (`eragrostis-unioloides`) | plants | 45 | 0 | 1 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 45 | 0 | 1 |
+| Cathedral bells (`kalanchoe-pinnata`) | plants | 45 | 0 | 1 |
 | Cream-anther field pepperwort (`lepidium-campestre`) | plants | 45 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 45 | 0 | 1 |
+| Sinkwa towelsponge (`luffa-acutangula`) | plants | 45 | 0 | 1 |
+| Moneywort (`lysimachia-nummularia`) | plants | 45 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 45 | 0 | 1 |
+| Wartremoving herb (`murdannia-keisak`) | plants | 45 | 0 | 1 |
+| Poet's narcissus (`narcissus-poeticus`) | plants | 45 | 0 | 1 |
+| Apple of Peru (`nicandra-physalodes`) | plants | 45 | 0 | 1 |
+| Sweet basil (`ocimum-basilicum`) | plants | 45 | 0 | 1 |
 | Proso millet (`panicum-miliaceum`) | plants | 45 | 0 | 1 |
+| Opium poppy (`papaver-somniferum`) | plants | 45 | 0 | 1 |
 | Bulbous bluegrass (`poa-bulbosa`) | plants | 45 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 45 | 0 | 1 |
-| German knotgrass (`scleranthus-annuus`) | plants | 45 | 0 | 1 |
-| French tamarisk (`tamarix-gallica`) | plants | 45 | 0 | 1 |
-| Seashore vervain (`verbena-litoralis`) | plants | 45 | 0 | 1 |
-| Weeping willow (`salix-babylonica`) | plants | 44 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 46 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 46 | 2 |
-| Silver fir (`abies-alba`) | plants | 0 | 46 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 46 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 46 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 46 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 46 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 46 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 46 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 46 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 46 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 46 | 0 |
+| Castor Bean (`ricinus-communis`) | plants | 45 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2977 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:54.805Z | 33 | 32 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:01.219Z | 50 | 45 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:34.115Z | 28 | 21 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 156 | 107 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

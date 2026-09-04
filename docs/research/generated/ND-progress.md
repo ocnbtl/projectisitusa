@@ -1,26 +1,26 @@
 # North Dakota Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `1737`
+- Verified present: `1766`
 - Verified absent: `53`
 - Not detected: `0`
-- Researched unresolved: `23324`
-- Not researched: `107598`
-- Determination coverage: `1.35%`
-- Research coverage: `18.92%`
-- Explicit outcome coverage: `18.9237%`
-- Applicable protocol cells: `225`
+- Researched unresolved: `23322`
+- Not researched: `107571`
+- Determination coverage: `1.37%`
+- Research coverage: `18.94%`
+- Explicit outcome coverage: `18.9440%`
+- Applicable protocol cells: `244`
 - Current complete protocol cells: `90`
-- Protocol completion: `45.78%`
-- Current protocol completion: `40.00%`
-- Evidence records: `2115`
-- Research runs: `33`
+- Protocol completion: `42.21%`
+- Current protocol completion: `36.89%`
+- Evidence records: `2144`
+- Research runs: `35`
 - Rejection records: `189`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Crested wheatgrass (`agropyron-cristatum`) | plants | 52 | 0 | 1 |
+| Desert wheatgrass (`agropyron-desertorum`) | plants | 52 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 52 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 52 | 0 | 1 |
 | Pale madwort (`alyssum-alyssoides`) | plants | 52 | 0 | 1 |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 52 | 0 | 1 |
 | Mediterranean amaranth (`amaranthus-graecizans`) | plants | 52 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 52 | 0 | 1 |
+| Woolly burdock (`arctium-tomentosum`) | plants | 52 | 0 | 1 |
+| Horseradish (`armoracia-rusticana`) | plants | 52 | 0 | 1 |
 | Chickpea milkvetch (`astragalus-cicer`) | plants | 52 | 0 | 1 |
 | Hoary Alyssum (`berteroa-incana`) | plants | 52 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 52 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 52 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 52 | 0 | 1 |
 | Littlepod False Flax (`camelina-microcarpa`) | plants | 52 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 52 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 52 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 52 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 52 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 52 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 52 | 0 | 1 |
 | Red Fescue (`festuca-rubra`) | plants | 52 | 0 | 1 |
 | Flower of an hour (`hibiscus-trionum`) | plants | 52 | 0 | 1 |
 | Common barley (`hordeum-vulgare`) | plants | 52 | 0 | 1 |
 | Roundfruit rush (`juncus-compressus`) | plants | 52 | 0 | 1 |
 | European stickseed (`lappula-squarrosa`) | plants | 52 | 0 | 1 |
-| Clasping pepperweed (`lepidium-perfoliatum`) | plants | 52 | 0 | 1 |
-| Common flax (`linum-usitatissimum`) | plants | 52 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 52 | 0 | 1 |
-| Proso millet (`panicum-miliaceum`) | plants | 52 | 0 | 1 |
-| Annual canarygrass (`phalaris-canariensis`) | plants | 52 | 0 | 1 |
-| Russian wildrye (`psathyrostachys-juncea`) | plants | 52 | 0 | 1 |
-| Austrian yellowcress (`rorippa-austriaca`) | plants | 52 | 0 | 1 |
-| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 52 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 51 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 987 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:28.494Z | 35 | 30 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:25.727Z | 27 | 25 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:02.759Z | 2 | 2 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 175 | 123 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

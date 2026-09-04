@@ -1,26 +1,26 @@
 # Mississippi Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `5446`
+- Verified present: `5512`
 - Verified absent: `82`
 - Not detected: `5`
-- Researched unresolved: `33258`
-- Not researched: `166537`
-- Determination coverage: `2.69%`
-- Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8922%`
-- Applicable protocol cells: `374`
+- Researched unresolved: `33209`
+- Not researched: `166520`
+- Determination coverage: `2.72%`
+- Research coverage: `18.90%`
+- Explicit outcome coverage: `18.9005%`
+- Applicable protocol cells: `389`
 - Current complete protocol cells: `115`
-- Protocol completion: `34.22%`
-- Current protocol completion: `30.75%`
-- Evidence records: `7806`
-- Research runs: `30`
+- Protocol completion: `32.90%`
+- Current protocol completion: `29.56%`
+- Evidence records: `7872`
+- Research runs: `32`
 - Rejection records: `754`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,11 +32,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 81 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 81 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 81 | 0 | 1 |
+| European chickweed (`cerastium-pumilum`) | plants | 81 | 0 | 1 |
+| Chinese fir (`cunninghamia-lanceolata`) | plants | 81 | 0 | 1 |
+| Variable flatsedge (`cyperus-difformis`) | plants | 81 | 0 | 1 |
+| Fimbry (`fimbristylis-littoralis`) | plants | 81 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 81 | 0 | 1 |
-| Swordfern (`macrothelypteris-torresiana`) | plants | 81 | 0 | 1 |
 | Low mallow (`malva-pusilla`) | plants | 81 | 0 | 1 |
 | White Sweet Clover (`melilotus-albus`) | plants | 81 | 0 | 1 |
+| Tussock paspalum (`paspalum-quadrifarium`) | plants | 81 | 0 | 1 |
 | Grass-like starwort (`stellaria-graminea`) | plants | 81 | 0 | 1 |
+| Swordfern (`macrothelypteris-torresiana`) | plants | 80 | 0 | 1 |
+| Puncturevine (`tribulus-terrestris`) | plants | 80 | 0 | 1 |
+| Gulf cockspur grass (`echinochloa-crus-pavonis`) | plants | 79 | 0 | 1 |
+| Gophertail lovegrass (`eragrostis-ciliaris`) | plants | 79 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 82 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 82 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 82 | 1 |
@@ -46,17 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cedar wattle (`acacia-elata`) | plants | 0 | 82 | 0 |
 | Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 82 | 0 |
 | New Zealand burr (`acaena-magellanica`) | plants | 0 | 82 | 0 |
-| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 82 | 0 |
-| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 82 | 0 |
-| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 82 | 0 |
-| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 82 | 0 |
-| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 82 | 0 |
-| Litchi mite (`aceria-litchii`) | wildlife | 0 | 82 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 82 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 82 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 82 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 82 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2445 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:21.727Z | 13 | 12 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:17.157Z | 57 | 30 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:54.539Z | 9 | 9 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 779 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

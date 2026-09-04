@@ -1,26 +1,26 @@
 # Montana Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `5736`
+- Verified present: `5760`
 - Verified absent: `56`
 - Not detected: `0`
-- Researched unresolved: `23646`
-- Not researched: `110786`
-- Determination coverage: `4.13%`
-- Research coverage: `20.99%`
-- Explicit outcome coverage: `20.9936%`
-- Applicable protocol cells: `460`
+- Researched unresolved: `23643`
+- Not researched: `110765`
+- Determination coverage: `4.15%`
+- Research coverage: `21.01%`
+- Explicit outcome coverage: `21.0085%`
+- Applicable protocol cells: `463`
 - Current complete protocol cells: `74`
-- Protocol completion: `18.91%`
-- Current protocol completion: `16.09%`
-- Evidence records: `5839`
-- Research runs: `35`
+- Protocol completion: `18.79%`
+- Current protocol completion: `15.98%`
+- Evidence records: `5863`
+- Research runs: `37`
 - Rejection records: `137`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 55 | 0 | 1 |
 | Bishop's Goutweed (`aegopodium-podagraria`) | plants | 55 | 0 | 1 |
 | Hollyhock (`alcea-rosea`) | plants | 55 | 0 | 1 |
 | Dill (`anethum-graveolens`) | plants | 55 | 0 | 1 |
@@ -45,6 +46,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 55 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 55 | 0 | 1 |
 | Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 55 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 55 | 0 | 1 |
 | Red hempnettle (`galeopsis-ladanum`) | plants | 55 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 55 | 0 | 1 |
 | Mammoth wildrye (`leymus-racemosus`) | plants | 55 | 0 | 1 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Raceme catnip (`nepeta-racemosa`) | plants | 55 | 0 | 1 |
 | Blindeyes (`papaver-dubium`) | plants | 55 | 0 | 1 |
 | Opium poppy (`papaver-somniferum`) | plants | 55 | 0 | 1 |
-| Solidstem burnet saxifrage (`pimpinella-saxifraga`) | plants | 55 | 0 | 1 |
-| Weld (`reseda-luteola`) | plants | 55 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2066 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:23.862Z | 1603 | 269 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:19.894Z | 23 | 21 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:57.417Z | 1 | 1 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 104 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

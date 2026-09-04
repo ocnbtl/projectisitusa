@@ -1,26 +1,26 @@
 # Arkansas Research Progress
 
-Generated: `2026-09-03T00:00:00.000Z`
+Generated: `2026-09-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `6510`
+- Verified present: `6881`
 - Verified absent: `75`
 - Not detected: `0`
-- Researched unresolved: `29212`
-- Not researched: `152003`
-- Determination coverage: `3.51%`
-- Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0612%`
-- Applicable protocol cells: `372`
+- Researched unresolved: `29048`
+- Not researched: `151796`
+- Determination coverage: `3.70%`
+- Research coverage: `19.17%`
+- Explicit outcome coverage: `19.1715%`
+- Applicable protocol cells: `439`
 - Current complete protocol cells: `128`
-- Protocol completion: `37.90%`
-- Current protocol completion: `34.41%`
-- Evidence records: `9825`
-- Research runs: `33`
+- Protocol completion: `32.12%`
+- Current protocol completion: `29.16%`
+- Evidence records: `10196`
+- Research runs: `35`
 - Rejection records: `632`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Lambsquarters (`chenopodium-album`) | plants | 74 | 0 | 1 |
-| Ricefield flatsedge (`cyperus-iria`) | plants | 74 | 0 | 1 |
-| Wall bedstraw (`galium-parisiense`) | plants | 74 | 0 | 1 |
-| Dovefoot Geranium (`geranium-molle`) | plants | 74 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 74 | 0 | 1 |
-| Lesser Swinecress (`lepidium-didymum`) | plants | 74 | 0 | 1 |
+| Smooth joyweed (`alternanthera-paronychioides`) | plants | 74 | 0 | 1 |
+| Pale madwort (`alyssum-alyssoides`) | plants | 74 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 74 | 0 | 1 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 74 | 0 | 1 |
+| Cabbage (`brassica-oleracea`) | plants | 74 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 74 | 0 | 1 |
+| Coriander (`coriandrum-sativum`) | plants | 74 | 0 | 1 |
+| Kenilworth ivy (`cymbalaria-muralis`) | plants | 74 | 0 | 1 |
+| Bristly dogstail grass (`cynosurus-echinatus`) | plants | 74 | 0 | 1 |
+| Brown flatsedge (`cyperus-fuscus`) | plants | 74 | 0 | 1 |
+| Keeled wormseed (`dysphania-carinata`) | plants | 74 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 74 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 74 | 0 | 1 |
+| Lawn marshpennywort (`hydrocotyle-sibthorpioides`) | plants | 74 | 0 | 1 |
+| Sweetpotato (`ipomoea-batatas`) | plants | 74 | 0 | 1 |
+| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 74 | 0 | 1 |
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 74 | 0 | 1 |
-| Wartremoving herb (`murdannia-keisak`) | plants | 74 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 74 | 0 | 1 |
+| Japanese yellow loosestrife (`lysimachia-japonica`) | plants | 74 | 0 | 1 |
+| Common Mallow (`malva-neglecta`) | plants | 74 | 0 | 1 |
+| White Sweet Clover (`melilotus-albus`) | plants | 74 | 0 | 1 |
 | Poet's narcissus (`narcissus-poeticus`) | plants | 74 | 0 | 1 |
 | Apple of Peru (`nicandra-physalodes`) | plants | 74 | 0 | 1 |
-| White willow (`salix-alba`) | plants | 74 | 0 | 1 |
-| German knotgrass (`scleranthus-annuus`) | plants | 74 | 0 | 1 |
-| Sorghum (`sorghum-bicolor`) | plants | 74 | 0 | 1 |
-| French tamarisk (`tamarix-gallica`) | plants | 74 | 0 | 1 |
-| Puncturevine (`tribulus-terrestris`) | plants | 74 | 0 | 1 |
-| Purpletop vervain (`verbena-bonariensis`) | plants | 74 | 0 | 1 |
-| Common Periwinkle (`vinca-minor`) | plants | 74 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 73 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 72 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 75 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 75 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 75 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 75 | 1 |
+| Sweet basil (`ocimum-basilicum`) | plants | 74 | 0 | 1 |
+| Torpedo grass (`panicum-repens`) | plants | 74 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,6 +82,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4459 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:36.035Z | 37 | 31 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:15.740Z | 281 | 134 |
+| TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:55.378Z | 90 | 32 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1201 | 154 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
