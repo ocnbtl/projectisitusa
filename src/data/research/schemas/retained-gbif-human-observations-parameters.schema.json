@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/retained-gbif-human-observations-parameters.schema.json",
+  "title": "Retained CC0 GBIF human-observation witness parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stateCode", "mode", "profile", "datasetKey", "datasetDoi", "datasetUrl", "metadataUrl",
+    "usagePolicyUrl", "datasetVersion", "datasetLastModified", "archiveBytes", "archiveSha256",
+    "occurrenceBytes", "occurrenceSha256", "emlSha256", "metaSha256", "archiveVerifiedAt",
+    "preflightEvaluationId", "targetPairSetSha256", "targets", "candidatePairs"
+  ],
+  "properties": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "mode": { "const": "retained-archive-witnesses" },
+    "profile": { "enum": ["blm-nisims", "gbif-ipams"] },
+    "datasetKey": { "type": "string", "pattern": "^[0-9a-f-]{36}$" },
+    "datasetDoi": { "type": "string", "pattern": "^10\\.15468/[a-z0-9]+$" },
+    "datasetUrl": { "type": "string", "format": "uri" },
+    "metadataUrl": { "type": "string", "format": "uri" },
+    "usagePolicyUrl": { "type": "string", "format": "uri" },
+    "datasetVersion": { "type": "string", "minLength": 1 },
+    "datasetLastModified": { "type": "string", "format": "date-time" },
+    "archiveBytes": { "type": "integer", "minimum": 1 },
+    "archiveSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "occurrenceBytes": { "type": "integer", "minimum": 1 },
+    "occurrenceSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "emlSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "metaSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "archiveVerifiedAt": { "type": "string", "format": "date-time" },
+    "preflightEvaluationId": { "type": "string", "pattern": "^(blm-nisims|gbif-ipams)-preflight-[0-9]{8}-r[0-9]+$" },
+    "targetPairSetSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "pairKey", "occurrenceId", "countyFips", "stateCode", "sourceState", "sourceCounty",
+          "speciesId", "scientificName", "eventDate", "latitude", "longitude"
+        ],
+        "properties": {
+          "pairKey": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
+          "occurrenceId": { "type": "string", "minLength": 1, "maxLength": 500 },
+          "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+          "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "sourceState": { "type": "string", "minLength": 1 },
+          "sourceCounty": { "type": "string", "minLength": 1 },
+          "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "scientificName": { "type": "string", "minLength": 1 },
+          "eventDate": { "type": "string", "format": "date" },
+          "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+          "longitude": { "type": "number", "minimum": -180, "maximum": 180 }
+        }
+      }
+    },
+    "candidatePairs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" }
+    }
+  }
+}

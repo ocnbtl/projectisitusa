@@ -33,6 +33,11 @@ import {
   type RetainedHerbariumTarget,
 } from "./adapters/retained-herbarium-preserved-specimens";
 import {
+  blmNisimsRetainedAdapter,
+  gbifIpamsRetainedAdapter,
+  type RetainedGbifObservationTarget,
+} from "./adapters/retained-gbif-human-observations";
+import {
   INATURALIST_GBIF_DATASET_KEY,
   inaturalistGbifResearchGradeAdapter,
 } from "./adapters/inaturalist-gbif-research-grade";
@@ -173,6 +178,27 @@ type CandidateFile = {
     preflightEvaluationId: string;
     targetPairSetSha256: string;
     targets: RetainedHerbariumTarget[];
+  };
+  retainedGbifObservations?: {
+    mode: "retained-archive-witnesses";
+    profile: "blm-nisims" | "gbif-ipams";
+    datasetKey: string;
+    datasetDoi: string;
+    datasetUrl: string;
+    metadataUrl: string;
+    usagePolicyUrl: string;
+    datasetVersion: string;
+    datasetLastModified: string;
+    archiveBytes: number;
+    archiveSha256: string;
+    occurrenceBytes: number;
+    occurrenceSha256: string;
+    emlSha256: string;
+    metaSha256: string;
+    archiveVerifiedAt: string;
+    preflightEvaluationId: string;
+    targetPairSetSha256: string;
+    targets: RetainedGbifObservationTarget[];
   };
   eddmapsReplay?: {
     mode: "committed-snapshot-replay";
@@ -541,6 +567,12 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
     return usgsBbsRouteStartAdapter;
   }
+  if (sourceId === blmNisimsRetainedAdapter.sourceId) {
+    return blmNisimsRetainedAdapter;
+  }
+  if (sourceId === gbifIpamsRetainedAdapter.sourceId) {
+    return gbifIpamsRetainedAdapter;
+  }
   if (sourceId === inaturalistGbifResearchGradeAdapter.sourceId) {
     return inaturalistGbifResearchGradeAdapter;
   }
@@ -675,6 +707,26 @@ function buildParameters(
     return {
       stateCode,
       ...candidateFile.retainedHerbarium,
+      targetPairSetSha256: sha256(candidatePairs.join("\n")),
+      targets,
+      candidatePairs,
+    };
+  }
+  if (
+    sourceId === blmNisimsRetainedAdapter.sourceId
+    || sourceId === gbifIpamsRetainedAdapter.sourceId
+  ) {
+    if (!candidateFile.retainedGbifObservations || candidateFile.sourceId !== sourceId) {
+      throw new Error("Retained GBIF human-observation research requires its committed archive-witness plan.");
+    }
+    const selected = new Set(candidatePairs);
+    const targets = candidateFile.retainedGbifObservations.targets.filter((target) => selected.has(target.pairKey));
+    if (targets.length !== candidatePairs.length) {
+      throw new Error("Retained GBIF human-observation witness identities do not cover every selected candidate pair.");
+    }
+    return {
+      stateCode,
+      ...candidateFile.retainedGbifObservations,
       targetPairSetSha256: sha256(candidatePairs.join("\n")),
       targets,
       candidatePairs,
@@ -1006,6 +1058,14 @@ async function main() {
               providerNetworkRequests: 0,
               replaySource: "Retained licensed preserved-specimen witness rows selected by the committed complete-archive preflight.",
               stabilityGate: "The committed archive, occurrence, target-pair, and witness identities must match the sealed plan.",
+              additionalRequests: 0,
+            }
+        : options.sourceId === blmNisimsRetainedAdapter.sourceId
+            || options.sourceId === gbifIpamsRetainedAdapter.sourceId
+          ? {
+              providerNetworkRequests: 0,
+              replaySource: "Retained CC0 human-observation witness rows selected by the committed complete-archive preflight.",
+              stabilityGate: "The committed dataset, archive, occurrence, target-pair, and witness identities must match the sealed plan.",
               additionalRequests: 0,
             }
         : options.sourceId === eddMapsSnapshotReplayAdapter.sourceId

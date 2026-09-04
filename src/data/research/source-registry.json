@@ -328,6 +328,34 @@
       }
     },
     {
+      "id": "blm-nisims",
+      "label": "BLM National Invasive Species Information Management System plants",
+      "aliases": ["BLM NISIMS", "National Invasive Species Information Management System"],
+      "authority": "U.S. Bureau of Land Management via GBIF-US",
+      "tier": "official-national",
+      "homepage": "https://www.gbif.org/dataset/cc63e998-fe1b-468d-94f1-6afcf494d0e4",
+      "access": "bulk-download",
+      "geographicScope": ["Sampled BLM lands in the United States"],
+      "evidenceCapabilities": ["recorded-present"],
+      "negativeSemantics": "none",
+      "refreshCadenceDays": 365,
+      "status": "operational",
+      "adapter": null,
+      "caveat": "Positive introduced invasive-plant percent-cover observations support historical recorded presence at sampled locations only. Zero-cover, absent, unmatched, and rejected rows are source silence and never support county absence or survey non-detection.",
+      "researchAdapter": {
+        "id": "blm-nisims-retained-snapshot",
+        "module": "scripts/research/adapters/retained-gbif-human-observations.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/retained-gbif-human-observations-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "The source scientific name must resolve exactly and unambiguously to one Project Isitusa catalog species after Unicode, whitespace, and case normalization. Unmatched and ambiguous names never publish.",
+        "geographyMatchingPolicy": "The retained point coordinate must fall inside exactly one active county equivalent in the provider-declared state. Missing, outside-state, and boundary-ambiguous coordinates never publish.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
+    },
+    {
       "id": "blm-aim-terrestrial-invasive-plants",
       "label": "BLM AIM Terrestrial Invasive Plant Indicators",
       "aliases": ["BLM Assessment, Inventory, and Monitoring terrestrial species indicators"],
@@ -630,7 +658,19 @@
       "refreshCadenceDays": 180,
       "status": "operational",
       "adapter": "scripts/import-gbif-ipams-alabama-plants.ts",
-      "caveat": "Dataset-specific observation evidence only."
+      "caveat": "Dataset-specific nonnative human-observation evidence supports historical recorded presence only. Missing or rejected records never support county absence or non-detection.",
+      "researchAdapter": {
+        "id": "gbif-ipams-retained-snapshot",
+        "module": "scripts/research/adapters/retained-gbif-human-observations.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/retained-gbif-human-observations-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "The source scientific name must resolve exactly and unambiguously to one Project Isitusa catalog species after Unicode, whitespace, and case normalization. Unmatched and ambiguous names never publish.",
+        "geographyMatchingPolicy": "The provider state and county must resolve to the same active county equivalent as the retained point coordinate. Missing, conflicting, outside-state, and boundary-ambiguous geography never publishes.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "gbif-ebird",

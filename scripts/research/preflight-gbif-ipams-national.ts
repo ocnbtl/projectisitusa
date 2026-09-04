@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import { parse } from "csv-parse/sync";
@@ -40,6 +40,16 @@ const SOURCE_ID = "gbif-ipams";
 const DATASET_KEY = "d587c7e5-d442-437a-a6d7-d1a78ecf2300";
 const EXPECTED_LICENSE = "https://creativecommons.org/publicdomain/zero/1.0/legalcode";
 const EXPECTED_DATASET = "Invasive Plant Atlas of the MidSouth (IPAMS)";
+const DATASET_DOI = "10.15468/3j3ueb";
+const DATASET_URL = "https://ipt.gbif.us/archive.do?r=ipams";
+const METADATA_URL = "https://ipt.gbif.us/eml.do?r=ipams";
+const USAGE_POLICY_URL = "https://creativecommons.org/publicdomain/zero/1.0/";
+const DATASET_VERSION = "1.4";
+const DATASET_LAST_MODIFIED = "2020-07-31T18:39:03Z";
+const ARCHIVE_BYTES = 898409;
+const ARCHIVE_SHA256 = "d9fed59d6b61541b9234c330990703fc823ad0a919acf8b2639f19a0b9a64e4b";
+const ARCHIVE_VERIFIED_AT = "2026-09-03T17:16:55.091Z";
+const PREFLIGHT_EVALUATION_ID = "gbif-ipams-preflight-20260904-r1";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -61,7 +71,22 @@ function parseArguments(argv: string[]) {
   const directoryIndex = argv.indexOf("--source-directory");
   const sourceDirectory = argv[directoryIndex + 1];
   assert(directoryIndex >= 0 && sourceDirectory, "--source-directory is required.");
-  return { sourceDirectory: path.resolve(sourceDirectory) };
+  const planOutputIndex = argv.indexOf("--plan-output-directory");
+  const planOutputDirectory = planOutputIndex >= 0 ? argv[planOutputIndex + 1] : undefined;
+  assert(planOutputIndex < 0 || planOutputDirectory, "--plan-output-directory requires a value.");
+  const excludePlanIndex = argv.indexOf("--exclude-plan-directory");
+  const excludePlanDirectory = excludePlanIndex >= 0 ? argv[excludePlanIndex + 1] : undefined;
+  assert(excludePlanIndex < 0 || excludePlanDirectory, "--exclude-plan-directory requires a value.");
+  const excludeSourceIndex = argv.indexOf("--exclude-source-id");
+  const excludeSourceId = excludeSourceIndex >= 0 ? argv[excludeSourceIndex + 1] : undefined;
+  assert(excludeSourceIndex < 0 || excludeSourceId, "--exclude-source-id requires a value.");
+  assert(Boolean(excludePlanDirectory) === Boolean(excludeSourceId), "Cross-source exclusion requires both directory and source ID.");
+  return {
+    sourceDirectory: path.resolve(sourceDirectory),
+    planOutputDirectory: planOutputDirectory ? path.resolve(planOutputDirectory) : null,
+    excludePlanDirectory: excludePlanDirectory ? path.resolve(excludePlanDirectory) : null,
+    excludeSourceId: excludeSourceId ?? null,
+  };
 }
 
 function readJson<T>(filePath: string) {
@@ -106,7 +131,7 @@ function buildCountyFeaturesByState() {
 
 function main() {
   const startedAt = Date.now();
-  const { sourceDirectory } = parseArguments(process.argv.slice(2));
+  const { sourceDirectory, planOutputDirectory, excludePlanDirectory, excludeSourceId } = parseArguments(process.argv.slice(2));
   const occurrencePath = path.join(sourceDirectory, "occurrence.txt");
   const emlPath = path.join(sourceDirectory, "eml.xml");
   const metaPath = path.join(sourceDirectory, "meta.xml");
@@ -151,6 +176,10 @@ function main() {
     speciesId: string;
     scientificName: string;
     eventDate: string;
+    latitude: number;
+    longitude: number;
+    sourceState: string;
+    sourceCounty: string;
   }> = [];
 
   for (const row of rows) {
@@ -227,6 +256,10 @@ function main() {
       speciesId: species.id,
       scientificName: species.scientificName,
       eventDate: row.eventDate,
+      latitude,
+      longitude,
+      sourceState: row.stateProvince,
+      sourceCounty: row.county,
     });
   }
 
@@ -262,6 +295,16 @@ function main() {
   const netEligiblePairs = grossPairs.filter(
     (key) => displayStatusByPair.get(key) !== "verified-present" && displayStatusByPair.get(key) !== "verified-absent",
   );
+  const excludedCrossSourcePairs = new Set<string>();
+  if (excludePlanDirectory && excludeSourceId) {
+    for (const filename of readdirSync(excludePlanDirectory).filter((entry) =>
+      entry.startsWith(`${excludeSourceId}-`) && entry.endsWith(".json"),
+    )) {
+      const plan = readJson<{ candidates?: Array<{ countyFips: string; speciesId: string }> }>(path.join(excludePlanDirectory, filename));
+      for (const candidate of plan.candidates ?? []) excludedCrossSourcePairs.add(`${candidate.countyFips}:${candidate.speciesId}`);
+    }
+  }
+  const selectedNetEligiblePairs = netEligiblePairs.filter((key) => !excludedCrossSourcePairs.has(key));
   const sameSourceOverlaps = grossPairs.filter((key) => screenedByIpams.has(key));
 
   const byState = new Map<string, { gross: number; presentOverlap: number; absentConflict: number; netEligible: number }>();
@@ -306,6 +349,8 @@ function main() {
       sameSourceSnapshotCompletedOverlaps: sameSourceOverlaps.length,
       withinPlanDuplicates: mappedRecords.length - grossPairs.length,
       netEligiblePairs: netEligiblePairs.length,
+      excludedEarlierSourcePairs: netEligiblePairs.length - selectedNetEligiblePairs.length,
+      selectedNetEligiblePairs: selectedNetEligiblePairs.length,
     },
     pairHashes: {
       grossPairSetSha256: sha256(`${grossPairs.join("\n")}\n`),
@@ -313,12 +358,70 @@ function main() {
       absentConflictSetSha256: sha256(`${absentConflicts.join("\n")}\n`),
       sameSourceOverlapSetSha256: sha256(`${sameSourceOverlaps.join("\n")}\n`),
       netEligiblePairSetSha256: sha256(`${netEligiblePairs.join("\n")}\n`),
+      selectedNetEligiblePairSetSha256: sha256(`${selectedNetEligiblePairs.join("\n")}\n`),
     },
     rejections: Object.fromEntries(Object.entries(rejectionCounts).sort(([left], [right]) => compareText(left, right))),
     states: Object.fromEntries([...byState.entries()].sort(([left], [right]) => compareText(left, right))),
     sampleNetEligiblePairs: netEligiblePairs.slice(0, 25),
     elapsedMs: Date.now() - startedAt,
   };
+  if (planOutputDirectory) {
+    mkdirSync(planOutputDirectory, { recursive: true });
+    const generatedAt = new Date().toISOString();
+    const targetsByState = new Map<string, Array<(typeof mappedRecords)[number] & { pairKey: string }>>();
+    for (const key of selectedNetEligiblePairs) {
+      const witness = pairRecords.get(key)?.[0];
+      assert(witness, `Missing retained IPAMS witness for ${key}.`);
+      const targets = targetsByState.get(witness.stateCode) ?? [];
+      targets.push({ pairKey: key, ...witness });
+      targetsByState.set(witness.stateCode, targets);
+    }
+    for (const [stateCode, unsortedTargets] of [...targetsByState.entries()].sort(([left], [right]) => compareText(left, right))) {
+      const targets = unsortedTargets.sort((left, right) => compareText(left.pairKey, right.pairKey));
+      const candidatePairs = targets.map((target) => target.pairKey);
+      const planId = `${SOURCE_ID}-${stateCode.toLocaleLowerCase("en-US")}-20260904-r1`;
+      const plan = {
+        schemaVersion: 1,
+        planId,
+        sourceId: SOURCE_ID,
+        stateCode,
+        generatedAt,
+        evaluatedAt: generatedAt,
+        dStartCommit: process.env.ISITUSA_BASELINE_COMMIT ?? null,
+        candidates: targets.map((target) => ({ sourceId: SOURCE_ID, speciesId: target.speciesId, countyFips: target.countyFips })),
+        retainedGbifObservations: {
+          mode: "retained-archive-witnesses",
+          profile: SOURCE_ID,
+          datasetKey: DATASET_KEY,
+          datasetDoi: DATASET_DOI,
+          datasetUrl: DATASET_URL,
+          metadataUrl: METADATA_URL,
+          usagePolicyUrl: USAGE_POLICY_URL,
+          datasetVersion: DATASET_VERSION,
+          datasetLastModified: DATASET_LAST_MODIFIED,
+          archiveBytes: ARCHIVE_BYTES,
+          archiveSha256: ARCHIVE_SHA256,
+          occurrenceBytes: occurrenceBytes.length,
+          occurrenceSha256: sha256(occurrenceBytes),
+          emlSha256: sha256(readFileSync(emlPath)),
+          metaSha256: sha256(readFileSync(metaPath)),
+          archiveVerifiedAt: ARCHIVE_VERIFIED_AT,
+          preflightEvaluationId: PREFLIGHT_EVALUATION_ID,
+          targetPairSetSha256: sha256(candidatePairs.join("\n")),
+          targets,
+        },
+        antiDuplication: {
+          exactCurrentProjectionSubtraction: true,
+          existingVerifiedPresentOverlaps: presentOverlaps.length,
+          priorSameSourceSnapshotOverlaps: sameSourceOverlaps.length,
+          excludedEarlierSourcePairs: netEligiblePairs.length - selectedNetEligiblePairs.length,
+          verifiedAbsentConflicts: absentConflicts.length,
+          selectedNetPairs: targets.length,
+        },
+      };
+      writeFileSync(path.join(planOutputDirectory, `${planId}.json`), `${JSON.stringify(plan, null, 2)}\n`);
+    }
+  }
   process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
 }
 

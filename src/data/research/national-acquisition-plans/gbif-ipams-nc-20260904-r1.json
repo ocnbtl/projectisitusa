@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-ipams-nc-20260904-r1",
+  "sourceId": "gbif-ipams",
+  "stateCode": "NC",
+  "generatedAt": "2026-09-04T20:19:06.725Z",
+  "evaluatedAt": "2026-09-04T20:19:06.725Z",
+  "dStartCommit": "927c4f4774f87b4f4ced4db9fbcb1e64a59a93af",
+  "candidates": [
+    {
+      "sourceId": "gbif-ipams",
+      "speciesId": "vinca-minor",
+      "countyFips": "37039"
+    },
+    {
+      "sourceId": "gbif-ipams",
+      "speciesId": "vinca-minor",
+      "countyFips": "37113"
+    }
+  ],
+  "retainedGbifObservations": {
+    "mode": "retained-archive-witnesses",
+    "profile": "gbif-ipams",
+    "datasetKey": "d587c7e5-d442-437a-a6d7-d1a78ecf2300",
+    "datasetDoi": "10.15468/3j3ueb",
+    "datasetUrl": "https://ipt.gbif.us/archive.do?r=ipams",
+    "metadataUrl": "https://ipt.gbif.us/eml.do?r=ipams",
+    "usagePolicyUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "datasetVersion": "1.4",
+    "datasetLastModified": "2020-07-31T18:39:03Z",
+    "archiveBytes": 898409,
+    "archiveSha256": "d9fed59d6b61541b9234c330990703fc823ad0a919acf8b2639f19a0b9a64e4b",
+    "occurrenceBytes": 12884816,
+    "occurrenceSha256": "57e011f88799e68e903c9999665da0ce76b069e8abb62adab93ead1f95795d7e",
+    "emlSha256": "1bf923fffc81199623492d9a22b63348b1fb265d4ebf6fc83dfa32fa43fd86f9",
+    "metaSha256": "deab7d2648df646fb121272f66917d1787ed96d884e85a3ea704baa62d2a468d",
+    "archiveVerifiedAt": "2026-09-03T17:16:55.091Z",
+    "preflightEvaluationId": "gbif-ipams-preflight-20260904-r1",
+    "targetPairSetSha256": "06ce75c9b05801a029354d317372301a0beed27e6c80d74d425751fc9eafe94b",
+    "targets": [
+      {
+        "pairKey": "37039:vinca-minor",
+        "occurrenceId": "2069562249",
+        "countyFips": "37039",
+        "stateCode": "NC",
+        "speciesId": "vinca-minor",
+        "scientificName": "Vinca minor",
+        "eventDate": "2006-06-14",
+        "latitude": 35.06399917602539,
+        "longitude": -84.16380310058594,
+        "sourceState": "North Carolina",
+        "sourceCounty": "Cherokee"
+      },
+      {
+        "pairKey": "37113:vinca-minor",
+        "occurrenceId": "2069870760",
+        "countyFips": "37113",
+        "stateCode": "NC",
+        "speciesId": "vinca-minor",
+        "scientificName": "Vinca minor",
+        "eventDate": "2006-06-14",
+        "latitude": 35.122798919677734,
+        "longitude": -83.32820129394531,
+        "sourceState": "North Carolina",
+        "sourceCounty": "Macon"
+      }
+    ]
+  },
+  "antiDuplication": {
+    "exactCurrentProjectionSubtraction": true,
+    "existingVerifiedPresentOverlaps": 2929,
+    "priorSameSourceSnapshotOverlaps": 305,
+    "excludedEarlierSourcePairs": 3,
+    "verifiedAbsentConflicts": 0,
+    "selectedNetPairs": 2
+  }
+}
