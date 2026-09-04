@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T202522Z__blm-nisims__7b090a4e8186",
+  "status": "complete",
+  "started_at": "2026-09-04T20:25:22.970Z",
+  "finished_at": "2026-09-04T20:25:22.971Z",
+  "actor_type": "adapter",
+  "actor_id": "blm-nisims-retained-snapshot@1.0.0",
+  "source_id": "blm-nisims",
+  "source_registry_hash": "bfe208129ebf92ab3be72479bf7a6b2f33a02699a7ec5dae635b39b787746752",
+  "adapter_id": "blm-nisims-retained-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "479beee07071db6b3c3891f8fb95463f917cb02853ce41232fe4ace16b0030b1",
+  "code_commit": "7ab31d0aa518bc75693eb738953bc9eb65cb5f49",
+  "parameter_hash": "7b090a4e81860a0139e456c9cb18d64a6ef453c1f8d6b2654fdc1434cb302f71",
+  "parameters": {
+    "stateCode": "WA",
+    "mode": "retained-archive-witnesses",
+    "profile": "blm-nisims",
+    "datasetKey": "cc63e998-fe1b-468d-94f1-6afcf494d0e4",
+    "datasetDoi": "10.15468/y4xndh",
+    "datasetUrl": "https://ipt.gbif.us/archive.do?r=blm_nisims",
+    "metadataUrl": "https://ipt.gbif.us/eml.do?r=blm_nisims",
+    "usagePolicyUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "datasetVersion": "1.2",
+    "datasetLastModified": "2023-01-04T17:25:43Z",
+    "archiveBytes": 7449124,
+    "archiveSha256": "60f8d6e8974b3b95e89e8d291db3cd1472548c18e85f8c3f3468abcd7c3d726c",
+    "occurrenceBytes": 54516023,
+    "occurrenceSha256": "8544e613a4f835c7c59cde648435cb59ab06512fded53b77fb0e234cc9123523",
+    "emlSha256": "bca5abb478b269331aa4a9e2a7aaa528f5834009b57f10ef9d1bb66d06a001e8",
+    "metaSha256": "6acfaedea65ff8ff2ec9cc02be54cf1e1d9456faedabb757f9cc492d147196c5",
+    "archiveVerifiedAt": "2026-09-03T17:16:55.091Z",
+    "preflightEvaluationId": "blm-nisims-preflight-20260904-r1",
+    "targetPairSetSha256": "3517bf036e1f300773964ff0906ea922e11efbe38be7e059e42ae8265212a6f2",
+    "targets": [
+      {
+        "pairKey": "53007:centaurea-debeauxii",
+        "occurrenceId": "{5BD72CC8-040D-45D6-983F-3768968D2ED5}",
+        "countyFips": "53007",
+        "stateCode": "WA",
+        "speciesId": "centaurea-debeauxii",
+        "scientificName": "Centaurea debeauxii",
+        "eventDate": "2016-07-21",
+        "latitude": 47.91613044,
+        "longitude": -119.9303508,
+        "sourceState": "Washington",
+        "sourceCounty": "Chelan County"
+      },
+      {
+        "pairKey": "53007:taeniatherum-caput-medusae",
+        "occurrenceId": "{5CEBA14E-40B0-4B75-A203-6DA77854572A}",
+        "countyFips": "53007",
+        "stateCode": "WA",
+        "speciesId": "taeniatherum-caput-medusae",
+        "scientificName": "Taeniatherum caput-medusae",
+        "eventDate": "2015-07-27",
+        "latitude": 47.5966361,
+        "longitude": -120.2471618,
+        "sourceState": "Washington",
+        "sourceCounty": "Chelan County"
+      },
+      {
+        "pairKey": "53047:kochia-scoparia",
+        "occurrenceId": "{07363DDF-6403-45C4-AD58-0DC249C5F063}",
+        "countyFips": "53047",
+        "stateCode": "WA",
+        "speciesId": "kochia-scoparia",
+        "scientificName": "Kochia scoparia",
+        "eventDate": "2016-06-27",
+        "latitude": 48.65204945,
+        "longitude": -119.4384532,
+        "sourceState": "Washington",
+        "sourceCounty": "Okanogan County"
+      },
+      {
+        "pairKey": "53055:alliaria-petiolata",
+        "occurrenceId": "{1D724438-2492-4CCE-8328-AD910EB44604}",
+        "countyFips": "53055",
+        "stateCode": "WA",
+        "speciesId": "alliaria-petiolata",
+        "scientificName": "Alliaria petiolata",
+        "eventDate": "2016-06-29",
+        "latitude": 48.42730987,
+        "longitude": -122.8118783,
+        "sourceState": "Washington",
+        "sourceCounty": "San Juan County"
+      }
+    ],
+    "candidatePairs": [
+      "53007:centaurea-debeauxii",
+      "53007:taeniatherum-caput-medusae",
+      "53047:kochia-scoparia",
+      "53055:alliaria-petiolata"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WA",
+    "county_fips": [
+      "53007",
+      "53047",
+      "53055"
+    ],
+    "species_ids": [
+      "alliaria-petiolata",
+      "centaurea-debeauxii",
+      "kochia-scoparia",
+      "taeniatherum-caput-medusae"
+    ],
+    "pair_keys": [
+      "53007:centaurea-debeauxii",
+      "53007:taeniatherum-caput-medusae",
+      "53047:kochia-scoparia",
+      "53055:alliaria-petiolata"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T202522Z__blm-nisims__7b090a4e8186/artifacts/blm-nisims-source-identity.json",
+      "sha256": "7a1ca8693b71d776c839b23aeedb7a90b13c2572ba63e4d40910d371e2487734",
+      "bytes": 1003,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202522Z__blm-nisims__7b090a4e8186/artifacts/blm-nisims-retained-witnesses.json.gz",
+      "sha256": "a942c243bf433b3bc753813a6ee31a45e69d68cda9bdf8349b5974688b51d935",
+      "bytes": 504,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T202522Z__blm-nisims__7b090a4e8186/assertions.ndjson",
+      "sha256": "029c9227931b7e442ee67917fdaffb2359eac32700fa473f0544a6809ee8da6c",
+      "bytes": 8141,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202522Z__blm-nisims__7b090a4e8186/reviews.ndjson",
+      "sha256": "3584395baf8ca5912e91c310246260d0a1debebb88d103c871c7a4e6f16004a2",
+      "bytes": 4566,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202522Z__blm-nisims__7b090a4e8186/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202522Z__blm-nisims__7b090a4e8186/outcomes.ndjson",
+      "sha256": "118b2ab12e153ffd9c02ccaa9098a6237c3643ccfae267760036acebf7720eaa",
+      "bytes": 2710,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 4,
+    "candidate_records": 4,
+    "assertion_events": 4,
+    "review_events": 4,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 4
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive introduced invasive-plant percent-cover observations support historical recorded presence at sampled locations only. Zero-cover, absent, unmatched, and rejected rows are source silence and never support county absence or survey non-detection."
+  ],
+  "source_warnings": [
+    "BLM NISIMS human observations support historical recorded presence only.",
+    "The complete source archive was screened offline; one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source blm-nisims --state WA --candidate-file src/data/research/national-acquisition-plans/blm-nisims-wa-20260904-r1.json --output-root src/data/research/runs --pairs 53007:centaurea-debeauxii,53007:taeniatherum-caput-medusae,53047:kochia-scoparia,53055:alliaria-petiolata"
+}
