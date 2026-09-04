@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "evaluationId": "direct-museum-preserved-specimens-execution-20260904-r1",
-  "evaluatedAt": "2026-09-04T07:00:43.826Z",
+  "evaluatedAt": "2026-09-04T07:28:38.035Z",
   "status": "integrated-substantial-minimum-cleared",
   "objective": "Produce cumulative, exact, net-new county-species determinations without replaying completed source snapshots, weakening evidence semantics, or counting raw source volume as progress.",
   "canonicalCheckout": "C:/Code/project-isitusa",
@@ -74,8 +74,9 @@
   ],
   "execution": {
     "startedAt": "2026-09-04T06:34:46Z",
-    "finishedAt": "2026-09-04T06:41:14.033Z",
-    "integrationCommit": "5711acbf9315064cb46ec3ea9bea552030ccf47d",
+    "finishedAt": "2026-09-04T07:16:57.091Z",
+    "initialIntegrationCommit": "5711acbf9315064cb46ec3ea9bea552030ccf47d",
+    "correctedLedgerCommit": "0811f01eeae8244a45bd8e9fef6d79b87e136c44",
     "statePlanCount": 95,
     "completeRuns": 95,
     "requestedUniquePairs": 11068,
@@ -91,7 +92,7 @@
         "sourceId": "harvard-huh-usa-preserved-specimens",
         "completeRuns": 47,
         "acceptedPairs": 7334,
-        "latestFinishedAt": "2026-09-04T06:36:33.750Z"
+        "latestFinishedAt": "2026-09-04T07:16:57.091Z"
       },
       {
         "sourceId": "smithsonian-nmnh-preserved-specimens",
@@ -184,7 +185,7 @@
     "immutableRunCount": 1852,
     "newRunCount": 95,
     "newRunFiles": 665,
-    "newRunOutputAndArtifactBytes": 59234226,
+    "newRunOutputAndArtifactBytes": 59278841,
     "newRetainedArtifactBytes": 813803,
     "researchIndex": {
       "stateCount": 51,
@@ -212,15 +213,25 @@
         "event": "state-projection-default-heap-limit",
         "result": "passed-identical-gate-with-8192-mb-heap",
         "detail": "The default Node heap exhausted while independently checking all state projections; no gate was weakened."
+      },
+      {
+        "event": "harvard-outcome-license-label",
+        "result": "corrected-and-all-47-runs-replaced-before-publication",
+        "detail": "A generic outcome note said CC0 although Harvard assertion metadata, rights holder, caveat, and review reason code correctly said CC BY 4.0. Adapter v1.0.1 made the note license-specific, expanded the fixture test to all four profiles, and regenerated the exact same 7334-pair Harvard scope. The final ledger contains 7334 CC BY 4.0 outcome notes and zero Harvard CC0 outcome notes."
+      },
+      {
+        "event": "guarded-correction-rerun",
+        "result": "recovered-without-partial-or-duplicate-runs",
+        "detail": "The first two correction attempts stopped before producing a run because coverage provenance was stale and then because the manifest and receipt made the worktree dirty. The remaining Massachusetts plan exceeded Windows command-line length, so its exact sealed pair list was loaded inside Node. Final correction coverage is 47 complete runs, 7334 unique pairs, zero errors, and the original selected pair hash."
       }
     ]
   },
   "publicationPlan": {
     "mode": "plan",
-    "releaseId": "research-5711acbf9315-dbc9aafd7ee9564b",
-    "sourceCommit": "5711acbf9315064cb46ec3ea9bea552030ccf47d",
-    "sourceTreeSha256": "90c723c64cd5a878fda87f8155b350975fa2627fdef123689d20a628423dd6c8",
-    "manifestFileSha256": "961e75a8ee4d210d0a3ad8f2e62ceb87576f9fbcb08fc3109d5e82f14be527eb",
+    "releaseId": "research-0811f01eeae8-2d413124675ff87d",
+    "sourceCommit": "0811f01eeae8244a45bd8e9fef6d79b87e136c44",
+    "sourceTreeSha256": "e6f6223b651ec17d88fe3472bc13cb6d669b6ad0777da0e9ef19849bfeceb859",
+    "manifestFileSha256": "0e824ba5c67722ba4c30b2693f00acea570725dcace1db26583e539df0f47180",
     "artifactCount": 3195,
     "uniqueObjectCount": 3195,
     "uniqueObjectBytes": 1322535317,
