@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T195255Z__usgs-bbs__39162482b57c",
+  "status": "complete",
+  "started_at": "2026-09-04T19:52:55.125Z",
+  "finished_at": "2026-09-04T19:52:55.144Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-bbs-route-start@1.2.0",
+  "source_id": "usgs-bbs",
+  "source_registry_hash": "b5db6823739dfebae472387838931d229e00db1a33de57d6dcb70e5ffdd970dc",
+  "adapter_id": "usgs-bbs-route-start",
+  "adapter_version": "1.2.0",
+  "adapter_code_hash": "b8418d3b2f82011e7a7ee2a61baceebf19a531f31b174354654844197d83c2fd",
+  "code_commit": "c3a078eb07298ce89a8fa1d83bfb6469e065e32f",
+  "parameter_hash": "39162482b57c9fa5fb0c572a8ad17f0a081109e5ebff30de5e04a592be49725a",
+  "parameters": {
+    "stateCode": "ND",
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 13,
+    "expectedStateGrossPairs": 22,
+    "expectedStateNetNewPairs": 13,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "38001:columba-livia",
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "routeDataId": "6345562",
+        "routeKey": "64:036",
+        "routeName": "BENTLEY",
+        "year": 2012,
+        "aou": "03131",
+        "stop1Count": 7,
+        "countyFips": "38001",
+        "stateCode": "ND",
+        "latitude": 46.1041487,
+        "longitude": -102.0608219
+      },
+      {
+        "pairKey": "38001:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6376350",
+        "routeKey": "64:036",
+        "routeName": "BENTLEY",
+        "year": 2021,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "38001",
+        "stateCode": "ND",
+        "latitude": 46.1041487,
+        "longitude": -102.0608219
+      },
+      {
+        "pairKey": "38001:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6353548",
+        "routeKey": "64:036",
+        "routeName": "BENTLEY",
+        "year": 2013,
+        "aou": "04930",
+        "stop1Count": 4,
+        "countyFips": "38001",
+        "stateCode": "ND",
+        "latitude": 46.1041487,
+        "longitude": -102.0608219
+      },
+      {
+        "pairKey": "38011:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6388490",
+        "routeKey": "64:030",
+        "routeName": "BOWMAN",
+        "year": 2025,
+        "aou": "06882",
+        "stop1Count": 6,
+        "countyFips": "38011",
+        "stateCode": "ND",
+        "latitude": 46.198459,
+        "longitude": -103.431806
+      },
+      {
+        "pairKey": "38029:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6358276",
+        "routeKey": "64:043",
+        "routeName": "BRADDOCK",
+        "year": 2015,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "38029",
+        "stateCode": "ND",
+        "latitude": 46.6039277,
+        "longitude": -100.1056369
+      },
+      {
+        "pairKey": "38033:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6388628",
+        "routeKey": "64:035",
+        "routeName": "GOLVA",
+        "year": 2025,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "38033",
+        "stateCode": "ND",
+        "latitude": 46.7309876,
+        "longitude": -103.9865945
+      },
+      {
+        "pairKey": "38033:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6342934",
+        "routeKey": "64:035",
+        "routeName": "GOLVA",
+        "year": 2011,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "38033",
+        "stateCode": "ND",
+        "latitude": 46.7309876,
+        "longitude": -103.9865945
+      },
+      {
+        "pairKey": "38051:columba-livia",
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "routeDataId": "6383520",
+        "routeKey": "64:106",
+        "routeName": "DANZIG 2",
+        "year": 2024,
+        "aou": "03131",
+        "stop1Count": 1,
+        "countyFips": "38051",
+        "stateCode": "ND",
+        "latitude": 46.1428537,
+        "longitude": -99.4821999
+      },
+      {
+        "pairKey": "38051:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6354640",
+        "routeKey": "64:006",
+        "routeName": "DANZIG",
+        "year": 2014,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "38051",
+        "stateCode": "ND",
+        "latitude": 46.1428537,
+        "longitude": -99.4821999
+      },
+      {
+        "pairKey": "38051:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6241962",
+        "routeKey": "64:006",
+        "routeName": "DANZIG",
+        "year": 2004,
+        "aou": "04930",
+        "stop1Count": 3,
+        "countyFips": "38051",
+        "stateCode": "ND",
+        "latitude": 46.1428537,
+        "longitude": -99.4821999
+      },
+      {
+        "pairKey": "38055:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6384776",
+        "routeKey": "64:041",
+        "routeName": "DOUGLAS CRK",
+        "year": 2024,
+        "aou": "06882",
+        "stop1Count": 7,
+        "countyFips": "38055",
+        "stateCode": "ND",
+        "latitude": 47.7465897,
+        "longitude": -101.5077209
+      },
+      {
+        "pairKey": "38071:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6383545",
+        "routeKey": "64:016",
+        "routeName": "WEBSTER",
+        "year": 2024,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "38071",
+        "stateCode": "ND",
+        "latitude": 48.2818817,
+        "longitude": -98.7246389
+      },
+      {
+        "pairKey": "38075:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6318479",
+        "routeKey": "64:024",
+        "routeName": "LORAINE",
+        "year": 2010,
+        "aou": "06882",
+        "stop1Count": 4,
+        "countyFips": "38075",
+        "stateCode": "ND",
+        "latitude": 48.8647667,
+        "longitude": -101.5405509
+      }
+    ],
+    "candidatePairs": [
+      "38001:columba-livia",
+      "38001:passer-domesticus",
+      "38001:sturnus-vulgaris",
+      "38011:passer-domesticus",
+      "38029:passer-domesticus",
+      "38033:streptopelia-decaocto",
+      "38033:sturnus-vulgaris",
+      "38051:columba-livia",
+      "38051:passer-domesticus",
+      "38051:sturnus-vulgaris",
+      "38055:passer-domesticus",
+      "38071:passer-domesticus",
+      "38075:passer-domesticus"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "ND",
+    "county_fips": [
+      "38001",
+      "38011",
+      "38029",
+      "38033",
+      "38051",
+      "38055",
+      "38071",
+      "38075"
+    ],
+    "species_ids": [
+      "columba-livia",
+      "passer-domesticus",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "38001:columba-livia",
+      "38001:passer-domesticus",
+      "38001:sturnus-vulgaris",
+      "38011:passer-domesticus",
+      "38029:passer-domesticus",
+      "38033:streptopelia-decaocto",
+      "38033:sturnus-vulgaris",
+      "38051:columba-livia",
+      "38051:passer-domesticus",
+      "38051:sturnus-vulgaris",
+      "38055:passer-domesticus",
+      "38071:passer-domesticus",
+      "38075:passer-domesticus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T195255Z__usgs-bbs__39162482b57c/artifacts/nd-retained-standard-stop1-witnesses.json",
+      "sha256": "64d636edae5304b60ee12f102eb8b17cc2cf6d6a89d08c17f787fef0aa0ce277",
+      "bytes": 6651,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T195255Z__usgs-bbs__39162482b57c/assertions.ndjson",
+      "sha256": "c625ccb3a480145c7f7849103ee649599f9fc6e075f88e46032187afa11de515",
+      "bytes": 31159,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195255Z__usgs-bbs__39162482b57c/reviews.ndjson",
+      "sha256": "064e73ddae682346d02b0ffd28971af44a74a14ad763554677829151642c751b",
+      "bytes": 12408,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195255Z__usgs-bbs__39162482b57c/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195255Z__usgs-bbs__39162482b57c/outcomes.ndjson",
+      "sha256": "eefd93e9b0ee3aa03cd151e825f19dcc6f4119da77e25eda56324108674253de",
+      "bytes": 10458,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 13,
+    "candidate_records": 13,
+    "assertion_events": 13,
+    "review_events": 13,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 13
+  },
+  "errors": [],
+  "known_caveats": [
+    "Route-start detections are sampled occurrence evidence, not countywide inventory."
+  ],
+  "source_warnings": [
+    "The complete hash-pinned BBS release was screened offline; one positive witness per eligible pair is retained in this immutable run.",
+    "Later stops, route totals, zero rows, missing rows, and source silence create no county absence or non-detection claim."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usgs-bbs --state ND --candidate-file src/data/research/national-acquisition-plans/usgs-bbs-nd-route-start-residual-v1.json --output-root src/data/research/runs --pairs 38001:columba-livia,38001:passer-domesticus,38001:sturnus-vulgaris,38011:passer-domesticus,38029:passer-domesticus,38033:streptopelia-decaocto,38033:sturnus-vulgaris,38051:columba-livia,38051:passer-domesticus,38051:sturnus-vulgaris,38055:passer-domesticus,38071:passer-domesticus,38075:passer-domesticus"
+}
