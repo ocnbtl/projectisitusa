@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T203019Z__gbif-ipams__1f59a9c6362a",
+  "status": "complete",
+  "started_at": "2026-09-04T20:30:19.487Z",
+  "finished_at": "2026-09-04T20:30:19.488Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ipams-retained-snapshot@1.0.0",
+  "source_id": "gbif-ipams",
+  "source_registry_hash": "28a19f51267ecabc53fb51094dae2804f9e69b1e22fe57ba4363b862142dcda1",
+  "adapter_id": "gbif-ipams-retained-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "479beee07071db6b3c3891f8fb95463f917cb02853ce41232fe4ace16b0030b1",
+  "code_commit": "3f8741e28999987fb0c777ba4d5c7032cc2c66c3",
+  "parameter_hash": "1f59a9c6362ae30582849807dd50a8673973743bf8047aab4b90da6fbebe090c",
+  "parameters": {
+    "stateCode": "NY",
+    "mode": "retained-archive-witnesses",
+    "profile": "gbif-ipams",
+    "datasetKey": "d587c7e5-d442-437a-a6d7-d1a78ecf2300",
+    "datasetDoi": "10.15468/3j3ueb",
+    "datasetUrl": "https://ipt.gbif.us/archive.do?r=ipams",
+    "metadataUrl": "https://ipt.gbif.us/eml.do?r=ipams",
+    "usagePolicyUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "datasetVersion": "1.4",
+    "datasetLastModified": "2020-07-31T18:39:03Z",
+    "archiveBytes": 898409,
+    "archiveSha256": "d9fed59d6b61541b9234c330990703fc823ad0a919acf8b2639f19a0b9a64e4b",
+    "occurrenceBytes": 12884816,
+    "occurrenceSha256": "57e011f88799e68e903c9999665da0ce76b069e8abb62adab93ead1f95795d7e",
+    "emlSha256": "1bf923fffc81199623492d9a22b63348b1fb265d4ebf6fc83dfa32fa43fd86f9",
+    "metaSha256": "deab7d2648df646fb121272f66917d1787ed96d884e85a3ea704baa62d2a468d",
+    "archiveVerifiedAt": "2026-09-03T17:16:55.091Z",
+    "preflightEvaluationId": "gbif-ipams-preflight-20260904-r1",
+    "targetPairSetSha256": "63cbf87a874e2c71198767dbc8d728b8b67660480b701a9904b845589081ee87",
+    "targets": [
+      {
+        "pairKey": "36111:hypericum-perforatum",
+        "occurrenceId": "2073569780",
+        "countyFips": "36111",
+        "stateCode": "NY",
+        "speciesId": "hypericum-perforatum",
+        "scientificName": "Hypericum perforatum",
+        "eventDate": "2006-07-12",
+        "latitude": 42.10490036010742,
+        "longitude": -74.35060119628906,
+        "sourceState": "New York",
+        "sourceCounty": "Ulster"
+      },
+      {
+        "pairKey": "36111:rhodotypos-scandens",
+        "occurrenceId": "2073569782",
+        "countyFips": "36111",
+        "stateCode": "NY",
+        "speciesId": "rhodotypos-scandens",
+        "scientificName": "Rhodotypos scandens",
+        "eventDate": "2006-07-12",
+        "latitude": 42.10490036010742,
+        "longitude": -74.35060119628906,
+        "sourceState": "New York",
+        "sourceCounty": "Ulster"
+      },
+      {
+        "pairKey": "36111:thymus-vulgaris",
+        "occurrenceId": "2073569784",
+        "countyFips": "36111",
+        "stateCode": "NY",
+        "speciesId": "thymus-vulgaris",
+        "scientificName": "Thymus vulgaris",
+        "eventDate": "2006-07-12",
+        "latitude": 42.10490036010742,
+        "longitude": -74.35060119628906,
+        "sourceState": "New York",
+        "sourceCounty": "Ulster"
+      }
+    ],
+    "candidatePairs": [
+      "36111:hypericum-perforatum",
+      "36111:rhodotypos-scandens",
+      "36111:thymus-vulgaris"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NY",
+    "county_fips": [
+      "36111"
+    ],
+    "species_ids": [
+      "hypericum-perforatum",
+      "rhodotypos-scandens",
+      "thymus-vulgaris"
+    ],
+    "pair_keys": [
+      "36111:hypericum-perforatum",
+      "36111:rhodotypos-scandens",
+      "36111:thymus-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T203019Z__gbif-ipams__1f59a9c6362a/artifacts/gbif-ipams-source-identity.json",
+      "sha256": "a1287e1628d6f934bd48c00615ecddf130cf5cd2090de970bc42c6deffe00363",
+      "bytes": 992,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203019Z__gbif-ipams__1f59a9c6362a/artifacts/gbif-ipams-retained-witnesses.json.gz",
+      "sha256": "3d2527cc1f3082807c7106d11e780a5aab267e76b4caa2fd48e1adf05651f8ec",
+      "bytes": 299,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T203019Z__gbif-ipams__1f59a9c6362a/assertions.ndjson",
+      "sha256": "c9b84bb2220c472faf33b3fcfa33c7bb621415e0173f95fe9f895bbf29014e80",
+      "bytes": 5655,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203019Z__gbif-ipams__1f59a9c6362a/reviews.ndjson",
+      "sha256": "405b2dccdb847136e369fb79b9ce9bc186140c5b82753c3cf7379d77657a6dab",
+      "bytes": 3300,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203019Z__gbif-ipams__1f59a9c6362a/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203019Z__gbif-ipams__1f59a9c6362a/outcomes.ndjson",
+      "sha256": "18e39b35b62f2a5d172a8dd5663943a7cd6e75ec74436078440b1344d70167e0",
+      "bytes": 2013,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Dataset-specific nonnative human-observation evidence supports historical recorded presence only. Missing or rejected records never support county absence or non-detection."
+  ],
+  "source_warnings": [
+    "GBIF IPAMS human observations support historical recorded presence only.",
+    "The complete source archive was screened offline; one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ipams --state NY --candidate-file src/data/research/national-acquisition-plans/gbif-ipams-ny-20260904-r1.json --output-root src/data/research/runs --pairs 36111:hypericum-perforatum,36111:rhodotypos-scandens,36111:thymus-vulgaris"
+}
