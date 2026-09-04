@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T203010Z__gbif-ipams__b75f7891a536",
+  "status": "complete",
+  "started_at": "2026-09-04T20:30:10.572Z",
+  "finished_at": "2026-09-04T20:30:10.573Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ipams-retained-snapshot@1.0.0",
+  "source_id": "gbif-ipams",
+  "source_registry_hash": "28a19f51267ecabc53fb51094dae2804f9e69b1e22fe57ba4363b862142dcda1",
+  "adapter_id": "gbif-ipams-retained-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "479beee07071db6b3c3891f8fb95463f917cb02853ce41232fe4ace16b0030b1",
+  "code_commit": "a5a498f83fc3440e1ef2e17c7a83278f53c368b6",
+  "parameter_hash": "b75f7891a536b1dabcb4fb63cbf9c26ec1eceb6a8a2d144a5b595c09c050f7b2",
+  "parameters": {
+    "stateCode": "NC",
+    "mode": "retained-archive-witnesses",
+    "profile": "gbif-ipams",
+    "datasetKey": "d587c7e5-d442-437a-a6d7-d1a78ecf2300",
+    "datasetDoi": "10.15468/3j3ueb",
+    "datasetUrl": "https://ipt.gbif.us/archive.do?r=ipams",
+    "metadataUrl": "https://ipt.gbif.us/eml.do?r=ipams",
+    "usagePolicyUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "datasetVersion": "1.4",
+    "datasetLastModified": "2020-07-31T18:39:03Z",
+    "archiveBytes": 898409,
+    "archiveSha256": "d9fed59d6b61541b9234c330990703fc823ad0a919acf8b2639f19a0b9a64e4b",
+    "occurrenceBytes": 12884816,
+    "occurrenceSha256": "57e011f88799e68e903c9999665da0ce76b069e8abb62adab93ead1f95795d7e",
+    "emlSha256": "1bf923fffc81199623492d9a22b63348b1fb265d4ebf6fc83dfa32fa43fd86f9",
+    "metaSha256": "deab7d2648df646fb121272f66917d1787ed96d884e85a3ea704baa62d2a468d",
+    "archiveVerifiedAt": "2026-09-03T17:16:55.091Z",
+    "preflightEvaluationId": "gbif-ipams-preflight-20260904-r1",
+    "targetPairSetSha256": "06ce75c9b05801a029354d317372301a0beed27e6c80d74d425751fc9eafe94b",
+    "targets": [
+      {
+        "pairKey": "37039:vinca-minor",
+        "occurrenceId": "2069562249",
+        "countyFips": "37039",
+        "stateCode": "NC",
+        "speciesId": "vinca-minor",
+        "scientificName": "Vinca minor",
+        "eventDate": "2006-06-14",
+        "latitude": 35.06399917602539,
+        "longitude": -84.16380310058594,
+        "sourceState": "North Carolina",
+        "sourceCounty": "Cherokee"
+      },
+      {
+        "pairKey": "37113:vinca-minor",
+        "occurrenceId": "2069870760",
+        "countyFips": "37113",
+        "stateCode": "NC",
+        "speciesId": "vinca-minor",
+        "scientificName": "Vinca minor",
+        "eventDate": "2006-06-14",
+        "latitude": 35.122798919677734,
+        "longitude": -83.32820129394531,
+        "sourceState": "North Carolina",
+        "sourceCounty": "Macon"
+      }
+    ],
+    "candidatePairs": [
+      "37039:vinca-minor",
+      "37113:vinca-minor"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NC",
+    "county_fips": [
+      "37039",
+      "37113"
+    ],
+    "species_ids": [
+      "vinca-minor"
+    ],
+    "pair_keys": [
+      "37039:vinca-minor",
+      "37113:vinca-minor"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T203010Z__gbif-ipams__b75f7891a536/artifacts/gbif-ipams-source-identity.json",
+      "sha256": "336cf6c58e172f41f6e153dcf99f8ea234db17c618774f8f2bdbb6d631a2b2bf",
+      "bytes": 992,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203010Z__gbif-ipams__b75f7891a536/artifacts/gbif-ipams-retained-witnesses.json.gz",
+      "sha256": "6bb7c6b487bb1c6c4bb8dacf4e2cf9e92e372ddcd2472703b426adfe416b660c",
+      "bytes": 279,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T203010Z__gbif-ipams__b75f7891a536/assertions.ndjson",
+      "sha256": "b86576a986c646e8875ceae60f8e398039e3bac9fcf893c7bbdc2b2dd7846a8c",
+      "bytes": 3742,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203010Z__gbif-ipams__b75f7891a536/reviews.ndjson",
+      "sha256": "849575b8f7bbd27a564aa416951a74980a1a8af02a58aee672a1a6e4ce403f12",
+      "bytes": 2186,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203010Z__gbif-ipams__b75f7891a536/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T203010Z__gbif-ipams__b75f7891a536/outcomes.ndjson",
+      "sha256": "92dd378c21cf25f6e31d5fa72ce6fe7a4be5a5c915930d87450a0b4afe3f0a72",
+      "bytes": 1328,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Dataset-specific nonnative human-observation evidence supports historical recorded presence only. Missing or rejected records never support county absence or non-detection."
+  ],
+  "source_warnings": [
+    "GBIF IPAMS human observations support historical recorded presence only.",
+    "The complete source archive was screened offline; one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ipams --state NC --candidate-file src/data/research/national-acquisition-plans/gbif-ipams-nc-20260904-r1.json --output-root src/data/research/runs --pairs 37039:vinca-minor,37113:vinca-minor"
+}
