@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "direct-museum-preserved-specimens-execution-20260904-r1",
+  "evaluatedAt": "2026-09-04T07:00:43.826Z",
+  "status": "integrated-substantial-minimum-cleared",
+  "objective": "Produce cumulative, exact, net-new county-species determinations without replaying completed source snapshots, weakening evidence semantics, or counting raw source volume as progress.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseline": {
+    "commit": "24349352039d73013b91c227ba85e464d468fd2d",
+    "fullCountySpeciesDenominator": 7872576,
+    "verifiedPresent": 299964,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 303107,
+    "notDetected": 236,
+    "researchedUnresolved": 1308779,
+    "notResearched": 6260454,
+    "conflicts": 0,
+    "coveragePercent": 3.850162895,
+    "determinedPairSetSha256": "e60906f475c379e1b3d405d744e3092a54467a74612f5596d849d6e66cbc0437"
+  },
+  "yieldPolicy": {
+    "stretchTargetNetDeterminations": 25000,
+    "checkpointNetDeterminations": 5000,
+    "substantialMinimumNetDeterminations": 10000,
+    "conditionalSourceMinimumNetPairs": 2000,
+    "minimumPresenceSharePercent": 80,
+    "interpretation": "Thresholds apply only to exact D_end minus D_start movement in unique countyFips:speciesId determinations. Rows, records, requests, assertions, reviews, files, and overlaps do not count. No absence batch was authorized or executed."
+  },
+  "sourcePreflight": [
+    {
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "evaluationPath": "ops/national-research/evaluations/smithsonian-nmnh-preserved-specimens-preflight-20260904-r1.json",
+      "disposition": "go-and-executed",
+      "datasetVersion": "1.112",
+      "publicationDate": "2026-09-02",
+      "license": "CC0 1.0",
+      "archiveUrl": "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112",
+      "archiveBytes": 1525644039,
+      "archiveSha256": "204173b11b5933ca6625d3c9b23e4b7902f034cbbd24d42bca9ae4f84703b0de",
+      "occurrenceBytes": 6535399365,
+      "occurrenceSha256": "e87cd8b1fbc991275adcf8822373ebe32dfd25499959550cee68e44c8c8d09ab",
+      "sourceRows": 9450048,
+      "acceptedUniqueRecords": 22323,
+      "grossUniquePairs": 9251,
+      "existingVerifiedPresentOverlaps": 5517,
+      "verifiedAbsentConflicts": 0,
+      "netEligiblePairs": 3734,
+      "netEligiblePairSetSha256": "7dddfc6daff565c39d450b56e84283a8277c33220d616adac1fe32a2f5df4c1b",
+      "preflightElapsedMs": 135588
+    },
+    {
+      "sourceId": "harvard-huh-usa-preserved-specimens",
+      "evaluationPath": "ops/national-research/evaluations/harvard-huh-usa-preserved-specimens-preflight-20260904-r1.json",
+      "disposition": "go-and-executed-after-cross-source-deduplication",
+      "datasetVersion": "1.74",
+      "publicationDate": "2026-08-29",
+      "license": "CC BY 4.0",
+      "requiredAttribution": "President and Fellows of Harvard College",
+      "archiveUrl": "https://ipt.huh.harvard.edu/ipt/archive.do?r=huh_usa&v=1.74",
+      "archiveBytes": 197742128,
+      "archiveSha256": "1b054306100050566bf68aa3df561d61120d1ed5b1e6fa5d8508b669dbb090e3",
+      "occurrenceBytes": 1164383110,
+      "occurrenceSha256": "e6babcd797b50a93241788a935b8ff284e02d5fcd2955e0e071ec369a9e1ad40",
+      "sourceRows": 1138962,
+      "acceptedUniqueRecords": 38793,
+      "grossUniquePairs": 19021,
+      "existingVerifiedPresentOverlaps": 11460,
+      "verifiedAbsentConflicts": 0,
+      "rawNetEligiblePairsAtBaseline": 7561,
+      "smithsonianCrossSourceOverlapsExcluded": 227,
+      "selectedResidualPairs": 7334,
+      "selectedResidualPairSetSha256": "c10b207873d738dfe8df90fc53c1a37e4d09cb7be12320fc1d3c9b61f6115d50"
+    }
+  ],
+  "execution": {
+    "startedAt": "2026-09-04T06:34:46Z",
+    "finishedAt": "2026-09-04T06:41:14.033Z",
+    "integrationCommit": "5711acbf9315064cb46ec3ea9bea552030ccf47d",
+    "statePlanCount": 95,
+    "completeRuns": 95,
+    "requestedUniquePairs": 11068,
+    "acceptedAssertionEvents": 11068,
+    "reviewEvents": 11068,
+    "completePairOutcomes": 11068,
+    "rejections": 0,
+    "errors": 0,
+    "upstreamRequests": 0,
+    "combinedNewPairSetSha256": "f078c0806ff9b2014735bc3066235260a8edf511f810c7bd8da5e88defa755a6",
+    "sources": [
+      {
+        "sourceId": "harvard-huh-usa-preserved-specimens",
+        "completeRuns": 47,
+        "acceptedPairs": 7334,
+        "latestFinishedAt": "2026-09-04T06:36:33.750Z"
+      },
+      {
+        "sourceId": "smithsonian-nmnh-preserved-specimens",
+        "completeRuns": 48,
+        "acceptedPairs": 3734,
+        "latestFinishedAt": "2026-09-04T06:41:14.033Z"
+      }
+    ],
+    "semanticGuards": {
+      "presenceOnly": true,
+      "preservedSpecimenBasisRequired": true,
+      "publicationCompatibleDatasetLicenseRequired": true,
+      "stableRecordIdentityRequired": true,
+      "exactUniqueCatalogBinomialRequired": true,
+      "blankIdentificationQualifierRequired": true,
+      "exactActiveCountyAliasRequired": true,
+      "cultivatedOrCaptiveTextRejected": true,
+      "validYearOrEventDateRequired": true,
+      "sourceSilenceCreatesAbsence": false,
+      "sourceSilenceCreatesNonDetection": false,
+      "coordinatesUsedForCountyAssignment": false
+    }
+  },
+  "integration": {
+    "asOfDate": "2026-09-04",
+    "fullCountySpeciesDenominator": 7872576,
+    "verifiedPresent": 311032,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 314175,
+    "notDetected": 236,
+    "researchedUnresolved": 1307620,
+    "notResearched": 6250545,
+    "conflicts": 0,
+    "coveragePercent": 3.990752201,
+    "determinedPairSetSha256": "71ceb491fb1717d2aaf57f89c019ad4e9df2ed4aec873beb340befc845fd7b5c",
+    "exactNetDeterminationDelta": 11068,
+    "verifiedPresentDelta": 11068,
+    "verifiedAbsentDelta": 0,
+    "presenceSharePercent": 100,
+    "researchedUnresolvedDelta": -1159,
+    "notResearchedDelta": -9909,
+    "determinationCoveragePointDelta": 0.140589306,
+    "exactSetDifferenceAudit": {
+      "addedPairs": 11068,
+      "removedPairs": 0,
+      "statusChangedPairs": 0,
+      "addedPairsOutsidePlan": 0,
+      "plannedPairsNotAdded": 0,
+      "addedNonPresentPairs": 0,
+      "crossSourceDuplicatesRemovedBeforeExecution": 227
+    },
+    "historicalFixedBaseline": {
+      "commit": "f08cf185b1ee7291c827083181bb7ae76700166c",
+      "totalUniqueDeterminations": 200218,
+      "gainBeforeThisExecution": 102889,
+      "gainIncludingThisExecution": 113957
+    },
+    "cumulativeInterpretation": "This execution adds exactly 11068 new pair keys to the 303107-pair current baseline. It does not re-count the prior 102889-pair gain since f08cf185; cumulative gain since that fixed historical baseline is now 113957."
+  },
+  "screenedAlternatives": [
+    {
+      "sourceId": "field-museum",
+      "disposition": "no-go-below-conditional-threshold",
+      "boundedSampleApproximateNetPairs": 130,
+      "reason": "The measured bounded sample was far below the 2000-pair conditional threshold."
+    },
+    {
+      "sourceId": "yale-peabody-museum",
+      "disposition": "no-go-access-and-rights-unresolved",
+      "reason": "A reproducible direct bulk surface was not accessible and redistribution rights were not clear enough for retained publication artifacts."
+    },
+    {
+      "sourceId": "tropicos",
+      "disposition": "no-go-no-public-bulk-contract",
+      "reason": "No public bulk archive or authorized API-key path was available for exact reproducible acquisition."
+    }
+  ],
+  "requestAndByteAccounting": {
+    "mainSourceAcquisition": {
+      "getRequests": 2,
+      "responseBodyBytes": 1723386167,
+      "measuredWallSeconds": 313.058061,
+      "retainedOnlyInTemporaryLocalStorage": true
+    },
+    "executionUpstreamRequests": 0,
+    "providerWrites": 0
+  },
+  "buildEvidence": {
+    "sourceRegistryCount": 40,
+    "immutableRunCount": 1852,
+    "newRunCount": 95,
+    "newRunFiles": 665,
+    "newRunOutputAndArtifactBytes": 59234226,
+    "newRetainedArtifactBytes": 813803,
+    "researchIndex": {
+      "stateCount": 51,
+      "bootstrapEvidence": 30130,
+      "runAssertionsAndReviews": 428136,
+      "rejections": 65203,
+      "outcomes": 1858825,
+      "pairStatuses": 2077367,
+      "firstAttempt": "failed-resource-limit-default-heap",
+      "firstAttemptError": "JavaScript heap out of memory near the default 3.5 GB limit",
+      "retry": "passed-with-node-max-old-space-size-8192"
+    },
+    "recoveryEvents": [
+      {
+        "event": "nmnh-county-suffix-validator-mismatch",
+        "result": "fixed-before-resuming",
+        "detail": "The adapter now normalizes a terminal Co. county abbreviation to County before exact active-county validation; the first 50 runs were halted and only remaining states were resumed after the focused test passed."
+      },
+      {
+        "event": "staging-path-receipt-relocation",
+        "result": "repaired-before-compilation",
+        "detail": "Receipt paths were rewritten from the temporary worker-results location to their verified immutable src/data/research/runs targets before the nationwide compiler passed."
+      },
+      {
+        "event": "state-projection-default-heap-limit",
+        "result": "passed-identical-gate-with-8192-mb-heap",
+        "detail": "The default Node heap exhausted while independently checking all state projections; no gate was weakened."
+      }
+    ]
+  },
+  "publicationPlan": {
+    "mode": "plan",
+    "releaseId": "research-5711acbf9315-dbc9aafd7ee9564b",
+    "sourceCommit": "5711acbf9315064cb46ec3ea9bea552030ccf47d",
+    "sourceTreeSha256": "90c723c64cd5a878fda87f8155b350975fa2627fdef123689d20a628423dd6c8",
+    "manifestFileSha256": "961e75a8ee4d210d0a3ad8f2e62ceb87576f9fbcb08fc3109d5e82f14be527eb",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1322535317,
+    "currentClassARequests": 0,
+    "currentClassBRequests": 0,
+    "r2Mutations": 0
+  },
+  "targetAssessment": {
+    "checkpointReached": true,
+    "substantialMinimumReached": true,
+    "stretchTargetReached": false,
+    "substantialMinimumClearedBy": 1068,
+    "stretchTargetShortfall": 13932,
+    "result": "The exact unique determination gain is 11068, all recorded-present. It clears both the 5000 checkpoint and 10000 substantial minimum while remaining below the 25000 stretch target after the selected fresh, rights-compatible high-yield lanes were completely executed and screened alternatives were below threshold or blocked."
+  },
+  "externalMutations": {
+    "pushes": 0,
+    "deployments": 0,
+    "r2Mutations": 0,
+    "providerWrites": 0
+  }
+}
