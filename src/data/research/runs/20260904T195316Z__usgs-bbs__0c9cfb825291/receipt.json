@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T195316Z__usgs-bbs__0c9cfb825291",
+  "status": "complete",
+  "started_at": "2026-09-04T19:53:16.514Z",
+  "finished_at": "2026-09-04T19:53:16.546Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-bbs-route-start@1.2.0",
+  "source_id": "usgs-bbs",
+  "source_registry_hash": "b5db6823739dfebae472387838931d229e00db1a33de57d6dcb70e5ffdd970dc",
+  "adapter_id": "usgs-bbs-route-start",
+  "adapter_version": "1.2.0",
+  "adapter_code_hash": "b8418d3b2f82011e7a7ee2a61baceebf19a531f31b174354654844197d83c2fd",
+  "code_commit": "850fc70580d311df53785a6cd9167193cffb7027",
+  "parameter_hash": "0c9cfb825291be93b685a04a88b20f5ae7b8da1e515e09ba8e31ff433c596e16",
+  "parameters": {
+    "stateCode": "VA",
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 4,
+    "expectedStateGrossPairs": 19,
+    "expectedStateNetNewPairs": 4,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "51005:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6367431",
+        "routeKey": "88:015",
+        "routeName": "COVINGTON",
+        "year": 2018,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "51005",
+        "stateCode": "VA",
+        "latitude": 37.8008166,
+        "longitude": -80.0474493
+      },
+      {
+        "pairKey": "51167:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6240305",
+        "routeKey": "88:014",
+        "routeName": "PUTNAM",
+        "year": 2000,
+        "aou": "06882",
+        "stop1Count": 3,
+        "countyFips": "51167",
+        "stateCode": "VA",
+        "latitude": 37.0178877,
+        "longitude": -81.9476239
+      },
+      {
+        "pairKey": "51167:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6246918",
+        "routeKey": "88:036",
+        "routeName": "SALTVILLE",
+        "year": 2004,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "51167",
+        "stateCode": "VA",
+        "latitude": 36.8831551,
+        "longitude": -81.9508764
+      },
+      {
+        "pairKey": "51181:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6225421",
+        "routeKey": "88:031",
+        "routeName": "SURRY",
+        "year": 1999,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "51181",
+        "stateCode": "VA",
+        "latitude": 37.0842847,
+        "longitude": -76.9863819
+      }
+    ],
+    "candidatePairs": [
+      "51005:passer-domesticus",
+      "51167:passer-domesticus",
+      "51167:sturnus-vulgaris",
+      "51181:passer-domesticus"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "VA",
+    "county_fips": [
+      "51005",
+      "51167",
+      "51181"
+    ],
+    "species_ids": [
+      "passer-domesticus",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "51005:passer-domesticus",
+      "51167:passer-domesticus",
+      "51167:sturnus-vulgaris",
+      "51181:passer-domesticus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T195316Z__usgs-bbs__0c9cfb825291/artifacts/va-retained-standard-stop1-witnesses.json",
+      "sha256": "e9fa9e4532c4abc234fc1c7392a42785a3d1c770c689008b9f56ffbdcae90373",
+      "bytes": 2956,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T195316Z__usgs-bbs__0c9cfb825291/assertions.ndjson",
+      "sha256": "7a9263b92c473c7ec5b73fe76d4239bc2910392a4d9fefdf8f2d20620b7fd052",
+      "bytes": 9589,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195316Z__usgs-bbs__0c9cfb825291/reviews.ndjson",
+      "sha256": "cfbe99d1fa5a542fc0e1300d6d73536cf5ce7822ad0785d81b39df03f23b2b9e",
+      "bytes": 3819,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195316Z__usgs-bbs__0c9cfb825291/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195316Z__usgs-bbs__0c9cfb825291/outcomes.ndjson",
+      "sha256": "85c2478903aad77b549cdcf7590f68cae72d92d23933b72016a0e2b8b254ef5c",
+      "bytes": 3219,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 4,
+    "candidate_records": 4,
+    "assertion_events": 4,
+    "review_events": 4,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 4
+  },
+  "errors": [],
+  "known_caveats": [
+    "Route-start detections are sampled occurrence evidence, not countywide inventory."
+  ],
+  "source_warnings": [
+    "The complete hash-pinned BBS release was screened offline; one positive witness per eligible pair is retained in this immutable run.",
+    "Later stops, route totals, zero rows, missing rows, and source silence create no county absence or non-detection claim."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usgs-bbs --state VA --candidate-file src/data/research/national-acquisition-plans/usgs-bbs-va-route-start-residual-v1.json --output-root src/data/research/runs --pairs 51005:passer-domesticus,51167:passer-domesticus,51167:sturnus-vulgaris,51181:passer-domesticus"
+}
