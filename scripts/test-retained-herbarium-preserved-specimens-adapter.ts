@@ -60,7 +60,7 @@ function context(profile: "nybg" | "torch-brit"): SourceAdapterContext {
         countyFips: "36001",
         stateCode: "NY",
         sourceState: "New York",
-        sourceCounty: "Albany Co.",
+        sourceCounty: nybg ? "Albany Co." : "Albany",
         speciesId: "agrostis-capillaris",
         scientificName: "Agrostis capillaris",
         eventDate: "2024-06-01",
@@ -90,6 +90,7 @@ async function main() {
       assert.equal(result.outcomes[0].status, "evidence-found");
       assert.equal(result.outcomes[0].scope_complete, true);
       assert.equal(result.assertions[0].claim_type, "recorded-present");
+      assert.equal(result.assertions[0].geography_match.source_county, profile === "nybg" ? "Albany County" : "Albany");
       assert.match(result.assertions[0].source_record_id, new RegExp(`^${adapter.sourceId}:`, "u"));
       assert.equal(result.upstreamRequests.length, 0);
       const witnesses = result.artifacts.find((artifact) => artifact.filename === `${profile}-retained-witnesses.json.gz`);

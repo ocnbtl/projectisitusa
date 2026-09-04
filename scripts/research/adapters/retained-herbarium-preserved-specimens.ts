@@ -139,6 +139,13 @@ function pairKey(value: { countyFips: string; speciesId: string }) {
   return `${value.countyFips}:${value.speciesId}`;
 }
 
+function assertionCountyName(target: RetainedHerbariumTarget, profile: Profile) {
+  if (profile.profile === "nybg") {
+    return target.sourceCounty.trim().replace(/\s+Co\.?$/iu, " County");
+  }
+  return target.sourceCounty.trim();
+}
+
 function parseParameters(context: SourceAdapterContext, profile: Profile) {
   const parameters = context.parameters as unknown as RetainedHerbariumParameters;
   assert(parameters.stateCode === context.stateCode, `${profile.label} state differs from the requested state.`);
@@ -218,9 +225,11 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
       source_taxon_key: null,
     },
     geography_match: {
-      method: "Exact provider state and county text normalized only for documented county abbreviation, then resolved to one active county-equivalent registry entry; coordinates were not used",
+      method: profile.profile === "nybg"
+        ? "Exact provider state and county text normalized only for the documented Co. county abbreviation, then resolved to one active county-equivalent registry entry; coordinates were not used"
+        : "Exact provider state and county text resolved to one active county-equivalent registry entry; coordinates were not used",
       source_state: target.sourceState,
-      source_county: target.sourceCounty,
+      source_county: assertionCountyName(target, profile),
       county_fips: target.countyFips,
     },
     temporal_scope: `Preserved specimen event recorded as ${target.eventDate}; validated event year ${target.year}.`,
