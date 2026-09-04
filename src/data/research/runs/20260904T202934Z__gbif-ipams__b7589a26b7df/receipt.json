@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T202934Z__gbif-ipams__b7589a26b7df",
+  "status": "complete",
+  "started_at": "2026-09-04T20:29:34.150Z",
+  "finished_at": "2026-09-04T20:29:34.151Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ipams-retained-snapshot@1.0.0",
+  "source_id": "gbif-ipams",
+  "source_registry_hash": "28a19f51267ecabc53fb51094dae2804f9e69b1e22fe57ba4363b862142dcda1",
+  "adapter_id": "gbif-ipams-retained-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "479beee07071db6b3c3891f8fb95463f917cb02853ce41232fe4ace16b0030b1",
+  "code_commit": "3850aa7f398e7504d684851b517c89976646ae16",
+  "parameter_hash": "b7589a26b7dfddac72764e84a6bc55b21c62f357eca4adcdc7b05fe0dff10afa",
+  "parameters": {
+    "stateCode": "ID",
+    "mode": "retained-archive-witnesses",
+    "profile": "gbif-ipams",
+    "datasetKey": "d587c7e5-d442-437a-a6d7-d1a78ecf2300",
+    "datasetDoi": "10.15468/3j3ueb",
+    "datasetUrl": "https://ipt.gbif.us/archive.do?r=ipams",
+    "metadataUrl": "https://ipt.gbif.us/eml.do?r=ipams",
+    "usagePolicyUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "datasetVersion": "1.4",
+    "datasetLastModified": "2020-07-31T18:39:03Z",
+    "archiveBytes": 898409,
+    "archiveSha256": "d9fed59d6b61541b9234c330990703fc823ad0a919acf8b2639f19a0b9a64e4b",
+    "occurrenceBytes": 12884816,
+    "occurrenceSha256": "57e011f88799e68e903c9999665da0ce76b069e8abb62adab93ead1f95795d7e",
+    "emlSha256": "1bf923fffc81199623492d9a22b63348b1fb265d4ebf6fc83dfa32fa43fd86f9",
+    "metaSha256": "deab7d2648df646fb121272f66917d1787ed96d884e85a3ea704baa62d2a468d",
+    "archiveVerifiedAt": "2026-09-03T17:16:55.091Z",
+    "preflightEvaluationId": "gbif-ipams-preflight-20260904-r1",
+    "targetPairSetSha256": "665235ce1e682bd989064c39a46a4c31d13e8dda48f0cb9789ec36cabee11e57",
+    "targets": [
+      {
+        "pairKey": "16017:najas-minor",
+        "occurrenceId": "2065463457",
+        "countyFips": "16017",
+        "stateCode": "ID",
+        "speciesId": "najas-minor",
+        "scientificName": "Najas minor",
+        "eventDate": "2007-07-24",
+        "latitude": 48.17390060424805,
+        "longitude": -116.95790100097656,
+        "sourceState": "Idaho",
+        "sourceCounty": "Bonner"
+      }
+    ],
+    "candidatePairs": [
+      "16017:najas-minor"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "ID",
+    "county_fips": [
+      "16017"
+    ],
+    "species_ids": [
+      "najas-minor"
+    ],
+    "pair_keys": [
+      "16017:najas-minor"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T202934Z__gbif-ipams__b7589a26b7df/artifacts/gbif-ipams-source-identity.json",
+      "sha256": "ae4050777a38a32569984596664cdb0c37bca57cd244f0bb74e24818c12d4430",
+      "bytes": 992,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202934Z__gbif-ipams__b7589a26b7df/artifacts/gbif-ipams-retained-witnesses.json.gz",
+      "sha256": "6b129d63c8eeb38dc88bd57b39ef7cd362206fb651e849694acb4b4dc0253d16",
+      "bytes": 219,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T202934Z__gbif-ipams__b7589a26b7df/assertions.ndjson",
+      "sha256": "80629d5358e97d15aa014dc7491cede14f2757200fe0124368a4dbff2bb6f359",
+      "bytes": 1862,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202934Z__gbif-ipams__b7589a26b7df/reviews.ndjson",
+      "sha256": "c688f6c22630f2c7cb373a34aa2ae4e0f0252fce05f59cc3bcd5afba91b28729",
+      "bytes": 1093,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202934Z__gbif-ipams__b7589a26b7df/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202934Z__gbif-ipams__b7589a26b7df/outcomes.ndjson",
+      "sha256": "b9b59c7b5c1743b30ce04cdb0dfd2745bd949f7b90e22b622dd583dccc5ad64a",
+      "bytes": 664,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Dataset-specific nonnative human-observation evidence supports historical recorded presence only. Missing or rejected records never support county absence or non-detection."
+  ],
+  "source_warnings": [
+    "GBIF IPAMS human observations support historical recorded presence only.",
+    "The complete source archive was screened offline; one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ipams --state ID --candidate-file src/data/research/national-acquisition-plans/gbif-ipams-id-20260904-r1.json --output-root src/data/research/runs --pairs 16017:najas-minor"
+}
