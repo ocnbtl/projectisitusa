@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:06.641Z | 48 | 38 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:39.796Z | 16 | 12 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:53.402Z | 10 | 10 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:15.279Z | 77 | 46 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:36.994Z | 77 | 46 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1054 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

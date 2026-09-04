@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T071452Z__harvard-huh-usa-preserved-specimens__121da3e6166e",
+  "status": "complete",
+  "started_at": "2026-09-04T07:14:52.833Z",
+  "finished_at": "2026-09-04T07:14:52.834Z",
+  "actor_type": "adapter",
+  "actor_id": "harvard-huh-usa-preserved-specimens-snapshot@1.0.1",
+  "source_id": "harvard-huh-usa-preserved-specimens",
+  "source_registry_hash": "8942a7eaece26457ce0910b91d45fc460d47f35db000a4c0d1143529ca4ece6e",
+  "adapter_id": "harvard-huh-usa-preserved-specimens-snapshot",
+  "adapter_version": "1.0.1",
+  "adapter_code_hash": "663c0f589ff5f1f3c3a07386486622a628e6540b8b6595bbd3e24efba4e852e0",
+  "code_commit": "25ea15aa36b6495b71a956c9e0363f588ba8438b",
+  "parameter_hash": "121da3e6166eda2308440ef98aec2f7cc07ae42e71f79a10cad4f118167110e4",
+  "parameters": {
+    "stateCode": "LA",
+    "mode": "retained-archive-witnesses",
+    "profile": "harvard-huh-usa",
+    "datasetUrl": "https://ipt.huh.harvard.edu/ipt/archive.do?r=huh_usa&v=1.74",
+    "metadataUrl": "https://ipt.huh.harvard.edu/ipt/eml.do?r=huh_usa&v=1.74",
+    "usagePolicyUrl": "https://ipt.huh.harvard.edu/ipt/resource.do?r=huh_usa&v=1.74",
+    "datasetVersion": "1.74",
+    "publicationDate": "2026-08-29",
+    "datasetLastModified": "not-provided-by-provider",
+    "datasetEtag": null,
+    "archiveBytes": 197742128,
+    "archiveSha256": "1b054306100050566bf68aa3df561d61120d1ed5b1e6fa5d8508b669dbb090e3",
+    "occurrenceBytes": 1164383110,
+    "occurrenceSha256": "e6babcd797b50a93241788a935b8ff284e02d5fcd2955e0e071ec369a9e1ad40",
+    "archiveAcquiredAt": "2026-09-04T06:18:23.126Z",
+    "preflightEvaluationId": "harvard-huh-usa-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "2d82b78acd4fccd0c67edc447e883af3d895ebb9122fdbae238f1eaf8346db1e",
+    "targets": [
+      {
+        "pairKey": "22105:conyza-bonariensis",
+        "recordId": "1dd8222e-3243-451a-9bc0-a5d823144993",
+        "occurrenceId": "1dd8222e-3243-451a-9bc0-a5d823144993",
+        "countyFips": "22105",
+        "stateCode": "LA",
+        "sourceState": "Louisiana",
+        "sourceCounty": "Tangipahoa Parish",
+        "speciesId": "conyza-bonariensis",
+        "scientificName": "Conyza bonariensis",
+        "eventDate": "2005-04-25",
+        "year": 2005,
+        "institutionCode": "GH",
+        "collectionCode": "GH",
+        "catalogNumber": "barcode-02216795",
+        "rightsHolder": "President and Fellows of Harvard College",
+        "references": "http://data.huh.harvard.edu/1dd8222e-3243-451a-9bc0-a5d823144993/image"
+      },
+      {
+        "pairKey": "22105:sorghum-bicolor",
+        "recordId": "82d179e1-bc46-40d4-b18a-306496939c46",
+        "occurrenceId": "82d179e1-bc46-40d4-b18a-306496939c46",
+        "countyFips": "22105",
+        "stateCode": "LA",
+        "sourceState": "Louisiana",
+        "sourceCounty": "Tangipahoa Parish",
+        "speciesId": "sorghum-bicolor",
+        "scientificName": "Sorghum bicolor",
+        "eventDate": "1938-06-30",
+        "year": 1938,
+        "institutionCode": "GH",
+        "collectionCode": "GH",
+        "catalogNumber": "barcode-01815057",
+        "rightsHolder": "President and Fellows of Harvard College",
+        "references": "http://data.huh.harvard.edu/82d179e1-bc46-40d4-b18a-306496939c46/image"
+      }
+    ],
+    "candidatePairs": [
+      "22105:conyza-bonariensis",
+      "22105:sorghum-bicolor"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "LA",
+    "county_fips": [
+      "22105"
+    ],
+    "species_ids": [
+      "conyza-bonariensis",
+      "sorghum-bicolor"
+    ],
+    "pair_keys": [
+      "22105:conyza-bonariensis",
+      "22105:sorghum-bicolor"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T071452Z__harvard-huh-usa-preserved-specimens__121da3e6166e/artifacts/harvard-huh-usa-source-identity.json",
+      "sha256": "8498fb516f98a42f5c453c851e87009a9369cc0baa7eeb9f2d1bf5d8c2983525",
+      "bytes": 884,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T071452Z__harvard-huh-usa-preserved-specimens__121da3e6166e/artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+      "sha256": "370149364725e91ee3a133392b6fb4cd23b531ce4a66be2db667e9e84ff5c8b3",
+      "bytes": 441,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T071452Z__harvard-huh-usa-preserved-specimens__121da3e6166e/assertions.ndjson",
+      "sha256": "8a593c78ab549584ef96af2c91f5d6774cc7607f356aaf38b5153c1c0394731b",
+      "bytes": 4937,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T071452Z__harvard-huh-usa-preserved-specimens__121da3e6166e/reviews.ndjson",
+      "sha256": "c1aa2bddad1ce802ccf88e20fea420cd8ff2320b3228b8e5159cb099e793ed43",
+      "bytes": 2283,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T071452Z__harvard-huh-usa-preserved-specimens__121da3e6166e/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T071452Z__harvard-huh-usa-preserved-specimens__121da3e6166e/outcomes.ndjson",
+      "sha256": "869d4ef6d183730a54c7ee7a20fe3c138da614d62fa2044f4917a3e1ce0530b4",
+      "bytes": 1515,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC BY 4.0 preserved-specimen evidence supports recorded presence only and requires Harvard University Herbaria attribution. Cultivated or captive text, missing dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "Harvard HUH USA physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source harvard-huh-usa-preserved-specimens --state LA --candidate-file ops/national-research/plans/harvard-huh-usa-preserved-specimens-20260904-r1/harvard-huh-usa-preserved-specimens-la-20260904-r1.json --output-root .cache/research/worker-results/harvard-license-correction-20260904 --pairs 22105:conyza-bonariensis,22105:sorghum-bicolor"
+}
