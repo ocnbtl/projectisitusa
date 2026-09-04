@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-31",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 386,
+    "applicableSpeciesCount": 387,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2118,
+    "unknownSpeciesCount": 2117,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 124,
-    "derivedApplicableSpeciesCount": 262,
+    "derivedApplicableSpeciesCount": 263,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 624,
+    "boundedAcquisitionSpeciesCount": 625,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 160256,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 4988,
+    "verifiedPresent": 4999,
     "verifiedAbsent": 64,
     "notDetected": 0,
-    "researchedUnresolved": 28022,
-    "notResearched": 127182,
-    "determinationCoveragePercent": 3.15,
+    "researchedUnresolved": 28016,
+    "notResearched": 127177,
+    "determinationCoveragePercent": 3.16,
     "researchCoveragePercent": 20.64,
-    "explicitOutcomePairCount": 33074,
-    "explicitOutcomeCoveragePercent": 20.6382,
+    "explicitOutcomePairCount": 33079,
+    "explicitOutcomeCoveragePercent": 20.6413,
     "conflictCount": 0,
-    "evidenceRecordCount": 11909,
+    "evidenceRecordCount": 11920,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11909,
+    "runEvidenceRecordCount": 11920,
     "rejectionRecordCount": 1986,
-    "researchRunCount": 43,
+    "researchRunCount": 44,
     "boundedAcquisition": {
-      "speciesCount": 624,
-      "totalPairs": 39936,
-      "verifiedPresent": 4988,
+      "speciesCount": 625,
+      "totalPairs": 40000,
+      "verifiedPresent": 4999,
       "verifiedAbsent": 64,
       "notDetected": 0,
-      "researchedUnresolved": 28022,
-      "notResearched": 6862,
-      "researchCoveragePercent": 82.82,
-      "explicitOutcomePairs": 33074,
-      "explicitOutcomeCoveragePercent": 82.8175
+      "researchedUnresolved": 28016,
+      "notResearched": 6921,
+      "researchCoveragePercent": 82.7,
+      "explicitOutcomePairs": 33079,
+      "explicitOutcomeCoveragePercent": 82.6975
     }
   },
   "migrationCandidates": {
@@ -243,9 +243,9 @@
       "authority": "USDA Forest Service",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-04T18:04:47.048Z",
+      "evidencePairCount": 11,
+      "screenedSpeciesCount": 9
     },
     {
       "id": "usfs-ids",
@@ -482,17 +482,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2496,
-    "applicableCells": 421,
-    "notApplicableCells": 2075,
+    "totalCells": 2500,
+    "applicableCells": 422,
+    "notApplicableCells": 2078,
     "completeCells": 169,
-    "incompleteCells": 239,
+    "incompleteCells": 240,
     "blockedCells": 13,
     "currentCells": 169,
     "staleCells": 0,
-    "undatedCells": 252,
-    "applicableCompletionPercent": 40.14,
-    "currentCompletePercent": 40.14,
+    "undatedCells": 253,
+    "applicableCompletionPercent": 40.05,
+    "currentCompletePercent": 40.05,
     "regulatedAndHighApplicableCells": 110,
     "regulatedAndHighCurrentCompleteCells": 110,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -512,9 +512,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 364,
+        "applicableCells": 365,
         "currentCompleteCells": 136,
-        "currentCompletePercent": 37.36
+        "currentCompletePercent": 37.26
       },
       {
         "category": "wildlife",
@@ -538,9 +538,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 285,
+        "applicableCells": 286,
         "currentCompleteCells": 46,
-        "currentCompletePercent": 16.14
+        "currentCompletePercent": 16.08
       },
       {
         "priority": "baseline",
@@ -558,7 +558,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 386,
+        "applicableCells": 387,
         "currentCompleteCells": 147,
         "processed": false
       },
@@ -707,6 +707,18 @@
       "speciesId": "bromus-sterilis",
       "commonName": "Poverty brome",
       "scientificName": "Bromus sterilis",
+      "category": "plants",
+      "notResearchedCountyCount": 63,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 63001
+    },
+    {
+      "speciesId": "caragana-arborescens",
+      "commonName": "Siberian peashrub",
+      "scientificName": "Caragana arborescens",
       "category": "plants",
       "notResearchedCountyCount": 63,
       "researchedUnresolvedCountyCount": 0,
@@ -1751,18 +1763,6 @@
       "speciesId": "malva-neglecta",
       "commonName": "Common Mallow",
       "scientificName": "Malva neglecta",
-      "category": "plants",
-      "notResearchedCountyCount": 56,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 56001
-    },
-    {
-      "speciesId": "matricaria-discoidea",
-      "commonName": "Pineapple Weed",
-      "scientificName": "Matricaria discoidea",
       "category": "plants",
       "notResearchedCountyCount": 56,
       "researchedUnresolvedCountyCount": 0,

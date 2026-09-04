@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `4988`
+- Verified present: `4999`
 - Verified absent: `64`
 - Not detected: `0`
-- Researched unresolved: `28022`
-- Not researched: `127182`
-- Determination coverage: `3.15%`
+- Researched unresolved: `28016`
+- Not researched: `127177`
+- Determination coverage: `3.16%`
 - Research coverage: `20.64%`
-- Explicit outcome coverage: `20.6382%`
-- Applicable protocol cells: `421`
+- Explicit outcome coverage: `20.6413%`
+- Applicable protocol cells: `422`
 - Current complete protocol cells: `169`
-- Protocol completion: `40.14%`
-- Current protocol completion: `40.14%`
-- Evidence records: `11909`
-- Research runs: `43`
+- Protocol completion: `40.05%`
+- Current protocol completion: `40.05%`
+- Evidence records: `11920`
+- Research runs: `44`
 - Rejection records: `1986`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,6 +44,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Rattlesnake brome (`bromus-briziformis`) | plants | 63 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 63 | 0 | 1 |
 | Poverty brome (`bromus-sterilis`) | plants | 63 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 63 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 63 | 0 | 1 |
 | Ferngrass (`catapodium-rigidum`) | plants | 63 | 0 | 1 |
 | Golden chamomile (`cota-tinctoria`) | plants | 63 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Buckwheat (`fagopyrum-esculentum`) | plants | 63 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 63 | 0 | 1 |
 | Marsh cudweed (`gnaphalium-uliginosum`) | plants | 63 | 0 | 1 |
-| Roundfruit rush (`juncus-compressus`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -78,7 +78,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 37 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:30.000Z | 325 | 89 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:29.136Z | 245 | 62 |
-| USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
+| USFS Current Invasive Plant Locations | operational | 2026-09-04T18:04:47.048Z | 11 | 9 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1024 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:42.550Z | 77 | 51 |
