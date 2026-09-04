@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T194936Z__usgs-bbs__be7d0f1e8894",
+  "status": "complete",
+  "started_at": "2026-09-04T19:49:36.376Z",
+  "finished_at": "2026-09-04T19:49:36.397Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-bbs-route-start@1.2.0",
+  "source_id": "usgs-bbs",
+  "source_registry_hash": "b5db6823739dfebae472387838931d229e00db1a33de57d6dcb70e5ffdd970dc",
+  "adapter_id": "usgs-bbs-route-start",
+  "adapter_version": "1.2.0",
+  "adapter_code_hash": "1d9f1ab39414224a1fb869583a0f293f2b4bc61ffe9a5bde5f5d93410b4920d3",
+  "code_commit": "251e9c1d158ae602ae1c6b3ec960e3327b4c28dc",
+  "parameter_hash": "be7d0f1e8894f102ab4f0884c5cba358edaa8e6305683a534c3049a0d29a0feb",
+  "parameters": {
+    "stateCode": "FL",
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 2,
+    "expectedStateGrossPairs": 26,
+    "expectedStateNetNewPairs": 2,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "12013:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6387641",
+        "routeKey": "25:004",
+        "routeName": "BLOUNTSTOWN",
+        "year": 2025,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "12013",
+        "stateCode": "FL",
+        "latitude": 30.5288404,
+        "longitude": -85.1334541
+      },
+      {
+        "pairKey": "12079:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6245831",
+        "routeKey": "25:058",
+        "routeName": "DOWLING PARK",
+        "year": 2001,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "12079",
+        "stateCode": "FL",
+        "latitude": 30.317504,
+        "longitude": -83.334896
+      }
+    ],
+    "candidatePairs": [
+      "12013:streptopelia-decaocto",
+      "12079:streptopelia-decaocto"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "FL",
+    "county_fips": [
+      "12013",
+      "12079"
+    ],
+    "species_ids": [
+      "streptopelia-decaocto"
+    ],
+    "pair_keys": [
+      "12013:streptopelia-decaocto",
+      "12079:streptopelia-decaocto"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T194936Z__usgs-bbs__be7d0f1e8894/artifacts/fl-retained-standard-stop1-witnesses.json",
+      "sha256": "2c94906f905dcd0e144820b0dfa1124f9d41473bf041de1fc020d081accf0de3",
+      "bytes": 2165,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T194936Z__usgs-bbs__be7d0f1e8894/assertions.ndjson",
+      "sha256": "6c970238b72552277e61bb5444a12ec69b461e76b9bd1a414621ce424cdaec4a",
+      "bytes": 4806,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T194936Z__usgs-bbs__be7d0f1e8894/reviews.ndjson",
+      "sha256": "24f76c7ad6f47a0bfe5f6984b5dc33dd69960eb4f9b57bbd0cc7ed3413abe4a5",
+      "bytes": 1918,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T194936Z__usgs-bbs__be7d0f1e8894/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T194936Z__usgs-bbs__be7d0f1e8894/outcomes.ndjson",
+      "sha256": "1855e75c5eb32674cb9c7a387ecb1cdecc028c2d34f86aa34173fb3647600d56",
+      "bytes": 1618,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Route-start detections are sampled occurrence evidence, not countywide inventory."
+  ],
+  "source_warnings": [
+    "The complete hash-pinned BBS release was screened offline; one positive witness per eligible pair is retained in this immutable run.",
+    "Later stops, route totals, zero rows, missing rows, and source silence create no county absence or non-detection claim."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usgs-bbs --state FL --candidate-file src/data/research/national-acquisition-plans/usgs-bbs-fl-route-start-residual-v1.json --output-root src/data/research/runs --pairs 12013:streptopelia-decaocto,12079:streptopelia-decaocto"
+}
