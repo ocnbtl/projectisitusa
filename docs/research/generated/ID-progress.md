@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `6227`
+- Verified present: `6255`
 - Verified absent: `44`
 - Not detected: `0`
-- Researched unresolved: `17784`
-- Not researched: `86121`
-- Determination coverage: `5.69%`
-- Research coverage: `21.83%`
-- Explicit outcome coverage: `21.8332%`
-- Applicable protocol cells: `582`
+- Researched unresolved: `17770`
+- Not researched: `86107`
+- Determination coverage: `5.72%`
+- Research coverage: `21.85%`
+- Explicit outcome coverage: `21.8460%`
+- Applicable protocol cells: `584`
 - Current complete protocol cells: `90`
-- Protocol completion: `17.70%`
-- Current protocol completion: `15.46%`
-- Evidence records: `6804`
-- Research runs: `33`
+- Protocol completion: `17.64%`
+- Current protocol completion: `15.41%`
+- Evidence records: `6832`
+- Research runs: `34`
 - Rejection records: `444`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,7 +33,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Fernleaf yarrow (`achillea-filipendulina`) | plants | 43 | 0 | 1 |
-| Noble yarrow (`achillea-nobilis`) | plants | 43 | 0 | 1 |
 | Bishop's Goutweed (`aegopodium-podagraria`) | plants | 43 | 0 | 1 |
 | Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 43 | 0 | 1 |
 | Dill (`anethum-graveolens`) | plants | 43 | 0 | 1 |
@@ -52,6 +51,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Palay rubbervine (`cryptostegia-grandiflora`) | plants | 43 | 0 | 1 |
 | Variable flatsedge (`cyperus-difformis`) | plants | 43 | 0 | 1 |
 | Paradise plant (`daphne-mezereum`) | plants | 43 | 0 | 1 |
+| Pricklyburr (`datura-inoxia`) | plants | 43 | 0 | 1 |
 | Maiden pink (`dianthus-deltoides`) | plants | 43 | 0 | 1 |
 | Thymeleaf dragonhead (`dracocephalum-thymiflorum`) | plants | 43 | 0 | 1 |
 | Great globethistle (`echinops-sphaerocephalus`) | plants | 43 | 0 | 1 |
@@ -78,7 +78,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 16 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 107 | 71 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:40.879Z | 393 | 81 |
-| USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
+| USFS Current Invasive Plant Locations | operational | 2026-09-04T17:40:41.121Z | 28 | 22 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1726 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:55.514Z | 2113 | 395 |
