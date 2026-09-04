@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `66`
 - County-species pairs: `165264`
-- Verified present: `1707`
+- Verified present: `1720`
 - Verified absent: `66`
 - Not detected: `0`
-- Researched unresolved: `29644`
-- Not researched: `133847`
-- Determination coverage: `1.07%`
+- Researched unresolved: `29637`
+- Not researched: `133841`
+- Determination coverage: `1.08%`
 - Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0102%`
+- Explicit outcome coverage: `19.0138%`
 - Applicable protocol cells: `291`
 - Current complete protocol cells: `90`
 - Protocol completion: `30.93%`
 - Current protocol completion: `30.93%`
-- Evidence records: `1893`
-- Research runs: `34`
+- Evidence records: `1906`
+- Research runs: `35`
 - Rejection records: `195`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,9 +44,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Caraway (`carum-carvi`) | plants | 65 | 0 | 1 |
 | Hare's ear mustard (`conringia-orientalis`) | plants | 65 | 0 | 1 |
 | Splitlip hempnettle (`galeopsis-bifida`) | plants | 65 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 65 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 65 | 0 | 1 |
-| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 65 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 65 | 0 | 1 |
 | Low mallow (`malva-pusilla`) | plants | 65 | 0 | 1 |
 | White Sweet Clover (`melilotus-albus`) | plants | 65 | 0 | 1 |
@@ -54,9 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | True forget-me-not (`myosotis-scorpioides`) | plants | 65 | 0 | 1 |
 | Rough Bluegrass (`poa-trivialis`) | plants | 65 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 65 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 65 | 0 | 1 |
 | Brown Trout (`salmo-trutta`) | wildlife | 65 | 0 | 1 |
 | Nightflowering silene (`silene-noctiflora`) | plants | 65 | 0 | 1 |
+| False spiraea (`sorbaria-sorbifolia`) | plants | 65 | 0 | 1 |
+| Sorghum (`sorghum-bicolor`) | plants | 65 | 0 | 1 |
+| French tamarisk (`tamarix-gallica`) | plants | 65 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 14 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 30 | 33 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:25:17.077Z | 13 | 10 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:37:57.834Z | 110 | 55 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

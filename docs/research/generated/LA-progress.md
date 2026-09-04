@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `8428`
+- Verified present: `8446`
 - Verified absent: `64`
 - Not detected: `0`
-- Researched unresolved: `21907`
-- Not researched: `129857`
-- Determination coverage: `5.30%`
-- Research coverage: `18.97%`
-- Explicit outcome coverage: `18.9690%`
-- Applicable protocol cells: `466`
+- Researched unresolved: `21903`
+- Not researched: `129843`
+- Determination coverage: `5.31%`
+- Research coverage: `18.98%`
+- Explicit outcome coverage: `18.9778%`
+- Applicable protocol cells: `469`
 - Current complete protocol cells: `111`
-- Protocol completion: `26.61%`
-- Current protocol completion: `23.82%`
-- Evidence records: `11466`
-- Research runs: `34`
+- Protocol completion: `26.44%`
+- Current protocol completion: `23.67%`
+- Evidence records: `11484`
+- Research runs: `35`
 - Rejection records: `1896`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,7 +36,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Smooth joyweed (`alternanthera-paronychioides`) | plants | 63 | 0 | 1 |
 | Yellow Rocket (`barbarea-vulgaris`) | plants | 63 | 0 | 1 |
 | Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 63 | 0 | 1 |
-| Bushkiller (`cayratia-japonica`) | plants | 63 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 63 | 0 | 1 |
 | Crossflower (`chorispora-tenella`) | plants | 63 | 0 | 1 |
 | Japanese cedar (`cryptomeria-japonica`) | plants | 63 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sweet alyssum (`lobularia-maritima`) | plants | 63 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 63 | 0 | 1 |
 | Pitscale grass (`mnesithea-granularis`) | plants | 63 | 0 | 1 |
+| Changing forget-me-not (`myosotis-discolor`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 73 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 458 | 35 |
+| BLM National Invasive Species Information Management System plants | operational | not run | 0 | 0 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:52.834Z | 2 | 2 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 734 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:01.519Z | 18 | 11 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:19:59.461Z | 186 | 10 |

@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 414,
+    "applicableSpeciesCount": 416,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2090,
+    "unknownSpeciesCount": 2088,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 66,
-    "derivedApplicableSpeciesCount": 348,
+    "derivedApplicableSpeciesCount": 350,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 559,
+    "boundedAcquisitionSpeciesCount": 561,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 187800,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 6927,
+    "verifiedPresent": 6936,
     "verifiedAbsent": 75,
     "notDetected": 0,
-    "researchedUnresolved": 29022,
-    "notResearched": 151776,
+    "researchedUnresolved": 29016,
+    "notResearched": 151773,
     "determinationCoveragePercent": 3.73,
     "researchCoveragePercent": 19.18,
-    "explicitOutcomePairCount": 36024,
-    "explicitOutcomeCoveragePercent": 19.1821,
+    "explicitOutcomePairCount": 36027,
+    "explicitOutcomeCoveragePercent": 19.1837,
     "conflictCount": 0,
-    "evidenceRecordCount": 10242,
+    "evidenceRecordCount": 10251,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 10242,
+    "runEvidenceRecordCount": 10251,
     "rejectionRecordCount": 632,
-    "researchRunCount": 38,
+    "researchRunCount": 39,
     "boundedAcquisition": {
-      "speciesCount": 559,
-      "totalPairs": 41925,
-      "verifiedPresent": 6927,
+      "speciesCount": 561,
+      "totalPairs": 42075,
+      "verifiedPresent": 6936,
       "verifiedAbsent": 75,
       "notDetected": 0,
-      "researchedUnresolved": 29022,
-      "notResearched": 5901,
-      "researchCoveragePercent": 85.92,
-      "explicitOutcomePairs": 36024,
-      "explicitOutcomeCoveragePercent": 85.9249
+      "researchedUnresolved": 29016,
+      "notResearched": 6048,
+      "researchCoveragePercent": 85.63,
+      "explicitOutcomePairs": 36027,
+      "explicitOutcomeCoveragePercent": 85.6257
     }
   },
   "migrationCandidates": {
@@ -228,6 +228,16 @@
       "screenedSpeciesCount": 35
     },
     {
+      "id": "blm-nisims",
+      "label": "BLM National Invasive Species Information Management System plants",
+      "authority": "U.S. Bureau of Land Management via GBIF-US",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
       "id": "blm-aim-terrestrial-invasive-plants",
       "label": "BLM AIM Terrestrial Invasive Plant Indicators",
       "authority": "U.S. Bureau of Land Management",
@@ -343,9 +353,9 @@
       "authority": "Invasive Plant Atlas of the MidSouth via GBIF",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-04T20:29:16.388Z",
+      "evidencePairCount": 9,
+      "screenedSpeciesCount": 7
     },
     {
       "id": "gbif-ebird",
@@ -482,17 +492,17 @@
     "protocolId": "national-pilot-multisource-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2236,
-    "applicableCells": 449,
-    "notApplicableCells": 1787,
+    "totalCells": 2244,
+    "applicableCells": 451,
+    "notApplicableCells": 1793,
     "completeCells": 141,
-    "incompleteCells": 308,
+    "incompleteCells": 310,
     "blockedCells": 0,
     "currentCells": 128,
     "staleCells": 13,
-    "undatedCells": 308,
-    "applicableCompletionPercent": 31.4,
-    "currentCompletePercent": 28.51,
+    "undatedCells": 310,
+    "applicableCompletionPercent": 31.26,
+    "currentCompletePercent": 28.38,
     "regulatedAndHighApplicableCells": 46,
     "regulatedAndHighCurrentCompleteCells": 46,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -512,9 +522,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 389,
+        "applicableCells": 391,
         "currentCompleteCells": 91,
-        "currentCompletePercent": 23.39
+        "currentCompletePercent": 23.27
       },
       {
         "category": "wildlife",
@@ -538,9 +548,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 377,
+        "applicableCells": 379,
         "currentCompleteCells": 69,
-        "currentCompletePercent": 18.3
+        "currentCompletePercent": 18.21
       },
       {
         "priority": "baseline",
@@ -558,7 +568,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 414,
+        "applicableCells": 416,
         "currentCompleteCells": 106,
         "processed": false
       },
@@ -635,6 +645,18 @@
       "speciesId": "canavalia-ensiformis",
       "commonName": "Jack bean",
       "scientificName": "Canavalia ensiformis",
+      "category": "plants",
+      "notResearchedCountyCount": 74,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 74001
+    },
+    {
+      "speciesId": "cayratia-japonica",
+      "commonName": "Bushkiller",
+      "scientificName": "Cayratia japonica",
       "category": "plants",
       "notResearchedCountyCount": 74,
       "researchedUnresolvedCountyCount": 0,
@@ -1079,6 +1101,18 @@
       "speciesId": "brassica-nigra",
       "commonName": "Black mustard",
       "scientificName": "Brassica nigra",
+      "category": "plants",
+      "notResearchedCountyCount": 73,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 73001
+    },
+    {
+      "speciesId": "cirsium-arvense",
+      "commonName": "Canada Thistle",
+      "scientificName": "Cirsium arvense",
       "category": "plants",
       "notResearchedCountyCount": 73,
       "researchedUnresolvedCountyCount": 0,
@@ -1723,26 +1757,6 @@
       "speciesId": "acarapis-woodi",
       "commonName": "Honey bee tracheal mite",
       "scientificName": "Acarapis woodi",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 75,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 750
-    },
-    {
-      "speciesId": "aceria-kuko",
-      "commonName": "Goji gall mite",
-      "scientificName": "Aceria kuko",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 75,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 750
-    },
-    {
-      "speciesId": "aceria-litchii",
-      "commonName": "Litchi mite",
-      "scientificName": "Aceria litchii",
       "category": "wildlife",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 75,

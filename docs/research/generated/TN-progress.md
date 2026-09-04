@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `8001`
+- Verified present: `8013`
 - Verified absent: `95`
 - Not detected: `8`
-- Researched unresolved: `36851`
-- Not researched: `192925`
-- Determination coverage: `3.40%`
+- Researched unresolved: `36847`
+- Not researched: `192917`
+- Determination coverage: `3.41%`
 - Research coverage: `18.90%`
-- Explicit outcome coverage: `18.8982%`
-- Applicable protocol cells: `426`
+- Explicit outcome coverage: `18.9015%`
+- Applicable protocol cells: `428`
 - Current complete protocol cells: `127`
-- Protocol completion: `32.86%`
-- Current protocol completion: `29.81%`
-- Evidence records: `10338`
-- Research runs: `35`
+- Protocol completion: `32.71%`
+- Current protocol completion: `29.67%`
+- Evidence records: `10350`
+- Research runs: `36`
 - Rejection records: `746`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,7 +42,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Poverty brome (`bromus-sterilis`) | plants | 94 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 94 | 0 | 1 |
 | Crossflower (`chorispora-tenella`) | plants | 94 | 0 | 1 |
-| Canada Thistle (`cirsium-arvense`) | plants | 94 | 0 | 1 |
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 94 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 94 | 0 | 1 |
 | Variable flatsedge (`cyperus-difformis`) | plants | 94 | 0 | 1 |
@@ -56,6 +55,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | False baby's breath (`galium-mollugo`) | plants | 94 | 0 | 1 |
 | Meadow hawkweed (`hieracium-caespitosum`) | plants | 94 | 0 | 1 |
 | Common barley (`hordeum-vulgare`) | plants | 94 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 94 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 94 | 0 | 1 |
 
 ## Source Operations
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 433 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 941 | 35 |
+| BLM National Invasive Species Information Management System plants | operational | not run | 0 | 0 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:36.994Z | 77 | 46 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1054 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:47.409Z | 12 | 10 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T20:07:45.190Z | 382 | 10 |

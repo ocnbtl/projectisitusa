@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `3386`
+- Verified present: `3409`
 - Verified absent: `29`
 - Not detected: `0`
-- Researched unresolved: `11779`
-- Not researched: `57422`
-- Determination coverage: `4.70%`
-- Research coverage: `20.92%`
-- Explicit outcome coverage: `20.9238%`
-- Applicable protocol cells: `484`
+- Researched unresolved: `11774`
+- Not researched: `57404`
+- Determination coverage: `4.73%`
+- Research coverage: `20.95%`
+- Explicit outcome coverage: `20.9486%`
+- Applicable protocol cells: `486`
 - Current complete protocol cells: `72`
-- Protocol completion: `17.56%`
-- Current protocol completion: `14.88%`
-- Evidence records: `3455`
-- Research runs: `38`
+- Protocol completion: `17.49%`
+- Current protocol completion: `14.81%`
+- Evidence records: `3478`
+- Research runs: `40`
 - Rejection records: `139`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,6 +36,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Fernleaf yarrow (`achillea-filipendulina`) | plants | 28 | 0 | 1 |
 | Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 28 | 0 | 1 |
 | Dill (`anethum-graveolens`) | plants | 28 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 28 | 0 | 1 |
 | Australian saltbush (`atriplex-semibaccata`) | plants | 28 | 0 | 1 |
 | Peregrine saltbush (`atriplex-suberecta`) | plants | 28 | 0 | 1 |
 | Lawndaisy (`bellis-perennis`) | plants | 28 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Winged Burning Bush (`euonymus-alatus`) | plants | 28 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 28 | 0 | 1 |
 | Sweet fennel (`foeniculum-vulgare`) | plants | 28 | 0 | 1 |
-| Yellow spring bedstraw (`galium-verum`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 20 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 75 | 67 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:25:20.079Z | 17 | 7 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:38:12.564Z | 246 | 66 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:40.675Z | 51 | 33 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 36 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:53.418Z | 6 | 3 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:40:31.571Z | 150 | 10 |

@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `2349`
+- Verified present: `2365`
 - Verified absent: `23`
 - Not detected: `0`
-- Researched unresolved: `9643`
-- Not researched: `45577`
-- Determination coverage: `4.12%`
-- Research coverage: `20.86%`
-- Explicit outcome coverage: `20.8623%`
-- Applicable protocol cells: `359`
+- Researched unresolved: `9640`
+- Not researched: `45564`
+- Determination coverage: `4.15%`
+- Research coverage: `20.88%`
+- Explicit outcome coverage: `20.8848%`
+- Applicable protocol cells: `360`
 - Current complete protocol cells: `62`
-- Protocol completion: `20.89%`
-- Current protocol completion: `17.27%`
-- Evidence records: `2389`
-- Research runs: `40`
+- Protocol completion: `20.83%`
+- Current protocol completion: `17.22%`
+- Evidence records: `2405`
+- Research runs: `41`
 - Rejection records: `81`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mammoth wildrye (`leymus-racemosus`) | plants | 22 | 0 | 1 |
 | Sweet alyssum (`lobularia-maritima`) | plants | 22 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 22 | 0 | 1 |
-| Matrimony vine (`lycium-barbarum`) | plants | 22 | 0 | 1 |
+| Onerow yellowcress (`nasturtium-microphyllum`) | plants | 22 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 1 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 68 | 71 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:25:29.046Z | 16 | 8 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:38:29.364Z | 283 | 66 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

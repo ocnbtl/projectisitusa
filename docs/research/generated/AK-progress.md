@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `1149`
+- Verified present: `1150`
 - Verified absent: `30`
 - Not detected: `0`
 - Researched unresolved: `13503`
-- Not researched: `60438`
+- Not researched: `60437`
 - Determination coverage: `1.57%`
-- Research coverage: `19.54%`
-- Explicit outcome coverage: `19.5447%`
+- Research coverage: `19.55%`
+- Explicit outcome coverage: `19.5461%`
 - Applicable protocol cells: `245`
 - Current complete protocol cells: `111`
 - Protocol completion: `45.31%`
 - Current protocol completion: `45.31%`
-- Evidence records: `1339`
-- Research runs: `37`
+- Evidence records: `1340`
+- Research runs: `38`
 - Rejection records: `2194`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,7 +36,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 29 | 0 | 1 |
 | Lawndaisy (`bellis-perennis`) | plants | 29 | 0 | 1 |
 | Gold-of-pleasure (`camelina-sativa`) | plants | 29 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 29 | 0 | 1 |
 | Simons' cotoneaster (`cotoneaster-simonsii`) | plants | 29 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 29 | 0 | 1 |
 | Splitlip hempnettle (`galeopsis-bifida`) | plants | 29 | 0 | 1 |
@@ -56,6 +55,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tall tumblemustard (`sisymbrium-altissimum`) | plants | 29 | 0 | 1 |
 | Red Sandspurry (`spergularia-rubra`) | plants | 29 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 29 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 28 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 1 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 21 | 34 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:24:10.391Z | 1 | 1 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:35:22.239Z | 2 | 2 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

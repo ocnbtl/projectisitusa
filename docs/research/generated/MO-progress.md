@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `8260`
+- Verified present: `8272`
 - Verified absent: `115`
 - Not detected: `0`
-- Researched unresolved: `46341`
-- Not researched: `233244`
+- Researched unresolved: `46340`
+- Not researched: `233233`
 - Determination coverage: `2.91%`
-- Research coverage: `19.00%`
-- Explicit outcome coverage: `19.0013%`
-- Applicable protocol cells: `394`
+- Research coverage: `19.01%`
+- Explicit outcome coverage: `19.0051%`
+- Applicable protocol cells: `398`
 - Current complete protocol cells: `120`
-- Protocol completion: `33.76%`
-- Current protocol completion: `30.46%`
-- Evidence records: `9216`
-- Research runs: `35`
+- Protocol completion: `33.42%`
+- Current protocol completion: `30.15%`
+- Evidence records: `9228`
+- Research runs: `36`
 - Rejection records: `1467`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -53,10 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Matrimony vine (`lycium-barbarum`) | plants | 114 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 114 | 0 | 1 |
 | Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 114 | 0 | 1 |
+| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 114 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 114 | 0 | 1 |
 | Apple of Peru (`nicandra-physalodes`) | plants | 114 | 0 | 1 |
 | Annual canarygrass (`phalaris-canariensis`) | plants | 114 | 0 | 1 |
-| Scots pine (`pinus-sylvestris`) | plants | 114 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 326 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:31.000Z | 335 | 33 |
+| BLM National Invasive Species Information Management System plants | operational | not run | 0 | 0 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:02.469Z | 28 | 19 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 695 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:04.549Z | 12 | 6 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T19:56:24.634Z | 326 | 10 |

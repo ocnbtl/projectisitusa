@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 363,
+    "applicableSpeciesCount": 367,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2141,
+    "unknownSpeciesCount": 2137,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 310,
+    "derivedApplicableSpeciesCount": 314,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 613,
+    "boundedAcquisitionSpeciesCount": 617,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 42568,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 1759,
+    "verifiedPresent": 1768,
     "verifiedAbsent": 17,
     "notDetected": 0,
-    "researchedUnresolved": 7203,
-    "notResearched": 33589,
-    "determinationCoveragePercent": 4.17,
-    "researchCoveragePercent": 21.09,
-    "explicitOutcomePairCount": 8979,
-    "explicitOutcomeCoveragePercent": 21.0933,
+    "researchedUnresolved": 7199,
+    "notResearched": 33584,
+    "determinationCoveragePercent": 4.19,
+    "researchCoveragePercent": 21.11,
+    "explicitOutcomePairCount": 8984,
+    "explicitOutcomeCoveragePercent": 21.1051,
     "conflictCount": 0,
-    "evidenceRecordCount": 2100,
+    "evidenceRecordCount": 2109,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 2100,
+    "runEvidenceRecordCount": 2109,
     "rejectionRecordCount": 251,
-    "researchRunCount": 35,
+    "researchRunCount": 36,
     "boundedAcquisition": {
-      "speciesCount": 613,
-      "totalPairs": 10421,
-      "verifiedPresent": 1759,
+      "speciesCount": 617,
+      "totalPairs": 10489,
+      "verifiedPresent": 1768,
       "verifiedAbsent": 17,
       "notDetected": 0,
-      "researchedUnresolved": 7203,
-      "notResearched": 1442,
-      "researchCoveragePercent": 86.16,
-      "explicitOutcomePairs": 8979,
-      "explicitOutcomeCoveragePercent": 86.1626
+      "researchedUnresolved": 7199,
+      "notResearched": 1505,
+      "researchCoveragePercent": 85.65,
+      "explicitOutcomePairs": 8984,
+      "explicitOutcomeCoveragePercent": 85.6516
     }
   },
   "migrationCandidates": {
@@ -226,6 +226,16 @@
       "lastRunAt": "2026-07-26T13:44:30.000Z",
       "evidencePairCount": 12,
       "screenedSpeciesCount": 77
+    },
+    {
+      "id": "blm-nisims",
+      "label": "BLM National Invasive Species Information Management System plants",
+      "authority": "U.S. Bureau of Land Management via GBIF-US",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-04T20:25:10.951Z",
+      "evidencePairCount": 9,
+      "screenedSpeciesCount": 9
     },
     {
       "id": "blm-aim-terrestrial-invasive-plants",
@@ -482,17 +492,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2452,
-    "applicableCells": 398,
-    "notApplicableCells": 2054,
+    "totalCells": 2468,
+    "applicableCells": 402,
+    "notApplicableCells": 2066,
     "completeCells": 101,
-    "incompleteCells": 297,
+    "incompleteCells": 301,
     "blockedCells": 0,
     "currentCells": 88,
     "staleCells": 13,
-    "undatedCells": 297,
-    "applicableCompletionPercent": 25.38,
-    "currentCompletePercent": 22.11,
+    "undatedCells": 301,
+    "applicableCompletionPercent": 25.12,
+    "currentCompletePercent": 21.89,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -512,9 +522,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 339,
+        "applicableCells": 343,
         "currentCompleteCells": 53,
-        "currentCompletePercent": 15.63
+        "currentCompletePercent": 15.45
       },
       {
         "category": "wildlife",
@@ -538,9 +548,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 337,
+        "applicableCells": 341,
         "currentCompleteCells": 40,
-        "currentCompletePercent": 11.87
+        "currentCompletePercent": 11.73
       },
       {
         "priority": "baseline",
@@ -558,7 +568,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 363,
+        "applicableCells": 367,
         "currentCompleteCells": 66,
         "processed": false
       },
@@ -608,9 +618,33 @@
       "priorityScore": 16001
     },
     {
+      "speciesId": "anthemis-arvensis",
+      "commonName": "Corn chamomile",
+      "scientificName": "Anthemis arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 16,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 16001
+    },
+    {
       "speciesId": "anthriscus-caucalis",
       "commonName": "Bur chervil",
       "scientificName": "Anthriscus caucalis",
+      "category": "plants",
+      "notResearchedCountyCount": 16,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 16001
+    },
+    {
+      "speciesId": "artemisia-vulgaris",
+      "commonName": "Mugwort",
+      "scientificName": "Artemisia vulgaris",
       "category": "plants",
       "notResearchedCountyCount": 16,
       "researchedUnresolvedCountyCount": 0,
@@ -635,6 +669,18 @@
       "speciesId": "barbarea-vulgaris",
       "commonName": "Yellow Rocket",
       "scientificName": "Barbarea vulgaris",
+      "category": "plants",
+      "notResearchedCountyCount": 16,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 16001
+    },
+    {
+      "speciesId": "bellis-perennis",
+      "commonName": "Lawndaisy",
+      "scientificName": "Bellis perennis",
       "category": "plants",
       "notResearchedCountyCount": 16,
       "researchedUnresolvedCountyCount": 0,
@@ -671,6 +717,18 @@
       "speciesId": "carthamus-lanatus",
       "commonName": "Woolly distaff thistle",
       "scientificName": "Carthamus lanatus",
+      "category": "plants",
+      "notResearchedCountyCount": 16,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 16001
+    },
+    {
+      "speciesId": "cynodon-nlemfuensis",
+      "commonName": "African bermudagrass",
+      "scientificName": "Cynodon nlemfuensis",
       "category": "plants",
       "notResearchedCountyCount": 16,
       "researchedUnresolvedCountyCount": 0,
@@ -1592,18 +1650,6 @@
       "priorityScore": 12001
     },
     {
-      "speciesId": "medicago-sativa",
-      "commonName": "Alfalfa",
-      "scientificName": "Medicago sativa",
-      "category": "plants",
-      "notResearchedCountyCount": 12,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 12001
-    },
-    {
       "speciesId": "sisymbrium-irio",
       "commonName": "London rocket",
       "scientificName": "Sisymbrium irio",
@@ -1626,6 +1672,18 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 12001
+    },
+    {
+      "speciesId": "medicago-sativa",
+      "commonName": "Alfalfa",
+      "scientificName": "Medicago sativa",
+      "category": "plants",
+      "notResearchedCountyCount": 11,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 11001
     },
     {
       "speciesId": "poa-compressa",
@@ -1722,54 +1780,6 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 9001
-    },
-    {
-      "speciesId": "onobrychis-viciifolia",
-      "commonName": "Sainfoin legume",
-      "scientificName": "Onobrychis viciifolia",
-      "category": "plants",
-      "notResearchedCountyCount": 9,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 9001
-    },
-    {
-      "speciesId": "tragopogon-dubius",
-      "commonName": "Yellow Salsify",
-      "scientificName": "Tragopogon dubius",
-      "category": "plants",
-      "notResearchedCountyCount": 8,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 8001
-    },
-    {
-      "speciesId": "camelina-microcarpa",
-      "commonName": "Littlepod False Flax",
-      "scientificName": "Camelina microcarpa",
-      "category": "plants",
-      "notResearchedCountyCount": 7,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 7001
-    },
-    {
-      "speciesId": "persicaria-maculosa",
-      "commonName": "Lady's Thumb",
-      "scientificName": "Persicaria maculosa",
-      "category": "plants",
-      "notResearchedCountyCount": 7,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 7001
     }
   ]
 }

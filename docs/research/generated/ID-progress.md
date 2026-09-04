@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `6256`
+- Verified present: `6270`
 - Verified absent: `44`
 - Not detected: `0`
-- Researched unresolved: `17769`
-- Not researched: `86107`
-- Determination coverage: `5.72%`
+- Researched unresolved: `17761`
+- Not researched: `86101`
+- Determination coverage: `5.73%`
 - Research coverage: `21.85%`
-- Explicit outcome coverage: `21.8460%`
-- Applicable protocol cells: `584`
+- Explicit outcome coverage: `21.8514%`
+- Applicable protocol cells: `587`
 - Current complete protocol cells: `90`
-- Protocol completion: `17.64%`
-- Current protocol completion: `15.41%`
-- Evidence records: `6833`
-- Research runs: `35`
+- Protocol completion: `17.55%`
+- Current protocol completion: `15.33%`
+- Evidence records: `6847`
+- Research runs: `37`
 - Rejection records: `444`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 16 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 107 | 71 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:24:47.288Z | 13 | 9 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:40.879Z | 393 | 81 |
 | USFS Current Invasive Plant Locations | operational | 2026-09-04T17:40:41.121Z | 28 | 22 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:43.656Z | 9 | 7 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 189 | 106 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:34.151Z | 1 | 1 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:35:29.249Z | 201 | 10 |

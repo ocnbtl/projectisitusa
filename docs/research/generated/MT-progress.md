@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `5797`
+- Verified present: `5806`
 - Verified absent: `56`
 - Not detected: `0`
-- Researched unresolved: `23638`
-- Not researched: `110733`
-- Determination coverage: `4.17%`
+- Researched unresolved: `23633`
+- Not researched: `110729`
+- Determination coverage: `4.18%`
 - Research coverage: `21.03%`
-- Explicit outcome coverage: `21.0313%`
-- Applicable protocol cells: `469`
+- Explicit outcome coverage: `21.0342%`
+- Applicable protocol cells: `470`
 - Current complete protocol cells: `74`
-- Protocol completion: `18.55%`
-- Current protocol completion: `15.78%`
-- Evidence records: `5900`
-- Research runs: `39`
+- Protocol completion: `18.51%`
+- Current protocol completion: `15.74%`
+- Evidence records: `5909`
+- Research runs: `40`
 - Rejection records: `137`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,6 +46,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Gray field slug (`deroceras-reticulatum`) | wildlife | 55 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 55 | 0 | 1 |
 | Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 55 | 0 | 1 |
+| Spanish heath (`erica-lusitanica`) | plants | 55 | 0 | 1 |
 | Black bindweed (`fallopia-convolvulus`) | plants | 55 | 0 | 1 |
 | Red hempnettle (`galeopsis-ladanum`) | plants | 55 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 55 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Nutria (`nutria`) | wildlife | 55 | 0 | 1 |
 | Changing forget-me-not (`myosotis-discolor`) | plants | 55 | 0 | 1 |
 | Raceme catnip (`nepeta-racemosa`) | plants | 55 | 0 | 1 |
-| Blindeyes (`papaver-dubium`) | plants | 55 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 4 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 239 | 68 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:24:50.331Z | 9 | 7 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:55.073Z | 404 | 88 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

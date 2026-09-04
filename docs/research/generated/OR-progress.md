@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `7941`
+- Verified present: `7968`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `12220`
-- Not researched: `69947`
-- Determination coverage: `8.85%`
-- Research coverage: `22.41%`
-- Explicit outcome coverage: `22.4053%`
-- Applicable protocol cells: `779`
+- Researched unresolved: `12207`
+- Not researched: `69933`
+- Determination coverage: `8.88%`
+- Research coverage: `22.42%`
+- Explicit outcome coverage: `22.4208%`
+- Applicable protocol cells: `782`
 - Current complete protocol cells: `105`
-- Protocol completion: `15.15%`
-- Current protocol completion: `13.48%`
-- Evidence records: `8207`
-- Research runs: `38`
+- Protocol completion: `15.09%`
+- Current protocol completion: `13.43%`
+- Evidence records: `8234`
+- Research runs: `40`
 - Rejection records: `441`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rosary Pea (`abrus-precatorius`) | plants | 35 | 0 | 1 |
 | Green wattle (`acacia-decurrens`) | plants | 35 | 0 | 1 |
 | Sydney golden wattle (`acacia-longifolia`) | plants | 35 | 0 | 1 |
 | Asian copperleaf (`acalypha-australis`) | plants | 35 | 0 | 1 |
@@ -47,6 +48,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common Barberry (`berberis-vulgaris`) | plants | 35 | 0 | 1 |
 | Purple false brome (`brachypodium-distachyon`) | plants | 35 | 0 | 1 |
 | Heath false brome (`brachypodium-pinnatum`) | plants | 35 | 0 | 1 |
+| White bryony (`bryonia-alba`) | plants | 35 | 0 | 1 |
 | Pot marigold (`calendula-officinalis`) | plants | 35 | 0 | 1 |
 | Canterbury bells (`campanula-medium`) | plants | 35 | 0 | 1 |
 | Curly plumeless thistle (`carduus-crispus`) | plants | 35 | 0 | 1 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Ferngrass (`catapodium-rigidum`) | plants | 35 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 35 | 0 | 1 |
 | Branched centaury (`centaurium-pulchellum`) | plants | 35 | 0 | 1 |
-| Spadeleaf (`centella-asiatica`) | plants | 35 | 0 | 1 |
-| Snow in summer (`cerastium-tomentosum`) | plants | 35 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 15 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:25:13.993Z | 26 | 20 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:37:50.685Z | 121 | 51 |
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:42:29.381Z | 730 | 129 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:27.554Z | 20 | 18 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 212 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:41.442Z | 1 | 1 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:38:49.254Z | 173 | 10 |

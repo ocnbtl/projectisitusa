@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 365,
+    "applicableSpeciesCount": 366,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2139,
+    "unknownSpeciesCount": 2138,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 312,
+    "derivedApplicableSpeciesCount": 313,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 573,
+    "boundedAcquisitionSpeciesCount": 574,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 180288,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 7020,
+    "verifiedPresent": 7021,
     "verifiedAbsent": 72,
     "notDetected": 29,
     "researchedUnresolved": 27260,
-    "notResearched": 145907,
+    "notResearched": 145906,
     "determinationCoveragePercent": 3.93,
     "researchCoveragePercent": 19.07,
-    "explicitOutcomePairCount": 34381,
-    "explicitOutcomeCoveragePercent": 19.07,
+    "explicitOutcomePairCount": 34382,
+    "explicitOutcomeCoveragePercent": 19.0706,
     "conflictCount": 0,
-    "evidenceRecordCount": 11317,
+    "evidenceRecordCount": 11318,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11317,
+    "runEvidenceRecordCount": 11318,
     "rejectionRecordCount": 1541,
-    "researchRunCount": 35,
+    "researchRunCount": 36,
     "boundedAcquisition": {
-      "speciesCount": 573,
-      "totalPairs": 41256,
-      "verifiedPresent": 7020,
+      "speciesCount": 574,
+      "totalPairs": 41328,
+      "verifiedPresent": 7021,
       "verifiedAbsent": 72,
       "notDetected": 29,
       "researchedUnresolved": 27260,
-      "notResearched": 6875,
-      "researchCoveragePercent": 83.34,
-      "explicitOutcomePairs": 34381,
-      "explicitOutcomeCoveragePercent": 83.3358
+      "notResearched": 6946,
+      "researchCoveragePercent": 83.19,
+      "explicitOutcomePairs": 34382,
+      "explicitOutcomeCoveragePercent": 83.193
     }
   },
   "migrationCandidates": {
@@ -226,6 +226,16 @@
       "lastRunAt": "2026-07-26T13:44:30.000Z",
       "evidencePairCount": 416,
       "screenedSpeciesCount": 33
+    },
+    {
+      "id": "blm-nisims",
+      "label": "BLM National Invasive Species Information Management System plants",
+      "authority": "U.S. Bureau of Land Management via GBIF-US",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-04T20:25:26.016Z",
+      "evidencePairCount": 1,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "blm-aim-terrestrial-invasive-plants",
@@ -482,17 +492,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2292,
-    "applicableCells": 400,
-    "notApplicableCells": 1892,
+    "totalCells": 2296,
+    "applicableCells": 401,
+    "notApplicableCells": 1895,
     "completeCells": 141,
-    "incompleteCells": 258,
+    "incompleteCells": 259,
     "blockedCells": 1,
     "currentCells": 128,
     "staleCells": 13,
-    "undatedCells": 259,
-    "applicableCompletionPercent": 35.25,
-    "currentCompletePercent": 32,
+    "undatedCells": 260,
+    "applicableCompletionPercent": 35.16,
+    "currentCompletePercent": 31.92,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -512,9 +522,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 344,
+        "applicableCells": 345,
         "currentCompleteCells": 94,
-        "currentCompletePercent": 27.33
+        "currentCompletePercent": 27.25
       },
       {
         "category": "wildlife",
@@ -538,9 +548,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 339,
+        "applicableCells": 340,
         "currentCompleteCells": 80,
-        "currentCompletePercent": 23.6
+        "currentCompletePercent": 23.53
       },
       {
         "priority": "baseline",
@@ -558,7 +568,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 365,
+        "applicableCells": 366,
         "currentCompleteCells": 107,
         "processed": false
       },
@@ -1067,6 +1077,18 @@
       "speciesId": "persicaria-maculosa",
       "commonName": "Lady's Thumb",
       "scientificName": "Persicaria maculosa",
+      "category": "plants",
+      "notResearchedCountyCount": 71,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 71001
+    },
+    {
+      "speciesId": "phalaris-canariensis",
+      "commonName": "Annual canarygrass",
+      "scientificName": "Phalaris canariensis",
       "category": "plants",
       "notResearchedCountyCount": 71,
       "researchedUnresolvedCountyCount": 0,
@@ -1751,18 +1773,6 @@
       "speciesId": "anarsia-lineatella",
       "commonName": "Peach twig borer",
       "scientificName": "Anarsia lineatella",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 72,
-      "missingProtocolSourceIds": [
-        "usfs-afpe"
-      ],
-      "priorityScore": 721
-    },
-    {
-      "speciesId": "aspidiotus-duplex",
-      "commonName": "Camphor scale",
-      "scientificName": "Aspidiotus duplex",
       "category": "insects",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 72,

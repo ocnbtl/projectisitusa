@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6243`
+- Verified present: `6244`
 - Verified absent: `99`
 - Not detected: `9`
 - Researched unresolved: `40893`
-- Not researched: `200652`
+- Not researched: `200651`
 - Determination coverage: `2.56%`
 - Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0580%`
-- Applicable protocol cells: `332`
+- Explicit outcome coverage: `19.0584%`
+- Applicable protocol cells: `333`
 - Current complete protocol cells: `119`
-- Protocol completion: `39.76%`
-- Current protocol completion: `35.84%`
-- Evidence records: `6609`
-- Research runs: `36`
+- Protocol completion: `39.64%`
+- Current protocol completion: `35.74%`
+- Evidence records: `6610`
+- Research runs: `37`
 - Rejection records: `316`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Pineapple Weed (`matricaria-discoidea`) | plants | 98 | 0 | 1 |
 | Sulphur Cinquefoil (`potentilla-recta`) | plants | 98 | 0 | 1 |
 | Laurel willow (`salix-pentandra`) | plants | 98 | 0 | 1 |
+| Giant Foxtail (`setaria-faberi`) | plants | 98 | 0 | 1 |
 | Foxtail millet (`setaria-italica`) | plants | 98 | 0 | 1 |
 | Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 98 | 0 | 1 |
 | Climbing Nightshade (`solanum-dulcamara`) | plants | 98 | 0 | 1 |
 | Field Sowthistle (`sonchus-arvensis`) | plants | 98 | 0 | 1 |
-| Grass-like starwort (`stellaria-graminea`) | plants | 98 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 299 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 203 | 33 |
+| BLM National Invasive Species Information Management System plants | operational | not run | 0 | 0 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:41.888Z | 43 | 24 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 297 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:31.135Z | 1 | 1 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T19:57:41.609Z | 260 | 10 |

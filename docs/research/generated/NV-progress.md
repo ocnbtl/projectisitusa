@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `1759`
+- Verified present: `1768`
 - Verified absent: `17`
 - Not detected: `0`
-- Researched unresolved: `7203`
-- Not researched: `33589`
-- Determination coverage: `4.17%`
-- Research coverage: `21.09%`
-- Explicit outcome coverage: `21.0933%`
-- Applicable protocol cells: `398`
+- Researched unresolved: `7199`
+- Not researched: `33584`
+- Determination coverage: `4.19%`
+- Research coverage: `21.11%`
+- Explicit outcome coverage: `21.1051%`
+- Applicable protocol cells: `402`
 - Current complete protocol cells: `88`
-- Protocol completion: `25.38%`
-- Current protocol completion: `22.11%`
-- Evidence records: `2100`
-- Research runs: `35`
+- Protocol completion: `25.12%`
+- Current protocol completion: `21.89%`
+- Evidence records: `2109`
+- Research runs: `36`
 - Rejection records: `251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -35,12 +35,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Orange wattle (`acacia-saligna`) | plants | 16 | 0 | 1 |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 16 | 0 | 1 |
 | Mediterranean amaranth (`amaranthus-graecizans`) | plants | 16 | 0 | 1 |
+| Corn chamomile (`anthemis-arvensis`) | plants | 16 | 0 | 1 |
 | Bur chervil (`anthriscus-caucalis`) | plants | 16 | 0 | 1 |
+| Mugwort (`artemisia-vulgaris`) | plants | 16 | 0 | 1 |
 | Australian saltbush (`atriplex-semibaccata`) | plants | 16 | 0 | 1 |
 | Yellow Rocket (`barbarea-vulgaris`) | plants | 16 | 0 | 1 |
+| Lawndaisy (`bellis-perennis`) | plants | 16 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 16 | 0 | 1 |
 | Big quakinggrass (`briza-maxima`) | plants | 16 | 0 | 1 |
 | Woolly distaff thistle (`carthamus-lanatus`) | plants | 16 | 0 | 1 |
+| African bermudagrass (`cynodon-nlemfuensis`) | plants | 16 | 0 | 1 |
 | Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 16 | 0 | 1 |
 | Longbeak stork's bill (`erodium-botrys`) | plants | 16 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 16 | 0 | 1 |
@@ -53,10 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chinese Silvergrass (`miscanthus-sinensis`) | plants | 16 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 16 | 0 | 1 |
 | Proso millet (`panicum-miliaceum`) | plants | 16 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 16 | 0 | 1 |
-| Parsley (`petroselinum-crispum`) | plants | 16 | 0 | 1 |
-| Mexican groundcherry (`physalis-philadelphica`) | plants | 16 | 0 | 1 |
-| Sweet cherry (`prunus-avium`) | plants | 16 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 1 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 12 | 77 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:25:10.951Z | 9 | 9 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:37:12.778Z | 182 | 54 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

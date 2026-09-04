@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `12242`
+- Verified present: `12253`
 - Verified absent: `58`
 - Not detected: `0`
-- Researched unresolved: `21288`
-- Not researched: `111644`
-- Determination coverage: `8.47%`
+- Researched unresolved: `21284`
+- Not researched: `111637`
+- Determination coverage: `8.48%`
 - Research coverage: `23.13%`
-- Explicit outcome coverage: `23.1271%`
+- Explicit outcome coverage: `23.1320%`
 - Applicable protocol cells: `869`
 - Current complete protocol cells: `186`
 - Protocol completion: `22.90%`
 - Current protocol completion: `21.40%`
-- Evidence records: `35242`
-- Research runs: `37`
+- Evidence records: `35253`
+- Research runs: `38`
 - Rejection records: `2661`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 71 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 51 | 34 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:24:41.195Z | 11 | 11 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:19.724Z | 88 | 46 |
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:52:26.773Z | 491 | 138 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `8279`
+- Verified present: `8282`
 - Verified absent: `67`
 - Not detected: `0`
 - Researched unresolved: `25473`
-- Not researched: `133949`
-- Determination coverage: `4.97%`
+- Not researched: `133946`
+- Determination coverage: `4.98%`
 - Research coverage: `20.16%`
-- Explicit outcome coverage: `20.1582%`
-- Applicable protocol cells: `658`
+- Explicit outcome coverage: `20.1600%`
+- Applicable protocol cells: `659`
 - Current complete protocol cells: `142`
-- Protocol completion: `23.56%`
-- Current protocol completion: `21.58%`
-- Evidence records: `18954`
-- Research runs: `35`
+- Protocol completion: `23.52%`
+- Current protocol completion: `21.55%`
+- Evidence records: `18957`
+- Research runs: `36`
 - Rejection records: `5119`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,6 +36,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | White moneywort (`alysicarpus-vaginalis`) | plants | 66 | 0 | 1 |
 | Elegant dutchman's pipe (`aristolochia-elegans`) | plants | 66 | 0 | 1 |
 | Gaping dutchman's pipe (`aristolochia-ringens`) | plants | 66 | 0 | 1 |
+| Asparagus fern (`asparagus-densiflorus`) | plants | 66 | 0 | 1 |
 | Tatarian orache (`atriplex-tatarica`) | plants | 66 | 0 | 1 |
 | Triangle barnacle (`balanus-trigonus`) | wildlife | 66 | 0 | 1 |
 | Crested philippine violet (`barleria-cristata`) | plants | 66 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chilean jessamine (`cestrum-parqui`) | plants | 66 | 0 | 1 |
 | Northern Snakehead (`northern-snakehead`) | wildlife | 66 | 0 | 1 |
 | Indo-Pacific swimming crab (`charybdis-hellerii`) | wildlife | 66 | 0 | 1 |
-| Tall windmill grass (`chloris-elata`) | plants | 66 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 126 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 535 | 49 |
+| BLM National Invasive Species Information Management System plants | operational | not run | 0 | 0 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:38.143Z | 118 | 64 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1488 | 170 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:25.165Z | 3 | 3 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-03T00:05:12.114Z | 301 | 8 |

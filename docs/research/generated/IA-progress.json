@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 297,
+    "applicableSpeciesCount": 298,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2207,
+    "unknownSpeciesCount": 2206,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 62,
-    "derivedApplicableSpeciesCount": 235,
+    "derivedApplicableSpeciesCount": 236,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 529,
+    "boundedAcquisitionSpeciesCount": 530,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 247896,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 6243,
+    "verifiedPresent": 6244,
     "verifiedAbsent": 99,
     "notDetected": 9,
     "researchedUnresolved": 40893,
-    "notResearched": 200652,
+    "notResearched": 200651,
     "determinationCoveragePercent": 2.56,
     "researchCoveragePercent": 19.06,
-    "explicitOutcomePairCount": 47244,
-    "explicitOutcomeCoveragePercent": 19.058,
+    "explicitOutcomePairCount": 47245,
+    "explicitOutcomeCoveragePercent": 19.0584,
     "conflictCount": 0,
-    "evidenceRecordCount": 6609,
+    "evidenceRecordCount": 6610,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 6609,
+    "runEvidenceRecordCount": 6610,
     "rejectionRecordCount": 316,
-    "researchRunCount": 36,
+    "researchRunCount": 37,
     "boundedAcquisition": {
-      "speciesCount": 529,
-      "totalPairs": 52371,
-      "verifiedPresent": 6243,
+      "speciesCount": 530,
+      "totalPairs": 52470,
+      "verifiedPresent": 6244,
       "verifiedAbsent": 99,
       "notDetected": 9,
       "researchedUnresolved": 40893,
-      "notResearched": 5127,
-      "researchCoveragePercent": 90.21,
-      "explicitOutcomePairs": 47244,
-      "explicitOutcomeCoveragePercent": 90.2102
+      "notResearched": 5225,
+      "researchCoveragePercent": 90.04,
+      "explicitOutcomePairs": 47245,
+      "explicitOutcomeCoveragePercent": 90.0419
     }
   },
   "migrationCandidates": {
@@ -228,6 +228,16 @@
       "screenedSpeciesCount": 33
     },
     {
+      "id": "blm-nisims",
+      "label": "BLM National Invasive Species Information Management System plants",
+      "authority": "U.S. Bureau of Land Management via GBIF-US",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
       "id": "blm-aim-terrestrial-invasive-plants",
       "label": "BLM AIM Terrestrial Invasive Plant Indicators",
       "authority": "U.S. Bureau of Land Management",
@@ -343,9 +353,9 @@
       "authority": "Invasive Plant Atlas of the MidSouth via GBIF",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-04T20:29:31.135Z",
+      "evidencePairCount": 1,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "gbif-ebird",
@@ -482,17 +492,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2116,
-    "applicableCells": 332,
-    "notApplicableCells": 1784,
+    "totalCells": 2120,
+    "applicableCells": 333,
+    "notApplicableCells": 1787,
     "completeCells": 132,
-    "incompleteCells": 200,
+    "incompleteCells": 201,
     "blockedCells": 0,
     "currentCells": 119,
     "staleCells": 13,
-    "undatedCells": 200,
-    "applicableCompletionPercent": 39.76,
-    "currentCompletePercent": 35.84,
+    "undatedCells": 201,
+    "applicableCompletionPercent": 39.64,
+    "currentCompletePercent": 35.74,
     "regulatedAndHighApplicableCells": 52,
     "regulatedAndHighCurrentCompleteCells": 52,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -512,9 +522,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 266,
+        "applicableCells": 267,
         "currentCompleteCells": 78,
-        "currentCompletePercent": 29.32
+        "currentCompletePercent": 29.21
       },
       {
         "category": "wildlife",
@@ -538,9 +548,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 254,
+        "applicableCells": 255,
         "currentCompleteCells": 54,
-        "currentCompletePercent": 21.26
+        "currentCompletePercent": 21.18
       },
       {
         "priority": "baseline",
@@ -558,7 +568,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 297,
+        "applicableCells": 298,
         "currentCompleteCells": 97,
         "processed": false
       },
@@ -803,6 +813,18 @@
       "speciesId": "salix-pentandra",
       "commonName": "Laurel willow",
       "scientificName": "Salix pentandra",
+      "category": "plants",
+      "notResearchedCountyCount": 98,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 98001
+    },
+    {
+      "speciesId": "setaria-faberi",
+      "commonName": "Giant Foxtail",
+      "scientificName": "Setaria faberi",
       "category": "plants",
       "notResearchedCountyCount": 98,
       "researchedUnresolvedCountyCount": 0,
@@ -1677,16 +1699,6 @@
       "speciesId": "anthriscus-sylvestris",
       "commonName": "Wild chervil",
       "scientificName": "Anthriscus sylvestris",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 99,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 990
-    },
-    {
-      "speciesId": "arabidopsis-thaliana",
-      "commonName": "Mouseear cress",
-      "scientificName": "Arabidopsis thaliana",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 99,

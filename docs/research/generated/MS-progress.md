@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `5572`
+- Verified present: `5739`
 - Verified absent: `82`
 - Not detected: `5`
-- Researched unresolved: `33179`
-- Not researched: `166490`
-- Determination coverage: `2.75%`
-- Research coverage: `18.92%`
-- Explicit outcome coverage: `18.9151%`
-- Applicable protocol cells: `417`
+- Researched unresolved: `33049`
+- Not researched: `166453`
+- Determination coverage: `2.83%`
+- Research coverage: `18.93%`
+- Explicit outcome coverage: `18.9331%`
+- Applicable protocol cells: `433`
 - Current complete protocol cells: `116`
-- Protocol completion: `30.94%`
-- Current protocol completion: `27.82%`
-- Evidence records: `7932`
-- Research runs: `35`
+- Protocol completion: `29.79%`
+- Current protocol completion: `26.79%`
+- Evidence records: `8099`
+- Research runs: `36`
 - Rejection records: `754`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,12 +34,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 81 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 81 | 0 | 1 |
+| Mugwort (`artemisia-vulgaris`) | plants | 81 | 0 | 1 |
 | Common borage (`borago-officinalis`) | plants | 81 | 0 | 1 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 81 | 0 | 1 |
 | Purple false brome (`brachypodium-distachyon`) | plants | 81 | 0 | 1 |
 | Heath false brome (`brachypodium-pinnatum`) | plants | 81 | 0 | 1 |
 | Poverty brome (`bromus-sterilis`) | plants | 81 | 0 | 1 |
 | Madagascar periwinkle (`catharanthus-roseus`) | plants | 81 | 0 | 1 |
-| Bushkiller (`cayratia-japonica`) | plants | 81 | 0 | 1 |
 | Feathertop (`cenchrus-longisetus`) | plants | 81 | 0 | 1 |
 | Cow sandbur (`cenchrus-setiger`) | plants | 81 | 0 | 1 |
 | European chickweed (`cerastium-pumilum`) | plants | 81 | 0 | 1 |
@@ -49,14 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Ricefield flatsedge (`cyperus-iria`) | plants | 81 | 0 | 1 |
 | Gray field slug (`deroceras-reticulatum`) | wildlife | 81 | 0 | 1 |
 | Asian ponysfoot (`dichondra-micrantha`) | plants | 81 | 0 | 1 |
+| Water yam (`dioscorea-alata`) | plants | 81 | 0 | 1 |
+| Air yam (`dioscorea-bulbifera`) | plants | 81 | 0 | 1 |
 | Early water grass (`echinochloa-oryzoides`) | plants | 81 | 0 | 1 |
 | Greenhouse Frog (`eleutherodactylus-planirostris`) | wildlife | 81 | 0 | 1 |
 | Red Fescue (`festuca-rubra`) | plants | 81 | 0 | 1 |
 | Fimbry (`fimbristylis-littoralis`) | plants | 81 | 0 | 1 |
 | Freshwater bryozoan (`fredericella-sultana`) | wildlife | 81 | 0 | 1 |
-| Mediterranean Gecko (`hemidactylus-turcicus`) | wildlife | 81 | 0 | 1 |
-| Sweetpotato (`ipomoea-batatas`) | plants | 81 | 0 | 1 |
-| Annual ryegrass (`lolium-multiflorum`) | plants | 81 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 83 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 762 | 35 |
+| BLM National Invasive Species Information Management System plants | operational | not run | 0 | 0 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:04.530Z | 26 | 22 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 779 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:07.552Z | 167 | 50 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:12:04.573Z | 192 | 9 |

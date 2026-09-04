@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `4999`
+- Verified present: `5007`
 - Verified absent: `64`
 - Not detected: `0`
-- Researched unresolved: `28016`
-- Not researched: `127177`
+- Researched unresolved: `28009`
+- Not researched: `127176`
 - Determination coverage: `3.16%`
 - Research coverage: `20.64%`
-- Explicit outcome coverage: `20.6413%`
-- Applicable protocol cells: `422`
+- Explicit outcome coverage: `20.6420%`
+- Applicable protocol cells: `423`
 - Current complete protocol cells: `169`
-- Protocol completion: `40.05%`
-- Current protocol completion: `40.05%`
-- Evidence records: `11920`
-- Research runs: `44`
+- Protocol completion: `39.95%`
+- Current protocol completion: `39.95%`
+- Evidence records: `11928`
+- Research runs: `46`
 - Rejection records: `1986`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -40,6 +40,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Italian bugloss (`anchusa-azurea`) | plants | 63 | 0 | 1 |
 | Greater burdock (`arctium-lappa`) | plants | 63 | 0 | 1 |
 | Horseradish (`armoracia-rusticana`) | plants | 63 | 0 | 1 |
+| Pitted beardgrass (`bothriochloa-pertusa`) | plants | 63 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 63 | 0 | 1 |
 | Rattlesnake brome (`bromus-briziformis`) | plants | 63 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 63 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Petty spurge (`euphorbia-peplus`) | plants | 63 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 63 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 63 | 0 | 1 |
-| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,6 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 37 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:30.000Z | 325 | 89 |
+| BLM National Invasive Species Information Management System plants | operational | 2026-09-04T20:24:44.276Z | 7 | 7 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:29.136Z | 245 | 62 |
 | USFS Current Invasive Plant Locations | operational | 2026-09-04T18:04:47.048Z | 11 | 9 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
@@ -88,7 +89,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:34.509Z | 55 | 39 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1367 | 186 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
-| GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
+| GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:22.169Z | 1 | 1 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:22:25.227Z | 233 | 10 |
