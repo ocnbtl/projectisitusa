@@ -1,6 +1,6 @@
 import { spawn } from "node:child_process";
 import { createInterface } from "node:readline";
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import { parse } from "csv-parse/sync";
@@ -86,14 +86,21 @@ function parseArguments(argv: string[]) {
   const planOutput = planOutputIndex >= 0 ? argv[planOutputIndex + 1] : undefined;
   const planIdIndex = argv.indexOf("--plan-id");
   const planId = planIdIndex >= 0 ? argv[planIdIndex + 1] : undefined;
+  const planOutputDirectoryIndex = argv.indexOf("--plan-output-directory");
+  const planOutputDirectory =
+    planOutputDirectoryIndex >= 0 ? argv[planOutputDirectoryIndex + 1] : undefined;
   if (Boolean(planOutput) !== Boolean(planId) || (planOutput && !stateCode)) {
     throw new Error("--plan-output, --plan-id, and --state must be provided together.");
+  }
+  if (planOutputDirectory && (planOutput || planId || stateCode)) {
+    throw new Error("--plan-output-directory cannot be combined with --state, --plan-output, or --plan-id.");
   }
   return {
     sourceDirectory: path.resolve(sourceDirectory),
     stateCode,
     planOutput: planOutput ? path.resolve(planOutput) : undefined,
     planId,
+    planOutputDirectory: planOutputDirectory ? path.resolve(planOutputDirectory) : undefined,
   };
 }
 
@@ -140,6 +147,7 @@ function main() {
     stateCode: outputStateCode,
     planOutput,
     planId,
+    planOutputDirectory,
   } = parseArguments(process.argv.slice(2));
   const catalog = readJson<CatalogSpecies[]>(path.join(root, "src/data/generated/species.json"));
   const currentPresence = readJson<PresenceFile>(path.join(root, "src/data/generated/presence.json"));
@@ -373,20 +381,20 @@ function main() {
             ? netPairs.filter((entry) => entry.stateCode === outputStateCode)
             : netPairs,
         };
-    if (planOutput && planId && outputStateCode) {
-      const selectedPairs = netPairs.filter((entry) => entry.stateCode === outputStateCode);
-      const plan = {
+    const buildPlan = (selectedStateCode: string, selectedPlanId: string) => {
+      const selectedPairs = netPairs.filter((entry) => entry.stateCode === selectedStateCode);
+      return {
         schemaVersion: 1,
-        planId,
+        planId: selectedPlanId,
         sourceId: "usgs-bbs",
-        stateCode: outputStateCode,
+        stateCode: selectedStateCode,
         candidates: selectedPairs.map((entry) => ({
           sourceId: "usgs-bbs",
           countyFips: entry.countyFips,
           speciesId: entry.speciesId,
         })),
         bbsPilot: {
-          mode: "hash-pinned-standard-stop1-positive",
+          mode: "retained-hash-pinned-standard-stop1-positive",
           scienceBaseItemId: "6a0b0b0ab66b0188da36aedd",
           scienceBaseItemUrl:
             "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
@@ -415,8 +423,8 @@ function main() {
             left.speciesId.localeCompare(right.speciesId),
           ),
           unmatchedCatalogBirds,
-          expectedStateAcceptedRows: selectedPairs.reduce((sum, entry) => sum + entry.rows, 0),
-          expectedStateGrossPairs: pairs.filter((entry) => entry.stateCode === outputStateCode).length,
+          expectedStateAcceptedRows: selectedPairs.length,
+          expectedStateGrossPairs: pairs.filter((entry) => entry.stateCode === selectedStateCode).length,
           expectedStateNetNewPairs: selectedPairs.length,
           nationalPreflight: {
             archiveRows,
@@ -427,9 +435,36 @@ function main() {
             unresolvedUnitedStatesRoutes,
             standardRuns: standardRuns.size,
           },
+          retainedWitnesses: selectedPairs.map((entry) => ({
+            pairKey: entry.pairKey,
+            speciesId: entry.speciesId,
+            scientificName: entry.scientificName,
+            routeDataId: entry.routeDataId,
+            routeKey: entry.routeKey,
+            routeName: entry.routeName,
+            year: entry.year,
+            aou: entry.aou,
+            stop1Count: entry.stop1Count,
+            countyFips: entry.countyFips,
+            stateCode: entry.stateCode,
+            latitude: entry.latitude,
+            longitude: entry.longitude,
+          })),
         },
       };
+    };
+    if (planOutput && planId && outputStateCode) {
+      const plan = buildPlan(outputStateCode, planId);
       writeFileSync(planOutput, `${JSON.stringify(plan, null, 2)}\n`);
+    }
+    if (planOutputDirectory) {
+      mkdirSync(planOutputDirectory, { recursive: true });
+      for (const state of byState.filter((entry) => entry.netNewPairs > 0)) {
+        const stateSlug = state.stateCode.toLowerCase();
+        const selectedPlanId = `usgs-bbs-${stateSlug}-route-start-residual-v1`;
+        const outputPath = path.join(planOutputDirectory, `${selectedPlanId}.json`);
+        writeFileSync(outputPath, `${JSON.stringify(buildPlan(state.stateCode, selectedPlanId), null, 2)}\n`);
+      }
     }
     process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
   };

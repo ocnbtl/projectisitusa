@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "planId": "usgs-bbs-ct-route-start-residual-v1",
+  "sourceId": "usgs-bbs",
+  "stateCode": "CT",
+  "candidates": [
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09110",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09110",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09120",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09130",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09130",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09140",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09140",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09150",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09160",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09180",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "09180",
+      "speciesId": "sturnus-vulgaris"
+    }
+  ],
+  "bbsPilot": {
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 11,
+    "expectedStateGrossPairs": 11,
+    "expectedStateNetNewPairs": 11,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "09110:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6357565",
+        "routeKey": "18:015",
+        "routeName": "SOUTHINGTON",
+        "year": 2015,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "09110",
+        "stateCode": "CT",
+        "latitude": 41.5832977,
+        "longitude": -72.8512329
+      },
+      {
+        "pairKey": "09110:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6228632",
+        "routeKey": "18:015",
+        "routeName": "SOUTHINGTON",
+        "year": 1997,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "09110",
+        "stateCode": "CT",
+        "latitude": 41.5832977,
+        "longitude": -72.8512329
+      },
+      {
+        "pairKey": "09120:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6250122",
+        "routeKey": "18:013",
+        "routeName": "LONG HILL",
+        "year": 2005,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "09120",
+        "stateCode": "CT",
+        "latitude": 41.2521947,
+        "longitude": -73.2470699
+      },
+      {
+        "pairKey": "09130:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6387360",
+        "routeKey": "18:014",
+        "routeName": "MID HADDAM",
+        "year": 2025,
+        "aou": "06882",
+        "stop1Count": 3,
+        "countyFips": "09130",
+        "stateCode": "CT",
+        "latitude": 41.5651229,
+        "longitude": -72.5906625
+      },
+      {
+        "pairKey": "09130:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6350683",
+        "routeKey": "18:006",
+        "routeName": "WESTBROOK",
+        "year": 2012,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "09130",
+        "stateCode": "CT",
+        "latitude": 41.2710807,
+        "longitude": -72.4984279
+      },
+      {
+        "pairKey": "09140:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6341556",
+        "routeKey": "18:008",
+        "routeName": "NO WOODBURY",
+        "year": 2011,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "09140",
+        "stateCode": "CT",
+        "latitude": 41.5493443,
+        "longitude": -73.2167392
+      },
+      {
+        "pairKey": "09140:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6341556",
+        "routeKey": "18:008",
+        "routeName": "NO WOODBURY",
+        "year": 2011,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "09140",
+        "stateCode": "CT",
+        "latitude": 41.5493443,
+        "longitude": -73.2167392
+      },
+      {
+        "pairKey": "09150:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6251647",
+        "routeKey": "18:007",
+        "routeName": "WILLIMANTIC",
+        "year": 2006,
+        "aou": "04930",
+        "stop1Count": 2,
+        "countyFips": "09150",
+        "stateCode": "CT",
+        "latitude": 41.7771877,
+        "longitude": -72.1354049
+      },
+      {
+        "pairKey": "09160:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6299876",
+        "routeKey": "18:012",
+        "routeName": "WARREN",
+        "year": 2008,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "09160",
+        "stateCode": "CT",
+        "latitude": 41.7487967,
+        "longitude": -73.3502269
+      },
+      {
+        "pairKey": "09180:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6381557",
+        "routeKey": "18:001",
+        "routeName": "MYSTIC",
+        "year": 2023,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "09180",
+        "stateCode": "CT",
+        "latitude": 41.3360007,
+        "longitude": -71.9642159
+      },
+      {
+        "pairKey": "09180:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6373191",
+        "routeKey": "18:001",
+        "routeName": "MYSTIC",
+        "year": 2019,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "09180",
+        "stateCode": "CT",
+        "latitude": 41.3360007,
+        "longitude": -71.9642159
+      }
+    ]
+  }
+}

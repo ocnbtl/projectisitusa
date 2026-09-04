@@ -29,7 +29,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const USGS_BBS_SOURCE_ID = "usgs-bbs" as const;
 export const USGS_BBS_ADAPTER_ID = "usgs-bbs-route-start" as const;
-export const USGS_BBS_ADAPTER_VERSION = "1.1.4" as const;
+export const USGS_BBS_ADAPTER_VERSION = "1.2.0" as const;
 
 const MAX_REQUEST_ATTEMPTS = 3;
 const REQUEST_TIMEOUT_MS = 180_000;
@@ -49,7 +49,7 @@ type ExactTarget = {
 
 export type BbsParameters = {
   stateCode: string;
-  mode: "hash-pinned-standard-stop1-positive";
+  mode: "hash-pinned-standard-stop1-positive" | "retained-hash-pinned-standard-stop1-positive";
   scienceBaseItemId: string;
   scienceBaseItemUrl: string;
   rawDataPageUrl: string;
@@ -72,6 +72,11 @@ export type BbsParameters = {
   expectedStateGrossPairs: number;
   expectedStateNetNewPairs: number;
   nationalPreflight: Record<string, number>;
+  retainedWitnesses?: Array<DetectionRecord & {
+    pairKey: string;
+    speciesId: string;
+    scientificName: string;
+  }>;
   candidatePairs: string[];
 };
 
@@ -363,6 +368,138 @@ function assertionAndReview(input: {
   return { assertion, review };
 }
 
+function runRetainedBbsWitnesses(
+  context: SourceAdapterContext,
+  parameters: BbsParameters,
+): SourceAdapterResult {
+  const witnesses = parameters.retainedWitnesses;
+  if (!witnesses?.length) {
+    throw new Error("Retained BBS witnesses are missing.");
+  }
+  if (
+    witnesses.length !== context.requestedPairs.length ||
+    witnesses.length !== parameters.expectedStateAcceptedRows ||
+    witnesses.length !== parameters.expectedStateNetNewPairs
+  ) {
+    throw new Error("Retained BBS witness counts differ from the sealed state plan.");
+  }
+  const targetsBySpecies = new Map(parameters.exactTargets.map((target) => [target.speciesId, target]));
+  const requestedByPair = new Map(
+    context.requestedPairs.map((pair) => [`${pair.countyFips}:${pair.speciesId}`, pair]),
+  );
+  const countyFeatures = buildStateCountyFeatures(context.stateCode);
+  const countyFeatureByFips = new Map(countyFeatures.map((entry) => [entry.countyFips, entry.feature]));
+  const recordsByPair = new Map<string, DetectionRecord[]>();
+  for (const witness of witnesses) {
+    const pair = requestedByPair.get(witness.pairKey);
+    if (!pair || witness.pairKey !== `${witness.countyFips}:${witness.speciesId}`) {
+      throw new Error(`Retained BBS witness is outside the requested scope: ${witness.pairKey}.`);
+    }
+    const target = targetsBySpecies.get(witness.speciesId);
+    if (
+      !target ||
+      target.scientificName !== witness.scientificName ||
+      target.aou !== witness.aou ||
+      pair.scientificName !== witness.scientificName
+    ) {
+      throw new Error(`Retained BBS witness taxon differs for ${witness.pairKey}.`);
+    }
+    const countyFeature = countyFeatureByFips.get(witness.countyFips);
+    if (
+      !countyFeature ||
+      !geoContains(countyFeature, [witness.longitude, witness.latitude]) ||
+      !/^\d{2}:\d{3}$/u.test(witness.routeKey) ||
+      !witness.routeDataId ||
+      !Number.isInteger(witness.year) ||
+      witness.year < parameters.releaseYearRange.start ||
+      witness.year > parameters.releaseYearRange.end ||
+      witness.stop1Count < 1
+    ) {
+      throw new Error(`Retained BBS witness contract failed for ${witness.pairKey}.`);
+    }
+    if (recordsByPair.has(witness.pairKey)) {
+      throw new Error(`Retained BBS witness repeats ${witness.pairKey}.`);
+    }
+    recordsByPair.set(witness.pairKey, [witness]);
+  }
+
+  const completedAt = new Date().toISOString();
+  const assertions: RunEvidenceAssertionEvent[] = [];
+  const reviews: EvidenceReviewEvent[] = [];
+  const outcomes: ResearchPairOutcome[] = [];
+  for (const pair of [...context.requestedPairs].sort(
+    (left, right) =>
+      compareText(left.countyFips, right.countyFips) ||
+      compareText(left.speciesId, right.speciesId),
+  )) {
+    const key = `${pair.countyFips}:${pair.speciesId}`;
+    const records = recordsByPair.get(key);
+    const target = targetsBySpecies.get(pair.speciesId);
+    if (!records?.length || !target) throw new Error(`Retained BBS evidence disappeared for ${key}.`);
+    const emitted = assertionAndReview({ context, pair, target, records, completedAt, parameters });
+    assertions.push(emitted.assertion);
+    reviews.push(emitted.review);
+    outcomes.push({
+      schemaVersion: 1,
+      outcome_id: contentId("usgs-bbs-outcome", {
+        runId: context.runId,
+        pairKey: key,
+        assertionId: emitted.assertion.eventId,
+      }),
+      run_id: context.runId,
+      source_id: USGS_BBS_SOURCE_ID,
+      state_code: context.stateCode,
+      county_fips: pair.countyFips,
+      species_id: pair.speciesId,
+      status: "evidence-found",
+      scope_complete: true,
+      recorded_at: completedAt,
+      assertion_event_ids: [emitted.assertion.eventId],
+      rejection_ids: [],
+      query_urls: [parameters.scienceBaseItemUrl, parameters.rawDataPageUrl],
+      notes: [
+        "One positive standard-run Stop 1 witness selected by the complete retained-release preflight supports this pair.",
+        "The result supports point recorded presence and survey detection only.",
+      ],
+    });
+  }
+  const artifact = {
+    schemaVersion: 1,
+    sourceId: USGS_BBS_SOURCE_ID,
+    stateCode: context.stateCode,
+    sourceFiles: parameters.files,
+    releaseTitle: parameters.releaseTitle,
+    citation: parameters.citation,
+    nationalPreflight: parameters.nationalPreflight,
+    retainedWitnesses: [...witnesses].sort((left, right) => compareText(left.pairKey, right.pairKey)),
+    semantics: {
+      claim: "recorded-present",
+      evidenceKind: "survey-detection",
+      sourceSilenceCreatesNegativeEvidence: false,
+    },
+  };
+  return {
+    completedAt,
+    assertions,
+    reviews,
+    rejections: [],
+    outcomes,
+    artifacts: [{
+      filename: `${context.stateCode.toLowerCase()}-retained-standard-stop1-witnesses.json`,
+      mediaType: "application/json",
+      contents: `${JSON.stringify(artifact, null, 2)}\n`,
+    }],
+    upstreamRequests: [],
+    candidateRecordCount: witnesses.length,
+    duplicateRecordCount: 0,
+    errors: [],
+    warnings: [
+      "The complete hash-pinned BBS release was screened offline; one positive witness per eligible pair is retained in this immutable run.",
+      "Later stops, route totals, zero rows, missing rows, and source silence create no county absence or non-detection claim.",
+    ],
+  };
+}
+
 export async function runUsGsBbsRouteStart(
   context: SourceAdapterContext,
   fetchImpl: FetchLike = fetch,
@@ -371,7 +508,10 @@ export async function runUsGsBbsRouteStart(
   if (context.sourceId !== USGS_BBS_SOURCE_ID || parameters.stateCode !== context.stateCode) {
     throw new Error("BBS adapter source or state context mismatch.");
   }
-  if (parameters.mode !== "hash-pinned-standard-stop1-positive") {
+  if (
+    parameters.mode !== "hash-pinned-standard-stop1-positive" &&
+    parameters.mode !== "retained-hash-pinned-standard-stop1-positive"
+  ) {
     throw new Error("Unsupported BBS adapter mode.");
   }
   const requestedPairKeys = new Set(
@@ -383,6 +523,9 @@ export async function runUsGsBbsRouteStart(
     parameters.candidatePairs.some((pairKey) => !requestedPairKeys.has(pairKey))
   ) {
     throw new Error("BBS candidate pair scope is not exact.");
+  }
+  if (parameters.mode === "retained-hash-pinned-standard-stop1-positive") {
+    return runRetainedBbsWitnesses(context, parameters);
   }
 
   const tempDirectory = mkdtempSync(path.join(tmpdir(), "isitusa-usgs-bbs-"));

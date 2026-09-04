@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "planId": "usgs-bbs-ky-route-start-residual-v1",
+  "sourceId": "usgs-bbs",
+  "stateCode": "KY",
+  "candidates": [
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "21011",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "21039",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "21061",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "21137",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "21211",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "21233",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "21237",
+      "speciesId": "sturnus-vulgaris"
+    }
+  ],
+  "bbsPilot": {
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 7,
+    "expectedStateGrossPairs": 22,
+    "expectedStateNetNewPairs": 7,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "21011:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6368287",
+        "routeKey": "39:044",
+        "routeName": "EAST UNION",
+        "year": 2018,
+        "aou": "06882",
+        "stop1Count": 6,
+        "countyFips": "21011",
+        "stateCode": "KY",
+        "latitude": 38.2051493,
+        "longitude": -83.9295763
+      },
+      {
+        "pairKey": "21039:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6237780",
+        "routeKey": "39:002",
+        "routeName": "LOVELACEVILE",
+        "year": 2004,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "21039",
+        "stateCode": "KY",
+        "latitude": 36.906723,
+        "longitude": -88.865164
+      },
+      {
+        "pairKey": "21061:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6313460",
+        "routeKey": "39:028",
+        "routeName": "DEMUNBRUNS",
+        "year": 2009,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "21061",
+        "stateCode": "KY",
+        "latitude": 37.256045,
+        "longitude": -86.135554
+      },
+      {
+        "pairKey": "21137:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6247187",
+        "routeKey": "39:022",
+        "routeName": "HUSTONVILLE",
+        "year": 2002,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "21137",
+        "stateCode": "KY",
+        "latitude": 37.470864,
+        "longitude": -84.8112865
+      },
+      {
+        "pairKey": "21211:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6243198",
+        "routeKey": "39:137",
+        "routeName": "PLEASUREVILL",
+        "year": 2001,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "21211",
+        "stateCode": "KY",
+        "latitude": 38.2698117,
+        "longitude": -85.2042619
+      },
+      {
+        "pairKey": "21233:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6384827",
+        "routeKey": "39:133",
+        "routeName": "DIXON",
+        "year": 2024,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "21233",
+        "stateCode": "KY",
+        "latitude": 37.592793,
+        "longitude": -87.6771392
+      },
+      {
+        "pairKey": "21237:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6298332",
+        "routeKey": "39:117",
+        "routeName": "CAMPTON",
+        "year": 2008,
+        "aou": "04930",
+        "stop1Count": 5,
+        "countyFips": "21237",
+        "stateCode": "KY",
+        "latitude": 37.7389457,
+        "longitude": -83.5630719
+      }
+    ]
+  }
+}

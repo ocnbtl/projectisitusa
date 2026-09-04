@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "planId": "usgs-bbs-mn-route-start-residual-v1",
+  "sourceId": "usgs-bbs",
+  "stateCode": "MN",
+  "candidates": [
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "27083",
+      "speciesId": "passer-domesticus"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "27091",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "27099",
+      "speciesId": "sturnus-vulgaris"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "27101",
+      "speciesId": "columba-livia"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "27133",
+      "speciesId": "streptopelia-decaocto"
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "countyFips": "27135",
+      "speciesId": "passer-domesticus"
+    }
+  ],
+  "bbsPilot": {
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 6,
+    "expectedStateGrossPairs": 32,
+    "expectedStateNetNewPairs": 6,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "27083:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6379044",
+        "routeKey": "50:061",
+        "routeName": "TRACY",
+        "year": 2022,
+        "aou": "06882",
+        "stop1Count": 5,
+        "countyFips": "27083",
+        "stateCode": "MN",
+        "latitude": 44.3555717,
+        "longitude": -95.6751884
+      },
+      {
+        "pairKey": "27091:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6372288",
+        "routeKey": "50:056",
+        "routeName": "FAIRMONT",
+        "year": 2019,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "27091",
+        "stateCode": "MN",
+        "latitude": 43.5872553,
+        "longitude": -94.307851
+      },
+      {
+        "pairKey": "27099:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6225592",
+        "routeKey": "50:054",
+        "routeName": "LE ROY",
+        "year": 1997,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "27099",
+        "stateCode": "MN",
+        "latitude": 43.601982,
+        "longitude": -92.529233
+      },
+      {
+        "pairKey": "27101:columba-livia",
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "routeDataId": "6168386",
+        "routeKey": "50:005",
+        "routeName": "CHANDLER",
+        "year": 2003,
+        "aou": "03131",
+        "stop1Count": 2,
+        "countyFips": "27101",
+        "stateCode": "MN",
+        "latitude": 43.9353187,
+        "longitude": -95.9840909
+      },
+      {
+        "pairKey": "27133:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6378148",
+        "routeKey": "50:006",
+        "routeName": "ASH CREEK",
+        "year": 2022,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "27133",
+        "stateCode": "MN",
+        "latitude": 43.5872765,
+        "longitude": -96.1830378
+      },
+      {
+        "pairKey": "27135:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6386446",
+        "routeKey": "50:082",
+        "routeName": "GREENBUSH",
+        "year": 2025,
+        "aou": "06882",
+        "stop1Count": 4,
+        "countyFips": "27135",
+        "stateCode": "MN",
+        "latitude": 48.7754769,
+        "longitude": -96.3165607
+      }
+    ]
+  }
+}
