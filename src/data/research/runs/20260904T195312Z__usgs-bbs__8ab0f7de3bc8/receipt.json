@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T195312Z__usgs-bbs__8ab0f7de3bc8",
+  "status": "complete",
+  "started_at": "2026-09-04T19:53:12.366Z",
+  "finished_at": "2026-09-04T19:53:12.383Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-bbs-route-start@1.2.0",
+  "source_id": "usgs-bbs",
+  "source_registry_hash": "b5db6823739dfebae472387838931d229e00db1a33de57d6dcb70e5ffdd970dc",
+  "adapter_id": "usgs-bbs-route-start",
+  "adapter_version": "1.2.0",
+  "adapter_code_hash": "b8418d3b2f82011e7a7ee2a61baceebf19a531f31b174354654844197d83c2fd",
+  "code_commit": "c6e20cb43b83584889f98a53f62f7218e254bd86",
+  "parameter_hash": "8ab0f7de3bc82bebd8495779ab94b2c57da8f75a7ad702905fc5af47f6aecdf1",
+  "parameters": {
+    "stateCode": "TN",
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 5,
+    "expectedStateGrossPairs": 25,
+    "expectedStateNetNewPairs": 5,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "47055:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6343300",
+        "routeKey": "82:017",
+        "routeName": "CAMPBELLSVILLE",
+        "year": 2011,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "47055",
+        "stateCode": "TN",
+        "latitude": 35.350403,
+        "longitude": -87.141505
+      },
+      {
+        "pairKey": "47055:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6343300",
+        "routeKey": "82:017",
+        "routeName": "CAMPBELLSVILLE",
+        "year": 2011,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "47055",
+        "stateCode": "TN",
+        "latitude": 35.350403,
+        "longitude": -87.141505
+      },
+      {
+        "pairKey": "47055:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6372145",
+        "routeKey": "82:017",
+        "routeName": "CAMPBELLSVILLE",
+        "year": 2019,
+        "aou": "04930",
+        "stop1Count": 5,
+        "countyFips": "47055",
+        "stateCode": "TN",
+        "latitude": 35.350403,
+        "longitude": -87.141505
+      },
+      {
+        "pairKey": "47075:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6367753",
+        "routeKey": "82:005",
+        "routeName": "TIBBS",
+        "year": 2018,
+        "aou": "22860",
+        "stop1Count": 4,
+        "countyFips": "47075",
+        "stateCode": "TN",
+        "latitude": 35.6893173,
+        "longitude": -89.334166
+      },
+      {
+        "pairKey": "47161:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6361295",
+        "routeKey": "82:114",
+        "routeName": "INDIAN MOUND 2",
+        "year": 2016,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "47161",
+        "stateCode": "TN",
+        "latitude": 36.5507429,
+        "longitude": -87.7500558
+      }
+    ],
+    "candidatePairs": [
+      "47055:passer-domesticus",
+      "47055:streptopelia-decaocto",
+      "47055:sturnus-vulgaris",
+      "47075:streptopelia-decaocto",
+      "47161:passer-domesticus"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "TN",
+    "county_fips": [
+      "47055",
+      "47075",
+      "47161"
+    ],
+    "species_ids": [
+      "passer-domesticus",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "47055:passer-domesticus",
+      "47055:streptopelia-decaocto",
+      "47055:sturnus-vulgaris",
+      "47075:streptopelia-decaocto",
+      "47161:passer-domesticus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T195312Z__usgs-bbs__8ab0f7de3bc8/artifacts/tn-retained-standard-stop1-witnesses.json",
+      "sha256": "5fc9ba56c3310f361892612aa7e82af0739e1b6d1e0031fa4193ace0df3b6d0c",
+      "bytes": 3410,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T195312Z__usgs-bbs__8ab0f7de3bc8/assertions.ndjson",
+      "sha256": "19b93e9b853f93601c562e6820682f900f4feb039517cd9869f5a72161d25628",
+      "bytes": 12005,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195312Z__usgs-bbs__8ab0f7de3bc8/reviews.ndjson",
+      "sha256": "08e529167845e1efefdc8baa42a7858be32afa32c9c92a76c4c53524b3553467",
+      "bytes": 4782,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195312Z__usgs-bbs__8ab0f7de3bc8/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195312Z__usgs-bbs__8ab0f7de3bc8/outcomes.ndjson",
+      "sha256": "58762d145d1489b910184975504d449df965249500a06901912510e31c2b6cfd",
+      "bytes": 4032,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 5,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Route-start detections are sampled occurrence evidence, not countywide inventory."
+  ],
+  "source_warnings": [
+    "The complete hash-pinned BBS release was screened offline; one positive witness per eligible pair is retained in this immutable run.",
+    "Later stops, route totals, zero rows, missing rows, and source silence create no county absence or non-detection claim."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usgs-bbs --state TN --candidate-file src/data/research/national-acquisition-plans/usgs-bbs-tn-route-start-residual-v1.json --output-root src/data/research/runs --pairs 47055:passer-domesticus,47055:streptopelia-decaocto,47055:sturnus-vulgaris,47075:streptopelia-decaocto,47161:passer-domesticus"
+}
