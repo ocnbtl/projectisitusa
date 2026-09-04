@@ -15,6 +15,7 @@ import {
   USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD,
   USGS_BBS_ROUTE_START_TOPOLOGY_PATH,
 } from "@/lib/research/coordinate-geography-contract";
+import { listCountyEquivalents } from "@/lib/research/geography-registry";
 import type {
   EvidenceReviewEvent,
   ResearchPairOutcome,
@@ -288,6 +289,12 @@ function assertionAndReview(input: {
   });
   const latestYear = Math.max(...records.map((record) => record.year));
   const coordinateIdentities = records.map((record) => [record.longitude, record.latitude]);
+  const registeredCounty = listCountyEquivalents(input.context.stateCode).find(
+    (county) => county.countyFips === input.pair.countyFips,
+  );
+  if (!registeredCounty) {
+    throw new Error(`BBS pair uses inactive county FIPS ${input.pair.countyFips}.`);
+  }
   const assertion: RunEvidenceAssertionEvent = {
     schemaVersion: 1,
     eventId: assertionId,
@@ -316,7 +323,7 @@ function assertionAndReview(input: {
     geography_match: {
       method: USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD,
       source_state: input.context.stateCode,
-      source_county: input.pair.countyName,
+      source_county: registeredCounty.legalName,
       county_fips: input.pair.countyFips,
       source_coordinate_count: new Set(coordinateIdentities.map((value) => value.join(","))).size,
       source_coordinates_sha256: sha256(stableJson(coordinateIdentities)),
