@@ -10,7 +10,7 @@ export const NYBG_SOURCE_ID = "nybg-preserved-specimens" as const;
 export const TORCH_BRIT_SOURCE_ID = "torch-brit-preserved-specimens" as const;
 export const SMITHSONIAN_NMNH_SOURCE_ID = "smithsonian-nmnh-preserved-specimens" as const;
 export const HARVARD_HUH_USA_SOURCE_ID = "harvard-huh-usa-preserved-specimens" as const;
-export const RETAINED_HERBARIUM_ADAPTER_VERSION = "1.0.0" as const;
+export const RETAINED_HERBARIUM_ADAPTER_VERSION = "1.0.1" as const;
 export const NYBG_DATASET_URL = "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences" as const;
 export const NYBG_METADATA_URL = "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences" as const;
 export const NYBG_POLICY_URL = "https://sweetgum.nybg.org/science/digital-collections/" as const;
@@ -369,7 +369,7 @@ function buildRunner(profile: Profile) {
         assertion_event_ids: [accepted.assertion.eventId],
         rejection_ids: [],
         query_urls: [profile.datasetUrl],
-        notes: ["One retained CC0 preserved-specimen witness supports historical recorded presence for this county-species pair."],
+        notes: [`One retained ${profile.licenseLabel} preserved-specimen witness supports historical recorded presence for this county-species pair.`],
       });
     }
     const identity = {
