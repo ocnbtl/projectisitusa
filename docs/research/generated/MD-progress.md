@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `24`
 - County-species pairs: `60096`
-- Verified present: `3037`
+- Verified present: `3610`
 - Verified absent: `24`
 - Not detected: `0`
-- Researched unresolved: `8640`
-- Not researched: `48395`
-- Determination coverage: `5.09%`
-- Research coverage: `19.47%`
-- Explicit outcome coverage: `19.4705%`
-- Applicable protocol cells: `440`
-- Current complete protocol cells: `94`
-- Protocol completion: `24.32%`
-- Current protocol completion: `21.36%`
-- Evidence records: `3330`
-- Research runs: `31`
+- Researched unresolved: `8493`
+- Not researched: `47969`
+- Determination coverage: `6.05%`
+- Research coverage: `20.18%`
+- Explicit outcome coverage: `20.1794%`
+- Applicable protocol cells: `603`
+- Current complete protocol cells: `98`
+- Protocol completion: `18.41%`
+- Current protocol completion: `16.25%`
+- Evidence records: `3903`
+- Research runs: `33`
 - Rejection records: `943`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Spiny amaranth (`amaranthus-spinosus`) | plants | 23 | 0 | 1 |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 23 | 0 | 1 |
+| Barbed goatgrass (`aegilops-triuncialis`) | plants | 23 | 0 | 1 |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 23 | 0 | 1 |
+| Bluemink (`ageratum-houstonianum`) | plants | 23 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 23 | 0 | 1 |
+| Water foxtail (`alopecurus-geniculatus`) | plants | 23 | 0 | 1 |
+| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 23 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 23 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 23 | 0 | 1 |
 | Dill (`anethum-graveolens`) | plants | 23 | 0 | 1 |
 | Bur chervil (`anthriscus-caucalis`) | plants | 23 | 0 | 1 |
 | Common bamboo (`bambusa-vulgaris`) | plants | 23 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 23 | 0 | 1 |
-| Orange eye butterflybush (`buddleja-davidii`) | plants | 23 | 0 | 1 |
-| Littlepod False Flax (`camelina-microcarpa`) | plants | 23 | 0 | 1 |
-| Woodland bittercress (`cardamine-flexuosa`) | plants | 23 | 0 | 1 |
-| Hammer sedge (`carex-hirta`) | plants | 23 | 0 | 1 |
-| Caraway (`carum-carvi`) | plants | 23 | 0 | 1 |
-| European chickweed (`cerastium-pumilum`) | plants | 23 | 0 | 1 |
-| Buckwheat (`fagopyrum-esculentum`) | plants | 23 | 0 | 1 |
-| Red Fescue (`festuca-rubra`) | plants | 23 | 0 | 1 |
-| Sweet fennel (`foeniculum-vulgare`) | plants | 23 | 0 | 1 |
-| Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 23 | 0 | 1 |
-| Wall bedstraw (`galium-parisiense`) | plants | 23 | 0 | 1 |
-| Small geranium (`geranium-pusillum`) | plants | 23 | 0 | 1 |
-| Mouseear hawkweed (`hieracium-pilosella`) | plants | 23 | 0 | 1 |
-| Common barley (`hordeum-vulgare`) | plants | 23 | 0 | 1 |
-| Black henbane (`hyoscyamus-niger`) | plants | 23 | 0 | 1 |
-| Garden lettuce (`lactuca-sativa`) | plants | 23 | 0 | 1 |
-| Fall dandelion (`leontodon-autumnalis`) | plants | 23 | 0 | 1 |
-| Gardencress pepperweed (`lepidium-sativum`) | plants | 23 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 23 | 0 | 1 |
-| Crown mayweed (`matricaria-chamomilla`) | plants | 23 | 0 | 1 |
+| Crested philippine violet (`barleria-cristata`) | plants | 23 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 23 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 23 | 0 | 1 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 23 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 23 | 0 | 1 |
+| Cabbage (`brassica-oleracea`) | plants | 23 | 0 | 1 |
+| Corn brome (`bromus-squarrosus`) | plants | 23 | 0 | 1 |
+| Angel's tears (`brugmansia-suaveolens`) | plants | 23 | 0 | 1 |
+| Pot marigold (`calendula-officinalis`) | plants | 23 | 0 | 1 |
+| Canterbury bells (`campanula-medium`) | plants | 23 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 23 | 0 | 1 |
+| Indian shot (`canna-indica`) | plants | 23 | 0 | 1 |
+| Curly plumeless thistle (`carduus-crispus`) | plants | 23 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:10.945Z | 7 | 5 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:01.660Z | 411 | 209 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:40.943Z | 6 | 5 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:58.566Z | 512 | 292 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:23.688Z | 61 | 43 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 261 | 110 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

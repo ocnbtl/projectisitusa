@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `11362`
+- Verified present: `12242`
 - Verified absent: `58`
 - Not detected: `0`
-- Researched unresolved: `21363`
-- Not researched: `112449`
-- Determination coverage: `7.86%`
-- Research coverage: `22.57%`
-- Explicit outcome coverage: `22.5728%`
-- Applicable protocol cells: `713`
+- Researched unresolved: `21288`
+- Not researched: `111644`
+- Determination coverage: `8.47%`
+- Research coverage: `23.13%`
+- Explicit outcome coverage: `23.1271%`
+- Applicable protocol cells: `869`
 - Current complete protocol cells: `186`
-- Protocol completion: `27.91%`
-- Current protocol completion: `26.09%`
-- Evidence records: `34362`
-- Research runs: `35`
+- Protocol completion: `22.90%`
+- Current protocol completion: `21.40%`
+- Evidence records: `35242`
+- Research runs: `37`
 - Rejection records: `2661`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Golden wattle (`acacia-pycnantha`) | plants | 57 | 0 | 1 |
-| Silver wattle (`acacia-retinodes`) | plants | 57 | 0 | 1 |
+| Coastal wattle (`acacia-cyclops`) | plants | 57 | 0 | 1 |
 | Japanese maple (`acer-palmatum`) | plants | 57 | 0 | 1 |
-| European water plantain (`alisma-plantago-aquatica`) | plants | 57 | 0 | 1 |
+| Rough maidenhair (`adiantum-hispidulum`) | plants | 57 | 0 | 1 |
 | Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 57 | 0 | 1 |
+| Love-lies-bleeding (`amaranthus-caudatus`) | plants | 57 | 0 | 1 |
+| Red amaranth (`amaranthus-cruentus`) | plants | 57 | 0 | 1 |
+| Mauritanian grass (`ampelodesmos-mauritanicus`) | plants | 57 | 0 | 1 |
+| Dill (`anethum-graveolens`) | plants | 57 | 0 | 1 |
+| Heartleaf madeiravine (`anredera-cordifolia`) | plants | 57 | 0 | 1 |
+| Corn chamomile (`anthemis-arvensis`) | plants | 57 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 57 | 0 | 1 |
 | Common asparagus fern (`asparagus-setaceus`) | plants | 57 | 0 | 1 |
-| Garden orache (`atriplex-hortensis`) | plants | 57 | 0 | 1 |
+| Mueller's saltbush (`atriplex-muelleri`) | plants | 57 | 0 | 1 |
 | Darwin's berberis (`berberis-darwinii`) | plants | 57 | 0 | 1 |
-| European white birch (`betula-pendula`) | plants | 57 | 0 | 1 |
+| Heath false brome (`brachypodium-pinnatum`) | plants | 57 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 57 | 0 | 1 |
 | Corn brome (`bromus-squarrosus`) | plants | 57 | 0 | 1 |
-| Pot marigold (`calendula-officinalis`) | plants | 57 | 0 | 1 |
-| Crimson bottlebrush (`callistemon-citrinus`) | plants | 57 | 0 | 1 |
 | Heather (`calluna-vulgaris`) | plants | 57 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 57 | 0 | 1 |
 | Ward's weed (`carrichtera-annua`) | plants | 57 | 0 | 1 |
-| River sheoak (`casuarina-cunninghamiana`) | plants | 57 | 0 | 1 |
-| Ferngrass (`catapodium-rigidum`) | plants | 57 | 0 | 1 |
+| Chinese catalpa (`catalpa-ovata`) | plants | 57 | 0 | 1 |
 | Red algae (`caulacanthus-ustulatus`) | plants | 57 | 0 | 1 |
-| Crimson fountaingrass (`cenchrus-setaceus`) | plants | 57 | 0 | 1 |
-| Rhodes grass (`chloris-gayana`) | plants | 57 | 0 | 1 |
-| Rose glorybower (`clerodendrum-bungei`) | plants | 57 | 0 | 1 |
-| Rock pigeon (`columba-livia`) | wildlife | 57 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 57 | 0 | 1 |
-| Golden chamomile (`cota-tinctoria`) | plants | 57 | 0 | 1 |
-| Oneseed hawthorn (`crataegus-monogyna`) | plants | 57 | 0 | 1 |
-| Kenilworth ivy (`cymbalaria-muralis`) | plants | 57 | 0 | 1 |
+| African feathergrass (`cenchrus-macrourus`) | plants | 57 | 0 | 1 |
+| Cow sandbur (`cenchrus-setiger`) | plants | 57 | 0 | 1 |
+| Snow in summer (`cerastium-tomentosum`) | plants | 57 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:40.353Z | 299 | 159 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:20.996Z | 218 | 118 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:00.789Z | 74 | 44 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:23.658Z | 701 | 300 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:34:53.368Z | 179 | 104 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1923 | 189 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

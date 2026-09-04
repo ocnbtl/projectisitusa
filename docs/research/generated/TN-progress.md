@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `7909`
+- Verified present: `7996`
 - Verified absent: `95`
 - Not detected: `8`
-- Researched unresolved: `36881`
-- Not researched: `192987`
-- Determination coverage: `3.36%`
-- Research coverage: `18.87%`
-- Explicit outcome coverage: `18.8721%`
-- Applicable protocol cells: `398`
-- Current complete protocol cells: `126`
-- Protocol completion: `34.92%`
-- Current protocol completion: `31.66%`
-- Evidence records: `10246`
-- Research runs: `32`
+- Researched unresolved: `36856`
+- Not researched: `192925`
+- Determination coverage: `3.40%`
+- Research coverage: `18.90%`
+- Explicit outcome coverage: `18.8982%`
+- Applicable protocol cells: `426`
+- Current complete protocol cells: `127`
+- Protocol completion: `32.86%`
+- Current protocol completion: `29.81%`
+- Evidence records: `10333`
+- Research runs: `34`
 - Rejection records: `746`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -35,28 +35,28 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mat amaranth (`amaranthus-blitoides`) | plants | 94 | 0 | 1 |
 | Mediterranean amaranth (`amaranthus-graecizans`) | plants | 94 | 0 | 1 |
 | Corn chamomile (`anthemis-arvensis`) | plants | 94 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 94 | 0 | 1 |
+| Lawndaisy (`bellis-perennis`) | plants | 94 | 0 | 1 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 94 | 0 | 1 |
 | Meadow brome (`bromus-commutatus`) | plants | 94 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 94 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 94 | 0 | 1 |
+| Poverty brome (`bromus-sterilis`) | plants | 94 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 94 | 0 | 1 |
+| Crossflower (`chorispora-tenella`) | plants | 94 | 0 | 1 |
 | Canada Thistle (`cirsium-arvense`) | plants | 94 | 0 | 1 |
+| Smooth hawksbeard (`crepis-capillaris`) | plants | 94 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 94 | 0 | 1 |
 | Variable flatsedge (`cyperus-difformis`) | plants | 94 | 0 | 1 |
 | Ricefield flatsedge (`cyperus-iria`) | plants | 94 | 0 | 1 |
+| Common Carp (`cyprinus-carpio`) | wildlife | 94 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 94 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 94 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 94 | 0 | 1 |
 | Red Fescue (`festuca-rubra`) | plants | 94 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 94 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 94 | 0 | 1 |
-| White Sweet Clover (`melilotus-albus`) | plants | 94 | 0 | 1 |
-| Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 94 | 0 | 1 |
-| Changing forget-me-not (`myosotis-discolor`) | plants | 94 | 0 | 1 |
-| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 94 | 0 | 1 |
-| Scots pine (`pinus-sylvestris`) | plants | 94 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 94 | 0 | 1 |
-| Rough Bluegrass (`poa-trivialis`) | plants | 94 | 0 | 1 |
-| Weeping willow (`salix-babylonica`) | plants | 94 | 0 | 1 |
-| German knotgrass (`scleranthus-annuus`) | plants | 94 | 0 | 1 |
-| Nightflowering silene (`silene-noctiflora`) | plants | 94 | 0 | 1 |
-| Maidenstears (`silene-vulgaris`) | plants | 94 | 0 | 1 |
+| False baby's breath (`galium-mollugo`) | plants | 94 | 0 | 1 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 94 | 0 | 1 |
+| Common barley (`hordeum-vulgare`) | plants | 94 | 0 | 1 |
+| Garden lettuce (`lactuca-sativa`) | plants | 94 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:59.085Z | 14 | 13 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:06.641Z | 48 | 38 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:39.796Z | 16 | 12 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:53.402Z | 10 | 10 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:15.279Z | 77 | 46 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1054 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

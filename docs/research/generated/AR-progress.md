@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `6881`
+- Verified present: `6918`
 - Verified absent: `75`
 - Not detected: `0`
-- Researched unresolved: `29048`
-- Not researched: `151796`
-- Determination coverage: `3.70%`
-- Research coverage: `19.17%`
-- Explicit outcome coverage: `19.1715%`
-- Applicable protocol cells: `439`
+- Researched unresolved: `29031`
+- Not researched: `151776`
+- Determination coverage: `3.72%`
+- Research coverage: `19.18%`
+- Explicit outcome coverage: `19.1821%`
+- Applicable protocol cells: `449`
 - Current complete protocol cells: `128`
-- Protocol completion: `32.12%`
-- Current protocol completion: `29.16%`
-- Evidence records: `10196`
-- Research runs: `35`
+- Protocol completion: `31.40%`
+- Current protocol completion: `28.51%`
+- Evidence records: `10233`
+- Research runs: `37`
 - Rejection records: `632`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,26 +37,26 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mediterranean amaranth (`amaranthus-graecizans`) | plants | 74 | 0 | 1 |
 | Caucasian bluestem (`bothriochloa-bladhii`) | plants | 74 | 0 | 1 |
 | Cabbage (`brassica-oleracea`) | plants | 74 | 0 | 1 |
+| Jack bean (`canavalia-ensiformis`) | plants | 74 | 0 | 1 |
 | Hare's ear mustard (`conringia-orientalis`) | plants | 74 | 0 | 1 |
 | Coriander (`coriandrum-sativum`) | plants | 74 | 0 | 1 |
 | Kenilworth ivy (`cymbalaria-muralis`) | plants | 74 | 0 | 1 |
+| Chinese hound's tongue (`cynoglossum-amabile`) | plants | 74 | 0 | 1 |
 | Bristly dogstail grass (`cynosurus-echinatus`) | plants | 74 | 0 | 1 |
 | Brown flatsedge (`cyperus-fuscus`) | plants | 74 | 0 | 1 |
+| Common Carp (`cyprinus-carpio`) | wildlife | 74 | 0 | 1 |
+| Annual wallrocket (`diplotaxis-muralis`) | plants | 74 | 0 | 1 |
 | Keeled wormseed (`dysphania-carinata`) | plants | 74 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 74 | 0 | 1 |
-| Black bindweed (`fallopia-convolvulus`) | plants | 74 | 0 | 1 |
 | Lawn marshpennywort (`hydrocotyle-sibthorpioides`) | plants | 74 | 0 | 1 |
 | Sweetpotato (`ipomoea-batatas`) | plants | 74 | 0 | 1 |
 | Cream-anther field pepperwort (`lepidium-campestre`) | plants | 74 | 0 | 1 |
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 74 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 74 | 0 | 1 |
 | Japanese yellow loosestrife (`lysimachia-japonica`) | plants | 74 | 0 | 1 |
-| Common Mallow (`malva-neglecta`) | plants | 74 | 0 | 1 |
-| White Sweet Clover (`melilotus-albus`) | plants | 74 | 0 | 1 |
+| Changing forget-me-not (`myosotis-discolor`) | plants | 74 | 0 | 1 |
 | Poet's narcissus (`narcissus-poeticus`) | plants | 74 | 0 | 1 |
 | Apple of Peru (`nicandra-physalodes`) | plants | 74 | 0 | 1 |
-| Sweet basil (`ocimum-basilicum`) | plants | 74 | 0 | 1 |
-| Torpedo grass (`panicum-repens`) | plants | 74 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:36.035Z | 37 | 31 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:15.740Z | 281 | 134 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:55.378Z | 90 | 32 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:36:38.156Z | 4 | 4 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:34:48.811Z | 33 | 25 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1201 | 154 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

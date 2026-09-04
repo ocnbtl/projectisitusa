@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `77`
 - County-species pairs: `192808`
-- Verified present: `4761`
+- Verified present: `4824`
 - Verified absent: `77`
 - Not detected: `0`
-- Researched unresolved: `31945`
-- Not researched: `156025`
-- Determination coverage: `2.51%`
-- Research coverage: `19.08%`
-- Explicit outcome coverage: `19.0775%`
-- Applicable protocol cells: `407`
+- Researched unresolved: `31924`
+- Not researched: `155983`
+- Determination coverage: `2.54%`
+- Research coverage: `19.10%`
+- Explicit outcome coverage: `19.0993%`
+- Applicable protocol cells: `417`
 - Current complete protocol cells: `111`
-- Protocol completion: `30.47%`
-- Current protocol completion: `27.27%`
-- Evidence records: `5012`
-- Research runs: `31`
+- Protocol completion: `29.74%`
+- Current protocol completion: `26.62%`
+- Evidence records: `5075`
+- Research runs: `33`
 - Rejection records: `237`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Common Barberry (`berberis-vulgaris`) | plants | 76 | 0 | 1 |
 | Hoary Alyssum (`berteroa-incana`) | plants | 76 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 76 | 0 | 1 |
 | Ripgut brome (`bromus-diandrus`) | plants | 76 | 0 | 1 |
@@ -44,19 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Yellow star-thistle (`centaurea-solstitialis`) | plants | 76 | 0 | 1 |
 | Hare's ear mustard (`conringia-orientalis`) | plants | 76 | 0 | 1 |
 | Bristly dogstail grass (`cynosurus-echinatus`) | plants | 76 | 0 | 1 |
+| Clammy goosefoot (`dysphania-pumilio`) | plants | 76 | 0 | 1 |
 | Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 76 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 76 | 0 | 1 |
 | Sweet fennel (`foeniculum-vulgare`) | plants | 76 | 0 | 1 |
-| Dovefoot Geranium (`geranium-molle`) | plants | 76 | 0 | 1 |
 | Marsh cudweed (`gnaphalium-uliginosum`) | plants | 76 | 0 | 1 |
 | Common barley (`hordeum-vulgare`) | plants | 76 | 0 | 1 |
-| Garden lettuce (`lactuca-sativa`) | plants | 76 | 0 | 1 |
+| Thatching grass (`hyparrhenia-hirta`) | plants | 76 | 0 | 1 |
 | Pepperweed (`lepidium-apetalum`) | plants | 76 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 76 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 76 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 76 | 0 | 1 |
 | Boston ivy (`parthenocissus-tricuspidata`) | plants | 76 | 0 | 1 |
-| Hairypink (`petrorhagia-dubia`) | plants | 76 | 0 | 1 |
-| Mugo pine (`pinus-mugo`) | plants | 76 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:45.603Z | 18 | 17 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:49.078Z | 96 | 62 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:21.244Z | 506 | 166 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:38.289Z | 7 | 7 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:01.136Z | 56 | 36 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 133 | 141 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

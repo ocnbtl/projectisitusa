@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `10285`
+- Verified present: `10505`
 - Verified absent: `100`
 - Not detected: `0`
-- Researched unresolved: `37124`
-- Not researched: `202891`
-- Determination coverage: `4.15%`
-- Research coverage: `18.97%`
-- Explicit outcome coverage: `18.9732%`
-- Applicable protocol cells: `456`
+- Researched unresolved: `37084`
+- Not researched: `202711`
+- Determination coverage: `4.24%`
+- Research coverage: `19.05%`
+- Explicit outcome coverage: `19.0451%`
+- Applicable protocol cells: `516`
 - Current complete protocol cells: `129`
-- Protocol completion: `31.14%`
-- Current protocol completion: `28.29%`
-- Evidence records: `13543`
-- Research runs: `32`
+- Protocol completion: `27.52%`
+- Current protocol completion: `25.00%`
+- Evidence records: `13763`
+- Research runs: `34`
 - Rejection records: `1277`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,29 +34,29 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Japanese maple (`acer-palmatum`) | plants | 99 | 0 | 1 |
 | Colonial bentgrass (`agrostis-capillaris`) | plants | 99 | 0 | 1 |
-| Hollyhock (`alcea-rosea`) | plants | 99 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 99 | 0 | 1 |
 | Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 99 | 0 | 1 |
 | Horseradish (`armoracia-rusticana`) | plants | 99 | 0 | 1 |
+| Triangle barnacle (`balanus-trigonus`) | wildlife | 99 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 99 | 0 | 1 |
 | Smooth Brome (`bromus-inermis`) | plants | 99 | 0 | 1 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 99 | 0 | 1 |
+| Heather (`calluna-vulgaris`) | plants | 99 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 99 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 99 | 0 | 1 |
 | Spadeleaf (`centella-asiatica`) | plants | 99 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 99 | 0 | 1 |
-| Canada Thistle (`cirsium-arvense`) | plants | 99 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 99 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 99 | 0 | 1 |
+| Ethiopian rattlebox (`crotalaria-brevidens`) | plants | 99 | 0 | 1 |
 | Japanese cedar (`cryptomeria-japonica`) | plants | 99 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 99 | 0 | 1 |
 | Ricefield flatsedge (`cyperus-iria`) | plants | 99 | 0 | 1 |
+| Purple foxglove (`digitalis-purpurea`) | plants | 99 | 0 | 1 |
 | Jamaican crabgrass (`digitaria-horizontalis`) | plants | 99 | 0 | 1 |
+| Crested latesummer mint (`elsholtzia-ciliata`) | plants | 99 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 99 | 0 | 1 |
 | Madwoman's milk (`euphorbia-helioscopia`) | plants | 99 | 0 | 1 |
-| Moleplant (`euphorbia-lathyris`) | plants | 99 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 99 | 0 | 1 |
-| Sweet fennel (`foeniculum-vulgare`) | plants | 99 | 0 | 1 |
-| Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 99 | 0 | 1 |
-| False baby's breath (`galium-mollugo`) | plants | 99 | 0 | 1 |
-| Wall bedstraw (`galium-parisiense`) | plants | 99 | 0 | 1 |
-| Mouseear hawkweed (`hieracium-pilosella`) | plants | 99 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 99 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:26.395Z | 19 | 18 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:23.243Z | 107 | 83 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:00.116Z | 25 | 12 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:15.400Z | 40 | 25 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:40.086Z | 180 | 91 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1134 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

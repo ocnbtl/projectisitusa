@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `105`
 - County-species pairs: `262920`
-- Verified present: `6769`
+- Verified present: `6824`
 - Verified absent: `105`
 - Not detected: `26`
-- Researched unresolved: `43147`
-- Not researched: `212873`
-- Determination coverage: `2.61%`
-- Research coverage: `19.04%`
-- Explicit outcome coverage: `19.0351%`
-- Applicable protocol cells: `373`
+- Researched unresolved: `43139`
+- Not researched: `212826`
+- Determination coverage: `2.64%`
+- Research coverage: `19.05%`
+- Explicit outcome coverage: `19.0529%`
+- Applicable protocol cells: `384`
 - Current complete protocol cells: `107`
-- Protocol completion: `32.17%`
-- Current protocol completion: `28.69%`
-- Evidence records: `7953`
-- Research runs: `33`
+- Protocol completion: `31.25%`
+- Current protocol completion: `27.86%`
+- Evidence records: `8008`
+- Research runs: `35`
 - Rejection records: `694`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,9 +32,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Hollyhock (`alcea-rosea`) | plants | 104 | 0 | 1 |
+| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 104 | 0 | 1 |
 | Meadow foxtail (`alopecurus-pratensis`) | plants | 104 | 0 | 1 |
 | Pale madwort (`alyssum-alyssoides`) | plants | 104 | 0 | 1 |
+| Mugwort (`artemisia-vulgaris`) | plants | 104 | 0 | 1 |
 | Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 104 | 0 | 1 |
+| Morning-glory leafminer moth (`bedellia-somnulentella`) | insects | 104 | 0 | 1 |
 | Hoary Alyssum (`berteroa-incana`) | plants | 104 | 0 | 1 |
 | Caucasian bluestem (`bothriochloa-bladhii`) | plants | 104 | 0 | 1 |
 | Corn brome (`bromus-squarrosus`) | plants | 104 | 0 | 1 |
@@ -44,19 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Brown flatsedge (`cyperus-fuscus`) | plants | 104 | 0 | 1 |
 | Common dogmustard (`erucastrum-gallicum`) | plants | 104 | 0 | 1 |
 | Winged Burning Bush (`euonymus-alatus`) | plants | 104 | 0 | 1 |
-| Black bindweed (`fallopia-convolvulus`) | plants | 104 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 104 | 0 | 1 |
+| Blackberry lily (`iris-domestica`) | plants | 104 | 0 | 1 |
 | German iris (`iris-germanica`) | plants | 104 | 0 | 1 |
+| Garden lettuce (`lactuca-sativa`) | plants | 104 | 0 | 1 |
 | Common flax (`linum-usitatissimum`) | plants | 104 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 104 | 0 | 1 |
+| Brown-dotted clothes moth (`niditinea-fuscella`) | insects | 104 | 0 | 1 |
+| Blindeyes (`papaver-dubium`) | plants | 104 | 0 | 1 |
 | Corn poppy (`papaver-rhoeas`) | plants | 104 | 0 | 1 |
-| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 104 | 0 | 1 |
-| Lady's Thumb (`persicaria-maculosa`) | plants | 104 | 0 | 1 |
-| Kiss me over the garden gate (`persicaria-orientalis`) | plants | 104 | 0 | 1 |
-| Mexican groundcherry (`physalis-philadelphica`) | plants | 104 | 0 | 1 |
-| Austrian pine (`pinus-nigra`) | plants | 104 | 0 | 1 |
-| Scots pine (`pinus-sylvestris`) | plants | 104 | 0 | 1 |
-| Nanking cherry (`prunus-tomentosa`) | plants | 104 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:02.414Z | 19 | 17 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:50.252Z | 173 | 84 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:29.769Z | 14 | 13 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:48.909Z | 10 | 9 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:14.145Z | 45 | 25 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 592 | 130 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

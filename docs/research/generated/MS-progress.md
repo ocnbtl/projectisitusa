@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `5512`
+- Verified present: `5567`
 - Verified absent: `82`
 - Not detected: `5`
-- Researched unresolved: `33209`
-- Not researched: `166520`
-- Determination coverage: `2.72%`
-- Research coverage: `18.90%`
-- Explicit outcome coverage: `18.9005%`
-- Applicable protocol cells: `389`
-- Current complete protocol cells: `115`
-- Protocol completion: `32.90%`
-- Current protocol completion: `29.56%`
-- Evidence records: `7872`
-- Research runs: `32`
+- Researched unresolved: `33184`
+- Not researched: `166490`
+- Determination coverage: `2.75%`
+- Research coverage: `18.92%`
+- Explicit outcome coverage: `18.9151%`
+- Applicable protocol cells: `417`
+- Current complete protocol cells: `116`
+- Protocol completion: `30.94%`
+- Current protocol completion: `27.82%`
+- Evidence records: `7927`
+- Research runs: `34`
 - Rejection records: `754`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,29 +34,29 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 81 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 81 | 0 | 1 |
-| Meadow brome (`bromus-commutatus`) | plants | 81 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 81 | 0 | 1 |
+| Purple false brome (`brachypodium-distachyon`) | plants | 81 | 0 | 1 |
+| Heath false brome (`brachypodium-pinnatum`) | plants | 81 | 0 | 1 |
+| Poverty brome (`bromus-sterilis`) | plants | 81 | 0 | 1 |
+| Madagascar periwinkle (`catharanthus-roseus`) | plants | 81 | 0 | 1 |
+| Bushkiller (`cayratia-japonica`) | plants | 81 | 0 | 1 |
+| Feathertop (`cenchrus-longisetus`) | plants | 81 | 0 | 1 |
+| Cow sandbur (`cenchrus-setiger`) | plants | 81 | 0 | 1 |
 | European chickweed (`cerastium-pumilum`) | plants | 81 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 81 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 81 | 0 | 1 |
 | Variable flatsedge (`cyperus-difformis`) | plants | 81 | 0 | 1 |
+| Ricefield flatsedge (`cyperus-iria`) | plants | 81 | 0 | 1 |
+| Gray field slug (`deroceras-reticulatum`) | wildlife | 81 | 0 | 1 |
+| Asian ponysfoot (`dichondra-micrantha`) | plants | 81 | 0 | 1 |
+| Early water grass (`echinochloa-oryzoides`) | plants | 81 | 0 | 1 |
+| Greenhouse Frog (`eleutherodactylus-planirostris`) | wildlife | 81 | 0 | 1 |
+| Red Fescue (`festuca-rubra`) | plants | 81 | 0 | 1 |
 | Fimbry (`fimbristylis-littoralis`) | plants | 81 | 0 | 1 |
+| Freshwater bryozoan (`fredericella-sultana`) | wildlife | 81 | 0 | 1 |
+| Mediterranean Gecko (`hemidactylus-turcicus`) | wildlife | 81 | 0 | 1 |
+| Sweetpotato (`ipomoea-batatas`) | plants | 81 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 81 | 0 | 1 |
-| Low mallow (`malva-pusilla`) | plants | 81 | 0 | 1 |
-| White Sweet Clover (`melilotus-albus`) | plants | 81 | 0 | 1 |
-| Tussock paspalum (`paspalum-quadrifarium`) | plants | 81 | 0 | 1 |
-| Grass-like starwort (`stellaria-graminea`) | plants | 81 | 0 | 1 |
-| Swordfern (`macrothelypteris-torresiana`) | plants | 80 | 0 | 1 |
-| Puncturevine (`tribulus-terrestris`) | plants | 80 | 0 | 1 |
-| Gulf cockspur grass (`echinochloa-crus-pavonis`) | plants | 79 | 0 | 1 |
-| Gophertail lovegrass (`eragrostis-ciliaris`) | plants | 79 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 82 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 82 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 82 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 82 | 1 |
-| Silver fir (`abies-alba`) | plants | 0 | 82 | 0 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 82 | 0 |
-| Cedar wattle (`acacia-elata`) | plants | 0 | 82 | 0 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 82 | 0 |
-| New Zealand burr (`acaena-magellanica`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:21.727Z | 13 | 12 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:17.157Z | 57 | 30 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:54.539Z | 9 | 9 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:10.520Z | 29 | 28 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:35.500Z | 26 | 22 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 779 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

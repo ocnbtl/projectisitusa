@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `1737`
+- Verified present: `1758`
 - Verified absent: `17`
 - Not detected: `0`
-- Researched unresolved: `7206`
-- Not researched: `33608`
-- Determination coverage: `4.12%`
-- Research coverage: `21.05%`
-- Explicit outcome coverage: `21.0487%`
-- Applicable protocol cells: `394`
+- Researched unresolved: `7204`
+- Not researched: `33589`
+- Determination coverage: `4.17%`
+- Research coverage: `21.09%`
+- Explicit outcome coverage: `21.0933%`
+- Applicable protocol cells: `398`
 - Current complete protocol cells: `88`
-- Protocol completion: `25.63%`
-- Current protocol completion: `22.34%`
-- Evidence records: `2078`
-- Research runs: `32`
+- Protocol completion: `25.38%`
+- Current protocol completion: `22.11%`
+- Evidence records: `2099`
+- Research runs: `34`
 - Rejection records: `251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,14 +42,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Big quakinggrass (`briza-maxima`) | plants | 16 | 0 | 1 |
 | Woolly distaff thistle (`carthamus-lanatus`) | plants | 16 | 0 | 1 |
 | Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 16 | 0 | 1 |
-| Clammy goosefoot (`dysphania-pumilio`) | plants | 16 | 0 | 1 |
 | Longbeak stork's bill (`erodium-botrys`) | plants | 16 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 16 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 16 | 0 | 1 |
 | Sweet fennel (`foeniculum-vulgare`) | plants | 16 | 0 | 1 |
 | Mouse barley (`hordeum-murinum`) | plants | 16 | 0 | 1 |
+| Garden lettuce (`lactuca-sativa`) | plants | 16 | 0 | 1 |
 | European stickseed (`lappula-squarrosa`) | plants | 16 | 0 | 1 |
-| Whitetop (`lepidium-draba`) | plants | 16 | 0 | 1 |
 | Cheeseweed mallow (`malva-parviflora`) | plants | 16 | 0 | 1 |
 | Chinese Silvergrass (`miscanthus-sinensis`) | plants | 16 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 16 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Wild Parsnip (`pastinaca-sativa`) | plants | 16 | 0 | 1 |
 | Parsley (`petroselinum-crispum`) | plants | 16 | 0 | 1 |
 | Mexican groundcherry (`physalis-philadelphica`) | plants | 16 | 0 | 1 |
+| Sweet cherry (`prunus-avium`) | plants | 16 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:39.133Z | 128 | 81 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:40.571Z | 191 | 93 |
 | TORCH BRIT preserved specimens | operational | not run | 0 | 0 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:30.736Z | 8 | 3 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:54.143Z | 13 | 10 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 54 | 118 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `72`
 - County-species pairs: `180288`
-- Verified present: `6963`
+- Verified present: `7020`
 - Verified absent: `72`
 - Not detected: `29`
-- Researched unresolved: `27261`
-- Not researched: `145963`
-- Determination coverage: `3.90%`
-- Research coverage: `19.04%`
-- Explicit outcome coverage: `19.0390%`
-- Applicable protocol cells: `375`
+- Researched unresolved: `27260`
+- Not researched: `145907`
+- Determination coverage: `3.93%`
+- Research coverage: `19.07%`
+- Explicit outcome coverage: `19.0700%`
+- Applicable protocol cells: `400`
 - Current complete protocol cells: `128`
-- Protocol completion: `37.60%`
-- Current protocol completion: `34.13%`
-- Evidence records: `11260`
-- Research runs: `33`
+- Protocol completion: `35.25%`
+- Current protocol completion: `32.00%`
+- Evidence records: `11317`
+- Research runs: `35`
 - Rejection records: `1541`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Bishop's Goutweed (`aegopodium-podagraria`) | plants | 71 | 0 | 1 |
-| Greater burdock (`arctium-lappa`) | plants | 71 | 0 | 1 |
-| Woolly burdock (`arctium-tomentosum`) | plants | 71 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 71 | 0 | 1 |
+| Mugwort (`artemisia-vulgaris`) | plants | 71 | 0 | 1 |
 | Bloodflower (`asclepias-curassavica`) | plants | 71 | 0 | 1 |
+| Garden orache (`atriplex-hortensis`) | plants | 71 | 0 | 1 |
 | Lawndaisy (`bellis-perennis`) | plants | 71 | 0 | 1 |
 | European white birch (`betula-pendula`) | plants | 71 | 0 | 1 |
-| Black mustard (`brassica-nigra`) | plants | 71 | 0 | 1 |
 | Meadow brome (`bromus-commutatus`) | plants | 71 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 71 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 71 | 0 | 1 |
+| Turkish wartycabbage (`bunias-orientalis`) | plants | 71 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 71 | 0 | 1 |
 | Siberian peashrub (`caragana-arborescens`) | plants | 71 | 0 | 1 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 71 | 0 | 1 |
 | European chickweed (`cerastium-pumilum`) | plants | 71 | 0 | 1 |
 | Celandine (`chelidonium-majus`) | plants | 71 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 71 | 0 | 1 |
+| Marsh thistle (`cirsium-palustre`) | plants | 71 | 0 | 1 |
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 71 | 0 | 1 |
+| Annual wallrocket (`diplotaxis-muralis`) | plants | 71 | 0 | 1 |
 | Hairy cupgrass (`eriochloa-villosa`) | plants | 71 | 0 | 1 |
+| Common dogmustard (`erucastrum-gallicum`) | plants | 71 | 0 | 1 |
 | Winged Burning Bush (`euonymus-alatus`) | plants | 71 | 0 | 1 |
+| Buckwheat (`fagopyrum-esculentum`) | plants | 71 | 0 | 1 |
 | Black bindweed (`fallopia-convolvulus`) | plants | 71 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 71 | 0 | 1 |
-| False baby's breath (`galium-mollugo`) | plants | 71 | 0 | 1 |
-| Wall bedstraw (`galium-parisiense`) | plants | 71 | 0 | 1 |
-| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 71 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 71 | 0 | 1 |
-| Roundfruit rush (`juncus-compressus`) | plants | 71 | 0 | 1 |
-| Common nipplewort (`lapsana-communis`) | plants | 71 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:12.790Z | 55 | 42 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:23.706Z | 68 | 45 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:57.874Z | 18 | 15 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:08.895Z | 9 | 7 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:29.150Z | 48 | 32 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1235 | 139 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

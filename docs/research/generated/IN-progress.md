@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `9640`
+- Verified present: `9714`
 - Verified absent: `92`
 - Not detected: `0`
-- Researched unresolved: `34819`
-- Not researched: `185817`
-- Determination coverage: `4.22%`
-- Research coverage: `19.34%`
-- Explicit outcome coverage: `19.3391%`
-- Applicable protocol cells: `423`
+- Researched unresolved: `34813`
+- Not researched: `185749`
+- Determination coverage: `4.26%`
+- Research coverage: `19.37%`
+- Explicit outcome coverage: `19.3686%`
+- Applicable protocol cells: `439`
 - Current complete protocol cells: `153`
-- Protocol completion: `39.24%`
-- Current protocol completion: `36.17%`
-- Evidence records: `11328`
-- Research runs: `34`
+- Protocol completion: `37.81%`
+- Current protocol completion: `34.85%`
+- Evidence records: `11402`
+- Research runs: `36`
 - Rejection records: `1431`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,27 +36,27 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Meadow foxtail (`alopecurus-pratensis`) | plants | 91 | 0 | 1 |
 | Mediterranean amaranth (`amaranthus-graecizans`) | plants | 91 | 0 | 1 |
 | European beachgrass (`ammophila-arenaria`) | plants | 91 | 0 | 1 |
-| European white birch (`betula-pendula`) | plants | 91 | 0 | 1 |
+| Faucet snail (`bithynia-tentaculata`) | wildlife | 91 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 91 | 0 | 1 |
 | Poverty brome (`bromus-sterilis`) | plants | 91 | 0 | 1 |
 | Angel's tears (`brugmansia-suaveolens`) | plants | 91 | 0 | 1 |
-| Littlepod False Flax (`camelina-microcarpa`) | plants | 91 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 91 | 0 | 1 |
 | Caraway (`carum-carvi`) | plants | 91 | 0 | 1 |
 | Branched centaury (`centaurium-pulchellum`) | plants | 91 | 0 | 1 |
 | Celandine (`chelidonium-majus`) | plants | 91 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 91 | 0 | 1 |
+| New world screwworm (`cochliomyia-hominivorax`) | insects | 91 | 0 | 1 |
 | Rockspray cotoneaster (`cotoneaster-horizontalis`) | plants | 91 | 0 | 1 |
+| Smooth hawksbeard (`crepis-capillaris`) | plants | 91 | 0 | 1 |
 | Jamaican crabgrass (`digitaria-horizontalis`) | plants | 91 | 0 | 1 |
-| Common dogmustard (`erucastrum-gallicum`) | plants | 91 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 91 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 91 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 91 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 91 | 0 | 1 |
+| Domestic cat (`felis-catus`) | wildlife | 91 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 91 | 0 | 1 |
+| False baby's breath (`galium-mollugo`) | plants | 91 | 0 | 1 |
 | Wall bedstraw (`galium-parisiense`) | plants | 91 | 0 | 1 |
 | Elecampane inula (`inula-helenium`) | plants | 91 | 0 | 1 |
 | German iris (`iris-germanica`) | plants | 91 | 0 | 1 |
-| European larch (`larix-decidua`) | plants | 91 | 0 | 1 |
-| Common flax (`linum-usitatissimum`) | plants | 91 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:00.272Z | 51 | 43 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:47.526Z | 200 | 111 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:26.801Z | 5 | 3 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:46.475Z | 33 | 8 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:11.861Z | 41 | 27 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1015 | 164 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

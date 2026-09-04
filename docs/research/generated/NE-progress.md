@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `4207`
+- Verified present: `4232`
 - Verified absent: `93`
 - Not detected: `0`
-- Researched unresolved: `39910`
-- Not researched: `188662`
-- Determination coverage: `1.85%`
-- Research coverage: `18.98%`
-- Explicit outcome coverage: `18.9847%`
-- Applicable protocol cells: `309`
+- Researched unresolved: `39905`
+- Not researched: `188642`
+- Determination coverage: `1.86%`
+- Research coverage: `18.99%`
+- Explicit outcome coverage: `18.9933%`
+- Applicable protocol cells: `315`
 - Current complete protocol cells: `92`
-- Protocol completion: `33.98%`
-- Current protocol completion: `29.77%`
-- Evidence records: `4814`
-- Research runs: `31`
+- Protocol completion: `33.33%`
+- Current protocol completion: `29.21%`
+- Evidence records: `4839`
+- Research runs: `33`
 - Rejection records: `536`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,8 +32,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 92 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 92 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 92 | 0 | 1 |
+| Horseradish (`armoracia-rusticana`) | plants | 92 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 92 | 0 | 1 |
 | Gold-of-pleasure (`camelina-sativa`) | plants | 92 | 0 | 1 |
 | Chinese catalpa (`catalpa-ovata`) | plants | 92 | 0 | 1 |
@@ -41,22 +43,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Buckwheat (`fagopyrum-esculentum`) | plants | 92 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 92 | 0 | 1 |
 | Bachelor's button (`gypsophila-paniculata`) | plants | 92 | 0 | 1 |
-| Flower of an hour (`hibiscus-trionum`) | plants | 92 | 0 | 1 |
 | Roundfruit rush (`juncus-compressus`) | plants | 92 | 0 | 1 |
 | Cream-anther field pepperwort (`lepidium-campestre`) | plants | 92 | 0 | 1 |
 | Whitetop (`lepidium-draba`) | plants | 92 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 92 | 0 | 1 |
 | Common Mallow (`malva-neglecta`) | plants | 92 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 92 | 0 | 1 |
+| Proso millet (`panicum-miliaceum`) | plants | 92 | 0 | 1 |
 | Wild Parsnip (`pastinaca-sativa`) | plants | 92 | 0 | 1 |
 | Scots pine (`pinus-sylvestris`) | plants | 92 | 0 | 1 |
+| Norway rat (`rattus-norvegicus`) | wildlife | 92 | 0 | 1 |
+| Foxtail millet (`setaria-italica`) | plants | 92 | 0 | 1 |
 | Nightflowering silene (`silene-noctiflora`) | plants | 92 | 0 | 1 |
 | Sorghum (`sorghum-bicolor`) | plants | 92 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 92 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 91 | 0 | 1 |
-| Littlepod False Flax (`camelina-microcarpa`) | plants | 91 | 0 | 1 |
-| Ferngrass (`catapodium-rigidum`) | plants | 91 | 0 | 1 |
-| Crossflower (`chorispora-tenella`) | plants | 91 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:30.566Z | 22 | 19 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:28.448Z | 122 | 56 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:05.736Z | 4 | 4 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:20.432Z | 8 | 8 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:44.590Z | 17 | 13 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 399 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T064103Z__smithsonian-nmnh-preserved-specimens__4e7bceef869c",
+  "status": "complete",
+  "started_at": "2026-09-04T06:41:03.727Z",
+  "finished_at": "2026-09-04T06:41:03.728Z",
+  "actor_type": "adapter",
+  "actor_id": "smithsonian-nmnh-preserved-specimens-snapshot@1.0.0",
+  "source_id": "smithsonian-nmnh-preserved-specimens",
+  "source_registry_hash": "4d1917f92166db11769825055aafd64725f3589d93f402dd7ee313c25cb21c34",
+  "adapter_id": "smithsonian-nmnh-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "3dd44898e98991d0393c820b35822c19bb4061c65f4fad958070539ede9d02b1",
+  "code_commit": "677e599e12cd7be442cd5d7ddbb9f4e103a72b88",
+  "parameter_hash": "4e7bceef869c15574964224346d839f6db28fb4dd43548c0d9aa5e057b0f8f7b",
+  "parameters": {
+    "stateCode": "VT",
+    "mode": "retained-archive-witnesses",
+    "profile": "smithsonian-nmnh",
+    "datasetUrl": "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112",
+    "metadataUrl": "https://collections.nmnh.si.edu/ipt/eml.do?r=nmnh_extant_dwc-a&v=1.112",
+    "usagePolicyUrl": "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a&v=1.112",
+    "datasetVersion": "1.112",
+    "publicationDate": "2026-09-02",
+    "datasetLastModified": "Wed, 02 Sep 2026 10:10:41 GMT",
+    "datasetEtag": null,
+    "archiveBytes": 1525644039,
+    "archiveSha256": "204173b11b5933ca6625d3c9b23e4b7902f034cbbd24d42bca9ae4f84703b0de",
+    "occurrenceBytes": 6535399365,
+    "occurrenceSha256": "e87cd8b1fbc991275adcf8822373ebe32dfd25499959550cee68e44c8c8d09ab",
+    "archiveAcquiredAt": "2026-09-04T06:08:00.659Z",
+    "preflightEvaluationId": "smithsonian-nmnh-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "04445f208585ac1d571780daf04289d6fdb65144b29debfc181da9b725433dd9",
+    "targets": [
+      {
+        "pairKey": "50003:campanula-rapunculoides",
+        "recordId": "http://n2t.net/ark:/65665/3e5ec4e63-c5a1-4401-95ff-be071063e53f",
+        "occurrenceId": "http://n2t.net/ark:/65665/3e5ec4e63-c5a1-4401-95ff-be071063e53f",
+        "countyFips": "50003",
+        "stateCode": "VT",
+        "sourceState": "Vermont",
+        "sourceCounty": "Bennington",
+        "speciesId": "campanula-rapunculoides",
+        "scientificName": "Campanula rapunculoides",
+        "eventDate": "1898-07-28",
+        "year": 1898,
+        "institutionCode": "US",
+        "collectionCode": "US",
+        "catalogNumber": "US 963339",
+        "rightsHolder": "",
+        "references": ""
+      },
+      {
+        "pairKey": "50005:campanula-rapunculoides",
+        "recordId": "http://n2t.net/ark:/65665/353f0b13a-907d-4c1a-a804-294962ca2744",
+        "occurrenceId": "http://n2t.net/ark:/65665/353f0b13a-907d-4c1a-a804-294962ca2744",
+        "countyFips": "50005",
+        "stateCode": "VT",
+        "sourceState": "Vermont",
+        "sourceCounty": "Caledonia",
+        "speciesId": "campanula-rapunculoides",
+        "scientificName": "Campanula rapunculoides",
+        "eventDate": "1892-07-02",
+        "year": 1892,
+        "institutionCode": "US",
+        "collectionCode": "US",
+        "catalogNumber": "US 310533",
+        "rightsHolder": "",
+        "references": ""
+      }
+    ],
+    "candidatePairs": [
+      "50003:campanula-rapunculoides",
+      "50005:campanula-rapunculoides"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "VT",
+    "county_fips": [
+      "50003",
+      "50005"
+    ],
+    "species_ids": [
+      "campanula-rapunculoides"
+    ],
+    "pair_keys": [
+      "50003:campanula-rapunculoides",
+      "50005:campanula-rapunculoides"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T064103Z__smithsonian-nmnh-preserved-specimens__4e7bceef869c/artifacts/smithsonian-nmnh-source-identity.json",
+      "sha256": "0cefdbb47200461378423c0cfcbc2bb236b236f62b2b26666240e3bb93fc29f4",
+      "bytes": 935,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064103Z__smithsonian-nmnh-preserved-specimens__4e7bceef869c/artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+      "sha256": "c6f98d21b1124b9623686308f5a5e6f725b634f437dd04fed839feda26099adb",
+      "bytes": 378,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T064103Z__smithsonian-nmnh-preserved-specimens__4e7bceef869c/assertions.ndjson",
+      "sha256": "12684fc66bb0a779412dc406d55193cb661daae0ce707321389b5678876753ff",
+      "bytes": 5057,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064103Z__smithsonian-nmnh-preserved-specimens__4e7bceef869c/reviews.ndjson",
+      "sha256": "322cdbd64ba69356a7d3ab3b2e6338dd038f5600c7fe668910e4ef48f3ea72ae",
+      "bytes": 2302,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064103Z__smithsonian-nmnh-preserved-specimens__4e7bceef869c/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064103Z__smithsonian-nmnh-preserved-specimens__4e7bceef869c/outcomes.ndjson",
+      "sha256": "40b7dd9a95d8fb9b716d08087f819b17e43ddb46cd36f793e4fec67a14b87d95",
+      "bytes": 1554,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "Smithsonian NMNH physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source smithsonian-nmnh-preserved-specimens --state VT --candidate-file ops/national-research/plans/smithsonian-nmnh-preserved-specimens-20260904-r1/smithsonian-nmnh-preserved-specimens-vt-20260904-r1.json --output-root .cache/research/worker-results/direct-museum-20260904 --pairs 50003:campanula-rapunculoides,50005:campanula-rapunculoides"
+}

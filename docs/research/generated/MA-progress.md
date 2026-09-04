@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `2816`
+- Verified present: `4485`
 - Verified absent: `14`
 - Not detected: `0`
-- Researched unresolved: `4027`
-- Not researched: `28199`
-- Determination coverage: `8.07%`
-- Research coverage: `19.56%`
-- Explicit outcome coverage: `19.5601%`
-- Applicable protocol cells: `463`
-- Current complete protocol cells: `86`
-- Protocol completion: `21.38%`
-- Current protocol completion: `18.57%`
-- Evidence records: `2882`
-- Research runs: `38`
+- Researched unresolved: `3947`
+- Not researched: `26610`
+- Determination coverage: `12.83%`
+- Research coverage: `24.09%`
+- Explicit outcome coverage: `24.0929%`
+- Applicable protocol cells: `727`
+- Current complete protocol cells: `87`
+- Protocol completion: `13.76%`
+- Current protocol completion: `11.97%`
+- Evidence records: `4551`
+- Research runs: `40`
 - Rejection records: `572`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 13 | 0 | 1 |
-| Corn chamomile (`anthemis-arvensis`) | plants | 13 | 0 | 1 |
-| Woolly burdock (`arctium-tomentosum`) | plants | 13 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 13 | 0 | 1 |
+| Crested wheatgrass (`agropyron-cristatum`) | plants | 13 | 0 | 1 |
+| Desert wheatgrass (`agropyron-desertorum`) | plants | 13 | 0 | 1 |
+| Bur chervil (`anthriscus-caucalis`) | plants | 13 | 0 | 1 |
 | Bloodflower (`asclepias-curassavica`) | plants | 13 | 0 | 1 |
-| Brown mustard (`brassica-juncea`) | plants | 13 | 0 | 1 |
-| Soft brome (`bromus-hordeaceus`) | plants | 13 | 0 | 1 |
+| Golden-tuft alyssum (`aurinia-saxatilis`) | plants | 13 | 0 | 1 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 13 | 0 | 1 |
+| Jamaican forget-me-not (`browallia-americana`) | plants | 13 | 0 | 1 |
 | Turkish wartycabbage (`bunias-orientalis`) | plants | 13 | 0 | 1 |
-| Heather (`calluna-vulgaris`) | plants | 13 | 0 | 1 |
-| Chinese catalpa (`catalpa-ovata`) | plants | 13 | 0 | 1 |
-| Perennial cornflower (`centaurea-montana`) | plants | 13 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 13 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 13 | 0 | 1 |
-| Oneseed hawthorn (`crataegus-monogyna`) | plants | 13 | 0 | 1 |
+| Dane's blood (`campanula-glomerata`) | plants | 13 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 13 | 0 | 1 |
+| European green crab (`carcinus-maenas`) | wildlife | 13 | 0 | 1 |
+| Japanese sedge (`carex-kobomugi`) | plants | 13 | 0 | 1 |
+| Bighead knapweed (`centaurea-macrocephala`) | plants | 13 | 0 | 1 |
+| Greater knapweed (`centaurea-scabiosa`) | plants | 13 | 0 | 1 |
+| European centaury (`centaurium-erythraea`) | plants | 13 | 0 | 1 |
+| Wood-boring amphipod (`chelura-terebrans`) | wildlife | 13 | 0 | 1 |
+| Rhodes grass (`chloris-gayana`) | plants | 13 | 0 | 1 |
+| Crossflower (`chorispora-tenella`) | plants | 13 | 0 | 1 |
+| Marsh thistle (`cirsium-palustre`) | plants | 13 | 0 | 1 |
+| Asian pigeonwings (`clitoria-ternatea`) | plants | 13 | 0 | 1 |
+| Japanese dogwood (`cornus-kousa`) | plants | 13 | 0 | 1 |
+| Common brassbuttons (`cotula-coronopifolia`) | plants | 13 | 0 | 1 |
+| Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 13 | 0 | 1 |
 | Japanese cedar (`cryptomeria-japonica`) | plants | 13 | 0 | 1 |
-| Maiden pink (`dianthus-deltoides`) | plants | 13 | 0 | 1 |
-| Clammy goosefoot (`dysphania-pumilio`) | plants | 13 | 0 | 1 |
-| Petty spurge (`euphorbia-peplus`) | plants | 13 | 0 | 1 |
-| Red hempnettle (`galeopsis-ladanum`) | plants | 13 | 0 | 1 |
-| False baby's breath (`galium-mollugo`) | plants | 13 | 0 | 1 |
-| Dyer's greenweed (`genista-tinctoria`) | plants | 13 | 0 | 1 |
-| Red alga (`heterosiphonia-japonica`) | plants | 13 | 0 | 1 |
-| Tall hawkweed (`hieracium-piloselloides`) | plants | 13 | 0 | 1 |
-| Black henbane (`hyoscyamus-niger`) | plants | 13 | 0 | 1 |
-| European larch (`larix-decidua`) | plants | 13 | 0 | 1 |
+| Gooseberry gourd (`cucumis-myriocarpus`) | plants | 13 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:08.880Z | 24 | 20 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:58.514Z | 168 | 87 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:38.391Z | 45 | 31 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:56.353Z | 16 | 15 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:21.114Z | 1653 | 396 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 200 | 98 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

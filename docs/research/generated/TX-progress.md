@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `15154`
+- Verified present: `15390`
 - Verified absent: `254`
 - Not detected: `0`
-- Researched unresolved: `107504`
-- Not researched: `513104`
-- Determination coverage: `2.42%`
-- Research coverage: `19.33%`
-- Explicit outcome coverage: `19.3253%`
-- Applicable protocol cells: `677`
+- Researched unresolved: `107436`
+- Not researched: `512936`
+- Determination coverage: `2.46%`
+- Research coverage: `19.35%`
+- Explicit outcome coverage: `19.3517%`
+- Applicable protocol cells: `708`
 - Current complete protocol cells: `120`
-- Protocol completion: `19.65%`
-- Current protocol completion: `17.73%`
-- Evidence records: `17859`
-- Research runs: `34`
+- Protocol completion: `18.79%`
+- Current protocol completion: `16.95%`
+- Evidence records: `18095`
+- Research runs: `36`
 - Rejection records: `1573`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,29 +34,29 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Fernleaf yarrow (`achillea-filipendulina`) | plants | 253 | 0 | 1 |
 | Bluemink (`ageratum-houstonianum`) | plants | 253 | 0 | 1 |
-| Smooth joyweed (`alternanthera-paronychioides`) | plants | 253 | 0 | 1 |
+| Barbados aloe (`aloe-vera`) | plants | 253 | 0 | 1 |
 | Love-lies-bleeding (`amaranthus-caudatus`) | plants | 253 | 0 | 1 |
 | Italian bugloss (`anchusa-azurea`) | plants | 253 | 0 | 1 |
 | Asparagus fern (`asparagus-densiflorus`) | plants | 253 | 0 | 1 |
 | Crested philippine violet (`barleria-cristata`) | plants | 253 | 0 | 1 |
 | Butterfly tree (`bauhinia-purpurea`) | plants | 253 | 0 | 1 |
 | Common borage (`borago-officinalis`) | plants | 253 | 0 | 1 |
+| Paperflower (`bougainvillea-glabra`) | plants | 253 | 0 | 1 |
 | Cabbage (`brassica-oleracea`) | plants | 253 | 0 | 1 |
 | Asian mustard (`brassica-tournefortii`) | plants | 253 | 0 | 1 |
 | Poverty brome (`bromus-sterilis`) | plants | 253 | 0 | 1 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 253 | 0 | 1 |
-| Creeping inchplant (`callisia-repens`) | plants | 253 | 0 | 1 |
+| Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 253 | 0 | 1 |
 | Rampion bellflower (`campanula-rapunculoides`) | plants | 253 | 0 | 1 |
 | Indian shot (`canna-indica`) | plants | 253 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 253 | 0 | 1 |
-| Day jessamine (`cestrum-diurnum`) | plants | 253 | 0 | 1 |
+| Natal plum (`carissa-macrocarpa`) | plants | 253 | 0 | 1 |
 | Chilean jessamine (`cestrum-parqui`) | plants | 253 | 0 | 1 |
+| Blow fly (`chrysomya-rufifacies`) | insects | 253 | 0 | 1 |
+| Colocynth (`citrullus-colocynthis`) | plants | 253 | 0 | 1 |
 | Rose glorybower (`clerodendrum-bungei`) | plants | 253 | 0 | 1 |
 | Turk's turbin (`clerodendrum-indicum`) | plants | 253 | 0 | 1 |
-| Job's tears (`coix-lacryma-jobi`) | plants | 253 | 0 | 1 |
-| Silver july croton (`croton-argenteus`) | plants | 253 | 0 | 1 |
-| Hedgehog gourd (`cucumis-dipsaceus`) | plants | 253 | 0 | 1 |
-| Garden cucumber (`cucumis-sativus`) | plants | 253 | 0 | 1 |
+| Asian pigeonwings (`clitoria-ternatea`) | plants | 253 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:01.161Z | 50 | 44 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:09.693Z | 727 | 257 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:43.419Z | 2545 | 441 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:55.769Z | 63 | 35 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:17.525Z | 173 | 115 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1013 | 142 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T064005Z__smithsonian-nmnh-preserved-specimens__8554134803dd",
+  "status": "complete",
+  "started_at": "2026-09-04T06:40:05.553Z",
+  "finished_at": "2026-09-04T06:40:05.554Z",
+  "actor_type": "adapter",
+  "actor_id": "smithsonian-nmnh-preserved-specimens-snapshot@1.0.0",
+  "source_id": "smithsonian-nmnh-preserved-specimens",
+  "source_registry_hash": "4d1917f92166db11769825055aafd64725f3589d93f402dd7ee313c25cb21c34",
+  "adapter_id": "smithsonian-nmnh-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "3dd44898e98991d0393c820b35822c19bb4061c65f4fad958070539ede9d02b1",
+  "code_commit": "677e599e12cd7be442cd5d7ddbb9f4e103a72b88",
+  "parameter_hash": "8554134803dd1ddced95c9cd6258aeacc2f2c0a19c6471704490732622b24b3d",
+  "parameters": {
+    "stateCode": "MN",
+    "mode": "retained-archive-witnesses",
+    "profile": "smithsonian-nmnh",
+    "datasetUrl": "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112",
+    "metadataUrl": "https://collections.nmnh.si.edu/ipt/eml.do?r=nmnh_extant_dwc-a&v=1.112",
+    "usagePolicyUrl": "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a&v=1.112",
+    "datasetVersion": "1.112",
+    "publicationDate": "2026-09-02",
+    "datasetLastModified": "Wed, 02 Sep 2026 10:10:41 GMT",
+    "datasetEtag": null,
+    "archiveBytes": 1525644039,
+    "archiveSha256": "204173b11b5933ca6625d3c9b23e4b7902f034cbbd24d42bca9ae4f84703b0de",
+    "occurrenceBytes": 6535399365,
+    "occurrenceSha256": "e87cd8b1fbc991275adcf8822373ebe32dfd25499959550cee68e44c8c8d09ab",
+    "archiveAcquiredAt": "2026-09-04T06:08:00.659Z",
+    "preflightEvaluationId": "smithsonian-nmnh-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "cff5fc7ddfc9b280a629a8776df160918d584901ef68e477c8c5059ed0011be8",
+    "targets": [
+      {
+        "pairKey": "27053:lumbricus-terrestris",
+        "recordId": "http://n2t.net/ark:/65665/3275be26b-2862-4a42-b4c3-b73f1dfd0090",
+        "occurrenceId": "http://n2t.net/ark:/65665/3275be26b-2862-4a42-b4c3-b73f1dfd0090",
+        "countyFips": "27053",
+        "stateCode": "MN",
+        "sourceState": "Minnesota",
+        "sourceCounty": "Hennepin County",
+        "speciesId": "lumbricus-terrestris",
+        "scientificName": "Lumbricus terrestris",
+        "eventDate": "1957-06-17",
+        "year": 1957,
+        "institutionCode": "USNM",
+        "collectionCode": "IZ",
+        "catalogNumber": "USNM 47965",
+        "rightsHolder": "",
+        "references": ""
+      },
+      {
+        "pairKey": "27057:lumbricus-rubellus",
+        "recordId": "http://n2t.net/ark:/65665/3d68c3f8a-f21b-4b3c-b315-fff802b17f79",
+        "occurrenceId": "http://n2t.net/ark:/65665/3d68c3f8a-f21b-4b3c-b315-fff802b17f79",
+        "countyFips": "27057",
+        "stateCode": "MN",
+        "sourceState": "Minnesota",
+        "sourceCounty": "Hubbard County",
+        "speciesId": "lumbricus-rubellus",
+        "scientificName": "Lumbricus rubellus",
+        "eventDate": "1968-08-09",
+        "year": 1968,
+        "institutionCode": "USNM",
+        "collectionCode": "IZ",
+        "catalogNumber": "USNM 124613",
+        "rightsHolder": "",
+        "references": ""
+      },
+      {
+        "pairKey": "27057:lumbricus-terrestris",
+        "recordId": "http://n2t.net/ark:/65665/3d03afd1b-e7ea-4d7f-9c71-d23bd4d64a00",
+        "occurrenceId": "http://n2t.net/ark:/65665/3d03afd1b-e7ea-4d7f-9c71-d23bd4d64a00",
+        "countyFips": "27057",
+        "stateCode": "MN",
+        "sourceState": "Minnesota",
+        "sourceCounty": "Hubbard County",
+        "speciesId": "lumbricus-terrestris",
+        "scientificName": "Lumbricus terrestris",
+        "eventDate": "1968-08-09",
+        "year": 1968,
+        "institutionCode": "USNM",
+        "collectionCode": "IZ",
+        "catalogNumber": "USNM 124655",
+        "rightsHolder": "",
+        "references": ""
+      }
+    ],
+    "candidatePairs": [
+      "27053:lumbricus-terrestris",
+      "27057:lumbricus-rubellus",
+      "27057:lumbricus-terrestris"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MN",
+    "county_fips": [
+      "27053",
+      "27057"
+    ],
+    "species_ids": [
+      "lumbricus-rubellus",
+      "lumbricus-terrestris"
+    ],
+    "pair_keys": [
+      "27053:lumbricus-terrestris",
+      "27057:lumbricus-rubellus",
+      "27057:lumbricus-terrestris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T064005Z__smithsonian-nmnh-preserved-specimens__8554134803dd/artifacts/smithsonian-nmnh-source-identity.json",
+      "sha256": "f38942192221617670b849f57a924bd7c4ba05289e1704e60981dcf071c64c5c",
+      "bytes": 935,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064005Z__smithsonian-nmnh-preserved-specimens__8554134803dd/artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+      "sha256": "7fe210232ffc90b036bcfdf1999956fca782b4467cd9292f170584e525510cfb",
+      "bytes": 457,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T064005Z__smithsonian-nmnh-preserved-specimens__8554134803dd/assertions.ndjson",
+      "sha256": "3653168633a535c2e53581b0ec0029b0b18303962f860413141f6cb51524e4fd",
+      "bytes": 7584,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064005Z__smithsonian-nmnh-preserved-specimens__8554134803dd/reviews.ndjson",
+      "sha256": "44747908e393d5def8e381689510d6718b8f996be2b5415e57def1a67b66fd39",
+      "bytes": 3442,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064005Z__smithsonian-nmnh-preserved-specimens__8554134803dd/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T064005Z__smithsonian-nmnh-preserved-specimens__8554134803dd/outcomes.ndjson",
+      "sha256": "419b0e6949bf3128f1eec811afb0d9c18d8f24284476d08cf49f5acb3bff4e46",
+      "bytes": 2320,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "Smithsonian NMNH physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source smithsonian-nmnh-preserved-specimens --state MN --candidate-file ops/national-research/plans/smithsonian-nmnh-preserved-specimens-20260904-r1/smithsonian-nmnh-preserved-specimens-mn-20260904-r1.json --output-root .cache/research/worker-results/direct-museum-20260904 --pairs 27053:lumbricus-terrestris,27057:lumbricus-rubellus,27057:lumbricus-terrestris"
+}

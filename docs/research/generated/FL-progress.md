@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `7990`
+- Verified present: `8277`
 - Verified absent: `67`
 - Not detected: `0`
-- Researched unresolved: `25502`
-- Not researched: `134209`
-- Determination coverage: `4.80%`
-- Research coverage: `20.00%`
-- Explicit outcome coverage: `20.0032%`
-- Applicable protocol cells: `581`
+- Researched unresolved: `25475`
+- Not researched: `133949`
+- Determination coverage: `4.97%`
+- Research coverage: `20.16%`
+- Explicit outcome coverage: `20.1582%`
+- Applicable protocol cells: `658`
 - Current complete protocol cells: `142`
-- Protocol completion: `26.68%`
-- Current protocol completion: `24.44%`
-- Evidence records: `18665`
-- Research runs: `32`
+- Protocol completion: `23.56%`
+- Current protocol completion: `21.58%`
+- Evidence records: `18952`
+- Research runs: `34`
 - Rejection records: `5119`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sisal hemp (`agave-sisalana`) | plants | 66 | 0 | 1 |
-| Bluemink (`ageratum-houstonianum`) | plants | 66 | 0 | 1 |
-| Woman's tongue (`albizia-lebbeck`) | plants | 66 | 0 | 1 |
-| Tall albizia (`albizia-procera`) | plants | 66 | 0 | 1 |
+| Red beadtree (`adenanthera-pavonina`) | plants | 66 | 0 | 1 |
 | White moneywort (`alysicarpus-vaginalis`) | plants | 66 | 0 | 1 |
 | Elegant dutchman's pipe (`aristolochia-elegans`) | plants | 66 | 0 | 1 |
-| Common bamboo (`bambusa-vulgaris`) | plants | 66 | 0 | 1 |
+| Gaping dutchman's pipe (`aristolochia-ringens`) | plants | 66 | 0 | 1 |
+| Tatarian orache (`atriplex-tatarica`) | plants | 66 | 0 | 1 |
+| Triangle barnacle (`balanus-trigonus`) | wildlife | 66 | 0 | 1 |
 | Crested philippine violet (`barleria-cristata`) | plants | 66 | 0 | 1 |
-| Clubed begonia (`begonia-cucullata`) | plants | 66 | 0 | 1 |
+| Morning-glory leafminer moth (`bedellia-somnulentella`) | insects | 66 | 0 | 1 |
+| Pike killifish (`belonesox-belizanus`) | wildlife | 66 | 0 | 1 |
 | Javanese bishopwood (`bischofia-javanica`) | plants | 66 | 0 | 1 |
 | Caucasian bluestem (`bothriochloa-bladhii`) | plants | 66 | 0 | 1 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 66 | 0 | 1 |
 | Paperflower (`bougainvillea-glabra`) | plants | 66 | 0 | 1 |
 | Angel's tears (`brugmansia-suaveolens`) | plants | 66 | 0 | 1 |
 | Smokebush (`buddleja-madagascariensis`) | plants | 66 | 0 | 1 |
-| Natal plum (`carissa-macrocarpa`) | plants | 66 | 0 | 1 |
+| Basketplant (`callisia-fragrans`) | plants | 66 | 0 | 1 |
+| Crimson bottlebrush (`callistemon-citrinus`) | plants | 66 | 0 | 1 |
+| Tea (`camellia-sinensis`) | plants | 66 | 0 | 1 |
 | Burmese fishtail palm (`caryota-mitis`) | plants | 66 | 0 | 1 |
 | Apple blossom (`cassia-javanica`) | plants | 66 | 0 | 1 |
 | Night jessamine (`cestrum-nocturnum`) | plants | 66 | 0 | 1 |
 | Chilean jessamine (`cestrum-parqui`) | plants | 66 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 66 | 0 | 1 |
+| Northern Snakehead (`northern-snakehead`) | wildlife | 66 | 0 | 1 |
+| Indo-Pacific swimming crab (`charybdis-hellerii`) | wildlife | 66 | 0 | 1 |
 | Tall windmill grass (`chloris-elata`) | plants | 66 | 0 | 1 |
-| Natal glorybower (`clerodendrum-glabrum`) | plants | 66 | 0 | 1 |
-| Hare's ear mustard (`conringia-orientalis`) | plants | 66 | 0 | 1 |
-| Redflower ragleaf (`crassocephalum-crepidioides`) | plants | 66 | 0 | 1 |
-| Japanese cedar (`cryptomeria-japonica`) | plants | 66 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:46.819Z | 36 | 34 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:29.775Z | 282 | 168 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:09.387Z | 65 | 50 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:31.361Z | 169 | 91 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:00.352Z | 118 | 64 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1488 | 170 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `9309`
+- Verified present: `9787`
 - Verified absent: `62`
 - Not detected: `10`
-- Researched unresolved: `21082`
-- Not researched: `124785`
-- Determination coverage: `6.04%`
-- Research coverage: `19.62%`
-- Explicit outcome coverage: `19.6222%`
-- Applicable protocol cells: `704`
+- Researched unresolved: `21023`
+- Not researched: `124366`
+- Determination coverage: `6.34%`
+- Research coverage: `19.89%`
+- Explicit outcome coverage: `19.8920%`
+- Applicable protocol cells: `740`
 - Current complete protocol cells: `110`
-- Protocol completion: `17.47%`
-- Current protocol completion: `15.63%`
-- Evidence records: `10431`
-- Research runs: `33`
+- Protocol completion: `16.62%`
+- Current protocol completion: `14.86%`
+- Evidence records: `10909`
+- Research runs: `35`
 - Rejection records: `1055`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,18 +34,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Rosary Pea (`abrus-precatorius`) | plants | 61 | 0 | 1 |
 | Japanese maple (`acer-palmatum`) | plants | 61 | 0 | 1 |
-| Sneezeweed (`achillea-ptarmica`) | plants | 61 | 0 | 1 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 61 | 0 | 1 |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 61 | 0 | 1 |
+| Desert wheatgrass (`agropyron-desertorum`) | plants | 61 | 0 | 1 |
 | Barbados aloe (`aloe-vera`) | plants | 61 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 61 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 61 | 0 | 1 |
 | Red amaranth (`amaranthus-cruentus`) | plants | 61 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 61 | 0 | 1 |
 | European beachgrass (`ammophila-arenaria`) | plants | 61 | 0 | 1 |
+| Mauritanian grass (`ampelodesmos-mauritanicus`) | plants | 61 | 0 | 1 |
 | Dill (`anethum-graveolens`) | plants | 61 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 61 | 0 | 1 |
 | Bloodflower (`asclepias-curassavica`) | plants | 61 | 0 | 1 |
 | Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 61 | 0 | 1 |
+| Faucet snail (`bithynia-tentaculata`) | wildlife | 61 | 0 | 1 |
 | Lipsticktree (`bixa-orellana`) | plants | 61 | 0 | 1 |
 | Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 61 | 0 | 1 |
 | Slender false brome (`brachypodium-sylvaticum`) | plants | 61 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Pigeonpea (`cajanus-cajan`) | plants | 61 | 0 | 1 |
 | Pot marigold (`calendula-officinalis`) | plants | 61 | 0 | 1 |
 | Gold-of-pleasure (`camelina-sativa`) | plants | 61 | 0 | 1 |
-| Siberian peashrub (`caragana-arborescens`) | plants | 61 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:41.348Z | 55 | 47 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:43.196Z | 1372 | 404 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:16.144Z | 8 | 7 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:33.287Z | 71 | 47 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:56.549Z | 407 | 170 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 650 | 116 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

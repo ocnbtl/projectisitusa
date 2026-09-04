@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `11220`
+- Verified present: `11291`
 - Verified absent: `102`
 - Not detected: `8`
-- Researched unresolved: `37308`
-- Not researched: `206770`
-- Determination coverage: `4.43%`
-- Research coverage: `19.04%`
-- Explicit outcome coverage: `19.0433%`
-- Applicable protocol cells: `419`
+- Researched unresolved: `37304`
+- Not researched: `206703`
+- Determination coverage: `4.46%`
+- Research coverage: `19.07%`
+- Explicit outcome coverage: `19.0695%`
+- Applicable protocol cells: `450`
 - Current complete protocol cells: `139`
-- Protocol completion: `36.28%`
-- Current protocol completion: `33.17%`
-- Evidence records: `13741`
-- Research runs: `34`
+- Protocol completion: `33.78%`
+- Current protocol completion: `30.89%`
+- Evidence records: `13812`
+- Research runs: `36`
 - Rejection records: `2122`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -35,28 +35,28 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese maple (`acer-palmatum`) | plants | 101 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 101 | 0 | 1 |
 | Meadow foxtail (`alopecurus-pratensis`) | plants | 101 | 0 | 1 |
-| Pale madwort (`alyssum-alyssoides`) | plants | 101 | 0 | 1 |
 | Mat amaranth (`amaranthus-blitoides`) | plants | 101 | 0 | 1 |
-| Mugwort (`artemisia-vulgaris`) | plants | 101 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 101 | 0 | 1 |
 | Chickpea milkvetch (`astragalus-cicer`) | plants | 101 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 101 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 101 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 101 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 101 | 0 | 1 |
 | Smooth Brome (`bromus-inermis`) | plants | 101 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 101 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 101 | 0 | 1 |
+| Rampion bellflower (`campanula-rapunculoides`) | plants | 101 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 101 | 0 | 1 |
-| Brownray knapweed (`centaurea-jacea`) | plants | 101 | 0 | 1 |
+| Crossflower (`chorispora-tenella`) | plants | 101 | 0 | 1 |
+| Job's tears (`coix-lacryma-jobi`) | plants | 101 | 0 | 1 |
 | Mute Swan (`cygnus-olor`) | wildlife | 101 | 0 | 1 |
-| Herb sophia (`descurainia-sophia`) | plants | 101 | 0 | 1 |
+| Common Carp (`cyprinus-carpio`) | wildlife | 101 | 0 | 1 |
+| Annual wallrocket (`diplotaxis-muralis`) | plants | 101 | 0 | 1 |
 | Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 101 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 101 | 0 | 1 |
-| Broadleaf helleborine (`epipactis-helleborine`) | plants | 101 | 0 | 1 |
+| Great globethistle (`echinops-sphaerocephalus`) | plants | 101 | 0 | 1 |
+| Feral horse (`equus-caballus`) | wildlife | 101 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 101 | 0 | 1 |
-| Flower of an hour (`hibiscus-trionum`) | plants | 101 | 0 | 1 |
-| English walnut (`juglans-regia`) | plants | 101 | 0 | 1 |
-| European stickseed (`lappula-squarrosa`) | plants | 101 | 0 | 1 |
-| Cream-anther field pepperwort (`lepidium-campestre`) | plants | 101 | 0 | 1 |
-| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 101 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 101 | 0 | 1 |
-| Spanish lime (`melicoccus-bijugatus`) | plants | 101 | 0 | 1 |
+| False baby's breath (`galium-mollugo`) | plants | 101 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:58.173Z | 32 | 28 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:44.264Z | 59 | 40 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:24.335Z | 21 | 20 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:44.049Z | 12 | 11 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:09.369Z | 59 | 37 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1019 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

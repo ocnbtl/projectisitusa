@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `1972`
+- Verified present: `2954`
 - Verified absent: `16`
 - Not detected: `0`
-- Researched unresolved: `5781`
-- Not researched: `32295`
-- Determination coverage: `4.96%`
-- Research coverage: `19.39%`
-- Explicit outcome coverage: `19.3915%`
-- Applicable protocol cells: `360`
-- Current complete protocol cells: `110`
-- Protocol completion: `34.17%`
-- Current protocol completion: `30.56%`
-- Evidence records: `2369`
-- Research runs: `31`
+- Researched unresolved: `5740`
+- Not researched: `31354`
+- Determination coverage: `7.41%`
+- Research coverage: `21.74%`
+- Explicit outcome coverage: `21.7402%`
+- Applicable protocol cells: `489`
+- Current complete protocol cells: `111`
+- Protocol completion: `25.36%`
+- Current protocol completion: `22.70%`
+- Evidence records: `3351`
+- Research runs: `33`
 - Rejection records: `292`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Pale madwort (`alyssum-alyssoides`) | plants | 15 | 0 | 1 |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 15 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 15 | 0 | 1 |
+| Red amaranth (`amaranthus-cruentus`) | plants | 15 | 0 | 1 |
 | Dill (`anethum-graveolens`) | plants | 15 | 0 | 1 |
-| Corn chamomile (`anthemis-arvensis`) | plants | 15 | 0 | 1 |
-| Greater burdock (`arctium-lappa`) | plants | 15 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 15 | 0 | 1 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 15 | 0 | 1 |
 | European white birch (`betula-pendula`) | plants | 15 | 0 | 1 |
-| Brown mustard (`brassica-juncea`) | plants | 15 | 0 | 1 |
-| Black mustard (`brassica-nigra`) | plants | 15 | 0 | 1 |
-| Hammer sedge (`carex-hirta`) | plants | 15 | 0 | 1 |
-| Caraway (`carum-carvi`) | plants | 15 | 0 | 1 |
-| Lesser knapweed (`centaurea-nigra`) | plants | 15 | 0 | 1 |
-| Paradise plant (`daphne-mezereum`) | plants | 15 | 0 | 1 |
-| Maiden pink (`dianthus-deltoides`) | plants | 15 | 0 | 1 |
-| Buckwheat (`fagopyrum-esculentum`) | plants | 15 | 0 | 1 |
-| Black henbane (`hyoscyamus-niger`) | plants | 15 | 0 | 1 |
-| Sweet alyssum (`lobularia-maritima`) | plants | 15 | 0 | 1 |
-| Annual ryegrass (`lolium-multiflorum`) | plants | 15 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 15 | 0 | 1 |
-| Hyssop loosestrife (`lythrum-hyssopifolia`) | plants | 15 | 0 | 1 |
-| High mallow (`malva-sylvestris`) | plants | 15 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 15 | 0 | 1 |
-| Purple moorgrass (`molinia-caerulea`) | plants | 15 | 0 | 1 |
-| Proso millet (`panicum-miliaceum`) | plants | 15 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 15 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 15 | 0 | 1 |
+| Soft brome (`bromus-hordeaceus`) | plants | 15 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 15 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 15 | 0 | 1 |
+| Snow in summer (`cerastium-tomentosum`) | plants | 15 | 0 | 1 |
+| Evergreen clematis (`clematis-vitalba`) | plants | 15 | 0 | 1 |
+| Pricklyburr (`datura-inoxia`) | plants | 15 | 0 | 1 |
+| Purple foxglove (`digitalis-purpurea`) | plants | 15 | 0 | 1 |
+| Perennial wallrocket (`diplotaxis-tenuifolia`) | plants | 15 | 0 | 1 |
+| Crested latesummer mint (`elsholtzia-ciliata`) | plants | 15 | 0 | 1 |
+| Musky stork's bill (`erodium-moschatum`) | plants | 15 | 0 | 1 |
+| Domestic cat (`felis-catus`) | wildlife | 15 | 0 | 1 |
+| Dovefoot Geranium (`geranium-molle`) | plants | 15 | 0 | 1 |
+| Bloody geranium (`geranium-sanguineum`) | plants | 15 | 0 | 1 |
+| Mouse barley (`hordeum-murinum`) | plants | 15 | 0 | 1 |
+| Annual candytuft (`iberis-amara`) | plants | 15 | 0 | 1 |
+| Spotted henbit (`lamium-maculatum`) | plants | 15 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 15 | 0 | 1 |
+| European larch (`larix-decidua`) | plants | 15 | 0 | 1 |
+| Clasping pepperweed (`lepidium-perfoliatum`) | plants | 15 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:13.171Z | 10 | 10 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:04.366Z | 138 | 80 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:43.763Z | 8 | 7 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:01.011Z | 34 | 19 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:26.124Z | 948 | 222 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 214 | 133 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

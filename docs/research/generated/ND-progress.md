@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `1766`
+- Verified present: `1794`
 - Verified absent: `53`
 - Not detected: `0`
-- Researched unresolved: `23322`
-- Not researched: `107571`
-- Determination coverage: `1.37%`
-- Research coverage: `18.94%`
-- Explicit outcome coverage: `18.9440%`
-- Applicable protocol cells: `244`
+- Researched unresolved: `23315`
+- Not researched: `107550`
+- Determination coverage: `1.39%`
+- Research coverage: `18.96%`
+- Explicit outcome coverage: `18.9599%`
+- Applicable protocol cells: `254`
 - Current complete protocol cells: `90`
-- Protocol completion: `42.21%`
-- Current protocol completion: `36.89%`
-- Evidence records: `2144`
-- Research runs: `35`
+- Protocol completion: `40.55%`
+- Current protocol completion: `35.43%`
+- Evidence records: `2172`
+- Research runs: `37`
 - Rejection records: `189`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -40,23 +40,23 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mediterranean amaranth (`amaranthus-graecizans`) | plants | 52 | 0 | 1 |
 | Woolly burdock (`arctium-tomentosum`) | plants | 52 | 0 | 1 |
 | Horseradish (`armoracia-rusticana`) | plants | 52 | 0 | 1 |
+| German-madwort (`asperugo-procumbens`) | plants | 52 | 0 | 1 |
 | Chickpea milkvetch (`astragalus-cicer`) | plants | 52 | 0 | 1 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 52 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 52 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 52 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 52 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 52 | 0 | 1 |
+| Corn brome (`bromus-squarrosus`) | plants | 52 | 0 | 1 |
 | Littlepod False Flax (`camelina-microcarpa`) | plants | 52 | 0 | 1 |
 | Gold-of-pleasure (`camelina-sativa`) | plants | 52 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 52 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 52 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 52 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 52 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 52 | 0 | 1 |
-| Black bindweed (`fallopia-convolvulus`) | plants | 52 | 0 | 1 |
 | Red Fescue (`festuca-rubra`) | plants | 52 | 0 | 1 |
 | Flower of an hour (`hibiscus-trionum`) | plants | 52 | 0 | 1 |
 | Common barley (`hordeum-vulgare`) | plants | 52 | 0 | 1 |
-| Roundfruit rush (`juncus-compressus`) | plants | 52 | 0 | 1 |
-| European stickseed (`lappula-squarrosa`) | plants | 52 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:28.494Z | 35 | 30 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:25.727Z | 27 | 25 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:02.759Z | 2 | 2 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:17.920Z | 10 | 7 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:42.335Z | 18 | 15 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 175 | 123 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

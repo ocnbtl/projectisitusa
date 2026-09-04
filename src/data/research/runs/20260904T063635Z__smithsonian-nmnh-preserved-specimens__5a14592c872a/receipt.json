@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T063635Z__smithsonian-nmnh-preserved-specimens__5a14592c872a",
+  "status": "complete",
+  "started_at": "2026-09-04T06:36:35.977Z",
+  "finished_at": "2026-09-04T06:36:35.978Z",
+  "actor_type": "adapter",
+  "actor_id": "smithsonian-nmnh-preserved-specimens-snapshot@1.0.0",
+  "source_id": "smithsonian-nmnh-preserved-specimens",
+  "source_registry_hash": "4d1917f92166db11769825055aafd64725f3589d93f402dd7ee313c25cb21c34",
+  "adapter_id": "smithsonian-nmnh-preserved-specimens-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "4f2b12629c5ba7c7ab21cd7cdfbdf1889dcae9fb7390f67f17920074bc8c70ec",
+  "code_commit": "fe6af1569e067f82f8e869932822d0924976b638",
+  "parameter_hash": "5a14592c872a14125c0623d75b18112ec50adc8540a61491c0b42b933e845a3e",
+  "parameters": {
+    "stateCode": "AK",
+    "mode": "retained-archive-witnesses",
+    "profile": "smithsonian-nmnh",
+    "datasetUrl": "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112",
+    "metadataUrl": "https://collections.nmnh.si.edu/ipt/eml.do?r=nmnh_extant_dwc-a&v=1.112",
+    "usagePolicyUrl": "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a&v=1.112",
+    "datasetVersion": "1.112",
+    "publicationDate": "2026-09-02",
+    "datasetLastModified": "Wed, 02 Sep 2026 10:10:41 GMT",
+    "datasetEtag": null,
+    "archiveBytes": 1525644039,
+    "archiveSha256": "204173b11b5933ca6625d3c9b23e4b7902f034cbbd24d42bca9ae4f84703b0de",
+    "occurrenceBytes": 6535399365,
+    "occurrenceSha256": "e87cd8b1fbc991275adcf8822373ebe32dfd25499959550cee68e44c8c8d09ab",
+    "archiveAcquiredAt": "2026-09-04T06:08:00.659Z",
+    "preflightEvaluationId": "smithsonian-nmnh-preserved-specimens-preflight-20260904-r1",
+    "targetPairSetSha256": "6fdbb88bf40df0b1cabe70779e107fddf5e37a8d246779ebede19c0a39906795",
+    "targets": [
+      {
+        "pairKey": "02164:festuca-rubra",
+        "recordId": "http://n2t.net/ark:/65665/32a499430-85fd-4d67-ad43-98152c5ad054",
+        "occurrenceId": "http://n2t.net/ark:/65665/32a499430-85fd-4d67-ad43-98152c5ad054",
+        "countyFips": "02164",
+        "stateCode": "AK",
+        "sourceState": "Alaska",
+        "sourceCounty": "Lake and Peninsula Borough",
+        "speciesId": "festuca-rubra",
+        "scientificName": "Festuca rubra",
+        "eventDate": "1902-07-27",
+        "year": 1902,
+        "institutionCode": "US",
+        "collectionCode": "US",
+        "catalogNumber": "US 420254",
+        "rightsHolder": "",
+        "references": ""
+      },
+      {
+        "pairKey": "02180:festuca-rubra",
+        "recordId": "http://n2t.net/ark:/65665/3ee738a12-bc2f-4e3c-8cae-c3cdb540f66f",
+        "occurrenceId": "http://n2t.net/ark:/65665/3ee738a12-bc2f-4e3c-8cae-c3cdb540f66f",
+        "countyFips": "02180",
+        "stateCode": "AK",
+        "sourceState": "Alaska",
+        "sourceCounty": "Nome",
+        "speciesId": "festuca-rubra",
+        "scientificName": "Festuca rubra",
+        "eventDate": "2017-08-18",
+        "year": 2017,
+        "institutionCode": "US",
+        "collectionCode": "US",
+        "catalogNumber": "",
+        "rightsHolder": "",
+        "references": ""
+      },
+      {
+        "pairKey": "02185:alopecurus-pratensis",
+        "recordId": "http://n2t.net/ark:/65665/3f1ccbddb-f9e7-44b1-a230-04f6527cfaf1",
+        "occurrenceId": "http://n2t.net/ark:/65665/3f1ccbddb-f9e7-44b1-a230-04f6527cfaf1",
+        "countyFips": "02185",
+        "stateCode": "AK",
+        "sourceState": "Alaska",
+        "sourceCounty": "North Slope Borough",
+        "speciesId": "alopecurus-pratensis",
+        "scientificName": "Alopecurus pratensis",
+        "eventDate": "2000-08-08",
+        "year": 2000,
+        "institutionCode": "US",
+        "collectionCode": "US",
+        "catalogNumber": "US 3682502",
+        "rightsHolder": "",
+        "references": ""
+      }
+    ],
+    "candidatePairs": [
+      "02164:festuca-rubra",
+      "02180:festuca-rubra",
+      "02185:alopecurus-pratensis"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "AK",
+    "county_fips": [
+      "02164",
+      "02180",
+      "02185"
+    ],
+    "species_ids": [
+      "alopecurus-pratensis",
+      "festuca-rubra"
+    ],
+    "pair_keys": [
+      "02164:festuca-rubra",
+      "02180:festuca-rubra",
+      "02185:alopecurus-pratensis"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T063635Z__smithsonian-nmnh-preserved-specimens__5a14592c872a/artifacts/smithsonian-nmnh-source-identity.json",
+      "sha256": "b3736e0fe31c965f1a186486b5b868ad1b28b1b0d35492f5d780b94d84771d14",
+      "bytes": 935,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T063635Z__smithsonian-nmnh-preserved-specimens__5a14592c872a/artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+      "sha256": "5f84c14160ab437eb1522f13ef68e97b1eb6aa15a06d2ed32ef1eba0221b6ded",
+      "bytes": 472,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T063635Z__smithsonian-nmnh-preserved-specimens__5a14592c872a/assertions.ndjson",
+      "sha256": "b2a685764a99be0bf98dc90d42d71a6f67728caf62a9923b0fbe4190c342a609",
+      "bytes": 7537,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T063635Z__smithsonian-nmnh-preserved-specimens__5a14592c872a/reviews.ndjson",
+      "sha256": "601a6fb31a31ed662ba91893ebbf65b6ce8a5fcd988809b81bc6bede1a354d9c",
+      "bytes": 3430,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T063635Z__smithsonian-nmnh-preserved-specimens__5a14592c872a/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T063635Z__smithsonian-nmnh-preserved-specimens__5a14592c872a/outcomes.ndjson",
+      "sha256": "57b91a4babd587d3d61ff7447b5eda62ff65035351b657d4984c07b6d96b0e98",
+      "bytes": 2308,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+  ],
+  "source_warnings": [
+    "Smithsonian NMNH physical specimens support historical recorded presence only.",
+    "The complete source archive was screened offline; only one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source smithsonian-nmnh-preserved-specimens --state AK --candidate-file ops/national-research/plans/smithsonian-nmnh-preserved-specimens-20260904-r1/smithsonian-nmnh-preserved-specimens-ak-20260904-r1.json --output-root .cache/research/worker-results/direct-museum-20260904 --pairs 02164:festuca-rubra,02180:festuca-rubra,02185:alopecurus-pratensis"
+}

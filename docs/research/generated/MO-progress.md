@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `8211`
+- Verified present: `8244`
 - Verified absent: `115`
 - Not detected: `0`
-- Researched unresolved: `46365`
-- Not researched: `233269`
-- Determination coverage: `2.89%`
-- Research coverage: `18.99%`
-- Explicit outcome coverage: `18.9926%`
-- Applicable protocol cells: `384`
+- Researched unresolved: `46357`
+- Not researched: `233244`
+- Determination coverage: `2.90%`
+- Research coverage: `19.00%`
+- Explicit outcome coverage: `19.0013%`
+- Applicable protocol cells: `394`
 - Current complete protocol cells: `120`
-- Protocol completion: `34.64%`
-- Current protocol completion: `31.25%`
-- Evidence records: `9167`
-- Research runs: `32`
+- Protocol completion: `33.76%`
+- Current protocol completion: `30.46%`
+- Evidence records: `9200`
+- Research runs: `34`
 - Rejection records: `1467`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,27 +36,27 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Colonial bentgrass (`agrostis-capillaris`) | plants | 114 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 114 | 0 | 1 |
 | Greater burdock (`arctium-lappa`) | plants | 114 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 114 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 114 | 0 | 1 |
 | Meadow brome (`bromus-commutatus`) | plants | 114 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 114 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 114 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 114 | 0 | 1 |
+| Broadleaf helleborine (`epipactis-helleborine`) | plants | 114 | 0 | 1 |
 | Common dogmustard (`erucastrum-gallicum`) | plants | 114 | 0 | 1 |
+| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 114 | 0 | 1 |
 | Small geranium (`geranium-pusillum`) | plants | 114 | 0 | 1 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 114 | 0 | 1 |
+| Garden lettuce (`lactuca-sativa`) | plants | 114 | 0 | 1 |
+| Common periwinkle (`littorina-littorea`) | wildlife | 114 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 114 | 0 | 1 |
+| Red marshworm (`lumbricus-rubellus`) | wildlife | 114 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 114 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 114 | 0 | 1 |
 | Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 114 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 114 | 0 | 1 |
 | Apple of Peru (`nicandra-physalodes`) | plants | 114 | 0 | 1 |
-| Lady's Thumb (`persicaria-maculosa`) | plants | 114 | 0 | 1 |
 | Annual canarygrass (`phalaris-canariensis`) | plants | 114 | 0 | 1 |
 | Scots pine (`pinus-sylvestris`) | plants | 114 | 0 | 1 |
-| Bulbous bluegrass (`poa-bulbosa`) | plants | 114 | 0 | 1 |
-| Sour cherry (`prunus-cerasus`) | plants | 114 | 0 | 1 |
-| White willow (`salix-alba`) | plants | 114 | 0 | 1 |
-| Maidenstears (`silene-vulgaris`) | plants | 114 | 0 | 1 |
-| Climbing Nightshade (`solanum-dulcamara`) | plants | 114 | 0 | 1 |
-| Sorghum (`sorghum-bicolor`) | plants | 114 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:19.533Z | 25 | 23 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:14.166Z | 46 | 33 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:52.132Z | 21 | 16 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:08.035Z | 5 | 4 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:33.293Z | 28 | 19 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 695 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

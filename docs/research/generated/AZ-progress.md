@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `1868`
+- Verified present: `1900`
 - Verified absent: `15`
 - Not detected: `0`
-- Researched unresolved: `6104`
-- Not researched: `29573`
-- Determination coverage: `5.01%`
-- Research coverage: `21.26%`
-- Explicit outcome coverage: `21.2646%`
-- Applicable protocol cells: `460`
+- Researched unresolved: `6103`
+- Not researched: `29542`
+- Determination coverage: `5.10%`
+- Research coverage: `21.35%`
+- Explicit outcome coverage: `21.3472%`
+- Applicable protocol cells: `475`
 - Current complete protocol cells: `126`
-- Protocol completion: `30.22%`
-- Current protocol completion: `27.39%`
-- Evidence records: `6450`
-- Research runs: `36`
+- Protocol completion: `29.26%`
+- Current protocol completion: `26.53%`
+- Evidence records: `6482`
+- Research runs: `38`
 - Rejection records: `1075`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,12 +32,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Lesser wax moth (`achroia-grisella`) | insects | 14 | 0 | 1 |
 | Red beadtree (`adenanthera-pavonina`) | plants | 14 | 0 | 1 |
 | Sisal hemp (`agave-sisalana`) | plants | 14 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 14 | 0 | 1 |
 | Barbados aloe (`aloe-vera`) | plants | 14 | 0 | 1 |
+| Red amaranth (`amaranthus-cruentus`) | plants | 14 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 14 | 0 | 1 |
 | Bur chervil (`anthriscus-caucalis`) | plants | 14 | 0 | 1 |
+| Coral vine (`antigonon-leptopus`) | plants | 14 | 0 | 1 |
 | Bluegreen saltbush (`atriplex-nummularia`) | plants | 14 | 0 | 1 |
 | Australian saltbush (`atriplex-semibaccata`) | plants | 14 | 0 | 1 |
 | Peregrine saltbush (`atriplex-suberecta`) | plants | 14 | 0 | 1 |
@@ -49,14 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Rattlesnake brome (`bromus-briziformis`) | plants | 14 | 0 | 1 |
 | Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 14 | 0 | 1 |
 | Indian shot (`canna-indica`) | plants | 14 | 0 | 1 |
+| Natal plum (`carissa-macrocarpa`) | plants | 14 | 0 | 1 |
 | Beach sheoak (`casuarina-equisetifolia`) | plants | 14 | 0 | 1 |
 | Madagascar periwinkle (`catharanthus-roseus`) | plants | 14 | 0 | 1 |
 | Mission grass (`cenchrus-polystachios`) | plants | 14 | 0 | 1 |
 | Crimson fountaingrass (`cenchrus-setaceus`) | plants | 14 | 0 | 1 |
-| Perennial cornflower (`centaurea-montana`) | plants | 14 | 0 | 1 |
-| Turk's turbin (`clerodendrum-indicum`) | plants | 14 | 0 | 1 |
-| Australian waterbuttons (`cotula-australis`) | plants | 14 | 0 | 1 |
-| Common brassbuttons (`cotula-coronopifolia`) | plants | 14 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:38.114Z | 74 | 58 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:18.638Z | 142 | 95 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:58.027Z | 10 | 10 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:36:40.533Z | 13 | 9 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:34:51.160Z | 19 | 14 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 321 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

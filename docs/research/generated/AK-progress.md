@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `1132`
+- Verified present: `1149`
 - Verified absent: `30`
 - Not detected: `0`
 - Researched unresolved: `13503`
-- Not researched: `60455`
-- Determination coverage: `1.55%`
-- Research coverage: `19.52%`
-- Explicit outcome coverage: `19.5221%`
-- Applicable protocol cells: `238`
+- Not researched: `60438`
+- Determination coverage: `1.57%`
+- Research coverage: `19.54%`
+- Explicit outcome coverage: `19.5447%`
+- Applicable protocol cells: `245`
 - Current complete protocol cells: `111`
-- Protocol completion: `46.64%`
-- Current protocol completion: `46.64%`
-- Evidence records: `1322`
-- Research runs: `35`
+- Protocol completion: `45.31%`
+- Current protocol completion: `45.31%`
+- Evidence records: `1339`
+- Research runs: `37`
 - Rejection records: `2194`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Sneezeweed (`achillea-ptarmica`) | plants | 29 | 0 | 1 |
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 29 | 0 | 1 |
 | Lawndaisy (`bellis-perennis`) | plants | 29 | 0 | 1 |
 | Gold-of-pleasure (`camelina-sativa`) | plants | 29 | 0 | 1 |
+| Lambsquarters (`chenopodium-album`) | plants | 29 | 0 | 1 |
 | Simons' cotoneaster (`cotoneaster-simonsii`) | plants | 29 | 0 | 1 |
-| Herb sophia (`descurainia-sophia`) | plants | 29 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 29 | 0 | 1 |
 | Splitlip hempnettle (`galeopsis-bifida`) | plants | 29 | 0 | 1 |
 | Tall hawkweed (`hieracium-piloselloides`) | plants | 29 | 0 | 1 |
+| Annual candytuft (`iberis-amara`) | plants | 29 | 0 | 1 |
 | Cream-anther field pepperwort (`lepidium-campestre`) | plants | 29 | 0 | 1 |
 | Purple toadflax (`linaria-purpurea`) | plants | 29 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 29 | 0 | 1 |
 | Big trefoil (`lotus-uliginosus`) | plants | 29 | 0 | 1 |
 | Common Mallow (`malva-neglecta`) | plants | 29 | 0 | 1 |
 | Wall-lettuce (`mycelis-muralis`) | plants | 29 | 0 | 1 |
+| Ballmustard (`neslia-paniculata`) | plants | 29 | 0 | 1 |
 | Bulbous bluegrass (`poa-bulbosa`) | plants | 29 | 0 | 1 |
 | Canada bluegrass (`poa-compressa`) | plants | 29 | 0 | 1 |
+| Garden rhubarb (`rheum-rhabarbarum`) | plants | 29 | 0 | 1 |
 | Rugosa rose (`rosa-rugosa`) | plants | 29 | 0 | 1 |
+| Tall tumblemustard (`sisymbrium-altissimum`) | plants | 29 | 0 | 1 |
 | Red Sandspurry (`spergularia-rubra`) | plants | 29 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 29 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 29 | 0 | 1 |
-| Meadow foxtail (`alopecurus-pratensis`) | plants | 28 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 28 | 0 | 1 |
-| Max chrysanthemum (`leucanthemum-maximum`) | plants | 28 | 0 | 1 |
-| Annual ryegrass (`lolium-multiflorum`) | plants | 28 | 0 | 1 |
-| Rough Bluegrass (`poa-trivialis`) | plants | 28 | 0 | 1 |
-| Thymeleaf Speedwell (`veronica-serpyllifolia`) | plants | 28 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:31.637Z | 58 | 39 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:10.544Z | 8 | 5 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:49.754Z | 2 | 2 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:36:35.978Z | 3 | 2 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:34:46.485Z | 14 | 10 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 87 | 150 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

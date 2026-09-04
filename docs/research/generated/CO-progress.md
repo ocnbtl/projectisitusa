@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `4902`
+- Verified present: `4988`
 - Verified absent: `64`
 - Not detected: `0`
-- Researched unresolved: `28039`
-- Not researched: `127251`
-- Determination coverage: `3.10%`
-- Research coverage: `20.60%`
-- Explicit outcome coverage: `20.5952%`
-- Applicable protocol cells: `409`
+- Researched unresolved: `28022`
+- Not researched: `127182`
+- Determination coverage: `3.15%`
+- Research coverage: `20.64%`
+- Explicit outcome coverage: `20.6382%`
+- Applicable protocol cells: `421`
 - Current complete protocol cells: `169`
-- Protocol completion: `41.32%`
-- Current protocol completion: `41.32%`
-- Evidence records: `11823`
-- Research runs: `41`
+- Protocol completion: `40.14%`
+- Current protocol completion: `40.14%`
+- Evidence records: `11909`
+- Research runs: `43`
 - Rejection records: `1986`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,10 +34,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Colonial bentgrass (`agrostis-capillaris`) | plants | 63 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 63 | 0 | 1 |
+| Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 63 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 63 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 63 | 0 | 1 |
 | Italian bugloss (`anchusa-azurea`) | plants | 63 | 0 | 1 |
 | Greater burdock (`arctium-lappa`) | plants | 63 | 0 | 1 |
+| Horseradish (`armoracia-rusticana`) | plants | 63 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 63 | 0 | 1 |
 | Rattlesnake brome (`bromus-briziformis`) | plants | 63 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 63 | 0 | 1 |
@@ -47,16 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Golden chamomile (`cota-tinctoria`) | plants | 63 | 0 | 1 |
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 63 | 0 | 1 |
 | Kenilworth ivy (`cymbalaria-muralis`) | plants | 63 | 0 | 1 |
+| Maiden pink (`dianthus-deltoides`) | plants | 63 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 63 | 0 | 1 |
 | Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 63 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 63 | 0 | 1 |
 | Buckwheat (`fagopyrum-esculentum`) | plants | 63 | 0 | 1 |
-| Red Fescue (`festuca-rubra`) | plants | 63 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 63 | 0 | 1 |
 | Marsh cudweed (`gnaphalium-uliginosum`) | plants | 63 | 0 | 1 |
-| Common barley (`hordeum-vulgare`) | plants | 63 | 0 | 1 |
 | Roundfruit rush (`juncus-compressus`) | plants | 63 | 0 | 1 |
-| Common flax (`linum-usitatissimum`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:42.550Z | 77 | 51 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:23.957Z | 263 | 106 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:03.236Z | 1 | 1 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:26.364Z | 31 | 19 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:34:55.667Z | 55 | 39 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1367 | 186 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

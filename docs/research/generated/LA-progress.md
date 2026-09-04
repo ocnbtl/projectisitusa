@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `8402`
+- Verified present: `8421`
 - Verified absent: `64`
 - Not detected: `0`
-- Researched unresolved: `21915`
-- Not researched: `129875`
-- Determination coverage: `5.28%`
-- Research coverage: `18.96%`
-- Explicit outcome coverage: `18.9578%`
-- Applicable protocol cells: `458`
+- Researched unresolved: `21914`
+- Not researched: `129857`
+- Determination coverage: `5.29%`
+- Research coverage: `18.97%`
+- Explicit outcome coverage: `18.9690%`
+- Applicable protocol cells: `466`
 - Current complete protocol cells: `111`
-- Protocol completion: `27.07%`
-- Current protocol completion: `24.24%`
-- Evidence records: `11440`
-- Research runs: `31`
+- Protocol completion: `26.61%`
+- Current protocol completion: `23.82%`
+- Evidence records: `11459`
+- Research runs: `33`
 - Rejection records: `1896`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,6 +42,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese cedar (`cryptomeria-japonica`) | plants | 63 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 63 | 0 | 1 |
 | Variable flatsedge (`cyperus-difformis`) | plants | 63 | 0 | 1 |
+| Chinese mitten crab (`eriocheir-sinensis`) | wildlife | 63 | 0 | 1 |
 | Fimbry (`fimbristylis-littoralis`) | plants | 63 | 0 | 1 |
 | Sweet fennel (`foeniculum-vulgare`) | plants | 63 | 0 | 1 |
 | Gray everlasting (`gamochaeta-coarctata`) | plants | 63 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sweet alyssum (`lobularia-maritima`) | plants | 63 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 63 | 0 | 1 |
 | Pitscale grass (`mnesithea-granularis`) | plants | 63 | 0 | 1 |
-| Changing forget-me-not (`myosotis-discolor`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:06.695Z | 64 | 49 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:56.109Z | 44 | 31 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:35.316Z | 28 | 20 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:54.000Z | 17 | 8 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:18.680Z | 2 | 2 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 734 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

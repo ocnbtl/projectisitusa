@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `87`
 - County-species pairs: `217848`
-- Verified present: `6175`
+- Verified present: `6205`
 - Verified absent: `87`
 - Not detected: `17`
-- Researched unresolved: `35033`
-- Not researched: `176536`
-- Determination coverage: `2.87%`
-- Research coverage: `18.96%`
-- Explicit outcome coverage: `18.9637%`
-- Applicable protocol cells: `309`
+- Researched unresolved: `35031`
+- Not researched: `176508`
+- Determination coverage: `2.89%`
+- Research coverage: `18.98%`
+- Explicit outcome coverage: `18.9765%`
+- Applicable protocol cells: `323`
 - Current complete protocol cells: `116`
-- Protocol completion: `41.75%`
-- Current protocol completion: `37.54%`
-- Evidence records: `7885`
-- Research runs: `33`
+- Protocol completion: `39.94%`
+- Current protocol completion: `35.91%`
+- Evidence records: `7915`
+- Research runs: `35`
 - Rejection records: `2176`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,16 +33,23 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 86 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 86 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 86 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 86 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 86 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 86 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 86 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 86 | 0 | 1 |
+| Greater knapweed (`centaurea-scabiosa`) | plants | 86 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 86 | 0 | 1 |
+| Annual wallrocket (`diplotaxis-muralis`) | plants | 86 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 86 | 0 | 1 |
 | Hairy cupgrass (`eriochloa-villosa`) | plants | 86 | 0 | 1 |
-| Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 86 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 86 | 0 | 1 |
+| Yellow spring bedstraw (`galium-verum`) | plants | 86 | 0 | 1 |
 | European larch (`larix-decidua`) | plants | 86 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 86 | 0 | 1 |
 | Dalmatian Toadflax (`linaria-dalmatica`) | plants | 86 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 86 | 0 | 1 |
+| Red marshworm (`lumbricus-rubellus`) | wildlife | 86 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 86 | 0 | 1 |
 | Marshpepper knotweed (`persicaria-hydropiper`) | plants | 86 | 0 | 1 |
 | Scots pine (`pinus-sylvestris`) | plants | 86 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 86 | 0 | 1 |
@@ -50,13 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | White willow (`salix-alba`) | plants | 86 | 0 | 1 |
 | Water spangles (`salvinia-minima`) | plants | 86 | 0 | 1 |
 | Giant Foxtail (`setaria-faberi`) | plants | 86 | 0 | 1 |
-| Red catchfly (`silene-dioica`) | plants | 86 | 0 | 1 |
-| Nightflowering silene (`silene-noctiflora`) | plants | 86 | 0 | 1 |
-| Irish potato (`solanum-tuberosum`) | plants | 86 | 0 | 1 |
-| Field Sowthistle (`sonchus-arvensis`) | plants | 86 | 0 | 1 |
-| European mountain ash (`sorbus-aucuparia`) | plants | 86 | 0 | 1 |
-| Grass-like starwort (`stellaria-graminea`) | plants | 86 | 0 | 1 |
-| Field Pennycress (`thlaspi-arvense`) | plants | 86 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:17.474Z | 31 | 24 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:11.480Z | 40 | 19 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:48.955Z | 7 | 5 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:05.554Z | 3 | 2 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:30.940Z | 27 | 20 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 864 | 132 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

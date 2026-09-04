@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `7897`
+- Verified present: `7941`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `12225`
-- Not researched: `69986`
-- Determination coverage: `8.80%`
-- Research coverage: `22.36%`
-- Explicit outcome coverage: `22.3620%`
-- Applicable protocol cells: `766`
+- Researched unresolved: `12220`
+- Not researched: `69947`
+- Determination coverage: `8.85%`
+- Research coverage: `22.41%`
+- Explicit outcome coverage: `22.4053%`
+- Applicable protocol cells: `779`
 - Current complete protocol cells: `105`
-- Protocol completion: `15.40%`
-- Current protocol completion: `13.71%`
-- Evidence records: `8163`
-- Research runs: `36`
+- Protocol completion: `15.15%`
+- Current protocol completion: `13.48%`
+- Evidence records: `8207`
+- Research runs: `38`
 - Rejection records: `441`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,11 +37,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Asian copperleaf (`acalypha-australis`) | plants | 35 | 0 | 1 |
 | Fernleaf yarrow (`achillea-filipendulina`) | plants | 35 | 0 | 1 |
 | Sneezeweed (`achillea-ptarmica`) | plants | 35 | 0 | 1 |
-| Barbed goatgrass (`aegilops-triuncialis`) | plants | 35 | 0 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 35 | 0 | 1 |
 | Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 35 | 0 | 1 |
 | Love-lies-bleeding (`amaranthus-caudatus`) | plants | 35 | 0 | 1 |
 | Red amaranth (`amaranthus-cruentus`) | plants | 35 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 35 | 0 | 1 |
+| Asian marsh snail (`assiminea-parasitologica`) | wildlife | 35 | 0 | 1 |
 | Chickpea milkvetch (`astragalus-cicer`) | plants | 35 | 0 | 1 |
 | Common Barberry (`berberis-vulgaris`) | plants | 35 | 0 | 1 |
 | Purple false brome (`brachypodium-distachyon`) | plants | 35 | 0 | 1 |
@@ -51,12 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Curly plumeless thistle (`carduus-crispus`) | plants | 35 | 0 | 1 |
 | Japanese sedge (`carex-kobomugi`) | plants | 35 | 0 | 1 |
 | Hottentot fig (`carpobrotus-edulis`) | plants | 35 | 0 | 1 |
+| Ferngrass (`catapodium-rigidum`) | plants | 35 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 35 | 0 | 1 |
 | Branched centaury (`centaurium-pulchellum`) | plants | 35 | 0 | 1 |
 | Spadeleaf (`centella-asiatica`) | plants | 35 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 35 | 0 | 1 |
-| Radiate fingergrass (`chloris-radiata`) | plants | 35 | 0 | 1 |
-| Asthmaweed (`conyza-floribunda`) | plants | 35 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:47.806Z | 2560 | 553 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:52.490Z | 17 | 13 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:24.265Z | 1 | 1 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:40.782Z | 24 | 21 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:03.415Z | 20 | 18 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 212 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

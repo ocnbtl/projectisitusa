@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `10006`
+- Verified present: `10430`
 - Verified absent: `67`
 - Not detected: `10`
-- Researched unresolved: `22723`
-- Not researched: `134962`
-- Determination coverage: `6.00%`
-- Research coverage: `19.55%`
-- Explicit outcome coverage: `19.5544%`
-- Applicable protocol cells: `540`
+- Researched unresolved: `22711`
+- Not researched: `134550`
+- Determination coverage: `6.26%`
+- Research coverage: `19.80%`
+- Explicit outcome coverage: `19.8000%`
+- Applicable protocol cells: `613`
 - Current complete protocol cells: `124`
-- Protocol completion: `25.37%`
-- Current protocol completion: `22.96%`
-- Evidence records: `16697`
-- Research runs: `33`
+- Protocol completion: `22.35%`
+- Current protocol completion: `20.23%`
+- Evidence records: `17121`
+- Research runs: `35`
 - Rejection records: `1638`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,29 +34,29 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Colonial bentgrass (`agrostis-capillaris`) | plants | 66 | 0 | 1 |
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 66 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 66 | 0 | 1 |
 | Meadow foxtail (`alopecurus-pratensis`) | plants | 66 | 0 | 1 |
-| Red amaranth (`amaranthus-cruentus`) | plants | 66 | 0 | 1 |
-| Horseradish (`armoracia-rusticana`) | plants | 66 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 66 | 0 | 1 |
+| German-madwort (`asperugo-procumbens`) | plants | 66 | 0 | 1 |
+| Tatarian orache (`atriplex-tatarica`) | plants | 66 | 0 | 1 |
+| Lawndaisy (`bellis-perennis`) | plants | 66 | 0 | 1 |
+| European white birch (`betula-pendula`) | plants | 66 | 0 | 1 |
+| Black mustard (`brassica-nigra`) | plants | 66 | 0 | 1 |
 | Cabbage (`brassica-oleracea`) | plants | 66 | 0 | 1 |
 | Rattlesnake brome (`bromus-briziformis`) | plants | 66 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 66 | 0 | 1 |
-| Littlepod False Flax (`camelina-microcarpa`) | plants | 66 | 0 | 1 |
+| Turkish wartycabbage (`bunias-orientalis`) | plants | 66 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 66 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 66 | 0 | 1 |
 | Hammer sedge (`carex-hirta`) | plants | 66 | 0 | 1 |
-| Prickly sedge (`carex-spicata`) | plants | 66 | 0 | 1 |
 | Madagascar periwinkle (`catharanthus-roseus`) | plants | 66 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 66 | 0 | 1 |
 | Marsh thistle (`cirsium-palustre`) | plants | 66 | 0 | 1 |
+| Evergreen clematis (`clematis-vitalba`) | plants | 66 | 0 | 1 |
+| Hare's ear mustard (`conringia-orientalis`) | plants | 66 | 0 | 1 |
+| Wild jute (`corchorus-tridens`) | plants | 66 | 0 | 1 |
 | Golden chamomile (`cota-tinctoria`) | plants | 66 | 0 | 1 |
 | Beaked hawksbeard (`crepis-vesicaria`) | plants | 66 | 0 | 1 |
 | Clover dodder (`cuscuta-epithymum`) | plants | 66 | 0 | 1 |
-| Chinese hound's tongue (`cynoglossum-amabile`) | plants | 66 | 0 | 1 |
-| Variable flatsedge (`cyperus-difformis`) | plants | 66 | 0 | 1 |
-| Tidalmarsh flatsedge (`cyperus-serotinus`) | plants | 66 | 0 | 1 |
-| Herb sophia (`descurainia-sophia`) | plants | 66 | 0 | 1 |
-| Annual wallrocket (`diplotaxis-muralis`) | plants | 66 | 0 | 1 |
-| Common dogmustard (`erucastrum-gallicum`) | plants | 66 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:50.527Z | 41 | 34 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:55.631Z | 368 | 185 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:27.407Z | 7 | 7 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:43.281Z | 62 | 27 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:05.793Z | 362 | 144 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1550 | 134 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `8750`
+- Verified present: `8792`
 - Verified absent: `120`
 - Not detected: `12`
-- Researched unresolved: `47854`
-- Not researched: `243744`
-- Determination coverage: `2.95%`
-- Research coverage: `18.88%`
-- Explicit outcome coverage: `18.8818%`
-- Applicable protocol cells: `404`
+- Researched unresolved: `47843`
+- Not researched: `243713`
+- Determination coverage: `2.97%`
+- Research coverage: `18.89%`
+- Explicit outcome coverage: `18.8921%`
+- Applicable protocol cells: `415`
 - Current complete protocol cells: `126`
-- Protocol completion: `34.41%`
-- Current protocol completion: `31.19%`
-- Evidence records: `10834`
-- Research runs: `32`
+- Protocol completion: `33.49%`
+- Current protocol completion: `30.36%`
+- Evidence records: `10876`
+- Research runs: `34`
 - Rejection records: `637`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -35,28 +35,28 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese maple (`acer-palmatum`) | plants | 119 | 0 | 1 |
 | Japanese Chaff Flower (`achyranthes-japonica`) | plants | 119 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 119 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 119 | 0 | 1 |
 | Narrowleaf bittercress (`cardamine-impatiens`) | plants | 119 | 0 | 1 |
+| Caraway (`carum-carvi`) | plants | 119 | 0 | 1 |
 | Japanese dogwood (`cornus-kousa`) | plants | 119 | 0 | 1 |
 | Pricklyburr (`datura-inoxia`) | plants | 119 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 119 | 0 | 1 |
+| Feral horse (`equus-caballus`) | wildlife | 119 | 0 | 1 |
+| Domestic cat (`felis-catus`) | wildlife | 119 | 0 | 1 |
 | German iris (`iris-germanica`) | plants | 119 | 0 | 1 |
 | Japanese rose (`kerria-japonica`) | plants | 119 | 0 | 1 |
 | Yellow archangel (`lamium-galeobdolon`) | plants | 119 | 0 | 1 |
 | Common flax (`linum-usitatissimum`) | plants | 119 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 119 | 0 | 1 |
+| Red marshworm (`lumbricus-rubellus`) | wildlife | 119 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 119 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 119 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 119 | 0 | 1 |
-| Common balm (`melissa-officinalis`) | plants | 119 | 0 | 1 |
-| True forget-me-not (`myosotis-scorpioides`) | plants | 119 | 0 | 1 |
 | Wild Parsnip (`pastinaca-sativa`) | plants | 119 | 0 | 1 |
 | Marshpepper knotweed (`persicaria-hydropiper`) | plants | 119 | 0 | 1 |
-| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 119 | 0 | 1 |
-| Lady's Thumb (`persicaria-maculosa`) | plants | 119 | 0 | 1 |
 | Norway spruce (`picea-abies`) | plants | 119 | 0 | 1 |
+| Norway rat (`rattus-norvegicus`) | wildlife | 119 | 0 | 1 |
 | Castor Bean (`ricinus-communis`) | plants | 119 | 0 | 1 |
-| White willow (`salix-alba`) | plants | 119 | 0 | 1 |
-| Laurel willow (`salix-pentandra`) | plants | 119 | 0 | 1 |
+| Dog rose (`rosa-canina`) | plants | 119 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:04.598Z | 18 | 16 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:53.024Z | 52 | 26 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:32.835Z | 76 | 60 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:51.507Z | 4 | 4 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:16.477Z | 38 | 29 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1023 | 144 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

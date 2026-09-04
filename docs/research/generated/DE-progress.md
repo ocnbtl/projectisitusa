@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `3`
 - County-species pairs: `7512`
-- Verified present: `602`
+- Verified present: `671`
 - Verified absent: `3`
 - Not detected: `0`
-- Researched unresolved: `874`
-- Not researched: `6033`
-- Determination coverage: `8.05%`
-- Research coverage: `19.69%`
-- Explicit outcome coverage: `19.6885%`
-- Applicable protocol cells: `352`
+- Researched unresolved: `863`
+- Not researched: `5975`
+- Determination coverage: `8.97%`
+- Research coverage: `20.46%`
+- Explicit outcome coverage: `20.4606%`
+- Applicable protocol cells: `404`
 - Current complete protocol cells: `81`
-- Protocol completion: `26.70%`
-- Current protocol completion: `23.01%`
-- Evidence records: `651`
-- Research runs: `39`
+- Protocol completion: `23.27%`
+- Current protocol completion: `20.05%`
+- Evidence records: `720`
+- Research runs: `41`
 - Rejection records: `164`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,25 +38,25 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 3 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 3 | 0 | 1 |
 | Sycamore Maple (`acer-pseudoplatanus`) | plants | 2 | 0 | 1 |
+| Creeping Bentgrass (`agrostis-stolonifera`) | plants | 2 | 0 | 1 |
+| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 2 | 0 | 1 |
+| Meadow foxtail (`alopecurus-pratensis`) | plants | 2 | 0 | 1 |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 2 | 0 | 1 |
 | Bur chervil (`anthriscus-caucalis`) | plants | 2 | 0 | 1 |
-| Brown mustard (`brassica-juncea`) | plants | 2 | 0 | 1 |
+| German-madwort (`asperugo-procumbens`) | plants | 2 | 0 | 1 |
+| Rattlesnake brome (`bromus-briziformis`) | plants | 2 | 0 | 1 |
+| Ripgut brome (`bromus-diandrus`) | plants | 2 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 2 | 0 | 1 |
 | Smooth Brome (`bromus-inermis`) | plants | 2 | 0 | 1 |
+| Poverty brome (`bromus-sterilis`) | plants | 2 | 0 | 1 |
 | Japanese beauty-berry (`callicarpa-japonica`) | plants | 2 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 2 | 0 | 1 |
 | Gold-of-pleasure (`camelina-sativa`) | plants | 2 | 0 | 1 |
 | Japanese sedge (`carex-kobomugi`) | plants | 2 | 0 | 1 |
+| Pearl millet (`cenchrus-americanus`) | plants | 2 | 0 | 1 |
+| Feathertop (`cenchrus-longisetus`) | plants | 2 | 0 | 1 |
 | Brownray knapweed (`centaurea-jacea`) | plants | 2 | 0 | 1 |
-| Branched centaury (`centaurium-pulchellum`) | plants | 2 | 0 | 1 |
-| Celandine (`chelidonium-majus`) | plants | 2 | 0 | 1 |
-| Oneseed hawthorn (`crataegus-monogyna`) | plants | 2 | 0 | 1 |
-| Asian flatsedge (`cyperus-microiria`) | plants | 2 | 0 | 1 |
-| Madwoman's milk (`euphorbia-helioscopia`) | plants | 2 | 0 | 1 |
-| Marsh cudweed (`gnaphalium-uliginosum`) | plants | 2 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 2 | 0 | 1 |
-| Roundfruit rush (`juncus-compressus`) | plants | 2 | 0 | 1 |
-| Matrimony vine (`lycium-barbarum`) | plants | 2 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 2 | 0 | 1 |
-| Common balm (`melissa-officinalis`) | plants | 2 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 2 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:44.763Z | 4 | 4 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:27.353Z | 92 | 74 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:06.081Z | 1 | 1 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:28.864Z | 39 | 37 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:34:58.096Z | 30 | 28 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 53 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

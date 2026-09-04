@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `846`
+- Verified present: `1645`
 - Verified absent: `5`
 - Not detected: `0`
-- Researched unresolved: `1799`
-- Not researched: `9870`
-- Determination coverage: `6.80%`
-- Research coverage: `21.17%`
-- Explicit outcome coverage: `21.1661%`
-- Applicable protocol cells: `441`
-- Current complete protocol cells: `81`
-- Protocol completion: `21.32%`
-- Current protocol completion: `18.37%`
-- Evidence records: `988`
-- Research runs: `33`
+- Researched unresolved: `1748`
+- Not researched: `9122`
+- Determination coverage: `13.18%`
+- Research coverage: `27.14%`
+- Explicit outcome coverage: `27.1406%`
+- Applicable protocol cells: `757`
+- Current complete protocol cells: `82`
+- Protocol completion: `12.55%`
+- Current protocol completion: `10.83%`
+- Evidence records: `1787`
+- Research runs: `34`
 - Rejection records: `1435`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Diamond burbark (`triumfetta-rhomboidea`) | plants | 5 | 0 | 1 |
+| Earleaf acacia (`acacia-auriculiformis`) | plants | 4 | 0 | 1 |
+| Cootamundra wattle (`acacia-baileyana`) | plants | 4 | 0 | 1 |
 | Green wattle (`acacia-decurrens`) | plants | 4 | 0 | 1 |
+| Red beadtree (`adenanthera-pavonina`) | plants | 4 | 0 | 1 |
+| Crested wheatgrass (`agropyron-cristatum`) | plants | 4 | 0 | 1 |
+| Colonial bentgrass (`agrostis-capillaris`) | plants | 4 | 0 | 1 |
 | Golden trumpet (`allamanda-cathartica`) | plants | 4 | 0 | 1 |
-| Giant taro (`alocasia-macrorrhizos`) | plants | 4 | 0 | 1 |
-| Barbados aloe (`aloe-vera`) | plants | 4 | 0 | 1 |
-| Spiny amaranth (`amaranthus-spinosus`) | plants | 4 | 0 | 1 |
-| Coral vine (`antigonon-leptopus`) | plants | 4 | 0 | 1 |
-| Greater burdock (`arctium-lappa`) | plants | 4 | 0 | 1 |
-| Australian saltbush (`atriplex-semibaccata`) | plants | 4 | 0 | 1 |
-| Brazilian begonia (`begonia-hirtella`) | plants | 4 | 0 | 1 |
+| Spleen amaranth (`amaranthus-dubius`) | plants | 4 | 0 | 1 |
+| Joseph's-coat (`amaranthus-tricolor`) | plants | 4 | 0 | 1 |
+| African asparagus fern (`asparagus-asparagoides`) | plants | 4 | 0 | 1 |
+| Mueller's saltbush (`atriplex-muelleri`) | plants | 4 | 0 | 1 |
+| Slender oat (`avena-barbata`) | plants | 4 | 0 | 1 |
+| Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 4 | 0 | 1 |
 | Javanese bishopwood (`bischofia-javanica`) | plants | 4 | 0 | 1 |
-| Pitted beardgrass (`bothriochloa-pertusa`) | plants | 4 | 0 | 1 |
-| Smokebush (`buddleja-madagascariensis`) | plants | 4 | 0 | 1 |
-| Pride-of-barbados (`caesalpinia-pulcherrima`) | plants | 4 | 0 | 1 |
-| Roostertree (`calotropis-procera`) | plants | 4 | 0 | 1 |
+| Paperflower (`bougainvillea-glabra`) | plants | 4 | 0 | 1 |
+| Smooth Brome (`bromus-inermis`) | plants | 4 | 0 | 1 |
+| Red brome (`bromus-rubens`) | plants | 4 | 0 | 1 |
+| Poverty brome (`bromus-sterilis`) | plants | 4 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 4 | 0 | 1 |
+| Cactus Moth (`cactoblastis-cactorum`) | insects | 4 | 0 | 1 |
+| Creeping inchplant (`callisia-repens`) | plants | 4 | 0 | 1 |
+| Canterbury bells (`campanula-medium`) | plants | 4 | 0 | 1 |
+| Jack bean (`canavalia-ensiformis`) | plants | 4 | 0 | 1 |
+| Natal plum (`carissa-macrocarpa`) | plants | 4 | 0 | 1 |
 | Burmese fishtail palm (`caryota-mitis`) | plants | 4 | 0 | 1 |
-| River sheoak (`casuarina-cunninghamiana`) | plants | 4 | 0 | 1 |
-| Madagascar periwinkle (`catharanthus-roseus`) | plants | 4 | 0 | 1 |
-| Elephant grass (`cenchrus-purpureus`) | plants | 4 | 0 | 1 |
-| Swollen fingergrass (`chloris-barbata`) | plants | 4 | 0 | 1 |
-| Stickbush (`clerodendrum-chinense`) | plants | 4 | 0 | 1 |
-| Natal glorybower (`clerodendrum-glabrum`) | plants | 4 | 0 | 1 |
-| Coconut palm (`cocos-nucifera`) | plants | 4 | 0 | 1 |
-| Asian nakedwood (`colubrina-asiatica`) | plants | 4 | 0 | 1 |
-| Cape province pygmyweed (`crassula-multicava`) | plants | 4 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:51.083Z | 48 | 40 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:35.415Z | 152 | 120 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:15.718Z | 6 | 6 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:36.461Z | 799 | 438 |
+| Harvard University Herbaria United States preserved specimens | operational | not run | 0 | 0 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 46 | 120 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

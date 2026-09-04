@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `4014`
+- Verified present: `4136`
 - Verified absent: `21`
 - Not detected: `0`
-- Researched unresolved: `6412`
-- Not researched: `42137`
-- Determination coverage: `7.67%`
-- Research coverage: `19.87%`
-- Explicit outcome coverage: `19.8673%`
-- Applicable protocol cells: `535`
+- Researched unresolved: `6393`
+- Not researched: `42034`
+- Determination coverage: `7.91%`
+- Research coverage: `20.06%`
+- Explicit outcome coverage: `20.0631%`
+- Applicable protocol cells: `577`
 - Current complete protocol cells: `124`
-- Protocol completion: `25.61%`
-- Current protocol completion: `23.18%`
-- Evidence records: `5513`
-- Research runs: `38`
+- Protocol completion: `23.74%`
+- Current protocol completion: `21.49%`
+- Evidence records: `5635`
+- Research runs: `40`
 - Rejection records: `997`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sycamore Maple (`acer-pseudoplatanus`) | plants | 20 | 0 | 1 |
 | Colonial bentgrass (`agrostis-capillaris`) | plants | 20 | 0 | 1 |
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 20 | 0 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 20 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 20 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 20 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 20 | 0 | 1 |
 | Italian bugloss (`anchusa-azurea`) | plants | 20 | 0 | 1 |
 | Greater burdock (`arctium-lappa`) | plants | 20 | 0 | 1 |
 | Absinthium (`artemisia-absinthium`) | plants | 20 | 0 | 1 |
-| Common borage (`borago-officinalis`) | plants | 20 | 0 | 1 |
-| Black mustard (`brassica-nigra`) | plants | 20 | 0 | 1 |
 | Rattlesnake brome (`bromus-briziformis`) | plants | 20 | 0 | 1 |
 | Heather (`calluna-vulgaris`) | plants | 20 | 0 | 1 |
-| Narrowleaf bittercress (`cardamine-impatiens`) | plants | 20 | 0 | 1 |
 | Prickly sedge (`carex-spicata`) | plants | 20 | 0 | 1 |
 | Woolly distaff thistle (`carthamus-lanatus`) | plants | 20 | 0 | 1 |
 | Diffuse Knapweed (`centaurea-diffusa`) | plants | 20 | 0 | 1 |
 | Brownray knapweed (`centaurea-jacea`) | plants | 20 | 0 | 1 |
+| Greater knapweed (`centaurea-scabiosa`) | plants | 20 | 0 | 1 |
 | Yellow star-thistle (`centaurea-solstitialis`) | plants | 20 | 0 | 1 |
-| Branched centaury (`centaurium-pulchellum`) | plants | 20 | 0 | 1 |
-| Celandine (`chelidonium-majus`) | plants | 20 | 0 | 1 |
+| Figleaf goosefoot (`chenopodium-ficifolium`) | plants | 20 | 0 | 1 |
 | Marsh thistle (`cirsium-palustre`) | plants | 20 | 0 | 1 |
 | Coriander (`coriandrum-sativum`) | plants | 20 | 0 | 1 |
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 20 | 0 | 1 |
 | Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 20 | 0 | 1 |
+| Rattleweed (`crotalaria-retusa`) | plants | 20 | 0 | 1 |
+| Clover dodder (`cuscuta-epithymum`) | plants | 20 | 0 | 1 |
 | Chinese hound's tongue (`cynoglossum-amabile`) | plants | 20 | 0 | 1 |
-| Variable flatsedge (`cyperus-difformis`) | plants | 20 | 0 | 1 |
-| Brown flatsedge (`cyperus-fuscus`) | plants | 20 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:34.877Z | 7 | 7 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:33.881Z | 559 | 236 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:10.855Z | 11 | 10 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:25.586Z | 15 | 12 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:49.443Z | 107 | 72 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 523 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

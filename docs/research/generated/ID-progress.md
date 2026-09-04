@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `6204`
+- Verified present: `6227`
 - Verified absent: `44`
 - Not detected: `0`
 - Researched unresolved: `17784`
-- Not researched: `86144`
-- Determination coverage: `5.67%`
-- Research coverage: `21.81%`
-- Explicit outcome coverage: `21.8124%`
-- Applicable protocol cells: `577`
+- Not researched: `86121`
+- Determination coverage: `5.69%`
+- Research coverage: `21.83%`
+- Explicit outcome coverage: `21.8332%`
+- Applicable protocol cells: `582`
 - Current complete protocol cells: `90`
-- Protocol completion: `17.85%`
-- Current protocol completion: `15.60%`
-- Evidence records: `6781`
-- Research runs: `31`
+- Protocol completion: `17.70%`
+- Current protocol completion: `15.46%`
+- Evidence records: `6804`
+- Research runs: `33`
 - Rejection records: `444`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,12 +39,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dill (`anethum-graveolens`) | plants | 43 | 0 | 1 |
 | Golden-tuft alyssum (`aurinia-saxatilis`) | plants | 43 | 0 | 1 |
 | Slender oat (`avena-barbata`) | plants | 43 | 0 | 1 |
+| Morning-glory leafminer moth (`bedellia-somnulentella`) | insects | 43 | 0 | 1 |
 | Cabbage (`brassica-oleracea`) | plants | 43 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 43 | 0 | 1 |
 | Ferngrass (`catapodium-rigidum`) | plants | 43 | 0 | 1 |
 | Brownray knapweed (`centaurea-jacea`) | plants | 43 | 0 | 1 |
 | Bighead knapweed (`centaurea-macrocephala`) | plants | 43 | 0 | 1 |
-| Lesser knapweed (`centaurea-nigra`) | plants | 43 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 43 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 43 | 0 | 1 |
 | Marsh thistle (`cirsium-palustre`) | plants | 43 | 0 | 1 |
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:55.514Z | 2113 | 395 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:41.720Z | 145 | 93 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:21.287Z | 8 | 8 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:41.719Z | 14 | 8 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:07.116Z | 9 | 7 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 189 | 106 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

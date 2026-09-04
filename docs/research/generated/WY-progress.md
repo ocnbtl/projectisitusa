@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `2294`
+- Verified present: `2349`
 - Verified absent: `23`
 - Not detected: `0`
 - Researched unresolved: `9643`
-- Not researched: `45632`
-- Determination coverage: `4.02%`
-- Research coverage: `20.77%`
-- Explicit outcome coverage: `20.7668%`
-- Applicable protocol cells: `352`
+- Not researched: `45577`
+- Determination coverage: `4.12%`
+- Research coverage: `20.86%`
+- Explicit outcome coverage: `20.8623%`
+- Applicable protocol cells: `359`
 - Current complete protocol cells: `62`
-- Protocol completion: `21.31%`
-- Current protocol completion: `17.61%`
-- Evidence records: `2334`
-- Research runs: `38`
+- Protocol completion: `20.89%`
+- Current protocol completion: `17.27%`
+- Evidence records: `2389`
+- Research runs: `40`
 - Rejection records: `81`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,8 +33,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Hollyhock (`alcea-rosea`) | plants | 22 | 0 | 1 |
+| European water plantain (`alisma-plantago-aquatica`) | plants | 22 | 0 | 1 |
+| Greater burdock (`arctium-lappa`) | plants | 22 | 0 | 1 |
 | Garden orache (`atriplex-hortensis`) | plants | 22 | 0 | 1 |
-| Yellow Rocket (`barbarea-vulgaris`) | plants | 22 | 0 | 1 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 22 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 22 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 22 | 0 | 1 |
@@ -43,6 +44,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Perennial cornflower (`centaurea-montana`) | plants | 22 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 22 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 22 | 0 | 1 |
+| Common Carp (`cyprinus-carpio`) | wildlife | 22 | 0 | 1 |
 | Maiden pink (`dianthus-deltoides`) | plants | 22 | 0 | 1 |
 | Great globethistle (`echinops-sphaerocephalus`) | plants | 22 | 0 | 1 |
 | Wilman lovegrass (`eragrostis-superba`) | plants | 22 | 0 | 1 |
@@ -50,13 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Marsh cudweed (`gnaphalium-uliginosum`) | plants | 22 | 0 | 1 |
 | Flower of an hour (`hibiscus-trionum`) | plants | 22 | 0 | 1 |
 | Common nipplewort (`lapsana-communis`) | plants | 22 | 0 | 1 |
-| Whitetop (`lepidium-draba`) | plants | 22 | 0 | 1 |
 | Purpleanther field pepperweed (`lepidium-heterophyllum`) | plants | 22 | 0 | 1 |
 | Mammoth wildrye (`leymus-racemosus`) | plants | 22 | 0 | 1 |
 | Sweet alyssum (`lobularia-maritima`) | plants | 22 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 22 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 22 | 0 | 1 |
-| Cheeseweed mallow (`malva-parviflora`) | plants | 22 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:17.062Z | 114 | 66 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:29.185Z | 173 | 85 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:52:03.309Z | 1 | 1 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:14.033Z | 13 | 5 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:33.750Z | 42 | 25 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 13 | 90 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

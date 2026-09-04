@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `1712`
+- Verified present: `2381`
 - Verified absent: `14`
 - Not detected: `0`
-- Researched unresolved: `4991`
-- Not researched: `28339`
-- Determination coverage: `4.92%`
-- Research coverage: `19.16%`
-- Explicit outcome coverage: `19.1608%`
-- Applicable protocol cells: `322`
-- Current complete protocol cells: `89`
-- Protocol completion: `31.68%`
-- Current protocol completion: `27.64%`
-- Evidence records: `1963`
-- Research runs: `32`
+- Researched unresolved: `4951`
+- Not researched: `27710`
+- Determination coverage: `6.83%`
+- Research coverage: `20.96%`
+- Explicit outcome coverage: `20.9550%`
+- Applicable protocol cells: `476`
+- Current complete protocol cells: `90`
+- Protocol completion: `21.64%`
+- Current protocol completion: `18.91%`
+- Evidence records: `2632`
+- Research runs: `34`
 - Rejection records: `171`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,29 +34,29 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Pale swallow-wort (`vincetoxicum-rossicum`) | plants | 14 | 0 | 1 |
 | Japanese maple (`acer-palmatum`) | plants | 13 | 0 | 1 |
-| Greater burdock (`arctium-lappa`) | plants | 13 | 0 | 1 |
-| Smooth Brome (`bromus-inermis`) | plants | 13 | 0 | 1 |
-| Caraway (`carum-carvi`) | plants | 13 | 0 | 1 |
-| Lambsquarters (`chenopodium-album`) | plants | 13 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 13 | 0 | 1 |
-| Petty spurge (`euphorbia-peplus`) | plants | 13 | 0 | 1 |
-| Elecampane inula (`inula-helenium`) | plants | 13 | 0 | 1 |
-| Onerow yellowcress (`nasturtium-microphyllum`) | plants | 13 | 0 | 1 |
-| Starry Stonewort (`nitellopsis-obtusa`) | plants | 13 | 0 | 1 |
-| European white waterlily (`nymphaea-alba`) | plants | 13 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 13 | 0 | 1 |
-| Garden sorrel (`rumex-acetosa`) | plants | 13 | 0 | 1 |
-| Birdeye pearlwort (`sagina-procumbens`) | plants | 13 | 0 | 1 |
-| White willow (`salix-alba`) | plants | 13 | 0 | 1 |
-| Laurel willow (`salix-pentandra`) | plants | 13 | 0 | 1 |
-| Foxtail millet (`setaria-italica`) | plants | 13 | 0 | 1 |
-| Red catchfly (`silene-dioica`) | plants | 13 | 0 | 1 |
-| European mountain ash (`sorbus-aucuparia`) | plants | 13 | 0 | 1 |
-| Red Sandspurry (`spergularia-rubra`) | plants | 13 | 0 | 1 |
-| Rock dandelion (`taraxacum-erythrospermum`) | plants | 13 | 0 | 1 |
-| Common Speedwell (`veronica-officinalis`) | plants | 13 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 12 | 0 | 2 |
-| Mugwort (`artemisia-vulgaris`) | plants | 12 | 0 | 1 |
+| Hollyhock (`alcea-rosea`) | plants | 13 | 0 | 1 |
+| Pale madwort (`alyssum-alyssoides`) | plants | 13 | 0 | 1 |
+| Mat amaranth (`amaranthus-blitoides`) | plants | 13 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 13 | 0 | 1 |
+| Lawndaisy (`bellis-perennis`) | plants | 13 | 0 | 1 |
+| Downy birch (`betula-pubescens`) | plants | 13 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 13 | 0 | 1 |
+| Japanese brome (`bromus-japonicus`) | plants | 13 | 0 | 1 |
+| Corn brome (`bromus-squarrosus`) | plants | 13 | 0 | 1 |
+| Littlepod False Flax (`camelina-microcarpa`) | plants | 13 | 0 | 1 |
+| Gold-of-pleasure (`camelina-sativa`) | plants | 13 | 0 | 1 |
+| Woodland bittercress (`cardamine-flexuosa`) | plants | 13 | 0 | 1 |
+| Narrowleaf bittercress (`cardamine-impatiens`) | plants | 13 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 13 | 0 | 1 |
+| Golden chamomile (`cota-tinctoria`) | plants | 13 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 13 | 0 | 1 |
+| Clover dodder (`cuscuta-epithymum`) | plants | 13 | 0 | 1 |
+| Kenilworth ivy (`cymbalaria-muralis`) | plants | 13 | 0 | 1 |
+| Chinese hound's tongue (`cynoglossum-amabile`) | plants | 13 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 13 | 0 | 1 |
+| Clammy goosefoot (`dysphania-pumilio`) | plants | 13 | 0 | 1 |
+| Crested latesummer mint (`elsholtzia-ciliata`) | plants | 13 | 0 | 1 |
+| Black bindweed (`fallopia-convolvulus`) | plants | 13 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:07.586Z | 3 | 3 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:17.485Z | 41 | 28 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:52.304Z | 9 | 6 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:03.728Z | 2 | 1 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:24.519Z | 667 | 208 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 125 | 108 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

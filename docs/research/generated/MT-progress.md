@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `5760`
+- Verified present: `5797`
 - Verified absent: `56`
 - Not detected: `0`
-- Researched unresolved: `23643`
-- Not researched: `110765`
-- Determination coverage: `4.15%`
-- Research coverage: `21.01%`
-- Explicit outcome coverage: `21.0085%`
-- Applicable protocol cells: `463`
+- Researched unresolved: `23638`
+- Not researched: `110733`
+- Determination coverage: `4.17%`
+- Research coverage: `21.03%`
+- Explicit outcome coverage: `21.0313%`
+- Applicable protocol cells: `469`
 - Current complete protocol cells: `74`
-- Protocol completion: `18.79%`
-- Current protocol completion: `15.98%`
-- Evidence records: `5863`
-- Research runs: `37`
+- Protocol completion: `18.55%`
+- Current protocol completion: `15.78%`
+- Evidence records: `5900`
+- Research runs: `39`
 - Rejection records: `137`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,7 +43,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Celandine (`chelidonium-majus`) | plants | 55 | 0 | 1 |
 | Evergreen clematis (`clematis-vitalba`) | plants | 55 | 0 | 1 |
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 55 | 0 | 1 |
-| Smooth hawksbeard (`crepis-capillaris`) | plants | 55 | 0 | 1 |
+| Gray field slug (`deroceras-reticulatum`) | wildlife | 55 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 55 | 0 | 1 |
 | Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 55 | 0 | 1 |
 | Black bindweed (`fallopia-convolvulus`) | plants | 55 | 0 | 1 |
@@ -53,10 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Matrimony vine (`lycium-barbarum`) | plants | 55 | 0 | 1 |
 | Moneywort (`lysimachia-nummularia`) | plants | 55 | 0 | 1 |
 | High mallow (`malva-sylvestris`) | plants | 55 | 0 | 1 |
+| Nutria (`nutria`) | wildlife | 55 | 0 | 1 |
 | Changing forget-me-not (`myosotis-discolor`) | plants | 55 | 0 | 1 |
 | Raceme catnip (`nepeta-racemosa`) | plants | 55 | 0 | 1 |
 | Blindeyes (`papaver-dubium`) | plants | 55 | 0 | 1 |
-| Opium poppy (`papaver-somniferum`) | plants | 55 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:23.862Z | 1603 | 269 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:19.894Z | 23 | 21 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:57.417Z | 1 | 1 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:12.972Z | 28 | 14 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:35:37.704Z | 9 | 7 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 104 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

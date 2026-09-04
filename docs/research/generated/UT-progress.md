@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `3326`
+- Verified present: `3386`
 - Verified absent: `29`
 - Not detected: `0`
-- Researched unresolved: `11782`
-- Not researched: `57479`
-- Determination coverage: `4.62%`
-- Research coverage: `20.85%`
-- Explicit outcome coverage: `20.8453%`
-- Applicable protocol cells: `474`
+- Researched unresolved: `11779`
+- Not researched: `57422`
+- Determination coverage: `4.70%`
+- Research coverage: `20.92%`
+- Explicit outcome coverage: `20.9238%`
+- Applicable protocol cells: `484`
 - Current complete protocol cells: `72`
-- Protocol completion: `17.93%`
-- Current protocol completion: `15.19%`
-- Evidence records: `3395`
-- Research runs: `36`
+- Protocol completion: `17.56%`
+- Current protocol completion: `14.88%`
+- Evidence records: `3455`
+- Research runs: `38`
 - Rejection records: `139`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,7 +33,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Japanese maple (`acer-palmatum`) | plants | 28 | 0 | 1 |
-| Sycamore Maple (`acer-pseudoplatanus`) | plants | 28 | 0 | 1 |
 | Fernleaf yarrow (`achillea-filipendulina`) | plants | 28 | 0 | 1 |
 | Creeping meadow foxtail (`alopecurus-arundinaceus`) | plants | 28 | 0 | 1 |
 | Dill (`anethum-graveolens`) | plants | 28 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Winged Burning Bush (`euonymus-alatus`) | plants | 28 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 28 | 0 | 1 |
 | Sweet fennel (`foeniculum-vulgare`) | plants | 28 | 0 | 1 |
+| Yellow spring bedstraw (`galium-verum`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -84,6 +84,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:03.267Z | 179 | 97 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:12.175Z | 418 | 157 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:46.595Z | 1 | 1 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:58.514Z | 9 | 5 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T06:36:19.894Z | 51 | 33 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 36 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
