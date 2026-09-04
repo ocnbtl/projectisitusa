@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T202931Z__gbif-ipams__a06e28f75787",
+  "status": "complete",
+  "started_at": "2026-09-04T20:29:31.134Z",
+  "finished_at": "2026-09-04T20:29:31.135Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ipams-retained-snapshot@1.0.0",
+  "source_id": "gbif-ipams",
+  "source_registry_hash": "28a19f51267ecabc53fb51094dae2804f9e69b1e22fe57ba4363b862142dcda1",
+  "adapter_id": "gbif-ipams-retained-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "479beee07071db6b3c3891f8fb95463f917cb02853ce41232fe4ace16b0030b1",
+  "code_commit": "f3f535380aecf53c086a7c1625bfe46e05a50edb",
+  "parameter_hash": "a06e28f75787c15373918db3b789bc2945bd2298095fb249ce77b169a6505239",
+  "parameters": {
+    "stateCode": "IA",
+    "mode": "retained-archive-witnesses",
+    "profile": "gbif-ipams",
+    "datasetKey": "d587c7e5-d442-437a-a6d7-d1a78ecf2300",
+    "datasetDoi": "10.15468/3j3ueb",
+    "datasetUrl": "https://ipt.gbif.us/archive.do?r=ipams",
+    "metadataUrl": "https://ipt.gbif.us/eml.do?r=ipams",
+    "usagePolicyUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "datasetVersion": "1.4",
+    "datasetLastModified": "2020-07-31T18:39:03Z",
+    "archiveBytes": 898409,
+    "archiveSha256": "d9fed59d6b61541b9234c330990703fc823ad0a919acf8b2639f19a0b9a64e4b",
+    "occurrenceBytes": 12884816,
+    "occurrenceSha256": "57e011f88799e68e903c9999665da0ce76b069e8abb62adab93ead1f95795d7e",
+    "emlSha256": "1bf923fffc81199623492d9a22b63348b1fb265d4ebf6fc83dfa32fa43fd86f9",
+    "metaSha256": "deab7d2648df646fb121272f66917d1787ed96d884e85a3ea704baa62d2a468d",
+    "archiveVerifiedAt": "2026-09-03T17:16:55.091Z",
+    "preflightEvaluationId": "gbif-ipams-preflight-20260904-r1",
+    "targetPairSetSha256": "7f4dea898811ea55add240b1e654c4b3094ca0f9705aa8b01074ab5d0689641f",
+    "targets": [
+      {
+        "pairKey": "19071:setaria-faberi",
+        "occurrenceId": "2067276615",
+        "countyFips": "19071",
+        "stateCode": "IA",
+        "speciesId": "setaria-faberi",
+        "scientificName": "Setaria faberi",
+        "eventDate": "2009-09-12",
+        "latitude": 40.688899993896484,
+        "longitude": -95.78160095214844,
+        "sourceState": "Iowa",
+        "sourceCounty": "Fremont"
+      }
+    ],
+    "candidatePairs": [
+      "19071:setaria-faberi"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "IA",
+    "county_fips": [
+      "19071"
+    ],
+    "species_ids": [
+      "setaria-faberi"
+    ],
+    "pair_keys": [
+      "19071:setaria-faberi"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T202931Z__gbif-ipams__a06e28f75787/artifacts/gbif-ipams-source-identity.json",
+      "sha256": "2694e25a9e0275f0f62d4d7552bbee51376083b5fd763648441af1171a424d73",
+      "bytes": 992,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202931Z__gbif-ipams__a06e28f75787/artifacts/gbif-ipams-retained-witnesses.json.gz",
+      "sha256": "70cf462fe9cb20992d4ec7424e7a402c2a5b75a0e20ab81e54ad3e39c61f3ec4",
+      "bytes": 223,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T202931Z__gbif-ipams__a06e28f75787/assertions.ndjson",
+      "sha256": "6e29c3759d2ec69500f0fd5571cfc42f659dad0ddc7bc304704579690a722f9b",
+      "bytes": 1871,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202931Z__gbif-ipams__a06e28f75787/reviews.ndjson",
+      "sha256": "f8275a24e36291247aec1c0c4b40f5ec3647f07d801d29aba36dd2c60911d971",
+      "bytes": 1096,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202931Z__gbif-ipams__a06e28f75787/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T202931Z__gbif-ipams__a06e28f75787/outcomes.ndjson",
+      "sha256": "ea7e2129a73e7f8fddd67419b868ba5ca3534296667226d4a812a4de7242a323",
+      "bytes": 667,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Dataset-specific nonnative human-observation evidence supports historical recorded presence only. Missing or rejected records never support county absence or non-detection."
+  ],
+  "source_warnings": [
+    "GBIF IPAMS human observations support historical recorded presence only.",
+    "The complete source archive was screened offline; one strict retained witness per eligible county-species pair is persisted in each immutable run.",
+    "Source silence and rejected rows never support absence or non-detection."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ipams --state IA --candidate-file src/data/research/national-acquisition-plans/gbif-ipams-ia-20260904-r1.json --output-root src/data/research/runs --pairs 19071:setaria-faberi"
+}
