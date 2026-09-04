@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "evaluationId": "direct-museum-preserved-specimens-execution-20260904-r1",
-  "evaluatedAt": "2026-09-04T07:28:38.035Z",
+  "evaluatedAt": "2026-09-04T08:09:29.908Z",
   "status": "integrated-substantial-minimum-cleared",
   "objective": "Produce cumulative, exact, net-new county-species determinations without replaying completed source snapshots, weakening evidence semantics, or counting raw source volume as progress.",
   "canonicalCheckout": "C:/Code/project-isitusa",
@@ -198,6 +198,24 @@
       "firstAttemptError": "JavaScript heap out of memory near the default 3.5 GB limit",
       "retry": "passed-with-node-max-old-space-size-8192"
     },
+    "verification": {
+      "completedAt": "2026-09-04T08:09:29.908Z",
+      "gitDiffCheck": "passed",
+      "typecheck": "passed",
+      "retainedSpecimenAdapterProfiles": "passed-all-four-profiles",
+      "dataIntegrity": "passed",
+      "prepareDataPlan": "passed",
+      "nationalResearchConfig": "passed",
+      "stateResearchProjections": "passed-all-51-with-node-max-old-space-size-8192",
+      "researchCompilation": "passed-all-51",
+      "researchDatabaseBuild": "passed-with-node-max-old-space-size-8192",
+      "researchCoverageIndex": "passed",
+      "nationalReadiness": "passed-zero-ready-or-certified-jurisdictions",
+      "researchPublication": "passed-plan-only-zero-provider-requests",
+      "researchIntegrity": "passed-including-97-of-97-national-skill-regressions",
+      "independentAllStateVerification": "passed-all-51-byte-stable",
+      "productionBuild": "passed-nextjs-15.5.23"
+    },
     "recoveryEvents": [
       {
         "event": "nmnh-county-suffix-validator-mismatch",
@@ -223,6 +241,11 @@
         "event": "guarded-correction-rerun",
         "result": "recovered-without-partial-or-duplicate-runs",
         "detail": "The first two correction attempts stopped before producing a run because coverage provenance was stale and then because the manifest and receipt made the worktree dirty. The remaining Massachusetts plan exceeded Windows command-line length, so its exact sealed pair list was loaded inside Node. Final correction coverage is 47 complete runs, 7334 unique pairs, zero errors, and the original selected pair hash."
+      },
+      {
+        "event": "cumulative-gbif-planner-fixture-drift",
+        "result": "updated-exact-expectations-and-full-suite-passed",
+        "detail": "The full research-integrity suite exposed two stale projected not-researched counts after the 11068 new determinations. Expectations were reconciled from 21910 to 21892 and from 22004 to 22002; the focused planner test and the complete research-integrity suite then passed."
       }
     ]
   },
