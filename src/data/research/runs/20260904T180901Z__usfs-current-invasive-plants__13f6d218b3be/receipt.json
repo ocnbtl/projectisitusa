@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be",
+  "status": "complete",
+  "started_at": "2026-09-04T18:09:01.806Z",
+  "finished_at": "2026-09-04T18:09:05.439Z",
+  "actor_type": "adapter",
+  "actor_id": "usfs-current-invasive-plants-targeted@1.1.0",
+  "source_id": "usfs-current-invasive-plants",
+  "source_registry_hash": "8942a7eaece26457ce0910b91d45fc460d47f35db000a4c0d1143529ca4ece6e",
+  "adapter_id": "usfs-current-invasive-plants-targeted",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "3c569007e8b3fdef4d0eef9cef7e94cb3a990a7a0c6abb15d2c35fa621a537e3",
+  "code_commit": "77edbfe590e0600d765a6a04d87f44b44122d2d6",
+  "parameter_hash": "13f6d218b3bedfd5c2d51c237047010b90c91af76bb50da222654d324430d09c",
+  "parameters": {
+    "stateCode": "AZ",
+    "catalogResponseSha256": "e5ccff191b1a43ac29d328e6e3b5bfb8b575ff9127263e6864acaa0118acb321",
+    "layerUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0",
+    "maxResponseBytes": 52428800,
+    "minimumRequestIntervalMs": 1000,
+    "mode": "targeted-stable-positive-witness",
+    "objectIdsPerRequest": 100,
+    "preflightEvaluationId": "usfs-current-invasive-plants-national-preflight-20260902-r1",
+    "providerDeclaredRefreshDate": "2026-08-30",
+    "targets": [
+      {
+        "countyFips": "04007",
+        "objectIds": [
+          2948,
+          6123,
+          67467,
+          73058,
+          109039,
+          122216,
+          179799,
+          195297,
+          214600,
+          220843,
+          255346,
+          303195,
+          329966,
+          340238,
+          349145,
+          350451,
+          353732,
+          358537,
+          430513,
+          430660
+        ],
+        "pairKey": "04007:tamarix-ramosissima",
+        "scientificName": "Tamarix ramosissima",
+        "speciesId": "tamarix-ramosissima"
+      },
+      {
+        "countyFips": "04011",
+        "objectIds": [
+          1456,
+          3074,
+          4678,
+          4856,
+          16407,
+          22938,
+          23233,
+          24012,
+          24734,
+          25178,
+          35571,
+          42128,
+          50726,
+          55293,
+          59860,
+          60361,
+          71313,
+          72812,
+          77188,
+          80450
+        ],
+        "pairKey": "04011:tamarix-ramosissima",
+        "scientificName": "Tamarix ramosissima",
+        "speciesId": "tamarix-ramosissima"
+      },
+      {
+        "countyFips": "04025",
+        "objectIds": [
+          22794,
+          30681,
+          152851,
+          164235,
+          164833,
+          174988,
+          261003,
+          298831,
+          446822,
+          464642,
+          526331,
+          537368,
+          538125,
+          605368,
+          617232,
+          659916,
+          700593,
+          722931,
+          757194,
+          771025
+        ],
+        "pairKey": "04025:cortaderia-selloana",
+        "scientificName": "Cortaderia selloana",
+        "speciesId": "cortaderia-selloana"
+      },
+      {
+        "countyFips": "04019",
+        "objectIds": [
+          9684,
+          144750,
+          239588,
+          256003,
+          283662,
+          289621,
+          382713,
+          382746,
+          481553,
+          528272,
+          573791,
+          621010,
+          745233,
+          828201,
+          844329
+        ],
+        "pairKey": "04019:hordeum-vulgare",
+        "scientificName": "Hordeum vulgare",
+        "speciesId": "hordeum-vulgare"
+      },
+      {
+        "countyFips": "04005",
+        "objectIds": [
+          54118,
+          65313,
+          79935,
+          129636,
+          154879,
+          197924,
+          231314,
+          245245,
+          325679,
+          473277,
+          714016,
+          749833,
+          809582
+        ],
+        "pairKey": "04005:sorghum-bicolor",
+        "scientificName": "Sorghum bicolor",
+        "speciesId": "sorghum-bicolor"
+      },
+      {
+        "countyFips": "04017",
+        "objectIds": [
+          290178,
+          312493,
+          384620,
+          405212,
+          428176,
+          513806,
+          750148,
+          853216
+        ],
+        "pairKey": "04017:tamarix-ramosissima",
+        "scientificName": "Tamarix ramosissima",
+        "speciesId": "tamarix-ramosissima"
+      },
+      {
+        "countyFips": "04025",
+        "objectIds": [
+          19021,
+          283456,
+          284003,
+          303793,
+          559835,
+          630584,
+          910716
+        ],
+        "pairKey": "04025:sorghum-bicolor",
+        "scientificName": "Sorghum bicolor",
+        "speciesId": "sorghum-bicolor"
+      },
+      {
+        "countyFips": "04005",
+        "objectIds": [
+          388356,
+          391253,
+          505742,
+          836152,
+          896551,
+          921525
+        ],
+        "pairKey": "04005:rumex-acetosa",
+        "scientificName": "Rumex acetosa",
+        "speciesId": "rumex-acetosa"
+      },
+      {
+        "countyFips": "04007",
+        "objectIds": [
+          72099,
+          142855,
+          435426,
+          550490,
+          673838
+        ],
+        "pairKey": "04007:salsola-tragus",
+        "scientificName": "Salsola tragus",
+        "speciesId": "salsola-tragus"
+      },
+      {
+        "countyFips": "04005",
+        "objectIds": [
+          11469,
+          285330,
+          346539,
+          516746,
+          723071
+        ],
+        "pairKey": "04005:hedera-helix",
+        "scientificName": "Hedera helix",
+        "speciesId": "hedera-helix"
+      },
+      {
+        "countyFips": "04007",
+        "objectIds": [
+          131251,
+          834183
+        ],
+        "pairKey": "04007:silybum-marianum",
+        "scientificName": "Silybum marianum",
+        "speciesId": "silybum-marianum"
+      },
+      {
+        "countyFips": "04025",
+        "objectIds": [
+          615839,
+          645780
+        ],
+        "pairKey": "04025:descurainia-sophia",
+        "scientificName": "Descurainia sophia",
+        "speciesId": "descurainia-sophia"
+      },
+      {
+        "countyFips": "04025",
+        "objectIds": [
+          438983,
+          781967
+        ],
+        "pairKey": "04025:bothriochloa-bladhii",
+        "scientificName": "Bothriochloa bladhii",
+        "speciesId": "bothriochloa-bladhii"
+      },
+      {
+        "countyFips": "04001",
+        "objectIds": [
+          57530
+        ],
+        "pairKey": "04001:tamarix-chinensis",
+        "scientificName": "Tamarix chinensis",
+        "speciesId": "tamarix-chinensis"
+      },
+      {
+        "countyFips": "04003",
+        "objectIds": [
+          464712
+        ],
+        "pairKey": "04003:tamarix-ramosissima",
+        "scientificName": "Tamarix ramosissima",
+        "speciesId": "tamarix-ramosissima"
+      },
+      {
+        "countyFips": "04005",
+        "objectIds": [
+          636877
+        ],
+        "pairKey": "04005:silene-vulgaris",
+        "scientificName": "Silene vulgaris",
+        "speciesId": "silene-vulgaris"
+      },
+      {
+        "countyFips": "04005",
+        "objectIds": [
+          287415
+        ],
+        "pairKey": "04005:tamarix-aphylla",
+        "scientificName": "Tamarix aphylla",
+        "speciesId": "tamarix-aphylla"
+      },
+      {
+        "countyFips": "04009",
+        "objectIds": [
+          95603
+        ],
+        "pairKey": "04009:hordeum-vulgare",
+        "scientificName": "Hordeum vulgare",
+        "speciesId": "hordeum-vulgare"
+      },
+      {
+        "countyFips": "04013",
+        "objectIds": [
+          229129
+        ],
+        "pairKey": "04013:tagetes-minuta",
+        "scientificName": "Tagetes minuta",
+        "speciesId": "tagetes-minuta"
+      },
+      {
+        "countyFips": "04013",
+        "objectIds": [
+          794596
+        ],
+        "pairKey": "04013:tamarix-parviflora",
+        "scientificName": "Tamarix parviflora",
+        "speciesId": "tamarix-parviflora"
+      },
+      {
+        "countyFips": "04017",
+        "objectIds": [
+          931984
+        ],
+        "pairKey": "04017:aegilops-triuncialis",
+        "scientificName": "Aegilops triuncialis",
+        "speciesId": "aegilops-triuncialis"
+      },
+      {
+        "countyFips": "04019",
+        "objectIds": [
+          156723
+        ],
+        "pairKey": "04019:tamarix-aphylla",
+        "scientificName": "Tamarix aphylla",
+        "speciesId": "tamarix-aphylla"
+      },
+      {
+        "countyFips": "04005",
+        "objectIds": [
+          158769
+        ],
+        "pairKey": "04005:schedonorus-arundinaceus",
+        "scientificName": "Schedonorus arundinaceus",
+        "speciesId": "schedonorus-arundinaceus"
+      },
+      {
+        "countyFips": "04011",
+        "objectIds": [
+          57871
+        ],
+        "pairKey": "04011:centaurea-stoebe-ssp-micranthos",
+        "scientificName": "Centaurea stoebe ssp. micranthos",
+        "speciesId": "centaurea-stoebe-ssp-micranthos"
+      },
+      {
+        "countyFips": "04019",
+        "objectIds": [
+          529248
+        ],
+        "pairKey": "04019:cirsium-arvense",
+        "scientificName": "Cirsium arvense",
+        "speciesId": "cirsium-arvense"
+      }
+    ],
+    "candidatePairs": [
+      "04001:tamarix-chinensis",
+      "04003:tamarix-ramosissima",
+      "04005:hedera-helix",
+      "04005:rumex-acetosa",
+      "04005:schedonorus-arundinaceus",
+      "04005:silene-vulgaris",
+      "04005:sorghum-bicolor",
+      "04005:tamarix-aphylla",
+      "04007:salsola-tragus",
+      "04007:silybum-marianum",
+      "04007:tamarix-ramosissima",
+      "04009:hordeum-vulgare",
+      "04011:centaurea-stoebe-ssp-micranthos",
+      "04011:tamarix-ramosissima",
+      "04013:tagetes-minuta",
+      "04013:tamarix-parviflora",
+      "04017:aegilops-triuncialis",
+      "04017:tamarix-ramosissima",
+      "04019:cirsium-arvense",
+      "04019:hordeum-vulgare",
+      "04019:tamarix-aphylla",
+      "04025:bothriochloa-bladhii",
+      "04025:cortaderia-selloana",
+      "04025:descurainia-sophia",
+      "04025:sorghum-bicolor"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "AZ",
+    "county_fips": [
+      "04001",
+      "04003",
+      "04005",
+      "04007",
+      "04009",
+      "04011",
+      "04013",
+      "04017",
+      "04019",
+      "04025"
+    ],
+    "species_ids": [
+      "aegilops-triuncialis",
+      "bothriochloa-bladhii",
+      "centaurea-stoebe-ssp-micranthos",
+      "cirsium-arvense",
+      "cortaderia-selloana",
+      "descurainia-sophia",
+      "hedera-helix",
+      "hordeum-vulgare",
+      "rumex-acetosa",
+      "salsola-tragus",
+      "schedonorus-arundinaceus",
+      "silene-vulgaris",
+      "silybum-marianum",
+      "sorghum-bicolor",
+      "tagetes-minuta",
+      "tamarix-aphylla",
+      "tamarix-chinensis",
+      "tamarix-parviflora",
+      "tamarix-ramosissima"
+    ],
+    "pair_keys": [
+      "04001:tamarix-chinensis",
+      "04003:tamarix-ramosissima",
+      "04005:hedera-helix",
+      "04005:rumex-acetosa",
+      "04005:schedonorus-arundinaceus",
+      "04005:silene-vulgaris",
+      "04005:sorghum-bicolor",
+      "04005:tamarix-aphylla",
+      "04007:salsola-tragus",
+      "04007:silybum-marianum",
+      "04007:tamarix-ramosissima",
+      "04009:hordeum-vulgare",
+      "04011:centaurea-stoebe-ssp-micranthos",
+      "04011:tamarix-ramosissima",
+      "04013:tagetes-minuta",
+      "04013:tamarix-parviflora",
+      "04017:aegilops-triuncialis",
+      "04017:tamarix-ramosissima",
+      "04019:cirsium-arvense",
+      "04019:hordeum-vulgare",
+      "04019:tamarix-aphylla",
+      "04025:bothriochloa-bladhii",
+      "04025:cortaderia-selloana",
+      "04025:descurainia-sophia",
+      "04025:sorghum-bicolor"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=1456%2C2948%2C3074%2C4678%2C4856%2C6123%2C9684%2C11469%2C16407%2C19021%2C22794%2C22938%2C23233%2C24012%2C24734%2C25178%2C30681%2C35571%2C42128%2C50726%2C54118%2C55293%2C57530%2C57871%2C59860%2C60361%2C65313%2C67467%2C71313%2C72099%2C72812%2C73058%2C77188%2C79935%2C80450%2C95603%2C109039%2C122216%2C129636%2C131251%2C142855%2C144750%2C152851%2C154879%2C156723%2C158769%2C164235%2C164833%2C174988%2C179799%2C195297%2C197924%2C214600%2C220843%2C229129%2C231314%2C239588%2C245245%2C255346%2C256003%2C261003%2C283456%2C283662%2C284003%2C285330%2C287415%2C289621%2C290178%2C298831%2C303195%2C303793%2C312493%2C325679%2C329966%2C340238%2C346539%2C349145%2C350451%2C353732%2C358537%2C382713%2C382746%2C384620%2C388356%2C391253%2C405212%2C428176%2C430513%2C430660%2C435426%2C438983%2C446822%2C464642%2C464712%2C473277%2C481553%2C505742%2C513806%2C516746%2C526331&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-04T18:09:01.808Z",
+      "record_count": 100
+    },
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=1456%2C2948%2C3074%2C4678%2C4856%2C6123%2C9684%2C11469%2C16407%2C19021%2C22794%2C22938%2C23233%2C24012%2C24734%2C25178%2C30681%2C35571%2C42128%2C50726%2C54118%2C55293%2C57530%2C57871%2C59860%2C60361%2C65313%2C67467%2C71313%2C72099%2C72812%2C73058%2C77188%2C79935%2C80450%2C95603%2C109039%2C122216%2C129636%2C131251%2C142855%2C144750%2C152851%2C154879%2C156723%2C158769%2C164235%2C164833%2C174988%2C179799%2C195297%2C197924%2C214600%2C220843%2C229129%2C231314%2C239588%2C245245%2C255346%2C256003%2C261003%2C283456%2C283662%2C284003%2C285330%2C287415%2C289621%2C290178%2C298831%2C303195%2C303793%2C312493%2C325679%2C329966%2C340238%2C346539%2C349145%2C350451%2C353732%2C358537%2C382713%2C382746%2C384620%2C388356%2C391253%2C405212%2C428176%2C430513%2C430660%2C435426%2C438983%2C446822%2C464642%2C464712%2C473277%2C481553%2C505742%2C513806%2C516746%2C526331&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-04T18:09:03.146Z",
+      "record_count": 100
+    },
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=528272%2C529248%2C537368%2C538125%2C550490%2C559835%2C573791%2C605368%2C615839%2C617232%2C621010%2C630584%2C636877%2C645780%2C659916%2C673838%2C700593%2C714016%2C722931%2C723071%2C745233%2C749833%2C750148%2C757194%2C771025%2C781967%2C794596%2C809582%2C828201%2C834183%2C836152%2C844329%2C853216%2C896551%2C910716%2C921525%2C931984&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-04T18:09:04.347Z",
+      "record_count": 37
+    },
+    {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?f=json&objectIds=528272%2C529248%2C537368%2C538125%2C550490%2C559835%2C573791%2C605368%2C615839%2C617232%2C621010%2C630584%2C636877%2C645780%2C659916%2C673838%2C700593%2C714016%2C722931%2C723071%2C745233%2C749833%2C750148%2C757194%2C771025%2C781967%2C794596%2C809582%2C828201%2C834183%2C836152%2C844329%2C853216%2C896551%2C910716%2C921525%2C931984&outFields=objectid%2Csite_id_fs%2Caccepted_plant_code%2Caccepted_scientific_name%2Caccepted_common_name%2Cdate_collected%2Cdate_collected_most_recent%2Ccurrent_measurement%2Cplant_status%2Cplant_status_set%2Cfs_unit_id%2Cfs_unit_name%2Cfeature_cn%2Clast_update%2Ccrc_value&returnGeometry=true&outSR=4326&geometryPrecision=7&orderByFields=objectid+ASC",
+      "status": 200,
+      "retrieved_at": "2026-09-04T18:09:05.439Z",
+      "record_count": 37
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/artifacts/usfs-current-invasive-plants-0001-before.json",
+      "sha256": "14b3ae66910f4c3da1bec1d120afa5c4278ee9284a80759c0780c0a6751b5fd5",
+      "bytes": 566068,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/artifacts/usfs-current-invasive-plants-0001-after.json",
+      "sha256": "14b3ae66910f4c3da1bec1d120afa5c4278ee9284a80759c0780c0a6751b5fd5",
+      "bytes": 566068,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/artifacts/usfs-current-invasive-plants-0002-before.json",
+      "sha256": "4bfc347141ee1e138ece2a1d1e17301f6f22619701575b7f3acc01b7f8c55ad1",
+      "bytes": 81757,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/artifacts/usfs-current-invasive-plants-0002-after.json",
+      "sha256": "4bfc347141ee1e138ece2a1d1e17301f6f22619701575b7f3acc01b7f8c55ad1",
+      "bytes": 81757,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/assertions.ndjson",
+      "sha256": "0aa5375df5c9bdba97da259bfad7225917e2c967d528d2943c0fde61ce7f4249",
+      "bytes": 101657,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/reviews.ndjson",
+      "sha256": "2cffbd026fe15f9353fbe69cd637ba41e866124411a76a2c55d547c2652fb3d7",
+      "bytes": 28132,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be/outcomes.ndjson",
+      "sha256": "1de79cbf2ab437339b443f9123edd03d8709629e079b9d8fabe1de5275f26f60",
+      "bytes": 55362,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 25,
+    "candidate_records": 137,
+    "assertion_events": 25,
+    "review_events": 25,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 25
+  },
+  "errors": [],
+  "known_caveats": [
+    "Occurrence evidence is limited to represented Forest Service lands."
+  ],
+  "source_warnings": [
+    "USFS current invasive-plant rows support recorded presence on represented Forest Service lands only.",
+    "Targeted selection and source silence create no absence or non-detection claim.",
+    "0 selected object records failed one or more conservative publication gates."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usfs-current-invasive-plants --state AZ --candidate-file src/data/research/national-acquisition-plans/usfs-current-invasive-plants-az-complete-20260904-r1.json --output-root src/data/research/runs --pairs 04001:tamarix-chinensis,04003:tamarix-ramosissima,04005:hedera-helix,04005:rumex-acetosa,04005:schedonorus-arundinaceus,04005:silene-vulgaris,04005:sorghum-bicolor,04005:tamarix-aphylla,04007:salsola-tragus,04007:silybum-marianum,04007:tamarix-ramosissima,04009:hordeum-vulgare,04011:centaurea-stoebe-ssp-micranthos,04011:tamarix-ramosissima,04013:tagetes-minuta,04013:tamarix-parviflora,04017:aegilops-triuncialis,04017:tamarix-ramosissima,04019:cirsium-arvense,04019:hordeum-vulgare,04019:tamarix-aphylla,04025:bothriochloa-bladhii,04025:cortaderia-selloana,04025:descurainia-sophia,04025:sorghum-bicolor"
+}
