@@ -1016,23 +1016,31 @@ async function main() {
               additionalRequests: 0,
             }
         : options.sourceId === usgsBbsRouteStartAdapter.sourceId
-          ? {
-              providerNetworkRequests: 5,
-              maximumProviderNetworkAttempts: 15,
-              requestTimeoutMs: 180000,
-              requestSequence: [
-                "GET the official ScienceBase item metadata",
-                "GET the hash-pinned Routes.csv",
-                "GET the hash-pinned Weather.csv",
-                "GET the hash-pinned 50-StopData.zip",
-                "GET the hash-pinned SpeciesList.csv",
-              ],
-              stabilityGate:
-                "Every downloaded file must match the exact ScienceBase size and MD5 pinned by the committed pilot plan.",
-              retryPolicy:
-                "Each idempotent GET has a three-minute timeout and may retry network errors, HTTP 429, or HTTP 5xx responses at most twice with capped Retry-After or bounded backoff.",
-              additionalRequests: 0,
-            }
+          ? candidateFile.bbsPilot?.mode === "retained-hash-pinned-standard-stop1-positive"
+            ? {
+                providerNetworkRequests: 0,
+                replaySource: "Retained positive Stop 1 witnesses selected by the committed complete-release preflight.",
+                stabilityGate:
+                  "Every witness must match the sealed pair scope, exact AOU taxon, release year, positive Stop 1 count, route identity, and active-county coordinate geometry.",
+                additionalRequests: 0,
+              }
+            : {
+                providerNetworkRequests: 5,
+                maximumProviderNetworkAttempts: 15,
+                requestTimeoutMs: 180000,
+                requestSequence: [
+                  "GET the official ScienceBase item metadata",
+                  "GET the hash-pinned Routes.csv",
+                  "GET the hash-pinned Weather.csv",
+                  "GET the hash-pinned 50-StopData.zip",
+                  "GET the hash-pinned SpeciesList.csv",
+                ],
+                stabilityGate:
+                  "Every downloaded file must match the exact ScienceBase size and MD5 pinned by the committed pilot plan.",
+                retryPolicy:
+                  "Each idempotent GET has a three-minute timeout and may retry network errors, HTTP 429, or HTTP 5xx responses at most twice with capped Retry-After or bounded backoff.",
+                additionalRequests: 0,
+              }
         : {
           cachedTaxonomyResponses: taxonomyCache?.selectedEntries.length ?? 0,
           archiveReplayResponses: archivedReplay?.requestUrls.length ?? 0,
