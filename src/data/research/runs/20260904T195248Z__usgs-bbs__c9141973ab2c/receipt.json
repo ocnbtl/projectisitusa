@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T195248Z__usgs-bbs__c9141973ab2c",
+  "status": "complete",
+  "started_at": "2026-09-04T19:52:48.516Z",
+  "finished_at": "2026-09-04T19:52:48.534Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-bbs-route-start@1.2.0",
+  "source_id": "usgs-bbs",
+  "source_registry_hash": "b5db6823739dfebae472387838931d229e00db1a33de57d6dcb70e5ffdd970dc",
+  "adapter_id": "usgs-bbs-route-start",
+  "adapter_version": "1.2.0",
+  "adapter_code_hash": "b8418d3b2f82011e7a7ee2a61baceebf19a531f31b174354654844197d83c2fd",
+  "code_commit": "dbc24b6ff691fa50f5b44ce6c75e10282ea88348",
+  "parameter_hash": "c9141973ab2c168d7b02af069e1c85f0860feffced6d65a46e313b12c144134a",
+  "parameters": {
+    "stateCode": "MO",
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 16,
+    "expectedStateGrossPairs": 35,
+    "expectedStateNetNewPairs": 16,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "29001:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6380257",
+        "routeKey": "52:068",
+        "routeName": "KIRKSVILLE",
+        "year": 2023,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "29001",
+        "stateCode": "MO",
+        "latitude": 40.1681387,
+        "longitude": -92.5154419
+      },
+      {
+        "pairKey": "29003:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6261619",
+        "routeKey": "52:136",
+        "routeName": "BARNARD",
+        "year": 2007,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "29003",
+        "stateCode": "MO",
+        "latitude": 40.0840684,
+        "longitude": -94.8524242
+      },
+      {
+        "pairKey": "29005:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6382367",
+        "routeKey": "52:138",
+        "routeName": "ELMO",
+        "year": 2023,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "29005",
+        "stateCode": "MO",
+        "latitude": 40.510921,
+        "longitude": -95.488087
+      },
+      {
+        "pairKey": "29061:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6225985",
+        "routeKey": "52:070",
+        "routeName": "MCFALL",
+        "year": 1997,
+        "aou": "06882",
+        "stop1Count": 10,
+        "countyFips": "29061",
+        "stateCode": "MO",
+        "latitude": 40.1002567,
+        "longitude": -94.1422189
+      },
+      {
+        "pairKey": "29079:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6362572",
+        "routeKey": "52:035",
+        "routeName": "TRENTON",
+        "year": 2016,
+        "aou": "06882",
+        "stop1Count": 1,
+        "countyFips": "29079",
+        "stateCode": "MO",
+        "latitude": 40.0903817,
+        "longitude": -93.5563439
+      },
+      {
+        "pairKey": "29115:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6252379",
+        "routeKey": "52:066",
+        "routeName": "LACLEDE",
+        "year": 2006,
+        "aou": "04930",
+        "stop1Count": 3,
+        "countyFips": "29115",
+        "stateCode": "MO",
+        "latitude": 39.7948327,
+        "longitude": -93.1267409
+      },
+      {
+        "pairKey": "29127:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6380885",
+        "routeKey": "52:146",
+        "routeName": "Emden",
+        "year": 2023,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "29127",
+        "stateCode": "MO",
+        "latitude": 39.832371,
+        "longitude": -91.815904
+      },
+      {
+        "pairKey": "29131:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6387210",
+        "routeKey": "52:062",
+        "routeName": "OSAGE BEACH",
+        "year": 2025,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "29131",
+        "stateCode": "MO",
+        "latitude": 38.1619747,
+        "longitude": -92.5999229
+      },
+      {
+        "pairKey": "29131:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6387210",
+        "routeKey": "52:062",
+        "routeName": "OSAGE BEACH",
+        "year": 2025,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "29131",
+        "stateCode": "MO",
+        "latitude": 38.1619747,
+        "longitude": -92.5999229
+      },
+      {
+        "pairKey": "29163:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6362365",
+        "routeKey": "52:147",
+        "routeName": "AUBURN",
+        "year": 2016,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "29163",
+        "stateCode": "MO",
+        "latitude": 39.225067,
+        "longitude": -90.890831
+      },
+      {
+        "pairKey": "29163:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6238772",
+        "routeKey": "52:126",
+        "routeName": "FRANKFORD",
+        "year": 2005,
+        "aou": "04930",
+        "stop1Count": 3,
+        "countyFips": "29163",
+        "stateCode": "MO",
+        "latitude": 39.5296983,
+        "longitude": -91.2159803
+      },
+      {
+        "pairKey": "29173:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6372351",
+        "routeKey": "52:025",
+        "routeName": "RENSSELAER",
+        "year": 2019,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "29173",
+        "stateCode": "MO",
+        "latitude": 39.6396973,
+        "longitude": -91.556756
+      },
+      {
+        "pairKey": "29175:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6371878",
+        "routeKey": "52:028",
+        "routeName": "HUNTSVILLE",
+        "year": 2019,
+        "aou": "06882",
+        "stop1Count": 2,
+        "countyFips": "29175",
+        "stateCode": "MO",
+        "latitude": 39.4294496,
+        "longitude": -92.5567869
+      },
+      {
+        "pairKey": "29175:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6380827",
+        "routeKey": "52:028",
+        "routeName": "HUNTSVILLE",
+        "year": 2023,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "29175",
+        "stateCode": "MO",
+        "latitude": 39.4294496,
+        "longitude": -92.5567869
+      },
+      {
+        "pairKey": "29175:sturnus-vulgaris",
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "routeDataId": "6361268",
+        "routeKey": "52:028",
+        "routeName": "HUNTSVILLE",
+        "year": 2016,
+        "aou": "04930",
+        "stop1Count": 1,
+        "countyFips": "29175",
+        "stateCode": "MO",
+        "latitude": 39.4294496,
+        "longitude": -92.5567869
+      },
+      {
+        "pairKey": "29181:passer-domesticus",
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "routeDataId": "6372668",
+        "routeKey": "52:002",
+        "routeName": "PULASKI",
+        "year": 2019,
+        "aou": "06882",
+        "stop1Count": 3,
+        "countyFips": "29181",
+        "stateCode": "MO",
+        "latitude": 36.5936897,
+        "longitude": -90.7479869
+      }
+    ],
+    "candidatePairs": [
+      "29001:streptopelia-decaocto",
+      "29003:passer-domesticus",
+      "29005:streptopelia-decaocto",
+      "29061:passer-domesticus",
+      "29079:passer-domesticus",
+      "29115:sturnus-vulgaris",
+      "29127:sturnus-vulgaris",
+      "29131:passer-domesticus",
+      "29131:sturnus-vulgaris",
+      "29163:passer-domesticus",
+      "29163:sturnus-vulgaris",
+      "29173:sturnus-vulgaris",
+      "29175:passer-domesticus",
+      "29175:streptopelia-decaocto",
+      "29175:sturnus-vulgaris",
+      "29181:passer-domesticus"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MO",
+    "county_fips": [
+      "29001",
+      "29003",
+      "29005",
+      "29061",
+      "29079",
+      "29115",
+      "29127",
+      "29131",
+      "29163",
+      "29173",
+      "29175",
+      "29181"
+    ],
+    "species_ids": [
+      "passer-domesticus",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "29001:streptopelia-decaocto",
+      "29003:passer-domesticus",
+      "29005:streptopelia-decaocto",
+      "29061:passer-domesticus",
+      "29079:passer-domesticus",
+      "29115:sturnus-vulgaris",
+      "29127:sturnus-vulgaris",
+      "29131:passer-domesticus",
+      "29131:sturnus-vulgaris",
+      "29163:passer-domesticus",
+      "29163:sturnus-vulgaris",
+      "29173:sturnus-vulgaris",
+      "29175:passer-domesticus",
+      "29175:streptopelia-decaocto",
+      "29175:sturnus-vulgaris",
+      "29181:passer-domesticus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T195248Z__usgs-bbs__c9141973ab2c/artifacts/mo-retained-standard-stop1-witnesses.json",
+      "sha256": "2f64fcfe845a6e14bbc0e781a13f84604e4b59c73b63c99fbc985629e02e9534",
+      "bytes": 7932,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T195248Z__usgs-bbs__c9141973ab2c/assertions.ndjson",
+      "sha256": "be69da620f805f5569d8f48dca93ae9ee17cc4a0fc3ec67b291599f8205134ca",
+      "bytes": 38371,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195248Z__usgs-bbs__c9141973ab2c/reviews.ndjson",
+      "sha256": "b1d1e8b99391be2b7155b7094d5bb4b10be64719412db14a9f7a847ef820e6f2",
+      "bytes": 15286,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195248Z__usgs-bbs__c9141973ab2c/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195248Z__usgs-bbs__c9141973ab2c/outcomes.ndjson",
+      "sha256": "9a1c112a9ddc83d6ac73ff152f98b5fe9554a52f3e77276215c585e8be7a6cd8",
+      "bytes": 12886,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 16,
+    "candidate_records": 16,
+    "assertion_events": 16,
+    "review_events": 16,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 16
+  },
+  "errors": [],
+  "known_caveats": [
+    "Route-start detections are sampled occurrence evidence, not countywide inventory."
+  ],
+  "source_warnings": [
+    "The complete hash-pinned BBS release was screened offline; one positive witness per eligible pair is retained in this immutable run.",
+    "Later stops, route totals, zero rows, missing rows, and source silence create no county absence or non-detection claim."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usgs-bbs --state MO --candidate-file src/data/research/national-acquisition-plans/usgs-bbs-mo-route-start-residual-v1.json --output-root src/data/research/runs --pairs 29001:streptopelia-decaocto,29003:passer-domesticus,29005:streptopelia-decaocto,29061:passer-domesticus,29079:passer-domesticus,29115:sturnus-vulgaris,29127:sturnus-vulgaris,29131:passer-domesticus,29131:sturnus-vulgaris,29163:passer-domesticus,29163:sturnus-vulgaris,29173:sturnus-vulgaris,29175:passer-domesticus,29175:streptopelia-decaocto,29175:sturnus-vulgaris,29181:passer-domesticus"
+}
