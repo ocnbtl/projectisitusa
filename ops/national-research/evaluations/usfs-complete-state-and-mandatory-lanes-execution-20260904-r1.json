@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usfs-complete-state-and-mandatory-lanes-execution-20260904-r1",
+  "evaluatedAt": "2026-09-04T18:12:32.876Z",
+  "status": "integrated-campaign-target-cleared-with-usfs-marginal-yield-measured-low",
+  "objective": "Continue cumulative, non-duplicative county-species determination work from the current matrix; execute complete-state USFS Current Invasive Plant tranches; and close the mandatory iDigBio and FIA lanes without converting source volume, silence, or unresolved outcomes into determination claims.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "turnBaseline": {
+    "commit": "1fb1171cf9c3a2b0c3f95283fb29a179031655d6",
+    "verifiedPresent": 311032,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 314175,
+    "notDetected": 236,
+    "researchedUnresolved": 1307620,
+    "notResearched": 6250545,
+    "fullCountySpeciesDenominator": 7872576,
+    "conflicts": 0
+  },
+  "fixedCampaignBaseline": {
+    "commit": "f08cf185b1ee7291c827083181bb7ae76700166c",
+    "verifiedPresent": 197075,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 200218,
+    "notDetected": 254,
+    "researchedUnresolved": 1361858,
+    "notResearched": 6310246
+  },
+  "usfsCurrentInvasivePlants": {
+    "sourceId": "usfs-current-invasive-plants",
+    "preflightPath": "ops/national-research/evaluations/usfs-current-invasive-plants-national-preflight-20260902-r1.json",
+    "layerUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0",
+    "providerDeclaredRefreshDate": "2026-08-30",
+    "catalogResponseSha256": "e5ccff191b1a43ac29d328e6e3b5bfb8b575ff9127263e6864acaa0118acb321",
+    "nationalObjectInventory": {
+      "providerCount": 946008,
+      "uniqueObjectIds": 946008,
+      "duplicateObjectIds": 0,
+      "minimumObjectId": 1,
+      "maximumObjectId": 946497,
+      "objectIdSetSha256": "003b7c1d19956ab4b943d19387da0b8bfdb5a38a4e10f847c55661155a446faa"
+    },
+    "completedStateTranches": [
+      {
+        "stateCode": "ID",
+        "planPath": "src/data/research/national-acquisition-plans/usfs-current-invasive-plants-id-complete-20260904-r1.json",
+        "planSha256": "7d031a06c1c6547063179d456c335f6baea9b8fad2962dbf65ccf16fb2315e26",
+        "runId": "20260904T174037Z__usfs-current-invasive-plants__68a999c1b86e",
+        "providerObjectIds": 157570,
+        "exactCatalogFeatureRows": 133017,
+        "countyWitnessRows": 59834,
+        "uniqueWitnessedPairs": 638,
+        "existingDeterminationOverlaps": 610,
+        "selectedPairs": 28,
+        "selectedFromNotResearched": 14,
+        "selectedFromResearchedUnresolved": 14,
+        "acceptedVerifiedPresent": 28,
+        "rejections": 0,
+        "duplicates": 0,
+        "errors": 0,
+        "planningRequests": 317,
+        "planningResponseBytes": 62962341,
+        "acquisitionRequests": 4,
+        "acquisitionArtifactBytes": 315200,
+        "acquisitionElapsedMs": 3482
+      },
+      {
+        "stateCode": "CO",
+        "planPath": "src/data/research/national-acquisition-plans/usfs-current-invasive-plants-co-complete-20260904-r1.json",
+        "planSha256": "8d7cf0d09381c6188108197e6222234bbfa27b0967836b5528f59c5db02b94bc",
+        "runId": "20260904T180445Z__usfs-current-invasive-plants__6f1e4758ed78",
+        "providerObjectIds": 129985,
+        "exactCatalogFeatureRows": 116050,
+        "countyWitnessRows": 116015,
+        "uniqueWitnessedPairs": 732,
+        "existingDeterminationOverlaps": 721,
+        "selectedPairs": 11,
+        "selectedFromNotResearched": 5,
+        "selectedFromResearchedUnresolved": 6,
+        "acceptedVerifiedPresent": 11,
+        "rejections": 0,
+        "duplicates": 0,
+        "errors": 0,
+        "planningRequests": 261,
+        "planningResponseBytes": 41201573,
+        "acquisitionRequests": 2,
+        "acquisitionArtifactBytes": 1321968,
+        "acquisitionElapsedMs": 1361
+      },
+      {
+        "stateCode": "AZ",
+        "planPath": "src/data/research/national-acquisition-plans/usfs-current-invasive-plants-az-complete-20260904-r1.json",
+        "planSha256": "09cc1b52b3d35b2b0c63accee88739c338a3c10e0382f3cadc2008e5697b6bd6",
+        "runId": "20260904T180901Z__usfs-current-invasive-plants__13f6d218b3be",
+        "providerObjectIds": 42728,
+        "exactCatalogFeatureRows": 38992,
+        "countyWitnessRows": 38739,
+        "uniqueWitnessedPairs": 284,
+        "existingDeterminationOverlaps": 259,
+        "selectedPairs": 25,
+        "selectedFromNotResearched": 20,
+        "selectedFromResearchedUnresolved": 5,
+        "acceptedVerifiedPresent": 25,
+        "rejections": 0,
+        "duplicates": 0,
+        "errors": 0,
+        "planningRequests": 87,
+        "planningResponseBytes": 13570519,
+        "acquisitionRequests": 4,
+        "acquisitionArtifactBytes": 1295650,
+        "acquisitionElapsedMs": 3633
+      }
+    ],
+    "turnTotals": {
+      "providerObjectsCompletelyScanned": 330283,
+      "exactCatalogFeatureRows": 288059,
+      "countyWitnessRows": 214588,
+      "uniqueWitnessedStatePairs": 1654,
+      "existingDeterminationOverlaps": 1590,
+      "selectedPairs": 64,
+      "acceptedVerifiedPresent": 64,
+      "acceptedVerifiedAbsent": 0,
+      "rejections": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "successfulPlanningRequests": 665,
+      "planningResponseBytes": 117734433,
+      "successfulAcquisitionRequests": 10,
+      "acquisitionArtifactBytes": 2932818,
+      "acquisitionElapsedMs": 8476,
+      "netDeterminationsPerCompletelyScannedObject": 0.000193773,
+      "knownAccountingQualification": "One initial Colorado planner attempt ended in an internal Node Undici assertion before an immutable plan or request ledger was written. Its unknown request and byte counts are excluded. A later retry completed and is fully accounted above."
+    },
+    "currentCoverage": {
+      "runCount": 10,
+      "completeRuns": 10,
+      "partialRuns": 0,
+      "requestedPairs": 1579,
+      "scopeCompletePairs": 1579
+    },
+    "marginalDecision": "The three fresh complete-state inventories yielded 64 exact net pairs after 1590 existing overlaps. Oregon, California, and Washington complete-plan candidates are already fully determined. Additional state scans remain technically possible, but this measured source is no longer a material path to another 10000 determinations; gross polygon counts are not a net-yield claim.",
+    "knownPlannerBoundary": "Alaska cannot use the current single envelope because its antimeridian bounds invert xmin and xmax. It requires deterministic east and west shards before execution."
+  },
+  "idigbioNational": {
+    "sourceId": "idigbio-preserved-specimens",
+    "disposition": "no-go-current-contract",
+    "existingRuns": 8,
+    "existingRequestedPairs": 155,
+    "currentReplayNetDeterminations": 0,
+    "liveReplayCheck": {
+      "requests": 1,
+      "responseBytes": 2993,
+      "httpElapsedMs": 235,
+      "status": 200,
+      "itemCount": 1,
+      "lastModified": "2025-11-25T19:38:59.779Z"
+    },
+    "stratifiedNationalAggregateSample": {
+      "requests": 48,
+      "responseBytes": 321808,
+      "cumulativeHttpElapsedMs": 18381,
+      "endToEndWallTime": "not-retained",
+      "catalogTaxaSampled": 48,
+      "aggregateRecords": 35121,
+      "resolvedAggregatePairs": 8171,
+      "currentVerifiedPresentOverlap": 3556,
+      "currentResearchedUnresolvedOverlap": 1069,
+      "currentlyNotResearched": 3546,
+      "sampleCalibratedNetEstimate": 1830,
+      "nationalExpansionPointEstimate": 95205,
+      "confidence": "low-screening-signal-only"
+    },
+    "blockers": [
+      "The corpus stopped updating on 2026-05-08 and no provider-native immutable national archive is established.",
+      "The adapter reduces catalog labels to two tokens, which can collapse infraspecific, virus, and hybrid identities.",
+      "A per-record license allowlist, complete recordset/query citation manifest, and publication-safe mixed-rights contract are missing.",
+      "The aggregate sample cannot apply exact record-level cultivation, rank, accepted-taxonomy, stable-identity, recordset, or license gates; it cannot establish the 2000-pair execution threshold."
+    ],
+    "providerWrites": 0
+  },
+  "usfsFiaPartialRecovery": {
+    "sourceId": "usfs-fia-invasive-plants",
+    "disposition": "no-go-zero-net-determinations",
+    "runs": 53,
+    "completeRuns": 47,
+    "partialRuns": 6,
+    "requestedPairs": 120011,
+    "scopeCompletePairs": 116748,
+    "incompletePairs": 3263,
+    "retainedAcquisitionFiles": 52,
+    "retainedAcquisitionBytes": 77012449,
+    "retainedHashMismatches": 0,
+    "strictlyRecoverableCurrentCountyPresencePairs": 0,
+    "bestCaseLegacyMappingPresenceOutcomes": 3,
+    "bestCaseLegacyMappingNetDeterminationsAfterOverlap": 0,
+    "reason": "Oregon and Washington retained only headers; Alaska and Connecticut lack row-level current geography; and the three potential Florida/South Dakota successor-geography presence pairs are already verified present through accepted GBIF reviews.",
+    "providerRequests": 0
+  },
+  "uncoveredSourcePortfolio": {
+    "reviewedEvaluationPath": "ops/national-research/evaluations/source-expansion-preflights-20260902-r1.json",
+    "currentInterpretation": "The dated real preflights were reviewed rather than replayed because no changed access, rights, snapshot, or yield condition was found during this turn.",
+    "lanes": [
+      {
+        "sourceId": "usfs-ids",
+        "disposition": "no-go-below-yield-threshold",
+        "estimatedNetPairs": 511
+      },
+      {
+        "sourceId": "sernec",
+        "disposition": "no-go-below-retainable-yield-and-rights",
+        "projectedUnambiguouslyRetainableCc0NetPairs": 1431
+      },
+      {
+        "sourceId": "usfs-laurel-wilt",
+        "disposition": "no-go-below-yield-and-rights",
+        "netEligiblePairs": 50
+      }
+    ],
+    "alreadyOpenedSinceFixedBaseline": [
+      "inaturalist-research-grade",
+      "eddmaps",
+      "blm-aim-terrestrial-invasive-plants",
+      "cpnwh-preserved-specimens",
+      "smithsonian-nmnh-preserved-specimens",
+      "harvard-huh-usa-preserved-specimens"
+    ]
+  },
+  "absenceLane": {
+    "newAbsenceAssertions": 0,
+    "humanApprovalRequests": 0,
+    "decision": "The unchanged five-candidate jurisdiction-wide eradication audit was not replayed. No new current official complete-jurisdiction claim was found in the mandatory presence work."
+  },
+  "integration": {
+    "asOfDate": "2026-09-04",
+    "verifiedPresent": 311096,
+    "verifiedAbsent": 3143,
+    "totalUniqueDeterminations": 314239,
+    "determinationCoveragePercent": 3.99156515,
+    "notDetected": 236,
+    "researchedUnresolved": 1307595,
+    "notResearched": 6250506,
+    "conflicts": 0,
+    "turnDelta": {
+      "verifiedPresent": 64,
+      "verifiedAbsent": 0,
+      "totalUniqueDeterminations": 64,
+      "notDetected": 0,
+      "researchedUnresolved": -25,
+      "notResearched": -39,
+      "removedDeterminations": 0
+    },
+    "fixedCampaignDelta": {
+      "verifiedPresent": 114021,
+      "verifiedAbsent": 0,
+      "totalUniqueDeterminations": 114021,
+      "notDetected": -18,
+      "researchedUnresolved": -54263,
+      "notResearched": -59740
+    }
+  },
+  "targetAssessment": {
+    "turnMilestone": "below-5000",
+    "fixedCampaignMilestone": "25000-cleared",
+    "fixedCampaignTarget": 25000,
+    "fixedCampaignNetDeterminations": 114021,
+    "fixedCampaignTargetExceededBy": 89021,
+    "interpretation": "The turn added 64 exact determinations. The continuing campaign established by the fixed f08cf185 baseline has already exceeded the 25000 target. The smaller turn delta is accepted because the mandatory USFS, iDigBio, FIA, and uncovered-source conditions were executed, measured, or durably rejected without replaying completed scopes or weakening evidence semantics."
+  },
+  "publicationPlan": {
+    "mode": "plan",
+    "releaseId": "research-f027e546f022-e502c027fa5735ed",
+    "sourceCommit": "f027e546f0220a28479604ccb0309f11827b3022",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1322773748,
+    "currentClassARequests": 0,
+    "currentClassBRequests": 0,
+    "r2Mutations": 0
+  },
+  "publicStateObservedOnce": {
+    "vercelUrl": "https://isitusa.com/",
+    "vercelHttpStatus": 200,
+    "r2PointerUrl": "https://data.isitusa.com/current.json",
+    "r2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "r2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "qualification": "These read-only observations are separate from repository and local publication-plan state."
+  },
+  "externalMutations": {
+    "pushes": 0,
+    "manualDeployments": 0,
+    "r2Uploads": 0,
+    "r2PointerMutations": 0,
+    "providerWrites": 0,
+    "estimatedMonetaryCostUsd": 0
+  }
+}
