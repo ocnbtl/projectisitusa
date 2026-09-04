@@ -7,10 +7,10 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `1925`
+- Verified present: `1926`
 - Verified absent: `15`
 - Not detected: `0`
-- Researched unresolved: `6098`
+- Researched unresolved: `6097`
 - Not researched: `29522`
 - Determination coverage: `5.17%`
 - Research coverage: `21.40%`
@@ -19,8 +19,8 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Current complete protocol cells: `126`
 - Protocol completion: `28.96%`
 - Current protocol completion: `26.25%`
-- Evidence records: `6507`
-- Research runs: `39`
+- Evidence records: `6508`
+- Research runs: `40`
 - Rejection records: `1075`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -93,7 +93,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:44:05.872Z | 86 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-09-04T19:49:28.541Z | 1 | 1 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | USDA APHIS northern giant hornet eradication statement (2024) | manual | 2026-09-01T19:16:53.000Z | 15 | 1 |
 | WSDA northern giant hornet eradication statement (2024) | manual | not run | 0 | 0 |

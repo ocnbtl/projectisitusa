@@ -11,12 +11,12 @@
     "applicabilityAsOf": "2026-07-31",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 109,
+    "applicableSpeciesCount": 111,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2395,
+    "unknownSpeciesCount": 2393,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 109,
-    "derivedApplicableSpeciesCount": 0,
+    "derivedApplicableSpeciesCount": 2,
     "resolvedStateSpeciesDecisionCount": 2504,
     "boundedAcquisitionSpeciesCount": 487,
     "defaultApplicability": "unknown",
@@ -28,16 +28,16 @@
   },
   "protocol": {
     "totalCells": 1948,
-    "applicableCells": 140,
-    "notApplicableCells": 1808,
+    "applicableCells": 142,
+    "notApplicableCells": 1806,
     "completeCells": 120,
-    "incompleteCells": 7,
+    "incompleteCells": 9,
     "blockedCells": 13,
     "currentCells": 120,
     "staleCells": 0,
-    "undatedCells": 20,
-    "applicableCompletionPercent": 85.71,
-    "currentCompletePercent": 85.71,
+    "undatedCells": 22,
+    "applicableCompletionPercent": 84.51,
+    "currentCompletePercent": 84.51,
     "regulatedAndHighApplicableCells": 95,
     "regulatedAndHighCurrentCompleteCells": 89,
     "regulatedAndHighCurrentCompletePercent": 93.68,
@@ -3535,16 +3535,6 @@
       "priorityScore": 90
     },
     {
-      "speciesId": "passer-domesticus",
-      "commonName": "House sparrow",
-      "scientificName": "Passer domesticus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 9,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 90
-    },
-    {
       "speciesId": "peperomia-pellucida",
       "commonName": "Man to man",
       "scientificName": "Peperomia pellucida",
@@ -4455,16 +4445,6 @@
       "priorityScore": 90
     },
     {
-      "speciesId": "sturnus-vulgaris",
-      "commonName": "European Starling",
-      "scientificName": "Sturnus vulgaris",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 9,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 90
-    },
-    {
       "speciesId": "taeniatherum-caput-medusae",
       "commonName": "Medusahead",
       "scientificName": "Taeniatherum caput-medusae",
@@ -4943,6 +4923,30 @@
       "researchedUnresolvedCountyCount": 9,
       "missingProtocolSourceIds": [],
       "priorityScore": 90
+    },
+    {
+      "speciesId": "passer-domesticus",
+      "commonName": "House sparrow",
+      "scientificName": "Passer domesticus",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 4,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 41
+    },
+    {
+      "speciesId": "sturnus-vulgaris",
+      "commonName": "European Starling",
+      "scientificName": "Sturnus vulgaris",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 3,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 31
     },
     {
       "speciesId": "vespa-mandarinia",
