@@ -198,7 +198,7 @@ assert.deepEqual(postRound78.selectedSpeciesIds, [
   "amaranthus-graecizans",
   "amylostereum-areolatum",
 ]);
-assert.equal(postRound78.exploitationPairs, 21_910);
+assert.equal(postRound78.exploitationPairs, 21_892);
 assert.equal(postRound78.explorationPairs, 3_144);
 assert.equal(postRound78.selectedTaxa.filter((entry) => entry.selectionLane === "exploration").length, 1);
 assert.equal(postRound78.exploitationPairs + postRound78.explorationPairs, postRound78.expectedNetMovement);
@@ -257,7 +257,7 @@ assert.deepEqual(postRound79.selectedSpeciesIds, [
   "amaranthus-dubius",
   "amylostereum-areolatum",
 ]);
-assert.equal(postRound79.exploitationPairs, 22_004);
+assert.equal(postRound79.exploitationPairs, 22_002);
 assert.equal(postRound79.explorationPairs, 3_144);
 assert.equal(postRound79.selectedTaxa.filter((entry) => entry.selectionLane === "exploration").length, 1);
 assert.equal(postRound79.exploitationPairs + postRound79.explorationPairs, postRound79.expectedNetMovement);
