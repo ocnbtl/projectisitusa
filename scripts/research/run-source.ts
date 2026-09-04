@@ -1004,7 +1004,7 @@ async function main() {
             || options.sourceId === harvardHuhUsaPreservedSpecimensAdapter.sourceId
           ? {
               providerNetworkRequests: 0,
-              replaySource: "Retained CC0 herbarium witness rows selected by the committed complete-archive preflight.",
+              replaySource: "Retained licensed preserved-specimen witness rows selected by the committed complete-archive preflight.",
               stabilityGate: "The committed archive, occurrence, target-pair, and witness identities must match the sealed plan.",
               additionalRequests: 0,
             }
