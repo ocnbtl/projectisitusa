@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260904T195259Z__usgs-bbs__dfa426884b5e",
+  "status": "complete",
+  "started_at": "2026-09-04T19:52:59.033Z",
+  "finished_at": "2026-09-04T19:52:59.063Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-bbs-route-start@1.2.0",
+  "source_id": "usgs-bbs",
+  "source_registry_hash": "b5db6823739dfebae472387838931d229e00db1a33de57d6dcb70e5ffdd970dc",
+  "adapter_id": "usgs-bbs-route-start",
+  "adapter_version": "1.2.0",
+  "adapter_code_hash": "b8418d3b2f82011e7a7ee2a61baceebf19a531f31b174354654844197d83c2fd",
+  "code_commit": "1754dcb4c941168599fc79e7221037d79bda6521",
+  "parameter_hash": "dfa426884b5e5129ad075cb130eb468949431e5122f717d4e0e5b9c0faca61bd",
+  "parameters": {
+    "stateCode": "NM",
+    "mode": "retained-hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 1,
+    "expectedStateGrossPairs": 29,
+    "expectedStateNetNewPairs": 1,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 146,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "retainedWitnesses": [
+      {
+        "pairKey": "35013:streptopelia-decaocto",
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "routeDataId": "6344578",
+        "routeKey": "60:027",
+        "routeName": "JORNADA",
+        "year": 2012,
+        "aou": "22860",
+        "stop1Count": 1,
+        "countyFips": "35013",
+        "stateCode": "NM",
+        "latitude": 32.3802337,
+        "longitude": -106.7294539
+      }
+    ],
+    "candidatePairs": [
+      "35013:streptopelia-decaocto"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NM",
+    "county_fips": [
+      "35013"
+    ],
+    "species_ids": [
+      "streptopelia-decaocto"
+    ],
+    "pair_keys": [
+      "35013:streptopelia-decaocto"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260904T195259Z__usgs-bbs__dfa426884b5e/artifacts/nm-retained-standard-stop1-witnesses.json",
+      "sha256": "88d22e48fa76ab4b0d554f7b417c2096139351a9bc182181612a218420c50b56",
+      "bytes": 1735,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260904T195259Z__usgs-bbs__dfa426884b5e/assertions.ndjson",
+      "sha256": "ef638a63c0bd98b7954b1000f6019b2d7509f69e21ff9d0d01b297dfee8a9c60",
+      "bytes": 2412,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195259Z__usgs-bbs__dfa426884b5e/reviews.ndjson",
+      "sha256": "529eafa54820b2e7239d44c4e116e2278370112df3b3fbca8ff552e6367dd985",
+      "bytes": 959,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195259Z__usgs-bbs__dfa426884b5e/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260904T195259Z__usgs-bbs__dfa426884b5e/outcomes.ndjson",
+      "sha256": "5209f65d5277b25bfe278e8ed2ece6460eb9bbec6b67da149cbda14e3c0263fc",
+      "bytes": 809,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Route-start detections are sampled occurrence evidence, not countywide inventory."
+  ],
+  "source_warnings": [
+    "The complete hash-pinned BBS release was screened offline; one positive witness per eligible pair is retained in this immutable run.",
+    "Later stops, route totals, zero rows, missing rows, and source silence create no county absence or non-detection claim."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usgs-bbs --state NM --candidate-file src/data/research/national-acquisition-plans/usgs-bbs-nm-route-start-residual-v1.json --output-root src/data/research/runs --pairs 35013:streptopelia-decaocto"
+}
