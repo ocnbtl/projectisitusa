@@ -8,6 +8,8 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const NYBG_SOURCE_ID = "nybg-preserved-specimens" as const;
 export const TORCH_BRIT_SOURCE_ID = "torch-brit-preserved-specimens" as const;
+export const SMITHSONIAN_NMNH_SOURCE_ID = "smithsonian-nmnh-preserved-specimens" as const;
+export const HARVARD_HUH_USA_SOURCE_ID = "harvard-huh-usa-preserved-specimens" as const;
 export const RETAINED_HERBARIUM_ADAPTER_VERSION = "1.0.0" as const;
 export const NYBG_DATASET_URL = "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences" as const;
 export const NYBG_METADATA_URL = "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences" as const;
@@ -17,6 +19,14 @@ export const TORCH_BRIT_DATASET_URL = "https://portal.torcherbaria.org/portal/co
 export const TORCH_BRIT_METADATA_URL = "https://portal.torcherbaria.org/portal/collections/datasets/emlhandler.php?collid=370" as const;
 export const TORCH_BRIT_POLICY_URL = "https://portal.torcherbaria.org/portal/includes/usagepolicy.php" as const;
 export const TORCH_BRIT_ARCHIVE_SHA256 = "79044ab7da4073020fc2d90a83e4c34391d68f2d4ed3302e5ad33bb16cb37fcf" as const;
+export const SMITHSONIAN_NMNH_DATASET_URL = "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112" as const;
+export const SMITHSONIAN_NMNH_METADATA_URL = "https://collections.nmnh.si.edu/ipt/eml.do?r=nmnh_extant_dwc-a&v=1.112" as const;
+export const SMITHSONIAN_NMNH_POLICY_URL = "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a&v=1.112" as const;
+export const SMITHSONIAN_NMNH_ARCHIVE_SHA256 = "204173b11b5933ca6625d3c9b23e4b7902f034cbbd24d42bca9ae4f84703b0de" as const;
+export const HARVARD_HUH_USA_DATASET_URL = "https://ipt.huh.harvard.edu/ipt/archive.do?r=huh_usa&v=1.74" as const;
+export const HARVARD_HUH_USA_METADATA_URL = "https://ipt.huh.harvard.edu/ipt/eml.do?r=huh_usa&v=1.74" as const;
+export const HARVARD_HUH_USA_POLICY_URL = "https://ipt.huh.harvard.edu/ipt/resource.do?r=huh_usa&v=1.74" as const;
+export const HARVARD_HUH_USA_ARCHIVE_SHA256 = "1b054306100050566bf68aa3df561d61120d1ed5b1e6fa5d8508b669dbb090e3" as const;
 export const CC0_LICENSE = "http://creativecommons.org/publicdomain/zero/1.0/" as const;
 
 export type RetainedHerbariumTarget = {
@@ -42,7 +52,7 @@ export type RetainedHerbariumTarget = {
 type RetainedHerbariumParameters = {
   stateCode: string;
   mode: "retained-archive-witnesses";
-  profile: "nybg" | "torch-brit";
+  profile: "nybg" | "torch-brit" | "smithsonian-nmnh" | "harvard-huh-usa";
   datasetUrl: string;
   metadataUrl: string;
   usagePolicyUrl: string;
@@ -63,9 +73,9 @@ type RetainedHerbariumParameters = {
 
 type Profile = {
   profile: RetainedHerbariumParameters["profile"];
-  sourceId: typeof NYBG_SOURCE_ID | typeof TORCH_BRIT_SOURCE_ID;
-  adapterId: "nybg-preserved-specimens-snapshot" | "torch-brit-preserved-specimens-snapshot";
-  label: "NYBG" | "TORCH BRIT";
+  sourceId: typeof NYBG_SOURCE_ID | typeof TORCH_BRIT_SOURCE_ID | typeof SMITHSONIAN_NMNH_SOURCE_ID | typeof HARVARD_HUH_USA_SOURCE_ID;
+  adapterId: "nybg-preserved-specimens-snapshot" | "torch-brit-preserved-specimens-snapshot" | "smithsonian-nmnh-preserved-specimens-snapshot" | "harvard-huh-usa-preserved-specimens-snapshot";
+  label: "NYBG" | "TORCH BRIT" | "Smithsonian NMNH" | "Harvard HUH USA";
   datasetUrl: string;
   metadataUrl: string;
   policyUrl: string;
@@ -77,6 +87,9 @@ type Profile = {
   archiveSha256: string;
   occurrenceBytes: number;
   occurrenceSha256: string;
+  taxonomyMethod: string;
+  licenseLabel: "CC0 1.0" | "CC BY 4.0";
+  retainedLicenseReasonCode: "retained-cc0-archive" | "retained-cc-by-archive";
 };
 
 const NYBG_PROFILE: Profile = {
@@ -95,6 +108,9 @@ const NYBG_PROFILE: Profile = {
   archiveSha256: NYBG_ARCHIVE_SHA256,
   occurrenceBytes: 3243235286,
   occurrenceSha256: "69c609fcb3da364149784f9afa9b78a6be61b95318b8e7e768244c1bebc35154",
+  taxonomyMethod: "Exact source genus plus specific epithet to one two-token Project Isitusa catalog plant binomial; source rank species and blank identification qualifier required",
+  licenseLabel: "CC0 1.0",
+  retainedLicenseReasonCode: "retained-cc0-archive",
 };
 
 const TORCH_BRIT_PROFILE: Profile = {
@@ -113,6 +129,51 @@ const TORCH_BRIT_PROFILE: Profile = {
   archiveSha256: TORCH_BRIT_ARCHIVE_SHA256,
   occurrenceBytes: 539901972,
   occurrenceSha256: "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
+  taxonomyMethod: "Exact source genus plus specific epithet to one two-token Project Isitusa catalog plant binomial; source rank species and blank identification qualifier required",
+  licenseLabel: "CC0 1.0",
+  retainedLicenseReasonCode: "retained-cc0-archive",
+};
+
+const SMITHSONIAN_NMNH_PROFILE: Profile = {
+  profile: "smithsonian-nmnh",
+  sourceId: SMITHSONIAN_NMNH_SOURCE_ID,
+  adapterId: "smithsonian-nmnh-preserved-specimens-snapshot",
+  label: "Smithsonian NMNH",
+  datasetUrl: SMITHSONIAN_NMNH_DATASET_URL,
+  metadataUrl: SMITHSONIAN_NMNH_METADATA_URL,
+  policyUrl: SMITHSONIAN_NMNH_POLICY_URL,
+  datasetVersion: "1.112",
+  publicationDate: "2026-09-02",
+  datasetLastModified: "Wed, 02 Sep 2026 10:10:41 GMT",
+  datasetEtag: null,
+  archiveBytes: 1525644039,
+  archiveSha256: SMITHSONIAN_NMNH_ARCHIVE_SHA256,
+  occurrenceBytes: 6535399365,
+  occurrenceSha256: "e87cd8b1fbc991275adcf8822373ebe32dfd25499959550cee68e44c8c8d09ab",
+  taxonomyMethod: "Exact source genus plus specific epithet to one unique two-token Project Isitusa catalog binomial with a blank identification qualifier; a blank source rank is accepted only when the full scientific name is the same binomial and no infraspecific epithet is present",
+  licenseLabel: "CC0 1.0",
+  retainedLicenseReasonCode: "retained-cc0-archive",
+};
+
+const HARVARD_HUH_USA_PROFILE: Profile = {
+  profile: "harvard-huh-usa",
+  sourceId: HARVARD_HUH_USA_SOURCE_ID,
+  adapterId: "harvard-huh-usa-preserved-specimens-snapshot",
+  label: "Harvard HUH USA",
+  datasetUrl: HARVARD_HUH_USA_DATASET_URL,
+  metadataUrl: HARVARD_HUH_USA_METADATA_URL,
+  policyUrl: HARVARD_HUH_USA_POLICY_URL,
+  datasetVersion: "1.74",
+  publicationDate: "2026-08-29",
+  datasetLastModified: "not-provided-by-provider",
+  datasetEtag: null,
+  archiveBytes: 197742128,
+  archiveSha256: HARVARD_HUH_USA_ARCHIVE_SHA256,
+  occurrenceBytes: 1164383110,
+  occurrenceSha256: "e6babcd797b50a93241788a935b8ff284e02d5fcd2955e0e071ec369a9e1ad40",
+  taxonomyMethod: "Exact source genus plus specific epithet to one unique two-token Project Isitusa catalog plant binomial with a blank identification qualifier and infraspecific epithet; the source scientific name must be the same binomial with at most its declared authorship appended",
+  licenseLabel: "CC BY 4.0",
+  retainedLicenseReasonCode: "retained-cc-by-archive",
 };
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -219,7 +280,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
     source_record_date: target.eventDate,
     retrieved_at: parameters.archiveAcquiredAt,
     taxon_match: {
-      method: "Exact source genus plus specific epithet to one two-token Project Isitusa catalog plant binomial; source rank species and blank identification qualifier required",
+      method: profile.taxonomyMethod,
       target_scientific_name: target.scientificName,
       source_scientific_name: target.scientificName,
       source_taxon_key: null,
@@ -244,7 +305,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
     notes: [
       `${profile.label} record ${target.recordId}; occurrenceID ${target.occurrenceId}.`,
       `Institution ${target.institutionCode || "unspecified"}; collection ${target.collectionCode || "unspecified"}; catalog ${target.catalogNumber || "unspecified"}.`,
-      `Dataset CC0; rights holder ${target.rightsHolder || "unspecified"}; archive ${profile.archiveSha256}.`,
+      `Dataset ${profile.licenseLabel}; rights holder ${target.rightsHolder || "unspecified"}; archive ${profile.archiveSha256}.`,
     ],
   };
   const review: EvidenceReviewEvent = {
@@ -264,7 +325,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
     decision: "accepted",
     publication_eligible: true,
     reason_codes: [
-      "retained-cc0-archive",
+      profile.retainedLicenseReasonCode,
       "stable-occurrence-identity",
       "preserved-specimen-basis",
       "exact-catalog-binomial",
@@ -366,4 +427,18 @@ export const torchBritPreservedSpecimensAdapter: ResearchSourceAdapter = {
   adapterVersion: RETAINED_HERBARIUM_ADAPTER_VERSION,
   sourceId: TORCH_BRIT_SOURCE_ID,
   run: buildRunner(TORCH_BRIT_PROFILE),
+};
+
+export const smithsonianNmnhPreservedSpecimensAdapter: ResearchSourceAdapter = {
+  adapterId: SMITHSONIAN_NMNH_PROFILE.adapterId,
+  adapterVersion: RETAINED_HERBARIUM_ADAPTER_VERSION,
+  sourceId: SMITHSONIAN_NMNH_SOURCE_ID,
+  run: buildRunner(SMITHSONIAN_NMNH_PROFILE),
+};
+
+export const harvardHuhUsaPreservedSpecimensAdapter: ResearchSourceAdapter = {
+  adapterId: HARVARD_HUH_USA_PROFILE.adapterId,
+  adapterVersion: RETAINED_HERBARIUM_ADAPTER_VERSION,
+  sourceId: HARVARD_HUH_USA_SOURCE_ID,
+  run: buildRunner(HARVARD_HUH_USA_PROFILE),
 };

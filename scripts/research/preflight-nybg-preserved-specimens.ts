@@ -37,11 +37,18 @@ type AcceptedRecord = {
 };
 
 const ROOT = process.cwd();
-const SOURCE_ID = "nybg-preserved-specimens";
-const DATASET_URL = "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences";
-const METADATA_URL = "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences";
-const POLICY_URL = "https://sweetgum.nybg.org/science/digital-collections/";
+const SOURCE_ID = process.env.ISITUSA_PREFLIGHT_SOURCE_ID ?? "nybg-preserved-specimens";
+const DATASET_URL = process.env.ISITUSA_PREFLIGHT_DATASET_URL ?? "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences";
+const METADATA_URL = process.env.ISITUSA_PREFLIGHT_METADATA_URL ?? "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences";
+const POLICY_URL = process.env.ISITUSA_PREFLIGHT_POLICY_URL ?? "https://sweetgum.nybg.org/science/digital-collections/";
+const DATASET_VERSION = process.env.ISITUSA_PREFLIGHT_DATASET_VERSION ?? "1.103";
+const PUBLICATION_DATE = process.env.ISITUSA_PREFLIGHT_PUBLICATION_DATE ?? "2026-08-25";
+const CATALOG_SCOPE = process.env.ISITUSA_PREFLIGHT_CATALOG_SCOPE === "all" ? "all" : "plants";
+const ALLOW_STRUCTURAL_SPECIES_RANK = process.env.ISITUSA_PREFLIGHT_ALLOW_STRUCTURAL_SPECIES_RANK === "1";
 const CC0_LEGALCODE = "http://creativecommons.org/publicdomain/zero/1.0/legalcode";
+const REQUIRED_LICENSE_TOKEN = process.env.ISITUSA_PREFLIGHT_LICENSE_TOKEN ?? CC0_LEGALCODE;
+const RIGHTS_DESCRIPTION = process.env.ISITUSA_PREFLIGHT_RIGHTS_DESCRIPTION
+  ?? "The versioned archive EML dedicates the complete occurrence dataset to CC0 1.0.";
 const MAX_YEAR = 2026;
 const CULTIVATED_OR_CAPTIVE_PATTERN =
   /\b(captive|captivity|cultivated|cultivation|cultured|garden|greenhouse|managed|nursery|planted|planting|arboretum|botanical garden|campus landscape|landscaped|zoo|aquarium)\b/iu;
@@ -109,7 +116,7 @@ async function main() {
   }
 
   const eml = readZipEntry(archive, "eml.xml", 2 * 1024 * 1024);
-  assert(eml.toString("utf8").includes(CC0_LEGALCODE), "NYBG EML does not contain the required CC0 dedication.");
+  assert(eml.toString("utf8").includes(REQUIRED_LICENSE_TOKEN), `${SOURCE_ID} EML does not contain the required dataset license.`);
 
   const catalog = readJson<CatalogSpecies[]>(path.join(ROOT, "src/data/generated/species.json"));
   const catalogGroups = new Map<string, CatalogSpecies[]>();
@@ -193,7 +200,14 @@ async function main() {
       reject("stable-record-identity-missing");
       continue;
     }
-    if (normalizedText(row.taxonRank) !== "species" || normalizedText(row.identificationQualifier)) {
+    const sourceScientificName = normalizedText(row.scientificName);
+    const sourceNameWithAuthorship = normalizedText(`${sourceName} ${row.scientificNameAuthorship ?? ""}`);
+    const sourceRank = normalizedText(row.taxonRank);
+    const structurallySpeciesRanked = ALLOW_STRUCTURAL_SPECIES_RANK
+      && !sourceRank
+      && (sourceScientificName === sourceName || sourceScientificName === sourceNameWithAuthorship)
+      && !normalizedText(row.infraspecificEpithet);
+    if ((sourceRank !== "species" && !structurallySpeciesRanked) || normalizedText(row.identificationQualifier)) {
       reject("taxon-rank-or-qualifier-invalid");
       continue;
     }
@@ -202,8 +216,8 @@ async function main() {
       continue;
     }
     const species = exactCatalog.get(sourceName);
-    if (!species || species.category !== "plants") {
-      reject("taxon-not-exact-catalog-plant");
+    if (!species || (CATALOG_SCOPE === "plants" && species.category !== "plants")) {
+      reject(CATALOG_SCOPE === "plants" ? "taxon-not-exact-catalog-plant" : "taxon-not-exact-catalog-species");
       continue;
     }
     exactCatalogTaxa.add(sourceName);
@@ -220,7 +234,17 @@ async function main() {
       geographyRejectionCounts.set(geographyKey, (geographyRejectionCounts.get(geographyKey) ?? 0) + 1);
       continue;
     }
-    const cultivationText = [row.locality, row.occurrenceRemarks, row.habitat, row.establishmentMeans].filter(Boolean).join(" ");
+    const cultivationText = [
+      row.locality,
+      row.verbatimLocality,
+      row.locationRemarks,
+      row.occurrenceRemarks,
+      row.habitat,
+      row.fieldNotes,
+      row.preparations,
+      row.establishmentMeans,
+      row.degreeOfEstablishment,
+    ].filter(Boolean).join(" ");
     if (CULTIVATED_OR_CAPTIVE_PATTERN.test(cultivationText)) {
       reject("cultivated-or-captive-text");
       continue;
@@ -310,8 +334,8 @@ async function main() {
       url: DATASET_URL,
       metadataUrl: METADATA_URL,
       policyUrl: POLICY_URL,
-      version: "1.103",
-      publicationDate: "2026-08-25",
+      version: DATASET_VERSION,
+      publicationDate: PUBLICATION_DATE,
       archiveBytes: statSync(archive).size,
       archiveSha256: await sha256File(archive),
       occurrenceBytes,
@@ -328,8 +352,10 @@ async function main() {
     semantics: {
       assertion: "recorded-present",
       basisOfRecord: "PreservedSpecimen",
-      rights: "The versioned archive EML dedicates the complete occurrence dataset to CC0 1.0.",
-      taxonomy: "Unique exact canonical binomial catalog plant match with source rank species and no identification qualifier.",
+      rights: RIGHTS_DESCRIPTION,
+      taxonomy: CATALOG_SCOPE === "plants"
+        ? "Unique exact canonical binomial catalog plant match with source rank species and no identification qualifier."
+        : "Unique exact canonical binomial catalog match with no identification qualifier; a blank source rank is accepted only when genus, specific epithet, and full scientific name are the same exact binomial and no infraspecific epithet is present.",
       geography: "Exact active county-equivalent alias inside an explicit national-v1 US jurisdiction; coordinates are not used.",
       cultivation: "Rows matching the conservative cultivated/captive text pattern in locality, occurrenceRemarks, habitat, or establishmentMeans are rejected.",
       negativeSemantics: "Source silence and rejected rows create no absence or non-detection assertion.",

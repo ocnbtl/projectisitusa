@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://isitusa.com/schemas/research/retained-herbarium-preserved-specimens-parameters.schema.json",
-  "title": "Retained CC0 herbarium specimen witness parameters",
+  "title": "Retained licensed preserved-specimen witness parameters",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -28,7 +28,7 @@
   "properties": {
     "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
     "mode": { "const": "retained-archive-witnesses" },
-    "profile": { "enum": ["nybg", "torch-brit"] },
+    "profile": { "enum": ["nybg", "torch-brit", "smithsonian-nmnh", "harvard-huh-usa"] },
     "datasetUrl": { "type": "string", "format": "uri" },
     "metadataUrl": { "type": "string", "format": "uri" },
     "usagePolicyUrl": { "type": "string", "format": "uri" },
@@ -41,7 +41,7 @@
     "occurrenceBytes": { "type": "integer", "minimum": 1 },
     "occurrenceSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
     "archiveAcquiredAt": { "type": "string", "format": "date-time" },
-    "preflightEvaluationId": { "type": "string", "pattern": "^(nybg|torch-brit)-preserved-specimens-preflight-[0-9]{8}-r[0-9]+$" },
+    "preflightEvaluationId": { "type": "string", "pattern": "^(nybg|torch-brit|smithsonian-nmnh|harvard-huh-usa)-preserved-specimens-preflight-[0-9]{8}-r[0-9]+$" },
     "targetPairSetSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
     "targets": {
       "type": "array",

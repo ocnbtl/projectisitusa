@@ -4,11 +4,21 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import {
+  HARVARD_HUH_USA_ARCHIVE_SHA256,
+  HARVARD_HUH_USA_DATASET_URL,
+  HARVARD_HUH_USA_METADATA_URL,
+  HARVARD_HUH_USA_POLICY_URL,
+  HARVARD_HUH_USA_SOURCE_ID,
   NYBG_ARCHIVE_SHA256,
   NYBG_DATASET_URL,
   NYBG_METADATA_URL,
   NYBG_POLICY_URL,
   NYBG_SOURCE_ID,
+  SMITHSONIAN_NMNH_ARCHIVE_SHA256,
+  SMITHSONIAN_NMNH_DATASET_URL,
+  SMITHSONIAN_NMNH_METADATA_URL,
+  SMITHSONIAN_NMNH_POLICY_URL,
+  SMITHSONIAN_NMNH_SOURCE_ID,
   TORCH_BRIT_ARCHIVE_SHA256,
   TORCH_BRIT_DATASET_URL,
   TORCH_BRIT_METADATA_URL,
@@ -53,8 +63,8 @@ type Preflight = {
 };
 
 type Profile = {
-  name: "nybg" | "torch-brit";
-  sourceId: typeof NYBG_SOURCE_ID | typeof TORCH_BRIT_SOURCE_ID;
+  name: "nybg" | "torch-brit" | "smithsonian-nmnh" | "harvard-huh-usa";
+  sourceId: typeof NYBG_SOURCE_ID | typeof TORCH_BRIT_SOURCE_ID | typeof SMITHSONIAN_NMNH_SOURCE_ID | typeof HARVARD_HUH_USA_SOURCE_ID;
   datasetUrl: string;
   metadataUrl: string;
   policyUrl: string;
@@ -68,6 +78,7 @@ type Profile = {
   occurrenceSha256: string;
   archiveAcquiredAt: string;
   expectedRawNet: number;
+  retainedLocalArchive: string;
 };
 
 const PROFILES: Record<Profile["name"], Profile> = {
@@ -87,6 +98,7 @@ const PROFILES: Record<Profile["name"], Profile> = {
     occurrenceSha256: "69c609fcb3da364149784f9afa9b78a6be61b95318b8e7e768244c1bebc35154",
     archiveAcquiredAt: "2026-09-04T04:13:16.000Z",
     expectedRawNet: 8066,
+    retainedLocalArchive: "C:/Users/Ocean/AppData/Local/Temp/isitusa-nybg-20260904/dwca-occurrences-v1.103.zip",
   },
   "torch-brit": {
     name: "torch-brit",
@@ -104,6 +116,43 @@ const PROFILES: Record<Profile["name"], Profile> = {
     occurrenceSha256: "9c8721ef160f19a322a1366e3df82f5068aebdf352c3808993b6e45daaf51e2e",
     archiveAcquiredAt: "2026-09-04T04:08:03.000Z",
     expectedRawNet: 4125,
+    retainedLocalArchive: "C:/Users/Ocean/AppData/Local/Temp/isitusa-torch-brit-20260904/BRIT-BRIT_DwC-A.zip",
+  },
+  "smithsonian-nmnh": {
+    name: "smithsonian-nmnh",
+    sourceId: SMITHSONIAN_NMNH_SOURCE_ID,
+    datasetUrl: SMITHSONIAN_NMNH_DATASET_URL,
+    metadataUrl: SMITHSONIAN_NMNH_METADATA_URL,
+    policyUrl: SMITHSONIAN_NMNH_POLICY_URL,
+    datasetVersion: "1.112",
+    publicationDate: "2026-09-02",
+    datasetLastModified: "Wed, 02 Sep 2026 10:10:41 GMT",
+    datasetEtag: null,
+    archiveBytes: 1525644039,
+    archiveSha256: SMITHSONIAN_NMNH_ARCHIVE_SHA256,
+    occurrenceBytes: 6535399365,
+    occurrenceSha256: "e87cd8b1fbc991275adcf8822373ebe32dfd25499959550cee68e44c8c8d09ab",
+    archiveAcquiredAt: "2026-09-04T06:08:00.659Z",
+    expectedRawNet: 3734,
+    retainedLocalArchive: "C:/Users/Ocean/AppData/Local/Temp/isitusa-nmnh-20260904/dwca-nmnh_extant_dwc-a-v1.112.zip",
+  },
+  "harvard-huh-usa": {
+    name: "harvard-huh-usa",
+    sourceId: HARVARD_HUH_USA_SOURCE_ID,
+    datasetUrl: HARVARD_HUH_USA_DATASET_URL,
+    metadataUrl: HARVARD_HUH_USA_METADATA_URL,
+    policyUrl: HARVARD_HUH_USA_POLICY_URL,
+    datasetVersion: "1.74",
+    publicationDate: "2026-08-29",
+    datasetLastModified: "not-provided-by-provider",
+    datasetEtag: null,
+    archiveBytes: 197742128,
+    archiveSha256: HARVARD_HUH_USA_ARCHIVE_SHA256,
+    occurrenceBytes: 1164383110,
+    occurrenceSha256: "e6babcd797b50a93241788a935b8ff284e02d5fcd2955e0e071ec369a9e1ad40",
+    archiveAcquiredAt: "2026-09-04T06:18:23.126Z",
+    expectedRawNet: 7561,
+    retainedLocalArchive: "C:/Users/Ocean/AppData/Local/Temp/isitusa-harvard-20260904/huh_usa-v1.74.zip",
   },
 };
 
@@ -134,7 +183,7 @@ function parseArguments(argv: string[]) {
     values.set(key.slice(2), value);
   }
   const profileName = values.get("profile") as Profile["name"] | undefined;
-  assert(profileName && profileName in PROFILES, "--profile must be nybg or torch-brit.");
+  assert(profileName && profileName in PROFILES, "--profile must name a configured retained preserved-specimen source.");
   const preflight = path.resolve(values.get("preflight") ?? "");
   const outputDirectory = path.resolve(ROOT, values.get("output-dir") ?? "");
   const evaluationOutput = path.resolve(ROOT, values.get("evaluation-output") ?? "");
@@ -231,7 +280,7 @@ function main() {
         targets,
       },
       antiDuplication: {
-        dStartDeterminedPairs: 291263,
+        dStartDeterminedPairs: 303107,
         rawNetPairsAtDStart: preflight.counts.netEligiblePairs,
         excludedEarlierSourcePairs: excludedCountsByState.get(stateCode) ?? 0,
         selectedNetPairs: targets.length,
@@ -264,9 +313,7 @@ function main() {
       lastModified: profile.datasetLastModified,
       etag: profile.datasetEtag,
       acquiredAt: profile.archiveAcquiredAt,
-      retainedLocalArchive: profile.name === "nybg"
-        ? "C:/Users/Ocean/AppData/Local/Temp/isitusa-nybg-20260904/dwca-occurrences-v1.103.zip"
-        : "C:/Users/Ocean/AppData/Local/Temp/isitusa-torch-brit-20260904/BRIT-BRIT_DwC-A.zip",
+      retainedLocalArchive: profile.retainedLocalArchive,
     },
     decision: {
       disposition: selectedPairs.length >= 5000 ? "go" : "conditional-bundled-with-nybg",
@@ -289,7 +336,7 @@ function main() {
     preflightElapsedMs: preflight.elapsedMs,
     plans: planSummaries,
     safeguards: [
-      "Only preserved-specimen rows with stable identities, a valid event year, an exact source species rank, a blank identification qualifier, an exact unique two-token catalog plant binomial, and one active county alias qualified.",
+      "Only preserved-specimen rows with stable identities, a valid event year, a blank identification qualifier, an exact unique two-token catalog binomial, and one active county alias qualified; sources lacking taxonRank additionally required exact structured genus, specific epithet, full scientific name with at most declared authorship, and a blank infraspecific epithet.",
       "Cultivated or captive text in locality, occurrence remarks, habitat, or establishment means was rejected conservatively.",
       "All already determined pairs and the selected earlier-source pair set were removed exactly; verified-absent conflicts were separately blocked and measured at zero.",
       "Source silence and all rejected rows create no absence or non-detection outcome.",

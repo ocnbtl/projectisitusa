@@ -26,7 +26,9 @@ import {
   type CpnwhTarget,
 } from "./adapters/cpnwh-preserved-specimens";
 import {
+  harvardHuhUsaPreservedSpecimensAdapter,
   nybgPreservedSpecimensAdapter,
+  smithsonianNmnhPreservedSpecimensAdapter,
   torchBritPreservedSpecimensAdapter,
   type RetainedHerbariumTarget,
 } from "./adapters/retained-herbarium-preserved-specimens";
@@ -155,7 +157,7 @@ type CandidateFile = {
   };
   retainedHerbarium?: {
     mode: "retained-archive-witnesses";
-    profile: "nybg" | "torch-brit";
+    profile: "nybg" | "torch-brit" | "smithsonian-nmnh" | "harvard-huh-usa";
     datasetUrl: string;
     metadataUrl: string;
     usagePolicyUrl: string;
@@ -530,6 +532,12 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === torchBritPreservedSpecimensAdapter.sourceId) {
     return torchBritPreservedSpecimensAdapter;
   }
+  if (sourceId === smithsonianNmnhPreservedSpecimensAdapter.sourceId) {
+    return smithsonianNmnhPreservedSpecimensAdapter;
+  }
+  if (sourceId === harvardHuhUsaPreservedSpecimensAdapter.sourceId) {
+    return harvardHuhUsaPreservedSpecimensAdapter;
+  }
   if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
     return usgsBbsRouteStartAdapter;
   }
@@ -650,7 +658,12 @@ function buildParameters(
       candidatePairs,
     };
   }
-  if (sourceId === nybgPreservedSpecimensAdapter.sourceId || sourceId === torchBritPreservedSpecimensAdapter.sourceId) {
+  if (
+    sourceId === nybgPreservedSpecimensAdapter.sourceId
+    || sourceId === torchBritPreservedSpecimensAdapter.sourceId
+    || sourceId === smithsonianNmnhPreservedSpecimensAdapter.sourceId
+    || sourceId === harvardHuhUsaPreservedSpecimensAdapter.sourceId
+  ) {
     if (!candidateFile.retainedHerbarium || candidateFile.sourceId !== sourceId) {
       throw new Error("Retained herbarium research requires its committed archive-witness plan.");
     }
@@ -985,7 +998,10 @@ async function main() {
               stabilityGate: "The committed archive, occurrence, target-pair, and witness identities must match the sealed plan.",
               additionalRequests: 0,
             }
-        : options.sourceId === nybgPreservedSpecimensAdapter.sourceId || options.sourceId === torchBritPreservedSpecimensAdapter.sourceId
+        : options.sourceId === nybgPreservedSpecimensAdapter.sourceId
+            || options.sourceId === torchBritPreservedSpecimensAdapter.sourceId
+            || options.sourceId === smithsonianNmnhPreservedSpecimensAdapter.sourceId
+            || options.sourceId === harvardHuhUsaPreservedSpecimensAdapter.sourceId
           ? {
               providerNetworkRequests: 0,
               replaySource: "Retained CC0 herbarium witness rows selected by the committed complete-archive preflight.",
