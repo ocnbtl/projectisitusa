@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "nybg-preserved-specimens-preflight-20260904-r1",
+  "evaluatedAt": "2026-09-04T04:23:49.711Z",
+  "status": "go",
+  "objective": "Measure nybg-preserved-specimens completely against the pinned current county-species determination set and retain only strict, unique historical-presence witnesses.",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseline": {
+    "commit": "b5000c373eaa575095a481a06eef12e833ce55ee",
+    "determinedPairSetSha256": "b01a0a42e4938ac918f0974df267b8c56f1bb9b8baa068f0c5f769f8a394c445"
+  },
+  "datasetIdentity": {
+    "url": "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences",
+    "metadataUrl": "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences",
+    "policyUrl": "https://sweetgum.nybg.org/science/digital-collections/",
+    "version": "1.103",
+    "publicationDate": "2026-08-25",
+    "archiveBytes": 736185551,
+    "archiveSha256": "84a5f69d746f1ec44fa89c63a9baf0fc5cb923dbb9330f91b6ac8660b159a483",
+    "occurrenceBytes": 3243235286,
+    "occurrenceSha256": "69c609fcb3da364149784f9afa9b78a6be61b95318b8e7e768244c1bebc35154",
+    "metaBytes": 5775,
+    "metaSha256": "c677268123854150b97d046fd6706718fe0926fd2697e383eb98ee051f1c5053",
+    "emlBytes": 9627,
+    "emlSha256": "91f991442c909438f7316e6013ab42927f25ec88a256530d4a04557380b9ff7e",
+    "datasetVersion": "1.103",
+    "lastModified": "Tue, 25 Aug 2026 05:05:10 GMT",
+    "etag": null,
+    "acquiredAt": "2026-09-04T04:13:16.000Z",
+    "retainedLocalArchive": "C:/Users/Ocean/AppData/Local/Temp/isitusa-nybg-20260904/dwca-occurrences-v1.103.zip"
+  },
+  "decision": {
+    "disposition": "go",
+    "rawNetEligiblePairsAtDStart": 8066,
+    "excludedCrossSourcePairs": 0,
+    "selectedNetEligiblePairs": 8066,
+    "verifiedAbsentConflicts": 0
+  },
+  "exactMeasurement": {
+    "sourceRows": 4923280,
+    "sourceTaxa": 315467,
+    "exactCatalogTaxa": 1259,
+    "acceptedUniqueRecords": 31187,
+    "grossUniqueCountySpeciesPairs": 20875,
+    "existingVerifiedPresentOverlaps": 12809,
+    "verifiedAbsentConflicts": 0,
+    "sameSourceSnapshotCompletedOverlaps": 0,
+    "priorPlanOverlaps": 0,
+    "withinPlanDuplicates": 10312,
+    "netEligiblePairs": 8066
+  },
+  "pairHashes": {
+    "gross": "7149f7439ea098f56499b909d2bf6ad8ba4ed773c71916ebaadfca9623f4abbe",
+    "presentOverlap": "32576721846003c668ef0763b171df2cd8b6081e0da8daee07730debec65c75f",
+    "absentConflict": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "netEligible": "71de00778290b49b5d1efc75ed3131fe2148915ccafcd69b088b0116c2a2f78c",
+    "excludedCrossSource": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "selected": "71de00778290b49b5d1efc75ed3131fe2148915ccafcd69b088b0116c2a2f78c"
+  },
+  "semantics": {
+    "assertion": "recorded-present",
+    "basisOfRecord": "PreservedSpecimen",
+    "rights": "The versioned archive EML dedicates the complete occurrence dataset to CC0 1.0.",
+    "taxonomy": "Unique exact canonical binomial catalog plant match with source rank species and no identification qualifier.",
+    "geography": "Exact active county-equivalent alias inside an explicit national-v1 US jurisdiction; coordinates are not used.",
+    "cultivation": "Rows matching the conservative cultivated/captive text pattern in locality, occurrenceRemarks, habitat, or establishmentMeans are rejected.",
+    "negativeSemantics": "Source silence and rejected rows create no absence or non-detection assertion."
+  },
+  "rejectionCounts": {
+    "country-not-us": 3311686,
+    "county-missing-geography": 5086,
+    "county-retired-geography": 336,
+    "county-unknown-county-name": 334,
+    "cultivated-or-captive-text": 4454,
+    "event-date-invalid": 2183,
+    "state-unresolved": 20488,
+    "taxon-not-exact-catalog-plant": 1311655,
+    "taxon-rank-or-qualifier-invalid": 235871
+  },
+  "rightsCounts": null,
+  "stateMeasurements": {
+    "AK": {
+      "gross": 12,
+      "presentOverlap": 4,
+      "absentConflict": 0,
+      "netEligible": 8
+    },
+    "AL": {
+      "gross": 85,
+      "presentOverlap": 84,
+      "absentConflict": 0,
+      "netEligible": 1
+    },
+    "AR": {
+      "gross": 635,
+      "presentOverlap": 354,
+      "absentConflict": 0,
+      "netEligible": 281
+    },
+    "AZ": {
+      "gross": 454,
+      "presentOverlap": 312,
+      "absentConflict": 0,
+      "netEligible": 142
+    },
+    "CA": {
+      "gross": 857,
+      "presentOverlap": 639,
+      "absentConflict": 0,
+      "netEligible": 218
+    },
+    "CO": {
+      "gross": 624,
+      "presentOverlap": 361,
+      "absentConflict": 0,
+      "netEligible": 263
+    },
+    "DE": {
+      "gross": 180,
+      "presentOverlap": 88,
+      "absentConflict": 0,
+      "netEligible": 92
+    },
+    "FL": {
+      "gross": 621,
+      "presentOverlap": 339,
+      "absentConflict": 0,
+      "netEligible": 282
+    },
+    "GA": {
+      "gross": 159,
+      "presentOverlap": 94,
+      "absentConflict": 0,
+      "netEligible": 65
+    },
+    "HI": {
+      "gross": 230,
+      "presentOverlap": 78,
+      "absentConflict": 0,
+      "netEligible": 152
+    },
+    "IA": {
+      "gross": 110,
+      "presentOverlap": 49,
+      "absentConflict": 0,
+      "netEligible": 61
+    },
+    "ID": {
+      "gross": 1457,
+      "presentOverlap": 1312,
+      "absentConflict": 0,
+      "netEligible": 145
+    },
+    "IL": {
+      "gross": 158,
+      "presentOverlap": 99,
+      "absentConflict": 0,
+      "netEligible": 59
+    },
+    "IN": {
+      "gross": 507,
+      "presentOverlap": 307,
+      "absentConflict": 0,
+      "netEligible": 200
+    },
+    "KS": {
+      "gross": 429,
+      "presentOverlap": 256,
+      "absentConflict": 0,
+      "netEligible": 173
+    },
+    "KY": {
+      "gross": 168,
+      "presentOverlap": 116,
+      "absentConflict": 0,
+      "netEligible": 52
+    },
+    "LA": {
+      "gross": 197,
+      "presentOverlap": 153,
+      "absentConflict": 0,
+      "netEligible": 44
+    },
+    "MA": {
+      "gross": 420,
+      "presentOverlap": 252,
+      "absentConflict": 0,
+      "netEligible": 168
+    },
+    "MD": {
+      "gross": 817,
+      "presentOverlap": 406,
+      "absentConflict": 0,
+      "netEligible": 411
+    },
+    "ME": {
+      "gross": 216,
+      "presentOverlap": 78,
+      "absentConflict": 0,
+      "netEligible": 138
+    },
+    "MI": {
+      "gross": 146,
+      "presentOverlap": 58,
+      "absentConflict": 0,
+      "netEligible": 88
+    },
+    "MN": {
+      "gross": 74,
+      "presentOverlap": 34,
+      "absentConflict": 0,
+      "netEligible": 40
+    },
+    "MO": {
+      "gross": 89,
+      "presentOverlap": 43,
+      "absentConflict": 0,
+      "netEligible": 46
+    },
+    "MS": {
+      "gross": 130,
+      "presentOverlap": 73,
+      "absentConflict": 0,
+      "netEligible": 57
+    },
+    "MT": {
+      "gross": 164,
+      "presentOverlap": 141,
+      "absentConflict": 0,
+      "netEligible": 23
+    },
+    "NC": {
+      "gross": 330,
+      "presentOverlap": 223,
+      "absentConflict": 0,
+      "netEligible": 107
+    },
+    "ND": {
+      "gross": 45,
+      "presentOverlap": 18,
+      "absentConflict": 0,
+      "netEligible": 27
+    },
+    "NE": {
+      "gross": 221,
+      "presentOverlap": 99,
+      "absentConflict": 0,
+      "netEligible": 122
+    },
+    "NH": {
+      "gross": 52,
+      "presentOverlap": 33,
+      "absentConflict": 0,
+      "netEligible": 19
+    },
+    "NJ": {
+      "gross": 1142,
+      "presentOverlap": 583,
+      "absentConflict": 0,
+      "netEligible": 559
+    },
+    "NM": {
+      "gross": 478,
+      "presentOverlap": 300,
+      "absentConflict": 0,
+      "netEligible": 178
+    },
+    "NV": {
+      "gross": 781,
+      "presentOverlap": 590,
+      "absentConflict": 0,
+      "netEligible": 191
+    },
+    "NY": {
+      "gross": 2629,
+      "presentOverlap": 1257,
+      "absentConflict": 0,
+      "netEligible": 1372
+    },
+    "OH": {
+      "gross": 136,
+      "presentOverlap": 76,
+      "absentConflict": 0,
+      "netEligible": 60
+    },
+    "OK": {
+      "gross": 230,
+      "presentOverlap": 134,
+      "absentConflict": 0,
+      "netEligible": 96
+    },
+    "OR": {
+      "gross": 387,
+      "presentOverlap": 370,
+      "absentConflict": 0,
+      "netEligible": 17
+    },
+    "PA": {
+      "gross": 829,
+      "presentOverlap": 461,
+      "absentConflict": 0,
+      "netEligible": 368
+    },
+    "RI": {
+      "gross": 26,
+      "presentOverlap": 9,
+      "absentConflict": 0,
+      "netEligible": 17
+    },
+    "SC": {
+      "gross": 167,
+      "presentOverlap": 117,
+      "absentConflict": 0,
+      "netEligible": 50
+    },
+    "SD": {
+      "gross": 103,
+      "presentOverlap": 52,
+      "absentConflict": 0,
+      "netEligible": 51
+    },
+    "TN": {
+      "gross": 121,
+      "presentOverlap": 73,
+      "absentConflict": 0,
+      "netEligible": 48
+    },
+    "TX": {
+      "gross": 1584,
+      "presentOverlap": 857,
+      "absentConflict": 0,
+      "netEligible": 727
+    },
+    "UT": {
+      "gross": 1245,
+      "presentOverlap": 827,
+      "absentConflict": 0,
+      "netEligible": 418
+    },
+    "VA": {
+      "gross": 207,
+      "presentOverlap": 141,
+      "absentConflict": 0,
+      "netEligible": 66
+    },
+    "VT": {
+      "gross": 91,
+      "presentOverlap": 50,
+      "absentConflict": 0,
+      "netEligible": 41
+    },
+    "WA": {
+      "gross": 344,
+      "presentOverlap": 313,
+      "absentConflict": 0,
+      "netEligible": 31
+    },
+    "WI": {
+      "gross": 167,
+      "presentOverlap": 99,
+      "absentConflict": 0,
+      "netEligible": 68
+    },
+    "WV": {
+      "gross": 103,
+      "presentOverlap": 52,
+      "absentConflict": 0,
+      "netEligible": 51
+    },
+    "WY": {
+      "gross": 518,
+      "presentOverlap": 345,
+      "absentConflict": 0,
+      "netEligible": 173
+    }
+  },
+  "topSpecies": [
+    {
+      "speciesId": "poa-compressa",
+      "scientificName": "Poa compressa",
+      "gross": 198,
+      "presentOverlap": 42,
+      "absentConflict": 0,
+      "netEligible": 156
+    },
+    {
+      "speciesId": "agrostis-stolonifera",
+      "scientificName": "Agrostis stolonifera",
+      "gross": 188,
+      "presentOverlap": 61,
+      "absentConflict": 0,
+      "netEligible": 127
+    },
+    {
+      "speciesId": "melilotus-albus",
+      "scientificName": "Melilotus albus",
+      "gross": 102,
+      "presentOverlap": 4,
+      "absentConflict": 0,
+      "netEligible": 98
+    },
+    {
+      "speciesId": "persicaria-maculosa",
+      "scientificName": "Persicaria maculosa",
+      "gross": 106,
+      "presentOverlap": 11,
+      "absentConflict": 0,
+      "netEligible": 95
+    },
+    {
+      "speciesId": "solanum-dulcamara",
+      "scientificName": "Solanum dulcamara",
+      "gross": 119,
+      "presentOverlap": 32,
+      "absentConflict": 0,
+      "netEligible": 87
+    },
+    {
+      "speciesId": "bromus-commutatus",
+      "scientificName": "Bromus commutatus",
+      "gross": 114,
+      "presentOverlap": 29,
+      "absentConflict": 0,
+      "netEligible": 85
+    },
+    {
+      "speciesId": "elymus-repens",
+      "scientificName": "Elymus repens",
+      "gross": 114,
+      "presentOverlap": 43,
+      "absentConflict": 0,
+      "netEligible": 71
+    },
+    {
+      "speciesId": "amaranthus-blitoides",
+      "scientificName": "Amaranthus blitoides",
+      "gross": 87,
+      "presentOverlap": 17,
+      "absentConflict": 0,
+      "netEligible": 70
+    },
+    {
+      "speciesId": "bromus-japonicus",
+      "scientificName": "Bromus japonicus",
+      "gross": 95,
+      "presentOverlap": 28,
+      "absentConflict": 0,
+      "netEligible": 67
+    },
+    {
+      "speciesId": "lepidium-campestre",
+      "scientificName": "Lepidium campestre",
+      "gross": 84,
+      "presentOverlap": 20,
+      "absentConflict": 0,
+      "netEligible": 64
+    },
+    {
+      "speciesId": "nitellopsis-obtusa",
+      "scientificName": "Nitellopsis obtusa",
+      "gross": 64,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 64
+    },
+    {
+      "speciesId": "tribulus-terrestris",
+      "scientificName": "Tribulus terrestris",
+      "gross": 117,
+      "presentOverlap": 55,
+      "absentConflict": 0,
+      "netEligible": 62
+    },
+    {
+      "speciesId": "bromus-hordeaceus",
+      "scientificName": "Bromus hordeaceus",
+      "gross": 127,
+      "presentOverlap": 66,
+      "absentConflict": 0,
+      "netEligible": 61
+    },
+    {
+      "speciesId": "camelina-microcarpa",
+      "scientificName": "Camelina microcarpa",
+      "gross": 112,
+      "presentOverlap": 51,
+      "absentConflict": 0,
+      "netEligible": 61
+    },
+    {
+      "speciesId": "chenopodium-album",
+      "scientificName": "Chenopodium album",
+      "gross": 78,
+      "presentOverlap": 19,
+      "absentConflict": 0,
+      "netEligible": 59
+    },
+    {
+      "speciesId": "thlaspi-arvense",
+      "scientificName": "Thlaspi arvense",
+      "gross": 102,
+      "presentOverlap": 44,
+      "absentConflict": 0,
+      "netEligible": 58
+    },
+    {
+      "speciesId": "barbarea-vulgaris",
+      "scientificName": "Barbarea vulgaris",
+      "gross": 63,
+      "presentOverlap": 9,
+      "absentConflict": 0,
+      "netEligible": 54
+    },
+    {
+      "speciesId": "myosotis-scorpioides",
+      "scientificName": "Myosotis scorpioides",
+      "gross": 75,
+      "presentOverlap": 21,
+      "absentConflict": 0,
+      "netEligible": 54
+    },
+    {
+      "speciesId": "fallopia-convolvulus",
+      "scientificName": "Fallopia convolvulus",
+      "gross": 59,
+      "presentOverlap": 6,
+      "absentConflict": 0,
+      "netEligible": 53
+    },
+    {
+      "speciesId": "potentilla-recta",
+      "scientificName": "Potentilla recta",
+      "gross": 66,
+      "presentOverlap": 14,
+      "absentConflict": 0,
+      "netEligible": 52
+    },
+    {
+      "speciesId": "alopecurus-geniculatus",
+      "scientificName": "Alopecurus geniculatus",
+      "gross": 68,
+      "presentOverlap": 18,
+      "absentConflict": 0,
+      "netEligible": 50
+    },
+    {
+      "speciesId": "festuca-rubra",
+      "scientificName": "Festuca rubra",
+      "gross": 61,
+      "presentOverlap": 13,
+      "absentConflict": 0,
+      "netEligible": 48
+    },
+    {
+      "speciesId": "kochia-scoparia",
+      "scientificName": "Kochia scoparia",
+      "gross": 64,
+      "presentOverlap": 16,
+      "absentConflict": 0,
+      "netEligible": 48
+    },
+    {
+      "speciesId": "persicaria-longiseta",
+      "scientificName": "Persicaria longiseta",
+      "gross": 47,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 47
+    },
+    {
+      "speciesId": "potentilla-argentea",
+      "scientificName": "Potentilla argentea",
+      "gross": 52,
+      "presentOverlap": 5,
+      "absentConflict": 0,
+      "netEligible": 47
+    },
+    {
+      "speciesId": "hypericum-perforatum",
+      "scientificName": "Hypericum perforatum",
+      "gross": 70,
+      "presentOverlap": 24,
+      "absentConflict": 0,
+      "netEligible": 46
+    },
+    {
+      "speciesId": "malva-neglecta",
+      "scientificName": "Malva neglecta",
+      "gross": 65,
+      "presentOverlap": 19,
+      "absentConflict": 0,
+      "netEligible": 46
+    },
+    {
+      "speciesId": "poa-trivialis",
+      "scientificName": "Poa trivialis",
+      "gross": 56,
+      "presentOverlap": 10,
+      "absentConflict": 0,
+      "netEligible": 46
+    },
+    {
+      "speciesId": "gnaphalium-uliginosum",
+      "scientificName": "Gnaphalium uliginosum",
+      "gross": 47,
+      "presentOverlap": 2,
+      "absentConflict": 0,
+      "netEligible": 45
+    },
+    {
+      "speciesId": "descurainia-sophia",
+      "scientificName": "Descurainia sophia",
+      "gross": 115,
+      "presentOverlap": 71,
+      "absentConflict": 0,
+      "netEligible": 44
+    },
+    {
+      "speciesId": "persicaria-hydropiper",
+      "scientificName": "Persicaria hydropiper",
+      "gross": 50,
+      "presentOverlap": 6,
+      "absentConflict": 0,
+      "netEligible": 44
+    },
+    {
+      "speciesId": "salix-alba",
+      "scientificName": "Salix alba",
+      "gross": 48,
+      "presentOverlap": 4,
+      "absentConflict": 0,
+      "netEligible": 44
+    },
+    {
+      "speciesId": "veronica-officinalis",
+      "scientificName": "Veronica officinalis",
+      "gross": 49,
+      "presentOverlap": 5,
+      "absentConflict": 0,
+      "netEligible": 44
+    },
+    {
+      "speciesId": "bromus-inermis",
+      "scientificName": "Bromus inermis",
+      "gross": 138,
+      "presentOverlap": 97,
+      "absentConflict": 0,
+      "netEligible": 41
+    },
+    {
+      "speciesId": "lotus-corniculatus",
+      "scientificName": "Lotus corniculatus",
+      "gross": 50,
+      "presentOverlap": 9,
+      "absentConflict": 0,
+      "netEligible": 41
+    },
+    {
+      "speciesId": "sinapis-arvensis",
+      "scientificName": "Sinapis arvensis",
+      "gross": 45,
+      "presentOverlap": 4,
+      "absentConflict": 0,
+      "netEligible": 41
+    },
+    {
+      "speciesId": "stellaria-graminea",
+      "scientificName": "Stellaria graminea",
+      "gross": 43,
+      "presentOverlap": 2,
+      "absentConflict": 0,
+      "netEligible": 41
+    },
+    {
+      "speciesId": "typha-angustifolia",
+      "scientificName": "Typha angustifolia",
+      "gross": 54,
+      "presentOverlap": 13,
+      "absentConflict": 0,
+      "netEligible": 41
+    },
+    {
+      "speciesId": "cyperus-iria",
+      "scientificName": "Cyperus iria",
+      "gross": 41,
+      "presentOverlap": 1,
+      "absentConflict": 0,
+      "netEligible": 40
+    },
+    {
+      "speciesId": "sisymbrium-altissimum",
+      "scientificName": "Sisymbrium altissimum",
+      "gross": 103,
+      "presentOverlap": 63,
+      "absentConflict": 0,
+      "netEligible": 40
+    },
+    {
+      "speciesId": "alyssum-alyssoides",
+      "scientificName": "Alyssum alyssoides",
+      "gross": 75,
+      "presentOverlap": 36,
+      "absentConflict": 0,
+      "netEligible": 39
+    },
+    {
+      "speciesId": "epipactis-helleborine",
+      "scientificName": "Epipactis helleborine",
+      "gross": 39,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 39
+    },
+    {
+      "speciesId": "silene-vulgaris",
+      "scientificName": "Silene vulgaris",
+      "gross": 45,
+      "presentOverlap": 6,
+      "absentConflict": 0,
+      "netEligible": 39
+    },
+    {
+      "speciesId": "amaranthus-graecizans",
+      "scientificName": "Amaranthus graecizans",
+      "gross": 46,
+      "presentOverlap": 8,
+      "absentConflict": 0,
+      "netEligible": 38
+    },
+    {
+      "speciesId": "lolium-multiflorum",
+      "scientificName": "Lolium multiflorum",
+      "gross": 42,
+      "presentOverlap": 4,
+      "absentConflict": 0,
+      "netEligible": 38
+    },
+    {
+      "speciesId": "pastinaca-sativa",
+      "scientificName": "Pastinaca sativa",
+      "gross": 47,
+      "presentOverlap": 9,
+      "absentConflict": 0,
+      "netEligible": 38
+    },
+    {
+      "speciesId": "vaccaria-hispanica",
+      "scientificName": "Vaccaria hispanica",
+      "gross": 48,
+      "presentOverlap": 11,
+      "absentConflict": 0,
+      "netEligible": 37
+    },
+    {
+      "speciesId": "erysimum-cheiranthoides",
+      "scientificName": "Erysimum cheiranthoides",
+      "gross": 53,
+      "presentOverlap": 17,
+      "absentConflict": 0,
+      "netEligible": 36
+    },
+    {
+      "speciesId": "polypogon-viridis",
+      "scientificName": "Polypogon viridis",
+      "gross": 39,
+      "presentOverlap": 3,
+      "absentConflict": 0,
+      "netEligible": 36
+    },
+    {
+      "speciesId": "silene-dioica",
+      "scientificName": "Silene dioica",
+      "gross": 36,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 36
+    },
+    {
+      "speciesId": "medicago-sativa",
+      "scientificName": "Medicago sativa",
+      "gross": 47,
+      "presentOverlap": 12,
+      "absentConflict": 0,
+      "netEligible": 35
+    },
+    {
+      "speciesId": "spergularia-rubra",
+      "scientificName": "Spergularia rubra",
+      "gross": 69,
+      "presentOverlap": 34,
+      "absentConflict": 0,
+      "netEligible": 35
+    },
+    {
+      "speciesId": "thinopyrum-intermedium",
+      "scientificName": "Thinopyrum intermedium",
+      "gross": 42,
+      "presentOverlap": 7,
+      "absentConflict": 0,
+      "netEligible": 35
+    },
+    {
+      "speciesId": "aegilops-cylindrica",
+      "scientificName": "Aegilops cylindrica",
+      "gross": 60,
+      "presentOverlap": 26,
+      "absentConflict": 0,
+      "netEligible": 34
+    },
+    {
+      "speciesId": "galium-mollugo",
+      "scientificName": "Galium mollugo",
+      "gross": 35,
+      "presentOverlap": 1,
+      "absentConflict": 0,
+      "netEligible": 34
+    },
+    {
+      "speciesId": "alopecurus-pratensis",
+      "scientificName": "Alopecurus pratensis",
+      "gross": 49,
+      "presentOverlap": 16,
+      "absentConflict": 0,
+      "netEligible": 33
+    },
+    {
+      "speciesId": "anthemis-arvensis",
+      "scientificName": "Anthemis arvensis",
+      "gross": 33,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 33
+    },
+    {
+      "speciesId": "chorispora-tenella",
+      "scientificName": "Chorispora tenella",
+      "gross": 85,
+      "presentOverlap": 53,
+      "absentConflict": 0,
+      "netEligible": 32
+    },
+    {
+      "speciesId": "hibiscus-trionum",
+      "scientificName": "Hibiscus trionum",
+      "gross": 38,
+      "presentOverlap": 6,
+      "absentConflict": 0,
+      "netEligible": 32
+    },
+    {
+      "speciesId": "lycium-barbarum",
+      "scientificName": "Lycium barbarum",
+      "gross": 38,
+      "presentOverlap": 6,
+      "absentConflict": 0,
+      "netEligible": 32
+    },
+    {
+      "speciesId": "taraxacum-erythrospermum",
+      "scientificName": "Taraxacum erythrospermum",
+      "gross": 34,
+      "presentOverlap": 2,
+      "absentConflict": 0,
+      "netEligible": 32
+    },
+    {
+      "speciesId": "tragopogon-dubius",
+      "scientificName": "Tragopogon dubius",
+      "gross": 72,
+      "presentOverlap": 40,
+      "absentConflict": 0,
+      "netEligible": 32
+    },
+    {
+      "speciesId": "agropyron-cristatum",
+      "scientificName": "Agropyron cristatum",
+      "gross": 57,
+      "presentOverlap": 26,
+      "absentConflict": 0,
+      "netEligible": 31
+    },
+    {
+      "speciesId": "tamarix-gallica",
+      "scientificName": "Tamarix gallica",
+      "gross": 34,
+      "presentOverlap": 3,
+      "absentConflict": 0,
+      "netEligible": 31
+    },
+    {
+      "speciesId": "berteroa-incana",
+      "scientificName": "Berteroa incana",
+      "gross": 55,
+      "presentOverlap": 25,
+      "absentConflict": 0,
+      "netEligible": 30
+    },
+    {
+      "speciesId": "nicandra-physalodes",
+      "scientificName": "Nicandra physalodes",
+      "gross": 31,
+      "presentOverlap": 1,
+      "absentConflict": 0,
+      "netEligible": 30
+    },
+    {
+      "speciesId": "sisymbrium-irio",
+      "scientificName": "Sisymbrium irio",
+      "gross": 38,
+      "presentOverlap": 8,
+      "absentConflict": 0,
+      "netEligible": 30
+    },
+    {
+      "speciesId": "veronica-serpyllifolia",
+      "scientificName": "Veronica serpyllifolia",
+      "gross": 32,
+      "presentOverlap": 2,
+      "absentConflict": 0,
+      "netEligible": 30
+    },
+    {
+      "speciesId": "hieracium-caespitosum",
+      "scientificName": "Hieracium caespitosum",
+      "gross": 32,
+      "presentOverlap": 3,
+      "absentConflict": 0,
+      "netEligible": 29
+    },
+    {
+      "speciesId": "rumex-patientia",
+      "scientificName": "Rumex patientia",
+      "gross": 33,
+      "presentOverlap": 4,
+      "absentConflict": 0,
+      "netEligible": 29
+    },
+    {
+      "speciesId": "salsola-tragus",
+      "scientificName": "Salsola tragus",
+      "gross": 74,
+      "presentOverlap": 45,
+      "absentConflict": 0,
+      "netEligible": 29
+    },
+    {
+      "speciesId": "scleranthus-annuus",
+      "scientificName": "Scleranthus annuus",
+      "gross": 34,
+      "presentOverlap": 5,
+      "absentConflict": 0,
+      "netEligible": 29
+    },
+    {
+      "speciesId": "setaria-italica",
+      "scientificName": "Setaria italica",
+      "gross": 29,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 29
+    },
+    {
+      "speciesId": "veronica-hederifolia",
+      "scientificName": "Veronica hederifolia",
+      "gross": 29,
+      "presentOverlap": 1,
+      "absentConflict": 0,
+      "netEligible": 28
+    },
+    {
+      "speciesId": "agrostis-capillaris",
+      "scientificName": "Agrostis capillaris",
+      "gross": 36,
+      "presentOverlap": 9,
+      "absentConflict": 0,
+      "netEligible": 27
+    },
+    {
+      "speciesId": "brassica-juncea",
+      "scientificName": "Brassica juncea",
+      "gross": 27,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 27
+    },
+    {
+      "speciesId": "galeopsis-tetrahit",
+      "scientificName": "Galeopsis tetrahit",
+      "gross": 28,
+      "presentOverlap": 1,
+      "absentConflict": 0,
+      "netEligible": 27
+    },
+    {
+      "speciesId": "galinsoga-parviflora",
+      "scientificName": "Galinsoga parviflora",
+      "gross": 28,
+      "presentOverlap": 1,
+      "absentConflict": 0,
+      "netEligible": 27
+    },
+    {
+      "speciesId": "setaria-verticillata",
+      "scientificName": "Setaria verticillata",
+      "gross": 29,
+      "presentOverlap": 2,
+      "absentConflict": 0,
+      "netEligible": 27
+    },
+    {
+      "speciesId": "agropyron-desertorum",
+      "scientificName": "Agropyron desertorum",
+      "gross": 32,
+      "presentOverlap": 6,
+      "absentConflict": 0,
+      "netEligible": 26
+    },
+    {
+      "speciesId": "echinochloa-colona",
+      "scientificName": "Echinochloa colona",
+      "gross": 110,
+      "presentOverlap": 84,
+      "absentConflict": 0,
+      "netEligible": 26
+    },
+    {
+      "speciesId": "eragrostis-pilosa",
+      "scientificName": "Eragrostis pilosa",
+      "gross": 64,
+      "presentOverlap": 38,
+      "absentConflict": 0,
+      "netEligible": 26
+    },
+    {
+      "speciesId": "galium-verum",
+      "scientificName": "Galium verum",
+      "gross": 29,
+      "presentOverlap": 3,
+      "absentConflict": 0,
+      "netEligible": 26
+    },
+    {
+      "speciesId": "malvastrum-coromandelianum",
+      "scientificName": "Malvastrum coromandelianum",
+      "gross": 26,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 26
+    },
+    {
+      "speciesId": "tamarix-chinensis",
+      "scientificName": "Tamarix chinensis",
+      "gross": 46,
+      "presentOverlap": 20,
+      "absentConflict": 0,
+      "netEligible": 26
+    },
+    {
+      "speciesId": "silene-noctiflora",
+      "scientificName": "Silene noctiflora",
+      "gross": 27,
+      "presentOverlap": 2,
+      "absentConflict": 0,
+      "netEligible": 25
+    },
+    {
+      "speciesId": "tanacetum-vulgare",
+      "scientificName": "Tanacetum vulgare",
+      "gross": 49,
+      "presentOverlap": 24,
+      "absentConflict": 0,
+      "netEligible": 25
+    },
+    {
+      "speciesId": "tragopogon-porrifolius",
+      "scientificName": "Tragopogon porrifolius",
+      "gross": 35,
+      "presentOverlap": 10,
+      "absentConflict": 0,
+      "netEligible": 25
+    },
+    {
+      "speciesId": "brassica-nigra",
+      "scientificName": "Brassica nigra",
+      "gross": 33,
+      "presentOverlap": 9,
+      "absentConflict": 0,
+      "netEligible": 24
+    },
+    {
+      "speciesId": "carum-carvi",
+      "scientificName": "Carum carvi",
+      "gross": 31,
+      "presentOverlap": 7,
+      "absentConflict": 0,
+      "netEligible": 24
+    },
+    {
+      "speciesId": "conringia-orientalis",
+      "scientificName": "Conringia orientalis",
+      "gross": 43,
+      "presentOverlap": 19,
+      "absentConflict": 0,
+      "netEligible": 24
+    },
+    {
+      "speciesId": "artemisia-vulgaris",
+      "scientificName": "Artemisia vulgaris",
+      "gross": 26,
+      "presentOverlap": 3,
+      "absentConflict": 0,
+      "netEligible": 23
+    },
+    {
+      "speciesId": "crepis-capillaris",
+      "scientificName": "Crepis capillaris",
+      "gross": 28,
+      "presentOverlap": 5,
+      "absentConflict": 0,
+      "netEligible": 23
+    },
+    {
+      "speciesId": "poa-bulbosa",
+      "scientificName": "Poa bulbosa",
+      "gross": 90,
+      "presentOverlap": 67,
+      "absentConflict": 0,
+      "netEligible": 23
+    },
+    {
+      "speciesId": "bromus-sterilis",
+      "scientificName": "Bromus sterilis",
+      "gross": 30,
+      "presentOverlap": 8,
+      "absentConflict": 0,
+      "netEligible": 22
+    },
+    {
+      "speciesId": "inula-helenium",
+      "scientificName": "Inula helenium",
+      "gross": 22,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 22
+    },
+    {
+      "speciesId": "polygonum-aviculare",
+      "scientificName": "Polygonum aviculare",
+      "gross": 115,
+      "presentOverlap": 93,
+      "absentConflict": 0,
+      "netEligible": 22
+    },
+    {
+      "speciesId": "amaranthus-spinosus",
+      "scientificName": "Amaranthus spinosus",
+      "gross": 21,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 21
+    },
+    {
+      "speciesId": "cardamine-flexuosa",
+      "scientificName": "Cardamine flexuosa",
+      "gross": 21,
+      "presentOverlap": 0,
+      "absentConflict": 0,
+      "netEligible": 21
+    },
+    {
+      "speciesId": "carex-spicata",
+      "scientificName": "Carex spicata",
+      "gross": 22,
+      "presentOverlap": 1,
+      "absentConflict": 0,
+      "netEligible": 21
+    }
+  ],
+  "preflightElapsedMs": 82401,
+  "plans": [
+    {
+      "stateCode": "AK",
+      "planId": "nybg-preserved-specimens-ak-20260904-r1",
+      "candidateCount": 8,
+      "pairSetSha256": "7d6699a2ec79113bb19f2d5b3d2e52fd1feda0f17091b4324c279a5308f4d5a5",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ak-20260904-r1.json"
+    },
+    {
+      "stateCode": "AL",
+      "planId": "nybg-preserved-specimens-al-20260904-r1",
+      "candidateCount": 1,
+      "pairSetSha256": "15db567268d433f1be51d463a35a779eeb54b312858471d77d1c294703cda7ea",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-al-20260904-r1.json"
+    },
+    {
+      "stateCode": "AR",
+      "planId": "nybg-preserved-specimens-ar-20260904-r1",
+      "candidateCount": 281,
+      "pairSetSha256": "bfd61e8068d199bf625f50a9c5c5358a42b6afa31042f0fe2ae68277a4b2a889",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ar-20260904-r1.json"
+    },
+    {
+      "stateCode": "AZ",
+      "planId": "nybg-preserved-specimens-az-20260904-r1",
+      "candidateCount": 142,
+      "pairSetSha256": "a2634a1c262fc05ae12c5bb7b174ca7e179d6134758c32919a77eb9247aceabe",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-az-20260904-r1.json"
+    },
+    {
+      "stateCode": "CA",
+      "planId": "nybg-preserved-specimens-ca-20260904-r1",
+      "candidateCount": 218,
+      "pairSetSha256": "41dccf6a846493799f7d74a7c3ae5ebfe5a3df1e5465c03b779492dad24abd6c",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ca-20260904-r1.json"
+    },
+    {
+      "stateCode": "CO",
+      "planId": "nybg-preserved-specimens-co-20260904-r1",
+      "candidateCount": 263,
+      "pairSetSha256": "6115ec91364bac02f943d11f1bab950787698f9d6462e4c0de3875918c66c743",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-co-20260904-r1.json"
+    },
+    {
+      "stateCode": "DE",
+      "planId": "nybg-preserved-specimens-de-20260904-r1",
+      "candidateCount": 92,
+      "pairSetSha256": "7dcc87aa7f8c97584c284de7a23e4e38c53a8ac2ae072cd010ebef8b3f261108",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-de-20260904-r1.json"
+    },
+    {
+      "stateCode": "FL",
+      "planId": "nybg-preserved-specimens-fl-20260904-r1",
+      "candidateCount": 282,
+      "pairSetSha256": "d52c646f8cf92ec5a2cc427978b95832120558c4106169221cbaf7f2e038777b",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-fl-20260904-r1.json"
+    },
+    {
+      "stateCode": "GA",
+      "planId": "nybg-preserved-specimens-ga-20260904-r1",
+      "candidateCount": 65,
+      "pairSetSha256": "d54c334bd2677d5dcdc46ddf2f501e4c3bd4db05b7221bf3f5c048e780114096",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ga-20260904-r1.json"
+    },
+    {
+      "stateCode": "HI",
+      "planId": "nybg-preserved-specimens-hi-20260904-r1",
+      "candidateCount": 152,
+      "pairSetSha256": "bda1430ae275bc2cc50ca0e13c5835dc8533a61d98bb67f8f87ac81901430088",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-hi-20260904-r1.json"
+    },
+    {
+      "stateCode": "IA",
+      "planId": "nybg-preserved-specimens-ia-20260904-r1",
+      "candidateCount": 61,
+      "pairSetSha256": "9f2e5f926d6a7e32b34fcc6a995a582e9347d594ebfa44fa28b75b7d48a6a317",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ia-20260904-r1.json"
+    },
+    {
+      "stateCode": "ID",
+      "planId": "nybg-preserved-specimens-id-20260904-r1",
+      "candidateCount": 145,
+      "pairSetSha256": "ba4d09d9df3a98bb9c7ef7154d08554b0a00c251f7a7a43b24928194606e9ed9",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-id-20260904-r1.json"
+    },
+    {
+      "stateCode": "IL",
+      "planId": "nybg-preserved-specimens-il-20260904-r1",
+      "candidateCount": 59,
+      "pairSetSha256": "85d39d35040adcb29449743a5cbe27f3da272220ccafa606a0a9a586501f9ca7",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-il-20260904-r1.json"
+    },
+    {
+      "stateCode": "IN",
+      "planId": "nybg-preserved-specimens-in-20260904-r1",
+      "candidateCount": 200,
+      "pairSetSha256": "d73e124cc09541effb4a7d86d33f57f5de938a3ea0199af30ef80bfff5a3b103",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-in-20260904-r1.json"
+    },
+    {
+      "stateCode": "KS",
+      "planId": "nybg-preserved-specimens-ks-20260904-r1",
+      "candidateCount": 173,
+      "pairSetSha256": "75b5d64f235fe8f0795fa3b4971c4504133bdc8c5f1e6e81b103d245df0e31ec",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ks-20260904-r1.json"
+    },
+    {
+      "stateCode": "KY",
+      "planId": "nybg-preserved-specimens-ky-20260904-r1",
+      "candidateCount": 52,
+      "pairSetSha256": "27862270098ecc1eed0c8c24768c1dc2cf794341d01e914d3f73cc93b76d4235",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ky-20260904-r1.json"
+    },
+    {
+      "stateCode": "LA",
+      "planId": "nybg-preserved-specimens-la-20260904-r1",
+      "candidateCount": 44,
+      "pairSetSha256": "3362c3110d5aa7663d5ef3791bc02b6c81f08d44d47b40c7c93c021e01ff7781",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-la-20260904-r1.json"
+    },
+    {
+      "stateCode": "MA",
+      "planId": "nybg-preserved-specimens-ma-20260904-r1",
+      "candidateCount": 168,
+      "pairSetSha256": "ccffa17eeebbc56575f20ffef6df0f630320e400664d068373858a28f1a43129",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ma-20260904-r1.json"
+    },
+    {
+      "stateCode": "MD",
+      "planId": "nybg-preserved-specimens-md-20260904-r1",
+      "candidateCount": 411,
+      "pairSetSha256": "5b867e5f0a4cc567cfd76822770506e51780bc37819e11452f399b21355b0f5b",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-md-20260904-r1.json"
+    },
+    {
+      "stateCode": "ME",
+      "planId": "nybg-preserved-specimens-me-20260904-r1",
+      "candidateCount": 138,
+      "pairSetSha256": "eae7516b5f229598926e1c8e02740825031fa8ab7d90cabb1ca85b4d6fbeca0c",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-me-20260904-r1.json"
+    },
+    {
+      "stateCode": "MI",
+      "planId": "nybg-preserved-specimens-mi-20260904-r1",
+      "candidateCount": 88,
+      "pairSetSha256": "53f3afc514a375ac58afbbc8836be6beddcdacc9aa38fa6a416954ff358cb863",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-mi-20260904-r1.json"
+    },
+    {
+      "stateCode": "MN",
+      "planId": "nybg-preserved-specimens-mn-20260904-r1",
+      "candidateCount": 40,
+      "pairSetSha256": "3ec006c4ea5ee0f6fcaa6888400a9ba95cd7a5a29825bb6c7480d855e10b3678",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-mn-20260904-r1.json"
+    },
+    {
+      "stateCode": "MO",
+      "planId": "nybg-preserved-specimens-mo-20260904-r1",
+      "candidateCount": 46,
+      "pairSetSha256": "5cf01f0a9d84f5a40c2ed503e15e6ec573b9af741af522ee3c03d0218a0383c5",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-mo-20260904-r1.json"
+    },
+    {
+      "stateCode": "MS",
+      "planId": "nybg-preserved-specimens-ms-20260904-r1",
+      "candidateCount": 57,
+      "pairSetSha256": "37ced6ae4c30ae14451bc2e264babcb0a543cb93b65a26c34b1fcb7008570284",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ms-20260904-r1.json"
+    },
+    {
+      "stateCode": "MT",
+      "planId": "nybg-preserved-specimens-mt-20260904-r1",
+      "candidateCount": 23,
+      "pairSetSha256": "edf30e1c9952d386805ab213406ebc020192360dc9e04925288fde1b99fdcc42",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-mt-20260904-r1.json"
+    },
+    {
+      "stateCode": "NC",
+      "planId": "nybg-preserved-specimens-nc-20260904-r1",
+      "candidateCount": 107,
+      "pairSetSha256": "79e956d0644bc7743d3be548cb8e1704ab7aa5298d1f6f46bd3bda9b6d7b949b",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-nc-20260904-r1.json"
+    },
+    {
+      "stateCode": "ND",
+      "planId": "nybg-preserved-specimens-nd-20260904-r1",
+      "candidateCount": 27,
+      "pairSetSha256": "3637182c924eaf3b6660412c2f26e099387b8115fb517b162ea80b7471c71d74",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-nd-20260904-r1.json"
+    },
+    {
+      "stateCode": "NE",
+      "planId": "nybg-preserved-specimens-ne-20260904-r1",
+      "candidateCount": 122,
+      "pairSetSha256": "9031aaea8af017a0c44952789f762361a10f121835014228102439822eb24049",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ne-20260904-r1.json"
+    },
+    {
+      "stateCode": "NH",
+      "planId": "nybg-preserved-specimens-nh-20260904-r1",
+      "candidateCount": 19,
+      "pairSetSha256": "d910e3800fcbb4d6a4cd6a139ff46449f1bdd51bed13f3e36ed570b47a4b89e7",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-nh-20260904-r1.json"
+    },
+    {
+      "stateCode": "NJ",
+      "planId": "nybg-preserved-specimens-nj-20260904-r1",
+      "candidateCount": 559,
+      "pairSetSha256": "fbfbab26749a21e8793b9e2f2954c8099306a2234bc518e4b1e0070cbc5fadd8",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-nj-20260904-r1.json"
+    },
+    {
+      "stateCode": "NM",
+      "planId": "nybg-preserved-specimens-nm-20260904-r1",
+      "candidateCount": 178,
+      "pairSetSha256": "b99dcc631e714a48e3a055e292ed8fc257e9960e291f227800a219295580926b",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-nm-20260904-r1.json"
+    },
+    {
+      "stateCode": "NV",
+      "planId": "nybg-preserved-specimens-nv-20260904-r1",
+      "candidateCount": 191,
+      "pairSetSha256": "7c0dc822ac4734eeb4ee2a768af5e8a7b7af0ae77f36cc9444c4edc2b08e986b",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-nv-20260904-r1.json"
+    },
+    {
+      "stateCode": "NY",
+      "planId": "nybg-preserved-specimens-ny-20260904-r1",
+      "candidateCount": 1372,
+      "pairSetSha256": "bea7958b5ccdda633b1945a7335772001bb7a65c604705465c2a490c520db8cf",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ny-20260904-r1.json"
+    },
+    {
+      "stateCode": "OH",
+      "planId": "nybg-preserved-specimens-oh-20260904-r1",
+      "candidateCount": 60,
+      "pairSetSha256": "c4263cf15ec1f7f70439c9dd9ddc9454c38cb048eceed3d963a8f11410c5c561",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-oh-20260904-r1.json"
+    },
+    {
+      "stateCode": "OK",
+      "planId": "nybg-preserved-specimens-ok-20260904-r1",
+      "candidateCount": 96,
+      "pairSetSha256": "3a038e36934ac020398a25b4d9b4a68f1292cc619b1088c96ea3d0cb06f3f1eb",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ok-20260904-r1.json"
+    },
+    {
+      "stateCode": "OR",
+      "planId": "nybg-preserved-specimens-or-20260904-r1",
+      "candidateCount": 17,
+      "pairSetSha256": "8c731b0c8cef1383d3a7ef8205f0abb3f82a049565e408b07664a0f9f7a33644",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-or-20260904-r1.json"
+    },
+    {
+      "stateCode": "PA",
+      "planId": "nybg-preserved-specimens-pa-20260904-r1",
+      "candidateCount": 368,
+      "pairSetSha256": "c2014d6f6c94d6ad033bad991d28b096c44c9169f80023534edf7a51d7144007",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-pa-20260904-r1.json"
+    },
+    {
+      "stateCode": "RI",
+      "planId": "nybg-preserved-specimens-ri-20260904-r1",
+      "candidateCount": 17,
+      "pairSetSha256": "c6f319fd15eaaf079eda89b91010236f7bd9e39159fe15b8bde5caf6d3539a1b",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ri-20260904-r1.json"
+    },
+    {
+      "stateCode": "SC",
+      "planId": "nybg-preserved-specimens-sc-20260904-r1",
+      "candidateCount": 50,
+      "pairSetSha256": "d96479e3bf7c26e45d0b3cb5f38106165d09c9fe23cc7bb85e9d3648fc616f8a",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-sc-20260904-r1.json"
+    },
+    {
+      "stateCode": "SD",
+      "planId": "nybg-preserved-specimens-sd-20260904-r1",
+      "candidateCount": 51,
+      "pairSetSha256": "7178945de9d29ad2ecbd993066c8917513d806fc060337dcaf60110cbf9428fa",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-sd-20260904-r1.json"
+    },
+    {
+      "stateCode": "TN",
+      "planId": "nybg-preserved-specimens-tn-20260904-r1",
+      "candidateCount": 48,
+      "pairSetSha256": "5a639ee218ac6d0198269271a85fd99efb674b00fa932c781586e155d37e35a2",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-tn-20260904-r1.json"
+    },
+    {
+      "stateCode": "TX",
+      "planId": "nybg-preserved-specimens-tx-20260904-r1",
+      "candidateCount": 727,
+      "pairSetSha256": "33012dbfc0c6b29de6998b0a8d40d5bcdf12e036205ca822be951442ee37565f",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-tx-20260904-r1.json"
+    },
+    {
+      "stateCode": "UT",
+      "planId": "nybg-preserved-specimens-ut-20260904-r1",
+      "candidateCount": 418,
+      "pairSetSha256": "e649ee7c19e8350da3e3c1b58d1aadcc164ceb17ba312cc91dddd6f22af4a5dd",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-ut-20260904-r1.json"
+    },
+    {
+      "stateCode": "VA",
+      "planId": "nybg-preserved-specimens-va-20260904-r1",
+      "candidateCount": 66,
+      "pairSetSha256": "a04ab1fdc6ef82176ee11121ea260103f8d122744863c98ce2ac65c7a7bbb6ec",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-va-20260904-r1.json"
+    },
+    {
+      "stateCode": "VT",
+      "planId": "nybg-preserved-specimens-vt-20260904-r1",
+      "candidateCount": 41,
+      "pairSetSha256": "991de893237b773e48c1526d9317c8408b4b975d9ba5efffe741b49f6b2b990c",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-vt-20260904-r1.json"
+    },
+    {
+      "stateCode": "WA",
+      "planId": "nybg-preserved-specimens-wa-20260904-r1",
+      "candidateCount": 31,
+      "pairSetSha256": "7ef1cc818ba3c43d4b48901f2ff599f52f2f6822618700d4c05b3acf603ef304",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-wa-20260904-r1.json"
+    },
+    {
+      "stateCode": "WI",
+      "planId": "nybg-preserved-specimens-wi-20260904-r1",
+      "candidateCount": 68,
+      "pairSetSha256": "f5642685009ab24ec029657dbf46168cfb534baa920488156f47559660f8feca",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-wi-20260904-r1.json"
+    },
+    {
+      "stateCode": "WV",
+      "planId": "nybg-preserved-specimens-wv-20260904-r1",
+      "candidateCount": 51,
+      "pairSetSha256": "69e96c42cbec487ec243c8c791f84bb1a0c5140a659a3ebb0872a57dc2e2487f",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-wv-20260904-r1.json"
+    },
+    {
+      "stateCode": "WY",
+      "planId": "nybg-preserved-specimens-wy-20260904-r1",
+      "candidateCount": 173,
+      "pairSetSha256": "5115b2e99e168a5a815439cde00a99a3115116bf75e95a08741a9cbfecb4b021",
+      "path": "ops/national-research/plans/nybg-preserved-specimens-20260904-r1/nybg-preserved-specimens-wy-20260904-r1.json"
+    }
+  ],
+  "safeguards": [
+    "Only preserved-specimen rows with stable identities, a valid event year, an exact source species rank, a blank identification qualifier, an exact unique two-token catalog plant binomial, and one active county alias qualified.",
+    "Cultivated or captive text in locality, occurrence remarks, habitat, or establishment means was rejected conservatively.",
+    "All already determined pairs and the selected earlier-source pair set were removed exactly; verified-absent conflicts were separately blocked and measured at zero.",
+    "Source silence and all rejected rows create no absence or non-detection outcome.",
+    "No R2 action, push, deployment, or public data mutation occurred."
+  ]
+}

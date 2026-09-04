@@ -26,6 +26,11 @@ import {
   type CpnwhTarget,
 } from "./adapters/cpnwh-preserved-specimens";
 import {
+  nybgPreservedSpecimensAdapter,
+  torchBritPreservedSpecimensAdapter,
+  type RetainedHerbariumTarget,
+} from "./adapters/retained-herbarium-preserved-specimens";
+import {
   INATURALIST_GBIF_DATASET_KEY,
   inaturalistGbifResearchGradeAdapter,
 } from "./adapters/inaturalist-gbif-research-grade";
@@ -147,6 +152,25 @@ type CandidateFile = {
     preflightEvaluationId: string;
     targetPairSetSha256: string;
     targets: CpnwhTarget[];
+  };
+  retainedHerbarium?: {
+    mode: "retained-archive-witnesses";
+    profile: "nybg" | "torch-brit";
+    datasetUrl: string;
+    metadataUrl: string;
+    usagePolicyUrl: string;
+    datasetVersion: string;
+    publicationDate: string;
+    datasetLastModified: string;
+    datasetEtag: string | null;
+    archiveBytes: number;
+    archiveSha256: string;
+    occurrenceBytes: number;
+    occurrenceSha256: string;
+    archiveAcquiredAt: string;
+    preflightEvaluationId: string;
+    targetPairSetSha256: string;
+    targets: RetainedHerbariumTarget[];
   };
   eddmapsReplay?: {
     mode: "committed-snapshot-replay";
@@ -500,6 +524,12 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === cpnwhPreservedSpecimensAdapter.sourceId) {
     return cpnwhPreservedSpecimensAdapter;
   }
+  if (sourceId === nybgPreservedSpecimensAdapter.sourceId) {
+    return nybgPreservedSpecimensAdapter;
+  }
+  if (sourceId === torchBritPreservedSpecimensAdapter.sourceId) {
+    return torchBritPreservedSpecimensAdapter;
+  }
   if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
     return usgsBbsRouteStartAdapter;
   }
@@ -615,6 +645,23 @@ function buildParameters(
     return {
       stateCode,
       ...candidateFile.cpnwh,
+      targetPairSetSha256: sha256(candidatePairs.join("\n")),
+      targets,
+      candidatePairs,
+    };
+  }
+  if (sourceId === nybgPreservedSpecimensAdapter.sourceId || sourceId === torchBritPreservedSpecimensAdapter.sourceId) {
+    if (!candidateFile.retainedHerbarium || candidateFile.sourceId !== sourceId) {
+      throw new Error("Retained herbarium research requires its committed archive-witness plan.");
+    }
+    const selected = new Set(candidatePairs);
+    const targets = candidateFile.retainedHerbarium.targets.filter((target) => selected.has(target.pairKey));
+    if (targets.length !== candidatePairs.length) {
+      throw new Error("Retained herbarium witness identities do not cover every selected candidate pair.");
+    }
+    return {
+      stateCode,
+      ...candidateFile.retainedHerbarium,
       targetPairSetSha256: sha256(candidatePairs.join("\n")),
       targets,
       candidatePairs,
@@ -935,6 +982,13 @@ async function main() {
           ? {
               providerNetworkRequests: 0,
               replaySource: "Retained CPNWH witness rows selected by the committed complete-archive preflight.",
+              stabilityGate: "The committed archive, occurrence, target-pair, and witness identities must match the sealed plan.",
+              additionalRequests: 0,
+            }
+        : options.sourceId === nybgPreservedSpecimensAdapter.sourceId || options.sourceId === torchBritPreservedSpecimensAdapter.sourceId
+          ? {
+              providerNetworkRequests: 0,
+              replaySource: "Retained CC0 herbarium witness rows selected by the committed complete-archive preflight.",
               stabilityGate: "The committed archive, occurrence, target-pair, and witness identities must match the sealed plan.",
               additionalRequests: 0,
             }
