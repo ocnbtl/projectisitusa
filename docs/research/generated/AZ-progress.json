@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-05",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 439,
+    "applicableSpeciesCount": 444,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2065,
+    "unknownSpeciesCount": 2060,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 98,
-    "derivedApplicableSpeciesCount": 341,
+    "derivedApplicableSpeciesCount": 346,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 655,
+    "boundedAcquisitionSpeciesCount": 660,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 37560,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 1900,
+    "verifiedPresent": 1925,
     "verifiedAbsent": 15,
     "notDetected": 0,
-    "researchedUnresolved": 6103,
-    "notResearched": 29542,
-    "determinationCoveragePercent": 5.1,
-    "researchCoveragePercent": 21.35,
-    "explicitOutcomePairCount": 8018,
-    "explicitOutcomeCoveragePercent": 21.3472,
+    "researchedUnresolved": 6098,
+    "notResearched": 29522,
+    "determinationCoveragePercent": 5.17,
+    "researchCoveragePercent": 21.4,
+    "explicitOutcomePairCount": 8038,
+    "explicitOutcomeCoveragePercent": 21.4004,
     "conflictCount": 0,
-    "evidenceRecordCount": 6482,
+    "evidenceRecordCount": 6507,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 6482,
+    "runEvidenceRecordCount": 6507,
     "rejectionRecordCount": 1075,
-    "researchRunCount": 38,
+    "researchRunCount": 39,
     "boundedAcquisition": {
-      "speciesCount": 655,
-      "totalPairs": 9825,
-      "verifiedPresent": 1900,
+      "speciesCount": 660,
+      "totalPairs": 9900,
+      "verifiedPresent": 1925,
       "verifiedAbsent": 15,
       "notDetected": 0,
-      "researchedUnresolved": 6103,
-      "notResearched": 1807,
-      "researchCoveragePercent": 81.61,
-      "explicitOutcomePairs": 8018,
-      "explicitOutcomeCoveragePercent": 81.6081
+      "researchedUnresolved": 6098,
+      "notResearched": 1862,
+      "researchCoveragePercent": 81.19,
+      "explicitOutcomePairs": 8038,
+      "explicitOutcomeCoveragePercent": 81.1919
     }
   },
   "migrationCandidates": {
@@ -243,9 +243,9 @@
       "authority": "USDA Forest Service",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-04T18:09:05.439Z",
+      "evidencePairCount": 25,
+      "screenedSpeciesCount": 19
     },
     {
       "id": "usfs-ids",
@@ -482,17 +482,17 @@
     "protocolId": "national-pilot-multisource-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2620,
-    "applicableCells": 475,
-    "notApplicableCells": 2145,
+    "totalCells": 2640,
+    "applicableCells": 480,
+    "notApplicableCells": 2160,
     "completeCells": 139,
-    "incompleteCells": 335,
+    "incompleteCells": 340,
     "blockedCells": 1,
     "currentCells": 126,
     "staleCells": 13,
-    "undatedCells": 336,
-    "applicableCompletionPercent": 29.26,
-    "currentCompletePercent": 26.53,
+    "undatedCells": 341,
+    "applicableCompletionPercent": 28.96,
+    "currentCompletePercent": 26.25,
     "regulatedAndHighApplicableCells": 81,
     "regulatedAndHighCurrentCompleteCells": 72,
     "regulatedAndHighCurrentCompletePercent": 88.89,
@@ -512,9 +512,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 402,
+        "applicableCells": 407,
         "currentCompleteCells": 82,
-        "currentCompletePercent": 20.4
+        "currentCompletePercent": 20.15
       },
       {
         "category": "wildlife",
@@ -538,9 +538,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 368,
+        "applicableCells": 373,
         "currentCompleteCells": 41,
-        "currentCompletePercent": 11.14
+        "currentCompletePercent": 10.99
       },
       {
         "priority": "baseline",
@@ -558,7 +558,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 439,
+        "applicableCells": 444,
         "currentCompleteCells": 104,
         "processed": false
       },
@@ -587,6 +587,18 @@
       "speciesId": "adenanthera-pavonina",
       "commonName": "Red beadtree",
       "scientificName": "Adenanthera pavonina",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "aegilops-triuncialis",
+      "commonName": "Barbed goatgrass",
+      "scientificName": "Aegilops triuncialis",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -896,6 +908,18 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "cortaderia-selloana",
+      "commonName": "Uruguayan pampas grass",
+      "scientificName": "Cortaderia selloana",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "cotula-australis",
       "commonName": "Australian waterbuttons",
       "scientificName": "Cotula australis",
@@ -1103,18 +1127,6 @@
       "speciesId": "hordeum-marinum",
       "commonName": "Seaside barley",
       "scientificName": "Hordeum marinum",
-      "category": "plants",
-      "notResearchedCountyCount": 14,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 14001
-    },
-    {
-      "speciesId": "hordeum-vulgare",
-      "commonName": "Common barley",
-      "scientificName": "Hordeum vulgare",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -1400,6 +1412,18 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "rumex-acetosa",
+      "commonName": "Garden sorrel",
+      "scientificName": "Rumex acetosa",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "salpichroa-origanifolia",
       "commonName": "Lily of the valley vine",
       "scientificName": "Salpichroa origanifolia",
@@ -1436,9 +1460,9 @@
       "priorityScore": 14001
     },
     {
-      "speciesId": "silybum-marianum",
-      "commonName": "Blessed milkthistle",
-      "scientificName": "Silybum marianum",
+      "speciesId": "silene-vulgaris",
+      "commonName": "Maidenstears",
+      "scientificName": "Silene vulgaris",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -1451,18 +1475,6 @@
       "speciesId": "sisymbrium-loeselii",
       "commonName": "Small tumbleweed mustard",
       "scientificName": "Sisymbrium loeselii",
-      "category": "plants",
-      "notResearchedCountyCount": 14,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 14001
-    },
-    {
-      "speciesId": "sorghum-bicolor",
-      "commonName": "Sorghum",
-      "scientificName": "Sorghum bicolor",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -1499,6 +1511,18 @@
       "speciesId": "syringa-vulgaris",
       "commonName": "Common lilac",
       "scientificName": "Syringa vulgaris",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "tagetes-minuta",
+      "commonName": "Muster john henry",
+      "scientificName": "Tagetes minuta",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -1712,21 +1736,9 @@
       "priorityScore": 13001
     },
     {
-      "speciesId": "tamarix-aphylla",
-      "commonName": "Athel tamarisk",
-      "scientificName": "Tamarix aphylla",
-      "category": "plants",
-      "notResearchedCountyCount": 13,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 13001
-    },
-    {
-      "speciesId": "tamarix-parviflora",
-      "commonName": "Smallflower tamarisk",
-      "scientificName": "Tamarix parviflora",
+      "speciesId": "silybum-marianum",
+      "commonName": "Blessed milkthistle",
+      "scientificName": "Silybum marianum",
       "category": "plants",
       "notResearchedCountyCount": 13,
       "researchedUnresolvedCountyCount": 0,
@@ -1751,18 +1763,6 @@
       "speciesId": "vulpia-bromoides",
       "commonName": "Brome fescue",
       "scientificName": "Vulpia bromoides",
-      "category": "plants",
-      "notResearchedCountyCount": 13,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 13001
-    },
-    {
-      "speciesId": "ziziphus-jujuba",
-      "commonName": "Jujube red date",
-      "scientificName": "Ziziphus jujuba",
       "category": "plants",
       "notResearchedCountyCount": 13,
       "researchedUnresolvedCountyCount": 0,

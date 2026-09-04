@@ -7,20 +7,20 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `1900`
+- Verified present: `1925`
 - Verified absent: `15`
 - Not detected: `0`
-- Researched unresolved: `6103`
-- Not researched: `29542`
-- Determination coverage: `5.10%`
-- Research coverage: `21.35%`
-- Explicit outcome coverage: `21.3472%`
-- Applicable protocol cells: `475`
+- Researched unresolved: `6098`
+- Not researched: `29522`
+- Determination coverage: `5.17%`
+- Research coverage: `21.40%`
+- Explicit outcome coverage: `21.4004%`
+- Applicable protocol cells: `480`
 - Current complete protocol cells: `126`
-- Protocol completion: `29.26%`
-- Current protocol completion: `26.53%`
-- Evidence records: `6482`
-- Research runs: `38`
+- Protocol completion: `28.96%`
+- Current protocol completion: `26.25%`
+- Evidence records: `6507`
+- Research runs: `39`
 - Rejection records: `1075`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,6 +34,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Lesser wax moth (`achroia-grisella`) | insects | 14 | 0 | 1 |
 | Red beadtree (`adenanthera-pavonina`) | plants | 14 | 0 | 1 |
+| Barbed goatgrass (`aegilops-triuncialis`) | plants | 14 | 0 | 1 |
 | Sisal hemp (`agave-sisalana`) | plants | 14 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 14 | 0 | 1 |
 | Barbados aloe (`aloe-vera`) | plants | 14 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Beach sheoak (`casuarina-equisetifolia`) | plants | 14 | 0 | 1 |
 | Madagascar periwinkle (`catharanthus-roseus`) | plants | 14 | 0 | 1 |
 | Mission grass (`cenchrus-polystachios`) | plants | 14 | 0 | 1 |
-| Crimson fountaingrass (`cenchrus-setaceus`) | plants | 14 | 0 | 1 |
 
 ## Source Operations
 
@@ -78,7 +78,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 11 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 81 |
 | BLM AIM Terrestrial Invasive Plant Indicators | operational | 2026-09-03T01:36:14.658Z | 113 | 38 |
-| USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
+| USFS Current Invasive Plant Locations | operational | 2026-09-04T18:09:05.439Z | 25 | 19 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 707 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:38.114Z | 74 | 58 |
