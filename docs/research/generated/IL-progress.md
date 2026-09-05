@@ -1,6 +1,6 @@
 # Illinois Research Progress
 
-Generated: `2026-09-04T00:00:00.000Z`
+Generated: `2026-09-05T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -8,19 +8,19 @@ Generated: `2026-09-04T00:00:00.000Z`
 - Counties: `102`
 - County-species pairs: `255408`
 - Verified present: `11291`
-- Verified absent: `102`
+- Verified absent: `202`
 - Not detected: `8`
-- Researched unresolved: `37304`
+- Researched unresolved: `37204`
 - Not researched: `206703`
-- Determination coverage: `4.46%`
+- Determination coverage: `4.50%`
 - Research coverage: `19.07%`
 - Explicit outcome coverage: `19.0695%`
 - Applicable protocol cells: `450`
 - Current complete protocol cells: `139`
 - Protocol completion: `33.78%`
 - Current protocol completion: `30.89%`
-- Evidence records: `13812`
-- Research runs: `36`
+- Evidence records: `13912`
+- Research runs: `37`
 - Rejection records: `2122`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -100,6 +100,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | WSDA northern giant hornet eradication statement (2024) | manual | not run | 0 | 0 |
 | WSDA 2025 northern giant hornet surveillance update | manual | not run | 0 | 0 |
 | NJDEP Asian longhorned beetle eradication status | manual | not run | 0 | 0 |
-| USDA APHIS Asian longhorned beetle program update (2026) | manual | not run | 0 | 0 |
+| USDA APHIS Asian longhorned beetle program update (2026) | manual | 2026-09-05T03:56:43.894Z | 100 | 1 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

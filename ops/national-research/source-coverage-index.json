@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-fcc645f7774a6f4c2e97",
-  "generatedFromCommit": "9c2c557877ef29ad1b314947aa6e00a81d603c1f",
+  "indexId": "source-coverage-63d46b4e0395a2707c62",
+  "generatedFromCommit": "7a69b2f37d49caf40d96b3944b701e5645de5ed3",
   "sourceRegistryPath": "src/data/research/source-registry.json",
-  "sourceRegistrySha256": "2dee232e8854d61af6d73d4be374bb352f371b342234179b92006f4a74015f18",
-  "runReceiptDigestSha256": "46ac722a5797318b8fd5300e82e1315dc2201031a499a6c69b8b9cfb700238b4",
-  "runCount": 1916,
+  "sourceRegistrySha256": "29b4bef7618ffbb6d21d54ca892a896cdc876a55f3b6093bb688897edf68018c",
+  "runReceiptDigestSha256": "0843764cd7478bddd988de954c3f615bc4ae8730660e950d215f6d8b3ec93e9e",
+  "runCount": 1918,
   "sourceCount": 41,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -53,13 +53,13 @@
     {
       "sourceId": "aphis-asian-longhorned-beetle-program-update-2026",
       "coverageState": "covered-by-immutable-runs",
-      "runCount": 1,
-      "completeRuns": 1,
+      "runCount": 3,
+      "completeRuns": 3,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 3,
-      "scopeCompletePairs": 3,
-      "latestFinishedAt": "2026-09-01T19:16:53.000Z"
+      "requestedPairs": 104,
+      "scopeCompletePairs": 104,
+      "latestFinishedAt": "2026-09-05T03:56:43.894Z"
     },
     {
       "sourceId": "aphis-eab",
@@ -59865,6 +59865,68 @@
       "outcomesPath": "src/data/research/runs/20260904T203059Z__gbif-ipams__fda2c10568fa/outcomes.ndjson",
       "outcomesSha256": "90b5061476b545f2f241ea196bf062b251366ca4c12addfa663be4213e56ad00",
       "outcomesBytes": 671
+    },
+    {
+      "coverageKey": "a734cdbe35a1640b61c133e1f9c685fbc8600674c9d804706045be651cc2ce50",
+      "queryKey": "3bb28a87adc81cbfbe7244baefec08c4f88b35c421de73a7ecc2d9556b87b96b",
+      "runId": "20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607",
+      "receiptPath": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607/receipt.json",
+      "receiptSha256": "9c1a87c40051937702ff13ba7c9be7d62596179791edff42c65a3749a062f491",
+      "sourceId": "aphis-asian-longhorned-beetle-program-update-2026",
+      "sourceRegistryHash": "29b4bef7618ffbb6d21d54ca892a896cdc876a55f3b6093bb688897edf68018c",
+      "adapterId": "official-eradication-determination",
+      "adapterVersion": "1.1.0",
+      "parameterHash": "92235eafedcbff92e1ccb8ed124296bd07874ca52dfde3be26e2a6dd3844e2d8",
+      "requestedScopeSha256": "e087c576ca8ec59498552b78999f4e53962f50b05be4f70608f9791f584d3e86",
+      "status": "complete",
+      "startedAt": "2026-09-05T03:56:43.894Z",
+      "finishedAt": "2026-09-05T03:56:43.894Z",
+      "refreshCadenceDays": 365,
+      "freshnessDeadline": "2027-09-05T03:56:43.894Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 1,
+      "outcomePairs": 1,
+      "scopeCompletePairs": 1,
+      "outcomeStatusCounts": {
+        "evidence-found": 1,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607/outcomes.ndjson",
+      "outcomesSha256": "8aa0f08bd45c66fe289119065592559e5501dadf317c8e6ebc58269fedacaa9b",
+      "outcomesBytes": 857
+    },
+    {
+      "coverageKey": "c02e0e8dac13007aedaf313edfc1d195ae23e348e7e4983b6d8aaa6a7f5bca2e",
+      "queryKey": "e0cd1cd3bcac22b3ea767fd0b1ffb12706c2f2fc70e6c40010e6430a2048d983",
+      "runId": "20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__7d39942da0c0",
+      "receiptPath": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__7d39942da0c0/receipt.json",
+      "receiptSha256": "01e208bed526fee3c9200ae151bc5d135a08fe18efd154d02c15b7f0b08e2d69",
+      "sourceId": "aphis-asian-longhorned-beetle-program-update-2026",
+      "sourceRegistryHash": "29b4bef7618ffbb6d21d54ca892a896cdc876a55f3b6093bb688897edf68018c",
+      "adapterId": "official-eradication-determination",
+      "adapterVersion": "1.1.0",
+      "parameterHash": "0ea68429b205c4d54b5ba9679f2de21b6531ca1e0e0c8b4ddb1cd44001bbdcc6",
+      "requestedScopeSha256": "51634935165b6f5aff7a092ef37040dbb0f1b192cd79403804201485ac9cf503",
+      "status": "complete",
+      "startedAt": "2026-09-05T03:56:43.894Z",
+      "finishedAt": "2026-09-05T03:56:43.894Z",
+      "refreshCadenceDays": 365,
+      "freshnessDeadline": "2027-09-05T03:56:43.894Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 100,
+      "outcomePairs": 100,
+      "scopeCompletePairs": 100,
+      "outcomeStatusCounts": {
+        "evidence-found": 100,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__7d39942da0c0/outcomes.ndjson",
+      "outcomesSha256": "777de638bd63e8cec9332c3d3a1d59ed8beea14953158fd5e5891c41e736ef79",
+      "outcomesBytes": 85700
     }
   ]
 }
