@@ -187,7 +187,7 @@ export function validateJurisdictionEvidenceRegistry(input: {
 
 export function resolveTemporalPairDetermination(input: {
   presenceEvidence: PresenceEvidence[];
-  jurisdictionEvidence: JurisdictionEvidenceRecord[];
+  jurisdictionEvidence: Array<Pick<JurisdictionEvidenceRecord, "id" | "statementType" | "effectiveAt" | "reaffirmedAt" | "validThrough">>;
   asOf: string;
 }) {
   const asOfTimestamp = dateOnlyTimestamp(input.asOf, "Temporal determination asOf");

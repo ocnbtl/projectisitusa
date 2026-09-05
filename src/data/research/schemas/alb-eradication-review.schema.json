@@ -1,0 +1,463 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "kind": {
+      "type": "string",
+      "const": "review-only-eradication-proposal"
+    },
+    "evaluationId": {
+      "type": "string",
+      "const": "aphis-alb-eradication-review-20260905-r2"
+    },
+    "asOf": {
+      "type": "string",
+      "const": "2026-09-05"
+    },
+    "status": {
+      "type": "string",
+      "const": "awaiting-human-approval-for-unconflicted-subset"
+    },
+    "baselineCommit": {
+      "type": "string",
+      "const": "3faf9a4efef83848610a0b7ec1a007e968dbb961"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "const": "aphis-asian-longhorned-beetle-program-update-2026"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifactPath": {
+          "type": "string"
+        },
+        "artifactSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "artifactBytes": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "retrievedAt": {
+          "type": "string"
+        },
+        "publishedAt": {
+          "type": "string",
+          "const": "2026-07-30"
+        },
+        "supportText": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supportTextSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "sourceId",
+        "url",
+        "artifactPath",
+        "artifactSha256",
+        "artifactBytes",
+        "retrievedAt",
+        "publishedAt",
+        "supportText",
+        "supportTextSha256"
+      ],
+      "additionalProperties": false
+    },
+    "baseline": {
+      "type": "object",
+      "properties": {
+        "verifiedPresent": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "verifiedAbsent": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "determinations": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "denominator": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "verifiedPresent",
+        "verifiedAbsent",
+        "determinations",
+        "denominator"
+      ],
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "candidateCountyFips": {
+          "minItems": 108,
+          "maxItems": 108,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\d{5}$"
+          }
+        },
+        "candidateCountyFipsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "eligibleCountyFips": {
+          "minItems": 101,
+          "maxItems": 101,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\d{5}$"
+          }
+        },
+        "eligibleCountyFipsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "heldCountyFips": {
+          "minItems": 7,
+          "maxItems": 7,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\d{5}$"
+          }
+        },
+        "heldCountyFipsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "excludedSubcountyScopes": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "candidateCountyFips",
+        "candidateCountyFipsSha256",
+        "eligibleCountyFips",
+        "eligibleCountyFipsSha256",
+        "heldCountyFips",
+        "heldCountyFipsSha256",
+        "excludedSubcountyScopes"
+      ],
+      "additionalProperties": false
+    },
+    "proposedParentRecords": {
+      "minItems": 2,
+      "maxItems": 2,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "speciesId": {
+            "type": "string",
+            "const": "asian-longhorned-beetle"
+          },
+          "statementType": {
+            "type": "string",
+            "const": "officially-eradicated"
+          },
+          "jurisdiction": {
+            "type": "object",
+            "properties": {
+              "level": {
+                "type": "string",
+                "const": "county-set"
+              },
+              "stateCode": {
+                "type": "string",
+                "enum": [
+                  "IL",
+                  "MA"
+                ]
+              },
+              "countyFips": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^\\d{5}$"
+                }
+              },
+              "countyFipsSha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "exclusions": {
+                "minItems": 0,
+                "maxItems": 0,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^\\d{5}$"
+                }
+              }
+            },
+            "required": [
+              "level",
+              "stateCode",
+              "countyFips",
+              "countyFipsSha256",
+              "exclusions"
+            ],
+            "additionalProperties": false
+          },
+          "effectiveAt": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "conflictCheckFrom": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "reaffirmedAt": {
+            "type": "string",
+            "const": "2026-07-30"
+          },
+          "validThrough": {
+            "type": "string",
+            "const": "2027-07-30"
+          },
+          "reviewStatus": {
+            "type": "string",
+            "const": "awaiting-human-approval"
+          }
+        },
+        "required": [
+          "id",
+          "speciesId",
+          "statementType",
+          "jurisdiction",
+          "effectiveAt",
+          "conflictCheckFrom",
+          "reaffirmedAt",
+          "validThrough",
+          "reviewStatus"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "audit": {
+      "minItems": 108,
+      "maxItems": 108,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "countyFips": {
+            "type": "string",
+            "pattern": "^\\d{5}$"
+          },
+          "stateCode": {
+            "type": "string",
+            "enum": [
+              "IL",
+              "MA",
+              "NY"
+            ]
+          },
+          "countyName": {
+            "type": "string"
+          },
+          "baselineDisplayStatus": {
+            "type": "string",
+            "enum": [
+              "verified-present",
+              "researched-unresolved"
+            ]
+          },
+          "projectionPath": {
+            "type": "string"
+          },
+          "projectionSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "effectiveAt": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "conflictCheckFrom": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "presenceEvidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "evidenceId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sourceId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "observedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "evidenceId",
+                "sourceId",
+                "observedAt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "conflict": {
+            "type": "boolean"
+          },
+          "conflictReason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reviewDisposition": {
+            "type": "string",
+            "enum": [
+              "eligible-for-human-review",
+              "held-undated-presence"
+            ]
+          }
+        },
+        "required": [
+          "countyFips",
+          "stateCode",
+          "countyName",
+          "baselineDisplayStatus",
+          "projectionPath",
+          "projectionSha256",
+          "effectiveAt",
+          "conflictCheckFrom",
+          "presenceEvidence",
+          "conflict",
+          "conflictReason",
+          "reviewDisposition"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "reconciliation": {
+      "type": "object",
+      "properties": {
+        "reviewedCandidatePairs": {
+          "type": "number",
+          "const": 108
+        },
+        "eligibleNewDeterminations": {
+          "type": "number",
+          "const": 101
+        },
+        "heldExistingPresentPairs": {
+          "type": "number",
+          "const": 7
+        },
+        "undatedPresenceConflicts": {
+          "type": "number",
+          "const": 7
+        },
+        "datedPostEradicationConflicts": {
+          "type": "number",
+          "const": 0
+        },
+        "expectedPresentDeltaAfterApproval": {
+          "type": "number",
+          "const": 0
+        },
+        "expectedAbsentDeltaAfterApproval": {
+          "type": "number",
+          "const": 101
+        },
+        "expectedDeterminationDeltaAfterApproval": {
+          "type": "number",
+          "const": 101
+        },
+        "actualDeterminationDeltaBeforeApproval": {
+          "type": "number",
+          "const": 0
+        }
+      },
+      "required": [
+        "reviewedCandidatePairs",
+        "eligibleNewDeterminations",
+        "heldExistingPresentPairs",
+        "undatedPresenceConflicts",
+        "datedPostEradicationConflicts",
+        "expectedPresentDeltaAfterApproval",
+        "expectedAbsentDeltaAfterApproval",
+        "expectedDeterminationDeltaAfterApproval",
+        "actualDeterminationDeltaBeforeApproval"
+      ],
+      "additionalProperties": false
+    },
+    "boundaries": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "kind",
+    "evaluationId",
+    "asOf",
+    "status",
+    "baselineCommit",
+    "source",
+    "baseline",
+    "scope",
+    "proposedParentRecords",
+    "audit",
+    "reconciliation",
+    "boundaries"
+  ],
+  "additionalProperties": false
+}
