@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "local-evidence-ui-validation-20260905-r1",
+  "verifiedAt": "2026-09-05T02:34:41.042Z",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseCommit": "3faf9a4efef83848610a0b7ec1a007e968dbb961",
+  "contentCommits": [
+    {
+      "commit": "5211b1b6d73427898ea352b2522cfec4def19137",
+      "title": "Add content-bound ALB review and EAB source qualification"
+    },
+    {
+      "commit": "b4dd803f5614231bdbf5c29e46c3af5a5f362475",
+      "title": "Show occurrence history beside current eradication determinations"
+    },
+    {
+      "commit": "b304786a1c89c34be58d69a6b1a05512cce25700",
+      "title": "Add R2 candidate storage and retained-object review"
+    }
+  ],
+  "checks": [
+    {
+      "command": "npm.cmd run validate:data",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/validate-data.log",
+      "logSha256": "bae2dafca4865627db5ff88d402b857907257fc204eb0387f6d7f4310635856e",
+      "logBytes": 54138
+    },
+    {
+      "command": "npm.cmd run check:alb-eradication-review",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-r2-check.log",
+      "logSha256": "43b520fefadb86111bbce16a9bd954ff6577dd6c354d455efa33c16f71ea2289",
+      "logBytes": 1249
+    },
+    {
+      "command": "npm.cmd run lint",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/lint.log",
+      "logSha256": "d3235c40b25d9cacb248b4d6d71e8e831f9de65b7761817769e65915079566c0",
+      "logBytes": 320
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/typecheck.log",
+      "logSha256": "935e803dca53d0d336a809b7096167c87b39147b5aa7fd36163dc29e7249ecf4",
+      "logBytes": 55
+    },
+    {
+      "command": "npm.cmd run check:vercel-publish",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/vercel-publish-check.log",
+      "logSha256": "774a96adc5c6166370577628fd0a548ef91dcc38f6c94ff7432430d5b274945a",
+      "logBytes": 666
+    },
+    {
+      "command": "npm.cmd run build",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/build.log",
+      "logSha256": "f71fffc91f5388842111a96731d9a5db0d90711f609d80240abb762c6de3638e",
+      "logBytes": 1452
+    }
+  ],
+  "validationOrderQualification": "The full data/research suite passed. The subsequent review-only ALB year-bound refinement passed the complete ALB r2 check, including byte stability, within-year conflicts, and tamper rejection; the final production build then passed lint and type validation on the final code. Generated evidence inputs and projections were unchanged.",
+  "frozenOrchestrationRegression": {
+    "passed": 97,
+    "failed": 0,
+    "criticalSafetyViolations": 0
+  },
+  "browserQa": "ops/national-research/evaluations/research-temporal-ui-qa-20260905-r1.json",
+  "research": {
+    "baselineAndFinal": {
+      "verifiedPresent": 311667,
+      "verifiedAbsent": 3143,
+      "uniqueDeterminations": 314810,
+      "denominator": 7872576
+    },
+    "netNewDeterminations": 0,
+    "generatedDataChanged": false,
+    "immutableRunsAdded": 0,
+    "approval": {
+      "artifact": "ops/national-research/evaluations/aphis-alb-eradication-review-20260905-r2.json",
+      "sha256": "19229e1f90b7be211af20874814744b94c31beeef947441228f432d2aa8b22d1",
+      "eligibleCount": 101,
+      "heldCount": 7,
+      "status": "awaiting-human-approval",
+      "r1Superseded": true
+    }
+  },
+  "r2": {
+    "status": "publication-blocked-by-existing-storage-stop",
+    "review": "ops/national-research/evaluations/r2-publication-review-20260905-r1.md",
+    "inventoryReportSha256": "f2d6dcab4251029dbac274dae39c4d24e4c07c654db641bda4655d921f994aed",
+    "projectedRetainedBytes": 9035784267,
+    "projectStorageStopBytes": 8000000000,
+    "counters": "Rounded dashboard observations qualified separately in the usage receipt."
+  },
+  "eab": {
+    "status": "blocked-reuse-terms-unresolved",
+    "review": "ops/national-research/evaluations/aphis-eab-current-source-gate-20260905-r1.json"
+  },
+  "authority": {
+    "localCommitsAuthorizedByContinuationPacket": true,
+    "pushPerformed": false,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "manualDeployments": 0,
+    "humanGatedAbsenceApplications": 0
+  },
+  "remote": {
+    "verifiedMainCommit": "3faf9a4efef83848610a0b7ec1a007e968dbb961",
+    "checkedBeforeReceipt": true
+  },
+  "legacyCheckoutTouched": false
+}
