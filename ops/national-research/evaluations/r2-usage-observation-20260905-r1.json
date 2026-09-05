@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "r2-usage-observation-20260905-r1",
+  "dashboard": "Cloudflare R2 Object Storage overview",
+  "observationWindowUtc": {
+    "start": "2026-09-05T01:53:36Z",
+    "end": "2026-09-05T01:54:29Z"
+  },
+  "displayedPeriod": "August 18 - September 18",
+  "displayedClassA": "26.3k",
+  "displayedClassB": "62.24k",
+  "displayedStorage": "7.71 GB",
+  "displayedBillableUsage": "$0.00",
+  "counterPrecision": "Rounded dashboard values; exact request counters were not exposed.",
+  "conservativePlanningInputs": {
+    "classA": 26500,
+    "classB": 62700
+  },
+  "qualification": "These are estimates with margin, not measured exact counters or guaranteed upper bounds. The billing view lagged the R2 view and showed 26.23k A and 62.16k B. Refresh current-period usage and inventory before any provider mutation.",
+  "priorReports": [
+    "r2-reachability-20260905-r1.json",
+    "r2-candidate-preflight-20260905-r1.json"
+  ],
+  "priorReportQualification": "The prior reports used conservative numeric planning inputs derived from earlier rounded dashboard displays. Their dashboardObservedAt fields record when those inputs were prepared, not an exact independent measurement of the request counters. Inventory bytes and LIST/GET request counts were measured by the report command.",
+  "reportSha256": "f2d6dcab4251029dbac274dae39c4d24e4c07c654db641bda4655d921f994aed",
+  "reportObservedAt": "2026-09-05T01:44:50.294Z",
+  "providerWrites": 0
+}

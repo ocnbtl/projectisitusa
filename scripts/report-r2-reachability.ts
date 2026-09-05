@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 
 import {
   GetObjectCommand,
@@ -127,6 +128,8 @@ async function main() {
     newClassARequests: listing.requestCount,
     newClassBRequests: classBRequests,
   });
+  const candidatePath = argument("--candidate-manifest");
+  const candidateManifest = candidatePath ? validateResearchPublicationManifest(JSON.parse(readFileSync(candidatePath, "utf8"))) : undefined;
   const report = buildR2ReachabilityReport({
     observedAt: new Date().toISOString(),
     dashboardObservedAt,
@@ -138,6 +141,7 @@ async function main() {
     bucketObjects: listing.objects,
     currentPointer,
     releases,
+    candidateManifest,
   });
   console.log(JSON.stringify(report, null, 2));
 }

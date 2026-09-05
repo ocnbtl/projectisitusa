@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-r2-reachability-report",
+  "observedAt": "2026-09-05T01:34:37.681Z",
+  "mode": "read-only-list-and-get",
+  "bucket": "project-isitusa-research",
+  "policy": {
+    "promotionPolicyVersion": 1,
+    "minimumPromotionIntervalHours": 168,
+    "rollbackReleaseCount": 2,
+    "automaticDeletionAllowed": false,
+    "deletionRequiresExplicitAuthority": true
+  },
+  "current": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "releaseManifestKey": "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z"
+  },
+  "rollbackWindow": {
+    "retainedReleaseIds": [
+      "research-e2115f6a705f-163982b59c8351b2",
+      "research-7427b6e8b43e-37943bb5dba1460c",
+      "research-a2951a092577-a039963dbd5201e6"
+    ],
+    "historicalReleaseIdsOutsideWindow": [
+      "research-84f2bb123166-e479cf967aa7f643",
+      "research-021c595d0604-b3467b304cd02d85",
+      "research-744e129b27a2-c01f406ea3d8d22a",
+      "research-aed213043298-61bb7c59ff565fba",
+      "research-2089c1fcd7f0-ef528a9620612236",
+      "research-1f093b3150f7-a291afc1812a7e4c",
+      "research-8bde16be35b8-e6a2af66396c19e7"
+    ]
+  },
+  "usageSample": {
+    "dashboardObservedAt": "2026-09-05T01:34:23.318Z",
+    "currentClassARequests": 26300,
+    "currentClassBRequests": 62400,
+    "reportClassARequests": 26,
+    "reportClassBRequests": 11,
+    "projectedClassARequests": 26326,
+    "projectedClassBRequests": 62411,
+    "classASafetyRequests": 800000,
+    "classBSafetyRequests": 8000000
+  },
+  "storage": {
+    "retainedBytes": 7709331640,
+    "storageSafetyBytes": 8000000000,
+    "headroomBytes": 290668360,
+    "percentOfSafetyBudget": 96.367
+  },
+  "inventory": {
+    "bucket": {
+      "objectCount": 25861,
+      "bytes": 7709331640,
+      "inventorySha256": "25f306dcef70fcb3870d676fe696e92d174ad52302becd0d2fd489941486c1b0",
+      "sampleKeys": [
+        "current.json",
+        "objects/sha256/00/0008528836040dd62c794e022a747429aa543bfeb9ab840d8b0823bd093a7b43.json",
+        "objects/sha256/00/000aaea1eb273cd0c0f7b9811a7bb65c5b28cfac725bf3993e1fe16983d164f9.json",
+        "objects/sha256/00/000dbcc2ab6cd3b5ebc47c9d346272061cb9a14cf43aa268b09715c5efd44a9c.json",
+        "objects/sha256/00/000eafd8066be8c19394073e3da3d4919f3fad83ece0c5dff382d0bff6733828.json",
+        "releases/research-84f2bb123166-e479cf967aa7f643/manifest.json",
+        "releases/research-8bde16be35b8-e6a2af66396c19e7/manifest.json",
+        "releases/research-a2951a092577-a039963dbd5201e6/manifest.json",
+        "releases/research-aed213043298-61bb7c59ff565fba/manifest.json",
+        "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json"
+      ]
+    },
+    "contentAddressedObjects": {
+      "objectCount": 25850,
+      "bytes": 7693676961,
+      "inventorySha256": "d81c60db350fc7e23f2a5b3c815e388b6da10088900c8628c217336179b1b6da",
+      "sampleKeys": [
+        "objects/sha256/00/0008528836040dd62c794e022a747429aa543bfeb9ab840d8b0823bd093a7b43.json",
+        "objects/sha256/00/000aaea1eb273cd0c0f7b9811a7bb65c5b28cfac725bf3993e1fe16983d164f9.json",
+        "objects/sha256/00/000dbcc2ab6cd3b5ebc47c9d346272061cb9a14cf43aa268b09715c5efd44a9c.json",
+        "objects/sha256/00/000eafd8066be8c19394073e3da3d4919f3fad83ece0c5dff382d0bff6733828.json",
+        "objects/sha256/00/0012c41232f68fd98c306514756ada1f0bb56f25ebea5a21a8b71b28036067ae.json",
+        "objects/sha256/ff/fff43077d324deb09cc0ffc8b4316b22cc53d1df0d01d766af5458c2195ce277.json",
+        "objects/sha256/ff/fff435374471b4e9e3af0bc42f261a9eaa4f4a582fe270ad3178407d4c153001.json",
+        "objects/sha256/ff/fff492b75e4854b2e4a8b299ac12dba05a39f31acc1ee93bc89d194cae1a4629.json",
+        "objects/sha256/ff/fffb63bd39f8f54f0694a9b44ed398e3b85c1660685f66f9d21f6041ae41cf68.json",
+        "objects/sha256/ff/fffef6cfcc0574b63f576279969132a4f1bd4b34914aa1fb2e855a829260e485.json"
+      ]
+    },
+    "releaseManifests": {
+      "objectCount": 10,
+      "bytes": 15654258,
+      "inventorySha256": "1ba20c2a33a0b3df492bd5e61fdf18ba441de900a62783f490f0f0a319cf37ef",
+      "sampleKeys": [
+        "releases/research-021c595d0604-b3467b304cd02d85/manifest.json",
+        "releases/research-1f093b3150f7-a291afc1812a7e4c/manifest.json",
+        "releases/research-2089c1fcd7f0-ef528a9620612236/manifest.json",
+        "releases/research-7427b6e8b43e-37943bb5dba1460c/manifest.json",
+        "releases/research-744e129b27a2-c01f406ea3d8d22a/manifest.json",
+        "releases/research-84f2bb123166-e479cf967aa7f643/manifest.json",
+        "releases/research-8bde16be35b8-e6a2af66396c19e7/manifest.json",
+        "releases/research-a2951a092577-a039963dbd5201e6/manifest.json",
+        "releases/research-aed213043298-61bb7c59ff565fba/manifest.json",
+        "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json"
+      ]
+    },
+    "pointers": {
+      "objectCount": 1,
+      "bytes": 421,
+      "inventorySha256": "abfaf3422d34e8c1f2b7ba83596babe2ea554b48e48280bc02c1ba1407b6589d",
+      "sampleKeys": [
+        "current.json"
+      ]
+    },
+    "otherObjects": {
+      "objectCount": 0,
+      "bytes": 0,
+      "inventorySha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sampleKeys": []
+    }
+  },
+  "reachability": {
+    "currentReleaseObjects": {
+      "objectCount": 3195,
+      "bytes": 1005235921,
+      "inventorySha256": "24b7b28ad3bef19fb5eb7cc59a1fb9a7c69b874a45845c4725d46d6e1d64c525",
+      "sampleKeys": [
+        "objects/sha256/00/001f3c78765f90cf8e603887020db54d91194685dc3f7beacedfc800462574cd.json",
+        "objects/sha256/00/0031a3b81d80154811f09ce8b0aa346def71a4811d7b8c6c080ed22820cc7a34.json",
+        "objects/sha256/00/005ee8da2bb17cead3efc9aa0f99f26b8b4b12954c54d11c55d88b19569d5dac.json",
+        "objects/sha256/00/006f86ded1093fe92e7dedefd2187f25d2adc48c87e8c35afbf92e999caac17d.json",
+        "objects/sha256/00/0091f8c1a7a05864f404058b3f6a801173973ee14b5cb222b162bef7a99d543b.json",
+        "objects/sha256/ff/ff66d7df93919293c34fe5211d7f4aa888d052aac25be451acbbbe2f2b4208ac.json",
+        "objects/sha256/ff/ff8d7a883b8c6780605725d341905ae1935ca9a90dc49b3deda14b9c98aff38b.json",
+        "objects/sha256/ff/ffabeb05fd2d2dff33cbac27adade6402ae2f7a0b185432d4fd6e244ad053d78.json",
+        "objects/sha256/ff/ffdc95f465a41c62e8d005a6c486bbd573adf2d4c5618c5b6243a8a24f855733.json",
+        "objects/sha256/ff/fff492b75e4854b2e4a8b299ac12dba05a39f31acc1ee93bc89d194cae1a4629.json"
+      ]
+    },
+    "rollbackOnlyObjects": {
+      "objectCount": 426,
+      "bytes": 205246030,
+      "inventorySha256": "4891bbe0a4fac45675161bd16d13dada35ea42b63dc868eee1e590f7ccc237f3",
+      "sampleKeys": [
+        "objects/sha256/00/002c2bca8de13cbe0511c378e3d2a90271f96adf6c062ce51e9d134af82d3716.json",
+        "objects/sha256/00/00463e7c2d18b8e918f4e64f85ce05e6e2c549250f33e280568dc522bb52e85e.json",
+        "objects/sha256/00/00bc8c25c58f455866ceed1f41b67df94dcb840f7514bf72ff72b8b719f52c1b.json",
+        "objects/sha256/00/00ccf72c6734ac5c6ef72535191f6889b298fc6b59aff4ba11aea215c768dfc4.json",
+        "objects/sha256/01/01469bba429dd06ab61ca290261ca34c61973d19d205219be90ee2fe2173577d.json",
+        "objects/sha256/fe/fee774ed5f3a50c078b540bfdc14a20234bb0995aea81249af3fad0bc002970e.json",
+        "objects/sha256/fe/fefd79e4d87302b6139bb99ff25835559c4c417b62d7c0db4a33578f7a852b43.json",
+        "objects/sha256/ff/ff266cead59d726a6186c1f4d6e8b30e4f87dbc045ffa2694a54684579a62b18.json",
+        "objects/sha256/ff/ff2a24a31c659db5ad5ebb03772d23cfd02bbbb437225d411652f145050afb80.json",
+        "objects/sha256/ff/ff65aed0b34563592421d8b9d12d3d76ac3c0d2f3b5a57f1036e532525acdcf8.json"
+      ]
+    },
+    "historicalOnlyObjects": {
+      "objectCount": 22229,
+      "bytes": 6483195010,
+      "inventorySha256": "e1a90ed88993ec6f189caee55aae93f6cec882a12da6425484a1596c974e38d1",
+      "sampleKeys": [
+        "objects/sha256/00/0008528836040dd62c794e022a747429aa543bfeb9ab840d8b0823bd093a7b43.json",
+        "objects/sha256/00/000aaea1eb273cd0c0f7b9811a7bb65c5b28cfac725bf3993e1fe16983d164f9.json",
+        "objects/sha256/00/000dbcc2ab6cd3b5ebc47c9d346272061cb9a14cf43aa268b09715c5efd44a9c.json",
+        "objects/sha256/00/000eafd8066be8c19394073e3da3d4919f3fad83ece0c5dff382d0bff6733828.json",
+        "objects/sha256/00/0012c41232f68fd98c306514756ada1f0bb56f25ebea5a21a8b71b28036067ae.json",
+        "objects/sha256/ff/fff0ebb726cf9388394a0a3b829ab726744eda42e186665d3d8fab9378c9d74e.json",
+        "objects/sha256/ff/fff43077d324deb09cc0ffc8b4316b22cc53d1df0d01d766af5458c2195ce277.json",
+        "objects/sha256/ff/fff435374471b4e9e3af0bc42f261a9eaa4f4a582fe270ad3178407d4c153001.json",
+        "objects/sha256/ff/fffb63bd39f8f54f0694a9b44ed398e3b85c1660685f66f9d21f6041ae41cf68.json",
+        "objects/sha256/ff/fffef6cfcc0574b63f576279969132a4f1bd4b34914aa1fb2e855a829260e485.json"
+      ]
+    },
+    "unreferencedContentObjects": {
+      "objectCount": 0,
+      "bytes": 0,
+      "inventorySha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sampleKeys": []
+    },
+    "historicalReleaseManifestsOutsideWindow": {
+      "objectCount": 7,
+      "bytes": 10957977,
+      "inventorySha256": "faaf62aee597297afdbbc824d2a5ca5a3f77592406e098880c90fb957c1ce518",
+      "sampleKeys": [
+        "releases/research-021c595d0604-b3467b304cd02d85/manifest.json",
+        "releases/research-1f093b3150f7-a291afc1812a7e4c/manifest.json",
+        "releases/research-2089c1fcd7f0-ef528a9620612236/manifest.json",
+        "releases/research-744e129b27a2-c01f406ea3d8d22a/manifest.json",
+        "releases/research-84f2bb123166-e479cf967aa7f643/manifest.json",
+        "releases/research-8bde16be35b8-e6a2af66396c19e7/manifest.json",
+        "releases/research-aed213043298-61bb7c59ff565fba/manifest.json"
+      ]
+    }
+  },
+  "deletion": {
+    "performed": false,
+    "automaticallyEligibleObjects": 0,
+    "candidateObjectCount": 22236,
+    "candidateBytes": 6494152987,
+    "qualification": "Candidates are inventory evidence only. No object is approved for deletion without explicit authority, a fresh report, and rollback verification."
+  },
+  "safety": {
+    "storageWithinProjectStop": true,
+    "classAWithinProjectStop": true,
+    "classBWithinProjectStop": true,
+    "pointerManifestReconciled": true,
+    "referencedObjectBytesReconciled": true
+  }
+}

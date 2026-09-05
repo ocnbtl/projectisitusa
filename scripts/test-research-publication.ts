@@ -22,7 +22,7 @@ import {
   RESEARCH_PROMOTION_MINIMUM_INTERVAL_HOURS,
   validateResearchPublicationPointer,
 } from "./research/publication-cadence";
-import { buildR2ReachabilityReport } from "./research/r2-reachability";
+import { buildR2ReachabilityReport, planR2CandidateRelease } from "./research/r2-reachability";
 
 async function main() {
   const root = mkdtempSync(path.join(tmpdir(), "isitusa-publication-test-"));
@@ -153,7 +153,7 @@ async function main() {
     release(releaseIds[3], "2026-08-01T00:00:00.000Z", ["objects/sha256/dd/history5"]),
   ];
   const object = (key: string, bytes: number) => ({ key, bytes, lastModified: null });
-  const reachability = buildR2ReachabilityReport({
+  const reachabilityInput = {
     observedAt: "2026-08-19T00:00:00.000Z",
     dashboardObservedAt: "2026-08-19T00:00:00.000Z",
     bucket: "fixture",
@@ -173,13 +173,42 @@ async function main() {
       object("objects/sha256/dd/history5", 5),
       object("objects/sha256/ee/orphan6", 6),
     ],
-  });
+  };
+  const reachability = buildR2ReachabilityReport(reachabilityInput);
   assert.equal(reachability.reachability.currentReleaseObjects.bytes, 3);
   assert.equal(reachability.reachability.rollbackOnlyObjects.bytes, 7);
   assert.equal(reachability.reachability.historicalOnlyObjects.bytes, 5);
   assert.equal(reachability.reachability.unreferencedContentObjects.bytes, 6);
   assert.equal(reachability.rollbackWindow.retainedReleaseIds.length, 3);
   assert.equal(reachability.deletion.performed, false);
+
+  assert.equal(reachability.deletion.reviewOnlyHistoricalRemovalBytes, 25);
+  assert.equal(reachability.deletion.reviewOnlyHistoricalRemoval.some((row) => row.key.endsWith("orphan6")), false);
+  assert.equal(reachability.deletion.reviewOnlyHistoricalRemoval.some((row) => row.key.includes("rollback")), false);
+  const reusedHistory = buildR2ReachabilityReport({ ...reachabilityInput, candidateManifest: releases[3].manifest });
+  assert.equal(reusedHistory.deletion.reviewOnlyHistoricalRemovalBytes, 0, "Both candidate content and its existing immutable manifest must remain protected.");
+  assert.equal(reusedHistory.deletion.reviewOnlyHistoricalRemoval.some((row) => row.key.endsWith("history5")), false, "Candidate references protect older content from the removal review.");
+  assert.equal(reusedHistory.candidateRelease?.reusedObjects, 1);
+  const candidateInput = {
+    manifest: first,
+    bucketObjects: [object("current.json", 100)],
+    currentClassARequests: 100,
+    currentClassBRequests: 200,
+    reviewOnlyHistoricalRemovalBytes: 0,
+  };
+  const candidatePlan = planR2CandidateRelease(candidateInput);
+  assert.equal(candidatePlan.missingObjects, 2, "Identical candidate files must deduplicate.");
+  assert.equal(candidatePlan.publicationWithoutDeletionAllowedByBudget, true);
+  const fullBucket = planR2CandidateRelease({ ...candidateInput, bucketObjects: [object("current.json", R2_STORAGE_SAFETY_BYTES)] });
+  assert.equal(fullBucket.publicationWithoutDeletionAllowedByBudget, false);
+  assert(fullBucket.bytesOverStorageStop > 0);
+  const classAFull = planR2CandidateRelease({ ...candidateInput, currentClassARequests: R2_CLASS_A_SAFETY_REQUESTS });
+  assert.equal(classAFull.publicationWithoutDeletionAllowedByBudget, false);
+  const classBFull = planR2CandidateRelease({ ...candidateInput, currentClassBRequests: R2_CLASS_B_SAFETY_REQUESTS });
+  assert.equal(classBFull.publicationWithoutDeletionAllowedByBudget, false);
+  const reused = planR2CandidateRelease({ ...candidateInput, bucketObjects: [object(first.artifacts[0].objectKey, first.artifacts[0].bytes)] });
+  assert.equal(reused.reusedObjects, 1);
+  assert.throws(() => planR2CandidateRelease({ ...candidateInput, bucketObjects: [object(first.artifacts[0].objectKey, first.artifacts[0].bytes + 1)] }), /byte count differs/u);
 
   const corrupted = structuredClone(first);
   corrupted.artifacts[0].bytes += 1;

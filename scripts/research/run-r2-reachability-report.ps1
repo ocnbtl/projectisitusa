@@ -7,7 +7,8 @@ param(
   [ValidateRange(0, 8000000)]
   [long]$MonthlyClassBUsed,
   [Parameter(Mandatory = $true)]
-  [string]$DashboardObservedAt
+  [string]$DashboardObservedAt,
+  [string]$CandidateManifest
 )
 
 $ErrorActionPreference = "Stop"
@@ -38,10 +39,11 @@ $env:R2_ACCESS_KEY_ID = $credential.UserName
 $env:R2_SECRET_ACCESS_KEY = $credential.GetNetworkCredential().Password
 Push-Location -LiteralPath $repoRoot
 try {
+  $candidateArguments = if ($CandidateManifest) { @("--candidate-manifest", $CandidateManifest) } else { @() }
   & $nodeExecutable --import tsx scripts/report-r2-reachability.ts `
     --monthly-class-a-used $MonthlyClassAUsed.ToString() `
     --monthly-class-b-used $MonthlyClassBUsed.ToString() `
-    --dashboard-observed-at $DashboardObservedAt
+    --dashboard-observed-at $DashboardObservedAt @candidateArguments
   if ($LASTEXITCODE -ne 0) { throw "R2 reachability report failed with exit code $LASTEXITCODE." }
 } finally {
   Pop-Location

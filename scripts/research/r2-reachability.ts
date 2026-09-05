@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 
-import type { ResearchPublicationManifest } from "./research-publication";
+import { manifestBytes, type ResearchPublicationManifest } from "./research-publication";
 import {
   RESEARCH_PROMOTION_MINIMUM_INTERVAL_HOURS,
   RESEARCH_PROMOTION_POLICY_VERSION,
@@ -79,6 +79,7 @@ export function buildR2ReachabilityReport(input: {
   bucketObjects: R2BucketObjectRecord[];
   currentPointer: ResearchPublicationPointer;
   releases: R2ReleaseInventoryRecord[];
+  candidateManifest?: ResearchPublicationManifest;
 }) {
   if (!Number.isFinite(Date.parse(input.observedAt)) || !Number.isFinite(Date.parse(input.dashboardObservedAt))) {
     throw new Error("R2 reachability observation timestamps must be valid ISO date-times.");
@@ -140,7 +141,23 @@ export function buildR2ReachabilityReport(input: {
   const historicalOnlyKeys = [...allReferencedKeys].filter((key) => !rollbackReferencedKeys.has(key));
   const unreferencedKeys = contentKeys.filter((key) => !allReferencedKeys.has(key));
   const outsideRollbackManifestKeys = historicalReleases.map((release) => release.manifestKey);
+  const candidateKeys = new Set(input.candidateManifest ? [
+    ...input.candidateManifest.artifacts.map((artifact) => artifact.objectKey),
+    `releases/${input.candidateManifest.releaseId}/manifest.json`,
+  ] : []);
+  const reviewOnlyHistoricalRemoval = [...historicalOnlyKeys, ...outsideRollbackManifestKeys]
+    .filter((key) => !candidateKeys.has(key))
+    .sort(compareText)
+    .map((key) => ({ key, bytes: inventory.get(key)!.bytes }));
+  const reviewOnlyHistoricalRemovalBytes = reviewOnlyHistoricalRemoval.reduce((sum, item) => sum + item.bytes, 0);
   const bucketSummary = summarizeKeys(inventory.keys(), inventory);
+  const candidateRelease = input.candidateManifest ? planR2CandidateRelease({
+    manifest: input.candidateManifest,
+    bucketObjects: input.bucketObjects,
+    currentClassARequests: input.currentClassARequests + input.reportClassARequests,
+    currentClassBRequests: input.currentClassBRequests + input.reportClassBRequests,
+    reviewOnlyHistoricalRemovalBytes,
+  }) : null;
   const projectedClassARequests = input.currentClassARequests + input.reportClassARequests;
   const projectedClassBRequests = input.currentClassBRequests + input.reportClassBRequests;
 
@@ -200,6 +217,9 @@ export function buildR2ReachabilityReport(input: {
     },
     deletion: {
       performed: false,
+      reviewOnlyHistoricalRemoval,
+      reviewOnlyHistoricalRemovalBytes,
+      reviewOnlyHistoricalRemovalSha256: createHash("sha256").update(JSON.stringify(reviewOnlyHistoricalRemoval)).digest("hex"),
       automaticallyEligibleObjects: 0,
       candidateObjectCount: historicalOnlyKeys.length + unreferencedKeys.length + outsideRollbackManifestKeys.length,
       candidateBytes:
@@ -209,6 +229,7 @@ export function buildR2ReachabilityReport(input: {
       qualification:
         "Candidates are inventory evidence only. No object is approved for deletion without explicit authority, a fresh report, and rollback verification.",
     },
+    candidateRelease,
     safety: {
       storageWithinProjectStop: bucketSummary.bytes <= R2_STORAGE_SAFETY_BYTES,
       classAWithinProjectStop: projectedClassARequests <= R2_CLASS_A_SAFETY_REQUESTS,
@@ -216,5 +237,63 @@ export function buildR2ReachabilityReport(input: {
       pointerManifestReconciled: true,
       referencedObjectBytesReconciled: true,
     },
+  };
+}
+
+/** Read-only counterpart to the publisher budget. This never authorizes deletion or upload. */
+export function planR2CandidateRelease(input: {
+  manifest: ResearchPublicationManifest;
+  bucketObjects: R2BucketObjectRecord[];
+  currentClassARequests: number;
+  currentClassBRequests: number;
+  reviewOnlyHistoricalRemovalBytes: number;
+}) {
+  const inventory = new Map<string, number>();
+  for (const object of input.bucketObjects) {
+    assertNonNegativeSafeInteger(object.bytes, "Inventory object bytes");
+    if (inventory.has(object.key)) throw new Error("Candidate inventory contains a duplicate key.");
+    inventory.set(object.key, object.bytes);
+  }
+  assertNonNegativeSafeInteger(input.currentClassARequests, "Candidate Class A usage");
+  assertNonNegativeSafeInteger(input.currentClassBRequests, "Candidate Class B usage");
+  assertNonNegativeSafeInteger(input.reviewOnlyHistoricalRemovalBytes, "Review-only removal bytes");
+  const unique = new Map(input.manifest.artifacts.map((artifact) => [artifact.objectKey, artifact]));
+  const missing = [...unique.values()].filter((artifact) => {
+    const bytes = inventory.get(artifact.objectKey);
+    if (bytes !== undefined && bytes !== artifact.bytes) throw new Error("Candidate object byte count differs from inventory.");
+    return bytes === undefined;
+  });
+  const retainedBytes = [...inventory.values()].reduce((sum, bytes) => sum + bytes, 0);
+  if (input.reviewOnlyHistoricalRemovalBytes > retainedBytes) throw new Error("Review removal exceeds retained inventory.");
+  const missingBytes = missing.reduce((sum, artifact) => sum + artifact.bytes, 0);
+  const releaseBytes = manifestBytes(input.manifest);
+  // Match publish-research-to-r2.ts: include manifest bytes plus its 1024-byte pointer reserve.
+  const projectedRetainedBytes = retainedBytes + missingBytes + releaseBytes.length + 1024;
+  const newClassARequests = Math.max(1, Math.ceil(inventory.size / 1000)) + missing.length + 2;
+  const newClassBRequests = unique.size + 1 + 4 + (inventory.has("current.json") ? 1 : 0);
+  const projectedClassARequests = input.currentClassARequests + newClassARequests;
+  const projectedClassBRequests = input.currentClassBRequests + newClassBRequests;
+  return {
+    mode: "review-only-no-provider-writes",
+    releaseId: input.manifest.releaseId,
+    sourceCommit: input.manifest.sourceCommit,
+    manifestSha256: createHash("sha256").update(releaseBytes).digest("hex"),
+    manifestBytes: releaseBytes.length,
+    totalCandidateObjects: unique.size,
+    reusedObjects: unique.size - missing.length,
+    missingObjects: missing.length,
+    missingBytes,
+    projectedRetainedBytes,
+    storageSafetyBytes: R2_STORAGE_SAFETY_BYTES,
+    bytesOverStorageStop: Math.max(0, projectedRetainedBytes - R2_STORAGE_SAFETY_BYTES),
+    newClassARequests,
+    newClassBRequests,
+    projectedClassARequests,
+    projectedClassBRequests,
+    publicationWithoutDeletionAllowedByBudget: projectedRetainedBytes <= R2_STORAGE_SAFETY_BYTES
+      && projectedClassARequests <= R2_CLASS_A_SAFETY_REQUESTS
+      && projectedClassBRequests <= R2_CLASS_B_SAFETY_REQUESTS,
+    projectedRetainedBytesAfterReviewOnlyRemoval: projectedRetainedBytes - input.reviewOnlyHistoricalRemovalBytes,
+    qualification: "Inventory sizes and exact manifest identity only. Full remote object hash verification, fresh counters, cadence checks, and explicit publication authority remain required. Request estimates cover one publish/promote invocation with full verification and four public probes; retries or separate phases require additional budget.",
   };
 }
