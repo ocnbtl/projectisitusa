@@ -170,6 +170,8 @@ export interface JurisdictionEvidenceRecord {
     exclusions: string[];
   };
   effectiveAt: string;
+  /** Earliest possible eradication date when the authority reports an interval. */
+  conflictCheckFrom?: string;
   reaffirmedAt: string | null;
   validThrough: string;
   review: {

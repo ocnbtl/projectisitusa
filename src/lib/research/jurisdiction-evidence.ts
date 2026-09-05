@@ -129,6 +129,9 @@ export function validateJurisdictionEvidenceRegistry(input: {
     }
 
     const effectiveAt = dateOnlyTimestamp(record.effectiveAt, `${record.id}: effectiveAt`);
+    if (record.conflictCheckFrom) {
+      assert(dateOnlyTimestamp(record.conflictCheckFrom, `${record.id}: conflictCheckFrom`) <= effectiveAt, `${record.id}: conflictCheckFrom follows effectiveAt.`);
+    }
     const reaffirmedAt = record.reaffirmedAt
       ? dateOnlyTimestamp(record.reaffirmedAt, `${record.id}: reaffirmedAt`)
       : effectiveAt;
@@ -187,7 +190,7 @@ export function validateJurisdictionEvidenceRegistry(input: {
 
 export function resolveTemporalPairDetermination(input: {
   presenceEvidence: PresenceEvidence[];
-  jurisdictionEvidence: Array<Pick<JurisdictionEvidenceRecord, "id" | "statementType" | "effectiveAt" | "reaffirmedAt" | "validThrough">>;
+  jurisdictionEvidence: Array<Pick<JurisdictionEvidenceRecord, "id" | "statementType" | "effectiveAt" | "conflictCheckFrom" | "reaffirmedAt" | "validThrough">>;
   asOf: string;
 }) {
   const asOfTimestamp = dateOnlyTimestamp(input.asOf, "Temporal determination asOf");
@@ -215,16 +218,19 @@ export function resolveTemporalPairDetermination(input: {
   let conflict = false;
   let conflictReason: string | null = null;
   if (selectedRecord) {
+    const conflictCheckFrom = selectedRecord.conflictCheckFrom ?? selectedRecord.effectiveAt;
     const effectiveAt = dateOnlyTimestamp(selectedRecord.effectiveAt, `${selectedRecord.id}: effectiveAt`);
+    const conflictTimestamp = dateOnlyTimestamp(conflictCheckFrom, `${selectedRecord.id}: conflictCheckFrom`);
+    assert(conflictTimestamp <= effectiveAt, `${selectedRecord.id}: conflictCheckFrom follows effectiveAt.`);
     const conflictingPresence = input.presenceEvidence.find((evidence) => {
       const observedAt = occurrenceTimestamp(evidence.observedAt);
-      return observedAt === null || observedAt >= effectiveAt;
+      return observedAt === null || observedAt >= conflictTimestamp;
     });
     if (conflictingPresence) {
       currentDeterminationStatus = "present";
       conflict = true;
       conflictReason = conflictingPresence.observedAt
-        ? `Accepted presence ${conflictingPresence.evidenceId} is on or after ${selectedRecord.effectiveAt}.`
+        ? `Accepted presence ${conflictingPresence.evidenceId} is on or after ${conflictCheckFrom}.`
         : `Accepted presence ${conflictingPresence.evidenceId} is undated.`;
     } else {
       currentDeterminationStatus = selectedRecord.statementType;

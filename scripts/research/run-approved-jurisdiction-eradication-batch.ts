@@ -1,6 +1,7 @@
 import {
   existsSync,
   mkdirSync,
+  mkdtempSync,
   readFileSync,
   readdirSync,
   renameSync,
@@ -17,6 +18,7 @@ import {
   APPROVAL_RECEIPT_PATH,
   OFFICIAL_ERADICATION_ADAPTER_ID,
   OFFICIAL_ERADICATION_ADAPTER_VERSION,
+  ALB_ERADICATION_ADAPTER_VERSION,
   OFFICIAL_ERADICATION_BATCH_ID,
   officialEradicationAdapter,
 } from "./adapters/official-eradication-determination";
@@ -45,6 +47,9 @@ import {
   validateResearchRunInMemory,
   verifyStagedResearchRun,
 } from "@/lib/research/validate-run";
+
+import { ALB_REVIEW_ID, ALB_REVIEW_PATH, ALB_SPECIES_ID } from "./alb-eradication-review";
+import { ALB_APPROVED_REVIEW_SHA256, ALB_APPROVAL_RECEIPT_PATH, loadApprovedAlbBatch, verifyAlbApplicationBaseline } from "./alb-approved-batch";
 
 const ROOT = process.cwd();
 const RESEARCH_DIR = path.join(ROOT, "src/data/research");
@@ -89,11 +94,13 @@ function readJson<T>(filepath: string): T {
 }
 
 function parseArguments(argv: string[]) {
+  const isAlb = argv[0] === "--batch" && argv[1] === ALB_REVIEW_ID;
+  if (isAlb) argv = argv.slice(2);
   assert(argv.length === 2 && argv[0] === "--recorded-at", "Use --recorded-at <ISO date-time>.");
   const milliseconds = Date.parse(argv[1]!);
   assert(Number.isFinite(milliseconds), "--recorded-at must be an ISO date-time.");
   assert(milliseconds <= Date.now(), "--recorded-at cannot be in the future.");
-  return { recordedAt: new Date(milliseconds).toISOString() };
+  return { recordedAt: new Date(milliseconds).toISOString(), isAlb };
 }
 
 function directoryContents(directory: string, prefix = "") {
@@ -173,8 +180,14 @@ function buildSpecs() {
 
 async function main() {
   const options = parseArguments(process.argv.slice(2));
-  const approvalRequestPath = path.join(ROOT, APPROVAL_ARTIFACT_PATH);
-  const approvalReceiptPath = path.join(ROOT, APPROVAL_RECEIPT_PATH);
+  const batchId = options.isAlb ? ALB_REVIEW_ID : OFFICIAL_ERADICATION_BATCH_ID;
+  const approvalArtifactPath = options.isAlb ? ALB_REVIEW_PATH : APPROVAL_ARTIFACT_PATH;
+  const approvalArtifactSha256 = options.isAlb ? ALB_APPROVED_REVIEW_SHA256 : APPROVAL_ARTIFACT_SHA256;
+  const approvalReceiptRelativePath = options.isAlb ? ALB_APPROVAL_RECEIPT_PATH : APPROVAL_RECEIPT_PATH;
+  const adapterVersion = options.isAlb ? ALB_ERADICATION_ADAPTER_VERSION : OFFICIAL_ERADICATION_ADAPTER_VERSION;
+  const alb = options.isAlb ? loadApprovedAlbBatch(ROOT) : null;
+  const approvalRequestPath = path.join(ROOT, approvalArtifactPath);
+  const approvalReceiptPath = path.join(ROOT, approvalReceiptRelativePath);
   const registryPath = path.join(RESEARCH_DIR, "source-registry.json");
   const jurisdictionRegistryPath = path.join(RESEARCH_DIR, "jurisdiction-evidence-registry.json");
   const countyRegistryPath = path.join(RESEARCH_DIR, "county-equivalent-registry.json");
@@ -183,9 +196,9 @@ async function main() {
   const approvalReceiptBytes = readFileSync(approvalReceiptPath);
   const approvalReceiptSha256 = sha256(approvalReceiptBytes);
   const approvalReceipt = JSON.parse(approvalReceiptBytes.toString("utf8")) as ApprovalReceipt;
-  assert(sha256(readFileSync(approvalRequestPath)) === APPROVAL_ARTIFACT_SHA256, "Approved request artifact hash changed.");
+  assert(sha256(readFileSync(approvalRequestPath)) === approvalArtifactSha256, "Approved request artifact hash changed.");
   assert(approvalReceipt.status === "human-approved" && approvalReceipt.actorId === "Ocean", "Approval receipt is not the expected human approval.");
-  assert(approvalReceipt.approvedArtifact.path === APPROVAL_ARTIFACT_PATH && approvalReceipt.approvedArtifact.sha256 === APPROVAL_ARTIFACT_SHA256, "Approval receipt references another artifact.");
+  assert(approvalReceipt.approvedArtifact.path === approvalArtifactPath && approvalReceipt.approvedArtifact.sha256 === approvalArtifactSha256, "Approval receipt references another artifact.");
   assert(approvalReceipt.recordedAt === options.recordedAt, "Recorded batch time differs from the approval receipt.");
   const inputPaths = [
     approvalRequestPath,
@@ -198,6 +211,9 @@ async function main() {
     PARAMETER_SCHEMA_PATH,
     ADAPTER_PATH,
     SCRIPT_PATH,
+    path.join(ROOT, "scripts/research/alb-approved-batch.ts"),
+    path.join(ROOT, "scripts/research/alb-eradication-review.ts"),
+    ...(alb ? [path.join(ROOT, alb.review.source.artifactPath)] : []),
     path.join(ROOT, "src/data/research/schemas/evidence-assertion.schema.json"),
     path.join(ROOT, "src/data/research/schemas/review-event.schema.json"),
     path.join(ROOT, "src/data/research/schemas/pair-outcome.schema.json"),
@@ -215,11 +231,17 @@ async function main() {
   const parameterSchema = readJson<Parameters<typeof z.fromJSONSchema>[0]>(PARAMETER_SCHEMA_PATH);
   const parameterValidator = z.fromJSONSchema(parameterSchema);
   const speciesById = new Map(readJson<Species[]>(speciesPath).map((species) => [species.id, species]));
-  const specs = buildSpecs();
-  assert(specs.length === 54, `Expected 54 state-scoped runs, found ${specs.length}.`);
-  const cacheRoot = path.join(ROOT, ".cache/research/jurisdiction-eradication-batch", snapshot.commit);
-  rmSync(cacheRoot, { recursive: true, force: true });
-  mkdirSync(cacheRoot, { recursive: true });
+  const specs: RunSpec[] = alb ? alb.review.proposedParentRecords.map((record) => ({
+    sourceId: alb.review.source.sourceId, stateCode: record.jurisdiction.stateCode,
+    speciesId: ALB_SPECIES_ID, parentJurisdictionEvidenceId: record.id,
+    countyFips: record.jurisdiction.countyFips, historicalOccurrencePairKeys: [],
+  })) : buildSpecs();
+  assert(specs.length === (alb ? 2 : 54), "Approved state-scoped run count differs.");
+  if (alb) verifyAlbApplicationBaseline(ROOT);
+  const cacheParent = path.resolve(ROOT, ".cache/research/jurisdiction-eradication-batch");
+  mkdirSync(cacheParent, { recursive: true });
+  const cacheRoot = mkdtempSync(path.join(cacheParent, `${snapshot.commit}-${batchId}-`));
+  assert(path.resolve(cacheRoot).startsWith(`${cacheParent}${path.sep}`), "Unsafe generated cache path.");
   const sourceRegistryHash = snapshot.fileHashes.get(registryPath)!;
   const adapterCodeHash = snapshot.fileHashes.get(ADAPTER_PATH)!;
   const scriptHash = snapshot.fileHashes.get(SCRIPT_PATH)!;
@@ -235,7 +257,7 @@ async function main() {
     const source = registry.sources.find((entry) => entry.id === spec.sourceId);
     assert(source?.researchAdapter, `Missing registered adapter for ${spec.sourceId}.`);
     assert(source.researchAdapter.id === OFFICIAL_ERADICATION_ADAPTER_ID, `Registered adapter differs for ${spec.sourceId}.`);
-    assert(source.researchAdapter.allowedVersions.includes(OFFICIAL_ERADICATION_ADAPTER_VERSION), `Adapter version is not registered for ${spec.sourceId}.`);
+    assert(source.researchAdapter.allowedVersions.includes(adapterVersion), `Adapter version is not registered for ${spec.sourceId}.`);
     const species = speciesById.get(spec.speciesId);
     assert(species, `Unknown species ${spec.speciesId}.`);
     const counties = new Map(listCountyEquivalents(spec.stateCode).map((county) => [county.countyFips, county]));
@@ -253,10 +275,10 @@ async function main() {
     const parameters = {
       stateCode: spec.stateCode,
       mode: "human-approved-official-eradication",
-      batchId: OFFICIAL_ERADICATION_BATCH_ID,
-      approvalArtifactPath: APPROVAL_ARTIFACT_PATH,
-      approvalArtifactSha256: APPROVAL_ARTIFACT_SHA256,
-      approvalReceiptPath: APPROVAL_RECEIPT_PATH,
+      batchId,
+      approvalArtifactPath,
+      approvalArtifactSha256,
+      approvalReceiptPath: approvalReceiptRelativePath,
       approvalReceiptSha256,
       sourceDocumentId: spec.sourceId,
       parentJurisdictionEvidenceId: spec.parentJurisdictionEvidenceId,
@@ -272,7 +294,7 @@ async function main() {
     const runId = `${runTimestamp(options.recordedAt)}__${spec.sourceId}__${runIdentityHash.slice(0, 12)}`;
     const finalDirectory = path.join(RUNS_ROOT, runId);
     const stagedDirectory = path.join(cacheRoot, runId);
-    const adapter = officialEradicationAdapter(spec.sourceId);
+    const adapter = officialEradicationAdapter(spec.sourceId, adapterVersion);
     const result = await adapter.run({
       runId,
       sourceId: spec.sourceId,
@@ -307,11 +329,11 @@ async function main() {
       started_at: options.recordedAt,
       finished_at: result.completedAt,
       actor_type: "adapter",
-      actor_id: `${OFFICIAL_ERADICATION_ADAPTER_ID}@${OFFICIAL_ERADICATION_ADAPTER_VERSION}`,
+      actor_id: `${OFFICIAL_ERADICATION_ADAPTER_ID}@${adapterVersion}`,
       source_id: spec.sourceId,
       source_registry_hash: sourceRegistryHash,
       adapter_id: OFFICIAL_ERADICATION_ADAPTER_ID,
-      adapter_version: OFFICIAL_ERADICATION_ADAPTER_VERSION,
+      adapter_version: adapterVersion,
       adapter_code_hash: adapterCodeHash,
       code_commit: snapshot.commit,
       parameter_hash: parameterHash,
@@ -343,7 +365,7 @@ async function main() {
         "No live provider request was issued; the approved batch replays retained, hash-pinned official artifacts reviewed immediately before human approval.",
         "Push, R2 publication, pointer promotion, deployment, and release are excluded from this local batch.",
       ],
-      rerun_command: `npm run research:run:approved-eradication -- --recorded-at ${options.recordedAt}`,
+      rerun_command: `npm run research:run:approved-eradication -- ${alb ? `--batch ${ALB_REVIEW_ID} ` : ""}--recorded-at ${options.recordedAt}`,
     };
     const validationResult: SourceAdapterResult = result;
     validateResearchRunInMemory({
@@ -380,9 +402,10 @@ async function main() {
     }),
     { pairs: 0, assertions: 0, reviews: 0, outcomes: 0 },
   );
-  assert(totals.pairs === 3151, `Expected 3151 source-pair screens, generated ${totals.pairs}.`);
-  assert(totals.assertions === 3151 && totals.reviews === 3151, "Approved assertion or review count differs.");
-  assert(totals.outcomes === 3151, "Approved outcome count differs.");
+  const expectedPairs = alb ? 101 : 3151;
+  assert(totals.pairs === expectedPairs, "Approved source-pair screen count differs.");
+  assert(totals.assertions === expectedPairs && totals.reviews === expectedPairs, "Approved assertion or review count differs.");
+  assert(totals.outcomes === expectedPairs, "Approved outcome count differs.");
   const newRuns: typeof generated = [];
   for (const run of generated) {
     if (!existsSync(run.finalDirectory)) {
@@ -417,14 +440,14 @@ async function main() {
   }
   rmSync(cacheRoot, { recursive: true, force: true });
   process.stdout.write(`${JSON.stringify({
-    batchId: OFFICIAL_ERADICATION_BATCH_ID,
+    batchId,
     codeCommit: snapshot.commit,
     recordedAt: options.recordedAt,
     runCount: generated.length,
     newRunCount: newRuns.length,
     sourcePairScreens: totals.pairs,
-    currentDeterminationAssertions: 3147,
-    historicalOccurrenceAssertions: 4,
+    currentDeterminationAssertions: alb ? 101 : 3147,
+    historicalOccurrenceAssertions: alb ? 0 : 4,
     assertionEvents: totals.assertions,
     reviewEvents: totals.reviews,
     outcomeEvents: totals.outcomes,

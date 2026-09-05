@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-03",
+  "updatedAt": "2026-09-05",
   "sources": [
     {
       "id": "eddmaps",
@@ -919,23 +919,36 @@
     {
       "id": "aphis-asian-longhorned-beetle-program-update-2026",
       "label": "USDA APHIS Asian longhorned beetle program update (2026)",
-      "aliases": ["APHIS 2026 ALB quarantine program update"],
+      "aliases": [
+        "APHIS 2026 ALB quarantine program update"
+      ],
       "authority": "USDA Animal and Plant Health Inspection Service",
       "tier": "official-national",
       "homepage": "https://direct.aphis.usda.gov/news/program-update/aphis-removes-portions-nassau-suffolk-counties-new-york-asian-longhorned-0",
       "access": "manual",
-      "geographicScope": ["United States", "New Jersey"],
-      "evidenceCapabilities": ["recorded-present", "officially-absent"],
+      "geographicScope": [
+        "United States",
+        "New Jersey",
+        "Illinois",
+        "Massachusetts"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "officially-absent"
+      ],
       "negativeSemantics": "explicit-authority-only",
       "refreshCadenceDays": 365,
       "dataFreshThrough": "2027-07-30",
       "status": "manual",
       "adapter": null,
-      "caveat": "Supports only the explicit, human-approved official eradication determination for the approved New Jersey county set through its parent record validThrough date.",
+      "caveat": "Supports only explicit, human-approved official eradication determinations for the exact approved New Jersey county set and ALB r2 unconflicted Illinois and Massachusetts county sets through each parent record validThrough date. Seven r2 counties with undated accepted presence remain held; no partial or subcounty scope is generalized.",
       "researchAdapter": {
         "id": "official-eradication-determination",
         "module": "scripts/research/adapters/official-eradication-determination.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.1.0"
+        ],
         "parameterSchema": "src/data/research/schemas/official-eradication-determination-parameters.schema.json",
         "publicationReviewGate": "human-approved",
         "taxonMatchingPolicy": "Exact canonical binomial agreement with the Project Isitusa catalog taxon named in the approved batch artifact.",

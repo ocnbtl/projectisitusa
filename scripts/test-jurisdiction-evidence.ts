@@ -38,16 +38,18 @@ validateJurisdictionEvidenceRegistry({
   countyRegistry,
   stateRegistry,
 });
-assert.equal(committedRegistry.records.length, 2, "Approved jurisdiction evidence registry count differs.");
+assert.equal(committedRegistry.records.length, 4, "Approved jurisdiction evidence registry count differs.");
 assert.deepEqual(
   committedRegistry.records.map((record) => record.id),
   [
     "vespa-mandarinia-us-officially-eradicated-2024",
     "asian-longhorned-beetle-nj-officially-eradicated-2013",
+    "asian-longhorned-beetle-il-unconflicted-eradication-20260905-r2",
+    "asian-longhorned-beetle-ma-unconflicted-eradication-20260905-r2",
   ],
 );
 assert.ok(
-  committedRegistry.records.every(
+  committedRegistry.records.slice(0, 2).every(
     (record) =>
       record.review.actorId === "Ocean" &&
       record.review.reviewedAt === "2026-09-01T19:16:53.000Z",

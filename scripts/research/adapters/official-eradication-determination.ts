@@ -1,4 +1,6 @@
 import { createHash } from "node:crypto";
+import { ALB_REVIEW_ID, ALB_REVIEW_PATH } from "../alb-eradication-review";
+import { ALB_APPROVED_REVIEW_SHA256, ALB_APPROVAL_RECEIPT_PATH, loadApprovedAlbBatch } from "../alb-approved-batch";
 
 import type {
   ResearchSourceAdapter,
@@ -16,6 +18,7 @@ import { stableJson } from "@/lib/research/run-files";
 export const OFFICIAL_ERADICATION_ADAPTER_ID =
   "official-eradication-determination" as const;
 export const OFFICIAL_ERADICATION_ADAPTER_VERSION = "1.0.0" as const;
+export const ALB_ERADICATION_ADAPTER_VERSION = "1.1.0" as const;
 export const OFFICIAL_ERADICATION_BATCH_ID =
   "jurisdiction-wide-eradication-human-approval-request-20260901-r1" as const;
 export const APPROVAL_ARTIFACT_PATH =
@@ -28,10 +31,10 @@ export const APPROVAL_RECEIPT_PATH =
 type Parameters = {
   stateCode: string;
   mode: "human-approved-official-eradication";
-  batchId: typeof OFFICIAL_ERADICATION_BATCH_ID;
-  approvalArtifactPath: typeof APPROVAL_ARTIFACT_PATH;
-  approvalArtifactSha256: typeof APPROVAL_ARTIFACT_SHA256;
-  approvalReceiptPath: typeof APPROVAL_RECEIPT_PATH;
+  batchId: typeof OFFICIAL_ERADICATION_BATCH_ID | typeof ALB_REVIEW_ID;
+  approvalArtifactPath: string;
+  approvalArtifactSha256: string;
+  approvalReceiptPath: string;
   approvalReceiptSha256: string;
   sourceDocumentId: string;
   parentJurisdictionEvidenceId: string | null;
@@ -125,14 +128,25 @@ function pairKey(value: { countyFips: string; speciesId: string }) {
 
 function parseParameters(context: SourceAdapterContext) {
   const parameters = context.parameters as unknown as Parameters;
-  const contract = SOURCE_CONTRACTS[context.sourceId];
+  let contract = SOURCE_CONTRACTS[context.sourceId];
   assert(contract, `Unsupported official eradication source ${context.sourceId}.`);
   assert(parameters.mode === "human-approved-official-eradication", "Eradication adapter mode differs.");
-  assert(parameters.batchId === OFFICIAL_ERADICATION_BATCH_ID, "Eradication batch identity differs.");
+  const isAlb = parameters.batchId === ALB_REVIEW_ID;
+  assert(isAlb || parameters.batchId === OFFICIAL_ERADICATION_BATCH_ID, "Eradication batch identity differs.");
+  if (isAlb) {
+    const { review, receipt, receiptSha256 } = loadApprovedAlbBatch(process.cwd());
+    assert(context.sourceId === review.source.sourceId, "ALB approval source differs.");
+    const parent = review.proposedParentRecords.find((record) => record.jurisdiction.stateCode === context.stateCode);
+    assert(parent, "ALB approval does not include this state.");
+    assert(stableJson(context.requestedPairs.map((pair) => pair.countyFips)) === stableJson(parent.jurisdiction.countyFips), "ALB requested county set differs from exact approval.");
+    assert(parameters.approvalReceiptSha256 === receiptSha256, "ALB approval receipt hash differs.");
+    assert(parameters.humanReviewTimestamp === receipt.recordedAt, "ALB human review time differs from receipt.");
+    contract = { ...contract, parentJurisdictionEvidenceId: parent.id, sourceSupport: review.source.supportText };
+  }
   assert(parameters.stateCode === context.stateCode, "Eradication state differs.");
-  assert(parameters.approvalArtifactPath === APPROVAL_ARTIFACT_PATH, "Approval artifact path differs.");
-  assert(parameters.approvalArtifactSha256 === APPROVAL_ARTIFACT_SHA256, "Approval artifact hash differs.");
-  assert(parameters.approvalReceiptPath === APPROVAL_RECEIPT_PATH, "Approval receipt path differs.");
+  assert(parameters.approvalArtifactPath === (isAlb ? ALB_REVIEW_PATH : APPROVAL_ARTIFACT_PATH), "Approval artifact path differs.");
+  assert(parameters.approvalArtifactSha256 === (isAlb ? ALB_APPROVED_REVIEW_SHA256 : APPROVAL_ARTIFACT_SHA256), "Approval artifact hash differs.");
+  assert(parameters.approvalReceiptPath === (isAlb ? ALB_APPROVAL_RECEIPT_PATH : APPROVAL_RECEIPT_PATH), "Approval receipt path differs.");
   assert(/^[a-f0-9]{64}$/u.test(parameters.approvalReceiptSha256), "Approval receipt hash is invalid.");
   assert(parameters.sourceDocumentId === context.sourceId, "Source document identity differs.");
   assert(parameters.parentJurisdictionEvidenceId === contract.parentJurisdictionEvidenceId, "Parent jurisdiction identity differs.");
@@ -178,7 +192,7 @@ function buildAssertion(input: {
     event_type: "evidence.asserted",
     created_at: input.parameters.humanReviewTimestamp,
     actor_type: "adapter",
-    actor_id: `${OFFICIAL_ERADICATION_ADAPTER_ID}@${OFFICIAL_ERADICATION_ADAPTER_VERSION}`,
+    actor_id: `${OFFICIAL_ERADICATION_ADAPTER_ID}@${input.parameters.batchId === ALB_REVIEW_ID ? ALB_ERADICATION_ADAPTER_VERSION : OFFICIAL_ERADICATION_ADAPTER_VERSION}`,
     run_id: input.context.runId,
     source_id: input.context.sourceId,
     state_code: input.context.stateCode,
@@ -321,13 +335,16 @@ export async function runOfficialEradicationDetermination(
   };
 }
 
-export function officialEradicationAdapter(sourceId: string): ResearchSourceAdapter {
+export function officialEradicationAdapter(sourceId: string, version: "1.0.0" | "1.1.0" = OFFICIAL_ERADICATION_ADAPTER_VERSION): ResearchSourceAdapter {
   assert(SOURCE_CONTRACTS[sourceId], `Unsupported official eradication source ${sourceId}.`);
   return {
     adapterId: OFFICIAL_ERADICATION_ADAPTER_ID,
-    adapterVersion: OFFICIAL_ERADICATION_ADAPTER_VERSION,
+    adapterVersion: version,
     sourceId,
-    run: runOfficialEradicationDetermination,
+    run: (context) => {
+      assert((context.parameters.batchId === ALB_REVIEW_ID) === (version === ALB_ERADICATION_ADAPTER_VERSION), "Adapter version differs from the approved batch.");
+      return runOfficialEradicationDetermination(context);
+    },
   };
 }
 

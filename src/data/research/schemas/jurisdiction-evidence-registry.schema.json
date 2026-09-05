@@ -129,6 +129,7 @@
         },
         "jurisdiction": { "$ref": "#/$defs/jurisdiction" },
         "effectiveAt": { "type": "string", "format": "date" },
+        "conflictCheckFrom": { "type": "string", "format": "date" },
         "reaffirmedAt": { "$ref": "#/$defs/dateOrNull" },
         "validThrough": { "type": "string", "format": "date" },
         "review": { "$ref": "#/$defs/review" },
