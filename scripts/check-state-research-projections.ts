@@ -15,7 +15,7 @@ import type {
 import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
 import { listCountyEquivalents } from "@/lib/research/geography-registry";
 import {
-  listImmutableResearchRuns,
+  loadImmutableResearchRun,
   readNdjson,
   stableJson,
 } from "@/lib/research/run-files";
@@ -26,7 +26,7 @@ import {
   type StateApplicabilityFile,
   type StateResearchConfigFile,
 } from "@/lib/research/state-research-config";
-import { selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
+import { assertImmutableRunStateConsistency, selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
 import { deriveStateSpeciesResolution } from "@/lib/research/state-species-resolution";
 import type { ProtocolCellProjection } from "@/lib/research/protocol-cells";
 import type { StateApplicabilitySourceRegistry } from "@/lib/research/state-applicability-sources";
@@ -84,7 +84,26 @@ const applicabilitySourceRegistry = readJson<StateApplicabilitySourceRegistry>(
 for (const source of applicabilitySourceRegistry.sources) {
   sourceIds.add(source.id);
 }
-const allImmutableRuns = listImmutableResearchRuns(ROOT);
+// Validate every run, including future runs and states without public projections,
+// before retaining only paths. Loading the whole national ledger at once exceeds
+// the desktop memory budget; the checks below need one state at a time.
+const runDirectoriesByState = new Map<string, string[]>();
+const runsDirectory = path.join(ROOT, "src/data/research/runs");
+if (existsSync(runsDirectory)) {
+  const runNames = readdirSync(runsDirectory, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && !entry.name.startsWith(".pending-research-run-"))
+    .map((entry) => entry.name)
+    .sort();
+  for (const runName of runNames) {
+    const directory = path.join(runsDirectory, runName);
+    const bundle = loadImmutableResearchRun(ROOT, directory);
+    assertImmutableRunStateConsistency(bundle);
+    const stateCode = bundle.receipt.requested_scope.state_code;
+    const directories = runDirectoriesByState.get(stateCode) ?? [];
+    directories.push(directory);
+    runDirectoriesByState.set(stateCode, directories);
+  }
+}
 const bootstrapEvidence = readNdjson<EvidenceAssertion>(
   path.join(ROOT, "src/data/research/evidence-assertions.ndjson"),
 );
@@ -151,7 +170,7 @@ for (const configuredState of configFile.states.filter(
     applicability,
   });
   const immutableRuns = selectImmutableResearchRunsForState(
-    allImmutableRuns,
+    (runDirectoriesByState.get(stateCode) ?? []).map((directory) => loadImmutableResearchRun(ROOT, directory)),
     stateCode,
     summary.asOf,
   );

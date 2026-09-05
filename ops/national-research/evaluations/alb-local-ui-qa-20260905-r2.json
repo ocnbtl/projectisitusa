@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "alb-local-ui-qa-20260905-r2",
+  "observedAt": "2026-09-05T05:00:10Z",
+  "status": "passed-local-candidate",
+  "browser": "Brave desktop with browser viewport emulation",
+  "applicationUiCommit": "285f65fa45adc569a514eca9c1803702e20e0afd",
+  "productionBuild": {
+    "command": "npm.cmd run build",
+    "exitCode": 0,
+    "buildId": "-KJvqjGjodnA4PJW1Cidm",
+    "logSha256": "1b6c44a36ab2d055cff6768f545207d73c78a4c8cb217093d17fedb976b87660"
+  },
+  "data": {
+    "releaseId": "research-285f65fa45ad-db79b0cdb4428cef",
+    "sourceCommit": "285f65fa45adc569a514eca9c1803702e20e0afd",
+    "manifestPath": "ops/national-research/publication/research-data-manifest.json",
+    "manifestSha256": "cb7a2275a3a1ddf3f49819d9d2ac39f10f201e0fc1a06f5edf51d179bf23f129",
+    "asOf": "2026-09-05"
+  },
+  "servingBoundary": {
+    "origin": "http://127.0.0.1:3116",
+    "upstream": "http://127.0.0.1:3115",
+    "method": "Local production Next server plus a loopback proxy that verifies every served research object against the candidate manifest hash and byte length.",
+    "pointer": "Synthetic local-only pointer; no public pointer was changed.",
+    "r2Writes": 0,
+    "ownedServersStopped": true,
+    "portsClosedAfterQa": [
+      3115,
+      3116
+    ],
+    "viewportReset": true
+  },
+  "counties": [
+    {
+      "stateCode": "IL",
+      "countyFips": "17001",
+      "name": "Adams",
+      "role": "approved",
+      "speciesId": "asian-longhorned-beetle",
+      "matchingPairs": 1,
+      "displayStatus": "Verified Absent",
+      "currentAgencyDetermination": "Officially eradicated",
+      "occurrenceHistory": "No historical occurrence recorded",
+      "evidenceCount": 1,
+      "agencyExplanationVisible": true,
+      "sourceLinkVerified": true
+    },
+    {
+      "stateCode": "IL",
+      "countyFips": "17031",
+      "name": "Cook",
+      "role": "held",
+      "speciesId": "asian-longhorned-beetle",
+      "matchingPairs": 1,
+      "displayStatus": "Verified Present",
+      "determination": "Recorded Present",
+      "freshness": "Undated",
+      "observationDate": "Not recorded",
+      "evidenceCount": 1,
+      "newEradicationClaimVisible": false,
+      "existingEddmapsEvidenceRetained": true
+    },
+    {
+      "stateCode": "MA",
+      "countyFips": "25021",
+      "name": "Norfolk",
+      "role": "approved",
+      "speciesId": "asian-longhorned-beetle",
+      "matchingPairs": 1,
+      "displayStatus": "Verified Absent",
+      "currentAgencyDetermination": "Officially eradicated",
+      "occurrenceHistory": "No historical occurrence recorded",
+      "evidenceCount": 1,
+      "agencyExplanationVisible": true,
+      "sourceLinkVerified": true
+    }
+  ],
+  "sourceUrl": "https://direct.aphis.usda.gov/news/program-update/aphis-removes-portions-nassau-suffolk-counties-new-york-asian-longhorned-0",
+  "interactions": {
+    "speciesSearchPassed": true,
+    "countySelectionPassed": true,
+    "stateSelectionPassed": true,
+    "desktopDisclosurePassed": true,
+    "mobileCollapsePassed": true,
+    "mobileExpansionPassed": true,
+    "clearFiltersRestoredCatalogCount": 2504,
+    "clearButtonDisabledAfterReset": true
+  },
+  "layouts": [
+    {
+      "viewportWidth": 1756,
+      "viewportHeight": 1254,
+      "documentWidth": 1741,
+      "documentHorizontalOverflow": false,
+      "visualInspection": "Approved determination and history appear in separate readable columns."
+    },
+    {
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 375,
+      "documentHorizontalOverflow": false,
+      "visualInspection": "Approved determination and history stack in the expanded evidence card; the status-count strip scrolls within its own container."
+    }
+  ],
+  "browserWarnings": [],
+  "browserErrors": [],
+  "limits": [
+    "Browser viewport emulation is not physical-device evidence.",
+    "This receipt verifies the local ALB candidate. Production R2 still serves the August 28 release.",
+    "No comprehensive accessibility or field-performance certification is claimed."
+  ]
+}

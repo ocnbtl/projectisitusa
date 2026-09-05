@@ -106,7 +106,8 @@
     "import:species-images": "node --import tsx scripts/import-species-images.ts",
     "optimize:species-images": "node --import tsx scripts/optimize-species-images.ts",
     "refresh:data": "node --import tsx scripts/refresh-data.ts",
-    "check:alb-approved-batch": "node --import tsx scripts/test-alb-approved-batch.ts"
+    "check:alb-approved-batch": "node --import tsx scripts/test-alb-approved-batch.ts && node --import tsx scripts/research/audit-approved-alb-batch.ts --check",
+    "research:audit:approved-alb": "node --import tsx scripts/research/audit-approved-alb-batch.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
