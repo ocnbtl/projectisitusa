@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607",
+  "status": "complete",
+  "started_at": "2026-09-05T03:56:43.894Z",
+  "finished_at": "2026-09-05T03:56:43.894Z",
+  "actor_type": "adapter",
+  "actor_id": "official-eradication-determination@1.1.0",
+  "source_id": "aphis-asian-longhorned-beetle-program-update-2026",
+  "source_registry_hash": "29b4bef7618ffbb6d21d54ca892a896cdc876a55f3b6093bb688897edf68018c",
+  "adapter_id": "official-eradication-determination",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "06cf36259975186cb27356c890d93c94a7f7b4a882a48a6374551114947cc821",
+  "code_commit": "2b39357d5057b5793c46b0d5b64934ccdfeda07b",
+  "parameter_hash": "92235eafedcbff92e1ccb8ed124296bd07874ca52dfde3be26e2a6dd3844e2d8",
+  "parameters": {
+    "stateCode": "MA",
+    "mode": "human-approved-official-eradication",
+    "batchId": "aphis-alb-eradication-review-20260905-r2",
+    "approvalArtifactPath": "ops/national-research/evaluations/aphis-alb-eradication-review-20260905-r2.json",
+    "approvalArtifactSha256": "19229e1f90b7be211af20874814744b94c31beeef947441228f432d2aa8b22d1",
+    "approvalReceiptPath": "ops/national-research/evaluations/aphis-alb-eradication-human-approval-receipt-20260905-r2.json",
+    "approvalReceiptSha256": "9648305151ebdc9cdc6c59fe711d3333b47aa162a7c2edb2b880307de7724b73",
+    "sourceDocumentId": "aphis-asian-longhorned-beetle-program-update-2026",
+    "parentJurisdictionEvidenceId": "asian-longhorned-beetle-ma-unconflicted-eradication-20260905-r2",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "25021:asian-longhorned-beetle"
+    ],
+    "historicalOccurrencePairKeys": [],
+    "humanReviewActorId": "Ocean",
+    "humanReviewTimestamp": "2026-09-05T03:56:43.894Z"
+  },
+  "requested_scope": {
+    "state_code": "MA",
+    "county_fips": [
+      "25021"
+    ],
+    "species_ids": [
+      "asian-longhorned-beetle"
+    ],
+    "pair_keys": [
+      "25021:asian-longhorned-beetle"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607/artifacts/approved-source-reference.json",
+      "sha256": "875c60f6328d559f4d98225f8e56bf4eab40b8b0638cd8bc73fe461a5a2d32e3",
+      "bytes": 865,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607/assertions.ndjson",
+      "sha256": "dd97b3348c71ef5c9b82c596626865ee3533df20e39966c3ea94315cf0880633",
+      "bytes": 3077,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607/reviews.ndjson",
+      "sha256": "bceb4e86f1982628506a10236dac8fee2e369941d1e7b955d485a218040040a9",
+      "bytes": 1070,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260905T035643894Z__aphis-asian-longhorned-beetle-program-update-2026__20d468538607/outcomes.ndjson",
+      "sha256": "8aa0f08bd45c66fe289119065592559e5501dadf317c8e6ebc58269fedacaa9b",
+      "bytes": 857,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Supports only explicit, human-approved official eradication determinations for the exact approved New Jersey county set and ALB r2 unconflicted Illinois and Massachusetts county sets through each parent record validThrough date. Seven r2 counties with undated accepted presence remain held; no partial or subcounty scope is generalized."
+  ],
+  "source_warnings": [
+    "This replay uses retained, hash-pinned official source artifacts reviewed before approval and performs no live provider request.",
+    "Absence is emitted only from an explicit human-approved parent jurisdiction determination; source silence never creates an assertion."
+  ],
+  "deviations": [
+    "No live provider request was issued; the approved batch replays retained, hash-pinned official artifacts reviewed immediately before human approval.",
+    "Push, R2 publication, pointer promotion, deployment, and release are excluded from this local batch."
+  ],
+  "rerun_command": "npm run research:run:approved-eradication -- --batch aphis-alb-eradication-review-20260905-r2 --recorded-at 2026-09-05T03:56:43.894Z"
+}
