@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "alb-local-validation-20260905-r2",
+  "verifiedAt": "2026-09-05T05:06:45.450Z",
+  "canonicalCheckout": "C:/Code/project-isitusa",
+  "baseCommit": "e6a810b27422c4ef7fe5be855d8ce9f757e175cb",
+  "verifiedContentCommit": "5da2296949472e9b15a82d023a4c23cb14641956",
+  "contentCommits": [
+    {
+      "commit": "2b39357d5057b5793c46b0d5b64934ccdfeda07b",
+      "title": "Apply approved ALB county scope with conservative year bounds"
+    },
+    {
+      "commit": "7a69b2f37d49caf40d96b3944b701e5645de5ed3",
+      "title": "Record 101 human-approved ALB absence assertions"
+    },
+    {
+      "commit": "285f65fa45adc569a514eca9c1803702e20e0afd",
+      "title": "Compile 101 new ALB determinations across national projections"
+    },
+    {
+      "commit": "5da2296949472e9b15a82d023a4c23cb14641956",
+      "title": "Record ALB verification and publication readiness"
+    }
+  ],
+  "checks": [
+    {
+      "command": "npm.cmd run research:compile:all -- --as-of 2026-09-05",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-compile-all.log",
+      "logSha256": "9dcd5556880d8bf3a3153b423dce092b3c5fb94976ffe52b3d828c610feea82e",
+      "logBytes": 51983,
+      "stateCount": 51,
+      "sequential": true
+    },
+    {
+      "command": "npm.cmd run research:verify:all -- --as-of 2026-09-05",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-verify-all.log",
+      "logSha256": "7a98701975e8b525c1ea7955c9b8dc970dd72eb1af25c714729edb67e3654da9",
+      "logBytes": 109820,
+      "stateCount": 51,
+      "byteStable": true
+    },
+    {
+      "command": "npm.cmd run validate:data",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-validate-data.log",
+      "logSha256": "21feb7d906eeb97ef64fab855f988739be461d7d8729fb616341ae6e391b8838",
+      "logBytes": 54981,
+      "nodeOptions": "--max-old-space-size=6144"
+    },
+    {
+      "command": "npm.cmd run check:state-research-projections",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-state-projections.log",
+      "logSha256": "3f9f3cb3b2c292cfc1a63d096689451ce3d348d1f348a4711e3b564260f52b19",
+      "logBytes": 15032,
+      "startedAt": "2026-09-05T04:54:29.9001712+00:00",
+      "finishedAt": "2026-09-05T04:55:58.2402975+00:00",
+      "nodeOptions": "--max-old-space-size=4096"
+    },
+    {
+      "command": "npm.cmd run check:national-research-config",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-national-config.log",
+      "logSha256": "f14e2f4dae04b41261903142f955ac95214667e85511df9a4290e1ed54a888ae",
+      "logBytes": 427,
+      "startedAt": "2026-09-05T04:55:58.4272101+00:00",
+      "finishedAt": "2026-09-05T04:55:58.9024142+00:00",
+      "nodeOptions": "--max-old-space-size=4096"
+    },
+    {
+      "command": "npm.cmd run check:vercel-publish",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-vercel-publish.log",
+      "logSha256": "774a96adc5c6166370577628fd0a548ef91dcc38f6c94ff7432430d5b274945a",
+      "logBytes": 666,
+      "startedAt": "2026-09-05T04:55:59.0732597+00:00",
+      "finishedAt": "2026-09-05T04:56:00.1821528+00:00",
+      "nodeOptions": "--max-old-space-size=4096"
+    },
+    {
+      "command": "npm.cmd run lint",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-lint.log",
+      "logSha256": "d3235c40b25d9cacb248b4d6d71e8e831f9de65b7761817769e65915079566c0",
+      "logBytes": 320,
+      "startedAt": "2026-09-05T04:56:00.3608918+00:00",
+      "finishedAt": "2026-09-05T04:56:04.0563858+00:00",
+      "nodeOptions": "--max-old-space-size=4096"
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-typecheck.log",
+      "logSha256": "935e803dca53d0d336a809b7096167c87b39147b5aa7fd36163dc29e7249ecf4",
+      "logBytes": 55,
+      "startedAt": "2026-09-05T04:56:04.2421188+00:00",
+      "finishedAt": "2026-09-05T04:56:08.1987675+00:00",
+      "nodeOptions": "--max-old-space-size=4096"
+    },
+    {
+      "command": "npm.cmd run build",
+      "result": "passed",
+      "exitCode": 0,
+      "retainedLogPath": "C:/Users/Ocean/.codex/visualizations/2026/09/05/01a06f1e-a9ed-77c2-8c4e-21213ababf8b/isitusa-staging/alb-build.log",
+      "logSha256": "1b6c44a36ab2d055cff6768f545207d73c78a4c8cb217093d17fedb976b87660",
+      "logBytes": 1452,
+      "startedAt": "2026-09-05T04:56:08.3722370+00:00",
+      "finishedAt": "2026-09-05T04:57:00.2667671+00:00",
+      "nodeOptions": "--max-old-space-size=4096"
+    },
+    {
+      "command": "npm.cmd run check:alb-approved-batch",
+      "result": "passed-after-content-commit",
+      "exitCode": 0,
+      "checkedCommit": "5da2296949472e9b15a82d023a4c23cb14641956",
+      "auditSha256": "aa8399ebd6ab778dcbc40c0a4c0a597ffeccdb3a58fb0a2f347344934df9fe6a",
+      "netNewDeterminations": 101,
+      "heldPairsUnchanged": 7
+    }
+  ],
+  "validationOrderQualification": "The full integrity suite passed with the final evidence, schemas, registry, approval, immutable runs, generated projections, and frozen ALB audit. A later change only reduced the standalone state-projection verifier memory footprint. The revised verifier then passed all 51 states, followed by configuration, Vercel publication checks, lint, typecheck, and production build. Final browser QA used the exact candidate manifest. The committed ALB audit was checked again after the content commit.",
+  "frozenOrchestrationRegression": {
+    "passed": 97,
+    "failed": 0,
+    "criticalSafetyViolations": 0
+  },
+  "research": {
+    "asOf": "2026-09-05",
+    "baseline": {
+      "verifiedPresent": 311667,
+      "verifiedAbsent": 3143,
+      "determinations": 314810,
+      "denominator": 7872576
+    },
+    "final": {
+      "verifiedPresent": 311667,
+      "verifiedAbsent": 3244,
+      "denominator": 7872576,
+      "determinations": 314911
+    },
+    "net": {
+      "verifiedPresent": 0,
+      "verifiedAbsent": 101,
+      "determinations": 101
+    },
+    "approvedCounties": 101,
+    "heldCounties": 7,
+    "heldPairsDeepEqualBaseline": true,
+    "acceptedPresenceRemoved": 0,
+    "undatedEvidenceAltered": 0,
+    "unadjudicatedConflicts": 0,
+    "notDetected": 236,
+    "researchedUnresolved": 1307130,
+    "notResearched": 6250299,
+    "immutableRunsAdded": 2,
+    "assertionsAdded": 101,
+    "humanApprovedReviewsAdded": 101,
+    "rejectionsAdded": 0,
+    "sourceCoverageIndex": "source-coverage-63d46b4e0395a2707c62",
+    "registeredSources": 41,
+    "immutableRuns": 1918,
+    "fullCatalogResearchAccountedJurisdictions": 0,
+    "buildTimeReadyStates": 0,
+    "implementation": {
+      "path": "ops/national-research/evaluations/aphis-alb-eradication-implementation-20260905-r2.json",
+      "sha256": "aa8399ebd6ab778dcbc40c0a4c0a597ffeccdb3a58fb0a2f347344934df9fe6a",
+      "bytes": 6014
+    },
+    "approval": {
+      "path": "ops/national-research/evaluations/aphis-alb-eradication-human-approval-receipt-20260905-r2.json",
+      "sha256": "9648305151ebdc9cdc6c59fe711d3333b47aa162a7c2edb2b880307de7724b73",
+      "bytes": 1513
+    },
+    "temporalQualification": "APHIS supplies eradication years. The conflict interval includes the full reported year; effectiveAt uses the first day of the following year. The source was reaffirmed July 30, 2026 and validity expires after July 30, 2027. No exact eradication day was inferred."
+  },
+  "browserQa": {
+    "path": "ops/national-research/evaluations/alb-local-ui-qa-20260905-r2.json",
+    "sha256": "8f3c303a1c52d8892395d732efbb0b5dbb05002d70251f14a5cedfe228b64765",
+    "bytes": 4049
+  },
+  "approvedProductionRelease": {
+    "commit": "e6a810b27422c4ef7fe5be855d8ce9f757e175cb",
+    "deploymentId": "dpl_E4Wihtw7ciuapKyRe74rYs1GDMi5",
+    "receipt": {
+      "path": "ops/national-research/evaluations/approved-ui-production-release-20260905-r1.json",
+      "sha256": "f19266543226b61bfc8d5f4a0b759ec5dde90eb0dc4bd6fdb978607e61ceffc4",
+      "bytes": 8174
+    },
+    "newAlbDataIncluded": false
+  },
+  "publication": {
+    "status": "blocked-by-storage-stop-and-awaiting-exact-external-write-authority",
+    "manifest": {
+      "path": "ops/national-research/publication/research-data-manifest.json",
+      "sha256": "cb7a2275a3a1ddf3f49819d9d2ac39f10f201e0fc1a06f5edf51d179bf23f129",
+      "bytes": 1565435
+    },
+    "candidateReleaseId": "research-285f65fa45ad-db79b0cdb4428cef",
+    "candidateSourceCommit": "285f65fa45adc569a514eca9c1803702e20e0afd",
+    "candidateObjectCount": 3195,
+    "candidateObjectBytes": 1324993945,
+    "inventoryObservedAt": "2026-09-05T04:21:40.818Z",
+    "retainedBytes": 7709331640,
+    "projectedRetainedBytes": 9035892044,
+    "storageStopBytes": 8000000000,
+    "overStorageStopBytes": 1035892044,
+    "report": {
+      "path": "ops/national-research/evaluations/r2-alb-candidate-preflight-20260905-r2.json",
+      "sha256": "92c6f149299458e994f1d0677c2bcd2b2bc477aac34b62a255e460b92a591725",
+      "bytes": 3280702
+    },
+    "usage": {
+      "path": "ops/national-research/evaluations/r2-alb-usage-observation-20260905-r2.json",
+      "sha256": "6a36d21e02baf72036e57f4e4e76ba63f55975c21447ed50f3c87d079b04f4cc",
+      "bytes": 1141
+    },
+    "publicReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "reviewOnlyHistoricalRemovalSetSha256": "eca9d4494a1c70b960b32707987c7931a205c03aa2f87eb8e4cea6c9b965884e",
+    "deletionAuthorized": false,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "resourceRecovery": {
+    "initialProjectionCheck": {
+      "command": "npm.cmd run check:state-research-projections",
+      "exitCode": 134,
+      "nodeOptions": "--max-old-space-size=4096",
+      "symptom": "V8 Ineffective mark-compacts near heap limit",
+      "logSha256": "3ff4dbdb51f1a59bc305bd15294102cac74d1ff30bc1ebd20fccc12eeae04594"
+    },
+    "correction": "The verifier validates every immutable run and state association in an initial pass, retains only directory paths, and then loads each state separately. All original projection checks and nationwide run validation remain active.",
+    "observedProjectionCheckWorkingSetBytes": [
+      805654528,
+      799670272
+    ],
+    "systemSamplingQualification": "System-wide free memory briefly fell to 0.31 and 1.47 percent in two build-period samples, then recovered to 16.37 percent within the next sample and 25.31 percent after build. The sampled dip was already over when the monitoring command returned. No user application was stopped. These samples do not establish a process-specific cause or continuous compliance with the RAM reserve.",
+    "latestObservedAvailableMemoryPercent": 25.31
+  },
+  "authority": {
+    "approvedFourCommitPushCompleted": true,
+    "approvedAlbApplicationCompleted": true,
+    "newLocalCommitPushPerformed": false,
+    "manualDeployments": 0,
+    "r2Writes": 0,
+    "exactNewPushRangeRequiresApproval": true
+  },
+  "remote": {
+    "verifiedMainCommit": "e6a810b27422c4ef7fe5be855d8ce9f757e175cb",
+    "checkedBeforeReceipt": true
+  },
+  "legacyCheckoutTouched": false
+}
