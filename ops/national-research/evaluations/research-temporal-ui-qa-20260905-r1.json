@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "research-temporal-ui-qa-20260905-r1",
+  "taskId": "01a06f1e-a9ed-77c2-8c4e-21213ababf8b",
+  "checkedAt": "2026-09-05T02:02:46.726Z",
+  "baselineCommit": "3faf9a4efef83848610a0b7ec1a007e968dbb961",
+  "outcome": "passed-local-desktop-and-mobile",
+  "codeFiles": [
+    {
+      "path": "src/components/research-control-center.tsx",
+      "sha256": "0ee6675888f71ae2c01f16a24ee0af3be1ffe7d4690740d3df161ff1b26783df"
+    },
+    {
+      "path": "src/lib/research/temporal-determination-presentation.ts",
+      "sha256": "aba9ced88f0b7c2a08131840578070f962c552f737e3ff5b41a5f3b98cb73c03"
+    },
+    {
+      "path": "scripts/test-temporal-determination-presentation.ts",
+      "sha256": "4b1099a5fdfb4c04ea4c48c55ccf5863b9908d9489ccb44bd197432b6556411c"
+    }
+  ],
+  "environment": {
+    "application": "Next.js local development server",
+    "browser": "Brave via CUA",
+    "url": "http://127.0.0.1:3116/research?state=WA&county=53073&species=Vespa+mandarinia",
+    "localResearchAsOf": "2026-09-04",
+    "localDataSource": "Existing committed publication manifest and local artifacts served through a temporary loopback QA proxy with SHA-256 verification",
+    "productionDeploymentTested": false,
+    "temporaryViewportReset": true,
+    "temporaryServersStopped": true
+  },
+  "views": [
+    {
+      "kind": "desktop",
+      "viewportWidth": 1756,
+      "visualResult": "The table shows Verified Present with Current: Officially eradicated. Expanded details show Previously recorded and Officially eradicated with the historical-count explanation."
+    },
+    {
+      "kind": "mobile",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 375,
+      "visualResult": "The species card and expanded evidence panel fit the viewport; the two temporal meanings stack clearly. The existing horizontally scrolling matching-count strip remains contained."
+    }
+  ],
+  "interactions": [
+    "Desktop evidence expansion",
+    "Mobile evidence collapse and expansion",
+    "Clear county filters returns ordinary present and not-researched rows without an eradication label"
+  ],
+  "console": {
+    "warningCount": 0,
+    "errorCount": 0,
+    "scope": "Browser development logs returned no warning or error entries in the tested tab."
+  },
+  "evidence": {
+    "visual": "Desktop and mobile screenshots inspected in the task tool transcript",
+    "semantic": "Real Whatcom County Vespa mandarinia projection, preserving its two source records",
+    "tests": "scripts/test-temporal-determination-presentation.ts"
+  },
+  "limitations": [
+    "Local browser QA does not establish deployed UI behavior.",
+    "Production R2 still uses the older published release.",
+    "Historical presence contributes to the compatibility present count and does not itself establish current presence."
+  ],
+  "dataMutations": 0,
+  "externalWrites": 0
+}

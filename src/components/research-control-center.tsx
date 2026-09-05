@@ -32,6 +32,7 @@ import {
   type ResearchCatalogSpecies,
 } from "@/lib/research/pair-resolution";
 import { fetchResearchProjectionJson } from "@/lib/research/public-projection-fetch";
+import { describeTemporalDetermination } from "@/lib/research/temporal-determination-presentation";
 import {
   buildResearchHref,
   parseResearchDeepLink,
@@ -477,6 +478,16 @@ function Pagination({
   );
 }
 
+function CurrentDeterminationLabel({ pair }: { pair: CountyResearchPair }) {
+  const temporal = describeTemporalDetermination(pair);
+  if (!temporal?.showInResults) return null;
+  return (
+    <span className="mt-1 block text-xs font-medium text-[var(--foreground)]">
+      Current: {temporal.currentLabel}
+    </span>
+  );
+}
+
 function EvidenceDetails({
   pair,
   sourceLabels,
@@ -484,8 +495,24 @@ function EvidenceDetails({
   pair: CountyResearchPair;
   sourceLabels: Map<string, string>;
 }) {
+  const temporal = describeTemporalDetermination(pair);
   return (
     <div className="bg-[var(--background)] px-4 py-4 sm:px-6">
+      {temporal ? (
+        <section aria-label="Occurrence history and current determination" className="mb-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 sm:p-4">
+          <dl className="grid gap-3 text-sm sm:grid-cols-2">
+            <div>
+              <dt className="text-xs text-[var(--muted)]">Occurrence history</dt>
+              <dd className="mt-1 font-medium">{temporal.historyLabel}</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-[var(--muted)]">Current agency determination</dt>
+              <dd className="mt-1 font-medium">{temporal.currentLabel}</dd>
+            </div>
+          </dl>
+          <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{temporal.explanation}</p>
+        </section>
+      ) : null}
       <dl className="grid gap-x-6 gap-y-3 text-xs sm:grid-cols-2 lg:grid-cols-5">
         {[
           ["Determination", pair.determinationStatus],
@@ -686,7 +713,10 @@ function CountyPairTable({
                       {formatLabel(pair.category)}
                     </td>
                     <td className="px-3 py-3">
+                      <span className="inline-block">
                       <StatusBadge status={pair.displayStatus} />
+                      <CurrentDeterminationLabel pair={pair} />
+                    </span>
                     </td>
                     <td className="px-3 py-3 text-xs text-[var(--muted)]">
                       {formatLabel(pair.researchStatus)}
@@ -747,7 +777,10 @@ function CountyPairTable({
                     ) : null}
                   </span>
                   <span className="mt-2 flex flex-wrap items-center gap-2">
-                    <StatusBadge status={pair.displayStatus} />
+                    <span className="inline-block">
+                        <StatusBadge status={pair.displayStatus} />
+                        <CurrentDeterminationLabel pair={pair} />
+                      </span>
                     <span className="text-xs text-[var(--muted)]">
                       {formatLabel(pair.category)}
                     </span>
