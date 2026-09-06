@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-worker-independent-audit",
+  "recordedAt": "2026-09-06T18:16:20.974Z",
+  "jobId": "taxonomy-pilot-20260906-r5-nybg-ny",
+  "leaseId": "lease-taxonomy-pilot-20260906-r5-nybg-ny-1",
+  "sourceId": "nybg-preserved-specimens",
+  "workerCommit": "f33713097be35e3166f3be03fbc507f3f62b23d7",
+  "workerBranchHead": "e5dca7824afa65bf450990d9dc5ef1aef08cb774",
+  "manifestHash": "893db8b62e1301487fdaadfcdeb727a725d1da3b832d7344a86d225416e03d42",
+  "manifestBytes": 107304,
+  "changedPaths": [
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-retained-witnesses.json.gz",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-source-identity.json",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-taxonomy-mappings.json",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/assertions.ndjson",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/manifest.json",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/outcomes.ndjson",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/receipt.json",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/rejections.ndjson",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/reviews.ndjson",
+    "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/source-verification.json"
+  ],
+  "pairs": 27,
+  "providerRequests": 0,
+  "unknownCollectionDates": 2,
+  "originalNamesAndDatesPreserved": true,
+  "sourceWitnessBytesEqualAdmission": true,
+  "checks": [
+    {
+      "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 64be16709fc57c70a6eb9e9dd145fdbde69fa45c...e5dca7824afa65bf450990d9dc5ef1aef08cb774",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "status": "passed-awaiting-orchestration-submission",
+  "newDeterminationsClaimed": 0
+}

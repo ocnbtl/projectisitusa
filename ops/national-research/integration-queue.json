@@ -32753,6 +32753,70 @@
         "sha256": "558fc8156f82c45b9409d3f92cb488d30d8f7d9de205a851e2a472c55fdf19c7",
         "bytes": 3423
       }
+    },
+    {
+      "queueId": "queue-lease-taxonomy-pilot-20260906-r5-nybg-ny-1",
+      "jobId": "taxonomy-pilot-20260906-r5-nybg-ny",
+      "leaseId": "lease-taxonomy-pilot-20260906-r5-nybg-ny-1",
+      "decision": "accepted",
+      "submittedAt": "2026-09-06T18:16:49.700Z",
+      "manifestPath": "manifests/taxonomy-pilot-20260906-r5-nybg-ny__lease-taxonomy-pilot-20260906-r5-nybg-ny-1.json",
+      "manifestHash": "893db8b62e1301487fdaadfcdeb727a725d1da3b832d7344a86d225416e03d42",
+      "manifestBytes": 107304,
+      "workerCommit": "f33713097be35e3166f3be03fbc507f3f62b23d7",
+      "workerBranchHead": "e5dca7824afa65bf450990d9dc5ef1aef08cb774",
+      "reviewedAt": "2026-09-06T18:17:25.049Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated 27 NYBG historical specimen assertions with original names and dates, including two undated records. Every witness matches the reviewed pinned inventory; all three retained artifacts and taxonomy mappings preserve NYBG CC0 and Kew CC BY 3.0 attribution. Exact two-commit scope, frozen skill hashes and canonical evidence checks passed. Independent source-concept interpretation passed; no current, establishment or negative claim is created.",
+      "changedPaths": [
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-retained-witnesses.json.gz",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-source-identity.json",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-taxonomy-mappings.json",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/assertions.ndjson",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/manifest.json",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/outcomes.ndjson",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/receipt.json",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/rejections.ndjson",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/reviews.ndjson",
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check 64be16709fc57c70a6eb9e9dd145fdbde69fa45c...e5dca7824afa65bf450990d9dc5ef1aef08cb774",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-taxonomy-pilot-20260906-r5-nybg-ny-1.json",
+        "sha256": "e7be2074003b3508e4ec33d89edd293d010dfa81be8b84411a3ed74227fd6e23",
+        "bytes": 3186
+      }
     }
   ]
 }

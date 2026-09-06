@@ -497580,7 +497580,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/museum_nybg_ny",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-09-06T17:49:21.852Z",
       "expiresAt": "2026-09-06T18:33:13.443Z",
       "recoveryAt": null,
@@ -497724,7 +497724,16 @@
         "Commit immutable-run content first and finalized manifest second.",
         "Pass the pinned worker validator and exact base-to-head whitespace checks.",
         "Independently review the new taxonomy interpretation and original New York source context; report whether this pilot supports broader use within the declared reference and inventory scope."
-      ]
+      ],
+      "transitionedAt": "2026-09-06T18:16:49.700Z",
+      "resultManifest": {
+        "path": "manifests/taxonomy-pilot-20260906-r5-nybg-ny__lease-taxonomy-pilot-20260906-r5-nybg-ny-1.json",
+        "sha256": "893db8b62e1301487fdaadfcdeb727a725d1da3b832d7344a86d225416e03d42",
+        "bytes": 107304,
+        "status": "complete",
+        "workerCommit": "f33713097be35e3166f3be03fbc507f3f62b23d7",
+        "workerBranchHead": "e5dca7824afa65bf450990d9dc5ef1aef08cb774"
+      }
     }
   ]
 }
