@@ -32525,6 +32525,132 @@
         "sha256": "1f482c4eaccfafcbb08a17250726e9dab8b4c45208e7c8e44d61e518962ccc06",
         "bytes": 2694
       }
+    },
+    {
+      "queueId": "queue-lease-museum-metadata-20260906-r4-nybg-ny-1",
+      "jobId": "museum-metadata-20260906-r4-nybg-ny",
+      "leaseId": "lease-museum-metadata-20260906-r4-nybg-ny-1",
+      "decision": "accepted",
+      "submittedAt": "2026-09-06T11:06:37.722Z",
+      "manifestPath": "manifests/museum-metadata-20260906-r4-nybg-ny__lease-museum-metadata-20260906-r4-nybg-ny-1.json",
+      "manifestHash": "ca1d6e2a4ee56a4281b51459609a9614b60416036455bd16151cf9876d08bdab",
+      "manifestBytes": 108869,
+      "workerCommit": "b49474983ded1751eae3861fc1d722031474a4d6",
+      "workerBranchHead": "ee8240f21791808955208466ab51207b0b99cc7b",
+      "reviewedAt": "2026-09-06T11:07:24.267Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently verified 28 exact nybg-preserved-specimens retained historical-occurrence witnesses, every declared byte and original acquisition identity, the unchanged admitted raw rows, machine-validated reviews, complete exact-pair outcomes, two immutable worker commits, frozen tools and zero provider requests or unsupported negative claims. All collection dates remain null.",
+      "changedPaths": [
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-retained-witnesses.json.gz",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-source-identity.json",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/assertions.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/manifest.json",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/outcomes.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/receipt.json",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/rejections.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/reviews.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...ee8240f21791808955208466ab51207b0b99cc7b",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-museum-metadata-20260906-r4-nybg-ny-1.json",
+        "sha256": "8d3b43aa00a8e304de54fd69e7d37268a10a6b62871138028ca444356a09270e",
+        "bytes": 2978
+      }
+    },
+    {
+      "queueId": "queue-lease-museum-metadata-20260906-r4-nmnh-ca-1",
+      "jobId": "museum-metadata-20260906-r4-nmnh-ca",
+      "leaseId": "lease-museum-metadata-20260906-r4-nmnh-ca-1",
+      "decision": "accepted",
+      "submittedAt": "2026-09-06T11:06:41.880Z",
+      "manifestPath": "manifests/museum-metadata-20260906-r4-nmnh-ca__lease-museum-metadata-20260906-r4-nmnh-ca-1.json",
+      "manifestHash": "fc044faf0ec754aa1bd6a48c54cca03ae9d1c263f64ed65999f760a6a2498e0a",
+      "manifestBytes": 40646,
+      "workerCommit": "c7773f9adb71f2343bfeb5151d876b11bb26acbd",
+      "workerBranchHead": "5cd1f89e7f28dd774ade5f223b2cf59231b21b7b",
+      "reviewedAt": "2026-09-06T11:08:06.819Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently verified 8 exact smithsonian-nmnh-preserved-specimens retained historical-occurrence witnesses, every declared byte and original acquisition identity, unchanged admitted raw rows, machine-validated reviews, complete exact-pair outcomes, two immutable worker commits, frozen tools and zero provider requests or unsupported negative claims. All collection dates remain null.",
+      "changedPaths": [
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-source-identity.json",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/assertions.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/manifest.json",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/outcomes.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/receipt.json",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/rejections.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/reviews.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...5cd1f89e7f28dd774ade5f223b2cf59231b21b7b",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-museum-metadata-20260906-r4-nmnh-ca-1.json",
+        "sha256": "3ba9cab53537c592f53c76c46fad6f68fcead1e34914cc24f06d3629ac7b1dc0",
+        "bytes": 3117
+      }
     }
   ]
 }

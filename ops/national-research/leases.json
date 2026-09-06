@@ -497248,7 +497248,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/museum_nybg_ny",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-09-06T10:48:54.324Z",
       "expiresAt": "2026-09-06T11:32:09.075Z",
       "recoveryAt": null,
@@ -497426,7 +497426,16 @@
         "Emit a complete immutable run and source verification; if a material source contradiction emerges, stop and record a blocker for MAIN.",
         "Commit immutable-run content first and finalized manifest second.",
         "Pass the pinned worker validator and exact base-to-head whitespace checks."
-      ]
+      ],
+      "transitionedAt": "2026-09-06T11:06:37.722Z",
+      "resultManifest": {
+        "path": "manifests/museum-metadata-20260906-r4-nybg-ny__lease-museum-metadata-20260906-r4-nybg-ny-1.json",
+        "sha256": "ca1d6e2a4ee56a4281b51459609a9614b60416036455bd16151cf9876d08bdab",
+        "bytes": 108869,
+        "status": "complete",
+        "workerCommit": "b49474983ded1751eae3861fc1d722031474a4d6",
+        "workerBranchHead": "ee8240f21791808955208466ab51207b0b99cc7b"
+      }
     },
     {
       "leaseId": "lease-museum-metadata-20260906-r4-nmnh-ca-1",
@@ -497434,7 +497443,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/museum_nmnh_ca",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-09-06T10:50:58.141Z",
       "expiresAt": "2026-09-06T11:32:09.076Z",
       "recoveryAt": null,
@@ -497554,7 +497563,16 @@
         "Emit a complete immutable run and source verification; if a material source contradiction emerges, stop and record a blocker for MAIN.",
         "Commit immutable-run content first and finalized manifest second.",
         "Pass the pinned worker validator and exact base-to-head whitespace checks."
-      ]
+      ],
+      "transitionedAt": "2026-09-06T11:06:41.880Z",
+      "resultManifest": {
+        "path": "manifests/museum-metadata-20260906-r4-nmnh-ca__lease-museum-metadata-20260906-r4-nmnh-ca-1.json",
+        "sha256": "fc044faf0ec754aa1bd6a48c54cca03ae9d1c263f64ed65999f760a6a2498e0a",
+        "bytes": 40646,
+        "status": "complete",
+        "workerCommit": "c7773f9adb71f2343bfeb5151d876b11bb26acbd",
+        "workerBranchHead": "5cd1f89e7f28dd774ade5f223b2cf59231b21b7b"
+      }
     }
   ]
 }

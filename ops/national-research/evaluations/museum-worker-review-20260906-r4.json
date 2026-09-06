@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-worker-review-evaluation",
+  "campaignId": "20260906-r4",
+  "recordedAt": "2026-09-06T11:09:13.279Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "workers": [
+    {
+      "schemaVersion": 1,
+      "kind": "isitusa-main-worker-independent-audit",
+      "recordedAt": "2026-09-06T11:05:43.269Z",
+      "jobId": "museum-metadata-20260906-r4-nybg-ny",
+      "leaseId": "lease-museum-metadata-20260906-r4-nybg-ny-1",
+      "sourceId": "nybg-preserved-specimens",
+      "workerCommit": "b49474983ded1751eae3861fc1d722031474a4d6",
+      "workerBranchHead": "ee8240f21791808955208466ab51207b0b99cc7b",
+      "manifestHash": "ca1d6e2a4ee56a4281b51459609a9614b60416036455bd16151cf9876d08bdab",
+      "manifestBytes": 108869,
+      "changedPaths": [
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-retained-witnesses.json.gz",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-source-identity.json",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/assertions.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/manifest.json",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/outcomes.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/receipt.json",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/rejections.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/reviews.ndjson",
+        "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/source-verification.json"
+      ],
+      "pairs": 28,
+      "providerRequests": 0,
+      "allCollectionDatesNull": true,
+      "sourceWitnessBytesEqualAdmission": true,
+      "checks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...ee8240f21791808955208466ab51207b0b99cc7b",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "status": "passed-awaiting-orchestration-submission",
+      "newDeterminationsClaimed": 0
+    },
+    {
+      "schemaVersion": 1,
+      "kind": "isitusa-main-worker-independent-audit",
+      "recordedAt": "2026-09-06T11:06:30.517Z",
+      "jobId": "museum-metadata-20260906-r4-nmnh-ca",
+      "leaseId": "lease-museum-metadata-20260906-r4-nmnh-ca-1",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "workerCommit": "c7773f9adb71f2343bfeb5151d876b11bb26acbd",
+      "workerBranchHead": "5cd1f89e7f28dd774ade5f223b2cf59231b21b7b",
+      "manifestHash": "fc044faf0ec754aa1bd6a48c54cca03ae9d1c263f64ed65999f760a6a2498e0a",
+      "manifestBytes": 40646,
+      "changedPaths": [
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-source-identity.json",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/assertions.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/manifest.json",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/outcomes.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/receipt.json",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/rejections.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/reviews.ndjson",
+        "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/source-verification.json"
+      ],
+      "pairs": 8,
+      "providerRequests": 0,
+      "allCollectionDatesNull": true,
+      "sourceWitnessBytesEqualAdmission": true,
+      "checks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...5cd1f89e7f28dd774ade5f223b2cf59231b21b7b",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "status": "passed-awaiting-orchestration-submission",
+      "newDeterminationsClaimed": 0
+    }
+  ],
+  "validationArtifact": {
+    "path": "ops/national-research/evaluations/artifacts/museum-worker-review-validation-20260906-r4.json.gz",
+    "decodedBytes": 61153,
+    "decodedSha256": "f22855e55d841f06232786641e0f844542e0e1e849da04a2f7174811ec1f294d",
+    "storedBytes": 5875,
+    "storedSha256": "7ca9671f27e5a6213c4796caf7a39b7c2e1025817f8fcbde7abf80a5e241676b"
+  },
+  "historicalAttempt": {
+    "error": "review receipt.reviewedAt differs from the queue contract.",
+    "resolution": "Supplied the same actual review timestamp through --now; no source bytes or verdict changed."
+  },
+  "status": "both-worker-submissions-accepted-awaiting-canonical-integration",
+  "newDeterminationsClaimed": 0
+}
