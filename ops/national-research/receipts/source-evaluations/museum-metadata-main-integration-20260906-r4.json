@@ -1,0 +1,1059 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-immutable-batch-integration",
+  "campaignId": "20260906-r4",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "admissionReceipt": "ops/national-research/receipts/source-evaluations/museum-metadata-admission-20260906-r4.json",
+  "codeCommit": "0d8d889dee375072993992bf90f9eb3b3ec1fc49",
+  "preMoveValidationCompletedAt": "2026-09-06T10:57:09.039Z",
+  "canonicalValidationCompletedAt": "2026-09-06T10:57:13.161Z",
+  "runCount": 24,
+  "assertions": 55,
+  "reviews": 55,
+  "outcomes": 55,
+  "rawAcquisitionRequests": 0,
+  "rejections": 0,
+  "errors": 0,
+  "absentConflicts": 0,
+  "allCollectionDatesNull": true,
+  "baseline": {
+    "gitCommit": "819ae7f362547e01ff895fcca6b6ef219fd2b6af",
+    "asOf": "2026-09-06",
+    "determinations": 315985,
+    "verifiedPresent": 312741,
+    "verifiedAbsent": 3244,
+    "fullCountySpeciesDenominator": 7872576,
+    "determinedPairSetSha256": "00f8beff5044830ccf68a1b855fb29618254d7eee65816b4939376f3dcca6190"
+  },
+  "exactCandidatePairs": [
+    "05045:vaccaria-hispanica",
+    "12103:egeria-densa",
+    "15001:cyperus-difformis",
+    "15001:cyperus-papyrus",
+    "15001:indigofera-hendecaphylla",
+    "15001:pseudelephantopus-spicatus",
+    "15003:fimbristylis-littoralis",
+    "15003:nymphaea-capensis",
+    "15003:nymphaea-lotus",
+    "15009:echinochloa-esculenta",
+    "19173:niditinea-fuscella",
+    "20065:tribulus-terrestris",
+    "21061:limax-maximus",
+    "22001:houttuynia-cordata",
+    "22071:mesocyclops-pehpeiensis",
+    "24003:medicago-sativa",
+    "24009:schedonorus-pratensis",
+    "24017:bromus-japonicus",
+    "24019:nutria",
+    "24025:fallopia-dumetorum",
+    "24033:chloris-truncata",
+    "24039:anthoxanthum-odoratum",
+    "25005:myosotis-arvensis",
+    "26033:lumbricus-rubellus",
+    "30031:niditinea-fuscella",
+    "30097:taraxacum-erythrospermum",
+    "33009:artemisia-vulgaris",
+    "34007:avena-sativa",
+    "34007:salix-babylonica",
+    "34017:bromus-hordeaceus",
+    "34021:avena-sativa",
+    "34021:chloris-radiata",
+    "34031:salix-alba",
+    "34041:epipactis-helleborine",
+    "36063:bithynia-tentaculata",
+    "41047:catapodium-rigidum",
+    "42027:salix-alba",
+    "42029:pseudosasa-japonica",
+    "42045:petasites-hybridus",
+    "42061:lumbricus-terrestris",
+    "42077:epipactis-helleborine",
+    "42101:alyssum-alyssoides",
+    "42101:poa-compressa",
+    "42101:rumex-patientia",
+    "42101:spartium-junceum",
+    "45019:laurus-nobilis",
+    "48201:eragrostis-plana",
+    "51013:sagina-procumbens",
+    "51085:amaranthus-spinosus",
+    "51085:oryza-sativa",
+    "51085:rosa-canina",
+    "51085:vinca-minor",
+    "51121:lysimachia-nummularia",
+    "51197:draba-verna",
+    "53075:cynosurus-echinatus"
+  ],
+  "pairSetSha256": "b01739cdd6553c08283269b03f3506a707646f2ccb66c5be24caefaf4dbcb115",
+  "activeWorkerPairsExcluded": 36,
+  "runs": [
+    {
+      "runId": "20260906T105324Z__nybg-preserved-specimens__56f58e6face1",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "AR",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-ar-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "0cd398944f56885a43a9d4532e16ed857284e57b7c2506dca0fd6a93b3892fdc",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "c690fb74a5307f246d6c689610df3edc5a197108abc0713fbe68e6988302f7c0"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1162,
+          "sha256": "4649a8201c67744ccf8e283af82d712f2dda44430d5c980af39575c8b7f951fb"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2445,
+          "sha256": "fd6a95a9c3a06d58911487ac64c875c5ecb2668d84a9c33f32c0ee6df4a74a46"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1104,
+          "sha256": "afabfa76bd4950e6315e982f17ebdb989235cbcf2c2a6663fa36282682aa06e7"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 713,
+          "sha256": "9d7b4ea172b3c5ae8db6627f18c32489c05e436de444386468fff4fb2af93fbc"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105327Z__nybg-preserved-specimens__d521464b5705",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "FL",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-fl-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "bdc9e63c661abbd7c2a9b5c24d3bb732018dcb88ac654792cb05ee4f3e229a45",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "a66fabc279da771d0d7affad2d7d66d3c24325a956b245e8a74608ff450a4553"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1096,
+          "sha256": "d21339947ce5a4a529e854202d5105c1fe37e06cf2d78db26e785b30ad93f0bd"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2429,
+          "sha256": "1ea46e34bdb8c27131dd47669b376f2c543597149d531da3b15ae5cbbdcf7169"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1098,
+          "sha256": "8cf1e200a9cfc2d2af81472a39e9e4db0713ca478874600d4a6155957d04f12f"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 707,
+          "sha256": "72f4e56a367911a12912a553dc640c13671213319aad66df72a89ca1102f5b2a"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105329Z__nybg-preserved-specimens__2c8bed78030e",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "KS",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-ks-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "a205e761a6ec42198722a6b331ff6f35dae7d35a8e43dd2596381aa26d38a071",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "89abb6875aebef005c4736083a020a32fa6ad9988cabb03a90586ebf67a5fe4f"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1139,
+          "sha256": "6b3bc58a84bd5df9f57962456d390f10d6e6509a27a7435d39b7c4ae073ac4e5"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2444,
+          "sha256": "a4a50de3aa25be856bd28088ec254f27e48a0a41a6b441e27b52833352c12c6b"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1105,
+          "sha256": "6b3c75ac9491add9523d72945ea54ebe6638c706ef813112f72fbfe2fade3b6a"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 714,
+          "sha256": "fdf698f59b24a6e4db8969023bb2db9dd5a7a8e5f9228376f58c3eeacbe6385c"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105332Z__nybg-preserved-specimens__05c0f69d5074",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "MA",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-ma-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "0b1e1499a95980645883e0a5474c1cba0af67e4f1169a20f570cd4ba46f8ee5d",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "f5a61eff166acd1f2fcf117728da651b14917b46a6586f9e15bbea39d694c0e6"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1137,
+          "sha256": "5c847a5f7f74324c4a8dc26b3e6d1b8088017c8fa146d87b67b48cdfb9827985"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2448,
+          "sha256": "a6dc6766039c07f2f7fd5d583b8488c1f0bb6ac87df4b54c836ec08ad170e1cf"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1103,
+          "sha256": "61ca1433be298b7a624e0090d2e9c4a5ca9778cf05bfa67354c880f30bc3a580"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 712,
+          "sha256": "87bc3068b68f33de4932ca82f157514b3108b49adb4b89aa5d29dd73927fca6c"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105334Z__nybg-preserved-specimens__eff198381e87",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "MD",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-md-20260906-r4.json",
+      "pairs": 3,
+      "receiptSha256": "d001443148120b4d2e2e6575745e29fc5947da4290a73e0834c036b6764b75c9",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "fcf815bff1047760a6834ec433d43f4660aa46bcc4fcece6e6a84366385382e6"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1807,
+          "sha256": "d8a0f5b166d99a570d04603c9c30570f5d551ffc4cd0eed078eed52c2b09c5b0"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 7359,
+          "sha256": "6beb90eafedb7d9b36df793a3fac7ffb3a803690f3f549560785f981479695da"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 3318,
+          "sha256": "999ab30cda0885f5054bef47482ff8eda90b8540cb7c0bd9f70d09c19abd0504"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 2145,
+          "sha256": "0d397b067a8f674d184bd52a17066f9cf3b9f54e3685053aec5bc77226f137bf"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105336Z__nybg-preserved-specimens__d9031f52227f",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "NH",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-nh-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "0ace2872d9e0a11f10a697153ae98439dfaf62378e1fec783f09fb01ba5bcda8",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "39f24ba6a49fce27c376bc4f8df33e93aadfe104f7de72cc27591495d86a6d75"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1159,
+          "sha256": "8c03e389ac31ec12338d1ae8ab0b8e0a669f087165cd47971307562f61f1d2a2"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2451,
+          "sha256": "c51adbb2ad74207d396972d7be84759ae92d68f660111a7f1f37a49238716bb2"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1104,
+          "sha256": "2c12948d7efaab1725063bd9881daead68f8b09556f079b91cffa3964d460436"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 713,
+          "sha256": "3bf33df4252e03aee7bb27facc99c8b5760cd287bb2e91dc1938963dc9d6d683"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105338Z__nybg-preserved-specimens__f0d516b67f20",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "NJ",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-nj-20260906-r4.json",
+      "pairs": 6,
+      "receiptSha256": "9eac7f9ea2c17c2539710c33af5f3aeb57523e3998a63bc42f3ff5d5792b8113",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "63448e7f74a0fb5e2b8953956ff69e12c61aaa981bf4df30e0482afaa9b338bb"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 2202,
+          "sha256": "0381f345807bea71bc3f285dac9785c8310240ce0efcfea63a5095a1e5c9a9ec"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 14605,
+          "sha256": "0e6df8210c9f61efc8ee929d62f08fcc09bb4f1d95c14282955e4fdb79856a12"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 6598,
+          "sha256": "139c0244f2f28a185d7f70f692c4c0f64175a6f6e8eed8ccaf98e5c0c56d88fc"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 4252,
+          "sha256": "3c4ac45fc3572255a638fb5bc70ce44335bcf5ab515d37d6d642cccb141fe741"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105341Z__nybg-preserved-specimens__683ac29703fd",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "PA",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-pa-20260906-r4.json",
+      "pairs": 6,
+      "receiptSha256": "66b252b987c9f4eac4522f396e575193655605d97f296512d77ac465c40911e1",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "9459faeca64d2247a4ef6447b25dd89c11a865d95501e7510c8211b6dd321a21"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 2369,
+          "sha256": "b93aa85d73420ab6ff9e95f5d4c7a204e7cd2ed6682b2f1bcdca33803f04cdb3"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 14667,
+          "sha256": "e0615b81bf9e6c675193cc23344a1aff0a681c690509d4d837ea4e4ad470c64f"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 6606,
+          "sha256": "97e8e67ac617c86393b70dd06699504adb029447f77983c9f5e044254ffc719e"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 4260,
+          "sha256": "2d2bfc2d1b3ffce943d21fda6fa6deeb5dde559aaf897b3f0c13688f2b2feaa7"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105343Z__nybg-preserved-specimens__781853bb5e88",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "SC",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-sc-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "dfcf1175a70084873a16ec820f9b63b5540fa22a39a0ff8e1cd96ce1a0cb9e10",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "292ea333a9cc0cca141b34734e2e2b1266d1f5b3ff85370bba08c8bf2ffe5822"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1104,
+          "sha256": "c5d9faa5069bd16eecbb487576b8b43f7bb0ef1f5f2bb9839598d1b18ab92d37"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2443,
+          "sha256": "10d85f6a28d03ff1f7b6221bd734d91c3604f8ff96a099a75cd9d633d9552740"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1100,
+          "sha256": "7531e794c5b00035727596307fe7b9614aeffd142478189924409c9338ac54d4"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 709,
+          "sha256": "2143a74ab7eda5552755a4d70fedb9bf545e81da683864c4ab7dcad557a9ecd1"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105346Z__nybg-preserved-specimens__19a49a6ad716",
+      "sourceId": "nybg-preserved-specimens",
+      "stateCode": "VA",
+      "planPath": "ops/national-research/plans/nybg-metadata-20260906-r4/nybg-preserved-specimens-va-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "5f358ad0e4a38186694372a5dfb6980c823280cad55d5e9db931a206618a3120",
+      "files": [
+        {
+          "relative": "artifacts/nybg-source-identity.json",
+          "bytes": 1164,
+          "sha256": "1cf9f99ad6bbd0e347dafdc6c0a00c343ba00a218802e2e3b62da24665c44dcd"
+        },
+        {
+          "relative": "artifacts/nybg-retained-witnesses.json.gz",
+          "bytes": 1058,
+          "sha256": "d334cbbf0b44aefdacad035b6c32891c303cda8fafc23ee7aa9f8ae60c1a3ec2"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2458,
+          "sha256": "9e4630f10cdce17acb303e3243ae3bb4aa15b3ca3484c04f3c0cd742b00061f3"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1107,
+          "sha256": "2580b9f5eb545738df4c2ebbe0c9d945b6b27747cd4ce7d0e557d4e7615d6332"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 716,
+          "sha256": "5a39d82a2ea650f200429008c334d4ba40185a6257ec355673455b5608bcbfdd"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105348Z__smithsonian-nmnh-preserved-specimens__8425e292365f",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "HI",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-hi-20260906-r4.json",
+      "pairs": 8,
+      "receiptSha256": "315bb5c3090d925662bb441187200ea6c10755134ec48dcedcd1ac43934b975c",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "98c86745ebb8025ec8e79fab6afced914b7db21ce3d010ffabd434d3ec0c0e1a"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 3084,
+          "sha256": "ad5708a24b6171c17f2c548d12e2ba72f026d2fdd492227eabcdf71707a92f85"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 20987,
+          "sha256": "917c2be8b1e63b3ae7b62f7c7dcf8b86b081ccb5ef141972e07fda3f8a0da1b8"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 9325,
+          "sha256": "e62f683feb0ae981130db0db944a222d760cbe528d532aa04e95f8dd22a541ac"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 6221,
+          "sha256": "30a65e5e8c2bfac757729f5add7e1d4fb4d069b4bfccdb690f1dc72ea5543539"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105350Z__smithsonian-nmnh-preserved-specimens__ca4f7b3d755e",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "IA",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-ia-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "3673ba1b99390bd8d7315d4f7d559f9dc91b0ceacf86935a0b914ae86642b92c",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "2896a9f467ec58e145b6ba5b09c751e5e2a8bea97361db978d1cc698fa64d367"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1169,
+          "sha256": "7df285421b4a1f4097a57e0d84adcc7fb2414c565fbd0953ab820bcd9d1a95b8"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2624,
+          "sha256": "342a13a8287db3dbf9359841a21190924cb9f5a9623e858bc3fd07e94e84044f"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1164,
+          "sha256": "c009d1257c2374ed59d188465c699ac1b9d611c710861c17aa68f90bd6c0af6b"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 776,
+          "sha256": "c6e4db6cb55e031d11e8d659efb51d484249bb1d1ab25f3e2955d5cc440fe22a"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105352Z__smithsonian-nmnh-preserved-specimens__a454713009df",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "KY",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-ky-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "35b8330790d513fe061dba3cae07710b65056a80f3688f6268ea2db321720c11",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "5d55257be6b42fc79aa7d878b4d9d74acfbe82b24491643008a831766e6f989a"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1054,
+          "sha256": "622c0d7d6168581f0f1bb4545a02d8ce85d67fd04c6b5b241de80809b4e1ca6e"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2617,
+          "sha256": "aac5211606d704f505fa0bbfd86852735a4deaea6a88db28e0dde7d3254277aa"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1159,
+          "sha256": "84b96fd9e1057bfb9f6b0f55a65a085c6772ceccc0e5b04ebc30afe21995e474"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 771,
+          "sha256": "f222148e55c68c840ff39da602bbae585f991a41ea6733ce4f5a1345254af28d"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105355Z__smithsonian-nmnh-preserved-specimens__ee83264545bc",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "LA",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-la-20260906-r4.json",
+      "pairs": 2,
+      "receiptSha256": "8781693fb3725a01a0bae67979c02997934a81b3c8b8ba85eb886f5604bfd038",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "89f29ada12c9bb14fbad58166cb0b9269f84b811102401d6b8f493f49351d2c7"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1576,
+          "sha256": "d316a2929c69bd3b2cea431b98e9c540a8fe50077a3a4c7f538af3492fbc810c"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5276,
+          "sha256": "f8f3678a51dd3651c29bc0aae51ee90d613c4946571fb44300954e0232ed1e71"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2333,
+          "sha256": "9e5d40f0ec38f31c0d2da5b9f849bfb0b8f325213494616fc6df8bb5a7f4297d"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1557,
+          "sha256": "ff5ec7b21aaeb156d2634c5ee02e02728ce4988db7d3f531599ff97f81017c84"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105357Z__smithsonian-nmnh-preserved-specimens__1029b65eb828",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "MD",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-md-20260906-r4.json",
+      "pairs": 4,
+      "receiptSha256": "10f17c73d01c38869ba8f29d75e99a5efa93e69e53de50cd48e088ed4579f7d9",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "a46a5fdc7ddc8002adfff216af3aa5d9d3f8b00244cdaa52659137f7e0e5be25"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 2220,
+          "sha256": "f9a1896f9be441e3357cc7a2e0dfc274aad1acf7c67b8633fdd2c7cc90e9ce20"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 10475,
+          "sha256": "7a63cedd19ae97ce013c59ff2be644bffebb88c5fa1af0a59e042b00350072a8"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 4637,
+          "sha256": "8290fb86b5c5ef98ee5aa6542b7937edb17f1afd38bf0a498858d092eac90ddb"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 3085,
+          "sha256": "6b46eb39e960e24431465caa36a3e2b067226c3b4693626451282f2f01193c29"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105359Z__smithsonian-nmnh-preserved-specimens__b03b5527387d",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "MI",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-mi-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "274a9bfaf15686bb26896a98fd3551badfb39ec12759a0ac240709e47f28c8d2",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "b68a2feaf889d653d1b2ab174f33e2dbffab772760ea3869448971155d5080c3"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1090,
+          "sha256": "7d15cda07569dfb4a26677368c618bb19558a4e76dce43c476e45cb1f2498f6b"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2631,
+          "sha256": "c33d53dd1e29a39a86d8b95425856eeda07b8c349a22950ce16ad466d29f54f5"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1164,
+          "sha256": "987f3265ce9de3d5391fd23e2231df5fc19b73ffaa17bfbe05dc8da44a5ea6d0"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 776,
+          "sha256": "69eff37c4b086540b7e0958683f1ad874c23623e1df65f949633cab9a3da7cad"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105402Z__smithsonian-nmnh-preserved-specimens__8d4921031f8e",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "MT",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-mt-20260906-r4.json",
+      "pairs": 2,
+      "receiptSha256": "3c6e60e1413fd80ff3737e5274275c9a392daf4ae0ba78e53bba7e39f6187bb4",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "db2556c27292f913c9366b679993af19b83bfd6620055a50571021707d319d23"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1605,
+          "sha256": "b029ec6ae62bca11318b942cff579f7f77fc3b48e602e0df088f88e198167bb3"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5271,
+          "sha256": "f21d1254e4e563c1af5c4f625524c98342cb0395d467728082f467fecefa1563"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2334,
+          "sha256": "b5a36d5a2f0eb2f5cfefb269bc9dcaa79ea32e9f1688f9b7d9f8b82be64172b5"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1558,
+          "sha256": "2afb138a41bc9d2e04d629f0052b1e983a13c58ec700e3556d4b57dcca563e96"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105404Z__smithsonian-nmnh-preserved-specimens__2720feb545c4",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "NJ",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-nj-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "59e556561326946fb9f79c22b79e3a29ca6eaa3cababcecf8459e8b7173077a7",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "93d00e4e9411e0b45814dbaee42f08f392d564a2bf3b087e4f569b8023d36f26"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1076,
+          "sha256": "3c327062ddbc380c08bbda2f703215b0a9998501b08a4caead41101455b4ef1f"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2631,
+          "sha256": "9285a856129f3a5a49a5af1da71e3596be11dc0094b31f13829abcd6ba398fce"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1167,
+          "sha256": "27f3715dfef83c291b0b047a2fa0944aad53fe3d3a75ac6bfd4ddde443c28560"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 779,
+          "sha256": "bf25588e04630b80582ca94e1a41a4d21f3fee819d7b5ae989e133da4c3d88c2"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105406Z__smithsonian-nmnh-preserved-specimens__b6ab3ae8f631",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "NY",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-ny-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "3fc6b9654ebf47da0a3805ab154a0f85c9c00e211486e2b15d7437a235fefd19",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "c88555f0e135027ba3480db58ea16b4ebabd99b82d96bea9309217c217d2ee1b"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1082,
+          "sha256": "f1c1d92009040268e9d16134fdaa3f99ec4aa17f23ddc47b6f055a35de0fd2ae"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2637,
+          "sha256": "71c8ada08c3bf6773286721305eecdf7b635802039ee5c8b9bfa94e92f0476f1"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1166,
+          "sha256": "5eab21020a0036ae73c2bba4e4da0b3cab07e17db3e1ffdb6437907879b639f7"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 778,
+          "sha256": "bd9153757169a3e0809203e3d3cb56ae6eee8712403b3ddae7da1e6360de1126"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105409Z__smithsonian-nmnh-preserved-specimens__697b88ebb22c",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "OR",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-or-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "ea48b0037f94361c2b5b010ae027e8b34c98285158115fe3dbc469103afb92b4",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "e5a412002891df01d44fc7a54d363dd0236863d7ed0be3a7cfe1d35ee7c5b768"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1078,
+          "sha256": "baae4571eff97b4276db0c6bcc996b2bcdd60894975b1c3418812ed40a3664e0"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2618,
+          "sha256": "4ab13bad565fbfc50511795a2b6617d3a58c7c03ed5847407a5e6f3aa61f7011"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1164,
+          "sha256": "819c8ade8b64d2e3c3bd08876f46a77e956187ab34cf450ce2cbbdffa068467a"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 776,
+          "sha256": "639f162a4e6ecff5efc65912ccc9c60db7d04072bebdbc14e8c3630a79563118"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105411Z__smithsonian-nmnh-preserved-specimens__ff8d5e870434",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "PA",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-pa-20260906-r4.json",
+      "pairs": 3,
+      "receiptSha256": "dcef12ab347b895a8bcfc4cf043e624f5319d4277faf52e1614426fe30440d49",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "9a85a40e3d1361b2ad25097912f41e468a195c61f3f3d50eb403cd095c034853"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1750,
+          "sha256": "7d9d818567c2b5db16ddf29765e9f19720199636a39f918b7ef1579aece9da22"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 7904,
+          "sha256": "1a6fc8b53fc9f0c91240fe43f3a5be57f7d5f090ba44b1d65d3f98eaaf4811d0"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 3498,
+          "sha256": "33f5cc427271bd80c7a64c753149f117779ed24e484cc764929faffbfe11f778"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 2334,
+          "sha256": "c56fffe72c9be4684ef57dfae044b9d76ec5de7db79274f0e558c9618f532763"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105414Z__smithsonian-nmnh-preserved-specimens__3404eacc9c8e",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "TX",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-tx-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "2f02f9caa07add7b3c376ccea7dd487fd70183fdbaa2f04184cdb1036ad2f9bf",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "33c49fdef17efa92a75bca7e04713aadd945dcdc0b848fb453ddf01740b5494a"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1135,
+          "sha256": "0ccb2429c07101f63a1a2884f595137218b64d1c6a476631e144a9758bf03e08"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2611,
+          "sha256": "e2d8c26dc9e2a4e16676d4a437cb0e97e83b296d58933636ef2adb7c307951a6"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1162,
+          "sha256": "eacf02c620beb2cf5ffcffdf367bc8ddef3a9ef9dea647d24874518d1a95cabd"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 774,
+          "sha256": "595dfd7384898637c8dde0a950284d92f4d09b3f0b2e4c6553618503c31ed444"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105416Z__smithsonian-nmnh-preserved-specimens__2ab0cb314829",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "VA",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-va-20260906-r4.json",
+      "pairs": 6,
+      "receiptSha256": "39ef84b40bc3b5009375c11f3c9af3a8933cda7958cd2c798c8504876bcfad9d",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "b50713ff4bfc539b853131f272f6da74ed2171d54484bf2d85cee001f12536f6"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 2248,
+          "sha256": "fbd7f82ba169f7a2e7962df617abe79e8b14c7af189e85a2a02aba711c169a13"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 15640,
+          "sha256": "8604bab64f2862953d92c9a0c0d15fc806c217b6f12f7d552ce14cf648750526"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 6957,
+          "sha256": "023f347931ab7be7c59522e840e247cbd59045375e6dbe1a60d4e9938c175be9"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 4629,
+          "sha256": "79b700e7455f33671f96c9860810695f4f63bd8bfbf46e9cb86c7e4148f6da65"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T105418Z__smithsonian-nmnh-preserved-specimens__9994cc5c58be",
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "stateCode": "WA",
+      "planPath": "ops/national-research/plans/nmnh-metadata-20260906-r4/smithsonian-nmnh-preserved-specimens-wa-20260906-r4.json",
+      "pairs": 1,
+      "receiptSha256": "8e20c0ea2fc87c37e8fef76ec6088a9061aa425b085b5013dc5ee2a83374c50f",
+      "files": [
+        {
+          "relative": "artifacts/smithsonian-nmnh-source-identity.json",
+          "bytes": 1237,
+          "sha256": "960f80d2f994d4f7f189b841e0235fed5d504ae97e924ae1475745466cc4b67a"
+        },
+        {
+          "relative": "artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+          "bytes": 1057,
+          "sha256": "0ac01b9cc56cde651592461d638876fe23b146a913504dfd9e4b0b1e81ff97aa"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2626,
+          "sha256": "6fd10b6ed03a59944a38953b584c93719de142414c87fd43581052bf08e597f7"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1165,
+          "sha256": "26301dc98abc43105134876445a692816e9d9b9fedf3084f7d1f1a0f1619f0b4"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 777,
+          "sha256": "ce3e90017c2c207f2177d1d208439f9d7f56087cf9a986797fab14c1fef9c333"
+        }
+      ]
+    }
+  ],
+  "status": "immutable-runs-integrated-projection-verification-pending",
+  "newDeterminationsClaimed": 0,
+  "validationEvidence": {
+    "path": "ops/national-research/evaluations/artifacts/museum-metadata-main-validation-20260906-r4.json.gz",
+    "storedSha256": "4bf895e79b10006d0acc22fee2583e7e1c497bc77b7eef13c012d107b09117a9",
+    "storedBytes": 5995
+  }
+}
