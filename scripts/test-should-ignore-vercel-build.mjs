@@ -19,6 +19,9 @@ assert.equal(
   true,
 );
 
+assert.equal(isDeploymentIndependentPath("src/data/research/question-assessments/pilot/assessments.ndjson"), true);
+assert.equal(isDeploymentIndependentPath("src/data/research/question-assessments-other/receipt.json"), false);
+
 for (const buildRelevantPath of [
   "app/page.tsx",
   "next.config.ts",

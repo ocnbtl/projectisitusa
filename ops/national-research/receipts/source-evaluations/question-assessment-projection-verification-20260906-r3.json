@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "kind": "question-assessment-projection-verification",
+  "verifiedAt": "2026-09-06T09:18:07.995Z",
+  "status": "local-ledger-projection-and-browser-verified",
+  "campaign": "dc-questions-20260906-r1",
+  "methodCommit": "4a3a45315a6c5b99757035bac54b864bfbb0bd4e",
+  "integrationCommit": "178e27afb5fda76e6eeaafccd7b69ed6ca78f4a7",
+  "integrationReceipt": {
+    "path": "ops/national-research/receipts/source-evaluations/question-assessment-integration-20260906-r3.json",
+    "sha256": "5fc9f097c53846af1cf373ee376f9f1a39ca9673372067c4878f85002203a2c1",
+    "bytes": 1555
+  },
+  "assessmentReceipt": {
+    "path": "src/data/research/question-assessments/dc-questions-20260906-r1/receipt.json",
+    "sha256": "ce19343bdaa90be347dfc7e92f505d3f24e266c2ea0621956bd4af22c7c2abf6",
+    "bytes": 4479
+  },
+  "evidence": {
+    "path": "ops/national-research/evaluations/artifacts/question-assessment-validation-20260906-r3.json.gz",
+    "sha256": "031243ff977995221144259ad8a99c914c1dcc9b3321392327f36d7a656588fe",
+    "bytes": 7863
+  },
+  "counts": {
+    "supportedQuestionAnswers": 256,
+    "historicalOccurrence": 249,
+    "wildOccurrenceDuring2026": 6,
+    "officialEradication": 1,
+    "establishedPopulation": 0,
+    "assessedUnresolved": 0,
+    "assessedWithGaps": 0,
+    "uniquePairsWithAnswers": 250,
+    "fullyAssessedPairs": 0,
+    "questionDenominator": 10016,
+    "pairDenominator": 2504
+  },
+  "biologicalMovement": {
+    "added": 0,
+    "removed": 0,
+    "transitions": 0,
+    "allNonAssessmentDataValuesUnchanged": true
+  },
+  "nationalLocalCounts": {
+    "verifiedPresent": 312741,
+    "verifiedAbsent": 3244,
+    "totalDeterminations": 315985,
+    "denominator": 7872576
+  },
+  "gates": [
+    {
+      "check": "question-contract-retained-evidence-and-presentation",
+      "status": "passed",
+      "evidence": "Executed during method implementation before committed integration; projection check subsequently replayed all 256 answers."
+    },
+    {
+      "check": "DC byte stability",
+      "status": "passed",
+      "log": "verify-dc.log",
+      "files": 7,
+      "protectedSharedOutputs": true
+    },
+    {
+      "check": "all-state projections",
+      "status": "passed",
+      "log": "state-projections-fixed.log",
+      "states": 51
+    },
+    {
+      "check": "national config",
+      "status": "passed",
+      "log": "national-config.log",
+      "adversarialCases": 13
+    },
+    {
+      "check": "Vercel packaging and client compatibility",
+      "status": "passed",
+      "log": "vercel-publish-final.log"
+    },
+    {
+      "check": "production build",
+      "status": "passed",
+      "log": "production-build.log",
+      "qualification": "Content build precedes the final Vercel-only packaging edits. The final packaging changes passed their dedicated fixture tests."
+    },
+    {
+      "check": "data integrity",
+      "status": "passed",
+      "log": "data-integrity.log"
+    },
+    {
+      "check": "source coverage index",
+      "status": "passed",
+      "log": "research-coverage.log"
+    },
+    {
+      "check": "readiness rebuild",
+      "status": "passed",
+      "log": "national-readiness.log",
+      "qualification": "39 states reflect the earlier 887 Harvard additions. Existing verified prior release identity is preserved."
+    },
+    {
+      "check": "local browser QA",
+      "status": "passed",
+      "flows": 6,
+      "desktopViewport": "1280x900",
+      "mobileViewport": "390x844",
+      "applicationErrors": 0,
+      "qualification": "Bundled headless Chromium; physical devices and production question metadata were not tested. Four local analytics errors from two unavailable Vercel endpoint requests are preserved separately."
+    }
+  ],
+  "resolvedFailure": {
+    "check": "first all-state projection validation",
+    "log": "state-projections.log",
+    "cause": "Strict version-4 schema did not yet declare optional questionAssessment metadata.",
+    "resolution": "Extended the schema with strict optional coverage and pair definitions; all 51 states then passed. Existing determination and survey meanings were retained."
+  },
+  "heldQuestion": {
+    "pairKey": "11001:mesocyclops-pehpeiensis",
+    "reason": "Invalid source date 1996-06-31 requires retained raw source review. No biological assertion was retracted."
+  },
+  "production": {
+    "applicationDeploymentInThisTranche": false,
+    "r2Uploads": 0,
+    "pointerPromotions": 0,
+    "deletions": 0,
+    "publicDataRelease": "research-6927e5fe2efb-886700baca52fe1e",
+    "publicDeterminations": 315098,
+    "unpublishedBiologicalAdditions": 887,
+    "unpublishedQuestionAnswers": 256,
+    "nextDataRelease": "Follow the existing seven-day cadence and fresh free-resource/capacity checks."
+  }
+}

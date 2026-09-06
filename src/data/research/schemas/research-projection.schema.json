@@ -431,6 +431,258 @@
         "not-researched": { "type": "string", "minLength": 1 }
       }
     },
+    "questionAssessmentCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "policyId",
+        "assessmentAsOf",
+        "definitions",
+        "pairDenominator",
+        "requiredQuestionCount",
+        "assessedQuestionCount",
+        "supportedQuestionCount",
+        "unresolvedQuestionCount",
+        "questionCountCompletedWithGaps",
+        "reopenedQuestionCount",
+        "fullyAssessedPairCount"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "policyId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assessmentAsOf": {
+          "type": "string",
+          "format": "date"
+        },
+        "definitions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "required",
+              "predicate",
+              "period"
+            ],
+            "properties": {
+              "id": {
+                "enum": [
+                  "documented-historical-occurrence",
+                  "wild-occurrence-in-period",
+                  "established-population-in-period",
+                  "official-status-as-of"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "predicate": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "properties": {
+                  "start": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "pairDenominator": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "requiredQuestionCount": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "assessedQuestionCount": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "supportedQuestionCount": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "unresolvedQuestionCount": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "questionCountCompletedWithGaps": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "reopenedQuestionCount": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "fullyAssessedPairCount": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        }
+      }
+    },
+    "pairQuestionAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policyId",
+        "assessmentAsOf",
+        "requiredQuestions",
+        "assessedQuestions",
+        "researchComplete",
+        "reopenedQuestionIds",
+        "answers"
+      ],
+      "properties": {
+        "policyId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assessmentAsOf": {
+          "type": "string",
+          "format": "date"
+        },
+        "requiredQuestions": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "assessedQuestions": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "researchComplete": {
+          "type": "boolean"
+        },
+        "reopenedQuestionIds": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "documented-historical-occurrence",
+              "wild-occurrence-in-period",
+              "established-population-in-period",
+              "official-status-as-of"
+            ]
+          }
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "questionId",
+              "disposition",
+              "answer",
+              "assessmentId",
+              "assessedAt",
+              "explanation",
+              "citations"
+            ],
+            "properties": {
+              "questionId": {
+                "enum": [
+                  "documented-historical-occurrence",
+                  "wild-occurrence-in-period",
+                  "established-population-in-period",
+                  "official-status-as-of"
+                ]
+              },
+              "disposition": {
+                "enum": [
+                  "supported",
+                  "assessed-unresolved",
+                  "assessed-with-gaps"
+                ]
+              },
+              "answer": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "documented-occurrence",
+                      "wild-occurrence-recorded",
+                      "established-population",
+                      "officially-eradicated",
+                      "officially-absent"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "assessmentId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "assessedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "evidenceId",
+                    "sourceId",
+                    "url",
+                    "observedAt"
+                  ],
+                  "properties": {
+                    "evidenceId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sourceId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "observedAt": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "pairEvidence": {
       "type": "object",
       "additionalProperties": false,
@@ -487,6 +739,7 @@
         "screenedBySourceIds"
       ],
       "properties": {
+        "questionAssessment": { "$ref": "#/$defs/pairQuestionAssessment" },
         "speciesId": { "type": "string", "minLength": 1 },
         "commonName": { "type": "string", "minLength": 1 },
         "scientificName": { "type": "string", "minLength": 1 },
@@ -557,6 +810,7 @@
         "statusDefinitions"
       ],
       "properties": {
+        "questionAssessment": { "$ref": "#/$defs/questionAssessmentCoverage" },
         "schemaVersion": { "const": 4 },
         "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
         "stateName": { "type": "string", "minLength": 1 },
@@ -601,6 +855,7 @@
         "pairs"
       ],
       "properties": {
+        "questionAssessment": { "$ref": "#/$defs/questionAssessmentCoverage" },
         "schemaVersion": { "const": 4 },
         "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
         "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },

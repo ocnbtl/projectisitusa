@@ -1,4 +1,55 @@
 {
+  "questionAssessment": {
+    "schemaVersion": 1,
+    "policyId": "dc-question-pilot-20260906",
+    "assessmentAsOf": "2026-09-06",
+    "definitions": [
+      {
+        "id": "documented-historical-occurrence",
+        "required": true,
+        "predicate": "Does a source document an occurrence in this county, at any time up to the assessment date?",
+        "period": {
+          "start": null,
+          "end": "2026-09-06"
+        }
+      },
+      {
+        "id": "wild-occurrence-in-period",
+        "required": true,
+        "predicate": "Was at least one explicitly wild occurrence recorded in this county during the stated period?",
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-09-06"
+        }
+      },
+      {
+        "id": "established-population-in-period",
+        "required": true,
+        "predicate": "Does evidence establish a population in this county during the stated period?",
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-09-06"
+        }
+      },
+      {
+        "id": "official-status-as-of",
+        "required": true,
+        "predicate": "Does an official absence or eradication determination apply to this county as of the assessment date?",
+        "period": {
+          "start": "2026-09-06",
+          "end": "2026-09-06"
+        }
+      }
+    ],
+    "pairDenominator": 2504,
+    "requiredQuestionCount": 10016,
+    "assessedQuestionCount": 256,
+    "supportedQuestionCount": 256,
+    "unresolvedQuestionCount": 0,
+    "questionCountCompletedWithGaps": 0,
+    "reopenedQuestionCount": 0,
+    "fullyAssessedPairCount": 0
+  },
   "schemaVersion": 4,
   "stateCode": "DC",
   "stateName": "District of Columbia",
