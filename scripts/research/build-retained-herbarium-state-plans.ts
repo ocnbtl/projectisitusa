@@ -29,7 +29,9 @@ import {
   type RetainedHerbariumTarget,
 } from "./adapters/retained-herbarium-preserved-specimens";
 
-type Preflight = {
+import { loadRetainedTaxonomyResolver, type RetainedTaxonomyRecovery } from "./retained-specimen-taxonomy";
+
+export type Preflight = {
   schemaVersion: number;
   kind: string;
   sourceId: string;
@@ -62,6 +64,7 @@ type Preflight = {
   netEligiblePairs: string[];
   representativeRecords: Record<string, Omit<RetainedHerbariumTarget, "pairKey">>;
   elapsedMs: number;
+  taxonomyRecovery?: RetainedTaxonomyRecovery;
   metadataRecovery?: { version: 1; asOf: string; identityAudit: {
     occurrenceSha256: string; occurrenceBytes: number; sourceRows: number; missingIdentities: string[]; conflictingIdentities: string[];
   } };
@@ -206,6 +209,8 @@ function main() {
   const { profile } = options;
   const preflight = readJson<Preflight>(options.preflight);
   const recovery = preflight.metadataRecovery;
+  const resolveTaxonomy = preflight.taxonomyRecovery ? loadRetainedTaxonomyResolver(preflight.taxonomyRecovery, profile.sourceId) : undefined;
+  assert(!resolveTaxonomy || recovery, "Taxonomy recovery requires metadata recovery.");
   let determinedPairsAtBaseline = 303107;
   const head = execFileSync("git", ["rev-parse", "HEAD"], { cwd: ROOT, encoding: "utf8" }).trim();
   assert(preflight.schemaVersion === 1 && preflight.kind === "isitusa-source-yield-preflight", `${profile.name} preflight kind differs.`);
@@ -272,6 +277,10 @@ function main() {
     assert(record, `${profile.name} preflight lacks a witness for ${pairKey}.`);
     assert(`${record.countyFips}:${record.speciesId}` === pairKey, `${profile.name} witness identity differs for ${pairKey}.`);
     const target = { pairKey, ...record } as RetainedHerbariumTarget;
+    if (resolveTaxonomy) {
+      const result = resolveTaxonomy(target.sourceRow!);
+      assert(result.status === "mapped-candidate" && result.speciesId === target.speciesId && result.catalogScientificName === target.scientificName, "Taxonomy candidate differs from reviewed reference.");
+    }
     if (recovery) {
       assert(!recovery.identityAudit.conflictingIdentities.includes(target.identityKey!), "Recovery selected witness has a source identity collision.");
       validateSpecimenRecoveryWitness(target, { version: 1, asOf: recovery.asOf, extractedAt: preflight.evaluatedAt,
@@ -321,6 +330,7 @@ function main() {
         preflightEvaluationId: evaluationId,
         targetPairSetSha256: pairSetSha256,
         ...(recovery ? { metadataRecovery: { version: 1, asOf: recovery.asOf, extractedAt: preflight.evaluatedAt, preflightSha256: sha256(readFileSync(options.preflight)), witnessSetSha256: sha256(stableJson(targets)) } } : {}),
+        ...(preflight.taxonomyRecovery ? { taxonomyRecovery: preflight.taxonomyRecovery } : {}),
         targets,
       },
       antiDuplication: {
@@ -373,6 +383,7 @@ function main() {
       selected: sha256(selectedPairs.join("\n")),
     },
     semantics: preflight.semantics,
+    ...(preflight.taxonomyRecovery ? { taxonomyRecovery: preflight.taxonomyRecovery } : {}),
     rejectionCounts: preflight.rejectionCounts,
     rightsCounts: preflight.rightsCounts ?? null,
     stateMeasurements: preflight.states,
@@ -381,7 +392,7 @@ function main() {
     ...(recovery ? { metadataRecovery: recovery, preflightSha256: sha256(readFileSync(options.preflight)) } : {}),
     plans: planSummaries,
     safeguards: [
-      recovery ? "Preserved specimens require an audited stable identity, retained raw-row hashes, exact unqualified catalog identity and active county. Collection dates may be unknown; invalid and unresolved dates, cultivation and individual source contradictions remain held." : "Only preserved-specimen rows with stable identities, a valid event year, a blank identification qualifier, an exact unique two-token catalog binomial, and one active county alias qualified; sources lacking taxonRank additionally required exact structured genus, specific epithet, full scientific name with at most declared authorship, and a blank infraspecific epithet.",
+      recovery ? "Preserved specimens require an audited stable identity, retained raw-row hashes, exact unqualified catalog identity or the separately evaluated taxonomy mapping, and active county. Collection dates may be unknown; invalid and unresolved dates, cultivation and individual source contradictions remain held." : "Only preserved-specimen rows with stable identities, a valid event year, a blank identification qualifier, an exact unique two-token catalog binomial, and one active county alias qualified; sources lacking taxonRank additionally required exact structured genus, specific epithet, full scientific name with at most declared authorship, and a blank infraspecific epithet.",
       "Cultivated or captive text in locality, occurrence remarks, habitat, or establishment means was rejected conservatively.",
       "All already determined pairs and the selected earlier-source pair set were removed exactly; verified-absent conflicts were separately blocked and measured at zero.",
       "Source silence and all rejected rows create no absence or non-detection outcome.",

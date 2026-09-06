@@ -581,6 +581,30 @@
               "pattern": "^[0-9a-f]{64}$"
             }
           }
+        },
+        "taxonomyRecovery": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "version",
+            "referenceId",
+            "referenceSha256",
+            "inventorySha256"
+          ],
+          "properties": {
+            "version": {
+              "const": 1
+            },
+            "referenceId": {
+              "const": "kew-wcvp-v16-nybg-infraspecific-20260906-r4"
+            },
+            "referenceSha256": {
+              "const": "c7197ad84e68644447029e386cfb14b1f08eedac3c7db70675f6659d86bc4df7"
+            },
+            "inventorySha256": {
+              "const": "79e8c9e69bf17a22034569de8515fe9c1ae2ad6a8f6a5f1d07b69d8e3a2a8ab0"
+            }
+          }
         }
       }
     }

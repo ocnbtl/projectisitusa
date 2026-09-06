@@ -513,16 +513,17 @@
       "researchAdapter": {
         "id": "nybg-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
+          "1.2.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
-        "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
+        "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected. Adapter 1.2.0 adds an opt-in evaluated WCVP v16 infraspecific-concept mapping for the hash-verified NYBG review inventory. Exact authoritative authorship or an explicit source autonym parent must resolve inside one catalog concept; original names and references remain retained. It does not enable arbitrary synonyms or fuzzy matches.",
         "geographyMatchingPolicy": "Explicit provider state and county-equivalent text must resolve uniquely to an active national-v1 county-equivalent registry entry after the documented NYBG Co. suffix is expanded to County. Missing, retired, unknown, and ambiguous county names are rejected; coordinates are not used.",
         "artifactRetention": "versioned",
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       },
-      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Evaluated metadata-recovery mode accepts explicitly undated historical records with one archive-audited stable identity and retained raw-row hashes. Cultivated or captive text, invalid or unresolved dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Evaluated metadata-recovery mode accepts explicitly undated historical records with one archive-audited stable identity and retained raw-row hashes. Cultivated or captive text, invalid or unresolved dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion. The 1.2.0 reviewed taxonomy mode admits supported infraspecific concepts after individual context review and all original non-taxonomy checks."
     },
     {
       "id": "torch-brit-preserved-specimens",
@@ -542,7 +543,8 @@
       "researchAdapter": {
         "id": "torch-brit-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
+          "1.2.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
@@ -571,7 +573,8 @@
       "researchAdapter": {
         "id": "smithsonian-nmnh-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
+          "1.2.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact structured source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog binomial and a blank identification qualifier. A blank source rank is accepted only when the full scientific name is the same binomial and infraspecific epithet is blank. Fuzzy, synonym, infraspecific, and ambiguous matches are rejected.",
@@ -600,7 +603,8 @@
       "researchAdapter": {
         "id": "harvard-huh-usa-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
+          "1.2.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact structured source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial, blank identification qualifier, and blank infraspecific epithet. The source scientific name must be the same binomial with at most its declared authorship appended. Fuzzy, synonym, infraspecific, and ambiguous matches are rejected.",

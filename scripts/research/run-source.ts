@@ -180,6 +180,7 @@ type CandidateFile = {
     preflightEvaluationId: string;
     targetPairSetSha256: string;
     metadataRecovery?: SpecimenMetadataRecovery;
+    taxonomyRecovery?: import("./retained-specimen-taxonomy").RetainedTaxonomyRecovery;
     targets: RetainedHerbariumTarget[];
   };
   retainedGbifObservations?: {

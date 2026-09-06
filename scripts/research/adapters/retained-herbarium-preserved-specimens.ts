@@ -8,11 +8,15 @@ import { stableJson } from "@/lib/research/run-files";
 import catalogJson from "@/data/generated/species.json";
 import { parseSpecimenDate, validateSpecimenRecoveryWitness, type SpecimenMetadataRecovery, type SpecimenRecoveryWitness } from "../specimen-record-metadata";
 
+import { loadRetainedTaxonomyResolver, RETAINED_TAXONOMY_CITATION, RETAINED_TAXONOMY_METHOD, type RetainedTaxonomyRecovery } from "../retained-specimen-taxonomy";
+import type { WcvpCandidateResolution } from "../wcvp-infraspecific-candidates";
+type AcceptedTaxonomy = Extract<WcvpCandidateResolution, { status: "mapped-candidate" }>;
+
 export const NYBG_SOURCE_ID = "nybg-preserved-specimens" as const;
 export const TORCH_BRIT_SOURCE_ID = "torch-brit-preserved-specimens" as const;
 export const SMITHSONIAN_NMNH_SOURCE_ID = "smithsonian-nmnh-preserved-specimens" as const;
 export const HARVARD_HUH_USA_SOURCE_ID = "harvard-huh-usa-preserved-specimens" as const;
-export const RETAINED_HERBARIUM_ADAPTER_VERSION = "1.1.0" as const;
+export const RETAINED_HERBARIUM_ADAPTER_VERSION = "1.2.0" as const;
 export const NYBG_DATASET_URL = "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences" as const;
 export const NYBG_METADATA_URL = "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences" as const;
 export const NYBG_POLICY_URL = "https://sweetgum.nybg.org/science/digital-collections/" as const;
@@ -68,6 +72,7 @@ type RetainedHerbariumParameters = {
   preflightEvaluationId: string;
   targetPairSetSha256: string;
   metadataRecovery?: SpecimenMetadataRecovery;
+  taxonomyRecovery?: RetainedTaxonomyRecovery;
   targets: RetainedHerbariumTarget[];
   candidatePairs: string[];
 };
@@ -245,10 +250,12 @@ function parseParameters(context: SourceAdapterContext, profile: Profile) {
     assert(Date.parse(parameters.archiveAcquiredAt) <= Date.parse(recovery.extractedAt)
       && Date.parse(recovery.extractedAt) <= Date.parse(context.runStartedAt), "Recovery extraction chronology differs.");
   }
+  assert(!parameters.taxonomyRecovery || parameters.metadataRecovery, "Taxonomy recovery requires retained raw metadata recovery.");
   return parameters;
 }
 
-function validateTarget(context: SourceAdapterContext, target: RetainedHerbariumTarget, activeCountyFips: Set<string>, profile: Profile, recovery?: SpecimenMetadataRecovery) {
+function validateTarget(context: SourceAdapterContext, target: RetainedHerbariumTarget, activeCountyFips: Set<string>, profile: Profile, recovery?: SpecimenMetadataRecovery, resolveTaxonomy?: ReturnType<typeof loadRetainedTaxonomyResolver>) {
+  let taxonomy: AcceptedTaxonomy | undefined;
   assert(target.pairKey === pairKey(target), `${profile.label} pair identity differs for ${target.pairKey}.`);
   assert(target.stateCode === context.stateCode, `${profile.label} state differs for ${target.pairKey}.`);
   assert(target.sourceState.trim().length > 0 && target.sourceCounty.trim().length > 0, `${profile.label} geography is missing for ${target.pairKey}.`);
@@ -261,20 +268,27 @@ function validateTarget(context: SourceAdapterContext, target: RetainedHerbarium
     assert(["united states", "united states of america", "u.s.a.", "usa"].includes(normalizedText(row.country)), "Recovery raw country differs.");
     assert(normalizedText(row.basisOfRecord).replace(/[^a-z]/gu, "") === "preservedspecimen", "Recovery raw witness is not a preserved specimen.");
     assert(!row.occurrenceStatus?.trim() || normalizedText(row.occurrenceStatus) === "present", "Recovery raw occurrence status contradicts presence.");
-    const sourceName = normalizedText((row.genus ?? "") + " " + (row.specificEpithet ?? ""));
-    const sourceScientificName = normalizedText(row.scientificName);
-    const sourceWithAuthorship = normalizedText(sourceName + " " + (row.scientificNameAuthorship ?? ""));
-    const sourceRank = normalizedText(row.taxonRank);
-    const structuralRank = ["smithsonian-nmnh", "harvard-huh-usa"].includes(profile.profile) && !sourceRank
-      && (sourceScientificName === sourceName || sourceScientificName === sourceWithAuthorship) && !normalizedText(row.infraspecificEpithet);
-    assert((sourceRank === "species" || structuralRank) && !normalizedText(row.identificationQualifier), "Recovery raw rank or qualifier differs.");
-    assert(sourceName === normalizedText(target.scientificName), "Recovery raw taxonomy differs.");
-    const catalogMatches = catalogJson.filter((entry) => normalizedText(entry.scientificName) === sourceName);
-    assert(catalogMatches.length === 1 && catalogMatches[0].id === target.speciesId
-      && (profile.profile === "smithsonian-nmnh" || catalogMatches[0].category === "plants"), "Recovery unique catalog scope differs.");
-    if (profile.profile === "harvard-huh-usa") {
-      assert((sourceScientificName === sourceName || sourceScientificName === sourceWithAuthorship)
-        && !normalizedText(row.infraspecificEpithet), "Harvard source scientific name or infraspecific epithet differs.");
+    if (resolveTaxonomy) {
+      const result = resolveTaxonomy(row);
+      assert(result.status === "mapped-candidate", "Taxonomy recovery witness held: " + (result.status === "held" ? result.reason : "unknown") + ".");
+      assert(result.speciesId === target.speciesId && result.catalogScientificName === target.scientificName, "Taxonomy recovery target concept differs.");
+      taxonomy = result;
+    } else {
+      const sourceName = normalizedText((row.genus ?? "") + " " + (row.specificEpithet ?? ""));
+      const sourceScientificName = normalizedText(row.scientificName);
+      const sourceWithAuthorship = normalizedText(sourceName + " " + (row.scientificNameAuthorship ?? ""));
+      const sourceRank = normalizedText(row.taxonRank);
+      const structuralRank = ["smithsonian-nmnh", "harvard-huh-usa"].includes(profile.profile) && !sourceRank
+        && (sourceScientificName === sourceName || sourceScientificName === sourceWithAuthorship) && !normalizedText(row.infraspecificEpithet);
+      assert((sourceRank === "species" || structuralRank) && !normalizedText(row.identificationQualifier), "Recovery raw rank or qualifier differs.");
+      assert(sourceName === normalizedText(target.scientificName), "Recovery raw taxonomy differs.");
+      const catalogMatches = catalogJson.filter((entry) => normalizedText(entry.scientificName) === sourceName);
+      assert(catalogMatches.length === 1 && catalogMatches[0].id === target.speciesId
+        && (profile.profile === "smithsonian-nmnh" || catalogMatches[0].category === "plants"), "Recovery unique catalog scope differs.");
+      if (profile.profile === "harvard-huh-usa") {
+        assert((sourceScientificName === sourceName || sourceScientificName === sourceWithAuthorship)
+          && !normalizedText(row.infraspecificEpithet), "Harvard source scientific name or infraspecific epithet differs.");
+      }
     }
     const countyName = row.county?.trim().replace(/\s+Co\.?$/iu, " County");
     const geography = resolveCountyEquivalent({ stateCode: target.stateCode, countyName, sourceId: profile.sourceId });
@@ -297,9 +311,10 @@ function validateTarget(context: SourceAdapterContext, target: RetainedHerbarium
   const requested = context.requestedPairs.find((pair) => pairKey(pair) === target.pairKey);
   assert(requested, `${profile.label} target was not requested: ${target.pairKey}.`);
   assert(normalizedText(requested.scientificName) === normalizedText(target.scientificName), `${profile.label} taxonomy differs for ${target.pairKey}.`);
+  return taxonomy;
 }
 
-function buildAssertionAndReview(context: SourceAdapterContext, target: RetainedHerbariumTarget, completedAt: string, parameters: RetainedHerbariumParameters, profile: Profile) {
+function buildAssertionAndReview(context: SourceAdapterContext, target: RetainedHerbariumTarget, completedAt: string, parameters: RetainedHerbariumParameters, profile: Profile, taxonomy?: AcceptedTaxonomy) {
   const normalizedPayloadHash = sha256(stableJson(target));
   const assertionEventId = contentId(`${profile.profile}-assertion`, {
     runId: context.runId,
@@ -327,9 +342,9 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
     source_record_date: target.eventDate,
     retrieved_at: parameters.archiveAcquiredAt,
     taxon_match: {
-      method: profile.taxonomyMethod,
+      method: taxonomy ? RETAINED_TAXONOMY_METHOD : profile.taxonomyMethod,
       target_scientific_name: target.scientificName,
-      source_scientific_name: target.scientificName,
+      source_scientific_name: taxonomy ? taxonomy.sourceScientificName : target.scientificName,
       source_taxon_key: null,
     },
     geography_match: {
@@ -352,6 +367,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
       "Source silence, excluded cultivated records, missing geography, and every rejected row create no absence or non-detection claim.",
     ],
     notes: [
+      ...(taxonomy ? [RETAINED_TAXONOMY_CITATION, `Taxonomy reference ${parameters.taxonomyRecovery!.referenceId}; WCVP rows ${taxonomy.referenceIds.join(", ")}; route ${taxonomy.route}; original specimen name preserved. Source-specific mapping artifact and immutable reference archive retain derivation.`] : []),
       `${profile.label} record ${target.recordId || "not supplied"}; occurrenceID ${target.occurrenceId || "not supplied; archive-bound core identity used"}.`,
       `Institution ${target.institutionCode || "unspecified"}; collection ${target.collectionCode || "unspecified"}; catalog ${target.catalogNumber || "unspecified"}.`,
       `Dataset ${profile.licenseLabel}; rights holder ${target.rightsHolder || "unspecified"}; archive ${profile.archiveSha256}.`,
@@ -377,7 +393,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
       profile.retainedLicenseReasonCode,
       target.occurrenceId ? "stable-occurrence-identity" : "stable-archive-bound-core-identity",
       "preserved-specimen-basis",
-      "exact-catalog-binomial",
+      taxonomy ? "authoritative-infraspecific-concept-containment" : "exact-catalog-binomial",
       "exact-active-county-name",
       target.eventDate === null ? "normalized-collection-date-unknown" : "valid-event-year",
       "cultivation-text-excluded",
@@ -397,14 +413,17 @@ function buildRunner(profile: Profile) {
     const parameters = parseParameters(context, profile);
     assert(getStateDefinition(context.stateCode)?.nationalV1Scope, `${profile.label} state ${context.stateCode} is not registered.`);
     const activeCountyFips = new Set(listCountyEquivalents(context.stateCode).map((county) => county.countyFips));
+    const resolveTaxonomy = parameters.taxonomyRecovery ? loadRetainedTaxonomyResolver(parameters.taxonomyRecovery, profile.sourceId) : undefined;
+    const taxonomyMappings: Array<{ pairKey: string; resolution: AcceptedTaxonomy }> = [];
     const completedAt = new Date().toISOString();
     assert(Date.parse(completedAt) >= Date.parse(context.runStartedAt), `${profile.label} completion precedes run start.`);
     const assertions: RunEvidenceAssertionEvent[] = [];
     const reviews: EvidenceReviewEvent[] = [];
     const outcomes: ResearchPairOutcome[] = [];
     for (const target of [...parameters.targets].sort((left, right) => compareText(left.pairKey, right.pairKey))) {
-      validateTarget(context, target, activeCountyFips, profile, parameters.metadataRecovery);
-      const accepted = buildAssertionAndReview(context, target, completedAt, parameters, profile);
+      const taxonomy = validateTarget(context, target, activeCountyFips, profile, parameters.metadataRecovery, resolveTaxonomy);
+      if (taxonomy) taxonomyMappings.push({ pairKey: target.pairKey, resolution: taxonomy });
+      const accepted = buildAssertionAndReview(context, target, completedAt, parameters, profile, taxonomy);
       assertions.push(accepted.assertion);
       reviews.push(accepted.review);
       outcomes.push({
@@ -441,6 +460,7 @@ function buildRunner(profile: Profile) {
       preflightEvaluationId: parameters.preflightEvaluationId,
       targetPairSetSha256: parameters.targetPairSetSha256,
       ...(parameters.metadataRecovery ? { metadataRecovery: parameters.metadataRecovery } : {}),
+      ...(parameters.taxonomyRecovery ? { taxonomyRecovery: parameters.taxonomyRecovery } : {}),
     };
     return {
       completedAt,
@@ -449,6 +469,7 @@ function buildRunner(profile: Profile) {
       rejections: [],
       outcomes,
       artifacts: [
+        ...(parameters.taxonomyRecovery ? [{ filename: `${profile.profile}-taxonomy-mappings.json`, mediaType: "application/json", contents: JSON.stringify({ reference: parameters.taxonomyRecovery, citation: RETAINED_TAXONOMY_CITATION, mappings: taxonomyMappings }, null, 2) + "\n" }] : []),
         { filename: `${profile.profile}-source-identity.json`, mediaType: "application/json", contents: `${JSON.stringify(identity, null, 2)}\n` },
         { filename: `${profile.profile}-retained-witnesses.json.gz`, mediaType: "application/gzip", contents: gzipSync(Buffer.from(stableJson(parameters.targets))) },
       ],

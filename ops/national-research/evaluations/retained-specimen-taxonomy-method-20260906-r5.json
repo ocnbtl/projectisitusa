@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-retained-specimen-taxonomy-method-evaluation",
+  "evaluatedAt": "2026-09-06T17:44:16.492Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "baseCommit": "1ade5b63abf40c97d7322684b94d6ec621e4db03",
+  "implementationState": "Scoped working changes on base commit; method is committed before production evidence runs.",
+  "adapterVersion": "1.2.0",
+  "referenceReview": "ops/national-research/receipts/source-evaluations/kew-wcvp-reference-review-20260906-r4.json",
+  "referenceRowVerification": "ops/national-research/receipts/source-evaluations/kew-wcvp-reference-row-verification-20260906-r4.json",
+  "code": [
+    {
+      "path": "scripts/research/retained-specimen-taxonomy.ts",
+      "sha256": "f2b50c0ea0016112d65fa35715cc95445bea56bb484de1e5cced31d91549170d"
+    },
+    {
+      "path": "scripts/research/wcvp-infraspecific-candidates.ts",
+      "sha256": "a659519369386bcb6e8109943387c5ac0025e46fff7f519b6e4af09e5a126f13"
+    },
+    {
+      "path": "scripts/research/build-reviewed-specimen-taxonomy-preflight.ts",
+      "sha256": "cc544e8e392a633fc25d9f9b41794c64bde7d2e163c559bb58c6aec893548691"
+    },
+    {
+      "path": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
+      "sha256": "673728a2c491ab877d27093b9c9acbe1d6badf06d738d8645b2c6d34560b2156"
+    },
+    {
+      "path": "scripts/research/build-retained-herbarium-state-plans.ts",
+      "sha256": "62f1835742f4c4929b0d9f79ae1d5ef24091fd6e6a4e4a36eec70b60f12ad84c"
+    },
+    {
+      "path": "scripts/research/run-source.ts",
+      "sha256": "91deeb9a6ad3a1344a3da9037c9498a4e22692f9e9c25026d394bda78c0a3043"
+    },
+    {
+      "path": "scripts/test-retained-specimen-taxonomy.ts",
+      "sha256": "e6f85ca02075604087505b2f7362d4c789069c113f085bcdb665b4afbdbf1ed2"
+    },
+    {
+      "path": "scripts/fixtures/wcvp-specimen-context-review-20260906-r4.json",
+      "sha256": "3dc1890a478b85d47200a4e99b750ec0c1fb63001b7f39d95a5950f33d4f1623"
+    },
+    {
+      "path": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
+      "sha256": "061a8ca78feede982d0e521bf83eeba96a370b5b684793515f28005b55172e5e"
+    }
+  ],
+  "baseline": {
+    "determinations": 316076,
+    "verifiedPresent": 312832,
+    "verifiedAbsent": 3244,
+    "pairSetSha256": "c9ba1776b93872fed6770ae753074210f1db8bac352dfbe5acef84f5b873c5a9"
+  },
+  "result": {
+    "sourceInventoryWitnesses": 316,
+    "taxonomyCandidates": 172,
+    "individualContextHolds": 7,
+    "eligibleWitnesses": 165,
+    "existingPresentOverlap": 1,
+    "existingAbsentConflict": 0,
+    "netCandidatePairs": 164,
+    "states": 32,
+    "pairSetSha256": "8b83336708655ee9d58f8fa7565cdd8f76fe21633103b89fb1ad9f4770669c5b"
+  },
+  "verification": [
+    {
+      "command": "npm run check:retained-specimen-taxonomy",
+      "exitCode": 0,
+      "scope": "Every 165 eligible retained witnesses executes through schema and adapter; all seven context holds and adversarial cases reject. Candidate reference tests include sibling subspecies."
+    },
+    {
+      "command": "node --import tsx scripts/test-retained-herbarium-preserved-specimens-adapter.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "node --import tsx scripts/test-specimen-record-metadata.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "Retained taxonomy preflight and state-plan builder trial",
+      "exitCode": 0,
+      "scope": "32 plans; exact union164; no evidence runs"
+    }
+  ],
+  "retainedValidation": {
+    "path": "ops/national-research/evaluations/artifacts/retained-taxonomy-method-validation-20260906-r5.json.gz",
+    "storedBytes": 63152,
+    "storedSha256": "800afdb16871888f1261a29b672dafae2e07742aa17653927853123919b1a15a",
+    "decodedBytes": 487952,
+    "decodedSha256": "883684df59c12f3f266dc476fcef1fe3890466f9536fda1ee6c9ba6a7c9dd80c"
+  },
+  "remainingReview": "Independently review source interpretation in a leased NY state pilot before broader source-run integration.",
+  "sourceRequests": 0,
+  "newDeterminations": 0,
+  "productionMutations": 0,
+  "status": "local-method-checks-passed-independent-state-pilot-pending"
+}

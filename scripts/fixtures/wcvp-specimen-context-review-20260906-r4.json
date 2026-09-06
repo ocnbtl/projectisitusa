@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-specimen-context-review",
+  "reviewedAt": "2026-09-06T17:33:51.506Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "inventoryPath": "ops/national-research/evaluations/artifacts/nybg-infraspecific-inventory-20260906-r4.json.gz",
+  "inventorySha256": "79e8c9e69bf17a22034569de8515fe9c1ae2ad6a8f6a5f1d07b69d8e3a2a8ab0",
+  "rowsReviewed": 172,
+  "holds": [
+    {
+      "pair": "16015:hordeum-marinum",
+      "reason": "reviewed-county-coordinate-conflict",
+      "rationale": "The source point lies about 2.7 km beyond the declared Boise County polygon, in Elmore County; uncertainty is not provided. Neither field is silently preferred.",
+      "sourceRowSha256": "02b8e9adf7c3f36250959c335fec7055d4415d6871b25f78aec225890de032c1",
+      "sourceUrl": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=1935338"
+    },
+    {
+      "pair": "16027:hordeum-marinum",
+      "reason": "reviewed-historical-county-lineage-unresolved",
+      "rationale": "The 1910 Canyon County label conflicts with a point now in Payette County, about 13.9 km outside the current Canyon boundary versus 3.4 km stated uncertainty. Historical county lineage needs review; no reassignment.",
+      "sourceRowSha256": "ccc28773daa9cb7ff081065366a4f119583d3b54012d3cd2e25d56d41058fd0f",
+      "sourceUrl": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=1935314"
+    },
+    {
+      "pair": "42059:medicago-sativa",
+      "reason": "reviewed-county-municipality-coordinate-conflict",
+      "rationale": "Greene County conflicts with Tannersville municipality and a point in Monroe County, roughly 407 km from the declared county versus 3.0 km uncertainty.",
+      "sourceRowSha256": "c40c6df4176dca418649f10fc439e46032630bf13a4850b54a994ca487228b83",
+      "sourceUrl": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=2867629"
+    },
+    {
+      "pair": "12086:koelreuteria-elegans",
+      "reason": "reviewed-cultivation-context-unresolved",
+      "rationale": "The source identifies the USDA subtropical horticultural research station and its street address without collection context. USDA documents the living ornamental germplasm collection. This flags unresolved cultivation, not proof that this individual was planted.",
+      "sourceRowSha256": "68f0667c9e1a75dcd778da765e77a2422f6578f7f01eaa0ad0d21e04f1430b9f",
+      "sourceUrl": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=2715680"
+    },
+    {
+      "pair": "22071:koelreuteria-elegans",
+      "reason": "reviewed-cultivation-context-unresolved",
+      "rationale": "The ornamental tree record names Tulane Campus, Warren House without habitat or spontaneous-growth context. Hold this individual for label review, not every campus specimen.",
+      "sourceRowSha256": "d0e0077611e297efd65c34b6394f5318d4636f80836910416f124a1ef1df17aa",
+      "sourceUrl": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=2715687"
+    },
+    {
+      "pair": "48041:koelreuteria-elegans",
+      "reason": "reviewed-cultivation-context-unresolved",
+      "rationale": "The tree record names the Texas A and M campus without habitat or spontaneous-growth context. Hold this individual for label review, not every campus specimen.",
+      "sourceRowSha256": "91afa09f904fd17c701efc3508d85c4c7d6802c6d31ec8943d88c5f957ffe458",
+      "sourceUrl": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=2715678"
+    },
+    {
+      "pair": "20045:acer-platanoides",
+      "reason": "reviewed-cultivar-context-unresolved",
+      "rationale": "The source names var. cucullatum at a city street corner. The taxonomic relationship is supported, but the potentially named ornamental form requires individual cultivation review before the current occurrence pathway. This is unresolved, not a cultivation assertion.",
+      "sourceRowSha256": "378e4cebea6e648bd46ecdb7b9641d240b92f4d076f17e525223af022b85eefc",
+      "sourceUrl": "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=2704983"
+    }
+  ],
+  "qualifications": [
+    "The retained county topology is generalized at 1:5 million. Small shoreline or county-edge offsets are diagnostic only and do not displace explicit county evidence.",
+    "Source coordinate uncertainty accommodates the small Beaverhead and Bowie offsets; neither is held solely on point containment.",
+    "DeTour Village shoreline and Florence Creek near-boundary coordinates need finer geometry to contradict explicit county/locality evidence; no automatic rejection.",
+    "Lawn, golf course, field station, road and campus words alone do not establish cultivation. The Yuba barley field-station record and campus alfalfa record retain historical occurrence eligibility.",
+    "Historical occurrence acceptance does not resolve wild occurrence in 2026 or establishment.",
+    "Current NYBG detail pages could not be opened by the browsing tool. This retrieval failure creates no biological claim."
+  ],
+  "supportingReferences": [
+    {
+      "url": "https://www.ars.usda.gov/southeast-area/miami-fl/subtropical-horticulture-research/docs/main/",
+      "finding": "The station maintains introduced tropical germplasm; this supports an individual context review, not a blanket station exclusion."
+    }
+  ],
+  "geographyDiagnostic": {
+    "schemaVersion": 1,
+    "kind": "isitusa-specimen-coordinate-contradiction-diagnostic",
+    "evaluatedAt": "2026-09-06T17:29:24.835Z",
+    "topologyPath": "src/data/source/county-equivalents-topology.json",
+    "topologySha256": "71bcbd0571137d470e667da72a4bfd1487e542486a085dbdfded2625fdb5166a",
+    "qualification": "Diagnostic only. Equirectangular nearest-segment distance is approximate; boundary uncertainty can explain near-edge coordinates. Coordinates do not replace declared geography and no county is reassigned.",
+    "results": [
+      {
+        "pair": "16015:hordeum-marinum",
+        "sourceRowSha256": "02b8e9adf7c3f36250959c335fec7055d4415d6871b25f78aec225890de032c1",
+        "sourceCounty": "Boise Co.",
+        "point": [
+          -115.66961,
+          43.65114
+        ],
+        "pointCounties": [
+          "16039"
+        ],
+        "uncertaintyMeters": null,
+        "approximateDistanceToDeclaredBoundaryMeters": 2733,
+        "locality": "Middle Fork Boise River, open shores and benches of river upstream from dam."
+      },
+      {
+        "pair": "16027:hordeum-marinum",
+        "sourceRowSha256": "ccc28773daa9cb7ff081065366a4f119583d3b54012d3cd2e25d56d41058fd0f",
+        "sourceCounty": "Canyon Co.",
+        "point": [
+          -116.720433,
+          43.932022
+        ],
+        "pointCounties": [
+          "16075"
+        ],
+        "uncertaintyMeters": "3435",
+        "approximateDistanceToDeclaredBoundaryMeters": 13923,
+        "locality": "Falk's Store. Saline flats."
+      },
+      {
+        "pair": "26033:myosotis-sylvatica",
+        "sourceRowSha256": "64e5c0c0fdbc2e86a6bd0d7a88ad86a030e253b483eb87e1fa1b3ea9a087704b",
+        "sourceCounty": "Chippewa Co.",
+        "point": [
+          -83.925111,
+          46.016333
+        ],
+        "pointCounties": [],
+        "uncertaintyMeters": null,
+        "approximateDistanceToDeclaredBoundaryMeters": 57,
+        "locality": "DeTour Village, on St. Mary's River, N of Lake Huron; property of Interlake Steamship Company, Spring Bay Rd."
+      },
+      {
+        "pair": "30001:myosotis-sylvatica",
+        "sourceRowSha256": "7c41496bfa0a77225b3337893eef8c24e03f03ef00264b10e52a5b5fa47af7bb",
+        "sourceCounty": "Beaverhead Co.",
+        "point": [
+          -111.6905,
+          44.5574
+        ],
+        "pointCounties": [
+          "16033"
+        ],
+        "uncertaintyMeters": "969",
+        "approximateDistanceToDeclaredBoundaryMeters": 250,
+        "locality": "Centennial Mtns.; west of Taylor Mtn."
+      },
+      {
+        "pair": "42059:medicago-sativa",
+        "sourceRowSha256": "c40c6df4176dca418649f10fc439e46032630bf13a4850b54a994ca487228b83",
+        "sourceCounty": "Greene Co.",
+        "point": [
+          -75.305739,
+          41.040092
+        ],
+        "pointCounties": [
+          "42089"
+        ],
+        "uncertaintyMeters": "3036",
+        "approximateDistanceToDeclaredBoundaryMeters": 407123,
+        "locality": "Tannersville"
+      },
+      {
+        "pair": "48037:medicago-lupulina",
+        "sourceRowSha256": "0cf38e67dde2ad52f59bdacaf168ce5d2c9cdbaca2ae973f04e31f62e8533324",
+        "sourceCounty": "Bowie Co.",
+        "point": [
+          -94.232088,
+          33.271088
+        ],
+        "pointCounties": [
+          "48067"
+        ],
+        "uncertaintyMeters": "14860",
+        "approximateDistanceToDeclaredBoundaryMeters": 582,
+        "locality": "Roadside, 15 miles southwest Texarkana"
+      },
+      {
+        "pair": "49015:linaria-dalmatica",
+        "sourceRowSha256": "df825e38fbe37b6636ca0414889400552b9a45a13c21d8fd9d40f477db68f44b",
+        "sourceCounty": "Emery Co.",
+        "point": [
+          -110.01081,
+          39.375
+        ],
+        "pointCounties": [
+          "49019"
+        ],
+        "uncertaintyMeters": null,
+        "approximateDistanceToDeclaredBoundaryMeters": 578,
+        "locality": "Desolation Canyon, on Florence Creek"
+      }
+    ]
+  },
+  "newDeterminations": 0
+}
