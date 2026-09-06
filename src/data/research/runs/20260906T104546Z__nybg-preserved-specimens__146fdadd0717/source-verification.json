@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-06T10:54:25.616Z",
+  "runId": "20260906T104546Z__nybg-preserved-specimens__146fdadd0717",
+  "sourceId": "nybg-preserved-specimens",
+  "stateCode": "NY",
+  "pairKeys": [
+    "36001:galinsoga-parviflora",
+    "36029:brassica-nigra",
+    "36029:camelina-sativa",
+    "36029:festuca-rubra",
+    "36029:lamium-maculatum",
+    "36029:lobularia-maritima",
+    "36029:melilotus-albus",
+    "36029:rumex-obtusifolius",
+    "36029:setaria-italica",
+    "36029:silene-noctiflora",
+    "36047:bromus-sterilis",
+    "36055:onopordum-acanthium",
+    "36063:capsella-bursa-pastoris",
+    "36069:vicia-sativa",
+    "36071:cardamine-flexuosa",
+    "36081:physalis-philadelphica",
+    "36097:convolvulus-arvensis",
+    "36123:arctium-lappa",
+    "36123:bellis-perennis",
+    "36123:bromus-sterilis",
+    "36123:cirsium-vulgare",
+    "36123:lablab-purpureus",
+    "36123:lupinus-luteus",
+    "36123:myosotis-arvensis",
+    "36123:prunus-persica",
+    "36123:sorbus-aucuparia",
+    "36123:trifolium-pratense",
+    "36123:trifolium-repens"
+  ],
+  "parameterHash": "146fdadd07179f4634bc2daeb39bdf7d1514c2d7883148bf1c423cf05fe70202",
+  "authority": {
+    "name": "New York Botanical Garden preserved specimens",
+    "sourceUrl": "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences",
+    "publisher": "The New York Botanical Garden"
+  },
+  "terms": {
+    "license": "CC0 1.0",
+    "termsUrl": "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-09-06T10:54:25.616Z",
+    "freshnessDate": "2026-08-25"
+  },
+  "geography": {
+    "method": "Explicit provider state and county-equivalent text must resolve uniquely to an active national-v1 county-equivalent registry entry after the documented NYBG Co. suffix is expanded to County. Missing, retired, unknown, and ambiguous county names are rejected; coordinates are not used.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are retained provider metadata only and were not used to assign counties."
+  },
+  "taxonomy": {
+    "method": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
+    "targetSpeciesIds": [
+      "arctium-lappa",
+      "bellis-perennis",
+      "brassica-nigra",
+      "bromus-sterilis",
+      "camelina-sativa",
+      "capsella-bursa-pastoris",
+      "cardamine-flexuosa",
+      "cirsium-vulgare",
+      "convolvulus-arvensis",
+      "festuca-rubra",
+      "galinsoga-parviflora",
+      "lablab-purpureus",
+      "lamium-maculatum",
+      "lobularia-maritima",
+      "lupinus-luteus",
+      "melilotus-albus",
+      "myosotis-arvensis",
+      "onopordum-acanthium",
+      "physalis-philadelphica",
+      "prunus-persica",
+      "rumex-obtusifolius",
+      "setaria-italica",
+      "silene-noctiflora",
+      "sorbus-aucuparia",
+      "trifolium-pratense",
+      "trifolium-repens",
+      "vicia-sativa"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "occurrenceID",
+      "id",
+      "archiveSha256",
+      "sourceRowSha256"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "The source supports historical recorded-presence occurrence only.",
+      "Source silence, missing geography, rejected rows, unknown dates and incomplete scope cannot support absence or survey non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-source-identity.json",
+      "sha256": "d258615bc3b111d8bb35e176dc5a36019b6d54df2cfebc1c0b426917f511c392",
+      "bytes": 1164
+    },
+    {
+      "path": "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-retained-witnesses.json.gz",
+      "sha256": "822670475d1f8b398b8fdc5a9385634494a1735f44723c88aa66eab13e400154",
+      "bytes": 6608
+    }
+  ],
+  "caveats": [
+    "This worker replayed only the 28 exact retained witnesses in the committed NYBG New York plan; it issued zero provider requests and did not retrieve or rescan the full archive.",
+    "The availability check and verifiedAt refer to the actual retained-witness audit at 2026-09-06T10:54:25.616Z. Live provider availability was not checked by this worker.",
+    "Snapshot and pagination completeness inherit the admitted complete-archive preflight and identity audit in ops/national-research/receipts/source-evaluations/museum-metadata-admission-20260906-r4.json. The scoped replay has no request pages.",
+    "The retained reviewed preflight stored SHA-256 is 00bf3402d37b241f49a990be2ad64c7332a4a03b58850632dc0f9fa7001d2928 and decoded SHA-256 is 9048cfae8760ee9b4384e0db971d4ad5a860f7c5cb5126bde6eb8adbc535beee; both hashes and all 28 raw-row hashes matched during the worker audit.",
+    "All 28 normalized collection dates and years remain null. The 2026-08-25 freshnessDate identifies archive publication, not specimen collection or present-day persistence.",
+    "The witnesses for 36123:lupinus-luteus and 36123:myosotis-arvensis retain NYBG occurrenceRemarks [Inferred county from precise loc.] and locality Penn Yan. The county field explicitly states Yates Co.; no worker coordinate inference or geography correction was made.",
+    "The Cardamine flexuosa witness has a 1981 accession narrative in occurrenceRemarks. It remains narrative provenance and was not used as a collection date.",
+    "Blank cultivation-context fields do not establish wildness, establishment, or current persistence. No explicit cultivation or material locality contradiction was found in the 28 retained rows reviewed for this historical occurrence scope.",
+    "Reviews are adapter machine-validated under nybg-preserved-specimens-snapshot@1.1.0. This bundle does not claim human approval or integrated determination gains."
+  ]
+}
