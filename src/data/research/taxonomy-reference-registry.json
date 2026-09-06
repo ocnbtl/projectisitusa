@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "kew-wcvp",
+      "label": "World Checklist of Vascular Plants",
+      "authority": "Royal Botanic Gardens, Kew, and WCVP collaborators",
+      "purpose": "taxonomy-reference-only",
+      "homepage": "https://powo.science.kew.org/about-wcvp",
+      "downloadUrl": "https://sftp.kew.org/pub/data-repositories/WCVP/wcvp.zip",
+      "termsUrl": "https://www.kew.org/science/collections-and-resources/data-and-digital/terms-of-use",
+      "citationUrl": "https://powo.science.kew.org/cite-us",
+      "adapter": { "id": "taxonomy-reference-download", "version": "1.0.0", "module": "scripts/research/acquire-taxonomy-reference.ts" },
+      "maximumArtifactBytes": 104857600,
+      "timeoutMs": 180000,
+      "redirects": "reject",
+      "retryPolicy": "No automatic retries; preserve failures and use a new acquisition identity after reviewing the cause.",
+      "licensing": "Inspect and retain this release's embedded metadata before reuse. Kew's terms defer data licensing to individual dataset metadata. An older GBIF-hosted WCVP release is CC BY 4.0, but that does not prove this snapshot's terms.",
+      "limitations": [
+        "Acquisition creates no taxonomy acceptance, county determination, research-completion outcome, or applicability decision.",
+        "Exact names, authorship, accepted-name and parent relationships require a separately evaluated mapping method. Misapplied names, homonyms and ambiguous concepts remain unresolved.",
+        "A taxonomic relationship does not establish occurrence, establishment, introduced status, invasive impact or geographic absence.",
+        "RBG, Kew cannot warrant the quality or accuracy of the data; Project Isitusa has no endorsement or affiliation with Kew."
+      ]
+    }
+  ]
+}

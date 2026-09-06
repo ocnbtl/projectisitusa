@@ -110,7 +110,9 @@
     "research:audit:approved-alb": "node --import tsx scripts/research/audit-approved-alb-batch.ts",
     "check:question-assessments": "node --import tsx scripts/test-question-assessments.ts && node --import tsx scripts/test-question-assessment-ledger.ts && node --import tsx scripts/test-question-assessment-planner.ts && node --import tsx scripts/test-question-assessment-presentation.ts && node --import tsx scripts/check-question-assessment-projection.ts",
     "research:questions:preview": "node --import tsx scripts/research/build-question-assessment-batch.ts --mode preview",
-    "research:questions:stage": "node --import tsx scripts/research/build-question-assessment-batch.ts --mode stage"
+    "research:questions:stage": "node --import tsx scripts/research/build-question-assessment-batch.ts --mode stage",
+    "research:acquire:taxonomy-reference": "node --import tsx scripts/research/acquire-taxonomy-reference.ts",
+    "check:taxonomy-reference-acquisition": "node --import tsx scripts/test-taxonomy-reference-acquisition.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

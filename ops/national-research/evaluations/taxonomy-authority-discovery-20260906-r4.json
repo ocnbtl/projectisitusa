@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-taxonomy-authority-discovery",
+  "evaluatedAt": "2026-09-06T11:32:23.290Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "inventory": "ops/national-research/evaluations/nybg-infraspecific-inventory-20260906-r4.json",
+  "candidatePairs": 316,
+  "overlapWithNewMuseumDeterminations": 1,
+  "candidatePairsAfterKnownOverlap": 315,
+  "findings": [
+    {
+      "sourceName": "Nelumbo nucifera subsp. lutea (Willd.) Borsch & Barthlott",
+      "inventoryPairs": 7,
+      "authorityAcceptedSpecies": "Nelumbo lutea",
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A988377-1",
+      "decision": "Do not assign automatically to source-name parent Nelumbo nucifera."
+    },
+    {
+      "sourceName": "Alisma plantago-aquatica var. parviflorum (Pursh) Torr.",
+      "inventoryPairs": 5,
+      "authorityAcceptedSpecies": "Alisma subcordatum",
+      "authorityId": "ITIS TSN 38893",
+      "sourceUrl": "https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=38893",
+      "decision": "Do not assign automatically to Alisma plantago-aquatica."
+    },
+    {
+      "sourceName": "Hordeum marinum subsp. gussoneanum (Parl.) Thell.",
+      "inventoryPairs": 15,
+      "authorityAcceptedParent": "Hordeum marinum",
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:60447542-2",
+      "decision": "Supported parent relationship lead; retain reference and evaluate mapping before admission."
+    },
+    {
+      "sourceName": "Veronica serpyllifolia var. humifusa (Dicks.) Vahl",
+      "inventoryPairs": 42,
+      "sourceUrls": [
+        "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77249941-1",
+        "https://burkeherbarium.org/waflora-new/checklist.php?ID=102698&Taxon=Veronica+serpyllifolia"
+      ],
+      "decision": "Authorship disagreement and origin status require explicit treatment. County occurrence cannot establish introduced or invasive status."
+    }
+  ],
+  "nextReference": {
+    "url": "https://sftp.kew.org/pub/data-repositories/WCVP/wcvp.zip",
+    "directoryLastModified": "2026-06-04",
+    "approximateListingSize": "84M",
+    "qualification": "Discovery metadata only; archive bytes and release identity not yet captured."
+  },
+  "biologicalAssertionsCreated": 0,
+  "status": "reference-required-before-taxonomy-admission"
+}

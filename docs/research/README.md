@@ -440,3 +440,9 @@ NEXT
 ```
 
 Generated counts must be reverified in the next task. Never copy an old count forward as current without reading freshly generated output.
+
+## Taxonomy reference acquisition
+
+`src/data/research/taxonomy-reference-registry.json` registers taxonomy references separately from occurrence-producing sources. MAIN may run `npm run research:acquire:taxonomy-reference -- --source kew-wcvp --acquisition-id <unique-id>` from a clean committed checkout. The bounded adapter retains exact archive bytes, embedded release metadata, source parameters, code and registry identity, request timing, and an immutable receipt under `src/data/research/taxonomy-references/`. Failed acquisitions remain visible and are never treated as complete references.
+
+A captured reference is not an accepted taxonomic mapping and emits no county evidence. Inspect the actual release licence and citation, then evaluate a mapping method that preserves original names, authorship, authoritative identifiers, accepted-name links, parent relationships, and known concept conflicts. Existing occurrence sources still supply occurrence evidence. Distribution omissions cannot supply county absence. RBG, Kew cannot warrant the quality or accuracy of its data; Isitusa has no Kew endorsement or affiliation.

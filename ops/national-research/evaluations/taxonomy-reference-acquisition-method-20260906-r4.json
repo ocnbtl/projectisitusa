@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-taxonomy-reference-acquisition-evaluation",
+  "evaluatedAt": "2026-09-06T11:32:23.289Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "adapterId": "taxonomy-reference-download",
+  "adapterVersion": "1.0.0",
+  "sourceId": "kew-wcvp",
+  "purpose": "Capture one licensed-release reference for subsequent taxonomy method review, not county evidence.",
+  "checks": [
+    {
+      "command": "node --import tsx scripts/test-taxonomy-reference-acquisition.ts",
+      "exitCode": 0,
+      "output": "Taxonomy reference transport: exact bytes and hash, immutable destination, size caps, truncation, HTTP error/redirect, encoding, HTML, registry purpose and unsafe paths passed. No network requests or acceptance method.\r\n"
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "exitCode": 0,
+      "output": "\r\n> project-isitusa@0.1.0 typecheck\r\n> tsc --noEmit\r\n\r\n"
+    }
+  ],
+  "controls": [
+    "MAIN branch and clean committed worktree",
+    "Registered HTTPS endpoint and versioned parameters",
+    "Direct HTTP 200; redirects rejected",
+    "Streaming bytes and SHA-256; declared and observed size must agree",
+    "100 MiB registered archive cap, within 256 MiB national limit",
+    "Unique acquisition directory; preserve partial failures; never overwrite completed receipts",
+    "ZIP signature, bounded archive listing and release metadata; no filesystem extraction",
+    "No automatic retries",
+    "Reference-only purpose; no inference or county outcome pathway"
+  ],
+  "limitations": [
+    "Live capture has not yet run.",
+    "Dataset release metadata must establish its actual reuse terms; an older CC-BY-4.0 GBIF mirror is not a substitute.",
+    "This validates acquisition integrity, not taxonomy concepts or biological evidence."
+  ],
+  "status": "bounded-acquisition-ready-for-live-pilot",
+  "newDeterminations": 0
+}
