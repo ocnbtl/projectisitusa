@@ -32644,7 +32644,7 @@
       "queueId": "queue-lease-museum-metadata-20260906-r4-nmnh-ca-1",
       "jobId": "museum-metadata-20260906-r4-nmnh-ca",
       "leaseId": "lease-museum-metadata-20260906-r4-nmnh-ca-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-09-06T11:06:41.880Z",
       "manifestPath": "manifests/museum-metadata-20260906-r4-nmnh-ca__lease-museum-metadata-20260906-r4-nmnh-ca-1.json",
       "manifestHash": "fc044faf0ec754aa1bd6a48c54cca03ae9d1c263f64ed65999f760a6a2498e0a",
@@ -32701,6 +32701,57 @@
         "path": "receipts/reviews/queue-lease-museum-metadata-20260906-r4-nmnh-ca-1.json",
         "sha256": "3ba9cab53537c592f53c76c46fad6f68fcead1e34914cc24f06d3629ac7b1dc0",
         "bytes": 3117
+      },
+      "integratedAt": "2026-09-06T11:10:06.973Z",
+      "integrator": "MAIN",
+      "integrationCommit": "025ced57b59ac836bd18ac8db91b1548133758ae",
+      "integrationChecks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...5cd1f89e7f28dd774ade5f223b2cf59231b21b7b",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "fresh canonical immutable-run validation after exact worker cherry-picks with original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed smithsonian-nmnh-preserved-specimens content and manifest commits without conflict. Fresh canonical validation passed for 8 complete historical-occurrence pairs. Unknown collection dates and original source acquisition identity remain unchanged; no unsupported negative determination is produced.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-museum-metadata-20260906-r4-nmnh-ca-1.json",
+        "sha256": "558fc8156f82c45b9409d3f92cb488d30d8f7d9de205a851e2a472c55fdf19c7",
+        "bytes": 3423
       }
     }
   ]

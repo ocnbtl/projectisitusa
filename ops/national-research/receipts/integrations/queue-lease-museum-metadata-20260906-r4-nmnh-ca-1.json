@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-museum-metadata-20260906-r4-nmnh-ca-1",
+  "jobId": "museum-metadata-20260906-r4-nmnh-ca",
+  "leaseId": "lease-museum-metadata-20260906-r4-nmnh-ca-1",
+  "workerCommit": "c7773f9adb71f2343bfeb5151d876b11bb26acbd",
+  "workerBranchHead": "5cd1f89e7f28dd774ade5f223b2cf59231b21b7b",
+  "manifestHash": "fc044faf0ec754aa1bd6a48c54cca03ae9d1c263f64ed65999f760a6a2498e0a",
+  "changedPaths": [
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-source-identity.json",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/assertions.ndjson",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/manifest.json",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/outcomes.ndjson",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/receipt.json",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/rejections.ndjson",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/reviews.ndjson",
+    "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...5cd1f89e7f28dd774ade5f223b2cf59231b21b7b",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "fresh canonical immutable-run validation after exact worker cherry-picks with original code commit and worker identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact reviewed smithsonian-nmnh-preserved-specimens content and manifest commits without conflict. Fresh canonical validation passed for 8 complete historical-occurrence pairs. Unknown collection dates and original source acquisition identity remain unchanged; no unsupported negative determination is produced.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-09-06T11:10:06.973Z",
+  "integrationCommit": "025ced57b59ac836bd18ac8db91b1548133758ae"
+}
