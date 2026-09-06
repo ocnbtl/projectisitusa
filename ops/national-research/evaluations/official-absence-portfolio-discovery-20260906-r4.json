@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-official-absence-portfolio-discovery",
+  "reviewedAt": "2026-09-06T11:52:38.573Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "catalogScopeSha256": "3fd42c23d916409cc5d61b3bef57e971af59ebf6d7ec0a17d04c618fc9010085",
+  "leads": [
+    {
+      "species": "Synchytrium endobioticum",
+      "url": "https://www.aphis.usda.gov/plant-pests-diseases/potato-wart",
+      "modifiedAt": "2026-09-04",
+      "finding": "APHIS describes eradication in 1994 and current absence knowledge nationwide.",
+      "scopeDecision": "Outside current catalog; do not expand denominator to count easy absences."
+    },
+    {
+      "species": "Dickeya solani",
+      "url": "https://www.aphis.usda.gov/plant-pests-diseases/dickeya",
+      "modifiedAt": "2025-07-30",
+      "finding": "APHIS distinguishes D. solani from established D. dianthicola.",
+      "scopeDecision": "Outside current catalog; no county determinations."
+    },
+    {
+      "speciesId": "tilletia-indica",
+      "url": "https://direct.aphis.usda.gov/plant-pests-diseases/karnal-bunt",
+      "modifiedAt": "2026-06-09",
+      "finding": "Current APHIS distribution statement confines disease to parts of Arizona and describes national surveillance in wheat-producing counties.",
+      "scopeDecision": "Promising broader official-status review. The pest-free-area list on this page covers an area of Mexico, not every US county. Do not convert unlisted quarantine acreage or incomplete survey footprints to verified absence.",
+      "next": "Review current distribution statement as a parent assessment, its biological predicate and geography, historical/countervailing observations, and exact source wording."
+    },
+    {
+      "speciesId": "bactrocera-dorsalis",
+      "url": "https://www.cdfa.ca.gov/plant/pdep/treatment/oriental_ff.html",
+      "finding": "CDFA describes the complex as not established in the continental United States and explains recurring eradication actions.",
+      "scopeDecision": "Potential official non-establishment assessment. This is distinct from occurrence absence; geography and dated authority require review."
+    },
+    {
+      "speciesIds": [
+        "ceratitis-capitata",
+        "anastrepha-ludens"
+      ],
+      "url": "https://direct.aphis.usda.gov/news/program-update/aphis-establishes-host-lists-regulated-articles-three-tephritid-fruit-fly",
+      "publishedAt": "2026-07-29",
+      "finding": "Current APHIS order describes non-endemic species and ongoing domestic quarantines.",
+      "scopeDecision": "Non-endemic is not absent or not established. Do not use this wording alone for either negative claim."
+    },
+    {
+      "url": "https://www.ippc.int/en/countries/united-states-of-america/pestreports/",
+      "finding": "Country pest reports offer explicit pest statuses with dated supporting reports; some recent entries concern partial-county quarantine changes.",
+      "scopeDecision": "Review report-level parent scope and exceptions before any county derivation."
+    }
+  ],
+  "newDeterminations": 0,
+  "status": "prioritized-source-interpretation-leads-no-negative-admissions"
+}

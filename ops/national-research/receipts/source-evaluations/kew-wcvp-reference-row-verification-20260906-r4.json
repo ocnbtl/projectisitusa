@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-taxonomy-reference-row-verification",
+  "verifiedAt": "2026-09-06T11:59:36.663657+00:00",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "method": "Independent Python csv.reader with QUOTE_NONE compared every retained row by original physical row number, all 31 fields and exact raw-line SHA; archive SHA independently recomputed. This verifies extraction, not source biological correctness.",
+  "archive": {
+    "path": "src/data/research/taxonomy-references/kew-wcvp-20260906-r4/archive.zip",
+    "bytes": 88179649,
+    "sha256": "d32ea2b3a85e489b14e83bcc9eae7274532e1d113753f7be290d4b2dfde573fa",
+    "mediaType": "application/zip"
+  },
+  "diagnosticIndexSha256": "b7baf732d58119114a25822b9ae85f63f77025d6ce61ef124b146178a07dd290",
+  "totalNamesRows": 1448984,
+  "retainedRowsVerified": 3271,
+  "retainedRowWitnessSetSha256": "7980150a9574d71afc76ff059e62700286ad46386a7c6449744ad76b74744b84",
+  "siblingSubspeciesCounterexample": {
+    "3296834": {
+      "taxon_name": "Sorghum bicolor subsp. bicolor",
+      "taxon_status": "Accepted",
+      "accepted_plant_name_id": "3296834",
+      "parent_plant_name_id": "443283"
+    },
+    "443283": {
+      "taxon_name": "Sorghum bicolor",
+      "taxon_status": "Accepted",
+      "accepted_plant_name_id": "443283",
+      "parent_plant_name_id": "443224"
+    },
+    "443257": {
+      "taxon_name": "Sorghum arundinaceum",
+      "taxon_status": "Synonym",
+      "accepted_plant_name_id": "450974",
+      "parent_plant_name_id": ""
+    },
+    "450974": {
+      "taxon_name": "Sorghum bicolor subsp. verticilliflorum",
+      "taxon_status": "Accepted",
+      "accepted_plant_name_id": "450974",
+      "parent_plant_name_id": "443283"
+    }
+  },
+  "sourceRequests": 0,
+  "newDeterminations": 0,
+  "status": "passed"
+}

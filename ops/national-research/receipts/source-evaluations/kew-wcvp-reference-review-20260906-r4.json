@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-taxonomy-reference-review",
+  "reviewedAt": "2026-09-06T11:52:38.570Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "sourceId": "kew-wcvp",
+  "acquisition": {
+    "path": "src/data/research/taxonomy-references/kew-wcvp-20260906-r4/receipt.json",
+    "sha256": "1fdf887ce7afba2591189e230f738fe2f1fff76172dcbd84deffdab6fbf7ca92",
+    "bytes": 2315,
+    "codeCommit": "eb274e5901830e709277dd2214040a6029805979",
+    "providerRequests": 1,
+    "archive": {
+      "path": "src/data/research/taxonomy-references/kew-wcvp-20260906-r4/archive.zip",
+      "bytes": 88179649,
+      "sha256": "d32ea2b3a85e489b14e83bcc9eae7274532e1d113753f7be290d4b2dfde573fa",
+      "mediaType": "application/zip"
+    }
+  },
+  "release": {
+    "version": "16",
+    "extractedAt": "2026-06-04",
+    "licence": "CC-BY-3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by/3.0",
+    "sourceCitation": "Govaerts R (ed.). 2026. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. [WWW document] URL https://doi.org/10.34885/egs6-cp24 [accessed 04 Jun 2026].",
+    "citationForUse": "Govaerts R (ed.). 2026. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. https://doi.org/10.34885/egs6-cp24. Version 16, extracted 4 June 2026; accessed 6 September 2026.",
+    "metadataWitness": {
+      "path": "src/data/research/taxonomy-references/kew-wcvp-20260906-r4/metadata-1.raw",
+      "bytes": 18112,
+      "sha256": "b4741be05ea3937b3604589602e1e24bcd3a0f558dcf8e06797eaa28b5207eaa",
+      "mediaType": "application/octet-stream",
+      "archiveEntry": "README_WCVP.xlsx",
+      "sheet": "README",
+      "citationCell": "A4",
+      "licenceCell": "A6",
+      "versionCell": "A9",
+      "extractionCell": "A10",
+      "rowCountCell": "A13"
+    },
+    "namesRowsDeclared": 1448984,
+    "namesRowsIndependentlyCounted": 1448984,
+    "namesColumns": 31,
+    "distributionRowsDeclared": 1995338,
+    "distributionRowsIndependentlyCounted": null
+  },
+  "method": {
+    "id": "wcvp-infraspecific-concept-candidate-v1",
+    "codePath": "scripts/research/wcvp-infraspecific-candidates.ts",
+    "codeSha256": "a659519369386bcb6e8109943387c5ac0025e46fff7f519b6e4af09e5a126f13",
+    "status": "diagnostic-only-not-source-admission",
+    "rules": [
+      "Exact authoritative full name and authorship; only whitespace/case/Unicode normalization",
+      "Explicit source autonyms may identify their supported species parent without claiming acceptance of their infraspecific rank",
+      "Retain accepted taxon and ancestor identities; matching catalog concept must contain the source concept",
+      "Never infer sibling subspecies identity from a shared species ancestor",
+      "Hold ambiguous catalog concepts, unsupported authors, hybrids and unplaced or misapplied names"
+    ],
+    "references": [
+      {
+        "url": "https://powo.science.kew.org/about-wcvp",
+        "section": "Species concepts and infraspecific ranks"
+      },
+      {
+        "url": "https://www.iaptglobal.org/_functions/code/madrid?cid=5405e94c-cfce-4e1c-9972-90eddb9fbf12",
+        "sections": [
+          "Article 25.1",
+          "Article 26.1",
+          "Article 6.2 Note 1"
+        ],
+        "qualification": "Nomenclature describes name relationships; it does not by itself establish present taxonomic circumscription. No full Code text redistributed."
+      }
+    ],
+    "regressionFinding": {
+      "issue": "An early diagnostic collapsed every catalog name to a species ancestor, allowing an invalid sibling-subspecies match.",
+      "example": "Sorghum bicolor subsp. bicolor must not establish Sorghum arundinaceum, which this release treats as a synonym of a different subspecies.",
+      "action": "Rejected trial retained; require catalog accepted-concept containment in the source ancestry; added sibling-subspecies regression before any admission."
+    }
+  },
+  "baseline": {
+    "determinations": 316076,
+    "determinedPairSetSha256": "c9ba1776b93872fed6770ae753074210f1db8bac352dfbe5acef84f5b873c5a9"
+  },
+  "counts": {
+    "sourceCandidates": 316,
+    "mappedCandidateRecords": 172,
+    "heldRecords": 144,
+    "mappedUniquePairs": 172,
+    "existingPresentOverlap": 1,
+    "existingAbsentConflicts": 0,
+    "netCandidatePairs": 171
+  },
+  "routes": {
+    "explicit-source-autonym-parent": 84,
+    "exact-authoritative-name": 88
+  },
+  "holds": {
+    "no-exact-authoritative-name-or-supported-autonym-parent": 76,
+    "accepted-concept-outside-resolved-catalog": 58,
+    "unresolved-or-hybrid-reference-concept": 9,
+    "ambiguous-source-concept": 1
+  },
+  "candidatePairSetSha256": "4b9291a373b6694b7413c8e082defb4e025884bd683d2a7829c30b8182e53371",
+  "retainedValidation": {
+    "path": "ops/national-research/evaluations/artifacts/wcvp-taxonomy-diagnostic-20260906-r4.json.gz",
+    "contentEncoding": "gzip",
+    "storedBytes": 492066,
+    "storedSha256": "c7197ad84e68644447029e386cfb14b1f08eedac3c7db70675f6659d86bc4df7",
+    "decodedBytes": 3445542,
+    "decodedSha256": "1e568948be2a5b13c1f9a214e910c950d2f58950c431ed6e08cda7f5403fabdc"
+  },
+  "nextWork": [
+    "Independently verify diagnostic reference rows against exact archive row bytes before sharing any accepted mapping",
+    "Review specimen geography and cultivation context for the 171 net candidates",
+    "Version and evaluate retained-specimen preflight and adapter mappings with immutable reference lineage before admitting records"
+  ],
+  "newDeterminations": 0,
+  "productionMutations": 0,
+  "status": "reference-verified-171-net-taxonomy-candidates-await-evidence-method"
+}

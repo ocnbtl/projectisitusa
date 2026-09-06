@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-taxonomy-reference-acquisition",
+  "acquisitionId": "kew-wcvp-20260906-r4",
+  "sourceId": "kew-wcvp",
+  "adapter": {
+    "id": "taxonomy-reference-download",
+    "version": "1.0.0",
+    "module": "scripts/research/acquire-taxonomy-reference.ts"
+  },
+  "codeCommit": "eb274e5901830e709277dd2214040a6029805979",
+  "registry": {
+    "path": "src/data/research/taxonomy-reference-registry.json",
+    "bytes": 1794,
+    "sha256": "bf3b5e186bb596d42179afac07e622b97017ce5b6696eae4613ad7d342407302"
+  },
+  "parameters": {
+    "url": "https://sftp.kew.org/pub/data-repositories/WCVP/wcvp.zip",
+    "maximumBytes": 104857600,
+    "timeoutMs": 180000,
+    "redirects": "reject"
+  },
+  "startedAt": "2026-09-06T11:33:41.721Z",
+  "completedAt": "2026-09-06T11:33:45.107Z",
+  "elapsedMilliseconds": 3385,
+  "status": "complete-reference-capture-awaiting-method-review",
+  "requestCount": 1,
+  "request": {
+    "url": "https://sftp.kew.org/pub/data-repositories/WCVP/wcvp.zip",
+    "status": 200,
+    "retrievedAt": "2026-09-06T11:33:42.149Z",
+    "contentType": "application/zip",
+    "etag": "\"54183c1-6536e62f7dc69\"",
+    "lastModified": "Thu, 04 Jun 2026 14:30:32 GMT"
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/taxonomy-references/kew-wcvp-20260906-r4/archive.zip",
+      "bytes": 88179649,
+      "sha256": "d32ea2b3a85e489b14e83bcc9eae7274532e1d113753f7be290d4b2dfde573fa",
+      "mediaType": "application/zip"
+    },
+    {
+      "path": "src/data/research/taxonomy-references/kew-wcvp-20260906-r4/metadata-1.raw",
+      "bytes": 18112,
+      "sha256": "b4741be05ea3937b3604589602e1e24bcd3a0f558dcf8e06797eaa28b5207eaa",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "path": "src/data/research/taxonomy-references/kew-wcvp-20260906-r4/metadata-index.json",
+      "bytes": 140,
+      "sha256": "601ec8cef90a2379c597b766603d67b68807aa7a5f8031a67c4ceaca7b501c48",
+      "mediaType": "application/json"
+    }
+  ],
+  "entries": [
+    "README_WCVP.xlsx",
+    "wcvp_distribution.csv",
+    "wcvp_names.csv"
+  ],
+  "licensingReview": "pending review of retained release metadata; no acceptance pathway activated",
+  "evidenceAssertions": 0,
+  "countyDeterminations": 0,
+  "reviewActor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "error": null
+}
