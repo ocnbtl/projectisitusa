@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-production-launch-gate",
+  "phase": "PRE-DEPLOYMENT",
+  "evaluationId": "research-production-launch-20260906-r1",
+  "observedAt": "2026-09-06T06:43:58.688Z",
+  "decision": "GO",
+  "scope": "Batched application copy and national research data release; not national research completion certification",
+  "authority": {
+    "path": "ops/national-research/receipts/authorizations/autonomous-national-research-20260906-r1.json",
+    "actorType": "agent",
+    "actor": "MAIN",
+    "humanArtifactApprovalClaimed": false
+  },
+  "candidate": {
+    "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+    "sourceTreeSha256": "0a01b02166f3a1a403a7542335952405b4a4d7b65203a5f6bc4173bf245445f6",
+    "manifestPath": "ops/national-research/publication/research-data-manifest.json",
+    "manifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+    "manifestBytes": 2047964,
+    "artifactCount": 3195,
+    "decodedBytes": 1325811580,
+    "storedBytes": 124646866
+  },
+  "research": {
+    "reconciliationPath": "ops/national-research/receipts/source-evaluations/cpnwh-metadata-projection-verification-20260906-r1.json",
+    "reconciliationSha256": "808f69d048910fed1037f263293637dec95b3d1e23a02bef4ad48f0a033873ea",
+    "baseline": {
+      "commit": "73fa2ad21abf5bfbb226e8fe436bbdd146e05bdb",
+      "asOf": "2026-09-05",
+      "pairSetSha256": "d1a0c15e2dfa3cc2ae9605e758b529de869de310c6d411993800d8d47bacda88",
+      "determinations": 314911,
+      "present": 311667,
+      "absent": 3244
+    },
+    "final": {
+      "verifiedPresent": 311854,
+      "verifiedAbsent": 3244,
+      "notDetected": 236,
+      "researchedUnresolved": 1307103,
+      "notResearched": 6250139,
+      "totalPairs": 7872576,
+      "countyCount": 3144,
+      "conflictCount": 0,
+      "determinations": 315098,
+      "pairSetSha256": "94eab46595469f7f165d7d36231007000048fcf7e20de8611bd3ce4ef3405eec"
+    },
+    "movement": {
+      "added": 187,
+      "removed": 0,
+      "net": 187,
+      "newAbsent": 0
+    },
+    "publicBaseline": {
+      "schemaVersion": 1,
+      "kind": "isitusa-public-research-baseline",
+      "observedAt": "2026-09-06T05:36:00.756Z",
+      "pointer": {
+        "schemaVersion": 1,
+        "kind": "isitusa-research-projection-pointer",
+        "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+        "releaseManifestKey": "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+        "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+        "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+        "promotedAt": "2026-08-28T08:58:25.633Z"
+      },
+      "manifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+      "summaryValidation": "All state summary Git bytes matched the hash-verified public manifest entries; no projection fetch identity was assumed from Git alone.",
+      "states": 51,
+      "asOf": [
+        "2026-08-27",
+        "2026-08-28"
+      ],
+      "verifiedPresent": 195356,
+      "verifiedAbsent": 0,
+      "determinations": 195356,
+      "totalPairs": 7872576,
+      "publicReadRequests": 2
+    },
+    "expectedPublicDeterminationIncrease": 119742,
+    "previouslyLocalBacklog": 119555,
+    "nationalCompletionClaimed": false
+  },
+  "gates": [
+    {
+      "category": "Scope and source of truth",
+      "status": "PASS",
+      "evidence": "Canonical MAIN; committed evidence 6927e5fe; full 7,872,576-pair denominator retained."
+    },
+    {
+      "category": "Functional behavior",
+      "status": "PASS",
+      "evidence": "All required research checks passed across the recorded prefix and repaired suffix; local research navigation succeeded."
+    },
+    {
+      "category": "Visual presentation",
+      "status": "PASS",
+      "evidence": "Built About page inspected at desktop and 390x844 mobile; revised copy wraps without horizontal overflow."
+    },
+    {
+      "category": "Accessibility",
+      "status": "PASS",
+      "evidence": "Existing semantic layout retained; meaningful County research link resolves and navigates to /research. No new widget."
+    },
+    {
+      "category": "SEO",
+      "status": "NOT_APPLICABLE",
+      "evidence": "No routing, indexability, canonical, metadata or sitemap changes in this release."
+    },
+    {
+      "category": "Performance and resilience",
+      "status": "PASS",
+      "evidence": "Build passed; deterministic HTTP gzip and unchanged-reader tests passed; stored candidate is 124,646,866 bytes for 1,325,811,580 decoded bytes."
+    },
+    {
+      "category": "Security and privacy",
+      "status": "PASS",
+      "evidence": "No auth, private-data, secret, permission or payment changes. Publisher uses existing DPAPI credential and immutable conditional writes."
+    },
+    {
+      "category": "Analytics and conversion",
+      "status": "NOT_APPLICABLE",
+      "evidence": "No analytics, consent, form or conversion instrumentation changes."
+    },
+    {
+      "category": "Monitoring and operations",
+      "status": "PASS",
+      "evidence": "Fresh authenticated provider usage, exact R2 inventory, guarded publication, retained prior pointer and bounded post-release probes."
+    },
+    {
+      "category": "Deployment readiness",
+      "status": "PASS",
+      "evidence": "Typecheck/build passed; app deployment and R2 promotion remain pending and require separate post-deployment proof."
+    },
+    {
+      "category": "Content and authority",
+      "status": "PASS",
+      "evidence": "Standing user authority covers batched Git push, app deployment and R2 promotion; historical occurrence and official absence retain distinct meanings."
+    },
+    {
+      "category": "Data release integrity",
+      "status": "PASS",
+      "evidence": "All 51 projections reconciled and byte-stable; 187 additions, zero removals, zero new absences, zero conflicts."
+    }
+  ],
+  "validation": {
+    "aggregateStatus": "PASS after specific fixes and targeted continuation",
+    "fullCommandExitCode": 1,
+    "fullCommandFailure": "check:research-coverage: index referenced 43d0912f despite evidence now committed at 6927e5fe",
+    "successfulPrefix": "All check:research-integrity components through approved jurisdiction batch audit, including the national archival replay and frozen 97/97 worker regression",
+    "successfulContinuation": [
+      "research:coverage:index",
+      "check:research-coverage",
+      "check:research-publication",
+      "typecheck",
+      "build"
+    ],
+    "otherPassed": [
+      "check:prepare-data-plan",
+      "check:data-integrity",
+      "check:state-research-projections",
+      "check:national-research-config",
+      "check:vercel-publish",
+      "research:verify:all -- --as-of 2026-09-06"
+    ],
+    "completedFixes": [
+      {
+        "issue": "Historical planner regression used mutable projections with a fixed expected count",
+        "resolution": "Pin a hashed real 47-taxon corpus at 6927e5fe; preserve the historical ranking scenarios and conservation assertions",
+        "fixturePath": "scripts/fixtures/national-gbif-selection-corpus-20260906.json",
+        "fixtureSha256": "5a232b475536b4f5b88077d81b62e176a84b46202e5e655cdae99a4fd02d1f20"
+      },
+      {
+        "issue": "Coverage index provenance became stale after evidence integration commit",
+        "resolution": "Regenerate using committed run/source history; diff changes only indexId and generatedFromCommit"
+      }
+    ],
+    "logs": [
+      {
+        "path": ".cache/research/campaigns/20260906-r1/final-gates.log",
+        "sha256": "b590a92107f136c775cfa8967095847c2ea0030e609354d2fcfdd7effd7e5b23",
+        "retention": "local ignored execution log"
+      },
+      {
+        "path": ".cache/research/campaigns/20260906-r1/final-gates-r2.log",
+        "sha256": "f629d610b4cf4847648ec0998b541ca62cf48783095ac7fc19447926a25c8e29",
+        "retention": "local ignored execution log"
+      },
+      {
+        "path": ".cache/research/campaigns/20260906-r1/final-gates-r3.log",
+        "sha256": "1a679fdbd1b84e66aee07341077ef88de0cff1feba53a2ef49d5084bed9b9ed9",
+        "retention": "local ignored execution log"
+      },
+      {
+        "path": ".cache/research/campaigns/20260906-r1/core-gates.log",
+        "sha256": "72f9c8854651103f12347d00549821e3cd6e921c351ef800e6f6a3ad0c2d8f74",
+        "retention": "local ignored execution log"
+      },
+      {
+        "path": ".cache/research/campaigns/20260906-r1/compile-all-state-research.log",
+        "sha256": "d15a1f32525ed6371f52294dbb2557d41f15e894f5653a546459329045e9df8e",
+        "retention": "local ignored execution log"
+      },
+      {
+        "path": ".cache/research/campaigns/20260906-r1/prepare-and-coverage.log",
+        "sha256": "71f00a90c4335bbc24dad7b32866f90931d2ffbdbd6d95367ed796252f828958",
+        "retention": "local ignored execution log"
+      }
+    ],
+    "processDeviation": "See the committed projection reconciliation receipt for the preserved pre-staging coverage-check sequence deviation."
+  },
+  "localUi": {
+    "url": "http://127.0.0.1:3187/about",
+    "browser": "Brave",
+    "verifiedAt": "2026-09-06T06:41:10.708Z",
+    "desktop": {
+      "observedWidth": 1757,
+      "observedHeight": 1254,
+      "noHorizontalOverflow": true,
+      "visualInspection": true
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "documentScrollWidth": 375,
+      "visualInspection": true
+    },
+    "countyResearchLink": "/research",
+    "navigationVerified": true,
+    "browserErrors": [],
+    "viewportReset": true,
+    "firstFullPageScreenshotTimedOut": true,
+    "subsequentViewportScreenshotSucceeded": true
+  },
+  "resources": {
+    "r2": {
+      "usageObservedAt": "2026-09-06T06:38:28.950Z",
+      "displayedClassA": "26.34k",
+      "displayedClassB": "62.29k",
+      "displayedStorage": "7.71 GB",
+      "displayedBillable": "$0.00; no billable usage incurred yet",
+      "period": "August 18 - September 18",
+      "planningCeilingClassA": 28026,
+      "planningCeilingClassB": 65011,
+      "ceilingInterpretation": "Conservative ceilings, not exact billing counts; include prior report operations",
+      "inventoryObservedAt": "2026-09-06T06:04:27.384Z",
+      "inventorySha256": "25f306dcef70fcb3870d676fe696e92d174ad52302becd0d2fd489941486c1b0",
+      "retainedBytes": 7709331640,
+      "retainedObjects": 25861,
+      "projectedRetainedBytesIncluding1024Reserve": 7836027494,
+      "safetyCapBytes": 8000000000,
+      "deletionPerformed": false,
+      "publisherRechecksInventoryBeforeWrites": true,
+      "plannedNewClassA": 3223,
+      "plannedNewClassB": 3205
+    },
+    "vercel": {
+      "schemaVersion": 1,
+      "kind": "isitusa-provider-usage-observation",
+      "observedAt": "2026-09-06T06:20:40.884Z",
+      "url": "https://vercel.com/unigentamos/~/usage",
+      "scope": "Unigentamos team, all projects",
+      "plan": "Hobby",
+      "displayedWindow": "Aug 7, 3am - Sep 6",
+      "metrics": {
+        "fastDataTransfer": {
+          "displayedUsed": "19.06 GB",
+          "included": "100 GB"
+        },
+        "fastOriginTransfer": {
+          "displayedUsed": "7.7 GB",
+          "included": "10 GB"
+        },
+        "edgeRequests": {
+          "displayedUsed": "263K",
+          "included": "1M"
+        },
+        "isrReads": {
+          "displayedUsed": "780K",
+          "included": "1M"
+        },
+        "buildCpuMinutes": {
+          "displayedUsed": "37h 46m",
+          "displayedIncluded": null
+        }
+      },
+      "interpretation": "Usage values are dashboard-rounded. Missing build allowance is unavailable, not zero. This release uses the existing Hobby project, one batched build, bounded probes, and no paid feature or plan change.",
+      "planDocumentation": "https://vercel.com/docs/plans/hobby"
+    },
+    "desktop": {
+      "observedAt": "2026-09-06T06:37:32.1496717Z",
+      "availableRamGiB": 8.71,
+      "totalRamGiB": 31.15,
+      "freeDiskGiB": 605.33
+    }
+  },
+  "rollback": {
+    "researchPointer": {
+      "schemaVersion": 1,
+      "kind": "isitusa-research-projection-pointer",
+      "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+      "releaseManifestKey": "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+      "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+      "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+      "promotedAt": "2026-08-28T08:58:25.633Z"
+    },
+    "priorManifestHashVerified": true,
+    "retainedReleaseIds": [
+      "research-e2115f6a705f-163982b59c8351b2",
+      "research-7427b6e8b43e-37943bb5dba1460c",
+      "research-a2951a092577-a039963dbd5201e6"
+    ],
+    "appDeploymentId": "dpl_E4Wihtw7ciuapKyRe74rYs1GDMi5",
+    "appSourceCommit": "e6a810b27422c4ef7fe5be855d8ce9f757e175cb",
+    "restorationExecuted": false,
+    "procedure": "If candidate delivery or semantic smoke fails, do not promote, or restore the exact retained prior release pointer after verifying its immutable manifest and probe hashes. Give any restored pointer the actual restoration time and record a correctness cadence override. The old manifest must not be passed to current local-artifact validation against different generated data; use an isolated prior checkout or a scoped verified pointer restoration. Use the existing provider rollback to the identified prior application deployment if the app fails. Recheck both public origins and representative routes."
+  },
+  "postDeploymentRequired": [
+    "Exact pushed Git SHA and production deployment/domain/source provenance",
+    "Full S3 stored and decoded object verification before pointer mutation",
+    "Both public origins: immutable manifest and representative object hashes before promotion",
+    "Both current pointers and public manifest identity after promotion",
+    "All 51 public summary hashes and aggregate counts; bounded dated, undated and official absence UI checks",
+    "Production About page and County research navigation; retain live checks separately from local gates"
+  ],
+  "blockers": [],
+  "limitations": [
+    "No county is classified absent from source silence.",
+    "No national or state completeness certification is made.",
+    "The next release needs a new inventory and resource check; this headroom is not an indefinite capacity claim.",
+    "Physical mobile device and broad unchanged-route regression were outside this bounded release."
+  ]
+}

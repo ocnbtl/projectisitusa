@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
@@ -106,40 +107,26 @@ const universePlan = loadNationalGbifDownloadPlan(path.join(
   "src/data/research/national-acquisition-plans/gbif-national-download-v1-retained-r77-v2.json",
 ));
 const universeTaxa = resolveNationalGbifTaxa(root, universePlan);
-const corpusCounts = new Map(universeTaxa.map((taxon) => [taxon.speciesId, {
-  speciesId: taxon.speciesId,
-  scientificName: taxon.scientificName,
-  taxonKey: taxon.taxonKey,
-  grossPairs: 0,
-  notResearchedPairs: 0,
-  blockedPairs: 0,
-  alreadyResearchedPairs: 0,
-}]));
-for (const stateCode of universePlan.nationalV1StateCodes) {
-  for (const county of listCountyEquivalents(stateCode)) {
-    const shard = JSON.parse(readFileSync(path.join(
-      root,
-      "public/generated/research",
-      stateCode,
-      "counties",
-      `${county.countyFips}.json`,
-    ), "utf8")) as {
-      pairs: Array<{ speciesId: string; displayStatus: string; researchStatus: string }>;
-    };
-    const pairBySpecies = new Map(shard.pairs.map((entry) => [entry.speciesId, entry]));
-    for (const taxon of corpusCounts.values()) {
-      taxon.grossPairs += 1;
-      const pair = pairBySpecies.get(taxon.speciesId);
-      if (!pair || (pair.displayStatus === "not-researched" && pair.researchStatus === "not-started")) {
-        taxon.notResearchedPairs += 1;
-      } else if (pair.displayStatus === "not-researched" && pair.researchStatus === "blocked") {
-        taxon.blockedPairs += 1;
-      } else {
-        taxon.alreadyResearchedPairs += 1;
-      }
-    }
-  }
+// Exact ranking regressions use a versioned real corpus, not mutable public outputs.
+// The fixture records the projection commit/tree; general data gates validate today's corpus.
+const fixtureBytes = readFileSync(path.join(root, "scripts/fixtures/national-gbif-selection-corpus-20260906.json"));
+assert.equal(createHash("sha256").update(fixtureBytes).digest("hex"), "5a232b475536b4f5b88077d81b62e176a84b46202e5e655cdae99a4fd02d1f20");
+const fixture = JSON.parse(fixtureBytes.toString("utf8")) as {
+  sourceCommit: string;
+  countyCount: number;
+  taxa: NationalGbifPlanningTaxon[];
+};
+assert.equal(fixture.sourceCommit, "6927e5fe2efbbbad808c488b01129f5ff33a2e68");
+assert.equal(fixture.countyCount, universePlan.nationalV1StateCodes.reduce((sum, state) => sum + listCountyEquivalents(state).length, 0));
+const identity = (taxon: { speciesId: string; scientificName: string; taxonKey: number }) => ({
+  speciesId: taxon.speciesId, scientificName: taxon.scientificName, taxonKey: taxon.taxonKey,
+});
+assert.deepEqual(fixture.taxa.map(identity), [...universeTaxa].sort((a, b) => a.speciesId.localeCompare(b.speciesId)).map(identity));
+for (const taxon of fixture.taxa) {
+  assert.equal(taxon.grossPairs, fixture.countyCount);
+  assert.equal(taxon.notResearchedPairs + taxon.blockedPairs + taxon.alreadyResearchedPairs, taxon.grossPairs);
 }
+const corpusCounts = new Map(fixture.taxa.map((taxon) => [taxon.speciesId, taxon]));
 const actualPrior = loadNationalGbifYieldPrior(
   path.join(root, "ops/national-research/evaluations/post-round-77-gbif-yield-prior-20260819-r1.json"),
   "9dd5d57a68949650cb7b1ff15bc654509bd92ba0062bf8349da39269b4dece37",
@@ -198,7 +185,8 @@ assert.deepEqual(postRound78.selectedSpeciesIds, [
   "amaranthus-graecizans",
   "amylostereum-areolatum",
 ]);
-assert.equal(postRound78.exploitationPairs, 21_892);
+// The pinned corpus includes the newly reviewed Iowa Amaranthus graecizans pair.
+assert.equal(postRound78.exploitationPairs, 21_891);
 assert.equal(postRound78.explorationPairs, 3_144);
 assert.equal(postRound78.selectedTaxa.filter((entry) => entry.selectionLane === "exploration").length, 1);
 assert.equal(postRound78.exploitationPairs + postRound78.explorationPairs, postRound78.expectedNetMovement);
