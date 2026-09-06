@@ -1,0 +1,13 @@
+# Compressed research publication
+
+Publication may use deterministic gzip for new R2 objects. The existing SHA-based JSON key, SHA-256 and byte count describe the decoded projection. Optional contentEncoding, storedSha256 and storedBytes describe the complete stored gzip representation. The browser continues receiving exactly the original JSON through HTTP decoding, including its original dates and freshness. A real HTTP regression verifies the unchanged reader.
+
+Existing immutable objects keep their stored representation. A fresh read-only inventory exports validated retained manifests and exact listed sizes. Unknown or conflicting representations fail closed. Compression changes the release identity while preserving the decoded source-tree identity. Offline manifest checks replay the sealed representation plan; they do not query R2 or recompress historical objects.
+
+Use the existing DPAPI wrappers. Export a dated inventory with run-r2-reachability-report.ps1 and its InventoryOutput parameter, supplying current dashboard counters. Build a committed-projection candidate with build-research-publication-manifest.ts --write --gzip --r2-inventory <export>. Measure the full candidate against all retained storage and request use before publishing. Retain the inventory and exact candidate identity with the release evidence.
+
+The publisher counts physical stored bytes, writes Standard storage only, uses single-attempt requests, verifies full S3 bytes in stored and decoded form, and refuses incomplete pagination. Every promotion requires --verification full, --public-origin https://data.isitusa.com and --app-origin https://isitusa.com. Immutable manifest and three object probes through each origin must pass before current.json can change. Mixed releases always include a gzip probe when gzip is present. Eight public probes are included in the request budget. Immutable manifests and objects use conditional creation.
+
+The project retains its 8 GB, 800,000 Class A and 8,000,000 Class B safety stops and seven-day promotion cadence. No retention deletion is performed. The [Cloudflare R2 pricing documentation](https://developers.cloudflare.com/r2/pricing/), checked September 6, 2026, provides 10 GB-month, 1 million Class A and 10 million Class B requests for Standard storage; the project uses stricter limits. Current dashboard and inventory evidence is still required for each publication.
+
+Rollback remains promotion of a previously validated retained manifest under the existing release policy. Application Git identity, Vercel deployment and public data pointer are verified separately.

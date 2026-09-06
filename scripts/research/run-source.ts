@@ -348,6 +348,8 @@ function parseArguments(argv: string[]) {
   const taxonomyCacheArgument = values.get("gbif-taxonomy-cache")?.at(-1);
   const attemptTelemetryArgument = values.get("attempt-telemetry")?.at(-1);
   const semanticDryRunValue = values.get("semantic-dry-run")?.at(-1) ?? "false";
+  const stageCanonicalValue = values.get("stage-canonical")?.at(-1) ?? "false";
+  if (!["true", "false"].includes(stageCanonicalValue)) throw new Error("--stage-canonical must be true or false.");
 
   if (!sourceId) throw new Error("--source is required.");
   const normalizedStateCode = stateCode.toUpperCase();
@@ -409,6 +411,9 @@ function parseArguments(argv: string[]) {
     throw new Error("Non-Alabama runs require an explicit --candidate-file.");
   }
   const sharedRunRoot = path.join(RESEARCH_DIR, "runs");
+  if (stageCanonicalValue === "true" && outputRoot !== sharedRunRoot) {
+    throw new Error("Canonical staging requires the canonical immutable-run output root.");
+  }
   if (
     outputRoot !== sharedRunRoot &&
     !path.relative(ROOT, outputRoot).split(path.sep).join("/").includes("worker-results/")
@@ -433,6 +438,7 @@ function parseArguments(argv: string[]) {
     taxonomyCache,
     telemetryPath,
     semanticDryRun: semanticDryRunValue === "true",
+    stageCanonical: stageCanonicalValue === "true",
     archiveReplay:
       archiveReplayCommit && archiveReplayRunId
         ? {
@@ -972,6 +978,9 @@ async function main() {
   assertRunStartNotFuture(startedAt);
   const runId = `${runTimestamp(startedAt)}__${options.sourceId}__${parameterHash.slice(0, 12)}`;
   const finalDirectory = path.join(options.outputRoot, runId);
+  const storageDirectory = options.stageCanonical
+    ? path.join(ROOT, ".cache/research/canonical-stage", runId) : finalDirectory;
+  if (options.stageCanonical && existsSync(storageDirectory)) throw new Error("Canonical staged run already exists.");
   if (existsSync(finalDirectory)) {
     throw new Error(`Immutable run directory already exists: ${path.relative(ROOT, finalDirectory)}`);
   }
@@ -1316,6 +1325,7 @@ async function main() {
       `--state ${options.stateCode}`,
       `--candidate-file ${relativeGitPath(options.candidateFile)}`,
       `--output-root ${relativeGitPath(options.outputRoot)}`,
+      ...(options.stageCanonical ? ["--stage-canonical true"] : []),
       `--pairs ${parameters.candidatePairs.join(",")}`,
       ...(taxonomyCache
         ? [`--gbif-taxonomy-cache ${relativeGitPath(taxonomyCache.cachePath)}`]
@@ -1367,9 +1377,9 @@ async function main() {
     ),
   });
 
-  mkdirSync(path.dirname(finalDirectory), { recursive: true });
+  mkdirSync(path.dirname(storageDirectory), { recursive: true });
   const temporaryDirectory = mkdtempSync(
-    path.join(path.dirname(finalDirectory), ".pending-research-run-"),
+    path.join(path.dirname(storageDirectory), ".pending-research-run-"),
   );
   try {
     mkdirSync(path.join(temporaryDirectory, "artifacts"), { recursive: true });
@@ -1390,12 +1400,12 @@ async function main() {
     if (stableJson(stagedReceipt) !== stableJson(receipt)) {
       throw new Error("Staged receipt bytes do not reproduce the validated receipt.");
     }
-    renameSync(temporaryDirectory, finalDirectory);
+    renameSync(temporaryDirectory, storageDirectory);
   } finally {
     rmSync(temporaryDirectory, { recursive: true, force: true });
   }
 
-  console.log(JSON.stringify({ directory: path.relative(ROOT, finalDirectory), ...receipt.counts, status }, null, 2));
+  console.log(JSON.stringify({ directory: path.relative(ROOT, storageDirectory), canonicalDirectory: path.relative(ROOT, finalDirectory), stagedForMainIntegration: options.stageCanonical, ...receipt.counts, status }, null, 2));
   persistAttemptTelemetry({
     status: "complete",
     finishedAt: new Date().toISOString(),

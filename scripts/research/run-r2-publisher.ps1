@@ -10,7 +10,9 @@ param(
   [long]$MonthlyClassBUsed = -1,
   [switch]$Promote,
   [string]$CadenceOverrideReason,
-  [string]$PublicOrigin
+  [string]$PublicOrigin,
+  [string]$AppOrigin,
+  [string]$Manifest
 )
 
 $ErrorActionPreference = "Stop"
@@ -29,6 +31,7 @@ $publisherArguments = @(
   "--verification", $Verification,
   "--concurrency", $Concurrency.ToString()
 )
+if ($Manifest) { $publisherArguments += @("--manifest", $Manifest) }
 
 if ($Mode -eq "plan") {
   Push-Location -LiteralPath $repoRoot
@@ -61,6 +64,7 @@ $publisherArguments += @(
 if ($Promote) { $publisherArguments += "--promote" }
 if ($CadenceOverrideReason) { $publisherArguments += @("--cadence-override-reason", $CadenceOverrideReason) }
 if ($PublicOrigin) { $publisherArguments += @("--public-origin", $PublicOrigin) }
+if ($AppOrigin) { $publisherArguments += @("--app-origin", $AppOrigin) }
 
 $env:R2_ACCOUNT_ID = "0fe57401a5fd98319e16832ee97de02d"
 $env:R2_BUCKET = "project-isitusa-research"

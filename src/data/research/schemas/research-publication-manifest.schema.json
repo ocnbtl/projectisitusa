@@ -4,40 +4,170 @@
   "title": "Project Isitusa research publication manifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "kind", "releaseId", "sourceCommit", "sourceCommitDate", "sourceRoot", "sourceTreeSha256", "artifactCount", "artifactBytes", "uniqueObjectCount", "uniqueObjectBytes", "artifacts"],
+  "required": [
+    "schemaVersion",
+    "kind",
+    "releaseId",
+    "sourceCommit",
+    "sourceCommitDate",
+    "sourceRoot",
+    "sourceTreeSha256",
+    "artifactCount",
+    "artifactBytes",
+    "uniqueObjectCount",
+    "uniqueObjectBytes",
+    "artifacts"
+  ],
   "properties": {
-    "schemaVersion": { "const": 1 },
-    "kind": { "const": "isitusa-research-projection-release" },
-    "releaseId": { "type": "string", "pattern": "^research-[0-9a-f]{12}-[0-9a-f]{16}$" },
-    "sourceCommit": { "$ref": "#/$defs/sha40" },
-    "sourceCommitDate": { "type": "string", "format": "date-time" },
-    "sourceRoot": { "const": "public/generated/research" },
-    "sourceTreeSha256": { "$ref": "#/$defs/sha256" },
-    "artifactCount": { "type": "integer", "minimum": 1 },
-    "artifactBytes": { "type": "integer", "minimum": 1 },
-    "uniqueObjectCount": { "type": "integer", "minimum": 1 },
-    "uniqueObjectBytes": { "type": "integer", "minimum": 1 },
+    "schemaVersion": {
+      "const": 1
+    },
+    "kind": {
+      "const": "isitusa-research-projection-release"
+    },
+    "releaseId": {
+      "type": "string",
+      "pattern": "^research-[0-9a-f]{12}-[0-9a-f]{16}$"
+    },
+    "sourceCommit": {
+      "$ref": "#/$defs/sha40"
+    },
+    "sourceCommitDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceRoot": {
+      "const": "public/generated/research"
+    },
+    "sourceTreeSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "artifactCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "artifactBytes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "uniqueObjectCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "uniqueObjectBytes": {
+      "type": "integer",
+      "minimum": 1
+    },
     "artifacts": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["logicalPath", "localPath", "objectKey", "sha256", "bytes", "contentType", "cacheControl"],
-        "properties": {
-          "logicalPath": { "type": "string", "pattern": "^public/generated/research/.+\\.json$" },
-          "localPath": { "type": "string", "pattern": "^public/generated/research/.+\\.json$" },
-          "objectKey": { "type": "string", "pattern": "^objects/sha256/[0-9a-f]{2}/[0-9a-f]{64}\\.json$" },
-          "sha256": { "$ref": "#/$defs/sha256" },
-          "bytes": { "type": "integer", "minimum": 0 },
-          "contentType": { "const": "application/json; charset=utf-8" },
-          "cacheControl": { "const": "public, max-age=31536000, immutable" }
-        }
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "logicalPath",
+              "localPath",
+              "objectKey",
+              "sha256",
+              "bytes",
+              "contentType",
+              "cacheControl"
+            ],
+            "properties": {
+              "logicalPath": {
+                "type": "string",
+                "pattern": "^public/generated/research/.+\\.json$"
+              },
+              "localPath": {
+                "type": "string",
+                "pattern": "^public/generated/research/.+\\.json$"
+              },
+              "objectKey": {
+                "type": "string",
+                "pattern": "^objects/sha256/[0-9a-f]{2}/[0-9a-f]{64}\\.json$"
+              },
+              "sha256": {
+                "$ref": "#/$defs/sha256"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "contentType": {
+                "const": "application/json; charset=utf-8"
+              },
+              "cacheControl": {
+                "const": "public, max-age=31536000, immutable"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "logicalPath",
+              "localPath",
+              "objectKey",
+              "sha256",
+              "bytes",
+              "contentType",
+              "cacheControl",
+              "contentEncoding",
+              "storedSha256",
+              "storedBytes"
+            ],
+            "properties": {
+              "logicalPath": {
+                "type": "string",
+                "pattern": "^public/generated/research/.+\\.json$"
+              },
+              "localPath": {
+                "type": "string",
+                "pattern": "^public/generated/research/.+\\.json$"
+              },
+              "objectKey": {
+                "type": "string",
+                "pattern": "^objects/sha256/[0-9a-f]{2}/[0-9a-f]{64}\\.json$"
+              },
+              "sha256": {
+                "$ref": "#/$defs/sha256"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "contentEncoding": {
+                "const": "gzip"
+              },
+              "storedSha256": {
+                "$ref": "#/$defs/sha256"
+              },
+              "storedBytes": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "contentType": {
+                "const": "application/json; charset=utf-8"
+              },
+              "cacheControl": {
+                "const": "public, max-age=31536000, immutable"
+              }
+            }
+          }
+        ]
       }
     }
   },
   "$defs": {
-    "sha40": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
-    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+    "sha40": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
   }
 }

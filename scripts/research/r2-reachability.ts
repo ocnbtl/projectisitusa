@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 
-import { manifestBytes, type ResearchPublicationManifest } from "./research-publication";
+import { manifestBytes, publicationStoredBytes, collectPublicationRepresentations, type ResearchPublicationManifest } from "./research-publication";
 import {
   RESEARCH_PROMOTION_MINIMUM_INTERVAL_HOURS,
   RESEARCH_PROMOTION_POLICY_VERSION,
@@ -124,7 +124,7 @@ export function buildR2ReachabilityReport(input: {
     }
     for (const artifact of release.manifest.artifacts) {
       const listed = inventory.get(artifact.objectKey);
-      if (!listed || listed.bytes !== artifact.bytes) {
+      if (!listed || listed.bytes !== publicationStoredBytes(artifact)) {
         throw new Error(`R2 artifact listing differs from release manifest: ${artifact.objectKey}`);
       }
       allReferencedKeys.add(artifact.objectKey);
@@ -132,6 +132,7 @@ export function buildR2ReachabilityReport(input: {
     }
   }
 
+  collectPublicationRepresentations(input.releases.flatMap((release) => release.manifest.artifacts));
   const contentKeys = [...inventory.keys()].filter((key) => key.startsWith("objects/sha256/"));
   const releaseManifestKeys = [...inventory.keys()].filter((key) => /^releases\/[^/]+\/manifest\.json$/u.test(key));
   const pointerKeys = [...inventory.keys()].filter((key) => key === "current.json");
@@ -260,17 +261,17 @@ export function planR2CandidateRelease(input: {
   const unique = new Map(input.manifest.artifacts.map((artifact) => [artifact.objectKey, artifact]));
   const missing = [...unique.values()].filter((artifact) => {
     const bytes = inventory.get(artifact.objectKey);
-    if (bytes !== undefined && bytes !== artifact.bytes) throw new Error("Candidate object byte count differs from inventory.");
+    if (bytes !== undefined && bytes !== publicationStoredBytes(artifact)) throw new Error("Candidate object byte count differs from inventory.");
     return bytes === undefined;
   });
   const retainedBytes = [...inventory.values()].reduce((sum, bytes) => sum + bytes, 0);
   if (input.reviewOnlyHistoricalRemovalBytes > retainedBytes) throw new Error("Review removal exceeds retained inventory.");
-  const missingBytes = missing.reduce((sum, artifact) => sum + artifact.bytes, 0);
+  const missingBytes = missing.reduce((sum, artifact) => sum + publicationStoredBytes(artifact), 0);
   const releaseBytes = manifestBytes(input.manifest);
   // Match publish-research-to-r2.ts: include manifest bytes plus its 1024-byte pointer reserve.
   const projectedRetainedBytes = retainedBytes + missingBytes + releaseBytes.length + 1024;
   const newClassARequests = Math.max(1, Math.ceil(inventory.size / 1000)) + missing.length + 2;
-  const newClassBRequests = unique.size + 1 + 4 + (inventory.has("current.json") ? 1 : 0);
+  const newClassBRequests = unique.size + 1 + 8 + (inventory.has("current.json") ? 1 : 0);
   const projectedClassARequests = input.currentClassARequests + newClassARequests;
   const projectedClassBRequests = input.currentClassBRequests + newClassBRequests;
   return {
@@ -294,6 +295,6 @@ export function planR2CandidateRelease(input: {
       && projectedClassARequests <= R2_CLASS_A_SAFETY_REQUESTS
       && projectedClassBRequests <= R2_CLASS_B_SAFETY_REQUESTS,
     projectedRetainedBytesAfterReviewOnlyRemoval: projectedRetainedBytes - input.reviewOnlyHistoricalRemovalBytes,
-    qualification: "Inventory sizes and exact manifest identity only. Full remote object hash verification, fresh counters, cadence checks, and explicit publication authority remain required. Request estimates cover one publish/promote invocation with full verification and four public probes; retries or separate phases require additional budget.",
+    qualification: "Inventory sizes and exact manifest identity only. Full remote object hash verification, fresh counters, cadence checks, and explicit publication authority remain required. Request estimates cover one publish/promote invocation with full verification and eight public probes; retries or separate phases require additional budget.",
   };
 }

@@ -8,7 +8,8 @@ param(
   [long]$MonthlyClassBUsed,
   [Parameter(Mandatory = $true)]
   [string]$DashboardObservedAt,
-  [string]$CandidateManifest
+  [string]$CandidateManifest,
+  [string]$InventoryOutput
 )
 
 $ErrorActionPreference = "Stop"
@@ -40,6 +41,7 @@ $env:R2_SECRET_ACCESS_KEY = $credential.GetNetworkCredential().Password
 Push-Location -LiteralPath $repoRoot
 try {
   $candidateArguments = if ($CandidateManifest) { @("--candidate-manifest", $CandidateManifest) } else { @() }
+  if ($InventoryOutput) { $candidateArguments += @("--inventory-output", $InventoryOutput) }
   & $nodeExecutable --import tsx scripts/report-r2-reachability.ts `
     --monthly-class-a-used $MonthlyClassAUsed.ToString() `
     --monthly-class-b-used $MonthlyClassBUsed.ToString() `

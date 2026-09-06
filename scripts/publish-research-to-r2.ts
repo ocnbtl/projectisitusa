@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { createReadStream, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import {
@@ -17,6 +17,11 @@ import {
   RESEARCH_MANIFEST_CACHE_CONTROL,
   RESEARCH_POINTER_CACHE_CONTROL,
   type ResearchPublicationArtifact,
+  publicationStoredBytes,
+  selectPublicationSamples,
+  publicationStoredSha256,
+  publicationUploadBytes,
+  verifyPublicationObjectBytes,
 } from "./research/research-publication";
 import {
   assertR2FreeTierSafety,
@@ -102,8 +107,10 @@ async function listBucket(client: S3Client, bucket: string) {
     }));
     requestCount += 1;
     for (const object of page.Contents ?? []) {
-      if (object.Key && Number.isSafeInteger(object.Size)) objects.set(object.Key, object.Size!);
+      if (!object.Key || !Number.isSafeInteger(object.Size) || object.Size! < 0 || objects.has(object.Key)) throw new Error("Invalid or repeated R2 inventory object.");
+      objects.set(object.Key, object.Size!);
     }
+    if (page.IsTruncated && (!page.NextContinuationToken || page.NextContinuationToken === continuationToken)) throw new Error("R2 inventory pagination is incomplete or repeated.");
     continuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
   } while (continuationToken);
   return { objects, requestCount };
@@ -130,30 +137,41 @@ async function verifyRemoteObject(
 ) {
   if (verification === "head") {
     const head = await client.send(new HeadObjectCommand({ Bucket: bucket, Key: artifact.objectKey }));
-    if (head.ContentLength !== artifact.bytes || head.Metadata?.sha256 !== artifact.sha256) {
+    if (head.ContentLength !== publicationStoredBytes(artifact) || head.Metadata?.sha256 !== artifact.sha256
+      || (head.ContentEncoding || undefined) !== artifact.contentEncoding
+      || (artifact.contentEncoding && head.Metadata?.["stored-sha256"] !== publicationStoredSha256(artifact))) {
       throw new Error(`R2 object metadata differs: ${artifact.objectKey}`);
     }
     return;
   }
   const result = await client.send(new GetObjectCommand({ Bucket: bucket, Key: artifact.objectKey }));
-  const hashed = await streamHash(result.Body);
-  if (hashed.bytes !== artifact.bytes || hashed.sha256 !== artifact.sha256) {
-    throw new Error(`R2 object bytes or hash differ: ${artifact.objectKey}`);
+  if (result.ContentLength !== publicationStoredBytes(artifact) || !result.Body || !(Symbol.asyncIterator in result.Body)) {
+    throw new Error(`R2 object size or stream differs: ${artifact.objectKey}`);
   }
+  const chunks: Buffer[] = [];
+  let size = 0;
+  for await (const chunk of result.Body as AsyncIterable<Uint8Array>) {
+    size += chunk.length;
+    if (size > publicationStoredBytes(artifact)) throw new Error("R2 object exceeds declared storage size.");
+    chunks.push(Buffer.from(chunk));
+  }
+  verifyPublicationObjectBytes(artifact, Buffer.concat(chunks), result.ContentEncoding);
 }
 
-async function verifyPublicSamples(origin: string, releaseKey: string, artifacts: ResearchPublicationArtifact[]) {
+async function verifyPublicSamples(origin: string, prefix: string, releaseKey: string, expectedManifest: Buffer, artifacts: ResearchPublicationArtifact[]) {
   const base = new URL(origin);
   if (base.protocol !== "https:" || base.pathname !== "/" || base.search || base.hash) {
     throw new Error("Public R2 origin must be an HTTPS origin without a path, query, or fragment.");
   }
-  const manifestResponse = await fetch(new URL(releaseKey, base));
+  const manifestResponse = await fetch(new URL(`${prefix}${releaseKey}`, base));
   if (!manifestResponse.ok) {
     throw new Error(`Public R2 release manifest returned ${manifestResponse.status}.`);
   }
-  const samples = [artifacts[0], artifacts[Math.floor(artifacts.length / 2)], artifacts.at(-1)!];
+  const publishedManifest = Buffer.from(await manifestResponse.arrayBuffer());
+  if (!publishedManifest.equals(expectedManifest)) throw new Error("Public release manifest bytes differ.");
+  const samples = selectPublicationSamples(artifacts);
   for (const artifact of samples) {
-    const response = await fetch(new URL(artifact.objectKey, base));
+    const response = await fetch(new URL(`${prefix}${artifact.objectKey}`, base));
     if (!response.ok) throw new Error(`Public R2 sample returned ${response.status}: ${artifact.objectKey}`);
     const bytes = Buffer.from(await response.arrayBuffer());
     if (bytes.length !== artifact.bytes || createHash("sha256").update(bytes).digest("hex") !== artifact.sha256) {
@@ -179,16 +197,23 @@ async function main() {
   const currentClassARequests = nonNegativeIntegerArgument("--monthly-class-a-used", mode !== "plan");
   const currentClassBRequests = nonNegativeIntegerArgument("--monthly-class-b-used", mode !== "plan");
   const publicOrigin = argument("--public-origin");
+  const appOrigin = argument("--app-origin");
+  const promote = process.argv.includes("--promote");
+  if (promote && (mode !== "publish" || verification !== "full" || !publicOrigin || !appOrigin)) {
+    throw new Error("Promotion requires publish mode, full verification, --public-origin and --app-origin for verified delivery before pointer mutation.");
+  }
+  const publicProbeCount = (publicOrigin ? 4 : 0) + (appOrigin ? 4 : 0);
   const cadenceOverrideReason = argument("--cadence-override-reason");
   if (cadenceOverrideReason && !process.argv.includes("--promote")) {
     throw new Error("--cadence-override-reason is only valid with --promote.");
   }
   const plannedClassARequests = uniqueArtifacts.length + 2 + (process.argv.includes("--promote") ? 1 : 0);
   const plannedClassBRequests =
-    uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0) + (process.argv.includes("--promote") ? 1 : 0);
+    uniqueArtifacts.length + 1 + publicProbeCount + (promote ? 1 : 0);
+  const uniqueStoredBytes = uniqueArtifacts.reduce((sum, artifact) => sum + publicationStoredBytes(artifact), 0);
 
   assertR2FreeTierSafety({
-    projectedStorageBytes: manifest.uniqueObjectBytes + manifestBytes(manifest).length,
+    projectedStorageBytes: uniqueStoredBytes + manifestBytes(manifest).length,
     currentClassARequests,
     currentClassBRequests,
     newClassARequests: plannedClassARequests,
@@ -200,6 +225,7 @@ async function main() {
     artifactCount: manifest.artifactCount,
     uniqueObjectCount: manifest.uniqueObjectCount,
     uniqueObjectBytes: manifest.uniqueObjectBytes,
+    uniqueStoredBytes,
     maximumNewClassARequests: plannedClassARequests,
     maximumVerificationClassBRequests: plannedClassBRequests,
     currentClassARequests,
@@ -217,6 +243,7 @@ async function main() {
   const client = new S3Client({
     endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
     region: "auto",
+    maxAttempts: 1,
     credentials: { accessKeyId, secretAccessKey },
   });
 
@@ -226,12 +253,12 @@ async function main() {
   const existingStorageBytes = [...listing.objects.values()].reduce((total, bytes) => total + bytes, 0);
   const missing = uniqueArtifacts.filter((artifact) => {
     const existingBytes = listing.objects.get(artifact.objectKey);
-    if (existingBytes !== undefined && existingBytes !== artifact.bytes) {
+    if (existingBytes !== undefined && existingBytes !== publicationStoredBytes(artifact)) {
       throw new Error(`Existing R2 content-addressed object has the wrong byte count: ${artifact.objectKey}`);
     }
     return existingBytes === undefined;
   });
-  const missingBytes = missing.reduce((total, artifact) => total + artifact.bytes, 0);
+  const missingBytes = missing.reduce((total, artifact) => total + publicationStoredBytes(artifact), 0);
   if (process.argv.includes("--promote")) {
     let previousPointer: ReturnType<typeof validateResearchPublicationPointer> | null = null;
     if (listing.objects.has(pointerKey)) {
@@ -253,7 +280,7 @@ async function main() {
   const projectedStorageBytes = existingStorageBytes + missingBytes + manifestBytes(manifest).length + 1024;
   const projectedClassARequests = listing.requestCount + missing.length + 1 + (process.argv.includes("--promote") ? 1 : 0);
   const projectedClassBRequests =
-    uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0) +
+    uniqueArtifacts.length + 1 + publicProbeCount +
     (process.argv.includes("--promote") && listing.objects.has(pointerKey) ? 1 : 0);
   assertR2FreeTierSafety({
     projectedStorageBytes,
@@ -267,14 +294,17 @@ async function main() {
   if (mode === "publish") {
     let uploaded = 0;
     await parallelForEach(missing, concurrency, async (artifact) => {
+      const stored = publicationUploadBytes(artifact, readFileSync(path.resolve(ROOT, artifact.localPath)));
       await client.send(new PutObjectCommand({
+        StorageClass: "STANDARD",
         Bucket: bucket,
         Key: artifact.objectKey,
-        Body: createReadStream(path.resolve(ROOT, artifact.localPath)),
-        ContentLength: artifact.bytes,
+        Body: stored,
+        ContentLength: stored.length,
+        ContentEncoding: artifact.contentEncoding,
         ContentType: artifact.contentType,
         CacheControl: artifact.cacheControl,
-        Metadata: { sha256: artifact.sha256 },
+        Metadata: { sha256: artifact.sha256, ...(artifact.contentEncoding ? { "stored-sha256": publicationStoredSha256(artifact) } : {}) },
         IfNoneMatch: "*",
       }));
       uploaded += 1;
@@ -283,7 +313,8 @@ async function main() {
       }
     });
     const releaseBytes = manifestBytes(manifest);
-    await client.send(new PutObjectCommand({
+    if (!listing.objects.has(releaseKey)) await client.send(new PutObjectCommand({
+        StorageClass: "STANDARD",
       Bucket: bucket,
       Key: releaseKey,
       Body: releaseBytes,
@@ -291,6 +322,7 @@ async function main() {
       ContentType: "application/json; charset=utf-8",
       CacheControl: RESEARCH_MANIFEST_CACHE_CONTROL,
       Metadata: { sha256: createHash("sha256").update(releaseBytes).digest("hex") },
+      IfNoneMatch: "*",
     }));
   }
 
@@ -312,6 +344,10 @@ async function main() {
     throw new Error("R2 release manifest differs from the local manifest.");
   }
 
+  // Both immutable delivery routes must verify before the only mutable publication operation.
+  if (publicOrigin) await verifyPublicSamples(publicOrigin, "", releaseKey, expectedReleaseBytes, manifest.artifacts);
+  if (appOrigin) await verifyPublicSamples(appOrigin, "research-data/", releaseKey, expectedReleaseBytes, manifest.artifacts);
+
   if (process.argv.includes("--promote")) {
     if (mode !== "publish") throw new Error("--promote requires --mode publish.");
     const pointer = Buffer.from(`${JSON.stringify({
@@ -324,6 +360,7 @@ async function main() {
       promotedAt: new Date().toISOString(),
     }, null, 2)}\n`);
     await client.send(new PutObjectCommand({
+        StorageClass: "STANDARD",
       Bucket: bucket,
       Key: pointerKey,
       Body: pointer,
@@ -334,7 +371,6 @@ async function main() {
     console.log(`Promoted R2 pointer to ${manifest.releaseId}.`);
   }
 
-  if (publicOrigin) await verifyPublicSamples(publicOrigin, releaseKey, manifest.artifacts);
   console.log(`R2 ${mode} completed for ${manifest.releaseId} with ${verification} verification.`);
 }
 

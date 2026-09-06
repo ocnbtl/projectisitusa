@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 import {
   GetObjectCommand,
@@ -66,13 +66,14 @@ async function listBucket(client: S3Client, bucket: string) {
     }));
     requestCount += 1;
     for (const object of page.Contents ?? []) {
-      if (!object.Key || !Number.isSafeInteger(object.Size)) continue;
+      if (!object.Key || !Number.isSafeInteger(object.Size) || object.Size! < 0) throw new Error("Invalid R2 inventory object.");
       objects.push({
         key: object.Key,
         bytes: object.Size!,
         lastModified: object.LastModified?.toISOString() ?? null,
       });
     }
+    if (page.IsTruncated && (!page.NextContinuationToken || page.NextContinuationToken === continuationToken)) throw new Error("R2 inventory pagination is incomplete or repeated.");
     continuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
   } while (continuationToken);
   return { objects, requestCount };
@@ -94,6 +95,7 @@ async function main() {
   const client = new S3Client({
     endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
     region: "auto",
+    maxAttempts: 1,
     credentials: { accessKeyId, secretAccessKey },
   });
 
@@ -143,6 +145,11 @@ async function main() {
     releases,
     candidateManifest,
   });
+  const inventoryOutput = argument("--inventory-output");
+  if (inventoryOutput) writeFileSync(inventoryOutput, `${JSON.stringify({
+    schemaVersion: 1, kind: "isitusa-r2-publication-inventory", observedAt: report.observedAt,
+    bucket, bucketObjects: listing.objects, releases,
+  })}\n`, { flag: "wx" });
   console.log(JSON.stringify(report, null, 2));
 }
 
