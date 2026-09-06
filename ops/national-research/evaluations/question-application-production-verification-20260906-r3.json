@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-production-verification",
+  "phase": "POST-DEPLOYMENT",
+  "verifiedAt": "2026-09-06T10:04:18.409Z",
+  "status": "go-application-verified-data-pointer-unchanged",
+  "preDeployment": {
+    "path": "ops/national-research/evaluations/question-application-launch-20260906-r3.json",
+    "sha256": "f7270db1d95306240322b177390a26f2b0cdb558bacd49762916c0fb725acd1f",
+    "bytes": 10579
+  },
+  "application": {
+    "commit": "e8333516369cf74e0b353a84c922b56ea994c630",
+    "remoteMain": "e8333516369cf74e0b353a84c922b56ea994c630",
+    "githubDeployment": {
+      "id": 6291612049,
+      "state": "success",
+      "environment": "Production",
+      "createdAt": "2026-09-06T09:59:07Z",
+      "url": "https://api.github.com/repos/ocnbtl/projectisitusa/deployments/6291612049/statuses",
+      "immutableUrl": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app"
+    },
+    "vercel": {
+      "deploymentId": "dpl_ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+      "url": "https://vercel.com/unigentamos/projectisitusa/ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+      "state": "READY",
+      "environment": "Production",
+      "latest": true,
+      "productionAlias": "https://isitusa.com",
+      "sourceCommit": "e8333516369cf74e0b353a84c922b56ea994c630",
+      "durationDisplayed": "4m 5s",
+      "evidence": "Authenticated provider UI shows the exact source commit, Ready, Latest, Production and current isitusa.com domain."
+    }
+  },
+  "http": {
+    "schemaVersion": 1,
+    "kind": "isitusa-question-application-production-http-verification",
+    "observedAt": "2026-09-06T10:00:30.179Z",
+    "status": "passed",
+    "applicationCommit": "e8333516369cf74e0b353a84c922b56ea994c630",
+    "providerDeploymentId": "dpl_ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+    "immutableUrl": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app",
+    "routeParity": [
+      {
+        "path": "/",
+        "byteIdentical": true,
+        "sha256": "8520b632b08e244799f9c348fc786965a22f26d232b2488228f10905fb6b6a37"
+      },
+      {
+        "path": "/research",
+        "byteIdentical": true,
+        "sha256": "03d6315fdd9eeaa7914e1672f33b2cc11fa32c3744d7b6614e5dd58e421a7571"
+      },
+      {
+        "path": "/about",
+        "byteIdentical": true,
+        "sha256": "3c26d88c537097cb0e3bdf8aab7e6ec0a0a4cebf5e6418267f0970486db52568"
+      }
+    ],
+    "pointer": {
+      "schemaVersion": 1,
+      "kind": "isitusa-research-projection-pointer",
+      "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+      "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+      "releaseManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+      "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+      "promotedAt": "2026-09-06T06:56:53.282Z"
+    },
+    "manifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+    "publicDc": {
+      "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+      "bytes": 395067,
+      "questionAssessmentPresent": false
+    },
+    "requestCount": 11,
+    "probes": [
+      {
+        "url": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app/",
+        "bytes": 3817627,
+        "sha256": "8520b632b08e244799f9c348fc786965a22f26d232b2488228f10905fb6b6a37",
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-vercel-id": "cle1::mfpv4-1788688828737-e9f632f23d99",
+          "x-vercel-cache": "HIT",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      },
+      {
+        "url": "https://isitusa.com/",
+        "status": 200,
+        "finalUrl": "https://isitusa.com/",
+        "bytes": 3817627,
+        "sha256": "8520b632b08e244799f9c348fc786965a22f26d232b2488228f10905fb6b6a37",
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-vercel-id": "cle1::4d454-1788688828850-e30805bbd37f",
+          "x-vercel-cache": "PRERENDER",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      },
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200,
+        "finalUrl": "https://isitusa.com/research",
+        "bytes": 14175,
+        "sha256": "03d6315fdd9eeaa7914e1672f33b2cc11fa32c3744d7b6614e5dd58e421a7571",
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-vercel-id": "cle1::4d454-1788688829168-9fb2da532e97",
+          "x-vercel-cache": "PRERENDER",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      },
+      {
+        "url": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app/research",
+        "status": 200,
+        "finalUrl": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app/research",
+        "bytes": 14175,
+        "sha256": "03d6315fdd9eeaa7914e1672f33b2cc11fa32c3744d7b6614e5dd58e421a7571",
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-vercel-id": "cle1::6hwb7-1788688829168-842650984fcd",
+          "x-vercel-cache": "PRERENDER",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      },
+      {
+        "url": "https://isitusa.com/about",
+        "status": 200,
+        "finalUrl": "https://isitusa.com/about",
+        "bytes": 23319,
+        "sha256": "3c26d88c537097cb0e3bdf8aab7e6ec0a0a4cebf5e6418267f0970486db52568",
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-vercel-id": "cle1::7fw8t-1788688829268-028d1679ba8f",
+          "x-vercel-cache": "PRERENDER",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      },
+      {
+        "url": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app/about",
+        "status": 200,
+        "finalUrl": "https://projectisitusa-lc3gwjzke-unigentamos.vercel.app/about",
+        "bytes": 23319,
+        "sha256": "3c26d88c537097cb0e3bdf8aab7e6ec0a0a4cebf5e6418267f0970486db52568",
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-vercel-id": "cle1::kllb9-1788688829277-d12ea38ca36d",
+          "x-vercel-cache": "PRERENDER",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      },
+      {
+        "url": "https://data.isitusa.com/current.json",
+        "status": 200,
+        "finalUrl": "https://data.isitusa.com/current.json",
+        "bytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=60, must-revalidate",
+          "x-vercel-id": null,
+          "x-vercel-cache": null,
+          "x-frame-options": null,
+          "x-content-type-options": null,
+          "referrer-policy": null,
+          "strict-transport-security": null,
+          "content-security-policy": null,
+          "permissions-policy": null
+        }
+      },
+      {
+        "url": "https://isitusa.com/research-data/current.json",
+        "status": 200,
+        "finalUrl": "https://isitusa.com/research-data/current.json",
+        "bytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=60, must-revalidate",
+          "x-vercel-id": "cle1::kxh88-1788688829404-bbbc972ccc32",
+          "x-vercel-cache": "MISS",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      },
+      {
+        "url": "https://data.isitusa.com/releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+        "status": 200,
+        "finalUrl": "https://data.isitusa.com/releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+        "bytes": 2047964,
+        "sha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "content-encoding": "br",
+          "cache-control": "public, max-age=31536000, immutable",
+          "x-vercel-id": null,
+          "x-vercel-cache": null,
+          "x-frame-options": null,
+          "x-content-type-options": null,
+          "referrer-policy": null,
+          "strict-transport-security": null,
+          "content-security-policy": null,
+          "permissions-policy": null
+        }
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "status": 200,
+        "finalUrl": "https://data.isitusa.com/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "bytes": 395067,
+        "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "content-encoding": "gzip",
+          "cache-control": "public, max-age=31536000, immutable",
+          "x-vercel-id": null,
+          "x-vercel-cache": null,
+          "x-frame-options": null,
+          "x-content-type-options": null,
+          "referrer-policy": null,
+          "strict-transport-security": null,
+          "content-security-policy": null,
+          "permissions-policy": null
+        }
+      },
+      {
+        "url": "https://isitusa.com/research-data/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "status": 200,
+        "finalUrl": "https://isitusa.com/research-data/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "bytes": 395067,
+        "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "content-encoding": "gzip",
+          "cache-control": "public, max-age=31536000, immutable",
+          "x-vercel-id": "cle1::pb27w-1788688829637-1fba9db8f78a",
+          "x-vercel-cache": "MISS",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=63072000",
+          "content-security-policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+          "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        }
+      }
+    ],
+    "qualification": "GET verification only. Hashes establish delivery parity and research-data identity; provider UI separately establishes Ready/Production/source provenance. New question answers remain local."
+  },
+  "browser": {
+    "observedAt": "2026-09-06T10:02:23.233Z",
+    "browser": "Brave",
+    "url": "https://isitusa.com/research?state=DC&county=11001&species=Vespa+mandarinia",
+    "viewport": {
+      "width": 1757,
+      "height": 1254
+    },
+    "documentScrollWidth": 1742,
+    "sourceScreenCoverageLabelVisible": true,
+    "officialEradicationVisible": true,
+    "evidenceControlOpened": true,
+    "sourceCitation": "https://www.aphis.usda.gov/news/agency-announcements/aphis-action-victory-over-worlds-largest-hornet-species",
+    "questionPanelVisible": false,
+    "consoleErrors": [],
+    "qualification": "Focused live desktop smoke with the unchanged public data release. The dated question panels were validated with local data in the linked prior receipt and are not yet public."
+  },
+  "movement": {
+    "productionAppDeployments": 1,
+    "productionResearchDataPromotions": 0,
+    "newPublicBiologicalDeterminations": 0,
+    "newPublicQuestionAnswers": 0,
+    "localBiologicalAdditionsAwaitingDataPromotion": 887,
+    "localQuestionAnswersAwaitingDataPromotion": 256,
+    "localTotalDeterminations": 315985,
+    "publicTotalDeterminations": 315098
+  },
+  "resources": {
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "paidFeaturesEnabled": 0,
+    "planChanges": 0,
+    "httpProbeRequests": 11,
+    "qualification": "Request count covers the retained HTTP probe script only; browser asset loads and GitHub/provider reads are additional bounded read requests. No paid resource was provisioned.",
+    "nextOrdinaryDataPromotionAt": "2026-09-13T06:56:53.282Z"
+  },
+  "rollback": {
+    "priorApplicationDeployment": "dpl_6wthX2sVXjP6LcMC9yyiCd8wZ5tw",
+    "researchPointerUnchanged": true,
+    "restorationExecuted": false
+  },
+  "limitations": [
+    "Provider Ready, remote Git identity, live app behavior and research-data identity were verified separately.",
+    "This receipt does not attest to the later commit that contains it.",
+    "No national completion or new biological conclusion is created by release verification."
+  ]
+}

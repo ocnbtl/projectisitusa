@@ -6451,6 +6451,56 @@
         "certifiedStates": 0
       },
       "evidenceScope": "This receipt attests to the identified app deployment and research release, not the later commit containing this receipt. Existing research remains incomplete and no additional biological conclusion is created by these release checks."
+    },
+    {
+      "verificationId": "production-e8333516-2026-09-06",
+      "verifiedAt": "2026-09-06T10:04:18.409Z",
+      "commitSha": "e8333516369cf74e0b353a84c922b56ea994c630",
+      "githubMainSha": "e8333516369cf74e0b353a84c922b56ea994c630",
+      "githubDeploymentId": 6291612049,
+      "vercelDeploymentId": "dpl_ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+      "vercelDeploymentUrl": "projectisitusa-lc3gwjzke-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/about",
+          "status": 200
+        },
+        {
+          "path": "/research-data/current.json",
+          "status": 200
+        }
+      ],
+      "researchReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+      "researchSourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+      "researchManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+      "releaseEvaluation": {
+        "path": "ops/national-research/evaluations/question-application-production-verification-20260906-r3.json",
+        "sha256": "b42f9afd2774b085a8ff95f0dd3ccf024d0f34b95aaa3baa7a9bb953e18b551c",
+        "bytes": 17871,
+        "result": "go-application-verified-data-pointer-unchanged"
+      },
+      "roundMovement": {
+        "newlyDeterminedPairs": 0,
+        "removedDeterminedPairs": 0,
+        "netDeterminations": 0,
+        "newVerifiedAbsent": 0,
+        "publicDeterminationIncrease": 0,
+        "unpublishedBiologicalAdditions": 887,
+        "unpublishedQuestionAnswers": 256,
+        "certifiedStates": 0
+      },
+      "evidenceScope": "Verified application release only. Research data remains on the unchanged 6927 release. This receipt attests to the identified application and public data, not the later commit carrying it."
     }
   ]
 }
