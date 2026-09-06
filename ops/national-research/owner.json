@@ -7,9 +7,9 @@
   "branch": "main",
   "baseSha": "73fa2ad21abf5bfbb226e8fe436bbdd146e05bdb",
   "acquiredAt": "2026-09-06T04:30:32.231Z",
-  "lastReverifiedAt": "2026-09-06T10:52:47.059Z",
-  "currentCheckpointSha": "239ccdda1f546121218b094c531bf720396a1273",
-  "localHeadAtLastReverification": "239ccdda1f546121218b094c531bf720396a1273",
+  "lastReverifiedAt": "2026-09-06T17:48:13.391Z",
+  "currentCheckpointSha": "64be16709fc57c70a6eb9e9dd145fdbde69fa45c",
+  "localHeadAtLastReverification": "64be16709fc57c70a6eb9e9dd145fdbde69fa45c",
   "state": "autonomous-evidence-recovery-and-batched-production",
   "ownershipEvidence": {
     "museumRecovery20260906r4": {
@@ -66,7 +66,9 @@
       "publicResearchReleaseId": "research-e2115f6a705f-163982b59c8351b2",
       "authorityPath": "ops/national-research/receipts/authorizations/autonomous-national-research-20260906-r1.json"
     },
-    "activeProjectTasks": ["01a04820-3db5-7a20-b137-deb00243ff52"],
+    "activeProjectTasks": [
+      "01a04820-3db5-7a20-b137-deb00243ff52"
+    ],
     "supersededOwnerTaskId": "national-gbif-round-79-acquisition-20260820-main",
     "gitWorktreeCount": 217,
     "mainWriterProcesses": 0,
@@ -140,7 +142,16 @@
       "yieldAuditPath": "ops/national-research/evaluations/post-round-79-gbif-yield-model-failure-audit-20260821-r1.json",
       "yieldAuditSha256": "d34d81762a670d34615e146a500555f983e15ec319e73f303da5389dc9d0c2e0",
       "yieldAuditBytes": 99820,
-      "historicalRounds": [70, 72, 74, 75, 76, 77, 78, 79],
+      "historicalRounds": [
+        70,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
       "rollingOriginSplits": 7,
       "stagedV2MeanAbsoluteError": 404.855,
       "currentSmoothedPriorV1MeanAbsoluteError": 854.184,
@@ -370,7 +381,16 @@
       "priorPath": "ops/national-research/evaluations/post-round-79-gbif-yield-prior-20260821-r1.json",
       "priorSha256": "7b67b4817338bb07e784fd14b3efdd8fab814ab8ede920e32641405f4b45f04c",
       "priorBytes": 17357,
-      "auditedRounds": [70, 72, 74, 75, 76, 77, 78, 79],
+      "auditedRounds": [
+        70,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
       "auditedSelectedPairs": 205588,
       "auditedPresentPairs": 7035,
       "auditedResearchedUnresolvedPairs": 198553,
@@ -679,7 +699,15 @@
       "auditImplementationSha256": "dfb38dcb5fd45807328d17a0a579548fc8e01c76495a77198b65d08c55febfe8",
       "auditTestSha256": "cc9b4de39cecc60633c6e0ce66834add60701d91854c34a3cc0b43c750d91e9b",
       "priorBuilderSha256": "92a8335c4835431bf6ad544dda15a7e0ea23c33a75dca8efcad7dd23bbecadf8",
-      "auditedRounds": [70, 72, 74, 75, 76, 77, 78],
+      "auditedRounds": [
+        70,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78
+      ],
       "selectedPairs": 180436,
       "presentPairs": 7005,
       "researchedUnresolvedPairs": 173431,
@@ -1204,35 +1232,35 @@
       "fullResearchIntegrity": "pass: frozen 97/97, 1,299 immutable runs, 308,559 assertions, 1,670,267 outcomes, zero unreviewed evidence, zero conflicts",
       "productionDeployment": "GitHub deployment 5995004538 and Vercel FT6Ps5bp7k7ao9WLvhZs8ahCqmgD succeeded for exact commit 2f7a9e0efc2ebc4ccc808fd6de84fb092b868064; canonical and immutable /research HTML matched byte-for-byte."
     },
-      "round67DeploymentCorrection": {
-        "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
-        "failedGitLinkedDeploymentId": "dpl_HxMcEyHvHqrqKiQh3xPsfUMjpNpW",
-        "failedGitStatusId": 52346366243,
-        "canceledDiagnosticRetryDeploymentId": "dpl_CwpD7zcYtB3qQsMoiueLy5c77y7a",
-        "canceledGitStatusId": 52348713795,
-        "previousLockedNextVersion": "15.5.15",
-        "correctedLockedNextVersion": "15.5.23",
-        "correctedLocalGates": "clean npm ci, typecheck, lint, and 6 GiB constrained 2,512-page build passed",
-        "failedCorrectedDependencyDeploymentId": "dpl_VqvcrfpYrfEZnXbZPdwztF31gsU6",
-        "failedCorrectedDependencyGitStatusId": 52351443257,
-        "failedCorrectedDependencyAt": "2026-08-17T09:08:12.000Z",
-        "failedCorrectedDependencyFinding": "Next.js 15.5.23 was installed and detected, but the provider stayed at optimized production build for about 45 minutes and failed without a compiler error line.",
-        "memoryOptimization": "experimental.webpackMemoryOptimizations enabled; true cold 6 GiB build, typecheck, lint, and all 2,512 pages passed",
-        "failedMemoryOptimizedDeploymentId": "dpl_HTznCQ3xneUYqMK7FcznA5FQ9Zra",
-        "failedMemoryOptimizedGitStatusId": 52354128031,
-        "failedMemoryOptimizedAt": "2026-08-17T09:59:23.000Z",
-        "failedMemoryOptimizedFinding": "The provider detected Next.js 15.5.23 with webpackMemoryOptimizations but repeated the about-45-minute silent optimized-build failure.",
-        "targetedStoreSplit": "Dedicated species, county, and snapshot stores keep the 27,830,728-byte presence.json out of all three affected server traces; cold 6 GiB build, typecheck, lint, data integrity, and targeted HTTP smokes pass.",
-        "successfulContentCommit": "bd0c05027d62a786fa72feeff7b0b5aa688a1756",
-        "successfulGitLinkedDeploymentId": "dpl_7BauuBV6GRQVH667nkWFp4eXksLE",
-        "successfulGitStatusId": 52355093723,
-        "successfulGitHubDeploymentId": 5943068621,
-        "successfulGitHubDeploymentStatusId": 16909309603,
-        "successfulDeploymentAt": "2026-08-17T10:18:02.000Z",
-        "successfulFinding": "The targeted store split restored the provider build to a successful 7.9-minute compile and READY production deployment while retaining the 15.5.23 dependency correction and Webpack memory optimization.",
-        "cancelRaceQualification": "A bounded cancel request crossed the successful READY transition and returned HTTP 400 because the deployment was already complete; no deployment was canceled and no replacement deployment was started.",
-        "externalReleaseStatus": "success-exact-content-sha-externally-verified"
-      },
+    "round67DeploymentCorrection": {
+      "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+      "failedGitLinkedDeploymentId": "dpl_HxMcEyHvHqrqKiQh3xPsfUMjpNpW",
+      "failedGitStatusId": 52346366243,
+      "canceledDiagnosticRetryDeploymentId": "dpl_CwpD7zcYtB3qQsMoiueLy5c77y7a",
+      "canceledGitStatusId": 52348713795,
+      "previousLockedNextVersion": "15.5.15",
+      "correctedLockedNextVersion": "15.5.23",
+      "correctedLocalGates": "clean npm ci, typecheck, lint, and 6 GiB constrained 2,512-page build passed",
+      "failedCorrectedDependencyDeploymentId": "dpl_VqvcrfpYrfEZnXbZPdwztF31gsU6",
+      "failedCorrectedDependencyGitStatusId": 52351443257,
+      "failedCorrectedDependencyAt": "2026-08-17T09:08:12.000Z",
+      "failedCorrectedDependencyFinding": "Next.js 15.5.23 was installed and detected, but the provider stayed at optimized production build for about 45 minutes and failed without a compiler error line.",
+      "memoryOptimization": "experimental.webpackMemoryOptimizations enabled; true cold 6 GiB build, typecheck, lint, and all 2,512 pages passed",
+      "failedMemoryOptimizedDeploymentId": "dpl_HTznCQ3xneUYqMK7FcznA5FQ9Zra",
+      "failedMemoryOptimizedGitStatusId": 52354128031,
+      "failedMemoryOptimizedAt": "2026-08-17T09:59:23.000Z",
+      "failedMemoryOptimizedFinding": "The provider detected Next.js 15.5.23 with webpackMemoryOptimizations but repeated the about-45-minute silent optimized-build failure.",
+      "targetedStoreSplit": "Dedicated species, county, and snapshot stores keep the 27,830,728-byte presence.json out of all three affected server traces; cold 6 GiB build, typecheck, lint, data integrity, and targeted HTTP smokes pass.",
+      "successfulContentCommit": "bd0c05027d62a786fa72feeff7b0b5aa688a1756",
+      "successfulGitLinkedDeploymentId": "dpl_7BauuBV6GRQVH667nkWFp4eXksLE",
+      "successfulGitStatusId": 52355093723,
+      "successfulGitHubDeploymentId": 5943068621,
+      "successfulGitHubDeploymentStatusId": 16909309603,
+      "successfulDeploymentAt": "2026-08-17T10:18:02.000Z",
+      "successfulFinding": "The targeted store split restored the provider build to a successful 7.9-minute compile and READY production deployment while retaining the 15.5.23 dependency correction and Webpack memory optimization.",
+      "cancelRaceQualification": "A bounded cancel request crossed the successful READY transition and returned HTTP 400 because the deployment was already complete; no deployment was canceled and no replacement deployment was started.",
+      "externalReleaseStatus": "success-exact-content-sha-externally-verified"
+    },
     "round69Release": {
       "implementationCommit": "d736ab02c996995467593f7567fb387cd0cd0d05",
       "successfulContentCommit": "b360212653852b6964a3a43060a7930229016617",
@@ -1310,7 +1338,7 @@
       "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
       "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
     },
-      "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
+    "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "gbif-preserved-specimens",
       "observedAt": "2026-08-20T20:53:20.927Z",
@@ -1696,6 +1724,19 @@
       "r2Promotions": 0,
       "r2Deletions": 0,
       "finding": "The Wisconsin BBS tranche is acquired, committed, indexed, compiled, pushed, and application-deployed with pinned-runtime, exact-SHA provider, live HTTP, and desktop/mobile browser verification. The prepared cumulative research-data release remains intentionally unpromoted because the seven-day cadence gate is critical and no override was supplied. The live site therefore continues to show the exact prior Wisconsin projection rather than partially exposing the new 56-pair movement."
+    },
+    "taxonomyPilot20260906r5": {
+      "observedAt": "2026-09-06T17:48:13.391Z",
+      "checkpointSha": "64be16709fc57c70a6eb9e9dd145fdbde69fa45c",
+      "activeProjectTasks": [
+        "01a06f1e-a9ed-77c2-8c4e-21213ababf8b"
+      ],
+      "otherIsitusaTaskStatus": "notLoaded",
+      "activeLeasesBeforeDispatch": 0,
+      "pendingQueueItems": 0,
+      "workerCandidatePairs": 27,
+      "mainCandidatePairs": 137,
+      "providerRequests": 0
     }
   },
   "reverificationHistory": [

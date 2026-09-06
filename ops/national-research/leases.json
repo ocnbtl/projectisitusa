@@ -497573,6 +497573,158 @@
         "workerCommit": "c7773f9adb71f2343bfeb5151d876b11bb26acbd",
         "workerBranchHead": "5cd1f89e7f28dd774ade5f223b2cf59231b21b7b"
       }
+    },
+    {
+      "leaseId": "lease-taxonomy-pilot-20260906-r5-nybg-ny-1",
+      "jobId": "taxonomy-pilot-20260906-r5-nybg-ny",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "/root/museum_nybg_ny",
+      "state": "active",
+      "claimedAt": "2026-09-06T17:49:21.852Z",
+      "expiresAt": "2026-09-06T18:33:13.443Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "NY"
+        ],
+        "sourceFamilies": [
+          "nybg-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "hordeum-marinum",
+          "hordeum-murinum",
+          "medicago-lupulina",
+          "medicago-sativa",
+          "myosotis-sylvatica",
+          "scleranthus-annuus",
+          "setaria-verticillata",
+          "sonchus-arvensis",
+          "thinopyrum-intermedium",
+          "veronica-serpyllifolia"
+        ],
+        "pairs": [
+          "36005:medicago-sativa",
+          "36027:medicago-sativa",
+          "36029:medicago-sativa",
+          "36029:myosotis-sylvatica",
+          "36039:sonchus-arvensis",
+          "36047:setaria-verticillata",
+          "36047:sonchus-arvensis",
+          "36059:sonchus-arvensis",
+          "36061:hordeum-murinum",
+          "36061:medicago-sativa",
+          "36061:sonchus-arvensis",
+          "36061:veronica-serpyllifolia",
+          "36071:medicago-sativa",
+          "36081:medicago-sativa",
+          "36081:sonchus-arvensis",
+          "36085:sonchus-arvensis",
+          "36087:sonchus-arvensis",
+          "36103:sonchus-arvensis",
+          "36107:medicago-lupulina",
+          "36107:medicago-sativa",
+          "36119:hordeum-marinum",
+          "36119:hordeum-murinum",
+          "36119:scleranthus-annuus",
+          "36119:sonchus-arvensis",
+          "36119:thinopyrum-intermedium",
+          "36123:medicago-lupulina",
+          "36123:medicago-sativa"
+        ]
+      },
+      "scopeClaims": [
+        "state/NY/source/nybg-preserved-specimens/taxon/hordeum-marinum",
+        "state/NY/source/nybg-preserved-specimens/taxon/hordeum-murinum",
+        "state/NY/source/nybg-preserved-specimens/taxon/medicago-lupulina",
+        "state/NY/source/nybg-preserved-specimens/taxon/medicago-sativa",
+        "state/NY/source/nybg-preserved-specimens/taxon/myosotis-sylvatica",
+        "state/NY/source/nybg-preserved-specimens/taxon/scleranthus-annuus",
+        "state/NY/source/nybg-preserved-specimens/taxon/setaria-verticillata",
+        "state/NY/source/nybg-preserved-specimens/taxon/sonchus-arvensis",
+        "state/NY/source/nybg-preserved-specimens/taxon/thinopyrum-intermedium",
+        "state/NY/source/nybg-preserved-specimens/taxon/veronica-serpyllifolia"
+      ],
+      "branch": "codex/taxonomy-pilot-20260906-r5-nybg-ny",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\taxonomy-pilot-20260906-r5-nybg-ny",
+      "baseSha": "64be16709fc57c70a6eb9e9dd145fdbde69fa45c",
+      "expectedReceiptCodeCommit": "64be16709fc57c70a6eb9e9dd145fdbde69fa45c",
+      "permittedPaths": [
+        "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20971520,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "Run the registered retained-specimen adapter using only the exact committed plan and original retained acquisition identity.",
+        "Preserve unknown collection dates explicitly and assess the historical occurrence claim only.",
+        "Do not make provider requests, broaden scope, or rewrite source witness bytes.",
+        "Emit a complete immutable run and source verification; if a material source contradiction emerges, stop and record a blocker for MAIN.",
+        "Commit immutable-run content first and finalized manifest second.",
+        "Pass the pinned worker validator and exact base-to-head whitespace checks.",
+        "Independently review the new taxonomy interpretation and original New York source context; report whether this pilot supports broader use within the declared reference and inventory scope."
+      ]
     }
   ]
 }
