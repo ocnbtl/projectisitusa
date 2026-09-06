@@ -11,6 +11,7 @@ import {
 } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
+import type { SpecimenMetadataRecovery } from "./specimen-record-metadata";
 
 import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specimens";
 import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
@@ -158,6 +159,7 @@ type CandidateFile = {
     archiveAcquiredAt: string;
     preflightEvaluationId: string;
     targetPairSetSha256: string;
+    metadataRecovery?: SpecimenMetadataRecovery;
     targets: CpnwhTarget[];
   };
   retainedHerbarium?: {
@@ -685,6 +687,7 @@ function buildParameters(
     return {
       stateCode,
       ...candidateFile.cpnwh,
+      ...(candidateFile.cpnwh.metadataRecovery ? { metadataRecovery: { ...candidateFile.cpnwh.metadataRecovery, witnessSetSha256: sha256(stableJson(targets)) } } : {}),
       targetPairSetSha256: sha256(candidatePairs.join("\n")),
       targets,
       candidatePairs,
@@ -900,6 +903,7 @@ async function main() {
     adapterPath,
     parameterSchemaPath,
     path.join(ROOT, "scripts/research/run-source.ts"),
+    path.join(ROOT, "scripts/research/specimen-record-metadata.ts"),
     path.join(ROOT, "scripts/research/gbif-archived-replay.ts"),
     path.join(ROOT, "scripts/research/gbif-source-verification.ts"),
     path.join(ROOT, "scripts/research/gbif-taxonomy-cache.ts"),

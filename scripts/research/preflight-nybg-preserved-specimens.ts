@@ -10,6 +10,7 @@ import stateRegistryJson from "@/data/research/state-registry.json";
 import { resolveCountyEquivalent } from "@/lib/research/geography-registry";
 
 import { listZipEntries, readZipEntry, spawnZipEntry } from "./zip-tools";
+import { auditSpecimenArchiveIdentities, parseSpecimenDate, specimenRecordIdentity, specimenRowSha256, specimenRecoveryHold } from "./specimen-record-metadata";
 
 type CatalogSpecies = { id: string; scientificName: string; category: string };
 type CountyProjection = {
@@ -27,8 +28,11 @@ type AcceptedRecord = {
   sourceCounty: string;
   speciesId: string;
   scientificName: string;
-  eventDate: string;
-  year: number;
+  eventDate: string | null;
+  year: number | null;
+  identityKey?: string;
+  sourceRowSha256?: string;
+  sourceRow?: SourceRow;
   institutionCode: string;
   collectionCode: string;
   catalogNumber: string;
@@ -82,7 +86,11 @@ function parseArguments(argv: string[]) {
   const output = argv[outputIndex + 1];
   assert(archiveIndex >= 0 && archive, "--archive is required.");
   assert(outputIndex >= 0 && output, "--output is required.");
-  return { archive: path.resolve(archive), output: path.resolve(output) };
+  const metadataRecovery = argv.includes("--metadata-recovery");
+  const asOfIndex = argv.indexOf("--as-of");
+  const asOf = asOfIndex >= 0 ? argv[asOfIndex + 1] : "";
+  if (metadataRecovery) parseSpecimenDate({}, asOf);
+  return { archive: path.resolve(archive), output: path.resolve(output), metadataRecovery, asOf };
 }
 
 function readJson<T>(filePath: string) {
@@ -109,7 +117,7 @@ function normalizedCountyName(value: string | undefined) {
 
 async function main() {
   const startedAt = Date.now();
-  const { archive, output } = parseArguments(process.argv.slice(2));
+  const { archive, output, metadataRecovery, asOf } = parseArguments(process.argv.slice(2));
   const entries = listZipEntries(archive);
   for (const expected of ["occurrence.txt", "meta.xml", "eml.xml"]) {
     assert(entries.includes(expected), `Archive is missing ${expected}.`);
@@ -151,6 +159,8 @@ async function main() {
   const sourceTaxa = new Set<string>();
   const exactCatalogTaxa = new Set<string>();
   const acceptedPairByOccurrenceId = new Map<string, string>();
+  const recoveryRowHashes = new Map<string, string>();
+  const recoveryRecordsByPair = new Map<string, AcceptedRecord[]>();
   const representativeByPair = new Map<string, AcceptedRecord>();
   let sourceRows = 0;
   let acceptedUniqueRecords = 0;
@@ -194,9 +204,10 @@ async function main() {
       reject("state-unresolved");
       continue;
     }
-    const recordId = row.id?.trim();
-    const occurrenceId = row.occurrenceID?.trim();
-    if (!recordId || !occurrenceId) {
+    const recordId = row.id?.trim() ?? "";
+    const occurrenceId = row.occurrenceID?.trim() ?? "";
+    const identity = specimenRecordIdentity(row);
+    if (!identity || (!metadataRecovery && (!recordId || !occurrenceId))) {
       reject("stable-record-identity-missing");
       continue;
     }
@@ -221,9 +232,10 @@ async function main() {
       continue;
     }
     exactCatalogTaxa.add(sourceName);
-    const eventYear = validEventYear(row);
-    if (eventYear === null) {
-      reject("event-date-invalid");
+    const date = metadataRecovery ? parseSpecimenDate(row, asOf) : null;
+    const eventYear = date && date.status !== "rejected" ? date.year : validEventYear(row);
+    if (date?.status === "rejected" || (!metadataRecovery && eventYear === null)) {
+      reject(date?.status === "rejected" ? date.reason : "event-date-invalid");
       continue;
     }
     const sourceCounty = normalizedCountyName(row.county);
@@ -249,17 +261,23 @@ async function main() {
       reject("cultivated-or-captive-text");
       continue;
     }
+    const recoveryHold = metadataRecovery ? specimenRecoveryHold(row) : null;
+    if (recoveryHold) {
+      reject(recoveryHold);
+      continue;
+    }
 
     const pairKey = `${geography.county.countyFips}:${species.id}`;
-    const priorPairKey = acceptedPairByOccurrenceId.get(occurrenceId);
+    const identityKey = metadataRecovery ? identity.identityKey : occurrenceId;
+    const priorPairKey = acceptedPairByOccurrenceId.get(identityKey);
     if (priorPairKey) {
       reject(priorPairKey === pairKey ? "duplicate-record-identity" : "duplicate-record-identity-conflict");
       continue;
     }
-    acceptedPairByOccurrenceId.set(occurrenceId, pairKey);
+    acceptedPairByOccurrenceId.set(identityKey, pairKey);
     acceptedUniqueRecords += 1;
-    if (!representativeByPair.has(pairKey)) {
-      representativeByPair.set(pairKey, {
+    if (metadataRecovery || !representativeByPair.has(pairKey)) {
+      const accepted: AcceptedRecord = {
         recordId,
         occurrenceId,
         countyFips: geography.county.countyFips,
@@ -268,19 +286,46 @@ async function main() {
         sourceCounty: row.county.trim(),
         speciesId: species.id,
         scientificName: species.scientificName,
-        eventDate: row.eventDate?.trim() || String(eventYear),
+        eventDate: date ? date.eventDate : row.eventDate?.trim() || String(eventYear),
         year: eventYear,
+        ...(metadataRecovery ? { identityKey, sourceRowSha256: specimenRowSha256(row), sourceRow: row } : {}),
         institutionCode: row.institutionCode?.trim() || "",
         collectionCode: row.collectionCode?.trim() || "",
         catalogNumber: row.catalogNumber?.trim() || "",
         rightsHolder: row.rightsHolder?.trim() || "",
         references: row.references?.trim() || "",
-      });
+      };
+      if (!representativeByPair.has(pairKey)) representativeByPair.set(pairKey, accepted);
+      if (metadataRecovery) {
+        recoveryRowHashes.set(identityKey, accepted.sourceRowSha256!);
+        const records = recoveryRecordsByPair.get(pairKey) ?? [];
+        records.push(accepted);
+        recoveryRecordsByPair.set(pairKey, records);
+      }
     }
   }
   const [exitCode, signal] = await closePromise;
   assert(exitCode === 0, `Archive extraction failed (${exitCode ?? signal}): ${unzipError.trim()}`);
-  assert((rejectionCounts["duplicate-record-identity-conflict"] ?? 0) === 0, "Conflicting duplicate occurrence identities were found.");
+  const occurrenceSha256 = occurrenceHash.digest("hex");
+  let identityAudit: Awaited<ReturnType<typeof auditSpecimenArchiveIdentities>> | undefined;
+  if (metadataRecovery) {
+    identityAudit = await auditSpecimenArchiveIdentities(archive, recoveryRowHashes);
+    assert(identityAudit.occurrenceSha256 === occurrenceSha256 && identityAudit.occurrenceBytes === occurrenceBytes
+      && identityAudit.sourceRows === sourceRows, "Archive changed between eligibility and identity audit.");
+    assert(identityAudit.missingIdentities.length === 0, "Selected witness identities disappeared in the complete archive audit.");
+    const conflicts = new Set(identityAudit.conflictingIdentities);
+    for (const key of conflicts) acceptedPairByOccurrenceId.delete(key);
+    acceptedUniqueRecords = acceptedPairByOccurrenceId.size;
+    representativeByPair.clear();
+    for (const [key, records] of recoveryRecordsByPair) {
+      const valid = records.filter((record) => !conflicts.has(record.identityKey!))
+        .sort((left, right) => Number(left.eventDate === null) - Number(right.eventDate === null));
+      if (valid.length) representativeByPair.set(key, valid[0]);
+    }
+    rejectionCounts["whole-archive-identity-conflict-held"] = conflicts.size;
+  } else {
+    assert((rejectionCounts["duplicate-record-identity-conflict"] ?? 0) === 0, "Conflicting duplicate occurrence identities were found.");
+  }
 
   const grossPairs = [...representativeByPair.keys()].sort(compareText);
   const presentOverlaps: string[] = [];
@@ -339,7 +384,7 @@ async function main() {
       archiveBytes: statSync(archive).size,
       archiveSha256: await sha256File(archive),
       occurrenceBytes,
-      occurrenceSha256: occurrenceHash.digest("hex"),
+      occurrenceSha256,
       metaBytes: meta.length,
       metaSha256: sha256(meta),
       emlBytes: eml.length,
@@ -360,6 +405,9 @@ async function main() {
       cultivation: "Rows matching the conservative cultivated/captive text pattern in locality, occurrenceRemarks, habitat, or establishmentMeans are rejected.",
       negativeSemantics: "Source silence and rejected rows create no absence or non-detection assertion.",
     },
+    metadataRecovery: metadataRecovery ? { version: 1, asOf, identityAudit,
+      datePolicy: "Valid dated or explicitly undated historical records; malformed, contradictory, partial-unresolved and future dates held.",
+      identityPolicy: "Occurrence ID when supplied; otherwise archive-version-bound core ID. Complete archive collision audit precedes witness acceptance." } : undefined,
     counts: {
       sourceRows,
       sourceTaxa: sourceTaxa.size,

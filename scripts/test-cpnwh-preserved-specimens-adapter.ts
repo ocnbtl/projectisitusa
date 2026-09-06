@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
 import { gunzipSync } from "node:zlib";
+import { createHash } from "node:crypto";
+import { stableJson } from "@/lib/research/run-files";
+import { specimenRowSha256, specimenRecordIdentity } from "./research/specimen-record-metadata";
 
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
 import {
@@ -61,6 +64,26 @@ function context(): SourceAdapterContext {
   };
 }
 
+function recoveryContext() {
+  const fixture = context();
+  fixture.runStartedAt = "2026-09-06T01:00:00.000Z";
+  const target = (fixture.parameters.targets as Array<Record<string, unknown>>)[0];
+  const row = { id: "12345", occurrenceID: "", eventDate: "", year: "", countryCode: "US", country: "United States",
+    stateProvince: "Washington", county: "Adams", genus: "Agrostis", specificEpithet: "capillaris", taxonRank: "species",
+    identificationQualifier: "", basisOfRecord: "PreservedSpecimen", license: CPNWH_CC0_LICENSE,
+    locality: "Roadside, escaped and growing wild", occurrenceRemarks: "Collection before 1930; exact date unknown" };
+  Object.assign(target, specimenRecordIdentity(row), { eventDate: null, year: null, sourceRow: row, sourceRowSha256: specimenRowSha256(row) });
+  sealRecovery(fixture);
+  return fixture;
+}
+
+function sealRecovery(fixture: SourceAdapterContext) {
+  const hash = (value: string) => createHash("sha256").update(value).digest("hex");
+  fixture.parameters.targetPairSetSha256 = hash((fixture.parameters.candidatePairs as string[]).join("\n"));
+  fixture.parameters.metadataRecovery = { version: 1, asOf: "2026-09-06", extractedAt: "2026-09-06T00:00:00.000Z",
+    preflightSha256: "a".repeat(64), witnessSetSha256: hash(stableJson(fixture.parameters.targets)) };
+}
+
 async function main() {
   const fixture = context();
   const hash = await import("node:crypto").then(({ createHash }) => createHash("sha256").update(pairKey).digest("hex"));
@@ -97,6 +120,53 @@ async function main() {
     unsafeIdentity.parameters.targetPairSetSha256 = hash;
     ((unsafeIdentity.parameters.targets as Array<Record<string, unknown>>)[0]).occurrenceId = "unsafe occurrence identity with spaces";
     await assert.rejects(() => runCpnwhPreservedSpecimens(unsafeIdentity), /occurrence ID is invalid/u);
+
+    const recovered = await runCpnwhPreservedSpecimens(recoveryContext());
+    assert.equal(recovered.assertions[0].source_record_id, `cpnwh-record-id:${CPNWH_ARCHIVE_SHA256}:12345`);
+    assert.equal(recovered.assertions[0].source_record_date, null);
+    assert.equal(recovered.assertions[0].retrieved_at, "2026-09-03T22:18:31.985Z");
+    assert.match(recovered.assertions[0].temporal_scope!, /normalized collection date unknown/u);
+    assert(recovered.reviews[0].reason_codes.includes("normalized-collection-date-unknown"));
+    assert(!recovered.reviews[0].reason_codes.includes("valid-event-year"));
+    assert(recovered.assertions.every((assertion) => assertion.claim_type === "recorded-present"));
+    assert(recovered.outcomes.every((outcome) => outcome.status === "evidence-found"));
+
+    const occurrenceOnly = recoveryContext();
+    const occurrenceTarget = (occurrenceOnly.parameters.targets as Array<Record<string, unknown>>)[0];
+    const occurrenceRow = occurrenceTarget.sourceRow as Record<string, string>;
+    occurrenceRow.id = ""; occurrenceRow.occurrenceID = "id:12345";
+    Object.assign(occurrenceTarget, specimenRecordIdentity(occurrenceRow), { sourceRowSha256: specimenRowSha256(occurrenceRow) });
+    sealRecovery(occurrenceOnly);
+    assert.equal((await runCpnwhPreservedSpecimens(occurrenceOnly)).assertions[0].source_record_id, "cpnwh:id:12345");
+
+    const twoCoreIds = recoveryContext();
+    const second = structuredClone((twoCoreIds.parameters.targets as Array<Record<string, unknown>>)[0]);
+    Object.assign(second, { pairKey: "53003:agrostis-capillaris", countyFips: "53003", sourceCounty: "Asotin" });
+    const secondRow = second.sourceRow as Record<string, string>; secondRow.id = "12346"; secondRow.county = "Asotin";
+    Object.assign(second, specimenRecordIdentity(secondRow), { sourceRowSha256: specimenRowSha256(secondRow) });
+    (twoCoreIds.parameters.targets as unknown[]).push(second);
+    (twoCoreIds.parameters.candidatePairs as string[]).push(second.pairKey as string);
+    twoCoreIds.requestedPairs.push({ countyFips: "53003", countyName: "Asotin", speciesId: "agrostis-capillaris", scientificName: "Agrostis capillaris" });
+    sealRecovery(twoCoreIds);
+    assert.equal((await runCpnwhPreservedSpecimens(twoCoreIds)).assertions.length, 2);
+
+    for (const mutation of ["row", "date", "future", "cultivated", "basis", "geography", "identity", "chronology", "set-hash"] as const) {
+      const bad = recoveryContext();
+      const item = (bad.parameters.targets as Array<Record<string, unknown>>)[0];
+      const raw = item.sourceRow as Record<string, string>;
+      if (mutation === "row") raw.catalogNumber = "tampered";
+      if (mutation === "date") raw.eventDate = "2024-02-30";
+      if (mutation === "future") raw.eventDate = "2027-01-01";
+      if (mutation === "cultivated") raw.occurrenceRemarks = "Grown in a green-house";
+      if (mutation === "basis") raw.occurrenceRemarks = "INaturalist observation";
+      if (mutation === "geography") raw.stateProvince = "Oregon";
+      if (mutation === "identity") { raw.id = ""; item.recordId = ""; }
+      if (mutation !== "row") item.sourceRowSha256 = specimenRowSha256(raw);
+      sealRecovery(bad);
+      if (mutation === "chronology") (bad.parameters.metadataRecovery as Record<string, unknown>).extractedAt = "2026-09-07T00:00:00Z";
+      if (mutation === "set-hash") (bad.parameters.metadataRecovery as Record<string, unknown>).witnessSetSha256 = "0".repeat(64);
+      await assert.rejects(() => runCpnwhPreservedSpecimens(bad), /CPNWH|Recovery/u, mutation);
+    }
   } finally {
     globalThis.fetch = originalFetch;
   }

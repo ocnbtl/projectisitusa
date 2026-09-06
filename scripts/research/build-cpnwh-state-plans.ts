@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { stableJson } from "@/lib/research/run-files";
 
 import {
   CPNWH_ARCHIVE_SHA256,
@@ -44,6 +45,9 @@ type Preflight = {
   netEligiblePairs: string[];
   representativeRecords: Record<string, Omit<CpnwhTarget, "pairKey">>;
   elapsedMs: number;
+  metadataRecovery?: { version: number; asOf: string; identityAudit: {
+    occurrenceSha256: string; occurrenceBytes: number; sourceRows: number; missingIdentities: string[];
+  } };
 };
 
 const ROOT = process.cwd();
@@ -78,12 +82,16 @@ function parseArguments(argv: string[]) {
   assert(preflight, "--preflight is required.");
   assert(outputDirectory.startsWith(`${ROOT}${path.sep}`), "--output-dir must remain inside the repository.");
   assert(evaluationOutput.startsWith(`${ROOT}${path.sep}`), "--evaluation-output must remain inside the repository.");
-  return { preflight, outputDirectory, evaluationOutput };
+  const campaign = values.get("campaign") ?? "20260903-r1";
+  assert(/^[0-9]{8}-r[0-9]+$/u.test(campaign), "--campaign must be YYYYMMDD-rN.");
+  return { preflight, outputDirectory, evaluationOutput, campaign };
 }
 
 function main() {
   const options = parseArguments(process.argv.slice(2));
   const preflight = JSON.parse(readFileSync(options.preflight, "utf8")) as Preflight;
+  const recovery = preflight.metadataRecovery;
+  const evaluationId = recovery ? `${CPNWH_SOURCE_ID}-preflight-${options.campaign}` : PREFLIGHT_EVALUATION_ID;
   const head = execFileSync("git", ["rev-parse", "HEAD"], { cwd: ROOT, encoding: "utf8" }).trim();
   assert(preflight.schemaVersion === 1 && preflight.kind === "isitusa-source-yield-preflight", "CPNWH preflight kind differs.");
   assert(preflight.sourceId === CPNWH_SOURCE_ID, "CPNWH preflight source differs.");
@@ -94,7 +102,15 @@ function main() {
   assert(preflight.datasetIdentity.archiveSha256 === CPNWH_ARCHIVE_SHA256, "CPNWH archive hash differs.");
   assert(preflight.datasetIdentity.occurrenceBytes === 2132017127, "CPNWH occurrence byte count differs.");
   assert(preflight.datasetIdentity.occurrenceSha256 === CPNWH_OCCURRENCE_SHA256, "CPNWH occurrence hash differs.");
-  assert(preflight.counts.netEligiblePairs >= 10000, "CPNWH net yield does not clear the 10000-pair stretch gate.");
+  assert(preflight.counts.netEligiblePairs > 0, "CPNWH preflight contains no eligible new pairs.");
+  if (recovery) {
+    assert(recovery.version === 1 && recovery.identityAudit.occurrenceSha256 === CPNWH_OCCURRENCE_SHA256
+      && recovery.identityAudit.occurrenceBytes === 2132017127 && recovery.identityAudit.sourceRows === preflight.counts.sourceRows
+      && recovery.identityAudit.missingIdentities.length === 0, "CPNWH recovery audit differs from the source artifact.");
+    assert(Date.parse(ARCHIVE_ACQUIRED_AT) <= Date.parse(preflight.evaluatedAt), "CPNWH extraction predates acquisition.");
+    assert(/^[0-9a-f]{64}$/u.test(preflight.baseline.determinedPairSetSha256)
+      && preflight.baseline.determinedPairSetSha256 !== sha256(""), "CPNWH recovery baseline is missing or empty.");
+  }
   assert(preflight.counts.verifiedAbsentConflicts === 0, "CPNWH preflight contains verified-absent conflicts.");
   const pairKeys = [...preflight.netEligiblePairs].sort(compareText);
   assert(new Set(pairKeys).size === pairKeys.length, "CPNWH preflight repeats net pairs.");
@@ -112,7 +128,7 @@ function main() {
     stateTargets.push(target);
     targetsByState.set(target.stateCode, stateTargets);
   }
-  assert(targetsByState.size === Object.keys(preflight.states).length, "CPNWH plan state count differs from preflight.");
+  assert(targetsByState.size === Object.values(preflight.states).filter((state) => state.netEligible > 0).length, "CPNWH plan state count differs from preflight.");
   mkdirSync(options.outputDirectory, { recursive: true });
   const planSummaries: Array<{ stateCode: string; planId: string; candidateCount: number; pairSetSha256: string; path: string }> = [];
   const generatedAt = new Date().toISOString();
@@ -122,7 +138,7 @@ function main() {
     assert(preflight.states[stateCode]?.netEligible === targets.length, `CPNWH ${stateCode} count differs from preflight.`);
     const statePairKeys = targets.map((target) => target.pairKey);
     const pairSetSha256 = sha256(statePairKeys.join("\n"));
-    const planId = `cpnwh-${stateCode.toLocaleLowerCase("en-US")}-20260903-r1`;
+    const planId = `cpnwh-${stateCode.toLocaleLowerCase("en-US")}-${options.campaign}`;
     const outputPath = path.join(options.outputDirectory, `${planId}.json`);
     const plan = {
       schemaVersion: 1,
@@ -145,8 +161,15 @@ function main() {
         occurrenceBytes: preflight.datasetIdentity.occurrenceBytes,
         occurrenceSha256: preflight.datasetIdentity.occurrenceSha256,
         archiveAcquiredAt: ARCHIVE_ACQUIRED_AT,
-        preflightEvaluationId: PREFLIGHT_EVALUATION_ID,
+        preflightEvaluationId: evaluationId,
         targetPairSetSha256: pairSetSha256,
+        ...(recovery ? { metadataRecovery: {
+          version: 1,
+          asOf: recovery.asOf,
+          extractedAt: preflight.evaluatedAt,
+          preflightSha256: sha256(readFileSync(options.preflight)),
+          witnessSetSha256: sha256(stableJson(targets)),
+        } } : {}),
         targets,
       },
       antiDuplication: {
@@ -158,7 +181,7 @@ function main() {
         priorPlanOverlaps: 0,
       },
     };
-    writeFileSync(outputPath, `${JSON.stringify(plan, null, 2)}\n`);
+    writeFileSync(outputPath, `${JSON.stringify(plan, null, 2)}\n`, { flag: "wx" });
     planSummaries.push({
       stateCode,
       planId,
@@ -170,10 +193,10 @@ function main() {
 
   const evaluation = {
     schemaVersion: 1,
-    evaluationId: PREFLIGHT_EVALUATION_ID,
+    evaluationId,
     evaluatedAt: preflight.evaluatedAt,
-    status: "go-stretch-gate-cleared",
-    objective: "Measure the complete CPNWH archive against the pinned current county-species determination set and authorize only strict, unique, overlap-adjusted historical presence pairs.",
+    status: "go-positive-marginal-yield",
+    objective: "Measure unique, overlap-adjusted historical presence candidates against the pinned current determination set; yield targets do not exclude useful residual evidence.",
     canonicalCheckout: "C:/Code/project-isitusa",
     baseline: preflight.baseline,
     datasetIdentity: {
@@ -186,9 +209,9 @@ function main() {
     },
     decision: {
       disposition: "go",
-      substantialMinimumNetDeterminations: 10000,
+      scaleTargetNetDeterminations: 10000,
       measuredNetEligiblePairs: preflight.counts.netEligiblePairs,
-      thresholdClearedBy: preflight.counts.netEligiblePairs - 10000,
+      scaleTargetAchieved: preflight.counts.netEligiblePairs >= 10000,
       verifiedAbsentConflicts: preflight.counts.verifiedAbsentConflicts,
     },
     exactMeasurement: preflight.counts,
@@ -199,9 +222,12 @@ function main() {
     stateMeasurements: preflight.states,
     topSpecies: preflight.topSpecies,
     preflightElapsedMs: preflight.elapsedMs,
+    ...(recovery ? { metadataRecovery: recovery, preflightSha256: sha256(readFileSync(options.preflight)) } : {}),
     plans: planSummaries,
     safeguards: [
-      "Only PreservedSpecimen rows with stable record and occurrence identities, CC0 licensing, a valid nonfuture event year, an exact source species rank, a blank identification qualifier, an exact unique two-token catalog plant binomial, and one active county alias qualified.",
+      recovery
+        ? "PreservedSpecimen rows require one audited stable identity, CC0 licensing, an exact unqualified catalog plant binomial and active county match. Normalized collection dates may be unknown; raw narrative remains retained. Invalid dates and reviewed specimen/geography contradictions are held."
+        : "Only PreservedSpecimen rows with stable record and occurrence identities, CC0 licensing, a valid nonfuture event year, an exact source species rank, a blank identification qualifier, an exact unique two-token catalog plant binomial, and one active county alias qualified.",
       "Cultivated or captive text in locality, occurrence remarks, habitat, or establishment means was rejected conservatively.",
       "All gross pairs were subtracted from the pinned verified-present set; verified-absent conflicts were separately blocked and measured at zero.",
       "Source silence and all rejected rows create no absence or non-detection outcome.",
@@ -209,9 +235,9 @@ function main() {
     ],
   };
   mkdirSync(path.dirname(options.evaluationOutput), { recursive: true });
-  writeFileSync(options.evaluationOutput, `${JSON.stringify(evaluation, null, 2)}\n`);
+  writeFileSync(options.evaluationOutput, `${JSON.stringify(evaluation, null, 2)}\n`, { flag: "wx" });
   console.log(JSON.stringify({
-    evaluationId: PREFLIGHT_EVALUATION_ID,
+    evaluationId,
     planCount: planSummaries.length,
     candidateCount: planSummaries.reduce((total, plan) => total + plan.candidateCount, 0),
     netPairSetSha256: preflight.pairHashes.netEligible,

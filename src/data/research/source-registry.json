@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-05",
+  "updatedAt": "2026-09-06",
   "sources": [
     {
       "id": "eddmaps",
@@ -458,13 +458,21 @@
     {
       "id": "cpnwh-preserved-specimens",
       "label": "Consortium of Pacific Northwest Herbaria preserved specimens",
-      "aliases": ["CPNWH Darwin Core Archive", "Pacific Northwest Herbaria specimen records"],
+      "aliases": [
+        "CPNWH Darwin Core Archive",
+        "Pacific Northwest Herbaria specimen records"
+      ],
       "authority": "Consortium of Pacific Northwest Herbaria and contributing collections",
       "tier": "academic",
       "homepage": "https://www.pnwherbaria.org/",
       "access": "download",
-      "geographicScope": ["United States", "Pacific Northwest"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "United States",
+        "Pacific Northwest"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "dataFreshThrough": "2026-06-04",
@@ -473,7 +481,10 @@
       "researchAdapter": {
         "id": "cpnwh-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/cpnwh-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.1.0"
+        ],
         "parameterSchema": "src/data/research/schemas/cpnwh-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
@@ -482,7 +493,7 @@
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       },
-      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Metadata recovery accepts an audited stable occurrence ID or archive-bound core ID and may preserve an unknown normalized collection date. Cultivated or captive records, invalid dates, conflicting identities, reviewed source contradictions, non-species ranks, ambiguous taxonomy and unresolved geography are excluded. Raw source details and acquisition bounds remain retained; source silence and every rejected row create no absence or non-detection assertion."
     },
     {
       "id": "nybg-preserved-specimens",

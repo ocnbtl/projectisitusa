@@ -3,19 +3,20 @@ import { gzipSync } from "node:zlib";
 
 import type { ResearchSourceAdapter, SourceAdapterContext, SourceAdapterResult } from "@/lib/research/source-adapter";
 import type { EvidenceReviewEvent, ResearchPairOutcome, RunEvidenceAssertionEvent } from "@/lib/research/types";
-import { getStateDefinition, listCountyEquivalents } from "@/lib/research/geography-registry";
+import { getStateDefinition, listCountyEquivalents, resolveCountyEquivalent } from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
+import { type SpecimenMetadataRecovery, type SpecimenRecoveryWitness, validateSpecimenRecoveryWitness } from "../specimen-record-metadata";
 
 export const CPNWH_SOURCE_ID = "cpnwh-preserved-specimens" as const;
 export const CPNWH_ADAPTER_ID = "cpnwh-preserved-specimens-snapshot" as const;
-export const CPNWH_ADAPTER_VERSION = "1.0.0" as const;
+export const CPNWH_ADAPTER_VERSION = "1.1.0" as const;
 export const CPNWH_DATASET_URL = "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip" as const;
 export const CPNWH_POLICY_URL = "https://www.pnwherbaria.org/data/datausagepolicy.php" as const;
 export const CPNWH_ARCHIVE_SHA256 = "cfb9ae60c2780734426367fd5371baa2262ac97b25214b33ba07f04a5d6e4180" as const;
 export const CPNWH_OCCURRENCE_SHA256 = "2e089934fd1d9d1c9791f793593b5f2e4af8006fdd1c44196b14bd2b8194d8b5" as const;
 export const CPNWH_CC0_LICENSE = "https://creativecommons.org/publicdomain/zero/1.0/" as const;
 
-export type CpnwhTarget = {
+export type CpnwhTarget = SpecimenRecoveryWitness & {
   pairKey: string;
   recordId: string;
   occurrenceId: string;
@@ -25,8 +26,8 @@ export type CpnwhTarget = {
   sourceCounty: string;
   speciesId: string;
   scientificName: string;
-  eventDate: string;
-  year: number;
+  eventDate: string | null;
+  year: number | null;
   institutionCode: string;
   collectionCode: string;
   catalogNumber: string;
@@ -47,6 +48,7 @@ type CpnwhParameters = {
   archiveAcquiredAt: string;
   preflightEvaluationId: string;
   targetPairSetSha256: string;
+  metadataRecovery?: SpecimenMetadataRecovery;
   targets: CpnwhTarget[];
   candidatePairs: string[];
 };
@@ -97,20 +99,46 @@ function parseParameters(context: SourceAdapterContext) {
   assert(stableJson(candidatePairs) === stableJson(requestedPairs), "CPNWH candidates differ from the requested pairs.");
   assert(stableJson(candidatePairs) === stableJson(targetPairs), "CPNWH targets differ from the requested pairs.");
   assert(sha256(candidatePairs.join("\n")) === parameters.targetPairSetSha256, "CPNWH target pair hash differs.");
-  assert(new Set(parameters.targets.map((target) => target.occurrenceId)).size === parameters.targets.length, "CPNWH witness occurrence identities are not unique within the state plan.");
+  assert(new Set(parameters.targets.map((target) => parameters.metadataRecovery ? target.identityKey : target.occurrenceId)).size === parameters.targets.length, "CPNWH witness identities are not unique within the state plan.");
+  if (parameters.metadataRecovery) {
+    const recovery = parameters.metadataRecovery;
+    assert(recovery.version === 1, "CPNWH metadata recovery version differs.");
+    assert(/^[0-9a-f]{64}$/u.test(recovery.preflightSha256), "CPNWH preflight hash is invalid.");
+    assert(sha256(stableJson(parameters.targets)) === recovery.witnessSetSha256, "CPNWH recovery witness set hash differs.");
+    assert(Date.parse(parameters.archiveAcquiredAt) <= Date.parse(recovery.extractedAt)
+      && Date.parse(recovery.extractedAt) <= Date.parse(context.runStartedAt), "CPNWH recovery extraction chronology differs.");
+  }
   return parameters;
 }
 
-function validateTarget(context: SourceAdapterContext, target: CpnwhTarget, activeCountyFips: Set<string>) {
+function validateTarget(context: SourceAdapterContext, target: CpnwhTarget, activeCountyFips: Set<string>, recovery?: SpecimenMetadataRecovery) {
   assert(target.pairKey === pairKey(target), `CPNWH target pair identity differs for ${target.pairKey}.`);
   assert(target.stateCode === context.stateCode, `CPNWH target state differs for ${target.pairKey}.`);
   assert(target.sourceState.trim().length > 0 && target.sourceCounty.trim().length > 0, `CPNWH source geography is missing for ${target.pairKey}.`);
   assert(activeCountyFips.has(target.countyFips), `CPNWH target county is inactive for ${target.pairKey}.`);
-  assert(/^\d+$/u.test(target.recordId), `CPNWH portal record ID is invalid for ${target.pairKey}.`);
-  assert(/^[A-Za-z0-9:._{}\/-]{20,200}$/u.test(target.occurrenceId), `CPNWH occurrence ID is invalid for ${target.pairKey}.`);
   assert(target.license === CPNWH_CC0_LICENSE, `CPNWH witness license differs for ${target.pairKey}.`);
-  assert(Number.isInteger(target.year) && target.year >= 1500 && target.year <= 2026, `CPNWH event year is invalid for ${target.pairKey}.`);
-  assert(target.eventDate.trim().length > 0, `CPNWH event date is missing for ${target.pairKey}.`);
+  if (recovery) {
+    validateSpecimenRecoveryWitness(target, recovery);
+    const row = target.sourceRow!;
+    const state = getStateDefinition(target.stateCode)!;
+    assert([state.stateName, ...Object.values(state.sourceStateNames)].some((name) => normalizedText(name) === normalizedText(row.stateProvince)), "CPNWH raw source state differs.");
+    assert(normalizedText(row.countryCode ?? "") === "us" || ["united states", "united states of america", "u.s.a.", "usa"].includes(normalizedText(row.country ?? "")), "CPNWH raw country differs.");
+    assert(row.license?.trim() === target.license, "CPNWH raw witness license differs.");
+    assert(normalizedText(row.basisOfRecord).replace(/[^a-z]/gu, "") === "preservedspecimen", "CPNWH raw witness is not a preserved specimen.");
+    assert(normalizedText(`${row.genus ?? ""} ${row.specificEpithet ?? ""}`) === normalizedText(target.scientificName)
+      && normalizedText(row.taxonRank) === "species" && !normalizedText(row.identificationQualifier ?? ""), "CPNWH raw taxonomy differs.");
+    const geography = resolveCountyEquivalent({ stateCode: target.stateCode, countyName: row.county, sourceId: CPNWH_SOURCE_ID });
+    assert(geography.status === "resolved" && geography.county.countyFips === target.countyFips
+      && row.stateProvince?.trim() === target.sourceState && row.county?.trim() === target.sourceCounty, "CPNWH raw geography differs.");
+    assert(!/\b(captive|captivity|cultivated|cultivation|cultured|garden|greenhouse|managed|nursery|planted|planting|arboretum|botanical garden|campus landscape|landscaped|zoo|aquarium)\b/iu.test(
+      [row.locality, row.occurrenceRemarks, row.habitat, row.establishmentMeans].filter(Boolean).join(" ")), "CPNWH cultivated or captive witness.");
+  } else {
+    assert(/^\d+$/u.test(target.recordId), `CPNWH portal record ID is invalid for ${target.pairKey}.`);
+    assert(/^[A-Za-z0-9:._{}\/-]{20,200}$/u.test(target.occurrenceId), `CPNWH occurrence ID is invalid for ${target.pairKey}.`);
+    assert(target.year !== null && Number.isInteger(target.year) && target.year >= 1500 && target.year <= 2026, `CPNWH event year is invalid for ${target.pairKey}.`);
+    assert(target.eventDate !== null && target.eventDate.trim().length > 0, `CPNWH event date is missing for ${target.pairKey}.`);
+    assert(!target.sourceRow && !target.identityKey && !target.sourceRowSha256, "CPNWH recovery fields require metadata recovery mode.");
+  }
   const requested = context.requestedPairs.find((pair) => pairKey(pair) === target.pairKey);
   assert(requested, `CPNWH target is not requested: ${target.pairKey}.`);
   assert(normalizedText(requested.scientificName) === normalizedText(target.scientificName), `CPNWH target taxonomy differs for ${target.pairKey}.`);
@@ -139,7 +167,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: CpnwhTar
     claim_type: "recorded-present",
     evidence_kind: "occurrence",
     scope: "point",
-    source_record_id: `cpnwh:${target.occurrenceId}`,
+    source_record_id: target.occurrenceId ? `cpnwh:${target.occurrenceId}` : `cpnwh-record-id:${CPNWH_ARCHIVE_SHA256}:${target.recordId}`,
     source_url: CPNWH_DATASET_URL,
     source_record_date: target.eventDate,
     retrieved_at: archiveAcquiredAt,
@@ -155,7 +183,9 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: CpnwhTar
       source_county: target.sourceCounty,
       county_fips: target.countyFips,
     },
-    temporal_scope: `Preserved specimen event recorded as ${target.eventDate}; validated event year ${target.year}.`,
+    temporal_scope: target.eventDate === null
+      ? "Historical preserved specimen; normalized collection date unknown. Original narrative and any date bounds remain in the retained source row. Acquisition does not establish current occurrence."
+      : `Preserved specimen event recorded as ${target.eventDate}; validated event year ${target.year}.`,
     spatial_scope: `Historical physical specimen occurrence assigned from explicit provider county geography in ${target.stateCode}; not a complete inventory of the county.`,
     survey_scope: null,
     normalized_payload_hash: normalizedPayloadHash,
@@ -165,7 +195,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: CpnwhTar
       "Source silence, excluded cultivated records, missing geography, and all rejected rows create no absence or non-detection claim.",
     ],
     notes: [
-      `CPNWH portal record ${target.recordId}; occurrenceID ${target.occurrenceId}.`,
+      `CPNWH portal record ${target.recordId || "not supplied"}; occurrenceID ${target.occurrenceId || "not supplied; archive-bound core identity used"}.`,
       `Institution ${target.institutionCode || "unspecified"}; collection ${target.collectionCode || "unspecified"}; catalog ${target.catalogNumber || "unspecified"}.`,
       `Record license ${target.license}; archive ${CPNWH_ARCHIVE_SHA256}.`,
     ],
@@ -188,11 +218,11 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: CpnwhTar
     publication_eligible: true,
     reason_codes: [
       "retained-cc0-archive",
-      "stable-occurrence-identity",
+      target.occurrenceId ? "stable-occurrence-identity" : "stable-archive-bound-core-identity",
       "preserved-specimen-basis",
       "exact-catalog-binomial",
       "exact-active-county-name",
-      "valid-event-year",
+      target.eventDate === null ? "normalized-collection-date-unknown" : "valid-event-year",
       "cultivation-text-excluded",
       "occurrence-only-semantics",
     ],
@@ -215,7 +245,7 @@ export async function runCpnwhPreservedSpecimens(context: SourceAdapterContext):
   const reviews: EvidenceReviewEvent[] = [];
   const outcomes: ResearchPairOutcome[] = [];
   for (const target of [...parameters.targets].sort((left, right) => compareText(left.pairKey, right.pairKey))) {
-    validateTarget(context, target, activeCountyFips);
+    validateTarget(context, target, activeCountyFips, parameters.metadataRecovery);
     const accepted = buildAssertionAndReview(context, target, completedAt, parameters.archiveAcquiredAt);
     assertions.push(accepted.assertion);
     reviews.push(accepted.review);
@@ -248,6 +278,7 @@ export async function runCpnwhPreservedSpecimens(context: SourceAdapterContext):
     archiveAcquiredAt: parameters.archiveAcquiredAt,
     preflightEvaluationId: parameters.preflightEvaluationId,
     targetPairSetSha256: parameters.targetPairSetSha256,
+    ...(parameters.metadataRecovery ? { metadataRecovery: parameters.metadataRecovery } : {}),
   };
   return {
     completedAt,
