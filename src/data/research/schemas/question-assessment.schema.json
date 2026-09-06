@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/question-assessment.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventType",
+    "assessmentId",
+    "planId",
+    "planSha256",
+    "pairKey",
+    "questionId",
+    "disposition",
+    "answer",
+    "stoppingRuleId",
+    "proofIds",
+    "assessedAt",
+    "actor",
+    "supersedes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "eventType": {
+      "const": "research.question-assessed"
+    },
+    "assessmentId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "planSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pairKey": {
+      "type": "string",
+      "minLength": 1
+    },
+    "questionId": {
+      "enum": [
+        "documented-historical-occurrence",
+        "wild-occurrence-in-period",
+        "established-population-in-period",
+        "official-status-as-of"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "supported",
+        "assessed-unresolved",
+        "assessed-with-gaps"
+      ]
+    },
+    "answer": {
+      "anyOf": [
+        {
+          "enum": [
+            "documented-occurrence",
+            "wild-occurrence-recorded",
+            "established-population",
+            "officially-eradicated",
+            "officially-absent"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "stoppingRuleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proofIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "assessedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "agent",
+            "human"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "supersedes": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

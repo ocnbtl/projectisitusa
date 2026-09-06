@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/question-coverage-proof.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "proofId",
+    "planSha256",
+    "pairKey",
+    "questionId",
+    "requirementId",
+    "kind",
+    "methodId",
+    "answer",
+    "sourceId",
+    "runIds",
+    "assertionEventIds",
+    "reviewEventIds",
+    "outcomeIds",
+    "artifacts",
+    "evaluatedAt",
+    "explanation"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "proofId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "planSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pairKey": {
+      "type": "string",
+      "minLength": 1
+    },
+    "questionId": {
+      "enum": [
+        "documented-historical-occurrence",
+        "wild-occurrence-in-period",
+        "established-population-in-period",
+        "official-status-as-of"
+      ]
+    },
+    "requirementId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "kind": {
+      "enum": [
+        "support",
+        "reviewed-scope-no-answer",
+        "reviewed-inapplicable-scope",
+        "reviewed-access-gap",
+        "contradiction-review"
+      ]
+    },
+    "methodId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "answer": {
+      "anyOf": [
+        {
+          "enum": [
+            "documented-occurrence",
+            "wild-occurrence-recorded",
+            "established-population",
+            "officially-eradicated",
+            "officially-absent"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sourceId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "runIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "assertionEventIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "reviewEventIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "outcomeIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "evaluatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "explanation": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

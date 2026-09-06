@@ -1,3 +1,4 @@
+import { buildQuestionAssessmentProjection } from "@/lib/research/question-assessment-ledger";
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
@@ -39,7 +40,7 @@ import {
   replaceStatePresenceFromResearch,
   serializePresenceOutsideState,
 } from "@/lib/research/compatibility-projection";
-import { loadImmutableResearchRun, readNdjson as readRunNdjson } from "@/lib/research/run-files";
+import { loadImmutableResearchRun, sha256, stableJson, readNdjson as readRunNdjson } from "@/lib/research/run-files";
 import { selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
 import {
   buildProtocolCellProjection,
@@ -546,6 +547,12 @@ const protocolCellProjection = buildProtocolCellProjection({
   immutableRuns,
 });
 
+const questionProjection = buildQuestionAssessmentProjection({
+  root: ROOT, stateCode: STATE_CODE, asOf: AS_OF, catalogSpecies, counties: counties.map((county) => ({ ...county, geographyScopeSha256: sha256(stableJson(countyRegistry.countyEquivalents.find((c) => c.countyFips === county.countyFips))) })),
+  activeAssertions: projectedRunAssertions, reviewEvents: [...runReviewEvents, ...lateReviewEvents],
+  immutableRuns, jurisdictionEvidence: jurisdictionEvidenceRegistry.records,
+});
+
 function pairReviewStatus(pairEvidence: EvidenceAssertion[]): ReviewStatus {
   const ranking = new Map<ReviewStatus, number>([
     ["not-reviewed", 0],
@@ -680,6 +687,8 @@ for (const county of counties) {
     }
 
     return {
+      ...(questionProjection?.pairs.has(pairKey(county.countyFips, speciesEntry.id))
+        ? { questionAssessment: questionProjection.pairs.get(pairKey(county.countyFips, speciesEntry.id))! } : {}),
       speciesId: speciesEntry.id,
       commonName: speciesEntry.commonName,
       scientificName: speciesEntry.scientificName,
@@ -749,6 +758,7 @@ for (const county of counties) {
   const fullCountyResolvablePairs =
     projectionScope.applicableSpeciesCount + projectionScope.unknownSpeciesCount;
   countyFiles.push({
+    ...(questionProjection ? { questionAssessment: questionProjection.counties.get(county.countyFips)! } : {}),
     schemaVersion: 4,
     stateCode: STATE_CODE,
     countyFips: county.countyFips,
@@ -920,6 +930,7 @@ if (conflictCount > 0) {
 }
 
 const summary: ResearchStateSummary = {
+  ...(questionProjection ? { questionAssessment: questionProjection.summary } : {}),
   schemaVersion: 4,
   stateCode: STATE_CODE,
   stateName: jurisdiction.stateName,

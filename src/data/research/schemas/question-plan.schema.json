@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/question-plan.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "planId",
+    "version",
+    "countyFips",
+    "speciesId",
+    "asOf",
+    "inputScopeSha256",
+    "questions",
+    "requirements",
+    "stoppingRules",
+    "reopeningConditions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "countyFips": {
+      "type": "string",
+      "pattern": "^[0-9]{5}$"
+    },
+    "speciesId": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "asOf": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "inputScopeSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "required",
+          "predicate",
+          "period",
+          "supportMethods"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "documented-historical-occurrence",
+              "wild-occurrence-in-period",
+              "established-population-in-period",
+              "official-status-as-of"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "predicate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "period": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "start",
+              "end"
+            ],
+            "properties": {
+              "start": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              }
+            }
+          },
+          "supportMethods": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "questionId",
+          "sourceFamily",
+          "rationale",
+          "evaluatedCoverageMethods"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "questionId": {
+            "enum": [
+              "documented-historical-occurrence",
+              "wild-occurrence-in-period",
+              "established-population-in-period",
+              "official-status-as-of"
+            ]
+          },
+          "sourceFamily": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evaluatedCoverageMethods": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          }
+        }
+      },
+      "minItems": 0
+    },
+    "stoppingRules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "questionId",
+          "kind",
+          "rationale",
+          "requiredRequirementIds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "questionId": {
+            "enum": [
+              "documented-historical-occurrence",
+              "wild-occurrence-in-period",
+              "established-population-in-period",
+              "official-status-as-of"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "sufficient-evidence",
+              "completed-accessible-plan",
+              "reviewed-access-gaps"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requiredRequirementIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "reopeningConditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  }
+}

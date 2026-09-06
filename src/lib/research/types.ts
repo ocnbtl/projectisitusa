@@ -1,3 +1,5 @@
+import type { PairQuestionAssessmentProjection, QuestionAssessmentCoverage } from "@/lib/research/question-assessment-ledger";
+export type { PairQuestionPlan, QuestionCoverageProof, ResearchQuestionAssessment } from "@/lib/research/question-assessments";
 import type { SpeciesCategory } from "@/lib/data/types";
 import type {
   StateSpeciesApplicability,
@@ -220,6 +222,7 @@ export interface PairEvidenceSummary {
 }
 
 export interface ResearchPairRecord {
+  questionAssessment?: PairQuestionAssessmentProjection;
   speciesId: string;
   commonName: string;
   scientificName: string;
@@ -295,6 +298,7 @@ export interface ResearchProjectionScope {
 }
 
 export interface ResearchCountyFile {
+  questionAssessment?: QuestionAssessmentCoverage;
   schemaVersion: 4;
   stateCode: string;
   countyFips: string;
@@ -328,6 +332,7 @@ export interface ResearchQueueEntry {
 }
 
 export interface ResearchStateSummary {
+  questionAssessment?: QuestionAssessmentCoverage;
   schemaVersion: 4;
   stateCode: string;
   stateName: string;

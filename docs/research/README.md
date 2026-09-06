@@ -284,6 +284,10 @@ Common examples:
 
 A rejection is not a completed pair review by itself. Pair completion requires an explicit outcome with `scope_complete: true`.
 
+## Question-aware research assessments
+
+The [question assessment extension](question-assessments.md) separates historical occurrence, wild observations within a period, establishment and official status. It requires explicit retained proofs and keeps research completion independent of biological determination coverage. The initial DC pilot activates supported answers only; unanswered questions remain outstanding.
+
 ## Pair Outcomes And Research Coverage
 
 Write pair outcomes to `src/data/research/runs/<run-id>/outcomes.ndjson` under the target model. Use:

@@ -32,6 +32,8 @@ import {
   type ResearchCatalogSpecies,
 } from "@/lib/research/pair-resolution";
 import { fetchResearchProjectionJson } from "@/lib/research/public-projection-fetch";
+import { describeResearchQuestions } from "@/lib/research/question-assessment-presentation";
+import type { QuestionAssessmentCoverage } from "@/lib/research/question-assessment-ledger";
 import { describeTemporalDetermination } from "@/lib/research/temporal-determination-presentation";
 import {
   buildResearchHref,
@@ -74,6 +76,7 @@ interface ResearchProjectionScope {
 }
 
 export interface ResearchSummaryFile {
+  questionAssessment?: QuestionAssessmentCoverage;
   schemaVersion: string | number;
   stateCode: string;
   stateName: string;
@@ -491,9 +494,11 @@ function CurrentDeterminationLabel({ pair }: { pair: CountyResearchPair }) {
 function EvidenceDetails({
   pair,
   sourceLabels,
+  questionCoverage,
 }: {
   pair: CountyResearchPair;
   sourceLabels: Map<string, string>;
+  questionCoverage?: QuestionAssessmentCoverage;
 }) {
   const temporal = describeTemporalDetermination(pair);
   return (
@@ -511,6 +516,30 @@ function EvidenceDetails({
             </div>
           </dl>
           <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{temporal.explanation}</p>
+        </section>
+      ) : null}
+      {questionCoverage ? (
+        <section aria-label="Research question assessments" className="mb-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 sm:p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="text-sm font-semibold">Research questions</h3>
+            <p className="text-xs text-[var(--muted)]">{pair.questionAssessment?.assessedQuestions ?? 0} of {questionCoverage.definitions.filter((q) => q.required).length} assessed</p>
+          </div>
+          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+            {describeResearchQuestions(questionCoverage, pair.questionAssessment).map((question) => (
+              <div key={question.id} className="min-w-0">
+                <h4 className="text-xs font-medium text-[var(--muted)]">{question.label}</h4>
+                <p className="mt-1 text-sm font-medium">{question.statusLabel}</p>
+                <p className="mt-1 text-xs text-[var(--muted)]">{question.periodLabel}</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{question.explanation}</p>
+                {question.citations.map((citation) => (
+                  <a key={citation.evidenceId} href={citation.url} target="_blank" rel="noreferrer"
+                    className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-[var(--accent-strong)] underline underline-offset-2">
+                    {sourceLabels.get(citation.sourceId) ?? citation.sourceId}<ExternalLink aria-hidden="true" size={12} />
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
         </section>
       ) : null}
       <dl className="grid gap-x-6 gap-y-3 text-xs sm:grid-cols-2 lg:grid-cols-5">
@@ -613,6 +642,7 @@ function EvidenceDetails({
 function CountyPairTable({
   pairs,
   sourceLabels,
+  questionCoverage,
   expandedSpeciesIds,
   onToggleEvidence,
   sortKey,
@@ -621,6 +651,7 @@ function CountyPairTable({
 }: {
   pairs: CountyResearchPair[];
   sourceLabels: Map<string, string>;
+  questionCoverage?: QuestionAssessmentCoverage;
   expandedSpeciesIds: Set<string>;
   onToggleEvidence: (speciesId: string) => void;
   sortKey: PairSortKey;
@@ -731,7 +762,7 @@ function CountyPairTable({
                   {isExpanded ? (
                     <tr>
                       <td colSpan={7} className="p-0">
-                        <EvidenceDetails pair={pair} sourceLabels={sourceLabels} />
+                        <EvidenceDetails pair={pair} sourceLabels={sourceLabels} questionCoverage={questionCoverage} />
                       </td>
                     </tr>
                   ) : null}
@@ -791,7 +822,7 @@ function CountyPairTable({
                 </span>
               </button>
               {isExpanded ? (
-                <EvidenceDetails pair={pair} sourceLabels={sourceLabels} />
+                <EvidenceDetails pair={pair} sourceLabels={sourceLabels} questionCoverage={questionCoverage} />
               ) : null}
             </div>
           );
@@ -1123,10 +1154,19 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                 </p>
               </div>
               <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
-                {formatPercent(countyData.summary.researchCoveragePercent)} full-catalog research coverage
+                {formatPercent(countyData.summary.researchCoveragePercent)} full-catalog source-screen coverage
               </p>
             </div>
 
+            {countyData.questionAssessment ? (
+              <div className="mt-4 rounded-lg border border-[var(--border)] p-3 text-sm">
+                <p className="font-medium">Research questions: {formatNumber(countyData.questionAssessment.assessedQuestionCount)} of {formatNumber(countyData.questionAssessment.requiredQuestionCount)} assessed</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {formatNumber(countyData.questionAssessment.fullyAssessedPairCount)} of {formatNumber(countyData.questionAssessment.pairDenominator)} county-species pairs have every required question assessed. Assessment cutoff: {countyData.questionAssessment.assessmentAsOf}.
+                  {" "}Occurrence history, wild observations, establishment and official absence or eradication are assessed separately.
+                </p>
+              </div>
+            ) : null}
             <dl className="mt-4 grid grid-cols-2 divide-x divide-y divide-[var(--border)] border-y border-[var(--border)] sm:grid-cols-3 lg:grid-cols-6">
               <Metric label="Verified present" value={formatNumber(countyData.summary.verifiedPresent)} />
               <Metric label="Verified absent" value={formatNumber(countyData.summary.verifiedAbsent)} />
@@ -1197,6 +1237,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             {pagePairs.length ? (
               <CountyPairTable
                 pairs={pagePairs}
+                questionCoverage={countyData.questionAssessment}
                 sourceLabels={sourceLabels}
                 expandedSpeciesIds={expandedSpeciesIds}
                 onToggleEvidence={toggleEvidence}
@@ -1556,8 +1597,8 @@ function ResearchControlCenterContent({
     ["Not detected", formatNumber(summary.summary.notDetected)],
     ["Unresolved", formatNumber(summary.summary.researchedUnresolved)],
     ["Not researched", formatNumber(summary.summary.notResearched)],
-    ["Full research coverage", formatPercent(summary.summary.researchCoveragePercent)],
-    ["Bounded coverage", formatPercent(summary.summary.boundedAcquisition.researchCoveragePercent)],
+    ["Source-screen coverage", formatPercent(summary.summary.researchCoveragePercent)],
+    ["Bounded source-screen coverage", formatPercent(summary.summary.boundedAcquisition.researchCoveragePercent)],
     ["Conflicts", formatNumber(summary.summary.conflictCount)],
   ];
 
