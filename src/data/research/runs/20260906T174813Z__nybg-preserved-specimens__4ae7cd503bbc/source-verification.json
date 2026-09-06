@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-06T17:55:17.519Z",
+  "runId": "20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc",
+  "sourceId": "nybg-preserved-specimens",
+  "stateCode": "NY",
+  "pairKeys": [
+    "36005:medicago-sativa",
+    "36027:medicago-sativa",
+    "36029:medicago-sativa",
+    "36029:myosotis-sylvatica",
+    "36039:sonchus-arvensis",
+    "36047:setaria-verticillata",
+    "36047:sonchus-arvensis",
+    "36059:sonchus-arvensis",
+    "36061:hordeum-murinum",
+    "36061:medicago-sativa",
+    "36061:sonchus-arvensis",
+    "36061:veronica-serpyllifolia",
+    "36071:medicago-sativa",
+    "36081:medicago-sativa",
+    "36081:sonchus-arvensis",
+    "36085:sonchus-arvensis",
+    "36087:sonchus-arvensis",
+    "36103:sonchus-arvensis",
+    "36107:medicago-lupulina",
+    "36107:medicago-sativa",
+    "36119:hordeum-marinum",
+    "36119:hordeum-murinum",
+    "36119:scleranthus-annuus",
+    "36119:sonchus-arvensis",
+    "36119:thinopyrum-intermedium",
+    "36123:medicago-lupulina",
+    "36123:medicago-sativa"
+  ],
+  "parameterHash": "4ae7cd503bbc91b975025a45abcada6812f1cd197f37e83c9bcff8a257e393b7",
+  "authority": {
+    "name": "New York Botanical Garden preserved specimens",
+    "sourceUrl": "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences",
+    "publisher": "The New York Botanical Garden"
+  },
+  "terms": {
+    "license": "NYBG specimen metadata: CC0 1.0. WCVP v16 taxonomy reference and derived mappings: CC BY 3.0, Royal Botanic Gardens, Kew; attribution and transformation notice retained in the mapping artifact and assertions.",
+    "termsUrl": "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-09-06T17:55:17.519Z",
+    "freshnessDate": "2026-08-25"
+  },
+  "geography": {
+    "method": "Explicit provider state and county-equivalent text must resolve uniquely to an active national-v1 county-equivalent registry entry after the documented NYBG Co. suffix is expanded to County. Missing, retired, unknown, and ambiguous county names are rejected; coordinates are not used.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Explicit provider county and locality were reviewed. No coordinates were used to assign or replace a county."
+  },
+  "taxonomy": {
+    "method": "Independent review supports WCVP v16 exact full-name/authorship or explicit source autonym-parent interpretation, with the catalog accepted concept equal to or an accepted ancestor of the source concept. Shared species ancestry alone is insufficient; sibling subspecies are not interchangeable. Autonym-parent interpretation asserts only the source parent species concept, not Kew acceptance of the exact source rank or unlisted infraspecific name.",
+    "targetSpeciesIds": [
+      "hordeum-marinum",
+      "hordeum-murinum",
+      "medicago-lupulina",
+      "medicago-sativa",
+      "myosotis-sylvatica",
+      "scleranthus-annuus",
+      "setaria-verticillata",
+      "sonchus-arvensis",
+      "thinopyrum-intermedium",
+      "veronica-serpyllifolia"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "occurrenceID",
+      "id",
+      "archiveSha256",
+      "sourceRowSha256",
+      "WCVP plant_name_id",
+      "accepted_plant_name_id",
+      "parent_plant_name_id"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "Only historical recorded occurrence is supported. No presence in 2026, wildness, establishment, introduced status or countywide distribution is inferred.",
+      "Missing evidence, rejected records, unknown dates and incomplete scope do not establish absence or survey non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-taxonomy-mappings.json",
+      "sha256": "b7069eef57a0cd8a271fa395e4ed841bae51e0c861486585ff6eb42455185453",
+      "bytes": 16395
+    },
+    {
+      "path": "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-source-identity.json",
+      "sha256": "40efedd82426fb6beb43f9733f748b82b56bbd8512fa721c5d980bfc2a1884f5",
+      "bytes": 1458
+    },
+    {
+      "path": "src/data/research/runs/20260906T174813Z__nybg-preserved-specimens__4ae7cd503bbc/artifacts/nybg-retained-witnesses.json.gz",
+      "sha256": "ccd3e337d1cadf41a667d0d279ad5b78cc977ecd13370d477e3a2e0af3a8478e",
+      "bytes": 7943
+    }
+  ],
+  "caveats": [
+    "The source was verified as retained bytes at 2026-09-06T17:55:17.519Z. Live provider availability was not checked; this worker issued zero provider requests and did not retrieve or rescan either complete archive.",
+    "This pilot reviews the exact 27 NY pairs from the committed plan. Snapshot and pagination completeness apply to this bounded retained-inventory replay. Earlier complete NYBG archive and stable-identity audits supply acquisition lineage; this is not a new complete-archive taxonomy screen or completion of all source research.",
+    "Independent interpretation and source-context review by lease worker /root/museum_nybg_ny found no material contradiction in these 27 rows. It verified 3271 retained WCVP raw-line hashes, 316 inventory raw-row hashes, all 27 source-row hashes, and the pinned reference, inventory, plan and admitted preflight hashes before execution.",
+    "Independent mapping routes: 15 exact authoritative full names and 12 explicit source autonym parents. Every catalog accepted taxon ID lies on the accepted source-concept ancestry path; no sibling-subspecies substitution is admitted.",
+    "The source-authored Medicago sativa var. sativa, Medicago lupulina var. lupulina and Myosotis sylvatica var. sylvatica names have no author after the repeated epithet. Scleranthus annuus L. subsp. annuus retains its parent author L. These explicitly declared autonyms resolve only through their exact Kew parent species concept.",
+    "The original authored Setaria verticillata var. ambigua (Guss.) Parl. is a retained Kew synonym of accepted Setaria verticillata, while the accepted Hordeum, Sonchus and Thinopyrum infraspecific concepts are contained by the respective catalog species concepts.",
+    "WCVP v16 was extracted 2026-06-04. README_WCVP.xlsx cell A6 states CC BY 3.0; the citation, licence URL and Isitusa selection/mapping/no-endorsement notice are retained. NYBG specimen metadata is separately CC0 1.0.",
+    "Only the pinned NYBG inventory and catalog/reference scope is supported. Changed witnesses, arbitrary new names, new sources or changed concepts require renewed review. This NY pilot does not independently validate every other state witness.",
+    "All original scientific names and collection-date precision remain retained. 25 dates span 1855 through 2023; 36123:medicago-lupulina and 36123:medicago-sativa remain explicitly undated. The 2026-08-25 freshnessDate identifies archive publication, not current biological persistence.",
+    "Context reviewed: 36061:veronica-serpyllifolia reports Central Park Strawberry Fields habitat Lawn; 36119:scleranthus-annuus reports a Pound Ridge reservation cemetery rock wall and Mowed lawn; 36071:medicago-sativa says Maple Lawn; 36029:medicago-sativa says Cherry Farm Swamp. These are preserved source contexts and do not by themselves prove either planting or spontaneous establishment.",
+    "Historical Yonkers wool-mill-yard localities and the exact declared county/municipality pairs were reviewed without a material conflict. No county was reassigned from coordinates or historical locality assumptions.",
+    "The canonical registered adapter is nybg-preserved-specimens-snapshot@1.2.0. Reviews are machine-validated; no human approval or integrated determination gain is claimed."
+  ]
+}
