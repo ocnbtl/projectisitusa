@@ -1,0 +1,2454 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-immutable-batch-integration",
+  "campaignId": "20260906-r2",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "admissionReceipt": "ops/national-research/receipts/source-evaluations/harvard-metadata-admission-20260906-r2.json",
+  "codeCommit": "ab97a87be4396d67d2d4e7eed7832fd3aaf9bea6",
+  "preMoveValidationCompletedAt": "2026-09-06T07:47:12.253Z",
+  "canonicalValidationCompletedAt": "2026-09-06T07:47:18.965Z",
+  "sourceId": "harvard-huh-usa-preserved-specimens",
+  "runCount": 39,
+  "assertions": 887,
+  "reviews": 887,
+  "outcomes": 887,
+  "rawAcquisitionRequests": 0,
+  "rejections": 0,
+  "errors": 0,
+  "absentConflicts": 0,
+  "allCollectionDatesNull": true,
+  "baseline": {
+    "schemaVersion": 1,
+    "campaignId": "20260906-r2",
+    "recordedAt": "2026-09-06T07:09:33.4920461Z",
+    "gitCommit": "9ee305503fd6d58954d5a2fe616b913f4540ba74",
+    "researchSourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+    "asOf": "2026-09-06",
+    "determinations": 315098,
+    "verifiedPresent": 311854,
+    "verifiedAbsent": 3244,
+    "fullCountySpeciesDenominator": 7872576,
+    "determinedPairSetSha256": "94eab46595469f7f165d7d36231007000048fcf7e20de8611bd3ce4ef3405eec",
+    "basis": "ops/national-research/receipts/source-evaluations/cpnwh-metadata-projection-verification-20260906-r1.json",
+    "publicRelease": "research-6927e5fe2efb-886700baca52fe1e",
+    "purpose": "Retained metadata-recovery opportunity measurement, not accepted new determinations"
+  },
+  "exactCandidatePairs": [
+    "02090:spergularia-rubra",
+    "02150:erysimum-cheiranthoides",
+    "04005:lepidium-perfoliatum",
+    "05003:verbena-litoralis",
+    "05005:ligustrum-vulgare",
+    "05011:verbena-litoralis",
+    "05013:senna-occidentalis",
+    "05015:reseda-alba",
+    "05017:verbena-litoralis",
+    "05041:linum-usitatissimum",
+    "05043:thlaspi-arvense",
+    "05057:ranunculus-parviflorus",
+    "05087:rosa-rubiginosa",
+    "05107:lysimachia-nummularia",
+    "05109:senna-occidentalis",
+    "05119:potentilla-recta",
+    "05119:tamarix-ramosissima",
+    "05127:verbascum-blattaria",
+    "05131:scleranthus-annuus",
+    "06001:linum-bienne",
+    "06001:polypogon-fugax",
+    "06001:symphytum-officinale",
+    "06005:verbena-brasiliensis",
+    "06007:datura-inoxia",
+    "06007:euonymus-alatus",
+    "06007:hibiscus-trionum",
+    "06007:ligustrum-vulgare",
+    "06007:vaccaria-hispanica",
+    "06009:malva-parviflora",
+    "06009:urtica-urens",
+    "06009:veronica-serpyllifolia",
+    "06019:physalis-philadelphica",
+    "06019:silene-gallica",
+    "06021:erodium-botrys",
+    "06023:lobularia-maritima",
+    "06023:rubus-bifrons",
+    "06029:datura-inoxia",
+    "06037:cupaniopsis-anacardioides",
+    "06037:ipomoea-indica",
+    "06037:limonium-sinuatum",
+    "06037:melissa-officinalis",
+    "06037:oenothera-glazioviana",
+    "06037:salpichroa-origanifolia",
+    "06037:sinapis-alba",
+    "06041:cryptomeria-japonica",
+    "06041:geranium-molle",
+    "06041:geranium-retrorsum",
+    "06041:linum-bienne",
+    "06041:salpichroa-origanifolia",
+    "06045:linum-bienne",
+    "06045:oenothera-glazioviana",
+    "06049:vaccaria-hispanica",
+    "06053:oenothera-stricta",
+    "06059:lepidium-ruderale",
+    "06059:sinapis-alba",
+    "06063:erodium-botrys",
+    "06063:erodium-moschatum",
+    "06063:silene-gallica",
+    "06065:linum-usitatissimum",
+    "06065:sinapis-alba",
+    "06069:iris-germanica",
+    "06071:dichondra-micrantha",
+    "06071:linum-usitatissimum",
+    "06071:rubus-ulmifolius",
+    "06073:cucumis-sativus",
+    "06073:echium-plantagineum",
+    "06073:ficus-benjamina",
+    "06073:heliotropium-arborescens",
+    "06073:podranea-ricasoliana",
+    "06077:lepidium-perfoliatum",
+    "06079:myoporum-laetum",
+    "06079:salpichroa-origanifolia",
+    "06081:linum-bienne",
+    "06081:reseda-alba",
+    "06083:dolichandra-unguis-cati",
+    "06083:passiflora-manicata",
+    "06083:podranea-ricasoliana",
+    "06085:sinapis-alba",
+    "06087:linum-bienne",
+    "06087:sisymbrium-irio",
+    "06093:rubus-bifrons",
+    "06093:scleranthus-annuus",
+    "06093:vaccaria-hispanica",
+    "06097:erodium-brachycarpum",
+    "06097:geranium-retrorsum",
+    "06097:sagina-procumbens",
+    "06099:sisymbrium-orientale",
+    "06099:verbena-brasiliensis",
+    "06101:sinapis-alba",
+    "06111:lantana-camara",
+    "06111:lathyrus-odoratus",
+    "06111:pinus-halepensis",
+    "12001:crotalaria-brevidens",
+    "12001:crotalaria-juncea",
+    "12001:crotalaria-retusa",
+    "12001:crotalaria-verrucosa",
+    "12001:indigofera-spicata",
+    "12001:lantana-montevidensis",
+    "12001:malva-parviflora",
+    "12001:polycarpon-tetraphyllum",
+    "12001:pyrostegia-venusta",
+    "12001:verbena-bonariensis",
+    "12003:heliotropium-amplexicaule",
+    "12005:wahlenbergia-marginata",
+    "12007:senna-occidentalis",
+    "12009:coccinia-grandis",
+    "12009:desmodium-triflorum",
+    "12009:ipomoea-indica",
+    "12009:leonotis-nepetifolia",
+    "12011:cestrum-diurnum",
+    "12011:datura-stramonium",
+    "12011:lobularia-maritima",
+    "12011:schinus-terebinthifolia",
+    "12013:silene-gallica",
+    "12015:clerodendrum-indicum",
+    "12015:schinus-terebinthifolia",
+    "12017:crotalaria-brevidens",
+    "12017:lantana-montevidensis",
+    "12019:desmodium-incanum",
+    "12021:crotalaria-incana",
+    "12021:delonix-regia",
+    "12021:ficus-benghalensis",
+    "12021:ipomoea-indica",
+    "12021:spermacoce-verticillata",
+    "12023:datura-stramonium",
+    "12031:datura-stramonium",
+    "12031:desmodium-incanum",
+    "12031:jasminum-multiflorum",
+    "12031:ligustrum-ovalifolium",
+    "12031:poranopsis-paniculata",
+    "12031:rosa-laevigata",
+    "12031:tradescantia-zebrina",
+    "12033:desmodium-incanum",
+    "12033:ipomoea-cairica",
+    "12033:verbascum-virgatum",
+    "12035:verbena-bonariensis",
+    "12037:ipomoea-cairica",
+    "12037:lantana-montevidensis",
+    "12037:malva-parviflora",
+    "12037:malvastrum-coromandelianum",
+    "12039:clerodendrum-indicum",
+    "12039:verbena-bonariensis",
+    "12049:crotalaria-brevidens",
+    "12051:ipomoea-indica",
+    "12053:bougainvillea-glabra",
+    "12053:drymaria-cordata",
+    "12055:desmodium-triflorum",
+    "12055:jasminum-multiflorum",
+    "12055:senna-siamea",
+    "12057:calliandra-haematocephala",
+    "12057:cestrum-nocturnum",
+    "12057:crotalaria-incana",
+    "12057:desmodium-incanum",
+    "12057:desmodium-triflorum",
+    "12057:ficus-carica",
+    "12057:ipomoea-cairica",
+    "12057:jasminum-sambac",
+    "12057:lobularia-maritima",
+    "12057:prunus-persica",
+    "12057:pseudelephantopus-spicatus",
+    "12057:schinus-terebinthifolia",
+    "12057:sinapis-arvensis",
+    "12061:ipomoea-indica",
+    "12063:malvastrum-coromandelianum",
+    "12063:salpichroa-origanifolia",
+    "12065:crotalaria-brevidens",
+    "12071:bauhinia-purpurea",
+    "12071:breynia-disticha",
+    "12071:calliandra-haematocephala",
+    "12071:canavalia-ensiformis",
+    "12071:clerodendrum-indicum",
+    "12071:clerodendrum-speciosissimum",
+    "12071:crotalaria-incana",
+    "12071:cyanthillium-cinereum",
+    "12071:desmodium-incanum",
+    "12071:desmodium-triflorum",
+    "12071:ipomoea-indica",
+    "12071:jasminum-multiflorum",
+    "12071:jasminum-sambac",
+    "12071:lantana-montevidensis",
+    "12071:murraya-paniculata",
+    "12071:petrea-volubilis",
+    "12071:pithecellobium-dulce",
+    "12071:plumbago-auriculata",
+    "12071:podocarpus-macrophyllus",
+    "12071:schinus-terebinthifolia",
+    "12071:talinum-fruticosum",
+    "12071:talipariti-tiliaceum",
+    "12073:clerodendrum-indicum",
+    "12073:crotalaria-brevidens",
+    "12073:crotalaria-retusa",
+    "12073:drymaria-cordata",
+    "12073:lantana-montevidensis",
+    "12073:leonurus-sibiricus",
+    "12073:lupinus-angustifolius",
+    "12073:malvastrum-coromandelianum",
+    "12073:salpichroa-origanifolia",
+    "12073:silene-gallica",
+    "12073:thlaspi-arvense",
+    "12075:bauhinia-variegata",
+    "12077:desmodium-triflorum",
+    "12077:verbascum-virgatum",
+    "12079:crotalaria-retusa",
+    "12081:crotalaria-incana",
+    "12081:ipomoea-cairica",
+    "12083:crotalaria-brevidens",
+    "12083:crotalaria-retusa",
+    "12083:cucumis-melo",
+    "12083:malvaviscus-penduliflorus",
+    "12083:verbascum-blattaria",
+    "12083:verbena-bonariensis",
+    "12085:cyanthillium-cinereum",
+    "12085:murraya-paniculata",
+    "12085:pseudelephantopus-spicatus",
+    "12085:pyrostegia-venusta",
+    "12085:spermacoce-verticillata",
+    "12085:vitex-trifolia",
+    "12086:centratherum-punctatum",
+    "12086:clerodendrum-indicum",
+    "12086:crotalaria-verrucosa",
+    "12086:cryptostegia-grandiflora",
+    "12086:cyanthillium-cinereum",
+    "12086:delonix-regia",
+    "12086:ipomoea-batatas",
+    "12086:ipomoea-cairica",
+    "12086:ipomoea-indica",
+    "12086:jasminum-multiflorum",
+    "12086:mentha-spicata",
+    "12086:pithecellobium-dulce",
+    "12086:plumbago-auriculata",
+    "12086:podranea-ricasoliana",
+    "12086:poranopsis-paniculata",
+    "12086:pseudelephantopus-spicatus",
+    "12086:pyrostegia-venusta",
+    "12086:rubus-niveus",
+    "12086:schinus-molle",
+    "12086:schinus-terebinthifolia",
+    "12086:spathodea-campanulata",
+    "12086:stictocardia-tiliifolia",
+    "12086:thespesia-populnea",
+    "12086:tribulus-terrestris",
+    "12086:verbena-bonariensis",
+    "12087:caesalpinia-pulcherrima",
+    "12087:cryptostegia-grandiflora",
+    "12087:desmodium-incanum",
+    "12087:gliricidia-sepium",
+    "12087:ipomoea-indica",
+    "12087:malvastrum-coromandelianum",
+    "12087:murraya-paniculata",
+    "12087:stictocardia-tiliifolia",
+    "12087:talinum-fruticosum",
+    "12087:talipariti-tiliaceum",
+    "12087:verbascum-thapsus",
+    "12087:vitex-trifolia",
+    "12095:carissa-macrocarpa",
+    "12095:lantana-montevidensis",
+    "12099:clerodendrum-indicum",
+    "12099:crotalaria-retusa",
+    "12099:dichrostachys-cinerea",
+    "12099:ipomoea-indica",
+    "12099:malvaviscus-penduliflorus",
+    "12099:schinus-terebinthifolia",
+    "12101:crotalaria-brevidens",
+    "12101:desmodium-incanum",
+    "12103:bauhinia-variegata",
+    "12103:bougainvillea-glabra",
+    "12103:crotalaria-brevidens",
+    "12103:ficus-benghalensis",
+    "12103:holmskioldia-sanguinea",
+    "12103:jasminum-multiflorum",
+    "12103:podocarpus-macrophyllus",
+    "12103:tribulus-terrestris",
+    "12105:cajanus-cajan",
+    "12105:clerodendrum-speciosissimum",
+    "12105:crotalaria-retusa",
+    "12105:pentas-lanceolata",
+    "12105:salvia-occidentalis",
+    "12115:bauhinia-variegata",
+    "12115:desmodium-triflorum",
+    "12115:ipomoea-cairica",
+    "12115:ipomoea-indica",
+    "12115:sinapis-arvensis",
+    "12115:thespesia-populnea",
+    "12119:desmodium-triflorum",
+    "12127:ipomoea-cairica",
+    "12127:ipomoea-indica",
+    "12127:lantana-montevidensis",
+    "12129:malvastrum-coromandelianum",
+    "12129:wahlenbergia-marginata",
+    "13245:kummerowia-striata",
+    "13291:cerastium-glomeratum",
+    "16013:spergularia-rubra",
+    "16037:silene-vulgaris",
+    "16061:spergularia-rubra",
+    "16065:lobularia-maritima",
+    "16065:viola-tricolor",
+    "17017:sisymbrium-altissimum",
+    "17019:hibiscus-trionum",
+    "17019:larix-decidua",
+    "17019:linum-usitatissimum",
+    "17019:lycium-barbarum",
+    "17019:sisymbrium-altissimum",
+    "17019:stellaria-graminea",
+    "17019:thlaspi-arvense",
+    "17029:amaranthus-caudatus",
+    "17029:celosia-argentea",
+    "17031:amaranthus-caudatus",
+    "17031:amaranthus-graecizans",
+    "17031:borago-officinalis",
+    "17031:centaurium-pulchellum",
+    "17031:chelidonium-majus",
+    "17031:sinapis-arvensis",
+    "17031:sisymbrium-altissimum",
+    "17031:solanum-nigrescens",
+    "17031:solanum-villosum",
+    "17031:tribulus-terrestris",
+    "17059:rosa-canina",
+    "17067:amaranthus-blitoides",
+    "17071:tribulus-terrestris",
+    "17073:potentilla-argentea",
+    "17073:sinapis-alba",
+    "17091:sinapis-arvensis",
+    "17097:campanula-rapunculoides",
+    "17097:sorbus-aucuparia",
+    "17111:campanula-rapunculoides",
+    "17119:cajanus-cajan",
+    "17119:thlaspi-arvense",
+    "17119:tribulus-terrestris",
+    "17129:amaranthus-spinosus",
+    "17129:hibiscus-trionum",
+    "17141:chelidonium-majus",
+    "17141:lotus-corniculatus",
+    "17141:pinus-sylvestris",
+    "17153:achyranthes-japonica",
+    "17159:prunus-cerasus",
+    "17159:prunus-mahaleb",
+    "17159:sisymbrium-altissimum",
+    "17159:vaccaria-hispanica",
+    "17181:prunus-avium",
+    "18015:potentilla-intermedia",
+    "18015:thlaspi-arvense",
+    "18039:geranium-pusillum",
+    "18053:malva-pusilla",
+    "18057:silene-vulgaris",
+    "18073:malva-neglecta",
+    "18089:gypsophila-paniculata",
+    "18089:potentilla-recta",
+    "18091:sorbus-aucuparia",
+    "18091:spergularia-rubra",
+    "18093:melissa-officinalis",
+    "18095:hibiscus-trionum",
+    "18095:potentilla-recta",
+    "18097:ageratum-houstonianum",
+    "18097:amaranthus-spinosus",
+    "18097:linum-usitatissimum",
+    "18097:sisymbrium-altissimum",
+    "18099:amaranthus-graecizans",
+    "18107:stellaria-graminea",
+    "18127:sisymbrium-altissimum",
+    "18135:amaranthus-cruentus",
+    "18151:potentilla-recta",
+    "18151:silene-vulgaris",
+    "18157:iris-domestica",
+    "18179:chelidonium-majus",
+    "18179:malva-pusilla",
+    "19005:chelidonium-majus",
+    "19005:lappula-squarrosa",
+    "19005:potentilla-argentea",
+    "19035:chelidonium-majus",
+    "19035:datura-stramonium",
+    "19037:galeopsis-tetrahit",
+    "19051:iris-domestica",
+    "19051:marrubium-vulgare",
+    "19051:rosa-rubiginosa",
+    "19053:amaranthus-blitoides",
+    "19053:hibiscus-trionum",
+    "19057:prunus-cerasus",
+    "19059:anchusa-azurea",
+    "19059:sinapis-arvensis",
+    "19059:syringa-vulgaris",
+    "19063:amaranthus-blitoides",
+    "19063:rorippa-austriaca",
+    "19063:rorippa-sylvestris",
+    "19063:salsola-tragus",
+    "19065:silene-noctiflora",
+    "19079:rosa-rubiginosa",
+    "19103:stellaria-graminea",
+    "19115:cerastium-fontanum",
+    "19147:morus-alba",
+    "19147:vaccaria-hispanica",
+    "19153:thlaspi-arvense",
+    "19161:potentilla-recta",
+    "19169:amaranthus-albus",
+    "19169:caragana-arborescens",
+    "19169:citrullus-lanatus",
+    "19169:cucumis-melo",
+    "19169:hibiscus-trionum",
+    "19169:larix-decidua",
+    "19169:potentilla-recta",
+    "19169:prunus-tomentosa",
+    "19169:ribes-nigrum",
+    "19169:sinapis-alba",
+    "19169:sisymbrium-altissimum",
+    "19169:thlaspi-arvense",
+    "19169:tribulus-terrestris",
+    "19189:malva-neglecta",
+    "19191:galeopsis-tetrahit",
+    "21151:viburnum-sieboldii",
+    "21211:verbascum-blattaria",
+    "22105:verbena-bonariensis",
+    "23001:chelidonium-majus",
+    "23001:crataegus-monogyna",
+    "23001:helminthotheca-echioides",
+    "23005:chelidonium-majus",
+    "23007:artemisia-vulgaris",
+    "23007:chelidonium-majus",
+    "23009:berteroa-incana",
+    "23009:medicago-sativa",
+    "23011:fagopyrum-esculentum",
+    "23013:symphytum-asperum",
+    "23017:chelidonium-majus",
+    "23017:euphorbia-helioscopia",
+    "23017:gypsophila-paniculata",
+    "23019:chelidonium-majus",
+    "23023:chelidonium-majus",
+    "23025:sisymbrium-altissimum",
+    "23027:descurainia-sophia",
+    "23031:chelidonium-majus",
+    "25001:raphanus-sativus",
+    "25005:alopecurus-geniculatus",
+    "25005:calendula-officinalis",
+    "25005:chelidonium-majus",
+    "25005:crataegus-monogyna",
+    "25005:galeopsis-bifida",
+    "25005:hibiscus-trionum",
+    "25005:lepidium-sativum",
+    "25005:malva-neglecta",
+    "25005:phalaris-canariensis",
+    "25005:salsola-tragus",
+    "25005:solanum-dulcamara",
+    "25005:symphytum-officinale",
+    "25009:asperugo-procumbens",
+    "25009:chelidonium-majus",
+    "25009:dianthus-deltoides",
+    "25009:lysimachia-punctata",
+    "25009:melissa-officinalis",
+    "25009:veronica-spicata",
+    "25011:asperugo-procumbens",
+    "25013:festuca-rubra",
+    "25013:reseda-lutea",
+    "25013:setaria-italica",
+    "25017:atriplex-tatarica",
+    "25017:iberis-amara",
+    "25017:reseda-alba",
+    "25017:russelia-equisetiformis",
+    "25021:calendula-officinalis",
+    "25025:verbascum-blattaria",
+    "25025:veronica-officinalis",
+    "25025:viburnum-sieboldii",
+    "25027:reseda-alba",
+    "25027:silybum-marianum",
+    "26009:silene-vulgaris",
+    "26049:solanum-dulcamara",
+    "26103:artemisia-absinthium",
+    "27003:potentilla-argentea",
+    "27005:galeopsis-tetrahit",
+    "27015:centaurium-pulchellum",
+    "27029:malva-pusilla",
+    "27029:silene-noctiflora",
+    "27029:sinapis-arvensis",
+    "27029:sisymbrium-altissimum",
+    "27041:citrullus-lanatus",
+    "27041:cucumis-melo",
+    "27041:linum-usitatissimum",
+    "27041:mentha-spicata",
+    "27049:potentilla-argentea",
+    "27049:silene-noctiflora",
+    "27051:hibiscus-trionum",
+    "27053:lamium-album",
+    "27053:linum-usitatissimum",
+    "27053:silene-noctiflora",
+    "27053:sisymbrium-altissimum",
+    "27053:thlaspi-arvense",
+    "27057:potentilla-argentea",
+    "27059:potentilla-argentea",
+    "27089:lysimachia-punctata",
+    "27099:potentilla-recta",
+    "27107:lotus-corniculatus",
+    "27107:silene-vulgaris",
+    "27111:malva-parviflora",
+    "27157:rorippa-sylvestris",
+    "28001:duchesnea-indica",
+    "28009:cerastium-glomeratum",
+    "28031:sinapis-arvensis",
+    "28035:clematis-terniflora",
+    "28035:verbena-bonariensis",
+    "28045:heliotropium-indicum",
+    "28045:tamarix-parviflora",
+    "28047:ipomoea-quamoclit",
+    "28047:rosa-bracteata",
+    "28047:silene-gallica",
+    "28047:typha-angustifolia",
+    "28047:wahlenbergia-marginata",
+    "28059:amaranthus-blitoides",
+    "28059:centaurium-pulchellum",
+    "28059:ipomoea-batatas",
+    "28059:leonotis-nepetifolia",
+    "28063:leonurus-sibiricus",
+    "28071:asclepias-curassavica",
+    "28075:amaranthus-albus",
+    "28087:geranium-dissectum",
+    "28087:ranunculus-parviflorus",
+    "28099:clematis-terniflora",
+    "28101:duchesnea-indica",
+    "28105:amaranthus-spinosus",
+    "28107:raphanus-sativus",
+    "28109:morus-alba",
+    "28113:rosa-laevigata",
+    "28113:verbena-bonariensis",
+    "28131:wahlenbergia-marginata",
+    "28135:ranunculus-repens",
+    "28143:cerastium-glomeratum",
+    "28149:amaranthus-blitoides",
+    "28149:cerastium-glomeratum",
+    "28153:heliotropium-indicum",
+    "28157:leonurus-sibiricus",
+    "28163:symphytum-officinale",
+    "29007:prunus-cerasus",
+    "29009:glechoma-hederacea",
+    "29009:melissa-officinalis",
+    "29015:erodium-cicutarium",
+    "29019:lotus-corniculatus",
+    "29019:sinapis-arvensis",
+    "29019:sisymbrium-altissimum",
+    "29031:cerastium-pumilum",
+    "29039:prunus-cerasus",
+    "29045:malva-parviflora",
+    "29045:pinus-sylvestris",
+    "29051:sisymbrium-altissimum",
+    "29057:rosa-canina",
+    "29059:cerastium-pumilum",
+    "29073:prunus-mahaleb",
+    "29077:geranium-molle",
+    "29077:scleranthus-annuus",
+    "29087:prunus-cerasus",
+    "29087:tamarix-gallica",
+    "29097:lycium-barbarum",
+    "29097:potentilla-recta",
+    "29097:prunus-mahaleb",
+    "29097:sisymbrium-altissimum",
+    "29097:tribulus-terrestris",
+    "29099:acer-platanoides",
+    "29099:datura-stramonium",
+    "29099:lespedeza-cuneata",
+    "29099:potentilla-recta",
+    "29127:prunus-cerasus",
+    "29137:sisymbrium-altissimum",
+    "29157:cardiospermum-halicacabum",
+    "29169:cerastium-glomeratum",
+    "29169:lathyrus-latifolius",
+    "29169:morus-alba",
+    "29207:typha-angustifolia",
+    "29211:hibiscus-trionum",
+    "29215:papaver-rhoeas",
+    "29217:lycium-barbarum",
+    "30031:sinapis-arvensis",
+    "30035:stellaria-graminea",
+    "30049:strigosella-africana",
+    "30049:vaccaria-hispanica",
+    "30099:linum-usitatissimum",
+    "30099:neslia-paniculata",
+    "32001:tamarix-gallica",
+    "32003:rapistrum-rugosum",
+    "32003:sinapis-arvensis",
+    "32005:sinapis-arvensis",
+    "32007:typha-angustifolia",
+    "32015:solanum-villosum",
+    "32017:datura-inoxia",
+    "32021:solanum-villosum",
+    "32023:sinapis-arvensis",
+    "32023:sisymbrium-loeselii",
+    "32027:strigosella-africana",
+    "32031:cerastium-glomeratum",
+    "32031:pinus-halepensis",
+    "32033:lappula-squarrosa",
+    "33001:chelidonium-majus",
+    "33001:datura-inoxia",
+    "33003:chelidonium-majus",
+    "33007:chelidonium-majus",
+    "33007:veronica-chamaedrys",
+    "33009:borago-officinalis",
+    "33009:chelidonium-majus",
+    "33009:lepidium-sativum",
+    "33011:chelidonium-majus",
+    "33013:chelidonium-majus",
+    "33015:artemisia-annua",
+    "33015:brassica-nigra",
+    "33015:chelidonium-majus",
+    "33015:crataegus-monogyna",
+    "33019:chelidonium-majus",
+    "33019:veronica-chamaedrys",
+    "34001:calluna-vulgaris",
+    "34001:lycium-barbarum",
+    "34001:nepeta-cataria",
+    "34001:silene-vulgaris",
+    "34005:potentilla-argentea",
+    "34005:scleranthus-annuus",
+    "34007:malva-parviflora",
+    "34007:malva-sylvestris",
+    "34007:physalis-peruviana",
+    "34007:potentilla-recta",
+    "34007:prunus-avium",
+    "34007:scleranthus-annuus",
+    "34007:silene-dioica",
+    "34007:sinapis-arvensis",
+    "34007:stachys-annua",
+    "34007:tribulus-terrestris",
+    "34009:potentilla-intermedia",
+    "34009:silene-dioica",
+    "34009:sisymbrium-altissimum",
+    "34009:stellaria-graminea",
+    "34009:tamarix-gallica",
+    "34011:spergula-arvensis",
+    "34013:potentilla-intermedia",
+    "34015:malva-parviflora",
+    "34015:potentilla-intermedia",
+    "34015:prunus-mahaleb",
+    "34015:rosa-rubiginosa",
+    "34015:scleranthus-annuus",
+    "34019:melissa-officinalis",
+    "34019:myosotis-arvensis",
+    "34019:silene-vulgaris",
+    "34019:symphytum-officinale",
+    "34019:syringa-vulgaris",
+    "34023:galium-mollugo",
+    "34023:lycopus-europaeus",
+    "34023:silene-noctiflora",
+    "34023:thlaspi-arvense",
+    "34025:potentilla-intermedia",
+    "34029:rosa-rugosa",
+    "34029:sagina-procumbens",
+    "34031:rorippa-sylvestris",
+    "34033:lycopus-europaeus",
+    "34033:melissa-officinalis",
+    "34033:prunus-domestica",
+    "34033:prunus-persica",
+    "34033:rubus-bifrons",
+    "34033:saponaria-officinalis",
+    "34033:thlaspi-arvense",
+    "34037:potentilla-intermedia",
+    "34039:ribes-nigrum",
+    "34039:typha-angustifolia",
+    "34041:ribes-uva-crispa",
+    "34041:thlaspi-arvense",
+    "35043:datura-inoxia",
+    "35061:sisymbrium-altissimum",
+    "36001:crataegus-monogyna",
+    "36001:silene-vulgaris",
+    "36023:spergula-arvensis",
+    "36029:acer-pseudoplatanus",
+    "36029:centaurium-erythraea",
+    "36029:hyoscyamus-niger",
+    "36029:lapsana-communis",
+    "36029:reseda-alba",
+    "36029:veronica-hederifolia",
+    "36039:rumex-longifolius",
+    "36045:silene-vulgaris",
+    "36065:erodium-cicutarium",
+    "36069:geranium-pusillum",
+    "36075:centaurium-erythraea",
+    "36075:erodium-moschatum",
+    "36075:sinapis-alba",
+    "36087:ranunculus-repens",
+    "36093:potentilla-recta",
+    "36109:spergula-arvensis",
+    "36113:silene-vulgaris",
+    "36115:silene-vulgaris",
+    "36117:silene-vulgaris",
+    "36117:vaccaria-hispanica",
+    "36117:vicia-cracca",
+    "36119:papaver-dubium",
+    "36121:trifolium-hybridum",
+    "36123:agrostemma-githago",
+    "36123:armoracia-rusticana",
+    "36123:camelina-sativa",
+    "36123:chelidonium-majus",
+    "36123:erysimum-cheiranthoides",
+    "36123:fumaria-officinalis",
+    "36123:geranium-pusillum",
+    "36123:rumex-crispus",
+    "36123:sinapis-arvensis",
+    "36123:sisymbrium-officinale",
+    "36123:typha-angustifolia",
+    "37019:spergula-arvensis",
+    "37193:silene-vulgaris",
+    "37199:silene-vulgaris",
+    "39025:malva-neglecta",
+    "39043:silene-vulgaris",
+    "39061:viburnum-sieboldii",
+    "39085:amaranthus-blitoides",
+    "39137:viburnum-sieboldii",
+    "41003:cryptomeria-japonica",
+    "41003:potentilla-reptans",
+    "41007:pinus-pinaster",
+    "41011:lobularia-maritima",
+    "41019:gypsophila-elegans",
+    "41019:vaccaria-hispanica",
+    "41047:alcea-rosea",
+    "41047:borago-officinalis",
+    "41047:lepidium-sativum",
+    "41047:linum-usitatissimum",
+    "41047:papaver-rhoeas",
+    "41047:sinapis-alba",
+    "41047:tree-of-heaven",
+    "41051:elaeagnus-pungens",
+    "41051:pinus-wallichiana",
+    "41053:ligustrum-vulgare",
+    "41059:prunus-mahaleb",
+    "41059:prunus-persica",
+    "41065:melissa-officinalis",
+    "41065:vaccaria-hispanica",
+    "42011:silene-vulgaris",
+    "42017:silene-vulgaris",
+    "42027:silene-vulgaris",
+    "42065:silene-vulgaris",
+    "42071:medicago-sativa",
+    "42071:spergularia-rubra",
+    "42077:lactuca-sativa",
+    "42101:datura-inoxia",
+    "42101:pyracantha-coccinea",
+    "42101:silene-vulgaris",
+    "44005:agrostis-capillaris",
+    "44005:euphorbia-peplus",
+    "44005:galium-mollugo",
+    "44005:lepidium-sativum",
+    "44005:marrubium-vulgare",
+    "44005:sonchus-arvensis",
+    "44005:veronica-chamaedrys",
+    "44005:veronica-officinalis",
+    "44005:vinca-major",
+    "44009:sorghum-bicolor",
+    "45015:amaranthus-spinosus",
+    "45015:conyza-bonariensis",
+    "47009:geranium-molle",
+    "47021:agrostemma-githago",
+    "47021:nicandra-physalodes",
+    "47031:erodium-cicutarium",
+    "47037:amaranthus-graecizans",
+    "47037:geranium-molle",
+    "47037:iris-domestica",
+    "47037:mentha-spicata",
+    "47037:prunus-mahaleb",
+    "47043:lysimachia-nummularia",
+    "47051:oenothera-glazioviana",
+    "47053:stellaria-media",
+    "47059:agrostemma-githago",
+    "47059:glechoma-hederacea",
+    "47059:melissa-officinalis",
+    "47059:nepeta-cataria",
+    "47059:nicotiana-tabacum",
+    "47059:potentilla-recta",
+    "47063:ranunculus-parviflorus",
+    "47065:thlaspi-arvense",
+    "47065:verbascum-blattaria",
+    "47093:hibiscus-trionum",
+    "47093:linum-usitatissimum",
+    "47093:mentha-spicata",
+    "47093:sisymbrium-altissimum",
+    "47105:cerastium-glomeratum",
+    "47105:iris-domestica",
+    "47105:ranunculus-parviflorus",
+    "47113:abutilon-theophrasti",
+    "47113:buglossoides-arvensis",
+    "47113:convolvulus-arvensis",
+    "47113:duchesnea-indica",
+    "47113:heliotropium-amplexicaule",
+    "47113:heliotropium-indicum",
+    "47113:iris-domestica",
+    "47113:lamium-amplexicaule",
+    "47113:lamium-purpureum",
+    "47113:lathyrus-latifolius",
+    "47113:ligustrum-ovalifolium",
+    "47113:ligustrum-sinense",
+    "47113:mirabilis-jalapa",
+    "47113:potentilla-recta",
+    "47113:prunus-cerasus",
+    "47113:ranunculus-repens",
+    "47113:saponaria-officinalis",
+    "47117:cerastium-fontanum",
+    "47131:morus-alba",
+    "47131:stellaria-media",
+    "47145:rosa-rubiginosa",
+    "47149:thlaspi-arvense",
+    "47149:viola-tricolor",
+    "47155:geranium-dissectum",
+    "47185:heliotropium-indicum",
+    "47189:thlaspi-arvense",
+    "48127:spergula-arvensis",
+    "48205:datura-stramonium",
+    "48229:datura-inoxia",
+    "48389:datura-inoxia",
+    "48453:ipomoea-triloba",
+    "48505:datura-inoxia",
+    "49053:datura-inoxia",
+    "49053:vaccaria-hispanica",
+    "50003:artemisia-absinthium",
+    "50007:lappula-squarrosa",
+    "50007:physalis-philadelphica",
+    "50011:myosotis-scorpioides",
+    "50017:chelidonium-majus",
+    "50017:dianthus-barbatus",
+    "50017:gnaphalium-uliginosum",
+    "50017:pastinaca-sativa",
+    "50021:chelidonium-majus",
+    "50023:chelidonium-majus",
+    "50023:inula-helenium",
+    "50025:amaranthus-caudatus",
+    "50025:calluna-vulgaris",
+    "50025:chelidonium-majus",
+    "50027:calluna-vulgaris",
+    "50027:chelidonium-majus",
+    "51009:silene-vulgaris",
+    "51019:ruta-graveolens",
+    "51019:symphytum-officinale",
+    "51033:syringa-vulgaris",
+    "51057:silene-vulgaris",
+    "51067:silene-vulgaris",
+    "51071:sisymbrium-altissimum",
+    "51073:thlaspi-arvense",
+    "51079:silene-vulgaris",
+    "51079:thlaspi-arvense",
+    "51081:scleranthus-annuus",
+    "51081:stellaria-graminea",
+    "51087:scleranthus-annuus",
+    "51087:silene-vulgaris",
+    "51087:sisymbrium-altissimum",
+    "51107:thlaspi-arvense",
+    "51149:silene-noctiflora",
+    "51157:silene-vulgaris",
+    "51161:silene-noctiflora",
+    "51161:stellaria-graminea",
+    "51161:symphytum-officinale",
+    "51165:scleranthus-annuus",
+    "51171:thlaspi-arvense",
+    "51173:symphytum-officinale",
+    "51175:stellaria-graminea",
+    "53037:vaccaria-hispanica",
+    "53039:lepidium-sativum",
+    "53039:picea-abies",
+    "54075:datura-stramonium",
+    "54093:datura-stramonium",
+    "55001:sinapis-arvensis",
+    "55003:galeopsis-tetrahit",
+    "55003:gypsophila-paniculata",
+    "55007:galeopsis-tetrahit",
+    "55009:dianthus-barbatus",
+    "55009:galeopsis-tetrahit",
+    "55009:malva-neglecta",
+    "55009:raphanus-sativus",
+    "55009:rosa-rubiginosa",
+    "55009:silene-noctiflora",
+    "55009:silene-vulgaris",
+    "55009:sinapis-arvensis",
+    "55009:sisymbrium-altissimum",
+    "55023:malva-pusilla",
+    "55023:potentilla-argentea",
+    "55025:amaranthus-caudatus",
+    "55025:amaranthus-cruentus",
+    "55025:eichhornia-crassipes",
+    "55025:linum-usitatissimum",
+    "55025:lotus-corniculatus",
+    "55025:sisymbrium-altissimum",
+    "55025:thlaspi-arvense",
+    "55029:sinapis-arvensis",
+    "55043:nicandra-physalodes",
+    "55051:sagina-procumbens",
+    "55069:sinapis-arvensis",
+    "55077:geranium-pusillum",
+    "55079:crataegus-monogyna",
+    "55079:rapistrum-rugosum",
+    "55081:lotus-corniculatus",
+    "55085:dianthus-deltoides",
+    "55105:rorippa-austriaca",
+    "55111:agrostemma-githago",
+    "55111:elsholtzia-ciliata",
+    "55117:crataegus-monogyna",
+    "56029:silene-vulgaris"
+  ],
+  "pairSetSha256": "7ec4176ab2c88e07d22390000389536be32b85ae9682c1a6adf1a5bb44129938",
+  "runs": [
+    {
+      "runId": "20260906T074334Z__harvard-huh-usa-preserved-specimens__3eccbc7cb644",
+      "stateCode": "AK",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ak-20260906-r2.json",
+      "pairs": 2,
+      "receiptSha256": "1364a20c4966ecd6bd0e1b0e6ff5806bc57e0b26544bc0b2de9414f8048a4537",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "49e47defd2ad7bd80b8c149068d59ef54187662477ba41804fa25843af2609f1"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1588,
+          "sha256": "98fa9662e73cbad57b1b07bc0f0893b50d303f6c96ef746d2da71a747816bbd9"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5175,
+          "sha256": "01ae6c59bd99ae954fd1426f216082caa9c97abe9f5e8a0db227e01d9bde28d3"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2326,
+          "sha256": "e6c2af81a4b7d6471719670cc11f13a7128ccab9f9a371077d3e9d475cae508e"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1522,
+          "sha256": "07001f4d3ca77a0607391f8183b196103f5197e210e0f7446f51d02059cc12d0"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074337Z__harvard-huh-usa-preserved-specimens__473474fcd9b4",
+      "stateCode": "AR",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ar-20260906-r2.json",
+      "pairs": 16,
+      "receiptSha256": "26e3869e4fd2c81691079383bbfd84ac917ab65c2ee0a88dbd98852f142c042b",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "525306658979d987be60525894860a8e19b7fee018e43227cb0e68aacff6e7ac"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 4412,
+          "sha256": "1699da44f9b437794b609b26b769e1f3a8443267d2d94c6f58fa1886ca382795"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 41189,
+          "sha256": "7b28ab63c8d11e532b5444ae32ebf2da9d34c26ff1c19ff9e1ace438a5e2aef2"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 18567,
+          "sha256": "4b1a129cb13546eab9e1466ceeb712a870a5b3b82b6c6e1c358c62e2381fadbe"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 12135,
+          "sha256": "233bd0789ce62cce032cf7ae6e9e696110e079d4d0dfa75d84540e83905ebd38"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074339Z__harvard-huh-usa-preserved-specimens__cdb4d65daa2a",
+      "stateCode": "AZ",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-az-20260906-r2.json",
+      "pairs": 1,
+      "receiptSha256": "bfe15d647b018be7fffd04c1c49c9495dc7ce4972d828e008b94f9a6020f5d08",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "5111f4a4d0b14c084299e584cf72a6261750a06547286528f890d840fe134643"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1243,
+          "sha256": "8a6733466acdc8e4ac1a3c3ba002ffdfeb2d05ce2c688b3e52dabd228115f506"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2583,
+          "sha256": "48a520f1fe269b510793fbbb713ed1639e900e895df1c910ee56a59f8dd0fd5a"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1163,
+          "sha256": "25af18d6eba67fb8533397f23355754579f085a9b13f416103b28088abb77651"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 761,
+          "sha256": "d150ba8c5f1f2033c20fec87d14a2ea5ffaf1d00347d83809ea84c6710c297b3"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074341Z__harvard-huh-usa-preserved-specimens__e18287aa10ca",
+      "stateCode": "CA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ca-20260906-r2.json",
+      "pairs": 73,
+      "receiptSha256": "65a0aa401a37da4ff968d53102ae9aff3df5a77ccb0bf2fbf6f19967541b0da0",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "ed2b29c0dd0dd9a860955fabb9190e9d5d8e3b1fb510be773f0edac251a301df"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 15540,
+          "sha256": "308ad49827b75b84b209f78b90120183e15e1f18dd305fb56ad695168fde0f16"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 188092,
+          "sha256": "2ba8e769053fc82ed38d4c6f074cf91e2573f947dec8f130a4d40f2c54c7143e"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 84666,
+          "sha256": "945ac9e54eefe59933ba207683468ddc99716aac2d8e3c206fad101243a4e6ad"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 55320,
+          "sha256": "9c2edff7d07fd6923120efb13ebdd7c966178f7a9a10990f4cb867e3611627fe"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074344Z__harvard-huh-usa-preserved-specimens__9125d5b34d14",
+      "stateCode": "FL",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-fl-20260906-r2.json",
+      "pairs": 197,
+      "receiptSha256": "376267e7f4596843c635fff5fe3454aa1062a48365be3be24da9a295bf9730ca",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "257178015ca680e432e730b3a0def66449111a7f844072f0fdc16bd77ffe0673"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 39448,
+          "sha256": "4d1bac22ea7009ef204580fbbb93d38ca6703e9d1e5dc85cecfe03b363af67e9"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 507919,
+          "sha256": "938dbedb42661a05b92d561d960d9137aaebd7a39665c2ba22fd71484199935a"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 228878,
+          "sha256": "7b4334db49b7a16b8c65ceee85412e3590f8ca7e59f09d12a1961e975f539731"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 149684,
+          "sha256": "5ab41f075cf09d5301b505565a7f1cd532b8ca4d30ebc26227ce0357436f539b"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074346Z__harvard-huh-usa-preserved-specimens__99b341f2b565",
+      "stateCode": "GA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ga-20260906-r2.json",
+      "pairs": 2,
+      "receiptSha256": "3f6e73db0f712667b26344acd71834b4537b10d1ffff40343d6bf8bd73cc6873",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "74ede8c035c9ecbacf0a93857c89dd83e79cedbf1211921b6defebfdae8f17ab"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1531,
+          "sha256": "c71f54f3702da9026ff1b9a66e7e1ddec43c3dd14b25577dbdd8c3b4f36b0312"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5157,
+          "sha256": "c8739239d7b956306e94ba1c5e4c54d9a86e10f0d556c4460fc7c5905445c918"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2324,
+          "sha256": "837eec2e4d5a6eebcc897787bb58fe295d33c4f8e49176b1b36d1f3b73ff0478"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1520,
+          "sha256": "e02a70e21d7b95e50ce3b1bb252e813923b9061963de356d77f8349369c9bf6d"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074348Z__harvard-huh-usa-preserved-specimens__64b9c407dd15",
+      "stateCode": "IA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ia-20260906-r2.json",
+      "pairs": 42,
+      "receiptSha256": "32cb5a9d67bfb81ee2e2d954ef25d34c3620dec4d6cddf701ef0b209427d828f",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "3b2fcc0b1ed4a86313417e5639ba486d23dceb2d6cf5c961459769d870d6e39b"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 9249,
+          "sha256": "242b73ed9fd96896d2d16a6386a2ade41a9854ba7b4a587e4acbcd3aded0d992"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 107813,
+          "sha256": "44a9a85b307f75893d1dbf143ea5812aaa94a9c450f3358cafb9714c12e43e75"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 48686,
+          "sha256": "75177a8e844dae463e594dc5d6eded3adaf737b7e7c0b92a898b5e0ef25d4579"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 31802,
+          "sha256": "9a085bfb877741de84add7323b1660065a2c112a3262feb1f030417e08ac4d60"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074351Z__harvard-huh-usa-preserved-specimens__c1f7babac276",
+      "stateCode": "ID",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-id-20260906-r2.json",
+      "pairs": 5,
+      "receiptSha256": "b598806d1aa24779518be1569a261f4ec9616b86d11ae66925a9e35e1ecdb740",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "4f63caebc5c17af9c01b949d2b607e06bc6b9be734d33d9dddee9a469983b02d"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 2130,
+          "sha256": "3ee473d9fb8ff131c859a3f2d46eeec9fd879114a8a56db06cc28d3928216e96"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 12847,
+          "sha256": "80d82a39e521906370f2d317b89357e9e87f38407720c28c1ddc1ade6abde9e9"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 5796,
+          "sha256": "26c05baf2e234f58a053367a498aeb03ea3eea3be80090d60f21f24b2e375dd9"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 3786,
+          "sha256": "13b55bc0d781d54da775f7eda8771833801d478c3e7dfc9ef035c5eb9825dad2"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074353Z__harvard-huh-usa-preserved-specimens__475ebed4e1ab",
+      "stateCode": "IL",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-il-20260906-r2.json",
+      "pairs": 43,
+      "receiptSha256": "1fa7ddc86fc2e724bfb5965b91c85f7cfadbdc3bc741c94de792538e1c9a94b5",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "d6f64500ca3effe9ef26f7550950f90af5225a1111009068d471b84f02c51321"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 9183,
+          "sha256": "f64d701d75421ff66e50eab042677fbe6cde4d3ceb62d86f6131f7b67611b483"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 110685,
+          "sha256": "039cebec302ebbbdc1cbf70d19b86ba582f7aa1cb663e59690c50bf8b1ec5d65"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 49899,
+          "sha256": "63f90f0d4ce6181495985f0110822a9098a3869382fcfb2cf3420f81bb0364e0"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 32613,
+          "sha256": "bc19772884049ff466de80e3134b40013276fd93038c2d7640acd71b513f8e84"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074355Z__harvard-huh-usa-preserved-specimens__91737354d8fd",
+      "stateCode": "IN",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-in-20260906-r2.json",
+      "pairs": 26,
+      "receiptSha256": "5e850447907a46a327ef4a9d4717997f0afc414d06cefcfe63287da541397e16",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "ef276a7e443399793eb33c3e33e86b10743ee09e5e79e7bfc92f454f8b1fb069"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 6218,
+          "sha256": "d827923b90e611cbd21f017b0ac2081b8e151b19ced7c0597d2df68c1b7b0d94"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 66912,
+          "sha256": "a314f9579e4f62dd419d2e077f410f269085b6760f8ad3bae4c47b9c2a09ddcd"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 30168,
+          "sha256": "831f31d687fcd00bad0dd6cec1d6ec4ad8df20872847e6120d2b3d220581803a"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 19716,
+          "sha256": "91cd4cd0389b140ac17abb548dac2daf637d9db25f45ddb410bb5e01f5ba69f3"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074358Z__harvard-huh-usa-preserved-specimens__e4bd87e595bc",
+      "stateCode": "KY",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ky-20260906-r2.json",
+      "pairs": 2,
+      "receiptSha256": "81878d02ea1c0b656dfaace0a462241e0d75fdf213193771a7be8ad4d00e502a",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "3711a02fa4344aa72bdfdc0ee780262df4127004d2819b154ef927c5b6299dc1"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1525,
+          "sha256": "d5371f698a30fdd6e032ffd34c226e818de1d41ce99231e9539eeb932a5b3703"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5156,
+          "sha256": "6a3bcbc6bc64172ba64dd2b90154141ec8bf8aae042646c7e92105f163fe552a"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2323,
+          "sha256": "e903d3497a4a1c460c398f97c1f3df0b0a426caac62c9cfc3e8f2be975d63a96"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1519,
+          "sha256": "e74f62eb7048da9ec3253fe1a6af5348256895d63aa7829461e2b01857404493"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074400Z__harvard-huh-usa-preserved-specimens__afca3c7922f0",
+      "stateCode": "LA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-la-20260906-r2.json",
+      "pairs": 1,
+      "receiptSha256": "9743a7e9e6ed295538226a7efc6be912a3fcb8e294fdb994dc70057a6fdd08e5",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "c20ee0446f6d080edf51d6265ce6d4e44b4487233ef2956f023aee8a90bd46af"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1227,
+          "sha256": "10c8c98be1d582c8be4759bb557a68033e8613ac1d715290e164f235d8345187"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2584,
+          "sha256": "0cfcef207aa621562971fbd8f6d0c48e66fc1524e3beedf75d3c774c5c95b1aa"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1162,
+          "sha256": "059d089961cc7fc123e4cf8e0adb2bcaee32c8d7ef6b3769b6e106b20f6e0eca"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 760,
+          "sha256": "9c28185cf286440a00ca0eb6c2aae7fbc2ed98cd5c1c0c7393d8b22474188f0b"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074402Z__harvard-huh-usa-preserved-specimens__e84b4691942e",
+      "stateCode": "MA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ma-20260906-r2.json",
+      "pairs": 33,
+      "receiptSha256": "21409422627a67d9a2cf4c45d0b75543a5c5bf013c099bd71d81ebf2cd523bd2",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "9d15dff839715b47e105575a3d33afa6cfec5ce2cd93109760a1838a35ab7610"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 8526,
+          "sha256": "83c0553544af3db1eed2c19d7a3d73dc35fc9b2ac164b8fe183b7e07e18777e9"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 85150,
+          "sha256": "b428568e0a187fc2267fa56a3decc28c3af3ecd73e318a967d4f30418afc183d"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 38281,
+          "sha256": "99b643958eebdea1db5c30afa445229b60ceba2a8c6499235e7420938e13f3da"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 25015,
+          "sha256": "f9d6cc184b4903fcbe1f24e740f36bc3dbf5611a3a215795c23ef638713759b2"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074404Z__harvard-huh-usa-preserved-specimens__6ae29d43fffa",
+      "stateCode": "ME",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-me-20260906-r2.json",
+      "pairs": 18,
+      "receiptSha256": "9c812aa4f9bc50c912aa4e0df0aacd1f595ebaa9a1fec0c857fba45ec21dd04e",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "f39a018ed412e39f8d677edac41d5a4873b58c04882092f30fee81031a924c1c"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 4951,
+          "sha256": "bc64c8639acb1b43dc3d4a6363e7bb5d67eb25bb8d0a77e697fa3f03fa2e25f0"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 46343,
+          "sha256": "df27476c450a5568b6b4a627843918ca93f1ba7fd540aa7d5f6ae8eff618df9d"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 20901,
+          "sha256": "086c7298a9d93f3246579388fd1458860be165f68d993763368d644feaf73c0a"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 13665,
+          "sha256": "eba78bf8cf250c42030c5ba50c32f206601d64d1d6fb0b8aa14e4a9d51be9e99"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074407Z__harvard-huh-usa-preserved-specimens__f244ac3c312f",
+      "stateCode": "MI",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-mi-20260906-r2.json",
+      "pairs": 3,
+      "receiptSha256": "cfc2f18881c9f2b17ef55813b918dd6459edc01617496fa6c3104cc2b6d07c93",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "907c1d9f2b2659699208f7cc173939f5fff788007989301987988028f12a99b2"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1849,
+          "sha256": "a89a96f1084548d9cb619823147e78e81d804b08c69f2979dfdd23bb6a3e933a"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 7726,
+          "sha256": "2295c62552aae1751c7d27b2d0e50358cb5bb15342218262a5f87a50623fd691"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 3481,
+          "sha256": "5a88dfe4830b2d728a829b23f5b030b1a559d0804c86924feecd66c85f10d84f"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 2275,
+          "sha256": "e24ffb85917453d147f013485db2d1bd36bf8db75ec1360f7d37a8e42f188a95"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074409Z__harvard-huh-usa-preserved-specimens__c22cc794cc1d",
+      "stateCode": "MN",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-mn-20260906-r2.json",
+      "pairs": 27,
+      "receiptSha256": "3e2ee621ea0d7b3e5409aef16727328470d7458b8e4d037c564a4ab70f31362d",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "e559ec7a1b2c3dc6a489dd26f9d15771396e85be1321dc3d948ee72e0a59e344"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 6272,
+          "sha256": "f8fc6d822d095b2b8be899479094eb57c9d2d6744e16b22a649a26fd471b4133"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 69566,
+          "sha256": "b83208a3893c63bc72fe3f5cb75cf747775f80a21c2806d0eca8ad14e80c8737"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 31324,
+          "sha256": "d20e6c019a3ed5a501eb48bb0fb935518550ad63e22be9fdb2b2284e416f7d9b"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 20470,
+          "sha256": "12d3ca48023be71badfbde849008c70d3b7c249f6bd679c306e6616137a9b2cb"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074411Z__harvard-huh-usa-preserved-specimens__70d2becc1145",
+      "stateCode": "MO",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-mo-20260906-r2.json",
+      "pairs": 38,
+      "receiptSha256": "f777213ee756e517a0ac7436dddcb0c84717aa0be39376dfc93592c76560fca1",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "016d6aea29cdaa545764bb3b5062a07244372b155c0c35349504a5d99cfe5941"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 8381,
+          "sha256": "d7f1022eb6ed6ab3ccb17ef8c72ae9bfd508c8dd3acf5f597677c627200e9db0"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 97747,
+          "sha256": "4b1631570fe9b855f6a9295392834226ab573d2082921b15691277dfcc191d32"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 44068,
+          "sha256": "03ba80e1774a672e74558897d2206b207eef46ef549603058c816177b1a46e66"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 28792,
+          "sha256": "2c1565bdf96d6772d9fca5a68f542c9f22f33c0b60e0d37c0c58273cace17bbe"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074414Z__harvard-huh-usa-preserved-specimens__c951f8a36389",
+      "stateCode": "MS",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ms-20260906-r2.json",
+      "pairs": 36,
+      "receiptSha256": "2ba7a73d16aa0e10d63c8034a82091491ec8731d59b2b61c39b36f5c52d70af3",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "fdbc6d1474f6ceb47a48c4792818884af67e2c3ff839699ad23596547f0b4970"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 8366,
+          "sha256": "72870135957b3ba86c301559f85a48f04e939e06e6071d09a787f8611906d4dc"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 92909,
+          "sha256": "6422cce1eb32c9be9d39321c1e4a0f4c20f914a6b40817dcccb8637bb5d84d1c"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 41802,
+          "sha256": "c7f2f2d5501925cb7ea2fb76f80108709ec626c409b12fc27bc9962cb30ee94d"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 27330,
+          "sha256": "2e985261b658a3e620a38266af121a1c46cebe7b92a31f0e6d168d3e57792325"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074416Z__harvard-huh-usa-preserved-specimens__7419ebc5ef6a",
+      "stateCode": "MT",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-mt-20260906-r2.json",
+      "pairs": 6,
+      "receiptSha256": "99b00e97c0bce1e3fbe035fa669586a7d825ba8ef10537a3bf546cb7c7903e3e",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "49b02358a969fc542854903e756a9052e79e806caec4e5ef11705837a9a8ba0f"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 2364,
+          "sha256": "491eb41bb0401e020b5235ad4f440d66bcd29e922d24e5bc2cefa27f0e3f0a95"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 15469,
+          "sha256": "bd572877def6459906eb22b2d5acd26096b89f3da31ca2f72ae76be785c24585"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 6966,
+          "sha256": "38435275a76ecc0cd7742fb4292391071ea5486d90834686c1130fd931148eda"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 4554,
+          "sha256": "00a8772fa9734c84998bf3ea7c1e3ad4a6831e7ce0a41b3990c67d2f7e827a3d"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074419Z__harvard-huh-usa-preserved-specimens__b2ec7bab9e46",
+      "stateCode": "NC",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-nc-20260906-r2.json",
+      "pairs": 3,
+      "receiptSha256": "5b1f645f432c33d9538da4d1bc5d125ebdb4674bdf4b6c32580e8b163cb468e0",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "a12ce6410ba23fcd1791207ab01f65431c6b485f6554410150be7d154204b82e"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1643,
+          "sha256": "24232b1f368847599d9c733fdf358ef62ff1907614d834615629b1fc1ebccbfe"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 7726,
+          "sha256": "b3142716c666065de35d6e4dbd7a67d7513311eb54a1ba30b34c3f1728ff2e5b"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 3476,
+          "sha256": "e9f4987a80a93d1fad0cd2df52e183a29e60a359d2caeecd67ebea1751ae509e"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 2270,
+          "sha256": "9246ff399a4d7fb4594214e94f0bbab3f3fa11a73e499e69eefdbfb4ff75892d"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074421Z__harvard-huh-usa-preserved-specimens__01cf07efaf25",
+      "stateCode": "NH",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-nh-20260906-r2.json",
+      "pairs": 16,
+      "receiptSha256": "845390ffae9e77aba5e4cf12a50017c87ee3890e17813050e57a9d429fc3f479",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "04386c52653f8d317edfda5aade8ab8ffcd78f00343d2a6735a305cc0b5ec530"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 4284,
+          "sha256": "ebb3f49029bd5c188bfce7a2f86347111821d8f5e412c5d31a688504e7d49300"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 41235,
+          "sha256": "607f11327d2a9503c9fe492f74c351ff5cb54bb3c5552aaf65821cbf239ae962"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 18556,
+          "sha256": "a728cb21d2128138efda6b4fd5b0ba2416c0a61f54a1bba1936f7d29211d22fd"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 12124,
+          "sha256": "727de3004d71d6fc0de7b844f8c90ff1ed5d82057eb5b352ca2bc844bdf0d8a7"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074423Z__harvard-huh-usa-preserved-specimens__4d57b9049a3c",
+      "stateCode": "NJ",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-nj-20260906-r2.json",
+      "pairs": 53,
+      "receiptSha256": "bd9e4969d854568b4a6d62867fd2b323353003473bab69928601ba6ef0da79df",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "0e5e65df0a36e317e894138400238d79371dac4ed5eae3ff3fb08cf3e1b64a9a"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 10815,
+          "sha256": "752fc010b364de8590a9074ee7c11b4ecbae26559f3cb968f01787b0b06218c9"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 136470,
+          "sha256": "11a261cb31d17926f5aa6ea901ddb0911e789f4b1faed36180a5f58ab8edaff8"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 61457,
+          "sha256": "ebafa5b9c99e6694e5599deb23a9d0906f7873a538d5bcf77f17dd8c5b89fa26"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 40151,
+          "sha256": "57c3f3439b4a0924a2632ce0c4a86a863a2986a2311cd76c774478adf10e3953"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074425Z__harvard-huh-usa-preserved-specimens__2fccbb988596",
+      "stateCode": "NM",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-nm-20260906-r2.json",
+      "pairs": 2,
+      "receiptSha256": "f19cdd1848279083d80c15f86989d020ca3702bea30334ae178f27610522880a",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "dbd4406329d13c2990da926a20ad61ff3a75f0e476c03577e4b1d1ab736f3490"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1477,
+          "sha256": "7f66e44b6e9a1ccabe214a65701812a4a3b71eb431119cf1f86b989329de970c"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5162,
+          "sha256": "344ce9b60443a571919bbce479ed658bdc2a7d20eea12c31ac70f164fc08bdc3"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2320,
+          "sha256": "2c8b6c93f98fbf8b11b6523ec335affc47401cd454bfe92b92858a0356af2706"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1516,
+          "sha256": "ce5f8b22eb9da17192af35256d9b1aaac9191d735703b67c646a504174c8deab"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074428Z__harvard-huh-usa-preserved-specimens__38ccd9642dd1",
+      "stateCode": "NV",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-nv-20260906-r2.json",
+      "pairs": 14,
+      "receiptSha256": "16fe49beec4150106193c45d4864e1eb52f8948291fdf9f83b989a3c6c5601c2",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "84262c7a740cdab4bb2a287a4687c8d334cfd13e566c5ef2e63f725ed5810bf7"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 3876,
+          "sha256": "1cafbfc6904badcbf07beb5f3e4c397b7a21adc9206c1ddcf90301d66e284f6c"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 35985,
+          "sha256": "951f28bd27f3ae6489f803079c25805a648b1a15b1c6a94132f3cd1074956f61"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 16237,
+          "sha256": "dc73dc72918a6b2c4be886dc04636031ec11ce84d3f9483dd40f01133e669777"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 10609,
+          "sha256": "bea2f9992bb74c330948aba22a515b8dcd604d586d0432d6eeb993eb516da7eb"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074430Z__harvard-huh-usa-preserved-specimens__ac4424743f21",
+      "stateCode": "NY",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ny-20260906-r2.json",
+      "pairs": 37,
+      "receiptSha256": "697733c7286423fe5f5451f202cf423f2649875965050e2a6a8a90a8415c7023",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "f601ddb35a40a0a2c3f812f97479992af81fb7e435307e9f886a5437f6bc434b"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 8887,
+          "sha256": "6a74c8f48ca9adda78f6934ea1f5dcca9aca55a661a4a94ff97b334d1a71a027"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 95172,
+          "sha256": "16a1353b70992732d18b792bcf987eab1ee09839a918d7f3ebb1d53c67a091a1"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 42912,
+          "sha256": "0be6f5182afc133ecd55033f9a2a82032b799471d433a089a2df3cfe8b980c8a"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 28038,
+          "sha256": "d5ee732de31a282a40917490598530ef20caa2adaff74220e442f6dd30c4081a"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074432Z__harvard-huh-usa-preserved-specimens__113e0e848d7f",
+      "stateCode": "OH",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-oh-20260906-r2.json",
+      "pairs": 5,
+      "receiptSha256": "a29586ebe93dc7052a2942d3fda66ef92441cbea1ae9b21ceba7d7bf3be35caa",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "054a2696704902643c39c3907863877f4feb673eae01b051a871da6af4be7392"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 2194,
+          "sha256": "33540b0dcdf2f3ee93197378aba6f8effbd34e43b62d81fcb6b347fe9ef43352"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 12845,
+          "sha256": "d9b851d405d578dd62a298f26b178250a89071c12881fb62bc920e261a4216d3"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 5800,
+          "sha256": "a49d0c57bad095e172544172303eb1e5bcf6aab7760065b90b1a21edf1a7e043"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 3790,
+          "sha256": "a4ab5707f65ec471581c2c94b51badb700de59328da40b588329ccc61d224eb5"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074435Z__harvard-huh-usa-preserved-specimens__50251410f88a",
+      "stateCode": "OR",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-or-20260906-r2.json",
+      "pairs": 20,
+      "receiptSha256": "2ec322364086c3f91bfca1387ff57894650eabced3a3843c9828ac7f34e5e701",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "b551897f074a21b9fceec66a5e6fede7c86080b5e6c2d661aa34bdb1fb19178e"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 5167,
+          "sha256": "ead4d52599440af581153063386708bbbbc54819a554c2beba2f1378ad336c7d"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 51395,
+          "sha256": "8385280de5be86ffe61d7349aa6360843591019037b02098c0aac7e69dca69a0"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 23186,
+          "sha256": "ca476421f4b5368758f4a4a6bbcafe18bc0a7b5d89f9ac93d7283fdddd1c466e"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 15146,
+          "sha256": "a3dd3901037f4517794447b69a0cf2a77f438b3df42c6747d5f389527424a76c"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074437Z__harvard-huh-usa-preserved-specimens__896e838e89ac",
+      "stateCode": "PA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-pa-20260906-r2.json",
+      "pairs": 10,
+      "receiptSha256": "5196c7f5ed7679bfac86ca1e012c820def6942f5017a029e5a9ca95def979aa2",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "46f9df12314ecd176564eb852f014399c7fbb04e9f67c053b6fb93c05af05312"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 3143,
+          "sha256": "ef635533458e4daecd3f3a28733d5344a8559a04e3e3c7dc9e0a433c2bb7a14a"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 25744,
+          "sha256": "3e358fc2bfd67ec3a063ca55865c9bbe6fc0d8ad6abb285c7bf8795bf2269c24"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 11583,
+          "sha256": "9f963192b34bd0ef09e4d1d3a4e389512aa5a333aff99e31655763d50efee839"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 7563,
+          "sha256": "1bfe795ee3d036f853a75cb3da172f7772b324930ecdeacf00324345d3c47434"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074439Z__harvard-huh-usa-preserved-specimens__6f5d3a65f252",
+      "stateCode": "RI",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ri-20260906-r2.json",
+      "pairs": 10,
+      "receiptSha256": "18cc422c10c1bfba879860cb9788a28b53c525cece78420d2eac7624a2f182d5",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "0d04bd75a3a3c61e485e3d02cbbe32f7f69d020bb109f9facbc77cfaf9220a8d"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 3112,
+          "sha256": "4fbee2d78b156f3f6a54b65fbbf5d27955eb89b14d533742ef2ae2baf9a86f49"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 25798,
+          "sha256": "d34fbfed5c223723c8b676c6175722c1f21b63bd62a2c4aab3f8256a62e52d12"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 11593,
+          "sha256": "d6a62f2f72ad4686c023265bdbb73fa301b6ec3b82cbc426ff602799795ccd1f"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 7573,
+          "sha256": "6eb0d7fff14db57e0fa3b1aa82197dd1cbb543599d88aeb5237fc87fba077c16"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074441Z__harvard-huh-usa-preserved-specimens__0add4277f5bd",
+      "stateCode": "SC",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-sc-20260906-r2.json",
+      "pairs": 2,
+      "receiptSha256": "45c7be3a6caf49d64af630e837808d7dbacd97d502ce364c401b6b5f491fdef5",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "7ae212d173ed07b327df52cb00f5d1e1fba301f51910cd2179f64c3fb3ec3c5c"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1497,
+          "sha256": "0511db006eefcc10ae1f06a75331549343ab8820c0c2457ca9431c1647f52801"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5171,
+          "sha256": "cea5f54eabd452dfbcf73d6a140045f76a94052ff7e73e9328d8ea4b4f5409f6"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2323,
+          "sha256": "598fbeab9fc471734844525b6c24b3193ab3649d13bd427f33d4c8fe7c6d3b3e"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1519,
+          "sha256": "b591521de90feb9a60d37c6cd3dfa018554217e6269905b358f96e4d0177d8bf"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074444Z__harvard-huh-usa-preserved-specimens__00cb6549d6c0",
+      "stateCode": "TN",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-tn-20260906-r2.json",
+      "pairs": 54,
+      "receiptSha256": "34bd7c74181fe044c9eb4ecd367ad95267bf0625b00287d3274e408ce78261c8",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "d0ebf04f138cbaa8261c82f16ce08b103f555cf35d7bf35c74d643adc183a7d2"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 11345,
+          "sha256": "75ed12eb53b8429f83cf63dda9f3b36a39575642aef8bd827ff2cabc6efc268a"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 139100,
+          "sha256": "c59eb32c1c516221e84abf2303b83c464cd33b379239fc6c6a0a50fd9fe1d5c7"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 62661,
+          "sha256": "53433aeb86959e28276920593224acfc3a4c72e5eeb3eca0465795a608cf9f94"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 40953,
+          "sha256": "a1f716c3a99cda90d706ddc6d91d5378ce38ebb5ed02bb33419d205025d26004"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074446Z__harvard-huh-usa-preserved-specimens__34c7b370fa18",
+      "stateCode": "TX",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-tx-20260906-r2.json",
+      "pairs": 6,
+      "receiptSha256": "128dbc8cc762a645f8b19a542854c655507bd1e17ff57f7b0c74feef45dd6623",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "aad60c7a0b5f0c4f85f3aa2d94a5b0a57e5641f5bdd68fd32d073ce918bfe12d"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 2290,
+          "sha256": "eaff3fe79864a6082d4c6a0a0ee9edf18bc6a7ed5befbc21b2646afb9971b704"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 15381,
+          "sha256": "c5109e255c6c5477867b75cc7cb0ad19f7e62987c4563c85a3dc472a3b5a422e"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 6946,
+          "sha256": "8ab7ccea9a9c549da55e0c298c5fcffed2984f0c3c536adb7a3daf7961a38514"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 4534,
+          "sha256": "c47cc03b6843766cb5af2fd9691bb5797c234b9f3506ebc675dfb18f0274007a"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074448Z__harvard-huh-usa-preserved-specimens__476b5174510d",
+      "stateCode": "UT",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-ut-20260906-r2.json",
+      "pairs": 2,
+      "receiptSha256": "c7dd32f2e7296f75a70e43e8fa6e15d40a57e5d0144cf48cce56d5e38fadfe26",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "58c468989b0e08c7fcfc6d1934b6f426e79731326da320085f8c04d423af3c47"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1518,
+          "sha256": "9bf7d6efd0dbe0857fe4eaf0b6af74dea1eb2c8296e8227dc54503ee44793bf8"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5137,
+          "sha256": "028a2a98a0d78aa25e6a471b115900818140a53bda08a7ac6bd4c9e6eb75a000"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2317,
+          "sha256": "f7916b91ca3afc805e23e3504c7a9dbb1cb7df93a57eb821e975dd45e4688097"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1513,
+          "sha256": "01a89b25c849175e3cf067b645f939f10f988da4162bd05be4f34db07349440c"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074451Z__harvard-huh-usa-preserved-specimens__388ac67c611f",
+      "stateCode": "VA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-va-20260906-r2.json",
+      "pairs": 25,
+      "receiptSha256": "2c6b3ee4e410b448393859b0fe309ac5af86fe672e3b98d51a579f9d5257296d",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "bf654bfe00d67aef0639bebfa4e972f460c8757404ffd9c09975eb0849911b4d"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 5477,
+          "sha256": "4ae49ffd2a532f7520c789ee341faea2f6b7d331b84e4924448fbabe9ca1870d"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 64376,
+          "sha256": "6548b21eab2a8ca072fc9bff15aa82fe1158edaf314c60ca580f75db1282465b"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 29000,
+          "sha256": "e3b5784c7b960bdd266c97c1b3e71d46da2e49c0ccd35365a1def4e6844dc9d5"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 18950,
+          "sha256": "9ab9771852f2a12e03135be1d393089fa7240372709b3b88038a48ed78087a61"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074453Z__harvard-huh-usa-preserved-specimens__1396151e175d",
+      "stateCode": "VT",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-vt-20260906-r2.json",
+      "pairs": 16,
+      "receiptSha256": "db867814dd074975f6d587b505688ac1a6396020065df5fec6498a06f0cd3a4b",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "bacd6d35a66fdecb1f1f745af42ced9d04b0ed43e06cbd8ecc223029174c4a15"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 4404,
+          "sha256": "2b8abacedaca3826b72dd7e90e64c5b854c128726eb5ed7526523e6c81d579bd"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 41203,
+          "sha256": "52ca4a9b34664721fdcc01517c3397c4f3492623b3b039ee59a93c33f248a208"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 18571,
+          "sha256": "7c374034f6cd869eb150d5fb7fe2e747aa64159a3ae5812ed75a786b16da3891"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 12139,
+          "sha256": "ce38191e4e92127b131566648dc30b0d3447ee9d092b2c91a77cc05792f1a3ea"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074455Z__harvard-huh-usa-preserved-specimens__72d1f251c432",
+      "stateCode": "WA",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-wa-20260906-r2.json",
+      "pairs": 3,
+      "receiptSha256": "ecf4ca72b974a78bca29973847989970d7415c3a6f277244da06515a0474a1f9",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "dd48faf298d5c43741e8ecf2f5ae39fa233bf8abc0feda8eb3cfb98bad675545"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1724,
+          "sha256": "572cf07be616500e53042c2ec0d928614a836163ab27a94f6a74881a5fe4e94c"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 7715,
+          "sha256": "d641037613235d664bfdfdb58a564959f1f64f04d26b5efbf3ed631341f967de"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 3474,
+          "sha256": "99eb47de4afaf1ebfdae57384204100aef799c26550f7bd0e706608286cd32bf"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 2268,
+          "sha256": "144ca64418e8f822d7db260c3cd5d991f1df6f5274cf456c84eaf6f994ba5414"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074457Z__harvard-huh-usa-preserved-specimens__ec2e0d7f3719",
+      "stateCode": "WI",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-wi-20260906-r2.json",
+      "pairs": 35,
+      "receiptSha256": "9cc339bed6f76b2abe170e13ae22fad3130c3c62a8efff5cfbd3c956ccdbd749",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "d2d984bcfe243f7ef1619685d30049458c6a538a02ca88aea8718e12e8934d73"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 7665,
+          "sha256": "3217df80515b60679232c5f3bde644f6716691f3aa8640dce7ff9e8b0d06eb89"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 90127,
+          "sha256": "3d0bbe921eae2924efd1c14e0235aabd8f283f2fd8171ed1854f26f1c93d43dc"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 40617,
+          "sha256": "e04293f1ed8791ac5688b51da775ebfa3e136e6b7c5c9a0a4b96a3d9c6a1e55f"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 26547,
+          "sha256": "aa24616eeba931d1f1eb207e9f06e00c3d46d3325020c51462234155c10a5376"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074500Z__harvard-huh-usa-preserved-specimens__831266422340",
+      "stateCode": "WV",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-wv-20260906-r2.json",
+      "pairs": 2,
+      "receiptSha256": "9e745ab632d10e8abf10b4feb0a62a9a9d0071ce8ce84d6fed6507e104e2188c",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "8ee3c68e3305025be27fb5416f32a7ecc54489e809915decde9f583cb0b3fc5f"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1410,
+          "sha256": "c2def04dcdd2b067f9e1cf1244ade05b6a6ef5e575898fb6b512e3b9939aeada"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 5160,
+          "sha256": "3bb96a9acca273130dc9379311ed8dfe189539f33019b42a6e22e66004170631"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 2320,
+          "sha256": "eb0709f3e07758faef5a8f112790776c5202deaf0453b3a349246a757339f139"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 1516,
+          "sha256": "04fcf75cd5e336aa8d04b2642da0137214010c12709df2a397fb0432e57bed9a"
+        }
+      ]
+    },
+    {
+      "runId": "20260906T074502Z__harvard-huh-usa-preserved-specimens__dd8eadd5a494",
+      "stateCode": "WY",
+      "planPath": "ops/national-research/plans/harvard-metadata-recovery-20260906-r2/harvard-huh-usa-preserved-specimens-wy-20260906-r2.json",
+      "pairs": 1,
+      "receiptSha256": "0fe2e78e3d58838f83fdabbb20747bfa29460fb9aceacb3dc26748dfefb25966",
+      "files": [
+        {
+          "relative": "artifacts/harvard-huh-usa-source-identity.json",
+          "bytes": 1186,
+          "sha256": "3f3ad50adbc63708650752183f6ec0ae8be67b2c386de78701ba16b8de25d42c"
+        },
+        {
+          "relative": "artifacts/harvard-huh-usa-retained-witnesses.json.gz",
+          "bytes": 1215,
+          "sha256": "6d7237d31c04d459bc8e2fe1bb6b39d5455e0bb67b8a059ae6891eb8901d348b"
+        },
+        {
+          "relative": "assertions.ndjson",
+          "bytes": 2564,
+          "sha256": "aca68572e15a3191f215a9b229ca3aef3fcbe7461635c030a607042139a08227"
+        },
+        {
+          "relative": "reviews.ndjson",
+          "bytes": 1158,
+          "sha256": "697ac31b02feded357dbe60a226647d2d79d4e306b5ad5c718b251c72fadc8b8"
+        },
+        {
+          "relative": "rejections.ndjson",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "relative": "outcomes.ndjson",
+          "bytes": 756,
+          "sha256": "36753ae6ff4d12bff0c4aa82d192672b607eb0ea969acc9190ca446236951baa"
+        }
+      ]
+    }
+  ],
+  "status": "immutable-runs-integrated-projection-verification-pending",
+  "newDeterminationsClaimed": 0
+}
