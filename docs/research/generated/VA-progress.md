@@ -1,26 +1,26 @@
 # Virginia Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `133`
 - County-species pairs: `333032`
-- Verified present: `15299`
+- Verified present: `15301`
 - Verified absent: `133`
 - Not detected: `0`
 - Researched unresolved: `48298`
-- Not researched: `269302`
+- Not researched: `269300`
 - Determination coverage: `4.63%`
 - Research coverage: `19.14%`
-- Explicit outcome coverage: `19.1363%`
-- Applicable protocol cells: `597`
+- Explicit outcome coverage: `19.1369%`
+- Applicable protocol cells: `598`
 - Current complete protocol cells: `131`
-- Protocol completion: `24.12%`
-- Current protocol completion: `21.94%`
-- Evidence records: `18479`
-- Research runs: `35`
+- Protocol completion: `24.08%`
+- Current protocol completion: `21.91%`
+- Evidence records: `18481`
+- Research runs: `36`
 - Rejection records: `2627`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,6 +44,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common Barberry (`berberis-vulgaris`) | plants | 132 | 0 | 1 |
 | Common borage (`borago-officinalis`) | plants | 132 | 0 | 1 |
 | Slender false brome (`brachypodium-sylvaticum`) | plants | 132 | 0 | 1 |
+| Ripgut brome (`bromus-diandrus`) | plants | 132 | 0 | 1 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 132 | 0 | 1 |
 | Brown bryozoan (`bugula-neritina`) | wildlife | 132 | 0 | 1 |
 | Gold-of-pleasure (`camelina-sativa`) | plants | 132 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Branched centaury (`centaurium-pulchellum`) | plants | 132 | 0 | 1 |
 | European chickweed (`cerastium-pumilum`) | plants | 132 | 0 | 1 |
 | Rhodes grass (`chloris-gayana`) | plants | 132 | 0 | 1 |
-| Job's tears (`coix-lacryma-jobi`) | plants | 132 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 9716 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:05.477Z | 6 | 6 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:28.154Z | 8 | 8 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:15.182Z | 66 | 45 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:49.315Z | 20 | 8 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:01.044Z | 510 | 216 |

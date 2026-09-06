@@ -1,26 +1,26 @@
 # Washington Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `8804`
+- Verified present: `8829`
 - Verified absent: `38`
 - Not detected: `0`
-- Researched unresolved: `14333`
-- Not researched: `74481`
-- Determination coverage: `9.05%`
-- Research coverage: `23.73%`
-- Explicit outcome coverage: `23.7313%`
-- Applicable protocol cells: `744`
+- Researched unresolved: `14324`
+- Not researched: `74465`
+- Determination coverage: `9.08%`
+- Research coverage: `23.75%`
+- Explicit outcome coverage: `23.7476%`
+- Applicable protocol cells: `745`
 - Current complete protocol cells: `184`
-- Protocol completion: `26.48%`
-- Current protocol completion: `24.73%`
-- Evidence records: `14094`
-- Research runs: `46`
+- Protocol completion: `26.44%`
+- Current protocol completion: `24.70%`
+- Evidence records: `14119`
+- Research runs: `47`
 - Rejection records: `1883`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,7 +34,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Threecorner leek (`allium-triquetrum`) | plants | 38 | 0 | 1 |
 | Joseph's-coat (`amaranthus-tricolor`) | plants | 38 | 0 | 1 |
-| Dill (`anethum-graveolens`) | plants | 38 | 0 | 1 |
 | Australian saltbush (`atriplex-semibaccata`) | plants | 38 | 0 | 1 |
 | Downy birch (`betula-pubescens`) | plants | 38 | 0 | 1 |
 | Cabbage (`brassica-oleracea`) | plants | 38 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Winged Burning Bush (`euonymus-alatus`) | plants | 38 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 38 | 0 | 1 |
 | Bloody geranium (`geranium-sanguineum`) | plants | 38 | 0 | 1 |
+| Saltlover (`halogeton-glomeratus`) | plants | 38 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:55:02.388Z | 293 | 76 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2557 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:09.895Z | 3293 | 493 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:30.317Z | 3318 | 497 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:20.330Z | 31 | 23 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:54.715Z | 3 | 3 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:06.334Z | 66 | 49 |

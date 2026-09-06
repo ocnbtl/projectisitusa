@@ -1,26 +1,26 @@
 # Oregon Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `7968`
+- Verified present: `7978`
 - Verified absent: `36`
 - Not detected: `0`
-- Researched unresolved: `12207`
-- Not researched: `69933`
-- Determination coverage: `8.88%`
-- Research coverage: `22.42%`
-- Explicit outcome coverage: `22.4208%`
+- Researched unresolved: `12206`
+- Not researched: `69924`
+- Determination coverage: `8.89%`
+- Research coverage: `22.43%`
+- Explicit outcome coverage: `22.4308%`
 - Applicable protocol cells: `782`
 - Current complete protocol cells: `105`
 - Protocol completion: `15.09%`
 - Current protocol completion: `13.43%`
-- Evidence records: `8234`
-- Research runs: `40`
+- Evidence records: `8244`
+- Research runs: `41`
 - Rejection records: `441`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | 2026-09-02T02:42:29.381Z | 730 | 129 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2721 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:47.806Z | 2560 | 553 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:23.438Z | 2570 | 553 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:52.490Z | 17 | 13 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:24.265Z | 1 | 1 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:40.782Z | 24 | 21 |

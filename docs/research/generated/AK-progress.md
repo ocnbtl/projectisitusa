@@ -1,26 +1,26 @@
 # Alaska Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `1150`
+- Verified present: `1154`
 - Verified absent: `30`
 - Not detected: `0`
 - Researched unresolved: `13503`
-- Not researched: `60437`
-- Determination coverage: `1.57%`
+- Not researched: `60433`
+- Determination coverage: `1.58%`
 - Research coverage: `19.55%`
-- Explicit outcome coverage: `19.5461%`
-- Applicable protocol cells: `245`
+- Explicit outcome coverage: `19.5514%`
+- Applicable protocol cells: `247`
 - Current complete protocol cells: `111`
-- Protocol completion: `45.31%`
-- Current protocol completion: `45.31%`
-- Evidence records: `1340`
-- Research runs: `38`
+- Protocol completion: `44.94%`
+- Current protocol completion: `44.94%`
+- Evidence records: `1344`
+- Research runs: `39`
 - Rejection records: `2194`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common Mallow (`malva-neglecta`) | plants | 29 | 0 | 1 |
 | Wall-lettuce (`mycelis-muralis`) | plants | 29 | 0 | 1 |
 | Ballmustard (`neslia-paniculata`) | plants | 29 | 0 | 1 |
+| Lady's Thumb (`persicaria-maculosa`) | plants | 29 | 0 | 1 |
 | Bulbous bluegrass (`poa-bulbosa`) | plants | 29 | 0 | 1 |
-| Canada bluegrass (`poa-compressa`) | plants | 29 | 0 | 1 |
 | Garden rhubarb (`rheum-rhabarbarum`) | plants | 29 | 0 | 1 |
 | Rugosa rose (`rosa-rugosa`) | plants | 29 | 0 | 1 |
 | Tall tumblemustard (`sisymbrium-altissimum`) | plants | 29 | 0 | 1 |
+| Hoe nightshade (`solanum-physalifolium`) | plants | 29 | 0 | 1 |
 | Red Sandspurry (`spergularia-rubra`) | plants | 29 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 29 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 28 | 0 | 1 |
-| Herb sophia (`descurainia-sophia`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 314 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:31.637Z | 58 | 39 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:33:48.658Z | 62 | 41 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:10.544Z | 8 | 5 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:49.754Z | 2 | 2 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:36:35.978Z | 3 | 2 |

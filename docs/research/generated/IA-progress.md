@@ -1,26 +1,26 @@
 # Iowa Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6244`
+- Verified present: `6246`
 - Verified absent: `99`
 - Not detected: `9`
-- Researched unresolved: `40893`
-- Not researched: `200651`
+- Researched unresolved: `40892`
+- Not researched: `200650`
 - Determination coverage: `2.56%`
 - Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0584%`
-- Applicable protocol cells: `333`
+- Explicit outcome coverage: `19.0588%`
+- Applicable protocol cells: `334`
 - Current complete protocol cells: `119`
-- Protocol completion: `39.64%`
-- Current protocol completion: `35.74%`
-- Evidence records: `6610`
-- Research runs: `37`
+- Protocol completion: `39.52%`
+- Current protocol completion: `35.63%`
+- Evidence records: `6612`
+- Research runs: `38`
 - Rejection records: `316`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,6 +34,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 98 | 0 | 1 |
 | Mat amaranth (`amaranthus-blitoides`) | plants | 98 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 98 | 0 | 1 |
 | Hoary Alyssum (`berteroa-incana`) | plants | 98 | 0 | 1 |
 | European white birch (`betula-pendula`) | plants | 98 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 98 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Foxtail millet (`setaria-italica`) | plants | 98 | 0 | 1 |
 | Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 98 | 0 | 1 |
 | Climbing Nightshade (`solanum-dulcamara`) | plants | 98 | 0 | 1 |
-| Field Sowthistle (`sonchus-arvensis`) | plants | 98 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 921 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:53.324Z | 36 | 30 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:34:55.668Z | 38 | 31 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:38.474Z | 61 | 34 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:18.968Z | 7 | 6 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:39.165Z | 14 | 10 |

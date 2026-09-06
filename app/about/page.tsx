@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { datasetSnapshot } from "@/lib/data/snapshot-store";
 import { AboutMission } from "@/components/about-mission";
 import { ImpactStats } from "@/components/impact-stats";
@@ -21,12 +22,27 @@ export default function AboutPage() {
           Data foundation
         </p>
         <p className="mt-3">
-          Project Isitusa is designed around county-level invasive species
-          exploration. The current release uses a full verified lower-48 invasive
-          species catalog from US-RIIS, plus a stored merged county presence
-          snapshot from {snapshotDate} using EDDMaps and USGS NAS where verified
-          county records are available. Remaining county-level gaps are surfaced
-          explicitly in the explorer while those records continue to be filled in.
+          The species catalog is based on the U.S. Register of Introduced and
+          Invasive Species (US-RIIS). The map starts from a stored county snapshot
+          dated {snapshotDate}, using EDDMapS and USGS NAS records. Reviewed county
+          research also contributes to the Alabama map. Map counts and national
+          research coverage can therefore differ.
+        </p>
+        <p className="mt-3">
+          <Link href="/research" className="underline underline-offset-4">
+            County research
+          </Link>{" "}
+          covers all 50 states and the District of Columbia, using registered
+          sources including agency surveys and museum specimens. Each state and
+          county view shows its assessment date, evidence, and source links.
+          Research releases are updated separately from the map, and many
+          county-species pairs remain unresolved.
+        </p>
+        <p className="mt-3">
+          A recorded occurrence may be historical and does not by itself establish
+          that a species is present today. Missing records do not establish
+          absence. Official absence and eradication findings retain their
+          geographic and time scope.
         </p>
       </section>
     </main>

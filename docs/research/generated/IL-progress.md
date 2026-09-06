@@ -1,26 +1,26 @@
 # Illinois Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `11291`
+- Verified present: `11295`
 - Verified absent: `202`
 - Not detected: `8`
-- Researched unresolved: `37204`
-- Not researched: `206703`
+- Researched unresolved: `37203`
+- Not researched: `206700`
 - Determination coverage: `4.50%`
 - Research coverage: `19.07%`
-- Explicit outcome coverage: `19.0695%`
-- Applicable protocol cells: `450`
+- Explicit outcome coverage: `19.0707%`
+- Applicable protocol cells: `451`
 - Current complete protocol cells: `139`
-- Protocol completion: `33.78%`
-- Current protocol completion: `30.89%`
-- Evidence records: `13912`
-- Research runs: `37`
+- Protocol completion: `33.70%`
+- Current protocol completion: `30.82%`
+- Evidence records: `13916`
+- Research runs: `38`
 - Rejection records: `2122`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,7 +43,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Black mustard (`brassica-nigra`) | plants | 101 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 101 | 0 | 1 |
 | Smooth Brome (`bromus-inermis`) | plants | 101 | 0 | 1 |
-| Japanese brome (`bromus-japonicus`) | plants | 101 | 0 | 1 |
 | Littlepod False Flax (`camelina-microcarpa`) | plants | 101 | 0 | 1 |
 | Rampion bellflower (`campanula-rapunculoides`) | plants | 101 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 101 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Feral horse (`equus-caballus`) | wildlife | 101 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 101 | 0 | 1 |
 | False baby's breath (`galium-mollugo`) | plants | 101 | 0 | 1 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 101 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7702 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:58.173Z | 32 | 28 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:00.217Z | 36 | 30 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:44.264Z | 59 | 40 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:24.335Z | 21 | 20 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:44.049Z | 12 | 11 |

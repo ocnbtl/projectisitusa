@@ -1,26 +1,26 @@
 # New Hampshire Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `1910`
+- Verified present: `1915`
 - Verified absent: `10`
 - Not detected: `0`
 - Researched unresolved: `3472`
-- Not researched: `19648`
-- Determination coverage: `7.67%`
-- Research coverage: `21.53%`
-- Explicit outcome coverage: `21.5335%`
-- Applicable protocol cells: `458`
+- Not researched: `19643`
+- Determination coverage: `7.69%`
+- Research coverage: `21.55%`
+- Explicit outcome coverage: `21.5535%`
+- Applicable protocol cells: `459`
 - Current complete protocol cells: `83`
-- Protocol completion: `20.96%`
-- Current protocol completion: `18.12%`
-- Evidence records: `1928`
-- Research runs: `41`
+- Protocol completion: `20.92%`
+- Current protocol completion: `18.08%`
+- Evidence records: `1933`
+- Research runs: `42`
 - Rejection records: `125`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 700 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:32.788Z | 14 | 14 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:18.718Z | 19 | 19 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:31.580Z | 19 | 18 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:08.096Z | 10 | 8 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:23.016Z | 4 | 4 |

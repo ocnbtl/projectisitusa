@@ -1,26 +1,26 @@
 # Missouri Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `8272`
+- Verified present: `8338`
 - Verified absent: `115`
 - Not detected: `0`
-- Researched unresolved: `46340`
-- Not researched: `233233`
-- Determination coverage: `2.91%`
-- Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0051%`
-- Applicable protocol cells: `398`
+- Researched unresolved: `46334`
+- Not researched: `233173`
+- Determination coverage: `2.94%`
+- Research coverage: `19.03%`
+- Explicit outcome coverage: `19.0259%`
+- Applicable protocol cells: `404`
 - Current complete protocol cells: `120`
-- Protocol completion: `33.42%`
-- Current protocol completion: `30.15%`
-- Evidence records: `9228`
-- Research runs: `36`
+- Protocol completion: `32.92%`
+- Current protocol completion: `29.70%`
+- Evidence records: `9294`
+- Research runs: `37`
 - Rejection records: `1467`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,10 +32,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 114 | 0 | 1 |
 | Colonial bentgrass (`agrostis-capillaris`) | plants | 114 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 114 | 0 | 1 |
+| Pale madwort (`alyssum-alyssoides`) | plants | 114 | 0 | 1 |
 | Greater burdock (`arctium-lappa`) | plants | 114 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 114 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 114 | 0 | 1 |
 | Meadow brome (`bromus-commutatus`) | plants | 114 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 114 | 0 | 1 |
@@ -45,18 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common dogmustard (`erucastrum-gallicum`) | plants | 114 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 114 | 0 | 1 |
 | Small geranium (`geranium-pusillum`) | plants | 114 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 114 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 114 | 0 | 1 |
 | Common periwinkle (`littorina-littorea`) | wildlife | 114 | 0 | 1 |
+| Annual ryegrass (`lolium-multiflorum`) | plants | 114 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 114 | 0 | 1 |
 | Red marshworm (`lumbricus-rubellus`) | wildlife | 114 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 114 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 114 | 0 | 1 |
 | Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 114 | 0 | 1 |
 | Chinese Silvergrass (`miscanthus-sinensis`) | plants | 114 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 114 | 0 | 1 |
 | Apple of Peru (`nicandra-physalodes`) | plants | 114 | 0 | 1 |
-| Annual canarygrass (`phalaris-canariensis`) | plants | 114 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 114 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5427 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:19.533Z | 25 | 23 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:33:50.938Z | 91 | 36 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:14.166Z | 46 | 33 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:52.132Z | 21 | 16 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:08.035Z | 5 | 4 |

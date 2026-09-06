@@ -1,26 +1,26 @@
 # Kentucky Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `8800`
+- Verified present: `8802`
 - Verified absent: `120`
 - Not detected: `12`
 - Researched unresolved: `47835`
-- Not researched: `243713`
+- Not researched: `243711`
 - Determination coverage: `2.97%`
 - Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8921%`
+- Explicit outcome coverage: `18.8928%`
 - Applicable protocol cells: `415`
 - Current complete protocol cells: `126`
 - Protocol completion: `33.49%`
 - Current protocol completion: `30.36%`
-- Evidence records: `10884`
-- Research runs: `36`
+- Evidence records: `10886`
+- Research runs: `37`
 - Rejection records: `637`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5533 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:04.598Z | 18 | 16 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:07.236Z | 20 | 16 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:53.024Z | 52 | 26 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:32.835Z | 76 | 60 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:51.507Z | 4 | 4 |

@@ -1,26 +1,26 @@
 # Utah Research Progress
 
-Generated: `2026-09-05T00:00:00.000Z`
+Generated: `2026-09-06T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `3409`
+- Verified present: `3412`
 - Verified absent: `29`
 - Not detected: `0`
-- Researched unresolved: `11774`
-- Not researched: `57404`
-- Determination coverage: `4.73%`
+- Researched unresolved: `11773`
+- Not researched: `57402`
+- Determination coverage: `4.74%`
 - Research coverage: `20.95%`
-- Explicit outcome coverage: `20.9486%`
-- Applicable protocol cells: `486`
+- Explicit outcome coverage: `20.9513%`
+- Applicable protocol cells: `487`
 - Current complete protocol cells: `72`
-- Protocol completion: `17.49%`
-- Current protocol completion: `14.81%`
-- Evidence records: `3478`
-- Research runs: `40`
+- Protocol completion: `17.45%`
+- Current protocol completion: `14.78%`
+- Evidence records: `3481`
+- Research runs: `41`
 - Rejection records: `139`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,6 +48,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Greater knapweed (`centaurea-scabiosa`) | plants | 28 | 0 | 1 |
 | Red valerian (`centranthus-ruber`) | plants | 28 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 28 | 0 | 1 |
+| Celandine (`chelidonium-majus`) | plants | 28 | 0 | 1 |
 | Rose (`cotoneaster-salicifolius`) | plants | 28 | 0 | 1 |
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 28 | 0 | 1 |
 | Maiden pink (`dianthus-deltoides`) | plants | 28 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common dogmustard (`erucastrum-gallicum`) | plants | 28 | 0 | 1 |
 | Winged Burning Bush (`euonymus-alatus`) | plants | 28 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 28 | 0 | 1 |
-| Sweet fennel (`foeniculum-vulgare`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -82,7 +82,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1375 | 316 |
-| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:03.267Z | 179 | 97 |
+| Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:25.901Z | 182 | 99 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:12.175Z | 418 | 157 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:46.595Z | 1 | 1 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:58.514Z | 9 | 5 |
