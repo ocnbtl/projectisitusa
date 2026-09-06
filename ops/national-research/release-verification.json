@@ -6406,6 +6406,51 @@
         "nonCriticalUnknowns": ["Exact Vercel provider build-log duration and runtime-log rows were inaccessible through the available connector."]
       },
       "evidenceScope": "Externally verified prior production release. Round 75 acquired one authenticated 16,077-record GBIF archive and reconciled 25,048 non-duplicative county-species pairs across 51 jurisdiction rows and 50 nonempty immutable runs. Final movement is 2,572 verified present and 22,476 researched unresolved, with zero absence or non-detection movement and no state certification claim. The R2 release research-aed213043298-61bb7c59ff565fba contains 3,195 objects and 956,854,728 content bytes; all objects passed full verification after upload and again during pointer promotion. Canonical, origin, public GitHub main, GitHub Production, and the immutable Vercel host identify released application commit 16936574c3d5cb225b3efeb50fe19d9ad3b26b8a. Public pointer, manifest, content object, canonical and immutable routes, changed Maryland byte identities, ZIP lookup, research consumer flow, responsive browser layout, and browser console/request checks passed. The guarded retained-byte projection is 3,644,782,881, below the 8 GB project stop. Exact Vercel provider build-log duration and runtime-log rows were inaccessible and are not claimed. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-58c9345b-2026-09-06",
+      "verifiedAt": "2026-09-06T07:05:40.367Z",
+      "commitSha": "58c9345b05885a9144eff77af2628fb9a5687153",
+      "githubMainSha": "58c9345b05885a9144eff77af2628fb9a5687153",
+      "githubDeploymentId": 6290117058,
+      "vercelDeploymentId": "dpl_6wthX2sVXjP6LcMC9yyiCd8wZ5tw",
+      "vercelDeploymentUrl": "projectisitusa-qfot1nvzs-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/about",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research-data/current.json",
+          "status": 200
+        }
+      ],
+      "researchReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+      "researchSourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+      "researchManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+      "releaseEvaluation": {
+        "path": "ops/national-research/evaluations/research-production-verification-20260906-r1.json",
+        "sha256": "65f21bc904b7f0e69b207d2661dd9a7341ee5f2e150ec87ac3e339af2383a1dc",
+        "bytes": 47305,
+        "result": "go-production-app-and-compressed-national-data-verified"
+      },
+      "roundMovement": {
+        "newlyDeterminedPairs": 187,
+        "removedDeterminedPairs": 0,
+        "netDeterminations": 187,
+        "newVerifiedAbsent": 0,
+        "publicDeterminationIncrease": 119742,
+        "previouslyLocalBacklog": 119555,
+        "certifiedStates": 0
+      },
+      "evidenceScope": "This receipt attests to the identified app deployment and research release, not the later commit containing this receipt. Existing research remains incomplete and no additional biological conclusion is created by these release checks."
     }
   ]
 }

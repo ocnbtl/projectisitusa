@@ -1,0 +1,1036 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-production-release-verification",
+  "phase": "POST-DEPLOYMENT",
+  "evaluationId": "research-production-verification-20260906-r1",
+  "verifiedAt": "2026-09-06T07:05:40.367Z",
+  "decision": "GO",
+  "preDeployment": {
+    "path": "ops/national-research/evaluations/research-production-launch-20260906-r1.json",
+    "sha256": "f76c317ad2bbeeaad740e5f054d52b4df426f437d9e24bbf646fb295f3982e91"
+  },
+  "application": {
+    "schemaVersion": 1,
+    "kind": "isitusa-app-deployment-verification",
+    "observedAt": "2026-09-06T06:56:17.300Z",
+    "gitRemoteVerifiedCommit": "58c9345b05885a9144eff77af2628fb9a5687153",
+    "provider": {
+      "observedAt": "2026-09-06T06:52:29.026Z",
+      "deploymentId": "dpl_6wthX2sVXjP6LcMC9yyiCd8wZ5tw",
+      "deploymentUrl": "https://projectisitusa-qfot1nvzs-unigentamos.vercel.app",
+      "providerUrl": "https://vercel.com/unigentamos/projectisitusa/6wthX2sVXjP6LcMC9yyiCd8wZ5tw",
+      "ready": true,
+      "latest": true,
+      "environment": "Production",
+      "assignedDomain": "isitusa.com",
+      "sourceCommit": "58c9345b05885a9144eff77af2628fb9a5687153",
+      "displayedBuildDuration": "3m 49s"
+    },
+    "observations": [
+      {
+        "url": "https://isitusa.com/about",
+        "status": 200,
+        "bytes": 23319,
+        "sha256": "c65e51de1652a6c959c58e7024561d3bcf5f4294111abe8a9d4729b13e243762",
+        "headers": {
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=63072000",
+          "x-frame-options": "DENY",
+          "referrer-policy": "no-referrer",
+          "cache-control": "public, max-age=0, must-revalidate"
+        }
+      },
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200,
+        "bytes": 14175,
+        "sha256": "df1365c579ebd089ca0bd5c0c998e4c772d9c554ab952d4fc7e75d8d47d1de49",
+        "headers": {
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=63072000",
+          "x-frame-options": "DENY",
+          "referrer-policy": "no-referrer",
+          "cache-control": "public, max-age=0, must-revalidate"
+        }
+      },
+      {
+        "url": "https://projectisitusa-qfot1nvzs-unigentamos.vercel.app/about",
+        "status": 200,
+        "bytes": 23319,
+        "sha256": "c65e51de1652a6c959c58e7024561d3bcf5f4294111abe8a9d4729b13e243762",
+        "headers": {
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+          "x-frame-options": "DENY",
+          "referrer-policy": "no-referrer",
+          "cache-control": "public, max-age=0, must-revalidate"
+        }
+      },
+      {
+        "url": "https://projectisitusa-qfot1nvzs-unigentamos.vercel.app/research",
+        "status": 200,
+        "bytes": 14175,
+        "sha256": "df1365c579ebd089ca0bd5c0c998e4c772d9c554ab952d4fc7e75d8d47d1de49",
+        "headers": {
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+          "x-frame-options": "DENY",
+          "referrer-policy": "no-referrer",
+          "cache-control": "public, max-age=0, must-revalidate"
+        }
+      }
+    ],
+    "canonicalMatchesImmutable": {
+      "/about": true,
+      "/research": true
+    },
+    "browserQa": {
+      "observedAt": "2026-09-06T06:54:25.888Z",
+      "url": "https://isitusa.com/about",
+      "desktop": {
+        "width": 1280,
+        "height": 900,
+        "scrollWidth": 1265
+      },
+      "mobile": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 375
+      },
+      "visualInspection": true,
+      "revisedCopyVisible": true,
+      "researchLinkHref": "/research",
+      "browserErrors": [],
+      "physicalDeviceTested": false,
+      "viewportReset": true
+    }
+  },
+  "githubDeployment": {
+    "id": 6290117058,
+    "sha": "58c9345b05885a9144eff77af2628fb9a5687153",
+    "environment": "Production",
+    "statusUrl": "https://api.github.com/repos/ocnbtl/projectisitusa/deployments/6290117058/statuses",
+    "status": "success",
+    "createdAt": "2026-09-06T06:51:21Z",
+    "environmentUrl": "https://projectisitusa-qfot1nvzs-unigentamos.vercel.app",
+    "logUrl": "https://projectisitusa-qfot1nvzs-unigentamos.vercel.app"
+  },
+  "research": {
+    "schemaVersion": 1,
+    "kind": "isitusa-public-release-verification",
+    "verifiedAt": "2026-09-06T06:57:54.295Z",
+    "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "manifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+    "pointers": [
+      {
+        "schemaVersion": 1,
+        "kind": "isitusa-research-projection-pointer",
+        "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+        "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+        "releaseManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+        "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+        "promotedAt": "2026-09-06T06:56:53.282Z"
+      },
+      {
+        "schemaVersion": 1,
+        "kind": "isitusa-research-projection-pointer",
+        "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+        "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+        "releaseManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+        "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+        "promotedAt": "2026-09-06T06:56:53.282Z"
+      }
+    ],
+    "stateCount": 51,
+    "totals": {
+      "verifiedPresent": 311854,
+      "verifiedAbsent": 3244,
+      "notDetected": 236,
+      "researchedUnresolved": 1307103,
+      "notResearched": 6250139,
+      "totalPairs": 7872576,
+      "countyCount": 3144,
+      "conflictCount": 0
+    },
+    "determinations": 315098,
+    "publicRequestCount": 61,
+    "publicReadsAreAdditionalToPublisher": true,
+    "samples": [
+      {
+        "state": "IA",
+        "county": "19071",
+        "species": "amaranthus-graecizans",
+        "pair": {
+          "speciesId": "amaranthus-graecizans",
+          "commonName": "Mediterranean amaranth",
+          "scientificName": "Amaranthus graecizans",
+          "category": "plants",
+          "applicabilityStatus": "applicable",
+          "displayStatus": "verified-present",
+          "determinationStatus": "recorded-present",
+          "surveyStatus": "unassessed",
+          "researchStatus": "reviewed-evidence-found",
+          "freshnessStatus": "stale",
+          "reviewStatus": "machine-validated",
+          "conflict": false,
+          "evidence": [
+            {
+              "evidenceId": "cpnwh-assertion-cabedbb5968ee87e82d7be98f99f01e110955a3143be5d826bf385f7d026a35d",
+              "sourceId": "cpnwh-preserved-specimens",
+              "sourceLabel": "Consortium of Pacific Northwest Herbaria preserved specimens",
+              "url": "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip",
+              "assertion": "recorded-present",
+              "scope": "point",
+              "observedAt": "1966-09-01",
+              "reviewedAt": "2026-09-06T05:34:55.668Z",
+              "caveat": "Historical preserved specimen evidence supports recorded presence only. It does not establish current abundance, countywide distribution, or current establishment. Source silence, excluded cultivated records, missing geography, and all rejected rows create no absence or non-detection claim.",
+              "lineage": "source-record"
+            }
+          ],
+          "screenedBySourceIds": [
+            "cpnwh-preserved-specimens"
+          ]
+        }
+      },
+      {
+        "state": "ID",
+        "county": "16001",
+        "species": "pinus-sylvestris",
+        "pair": {
+          "speciesId": "pinus-sylvestris",
+          "commonName": "Scots pine",
+          "scientificName": "Pinus sylvestris",
+          "category": "plants",
+          "applicabilityStatus": "applicable",
+          "displayStatus": "verified-present",
+          "determinationStatus": "recorded-present",
+          "surveyStatus": "unassessed",
+          "researchStatus": "reviewed-evidence-found",
+          "freshnessStatus": "undated",
+          "reviewStatus": "machine-validated",
+          "conflict": false,
+          "evidence": [
+            {
+              "evidenceId": "cpnwh-assertion-0ef6c7102c9725db72be9cc4fddba8abab833537ac88f06df76ab7d7a755528e",
+              "sourceId": "cpnwh-preserved-specimens",
+              "sourceLabel": "Consortium of Pacific Northwest Herbaria preserved specimens",
+              "url": "https://www.pnwherbaria.org/data/getdataset.php?File=CPNWH_DwCA.zip",
+              "assertion": "recorded-present",
+              "scope": "point",
+              "reviewedAt": "2026-09-06T05:34:57.999Z",
+              "caveat": "Historical preserved specimen evidence supports recorded presence only. It does not establish current abundance, countywide distribution, or current establishment. Source silence, excluded cultivated records, missing geography, and all rejected rows create no absence or non-detection claim.",
+              "lineage": "source-record"
+            }
+          ],
+          "screenedBySourceIds": [
+            "cpnwh-preserved-specimens"
+          ]
+        }
+      },
+      {
+        "state": "DC",
+        "county": "11001",
+        "species": "vespa-mandarinia",
+        "pair": {
+          "speciesId": "vespa-mandarinia",
+          "commonName": "Vespid wasp",
+          "scientificName": "Vespa mandarinia",
+          "category": "insects",
+          "applicabilityStatus": "unknown",
+          "displayStatus": "verified-absent",
+          "determinationStatus": "officially-absent",
+          "historicalOccurrenceStatus": "none",
+          "currentDeterminationStatus": "officially-eradicated",
+          "surveyStatus": "unassessed",
+          "researchStatus": "reviewed-evidence-found",
+          "freshnessStatus": "current",
+          "reviewStatus": "human-approved",
+          "conflict": false,
+          "evidence": [
+            {
+              "evidenceId": "official-eradication-assertion-52dff1f0e994fb47604ab553a20f003d9fc65eb3e94a0fb875bf0012d64dea5f",
+              "sourceId": "aphis-northern-giant-hornet-eradication-2024",
+              "sourceLabel": "USDA APHIS northern giant hornet eradication statement (2024)",
+              "url": "https://www.aphis.usda.gov/news/agency-announcements/aphis-action-victory-over-worlds-largest-hornet-species",
+              "assertion": "officially-absent",
+              "scope": "county",
+              "observedAt": "2024-12-18",
+              "reviewedAt": "2026-09-01T19:16:53.000Z",
+              "caveat": "This is an explicit authoritative eradication determination, not an inference from silence, an empty query, a map, a model, or an unconfirmed survey result. The determination is current only through the parent record validThrough date and must fail closed after that date without reaffirmation.",
+              "lineage": "source-record",
+              "parentJurisdictionEvidenceId": "vespa-mandarinia-us-officially-eradicated-2024"
+            }
+          ],
+          "screenedBySourceIds": [
+            "aphis-northern-giant-hornet-eradication-2024"
+          ]
+        }
+      }
+    ],
+    "observations": [
+      {
+        "url": "https://data.isitusa.com/current.json",
+        "status": 200,
+        "decodedBytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "contentEncoding": "br",
+        "cacheControl": "public, max-age=60, must-revalidate",
+        "etag": "W/\"9c7a0747af09da665f7111c20aed7992\""
+      },
+      {
+        "url": "https://data.isitusa.com/releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+        "status": 200,
+        "decodedBytes": 2047964,
+        "sha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+        "contentEncoding": "br",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "W/\"984e580cc506f2ada2fdc3270dbd8721\""
+      },
+      {
+        "url": "https://isitusa.com/research-data/current.json",
+        "status": 200,
+        "decodedBytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "contentEncoding": "br",
+        "cacheControl": "public, max-age=60, must-revalidate",
+        "etag": "W/\"9c7a0747af09da665f7111c20aed7992\""
+      },
+      {
+        "url": "https://isitusa.com/research-data/releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+        "status": 200,
+        "decodedBytes": 2047964,
+        "sha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+        "contentEncoding": "br",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "W/\"984e580cc506f2ada2fdc3270dbd8721\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/ea/eac44f9278d3aa40fca00d9accc29dc28f718028c6b71041bca06ea77cb89129.json",
+        "status": 200,
+        "decodedBytes": 389201,
+        "sha256": "eac44f9278d3aa40fca00d9accc29dc28f718028c6b71041bca06ea77cb89129",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"0712be599278875c1f26b2e341463ee0\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/8e/8e02a343b8972af70ec24ca40b23e536b641f730d6e9fb658d6b22a8f88ed2c1.json",
+        "status": 200,
+        "decodedBytes": 1871443,
+        "sha256": "8e02a343b8972af70ec24ca40b23e536b641f730d6e9fb658d6b22a8f88ed2c1",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"394b4e8830e998705f3e5003ee2d8109\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/85/852c4ca398439a6ec24a363ceb424bf4d47e032cca7e30d0842f1b50fe24ec48.json",
+        "status": 200,
+        "decodedBytes": 461474,
+        "sha256": "852c4ca398439a6ec24a363ceb424bf4d47e032cca7e30d0842f1b50fe24ec48",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"75c7e782c807336994712d1b8e0be9b9\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/54/5400df0058af9f7a59ad36279c81cc70a74c828a68a365a971f4fa4b53ed8535.json",
+        "status": 200,
+        "decodedBytes": 474475,
+        "sha256": "5400df0058af9f7a59ad36279c81cc70a74c828a68a365a971f4fa4b53ed8535",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"785da2d6b3f80fa04f435f2f82015dad\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/cf/cfd75880242811b26fda7325836e85460024ccabde7c4f9bd0a90937b5fef6ff.json",
+        "status": 200,
+        "decodedBytes": 711802,
+        "sha256": "cfd75880242811b26fda7325836e85460024ccabde7c4f9bd0a90937b5fef6ff",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"b7c1f00ac9545eaa238c4db30cfbf795\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/be/be0054b8996a46b16bf282478e62710c599ac50dbdc1c1aa7b8ea542a25daae9.json",
+        "status": 200,
+        "decodedBytes": 489877,
+        "sha256": "be0054b8996a46b16bf282478e62710c599ac50dbdc1c1aa7b8ea542a25daae9",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"45ecb5dd03944bf8d476b768b05681f5\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/4a/4a6e0c76867936e166c24e38e7ac2180bed3c45c3cf59b044bcb7f2bb49551fc.json",
+        "status": 200,
+        "decodedBytes": 337901,
+        "sha256": "4a6e0c76867936e166c24e38e7ac2180bed3c45c3cf59b044bcb7f2bb49551fc",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"23e9590d91ab6aa3c00a9bf0b4fc6690\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/b9/b9ed906017e502976d90004c0365ddfc18a4260a261157363148e7f259f2a8d4.json",
+        "status": 200,
+        "decodedBytes": 333871,
+        "sha256": "b9ed906017e502976d90004c0365ddfc18a4260a261157363148e7f259f2a8d4",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"f5743142e779f644c6de032d308a83e6\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/2e/2e71b1ef8b178370f17e0d0f918ce164474f05a9cc63e68d5757213b2b988ccc.json",
+        "status": 200,
+        "decodedBytes": 401032,
+        "sha256": "2e71b1ef8b178370f17e0d0f918ce164474f05a9cc63e68d5757213b2b988ccc",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"74dce1eeb945e9b9f37791525fd5c173\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/8e/8e6f9ba4017ded61c814c906354305f32e6f05c4a82dfd45f6b1d669ce67ad46.json",
+        "status": 200,
+        "decodedBytes": 584633,
+        "sha256": "8e6f9ba4017ded61c814c906354305f32e6f05c4a82dfd45f6b1d669ce67ad46",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"b2c8d40675040dccfcd0723f1aa93b15\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/7e/7ef55afa07a54a6aed254005ae4ea9f2aadf1484f9a6661d9887b00a498c8045.json",
+        "status": 200,
+        "decodedBytes": 519812,
+        "sha256": "7ef55afa07a54a6aed254005ae4ea9f2aadf1484f9a6661d9887b00a498c8045",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"4eaeda0dce3aa0f061b10edb9c376541\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/db/db4986b30abbe66dc56eb543ae5fc94af917d6b545f8a3b15db4082d8cabcedc.json",
+        "status": 200,
+        "decodedBytes": 651994,
+        "sha256": "db4986b30abbe66dc56eb543ae5fc94af917d6b545f8a3b15db4082d8cabcedc",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"870a18dfc3abc696eb70539904a758b0\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/85/8589f22010bcde4b870f0139299779b7d5ad953b7462976d2f6797e3083a10ab.json",
+        "status": 200,
+        "decodedBytes": 457695,
+        "sha256": "8589f22010bcde4b870f0139299779b7d5ad953b7462976d2f6797e3083a10ab",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"20a411e5ef78511e0a1488389304e439\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/37/37c49e7df8219f50fced97a6d8203ecdc0a97bd8363d14dff1491d28111931d0.json",
+        "status": 200,
+        "decodedBytes": 575404,
+        "sha256": "37c49e7df8219f50fced97a6d8203ecdc0a97bd8363d14dff1491d28111931d0",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"f7a21d17ba360f6e6748205693f8c94a\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/6e/6e7dcc6627b39cc360a8d285ee4cc200022da4b974ca079fccee570caeab5271.json",
+        "status": 200,
+        "decodedBytes": 489222,
+        "sha256": "6e7dcc6627b39cc360a8d285ee4cc200022da4b974ca079fccee570caeab5271",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"aceff738614d6525b83714c041086606\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/83/832422a7b1d07838efea990750a7757aa80dbf1466d78fcb43a931c0895875a9.json",
+        "status": 200,
+        "decodedBytes": 492842,
+        "sha256": "832422a7b1d07838efea990750a7757aa80dbf1466d78fcb43a931c0895875a9",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"7c5bdd3d791c9d41df0c29c63adafa00\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/e2/e21ff35ce7207846d29242e440c655976c22eb10f802cef4bb3e8dcfe14e33dd.json",
+        "status": 200,
+        "decodedBytes": 485978,
+        "sha256": "e21ff35ce7207846d29242e440c655976c22eb10f802cef4bb3e8dcfe14e33dd",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"b17f8f67ac449cdb5c3ceb8fd7b19fed\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/42/42401edac7227386b3e1a7e17aaa99e83892fd6f389ef3dc223468078253653b.json",
+        "status": 200,
+        "decodedBytes": 485367,
+        "sha256": "42401edac7227386b3e1a7e17aaa99e83892fd6f389ef3dc223468078253653b",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"719577affd43797f5c6802816e55c1d0\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/d0/d0a5c9ea4459f59b11b2d52f5eb59a50113b3c0c45599c9f076d3dd444dc5057.json",
+        "status": 200,
+        "decodedBytes": 446221,
+        "sha256": "d0a5c9ea4459f59b11b2d52f5eb59a50113b3c0c45599c9f076d3dd444dc5057",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"c76ca990caff8f29ea04ca0afe085c96\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/6e/6e982bc9640be311d63bbb052a9bf33958d73b3543df38024ef020be51e73cc8.json",
+        "status": 200,
+        "decodedBytes": 605157,
+        "sha256": "6e982bc9640be311d63bbb052a9bf33958d73b3543df38024ef020be51e73cc8",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"dd2394fedec7e3eafd7c1ee8b90ea3dc\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/34/34245ea1dc7612f2899007a144e68266e1a66ff0d13d046850757cfb08164f4d.json",
+        "status": 200,
+        "decodedBytes": 529411,
+        "sha256": "34245ea1dc7612f2899007a144e68266e1a66ff0d13d046850757cfb08164f4d",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"3e2236d1214e3394826eaddd9542cf58\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/dc/dc720a06108e51068db6fd70ee21769a478f24ff616d3e0e334a451225dfc03c.json",
+        "status": 200,
+        "decodedBytes": 491557,
+        "sha256": "dc720a06108e51068db6fd70ee21769a478f24ff616d3e0e334a451225dfc03c",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"f8f0eec6ccc574c1a563ea448edcbecd\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/b0/b03f616737697ede8a6a8f2ba1d3a0a4c3ec2cfe60f891f60c0585811a5f1cf7.json",
+        "status": 200,
+        "decodedBytes": 500706,
+        "sha256": "b03f616737697ede8a6a8f2ba1d3a0a4c3ec2cfe60f891f60c0585811a5f1cf7",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"9f79a32ddd4a14b85d9711524c4383f7\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/47/47c4a33897afd36fe22913dd05b5bd9ad011ac50bb7573c03c0141da70adb752.json",
+        "status": 200,
+        "decodedBytes": 444215,
+        "sha256": "47c4a33897afd36fe22913dd05b5bd9ad011ac50bb7573c03c0141da70adb752",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"282aeceed5f13034af4b1651efcba105\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/28/28da2bd00c0180d087c9d615bab21879a2bae6a09b5d63346c35278d766f23fa.json",
+        "status": 200,
+        "decodedBytes": 480334,
+        "sha256": "28da2bd00c0180d087c9d615bab21879a2bae6a09b5d63346c35278d766f23fa",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"b10149fc674eca91ed2a41834bebcbe1\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/6f/6fb6c61930f6b87dc2fb0effe5cbc56b9d7f2c1a1f62b7f23feb3558b97fd9f9.json",
+        "status": 200,
+        "decodedBytes": 447434,
+        "sha256": "6fb6c61930f6b87dc2fb0effe5cbc56b9d7f2c1a1f62b7f23feb3558b97fd9f9",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"d956e4957f286ae4d0980a5c91951abe\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/bb/bb02b0e0497dd891f2b88b8dbad2a1ab50d6ac2c169dad8dc5c23f7d1c993c0b.json",
+        "status": 200,
+        "decodedBytes": 523274,
+        "sha256": "bb02b0e0497dd891f2b88b8dbad2a1ab50d6ac2c169dad8dc5c23f7d1c993c0b",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"88a63d6323ab5ef2791e004c1f9e6d59\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/8d/8df9210fc772e54738c9ccc37519468db670db83fca33c3638f21b93dd71e7e6.json",
+        "status": 200,
+        "decodedBytes": 512892,
+        "sha256": "8df9210fc772e54738c9ccc37519468db670db83fca33c3638f21b93dd71e7e6",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"2144668664c48186756b6201d0c1a5b2\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/19/196dfaeaccb58e2a074b8c600789120eb51c51e5585af11a0b3e8c04a1e78aa8.json",
+        "status": 200,
+        "decodedBytes": 416047,
+        "sha256": "196dfaeaccb58e2a074b8c600789120eb51c51e5585af11a0b3e8c04a1e78aa8",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"ec9e88c45d66ae9c5471ac26aae00755\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/8f/8f4995a93a1b12b21cc93459de9bd0be77556267e5e2b8d5ecf8c6dcde326bff.json",
+        "status": 200,
+        "decodedBytes": 454685,
+        "sha256": "8f4995a93a1b12b21cc93459de9bd0be77556267e5e2b8d5ecf8c6dcde326bff",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"340635667ba96952da33a778f4826627\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/ae/aef0d76d4497f89ba377b53a06398416120dbfec23e37dd2b38197684638e37f.json",
+        "status": 200,
+        "decodedBytes": 463783,
+        "sha256": "aef0d76d4497f89ba377b53a06398416120dbfec23e37dd2b38197684638e37f",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"61bc44833d59c57810b6846fdc3330b7\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/b1/b1a68c1197768d7c272d0f03cc743332bb9a84e2973d72b20018ce01fc02224b.json",
+        "status": 200,
+        "decodedBytes": 507093,
+        "sha256": "b1a68c1197768d7c272d0f03cc743332bb9a84e2973d72b20018ce01fc02224b",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"e6b8a6ee78f6a4b4ce473a536f54bfc9\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/81/81e1d1570ce7af6918f737cfaefea7c2e4c406981810aee5ad88c37c25dbec12.json",
+        "status": 200,
+        "decodedBytes": 435438,
+        "sha256": "81e1d1570ce7af6918f737cfaefea7c2e4c406981810aee5ad88c37c25dbec12",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"c7ad6fe809c350b28dba788139bc9fd0\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/5c/5c421d9a550f3d824aa370dbaa509557909df6323d763786408a04a717ab426c.json",
+        "status": 200,
+        "decodedBytes": 446135,
+        "sha256": "5c421d9a550f3d824aa370dbaa509557909df6323d763786408a04a717ab426c",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"bdbf3360fffb698faa93ad5717746a04\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/ab/abc20ce9fefdebda1996cc0c60699bf3577fab2519aae2704d49fcd5ea15b3d1.json",
+        "status": 200,
+        "decodedBytes": 639337,
+        "sha256": "abc20ce9fefdebda1996cc0c60699bf3577fab2519aae2704d49fcd5ea15b3d1",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"ac5b7f7fae5d7fddbab31ab5cfe3686d\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/74/74b4556091d27aaa9f7c78824c9d498d9cb2afddbd64dd854ecc42e8fb45904d.json",
+        "status": 200,
+        "decodedBytes": 491703,
+        "sha256": "74b4556091d27aaa9f7c78824c9d498d9cb2afddbd64dd854ecc42e8fb45904d",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"8751264b02fa05fccde2c9aecf9067b0\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/d1/d12248e7ec030af82997f21b09f23c70b35306edf632ffe331ab69568a0d48dc.json",
+        "status": 200,
+        "decodedBytes": 469429,
+        "sha256": "d12248e7ec030af82997f21b09f23c70b35306edf632ffe331ab69568a0d48dc",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"07e80dc5acb6402035d1305b3aa2d43f\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/97/97ef3ca56bea94a9c116d7d86c352a0be3445e2e4eac6e8adeb762394319c680.json",
+        "status": 200,
+        "decodedBytes": 660169,
+        "sha256": "97ef3ca56bea94a9c116d7d86c352a0be3445e2e4eac6e8adeb762394319c680",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"ec2a167807a1d3a41d1d774cd240e09f\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/ef/ef7d4c21fe08d9ec01a7225a6be52c8e5558ffac60d560cff2b5bdc674c231af.json",
+        "status": 200,
+        "decodedBytes": 562990,
+        "sha256": "ef7d4c21fe08d9ec01a7225a6be52c8e5558ffac60d560cff2b5bdc674c231af",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"711fc16a40ecb9729b95f02014c30648\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/95/95bc70b621cafb337cc3eec3c7749f45848a4b89fbbc8489113c6080a8287d28.json",
+        "status": 200,
+        "decodedBytes": 451016,
+        "sha256": "95bc70b621cafb337cc3eec3c7749f45848a4b89fbbc8489113c6080a8287d28",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"bc9bd4a8dd93b22ffbc6d5de40b1f070\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/cc/ccb25ed243e11d61478e95b630da27f85ed96e129266e3f6012b18383cfcb044.json",
+        "status": 200,
+        "decodedBytes": 436853,
+        "sha256": "ccb25ed243e11d61478e95b630da27f85ed96e129266e3f6012b18383cfcb044",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"8c894f317ceaddc7675f2ac25028b770\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/2f/2fbfd9f71d36fe24f982d76e3ea5a9d3c78aeec960f678c26ca3228cdab46dad.json",
+        "status": 200,
+        "decodedBytes": 439714,
+        "sha256": "2fbfd9f71d36fe24f982d76e3ea5a9d3c78aeec960f678c26ca3228cdab46dad",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"98a16f6c8223356efb9c1438d7edfc29\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/95/95b02d0b6ca64191997503a4c83934785bdf2601a37d3ba245ea082a4e33914b.json",
+        "status": 200,
+        "decodedBytes": 464562,
+        "sha256": "95b02d0b6ca64191997503a4c83934785bdf2601a37d3ba245ea082a4e33914b",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"a5c0de5eb706969b8430f86164ab23f3\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/27/27ba4f0f3ebd0a793026c286fc03690a171d74fff8d6e6fe1f3045d3718c03a3.json",
+        "status": 200,
+        "decodedBytes": 772870,
+        "sha256": "27ba4f0f3ebd0a793026c286fc03690a171d74fff8d6e6fe1f3045d3718c03a3",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"1cbc0c42153d24eaa4e01091b9a2940e\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/15/158e9bc12d8c123493895650c66a6d524c337eb1725b45a6cc58ffdab97c098f.json",
+        "status": 200,
+        "decodedBytes": 495260,
+        "sha256": "158e9bc12d8c123493895650c66a6d524c337eb1725b45a6cc58ffdab97c098f",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"7e287a1c68a40e0283c5ab526b9a8922\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/d2/d20317fe78e77de6eef9229bbbfbdb12e8f933d0fc9ab9700c4e7227a92b3107.json",
+        "status": 200,
+        "decodedBytes": 602487,
+        "sha256": "d20317fe78e77de6eef9229bbbfbdb12e8f933d0fc9ab9700c4e7227a92b3107",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"cb297fca5a6edf482bff7104f24e9e3f\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/82/82b391c6c192b4082ad7716078c7fb834a700ffe1132e40c2c9d50465a300fe4.json",
+        "status": 200,
+        "decodedBytes": 473196,
+        "sha256": "82b391c6c192b4082ad7716078c7fb834a700ffe1132e40c2c9d50465a300fe4",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"b9d8e121cf126216b1a54f5d6f866f0f\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/fe/fe57e733f0127b89e599ade19d1957a32d3de6f7e0a5aa7235f33feda7c17742.json",
+        "status": 200,
+        "decodedBytes": 642099,
+        "sha256": "fe57e733f0127b89e599ade19d1957a32d3de6f7e0a5aa7235f33feda7c17742",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"cf5b1ed213fcedaaf76d25fbcaa8da6a\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/f0/f0455ba1f7e0e66dbf4ad92e945b0e4e3a9a694e1589cd20743a405d5dbd896b.json",
+        "status": 200,
+        "decodedBytes": 464965,
+        "sha256": "f0455ba1f7e0e66dbf4ad92e945b0e4e3a9a694e1589cd20743a405d5dbd896b",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"616c5c5b24545d95a75ccad5609c985f\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/15/1556ed2dc43352456f03de7b09501931b0f41b1a15a6aaa533473d76d97bc2f7.json",
+        "status": 200,
+        "decodedBytes": 456670,
+        "sha256": "1556ed2dc43352456f03de7b09501931b0f41b1a15a6aaa533473d76d97bc2f7",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"2866518195cf76149ee40072d38a906f\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/c1/c1b8e51744361229fef6d22f0f524665baf2a9abb02a46dcbfb0a71542a93672.json",
+        "status": 200,
+        "decodedBytes": 445998,
+        "sha256": "c1b8e51744361229fef6d22f0f524665baf2a9abb02a46dcbfb0a71542a93672",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"1abc84aaaf78bd06c165567786f3dcd1\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/e5/e58bf7cfc4055542d4ebb7d4641e96f34059b01ba35a134196343097a305ede6.json",
+        "status": 200,
+        "decodedBytes": 306193,
+        "sha256": "e58bf7cfc4055542d4ebb7d4641e96f34059b01ba35a134196343097a305ede6",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"790e1bdf47375f2d8b18e6eecf16fe8e\""
+      },
+      {
+        "url": "https://isitusa.com/research-data/objects/sha256/e5/e58bf7cfc4055542d4ebb7d4641e96f34059b01ba35a134196343097a305ede6.json",
+        "status": 200,
+        "decodedBytes": 306193,
+        "sha256": "e58bf7cfc4055542d4ebb7d4641e96f34059b01ba35a134196343097a305ede6",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"790e1bdf47375f2d8b18e6eecf16fe8e\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/b4/b466ab402e03902fa7a270a42c24ee924c8b9780ff55473dc2fc95194109247d.json",
+        "status": 200,
+        "decodedBytes": 595547,
+        "sha256": "b466ab402e03902fa7a270a42c24ee924c8b9780ff55473dc2fc95194109247d",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"f5d3fbed472c7de417785c7e89613936\""
+      },
+      {
+        "url": "https://isitusa.com/research-data/objects/sha256/b4/b466ab402e03902fa7a270a42c24ee924c8b9780ff55473dc2fc95194109247d.json",
+        "status": 200,
+        "decodedBytes": 595547,
+        "sha256": "b466ab402e03902fa7a270a42c24ee924c8b9780ff55473dc2fc95194109247d",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"f5d3fbed472c7de417785c7e89613936\""
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "status": 200,
+        "decodedBytes": 395067,
+        "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"e85bbca77967a87a5246a295f3e371e6\""
+      },
+      {
+        "url": "https://isitusa.com/research-data/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "status": 200,
+        "decodedBytes": 395067,
+        "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+        "contentEncoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "etag": "\"e85bbca77967a87a5246a295f3e371e6\""
+      }
+    ]
+  },
+  "publicMovement": {
+    "beforeDeterminations": 195356,
+    "afterDeterminations": 315098,
+    "increase": 119742,
+    "previouslyLocalBacklog": 119555,
+    "newThisRound": 187,
+    "removedThisRound": 0,
+    "newAbsencesThisRound": 0,
+    "denominator": 7872576,
+    "nationalCompletionClaimed": false
+  },
+  "publication": {
+    "invocations": 1,
+    "retries": 0,
+    "mode": "publish",
+    "verification": "full",
+    "concurrency": 4,
+    "uploadedObjects": 3195,
+    "verifiedObjects": 3195,
+    "newManifestObjects": 1,
+    "pointerPromotions": 1,
+    "storedAndDecodedHashesVerified": true,
+    "publicOriginsVerifiedBeforePromotion": [
+      "https://data.isitusa.com",
+      "https://isitusa.com/research-data"
+    ],
+    "prePromotionPublicProbes": 8,
+    "promotedAt": "2026-09-06T06:56:53.282Z",
+    "log": {
+      "path": ".cache/research/campaigns/20260906-r1/r2-publication.log",
+      "sha256": "d08e2044393d19335205802f74a2ad470b40348771948d3e4dd903fdcad653ca"
+    },
+    "cadenceOverrideUsed": false,
+    "plannedInvocationClassA": 3223,
+    "plannedInvocationClassB": 3205
+  },
+  "resources": {
+    "exactInventoryObservedAt": "2026-09-06T06:59:13.578Z",
+    "retainedBytes": 7836026470,
+    "objectCount": 29057,
+    "inventorySha256": "dc59fa378ee33a6bc7321725c2ca91e000bd1aea7d74cde91648bd3cae404383",
+    "safetyCapBytes": 8000000000,
+    "headroomBytes": 163973530,
+    "retainedReleaseIds": [
+      "research-6927e5fe2efb-886700baca52fe1e",
+      "research-e2115f6a705f-163982b59c8351b2",
+      "research-7427b6e8b43e-37943bb5dba1460c"
+    ],
+    "current": {
+      "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+      "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+      "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+      "promotedAt": "2026-09-06T06:56:53.282Z"
+    },
+    "postInventoryRequestAccounting": {
+      "dashboardObservedAt": "2026-09-06T06:58:22.543Z",
+      "currentClassARequests": 31500,
+      "currentClassBRequests": 69000,
+      "reportClassARequests": 30,
+      "reportClassBRequests": 12,
+      "projectedClassARequests": 31530,
+      "projectedClassBRequests": 69012,
+      "classASafetyRequests": 800000,
+      "classBSafetyRequests": 8000000
+    },
+    "dashboard": {
+      "observedAt": "2026-09-06T06:58:22.543Z",
+      "displayedClassA": "26.34k",
+      "displayedClassB": "62.29k",
+      "displayedStorage": "7.71 GB",
+      "displayedBillable": "$0.00; no billable usage incurred yet",
+      "qualification": "Dashboard aggregates had not incorporated this publication. Exact storage is from the later complete S3 inventory; request values passed to the wrapper are additive conservative ceilings, not observed billing totals."
+    },
+    "paidPlanOrFeatureEnabled": false,
+    "deletionPerformed": false,
+    "nextReleaseRequiresNewBudget": true
+  },
+  "browserResearchQa": {
+    "observedAt": "2026-09-06T07:01:54.729Z",
+    "researchAsOf": "2026-09-06",
+    "aboutResearchLinkNavigation": true,
+    "search": true,
+    "evidenceExpansion": true,
+    "dated": {
+      "county": "19071",
+      "species": "amaranthus-graecizans",
+      "observedLabel": "Observed: Sep 1, 1966",
+      "freshnessLabel": "Stale",
+      "historicalCaveatVisible": true
+    },
+    "undated": {
+      "county": "16001",
+      "species": "pinus-sylvestris",
+      "observedLabel": "Observed: Not recorded",
+      "freshnessLabel": "Undated",
+      "historicalCaveatVisible": true,
+      "sourceLinkVerified": true,
+      "mobileWidth": 390,
+      "mobileHeight": 844,
+      "documentScrollWidth": 375,
+      "visualInspection": true
+    },
+    "officialAbsence": {
+      "county": "11001",
+      "species": "vespa-mandarinia",
+      "label": "Current: Officially eradicated",
+      "history": "No historical occurrence recorded",
+      "sourceLinkVerified": true,
+      "officialDeclarationCaveatVisible": true
+    },
+    "browserErrors": [],
+    "viewportReset": true
+  },
+  "gates": [
+    {
+      "category": "Scope and source of truth",
+      "status": "PASS",
+      "evidence": "Canonical MAIN; committed evidence 6927e5fe; full 7,872,576-pair denominator retained."
+    },
+    {
+      "category": "Functional behavior",
+      "status": "PASS",
+      "evidence": "All 51 public summary hashes and totals match the manifest; dated, undated and official absence county objects verify through both origins. Live navigation, search and evidence expansion passed."
+    },
+    {
+      "category": "Visual presentation",
+      "status": "PASS",
+      "evidence": "Production About inspected at1280x900 and390x844; mobile undated evidence is legible with no document overflow."
+    },
+    {
+      "category": "Accessibility",
+      "status": "PASS",
+      "evidence": "Existing semantic layout retained; meaningful County research link resolves and navigates to /research. No new widget."
+    },
+    {
+      "category": "SEO",
+      "status": "NOT_APPLICABLE",
+      "evidence": "No routing, indexability, canonical, metadata or sitemap changes in this release."
+    },
+    {
+      "category": "Performance and resilience",
+      "status": "PASS",
+      "evidence": "Build passed; deterministic HTTP gzip and unchanged-reader tests passed; stored candidate is 124,646,866 bytes for 1,325,811,580 decoded bytes."
+    },
+    {
+      "category": "Security and privacy",
+      "status": "PASS",
+      "evidence": "No auth, private-data, secret, permission or payment changes. Publisher uses existing DPAPI credential and immutable conditional writes."
+    },
+    {
+      "category": "Analytics and conversion",
+      "status": "NOT_APPLICABLE",
+      "evidence": "No analytics, consent, form or conversion instrumentation changes."
+    },
+    {
+      "category": "Monitoring and operations",
+      "status": "PASS",
+      "evidence": "Fresh authenticated provider usage, exact R2 inventory, guarded publication, retained prior pointer and bounded post-release probes."
+    },
+    {
+      "category": "Deployment readiness",
+      "status": "PASS",
+      "evidence": "Remote main, GitHub Production success, Vercel Ready/Latest/Production and isitusa.com domain assignment identify app 58c9345b. Both public data pointers identify the exact 6927e5fe research release."
+    },
+    {
+      "category": "Content and authority",
+      "status": "PASS",
+      "evidence": "Standing user authority covers batched Git push, app deployment and R2 promotion; historical occurrence and official absence retain distinct meanings."
+    },
+    {
+      "category": "Data release integrity",
+      "status": "PASS",
+      "evidence": "All 51 projections reconciled and byte-stable; 187 additions, zero removals, zero new absences, zero conflicts."
+    }
+  ],
+  "blockers": [],
+  "rollback": {
+    "researchPointer": {
+      "schemaVersion": 1,
+      "kind": "isitusa-research-projection-pointer",
+      "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+      "releaseManifestKey": "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+      "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+      "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+      "promotedAt": "2026-08-28T08:58:25.633Z"
+    },
+    "priorManifestHashVerified": true,
+    "retainedReleaseIds": [
+      "research-e2115f6a705f-163982b59c8351b2",
+      "research-7427b6e8b43e-37943bb5dba1460c",
+      "research-a2951a092577-a039963dbd5201e6"
+    ],
+    "appDeploymentId": "dpl_E4Wihtw7ciuapKyRe74rYs1GDMi5",
+    "appSourceCommit": "e6a810b27422c4ef7fe5be855d8ce9f757e175cb",
+    "restorationExecuted": false,
+    "procedure": "If candidate delivery or semantic smoke fails, do not promote, or restore the exact retained prior release pointer after verifying its immutable manifest and probe hashes. Give any restored pointer the actual restoration time and record a correctness cadence override. The old manifest must not be passed to current local-artifact validation against different generated data; use an isolated prior checkout or a scoped verified pointer restoration. Use the existing provider rollback to the identified prior application deployment if the app fails. Recheck both public origins and representative routes."
+  },
+  "nextMilestones": [
+    {
+      "work": "Measure retained Harvard HUH metadata recovery against the315098-pair baseline",
+      "status": "not started",
+      "prospectivePairCount": null
+    },
+    {
+      "work": "Implement question-specific finite research dispositions using existing evidence and protocol infrastructure",
+      "status": "advisory review in progress",
+      "currentCompletionClaims": 0
+    },
+    {
+      "work": "Reduce global-date publication churn while preserving freshness and old-reader compatibility",
+      "status": "advisory review in progress"
+    }
+  ],
+  "scopeBoundary": "This receipt attests to the identified app deployment and research release, not the later commit containing this receipt. Existing research remains incomplete and no additional biological conclusion is created by these release checks."
+}
