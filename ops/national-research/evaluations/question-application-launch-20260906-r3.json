@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-production-launch-gate",
+  "phase": "PRE-DEPLOYMENT",
+  "evaluationId": "question-application-launch-20260906-r3",
+  "observedAt": "2026-09-06T09:53:41.975Z",
+  "decision": "GO_APPLICATION_ONLY",
+  "scope": "One batched production application build; accumulated evidence is pushed to Git but no R2 upload or data promotion.",
+  "authority": {
+    "path": "ops/national-research/receipts/authorizations/autonomous-national-research-20260906-r1.json",
+    "actorType": "agent",
+    "actor": "MAIN",
+    "humanArtifactApprovalClaimed": false
+  },
+  "candidate": {
+    "codeCommit": "6aec0dcdf8ed893be34a665d1128e793c8d6f3e3",
+    "previousRemoteMain": "9ee305503fd6d58954d5a2fe616b913f4540ba74",
+    "releasePreparation": "The commit carrying this receipt adds only operations, checkpoint and local publication-manifest files; post-deployment evidence must record its exact final SHA.",
+    "manifest": {
+      "path": "ops/national-research/publication/research-data-manifest.json",
+      "sha256": "4dbbd4b4c945497f97b7e30f2b05ecdef59dd1be13412f86b15e0eb27d645408",
+      "bytes": 2047966
+    },
+    "dataReleaseId": "research-6aec0dcdf8ed-3c596e21043e27e0",
+    "dataPublication": "held-for-ordinary-cadence"
+  },
+  "research": {
+    "verifiedPresent": 312741,
+    "verifiedAbsent": 3244,
+    "totalDeterminations": 315985,
+    "denominator": 7872576,
+    "newBiologicalPairsSincePublicRelease": 887,
+    "biologicalRemovals": 0,
+    "transitions": 0,
+    "supportedQuestionAnswers": 256,
+    "uniquePairsWithQuestionAnswers": 250,
+    "fullyAssessedPairs": 0,
+    "unpublishedQuestionAnswers": 256
+  },
+  "gates": [
+    {
+      "category": "Scope and source of truth",
+      "status": "PASS",
+      "evidence": "Canonical MAIN at the pinned candidate; full denominator retained; append-only research and assessment ledgers."
+    },
+    {
+      "category": "Functional behavior",
+      "status": "PASS",
+      "evidence": "Question contract, raw evidence replay, all 51 projection schemas, six local browser cases, and old-projection compatibility passed."
+    },
+    {
+      "category": "Visual presentation",
+      "status": "PASS",
+      "evidence": "Local built application inspected at 1280x900 and 390x844; no horizontal overflow in recorded flows."
+    },
+    {
+      "category": "Accessibility",
+      "status": "PASS",
+      "evidence": "Focused keyboard Enter, citation focus, named question region and semantic presentation passed. Full assistive-technology and physical-device audits were not performed."
+    },
+    {
+      "category": "SEO",
+      "status": "NOT_APPLICABLE",
+      "evidence": "No canonical, route, indexability, sitemap or metadata changes."
+    },
+    {
+      "category": "Performance and resilience",
+      "status": "PASS",
+      "evidence": "Browser presentation imports remain client-safe; question ledger excluded from Vercel packaging. Dedicated packaging fixtures passed."
+    },
+    {
+      "category": "Security and privacy",
+      "status": "PASS",
+      "evidence": "No secret, auth, permission, private-data or payment surface changes. Public source links and data remain static."
+    },
+    {
+      "category": "Analytics and conversion",
+      "status": "NOT_APPLICABLE",
+      "evidence": "No instrumentation changes. Four local analytics errors from unavailable Vercel endpoints are explicitly retained; no application error was observed."
+    },
+    {
+      "category": "Monitoring and operations",
+      "status": "PASS",
+      "evidence": "Authenticated Hobby usage observation retained; one Basic build and bounded probes planned. Prior Ready production deployment remains the rollback target."
+    },
+    {
+      "category": "Deployment readiness",
+      "status": "PASS",
+      "evidence": "Typecheck/content build and final packaging tests passed. Content build preceded final packaging edits; the provider build must verify the complete final artifact."
+    },
+    {
+      "category": "Content and authority",
+      "status": "PASS",
+      "evidence": "Historical, dated wild, establishment and official-eradication questions remain separate. Source-screen completion is not presented as a complete question assessment."
+    },
+    {
+      "category": "Data release integrity",
+      "status": "PASS",
+      "evidence": "Full research-integrity prefix passed; stale-manifest failure preserved and the repaired publication suffix passed. This is application-only publication; the data pointer remains on the prior release."
+    }
+  ],
+  "validation": {
+    "evidence": {
+      "path": "ops/national-research/evaluations/artifacts/question-application-launch-validation-20260906-r3.json.gz",
+      "sha256": "485f84cb396a1f63c822bb1200c3adfd4105fbad2836b8e25d227df4cb6b9d27",
+      "bytes": 12327
+    },
+    "projection": {
+      "path": "ops/national-research/receipts/source-evaluations/question-assessment-projection-verification-20260906-r3.json",
+      "sha256": "64c096136c3e24815d8b04ba852a31c9683a702815e19b6d7df35e616b34c325",
+      "bytes": 4725
+    },
+    "researchIntegrity": {
+      "command": "npm run check:research-integrity",
+      "processExitCode": 1,
+      "qualification": "Every preceding stage, including full immutable evidence validation, passed. The final publication suffix failed only because the manifest was stale. Do not describe the original process as exit 0.",
+      "repairedSuffix": {
+        "command": "npm run check:research-publication",
+        "processExitCode": 0
+      },
+      "passedLedgerCounts": {
+        "sources": 41,
+        "immutableRuns": 1978,
+        "runAssertions": 429946,
+        "pairOutcomes": 1860635
+      }
+    },
+    "publicationPlanQualification": "Offline plan mode defaults displayed current request counts to zero. Those are not measured provider usage and are not used to authorize an R2 mutation."
+  },
+  "resources": {
+    "vercel": {
+      "schemaVersion": 1,
+      "kind": "isitusa-provider-usage-observation",
+      "url": "https://vercel.com/unigentamos/~/usage",
+      "scope": "Unigentamos team, all projects",
+      "plan": "Hobby",
+      "displayedWindow": "Aug 7, 6am - Sep 6",
+      "metrics": {
+        "fastDataTransfer": {
+          "used": "19.58 GB",
+          "included": "100 GB"
+        },
+        "fastOriginTransfer": {
+          "used": "7.72 GB",
+          "included": "10 GB"
+        },
+        "edgeRequests": {
+          "used": 266022,
+          "included": 1000000
+        },
+        "isrReads": {
+          "used": 781992,
+          "included": 1000000
+        },
+        "buildCpuMinutes": {
+          "displayedUsed": "38h 10m",
+          "displayedIncluded": null
+        }
+      },
+      "candidate": {
+        "newBuilds": 1,
+        "r2Uploads": 0,
+        "r2Promotions": 0,
+        "paidFeatures": 0,
+        "planChanges": 0
+      },
+      "currentDocumentation": {
+        "hobbyPlan": "https://vercel.com/docs/plans/hobby",
+        "limits": "https://vercel.com/docs/limits",
+        "builds": "https://vercel.com/docs/builds/managing-builds",
+        "verifiedOn": "2026-09-06",
+        "interpretation": "Current primary documentation states Basic build machines are included with Hobby (2 vCPUs and 8 GB RAM). One concurrent deployment, 100 deployments per day and 45 minutes per build remain documented. Older cached 6000 build-minute allowance is absent from the current plan/limit pages and is not treated as a current quota."
+      },
+      "qualification": "Dashboard usage is scoped to the selected last-30-days window and partly rounded. Bounded app probes are small relative to observed headroom. No paid resource will be enabled.",
+      "recordedAt": "2026-09-06T09:29:01.207Z",
+      "observationWindow": {
+        "notBefore": "2026-09-06T09:20:15.492Z",
+        "notAfter": "2026-09-06T09:29:01.207Z",
+        "qualification": "The UI observation occurred within this interval; no exact provider measurement timestamp was exposed."
+      }
+    },
+    "desktop": {
+      "observedAt": "2026-09-06T09:49:33.9609336Z",
+      "totalRamBytes": 33450536960,
+      "availableRamBytes": 11383312384,
+      "pageReadsPerSec": 7,
+      "pageWritesPerSec": 0,
+      "freeDiskBytes": 647236124672
+    },
+    "r2": {
+      "observedAt": "2026-09-06T06:59:13.578Z",
+      "retainedBytes": 7836026470,
+      "retainedObjectCount": 29057,
+      "inventorySha256": "dc59fa378ee33a6bc7321725c2ca91e000bd1aea7d74cde91648bd3cae404383",
+      "candidateNewObjects": 1756,
+      "candidateReusedObjects": 1439,
+      "candidateIncrementalStoredBytes": 68286014,
+      "manifestBytes": 2047966,
+      "projectedRetainedBytesIncluding1024Reserve": 7906361474,
+      "storageSafetyBytes": 8000000000,
+      "qualification": "Offline planning against the hash-reconciled retained listing, not a new provider observation or permission to bypass cadence. Fresh capacity and request checks are required at actual publication.",
+      "uploadsPlanned": 0,
+      "promotionsPlanned": 0,
+      "deletionsPlanned": 0,
+      "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z"
+    }
+  },
+  "rollback": {
+    "appDeploymentId": "dpl_6wthX2sVXjP6LcMC9yyiCd8wZ5tw",
+    "appSourceCommit": "58c9345b05885a9144eff77af2628fb9a5687153",
+    "appImmutableUrl": "https://projectisitusa-qfot1nvzs-unigentamos.vercel.app",
+    "researchReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "researchManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+    "procedure": "Use the existing provider rollback to the verified prior application deployment if candidate behavior fails. Preserve the unchanged research-data pointer. Verify source SHA, alias, immutable deployment, public routes and pointer identity separately after any rollback.",
+    "restorationExecuted": false
+  },
+  "postDeploymentRequired": [
+    "Exact remote main SHA",
+    "Provider source SHA, Ready state, immutable URL and production alias",
+    "Public and immutable route behavior and matching bundle identities",
+    "Unchanged direct and same-origin research pointer; legacy data compatibility",
+    "Record that the 256 question answers and 887 new determinations remain unpublished until data promotion"
+  ],
+  "blockers": [],
+  "limitations": [
+    "The new renderer is compatible with the existing public data snapshot; local question answers are not yet publicly delivered.",
+    "No national research completion, exhaustive accessibility, physical-device or prospective error-rate claim.",
+    "GitHub/Vercel final artifact verification remains pending until deployment."
+  ]
+}
