@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-retained-taxonomy-automated-method-admission",
+  "recordedAt": "2026-09-06T18:19:51.605Z",
+  "reviewer": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "independentReviewer": {
+    "type": "agent",
+    "id": "/root/museum_nybg_ny"
+  },
+  "status": "accepted-within-pinned-inventory-reference-and-catalog",
+  "adapterVersion": "1.2.0",
+  "sourceId": "nybg-preserved-specimens",
+  "implementationCommit": "888c80eef",
+  "references": [
+    {
+      "path": "ops/national-research/evaluations/retained-specimen-taxonomy-method-20260906-r5.json",
+      "sha256": "8dbbd42bcbed7fb531c94a0b81af6062c8097cad1fe138c587b7d0d772e14852",
+      "bytes": 4214
+    },
+    {
+      "path": "ops/national-research/receipts/source-evaluations/nybg-taxonomy-independent-interpretation-20260906-r5.json",
+      "sha256": "c0c2ff89922f133c394790fef81f4a912a1299feee1fab8442c4eb9bdfd2fabf",
+      "bytes": 21679
+    },
+    {
+      "path": "ops/national-research/receipts/source-evaluations/nybg-taxonomy-main-pilot-audit-20260906-r5.json",
+      "sha256": "f2a95b534a39e55f7a880dd222c46c6ec4db2a372423dbd3f57b45b1913a24dc",
+      "bytes": 2815
+    },
+    {
+      "path": "ops/national-research/receipts/integrations/queue-lease-taxonomy-pilot-20260906-r5-nybg-ny-1.json",
+      "sha256": "657b8cc89d87692a14d601f7cf536c386ca63717211f1c7af9faee6f685618b5",
+      "bytes": 3418
+    },
+    {
+      "path": "scripts/fixtures/wcvp-specimen-context-review-20260906-r4.json",
+      "sha256": "3dc1890a478b85d47200a4e99b750ec0c1fb63001b7f39d95a5950f33d4f1623",
+      "bytes": 9278
+    }
+  ],
+  "pilot": {
+    "jobId": "taxonomy-pilot-20260906-r5-nybg-ny",
+    "integrationCommit": "854d39ef37ae845b98c4557427df7d52a01668a1",
+    "pairs": 27,
+    "exactAuthoritativeNameRoutes": 15,
+    "explicitAutonymParentRoutes": 12,
+    "unknownCollectionDates": 2,
+    "providerRequests": 0,
+    "independentInterpretation": "All 27 original source-to-target paths and source context independently reviewed. All 3271 retained WCVP raw-line hashes and 316 inventory witness hashes independently checked."
+  },
+  "admittedScope": {
+    "candidatePairs": 164,
+    "states": 32,
+    "remainingMainPairs": 137,
+    "remainingStates": 31,
+    "pairSetSha256": "8b83336708655ee9d58f8fa7565cdd8f76fe21633103b89fb1ad9f4770669c5b",
+    "qualification": "Only the admitted immutable inventory witnesses and pinned WCVP v16 reference under the current catalog. MAIN individually reviewed all 172 mapped candidate contexts and retained seven explicit holds; the full adapter tests passed for all 165 eligible witnesses, including one already-known pair."
+  },
+  "rules": [
+    "Preserve original full specimen names and dates, including missing dates.",
+    "Accepted catalog concept must contain the source accepted concept; a shared broader species parent alone does not resolve sibling concepts.",
+    "Preserve all original geography, date, identity and cultivation checks and seven reviewed context holds.",
+    "Retain Kew CC BY 3.0 reference attribution and NYBG CC0 source attribution.",
+    "Emit historical occurrence only; no current persistence, establishment, absence or non-detection follows.",
+    "Revalidate on changes to source row, inventory, catalog, reference, resolver or interpretation; no generic fuzzy matching or arbitrary-name acceptance."
+  ],
+  "newDeterminationsClaimed": 0
+}

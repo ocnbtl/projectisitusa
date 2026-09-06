@@ -32758,7 +32758,7 @@
       "queueId": "queue-lease-taxonomy-pilot-20260906-r5-nybg-ny-1",
       "jobId": "taxonomy-pilot-20260906-r5-nybg-ny",
       "leaseId": "lease-taxonomy-pilot-20260906-r5-nybg-ny-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-09-06T18:16:49.700Z",
       "manifestPath": "manifests/taxonomy-pilot-20260906-r5-nybg-ny__lease-taxonomy-pilot-20260906-r5-nybg-ny-1.json",
       "manifestHash": "893db8b62e1301487fdaadfcdeb727a725d1da3b832d7344a86d225416e03d42",
@@ -32816,6 +32816,57 @@
         "path": "receipts/reviews/queue-lease-taxonomy-pilot-20260906-r5-nybg-ny-1.json",
         "sha256": "e7be2074003b3508e4ec33d89edd293d010dfa81be8b84411a3ed74227fd6e23",
         "bytes": 3186
+      },
+      "integratedAt": "2026-09-06T18:18:32.788Z",
+      "integrator": "MAIN",
+      "integrationCommit": "854d39ef37ae845b98c4557427df7d52a01668a1",
+      "integrationChecks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check 64be16709fc57c70a6eb9e9dd145fdbde69fa45c...e5dca7824afa65bf450990d9dc5ef1aef08cb774",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "fresh canonical immutable-run validation on integrated MAIN with exact NYBG source, NY state, ordered 27 pairs, worker code and task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed NYBG New York content and manifest commits without conflict. Fresh canonical validation passed for all 27 ordered historical occurrence pairs with original taxonomy witnesses, names, dates and attribution. No unsupported negative or establishment claim is created.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-taxonomy-pilot-20260906-r5-nybg-ny-1.json",
+        "sha256": "657b8cc89d87692a14d601f7cf536c386ca63717211f1c7af9faee6f685618b5",
+        "bytes": 3418
       }
     }
   ]
