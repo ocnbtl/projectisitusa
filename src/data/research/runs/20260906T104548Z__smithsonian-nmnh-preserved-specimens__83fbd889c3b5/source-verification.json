@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-06T10:57:44.003Z",
+  "runId": "20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5",
+  "sourceId": "smithsonian-nmnh-preserved-specimens",
+  "stateCode": "CA",
+  "pairKeys": [
+    "06001:eragrostis-curvula",
+    "06001:nassella-neesiana",
+    "06009:coriandrum-sativum",
+    "06037:eleusine-tristachya",
+    "06043:digitaria-ischaemum",
+    "06073:cyprinus-carpio",
+    "06083:eucalyptus-sideroxylon",
+    "06099:spergula-arvensis"
+  ],
+  "parameterHash": "83fbd889c3b53f590c3049a41bbaee30de1406cd8c5993fbaab550ba43a91ac1",
+  "authority": {
+    "name": "Smithsonian NMNH extant preserved specimens",
+    "sourceUrl": "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112",
+    "publisher": "National Museum of Natural History, Smithsonian Institution"
+  },
+  "terms": {
+    "license": "CC0 1.0",
+    "termsUrl": "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a&v=1.112",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-09-06T10:57:44.003Z",
+    "freshnessDate": "2026-09-02"
+  },
+  "geography": {
+    "method": "Explicit provider state and county-equivalent text must resolve uniquely to an active national-v1 county-equivalent registry entry. Missing, retired, unknown, and ambiguous county names are rejected; coordinates are not used.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used. Explicit provider California and county text resolves uniquely to one active county-equivalent registry entry."
+  },
+  "taxonomy": {
+    "method": "Exact structured source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog binomial and a blank identification qualifier. A blank source rank is accepted only when the full scientific name is the same binomial and infraspecific epithet is blank. Fuzzy, synonym, infraspecific, and ambiguous matches are rejected.",
+    "targetSpeciesIds": [
+      "coriandrum-sativum",
+      "cyprinus-carpio",
+      "digitaria-ischaemum",
+      "eleusine-tristachya",
+      "eragrostis-curvula",
+      "eucalyptus-sideroxylon",
+      "nassella-neesiana",
+      "spergula-arvensis"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "occurrenceID",
+      "id",
+      "archiveSha256",
+      "sourceRowSha256"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "This source supports historical recorded-presence occurrence only.",
+      "Source silence, missing dates, failed retrieval, rejected rows and incomplete scope never support absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-source-identity.json",
+      "sha256": "2c0562e183acbf21382f266a79f24db55cec006ce24b8150f7915feedeaf4f4d",
+      "bytes": 1237
+    },
+    {
+      "path": "src/data/research/runs/20260906T104548Z__smithsonian-nmnh-preserved-specimens__83fbd889c3b5/artifacts/smithsonian-nmnh-retained-witnesses.json.gz",
+      "sha256": "f88ab454d90c9ced66bdd1f3447ecb7f11991bf0ec6de1c0e0cc6af774bc160f",
+      "bytes": 3009
+    }
+  ],
+  "caveats": [
+    "Historical CC0 preserved-specimen evidence supports recorded presence only. Evaluated metadata-recovery mode accepts explicitly undated historical records with one archive-audited stable identity and retained raw-row hashes. Cultivated or captive text, invalid or unresolved dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion.",
+    "Availability status and checkedAt describe local access to the eight committed retained witness rows checked by /root/museum_nmnh_ca. Live provider availability was not checked.",
+    "The worker issued zero provider requests. Empty acquisition.requests matches receipt.upstream_requests and measured run attempt telemetry.",
+    "Snapshot and pagination completeness apply only to complete offline replay of the exact eight leased California pairs. Complete national archive screening and identity collision audit were performed by MAIN and are recorded in the committed admission; this worker did not repeat national acquisition or the full archive pass.",
+    "Original archive acquisition remains 2026-09-04T06:08:00.659Z. It is preserved in receipt.parameters and assertion retrieved_at fields. The snapshot publication date 2026-09-02 is not a collection date.",
+    "All eight collection dates remain null. These records establish historical recorded occurrence only and do not establish present-day persistence, establishment, abundance, or countywide occupancy.",
+    "Worker independently verified exact retained preflight witness equality, all source-row hashes, stable identities, exact taxonomy, active county mapping, explicit date fields and absence of contradictory occurrence/cultivation text. This is agent inspection and machine validation, not human approval.",
+    "Admission: ops/national-research/receipts/source-evaluations/museum-metadata-admission-20260906-r4.json at worker base d1e8567d939ebcab99b4fff50f72bf36ae94633c.",
+    "Retained reviewed preflight compressed SHA-256 f0276a335d392e88105273549b488ffdf48dc75881c9675b53ac0fce02d98cbb and decoded SHA-256 65ba26427187108a278990cf7c8ea2edea44c32f03cd32bc526f679c69448da6 were independently verified. Witness set SHA-256 2f8960aa36ead96d959c46a55164c4ac84280e028e2087ae64d7a5822dbc94f4.",
+    "Independent worker audit checkedAt 2026-09-06T10:57:44.003Z; staging audit SHA-256 87eb93718ca88a0d760dbb3522b894a710ce7d09972296011769573d543be4cc.",
+    "The eight outcomes are worker evidence candidates. National net determination movement remains unclaimed pending MAIN integration, compilation and reconciliation."
+  ]
+}
