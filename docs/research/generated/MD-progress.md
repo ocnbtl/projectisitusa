@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `24`
 - County-species pairs: `60096`
-- Verified present: `3612`
+- Verified present: `3619`
 - Verified absent: `24`
 - Not detected: `0`
-- Researched unresolved: `8491`
-- Not researched: `47969`
-- Determination coverage: `6.05%`
-- Research coverage: `20.18%`
-- Explicit outcome coverage: `20.1794%`
-- Applicable protocol cells: `603`
+- Researched unresolved: `8489`
+- Not researched: `47964`
+- Determination coverage: `6.06%`
+- Research coverage: `20.19%`
+- Explicit outcome coverage: `20.1877%`
+- Applicable protocol cells: `606`
 - Current complete protocol cells: `98`
-- Protocol completion: `18.41%`
-- Current protocol completion: `16.25%`
-- Evidence records: `3905`
-- Research runs: `34`
+- Protocol completion: `18.32%`
+- Current protocol completion: `16.17%`
+- Evidence records: `3912`
+- Research runs: `36`
 - Rejection records: `943`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -83,9 +83,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 89 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:10.945Z | 7 | 5 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:01.660Z | 411 | 209 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T10:53:36.482Z | 414 | 210 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:40.943Z | 6 | 5 |
-| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:58.566Z | 512 | 292 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-06T10:53:59.649Z | 516 | 294 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:54.831Z | 61 | 43 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 261 | 110 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |

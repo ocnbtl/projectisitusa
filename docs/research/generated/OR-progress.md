@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `7998`
+- Verified present: `7999`
 - Verified absent: `36`
 - Not detected: `0`
 - Researched unresolved: `12202`
-- Not researched: `69908`
+- Not researched: `69907`
 - Determination coverage: `8.91%`
 - Research coverage: `22.45%`
-- Explicit outcome coverage: `22.4485%`
+- Explicit outcome coverage: `22.4496%`
 - Applicable protocol cells: `784`
 - Current complete protocol cells: `105`
 - Protocol completion: `15.05%`
 - Current protocol completion: `13.39%`
-- Evidence records: `8264`
-- Research runs: `42`
+- Evidence records: `8265`
+- Research runs: `43`
 - Rejection records: `441`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -54,9 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Curly plumeless thistle (`carduus-crispus`) | plants | 35 | 0 | 1 |
 | Japanese sedge (`carex-kobomugi`) | plants | 35 | 0 | 1 |
 | Hottentot fig (`carpobrotus-edulis`) | plants | 35 | 0 | 1 |
-| Ferngrass (`catapodium-rigidum`) | plants | 35 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 35 | 0 | 1 |
 | Branched centaury (`centaurium-pulchellum`) | plants | 35 | 0 | 1 |
+| Spadeleaf (`centella-asiatica`) | plants | 35 | 0 | 1 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:23.438Z | 2570 | 553 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:52.490Z | 17 | 13 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:24.265Z | 1 | 1 |
-| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:40.782Z | 24 | 21 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-06T10:54:11.301Z | 25 | 21 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:35.011Z | 40 | 37 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 212 | 114 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |

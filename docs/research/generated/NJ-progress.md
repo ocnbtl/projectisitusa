@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `4189`
+- Verified present: `4196`
 - Verified absent: `21`
 - Not detected: `0`
-- Researched unresolved: `6386`
-- Not researched: `41988`
-- Determination coverage: `8.01%`
-- Research coverage: `20.15%`
-- Explicit outcome coverage: `20.1506%`
-- Applicable protocol cells: `586`
+- Researched unresolved: `6384`
+- Not researched: `41983`
+- Determination coverage: `8.02%`
+- Research coverage: `20.16%`
+- Explicit outcome coverage: `20.1601%`
+- Applicable protocol cells: `588`
 - Current complete protocol cells: `124`
-- Protocol completion: `23.38%`
-- Current protocol completion: `21.16%`
-- Evidence records: `5688`
-- Research runs: `41`
+- Protocol completion: `23.30%`
+- Current protocol completion: `21.09%`
+- Evidence records: `5695`
+- Research runs: `43`
 - Rejection records: `997`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -49,6 +49,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Greater knapweed (`centaurea-scabiosa`) | plants | 20 | 0 | 1 |
 | Yellow star-thistle (`centaurea-solstitialis`) | plants | 20 | 0 | 1 |
 | Figleaf goosefoot (`chenopodium-ficifolium`) | plants | 20 | 0 | 1 |
+| Radiate fingergrass (`chloris-radiata`) | plants | 20 | 0 | 1 |
 | Marsh thistle (`cirsium-palustre`) | plants | 20 | 0 | 1 |
 | Coriander (`coriandrum-sativum`) | plants | 20 | 0 | 1 |
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 20 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Rattleweed (`crotalaria-retusa`) | plants | 20 | 0 | 1 |
 | Clover dodder (`cuscuta-epithymum`) | plants | 20 | 0 | 1 |
 | Chinese hound's tongue (`cynoglossum-amabile`) | plants | 20 | 0 | 1 |
-| Variable flatsedge (`cyperus-difformis`) | plants | 20 | 0 | 1 |
 
 ## Source Operations
 
@@ -83,9 +83,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2243 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:34.877Z | 7 | 7 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:33.881Z | 559 | 236 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T10:53:41.097Z | 565 | 238 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:10.855Z | 11 | 10 |
-| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:25.586Z | 15 | 12 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-06T10:54:06.692Z | 16 | 13 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:23.590Z | 160 | 112 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 523 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |

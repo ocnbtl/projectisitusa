@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `8804`
+- Verified present: `8805`
 - Verified absent: `120`
 - Not detected: `12`
 - Researched unresolved: `47834`
-- Not researched: `243710`
+- Not researched: `243709`
 - Determination coverage: `2.97%`
 - Research coverage: `18.89%`
-- Explicit outcome coverage: `18.8931%`
-- Applicable protocol cells: `416`
+- Explicit outcome coverage: `18.8934%`
+- Applicable protocol cells: `417`
 - Current complete protocol cells: `126`
-- Protocol completion: `33.41%`
-- Current protocol completion: `30.29%`
-- Evidence records: `10888`
-- Research runs: `38`
+- Protocol completion: `33.33%`
+- Current protocol completion: `30.22%`
+- Evidence records: `10889`
+- Research runs: `39`
 - Rejection records: `637`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,6 +46,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | German iris (`iris-germanica`) | plants | 119 | 0 | 1 |
 | Japanese rose (`kerria-japonica`) | plants | 119 | 0 | 1 |
 | Yellow archangel (`lamium-galeobdolon`) | plants | 119 | 0 | 1 |
+| Spotted leopard slug (`limax-maximus`) | wildlife | 119 | 0 | 1 |
 | Common flax (`linum-usitatissimum`) | plants | 119 | 0 | 1 |
 | Red marshworm (`lumbricus-rubellus`) | wildlife | 119 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 119 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Norway spruce (`picea-abies`) | plants | 119 | 0 | 1 |
 | Norway rat (`rattus-norvegicus`) | wildlife | 119 | 0 | 1 |
 | Castor Bean (`ricinus-communis`) | plants | 119 | 0 | 1 |
-| Dog rose (`rosa-canina`) | plants | 119 | 0 | 1 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:07.236Z | 20 | 16 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:53.024Z | 52 | 26 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:32.835Z | 76 | 60 |
-| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:51.507Z | 4 | 4 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-06T10:53:55.028Z | 5 | 5 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:58.018Z | 40 | 30 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1023 | 144 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |

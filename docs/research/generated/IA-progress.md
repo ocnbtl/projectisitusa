@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6288`
+- Verified present: `6289`
 - Verified absent: `99`
 - Not detected: `9`
 - Researched unresolved: `40882`
-- Not researched: `200618`
+- Not researched: `200617`
 - Determination coverage: `2.58%`
 - Research coverage: `19.07%`
-- Explicit outcome coverage: `19.0717%`
-- Applicable protocol cells: `352`
+- Explicit outcome coverage: `19.0721%`
+- Applicable protocol cells: `353`
 - Current complete protocol cells: `119`
-- Protocol completion: `37.50%`
-- Current protocol completion: `33.81%`
-- Evidence records: `6654`
-- Research runs: `39`
+- Protocol completion: `37.39%`
+- Current protocol completion: `33.71%`
+- Evidence records: `6655`
+- Research runs: `40`
 - Rejection records: `316`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -55,8 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Whitetop (`lepidium-draba`) | plants | 98 | 0 | 1 |
 | High mallow (`malva-sylvestris`) | plants | 98 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 98 | 0 | 1 |
+| Brown-dotted clothes moth (`niditinea-fuscella`) | insects | 98 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 98 | 0 | 1 |
-| Sour cherry (`prunus-cerasus`) | plants | 98 | 0 | 1 |
 
 ## Source Operations
 
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:34:55.668Z | 38 | 31 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:38.474Z | 61 | 34 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:18.968Z | 7 | 6 |
-| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:39.165Z | 14 | 10 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-06T10:53:52.725Z | 15 | 11 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:48.927Z | 85 | 58 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 297 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |

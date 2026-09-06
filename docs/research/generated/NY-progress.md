@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `9828`
+- Verified present: `9857`
 - Verified absent: `62`
 - Not detected: `10`
-- Researched unresolved: `21013`
-- Not researched: `124335`
-- Determination coverage: `6.37%`
-- Research coverage: `19.91%`
-- Explicit outcome coverage: `19.9120%`
-- Applicable protocol cells: `743`
+- Researched unresolved: `21004`
+- Not researched: `124315`
+- Determination coverage: `6.39%`
+- Research coverage: `19.92%`
+- Explicit outcome coverage: `19.9249%`
+- Applicable protocol cells: `745`
 - Current complete protocol cells: `110`
-- Protocol completion: `16.55%`
-- Current protocol completion: `14.80%`
-- Evidence records: `10950`
-- Research runs: `38`
+- Protocol completion: `16.51%`
+- Current protocol completion: `14.77%`
+- Evidence records: `10979`
+- Research runs: `40`
 - Rejection records: `1055`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,7 +46,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dill (`anethum-graveolens`) | plants | 61 | 0 | 1 |
 | Bloodflower (`asclepias-curassavica`) | plants | 61 | 0 | 1 |
 | Fivehorn smotherweed (`bassia-hyssopifolia`) | plants | 61 | 0 | 1 |
-| Faucet snail (`bithynia-tentaculata`) | wildlife | 61 | 0 | 1 |
 | Lipsticktree (`bixa-orellana`) | plants | 61 | 0 | 1 |
 | Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 61 | 0 | 1 |
 | Slender false brome (`brachypodium-sylvaticum`) | plants | 61 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Pigeonpea (`cajanus-cajan`) | plants | 61 | 0 | 1 |
 | Pot marigold (`calendula-officinalis`) | plants | 61 | 0 | 1 |
 | Siberian peashrub (`caragana-arborescens`) | plants | 61 | 0 | 1 |
+| Indian sandbur (`cenchrus-biflorus`) | plants | 61 | 0 | 1 |
 
 ## Source Operations
 
@@ -83,9 +83,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4441 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:21.042Z | 56 | 47 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:43.196Z | 1372 | 404 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T10:54:45.623Z | 1400 | 410 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:16.144Z | 8 | 7 |
-| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:33.287Z | 71 | 47 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-06T10:54:09.006Z | 72 | 47 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:30.493Z | 444 | 181 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 650 | 116 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
