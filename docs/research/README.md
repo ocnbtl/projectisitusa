@@ -377,7 +377,7 @@ On the canonical Windows host, `scripts/research/run-r2-publisher.ps1` loads the
 
 The current delivery configuration uses `r2` mode and resolves `https://data.isitusa.com/current.json` to an immutable release manifest. The client verifies decoded JSON bytes and SHA-256 before parsing. Transparent HTTP gzip preserves that reader contract. Retain the previous pointer and immutable manifests for rollback; the configured GitHub route also supports an exact source-commit fallback. Verify the live pointer and app deployment separately because research-data promotion and app deployment have different identities.
 
-For retained specimen metadata recovery and centralized small-run batching, follow [the reviewed metadata method](specimen-metadata-recovery-v1.md) and [MAIN canonical staging](main-canonical-staging.md). Neither workflow relaxes evidence geography, taxonomy, licensing, or negative-evidence requirements.
+For retained specimen metadata recovery and centralized small-run batching, follow [the reviewed metadata method](specimen-metadata-recovery-v1.md) and [MAIN canonical staging](main-canonical-staging.md). The [retained herbarium extension](retained-specimen-metadata-recovery.md) adds Harvard, NYBG and Smithsonian raw-witness validation, reusable campaign planning and interval review classification. Neither workflow relaxes evidence geography, taxonomy, licensing, or negative-evidence requirements.
 
 ## EDDMapS Bounded Merge
 

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-recovery-admission",
+  "campaignId": "20260906-r2",
+  "recordedAt": "2026-09-06T07:42:43.053Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "baseline": {
+    "schemaVersion": 1,
+    "campaignId": "20260906-r2",
+    "recordedAt": "2026-09-06T07:09:33.4920461Z",
+    "gitCommit": "9ee305503fd6d58954d5a2fe616b913f4540ba74",
+    "researchSourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+    "asOf": "2026-09-06",
+    "determinations": 315098,
+    "verifiedPresent": 311854,
+    "verifiedAbsent": 3244,
+    "fullCountySpeciesDenominator": 7872576,
+    "determinedPairSetSha256": "94eab46595469f7f165d7d36231007000048fcf7e20de8611bd3ce4ef3405eec",
+    "basis": "ops/national-research/receipts/source-evaluations/cpnwh-metadata-projection-verification-20260906-r1.json",
+    "publicRelease": "research-6927e5fe2efb-886700baca52fe1e",
+    "purpose": "Retained metadata-recovery opportunity measurement, not accepted new determinations"
+  },
+  "preflightBaseline": {
+    "commit": "e717faa2940895418e3ac0ca876c71e0cbc754fe",
+    "determinedPairSetSha256": "94eab46595469f7f165d7d36231007000048fcf7e20de8611bd3ce4ef3405eec"
+  },
+  "methodEvaluation": "ops/national-research/evaluations/retained-specimen-metadata-method-20260906-r2.json",
+  "preflightArtifact": {
+    "path": "ops/national-research/evaluations/artifacts/harvard-metadata-preflight-20260906-r2.json.gz",
+    "contentEncoding": "gzip",
+    "storedBytes": 195548,
+    "storedSha256": "eea4dbfa878ee0583957105280273705230a83c8e990840c987f240b049a719e",
+    "decodedBytes": 3491127,
+    "decodedSha256": "9ca0ef01fef54caa41e0b4ceefed6a555ad581f58b343f0ad10decf66f72b75b"
+  },
+  "preflightEvaluation": "ops/national-research/evaluations/harvard-huh-usa-preserved-specimens-preflight-20260906-r2.json",
+  "exactCandidates": {
+    "count": 887,
+    "pairSetSha256": "7ec4176ab2c88e07d22390000389536be32b85ae9682c1a6adf1a5bb44129938",
+    "states": [
+      "AK",
+      "AR",
+      "AZ",
+      "CA",
+      "FL",
+      "GA",
+      "IA",
+      "ID",
+      "IL",
+      "IN",
+      "KY",
+      "LA",
+      "MA",
+      "ME",
+      "MI",
+      "MN",
+      "MO",
+      "MS",
+      "MT",
+      "NC",
+      "NH",
+      "NJ",
+      "NM",
+      "NV",
+      "NY",
+      "OH",
+      "OR",
+      "PA",
+      "RI",
+      "SC",
+      "TN",
+      "TX",
+      "UT",
+      "VA",
+      "VT",
+      "WA",
+      "WI",
+      "WV",
+      "WY"
+    ],
+    "undated": 887,
+    "presentOverlaps": 14366,
+    "verifiedAbsentConflicts": 0
+  },
+  "review": {
+    "initialExploratoryCandidates": 892,
+    "individualWitnessHolds": [
+      {
+        "pairKey": "12086:spathoglottis-plicata",
+        "reason": "reviewed-cultivated-specimen",
+        "sourceRowSha256": "b1f11fc4e1bbe5ccfe04ec1bff07ae8a473667d929c6b9ee5edde85f007436ea"
+      },
+      {
+        "pairKey": "48039:catharanthus-roseus",
+        "reason": "reviewed-cultivated-specimen",
+        "sourceRowSha256": "7b1b86d16daade8f3759910315c50a0c1e20de58b51fc1824e425ce56ee845cc"
+      },
+      {
+        "pairKey": "36029:symphytum-asperum",
+        "reason": "reviewed-cultivated-specimen",
+        "sourceRowSha256": "0ffe8a2a77324eb81e61a47c2ee0652af315fca2c03b94f3fcb99f388745a701"
+      },
+      {
+        "pairKey": "06001:eucalyptus-tereticornis",
+        "reason": "reviewed-cultivation-context-unresolved",
+        "sourceRowSha256": "bca278c69428a93ed47f4b4ce1b0fcf3bdd27d7cf6aed8616468fe64a28271fe"
+      },
+      {
+        "pairKey": "06009:vaccaria-hispanica",
+        "reason": "reviewed-county-lineage-unresolved",
+        "sourceRowSha256": "d46646c6f57c2e9cecb054ec3be33229877e45d8b99c48eb367cbea30b325fe8"
+      }
+    ],
+    "unchangedRetainedWitnesses": 887,
+    "allRemainingWitnessesIdenticalToReviewedExploratorySet": true
+  },
+  "checks": {
+    "completeArchiveEligibilityAndIdentityPasses": "passed",
+    "currentNationalBaselineHash": "independently reconstructed by planner",
+    "sourceCoverageBeforePreflight": "passed after committing method registry and rebuilding derived coverage index",
+    "earlierCoverageAttempt": "correctly refused uncommitted source-registry changes; no dependent preflight or staged run was performed before the repaired gate",
+    "pairUnionAndHeldDifference": "passed"
+  },
+  "status": "plans-verified-awaiting-immutable-integration",
+  "newDeterminationsClaimed": 0,
+  "providerRequests": 0
+}
