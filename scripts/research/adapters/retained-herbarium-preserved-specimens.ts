@@ -3,14 +3,16 @@ import { gzipSync } from "node:zlib";
 
 import type { ResearchSourceAdapter, SourceAdapterContext, SourceAdapterResult } from "@/lib/research/source-adapter";
 import type { EvidenceReviewEvent, ResearchPairOutcome, RunEvidenceAssertionEvent } from "@/lib/research/types";
-import { getStateDefinition, listCountyEquivalents } from "@/lib/research/geography-registry";
+import { getStateDefinition, listCountyEquivalents, resolveCountyEquivalent } from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
+import catalogJson from "@/data/generated/species.json";
+import { parseSpecimenDate, validateSpecimenRecoveryWitness, type SpecimenMetadataRecovery, type SpecimenRecoveryWitness } from "../specimen-record-metadata";
 
 export const NYBG_SOURCE_ID = "nybg-preserved-specimens" as const;
 export const TORCH_BRIT_SOURCE_ID = "torch-brit-preserved-specimens" as const;
 export const SMITHSONIAN_NMNH_SOURCE_ID = "smithsonian-nmnh-preserved-specimens" as const;
 export const HARVARD_HUH_USA_SOURCE_ID = "harvard-huh-usa-preserved-specimens" as const;
-export const RETAINED_HERBARIUM_ADAPTER_VERSION = "1.0.1" as const;
+export const RETAINED_HERBARIUM_ADAPTER_VERSION = "1.1.0" as const;
 export const NYBG_DATASET_URL = "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences" as const;
 export const NYBG_METADATA_URL = "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences" as const;
 export const NYBG_POLICY_URL = "https://sweetgum.nybg.org/science/digital-collections/" as const;
@@ -29,7 +31,7 @@ export const HARVARD_HUH_USA_POLICY_URL = "https://ipt.huh.harvard.edu/ipt/resou
 export const HARVARD_HUH_USA_ARCHIVE_SHA256 = "1b054306100050566bf68aa3df561d61120d1ed5b1e6fa5d8508b669dbb090e3" as const;
 export const CC0_LICENSE = "http://creativecommons.org/publicdomain/zero/1.0/" as const;
 
-export type RetainedHerbariumTarget = {
+export type RetainedHerbariumTarget = SpecimenRecoveryWitness & {
   pairKey: string;
   recordId: string;
   occurrenceId: string;
@@ -39,8 +41,6 @@ export type RetainedHerbariumTarget = {
   sourceCounty: string;
   speciesId: string;
   scientificName: string;
-  eventDate: string;
-  year: number;
   institutionCode: string;
   collectionCode: string;
   catalogNumber: string;
@@ -67,6 +67,7 @@ type RetainedHerbariumParameters = {
   archiveAcquiredAt: string;
   preflightEvaluationId: string;
   targetPairSetSha256: string;
+  metadataRecovery?: SpecimenMetadataRecovery;
   targets: RetainedHerbariumTarget[];
   candidatePairs: string[];
 };
@@ -184,8 +185,8 @@ function compareText(left: string, right: string) {
   return left < right ? -1 : left > right ? 1 : 0;
 }
 
-function normalizedText(value: string) {
-  return value.normalize("NFKC").trim().toLocaleLowerCase("en-US").replace(/\s+/gu, " ");
+function normalizedText(value: string | undefined) {
+  return (value ?? "").normalize("NFKC").trim().toLocaleLowerCase("en-US").replace(/\s+/gu, " ");
 }
 
 function sha256(value: string | Buffer) {
@@ -230,20 +231,69 @@ function parseParameters(context: SourceAdapterContext, profile: Profile) {
   assert(stableJson(candidatePairs) === stableJson(requestedPairs), `${profile.label} candidates differ from requested pairs.`);
   assert(stableJson(candidatePairs) === stableJson(targetPairs), `${profile.label} targets differ from requested pairs.`);
   assert(sha256(candidatePairs.join("\n")) === parameters.targetPairSetSha256, `${profile.label} target pair hash differs.`);
-  assert(new Set(parameters.targets.map((target) => target.occurrenceId)).size === parameters.targets.length, `${profile.label} occurrence identities repeat within the state plan.`);
+  assert(new Set(candidatePairs).size === candidatePairs.length, "Candidate pairs repeat.");
+  assert(new Set(parameters.targets.map((target) => parameters.metadataRecovery ? target.identityKey : target.occurrenceId)).size === parameters.targets.length, `${profile.label} occurrence identities repeat within the state plan.`);
+  if (parameters.metadataRecovery) {
+    const recovery = parameters.metadataRecovery;
+    // TORCH's CSV archive needs its own evaluated complete identity-audit recovery path.
+    assert(profile.profile !== "torch-brit", "TORCH metadata recovery requires its evaluated CSV identity audit.");
+    assert(recovery.version === 1, "Retained herbarium metadata recovery version differs.");
+    parseSpecimenDate({}, recovery.asOf);
+    assert(recovery.asOf <= context.runStartedAt.slice(0, 10), "Recovery reporting date is after run start.");
+    assert(/^[0-9a-f]{64}$/u.test(recovery.preflightSha256), "Recovery preflight hash is invalid.");
+    assert(sha256(stableJson(parameters.targets)) === recovery.witnessSetSha256, "Recovery witness set hash differs.");
+    assert(Date.parse(parameters.archiveAcquiredAt) <= Date.parse(recovery.extractedAt)
+      && Date.parse(recovery.extractedAt) <= Date.parse(context.runStartedAt), "Recovery extraction chronology differs.");
+  }
   return parameters;
 }
 
-function validateTarget(context: SourceAdapterContext, target: RetainedHerbariumTarget, activeCountyFips: Set<string>, profile: Profile) {
+function validateTarget(context: SourceAdapterContext, target: RetainedHerbariumTarget, activeCountyFips: Set<string>, profile: Profile, recovery?: SpecimenMetadataRecovery) {
   assert(target.pairKey === pairKey(target), `${profile.label} pair identity differs for ${target.pairKey}.`);
   assert(target.stateCode === context.stateCode, `${profile.label} state differs for ${target.pairKey}.`);
   assert(target.sourceState.trim().length > 0 && target.sourceCounty.trim().length > 0, `${profile.label} geography is missing for ${target.pairKey}.`);
   assert(activeCountyFips.has(target.countyFips), `${profile.label} county is inactive for ${target.pairKey}.`);
-  assert(/^[A-Za-z0-9:._{}\/-]{1,200}$/u.test(target.recordId), `${profile.label} record ID is invalid for ${target.pairKey}.`);
-  assert(/^[A-Za-z0-9:._{}\/-]{20,200}$/u.test(target.occurrenceId), `${profile.label} occurrence ID is invalid for ${target.pairKey}.`);
-  if (profile.profile === "torch-brit") assert(target.rights === CC0_LICENSE, `${profile.label} row rights differ for ${target.pairKey}.`);
-  assert(Number.isInteger(target.year) && target.year >= 1500 && target.year <= 2026, `${profile.label} event year is invalid for ${target.pairKey}.`);
-  assert(target.eventDate.trim().length > 0, `${profile.label} event date is missing for ${target.pairKey}.`);
+  if (recovery) {
+    validateSpecimenRecoveryWitness(target, recovery);
+    const row = target.sourceRow!;
+    const state = getStateDefinition(target.stateCode)!;
+    assert([state.stateName, ...Object.values(state.sourceStateNames)].some((name) => normalizedText(name) === normalizedText(row.stateProvince)), "Recovery raw source state differs.");
+    assert(["united states", "united states of america", "u.s.a.", "usa"].includes(normalizedText(row.country)), "Recovery raw country differs.");
+    assert(normalizedText(row.basisOfRecord).replace(/[^a-z]/gu, "") === "preservedspecimen", "Recovery raw witness is not a preserved specimen.");
+    assert(!row.occurrenceStatus?.trim() || normalizedText(row.occurrenceStatus) === "present", "Recovery raw occurrence status contradicts presence.");
+    const sourceName = normalizedText((row.genus ?? "") + " " + (row.specificEpithet ?? ""));
+    const sourceScientificName = normalizedText(row.scientificName);
+    const sourceWithAuthorship = normalizedText(sourceName + " " + (row.scientificNameAuthorship ?? ""));
+    const sourceRank = normalizedText(row.taxonRank);
+    const structuralRank = ["smithsonian-nmnh", "harvard-huh-usa"].includes(profile.profile) && !sourceRank
+      && (sourceScientificName === sourceName || sourceScientificName === sourceWithAuthorship) && !normalizedText(row.infraspecificEpithet);
+    assert((sourceRank === "species" || structuralRank) && !normalizedText(row.identificationQualifier), "Recovery raw rank or qualifier differs.");
+    assert(sourceName === normalizedText(target.scientificName), "Recovery raw taxonomy differs.");
+    const catalogMatches = catalogJson.filter((entry) => normalizedText(entry.scientificName) === sourceName);
+    assert(catalogMatches.length === 1 && catalogMatches[0].id === target.speciesId
+      && (profile.profile === "smithsonian-nmnh" || catalogMatches[0].category === "plants"), "Recovery unique catalog scope differs.");
+    if (profile.profile === "harvard-huh-usa") {
+      assert((sourceScientificName === sourceName || sourceScientificName === sourceWithAuthorship)
+        && !normalizedText(row.infraspecificEpithet), "Harvard source scientific name or infraspecific epithet differs.");
+    }
+    const countyName = row.county?.trim().replace(/\s+Co\.?$/iu, " County");
+    const geography = resolveCountyEquivalent({ stateCode: target.stateCode, countyName, sourceId: profile.sourceId });
+    assert(geography.status === "resolved" && geography.county.countyFips === target.countyFips
+      && row.stateProvince?.trim() === target.sourceState && row.county?.trim() === target.sourceCounty, "Recovery raw geography differs.");
+    assert(!/\b(captive|captivity|cultivated|cultivation|cultured|garden|greenhouse|managed|nursery|planted|planting|arboretum|botanical garden|campus landscape|landscaped|zoo|aquarium)\b/iu.test(
+      [row.locality, row.verbatimLocality, row.locationRemarks, row.occurrenceRemarks, row.habitat,
+        row.fieldNotes, row.preparations, row.establishmentMeans, row.degreeOfEstablishment].filter(Boolean).join(" ")), "Recovery cultivated or captive witness.");
+    for (const field of ["institutionCode", "collectionCode", "catalogNumber", "rightsHolder", "references"] as const) {
+      assert((row[field]?.trim() ?? "") === target[field], "Recovery retained attribution or locator differs: " + field + ".");
+    }
+  } else {
+    assert(/^[A-Za-z0-9:._{}\/-]{1,200}$/u.test(target.recordId), `${profile.label} record ID is invalid for ${target.pairKey}.`);
+    assert(/^[A-Za-z0-9:._{}\/-]{20,200}$/u.test(target.occurrenceId), `${profile.label} occurrence ID is invalid for ${target.pairKey}.`);
+    if (profile.profile === "torch-brit") assert(target.rights === CC0_LICENSE, `${profile.label} row rights differ for ${target.pairKey}.`);
+    assert(target.year !== null && Number.isInteger(target.year) && target.year >= 1500 && target.year <= 2026, `${profile.label} event year is invalid for ${target.pairKey}.`);
+    assert(target.eventDate !== null && target.eventDate.trim().length > 0, `${profile.label} event date is missing for ${target.pairKey}.`);
+    assert(!target.sourceRow && !target.sourceRowSha256 && !target.identityKey, "Recovery fields require metadata recovery mode.");
+  }
   const requested = context.requestedPairs.find((pair) => pairKey(pair) === target.pairKey);
   assert(requested, `${profile.label} target was not requested: ${target.pairKey}.`);
   assert(normalizedText(requested.scientificName) === normalizedText(target.scientificName), `${profile.label} taxonomy differs for ${target.pairKey}.`);
@@ -272,7 +322,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
     claim_type: "recorded-present",
     evidence_kind: "occurrence",
     scope: "point",
-    source_record_id: `${profile.sourceId}:${target.occurrenceId}`,
+    source_record_id: target.occurrenceId ? `${profile.sourceId}:${target.occurrenceId}` : `${profile.sourceId}-record-id:${profile.archiveSha256}:${target.recordId}`,
     source_url: target.references || profile.datasetUrl,
     source_record_date: target.eventDate,
     retrieved_at: parameters.archiveAcquiredAt,
@@ -290,7 +340,9 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
       source_county: assertionCountyName(target),
       county_fips: target.countyFips,
     },
-    temporal_scope: `Preserved specimen event recorded as ${target.eventDate}; validated event year ${target.year}.`,
+    temporal_scope: target.eventDate === null
+      ? "Historical preserved specimen; normalized collection date unknown. Original narrative and any date bounds remain in the retained source row. Acquisition does not establish current occurrence."
+      : `Preserved specimen event recorded as ${target.eventDate}; validated event year ${target.year}.`,
     spatial_scope: `Historical physical specimen occurrence assigned from explicit provider county geography in ${target.stateCode}; not a complete inventory of the county.`,
     survey_scope: null,
     normalized_payload_hash: normalizedPayloadHash,
@@ -300,7 +352,7 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
       "Source silence, excluded cultivated records, missing geography, and every rejected row create no absence or non-detection claim.",
     ],
     notes: [
-      `${profile.label} record ${target.recordId}; occurrenceID ${target.occurrenceId}.`,
+      `${profile.label} record ${target.recordId || "not supplied"}; occurrenceID ${target.occurrenceId || "not supplied; archive-bound core identity used"}.`,
       `Institution ${target.institutionCode || "unspecified"}; collection ${target.collectionCode || "unspecified"}; catalog ${target.catalogNumber || "unspecified"}.`,
       `Dataset ${profile.licenseLabel}; rights holder ${target.rightsHolder || "unspecified"}; archive ${profile.archiveSha256}.`,
     ],
@@ -323,11 +375,11 @@ function buildAssertionAndReview(context: SourceAdapterContext, target: Retained
     publication_eligible: true,
     reason_codes: [
       profile.retainedLicenseReasonCode,
-      "stable-occurrence-identity",
+      target.occurrenceId ? "stable-occurrence-identity" : "stable-archive-bound-core-identity",
       "preserved-specimen-basis",
       "exact-catalog-binomial",
       "exact-active-county-name",
-      "valid-event-year",
+      target.eventDate === null ? "normalized-collection-date-unknown" : "valid-event-year",
       "cultivation-text-excluded",
       "occurrence-only-semantics",
     ],
@@ -351,7 +403,7 @@ function buildRunner(profile: Profile) {
     const reviews: EvidenceReviewEvent[] = [];
     const outcomes: ResearchPairOutcome[] = [];
     for (const target of [...parameters.targets].sort((left, right) => compareText(left.pairKey, right.pairKey))) {
-      validateTarget(context, target, activeCountyFips, profile);
+      validateTarget(context, target, activeCountyFips, profile, parameters.metadataRecovery);
       const accepted = buildAssertionAndReview(context, target, completedAt, parameters, profile);
       assertions.push(accepted.assertion);
       reviews.push(accepted.review);
@@ -388,6 +440,7 @@ function buildRunner(profile: Profile) {
       archiveAcquiredAt: parameters.archiveAcquiredAt,
       preflightEvaluationId: parameters.preflightEvaluationId,
       targetPairSetSha256: parameters.targetPairSetSha256,
+      ...(parameters.metadataRecovery ? { metadataRecovery: parameters.metadataRecovery } : {}),
     };
     return {
       completedAt,

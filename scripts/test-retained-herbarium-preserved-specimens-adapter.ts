@@ -1,6 +1,11 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { gunzipSync } from "node:zlib";
+import { z } from "zod";
+import { stableJson } from "@/lib/research/run-files";
+import parameterSchema from "@/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json";
+import reviewFixtures from "./fixtures/harvard-specimen-metadata-review-20260906.json";
+import { specimenRowSha256, specimenRecordIdentity, specimenRecoveryHold } from "./research/specimen-record-metadata";
 
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
 import {
@@ -20,6 +25,7 @@ import {
   TORCH_BRIT_DATASET_URL,
   TORCH_BRIT_METADATA_URL,
   TORCH_BRIT_POLICY_URL,
+  type RetainedHerbariumTarget,
   harvardHuhUsaPreservedSpecimensAdapter,
   nybgPreservedSpecimensAdapter,
   smithsonianNmnhPreservedSpecimensAdapter,
@@ -182,6 +188,120 @@ function context(profile: ProfileName): SourceAdapterContext {
   };
 }
 
+
+function sealRecovery(fixture: SourceAdapterContext) {
+  const hash = (value: string) => createHash("sha256").update(value).digest("hex");
+  fixture.parameters.targetPairSetSha256 = hash((fixture.parameters.candidatePairs as string[]).slice().sort().join("\n"));
+  fixture.parameters.metadataRecovery = { version: 1, asOf: "2026-09-06", extractedAt: "2026-09-06T07:00:00.000Z",
+    preflightSha256: reviewFixtures.preflightSha256, witnessSetSha256: hash(stableJson(fixture.parameters.targets)) };
+}
+
+function recoveryContext(record = reviewFixtures.positive) {
+  const fixture = context("harvard-huh-usa");
+  fixture.runStartedAt = "2026-09-06T07:01:00.000Z";
+  const target = { pairKey: record.pairKey, ...structuredClone(record.witness) };
+  fixture.stateCode = target.stateCode;
+  fixture.parameters.stateCode = target.stateCode;
+  fixture.parameters.targets = [target];
+  fixture.parameters.candidatePairs = [record.pairKey];
+  fixture.requestedPairs = [{ countyFips: target.countyFips, countyName: target.sourceCounty,
+    speciesId: target.speciesId, scientificName: target.scientificName }];
+  sealRecovery(fixture);
+  return fixture;
+}
+
+async function testRecovery() {
+  const schema = z.fromJSONSchema(parameterSchema as unknown as Parameters<typeof z.fromJSONSchema>[0]);
+  for (const profile of Object.keys(profiles) as ProfileName[]) schema.parse(context(profile).parameters);
+  const fixture = recoveryContext();
+  schema.parse(fixture.parameters);
+  const result = await harvardHuhUsaPreservedSpecimensAdapter.run(fixture);
+  assert.equal(result.assertions.length, 1);
+  assert.equal(result.assertions[0].source_record_date, null);
+  assert.equal(result.assertions[0].retrieved_at, profiles["harvard-huh-usa"].acquiredAt);
+  assert.match(result.assertions[0].temporal_scope!, /normalized collection date unknown/u);
+  assert(result.assertions[0].notes.some((note) => /CC BY 4.0; rights holder President and Fellows of Harvard College/u.test(note)));
+  assert(result.reviews[0].reason_codes.includes("normalized-collection-date-unknown"));
+  assert(!result.reviews[0].reason_codes.includes("valid-event-year"));
+  assert.equal(result.outcomes[0].status, "evidence-found");
+  assert.equal(result.upstreamRequests.length, 0);
+
+  for (const hold of reviewFixtures.holds) {
+    assert.equal(specimenRowSha256(hold.witness.sourceRow), hold.witness.sourceRowSha256);
+    assert.equal(specimenRecoveryHold(hold.witness.sourceRow), hold.reason);
+    await assert.rejects(() => harvardHuhUsaPreservedSpecimensAdapter.run(recoveryContext(hold)), /Recovery witness held/u, hold.pairKey);
+  }
+  for (const identityMode of ["core", "occurrence"] as const) {
+    const single = recoveryContext();
+    const target = (single.parameters.targets as RetainedHerbariumTarget[])[0];
+    const row = target.sourceRow!;
+    if (identityMode === "core") row.occurrenceID = "";
+    else row.id = "";
+    Object.assign(target, specimenRecordIdentity(row), { sourceRowSha256: specimenRowSha256(row) });
+    sealRecovery(single);
+    schema.parse(single.parameters);
+    const assertion = (await harvardHuhUsaPreservedSpecimensAdapter.run(single)).assertions[0];
+    assert.equal(assertion.source_record_id, identityMode === "core"
+      ? "harvard-huh-usa-preserved-specimens-record-id:" + HARVARD_HUH_USA_ARCHIVE_SHA256 + ":" + target.recordId
+      : "harvard-huh-usa-preserved-specimens:" + target.occurrenceId);
+  }
+  const dated = recoveryContext();
+  const datedTarget = (dated.parameters.targets as RetainedHerbariumTarget[])[0];
+  Object.assign(datedTarget.sourceRow!, { eventDate: "1901-06-05", year: "1901" });
+  Object.assign(datedTarget, { eventDate: "1901-06-05", year: 1901, sourceRowSha256: specimenRowSha256(datedTarget.sourceRow!) });
+  sealRecovery(dated);
+  assert.equal((await harvardHuhUsaPreservedSpecimensAdapter.run(dated)).assertions[0].source_record_date, "1901-06-05");
+
+  const mutations = ["row-hash", "date-invalid", "date-future", "date-interval", "date-conflict", "basis", "status", "state", "county",
+    "taxonomy", "infraspecific", "qualifier", "cultivation", "identity", "attribution", "locator", "chronology", "witness-set",
+    "reporting-date", "mode"] as const;
+  for (const mutation of mutations) {
+    const bad = recoveryContext();
+    const target = (bad.parameters.targets as RetainedHerbariumTarget[])[0];
+    const row = target.sourceRow!;
+    if (mutation === "row-hash") row.catalogNumber = "tampered";
+    if (mutation === "date-invalid") row.eventDate = "2024-02-30";
+    if (mutation === "date-future") row.eventDate = "2027-01-01";
+    if (mutation === "date-interval") row.eventDate = "1901/1902";
+    if (mutation === "date-conflict") { row.eventDate = "1901"; row.year = "1902"; }
+    if (mutation === "basis") row.basisOfRecord = "HumanObservation";
+    if (mutation === "status") row.occurrenceStatus = "absent";
+    if (mutation === "state") row.stateProvince = target.stateCode === "NY" ? "Oregon" : "New York";
+    if (mutation === "county") row.county = "Definitely another county";
+    if (mutation === "taxonomy") row.genus = "Ambiguous";
+    if (mutation === "infraspecific") row.infraspecificEpithet = "subspecies";
+    if (mutation === "qualifier") row.identificationQualifier = "cf.";
+    if (mutation === "cultivation") row.fieldNotes = "Specimen cultivated in greenhouse";
+    if (mutation === "identity") { row.id = ""; row.occurrenceID = ""; target.recordId = ""; target.occurrenceId = ""; }
+    if (mutation === "attribution") target.rightsHolder = "Invented owner";
+    if (mutation === "locator") target.references = "https://example.invalid/replaced";
+    if (mutation !== "row-hash") target.sourceRowSha256 = specimenRowSha256(row);
+    sealRecovery(bad);
+    const recovery = bad.parameters.metadataRecovery as Record<string, unknown>;
+    if (mutation === "chronology") recovery.extractedAt = "2026-09-07T00:00:00.000Z";
+    if (mutation === "witness-set") recovery.witnessSetSha256 = "0".repeat(64);
+    if (mutation === "reporting-date") recovery.asOf = "2026-09-07";
+    if (mutation === "mode") delete bad.parameters.metadataRecovery;
+    await assert.rejects(() => harvardHuhUsaPreservedSpecimensAdapter.run(bad), /Recovery|Harvard|recovery/u, mutation);
+  }
+  const stripped = recoveryContext();
+  delete (stripped.parameters.targets as Array<Record<string, unknown>>)[0].sourceRow;
+  assert.equal(schema.safeParse(stripped.parameters).success, false);
+  const implicit = recoveryContext();
+  delete implicit.parameters.metadataRecovery;
+  assert.equal(schema.safeParse(implicit.parameters).success, false);
+  const torch = recoveryContext();
+  torch.parameters.profile = "torch-brit";
+  assert.equal(schema.safeParse(torch.parameters).success, false);
+
+  const duplicated = recoveryContext();
+  (duplicated.parameters.targets as unknown[]).push(structuredClone((duplicated.parameters.targets as unknown[])[0]));
+  (duplicated.parameters.candidatePairs as string[]).push((duplicated.parameters.candidatePairs as string[])[0]);
+  duplicated.requestedPairs.push({ ...duplicated.requestedPairs[0] });
+  sealRecovery(duplicated);
+  await assert.rejects(() => harvardHuhUsaPreservedSpecimensAdapter.run(duplicated), /repeat/u);
+}
+
 async function main() {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async () => { throw new Error("Retained herbarium replay must not use the network."); };
@@ -203,6 +323,8 @@ async function main() {
       assert(witnesses && Buffer.isBuffer(witnesses.contents));
       assert.equal(JSON.parse(gunzipSync(witnesses.contents).toString("utf8"))[0].pairKey, pairKey);
     }
+
+    await testRecovery();
 
     const invalid = context("torch-brit");
     delete (invalid.parameters.targets as Array<Record<string, unknown>>)[0].rights;

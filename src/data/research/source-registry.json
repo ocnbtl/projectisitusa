@@ -513,7 +513,7 @@
       "researchAdapter": {
         "id": "nybg-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
@@ -522,7 +522,7 @@
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       },
-      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Evaluated metadata-recovery mode accepts explicitly undated historical records with one archive-audited stable identity and retained raw-row hashes. Cultivated or captive text, invalid or unresolved dates, weak identities, non-species ranks, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
     },
     {
       "id": "torch-brit-preserved-specimens",
@@ -542,7 +542,7 @@
       "researchAdapter": {
         "id": "torch-brit-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
@@ -571,7 +571,7 @@
       "researchAdapter": {
         "id": "smithsonian-nmnh-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact structured source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog binomial and a blank identification qualifier. A blank source rank is accepted only when the full scientific name is the same binomial and infraspecific epithet is blank. Fuzzy, synonym, infraspecific, and ambiguous matches are rejected.",
@@ -580,7 +580,7 @@
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       },
-      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Cultivated or captive text, missing dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+      "caveat": "Historical CC0 preserved-specimen evidence supports recorded presence only. Evaluated metadata-recovery mode accepts explicitly undated historical records with one archive-audited stable identity and retained raw-row hashes. Cultivated or captive text, invalid or unresolved dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
     },
     {
       "id": "harvard-huh-usa-preserved-specimens",
@@ -600,7 +600,7 @@
       "researchAdapter": {
         "id": "harvard-huh-usa-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0"],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact structured source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial, blank identification qualifier, and blank infraspecific epithet. The source scientific name must be the same binomial with at most its declared authorship appended. Fuzzy, synonym, infraspecific, and ambiguous matches are rejected.",
@@ -609,7 +609,7 @@
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       },
-      "caveat": "Historical CC BY 4.0 preserved-specimen evidence supports recorded presence only and requires Harvard University Herbaria attribution. Cultivated or captive text, missing dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
+      "caveat": "Historical CC BY 4.0 preserved-specimen evidence supports recorded presence only and requires Harvard University Herbaria attribution. Evaluated metadata-recovery mode accepts explicitly undated historical records with one archive-audited stable identity and retained raw-row hashes. Cultivated or captive text, invalid or unresolved dates, weak identities, ambiguous taxonomy, and unresolved geography are excluded. Source silence and every rejected row create no absence or non-detection assertion."
     },
     {
       "id": "gbif-preserved-specimens",

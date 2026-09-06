@@ -17,6 +17,9 @@ assert.equal(parseSpecimenDate({ year: "2026", month: "10", day: "1" }, asOf).st
 assert.equal(parseSpecimenDate({ year: "2023", month: "2", day: "29" }, asOf).status, "rejected");
 assert.deepEqual(parseSpecimenDate({ year: "1901", month: "6", day: "5" }, asOf), { status: "dated", eventDate: "1901-06-05", year: 1901 });
 assert.equal(parseSpecimenDate({ month: "06" }, asOf).status, "rejected");
+for (const interval of ["1901/1902", "1912-07-29/1912-07-11", "1922-09-18/1922-10-01", "1981-07-16/1981-07-16"]) {
+  assert.deepEqual(parseSpecimenDate({ eventDate: interval }, asOf), { status: "rejected", reason: "event-date-interval-requires-review" });
+}
 assert.equal(parseSpecimenDate({ verbatimEventDate: "June 1910" }, asOf).status, "rejected");
 assert.deepEqual(parseSpecimenDate({ eventDate: "2024-02-29", year: "2024" }, asOf), { status: "dated", eventDate: "2024-02-29", year: 2024 });
 assert.deepEqual(parseSpecimenDate({ year: "1901" }, asOf), { status: "dated", eventDate: "1901", year: 1901 });

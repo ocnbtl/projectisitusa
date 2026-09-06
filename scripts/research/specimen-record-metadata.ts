@@ -34,6 +34,15 @@ export function specimenRecoveryHold(row: Record<string, string | undefined>): s
     "50011c71ff7700b4356a2204a5bff132c0c932a0c1944355939214df705929aa",
   ]);
   if (geographyHolds.has(specimenRowSha256(row))) return "reviewed-county-locality-conflict";
+  const reviewedHolds = new Map<string, string>([
+    ["b1f11fc4e1bbe5ccfe04ec1bff07ae8a473667d929c6b9ee5edde85f007436ea", "reviewed-cultivated-specimen"],
+    ["7b1b86d16daade8f3759910315c50a0c1e20de58b51fc1824e425ce56ee845cc", "reviewed-cultivated-specimen"],
+    ["0ffe8a2a77324eb81e61a47c2ee0652af315fca2c03b94f3fcb99f388745a701", "reviewed-cultivated-specimen"],
+    ["bca278c69428a93ed47f4b4ce1b0fcf3bdd27d7cf6aed8616468fe64a28271fe", "reviewed-cultivation-context-unresolved"],
+    ["d46646c6f57c2e9cecb054ec3be33229877e45d8b99c48eb367cbea30b325fe8", "reviewed-county-lineage-unresolved"],
+  ]);
+  const reviewedHold = reviewedHolds.get(specimenRowSha256(row));
+  if (reviewedHold) return reviewedHold;
   const narrative = [row.locality, row.verbatimLocality, row.locationRemarks, row.occurrenceRemarks,
     row.habitat, row.fieldNotes, row.preparations, row.establishmentMeans, row.degreeOfEstablishment]
     .filter(Boolean).join(" ");
@@ -75,6 +84,9 @@ export function parseSpecimenDate(row: Record<string, string | undefined>, asOf:
     }
     return { status: "undated", eventDate: null, year: null };
   }
+  // Darwin Core permits intervals. This recovery method has no interval projection contract;
+  // retain them for review without calling them malformed or collapsing them to their first day.
+  if (eventDate.includes("/")) return { status: "rejected", reason: "event-date-interval-requires-review" };
   if (explicitYear && !/^\d{4}$/u.test(explicitYear)) {
     return { status: "rejected", reason: "event-year-malformed" };
   }

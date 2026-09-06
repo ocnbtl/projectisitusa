@@ -179,6 +179,7 @@ type CandidateFile = {
     archiveAcquiredAt: string;
     preflightEvaluationId: string;
     targetPairSetSha256: string;
+    metadataRecovery?: SpecimenMetadataRecovery;
     targets: RetainedHerbariumTarget[];
   };
   retainedGbifObservations?: {
@@ -716,6 +717,7 @@ function buildParameters(
     return {
       stateCode,
       ...candidateFile.retainedHerbarium,
+      ...(candidateFile.retainedHerbarium.metadataRecovery ? { metadataRecovery: { ...candidateFile.retainedHerbarium.metadataRecovery, witnessSetSha256: sha256(stableJson(targets)) } } : {}),
       targetPairSetSha256: sha256(candidatePairs.join("\n")),
       targets,
       candidatePairs,

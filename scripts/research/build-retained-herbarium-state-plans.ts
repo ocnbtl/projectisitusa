@@ -1,7 +1,9 @@
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { stableJson } from "@/lib/research/run-files";
+import { parseSpecimenDate, validateSpecimenRecoveryWitness } from "./specimen-record-metadata";
 
 import {
   HARVARD_HUH_USA_ARCHIVE_SHA256,
@@ -60,6 +62,9 @@ type Preflight = {
   netEligiblePairs: string[];
   representativeRecords: Record<string, Omit<RetainedHerbariumTarget, "pairKey">>;
   elapsedMs: number;
+  metadataRecovery?: { version: 1; asOf: string; identityAudit: {
+    occurrenceSha256: string; occurrenceBytes: number; sourceRows: number; missingIdentities: string[]; conflictingIdentities: string[];
+  } };
 };
 
 type Profile = {
@@ -191,13 +196,17 @@ function parseArguments(argv: string[]) {
   assert(preflight, "--preflight is required.");
   assert(outputDirectory.startsWith(`${ROOT}${path.sep}`), "--output-dir must remain inside the repository.");
   assert(evaluationOutput.startsWith(`${ROOT}${path.sep}`), "--evaluation-output must remain inside the repository.");
-  return { profile: PROFILES[profileName], preflight, outputDirectory, evaluationOutput, excludePreflight };
+  const campaign = values.get("campaign") ?? "20260904-r1";
+  assert(/^[0-9]{8}-r[0-9]+$/u.test(campaign), "--campaign must be YYYYMMDD-rN.");
+  return { profile: PROFILES[profileName], preflight, outputDirectory, evaluationOutput, excludePreflight, campaign };
 }
 
 function main() {
   const options = parseArguments(process.argv.slice(2));
   const { profile } = options;
   const preflight = readJson<Preflight>(options.preflight);
+  const recovery = preflight.metadataRecovery;
+  let determinedPairsAtBaseline = 303107;
   const head = execFileSync("git", ["rev-parse", "HEAD"], { cwd: ROOT, encoding: "utf8" }).trim();
   assert(preflight.schemaVersion === 1 && preflight.kind === "isitusa-source-yield-preflight", `${profile.name} preflight kind differs.`);
   assert(preflight.sourceId === profile.sourceId, `${profile.name} preflight source differs.`);
@@ -209,7 +218,36 @@ function main() {
   assert(preflight.datasetIdentity.archiveSha256 === profile.archiveSha256, `${profile.name} archive hash differs.`);
   assert(preflight.datasetIdentity.occurrenceBytes === profile.occurrenceBytes, `${profile.name} occurrence byte count differs.`);
   assert(preflight.datasetIdentity.occurrenceSha256 === profile.occurrenceSha256, `${profile.name} occurrence hash differs.`);
-  assert(preflight.counts.netEligiblePairs === profile.expectedRawNet, `${profile.name} raw net yield differs.`);
+  if (recovery) {
+    assert(profile.name !== "torch-brit", "TORCH recovery needs its evaluated CSV identity audit.");
+    assert(recovery.version === 1, "Recovery policy version differs.");
+    parseSpecimenDate({}, recovery.asOf);
+    assert(recovery.asOf <= preflight.evaluatedAt.slice(0, 10), "Recovery reporting date follows extraction.");
+    assert(recovery.identityAudit.occurrenceSha256 === profile.occurrenceSha256
+      && recovery.identityAudit.occurrenceBytes === profile.occurrenceBytes
+      && recovery.identityAudit.sourceRows === preflight.counts.sourceRows
+      && recovery.identityAudit.missingIdentities.length === 0, "Recovery identity audit differs from the complete source artifact.");
+    assert(Date.parse(profile.archiveAcquiredAt) <= Date.parse(preflight.evaluatedAt)
+      && Date.parse(preflight.evaluatedAt) <= Date.now(), "Recovery extraction chronology differs.");
+    const determined = new Set<string>();
+    const projectionRoot = path.join(ROOT, "public/generated/research");
+    for (const stateCode of readdirSync(projectionRoot).filter((name) => /^[A-Z]{2}$/u.test(name)).sort(compareText)) {
+      const countyRoot = path.join(projectionRoot, stateCode, "counties");
+      for (const name of readdirSync(countyRoot).filter((name) => /^[0-9]{5}\.json$/u.test(name)).sort(compareText)) {
+        const county = readJson<{ stateCode: string; countyFips: string; pairs: Array<{ speciesId: string; displayStatus: string }> }>(path.join(countyRoot, name));
+        assert(county.stateCode === stateCode && county.countyFips === name.slice(0, 5), "Recovery baseline geography differs.");
+        for (const pair of county.pairs) {
+          if (["verified-present", "verified-absent"].includes(pair.displayStatus)) determined.add(county.countyFips + ":" + pair.speciesId);
+        }
+      }
+    }
+    assert(determined.size > 0 && sha256([...determined].sort(compareText).join("\n")) === preflight.baseline.determinedPairSetSha256, "Recovery current determination baseline hash differs.");
+    assert(preflight.netEligiblePairs.every((key) => !determined.has(key)), "Recovery candidates overlap current determinations.");
+    determinedPairsAtBaseline = determined.size;
+    assert(preflight.netEligiblePairs.length === preflight.counts.netEligiblePairs && preflight.counts.netEligiblePairs > 0, "Recovery net pair count differs or is empty.");
+  } else {
+    assert(preflight.counts.netEligiblePairs === profile.expectedRawNet, profile.name + " raw net yield differs.");
+  }
   assert(preflight.counts.verifiedAbsentConflicts === 0, `${profile.name} preflight contains verified-absent conflicts.`);
   assert(sha256([...preflight.netEligiblePairs].sort(compareText).join("\n")) === preflight.pairHashes.netEligible, `${profile.name} net pair hash differs.`);
 
@@ -220,7 +258,7 @@ function main() {
   const excludedCrossSourcePairs = rawPairs.filter((pairKey) => excludedPairs.has(pairKey));
   const selectedPairs = rawPairs.filter((pairKey) => !excludedPairs.has(pairKey));
   assert(new Set(selectedPairs).size === selectedPairs.length, `${profile.name} selected pairs repeat.`);
-  assert(selectedPairs.length >= 2000, `${profile.name} residual does not clear the conditional 2000-pair gate.`);
+  assert(selectedPairs.length >= (recovery ? 1 : 2000), "Selected residual does not meet the applicable positive-yield plan rule.");
 
   const targetsByState = new Map<string, RetainedHerbariumTarget[]>();
   const excludedCountsByState = new Map<string, number>();
@@ -234,6 +272,11 @@ function main() {
     assert(record, `${profile.name} preflight lacks a witness for ${pairKey}.`);
     assert(`${record.countyFips}:${record.speciesId}` === pairKey, `${profile.name} witness identity differs for ${pairKey}.`);
     const target = { pairKey, ...record } as RetainedHerbariumTarget;
+    if (recovery) {
+      assert(!recovery.identityAudit.conflictingIdentities.includes(target.identityKey!), "Recovery selected witness has a source identity collision.");
+      validateSpecimenRecoveryWitness(target, { version: 1, asOf: recovery.asOf, extractedAt: preflight.evaluatedAt,
+        preflightSha256: sha256(readFileSync(options.preflight)), witnessSetSha256: sha256(stableJson([target])) });
+    }
     const targets = targetsByState.get(target.stateCode) ?? [];
     targets.push(target);
     targetsByState.set(target.stateCode, targets);
@@ -241,14 +284,14 @@ function main() {
 
   mkdirSync(options.outputDirectory, { recursive: true });
   const generatedAt = new Date().toISOString();
-  const evaluationId = `${profile.sourceId}-preflight-20260904-r1`;
+  const evaluationId = `${profile.sourceId}-preflight-${recovery ? options.campaign : "20260904-r1"}`;
   const planSummaries: Array<{ stateCode: string; planId: string; candidateCount: number; pairSetSha256: string; path: string }> = [];
   for (const [stateCode, unsortedTargets] of [...targetsByState.entries()].sort(([left], [right]) => compareText(left, right))) {
     const targets = unsortedTargets.sort((left, right) => compareText(left.pairKey, right.pairKey));
     assert(targets.length <= 5000, `${profile.name} ${stateCode} exceeds the 5000-pair runner limit.`);
     const statePairs = targets.map((target) => target.pairKey);
     const pairSetSha256 = sha256(statePairs.join("\n"));
-    const planId = `${profile.sourceId}-${stateCode.toLocaleLowerCase("en-US")}-20260904-r1`;
+    const planId = `${profile.sourceId}-${stateCode.toLocaleLowerCase("en-US")}-${recovery ? options.campaign : "20260904-r1"}`;
     const outputPath = path.join(options.outputDirectory, `${planId}.json`);
     const plan = {
       schemaVersion: 1,
@@ -277,10 +320,11 @@ function main() {
         archiveAcquiredAt: profile.archiveAcquiredAt,
         preflightEvaluationId: evaluationId,
         targetPairSetSha256: pairSetSha256,
+        ...(recovery ? { metadataRecovery: { version: 1, asOf: recovery.asOf, extractedAt: preflight.evaluatedAt, preflightSha256: sha256(readFileSync(options.preflight)), witnessSetSha256: sha256(stableJson(targets)) } } : {}),
         targets,
       },
       antiDuplication: {
-        dStartDeterminedPairs: 303107,
+        dStartDeterminedPairs: determinedPairsAtBaseline,
         rawNetPairsAtDStart: preflight.counts.netEligiblePairs,
         excludedEarlierSourcePairs: excludedCountsByState.get(stateCode) ?? 0,
         selectedNetPairs: targets.length,
@@ -302,7 +346,7 @@ function main() {
     schemaVersion: 1,
     evaluationId,
     evaluatedAt: preflight.evaluatedAt,
-    status: selectedPairs.length >= 5000 ? "go" : "conditional-bundled",
+    status: recovery ? "go-positive-marginal-yield" : selectedPairs.length >= 5000 ? "go" : "conditional-bundled",
     objective: `Measure ${profile.sourceId} completely against the pinned current county-species determination set and retain only strict, unique historical-presence witnesses.`,
     canonicalCheckout: "C:/Code/project-isitusa",
     baseline: preflight.baseline,
@@ -316,7 +360,7 @@ function main() {
       retainedLocalArchive: profile.retainedLocalArchive,
     },
     decision: {
-      disposition: selectedPairs.length >= 5000 ? "go" : "conditional-bundled-with-nybg",
+      disposition: recovery ? "go-positive-marginal-yield" : selectedPairs.length >= 5000 ? "go" : "conditional-bundled-with-nybg",
       rawNetEligiblePairsAtDStart: preflight.counts.netEligiblePairs,
       excludedCrossSourcePairs: excludedCrossSourcePairs.length,
       selectedNetEligiblePairs: selectedPairs.length,
@@ -334,9 +378,10 @@ function main() {
     stateMeasurements: preflight.states,
     topSpecies: preflight.topSpecies,
     preflightElapsedMs: preflight.elapsedMs,
+    ...(recovery ? { metadataRecovery: recovery, preflightSha256: sha256(readFileSync(options.preflight)) } : {}),
     plans: planSummaries,
     safeguards: [
-      "Only preserved-specimen rows with stable identities, a valid event year, a blank identification qualifier, an exact unique two-token catalog binomial, and one active county alias qualified; sources lacking taxonRank additionally required exact structured genus, specific epithet, full scientific name with at most declared authorship, and a blank infraspecific epithet.",
+      recovery ? "Preserved specimens require an audited stable identity, retained raw-row hashes, exact unqualified catalog identity and active county. Collection dates may be unknown; invalid and unresolved dates, cultivation and individual source contradictions remain held." : "Only preserved-specimen rows with stable identities, a valid event year, a blank identification qualifier, an exact unique two-token catalog binomial, and one active county alias qualified; sources lacking taxonRank additionally required exact structured genus, specific epithet, full scientific name with at most declared authorship, and a blank infraspecific epithet.",
       "Cultivated or captive text in locality, occurrence remarks, habitat, or establishment means was rejected conservatively.",
       "All already determined pairs and the selected earlier-source pair set were removed exactly; verified-absent conflicts were separately blocked and measured at zero.",
       "Source silence and all rejected rows create no absence or non-detection outcome.",

@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-evidence-method-evaluation",
+  "evaluationId": "retained-specimen-metadata-method-20260906-r2",
+  "recordedAt": "2026-09-06T07:37:39.339Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "adapterVersion": "1.1.0",
+  "authorityReceipt": "ops/national-research/receipts/authorizations/autonomous-national-research-20260906-r1.json",
+  "status": "local-method-tests-passed-campaign-measurement-pending",
+  "scope": [
+    "harvard-huh-usa-preserved-specimens",
+    "nybg-preserved-specimens",
+    "smithsonian-nmnh-preserved-specimens"
+  ],
+  "sourceFacts": {
+    "archiveSha256": "1b054306100050566bf68aa3df561d61120d1ed5b1e6fa5d8508b669dbb090e3",
+    "occurrenceSha256": "e6babcd797b50a93241788a935b8ff284e02d5fcd2955e0e071ec369a9e1ad40",
+    "attribution": "Harvard University Herbaria; President and Fellows of Harvard College; CC BY 4.0. Metadata only; no media reproduced.",
+    "diagnosticPath": "ops/national-research/evaluations/harvard-date-format-diagnostic-20260906-r2.json",
+    "diagnosticSha256": "3a6b7723e213d4d28e1f2aeaaaff11a7465621078abac9feaea2de09f53110ca"
+  },
+  "holds": [
+    {
+      "pairKey": "12086:spathoglottis-plicata",
+      "reason": "reviewed-cultivated-specimen",
+      "note": "Explicitly grown from seed from Sumatra at USDA Chapman Field.",
+      "sourceRowSha256": "b1f11fc4e1bbe5ccfe04ec1bff07ae8a473667d929c6b9ee5edde85f007436ea",
+      "occurrenceId": "5fc9f5c8-57cb-4685-bce5-f37d4ae091e6"
+    },
+    {
+      "pairKey": "48039:catharanthus-roseus",
+      "reason": "reviewed-cultivated-specimen",
+      "note": "Occurrence remarks explicitly say Southern cult.",
+      "sourceRowSha256": "7b1b86d16daade8f3759910315c50a0c1e20de58b51fc1824e425ce56ee845cc",
+      "occurrenceId": "a0217041-45fa-4cc1-898f-5011d91b4f12"
+    },
+    {
+      "pairKey": "36029:symphytum-asperum",
+      "reason": "reviewed-cultivated-specimen",
+      "note": "Habitat is Hort.; horticultural-origin witness.",
+      "sourceRowSha256": "0ffe8a2a77324eb81e61a47c2ee0652af315fca2c03b94f3fcb99f388745a701",
+      "occurrenceId": "38695f7f-60f1-416e-9618-5c6e3ed4dd26"
+    },
+    {
+      "pairKey": "06001:eucalyptus-tereticornis",
+      "reason": "reviewed-cultivation-context-unresolved",
+      "note": "Experimental-station locality without corroborating wildness context; individual witness held pending label or contextual review, not a universal institutional-location rule.",
+      "sourceRowSha256": "bca278c69428a93ed47f4b4ce1b0fcf3bdd27d7cf6aed8616468fe64a28271fe",
+      "occurrenceId": "ac363a9f-22a5-41e2-a4df-25030dfd9def"
+    },
+    {
+      "pairKey": "06009:vaccaria-hispanica",
+      "reason": "reviewed-county-lineage-unresolved",
+      "note": "Calaveras county and Amador municipality with no collection date or finer locality; current-boundary assignment needs source label or historical-boundary adjudication.",
+      "sourceRowSha256": "d46646c6f57c2e9cecb054ec3be33229877e45d8b99c48eb367cbea30b325fe8",
+      "occurrenceId": "afa50287-88d2-4169-98cd-9be182eded6d"
+    }
+  ],
+  "validation": [
+    {
+      "command": "node --import tsx scripts/test-specimen-record-metadata.ts",
+      "status": "passed"
+    },
+    {
+      "command": "node --import tsx scripts/test-cpnwh-preserved-specimens-adapter.ts",
+      "status": "passed"
+    },
+    {
+      "command": "node --import tsx scripts/test-retained-herbarium-preserved-specimens-adapter.ts",
+      "status": "passed",
+      "cases": "All four legacy profiles; real Harvard undated witness; five raw-row holds; core-only/occurrence-only identity; dated recovery; 20 adverse mutations; schema isolation and duplicate pair rejection."
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "status": "passed"
+    },
+    {
+      "command": "npm.cmd run lint -- --file <seven changed TypeScript files>",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Harvard initial 892 candidates were exploratory with null embedded baseline. They are not accepted plans or determinations.",
+    "Complete pinned-baseline campaign rerun and immutable integration still required.",
+    "NYBG and Smithsonian share the raw witness method; their complete recovery campaigns are not yet measured or accepted.",
+    "TORCH recovery remains blocked on evaluated CSV identity audit.",
+    "All date intervals are retained for review; no new interval assertions or current occurrence claims.",
+    "Read-only advisory observations informed MAIN inspection; no human approval or formal worker integration is asserted."
+  ],
+  "resourceObservation": {
+    "observedAt": "2026-09-06T07:36:26.7971234Z",
+    "availableRamBytes": 9814495232,
+    "availableRamPercent": 29.34,
+    "pageReadsPerSec": 3,
+    "pageWritesPerSec": 0,
+    "commitChargePercent": 57,
+    "freeDiskBytes": 648775794688,
+    "tier": "green"
+  }
+}

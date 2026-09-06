@@ -194,6 +194,10 @@ async function main() {
       reject("basis-not-preserved-specimen");
       continue;
     }
+    if (metadataRecovery && row.occurrenceStatus?.trim() && normalizedText(row.occurrenceStatus) !== "present") {
+      reject("occurrence-status-contradicts-presence");
+      continue;
+    }
     const country = normalizedText(row.country);
     if (!["united states", "united states of america", "u.s.a.", "usa"].includes(country)) {
       reject("country-not-us");
@@ -220,6 +224,11 @@ async function main() {
       && !normalizedText(row.infraspecificEpithet);
     if ((sourceRank !== "species" && !structurallySpeciesRanked) || normalizedText(row.identificationQualifier)) {
       reject("taxon-rank-or-qualifier-invalid");
+      continue;
+    }
+    if (metadataRecovery && SOURCE_ID === "harvard-huh-usa-preserved-specimens"
+      && ((sourceScientificName !== sourceName && sourceScientificName !== sourceNameWithAuthorship) || normalizedText(row.infraspecificEpithet))) {
+      reject("harvard-source-name-or-infraspecific-conflict");
       continue;
     }
     if (ambiguousCatalogNames.has(sourceName)) {
@@ -406,7 +415,7 @@ async function main() {
       negativeSemantics: "Source silence and rejected rows create no absence or non-detection assertion.",
     },
     metadataRecovery: metadataRecovery ? { version: 1, asOf, identityAudit,
-      datePolicy: "Valid dated or explicitly undated historical records; malformed, contradictory, partial-unresolved and future dates held.",
+      datePolicy: "Valid single dates or explicitly undated historical records; malformed, contradictory, partial-unresolved, interval-requires-review and future dates held. Date intervals are never collapsed to a single day.",
       identityPolicy: "Occurrence ID when supplied; otherwise archive-version-bound core ID. Complete archive collision audit precedes witness acceptance." } : undefined,
     counts: {
       sourceRows,
