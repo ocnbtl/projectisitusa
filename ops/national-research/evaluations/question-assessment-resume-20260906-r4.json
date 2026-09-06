@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "kind": "question-assessment-resume-evaluation",
+  "evaluatedAt": "2026-09-06T10:14:07.056Z",
+  "status": "passed-local-preview-and-regressions",
+  "baseCommit": "e8333516369cf74e0b353a84c922b56ea994c630",
+  "candidateFiles": [
+    {
+      "path": "docs/research/question-assessments.md",
+      "sha256": "e984a4408ad2eb30fcf0a0a7efe3cb76d82121bf95c570d82ece5d5f255c0fbd",
+      "bytes": 7925
+    },
+    {
+      "path": "package.json",
+      "sha256": "f09afe3671538fdc7e8e008073fa03b58f34de53a9c1ad8246af40f9174537bf",
+      "bytes": 16143
+    },
+    {
+      "path": "scripts/research/build-question-assessment-batch.ts",
+      "sha256": "7bd47f4922fcabdd280db7873be5827b0d35ddc6a61bc4a375f74b2995bdade9",
+      "bytes": 5616
+    },
+    {
+      "path": "scripts/research/question-assessment-planner.ts",
+      "sha256": "876ae65335e9a7f7c9cf16ecd309a137a1150289e7139e379700cf081238781b",
+      "bytes": 3406
+    },
+    {
+      "path": "scripts/test-question-assessments.ts",
+      "sha256": "f7da58b1082b73f76279e077935e3821794f5bb75e8d0f152bfd98075304b005",
+      "bytes": 11297
+    },
+    {
+      "path": "scripts/test-question-assessment-planner.ts",
+      "sha256": "888665a03f587e7c876cb02e6e01b2b69ffee03c6803d5c195f9d9c458b928f4",
+      "bytes": 6899
+    },
+    {
+      "path": "src/lib/research/question-assessment-ledger.ts",
+      "sha256": "843ae88ecd5f6030bf9b55f4a84ea663548bde0f5290864779d39de763f40331",
+      "bytes": 27549
+    },
+    {
+      "path": "src/lib/research/question-assessments.ts",
+      "sha256": "9f8ecde312216f90a95539cc491f8f740decaab1600f070d29b6043ae89e4e0e",
+      "bytes": 15040
+    }
+  ],
+  "validation": {
+    "path": "ops/national-research/evaluations/artifacts/question-assessment-resume-validation-20260906-r4.json.gz",
+    "sha256": "2b801027c54d0af28d856795e224ccbdf1b2a04b2c6f783a66f9d71fa0b9ea7c",
+    "bytes": 2084
+  },
+  "behavior": {
+    "unchangedReplay": "Skip valid answers and return success with zero new events and no staging destination.",
+    "changedEvidence": "Reopen an answer if its retained witness no longer qualifies. An independently retained alternate witness can support a replacement.",
+    "changedPlan": "Replay the evaluated method and link a qualifying replacement to the latest prior assessment of that pair and question. Revisiting an old plan cannot revive superseded answers.",
+    "chronology": "A campaign cannot predate retained history. A replacement must be strictly later than its predecessor; equal instants and cycles fail."
+  },
+  "checks": [
+    {
+      "command": "npm run check:question-assessments",
+      "exitCode": 0,
+      "scope": "Core contract, real retained source readers, resume planner regressions, presentation and exact DC projection replay."
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "node --import tsx scripts/research/build-question-assessment-batch.ts --mode preview --state DC --as-of 2026-09-06 --campaign dc-questions-20260906-r1",
+      "exitCode": 0,
+      "result": {
+        "schemaVersion": 1,
+        "mode": "preview",
+        "campaign": "dc-questions-20260906-r1",
+        "evaluatedAt": "2026-09-06T10:11:39.501Z",
+        "stateCode": "DC",
+        "asOf": "2026-09-06",
+        "codeCommit": "e8333516369cf74e0b353a84c922b56ea994c630",
+        "status": "no-new-answers",
+        "methodCodeCommitted": false,
+        "baseline": {
+          "batchIds": [
+            "dc-questions-20260906-r1"
+          ],
+          "assessmentEvents": 256,
+          "validSupportedAnswers": 256,
+          "reopenedQuestions": 0,
+          "requiredQuestionCount": 10016
+        },
+        "skippedSupportedAnswers": 256,
+        "firstAssessmentEvents": 0,
+        "replacementEvents": 0,
+        "reopenedQuestionsRemaining": 0,
+        "uniquePairs": 0,
+        "assessmentEvents": 0,
+        "questionCounts": {
+          "documented-historical-occurrence": 0,
+          "wild-occurrence-in-period": 0,
+          "established-population-in-period": 0,
+          "official-status-as-of": 0
+        },
+        "questionDenominator": 10016,
+        "newBiologicalDeterminations": 0,
+        "unresolvedCompletions": 0,
+        "wholePairsCompleted": 0,
+        "sourceRunCount": 0,
+        "destination": null
+      }
+    },
+    {
+      "command": "node --import tsx scripts/test-question-assessment-planner.ts",
+      "exitCode": 0,
+      "scope": "Final regression uses current valid answers as its comparison set so future additional research is not mistaken for duplicate work; the retained Aedes no-op remains explicit."
+    }
+  ],
+  "preservedFailure": {
+    "command": "npm run check:question-assessments",
+    "exitCode": 1,
+    "cause": "The initial alternate-witness regression assumed two qualifying Aedes witnesses. Retained evidence contains only one.",
+    "correction": "Use Acer platanoides, which has two independently retained qualifying GBIF preserved-specimen assertions. The alternate-witness assertion remains required and passes."
+  },
+  "movement": {
+    "newBiologicalDeterminations": 0,
+    "removedBiologicalDeterminations": 0,
+    "newAssessmentEvents": 0,
+    "existingSupportedAnswers": 256,
+    "fullyAssessedPairs": 0
+  },
+  "limits": [
+    "This step does not activate establishment or finite unresolved assessment methods.",
+    "The successful preview was run before committing the changed method. Immutable stage mode remains guarded until the method is committed.",
+    "No deployment, R2 mutation or new source acquisition was performed by the planner change."
+  ],
+  "finalizedAt": "2026-09-06T10:16:10.461Z"
+}

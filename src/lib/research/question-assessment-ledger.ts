@@ -268,13 +268,15 @@ export function deriveSupportedQuestionProofs(context: QuestionEvidenceContext, 
     .sort((a, b) => a.questionId.localeCompare(b.questionId));
 }
 
-export function makeSupportedQuestionAssessment(plan: PairQuestionPlan, proof: QuestionCoverageProof): ResearchQuestionAssessment {
+export function makeSupportedQuestionAssessment(plan: PairQuestionPlan, proof: QuestionCoverageProof, previous: ResearchQuestionAssessment | null = null): ResearchQuestionAssessment {
+  assert(!previous || (previous.pairKey === proof.pairKey && previous.questionId === proof.questionId
+    && Date.parse(previous.assessedAt) < Date.parse(proof.evaluatedAt)), "A replacement must follow an earlier assessment of the same pair and question.");
   const payload: Omit<ResearchQuestionAssessment, "assessmentId"> = {
     schemaVersion: 1, eventType: "research.question-assessed", planId: plan.planId,
     planSha256: questionPlanSha256(plan), pairKey: proof.pairKey, questionId: proof.questionId,
     disposition: "supported", answer: proof.answer, stoppingRuleId: proof.questionId + ":supported",
     proofIds: [proof.proofId], assessedAt: proof.evaluatedAt, actor: { type: "agent", id: "MAIN-question-assessment@" + QUESTION_ASSESSMENT_METHOD_VERSION },
-    supersedes: null,
+    supersedes: previous?.assessmentId ?? null,
   };
   const assessment = { ...payload, assessmentId: questionEventId("question-assessment", payload) };
   validateQuestionAssessment(plan, assessment, [proof]);
@@ -329,9 +331,10 @@ export function readQuestionAssessmentBatches(root: string, stateCode: string, a
   }).filter((value): value is NonNullable<typeof value> => value !== null);
 }
 
-export function buildQuestionAssessmentProjection(context: QuestionEvidenceContext) {
+export function buildQuestionAssessmentProjection(context: QuestionEvidenceContext,
+  retainedBatches?: ReturnType<typeof readQuestionAssessmentBatches>) {
   if (!questionPolicyApplies(context.stateCode, context.asOf)) return undefined;
-  const batches = readQuestionAssessmentBatches(context.root, context.stateCode, context.asOf);
+  const batches = retainedBatches ?? readQuestionAssessmentBatches(context.root, context.stateCode, context.asOf);
   const proofs = batches.flatMap((b) => b.proofs);
   const assessments = batches.flatMap((b) => b.assessments);
   assert(new Set(proofs.map((p) => p.proofId)).size === proofs.length, "Question proof IDs repeat across batches.");

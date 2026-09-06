@@ -3,10 +3,10 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { loadQuestionEvidenceContext } from "./question-assessment-context";
 import {
-  QUESTION_POLICY, QUESTION_POLICY_SHA256, questionPolicyApplies, makePairQuestionPlan,
-  deriveSupportedQuestionProofs, makeSupportedQuestionAssessment, type QuestionAssessmentBatch,
+  QUESTION_POLICY, QUESTION_POLICY_SHA256, questionPolicyApplies, type QuestionAssessmentBatch,
 } from "../../src/lib/research/question-assessment-ledger";
-import { QUESTION_ASSESSMENT_METHOD_VERSION, type PairQuestionPlan, type QuestionCoverageProof, type ResearchQuestionAssessment } from "../../src/lib/research/question-assessments";
+import { QUESTION_ASSESSMENT_METHOD_VERSION } from "../../src/lib/research/question-assessments";
+import { planSupportedQuestionAssessments } from "./question-assessment-planner";
 import { assertRunStartNotFuture, fileReference, sha256 } from "../../src/lib/research/run-files";
 
 const options = new Map<string, string>();
@@ -22,23 +22,29 @@ assertRunStartNotFuture(evaluatedAt);
 if (evaluatedAt.slice(0, 10) < asOf) throw new Error("Question evaluation predates its reporting date.");
 const git = (args: string[]) => execFileSync("git", ["-c", "safe.directory=" + root.replace(/\\/gu, "/"), ...args], { cwd: root, encoding: "utf8" }).trim();
 const codeCommit = git(["rev-parse", "HEAD"]);
-const codePaths = ["src/lib/research", "scripts/research/build-question-assessment-batch.ts", "scripts/research/question-assessment-context.ts", "src/data/research/schemas", "src/data/research/research-questions.json"];
+const codePaths = ["src/lib/research", "scripts/research/build-question-assessment-batch.ts", "scripts/research/question-assessment-context.ts", "scripts/research/question-assessment-planner.ts", "src/data/research/schemas", "src/data/research/research-questions.json"];
 const dirtyCode = git(["status", "--porcelain", "--", ...codePaths]);
 if (mode === "stage" && dirtyCode) throw new Error("Commit the evaluated question method before immutable staging.");
 const destination = path.join(root, ".cache/research/question-assessments", mode + "-" + campaign);
-if (existsSync(destination)) throw new Error("Question batch staging directory already exists; retain it and choose a new campaign.");
 const context = loadQuestionEvidenceContext(root, stateCode, asOf);
-const plans: PairQuestionPlan[] = [], proofs: QuestionCoverageProof[] = [], assessments: ResearchQuestionAssessment[] = [];
-for (const county of context.counties) {
-  for (const species of [...context.catalogSpecies].sort((a, b) => a.id.localeCompare(b.id))) {
-    const plan = makePairQuestionPlan(species, county);
-    const found = deriveSupportedQuestionProofs(context, plan, evaluatedAt);
-    if (!found.length) continue;
-    plans.push(plan); proofs.push(...found);
-    assessments.push(...found.map((proof) => makeSupportedQuestionAssessment(plan, proof)));
-  }
+const planned = planSupportedQuestionAssessments(context, evaluatedAt);
+const { plans, proofs, assessments } = planned;
+const resume = {
+  baseline: planned.baseline, skippedSupportedAnswers: planned.skippedSupportedAnswers,
+  firstAssessmentEvents: planned.firstAssessmentEvents, replacementEvents: planned.replacementEvents,
+  reopenedQuestionsRemaining: planned.reopenedQuestionsRemaining,
+};
+if (!assessments.length) {
+  // A completed replay is a successful no-op, even when the original staging directory remains.
+  // Never create an empty receipt or overwrite a retained batch to record that nothing changed.
+  console.log(JSON.stringify({ schemaVersion: 1, mode, campaign, evaluatedAt, stateCode, asOf, codeCommit,
+    status: "no-new-answers", methodCodeCommitted: !dirtyCode, ...resume,
+    uniquePairs: 0, assessmentEvents: 0, questionCounts: Object.fromEntries(QUESTION_POLICY.questions.map((q) => [q.id, 0])),
+    questionDenominator: planned.baseline.requiredQuestionCount, newBiologicalDeterminations: 0,
+    unresolvedCompletions: 0, wholePairsCompleted: 0, sourceRunCount: 0, destination: null }, null, 2));
+  process.exit(0);
 }
-if (!assessments.length) throw new Error("No evaluated question answers were found.");
+if (existsSync(destination)) throw new Error("Question batch staging directory already exists; retain it and choose a new campaign.");
 mkdirSync(destination, { recursive: true });
 const writeLines = (name: string, rows: object[]) => {
   const filename = path.join(destination, name + ".ndjson");
@@ -57,6 +63,7 @@ writeFileSync(path.join(destination, "receipt.json"), JSON.stringify(receipt, nu
 const questionCounts = Object.fromEntries(QUESTION_POLICY.questions.map((q) => [q.id, assessments.filter((a) => a.questionId === q.id).length]));
 const report = {
   schemaVersion: 1, mode, campaign, evaluatedAt, stateCode, asOf, codeCommit, methodCodeCommitted: !dirtyCode,
+  status: "new-answers-staged", ...resume,
   uniquePairs: plans.length, assessmentEvents: assessments.length, questionCounts,
   questionDenominator: context.counties.length * context.catalogSpecies.length * QUESTION_POLICY.questions.filter((q) => q.required).length,
   newBiologicalDeterminations: 0, unresolvedCompletions: 0, wholePairsCompleted: 0,

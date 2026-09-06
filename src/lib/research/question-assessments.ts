@@ -210,21 +210,26 @@ export function resolveCurrentQuestionAssessments(
 ) {
   validateQuestionPlan(plan);
   assert(new Set(assessments.map((a) => a.assessmentId)).size === assessments.length, "Assessment event identities repeat.");
+  const pairKey = plan.countyFips + ":" + plan.speciesId;
   for (const assessment of assessments) {
+    assert(assessment.pairKey === pairKey && Number.isFinite(Date.parse(assessment.assessedAt)), "Assessment history has an invalid pair or timestamp.");
     if (assessment.supersedes !== null) {
       const previous = assessments.find((a) => a.assessmentId === assessment.supersedes);
-      assert(previous && previous.pairKey === assessment.pairKey && previous.questionId === assessment.questionId && previous.assessedAt <= assessment.assessedAt && previous.assessmentId !== assessment.assessmentId, "Supersession must reference an earlier assessment of the same pair and question.");
+      assert(previous && previous.pairKey === assessment.pairKey && previous.questionId === assessment.questionId
+        && Date.parse(previous.assessedAt) < Date.parse(assessment.assessedAt), "Supersession must reference a strictly earlier assessment of the same pair and question.");
     }
   }
-  const current = assessments.filter((a) => a.planSha256 === questionPlanSha256(plan));
-  for (const assessment of current) validateQuestionAssessment(plan, assessment, proofs);
+  // Resolve one chronological chain across plan revisions before selecting the current plan.
+  // Otherwise revisiting an old plan could revive an assessment that was already superseded.
   const byQuestion = new Map<ResearchQuestionId, ResearchQuestionAssessment>();
-  for (const assessment of [...current].sort((a, b) => a.assessedAt.localeCompare(b.assessedAt) || a.assessmentId.localeCompare(b.assessmentId))) {
+  for (const assessment of [...assessments].sort((a, b) => Date.parse(a.assessedAt) - Date.parse(b.assessedAt) || a.assessmentId.localeCompare(b.assessmentId))) {
     const previous = byQuestion.get(assessment.questionId);
     assert(!previous || assessment.supersedes === previous.assessmentId, "A replacement question assessment must explicitly supersede its predecessor.");
     byQuestion.set(assessment.questionId, assessment);
   }
-  return [...byQuestion.values()];
+  const current = [...byQuestion.values()].filter((a) => a.planSha256 === questionPlanSha256(plan));
+  for (const assessment of current) validateQuestionAssessment(plan, assessment, proofs);
+  return current;
 }
 
 export function summarizeQuestionAssessmentDecisions(plan: PairQuestionPlan, decisions: ResearchQuestionAssessment[]) {

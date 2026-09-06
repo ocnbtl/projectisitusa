@@ -45,3 +45,11 @@ Compilation verifies retained file hashes and resolves source assertions through
 - MAIN compiles and verifies the affected state, inspects public and generated diffs, and reconciles biological counts before committing. App and R2 release cadence and capacity checks remain unchanged.
 
 The compiler emits optional question metadata in existing version-4 state and county projections. Older projections remain readable. The research page labels legacy coverage as source-screen coverage and displays question assessment coverage independently. Local assessment progress is not public until its data release is verified.
+
+## Resuming a question campaign
+
+The batch planner first replays the retained assessments against the current policy and evidence. Valid supported answers are skipped. A replay with no new answers succeeds with zero events and a null destination; it does not overwrite the previous staging directory or create an empty immutable batch. Keep the execution report as the round's no-op evidence.
+
+New or reopened answers must have a qualifying witness at the new evaluation time. A replacement explicitly supersedes the latest earlier assessment of the same pair and question, including across plan revisions. Reusing an older plan does not revive a superseded answer. Evaluation cannot predate retained history, and replacements must be strictly later than their predecessors. Additional corroboration alone does not manufacture another completed question.
+
+A nonempty batch still requires a distinct campaign directory, committed method code and normal review before integration. Reports distinguish skipped valid answers, first assessments, replacement events and questions that remain reopened. No biological determination is created by this planning step.

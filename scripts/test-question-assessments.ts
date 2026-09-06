@@ -89,4 +89,13 @@ const emptyRule = structuredClone(plan);
 emptyRule.stoppingRules.find(r => r.id === "historical-unresolved")!.requiredRequirementIds = [];
 assert.throws(() => validateQuestionAssessment(emptyRule, { ...unresolved, planSha256: questionPlanSha256(emptyRule) },
   coverage.map(p => ({ ...p, planSha256: questionPlanSha256(emptyRule) }))), /nonempty/u);
+// Equal instants and cycles cannot create an earlier predecessor, regardless of timestamp formatting.
+assert.throws(() => summarizePairQuestionAssessments(plan, [assessment(), assessment({ assessmentId: "same-instant", supersedes: "assessment-1", assessedAt: "2026-09-06T01:00:00.000Z" })], [support]), /strictly earlier/u);
+assert.throws(() => summarizePairQuestionAssessments(plan, [assessment({ supersedes: "cycle" }), assessment({ assessmentId: "cycle", supersedes: "assessment-1" })], [support]), /strictly earlier/u);
+const changedPlan = structuredClone(plan);
+changedPlan.version = "changed-fixture";
+const revisedProof = proof("revised-support", { planSha256: questionPlanSha256(changedPlan), evaluatedAt: "2026-09-06T02:00:00Z" });
+const revisedAssessment = assessment({ assessmentId: "revised-plan-answer", planSha256: questionPlanSha256(changedPlan), assessedAt: "2026-09-06T03:00:00Z", proofIds: [revisedProof.proofId], supersedes: "assessment-1" });
+assert.equal(summarizePairQuestionAssessments(plan, [assessment(), revisedAssessment], [support, revisedProof]).assessedQuestions, 0);
+assert.throws(() => summarizePairQuestionAssessments(changedPlan, [assessment(), { ...revisedAssessment, supersedes: null }], [support, revisedProof]), /supersede/u);
 console.log("Question assessments: evidence-specific answers, finite completion, explicit gaps, source-screen rejection, supersession and reopening passed.");
