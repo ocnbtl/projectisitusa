@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-museum-metadata-20260906-r4-nybg-ny-1",
+  "jobId": "museum-metadata-20260906-r4-nybg-ny",
+  "leaseId": "lease-museum-metadata-20260906-r4-nybg-ny-1",
+  "workerCommit": "b49474983ded1751eae3861fc1d722031474a4d6",
+  "workerBranchHead": "ee8240f21791808955208466ab51207b0b99cc7b",
+  "manifestHash": "ca1d6e2a4ee56a4281b51459609a9614b60416036455bd16151cf9876d08bdab",
+  "changedPaths": [
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-retained-witnesses.json.gz",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/artifacts/nybg-source-identity.json",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/assertions.ndjson",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/manifest.json",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/outcomes.ndjson",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/receipt.json",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/rejections.ndjson",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/reviews.ndjson",
+    "src/data/research/runs/20260906T104546Z__nybg-preserved-specimens__146fdadd0717/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...ee8240f21791808955208466ab51207b0b99cc7b",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "fresh canonical immutable-run validation after exact worker cherry-picks with original code commit and worker identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact reviewed nybg-preserved-specimens content and manifest commits without conflict. Fresh canonical validation passed for 28 complete historical-occurrence pairs. Unknown collection dates and original source acquisition identity remain unchanged; no unsupported negative determination is produced.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-09-06T11:10:04.024Z",
+  "integrationCommit": "42b59ce8cf1dd529c1a43ff9f66d3e4c83dc7a17"
+}

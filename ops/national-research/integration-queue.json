@@ -32530,7 +32530,7 @@
       "queueId": "queue-lease-museum-metadata-20260906-r4-nybg-ny-1",
       "jobId": "museum-metadata-20260906-r4-nybg-ny",
       "leaseId": "lease-museum-metadata-20260906-r4-nybg-ny-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-09-06T11:06:37.722Z",
       "manifestPath": "manifests/museum-metadata-20260906-r4-nybg-ny__lease-museum-metadata-20260906-r4-nybg-ny-1.json",
       "manifestHash": "ca1d6e2a4ee56a4281b51459609a9614b60416036455bd16151cf9876d08bdab",
@@ -32587,6 +32587,57 @@
         "path": "receipts/reviews/queue-lease-museum-metadata-20260906-r4-nybg-ny-1.json",
         "sha256": "8d3b43aa00a8e304de54fd69e7d37268a10a6b62871138028ca444356a09270e",
         "bytes": 2978
+      },
+      "integratedAt": "2026-09-06T11:10:04.024Z",
+      "integrator": "MAIN",
+      "integrationCommit": "42b59ce8cf1dd529c1a43ff9f66d3e4c83dc7a17",
+      "integrationChecks": [
+        {
+          "command": "independent frozen filesystem skill hashes, exact two-commit history, clean worktree and committed manifest byte audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "current canonical immutable-run validator with exact source, state, ordered pairs, original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "raw retained preflight and every descriptor hash, accepted historical evidence and exact pair-scope audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1e8567d939ebcab99b4fff50f72bf36ae94633c...ee8240f21791808955208466ab51207b0b99cc7b",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "fresh canonical immutable-run validation after exact worker cherry-picks with original code commit and worker identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed nybg-preserved-specimens content and manifest commits without conflict. Fresh canonical validation passed for 28 complete historical-occurrence pairs. Unknown collection dates and original source acquisition identity remain unchanged; no unsupported negative determination is produced.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-museum-metadata-20260906-r4-nybg-ny-1.json",
+        "sha256": "9e052de0e6f5ce265df31f3204e967aa76c9595c61797b21257f731acec44e6e",
+        "bytes": 3280
       }
     },
     {
