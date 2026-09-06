@@ -12,6 +12,8 @@ import { resolveCountyEquivalent } from "@/lib/research/geography-registry";
 import { listZipEntries, readZipEntry, spawnZipEntry } from "./zip-tools";
 import { auditSpecimenArchiveIdentities, parseSpecimenDate, specimenRecordIdentity, specimenRowSha256, specimenRecoveryHold } from "./specimen-record-metadata";
 
+import { specimenInfraspecificCandidate } from "./specimen-infraspecific-inventory";
+
 type CatalogSpecies = { id: string; scientificName: string; category: string };
 type CountyProjection = {
   stateCode: string;
@@ -90,7 +92,9 @@ function parseArguments(argv: string[]) {
   const asOfIndex = argv.indexOf("--as-of");
   const asOf = asOfIndex >= 0 ? argv[asOfIndex + 1] : "";
   if (metadataRecovery) parseSpecimenDate({}, asOf);
-  return { archive: path.resolve(archive), output: path.resolve(output), metadataRecovery, asOf };
+  const infraspecificInventory = argv.includes("--infraspecific-inventory");
+  assert(!infraspecificInventory || metadataRecovery, "Infraspecific inventory requires metadata recovery filters and an explicit reporting date.");
+  return { archive: path.resolve(archive), output: path.resolve(output), metadataRecovery, asOf, infraspecificInventory };
 }
 
 function readJson<T>(filePath: string) {
@@ -117,7 +121,7 @@ function normalizedCountyName(value: string | undefined) {
 
 async function main() {
   const startedAt = Date.now();
-  const { archive, output, metadataRecovery, asOf } = parseArguments(process.argv.slice(2));
+  const { archive, output, metadataRecovery, asOf, infraspecificInventory } = parseArguments(process.argv.slice(2));
   const entries = listZipEntries(archive);
   for (const expected of ["occurrence.txt", "meta.xml", "eml.xml"]) {
     assert(entries.includes(expected), `Archive is missing ${expected}.`);
@@ -222,14 +226,20 @@ async function main() {
       && !sourceRank
       && (sourceScientificName === sourceName || sourceScientificName === sourceNameWithAuthorship)
       && !normalizedText(row.infraspecificEpithet);
-    if ((sourceRank !== "species" && !structurallySpeciesRanked) || normalizedText(row.identificationQualifier)) {
-      reject("taxon-rank-or-qualifier-invalid");
-      continue;
-    }
-    if (metadataRecovery && SOURCE_ID === "harvard-huh-usa-preserved-specimens"
-      && ((sourceScientificName !== sourceName && sourceScientificName !== sourceNameWithAuthorship) || normalizedText(row.infraspecificEpithet))) {
-      reject("harvard-source-name-or-infraspecific-conflict");
-      continue;
+    if (infraspecificInventory) {
+      const candidate = specimenInfraspecificCandidate(row);
+      if (candidate.status !== "candidate") { reject("infraspecific-inventory-" + candidate.reason); continue; }
+      assert(candidate.parentBinomial === sourceName, "Inventory parent differs from the catalog lookup.");
+    } else {
+      if ((sourceRank !== "species" && !structurallySpeciesRanked) || normalizedText(row.identificationQualifier)) {
+        reject("taxon-rank-or-qualifier-invalid");
+        continue;
+      }
+      if (metadataRecovery && SOURCE_ID === "harvard-huh-usa-preserved-specimens"
+        && ((sourceScientificName !== sourceName && sourceScientificName !== sourceNameWithAuthorship) || normalizedText(row.infraspecificEpithet))) {
+        reject("harvard-source-name-or-infraspecific-conflict");
+        continue;
+      }
     }
     if (ambiguousCatalogNames.has(sourceName)) {
       reject("catalog-name-ambiguous");
@@ -381,7 +391,9 @@ async function main() {
   const meta = readZipEntry(archive, "meta.xml", 2 * 1024 * 1024);
   const result = {
     schemaVersion: 1,
-    kind: "isitusa-source-yield-preflight",
+    kind: infraspecificInventory ? "isitusa-source-infraspecific-inventory" : "isitusa-source-yield-preflight",
+    ...(infraspecificInventory ? { inventoryQualification: "Exploratory source-declared infraspecific containment candidates only. No synonym mapping or accepted adapter is activated. Rows and pairs passing these filters still require method and witness review; the distinct kind cannot be admitted by the state-plan builder.",
+      taxonomyReferences: ["https://dwc.tdwg.org/terms/#dwc:specificEpithet", "https://dwc.tdwg.org/terms/#dwc:infraspecificEpithet", "https://dwc.tdwg.org/terms/#dwc:taxonRank"] } : {}),
     sourceId: SOURCE_ID,
     evaluatedAt: new Date().toISOString(),
     datasetIdentity: {
@@ -404,10 +416,10 @@ async function main() {
       determinedPairSetSha256: process.env.ISITUSA_BASELINE_PAIR_SET_SHA256 ?? null,
     },
     semantics: {
-      assertion: "recorded-present",
+      assertion: infraspecificInventory ? "none-inventory-only" : "recorded-present",
       basisOfRecord: "PreservedSpecimen",
       rights: RIGHTS_DESCRIPTION,
-      taxonomy: CATALOG_SCOPE === "plants"
+      taxonomy: infraspecificInventory ? "Source-declared subspecies, variety or form with matching name components, an unambiguous exact catalog species parent, and no identification qualifier, hybrid, cultivar or accepted-parent conflict; exploratory only." : CATALOG_SCOPE === "plants"
         ? "Unique exact canonical binomial catalog plant match with source rank species and no identification qualifier."
         : "Unique exact canonical binomial catalog match with no identification qualifier; a blank source rank is accepted only when genus, specific epithet, and full scientific name are the same exact binomial and no infraspecific epithet is present.",
       geography: "Exact active county-equivalent alias inside an explicit national-v1 US jurisdiction; coordinates are not used.",
@@ -452,6 +464,7 @@ async function main() {
   };
   writeFileSync(output, `${JSON.stringify(result, null, 2)}\n`);
   console.log(JSON.stringify({
+    kind: result.kind,
     sourceRows: result.counts.sourceRows,
     acceptedUniqueRecords: result.counts.acceptedUniqueRecords,
     grossPairs: result.counts.grossUniqueCountySpeciesPairs,

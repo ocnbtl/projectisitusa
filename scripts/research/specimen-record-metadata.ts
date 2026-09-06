@@ -41,6 +41,11 @@ export function specimenRecoveryHold(row: Record<string, string | undefined>): s
     ["bca278c69428a93ed47f4b4ce1b0fcf3bdd27d7cf6aed8616468fe64a28271fe", "reviewed-cultivation-context-unresolved"],
     ["d46646c6f57c2e9cecb054ec3be33229877e45d8b99c48eb367cbea30b325fe8", "reviewed-county-lineage-unresolved"],
   ]);
+  // Retained NYBG/NMNH review, with raw witnesses and rationale in the r4 fixture.
+  reviewedHolds.set("cb37fc4eb84193c0d2ff0a39ecf6f22bd3feb7acf5674af90b302b618334ea28", "reviewed-date-and-cultivation-context-unresolved");
+  reviewedHolds.set("2ed46ee86e31bb47808f2bf48a1c5a502c7ffdbc89b679b592fe88281aef968e", "reviewed-county-locality-conflict");
+  reviewedHolds.set("7769e994bdc4b66a0a821bbf6f72decc8dad1c419334a0f5047e3ed3a2ad4c93", "reviewed-cultivation-context-unresolved");
+  reviewedHolds.set("cfe3521eac53d1bd663dcf63ce09d9437a30e1a47670818efa413b31f1765ea3", "reviewed-cultivation-context-unresolved");
   const reviewedHold = reviewedHolds.get(specimenRowSha256(row));
   if (reviewedHold) return reviewedHold;
   const narrative = [row.locality, row.verbatimLocality, row.locationRemarks, row.occurrenceRemarks,

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { parseSpecimenDate, specimenRecordIdentity, specimenRowSha256, SpecimenIdentityAudit } from "./research/specimen-record-metadata";
+import reviewFixtures from "./fixtures/museum-specimen-metadata-review-20260906-r4.json";
+import { type SpecimenRecoveryWitness, specimenRecoveryHold, validateSpecimenRecoveryWitness, parseSpecimenDate, specimenRecordIdentity, specimenRowSha256, SpecimenIdentityAudit } from "./research/specimen-record-metadata";
 
 const asOf = "2026-09-06";
 assert.deepEqual(parseSpecimenDate({}, asOf), { status: "undated", eventDate: null, year: null });
@@ -41,3 +42,24 @@ identical.observe({ genus: "Agrostis", county: "Adams", occurrenceID: "urn:speci
 assert.deepEqual(identical.result().conflictingIdentities, []);
 assert.deepEqual(new SpecimenIdentityAudit(new Map([["core:missing", "hash"]])).result().missingIdentities, ["core:missing"]);
 console.log("Specimen metadata recovery: missing/invalid/future dates, stable identity fallback, and whole-archive collision audit passed.");
+
+function checkedFixture(witness: Omit<SpecimenRecoveryWitness, "sourceRow"> & { sourceRow: Record<string, string | undefined> }): SpecimenRecoveryWitness {
+  const sourceRow: Record<string, string> = {};
+  for (const [key, value] of Object.entries(witness.sourceRow)) {
+    assert(typeof value === "string", "Retained fixture fields must be strings.");
+    sourceRow[key] = value;
+  }
+  return { ...witness, sourceRow };
+}
+const recovery = { version: 1 as const, asOf, extractedAt: reviewFixtures.reviewedAt, preflightSha256: "a".repeat(64), witnessSetSha256: "b".repeat(64) };
+for (const hold of reviewFixtures.holds) {
+  assert.equal(specimenRowSha256(hold.witness.sourceRow), hold.witness.sourceRowSha256);
+  assert.equal(specimenRecoveryHold(hold.witness.sourceRow), hold.reason);
+  assert.throws(() => validateSpecimenRecoveryWitness(checkedFixture(hold.witness), recovery), /Recovery witness held/u, hold.pairKey);
+}
+for (const positive of reviewFixtures.positive) {
+  assert.equal(specimenRecoveryHold(positive.witness.sourceRow), null);
+  validateSpecimenRecoveryWitness(checkedFixture(positive.witness), recovery);
+  assert.equal(positive.witness.eventDate, null);
+}
+console.log("NYBG/NMNH retained review: four specific holds and two undated historical controls passed.");

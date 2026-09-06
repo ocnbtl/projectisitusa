@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-museum-recovery-controls-evaluation",
+  "evaluatedAt": "2026-09-06T10:30:22.848Z",
+  "status": "regressions-passed-candidate-replay-pending",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "baseCommit": "1da7a82b53fbc27e7b0c02beef50805a8841f010",
+  "candidateFiles": [
+    {
+      "path": "scripts/research/specimen-record-metadata.ts",
+      "sha256": "912001d2353e1c216a0eff42f3a670b63f755ebd3e92c916f4d433d9b165357e",
+      "bytes": 10198
+    },
+    {
+      "path": "scripts/research/specimen-infraspecific-inventory.ts",
+      "sha256": "2d9c533d465f882b60411f723bf30a87005138536c27cbd7536da29fdb5e5a18",
+      "bytes": 2897
+    },
+    {
+      "path": "scripts/research/preflight-nybg-preserved-specimens.ts",
+      "sha256": "8a265c69af7e5b65eceffc87dcaff833d51eb246394380d3ecb48572e82af344",
+      "bytes": 24239
+    },
+    {
+      "path": "scripts/test-specimen-record-metadata.ts",
+      "sha256": "441872afd12a044a9d12adec62bf25def68789bcfc2f79204028d7adb8724cdb",
+      "bytes": 5260
+    },
+    {
+      "path": "scripts/test-specimen-infraspecific-inventory.ts",
+      "sha256": "bb1d3ca15ccb87aa9b4774dbf81196c0fe4be30dd254f668c82d56d98f3784f8",
+      "bytes": 2228
+    },
+    {
+      "path": "scripts/fixtures/museum-specimen-metadata-review-20260906-r4.json",
+      "sha256": "76952a596432e8521c4bf1dab93a46791ec49f98fdc7b5432722311aaeab1d6f",
+      "bytes": 27166
+    },
+    {
+      "path": "package.json",
+      "sha256": "3bce9ed58c2ffcaa8e656b83ca15ff264d2068a9b74353e312fa2859f57ecc78",
+      "bytes": 16213
+    }
+  ],
+  "validation": {
+    "path": "ops/national-research/evaluations/artifacts/museum-recovery-controls-validation-20260906-r4.json.gz",
+    "sha256": "d27566c030fd6874a48787fbb731215fcb1715da684d2fabb9c3136eaa433223",
+    "bytes": 1420
+  },
+  "sources": [
+    {
+      "sourceId": "nybg-preserved-specimens",
+      "dataset": {
+        "url": "https://sweetgum.nybg.org:8443/ipt/archive.do?r=occurrences",
+        "metadataUrl": "https://sweetgum.nybg.org:8443/ipt/eml.do?r=occurrences",
+        "policyUrl": "https://sweetgum.nybg.org/science/digital-collections/",
+        "version": "1.103",
+        "publicationDate": "2026-08-25",
+        "archiveBytes": 736185551,
+        "archiveSha256": "84a5f69d746f1ec44fa89c63a9baf0fc5cb923dbb9330f91b6ac8660b159a483",
+        "occurrenceBytes": 3243235286,
+        "occurrenceSha256": "69c609fcb3da364149784f9afa9b78a6be61b95318b8e7e768244c1bebc35154",
+        "metaBytes": 5775,
+        "metaSha256": "c677268123854150b97d046fd6706718fe0926fd2697e383eb98ee051f1c5053",
+        "emlBytes": 9627,
+        "emlSha256": "91f991442c909438f7316e6013ab42927f25ec88a256530d4a04557380b9ff7e"
+      },
+      "rawPreflight": {
+        "path": "ops/national-research/evaluations/artifacts/nybg-metadata-raw-preflight-20260906-r4.json.gz",
+        "sha256": "1f21e650aaaa8ed267a7475ef4120d2c6f472f20850178d368c2786e7c935a9f",
+        "bytes": 19095,
+        "decodedSha256": "8945272c6af22e351cb323a39715c654139144f2d39233cffe199bec6ba6235b",
+        "decodedBytes": 207940
+      },
+      "counts": {
+        "sourceRows": 4923280,
+        "sourceTaxa": 315467,
+        "exactCatalogTaxa": 1259,
+        "acceptedUniqueRecords": 30959,
+        "grossUniqueCountySpeciesPairs": 20786,
+        "existingVerifiedPresentOverlaps": 20735,
+        "verifiedAbsentConflicts": 0,
+        "sameSourceSnapshotCompletedOverlaps": 0,
+        "priorPlanOverlaps": 0,
+        "withinPlanDuplicates": 10173,
+        "netEligiblePairs": 51
+      },
+      "evaluatedAt": "2026-09-06T09:34:23.073Z",
+      "baseline": {
+        "commit": null,
+        "determinedPairSetSha256": null
+      },
+      "qualification": "Original exploratory extraction retained exactly, including its null baseline fields. MAIN must pin a current determination baseline before admitting plans."
+    },
+    {
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "dataset": {
+        "url": "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112",
+        "metadataUrl": "https://collections.nmnh.si.edu/ipt/eml.do?r=nmnh_extant_dwc-a&v=1.112",
+        "policyUrl": "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a&v=1.112",
+        "version": "1.112",
+        "publicationDate": "2026-09-02",
+        "archiveBytes": 1525644039,
+        "archiveSha256": "204173b11b5933ca6625d3c9b23e4b7902f034cbbd24d42bca9ae4f84703b0de",
+        "occurrenceBytes": 6535399365,
+        "occurrenceSha256": "e87cd8b1fbc991275adcf8822373ebe32dfd25499959550cee68e44c8c8d09ab",
+        "metaBytes": 7757,
+        "metaSha256": "eaf66693969ab2c663faf7382fbf9f00c85b77b3b0c66a507d1f681341245fc9",
+        "emlBytes": 23081,
+        "emlSha256": "9db41d0a1ce40de82b731db0b9b7e574294dc15b94ba0b1169bc704c80310983"
+      },
+      "rawPreflight": {
+        "path": "ops/national-research/evaluations/artifacts/nmnh-metadata-raw-preflight-20260906-r4.json.gz",
+        "sha256": "896f93317e2aa773e9fc76ab2d8d64063fb3ee2068a4b7b60464c8bbd42fe91e",
+        "bytes": 20324,
+        "decodedSha256": "c91c93ab6571d5e8086c7e440c50cfafea834eab2295c0711c64dba6679c51b9",
+        "decodedBytes": 198564
+      },
+      "counts": {
+        "sourceRows": 9450048,
+        "sourceTaxa": 708463,
+        "exactCatalogTaxa": 1511,
+        "acceptedUniqueRecords": 21966,
+        "grossUniqueCountySpeciesPairs": 9135,
+        "existingVerifiedPresentOverlaps": 9091,
+        "verifiedAbsentConflicts": 0,
+        "sameSourceSnapshotCompletedOverlaps": 0,
+        "priorPlanOverlaps": 0,
+        "withinPlanDuplicates": 12831,
+        "netEligiblePairs": 44
+      },
+      "evaluatedAt": "2026-09-06T09:42:30.312Z",
+      "baseline": {
+        "commit": null,
+        "determinedPairSetSha256": null
+      },
+      "qualification": "Original exploratory extraction retained exactly, including its null baseline fields. MAIN must pin a current determination baseline before admitting plans."
+    }
+  ],
+  "triage": {
+    "rawCandidateUnion": 95,
+    "crossSourceOverlap": 0,
+    "specificHeldWitnesses": [
+      {
+        "source": "nybg",
+        "profile": "nybg",
+        "pairKey": "18133:pinus-sylvestris",
+        "reason": "reviewed-date-and-cultivation-context-unresolved",
+        "explanation": "The record has no normalized date but retains an ambiguous date expression in occurrenceRemarks, a yard locality, and an originally qualified different name. Hold this specific witness for source-label review; do not infer cultivation solely from the word yard or invent an event date.",
+        "sourceLinks": [
+          "http://sweetgum.nybg.org/science/vh/specimen_details.php?irn=210187"
+        ],
+        "sourceRowSha256": "cb37fc4eb84193c0d2ff0a39ecf6f22bd3feb7acf5674af90b302b618334ea28"
+      },
+      {
+        "source": "nmnh",
+        "profile": "smithsonian-nmnh",
+        "pairKey": "54039:papaver-dubium",
+        "reason": "reviewed-county-locality-conflict",
+        "explanation": "The structured county is Kanawha, while the locality describes John Brown's execution site. NPS places that execution in Charles Town, which is inconsistent with this named locality being Charleston. Preserve the conflict; do not silently reassign the specimen.",
+        "sourceLinks": [
+          "https://www.nps.gov/people/john-brown.htm"
+        ],
+        "sourceRowSha256": "2ed46ee86e31bb47808f2bf48a1c5a502c7ffdbc89b679b592fe88281aef968e"
+      },
+      {
+        "source": "nmnh",
+        "profile": "smithsonian-nmnh",
+        "pairKey": "15003:hypoestes-phyllostachya",
+        "reason": "reviewed-cultivation-context-unresolved",
+        "explanation": "The only locality is Magoon facility, without habitat or establishment context. The University identifies Magoon as a horticultural research and propagation site. A volunteer plant is possible, so this is an unresolved witness review, not a claim that the specimen was cultivated.",
+        "sourceLinks": [
+          "https://www.ctahr.hawaii.edu/site/locationdetails.aspx?id=er-omago",
+          "http://n2t.net/ark:/65665/3a776746c-4bd1-40d8-b6a0-89e1dc4fe4ed"
+        ],
+        "sourceRowSha256": "7769e994bdc4b66a0a821bbf6f72decc8dad1c419334a0f5047e3ed3a2ad4c93"
+      },
+      {
+        "source": "nmnh",
+        "profile": "smithsonian-nmnh",
+        "pairKey": "24033:dasypyrum-villosum",
+        "reason": "reviewed-cultivation-context-unresolved",
+        "explanation": "The locality is the National Plant Materials Center and the collector record number is PI368885; no field habitat or establishment context is supplied. Hold the specific accession-context witness for cultivation review; do not apply a blanket research-center exclusion.",
+        "sourceLinks": [
+          "http://n2t.net/ark:/65665/3c0fad29c-fadf-40d7-80e5-4b1e6324b308"
+        ],
+        "sourceRowSha256": "cfe3521eac53d1bd663dcf63ce09d9437a30e1a47670818efa413b31f1765ea3"
+      }
+    ],
+    "remainingCandidatePairsBeforeAlternateWitnessReplay": 91,
+    "newDeterminations": 0,
+    "qualification": "Review holds are specific unresolved or contradictory witnesses. They are not absence findings, proven cultivation findings, or blanket exclusions for yards, farms, ponds, universities or research centers. Other dated/undated historical controls still pass."
+  },
+  "taxonomyInventory": {
+    "status": "exploratory-only",
+    "kind": "isitusa-source-infraspecific-inventory",
+    "commandFlag": "--infraspecific-inventory",
+    "requiresMetadataRecovery": true,
+    "references": [
+      "https://dwc.tdwg.org/terms/#dwc:specificEpithet",
+      "https://dwc.tdwg.org/terms/#dwc:infraspecificEpithet",
+      "https://dwc.tdwg.org/terms/#dwc:taxonRank"
+    ],
+    "interpretation": "A source-declared subspecies, variety or form can be a candidate for its exact catalog species parent when full-name components agree. Genus can express classification rather than the name's literal generic component, so conflicting name/classification parents are held. This code does not resolve synonyms or activate an accepted containment adapter.",
+    "guards": [
+      "Distinct output kind is rejected by the existing state-plan builder.",
+      "Existing specimen rights, identity, date, country, county, cultivation and current-determination overlap filters remain in force.",
+      "Source rank, infraspecific epithet, full name and any accepted-name parent must agree. Qualifiers, hybrids, cultivars and unsupported ranks are held.",
+      "A complete archive identity audit and immutable source hashes are retained."
+    ],
+    "prospectiveYield": null,
+    "nextStep": "Measure retained NYBG archive candidates, review representative and difficult source taxa, and evaluate a separately versioned adapter before admission."
+  },
+  "checks": [
+    {
+      "command": "node --import tsx scripts/test-specimen-record-metadata.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "node --import tsx scripts/test-specimen-infraspecific-inventory.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "node --import tsx scripts/test-retained-herbarium-preserved-specimens-adapter.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    }
+  ],
+  "preservedFailure": {
+    "command": "npm run typecheck",
+    "exitCode": 2,
+    "cause": "TypeScript inferred optional undefined fields across heterogeneous imported JSON fixture rows.",
+    "correction": "The test now explicitly checks that every retained source field is a string before constructing the typed witness. Production validation was not weakened."
+  },
+  "limitations": [
+    "NYBG specimen and two n2t locator opens returned non-retryable browser safety errors. No alternate fetch was used to bypass them. Retained raw records remain available for the specific review.",
+    "NPS John Brown page and University of Hawaii Magoon description were read as contextual references, not new county-species assertions."
+  ],
+  "externalEffects": {
+    "newSourceAcquisitions": 0,
+    "networkRequestsFromInventory": 0,
+    "productionDeployments": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  }
+}
