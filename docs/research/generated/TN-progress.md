@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `8013`
+- Verified present: `8067`
 - Verified absent: `95`
 - Not detected: `8`
-- Researched unresolved: `36847`
-- Not researched: `192917`
-- Determination coverage: `3.41%`
-- Research coverage: `18.90%`
-- Explicit outcome coverage: `18.9015%`
-- Applicable protocol cells: `428`
+- Researched unresolved: `36815`
+- Not researched: `192895`
+- Determination coverage: `3.43%`
+- Research coverage: `18.91%`
+- Explicit outcome coverage: `18.9108%`
+- Applicable protocol cells: `441`
 - Current complete protocol cells: `127`
-- Protocol completion: `32.71%`
-- Current protocol completion: `29.67%`
-- Evidence records: `10350`
-- Research runs: `36`
+- Protocol completion: `31.75%`
+- Current protocol completion: `28.80%`
+- Evidence records: `10404`
+- Research runs: `37`
 - Rejection records: `746`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,7 +33,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Mat amaranth (`amaranthus-blitoides`) | plants | 94 | 0 | 1 |
-| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 94 | 0 | 1 |
 | Corn chamomile (`anthemis-arvensis`) | plants | 94 | 0 | 1 |
 | Lawndaisy (`bellis-perennis`) | plants | 94 | 0 | 1 |
 | Caucasian bluestem (`bothriochloa-bladhii`) | plants | 94 | 0 | 1 |
@@ -53,6 +52,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Red Fescue (`festuca-rubra`) | plants | 94 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 94 | 0 | 1 |
 | False baby's breath (`galium-mollugo`) | plants | 94 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 94 | 0 | 1 |
 | Meadow hawkweed (`hieracium-caespitosum`) | plants | 94 | 0 | 1 |
 | Common barley (`hordeum-vulgare`) | plants | 94 | 0 | 1 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 94 | 0 | 1 |
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:06.641Z | 48 | 38 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:39.796Z | 16 | 12 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:53.402Z | 10 | 10 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:36.994Z | 77 | 46 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:44.084Z | 131 | 89 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1054 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:47.409Z | 12 | 10 |

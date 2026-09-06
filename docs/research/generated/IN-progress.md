@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `9720`
+- Verified present: `9746`
 - Verified absent: `92`
 - Not detected: `0`
 - Researched unresolved: `34810`
-- Not researched: `185746`
-- Determination coverage: `4.26%`
-- Research coverage: `19.37%`
-- Explicit outcome coverage: `19.3699%`
-- Applicable protocol cells: `439`
+- Not researched: `185720`
+- Determination coverage: `4.27%`
+- Research coverage: `19.38%`
+- Explicit outcome coverage: `19.3812%`
+- Applicable protocol cells: `448`
 - Current complete protocol cells: `153`
-- Protocol completion: `37.81%`
-- Current protocol completion: `34.85%`
-- Evidence records: `11408`
-- Research runs: `38`
+- Protocol completion: `37.05%`
+- Current protocol completion: `34.15%`
+- Evidence records: `11434`
+- Research runs: `39`
 - Rejection records: `1431`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,9 +32,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Bluemink (`ageratum-houstonianum`) | plants | 91 | 0 | 1 |
 | European water plantain (`alisma-plantago-aquatica`) | plants | 91 | 0 | 1 |
 | Meadow foxtail (`alopecurus-pratensis`) | plants | 91 | 0 | 1 |
-| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 91 | 0 | 1 |
+| Red amaranth (`amaranthus-cruentus`) | plants | 91 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 91 | 0 | 1 |
 | European beachgrass (`ammophila-arenaria`) | plants | 91 | 0 | 1 |
 | Faucet snail (`bithynia-tentaculata`) | wildlife | 91 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 91 | 0 | 1 |
@@ -43,7 +45,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 91 | 0 | 1 |
 | Caraway (`carum-carvi`) | plants | 91 | 0 | 1 |
 | Branched centaury (`centaurium-pulchellum`) | plants | 91 | 0 | 1 |
-| Celandine (`chelidonium-majus`) | plants | 91 | 0 | 1 |
 | New world screwworm (`cochliomyia-hominivorax`) | insects | 91 | 0 | 1 |
 | Rockspray cotoneaster (`cotoneaster-horizontalis`) | plants | 91 | 0 | 1 |
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 91 | 0 | 1 |
@@ -55,8 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 91 | 0 | 1 |
 | False baby's breath (`galium-mollugo`) | plants | 91 | 0 | 1 |
 | Wall bedstraw (`galium-parisiense`) | plants | 91 | 0 | 1 |
-| Elecampane inula (`inula-helenium`) | plants | 91 | 0 | 1 |
-| German iris (`iris-germanica`) | plants | 91 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 91 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:47.526Z | 200 | 111 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:26.801Z | 5 | 3 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:46.475Z | 33 | 8 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:47.316Z | 41 | 27 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:55.766Z | 67 | 48 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1015 | 164 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:37.091Z | 1 | 1 |

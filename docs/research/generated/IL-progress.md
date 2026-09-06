@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `11295`
+- Verified present: `11338`
 - Verified absent: `202`
 - Not detected: `8`
-- Researched unresolved: `37203`
-- Not researched: `206700`
-- Determination coverage: `4.50%`
-- Research coverage: `19.07%`
-- Explicit outcome coverage: `19.0707%`
-- Applicable protocol cells: `451`
+- Researched unresolved: `37201`
+- Not researched: `206659`
+- Determination coverage: `4.52%`
+- Research coverage: `19.09%`
+- Explicit outcome coverage: `19.0867%`
+- Applicable protocol cells: `474`
 - Current complete protocol cells: `139`
-- Protocol completion: `33.70%`
-- Current protocol completion: `30.82%`
-- Evidence records: `13916`
-- Research runs: `38`
+- Protocol completion: `32.07%`
+- Current protocol completion: `29.32%`
+- Evidence records: `13959`
+- Research runs: `39`
 - Rejection records: `2122`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,19 +33,21 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Japanese maple (`acer-palmatum`) | plants | 101 | 0 | 1 |
+| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 101 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 101 | 0 | 1 |
 | Meadow foxtail (`alopecurus-pratensis`) | plants | 101 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 101 | 0 | 1 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 101 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 101 | 0 | 1 |
 | Greater burdock (`arctium-lappa`) | plants | 101 | 0 | 1 |
 | Chickpea milkvetch (`astragalus-cicer`) | plants | 101 | 0 | 1 |
-| Common borage (`borago-officinalis`) | plants | 101 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 101 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 101 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 101 | 0 | 1 |
 | Smooth Brome (`bromus-inermis`) | plants | 101 | 0 | 1 |
+| Pigeonpea (`cajanus-cajan`) | plants | 101 | 0 | 1 |
 | Littlepod False Flax (`camelina-microcarpa`) | plants | 101 | 0 | 1 |
-| Rampion bellflower (`campanula-rapunculoides`) | plants | 101 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 101 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 101 | 0 | 1 |
 | Crossflower (`chorispora-tenella`) | plants | 101 | 0 | 1 |
 | Job's tears (`coix-lacryma-jobi`) | plants | 101 | 0 | 1 |
 | Mute Swan (`cygnus-olor`) | wildlife | 101 | 0 | 1 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Great globethistle (`echinops-sphaerocephalus`) | plants | 101 | 0 | 1 |
 | Feral horse (`equus-caballus`) | wildlife | 101 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 101 | 0 | 1 |
-| False baby's breath (`galium-mollugo`) | plants | 101 | 0 | 1 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 101 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:44.264Z | 59 | 40 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:24.335Z | 21 | 20 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:44.049Z | 12 | 11 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:45.463Z | 59 | 37 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:53.449Z | 102 | 68 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1019 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

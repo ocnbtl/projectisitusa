@@ -7,10 +7,10 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `8334`
+- Verified present: `8336`
 - Verified absent: `159`
 - Not detected: `0`
-- Researched unresolved: `67291`
+- Researched unresolved: `67289`
 - Not researched: `322352`
 - Determination coverage: `2.13%`
 - Research coverage: `19.03%`
@@ -19,8 +19,8 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Current complete protocol cells: `126`
 - Protocol completion: `30.62%`
 - Current protocol completion: `27.75%`
-- Evidence records: `11341`
-- Research runs: `39`
+- Evidence records: `11343`
+- Research runs: `40`
 - Rejection records: `954`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:32.912Z | 65 | 52 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:12.743Z | 22 | 12 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:33.936Z | 22 | 14 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:39.965Z | 68 | 49 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:46.677Z | 70 | 49 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1188 | 159 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:28.193Z | 3 | 3 |

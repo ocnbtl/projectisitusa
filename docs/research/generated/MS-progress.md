@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `5739`
+- Verified present: `5775`
 - Verified absent: `82`
 - Not detected: `5`
-- Researched unresolved: `33049`
-- Not researched: `166453`
-- Determination coverage: `2.83%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9331%`
-- Applicable protocol cells: `433`
+- Researched unresolved: `33028`
+- Not researched: `166438`
+- Determination coverage: `2.85%`
+- Research coverage: `18.94%`
+- Explicit outcome coverage: `18.9404%`
+- Applicable protocol cells: `443`
 - Current complete protocol cells: `116`
-- Protocol completion: `29.79%`
-- Current protocol completion: `26.79%`
-- Evidence records: `8099`
-- Research runs: `36`
+- Protocol completion: `29.12%`
+- Current protocol completion: `26.19%`
+- Evidence records: `8135`
+- Research runs: `37`
 - Rejection records: `754`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,7 +34,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Creeping Bentgrass (`agrostis-stolonifera`) | plants | 81 | 0 | 1 |
 | Water foxtail (`alopecurus-geniculatus`) | plants | 81 | 0 | 1 |
+| Spiny amaranth (`amaranthus-spinosus`) | plants | 81 | 0 | 1 |
 | Mugwort (`artemisia-vulgaris`) | plants | 81 | 0 | 1 |
+| Bloodflower (`asclepias-curassavica`) | plants | 81 | 0 | 1 |
 | Common borage (`borago-officinalis`) | plants | 81 | 0 | 1 |
 | Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 81 | 0 | 1 |
 | Purple false brome (`brachypodium-distachyon`) | plants | 81 | 0 | 1 |
@@ -43,6 +45,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Madagascar periwinkle (`catharanthus-roseus`) | plants | 81 | 0 | 1 |
 | Feathertop (`cenchrus-longisetus`) | plants | 81 | 0 | 1 |
 | Cow sandbur (`cenchrus-setiger`) | plants | 81 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 81 | 0 | 1 |
 | European chickweed (`cerastium-pumilum`) | plants | 81 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 81 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 81 | 0 | 1 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Air yam (`dioscorea-bulbifera`) | plants | 81 | 0 | 1 |
 | Early water grass (`echinochloa-oryzoides`) | plants | 81 | 0 | 1 |
 | Greenhouse Frog (`eleutherodactylus-planirostris`) | wildlife | 81 | 0 | 1 |
-| Red Fescue (`festuca-rubra`) | plants | 81 | 0 | 1 |
-| Fimbry (`fimbristylis-littoralis`) | plants | 81 | 0 | 1 |
-| Freshwater bryozoan (`fredericella-sultana`) | wildlife | 81 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:17.157Z | 57 | 30 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:54.539Z | 9 | 9 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:10.520Z | 29 | 28 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:04.530Z | 26 | 22 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:14.375Z | 62 | 49 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 779 | 147 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:07.552Z | 167 | 50 |

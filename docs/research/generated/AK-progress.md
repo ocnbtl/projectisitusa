@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `1154`
+- Verified present: `1156`
 - Verified absent: `30`
 - Not detected: `0`
 - Researched unresolved: `13503`
-- Not researched: `60433`
+- Not researched: `60431`
 - Determination coverage: `1.58%`
 - Research coverage: `19.55%`
-- Explicit outcome coverage: `19.5514%`
+- Explicit outcome coverage: `19.5540%`
 - Applicable protocol cells: `247`
 - Current complete protocol cells: `111`
 - Protocol completion: `44.94%`
 - Current protocol completion: `44.94%`
-- Evidence records: `1344`
-- Research runs: `39`
+- Evidence records: `1346`
+- Research runs: `40`
 - Rejection records: `2194`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -54,9 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Rugosa rose (`rosa-rugosa`) | plants | 29 | 0 | 1 |
 | Tall tumblemustard (`sisymbrium-altissimum`) | plants | 29 | 0 | 1 |
 | Hoe nightshade (`solanum-physalifolium`) | plants | 29 | 0 | 1 |
-| Red Sandspurry (`spergularia-rubra`) | plants | 29 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 29 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 28 | 0 | 1 |
+| Herb sophia (`descurainia-sophia`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:10.544Z | 8 | 5 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:49.754Z | 2 | 2 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:36:35.978Z | 3 | 2 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:27.140Z | 14 | 10 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:34.739Z | 16 | 11 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 87 | 150 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

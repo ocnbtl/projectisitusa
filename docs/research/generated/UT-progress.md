@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `3412`
+- Verified present: `3414`
 - Verified absent: `29`
 - Not detected: `0`
 - Researched unresolved: `11773`
-- Not researched: `57402`
+- Not researched: `57400`
 - Determination coverage: `4.74%`
 - Research coverage: `20.95%`
-- Explicit outcome coverage: `20.9513%`
-- Applicable protocol cells: `487`
+- Explicit outcome coverage: `20.9541%`
+- Applicable protocol cells: `488`
 - Current complete protocol cells: `72`
-- Protocol completion: `17.45%`
-- Current protocol completion: `14.78%`
-- Evidence records: `3481`
-- Research runs: `41`
+- Protocol completion: `17.42%`
+- Current protocol completion: `14.75%`
+- Evidence records: `3483`
+- Research runs: `42`
 - Rejection records: `139`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Celandine (`chelidonium-majus`) | plants | 28 | 0 | 1 |
 | Rose (`cotoneaster-salicifolius`) | plants | 28 | 0 | 1 |
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 28 | 0 | 1 |
+| Pricklyburr (`datura-inoxia`) | plants | 28 | 0 | 1 |
 | Maiden pink (`dianthus-deltoides`) | plants | 28 | 0 | 1 |
 | Clammy goosefoot (`dysphania-pumilio`) | plants | 28 | 0 | 1 |
 | Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 28 | 0 | 1 |
 | Common dogmustard (`erucastrum-gallicum`) | plants | 28 | 0 | 1 |
 | Winged Burning Bush (`euonymus-alatus`) | plants | 28 | 0 | 1 |
-| Petty spurge (`euphorbia-peplus`) | plants | 28 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:12.175Z | 418 | 157 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:46.595Z | 1 | 1 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:58.514Z | 9 | 5 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:40.675Z | 51 | 33 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:48.844Z | 53 | 35 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 36 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:53.418Z | 6 | 3 |

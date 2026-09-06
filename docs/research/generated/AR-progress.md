@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `6937`
+- Verified present: `6953`
 - Verified absent: `75`
 - Not detected: `0`
-- Researched unresolved: `29015`
-- Not researched: `151773`
-- Determination coverage: `3.73%`
-- Research coverage: `19.18%`
-- Explicit outcome coverage: `19.1837%`
-- Applicable protocol cells: `451`
+- Researched unresolved: `29009`
+- Not researched: `151763`
+- Determination coverage: `3.74%`
+- Research coverage: `19.19%`
+- Explicit outcome coverage: `19.1890%`
+- Applicable protocol cells: `455`
 - Current complete protocol cells: `128`
-- Protocol completion: `31.26%`
-- Current protocol completion: `28.38%`
-- Evidence records: `10252`
-- Research runs: `40`
+- Protocol completion: `30.99%`
+- Current protocol completion: `28.13%`
+- Evidence records: `10268`
+- Research runs: `41`
 - Rejection records: `632`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -53,10 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sweetpotato (`ipomoea-batatas`) | plants | 74 | 0 | 1 |
 | Cream-anther field pepperwort (`lepidium-campestre`) | plants | 74 | 0 | 1 |
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 74 | 0 | 1 |
+| Common flax (`linum-usitatissimum`) | plants | 74 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 74 | 0 | 1 |
 | Japanese yellow loosestrife (`lysimachia-japonica`) | plants | 74 | 0 | 1 |
 | Changing forget-me-not (`myosotis-discolor`) | plants | 74 | 0 | 1 |
-| Poet's narcissus (`narcissus-poeticus`) | plants | 74 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:15.740Z | 281 | 134 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:55.378Z | 90 | 32 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:36:38.156Z | 4 | 4 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:28.961Z | 33 | 25 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:37.053Z | 49 | 38 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1201 | 154 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:16.388Z | 9 | 7 |

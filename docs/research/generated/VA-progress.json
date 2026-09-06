@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 563,
+    "applicableSpeciesCount": 565,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 1941,
+    "unknownSpeciesCount": 1939,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 510,
+    "derivedApplicableSpeciesCount": 512,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 685,
+    "boundedAcquisitionSpeciesCount": 687,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 333032,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 15301,
+    "verifiedPresent": 15326,
     "verifiedAbsent": 133,
     "notDetected": 0,
     "researchedUnresolved": 48298,
-    "notResearched": 269300,
-    "determinationCoveragePercent": 4.63,
+    "notResearched": 269275,
+    "determinationCoveragePercent": 4.64,
     "researchCoveragePercent": 19.14,
-    "explicitOutcomePairCount": 63732,
-    "explicitOutcomeCoveragePercent": 19.1369,
+    "explicitOutcomePairCount": 63757,
+    "explicitOutcomeCoveragePercent": 19.1444,
     "conflictCount": 0,
-    "evidenceRecordCount": 18481,
+    "evidenceRecordCount": 18506,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 18481,
+    "runEvidenceRecordCount": 18506,
     "rejectionRecordCount": 2627,
-    "researchRunCount": 36,
+    "researchRunCount": 37,
     "boundedAcquisition": {
-      "speciesCount": 685,
-      "totalPairs": 91105,
-      "verifiedPresent": 15301,
+      "speciesCount": 687,
+      "totalPairs": 91371,
+      "verifiedPresent": 15326,
       "verifiedAbsent": 133,
       "notDetected": 0,
       "researchedUnresolved": 48298,
-      "notResearched": 27373,
-      "researchCoveragePercent": 69.95,
-      "explicitOutcomePairs": 63732,
-      "explicitOutcomeCoveragePercent": 69.9544
+      "notResearched": 27614,
+      "researchCoveragePercent": 69.78,
+      "explicitOutcomePairs": 63757,
+      "explicitOutcomeCoveragePercent": 69.7782
     }
   },
   "migrationCandidates": {
@@ -323,9 +323,9 @@
       "authority": "Harvard University Herbaria",
       "tier": "academic",
       "status": "operational",
-      "lastRunAt": "2026-09-04T07:15:42.497Z",
-      "evidencePairCount": 145,
-      "screenedSpeciesCount": 71
+      "lastRunAt": "2026-09-06T07:44:51.078Z",
+      "evidencePairCount": 170,
+      "screenedSpeciesCount": 80
     },
     {
       "id": "gbif-preserved-specimens",
@@ -492,17 +492,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2740,
-    "applicableCells": 598,
-    "notApplicableCells": 2142,
+    "totalCells": 2748,
+    "applicableCells": 600,
+    "notApplicableCells": 2148,
     "completeCells": 144,
-    "incompleteCells": 454,
+    "incompleteCells": 456,
     "blockedCells": 0,
     "currentCells": 131,
     "staleCells": 13,
-    "undatedCells": 454,
-    "applicableCompletionPercent": 24.08,
-    "currentCompletePercent": 21.91,
+    "undatedCells": 456,
+    "applicableCompletionPercent": 24,
+    "currentCompletePercent": 21.83,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -522,9 +522,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 519,
+        "applicableCells": 521,
         "currentCompleteCells": 98,
-        "currentCompletePercent": 18.88
+        "currentCompletePercent": 18.81
       },
       {
         "category": "wildlife",
@@ -548,9 +548,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 537,
+        "applicableCells": 539,
         "currentCompleteCells": 84,
-        "currentCompletePercent": 15.64
+        "currentCompletePercent": 15.58
       },
       {
         "priority": "baseline",
@@ -568,7 +568,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 563,
+        "applicableCells": 565,
         "currentCompleteCells": 109,
         "processed": false
       },
@@ -1566,6 +1566,18 @@
       "priorityScore": 132001
     },
     {
+      "speciesId": "ruta-graveolens",
+      "commonName": "Common rue",
+      "scientificName": "Ruta graveolens",
+      "category": "plants",
+      "notResearchedCountyCount": 132,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 132001
+    },
+    {
       "speciesId": "salix-caprea",
       "commonName": "Goat willow",
       "scientificName": "Salix caprea",
@@ -1761,18 +1773,6 @@
       "speciesId": "viola-odorata",
       "commonName": "Sweet violet",
       "scientificName": "Viola odorata",
-      "category": "plants",
-      "notResearchedCountyCount": 132,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 132001
-    },
-    {
-      "speciesId": "zephyranthes-candida",
-      "commonName": "Autumn zephyrlily",
-      "scientificName": "Zephyranthes candida",
       "category": "plants",
       "notResearchedCountyCount": 132,
       "researchedUnresolvedCountyCount": 0,

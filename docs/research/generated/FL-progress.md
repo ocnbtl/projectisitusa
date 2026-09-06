@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `8282`
+- Verified present: `8479`
 - Verified absent: `67`
 - Not detected: `0`
-- Researched unresolved: `25473`
-- Not researched: `133946`
-- Determination coverage: `4.98%`
-- Research coverage: `20.16%`
-- Explicit outcome coverage: `20.1600%`
-- Applicable protocol cells: `659`
+- Researched unresolved: `25458`
+- Not researched: `133764`
+- Determination coverage: `5.09%`
+- Research coverage: `20.27%`
+- Explicit outcome coverage: `20.2685%`
+- Applicable protocol cells: `701`
 - Current complete protocol cells: `142`
-- Protocol completion: `23.52%`
-- Current protocol completion: `21.55%`
-- Evidence records: `18957`
-- Research runs: `36`
+- Protocol completion: `22.11%`
+- Current protocol completion: `20.26%`
+- Evidence records: `19154`
+- Research runs: `37`
 - Rejection records: `5119`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -40,23 +40,23 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tatarian orache (`atriplex-tatarica`) | plants | 66 | 0 | 1 |
 | Triangle barnacle (`balanus-trigonus`) | wildlife | 66 | 0 | 1 |
 | Crested philippine violet (`barleria-cristata`) | plants | 66 | 0 | 1 |
+| Butterfly tree (`bauhinia-purpurea`) | plants | 66 | 0 | 1 |
 | Morning-glory leafminer moth (`bedellia-somnulentella`) | insects | 66 | 0 | 1 |
 | Pike killifish (`belonesox-belizanus`) | wildlife | 66 | 0 | 1 |
 | Javanese bishopwood (`bischofia-javanica`) | plants | 66 | 0 | 1 |
 | Caucasian bluestem (`bothriochloa-bladhii`) | plants | 66 | 0 | 1 |
 | Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 66 | 0 | 1 |
-| Paperflower (`bougainvillea-glabra`) | plants | 66 | 0 | 1 |
+| Snowbush (`breynia-disticha`) | plants | 66 | 0 | 1 |
 | Angel's tears (`brugmansia-suaveolens`) | plants | 66 | 0 | 1 |
 | Smokebush (`buddleja-madagascariensis`) | plants | 66 | 0 | 1 |
 | Basketplant (`callisia-fragrans`) | plants | 66 | 0 | 1 |
 | Crimson bottlebrush (`callistemon-citrinus`) | plants | 66 | 0 | 1 |
 | Tea (`camellia-sinensis`) | plants | 66 | 0 | 1 |
+| Jack bean (`canavalia-ensiformis`) | plants | 66 | 0 | 1 |
 | Burmese fishtail palm (`caryota-mitis`) | plants | 66 | 0 | 1 |
 | Apple blossom (`cassia-javanica`) | plants | 66 | 0 | 1 |
-| Night jessamine (`cestrum-nocturnum`) | plants | 66 | 0 | 1 |
+| Larkdaisy (`centratherum-punctatum`) | plants | 66 | 0 | 1 |
 | Chilean jessamine (`cestrum-parqui`) | plants | 66 | 0 | 1 |
-| Northern Snakehead (`northern-snakehead`) | wildlife | 66 | 0 | 1 |
-| Indo-Pacific swimming crab (`charybdis-hellerii`) | wildlife | 66 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:29.775Z | 282 | 168 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:09.387Z | 65 | 50 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:31.361Z | 169 | 91 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:38.143Z | 118 | 64 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:44.068Z | 315 | 150 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1488 | 170 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:25.165Z | 3 | 3 |

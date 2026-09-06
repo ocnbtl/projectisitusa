@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `87`
 - County-species pairs: `217848`
-- Verified present: `6211`
+- Verified present: `6238`
 - Verified absent: `87`
 - Not detected: `17`
-- Researched unresolved: `35025`
-- Not researched: `176508`
-- Determination coverage: `2.89%`
-- Research coverage: `18.98%`
-- Explicit outcome coverage: `18.9765%`
-- Applicable protocol cells: `323`
+- Researched unresolved: `35021`
+- Not researched: `176485`
+- Determination coverage: `2.90%`
+- Research coverage: `18.99%`
+- Explicit outcome coverage: `18.9871%`
+- Applicable protocol cells: `334`
 - Current complete protocol cells: `116`
-- Protocol completion: `39.94%`
-- Current protocol completion: `35.91%`
-- Evidence records: `7921`
-- Research runs: `36`
+- Protocol completion: `38.62%`
+- Current protocol completion: `34.73%`
+- Evidence records: `7948`
+- Research runs: `37`
 - Rejection records: `2176`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,24 +39,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Gold-of-pleasure (`camelina-sativa`) | plants | 86 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 86 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 86 | 0 | 1 |
+| Branched centaury (`centaurium-pulchellum`) | plants | 86 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 86 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 86 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 86 | 0 | 1 |
 | Hairy cupgrass (`eriochloa-villosa`) | plants | 86 | 0 | 1 |
 | Black bindweed (`fallopia-convolvulus`) | plants | 86 | 0 | 1 |
+| Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 86 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 86 | 0 | 1 |
+| White deadnettle (`lamium-album`) | plants | 86 | 0 | 1 |
 | European larch (`larix-decidua`) | plants | 86 | 0 | 1 |
 | Whitetop (`lepidium-draba`) | plants | 86 | 0 | 1 |
 | Dalmatian Toadflax (`linaria-dalmatica`) | plants | 86 | 0 | 1 |
 | Red marshworm (`lumbricus-rubellus`) | wildlife | 86 | 0 | 1 |
+| Large yellow loosestrife (`lysimachia-punctata`) | plants | 86 | 0 | 1 |
+| Cheeseweed mallow (`malva-parviflora`) | plants | 86 | 0 | 1 |
+| Low mallow (`malva-pusilla`) | plants | 86 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 86 | 0 | 1 |
 | Marshpepper knotweed (`persicaria-hydropiper`) | plants | 86 | 0 | 1 |
-| Scots pine (`pinus-sylvestris`) | plants | 86 | 0 | 1 |
-| Silver cinquefoil (`potentilla-argentea`) | plants | 86 | 0 | 1 |
-| European bird cherry (`prunus-padus`) | plants | 86 | 0 | 1 |
-| White willow (`salix-alba`) | plants | 86 | 0 | 1 |
-| Water spangles (`salvinia-minima`) | plants | 86 | 0 | 1 |
-| Giant Foxtail (`setaria-faberi`) | plants | 86 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:11.480Z | 40 | 19 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:48.955Z | 7 | 5 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:05.554Z | 3 | 2 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:00.605Z | 27 | 20 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:09.660Z | 54 | 39 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 864 | 132 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

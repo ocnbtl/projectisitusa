@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `9791`
+- Verified present: `9828`
 - Verified absent: `62`
 - Not detected: `10`
-- Researched unresolved: `21023`
-- Not researched: `124362`
-- Determination coverage: `6.35%`
-- Research coverage: `19.89%`
-- Explicit outcome coverage: `19.8946%`
-- Applicable protocol cells: `741`
+- Researched unresolved: `21013`
+- Not researched: `124335`
+- Determination coverage: `6.37%`
+- Research coverage: `19.91%`
+- Explicit outcome coverage: `19.9120%`
+- Applicable protocol cells: `743`
 - Current complete protocol cells: `110`
-- Protocol completion: `16.60%`
-- Current protocol completion: `14.84%`
-- Evidence records: `10913`
-- Research runs: `37`
+- Protocol completion: `16.55%`
+- Current protocol completion: `14.80%`
+- Evidence records: `10950`
+- Research runs: `38`
 - Rejection records: `1055`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Turkish wartycabbage (`bunias-orientalis`) | plants | 61 | 0 | 1 |
 | Pigeonpea (`cajanus-cajan`) | plants | 61 | 0 | 1 |
 | Pot marigold (`calendula-officinalis`) | plants | 61 | 0 | 1 |
-| Gold-of-pleasure (`camelina-sativa`) | plants | 61 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 61 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:43.196Z | 1372 | 404 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:16.144Z | 8 | 7 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:33.287Z | 71 | 47 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:21.853Z | 407 | 170 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:30.493Z | 444 | 181 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 650 | 116 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:19.488Z | 3 | 3 |

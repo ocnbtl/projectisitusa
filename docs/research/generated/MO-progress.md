@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `8338`
+- Verified present: `8376`
 - Verified absent: `115`
 - Not detected: `0`
-- Researched unresolved: `46334`
-- Not researched: `233173`
-- Determination coverage: `2.94%`
-- Research coverage: `19.03%`
-- Explicit outcome coverage: `19.0259%`
-- Applicable protocol cells: `404`
+- Researched unresolved: `46325`
+- Not researched: `233144`
+- Determination coverage: `2.95%`
+- Research coverage: `19.04%`
+- Explicit outcome coverage: `19.0360%`
+- Applicable protocol cells: `417`
 - Current complete protocol cells: `120`
-- Protocol completion: `32.92%`
-- Current protocol completion: `29.70%`
-- Evidence records: `9294`
-- Research runs: `37`
+- Protocol completion: `31.89%`
+- Current protocol completion: `28.78%`
+- Evidence records: `9332`
+- Research runs: `38`
 - Rejection records: `1467`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,18 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Broadleaf helleborine (`epipactis-helleborine`) | plants | 114 | 0 | 1 |
 | Common dogmustard (`erucastrum-gallicum`) | plants | 114 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 114 | 0 | 1 |
+| Dovefoot Geranium (`geranium-molle`) | plants | 114 | 0 | 1 |
 | Small geranium (`geranium-pusillum`) | plants | 114 | 0 | 1 |
+| Flower of an hour (`hibiscus-trionum`) | plants | 114 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 114 | 0 | 1 |
 | Common periwinkle (`littorina-littorea`) | wildlife | 114 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 114 | 0 | 1 |
-| Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 114 | 0 | 1 |
 | Red marshworm (`lumbricus-rubellus`) | wildlife | 114 | 0 | 1 |
-| Matrimony vine (`lycium-barbarum`) | plants | 114 | 0 | 1 |
+| Cheeseweed mallow (`malva-parviflora`) | plants | 114 | 0 | 1 |
+| Common balm (`melissa-officinalis`) | plants | 114 | 0 | 1 |
 | Claspleaf pennycress (`microthlaspi-perfoliatum`) | plants | 114 | 0 | 1 |
 | Chinese Silvergrass (`miscanthus-sinensis`) | plants | 114 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 114 | 0 | 1 |
-| Apple of Peru (`nicandra-physalodes`) | plants | 114 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 114 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:14.166Z | 46 | 33 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:52.132Z | 21 | 16 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:08.035Z | 5 | 4 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:02.469Z | 28 | 19 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:12.008Z | 66 | 47 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 695 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:04.549Z | 12 | 6 |

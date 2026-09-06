@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6246`
+- Verified present: `6288`
 - Verified absent: `99`
 - Not detected: `9`
-- Researched unresolved: `40892`
-- Not researched: `200650`
-- Determination coverage: `2.56%`
-- Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0588%`
-- Applicable protocol cells: `334`
+- Researched unresolved: `40882`
+- Not researched: `200618`
+- Determination coverage: `2.58%`
+- Research coverage: `19.07%`
+- Explicit outcome coverage: `19.0717%`
+- Applicable protocol cells: `352`
 - Current complete protocol cells: `119`
-- Protocol completion: `39.52%`
-- Current protocol completion: `35.63%`
-- Evidence records: `6612`
-- Research runs: `38`
+- Protocol completion: `37.50%`
+- Current protocol completion: `33.81%`
+- Evidence records: `6654`
+- Research runs: `39`
 - Rejection records: `316`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,12 +33,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Barbed goatgrass (`aegilops-triuncialis`) | plants | 98 | 0 | 1 |
-| Mat amaranth (`amaranthus-blitoides`) | plants | 98 | 0 | 1 |
 | Mediterranean amaranth (`amaranthus-graecizans`) | plants | 98 | 0 | 1 |
+| Italian bugloss (`anchusa-azurea`) | plants | 98 | 0 | 1 |
 | Hoary Alyssum (`berteroa-incana`) | plants | 98 | 0 | 1 |
 | European white birch (`betula-pendula`) | plants | 98 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 98 | 0 | 1 |
 | Weevil (`calomycterus-setarius`) | insects | 98 | 0 | 1 |
+| Siberian peashrub (`caragana-arborescens`) | plants | 98 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 98 | 0 | 1 |
 | Diffuse Knapweed (`centaurea-diffusa`) | plants | 98 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 98 | 0 | 1 |
@@ -48,15 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Quackgrass (`elymus-repens`) | plants | 98 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 98 | 0 | 1 |
 | Eurasian hemp moth (`grapholita-delineana`) | insects | 98 | 0 | 1 |
+| Blackberry lily (`iris-domestica`) | plants | 98 | 0 | 1 |
+| European stickseed (`lappula-squarrosa`) | plants | 98 | 0 | 1 |
+| European larch (`larix-decidua`) | plants | 98 | 0 | 1 |
 | Whitetop (`lepidium-draba`) | plants | 98 | 0 | 1 |
 | High mallow (`malva-sylvestris`) | plants | 98 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 98 | 0 | 1 |
-| Sulphur Cinquefoil (`potentilla-recta`) | plants | 98 | 0 | 1 |
-| Laurel willow (`salix-pentandra`) | plants | 98 | 0 | 1 |
-| Giant Foxtail (`setaria-faberi`) | plants | 98 | 0 | 1 |
-| Foxtail millet (`setaria-italica`) | plants | 98 | 0 | 1 |
-| Small tumbleweed mustard (`sisymbrium-loeselii`) | plants | 98 | 0 | 1 |
-| Climbing Nightshade (`solanum-dulcamara`) | plants | 98 | 0 | 1 |
+| Silver cinquefoil (`potentilla-argentea`) | plants | 98 | 0 | 1 |
+| Sour cherry (`prunus-cerasus`) | plants | 98 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:38.474Z | 61 | 34 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:18.968Z | 7 | 6 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:39.165Z | 14 | 10 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:41.888Z | 43 | 24 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:48.927Z | 85 | 58 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 297 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:31.135Z | 1 | 1 |

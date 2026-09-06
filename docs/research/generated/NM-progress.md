@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `2735`
+- Verified present: `2737`
 - Verified absent: `33`
 - Not detected: `0`
 - Researched unresolved: `13967`
-- Not researched: `65897`
+- Not researched: `65895`
 - Determination coverage: `3.35%`
 - Research coverage: `20.25%`
-- Explicit outcome coverage: `20.2524%`
-- Applicable protocol cells: `385`
+- Explicit outcome coverage: `20.2549%`
+- Applicable protocol cells: `386`
 - Current complete protocol cells: `63`
-- Protocol completion: `19.74%`
-- Current protocol completion: `16.36%`
-- Evidence records: `2775`
-- Research runs: `37`
+- Protocol completion: `19.69%`
+- Current protocol completion: `16.32%`
+- Evidence records: `2777`
+- Research runs: `38`
 - Rejection records: `496`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,6 +45,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New world screwworm (`cochliomyia-hominivorax`) | insects | 32 | 0 | 1 |
 | Hare's ear mustard (`conringia-orientalis`) | plants | 32 | 0 | 1 |
 | Common Carp (`cyprinus-carpio`) | wildlife | 32 | 0 | 1 |
+| Pricklyburr (`datura-inoxia`) | plants | 32 | 0 | 1 |
 | Greenleaf ticktrefoil (`desmodium-intortum`) | plants | 32 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 32 | 0 | 1 |
 | Perennial wallrocket (`diplotaxis-tenuifolia`) | plants | 32 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Low mallow (`malva-pusilla`) | plants | 32 | 0 | 1 |
 | Guineagrass (`megathyrsus-maximus`) | plants | 32 | 0 | 1 |
 | Anise (`myrrhis-odorata`) | plants | 32 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 32 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:36.771Z | 178 | 82 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:13.690Z | 3 | 3 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:28.217Z | 19 | 17 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:17.970Z | 34 | 26 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:25.984Z | 36 | 27 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 44 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:16.534Z | 2 | 1 |

@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `1915`
+- Verified present: `1931`
 - Verified absent: `10`
 - Not detected: `0`
-- Researched unresolved: `3472`
-- Not researched: `19643`
-- Determination coverage: `7.69%`
-- Research coverage: `21.55%`
-- Explicit outcome coverage: `21.5535%`
-- Applicable protocol cells: `459`
+- Researched unresolved: `3471`
+- Not researched: `19628`
+- Determination coverage: `7.75%`
+- Research coverage: `21.61%`
+- Explicit outcome coverage: `21.6134%`
+- Applicable protocol cells: `462`
 - Current complete protocol cells: `83`
-- Protocol completion: `20.92%`
-- Current protocol completion: `18.08%`
-- Evidence records: `1933`
-- Research runs: `42`
+- Protocol completion: `20.78%`
+- Current protocol completion: `17.97%`
+- Evidence records: `1949`
+- Research runs: `43`
 - Rejection records: `125`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,6 +38,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Golden-tuft alyssum (`aurinia-saxatilis`) | plants | 9 | 0 | 1 |
 | Lawndaisy (`bellis-perennis`) | plants | 9 | 0 | 1 |
 | European white birch (`betula-pendula`) | plants | 9 | 0 | 1 |
+| Common borage (`borago-officinalis`) | plants | 9 | 0 | 1 |
 | Soft brome (`bromus-hordeaceus`) | plants | 9 | 0 | 1 |
 | Japanese brome (`bromus-japonicus`) | plants | 9 | 0 | 1 |
 | Pot marigold (`calendula-officinalis`) | plants | 9 | 0 | 1 |
@@ -48,15 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Marsh thistle (`cirsium-palustre`) | plants | 9 | 0 | 1 |
 | Hare's ear mustard (`conringia-orientalis`) | plants | 9 | 0 | 1 |
 | Golden chamomile (`cota-tinctoria`) | plants | 9 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 9 | 0 | 1 |
 | Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 9 | 0 | 1 |
 | Garden cucumber (`cucumis-sativus`) | plants | 9 | 0 | 1 |
-| Pricklyburr (`datura-inoxia`) | plants | 9 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 9 | 0 | 1 |
 | Common dogmustard (`erucastrum-gallicum`) | plants | 9 | 0 | 1 |
 | Madwoman's milk (`euphorbia-helioscopia`) | plants | 9 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 9 | 0 | 1 |
 | Queen of the meadow (`filipendula-ulmaria`) | plants | 9 | 0 | 1 |
-| Dyer's greenweed (`genista-tinctoria`) | plants | 9 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:31.580Z | 19 | 18 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:08.096Z | 10 | 8 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:23.016Z | 4 | 4 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:14.078Z | 662 | 206 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:21.306Z | 678 | 209 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 70 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

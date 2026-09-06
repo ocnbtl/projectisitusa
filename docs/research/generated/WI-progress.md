@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `72`
 - County-species pairs: `180288`
-- Verified present: `7021`
+- Verified present: `7056`
 - Verified absent: `72`
 - Not detected: `29`
-- Researched unresolved: `27260`
-- Not researched: `145906`
-- Determination coverage: `3.93%`
-- Research coverage: `19.07%`
-- Explicit outcome coverage: `19.0706%`
-- Applicable protocol cells: `401`
+- Researched unresolved: `27255`
+- Not researched: `145876`
+- Determination coverage: `3.95%`
+- Research coverage: `19.09%`
+- Explicit outcome coverage: `19.0872%`
+- Applicable protocol cells: `416`
 - Current complete protocol cells: `128`
-- Protocol completion: `35.16%`
-- Current protocol completion: `31.92%`
-- Evidence records: `11318`
-- Research runs: `36`
+- Protocol completion: `33.89%`
+- Current protocol completion: `30.77%`
+- Evidence records: `11353`
+- Research runs: `37`
 - Rejection records: `1541`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,6 +33,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Bishop's Goutweed (`aegopodium-podagraria`) | plants | 71 | 0 | 1 |
+| Love-lies-bleeding (`amaranthus-caudatus`) | plants | 71 | 0 | 1 |
+| Red amaranth (`amaranthus-cruentus`) | plants | 71 | 0 | 1 |
 | Absinthium (`artemisia-absinthium`) | plants | 71 | 0 | 1 |
 | Mugwort (`artemisia-vulgaris`) | plants | 71 | 0 | 1 |
 | Bloodflower (`asclepias-curassavica`) | plants | 71 | 0 | 1 |
@@ -50,13 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Celandine (`chelidonium-majus`) | plants | 71 | 0 | 1 |
 | Marsh thistle (`cirsium-palustre`) | plants | 71 | 0 | 1 |
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 71 | 0 | 1 |
+| Maiden pink (`dianthus-deltoides`) | plants | 71 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 71 | 0 | 1 |
+| Crested latesummer mint (`elsholtzia-ciliata`) | plants | 71 | 0 | 1 |
 | Hairy cupgrass (`eriochloa-villosa`) | plants | 71 | 0 | 1 |
 | Common dogmustard (`erucastrum-gallicum`) | plants | 71 | 0 | 1 |
-| Winged Burning Bush (`euonymus-alatus`) | plants | 71 | 0 | 1 |
-| Buckwheat (`fagopyrum-esculentum`) | plants | 71 | 0 | 1 |
-| Black bindweed (`fallopia-convolvulus`) | plants | 71 | 0 | 1 |
-| Gallant Soldier (`galinsoga-parviflora`) | plants | 71 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:23.706Z | 68 | 45 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:57.874Z | 18 | 15 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:08.895Z | 9 | 7 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:48.189Z | 48 | 32 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:57.857Z | 83 | 59 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1235 | 139 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

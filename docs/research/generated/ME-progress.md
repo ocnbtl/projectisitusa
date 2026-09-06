@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `2954`
+- Verified present: `2972`
 - Verified absent: `16`
 - Not detected: `0`
 - Researched unresolved: `5740`
-- Not researched: `31354`
-- Determination coverage: `7.41%`
-- Research coverage: `21.74%`
-- Explicit outcome coverage: `21.7402%`
-- Applicable protocol cells: `489`
+- Not researched: `31336`
+- Determination coverage: `7.46%`
+- Research coverage: `21.79%`
+- Explicit outcome coverage: `21.7851%`
+- Applicable protocol cells: `492`
 - Current complete protocol cells: `111`
-- Protocol completion: `25.36%`
-- Current protocol completion: `22.70%`
-- Evidence records: `3351`
-- Research runs: `33`
+- Protocol completion: `25.20%`
+- Current protocol completion: `22.56%`
+- Evidence records: `3369`
+- Research runs: `34`
 - Rejection records: `292`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Domestic cat (`felis-catus`) | wildlife | 15 | 0 | 1 |
 | Dovefoot Geranium (`geranium-molle`) | plants | 15 | 0 | 1 |
 | Bloody geranium (`geranium-sanguineum`) | plants | 15 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 15 | 0 | 1 |
+| Bristly oxtongue (`helminthotheca-echioides`) | plants | 15 | 0 | 1 |
 | Mouse barley (`hordeum-murinum`) | plants | 15 | 0 | 1 |
 | Annual candytuft (`iberis-amara`) | plants | 15 | 0 | 1 |
 | Spotted henbit (`lamium-maculatum`) | plants | 15 | 0 | 1 |
 | European stickseed (`lappula-squarrosa`) | plants | 15 | 0 | 1 |
-| European larch (`larix-decidua`) | plants | 15 | 0 | 1 |
-| Clasping pepperweed (`lepidium-perfoliatum`) | plants | 15 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:04.366Z | 138 | 80 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:43.763Z | 8 | 7 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:01.011Z | 34 | 19 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:56.724Z | 948 | 222 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:04.960Z | 966 | 225 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 214 | 133 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `4136`
+- Verified present: `4189`
 - Verified absent: `21`
 - Not detected: `0`
-- Researched unresolved: `6393`
-- Not researched: `42034`
-- Determination coverage: `7.91%`
-- Research coverage: `20.06%`
-- Explicit outcome coverage: `20.0631%`
-- Applicable protocol cells: `577`
+- Researched unresolved: `6386`
+- Not researched: `41988`
+- Determination coverage: `8.01%`
+- Research coverage: `20.15%`
+- Explicit outcome coverage: `20.1506%`
+- Applicable protocol cells: `586`
 - Current complete protocol cells: `124`
-- Protocol completion: `23.74%`
-- Current protocol completion: `21.49%`
-- Evidence records: `5635`
-- Research runs: `40`
+- Protocol completion: `23.38%`
+- Current protocol completion: `21.16%`
+- Evidence records: `5688`
+- Research runs: `41`
 - Rejection records: `997`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,7 +42,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Greater burdock (`arctium-lappa`) | plants | 20 | 0 | 1 |
 | Absinthium (`artemisia-absinthium`) | plants | 20 | 0 | 1 |
 | Rattlesnake brome (`bromus-briziformis`) | plants | 20 | 0 | 1 |
-| Heather (`calluna-vulgaris`) | plants | 20 | 0 | 1 |
 | Prickly sedge (`carex-spicata`) | plants | 20 | 0 | 1 |
 | Woolly distaff thistle (`carthamus-lanatus`) | plants | 20 | 0 | 1 |
 | Diffuse Knapweed (`centaurea-diffusa`) | plants | 20 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Rattleweed (`crotalaria-retusa`) | plants | 20 | 0 | 1 |
 | Clover dodder (`cuscuta-epithymum`) | plants | 20 | 0 | 1 |
 | Chinese hound's tongue (`cynoglossum-amabile`) | plants | 20 | 0 | 1 |
+| Variable flatsedge (`cyperus-difformis`) | plants | 20 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:33.881Z | 559 | 236 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:10.855Z | 11 | 10 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:25.586Z | 15 | 12 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:16.077Z | 107 | 72 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:23.590Z | 160 | 112 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 523 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

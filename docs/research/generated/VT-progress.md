@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `2381`
+- Verified present: `2397`
 - Verified absent: `14`
 - Not detected: `0`
-- Researched unresolved: `4951`
-- Not researched: `27710`
-- Determination coverage: `6.83%`
-- Research coverage: `20.96%`
-- Explicit outcome coverage: `20.9550%`
-- Applicable protocol cells: `476`
+- Researched unresolved: `4950`
+- Not researched: `27695`
+- Determination coverage: `6.88%`
+- Research coverage: `21.00%`
+- Explicit outcome coverage: `20.9978%`
+- Applicable protocol cells: `480`
 - Current complete protocol cells: `90`
-- Protocol completion: `21.64%`
-- Current protocol completion: `18.91%`
-- Evidence records: `2632`
-- Research runs: `34`
+- Protocol completion: `21.46%`
+- Current protocol completion: `18.75%`
+- Evidence records: `2648`
+- Research runs: `35`
 - Rejection records: `171`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,6 +37,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hollyhock (`alcea-rosea`) | plants | 13 | 0 | 1 |
 | Pale madwort (`alyssum-alyssoides`) | plants | 13 | 0 | 1 |
 | Mat amaranth (`amaranthus-blitoides`) | plants | 13 | 0 | 1 |
+| Love-lies-bleeding (`amaranthus-caudatus`) | plants | 13 | 0 | 1 |
 | Spiny amaranth (`amaranthus-spinosus`) | plants | 13 | 0 | 1 |
 | Lawndaisy (`bellis-perennis`) | plants | 13 | 0 | 1 |
 | Downy birch (`betula-pubescens`) | plants | 13 | 0 | 1 |
@@ -47,7 +48,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Gold-of-pleasure (`camelina-sativa`) | plants | 13 | 0 | 1 |
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 13 | 0 | 1 |
 | Narrowleaf bittercress (`cardamine-impatiens`) | plants | 13 | 0 | 1 |
-| Celandine (`chelidonium-majus`) | plants | 13 | 0 | 1 |
 | Golden chamomile (`cota-tinctoria`) | plants | 13 | 0 | 1 |
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 13 | 0 | 1 |
 | Clover dodder (`cuscuta-epithymum`) | plants | 13 | 0 | 1 |
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:17.485Z | 41 | 28 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:52.304Z | 9 | 6 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:03.728Z | 2 | 1 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:44.373Z | 667 | 208 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:53.360Z | 683 | 212 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 125 | 108 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

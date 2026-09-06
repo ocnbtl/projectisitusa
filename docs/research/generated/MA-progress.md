@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `4515`
+- Verified present: `4548`
 - Verified absent: `15`
 - Not detected: `0`
-- Researched unresolved: `3946`
-- Not researched: `26580`
-- Determination coverage: `12.92%`
-- Research coverage: `24.18%`
-- Explicit outcome coverage: `24.1785%`
-- Applicable protocol cells: `729`
+- Researched unresolved: `3943`
+- Not researched: `26550`
+- Determination coverage: `13.02%`
+- Research coverage: `24.26%`
+- Explicit outcome coverage: `24.2640%`
+- Applicable protocol cells: `733`
 - Current complete protocol cells: `87`
-- Protocol completion: `13.72%`
-- Current protocol completion: `11.93%`
-- Evidence records: `4582`
-- Research runs: `42`
+- Protocol completion: `13.64%`
+- Current protocol completion: `11.87%`
+- Evidence records: `4615`
+- Research runs: `43`
 - Rejection records: `572`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,6 +36,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Desert wheatgrass (`agropyron-desertorum`) | plants | 13 | 0 | 1 |
 | Bur chervil (`anthriscus-caucalis`) | plants | 13 | 0 | 1 |
 | Bloodflower (`asclepias-curassavica`) | plants | 13 | 0 | 1 |
+| Tatarian orache (`atriplex-tatarica`) | plants | 13 | 0 | 1 |
 | Golden-tuft alyssum (`aurinia-saxatilis`) | plants | 13 | 0 | 1 |
 | Caucasian bluestem (`bothriochloa-bladhii`) | plants | 13 | 0 | 1 |
 | Jamaican forget-me-not (`browallia-americana`) | plants | 13 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common brassbuttons (`cotula-coronopifolia`) | plants | 13 | 0 | 1 |
 | Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 13 | 0 | 1 |
 | Japanese cedar (`cryptomeria-japonica`) | plants | 13 | 0 | 1 |
-| Gooseberry gourd (`cucumis-myriocarpus`) | plants | 13 | 0 | 1 |
 
 ## Source Operations
 
@@ -86,7 +86,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:58.514Z | 168 | 87 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:38.391Z | 45 | 31 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:56.353Z | 16 | 15 |
-| Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:16:57.091Z | 1653 | 396 |
+| Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:02.561Z | 1686 | 403 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 200 | 98 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
