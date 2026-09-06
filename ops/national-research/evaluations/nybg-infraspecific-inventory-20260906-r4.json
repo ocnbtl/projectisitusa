@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-taxonomy-recovery-inventory-evaluation",
+  "campaignId": "20260906-r4",
+  "evaluatedAt": "2026-09-06T10:44:52.439Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "methodCodeCommit": "819ae7f362547e01ff895fcca6b6ef219fd2b6af",
+  "inventory": {
+    "path": "ops/national-research/evaluations/artifacts/nybg-infraspecific-inventory-20260906-r4.json.gz",
+    "contentEncoding": "gzip",
+    "storedBytes": 102067,
+    "storedSha256": "79e8c9e69bf17a22034569de8515fe9c1ae2ad6a8f6a5f1d07b69d8e3a2a8ab0",
+    "decodedBytes": 1113771,
+    "decodedSha256": "574962235a624d43d1aff4f44429653c5ff11d9810ecca77c17c03ac4319d413"
+  },
+  "baseline": {
+    "commit": "819ae7f362547e01ff895fcca6b6ef219fd2b6af",
+    "determinedPairSetSha256": "00f8beff5044830ccf68a1b855fb29618254d7eee65816b4939376f3dcca6190"
+  },
+  "sourceId": "nybg-preserved-specimens",
+  "counts": {
+    "sourceRows": 4923280,
+    "sourceTaxa": 315467,
+    "exactCatalogTaxa": 152,
+    "acceptedUniqueRecords": 1555,
+    "grossUniqueCountySpeciesPairs": 1077,
+    "existingVerifiedPresentOverlaps": 761,
+    "verifiedAbsentConflicts": 0,
+    "sameSourceSnapshotCompletedOverlaps": 0,
+    "priorPlanOverlaps": 0,
+    "withinPlanDuplicates": 478,
+    "netEligiblePairs": 316
+  },
+  "pairHashes": {
+    "gross": "9d5ab854d9722e9e14d070f017629ba04cfc758e20d891e341003750b2c3a701",
+    "presentOverlap": "097cfa87b789dbca3ee37adc10b0c227d275ddb5074be51c25e69e6e76f17a58",
+    "absentConflict": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "netEligible": "20047074220389a372bf4fcfa53fd37767928034855e75054b02804c916d2898"
+  },
+  "overlapWithAdmittedMetadataPairs": [
+    "24003:medicago-sativa"
+  ],
+  "qualification": "Syntactically consistent source infraspecific names are review candidates only. Current accepted taxon concepts and parent relationships must be verified against explicit authoritative mappings. Historical infraspecific names can now belong to another species; source spelling alone does not establish catalog identity or invasive status.",
+  "validationRequired": [
+    "Taxon concept and synonym resolution against cited authoritative sources",
+    "Preserve original full name and versioned accepted parent mapping",
+    "Review specimen context and geographic exceptions",
+    "Evaluate and version adapter and schema before admission"
+  ],
+  "examplePotentialConceptConflicts": [
+    "Nelumbo nucifera infraspecific names may represent another species; investigate before mapping.",
+    "Alisma plantago-aquatica infraspecific names may represent separately accepted species; investigate before mapping."
+  ],
+  "methodologicalReference": {
+    "title": "Darwin Core terms",
+    "url": "https://dwc.tdwg.org/terms/"
+  },
+  "status": "inventory-only-not-an-acceptance-method",
+  "newDeterminationsClaimed": 0,
+  "providerRequests": 0
+}

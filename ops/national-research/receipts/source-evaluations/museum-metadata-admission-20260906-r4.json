@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-recovery-admission",
+  "campaignId": "20260906-r4",
+  "recordedAt": "2026-09-06T10:44:52.434Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "baseline": {
+    "gitCommit": "819ae7f362547e01ff895fcca6b6ef219fd2b6af",
+    "asOf": "2026-09-06",
+    "determinations": 315985,
+    "verifiedPresent": 312741,
+    "verifiedAbsent": 3244,
+    "fullCountySpeciesDenominator": 7872576,
+    "determinedPairSetSha256": "00f8beff5044830ccf68a1b855fb29618254d7eee65816b4939376f3dcca6190"
+  },
+  "methodEvaluations": [
+    "ops/national-research/evaluations/retained-specimen-metadata-method-20260906-r2.json",
+    "ops/national-research/evaluations/museum-recovery-controls-20260906-r4.json"
+  ],
+  "sources": [
+    {
+      "sourceId": "nybg-preserved-specimens",
+      "preflightBaseline": {
+        "commit": "819ae7f362547e01ff895fcca6b6ef219fd2b6af",
+        "determinedPairSetSha256": "00f8beff5044830ccf68a1b855fb29618254d7eee65816b4939376f3dcca6190"
+      },
+      "preflightArtifact": {
+        "path": "ops/national-research/evaluations/artifacts/nybg-metadata-reviewed-preflight-20260906-r4.json.gz",
+        "contentEncoding": "gzip",
+        "storedBytes": 18854,
+        "storedSha256": "00bf3402d37b241f49a990be2ad64c7332a4a03b58850632dc0f9fa7001d2928",
+        "decodedBytes": 204797,
+        "decodedSha256": "9048cfae8760ee9b4384e0db971d4ad5a860f7c5cb5126bde6eb8adbc535beee"
+      },
+      "preflightEvaluation": "ops/national-research/evaluations/nybg-preserved-specimens-preflight-20260906-r4.json",
+      "exactCandidates": {
+        "count": 50,
+        "pairSetSha256": "b544b7abab4b66d9beb11d1398f5bf7d429a21c1c46947aafd0f0a2dee7b8396",
+        "states": [
+          "AR",
+          "FL",
+          "KS",
+          "MA",
+          "MD",
+          "NH",
+          "NJ",
+          "NY",
+          "PA",
+          "SC",
+          "VA"
+        ],
+        "undated": 50,
+        "presentOverlaps": 20735,
+        "verifiedAbsentConflicts": 0
+      },
+      "review": {
+        "exploratoryCount": 51,
+        "removedPairs": [
+          "18133:pinus-sylvestris"
+        ],
+        "heldWitnesses": [
+          {
+            "pairKey": "18133:pinus-sylvestris",
+            "reason": "reviewed-date-and-cultivation-context-unresolved",
+            "sourceRowSha256": "cb37fc4eb84193c0d2ff0a39ecf6f22bd3feb7acf5674af90b302b618334ea28"
+          }
+        ],
+        "remainingWitnessesUnchanged": true,
+        "alternativeWitnessesRecovered": 0
+      }
+    },
+    {
+      "sourceId": "smithsonian-nmnh-preserved-specimens",
+      "preflightBaseline": {
+        "commit": "819ae7f362547e01ff895fcca6b6ef219fd2b6af",
+        "determinedPairSetSha256": "00f8beff5044830ccf68a1b855fb29618254d7eee65816b4939376f3dcca6190"
+      },
+      "preflightArtifact": {
+        "path": "ops/national-research/evaluations/artifacts/nmnh-metadata-reviewed-preflight-20260906-r4.json.gz",
+        "contentEncoding": "gzip",
+        "storedBytes": 19242,
+        "storedSha256": "f0276a335d392e88105273549b488ffdf48dc75881c9675b53ac0fce02d98cbb",
+        "decodedBytes": 188092,
+        "decodedSha256": "65ba26427187108a278990cf7c8ea2edea44c32f03cd32bc526f679c69448da6"
+      },
+      "preflightEvaluation": "ops/national-research/evaluations/smithsonian-nmnh-preserved-specimens-preflight-20260906-r4.json",
+      "exactCandidates": {
+        "count": 41,
+        "pairSetSha256": "479659138e15ab601ada17575da6f10ee246c63657a14a0d4f3f9b79fddbaaa3",
+        "states": [
+          "CA",
+          "HI",
+          "IA",
+          "KY",
+          "LA",
+          "MD",
+          "MI",
+          "MT",
+          "NJ",
+          "NY",
+          "OR",
+          "PA",
+          "TX",
+          "VA",
+          "WA"
+        ],
+        "undated": 41,
+        "presentOverlaps": 9091,
+        "verifiedAbsentConflicts": 0
+      },
+      "review": {
+        "exploratoryCount": 44,
+        "removedPairs": [
+          "15003:hypoestes-phyllostachya",
+          "24033:dasypyrum-villosum",
+          "54039:papaver-dubium"
+        ],
+        "heldWitnesses": [
+          {
+            "pairKey": "54039:papaver-dubium",
+            "reason": "reviewed-county-locality-conflict",
+            "sourceRowSha256": "2ed46ee86e31bb47808f2bf48a1c5a502c7ffdbc89b679b592fe88281aef968e"
+          },
+          {
+            "pairKey": "15003:hypoestes-phyllostachya",
+            "reason": "reviewed-cultivation-context-unresolved",
+            "sourceRowSha256": "7769e994bdc4b66a0a821bbf6f72decc8dad1c419334a0f5047e3ed3a2ad4c93"
+          },
+          {
+            "pairKey": "24033:dasypyrum-villosum",
+            "reason": "reviewed-cultivation-context-unresolved",
+            "sourceRowSha256": "cfe3521eac53d1bd663dcf63ce09d9437a30e1a47670818efa413b31f1765ea3"
+          }
+        ],
+        "remainingWitnessesUnchanged": true,
+        "alternativeWitnessesRecovered": 0
+      }
+    }
+  ],
+  "exactCandidates": {
+    "count": 91,
+    "pairSetSha256": "44876194a47e8d5f5fe4d85f90f559bd9fcd44948a5b560bb5cd9b0653f58a8e",
+    "pairKeys": [
+      "05045:vaccaria-hispanica",
+      "06001:eragrostis-curvula",
+      "06001:nassella-neesiana",
+      "06009:coriandrum-sativum",
+      "06037:eleusine-tristachya",
+      "06043:digitaria-ischaemum",
+      "06073:cyprinus-carpio",
+      "06083:eucalyptus-sideroxylon",
+      "06099:spergula-arvensis",
+      "12103:egeria-densa",
+      "15001:cyperus-difformis",
+      "15001:cyperus-papyrus",
+      "15001:indigofera-hendecaphylla",
+      "15001:pseudelephantopus-spicatus",
+      "15003:fimbristylis-littoralis",
+      "15003:nymphaea-capensis",
+      "15003:nymphaea-lotus",
+      "15009:echinochloa-esculenta",
+      "19173:niditinea-fuscella",
+      "20065:tribulus-terrestris",
+      "21061:limax-maximus",
+      "22001:houttuynia-cordata",
+      "22071:mesocyclops-pehpeiensis",
+      "24003:medicago-sativa",
+      "24009:schedonorus-pratensis",
+      "24017:bromus-japonicus",
+      "24019:nutria",
+      "24025:fallopia-dumetorum",
+      "24033:chloris-truncata",
+      "24039:anthoxanthum-odoratum",
+      "25005:myosotis-arvensis",
+      "26033:lumbricus-rubellus",
+      "30031:niditinea-fuscella",
+      "30097:taraxacum-erythrospermum",
+      "33009:artemisia-vulgaris",
+      "34007:avena-sativa",
+      "34007:salix-babylonica",
+      "34017:bromus-hordeaceus",
+      "34021:avena-sativa",
+      "34021:chloris-radiata",
+      "34031:salix-alba",
+      "34041:epipactis-helleborine",
+      "36001:galinsoga-parviflora",
+      "36029:brassica-nigra",
+      "36029:camelina-sativa",
+      "36029:festuca-rubra",
+      "36029:lamium-maculatum",
+      "36029:lobularia-maritima",
+      "36029:melilotus-albus",
+      "36029:rumex-obtusifolius",
+      "36029:setaria-italica",
+      "36029:silene-noctiflora",
+      "36047:bromus-sterilis",
+      "36055:onopordum-acanthium",
+      "36063:bithynia-tentaculata",
+      "36063:capsella-bursa-pastoris",
+      "36069:vicia-sativa",
+      "36071:cardamine-flexuosa",
+      "36081:physalis-philadelphica",
+      "36097:convolvulus-arvensis",
+      "36123:arctium-lappa",
+      "36123:bellis-perennis",
+      "36123:bromus-sterilis",
+      "36123:cirsium-vulgare",
+      "36123:lablab-purpureus",
+      "36123:lupinus-luteus",
+      "36123:myosotis-arvensis",
+      "36123:prunus-persica",
+      "36123:sorbus-aucuparia",
+      "36123:trifolium-pratense",
+      "36123:trifolium-repens",
+      "41047:catapodium-rigidum",
+      "42027:salix-alba",
+      "42029:pseudosasa-japonica",
+      "42045:petasites-hybridus",
+      "42061:lumbricus-terrestris",
+      "42077:epipactis-helleborine",
+      "42101:alyssum-alyssoides",
+      "42101:poa-compressa",
+      "42101:rumex-patientia",
+      "42101:spartium-junceum",
+      "45019:laurus-nobilis",
+      "48201:eragrostis-plana",
+      "51013:sagina-procumbens",
+      "51085:amaranthus-spinosus",
+      "51085:oryza-sativa",
+      "51085:rosa-canina",
+      "51085:vinca-minor",
+      "51121:lysimachia-nummularia",
+      "51197:draba-verna",
+      "53075:cynosurus-echinatus"
+    ],
+    "crossSourceOverlaps": 0,
+    "allCollectionDatesNull": true
+  },
+  "checks": {
+    "currentNationalBaseline": "independently reconstructed",
+    "completeArchiveEligibilityAndIdentityReplay": "passed",
+    "exactHeldDifferenceAndRetainedWitnessEquality": "passed",
+    "planWitnessAndPairUnion": "passed"
+  },
+  "providerRequests": 0,
+  "newDeterminationsClaimed": 0,
+  "status": "plans-verified-awaiting-immutable-integration"
+}
