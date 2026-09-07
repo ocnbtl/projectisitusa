@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39",
+  "status": "complete",
+  "started_at": "2026-09-07T18:47:04.949Z",
+  "finished_at": "2026-09-07T18:47:07.297Z",
+  "actor_type": "adapter",
+  "actor_id": "inaturalist-gbif-research-grade@1.1.0",
+  "source_id": "inaturalist-research-grade",
+  "source_registry_hash": "1e20f01f7c130739938f4eed9da66a0d3553cf6bfc06d6bf9c0e5afad5de2603",
+  "adapter_id": "inaturalist-gbif-research-grade",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "5d82c8022708226e739543f8a6a81661fe13a2a9beeaea6a9aff66150b896702",
+  "code_commit": "a261b80c3dca6e5b9a816e72739afaf0d149571c",
+  "parameter_hash": "9eb9c50ffb39a388f8698aba602783388fab08809de7b2f6065d3d3c0f23fdcc",
+  "parameters": {
+    "stateCode": "IA",
+    "stateProvince": "Iowa",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "19193:anolis-sagrei"
+    ],
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "IA",
+    "county_fips": [
+      "19193"
+    ],
+    "species_ids": [
+      "anolis-sagrei"
+    ],
+    "pair_keys": [
+      "19193:anolis-sagrei"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Anolis+sagrei&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:06.969Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Iowa&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=4287413&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:07.295Z",
+      "record_count": 7
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/artifacts/gbif-occurrences-anolis-sagrei-000000.json.gz",
+      "sha256": "e1805bc1194ee3484c95a71f10a5d6ccef22cca977e44313c8ff46b45d4ad73b",
+      "bytes": 4511,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/artifacts/gbif-species-match-anolis-sagrei.json.gz",
+      "sha256": "368a235a1a12954831c1d24d09475e6095d44f197595133d28a8b7da7a854b54",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/artifacts/inaturalist-retained-replay-provenance.json",
+      "sha256": "46480397f52c72d9e90d062fafb49d7992a0094e456b7874dbd523945d2b0029",
+      "bytes": 2277,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/assertions.ndjson",
+      "sha256": "b21b67777d0de737cf21be0fadae4e386bc7f724856a0d7062dedea4eb05a95f",
+      "bytes": 2957,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/reviews.ndjson",
+      "sha256": "510dee97012e8702b93e844540ffadc307068ddf36e652134de5e2be1ae24c7d",
+      "bytes": 1044,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/outcomes.ndjson",
+      "sha256": "277fa5385a37089d1473467cc88161ef7ed03c1067df63bc7c57e1787af25eae",
+      "bytes": 894,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 7,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Licensed community-reviewed occurrence evidence distributed through the provider-recommended weekly GBIF dataset. Research Grade, taxonomy, public geography, and licenses can change after the retained run snapshot. Missing records never support absence or non-detection."
+  ],
+  "source_warnings": [
+    "Upstream request timestamps mark local response replay; original provider retrieval dates remain in assertion retrieved_at and the retained-replay provenance artifact. No live source request was issued."
+  ],
+  "deviations": [
+    "Replayed 2 provider response artifact(s) from archived run 20260902T195719Z__inaturalist-research-grade__4b854db10cbb at commit ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff; no live provider request was issued."
+  ],
+  "rerun_command": "npm run research:run -- --source inaturalist-research-grade --state IA --candidate-file ops/national-research/plans/inaturalist-context-20260907-r6/inaturalist-ia-20260907-r6.json --output-root src/data/research/runs --stage-canonical true --pairs 19193:anolis-sagrei --archive-replay-commit ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff --archive-replay-run-id 20260902T195719Z__inaturalist-research-grade__4b854db10cbb"
+}

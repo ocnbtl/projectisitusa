@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-main-retained-context-evidence-review",
+  "reviewedAt": "2026-09-07T18:52:59.169Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "status": "independently-audited-awaiting-canonical-validation-and-projection",
+  "sourceId": "inaturalist-research-grade",
+  "runs": [
+    "20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1",
+    "20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39"
+  ],
+  "baseline": {
+    "determinedPairs": 316240,
+    "pairSetSha256": "6258ef9cb90dc6637fcf0c1d73ff8104b5c50cbe91dc1968958d0a276af6880f"
+  },
+  "reviewedWitnesses": [
+    {
+      "pairKey": "20055:columba-livia",
+      "eventId": "gbif-assertion-237748f1590ec335838fab105c0f2b7f12316005d169a889f1806625426b29f0",
+      "sourceRecordId": "6235261954",
+      "sourceUrl": "https://www.gbif.org/occurrence/6235261954",
+      "sourceDate": "2026-04-23T16:59:08",
+      "originalRetrievedAt": "2026-09-02T19:56:49.559Z",
+      "rawRowSha256": "4bd9834e117fd3cf2c3ec8765695282b000b8ecd80c5caa1299bc07f335f5455",
+      "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "recordedBy": "Calinsdad",
+      "sourceCounty": "Finney",
+      "context": "S Fourth St, Garden City, KS, US",
+      "interpretation": "Provider wild occurrence with matching species concept and explicit county; Garden City is a place name, not an organism cultivation flag."
+    },
+    {
+      "pairKey": "20055:sturnus-vulgaris",
+      "eventId": "gbif-assertion-a0711f0e73eb369b46cacde37018f0d068a316ad9c2d15397ae09f38db47f5c1",
+      "sourceRecordId": "4102938699",
+      "sourceUrl": "https://www.gbif.org/occurrence/4102938699",
+      "sourceDate": "2023-05-02T09:31:06",
+      "originalRetrievedAt": "2026-09-02T19:56:59.091Z",
+      "rawRowSha256": "61f377abcfd3580f07d8c1cfcba0c57f2a53e3d3e0dad2fdd9649529c862c8fc",
+      "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "recordedBy": "Calinsdad",
+      "sourceCounty": "Finney",
+      "context": "Garden City Community College, Garden City, KS, US",
+      "interpretation": "Provider wild occurrence with matching species concept and explicit county; Garden City is a place name, not an organism cultivation flag."
+    },
+    {
+      "pairKey": "19193:anolis-sagrei",
+      "eventId": "gbif-assertion-77745f7ddbab54110752c93a7b907fb0e42adb82b2a38e6c3cb6f535155f965b",
+      "sourceRecordId": "4923650293",
+      "sourceUrl": "https://www.gbif.org/occurrence/4923650293",
+      "sourceDate": "2020-06-24T09:31:27",
+      "originalRetrievedAt": "2026-09-02T19:57:21.000Z",
+      "rawRowSha256": "f0bc69cc1f48a607ac1768fc7eae8bcc8f086abcccbe24ffeb0a80bdebb47a92",
+      "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+      "recordedBy": "Halen Cloud",
+      "sourceCounty": "Woodbury",
+      "context": "Found this little fella in our greenhouse - probably from a houseplant shipment from Florida. I took it home since it is invasive and will die in the winter outside",
+      "interpretation": "Documented encounter with a likely unintentionally transported greenhouse individual; origin is observer inference. Later collection does not erase original occurrence. No current population, establishment or winter survival claim."
+    }
+  ],
+  "prospectiveAdditionalUniquePairs": 3,
+  "integratedDeterminationGainClaimed": 0,
+  "networkRequests": 0,
+  "checks": [
+    "All receipt event and artifact descriptors matched original staged bytes.",
+    "Every emitted assertion independently matched exactly one original hashed provider row, original observation date and original retrieval date.",
+    "CC0/BY metadata terms and credit preserved; no media downloaded.",
+    "Every pair absent from the fixed 316240-pair baseline; no negative claim or establishment inference created."
+  ],
+  "limitations": [
+    "The IA greenhouse record documents one occurrence, not an established population.",
+    "Full canonical validation and generated pair-set reconciliation remain required."
+  ]
+}

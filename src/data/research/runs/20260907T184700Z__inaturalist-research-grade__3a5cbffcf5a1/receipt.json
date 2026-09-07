@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1",
+  "status": "complete",
+  "started_at": "2026-09-07T18:47:00.782Z",
+  "finished_at": "2026-09-07T18:47:04.755Z",
+  "actor_type": "adapter",
+  "actor_id": "inaturalist-gbif-research-grade@1.1.0",
+  "source_id": "inaturalist-research-grade",
+  "source_registry_hash": "1e20f01f7c130739938f4eed9da66a0d3553cf6bfc06d6bf9c0e5afad5de2603",
+  "adapter_id": "inaturalist-gbif-research-grade",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "5d82c8022708226e739543f8a6a81661fe13a2a9beeaea6a9aff66150b896702",
+  "code_commit": "a261b80c3dca6e5b9a816e72739afaf0d149571c",
+  "parameter_hash": "3a5cbffcf5a1c7c4917cb66d7e5b74e3a31eedb84b55a26ec8a0f2da5be4aff7",
+  "parameters": {
+    "stateCode": "KS",
+    "stateProvince": "Kansas",
+    "candidateLimit": 2,
+    "candidatePairs": [
+      "20055:columba-livia",
+      "20055:sturnus-vulgaris"
+    ],
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "KS",
+    "county_fips": [
+      "20055"
+    ],
+    "species_ids": [
+      "columba-livia",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "20055:columba-livia",
+      "20055:sturnus-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Columba+livia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:03.045Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Kansas&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495414&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:03.360Z",
+      "record_count": 260
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Sturnus+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:03.702Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Kansas&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:04.044Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Kansas&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:04.389Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Kansas&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=9809229&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:47:04.735Z",
+      "record_count": 183
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/artifacts/gbif-occurrences-columba-livia-000000.json.gz",
+      "sha256": "0c6eed505b8fce755f77104f5dec7c69efbfd381399d0678dcb51be445fc9fc9",
+      "bytes": 80780,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/artifacts/gbif-occurrences-sturnus-vulgaris-000000.json.gz",
+      "sha256": "7a827874c14c65af12e0e51dfae7c1e7114520c22255fa467d3c28b60d351f88",
+      "bytes": 93179,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/artifacts/gbif-occurrences-sturnus-vulgaris-000300.json.gz",
+      "sha256": "66b456bc612a6e18719f49ec8f9d6de822a8e4eaaf89734ad7d47538fb0e50a0",
+      "bytes": 91345,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/artifacts/gbif-occurrences-sturnus-vulgaris-000600.json.gz",
+      "sha256": "284a9c0ccf35854e3d25a0d5c5565268c8d1340f80b68c8dd222f52408468d50",
+      "bytes": 55164,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/artifacts/gbif-species-match-columba-livia.json.gz",
+      "sha256": "65641895f736571db77aca202385aec5c3933cf2db106f8aa626365f1c3717bc",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/artifacts/gbif-species-match-sturnus-vulgaris.json.gz",
+      "sha256": "1393243d6a16652d0bcce5d68487a927921daa3d80d685e60a01f04b3173c8cc",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/artifacts/inaturalist-retained-replay-provenance.json",
+      "sha256": "8306ea7214ae7a38dea86029a1000cd80800304c879173a522d963b2856af301",
+      "bytes": 5086,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/assertions.ndjson",
+      "sha256": "189eda0dc2684b8bd273aaaa43433d071563793b5ce29408db236d87f235b47e",
+      "bytes": 5933,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/reviews.ndjson",
+      "sha256": "d0b73747f8d7ec7759591074ae19cbdb80d4ef46672db7ea5535c3cdd99a4043",
+      "bytes": 2091,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/rejections.ndjson",
+      "sha256": "6d442215618e993fd2218723c2e111ec5a41bac322380f72751a70603f377088",
+      "bytes": 36192,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1/outcomes.ndjson",
+      "sha256": "28c0cb247452b1ac3c068840cbd74ee5be4692e9690081440bc4f69518ed5b71",
+      "bytes": 6501,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 1043,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 51,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Licensed community-reviewed occurrence evidence distributed through the provider-recommended weekly GBIF dataset. Research Grade, taxonomy, public geography, and licenses can change after the retained run snapshot. Missing records never support absence or non-detection."
+  ],
+  "source_warnings": [
+    "Upstream request timestamps mark local response replay; original provider retrieval dates remain in assertion retrieved_at and the retained-replay provenance artifact. No live source request was issued."
+  ],
+  "deviations": [
+    "Replayed 6 provider response artifact(s) from archived run 20260902T195643Z__inaturalist-research-grade__a0d0242eb262 at commit ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff; no live provider request was issued."
+  ],
+  "rerun_command": "npm run research:run -- --source inaturalist-research-grade --state KS --candidate-file ops/national-research/plans/inaturalist-context-20260907-r6/inaturalist-ks-20260907-r6.json --output-root src/data/research/runs --stage-canonical true --pairs 20055:columba-livia,20055:sturnus-vulgaris --archive-replay-commit ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff --archive-replay-run-id 20260902T195643Z__inaturalist-research-grade__a0d0242eb262"
+}

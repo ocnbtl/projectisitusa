@@ -167,6 +167,21 @@ export function retainedWildRecordSupportsPeriod(input: {
     && record.basisOfRecord === "HUMAN_OBSERVATION" && record.occurrenceStatus === "PRESENT"
     && record.species === assertion.taxon_match.target_scientific_name;
 }
+/** Reproduce the normalization shape pinned by the original adapter version. */
+export function retainedWildPayloadHash(record: Record<string, unknown>, assertion: RunEvidenceAssertionEvent, adapterVersion: string) {
+  assert(adapterVersion === "1.0.0" || adapterVersion === "1.1.0", "Unsupported retained iNaturalist normalization version.");
+  const payload = supportingPayload(record as unknown as GbifOccurrenceRecord, {
+    countyFips: assertion.county_fips, countyName: assertion.geography_match.source_county, countyLegalName: assertion.geography_match.source_county,
+    stateCode: assertion.state_code, stateName: assertion.geography_match.source_state, sourceStateName: assertion.geography_match.source_state,
+    speciesId: assertion.species_id, scientificName: assertion.taxon_match.target_scientific_name,
+  }, { speciesKey: Number(assertion.taxon_match.source_taxon_key), canonicalName: assertion.taxon_match.target_scientific_name,
+    confidence: Number(/confidence ([0-9]+)/u.exec(assertion.taxon_match.method)?.[1]),
+  });
+  const legacyKeys = ["gbifKey", "occurrenceID", "datasetKey", "basisOfRecord", "occurrenceStatus", "countryCode", "stateProvince", "county", "targetCountyFips", "targetSpeciesId", "targetScientificName", "sourceScientificName", "matchedSpeciesKey", "sourceTaxonKeys", "eventDate", "decimalLatitude", "decimalLongitude", "coordinateUncertaintyInMeters", "crawlId", "lastParsed", "license", "captiveCultivated", "issues"] as const;
+  const keys = adapterVersion === "1.0.0" ? legacyKeys : [...legacyKeys, "recordedBy", "organismContext"] as const;
+  return sha256(stableJson(Object.fromEntries(keys.map(key => [key, payload[key]]))));
+}
+
 function sourceRecordForWildProof(context: QuestionEvidenceContext, bundle: ImmutableResearchRunBundle, assertion: RunEvidenceAssertionEvent) {
   const matches: Array<{ record: Record<string, unknown>; artifact: Artifact }> = [];
   for (const artifact of bundle.receipt.artifacts.filter((a) => a.path.includes("/gbif-occurrences-" + assertion.species_id + "-") && a.path.endsWith(".json.gz"))) {
@@ -176,14 +191,7 @@ function sourceRecordForWildProof(context: QuestionEvidenceContext, bundle: Immu
   }
   assert(matches.length === 1, "Retained accepted iNaturalist witness must have exactly one raw identity.");
   const selected = matches[0]!;
-  const payload = supportingPayload(selected.record as unknown as GbifOccurrenceRecord, {
-    countyFips: assertion.county_fips, countyName: assertion.geography_match.source_county, countyLegalName: assertion.geography_match.source_county,
-    stateCode: assertion.state_code, stateName: assertion.geography_match.source_state, sourceStateName: assertion.geography_match.source_state,
-    speciesId: assertion.species_id, scientificName: assertion.taxon_match.target_scientific_name,
-  }, { speciesKey: Number(assertion.taxon_match.source_taxon_key), canonicalName: assertion.taxon_match.target_scientific_name,
-    confidence: Number(/confidence ([0-9]+)/u.exec(assertion.taxon_match.method)?.[1]),
-  });
-  assert(sha256(stableJson(payload)) === assertion.normalized_payload_hash, "Retained wild witness does not reproduce its accepted normalized payload.");
+  assert(retainedWildPayloadHash(selected.record, assertion, bundle.receipt.adapter_version) === assertion.normalized_payload_hash, "Retained wild witness does not reproduce its accepted normalized payload.");
   return selected;
 }
 

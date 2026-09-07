@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "kind": "inaturalist-context-canonical-validation",
+  "recordedAt": "2026-09-07T18:56:08.304Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "runValidation": {
+    "schemaVersion": 1,
+    "kind": "inaturalist-main-canonical-run-validation",
+    "checkedAt": "2026-09-07T18:54:39.990Z",
+    "results": [
+      {
+        "runId": "20260907T184700Z__inaturalist-research-grade__3a5cbffcf5a1",
+        "status": "pass",
+        "counts": {
+          "requested_pairs": 2,
+          "candidate_records": 1043,
+          "assertion_events": 2,
+          "review_events": 2,
+          "rejection_records": 51,
+          "duplicate_records": 0,
+          "error_count": 0,
+          "pair_outcomes": 2
+        },
+        "artifacts": 7
+      },
+      {
+        "runId": "20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39",
+        "status": "pass",
+        "counts": {
+          "requested_pairs": 1,
+          "candidate_records": 7,
+          "assertion_events": 1,
+          "review_events": 1,
+          "rejection_records": 0,
+          "duplicate_records": 0,
+          "error_count": 0,
+          "pair_outcomes": 1
+        },
+        "artifacts": 3
+      }
+    ],
+    "newDeterminationsClaimed": 0
+  },
+  "methodGuidance": [
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000169932",
+      "finalUrl": "https://help.inaturalist.org/en/support/solutions/articles/151000169932",
+      "status": 200,
+      "retrievedAt": "2026-09-07T18:53:34.197Z",
+      "path": "ops/national-research/evaluations/artifacts/inaturalist-method-guidance-151000169932-20260907-r6.html.gz",
+      "bytes": 108752,
+      "sha256": "fdbefba47060c27e71abc51448e7641d5e4401f732af3fa49c5d66bc0dfd2dad",
+      "contentType": "text/html; charset=utf-8",
+      "originalResponseBytes": 181239,
+      "originalResponseSha256": "851d0e3672c9b28b1bdd9b2260a7a98726ca28307d34cd36b7aba8c77bd66ada",
+      "encoding": "gzip of unmodified HTTP response entity"
+    },
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000173511",
+      "finalUrl": "https://help.inaturalist.org/en/support/solutions/articles/151000173511",
+      "status": 200,
+      "retrievedAt": "2026-09-07T18:53:34.547Z",
+      "path": "ops/national-research/evaluations/artifacts/inaturalist-method-guidance-151000173511-20260907-r6.html.gz",
+      "bytes": 109695,
+      "sha256": "b170a75942cc6de81b897070019ff7ca63056e7b02b16c043d81c1f8d10491e4",
+      "contentType": "text/html; charset=utf-8",
+      "originalResponseBytes": 181712,
+      "originalResponseSha256": "5be5eeadb107c77f7923e93c4864788a5ed8cb5d42021b1281a298118cc1bc72",
+      "encoding": "gzip of unmodified HTTP response entity"
+    }
+  ],
+  "methodGuidanceProviderReads": 2,
+  "countyEvidenceProviderReads": 0,
+  "compatibilityCorrection": {
+    "trigger": "check:question-assessments failed because newly added recordedBy and organismContext fields changed reproduction of a v1.0.0 normalized payload.",
+    "fix": "The question reader explicitly selects the payload field set for the receipt adapter version. Original v1.0.0 hashes exclude the v1.1.0 attribution/context fields. Unknown versions are rejected.",
+    "validation": "check:question-assessments and typecheck passed after correction; all 256 existing DC supported answers reproduce with zero reopened questions. Regression checks retain old hashes and detect context changes under v1.1.0."
+  },
+  "limitations": [
+    "This validation records immutable accepted assertions, not generated determination gains. Compile affected projections and reconcile exact pair sets.",
+    "Independent worker source-run validation remains separate; method guidance retrieval is not a new occurrence acquisition."
+  ]
+}

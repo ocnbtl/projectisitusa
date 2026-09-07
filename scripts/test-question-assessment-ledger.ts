@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import {
   QUESTION_POLICY, makePairQuestionPlan, deriveSupportedQuestionProofs, makeSupportedQuestionAssessment,
-  retainedWildRecordSupportsPeriod, readQuestionArtifact, type QuestionEvidenceContext,
+  retainedWildRecordSupportsPeriod, retainedWildPayloadHash, readQuestionArtifact, type QuestionEvidenceContext,
 } from "../src/lib/research/question-assessment-ledger";
 import { summarizePairQuestionAssessments, resolveCurrentQuestionAssessments } from "../src/lib/research/question-assessments";
 import { loadQuestionEvidenceContext } from "./research/question-assessment-context";
@@ -26,6 +26,12 @@ const assertion = context.activeAssertions.find((a) => a.eventId === wild.assert
 const artifact = wild.artifacts.find((a) => a.path.includes("/gbif-occurrences-aedes-albopictus-"))!;
 const rows = JSON.parse(gunzipSync(readFileSync(artifact.path)).toString("utf8")).results as Record<string, unknown>[];
 const record = rows.find((r) => String(r.key) === assertion.source_record_id)!;
+assert.equal(retainedWildPayloadHash(record, assertion, "1.0.0"), assertion.normalized_payload_hash, "Attribution/context enrichment changed an immutable v1.0.0 witness hash.");
+assert.notEqual(retainedWildPayloadHash(record, assertion, "1.1.0"), assertion.normalized_payload_hash);
+const changedContext = { ...record, occurrenceRemarks: "A different retained organism context", recordedBy: "Changed attribution" };
+assert.equal(retainedWildPayloadHash(changedContext, assertion, "1.0.0"), assertion.normalized_payload_hash);
+assert.notEqual(retainedWildPayloadHash(changedContext, assertion, "1.1.0"), retainedWildPayloadHash(record, assertion, "1.1.0"));
+assert.throws(() => retainedWildPayloadHash(record, assertion, "2.0.0"), /normalization version/u);
 const period = aedesPlan.questions.find((q) => q.id === "wild-occurrence-in-period")!.period;
 assert.equal(retainedWildRecordSupportsPeriod({ record, assertion, period }), true);
 for (const changed of [
