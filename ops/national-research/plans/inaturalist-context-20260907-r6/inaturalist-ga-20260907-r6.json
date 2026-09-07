@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "planId": "inaturalist-context-ga-20260907-r6",
+  "sourceId": "inaturalist-research-grade",
+  "stateCode": "GA",
+  "generatedAt": "2026-09-07T18:41:18.769Z",
+  "evaluatedAt": "2026-09-07T18:41:18.769Z",
+  "dStartCommit": "ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff",
+  "dStartDeterminedPairSetSha256": "6258ef9cb90dc6637fcf0c1d73ff8104b5c50cbe91dc1968958d0a276af6880f",
+  "candidates": [
+    {
+      "sourceId": "inaturalist-research-grade",
+      "speciesId": "streptopelia-decaocto",
+      "countyFips": "13073"
+    }
+  ],
+  "inaturalistGbif": {
+    "mode": "weekly-gbif-dataset-snapshot",
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "datasetDoi": "10.15468/ab3s5x",
+    "datasetPublishedAt": "2026-08-23T20:00:00-04:00",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode"
+    ],
+    "snapshotIdentitySha256": "927db4166b7fecffc4fcfbfd27f88ea2350fc2eef2f363722efad67bea3fba9e"
+  },
+  "archiveReplay": {
+    "commit": "ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff",
+    "runId": "20260902T195311Z__inaturalist-research-grade__f86b22f39c15",
+    "originalPlan": "src/data/research/national-acquisition-plans/inaturalist-gbif-ga-20260902-r1.json"
+  },
+  "antiDuplication": {
+    "baselineDeterminedPairs": 316240,
+    "pairsVerifiedUnresolved": [
+      "13073:streptopelia-decaocto"
+    ],
+    "checkedAgainst": "taxonomy-main-batch/determined-final.json.gz",
+    "evidenceQualification": "Historical occurrence candidates only; original source dates and retrieval lineage required. Reconcile again at integration."
+  }
+}

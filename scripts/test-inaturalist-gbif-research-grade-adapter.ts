@@ -5,6 +5,9 @@ import type { SourceAdapterContext } from "@/lib/research/source-adapter";
 import {
   INATURALIST_GBIF_DATASET_KEY,
   inaturalistGbifResearchGradeAdapter,
+  occurrenceRejection,
+  supportingPayload,
+  type GbifOccurrenceRecord,
 } from "./research/adapters/inaturalist-gbif-research-grade";
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -24,8 +27,8 @@ const parameters = {
   stateProvince: "Alabama",
   candidateLimit: 2,
   candidatePairs: ["01001:example-species", "01003:example-species"],
-  basisOfRecord: "HUMAN_OBSERVATION",
-  occurrenceStatus: "PRESENT",
+  basisOfRecord: "HUMAN_OBSERVATION" as const,
+  occurrenceStatus: "PRESENT" as const,
   minimumMatchConfidence: 95,
   pageLimit: 300,
   datasetKey: INATURALIST_GBIF_DATASET_KEY,
@@ -95,7 +98,7 @@ function occurrence(
   };
 }
 
-async function runWith(records: unknown[], runId: string) {
+async function runWith(records: unknown[], runId: string, parameterOverrides: Record<string, unknown> = {}) {
   const urls: string[] = [];
   const originalFetch = globalThis.fetch;
   globalThis.fetch = (async (input: URL | RequestInfo) => {
@@ -120,7 +123,7 @@ async function runWith(records: unknown[], runId: string) {
     });
   }) as typeof fetch;
   try {
-    return { urls, result: await inaturalistGbifResearchGradeAdapter.run({ ...context, runId }) };
+    return { urls, result: await inaturalistGbifResearchGradeAdapter.run({ ...context, runId, parameters: { ...parameters, ...parameterOverrides } }) };
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -170,6 +173,45 @@ async function main() {
   assert(drift.result.assertions.length === 0, "Snapshot drift or excessive uncertainty was published.");
   assert(drift.result.rejections.some((entry) => entry.reason_code === "source-contradiction"), "Crawl drift was not rejected.");
   assert(drift.result.rejections.some((entry) => entry.reason_code === "geography-missing"), "Excessive uncertainty was not rejected.");
+
+  const testPair = {
+    countyFips: "01001", countyName: "Autauga", countyLegalName: "Autauga County",
+    stateCode: "AL", stateName: "Alabama", sourceStateName: "Alabama",
+    speciesId: "example-species", scientificName: "Example species",
+  };
+  const testMatch = { speciesKey: 123, canonicalName: "Example species", confidence: 100 };
+  const safePlaces = ["Garden City", "Garden County", "Smithsonian National Zoo", "botanical garden", "greenhouse", "nursery", "arboretum", "campus landscape", "landscaped", "aquarium"];
+  for (const locality of safePlaces) {
+    const candidate = occurrence(4001, "Autauga", { locality });
+    assert(occurrenceRejection(candidate, testPair, testMatch, parameters) === null, "A place or habitat alone incorrectly overrode explicit wild status: " + locality);
+    assert(occurrenceRejection({ ...candidate, "http://unknown.org/captive_cultivated": "captive" }, testPair, testMatch, parameters)?.reason === "cultivated-or-captive", "A place name bypassed explicit captive status.");
+    assert(occurrenceRejection({ ...candidate, "http://unknown.org/captive_cultivated": undefined }, testPair, testMatch, parameters)?.reason === "cultivated-or-captive", "Missing wild status was accepted.");
+  }
+  const managed = occurrence(4002, "Autauga", { occurrenceRemarks: "Managed to get me." });
+  assert(occurrenceRejection(managed, testPair, testMatch, parameters) === null, "A verb in mosquito remarks became cultivation evidence.");
+  for (const field of ["locality", "verbatimLocality", "occurrenceRemarks", "habitat", "establishmentMeans", "degreeOfEstablishment", "preparations"]) {
+    for (const term of ["captive", "captivity", "cultivated", "cultivation", "cultured", "planted", "planting"]) {
+      assert(occurrenceRejection(occurrence(4003, "Autauga", { [field]: term }), testPair, testMatch, parameters)?.reason === "cultivated-or-captive", "Explicit organism-status conflict escaped review: " + field + "/" + term);
+    }
+  }
+  // Negations and references to another captive organism need a separately reviewed interpretation.
+  assert(occurrenceRejection(occurrence(4004, "Autauga", { occurrenceRemarks: "Wild lizard in captive bird environment" }), testPair, testMatch, parameters)?.reason === "cultivated-or-captive", "Ambiguous narrative interpretation was silently admitted.");
+  const newPayload = supportingPayload(managed as GbifOccurrenceRecord, testPair, testMatch);
+  assert(newPayload.organismContext.occurrenceRemarks === "Managed to get me.", "The decision context was omitted from the normalized witness.");
+  const licensed = await runWith([
+    occurrence(5001, "Autauga", { license: parameters.allowedLicenses[2], locality: "Garden City" }),
+    occurrence(5002, "Baldwin", { locality: "Garden City", recordedBy: ["Fixture observer"] }),
+  ], "synthetic-inaturalist-license-subset", { allowedLicenses: [parameters.allowedLicenses[0], parameters.allowedLicenses[1]] });
+  assert(licensed.result.assertions.length === 1 && licensed.result.assertions[0].county_fips === "01003", "The adapter expanded the explicitly selected license subset.");
+  assert(licensed.result.assertions[0].notes.some(note => note.includes("Fixture observer")), "Observer attribution was lost.");
+  assert(licensed.result.assertions[0].notes.some(note => note.includes("Observation metadata license:")), "Metadata license attribution was lost.");
+  assert(licensed.result.assertions[0].claim_type === "recorded-present", "Context recovery changed the biological question.");
+  for (const allowedLicenses of [[], [parameters.allowedLicenses[0], parameters.allowedLicenses[0]], ["https://example.invalid/unlicensed"]]) {
+    let rejectedLicenseContract = false;
+    try { await runWith([], "synthetic-inaturalist-invalid-license-set", { allowedLicenses }); }
+    catch { rejectedLicenseContract = true; }
+    assert(rejectedLicenseContract, "An empty, duplicate or unregistered license set was accepted.");
+  }
 
   process.stdout.write("iNaturalist weekly-GBIF Research Grade adapter tests passed.\n");
 }

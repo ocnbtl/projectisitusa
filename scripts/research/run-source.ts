@@ -72,6 +72,7 @@ import {
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
 import { loadGbifArchivedReplay } from "./gbif-archived-replay";
+import { applyInaturalistReplayProvenance, loadInaturalistArchivedReplay } from "./inaturalist-archived-replay";
 import {
   buildGbifSourceVerification,
   gbifSourceVerificationFilename,
@@ -371,8 +372,8 @@ function parseArguments(argv: string[]) {
   if (archiveReplayCommit && !/^[a-f0-9]{40}$/u.test(archiveReplayCommit)) {
     throw new Error("--archive-replay-commit must be a full Git SHA.");
   }
-  if (archiveReplayCommit && sourceId !== "gbif-preserved-specimens") {
-    throw new Error("Archived replay is currently limited to GBIF preserved specimens.");
+  if (archiveReplayCommit && sourceId !== "gbif-preserved-specimens" && sourceId !== "inaturalist-research-grade") {
+    throw new Error("Archived replay is limited to GBIF preserved specimens and retained iNaturalist Research Grade responses.");
   }
   if (!new Set(["true", "false"]).has(semanticDryRunValue)) {
     throw new Error("--semantic-dry-run must be true or false.");
@@ -914,6 +915,7 @@ async function main() {
     path.join(ROOT, "scripts/research/run-source.ts"),
     path.join(ROOT, "scripts/research/specimen-record-metadata.ts"),
     path.join(ROOT, "scripts/research/gbif-archived-replay.ts"),
+    path.join(ROOT, "scripts/research/inaturalist-archived-replay.ts"),
     path.join(ROOT, "scripts/research/gbif-source-verification.ts"),
     path.join(ROOT, "scripts/research/gbif-taxonomy-cache.ts"),
     path.join(ROOT, "src/lib/research/source-adapter.ts"),
@@ -1000,7 +1002,9 @@ async function main() {
         expectedSpecies: selectedSpecies,
       })
     : null;
-  const archivedReplay = options.archiveReplay
+  const inaturalistReplay = options.archiveReplay && options.sourceId === "inaturalist-research-grade"
+    ? loadInaturalistArchivedReplay({ repositoryRoot: ROOT, archiveCommit: options.archiveReplay.commit, archiveRunId: options.archiveReplay.runId, stateCode: options.stateCode, requestedPairKeys: parameters.candidatePairs, expectedSpecies: selectedSpecies, requestedParameters: parameters }) : null;
+  const archivedReplay = inaturalistReplay ?? (options.archiveReplay
     ? loadGbifArchivedReplay({
         repositoryRoot: ROOT,
         archiveCommit: options.archiveReplay.commit,
@@ -1009,7 +1013,7 @@ async function main() {
         sourceId: options.sourceId,
         requestedPairKeys: parameters.candidatePairs,
       })
-    : null;
+    : null);
 
   if (options.semanticDryRun) {
     const candidateFile = readJson<CandidateFile>(options.candidateFile);
@@ -1240,6 +1244,8 @@ async function main() {
       : result.errors.length === 0 && result.outcomes.every((outcome) => outcome.scope_complete)
         ? "complete"
         : "partial";
+
+  if (inaturalistReplay) applyInaturalistReplayProvenance(result, inaturalistReplay);
 
   const outputContents = new Map<string, { contents: string; mediaType: string }>([
     ["assertions.ndjson", { contents: asNdjson(result.assertions), mediaType: "application/x-ndjson" }],

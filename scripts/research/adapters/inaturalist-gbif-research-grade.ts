@@ -22,7 +22,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const INATURALIST_GBIF_SOURCE_ID = "inaturalist-research-grade" as const;
 export const INATURALIST_GBIF_ADAPTER_ID = "inaturalist-gbif-research-grade" as const;
-export const INATURALIST_GBIF_ADAPTER_VERSION = "1.0.0";
+export const INATURALIST_GBIF_ADAPTER_VERSION = "1.1.0";
 export const INATURALIST_GBIF_DATASET_KEY = "50c9509d-22c7-4a22-a47d-8c48425ef4a7" as const;
 const SOURCE_ID = INATURALIST_GBIF_SOURCE_ID;
 const ADAPTER_ID = INATURALIST_GBIF_ADAPTER_ID;
@@ -40,8 +40,10 @@ const INATURALIST_ALLOWED_LICENSES = [
   "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
 ] as const;
 
+// A place or habitat (Garden City, zoo, greenhouse) is not the organism's wild status.
+// Retain explicit cultivation/captivity conflicts for review, even when the source says wild.
 const CULTIVATED_OR_CAPTIVE_PATTERN =
-  /\b(captive|captivity|cultivated|cultivation|cultured|garden|greenhouse|managed|nursery|planted|planting|arboretum|botanical garden|campus landscape|landscaped|zoo|aquarium)\b/i;
+  /\b(captive|captivity|cultivated|cultivation|cultured|planted|planting)\b/i;
 
 const GEOSPATIAL_CONTRADICTION_ISSUES = new Set([
   "CONTINENT_COUNTRY_MISMATCH",
@@ -145,6 +147,7 @@ export interface GbifOccurrenceRecord {
   year?: number;
   month?: number;
   day?: number;
+  recordedBy?: string | string[];
   occurrenceRemarks?: string;
   habitat?: string;
   establishmentMeans?: string;
@@ -247,9 +250,13 @@ function parseParameters(context: SourceAdapterContext): GbifAdapterParameters {
   }
   if (
     !Array.isArray(parameters.allowedLicenses) ||
-    stableJson([...parameters.allowedLicenses].sort()) !== stableJson([...INATURALIST_ALLOWED_LICENSES].sort())
+    parameters.allowedLicenses.length === 0 ||
+    new Set(parameters.allowedLicenses).size !== parameters.allowedLicenses.length ||
+    !parameters.allowedLicenses.every((license) =>
+      typeof license === "string" && (INATURALIST_ALLOWED_LICENSES as readonly string[]).includes(license),
+    )
   ) {
-    throw new Error("allowedLicenses must equal the three licenses in the iNaturalist weekly GBIF contract.");
+    throw new Error("allowedLicenses must be a nonempty unique subset of the three registered iNaturalist weekly GBIF licenses.");
   }
   if (!Array.isArray(parameters.candidatePairs) || parameters.candidatePairs.length === 0) {
     throw new Error("candidatePairs must contain at least one county-species pair key.");
@@ -290,7 +297,7 @@ function parseParameters(context: SourceAdapterContext): GbifAdapterParameters {
       1,
       10_000,
     ),
-    allowedLicenses: [...INATURALIST_ALLOWED_LICENSES],
+    allowedLicenses: [...parameters.allowedLicenses] as string[],
     minimumMatchConfidence: requireInteger(
       parameters.minimumMatchConfidence,
       "minimumMatchConfidence",
@@ -755,7 +762,7 @@ export function occurrenceRejection(
     return {
       reason: "cultivated-or-captive",
       notes: [
-        "Locality, habitat, occurrence remarks, establishment, or preparation text indicates cultivated, captive, or managed material.",
+        "Explicit cultivation or captivity language conflicts with acceptance as a wild observation; review the organism context. Place and habitat words alone are not cultivation evidence.",
       ],
     };
   }
@@ -897,6 +904,16 @@ export function supportingPayload(
     lastParsed: record.lastParsed ?? null,
     license: record.license ?? null,
     captiveCultivated: record["http://unknown.org/captive_cultivated"] ?? null,
+    recordedBy: record.recordedBy ?? null,
+    organismContext: {
+      locality: record.locality ?? null,
+      verbatimLocality: record.verbatimLocality ?? null,
+      occurrenceRemarks: record.occurrenceRemarks ?? null,
+      habitat: record.habitat ?? null,
+      establishmentMeans: record.establishmentMeans ?? null,
+      degreeOfEstablishment: record.degreeOfEstablishment ?? null,
+      preparations: record.preparations ?? null,
+    },
     issues: [...(record.issues ?? [])].sort(),
   };
 }
@@ -975,6 +992,9 @@ export function makeGbifAssertionAndReview(
       record.institutionCode ? `Institution code: ${record.institutionCode}.` : "",
       record.collectionCode ? `Collection code: ${record.collectionCode}.` : "",
       record.catalogNumber ? `Catalog number: ${record.catalogNumber}.` : "",
+      record.license ? `Observation metadata license: ${record.license}. Media licenses are separate; no images are reused.` : "",
+      record.recordedBy ? `Recorded by: ${Array.isArray(record.recordedBy) ? record.recordedBy.join("; ") : record.recordedBy}.` : "",
+      "Wild-status interpretation follows iNaturalist organism-level guidance: https://help.inaturalist.org/en/support/solutions/articles/151000169932 . Place names and managed habitats alone do not make an organism cultivated or captive.",
     ].filter(Boolean),
   };
   const review: EvidenceReviewEvent = {

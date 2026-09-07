@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-inaturalist-context-method-admission",
+  "recordedAt": "2026-09-07T18:41:18.771Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "status": "method-implementation-tested-independent-pilot-pending",
+  "adapterId": "inaturalist-gbif-research-grade",
+  "adapterVersion": "1.1.0",
+  "archiveCommit": "ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff",
+  "baseline": {
+    "determinedPairs": 316240,
+    "present": 312996,
+    "absent": 3244,
+    "asOf": "2026-09-06",
+    "pairSetSha256": "6258ef9cb90dc6637fcf0c1d73ff8104b5c50cbe91dc1968958d0a276af6880f"
+  },
+  "evaluation": {
+    "path": "ops/national-research/evaluations/artifacts/inaturalist-v11-context-evaluation-20260907-r6.json.gz",
+    "bytes": 29969,
+    "sha256": "6e4cb1b0cb9f77d18145e1dc27d66bba0fd7d412a5fb55154450b9f35ec31081",
+    "encoding": "gzip UTF-8 JSON"
+  },
+  "summary": {
+    "rawRowsVerified": 125,
+    "eligibleRows": 96,
+    "eligibleUnresolvedPairs": [
+      "05119:anolis-sagrei",
+      "06059:aedes-albopictus",
+      "11001:streptopelia-decaocto",
+      "13011:pieris-rapae",
+      "13073:streptopelia-decaocto",
+      "13257:pieris-rapae",
+      "13261:anolis-sagrei",
+      "17115:streptopelia-decaocto",
+      "19039:pieris-rapae",
+      "19193:anolis-sagrei",
+      "20055:columba-livia",
+      "20055:pieris-rapae",
+      "20055:sturnus-vulgaris",
+      "20091:anolis-sagrei",
+      "20185:pieris-rapae",
+      "25023:anolis-sagrei",
+      "27019:anolis-sagrei",
+      "31069:pieris-rapae",
+      "34005:anolis-sagrei",
+      "37127:anolis-sagrei",
+      "37153:pieris-rapae",
+      "38073:pieris-rapae",
+      "38079:coccinella-septempunctata",
+      "38079:pieris-rapae",
+      "39151:anolis-sagrei",
+      "40079:anolis-sagrei",
+      "40143:anolis-sagrei",
+      "42017:anolis-sagrei",
+      "45023:pieris-rapae",
+      "48173:passer-domesticus"
+    ],
+    "openLicenseRows": 17,
+    "openLicenseUnresolvedPairs": [
+      "13073:streptopelia-decaocto",
+      "19193:anolis-sagrei",
+      "20055:columba-livia",
+      "20055:sturnus-vulgaris"
+    ],
+    "remainingReasons": {
+      "cultivated-or-captive": 5,
+      "geography-missing": 23,
+      "record-failed": 1
+    }
+  },
+  "selectedPilot": {
+    "pairs": 4,
+    "states": [
+      "GA",
+      "KS",
+      "IA"
+    ],
+    "licenseScope": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode"
+    ],
+    "plans": [
+      "ops/national-research/plans/inaturalist-context-20260907-r6/inaturalist-ga-20260907-r6.json",
+      "ops/national-research/plans/inaturalist-context-20260907-r6/inaturalist-ks-20260907-r6.json",
+      "ops/national-research/plans/inaturalist-context-20260907-r6/inaturalist-ia-20260907-r6.json"
+    ],
+    "independentWorkerScope": [
+      "13073:streptopelia-decaocto"
+    ],
+    "mainScope": [
+      "19193:anolis-sagrei",
+      "20055:columba-livia",
+      "20055:sturnus-vulgaris"
+    ]
+  },
+  "rules": [
+    "Place or habitat words alone do not establish captivity or cultivation. An explicit provider wild flag remains required.",
+    "Explicit captive, captivity, cultivated, cultivation, cultured, planted or planting language in seven context fields remains held for context review; negation and other-organism references are not automatically resolved.",
+    "All original snapshot, exact taxon, county, coordinate uncertainty, date-presence and record-status filters remain enforced. This version does not fix general date validation.",
+    "Accept only documented historical occurrence. Original observation dates and original provider retrieval timestamps are preserved separately from new interpretation time.",
+    "Replay only immutable committed original responses with verified artifact hashes, parameters, complete requested outcomes and contiguous complete pagination. No provider fallback.",
+    "This pilot selects CC0 and CC BY observation metadata. It does not impose a new universal metadata license policy or conclude all BY-NC facts are unusable. Media reuse requires its own license; no media downloaded."
+  ],
+  "primaryReferences": [
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000169932",
+      "checkedAt": "2026-09-07",
+      "supports": "Source wild classification concerns organism intentional presence; a wild organism can occur in gardens, zoos, buildings or as a hitchhiker."
+    },
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000173511",
+      "checkedAt": "2026-09-07",
+      "supports": "Observation metadata and media can carry different licenses; GBIF accepts CC0, BY and BY-NC; treatment of factual observations and narrative descriptions differs."
+    }
+  ],
+  "checks": [
+    {
+      "command": "node --import tsx scripts/test-inaturalist-gbif-research-grade-adapter.ts",
+      "result": "pass"
+    },
+    {
+      "command": "node --import tsx scripts/test-inaturalist-archived-replay.ts",
+      "result": "pass",
+      "coverage": "Eight real retained responses plus corruption, total, completeness, scope, snapshot, license and network-fallback failure cases."
+    },
+    {
+      "command": "npm run typecheck",
+      "result": "pass",
+      "checkedAt": "2026-09-07"
+    }
+  ],
+  "progress": {
+    "newAssertions": 0,
+    "netNewDeterminations": 0,
+    "newAbsences": 0
+  },
+  "remaining": [
+    "Independent exact-state evidence pilot and canonical immutable-run validation.",
+    "Integrate accepted replay runs and reconcile exact pair union before claiming gains.",
+    "Evaluate remaining 26 BY-NC-only pairs under actual intended reuse terms before selecting another rights scope.",
+    "Retain the five explicit cultivation/captivity conflicts for contextual method work."
+  ]
+}
