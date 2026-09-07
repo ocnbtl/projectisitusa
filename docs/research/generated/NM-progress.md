@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `2737`
+- Verified present: `2743`
 - Verified absent: `33`
 - Not detected: `0`
-- Researched unresolved: `13967`
-- Not researched: `65895`
-- Determination coverage: `3.35%`
-- Research coverage: `20.25%`
-- Explicit outcome coverage: `20.2549%`
+- Researched unresolved: `13966`
+- Not researched: `65890`
+- Determination coverage: `3.36%`
+- Research coverage: `20.26%`
+- Explicit outcome coverage: `20.2609%`
 - Applicable protocol cells: `386`
 - Current complete protocol cells: `63`
 - Protocol completion: `19.69%`
 - Current protocol completion: `16.32%`
-- Evidence records: `2777`
-- Research runs: `38`
+- Evidence records: `2783`
+- Research runs: `39`
 - Rejection records: `496`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Perennial wallrocket (`diplotaxis-tenuifolia`) | plants | 32 | 0 | 1 |
 | Moleplant (`euphorbia-lathyris`) | plants | 32 | 0 | 1 |
 | Bachelor's button (`gypsophila-paniculata`) | plants | 32 | 0 | 1 |
-| Mouse barley (`hordeum-murinum`) | plants | 32 | 0 | 1 |
 | Common barley (`hordeum-vulgare`) | plants | 32 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 32 | 0 | 1 |
 | Low mallow (`malva-pusilla`) | plants | 32 | 0 | 1 |
 | Guineagrass (`megathyrsus-maximus`) | plants | 32 | 0 | 1 |
 | Anise (`myrrhis-odorata`) | plants | 32 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 32 | 0 | 1 |
 
 ## Source Operations
 
@@ -83,7 +83,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 948 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:37.078Z | 22 | 20 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:36.771Z | 178 | 82 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T18:22:33.571Z | 184 | 83 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:13.690Z | 3 | 3 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:28.217Z | 19 | 17 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:25.984Z | 36 | 27 |

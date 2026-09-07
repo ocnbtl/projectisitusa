@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `105`
 - County-species pairs: `262920`
-- Verified present: `6834`
+- Verified present: `6836`
 - Verified absent: `105`
 - Not detected: `26`
 - Researched unresolved: `43132`
-- Not researched: `212823`
+- Not researched: `212821`
 - Determination coverage: `2.64%`
 - Research coverage: `19.05%`
-- Explicit outcome coverage: `19.0541%`
-- Applicable protocol cells: `384`
+- Explicit outcome coverage: `19.0548%`
+- Applicable protocol cells: `385`
 - Current complete protocol cells: `107`
-- Protocol completion: `31.25%`
-- Current protocol completion: `27.86%`
-- Evidence records: `8018`
-- Research runs: `38`
+- Protocol completion: `31.17%`
+- Current protocol completion: `27.79%`
+- Evidence records: `8020`
+- Research runs: `39`
 - Rejection records: `694`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -53,10 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | German iris (`iris-germanica`) | plants | 104 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 104 | 0 | 1 |
 | Common flax (`linum-usitatissimum`) | plants | 104 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 104 | 0 | 1 |
 | Brown-dotted clothes moth (`niditinea-fuscella`) | insects | 104 | 0 | 1 |
 | Blindeyes (`papaver-dubium`) | plants | 104 | 0 | 1 |
 | Corn poppy (`papaver-rhoeas`) | plants | 104 | 0 | 1 |
+| Bristly Lady's Thumb (`persicaria-longiseta`) | plants | 104 | 0 | 1 |
 
 ## Source Operations
 
@@ -83,7 +83,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4550 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:35:04.850Z | 21 | 19 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-06T10:53:31.776Z | 174 | 84 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T18:22:00.002Z | 176 | 86 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:29.769Z | 14 | 13 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:48.909Z | 10 | 9 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:14:49.159Z | 45 | 25 |

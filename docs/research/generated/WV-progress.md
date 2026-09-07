@@ -7,10 +7,10 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `6396`
+- Verified present: `6397`
 - Verified absent: `55`
 - Not detected: `23`
-- Researched unresolved: `19750`
+- Researched unresolved: `19749`
 - Not researched: `111496`
 - Determination coverage: `4.68%`
 - Research coverage: `19.04%`
@@ -19,8 +19,8 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Current complete protocol cells: `97`
 - Protocol completion: `25.46%`
 - Current protocol completion: `22.45%`
-- Evidence records: `7868`
-- Research runs: `35`
+- Evidence records: `7869`
+- Research runs: `36`
 - Rejection records: `216`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -83,7 +83,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3089 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:48:14.994Z | 9 | 8 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:49:26.102Z | 51 | 40 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T18:23:00.778Z | 52 | 41 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:52:00.518Z | 4 | 4 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:41:11.460Z | 125 | 91 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:45:00.165Z | 64 | 44 |

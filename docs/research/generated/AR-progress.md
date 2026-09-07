@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `6954`
+- Verified present: `6956`
 - Verified absent: `75`
 - Not detected: `0`
-- Researched unresolved: `29009`
-- Not researched: `151762`
+- Researched unresolved: `29008`
+- Not researched: `151761`
 - Determination coverage: `3.74%`
 - Research coverage: `19.19%`
-- Explicit outcome coverage: `19.1896%`
-- Applicable protocol cells: `456`
+- Explicit outcome coverage: `19.1901%`
+- Applicable protocol cells: `457`
 - Current complete protocol cells: `128`
-- Protocol completion: `30.92%`
-- Current protocol completion: `28.07%`
-- Evidence records: `10269`
-- Research runs: `42`
+- Protocol completion: `30.85%`
+- Current protocol completion: `28.01%`
+- Evidence records: `10271`
+- Research runs: `43`
 - Rejection records: `632`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common flax (`linum-usitatissimum`) | plants | 74 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 74 | 0 | 1 |
 | Japanese yellow loosestrife (`lysimachia-japonica`) | plants | 74 | 0 | 1 |
-| Changing forget-me-not (`myosotis-discolor`) | plants | 74 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 74 | 0 | 1 |
 
 ## Source Operations
 
@@ -83,7 +83,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4459 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-06T05:34:48.936Z | 38 | 32 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-06T10:53:27.035Z | 282 | 135 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T18:21:33.344Z | 284 | 137 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:55.378Z | 90 | 32 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:36:38.156Z | 4 | 4 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:37.053Z | 49 | 38 |

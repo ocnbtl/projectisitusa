@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `4234`
+- Verified present: `4237`
 - Verified absent: `93`
 - Not detected: `0`
 - Researched unresolved: `39905`
-- Not researched: `188640`
+- Not researched: `188637`
 - Determination coverage: `1.86%`
-- Research coverage: `18.99%`
-- Explicit outcome coverage: `18.9941%`
-- Applicable protocol cells: `316`
+- Research coverage: `19.00%`
+- Explicit outcome coverage: `18.9954%`
+- Applicable protocol cells: `317`
 - Current complete protocol cells: `92`
-- Protocol completion: `33.23%`
-- Current protocol completion: `29.11%`
-- Evidence records: `4841`
-- Research runs: `34`
+- Protocol completion: `33.12%`
+- Current protocol completion: `29.02%`
+- Evidence records: `4844`
+- Research runs: `35`
 - Rejection records: `536`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,13 +48,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Whitetop (`lepidium-draba`) | plants | 92 | 0 | 1 |
 | Matrimony vine (`lycium-barbarum`) | plants | 92 | 0 | 1 |
 | Common Mallow (`malva-neglecta`) | plants | 92 | 0 | 1 |
-| Alfalfa (`medicago-sativa`) | plants | 92 | 0 | 1 |
 | Proso millet (`panicum-miliaceum`) | plants | 92 | 0 | 1 |
 | Wild Parsnip (`pastinaca-sativa`) | plants | 92 | 0 | 1 |
 | Scots pine (`pinus-sylvestris`) | plants | 92 | 0 | 1 |
 | Norway rat (`rattus-norvegicus`) | wildlife | 92 | 0 | 1 |
 | Foxtail millet (`setaria-italica`) | plants | 92 | 0 | 1 |
 | Nightflowering silene (`silene-noctiflora`) | plants | 92 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 92 | 0 | 1 |
 | Sorghum (`sorghum-bicolor`) | plants | 92 | 0 | 1 |
 | Common lilac (`syringa-vulgaris`) | plants | 92 | 0 | 1 |
 
@@ -83,7 +83,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1483 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:30.566Z | 22 | 19 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:28.448Z | 122 | 56 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T18:22:27.686Z | 125 | 58 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:51:05.736Z | 4 | 4 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:20.432Z | 8 | 8 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-04T07:15:12.169Z | 17 | 13 |

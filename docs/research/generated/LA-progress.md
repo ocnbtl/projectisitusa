@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `8449`
+- Verified present: `8450`
 - Verified absent: `64`
 - Not detected: `0`
 - Researched unresolved: `21903`
-- Not researched: `129840`
+- Not researched: `129839`
 - Determination coverage: `5.31%`
 - Research coverage: `18.98%`
-- Explicit outcome coverage: `18.9796%`
-- Applicable protocol cells: `471`
+- Explicit outcome coverage: `18.9803%`
+- Applicable protocol cells: `472`
 - Current complete protocol cells: `111`
-- Protocol completion: `26.33%`
-- Current protocol completion: `23.57%`
-- Evidence records: `11487`
-- Research runs: `37`
+- Protocol completion: `26.27%`
+- Current protocol completion: `23.52%`
+- Evidence records: `11488`
+- Research runs: `38`
 - Rejection records: `1896`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | California privet (`ligustrum-ovalifolium`) | plants | 63 | 0 | 1 |
 | Sweet alyssum (`lobularia-maritima`) | plants | 63 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 63 | 0 | 1 |
-| Copepod (`mesocyclops-pehpeiensis`) | wildlife | 63 | 0 | 1 |
+| Alfalfa (`medicago-sativa`) | plants | 63 | 0 | 1 |
 
 ## Source Operations
 
@@ -83,7 +83,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7190 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:06.695Z | 64 | 49 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:47:56.109Z | 44 | 31 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T18:22:03.207Z | 45 | 32 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:35.316Z | 28 | 20 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-06T10:53:57.339Z | 19 | 10 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:00.269Z | 3 | 3 |

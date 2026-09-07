@@ -7,20 +7,20 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `1782`
+- Verified present: `1795`
 - Verified absent: `17`
 - Not detected: `0`
-- Researched unresolved: `7198`
-- Not researched: `33571`
-- Determination coverage: `4.23%`
-- Research coverage: `21.14%`
-- Explicit outcome coverage: `21.1356%`
-- Applicable protocol cells: `407`
+- Researched unresolved: `7197`
+- Not researched: `33559`
+- Determination coverage: `4.26%`
+- Research coverage: `21.16%`
+- Explicit outcome coverage: `21.1638%`
+- Applicable protocol cells: `408`
 - Current complete protocol cells: `88`
-- Protocol completion: `24.82%`
-- Current protocol completion: `21.62%`
-- Evidence records: `2123`
-- Research runs: `37`
+- Protocol completion: `24.75%`
+- Current protocol completion: `21.57%`
+- Evidence records: `2136`
+- Research runs: `38`
 - Rejection records: `251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 16 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 16 | 0 | 1 |
 | Sweet fennel (`foeniculum-vulgare`) | plants | 16 | 0 | 1 |
-| Mouse barley (`hordeum-murinum`) | plants | 16 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 16 | 0 | 1 |
 | Cheeseweed mallow (`malva-parviflora`) | plants | 16 | 0 | 1 |
 | Chinese Silvergrass (`miscanthus-sinensis`) | plants | 16 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 16 | 0 | 1 |
 | Proso millet (`panicum-miliaceum`) | plants | 16 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 16 | 0 | 1 |
 
 ## Source Operations
 
@@ -83,7 +83,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 609 | 316 |
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:47:39.133Z | 128 | 81 |
-| New York Botanical Garden preserved specimens | operational | 2026-09-04T04:48:40.571Z | 191 | 93 |
+| New York Botanical Garden preserved specimens | operational | 2026-09-06T18:22:36.425Z | 204 | 98 |
 | TORCH BRIT preserved specimens | operational | not run | 0 | 0 |
 | Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:40:30.736Z | 8 | 3 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:44:28.205Z | 27 | 21 |
