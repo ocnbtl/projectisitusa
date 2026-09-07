@@ -21,6 +21,9 @@ assert.equal(
 
 assert.equal(isDeploymentIndependentPath("src/data/research/question-assessments/pilot/assessments.ndjson"), true);
 assert.equal(isDeploymentIndependentPath("src/data/research/question-assessments-other/receipt.json"), false);
+assert.equal(isDeploymentIndependentPath("src/data/research/taxonomy-references/kew-v16/archive.zip"), true);
+assert.equal(isDeploymentIndependentPath("src/data/research/taxonomy-reference-registry.json"), false);
+assert.equal(isDeploymentIndependentPath("src/data/research/taxonomy-references-other/archive.zip"), false);
 
 for (const buildRelevantPath of [
   "app/page.tsx",

@@ -1,10 +1,11 @@
-# These immutable research and operations trees remain versioned in Git and are
-# published through the R2 research-data release pipeline. They are not runtime
-# inputs for the Next.js application and must not enter Vercel's build workspace.
+# Research inputs and operations trees remain versioned in Git. Public research
+# projections use the R2 release pipeline; raw reference archives are research-only.
+# These trees are not Next.js runtime inputs and stay outside the Vercel workspace.
 public/generated/research
 src/data/generated/research
 src/data/research/runs
 src/data/research/question-assessments
 src/data/research/national-acquisitions
+src/data/research/taxonomy-references
 ops
 docs

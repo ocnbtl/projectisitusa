@@ -10,6 +10,7 @@ const DEPLOYMENT_INDEPENDENT_PATHS = [
   /^public\/generated\/research\//u,
   /^src\/data\/generated\/research\//u,
   /^src\/data\/research\/national-acquisitions\//u,
+  /^src\/data\/research\/taxonomy-references\//u,
   /^src\/data\/research\/runs\//u,
   /^src\/data\/research\/question-assessments\//u,
 ];

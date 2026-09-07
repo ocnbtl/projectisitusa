@@ -20,6 +20,7 @@ export const EXCLUDED_VERCEL_BUILD_PATHS = Object.freeze([
   "src/data/research/runs",
   "src/data/research/question-assessments",
   "src/data/research/national-acquisitions",
+  "src/data/research/taxonomy-references",
   "ops",
   "docs",
 ]);

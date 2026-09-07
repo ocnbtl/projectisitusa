@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-taxonomy-release-capacity-review",
+  "recordedAt": "2026-09-07T17:36:58.568Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "dashboard": {
+    "observedAt": "2026-09-07T17:32:30.000Z",
+    "url": "https://dash.cloudflare.com/0fe57401a5fd98319e16832ee97de02d/r2/overview",
+    "billingPeriod": "August 18 - September 18",
+    "displayedBillableUsage": "$0.00",
+    "displayedClassA": "29.75k",
+    "displayedClassB": "65.65k",
+    "displayedObjects": "29.06k",
+    "displayedStorage": "7.84 GB",
+    "qualification": "Refreshed signed-in dashboard; displayed quantities are rounded and reporting may lag. They are not exact lifetime or future billing guarantees."
+  },
+  "requestBudgetInputs": {
+    "classABeforeInventory": 35000,
+    "classBBeforeInventory": 80000,
+    "meaning": "Deliberately buffered planning inputs above the current rounded dashboard and prior recorded operation reservations, not measured billing counters.",
+    "inventoryClassARequests": 30,
+    "inventoryClassBRequests": 12
+  },
+  "pricingReference": {
+    "url": "https://developers.cloudflare.com/r2/pricing/",
+    "checkedOn": "2026-09-07",
+    "standardFreeStorageGbMonthsPerMonth": 10,
+    "standardFreeClassARequestsPerMonth": 1000000,
+    "standardFreeClassBRequestsPerMonth": 10000000,
+    "projectSafetyFraction": 0.8
+  },
+  "liveInventory": {
+    "observedAt": "2026-09-07T17:33:10.686Z",
+    "objectCount": 29057,
+    "bytes": 7836026470,
+    "inventorySha256": "dc59fa378ee33a6bc7321725c2ca91e000bd1aea7d74cde91648bd3cae404383",
+    "sampleKeys": [
+      "current.json",
+      "objects/sha256/00/0008528836040dd62c794e022a747429aa543bfeb9ab840d8b0823bd093a7b43.json",
+      "objects/sha256/00/000aaea1eb273cd0c0f7b9811a7bb65c5b28cfac725bf3993e1fe16983d164f9.json",
+      "objects/sha256/00/000dbcc2ab6cd3b5ebc47c9d346272061cb9a14cf43aa268b09715c5efd44a9c.json",
+      "objects/sha256/00/000eafd8066be8c19394073e3da3d4919f3fad83ece0c5dff382d0bff6733828.json",
+      "releases/research-84f2bb123166-e479cf967aa7f643/manifest.json",
+      "releases/research-8bde16be35b8-e6a2af66396c19e7/manifest.json",
+      "releases/research-a2951a092577-a039963dbd5201e6/manifest.json",
+      "releases/research-aed213043298-61bb7c59ff565fba/manifest.json",
+      "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json"
+    ],
+    "artifact": {
+      "path": "ops/national-research/evaluations/artifacts/r2-inventory-20260907-r5.json.gz",
+      "storedSha256": "39a371ea742c4551889624334502c8f8c8f66faa22c22d94f9f124ef33818b2e",
+      "storedBytes": 3468298,
+      "decodedSha256": "7238131fbf057cd531c9f36ccbcd440c5e7f09317f9099778529c497d48d5690",
+      "decodedBytes": 19808637
+    }
+  },
+  "currentRelease": {
+    "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+    "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+    "promotedAt": "2026-09-06T06:56:53.282Z"
+  },
+  "candidate": {
+    "mode": "review-only-no-provider-writes",
+    "releaseId": "research-f3421d0f23e7-4fc3086544dc99a8",
+    "sourceCommit": "f3421d0f23e7c0b79eac20e1f8fe8317346811c2",
+    "manifestSha256": "074b382043a15226a333f53db5b1bbebf046a9ea3e25f41b06ac847316c81ed1",
+    "manifestBytes": 2047966,
+    "totalCandidateObjects": 3195,
+    "reusedObjects": 757,
+    "missingObjects": 2438,
+    "missingBytes": 92994581,
+    "projectedRetainedBytes": 7931070041,
+    "storageSafetyBytes": 8000000000,
+    "bytesOverStorageStop": 0,
+    "newClassARequests": 2470,
+    "newClassBRequests": 3205,
+    "projectedClassARequests": 37500,
+    "projectedClassBRequests": 83217,
+    "publicationWithoutDeletionAllowedByBudget": true,
+    "projectedRetainedBytesAfterReviewOnlyRemoval": 7931070041,
+    "qualification": "Inventory sizes and exact manifest identity only. Full remote object hash verification, fresh counters, cadence checks, and explicit publication authority remain required. Request estimates cover one publish/promote invocation with full verification and eight public probes; retries or separate phases require additional budget."
+  },
+  "cadence": {
+    "lastPromotionAt": "2026-09-06T06:56:53.282Z",
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+    "minimumIntervalHours": 168,
+    "disposition": "prepared-locally-awaiting-established-cadence"
+  },
+  "researchReferenceDelivery": {
+    "taxonomyArchiveBytes": 88179649,
+    "includedInR2Candidate": false,
+    "vercelBuildExcluded": true,
+    "verification": [
+      "existing Vercel build-workspace parity and simulated-pruning tests passed",
+      "ignored-build path boundary tests passed",
+      "all 3195 publication artifacts remain under public/generated/research"
+    ]
+  },
+  "providerMutations": {
+    "uploads": 0,
+    "promotions": 0,
+    "deletions": 0
+  },
+  "publicationStatus": "local-storage-plan-only"
+}

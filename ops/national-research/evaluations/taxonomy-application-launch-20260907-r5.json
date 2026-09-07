@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-production-launch-gate",
+  "phase": "PRE-DEPLOYMENT",
+  "evaluationId": "taxonomy-application-launch-20260907-r5",
+  "observedAt": "2026-09-07T17:50:58.437Z",
+  "decision": "GO_APPLICATION_ONLY",
+  "scope": "One batched Git push and application deployment including tested taxonomy archive build exclusion. No R2 upload, promotion or deletion.",
+  "authority": {
+    "path": "ops/national-research/receipts/authorizations/autonomous-national-research-20260906-r1.json",
+    "actorType": "agent",
+    "actor": "MAIN",
+    "humanArtifactApprovalClaimed": false
+  },
+  "candidate": {
+    "inputCommit": "f3421d0f23e7c0b79eac20e1f8fe8317346811c2",
+    "previousRemoteMain": "e8333516369cf74e0b353a84c922b56ea994c630",
+    "releasePreparation": "The commit carrying this receipt also contains the four tested build exclusion edits and capacity planning artifacts. Post-deployment verification must record its exact final SHA.",
+    "manifest": {
+      "path": "ops/national-research/publication/research-data-manifest.json",
+      "sha256": "074b382043a15226a333f53db5b1bbebf046a9ea3e25f41b06ac847316c81ed1",
+      "bytes": 2047966
+    },
+    "dataReleaseId": "research-f3421d0f23e7-4fc3086544dc99a8",
+    "dataPublication": "held-for-ordinary-cadence"
+  },
+  "validation": {
+    "applicationPublication": {
+      "command": "npm run check:vercel-publish",
+      "exitCode": 0,
+      "scope": "Packaging parity, simulated pruning, ignored-build boundaries, R2 fetch compatibility, deep links and temporal presentation."
+    },
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "environment": "Node 22.23.2; max old space 2048 MiB; VERCEL is not 1; canonical inputs not pruned",
+      "log": {
+        "path": "ops/national-research/evaluations/artifacts/taxonomy-application-build-20260907-r5.log.gz",
+        "sha256": "93dfc0aaa10be9f7daf80b2b395920ecda65fd816d29d6482b94f87d4ea26abe",
+        "bytes": 668
+      }
+    },
+    "diffCheck": {
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    "nationalProjectionReconciliation": {
+      "path": "ops/national-research/receipts/source-evaluations/nybg-taxonomy-projection-verification-20260907-r5.json",
+      "sha256": "d67607985eb8556684d5f07f482fac02fde70e4f94dd12ae6454977a970b0753",
+      "bytes": 14558
+    },
+    "researchQualification": "The prior completed 10-step national verification and byte stability are retained in the linked receipt. They were not rerun for the deployment-only packaging edit."
+  },
+  "providerUsage": {
+    "observedAt": "2026-09-07T17:50:58.440Z",
+    "plan": "Hobby",
+    "url": "https://vercel.com/unigentamos",
+    "scope": "Team overview Last 30 days",
+    "displayed": {
+      "isrReads": "765K / 1M",
+      "fastOriginTransfer": "7.47 GB / 10 GB",
+      "fastDataTransfer": "19.5 GB / 100 GB",
+      "edgeRequests": "196K / 1M",
+      "fluidCpu": "1h 26s / 4h",
+      "functionInvocations": "109K / 1M"
+    },
+    "projectView": {
+      "url": "https://vercel.com/unigentamos/projectisitusa/usage",
+      "window": "Aug 8, 2pm - Sep 7",
+      "isrReads": 756961,
+      "originTransfer": "6.04 GB / 10 GB",
+      "buildCpuMinutes": "28h 22m",
+      "billableBuildMinutes": "0s / 0s"
+    },
+    "planning": {
+      "basicBuilds": 1,
+      "paidFeaturesEnabled": 0,
+      "providerProbes": "Bounded representative routes only; no broad crawl"
+    },
+    "pricingReference": {
+      "url": "https://vercel.com/docs/builds/managing-builds",
+      "checkedOn": "2026-09-07",
+      "meaning": "Hobby Basic builds are included, with 2 vCPUs, 8 GB RAM and one concurrent deployment."
+    },
+    "qualification": "Dashboard usage is window-scoped, partly rounded and may lag. Team totals govern shared resource headroom. No plan or capacity changes."
+  },
+  "research": {
+    "verifiedPresent": 312996,
+    "verifiedAbsent": 3244,
+    "totalDeterminations": 316240,
+    "denominator": 7872576,
+    "latestTaxonomyNetAdditions": 164,
+    "removals": 0,
+    "transitions": 0
+  },
+  "researchCapacity": {
+    "path": "ops/national-research/receipts/source-evaluations/taxonomy-release-capacity-20260907-r5.json",
+    "sha256": "1e10d0fbb0e4a5bc22b3917963748d9aa72658396dc2f659bf73e6f24ce6eaf7",
+    "bytes": 4920
+  },
+  "rollback": {
+    "applicationCommit": "e8333516369cf74e0b353a84c922b56ea994c630",
+    "deploymentId": "dpl_ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+    "verifiedVia": "Authenticated provider UI in this session shows Ready, Latest, Production, source SHA and isitusa.com alias",
+    "researchPointer": {
+      "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+      "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+      "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+      "promotedAt": "2026-09-06T06:56:53.282Z"
+    }
+  },
+  "limitations": [
+    "No public biological gain is claimed before the R2 data release.",
+    "No UI feature or visual layout is changed by this release; focused live smoke remains required.",
+    "The Vercel connector returned 404 for the known project; provider verification uses the existing authenticated browser instead."
+  ]
+}
