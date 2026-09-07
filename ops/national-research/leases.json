@@ -497734,6 +497734,112 @@
         "workerCommit": "f33713097be35e3166f3be03fbc507f3f62b23d7",
         "workerBranchHead": "e5dca7824afa65bf450990d9dc5ef1aef08cb774"
       }
+    },
+    {
+      "leaseId": "lease-inaturalist-context-pilot-20260907-r6-ga-1",
+      "jobId": "inaturalist-context-pilot-20260907-r6-ga",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "/root/museum_nybg_ny",
+      "state": "active",
+      "claimedAt": "2026-09-07T18:45:01.252Z",
+      "expiresAt": "2026-09-07T19:30:01.195Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "GA"
+        ],
+        "sourceFamilies": [
+          "inaturalist-research-grade"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "streptopelia-decaocto"
+        ],
+        "pairs": [
+          "13073:streptopelia-decaocto"
+        ]
+      },
+      "scopeClaims": [
+        "state/GA/source/inaturalist-research-grade/taxon/streptopelia-decaocto"
+      ],
+      "branch": "codex/inaturalist-context-pilot-20260907-r6-ga",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga",
+      "baseSha": "8ab408bfbc7811a3b3525be9e72254be12b1babc",
+      "expectedReceiptCodeCommit": "8ab408bfbc7811a3b3525be9e72254be12b1babc",
+      "permittedPaths": [
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20971520,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "Use the committed v1.1.0 adapter and exact explicit pair with the sealed original archived responses; no network fallback.",
+        "Independently review original observer context and primary iNaturalist wild classification and attribution guidance.",
+        "Emit only supported historical occurrence with original source date and provider retrieval lineage; no establishment or negative biological claim.",
+        "Emit the complete immutable run, source verification and closed manifest; record local replay timestamps honestly and link original acquisition provenance.",
+        "Use the frozen worker validator. Commit run content first and manifest second; no other changed paths."
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/manifest.json"
     }
   ]
 }

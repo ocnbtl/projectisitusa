@@ -494501,6 +494501,144 @@
       "priority": 100,
       "state": "completed",
       "currentLeaseId": "lease-taxonomy-pilot-20260906-r5-nybg-ny-1"
+    },
+    {
+      "jobId": "inaturalist-context-pilot-20260907-r6-ga",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "GA"
+        ],
+        "sourceFamilies": [
+          "inaturalist-research-grade"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "streptopelia-decaocto"
+        ],
+        "pairs": [
+          "13073:streptopelia-decaocto"
+        ]
+      },
+      "scopeClaims": [
+        "state/GA/source/inaturalist-research-grade/taxon/streptopelia-decaocto"
+      ],
+      "branch": "codex/inaturalist-context-pilot-20260907-r6-ga",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga",
+      "baseSha": "8ab408bfbc7811a3b3525be9e72254be12b1babc",
+      "expectedReceiptCodeCommit": "8ab408bfbc7811a3b3525be9e72254be12b1babc",
+      "permittedPaths": [
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20971520,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "inaturalist-context-20260907-r6",
+        "candidateFile": "ops/national-research/plans/inaturalist-context-20260907-r6/inaturalist-ga-20260907-r6.json",
+        "candidateLimit": 1,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count",
+        "startedAt": "2026-09-07T18:43:50.987Z",
+        "outputRoot": "src/data/research/runs",
+        "attemptTelemetryPath": "C:/Code/project-isitusa-worker-staging/inaturalist-context-pilot-20260907-r6-ga/attempt-telemetry.json",
+        "expectedRunPath": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 0,
+          "archiveReplayResponses": 2,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 0,
+          "providerNetworkRequests": 0,
+          "additionalOccurrencePages": 0
+        },
+        "archiveReplay": {
+          "commit": "ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff",
+          "runId": "20260902T195311Z__inaturalist-research-grade__f86b22f39c15"
+        },
+        "explicitPairs": [
+          "13073:streptopelia-decaocto"
+        ],
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        },
+        "admissionReceipt": "ops/national-research/receipts/source-evaluations/inaturalist-context-method-admission-20260907-r6.json",
+        "methodReview": "Independently interpret the original observation, source wild classification, exact taxon and county, date, rights, and retained-replay lineage. Report limitations and any contradiction before accepting a historical occurrence. Do not infer establishment from secondhand narrative. No provider requests or shared-method edits."
+      },
+      "expiresAt": "2026-09-07T19:30:01.195Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Use the committed v1.1.0 adapter and exact explicit pair with the sealed original archived responses; no network fallback.",
+        "Independently review original observer context and primary iNaturalist wild classification and attribution guidance.",
+        "Emit only supported historical occurrence with original source date and provider retrieval lineage; no establishment or negative biological claim.",
+        "Emit the complete immutable run, source verification and closed manifest; record local replay timestamps honestly and link original acquisition provenance.",
+        "Use the frozen worker validator. Commit run content first and manifest second; no other changed paths."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-inaturalist-context-pilot-20260907-r6-ga-1"
     }
   ]
 }

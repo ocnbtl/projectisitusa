@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "kind": "bounded-offline-worker-admission",
+  "samples": [
+    {
+      "observedAt": "2026-09-07T18:41:54.8585520Z",
+      "totalMemoryBytes": 33450536960,
+      "availableMemoryBytes": 11543687168,
+      "commitChargePercent": 65,
+      "pageReadsPerSecond": 30,
+      "pageWritesPerSecond": 0,
+      "diskSizeBytes": 1999284203520,
+      "diskFreeBytes": 625134391296
+    },
+    {
+      "observedAt": "2026-09-07T18:42:00.3455375Z",
+      "totalMemoryBytes": 33450536960,
+      "availableMemoryBytes": 11694129152,
+      "commitChargePercent": 64,
+      "pageReadsPerSecond": 3,
+      "pageWritesPerSecond": 0,
+      "diskSizeBytes": 1999284203520,
+      "diskFreeBytes": 625129385984
+    },
+    {
+      "observedAt": "2026-09-07T18:42:05.8288616Z",
+      "totalMemoryBytes": 33450536960,
+      "availableMemoryBytes": 11708301312,
+      "commitChargePercent": 64,
+      "pageReadsPerSecond": 3,
+      "pageWritesPerSecond": 0,
+      "diskSizeBytes": 1999284203520,
+      "diskFreeBytes": 625124790272
+    },
+    {
+      "observedAt": "2026-09-07T18:42:11.3023906Z",
+      "totalMemoryBytes": 33450536960,
+      "availableMemoryBytes": 11662356480,
+      "commitChargePercent": 64,
+      "pageReadsPerSecond": 0,
+      "pageWritesPerSecond": 0,
+      "diskSizeBytes": 1999284203520,
+      "diskFreeBytes": 625155059712
+    },
+    {
+      "observedAt": "2026-09-07T18:42:16.7821920Z",
+      "totalMemoryBytes": 33450536960,
+      "availableMemoryBytes": 11626450944,
+      "commitChargePercent": 64,
+      "pageReadsPerSecond": 0,
+      "pageWritesPerSecond": 0,
+      "diskSizeBytes": 1999284203520,
+      "diskFreeBytes": 625151803392
+    },
+    {
+      "observedAt": "2026-09-07T18:42:22.2793501Z",
+      "totalMemoryBytes": 33450536960,
+      "availableMemoryBytes": 11597205504,
+      "commitChargePercent": 65,
+      "pageReadsPerSecond": 3,
+      "pageWritesPerSecond": 0,
+      "diskSizeBytes": 1999284203520,
+      "diskFreeBytes": 625153851392
+    },
+    {
+      "observedAt": "2026-09-07T18:42:27.7595651Z",
+      "totalMemoryBytes": 33450536960,
+      "availableMemoryBytes": 10478874624,
+      "commitChargePercent": 66,
+      "pageReadsPerSecond": 3,
+      "pageWritesPerSecond": 0,
+      "diskSizeBytes": 1999284203520,
+      "diskFreeBytes": 625134596096
+    }
+  ],
+  "tier": "green",
+  "declaredWorkerMemoryMiB": 768,
+  "mainSequentialBudgetMiB": 2048,
+  "availableAgentSlots": 4,
+  "selectedWorkers": 1,
+  "providerNetworkRequests": 0,
+  "checks": {
+    "memoryAfterReservationsAboveTenPercent": true,
+    "diskReservePass": true
+  }
+}
