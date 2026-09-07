@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-production-verification",
+  "phase": "POST-DEPLOYMENT",
+  "verifiedAt": "2026-09-07T18:07:20.625Z",
+  "status": "go-application-verified-data-pointer-unchanged",
+  "preDeployment": {
+    "path": "ops/national-research/evaluations/taxonomy-application-launch-20260907-r5.json",
+    "sha256": "e95c88bd109cfb6ce6a23ae16a3e2a8dfba4f3cc3f85f602b4082e30c3093eec",
+    "bytes": 5270
+  },
+  "application": {
+    "commit": "14d878d44eb8cf75ea5963c79d6e5829f72ae303",
+    "remoteMain": "14d878d44eb8cf75ea5963c79d6e5829f72ae303",
+    "githubCommitStatus": {
+      "context": "Vercel",
+      "state": "success",
+      "targetUrl": "https://vercel.com/unigentamos/projectisitusa/EeLCkcUkQej8LqaYEZxY4LGFQ6rD"
+    },
+    "vercel": {
+      "deploymentId": "dpl_EeLCkcUkQej8LqaYEZxY4LGFQ6rD",
+      "url": "https://projectisitusa-1t6lgtgs6-unigentamos.vercel.app",
+      "state": "READY",
+      "environment": "Production",
+      "latest": true,
+      "productionAlias": "https://isitusa.com",
+      "sourceCommit": "14d878d44eb8cf75ea5963c79d6e5829f72ae303",
+      "durationDisplayed": "4m 13s",
+      "evidence": "Authenticated provider deployment UI confirmed Ready, Latest, Production, exact source commit and current isitusa.com alias."
+    }
+  },
+  "http": {
+    "schemaVersion": 1,
+    "kind": "isitusa-production-http-verification",
+    "observedAt": "2026-09-07T18:01:01.774Z",
+    "status": "passed",
+    "applicationCommit": "14d878d44eb8cf75ea5963c79d6e5829f72ae303",
+    "deploymentId": "dpl_EeLCkcUkQej8LqaYEZxY4LGFQ6rD",
+    "immutableUrl": "https://projectisitusa-1t6lgtgs6-unigentamos.vercel.app",
+    "routeParity": [
+      {
+        "path": "/",
+        "byteIdentical": true,
+        "sha256": "b97727e084c2aef21a426da0e14375dd7d7f116ad0a3fccc9e919d3e3b8ceea5"
+      },
+      {
+        "path": "/research",
+        "byteIdentical": true,
+        "sha256": "259fca907b75bdb3d8efe14078dd2e9d9e1f0819d44a3dd7be2e04d14ec06831"
+      },
+      {
+        "path": "/about",
+        "byteIdentical": true,
+        "sha256": "376f539d9332890084e6945adda72362c6954b9baa6e84f79efeecadee8b0a15"
+      }
+    ],
+    "pointer": {
+      "schemaVersion": 1,
+      "kind": "isitusa-research-projection-pointer",
+      "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+      "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+      "releaseManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+      "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+      "promotedAt": "2026-09-06T06:56:53.282Z"
+    },
+    "manifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+    "dcObject": {
+      "logicalPath": "public/generated/research/DC/counties/11001.json",
+      "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+      "bytes": 395067
+    },
+    "requestCount": 11,
+    "probes": [
+      {
+        "url": "https://projectisitusa-1t6lgtgs6-unigentamos.vercel.app/",
+        "status": 200,
+        "bytes": 3817627,
+        "sha256": "b97727e084c2aef21a426da0e14375dd7d7f116ad0a3fccc9e919d3e3b8ceea5",
+        "contentType": "text/html; charset=utf-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "vercelId": "cle1::mpcr5-1788804059842-a7bda6c91c07"
+      },
+      {
+        "url": "https://isitusa.com/",
+        "status": 200,
+        "bytes": 3817627,
+        "sha256": "b97727e084c2aef21a426da0e14375dd7d7f116ad0a3fccc9e919d3e3b8ceea5",
+        "contentType": "text/html; charset=utf-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "vercelId": "cle1::qjqxr-1788804060294-119ccb9ad12d"
+      },
+      {
+        "url": "https://projectisitusa-1t6lgtgs6-unigentamos.vercel.app/research",
+        "status": 200,
+        "bytes": 14175,
+        "sha256": "259fca907b75bdb3d8efe14078dd2e9d9e1f0819d44a3dd7be2e04d14ec06831",
+        "contentType": "text/html; charset=utf-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "vercelId": "cle1::mpcr5-1788804060664-fd13484deea7"
+      },
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200,
+        "bytes": 14175,
+        "sha256": "259fca907b75bdb3d8efe14078dd2e9d9e1f0819d44a3dd7be2e04d14ec06831",
+        "contentType": "text/html; charset=utf-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "vercelId": "cle1::qjqxr-1788804060777-33fe9f7d3f01"
+      },
+      {
+        "url": "https://projectisitusa-1t6lgtgs6-unigentamos.vercel.app/about",
+        "status": 200,
+        "bytes": 23319,
+        "sha256": "376f539d9332890084e6945adda72362c6954b9baa6e84f79efeecadee8b0a15",
+        "contentType": "text/html; charset=utf-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "vercelId": "cle1::f9gzz-1788804060836-38bf077a6717"
+      },
+      {
+        "url": "https://isitusa.com/about",
+        "status": 200,
+        "bytes": 23319,
+        "sha256": "376f539d9332890084e6945adda72362c6954b9baa6e84f79efeecadee8b0a15",
+        "contentType": "text/html; charset=utf-8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "vercelId": "cle1::h5hmj-1788804061040-d1db7117d275"
+      },
+      {
+        "url": "https://data.isitusa.com/current.json",
+        "status": 200,
+        "bytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "public, max-age=60, must-revalidate",
+        "vercelId": null
+      },
+      {
+        "url": "https://isitusa.com/research-data/current.json",
+        "status": 200,
+        "bytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "public, max-age=60, must-revalidate",
+        "vercelId": "cle1::grd6t-1788804061241-83cd9bff7c98"
+      },
+      {
+        "url": "https://data.isitusa.com/releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+        "status": 200,
+        "bytes": 2047964,
+        "sha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "vercelId": null
+      },
+      {
+        "url": "https://data.isitusa.com/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "status": 200,
+        "bytes": 395067,
+        "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "vercelId": null
+      },
+      {
+        "url": "https://isitusa.com/research-data/objects/sha256/fa/fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e.json",
+        "status": 200,
+        "bytes": 395067,
+        "sha256": "fa20dcf7c29f2cd2d278e5df91a23e1b16c9871fc6f47d780ef2e520b2b1832e",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "vercelId": "cle1::rnjns-1788804061572-70c403e5fcb0"
+      }
+    ]
+  },
+  "browser": {
+    "observedAt": "2026-09-07T18:07:20.626Z",
+    "browser": "Brave",
+    "url": "https://isitusa.com/research?state=AL&county=01001&species=Vespa+mandarinia",
+    "reloadedAfterDeployment": true,
+    "sourceScreenCoverageLabelVisible": true,
+    "researchAsOf": "2026-09-06",
+    "countyFips": "01001",
+    "officialEradicationVisible": true,
+    "evidenceControlOpened": true,
+    "sourceCitation": "https://www.aphis.usda.gov/news/agency-announcements/aphis-action-victory-over-worlds-largest-hornet-species",
+    "historicalAndCurrentClaimsSeparated": true,
+    "qualification": "Focused functional smoke on the refreshed public site. No new layout, accessibility or device audit is claimed."
+  },
+  "resources": {
+    "applicationDeployments": 1,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "paidFeaturesEnabled": 0,
+    "planChanges": 0,
+    "httpProbeRequests": 11,
+    "nextOrdinaryDataPromotionAt": "2026-09-13T06:56:53.282Z",
+    "qualification": "Browser and provider reads are additional bounded requests. No paid resource was provisioned."
+  },
+  "rollback": {
+    "priorApplicationDeployment": "dpl_ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+    "researchPointerUnchanged": true,
+    "restorationExecuted": false
+  },
+  "localResearch": {
+    "verifiedPresent": 312996,
+    "verifiedAbsent": 3244,
+    "totalDeterminations": 316240,
+    "latestVerifiedNetAdditions": 164,
+    "qualification": "R2 has not received these additions. This application release does not attest that every public surface contains the local research snapshot."
+  },
+  "limitations": [
+    "The subsequently edited iNaturalist v1.1 method is local, uncommitted and excluded from this deployment identity.",
+    "This receipt does not attest to the later commit carrying it.",
+    "No national completion is claimed."
+  ]
+}
