@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260907T184350Z__inaturalist-research-grade__e01f6358c2d1",
+  "status": "complete",
+  "started_at": "2026-09-07T18:43:50.987Z",
+  "finished_at": "2026-09-07T18:55:15.552Z",
+  "actor_type": "adapter",
+  "actor_id": "inaturalist-gbif-research-grade@1.1.0",
+  "source_id": "inaturalist-research-grade",
+  "source_registry_hash": "1e20f01f7c130739938f4eed9da66a0d3553cf6bfc06d6bf9c0e5afad5de2603",
+  "adapter_id": "inaturalist-gbif-research-grade",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "5d82c8022708226e739543f8a6a81661fe13a2a9beeaea6a9aff66150b896702",
+  "code_commit": "8ab408bfbc7811a3b3525be9e72254be12b1babc",
+  "parameter_hash": "e01f6358c2d14f8d33b0eebe63f6f0504bfd2421f907e04d7aa9af1ccecac37d",
+  "parameters": {
+    "stateCode": "GA",
+    "stateProvince": "Georgia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "13073:streptopelia-decaocto"
+    ],
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "GA",
+    "county_fips": [
+      "13073"
+    ],
+    "species_ids": [
+      "streptopelia-decaocto"
+    ],
+    "pair_keys": [
+      "13073:streptopelia-decaocto"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Streptopelia+decaocto&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:55:15.216Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Georgia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495696&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-09-07T18:55:15.539Z",
+      "record_count": 208
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+      "sha256": "5e28e9162dc5a90b4fccd05f07ebc2fe38bf437a09d1977f2ae60cca2b561560",
+      "bytes": 66801,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+      "sha256": "deef24d263ca5487a73188954214cd855e467b353b82cfaad3ca6bfeabdbc35b",
+      "bytes": 288,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/inaturalist-retained-replay-provenance.json",
+      "sha256": "f0f149f025fda2a76f4085b88e30eed1b8287e85c8442f7aac96eb3c3cdbed9c",
+      "bytes": 2317,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/assertions.ndjson",
+      "sha256": "055924f8231af84a3f525640a3505f43a2f24c2d145b6fb9ccbacb2f49783c0b",
+      "bytes": 2991,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/reviews.ndjson",
+      "sha256": "fab26c12f1a07bc3d9209b4a5ec25a0ecd74bd1b8ac283b5ba94d99312666589",
+      "bytes": 1052,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/rejections.ndjson",
+      "sha256": "0a1db4d2bfcdb3ab83b1b83a729d7717c5781305d62b8e46e19557043966a5d1",
+      "bytes": 3630,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/outcomes.ndjson",
+      "sha256": "e74e107d69c03237c1732714bcee0bb7c476124f58c120427e347bba2ebb6af6",
+      "bytes": 1314,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/source-verification.json",
+      "sha256": "c340aecaf301264651506935a3a58c31af8c5dda25459ef0dc77a77efe948ffd",
+      "bytes": 10379,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 208,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 5,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Licensed community-reviewed occurrence evidence distributed through the provider-recommended weekly GBIF dataset. Research Grade, taxonomy, public geography, and licenses can change after the retained run snapshot. Missing records never support absence or non-detection."
+  ],
+  "source_warnings": [
+    "Upstream request timestamps mark local response replay; original provider retrieval dates remain in assertion retrieved_at and the retained-replay provenance artifact. No live source request was issued."
+  ],
+  "deviations": [
+    "Replayed 2 provider response artifact(s) from archived run 20260902T195311Z__inaturalist-research-grade__f86b22f39c15 at commit ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff; no live provider request was issued."
+  ],
+  "rerun_command": "npm run research:run -- --source inaturalist-research-grade --state GA --candidate-file ops/national-research/plans/inaturalist-context-20260907-r6/inaturalist-ga-20260907-r6.json --output-root src/data/research/runs --pairs 13073:streptopelia-decaocto --archive-replay-commit ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff --archive-replay-run-id 20260902T195311Z__inaturalist-research-grade__f86b22f39c15"
+}

@@ -497741,7 +497741,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/museum_nybg_ny",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-09-07T18:45:01.252Z",
       "expiresAt": "2026-09-07T19:30:01.195Z",
       "recoveryAt": null,
@@ -497839,7 +497839,16 @@
         "Emit the complete immutable run, source verification and closed manifest; record local replay timestamps honestly and link original acquisition provenance.",
         "Use the frozen worker validator. Commit run content first and manifest second; no other changed paths."
       ],
-      "expectedManifestPath": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/manifest.json"
+      "expectedManifestPath": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/manifest.json",
+      "transitionedAt": "2026-09-07T19:06:16.056Z",
+      "resultManifest": {
+        "path": "manifests/inaturalist-context-pilot-20260907-r6-ga__lease-inaturalist-context-pilot-20260907-r6-ga-1.json",
+        "sha256": "567fdd6aeca3be03fd689112ba1861bdc84932169cb127f31dffc16e30126208",
+        "bytes": 9954,
+        "status": "complete",
+        "workerCommit": "4494eae356915dab4975050bd690707a9dbb9309",
+        "workerBranchHead": "8f7051aea800c0619444d322750c93270003a7bd"
+      }
     }
   ]
 }

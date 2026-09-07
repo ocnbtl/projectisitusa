@@ -32868,6 +32868,70 @@
         "sha256": "657b8cc89d87692a14d601f7cf536c386ca63717211f1c7af9faee6f685618b5",
         "bytes": 3418
       }
+    },
+    {
+      "queueId": "queue-lease-inaturalist-context-pilot-20260907-r6-ga-1",
+      "jobId": "inaturalist-context-pilot-20260907-r6-ga",
+      "leaseId": "lease-inaturalist-context-pilot-20260907-r6-ga-1",
+      "decision": "accepted",
+      "submittedAt": "2026-09-07T19:06:16.056Z",
+      "manifestPath": "manifests/inaturalist-context-pilot-20260907-r6-ga__lease-inaturalist-context-pilot-20260907-r6-ga-1.json",
+      "manifestHash": "567fdd6aeca3be03fd689112ba1861bdc84932169cb127f31dffc16e30126208",
+      "manifestBytes": 9954,
+      "workerCommit": "4494eae356915dab4975050bd690707a9dbb9309",
+      "workerBranchHead": "8f7051aea800c0619444d322750c93270003a7bd",
+      "reviewedAt": "2026-09-07T19:06:46.437Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently verified the single GA historical occurrence, complete original response and all descriptors. The provider wild field, exact taxonomy/county and CC BY attribution support the documented encounter. Garden-center wording is not captivity. Secondhand nesting does not establish a population. Original provider retrieval remains separate from local replay. Independent primary guidance interpretation and frozen worker checks passed.",
+      "changedPaths": [
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/inaturalist-retained-replay-provenance.json",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/assertions.ndjson",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/manifest.json",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/outcomes.ndjson",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/receipt.json",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/rejections.ndjson",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/reviews.ndjson",
+        "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "Independently hashed frozen skill trees, exact two-commit history, manifest bytes and exact allowed changed paths",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Pinned worker manifest validator executed by MAIN",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Canonical immutable-run validator with exact source, state, pair and actor/code lineage",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "MAIN original provider row, complete page, retrieval date, metadata license and source-context audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check 8ab408bfbc7811a3b3525be9e72254be12b1babc...8f7051aea800c0619444d322750c93270003a7bd",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-inaturalist-context-pilot-20260907-r6-ga-1.json",
+        "sha256": "e739288703ef75337f374a7419a230c10d3bde55991921573a024308e317c45a",
+        "bytes": 3191
+      }
     }
   ]
 }

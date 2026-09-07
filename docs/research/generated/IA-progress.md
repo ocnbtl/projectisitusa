@@ -1,16 +1,16 @@
 # Iowa Research Progress
 
-Generated: `2026-09-06T00:00:00.000Z`
+Generated: `2026-09-07T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6289`
+- Verified present: `6290`
 - Verified absent: `99`
 - Not detected: `9`
-- Researched unresolved: `40882`
+- Researched unresolved: `40881`
 - Not researched: `200617`
 - Determination coverage: `2.58%`
 - Research coverage: `19.07%`
@@ -19,8 +19,8 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Current complete protocol cells: `119`
 - Protocol completion: `37.39%`
 - Current protocol completion: `33.71%`
-- Evidence records: `6655`
-- Research runs: `40`
+- Evidence records: `6656`
+- Research runs: `41`
 - Rejection records: `316`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -92,7 +92,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:29:31.135Z | 1 | 1 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | 2026-09-02T19:57:41.609Z | 260 | 10 |
+| iNaturalist Research Grade observations | operational | 2026-09-07T18:47:07.297Z | 261 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-09-04T19:49:43.887Z | 12 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

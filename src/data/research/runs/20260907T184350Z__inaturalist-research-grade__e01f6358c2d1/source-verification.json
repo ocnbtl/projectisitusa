@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-07T18:55:12.828Z",
+  "runId": "20260907T184350Z__inaturalist-research-grade__e01f6358c2d1",
+  "sourceId": "inaturalist-research-grade",
+  "stateCode": "GA",
+  "pairKeys": [
+    "13073:streptopelia-decaocto"
+  ],
+  "parameterHash": "e01f6358c2d14f8d33b0eebe63f6f0504bfd2421f907e04d7aa9af1ccecac37d",
+  "authority": {
+    "name": "iNaturalist Research Grade observations, retained weekly GBIF dataset",
+    "sourceUrl": "https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "publisher": "iNaturalist; GBIF distribution; accepted observation recorded by and rights held by Celeste Ray"
+  },
+  "terms": {
+    "license": "Accepted observation metadata: Creative Commons Attribution 4.0 (CC BY 4.0), attributed to Celeste Ray. Plan permits CC0 and CC BY 4.0 accepted evidence. Original response bytes retain their original per-record licenses, including records outside the selected pair. Media permissions are separate; no media bytes acquired or reused.",
+    "termsUrl": "http://creativecommons.org/licenses/by/4.0/legalcode",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-09-07T18:55:12.828Z",
+    "freshnessDate": "2026-08-29"
+  },
+  "geography": {
+    "method": "Exact provider-interpreted GADM Georgia / Columbia names resolve to active registry county 13073, Columbia County, Georgia. Four rows lacking provider GADM state and one with South Carolina/Aiken remain explicit outside-scope rejections with null target county.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Project Isitusa performs no coordinate-to-county inference. The approved registered policy uses provider-interpreted GADM names and requires public coordinates, uncertainty at most 10000 meters and no contradictory geospatial issue. The accepted row reports 6 meters uncertainty."
+  },
+  "taxonomy": {
+    "method": "Retained GBIF strict EXACT species match has confidence 99 and accepted species key 2495696 for Streptopelia decaocto. The original row speciesKey, acceptedTaxonKey and taxonKey are 2495696, and scientificName is Streptopelia decaocto (Frivaldszky, 1838). Full source name and authorship are preserved; TAXON_ID_NOT_FOUND remains a provider issue, with no contradictory binomial or accepted key.",
+    "targetSpeciesIds": [
+      "streptopelia-decaocto"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "GBIF key",
+      "iNaturalist occurrenceID",
+      "GBIF datasetKey",
+      "crawlId",
+      "original response artifact SHA256",
+      "SHA256 of JSON.stringify of the original parsed provider row"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "retained-taxonomy-streptopelia-decaocto",
+        "url": "https://api.gbif.org/v1/species/match?name=Streptopelia+decaocto&rank=SPECIES&strict=true",
+        "purpose": "Local immutable response replay only; no provider network request. Original successful provider acquisition 2026-09-02T19:53:22.258Z, archived artifact src/data/research/runs/20260902T195311Z__inaturalist-research-grade__f86b22f39c15/artifacts/gbif-species-match-streptopelia-decaocto.json.gz, SHA256 deef24d263ca5487a73188954214cd855e467b353b82cfaad3ca6bfeabdbc35b; this request retrievedAt is the local replay time.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-09-07T18:55:15.216Z",
+        "declaredRecordCount": 1,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "retained-occurrences-streptopelia-decaocto",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Georgia&basisOfRecord=HUMAN_OBSERVATION&occurrenceStatus=PRESENT&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&hasCoordinate=true&hasGeospatialIssue=false&taxonKey=2495696&limit=300&offset=0",
+        "purpose": "Local immutable response replay only; no provider network request. Original successful provider acquisition 2026-09-02T19:53:22.613Z, archived artifact src/data/research/runs/20260902T195311Z__inaturalist-research-grade__f86b22f39c15/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz, SHA256 5e28e9162dc5a90b4fccd05f07ebc2fe38bf437a09d1977f2ae60cca2b561560; this request retrievedAt is the local replay time.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-09-07T18:55:15.539Z",
+        "declaredRecordCount": 208,
+        "receivedRecordCount": 208,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "A historical point observation supports recorded presence only; it establishes neither countywide abundance nor an established population or current persistence.",
+      "Secondhand nesting language from a salesperson is not an independent breeding or establishment finding.",
+      "Missing records, source silence, excluded licenses, geography rejection, failed requests and limited source scope never imply absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+      "sha256": "5e28e9162dc5a90b4fccd05f07ebc2fe38bf437a09d1977f2ae60cca2b561560",
+      "bytes": 66801
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+      "sha256": "deef24d263ca5487a73188954214cd855e467b353b82cfaad3ca6bfeabdbc35b",
+      "bytes": 288
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/inaturalist-retained-replay-provenance.json",
+      "sha256": "f0f149f025fda2a76f4085b88e30eed1b8287e85c8442f7aac96eb3c3cdbed9c",
+      "bytes": 2317
+    }
+  ],
+  "caveats": [
+    "Independent context reviewer: agent /root/museum_nybg_ny, lease lease-inaturalist-context-pilot-20260907-r6-ga-1. Source verification and availability timestamps refer to the actual offline retained-input review at 2026-09-07T18:55:12.828Z; this companion file was constructed after the adapter completed. No human approval is claimed.",
+    "Availability and complete snapshot attestations apply only to the committed two-response replay for the exact requested pair, not live provider availability or an exhaustive biodiversity inventory. Original run src/data/research/runs/20260902T195311Z__inaturalist-research-grade__f86b22f39c15/receipt.json at ea6ead3245cfcc0c0aa155ac2a86f8a08680aaff; original receipt SHA256 4be87f2855e5cc75ee6494d1cdb6d672351d170483e2016024d9f42948f76418. No historical source-verification file was fabricated.",
+    "Historical observation: https://www.inaturalist.org/observations/264585723, GBIF 5087783411, Celeste Ray, eventDate 2025-03-08T18:01:26. Original eventTime 18:01:26-05:00 and verbatim date remain in the raw row. Original provider retrieval was 2026-09-02T19:53:22.613Z. Local replay interpretation occurred 2026-09-07T18:55:15.539Z.",
+    "The observer reports birds seen and calling in outdoor garden-center rafters near Martinez, Georgia. A garden center is a location; the organism is explicitly marked wild. No explicit captivity or cultivation conflict occurs in the seven context fields. The salesperson nesting claim is secondhand and does not establish breeding, population establishment, abundance or current persistence.",
+    "Primary iNaturalist wild/captive guidance was independently read offline from MAIN's HTTP 200 acquisition at 2026-09-07T18:53:34.197Z: https://help.inaturalist.org/en/support/solutions/articles/151000169932; 181239 bytes; SHA256 851d0e3672c9b28b1bdd9b2260a7a98726ca28307d34cd36b7aba8c77bd66ada. It distinguishes intentional organism placement and includes unkept birds benefiting from human activity as wild.",
+    "Primary licensing guidance was independently read offline from MAIN's HTTP 200 acquisition at 2026-09-07T18:53:34.547Z: https://help.inaturalist.org/en/support/solutions/articles/151000173511; 181712 bytes; SHA256 5be5eeadb107c77f7923e93c4864788a5ed8cb5d42021b1281a298118cc1bc72. Observation metadata and narrative licenses are separate from media licenses. These two MAIN documentation reads are separate from the worker's zero-network occurrence replay.",
+    "All 208 original rows were inventoried for scope and raw-row hashes. Exactly one row resolves to Columbia; five provider-geography conflicts are rejected, and 202 other Georgia county rows are outside this leased pair. The retained original response includes other per-record license choices; only the accepted CC BY 4.0 observation is emitted as evidence.",
+    "Original two compressed artifacts match archived bytes exactly; decoded response hashes and all four original event-output hashes were checked. The new provenance artifact retains original request times and raw-row hash convention.",
+    "Raw provider issues COORDINATE_ROUNDED, CONTINENT_DERIVED_FROM_COORDINATES and TAXON_ID_NOT_FOUND remain visible. Independent review found no contradiction with the exact accepted binomial/key, provider county text or retained date.",
+    "Runner sourceRequests counts two locally replayed responses. Worker live provider attempts, media downloads, failed requests, negative assertions and human interventions are all zero.",
+    "Method v1.1.0 is supported for this inspected row and scope. It retains conservative holds for explicit captivity/cultivation narrative, including unresolved negation or other-organism language, and does not claim to repair general date validation.",
+    "This worker reports one publication-eligible assertion and one completed pair. MAIN must independently validate and reconcile the integrated unique-pair set before claiming a determination gain."
+  ]
+}

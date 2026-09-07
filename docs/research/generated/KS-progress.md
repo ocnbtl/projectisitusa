@@ -1,16 +1,16 @@
 # Kansas Research Progress
 
-Generated: `2026-09-06T00:00:00.000Z`
+Generated: `2026-09-07T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `105`
 - County-species pairs: `262920`
-- Verified present: `6836`
+- Verified present: `6838`
 - Verified absent: `105`
 - Not detected: `26`
-- Researched unresolved: `43132`
+- Researched unresolved: `43130`
 - Not researched: `212821`
 - Determination coverage: `2.64%`
 - Research coverage: `19.05%`
@@ -19,9 +19,9 @@ Generated: `2026-09-06T00:00:00.000Z`
 - Current complete protocol cells: `107`
 - Protocol completion: `31.17%`
 - Current protocol completion: `27.79%`
-- Evidence records: `8020`
-- Research runs: `39`
-- Rejection records: `694`
+- Evidence records: `8022`
+- Research runs: `40`
+- Rejection records: `745`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -92,7 +92,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
-| iNaturalist Research Grade observations | operational | 2026-09-02T19:57:00.500Z | 315 | 10 |
+| iNaturalist Research Grade observations | operational | 2026-09-07T18:47:04.755Z | 317 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-09-04T19:49:51.676Z | 7 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |

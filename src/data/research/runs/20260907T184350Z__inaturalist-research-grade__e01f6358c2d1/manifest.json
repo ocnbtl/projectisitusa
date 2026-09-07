@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "jobId": "inaturalist-context-pilot-20260907-r6-ga",
+  "leaseId": "lease-inaturalist-context-pilot-20260907-r6-ga-1",
+  "status": "complete",
+  "branch": "codex/inaturalist-context-pilot-20260907-r6-ga",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga",
+  "baseSha": "8ab408bfbc7811a3b3525be9e72254be12b1babc",
+  "commitSha": "4494eae356915dab4975050bd690707a9dbb9309",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "inaturalist-research-grade",
+    "adapterVersion": "1.1.0",
+    "stateCode": "GA",
+    "stateProvince": "Georgia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "13073:streptopelia-decaocto"
+    ],
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+    "expectedCrawlId": 605,
+    "expectedLastParsed": "2026-08-29T05:09:50.488Z",
+    "maximumCoordinateUncertaintyMeters": 10000,
+    "allowedLicenses": [
+      "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "http://creativecommons.org/licenses/by/4.0/legalcode"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+      "sha256": "5e28e9162dc5a90b4fccd05f07ebc2fe38bf437a09d1977f2ae60cca2b561560",
+      "bytes": 66801,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+      "sha256": "deef24d263ca5487a73188954214cd855e467b353b82cfaad3ca6bfeabdbc35b",
+      "bytes": 288,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/inaturalist-retained-replay-provenance.json",
+      "sha256": "f0f149f025fda2a76f4085b88e30eed1b8287e85c8442f7aac96eb3c3cdbed9c",
+      "bytes": 2317,
+      "media_type": "application/json"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/assertions.ndjson",
+      "sha256": "055924f8231af84a3f525640a3505f43a2f24c2d145b6fb9ccbacb2f49783c0b",
+      "bytes": 2991,
+      "media_type": "application/x-ndjson",
+      "count": 1
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/reviews.ndjson",
+      "sha256": "fab26c12f1a07bc3d9209b4a5ec25a0ecd74bd1b8ac283b5ba94d99312666589",
+      "bytes": 1052,
+      "media_type": "application/x-ndjson",
+      "count": 1
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/rejections.ndjson",
+      "sha256": "0a1db4d2bfcdb3ab83b1b83a729d7717c5781305d62b8e46e19557043966a5d1",
+      "bytes": 3630,
+      "media_type": "application/x-ndjson",
+      "count": 5
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/outcomes.ndjson",
+      "sha256": "e74e107d69c03237c1732714bcee0bb7c476124f58c120427e347bba2ebb6af6",
+      "bytes": 1314,
+      "media_type": "application/x-ndjson",
+      "count": 1
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/receipt.json",
+    "sha256": "7639d581f02f076da23b9630d30110c42dd8fcb4166945a2b577b5d0b583ad8a",
+    "bytes": 6130,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/source-verification.json",
+    "sha256": "c340aecaf301264651506935a3a58c31af8c5dda25459ef0dc77a77efe948ffd",
+    "bytes": 10379,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 3,
+      "retainedArtifactBytes": 69406,
+      "sourceRequests": 2,
+      "providerCandidates": 208,
+      "assertionEvents": 1,
+      "publicationEligibleAssertions": 1,
+      "reviewEvents": 1,
+      "rejectionRecords": 5,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 3,
+      "retainedArtifactBytes": 69406,
+      "sourceRequests": 2,
+      "providerCandidates": 208,
+      "assertionEvents": 1,
+      "publicationEligibleAssertions": 1,
+      "reviewEvents": 1,
+      "rejectionRecords": 5,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node --max-old-space-size=768 --import tsx scripts/research/validate-immutable-run.ts --repository-root 'C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga' --validation-root 'C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga' --run-directory 'C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga\\src\\data\\research\\runs\\20260907T184350Z__inaturalist-research-grade__e01f6358c2d1' --source-verification 'C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga\\src\\data\\research\\runs\\20260907T184350Z__inaturalist-research-grade__e01f6358c2d1\\source-verification.json' --run-id 20260907T184350Z__inaturalist-research-grade__e01f6358c2d1 --source-id inaturalist-research-grade --state-code GA --pair-keys 13073:streptopelia-decaocto --code-commit 8ab408bfbc7811a3b3525be9e72254be12b1babc --worker-task-id /root/museum_nybg_ny",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 8ab408bfbc7811a3b3525be9e72254be12b1babc...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --max-old-space-size=768 .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-inaturalist-context-pilot-20260907-r6-ga-1 --manifest src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/manifest.json --repo 'C:\\Code\\project-isitusa-worktrees\\inaturalist-context-pilot-20260907-r6-ga'",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-inaturalist-context-pilot-20260907-r6-ga-1",
+        "status": "complete",
+        "finishedAt": "2026-09-07T18:55:15.552Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 208,
+        "retainedArtifacts": 3,
+        "receiptSha256": "7639d581f02f076da23b9630d30110c42dd8fcb4166945a2b577b5d0b583ad8a"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 2.302,
+    "peakMemoryMb": 206.316,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 1,
+    "manualInterventions": 0,
+    "wallTimeMeasurement": "Registered runner attempt telemetry: process work from 2026-09-07T18:55:13.419Z through 2026-09-07T18:55:15.721Z. Excludes independent source review, content/manifest construction and validation.",
+    "peakMemoryMeasurement": "Maximum process RSS sampled by run-source attempt telemetry, in MiB; not an OS-measured lifetime peak. Node heap cap was 768 MiB.",
+    "telemetry": {
+      "path": "C:/Code/project-isitusa-worker-staging/inaturalist-context-pilot-20260907-r6-ga/attempt-telemetry.json",
+      "sha256": "8675b0ff63f1a84cdfde8c659835d8fb36d0acdffd3ae7bbbcebdfda32683181",
+      "bytes": 1775,
+      "requestCounts": {
+        "totalAttempts": 2,
+        "archiveReplayHits": 2,
+        "cachedTaxonomyHits": 0,
+        "liveProviderAttempts": 0,
+        "completedResponses": 2,
+        "failedAttempts": 0
+      }
+    },
+    "providerNetworkRequests": 0,
+    "replayedResponses": 2
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
