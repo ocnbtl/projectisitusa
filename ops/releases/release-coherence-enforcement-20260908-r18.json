@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "kind": "hosted-release-coherence-enforcement",
+  "recordedAt": "2026-09-08T20:47:37.242Z",
+  "guardCommit": "22be801ad3a2ac1fae425896282012947422cfbb",
+  "remoteCommit": "22be801ad3a2ac1fae425896282012947422cfbb",
+  "guardDeployment": {
+    "id": "dpl_EuzM5y7vJnRRuH9SXspWYxkTeJzd",
+    "url": "projectisitusa-l6rhxzr2g-unigentamos.vercel.app",
+    "state": "CANCELED",
+    "substate": "STAGED",
+    "target": "production",
+    "commit": "22be801ad3a2ac1fae425896282012947422cfbb",
+    "createdAt": 1788899346394
+  },
+  "expectedStatus": "CANCELED",
+  "reason": "The actual Vercel ignored-build command detected Talladega206app versus205published presence and canceled before the full build.",
+  "activeProduction": {
+    "id": "dpl_Bt1mkLJtfSubq62VJzVBQydtoyP5",
+    "url": "projectisitusa-puieaznrc-unigentamos.vercel.app",
+    "state": "READY",
+    "substate": "PROMOTED",
+    "target": "production",
+    "commit": "0fea5725577ca361dfe376aedc832867c1fcf943",
+    "createdAt": 1788889635297
+  },
+  "activeAlias": "isitusa.com",
+  "providerVerifiedAt": "2026-09-08T20:33:45.593Z",
+  "rollbackReceipt": "ops/releases/epa-wqp-rollback-20260908-r18.json",
+  "artifact": {
+    "path": "ops/releases/artifacts/release-coherence-enforcement-20260908-r18.json.gz",
+    "bytes": 1472,
+    "sha256": "c061889d0199c5024abb114fc8f9ced71b9ed09bc5fb16a222a35ad551541ff2"
+  },
+  "qualification": "Vercel CLI inspect returned1for this canceled deployment; the explicit provider state and log establish successful hold enforcement. No successful app release is claimed. The guard snapshot does not make later pointer or manual deployment promotions atomic."
+}
