@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-nrsa-canonical-county-field-correction",
+  "recordedAt": "2026-09-08T18:57:58.688Z",
+  "failedAttemptSourceCommit": "46ac781ba77bd9ab5d3ee2877ece5ebe452171eb",
+  "originalError": "Error: Assertion epa-nrsa-fish-assertion-15f8042d9a0cc29dd1ebcea10080e2b447ad048cb5e75f4a096891e0d296b636 source county does not resolve to its declared county FIPS.\n    at assert (C:\\Code\\project-isitusa\\src\\lib\\research\\validate-run.ts:53:25)\n    at validateResearchRunInMemory (C:\\Code\\project-isitusa\\src\\lib\\research\\validate-run.ts:544:5)\n    at main (C:\\Code\\project-isitusa\\scripts\\research\\run-source.ts:1455:3)\n",
+  "originalStderrSha256": "5932757322d5cb2e386fd18d926f1f2d8462912394f64b275f4e673d747cb333",
+  "cause": "The generic normalized source_county field resolves a county name. Initial EPA assertions put publisher FIPS there despite also retaining the actual CNTYNAME in original witnesses. WQP has a separate historical FIPS field exception that EPA does not use.",
+  "correction": "Emit the exact primary EPA CNTYNAME in source_county and retain county_fips separately. No validator exception or geography reassignment added.",
+  "canonicalCountyNamesVerified": 445,
+  "regression": "Full retained-replay test now asserts every emitted source_county resolves to the declared county through the canonical resolver.",
+  "newDeterminations": 0,
+  "providerRequests": 0,
+  "immutableRunsCompleted": 0
+}

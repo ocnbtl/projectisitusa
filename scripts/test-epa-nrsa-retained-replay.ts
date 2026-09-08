@@ -1,3 +1,4 @@
+import { resolveCountyEquivalent } from "@/lib/research/geography-registry";
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { z } from 'zod';
@@ -27,6 +28,7 @@ try {
   for (const [name, records] of [['evidence-assertion', r.assertions], ['review-event', r.reviews], ['pair-outcome', r.outcomes], ['rejection-record', r.rejections]] as const) for (const record of records) schemas[name].parse(record);
   for (const w of artifact.witnesses) {
    const a = r.assertions.find(a => a.county_fips + ':' + a.species_id === w.pairKey)!; assert(a && a.claim_type === 'recorded-present'); assert(!method.heldPairs.includes(w.pairKey));
+   const county = resolveCountyEquivalent({stateCode: state, countyName: a.geography_match.source_county, sourceId: 'epa-nrsa-fish-counts'}); assert(county.status === 'resolved' && county.county.countyFips === a.county_fips, 'canonical source county name must resolve');
    const positive = w.sourceRows.filter((x: {disposition: string}) => x.disposition === 'positive'), primary = positive.find((x: any) => x.fish.parsedRowIndexZeroBased === w.primary.fish.parsedRowIndexZeroBased);
    assert(primary); assert.deepEqual(primary.fish, w.primary.fish); assert.deepEqual(primary.site, w.primary.site); assert.deepEqual(primary.taxon, w.primary.taxon); assert.equal(primary.date, w.primary.date);
    const latest = positive.map((x: {date: string}) => x.date).sort().at(-1); assert.equal(a.source_record_date, latest); if (latest !== w.primary.date) primaryDateDifferences++;
