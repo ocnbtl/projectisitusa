@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 1,
+  "kind": "agent-jurisdiction-pilot-verified-completion",
+  "recordedAt": "2026-09-08T05:32:06.091Z",
+  "integratedHead": "03c91a989e7b7aadd3804c7aee90b430f519d9b9",
+  "asOf": "2026-09-08",
+  "method": "official-jurisdiction-agent-review-v1",
+  "parentId": "tilletia-indica-ca-officially-eradicated-agent-20260908",
+  "runId": "20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591",
+  "worker": {
+    "checkedAt": "2026-09-08T05:16:22.525Z",
+    "workerCommit": "cc6168e4f4654d4c49e975932579194c877430d6",
+    "workerBranchHead": "c4ef5fa9bee347d0e1aec5ccc4d664d8f2a26a55",
+    "manifestHash": "96562f95504ebf9dfc4bafa34f6846bf2e27485649e04cb9a7e2d0294a9b8525",
+    "changedPaths": [
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/artifacts/reviewed-parent-and-conflict-baseline.json",
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/assertions.ndjson",
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/manifest.json",
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/outcomes.ndjson",
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/receipt.json",
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/rejections.ndjson",
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/reviews.ndjson",
+      "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/source-verification.json"
+    ],
+    "checks": [
+      {
+        "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+        "exitCode": 0,
+        "result": "pass"
+      },
+      {
+        "command": "MAIN independent source semantics and 58 unchanged current contradiction baseline hashes",
+        "exitCode": 0,
+        "result": "pass"
+      },
+      {
+        "command": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r8-agent-absence\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8",
+        "exitCode": 0,
+        "result": "pass"
+      },
+      {
+        "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-verification C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\source-verification.json --run-id 20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-id nappo-karnal-bunt-eradication-2010 --state-code CA --pair-keys-stdin true --code-commit 546e90d1b08ff9365511c0677a09bd49d69fa6a4 --worker-task-id karnal_bunt_pilot_r8",
+        "exitCode": 0,
+        "result": "pass"
+      }
+    ]
+  },
+  "integrationReceipt": {
+    "path": "ops/national-research/receipts/integrations/queue-lease-karnal-bunt-ca-agent-pilot-20260908-r8-1.json",
+    "bytes": 4925,
+    "sha256": "abc41cdc56c1e1c38cc5969ad7f7cb84f6e715eacda59c98561202cd822d6b6d"
+  },
+  "before": {
+    "capturedAt": "2026-09-08T05:00:38.801Z",
+    "stateJurisdictions": 51,
+    "counties": 3144,
+    "catalogSpecies": 2504,
+    "stateSpeciesCombinations": 127704,
+    "denominator": 7872576,
+    "verifiedPresent": 313000,
+    "verifiedAbsent": 3244,
+    "determinations": 316244,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6249190,
+    "explicitOutcomePairs": 1579032,
+    "evidenceRecords": 459960,
+    "conflicts": 0,
+    "pairStatusSha256": "383da8fe4547cebf075b4bf97a0ec7389c412e41390afed37c570d7ccaef2edd"
+  },
+  "after": {
+    "capturedAt": "2026-09-08T05:21:36.150Z",
+    "stateJurisdictions": 51,
+    "counties": 3144,
+    "catalogSpecies": 2504,
+    "stateSpeciesCombinations": 127704,
+    "denominator": 7872576,
+    "verifiedPresent": 313000,
+    "verifiedAbsent": 3302,
+    "determinations": 316302,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6249132,
+    "explicitOutcomePairs": 1579090,
+    "evidenceRecords": 460018,
+    "conflicts": 0,
+    "pairStatusSha256": "155d53d9ca3387a2d33b8578690f647017b1de5890b5104d2ebe7e9162de2b75"
+  },
+  "delta": {
+    "newUniqueDeterminations": 58,
+    "newPresent": 0,
+    "newAbsent": 58,
+    "removed": 0,
+    "statusTransitions": 0,
+    "pairs": [
+      [
+        "06001:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06003:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06005:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06007:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06009:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06011:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06013:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06015:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06017:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06019:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06021:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06023:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06025:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06027:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06029:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06031:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06033:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06035:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06037:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06039:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06041:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06043:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06045:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06047:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06049:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06051:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06053:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06055:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06057:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06059:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06061:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06063:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06065:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06067:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06069:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06071:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06073:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06075:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06077:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06079:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06081:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06083:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06085:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06087:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06089:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06091:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06093:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06095:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06097:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06099:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06101:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06103:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06105:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06107:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06109:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06111:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06113:tilletia-indica",
+        "verified-absent"
+      ],
+      [
+        "06115:tilletia-indica",
+        "verified-absent"
+      ]
+    ]
+  },
+  "baselineArtifact": {
+    "path": "ops/national-research/evaluations/artifacts/agent-jurisdiction-baseline-20260908-r8.json.gz",
+    "bytes": 1346173,
+    "sha256": "9d71d67afc65d0bc06a0ab87b11068af010250897850aec78ce7b27af472a39a"
+  },
+  "finalArtifact": {
+    "path": "ops/national-research/evaluations/artifacts/agent-jurisdiction-final-20260908-r8.json.gz",
+    "bytes": 1346693,
+    "sha256": "0f7afabec4a414f46f0b8b727d1b2bffe6cb63ad3608fcd90d781c0d9c91d5f2"
+  },
+  "validationArtifact": {
+    "path": "ops/national-research/evaluations/artifacts/agent-jurisdiction-validation-20260908-r8.json.gz",
+    "bytes": 14668,
+    "sha256": "fbfe6d6afb37a23a86c176d1b683e4bfbebb2c2a00f4c99351c7e9ab8d28f097"
+  },
+  "gates": [
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/research-integrity.log",
+      "bytes": 57719,
+      "sha256": "b6cebfa0a6ad368bbbc6c87b96351d4de3f8118fb8b1e660ffe65ee6c62d2c5a",
+      "exitCode": 0
+    },
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/integrated-canonical-validation.json",
+      "bytes": 462,
+      "sha256": "57516163c58c803a1d009982a4d357acdf98b5acab4848aea592922492a404c9",
+      "exitCode": 0
+    },
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/verify-ca.log",
+      "bytes": 2154,
+      "sha256": "96c9bff427e9e280a41272488d8343678cae527db620ba70a113742b0f121d4e",
+      "exitCode": 0
+    },
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/check-state-research-projections.log",
+      "bytes": 14905,
+      "sha256": "97d2c330e6e10e4774e9a73e20cdebf4f0f661d94d7038ec1446b2e24a3089cf",
+      "exitCode": 0
+    },
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/test-national-research-compiler.log",
+      "bytes": 303,
+      "sha256": "ae7057f86f4e46544d16ce630e7979fa8ee32cacad31780090542470a552e87f",
+      "exitCode": 0
+    },
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/check-data-integrity.log",
+      "bytes": 687,
+      "sha256": "fb65ffe654825a5844c26e69abb0395f0637b7098f594de76d01117f9c0c3ade",
+      "exitCode": 0
+    },
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/vercel-publish-tests.log",
+      "bytes": 666,
+      "sha256": "774a96adc5c6166370577628fd0a548ef91dcc38f6c94ff7432430d5b274945a",
+      "exitCode": 0
+    },
+    {
+      "path": ".cache/research/campaigns/20260908-r8-agent-absence/app-build.log",
+      "bytes": 2751,
+      "sha256": "23212b9ca2d0499ad77a291beae341cd05a651a72a7e0fb7f63705f6168472bf",
+      "exitCode": 0
+    }
+  ],
+  "gateScopeNotes": [
+    "Full research-integrity passed after shared method admission and before worker integration; the newly integrated 58-pair run then passed fresh immutable validation, California byte-stability, all-state projection checks and data integrity.",
+    "The application production build and Vercel packaging, projection fetch, deep-link and temporal-presentation tests passed after integration.",
+    "All four historical human parent records and 41 preexisting source definitions remained unchanged.",
+    "This method does not authorize question-assessment or protocol-completion claims."
+  ],
+  "researchPublication": {
+    "state": "local-verified-awaiting-scheduled-batch",
+    "providerWrites": 0,
+    "pointerPromotions": 0,
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+    "liveReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "candidateManifestNeedsRefresh": true
+  },
+  "nextSourceDiscovery": {
+    "path": "ops/national-research/evaluations/karnal-bunt-expansion-discovery-20260908-r8.json",
+    "prospectivePairs": 449,
+    "acceptedDeterminations": 0,
+    "blocker": "Exact publication-date and state-scope semantics need independent source review and a tested method extension; no year-only date is expanded into an invented day."
+  },
+  "limitations": [
+    "Absence is a time-bounded official state-status determination, not proof of future biological impossibility.",
+    "The 2010 declaration publication, 2026 corroboration modification, original retrieval and project review expiry remain separate fields.",
+    "No absence was inferred from missing county records or source silence.",
+    "The new California determinations are not yet on the live research pointer."
+  ]
+}

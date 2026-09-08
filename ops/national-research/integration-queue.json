@@ -32988,7 +32988,7 @@
       "queueId": "queue-lease-karnal-bunt-ca-agent-pilot-20260908-r8-1",
       "jobId": "karnal-bunt-ca-agent-pilot-20260908-r8",
       "leaseId": "lease-karnal-bunt-ca-agent-pilot-20260908-r8-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-09-08T05:16:53.783Z",
       "manifestPath": "manifests/karnal-bunt-ca-agent-pilot-20260908-r8__lease-karnal-bunt-ca-agent-pilot-20260908-r8-1.json",
       "manifestHash": "96562f95504ebf9dfc4bafa34f6846bf2e27485649e04cb9a7e2d0294a9b8525",
@@ -33039,6 +33039,52 @@
         "path": "receipts/reviews/queue-lease-karnal-bunt-ca-agent-pilot-20260908-r8-1.json",
         "sha256": "184101b1a5483096d8701f3ac6e134a8f7412a4855bcbde760411352a477522b",
         "bytes": 4071
+      },
+      "integratedAt": "2026-09-08T05:20:16.086Z",
+      "integrator": "MAIN",
+      "integrationCommit": "03c91a989e7b7aadd3804c7aee90b430f519d9b9",
+      "integrationChecks": [
+        {
+          "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "MAIN independent source semantics and 58 unchanged current contradiction baseline hashes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r8-agent-absence\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-verification C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\source-verification.json --run-id 20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-id nappo-karnal-bunt-eradication-2010 --state-code CA --pair-keys-stdin true --code-commit 546e90d1b08ff9365511c0677a09bd49d69fa6a4 --worker-task-id karnal_bunt_pilot_r8",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\source-verification.json --run-id 20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-id nappo-karnal-bunt-eradication-2010 --state-code CA --pair-keys-stdin true --code-commit 546e90d1b08ff9365511c0677a09bd49d69fa6a4 --worker-task-id karnal_bunt_pilot_r8",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed content and final manifest trees without conflict. Fresh canonical validation passed for 58 exact California county children with original declaration and acquisition dates, independent agent identity, source hashes and no accepted contrary baseline evidence. No projected determination gain is claimed before compilation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-karnal-bunt-ca-agent-pilot-20260908-r8-1.json",
+        "sha256": "abc41cdc56c1e1c38cc5969ad7f7cb84f6e715eacda59c98561202cd822d6b6d",
+        "bytes": 4925
       }
     }
   ]

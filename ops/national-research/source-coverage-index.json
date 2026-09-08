@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-bd3a3cd24207174aa5fa",
-  "generatedFromCommit": "f70781e19e2b3fed0a6e4629198266e170fb24b2",
+  "indexId": "source-coverage-82fc3cd24dba3d667827",
+  "generatedFromCommit": "03c91a989e7b7aadd3804c7aee90b430f519d9b9",
   "sourceRegistryPath": "src/data/research/source-registry.json",
   "sourceRegistrySha256": "134819d98222c22c458b9683a61398be9c7745ad28c72cae3c6e45c02a573731",
-  "runReceiptDigestSha256": "84e71870e1e125d758d666e3831649b006b8d2ab06fd6356e83c4a20389e8d91",
-  "runCount": 2039,
+  "runReceiptDigestSha256": "c6091fa1de994f7772c13242dacacef6e197a21f0ad88498db4987667063d1d6",
+  "runCount": 2040,
   "sourceCount": 43,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -272,14 +272,14 @@
     },
     {
       "sourceId": "nappo-karnal-bunt-eradication-2010",
-      "coverageState": "no-immutable-run-coverage",
-      "runCount": 0,
-      "completeRuns": 0,
+      "coverageState": "covered-by-immutable-runs",
+      "runCount": 1,
+      "completeRuns": 1,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 0,
-      "scopeCompletePairs": 0,
-      "latestFinishedAt": null
+      "requestedPairs": 58,
+      "scopeCompletePairs": 58,
+      "latestFinishedAt": "2026-09-08T05:07:20.810Z"
     },
     {
       "sourceId": "neon-tall",
@@ -63700,6 +63700,37 @@
       "outcomesPath": "src/data/research/runs/20260907T184704Z__inaturalist-research-grade__9eb9c50ffb39/outcomes.ndjson",
       "outcomesSha256": "277fa5385a37089d1473467cc88161ef7ed03c1067df63bc7c57e1787af25eae",
       "outcomesBytes": 894
+    },
+    {
+      "coverageKey": "d31355b89197ca6ea6fc1a25f51a394e8ae936ac85322f869e31d5fa35d3982e",
+      "queryKey": "be881bfa5a21ec208b8de7d645b57ddeda35a8153b24c6c9586f34446f427fb2",
+      "runId": "20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591",
+      "receiptPath": "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/receipt.json",
+      "receiptSha256": "0b85a3dab7fd831295a59e053f2f1acc803c5673dd2a908a0ebb7e0d2243a7a3",
+      "sourceId": "nappo-karnal-bunt-eradication-2010",
+      "sourceRegistryHash": "134819d98222c22c458b9683a61398be9c7745ad28c72cae3c6e45c02a573731",
+      "adapterId": "official-jurisdiction-agent-reviewed",
+      "adapterVersion": "1.0.0",
+      "parameterHash": "a9cbd4fcc5914f5ca8872f157cb2b61c5af7879f28e4a7e124668a8d09d96bcb",
+      "requestedScopeSha256": "5814d182b5c2c5c314410defb20dc44c2c9da24b163230dd14165a6e775e7784",
+      "status": "complete",
+      "startedAt": "2026-09-08T04:56:22.851Z",
+      "finishedAt": "2026-09-08T05:07:20.810Z",
+      "refreshCadenceDays": 365,
+      "freshnessDeadline": "2027-09-08T05:07:20.810Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 58,
+      "outcomePairs": 58,
+      "scopeCompletePairs": 58,
+      "outcomeStatusCounts": {
+        "evidence-found": 58,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/outcomes.ndjson",
+      "outcomesSha256": "f5cf8b289e0be19efba4a35d607ae657aeae02cfa1650172aeabf8581c4fd2cb",
+      "outcomesBytes": 41760
     }
   ]
 }

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-karnal-bunt-ca-agent-pilot-20260908-r8-1",
+  "jobId": "karnal-bunt-ca-agent-pilot-20260908-r8",
+  "leaseId": "lease-karnal-bunt-ca-agent-pilot-20260908-r8-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-09-08T05:20:16.086Z",
+  "integrationCommit": "03c91a989e7b7aadd3804c7aee90b430f519d9b9",
+  "workerCommit": "cc6168e4f4654d4c49e975932579194c877430d6",
+  "workerBranchHead": "c4ef5fa9bee347d0e1aec5ccc4d664d8f2a26a55",
+  "manifestHash": "96562f95504ebf9dfc4bafa34f6846bf2e27485649e04cb9a7e2d0294a9b8525",
+  "changedPaths": [
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/artifacts/reviewed-parent-and-conflict-baseline.json",
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/assertions.ndjson",
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/manifest.json",
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/outcomes.ndjson",
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/receipt.json",
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/rejections.ndjson",
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/reviews.ndjson",
+    "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "MAIN independent source semantics and 58 unchanged current contradiction baseline hashes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r8-agent-absence\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-verification C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\source-verification.json --run-id 20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-id nappo-karnal-bunt-eradication-2010 --state-code CA --pair-keys-stdin true --code-commit 546e90d1b08ff9365511c0677a09bd49d69fa6a4 --worker-task-id karnal_bunt_pilot_r8",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591\\source-verification.json --run-id 20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591 --source-id nappo-karnal-bunt-eradication-2010 --state-code CA --pair-keys-stdin true --code-commit 546e90d1b08ff9365511c0677a09bd49d69fa6a4 --worker-task-id karnal_bunt_pilot_r8",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed content and final manifest trees without conflict. Fresh canonical validation passed for 58 exact California county children with original declaration and acquisition dates, independent agent identity, source hashes and no accepted contrary baseline evidence. No projected determination gain is claimed before compilation."
+}
