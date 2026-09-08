@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "kind": "pre-write-pilot-integration-contract-failure",
+  "recordedAt": "2026-09-08T12:00:27.726Z",
+  "failures": [
+    {
+      "state": "CA",
+      "leaseId": "lease-wqp-ca-positive-pilot-20260908-r13-1",
+      "baseSha": "ede5df893e0727ab5eb7c5b6f0dee63aa0654fe1",
+      "expectedRunPath": "src/data/research/runs/20260908T115433Z__water-quality-portal__2b144c7e4fa0",
+      "exitCode": 1,
+      "error": "Source county does not resolve to declared county FIPS: shared validator treated the literal publisher county FIPS as a county name.",
+      "newRunFiles": 0,
+      "newCommits": 0,
+      "providerRequests": 0,
+      "proposal": "Narrowly resolve publisher FIPS for the registered WQP adapter; retain canonical source-row reconstruction and do not invent source county names."
+    },
+    {
+      "state": "KS",
+      "leaseId": "lease-wqp-ks-positive-pilot-20260908-r13-1",
+      "baseSha": "ede5df893e0727ab5eb7c5b6f0dee63aa0654fe1",
+      "expectedRunPath": "src/data/research/runs/20260908T115435Z__water-quality-portal__bf46b04cf8ef",
+      "exitCode": 1,
+      "error": "Source county does not resolve to declared county FIPS: shared validator treated the literal publisher county FIPS as a county name.",
+      "newRunFiles": 0,
+      "newCommits": 0,
+      "providerRequests": 0,
+      "elapsedSeconds": 4.9268548,
+      "observedPeakWorkingSetBytes": 301395968,
+      "proposal": "Narrowly resolve publisher FIPS for the registered WQP adapter; retain canonical source-row reconstruction and do not invent source county names."
+    }
+  ],
+  "sharedCorrection": "WQP adapter/version-gated countyFips resolution; all other sources retain existing county-name path.",
+  "orchestrationIntervention": "The initial archival helper incorrectly expected executionContract on a lease instead of its job; it stopped after closing CA, before creating a failure receipt. Resume checked lifecycle state and used the pinned expectedManifestPath. No attempt history or source bytes were changed.",
+  "retryRequired": true,
+  "newDeterminations": 0
+}

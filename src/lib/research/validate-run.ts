@@ -515,7 +515,11 @@ export function validateResearchRunInMemory(input: {
     }
     const sourceCounty = resolveCountyEquivalent({
       stateCode,
-      countyName: assertion.geography_match.source_county,
+      // WQP discloses an exact Station FIPS, not a county-name field.
+      // Its canonical retained-row reconstruction above verifies that literal source value.
+      ...(sourceId === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && receipt.adapter_version === WQP_VERSION
+        ? { countyFips: assertion.geography_match.source_county }
+        : { countyName: assertion.geography_match.source_county }),
       sourceId,
     });
     assert(
