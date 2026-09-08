@@ -1,0 +1,564 @@
+{
+  "record": {
+    "schemaVersion": 1,
+    "id": "tilletia-indica-al-officially-absent-precision-20260908",
+    "speciesId": "tilletia-indica",
+    "statementType": "officially-absent",
+    "sourceDocuments": [
+      {
+        "sourceId": "eppo-karnal-bunt-state-status",
+        "url": "https://gd.eppo.int/taxon/NEOVIN/distribution/US_al",
+        "artifactPath": "ops/national-research/inputs/karnal-bunt-state-status-20260908-r9/eppo-al-status.html.gz",
+        "artifactSha256": "c973c3e85a9af2f4d8c9becade79c56644863c5e1840a7425ee8adbe1715fb96",
+        "supportText": "Current pest situation evaluated by EPPO on the basis of information dated 1999: Absent, invalid record",
+        "supportTextSha256": "54955ccbd760e671762c26f54e95393fd0086553259e89ccd5f8e6ec1a87c782",
+        "publishedAt": null,
+        "modifiedAt": null,
+        "informationYear": 1999
+      },
+      {
+        "sourceId": "aphis-karnal-bunt-current",
+        "url": "https://www.aphis.usda.gov/plant-pests-diseases/karnal-bunt",
+        "artifactPath": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-current.html.gz",
+        "artifactSha256": "25d064bdfddb4432abcd058494eb975c0bc39837237d720e39d9a3215a9e0bff",
+        "supportText": "A successful quarantine and national survey program have confined Karnal bunt to portions of one State: Arizona.",
+        "supportTextSha256": "cd375c6821bcbddc5ead89fb7b271b98384f722f5aa774e8eb43e279c9a5622c",
+        "publishedAt": null,
+        "modifiedAt": "2026-06-09"
+      }
+    ],
+    "jurisdiction": {
+      "level": "state",
+      "id": "US-AL",
+      "stateCode": "AL",
+      "countyFips": [
+        "01001",
+        "01003",
+        "01005",
+        "01007",
+        "01009",
+        "01011",
+        "01013",
+        "01015",
+        "01017",
+        "01019",
+        "01021",
+        "01023",
+        "01025",
+        "01027",
+        "01029",
+        "01031",
+        "01033",
+        "01035",
+        "01037",
+        "01039",
+        "01041",
+        "01043",
+        "01045",
+        "01047",
+        "01049",
+        "01051",
+        "01053",
+        "01055",
+        "01057",
+        "01059",
+        "01061",
+        "01063",
+        "01065",
+        "01067",
+        "01069",
+        "01071",
+        "01073",
+        "01075",
+        "01077",
+        "01079",
+        "01081",
+        "01083",
+        "01085",
+        "01087",
+        "01089",
+        "01091",
+        "01093",
+        "01095",
+        "01097",
+        "01099",
+        "01101",
+        "01103",
+        "01105",
+        "01107",
+        "01109",
+        "01111",
+        "01113",
+        "01115",
+        "01117",
+        "01119",
+        "01121",
+        "01123",
+        "01125",
+        "01127",
+        "01129",
+        "01131",
+        "01133"
+      ],
+      "countyFipsSha256": "95991c4b7f7bd93a1e5172a54fca8f761e93f80a429e1abb48c4e1ff1883bd3d",
+      "exclusions": []
+    },
+    "effectiveAt": "2026-06-09",
+    "conflictCheckFrom": "1999-01-01",
+    "reaffirmedAt": "2026-06-09",
+    "validThrough": "2027-06-09",
+    "review": {
+      "gate": "agent-reviewed",
+      "status": "agent-reviewed",
+      "actorId": "MAIN",
+      "reviewedAt": "2026-09-08T06:20:40.733Z",
+      "methodVersion": "official-jurisdiction-agent-review-precision-v2",
+      "independentActorId": "eppo_al_review_r9",
+      "independentReview": {
+        "path": "ops/national-research/evaluations/karnal-bunt-al-independent-review-20260908-r9.json",
+        "sha256": "18d3fbe97cade57c3e57c66a04c406c1e7949c3059fb67e9d3de5bd4878c6464"
+      },
+      "reviewedAsOf": "2026-09-08",
+      "declarationSourceId": "eppo-karnal-bunt-state-status",
+      "corroborationSourceId": "aphis-karnal-bunt-current",
+      "authorityDateKind": "modified",
+      "expiryPolicy": "authority-date-plus-365-days-v1",
+      "declarationInformationYear": 1999,
+      "effectiveDateKind": "corroboration-authority-date",
+      "sourceConflictDisposition": "no-unresolved-current-conflict",
+      "presenceConflictPolicy": "all-presence"
+    },
+    "caveats": [
+      "The declaration date is unknown. EPPO supplies underlying information year 1999; no exact declaration or biological event day is inferred.",
+      "effectiveAt and reaffirmedAt are project eligibility/freshness anchors from separate APHIS page modification metadata, not a demonstrated statement-specific reaffirmation.",
+      "validThrough is a project review expiry 365 days after corroboration page metadata, not an authority promise or biological guarantee.",
+      "The APHIS page publication metadata is 2023-06-21T09:03:22-0400 and modification metadata is 2026-06-09T11:19:36-0400; neither dates the EPPO status statement.",
+      "EPPO status reason: Absent, invalid record. Preserve history and exact record correction lineage.",
+      "EPPO Alabama explicitly states Absent, invalid record as its evaluated situation and From NPPO.",
+      "EPPO Reporting Service 2000/010 concludes T. indica is not present in Alabama and attributes earlier reports to distinct T. walkeri. Preserve issue 01 of 2000 without invented publication day.",
+      "Mobile, Perry and Geneva historical reports have specific correction context. Do not automatically retract or remap unrelated older records. Invalid record is not eradication.",
+      "Year-only information remains year precision; no global table modification, retrieval, January 1, or corroborating source date substitution for source_record_date.",
+      "The old v1 adapter cannot issue these children. Admit and test separate precision-v2 with null source_record_date and truthful temporal_scope.",
+      "Exact state membership supports derived jurisdiction-status children, not independent county surveys. Quarantine geography, missing records, failed retrieval, and survey silence alone supply no absence.",
+      "Separate county-baseline and MAIN integration checks must block ANY accepted genuine T. indica positive regardless of date until specific adjudication. Invalid-record correction cannot clear unrelated pre-1999 presence.",
+      "Current APHIS confinement text supplies substantive corroboration; page metadata alone does not."
+    ]
+  },
+  "parentSha256": "fc05bf875fa1ff9918f68fe13e264177a301bffd10335e520f50369e98ba79e7",
+  "originalAcquisition": {
+    "name": "eppo-al-status",
+    "url": "https://gd.eppo.int/taxon/NEOVIN/distribution/US_al",
+    "finalUrl": "https://gd.eppo.int/taxon/NEOVIN/distribution/US_al",
+    "status": 200,
+    "retrievedAt": "2026-09-08T05:54:13.641Z",
+    "path": "ops/national-research/inputs/karnal-bunt-state-status-20260908-r9/eppo-al-status.html.gz",
+    "storedBytes": 4484,
+    "storedSha256": "c973c3e85a9af2f4d8c9becade79c56644863c5e1840a7425ee8adbe1715fb96",
+    "bytes": 14948,
+    "sha256": "2c2a83ae30962133df4cb4ff7f26f26042634dbc5d6455cb1f71718b184b3ef4"
+  },
+  "conflictChecks": [
+    {
+      "pairKey": "01001:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01001.json",
+      "sha256": "0b8dd39ed68b406d8b543249157d40d4c8b40b9a8cc077a524314acc105076ed",
+      "conflict": false
+    },
+    {
+      "pairKey": "01003:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01003.json",
+      "sha256": "51bd9a165468c228ee840978631c90fbe05e3a6ddc4ac4ba176e6cc1c695a679",
+      "conflict": false
+    },
+    {
+      "pairKey": "01005:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01005.json",
+      "sha256": "16511ee1ddcc46bd44e3524966fc383e388283052627c4795e31d3f2d6bc0e04",
+      "conflict": false
+    },
+    {
+      "pairKey": "01007:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01007.json",
+      "sha256": "58de446486d5bb565711c70a69e194405adf8bfb88cadebe2c1591ae625f3021",
+      "conflict": false
+    },
+    {
+      "pairKey": "01009:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01009.json",
+      "sha256": "cb7e7296de8693a7d7de82926a9600acb3e815953f99412755c456db503690cf",
+      "conflict": false
+    },
+    {
+      "pairKey": "01011:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01011.json",
+      "sha256": "0cbcb7c40c15a2e12a565c5dcbea71f6085e248cb5b3455f00477eeecaa914da",
+      "conflict": false
+    },
+    {
+      "pairKey": "01013:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01013.json",
+      "sha256": "daa75588d892330fa2ff9ec5a2ec23aeffe587aca7f7d99acaea82e96cac3d18",
+      "conflict": false
+    },
+    {
+      "pairKey": "01015:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01015.json",
+      "sha256": "8c452954c81e26c453d0df16de0c7ff64e7bb41a91f9ab2f058244ebfa09dd6f",
+      "conflict": false
+    },
+    {
+      "pairKey": "01017:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01017.json",
+      "sha256": "cccef8850fca4284ac49255a49b359a77e5f5eab7ac57e712f91cc29812c5d9f",
+      "conflict": false
+    },
+    {
+      "pairKey": "01019:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01019.json",
+      "sha256": "ff1ede8ead9ae595a175b5dbd4645bf16a211f4dc3049a418bac864e8ba6812c",
+      "conflict": false
+    },
+    {
+      "pairKey": "01021:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01021.json",
+      "sha256": "b549d9c74c874c3a04d09debb82f64e2df916015374ac8d13f25a6a10ec9d98b",
+      "conflict": false
+    },
+    {
+      "pairKey": "01023:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01023.json",
+      "sha256": "25f0bd74f0442b21b81bb642bcf35ecc006af0898353260722084b95ea60cd1b",
+      "conflict": false
+    },
+    {
+      "pairKey": "01025:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01025.json",
+      "sha256": "2ef074d7f728b86c742fba561b3ae137c8ffd26326f62ff4f0773a6dd39eeaf8",
+      "conflict": false
+    },
+    {
+      "pairKey": "01027:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01027.json",
+      "sha256": "9f4c6d511e4a617b74411125c66b03846bfd609e1c833dead4a616e7a747270e",
+      "conflict": false
+    },
+    {
+      "pairKey": "01029:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01029.json",
+      "sha256": "4c7346aeab6b1c02fac9247a805480218b69e57afa7cd1f6849bf0b4da95db33",
+      "conflict": false
+    },
+    {
+      "pairKey": "01031:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01031.json",
+      "sha256": "c0c5c87d82b16b1cdf9067c39af9afad62e7d7ba1118caa2e32b4a3496a4e350",
+      "conflict": false
+    },
+    {
+      "pairKey": "01033:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01033.json",
+      "sha256": "340023fdaf76a233ce20f2347caece7e93d8db022cff49fc8b80c9b291ff3f22",
+      "conflict": false
+    },
+    {
+      "pairKey": "01035:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01035.json",
+      "sha256": "2f8bdc7d405411a27962e9f6ccea953df43b541265670a0b7dbd7498cb6cbc3d",
+      "conflict": false
+    },
+    {
+      "pairKey": "01037:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01037.json",
+      "sha256": "c0dd48e6cc78e53e252691df3d9ef1afef011955af3093464d30cd00b2482ea3",
+      "conflict": false
+    },
+    {
+      "pairKey": "01039:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01039.json",
+      "sha256": "77a5696ce66a144ba99c4addef4983f694c8bba9d771da24582dc82707daf1cb",
+      "conflict": false
+    },
+    {
+      "pairKey": "01041:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01041.json",
+      "sha256": "a7c04acbb2aa4ec75fb86a62df2c769d23a6fcb424d3afed56e0ee454a54311d",
+      "conflict": false
+    },
+    {
+      "pairKey": "01043:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01043.json",
+      "sha256": "028d4604edd14c7b55a130b5877772fde0634c3dc9b1d2ae69fffec2535e284a",
+      "conflict": false
+    },
+    {
+      "pairKey": "01045:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01045.json",
+      "sha256": "a667371f39c1922da7884a99f8eab55437928c52e45e1724d46714da03a21655",
+      "conflict": false
+    },
+    {
+      "pairKey": "01047:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01047.json",
+      "sha256": "972b3a1476a67afe2cca075e9a546f477cc941575fd096093fd45866c5e519d8",
+      "conflict": false
+    },
+    {
+      "pairKey": "01049:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01049.json",
+      "sha256": "3149132d8ca36dceceaec2fa0a13942e29d2a064c6c65bf8791f2ebffc64613a",
+      "conflict": false
+    },
+    {
+      "pairKey": "01051:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01051.json",
+      "sha256": "f75be9511715719855eb71e3b8cf170e535b6f27c40dfd9179daabd338e7f9f3",
+      "conflict": false
+    },
+    {
+      "pairKey": "01053:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01053.json",
+      "sha256": "3292b8c7de5535b2a095fa825e54f2bf7f2f80c4cef8a3bdf0f82387adae5634",
+      "conflict": false
+    },
+    {
+      "pairKey": "01055:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01055.json",
+      "sha256": "fb27b942681452ed0ce818f77664e8cb38085ca2996efcb7a8f029dc927e0330",
+      "conflict": false
+    },
+    {
+      "pairKey": "01057:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01057.json",
+      "sha256": "457b50387810af0e981a2a112eaa4728d860a19ad3f70b0652bde6ba3837c000",
+      "conflict": false
+    },
+    {
+      "pairKey": "01059:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01059.json",
+      "sha256": "6860c9ec96b2a5a1c743b29ee92ccdb6833107e381c20bbef07322890bffb4ac",
+      "conflict": false
+    },
+    {
+      "pairKey": "01061:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01061.json",
+      "sha256": "10294402222b58709c2b90827508be9bdbbf490f00e3de63bb6049d71b918024",
+      "conflict": false
+    },
+    {
+      "pairKey": "01063:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01063.json",
+      "sha256": "a692bbd67af027d01e8b9207a318104c4a4996732adc85731b766cee3a822815",
+      "conflict": false
+    },
+    {
+      "pairKey": "01065:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01065.json",
+      "sha256": "633e6d56341d6b5fe99dfb7245617ad0a9bd0b2cf8cc0e9cd0e430738b0513ab",
+      "conflict": false
+    },
+    {
+      "pairKey": "01067:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01067.json",
+      "sha256": "4c05f28820830d071bc2acfbc251b85099d36e6689b489b3d8f9b25ab80b7138",
+      "conflict": false
+    },
+    {
+      "pairKey": "01069:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01069.json",
+      "sha256": "e7b30f869be2202d9bd74fecc668bb4d416efd7de66c99cc4adb298842f8f33d",
+      "conflict": false
+    },
+    {
+      "pairKey": "01071:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01071.json",
+      "sha256": "c664cf928188795d5e95310644c8e112cab81ace6e47d24b85b8a39d586a1f5b",
+      "conflict": false
+    },
+    {
+      "pairKey": "01073:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01073.json",
+      "sha256": "c4a979e6cb040670f72f12d70254d25f6a7b65d6fdddbdaeb98170b6a1606161",
+      "conflict": false
+    },
+    {
+      "pairKey": "01075:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01075.json",
+      "sha256": "855244e8f04945e6b66889aa734dbc077e0009181a9f2382a8dfa78fd8bfeec3",
+      "conflict": false
+    },
+    {
+      "pairKey": "01077:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01077.json",
+      "sha256": "1fa1c63d964d97479f69ef91bfd68d78d173a08a586ea877438266efa6cde8d6",
+      "conflict": false
+    },
+    {
+      "pairKey": "01079:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01079.json",
+      "sha256": "2966e3e0ab6eba0f70e981a32293316eb884619db82f79fb3a5c0262b4856c1d",
+      "conflict": false
+    },
+    {
+      "pairKey": "01081:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01081.json",
+      "sha256": "ed5db9a86be46490dd31afc6b909e9b5bb1ef976d245910b0f82cebfc79af6f0",
+      "conflict": false
+    },
+    {
+      "pairKey": "01083:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01083.json",
+      "sha256": "70a821712e0aae358d81606b2c90954b6279e473cf362beeb4b3b24306839334",
+      "conflict": false
+    },
+    {
+      "pairKey": "01085:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01085.json",
+      "sha256": "d3f2b1daa4a05b9b840db7345b613a120c9c54f5e7b65704c8791a7e31ade2fb",
+      "conflict": false
+    },
+    {
+      "pairKey": "01087:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01087.json",
+      "sha256": "b62883228f287d7e2237d229d5dc45c03c90f08747a111932171bcf4cf6ebac3",
+      "conflict": false
+    },
+    {
+      "pairKey": "01089:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01089.json",
+      "sha256": "213a4cf85a23a281b4fe5f28ca14b58e32bbebf1f63dd3772b7eaccb913885f7",
+      "conflict": false
+    },
+    {
+      "pairKey": "01091:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01091.json",
+      "sha256": "17dd006626a146f5297ec656c53610f33a1cfd6f39f9f3e04e702c8ed09750fe",
+      "conflict": false
+    },
+    {
+      "pairKey": "01093:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01093.json",
+      "sha256": "16bdb8d3d9eb9e0c7adbf313affb54e90fb91606fb84504e9203423c97545946",
+      "conflict": false
+    },
+    {
+      "pairKey": "01095:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01095.json",
+      "sha256": "e71ebcb7f2ce365b43a2fc446edca9fc06df9e44f18846cc448dca74469349a7",
+      "conflict": false
+    },
+    {
+      "pairKey": "01097:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01097.json",
+      "sha256": "6b64e37601d31f5ba185c8651d6cad3c4fccbaab415fe6419e960314181297d5",
+      "conflict": false
+    },
+    {
+      "pairKey": "01099:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01099.json",
+      "sha256": "43988fb8725f76dcd23cf3dca283705a5f688fd9ea77b52d195859c99f5f020a",
+      "conflict": false
+    },
+    {
+      "pairKey": "01101:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01101.json",
+      "sha256": "01066c996d781bcd16f95e952aaa3a7347a2295e686b08b6c161a6da370b9daa",
+      "conflict": false
+    },
+    {
+      "pairKey": "01103:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01103.json",
+      "sha256": "314b0d448fa924a7513ed2c3a859bf1c137f9e132c1b0529414ad89bdba082e7",
+      "conflict": false
+    },
+    {
+      "pairKey": "01105:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01105.json",
+      "sha256": "224a5741f0b4e556bf08b5207b6dd0bb30ecdc2ed66c85dd54787e216bd57b20",
+      "conflict": false
+    },
+    {
+      "pairKey": "01107:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01107.json",
+      "sha256": "a9651b7506dd4d1884d3a2c9f35fadf762de742d6dc64c734c10c7bfd39acd21",
+      "conflict": false
+    },
+    {
+      "pairKey": "01109:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01109.json",
+      "sha256": "0ef446455d989670044301518483612ea154cf731e26b38c4e5e502a15106929",
+      "conflict": false
+    },
+    {
+      "pairKey": "01111:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01111.json",
+      "sha256": "41ddb02625bebd8b30f9afe36983bae0a83500e0933e04dd1a468ac748ba00c5",
+      "conflict": false
+    },
+    {
+      "pairKey": "01113:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01113.json",
+      "sha256": "3fd505e68bede25ff6db83970a353183f3f117456082124065519542f862b3ae",
+      "conflict": false
+    },
+    {
+      "pairKey": "01115:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01115.json",
+      "sha256": "46c36851cffc569cf0eddfa3b41c9b13a3cdd26a2e1ffc90332ec7f957106644",
+      "conflict": false
+    },
+    {
+      "pairKey": "01117:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01117.json",
+      "sha256": "d21feeb857c714147ef2cf63a3f1362e11c313e4815b38758e00f1e9e4b18f9b",
+      "conflict": false
+    },
+    {
+      "pairKey": "01119:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01119.json",
+      "sha256": "6eaf3bea24486c719f50e1003f2823a5924c64086c7dc3728a84db6b0b80cd82",
+      "conflict": false
+    },
+    {
+      "pairKey": "01121:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01121.json",
+      "sha256": "eb204fc4274148461e890f5156d3778897cd738719c2df5ad16fb05fe4fbd1be",
+      "conflict": false
+    },
+    {
+      "pairKey": "01123:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01123.json",
+      "sha256": "9f4e1fc0447f9c9b67fb9464b955b8262d22b9391438c0003fbc5b49b890a8c8",
+      "conflict": false
+    },
+    {
+      "pairKey": "01125:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01125.json",
+      "sha256": "ee8b715a9aafda9fdfb9594dc66384dcb09eb6c5e8f673e5db231dbcd10b5159",
+      "conflict": false
+    },
+    {
+      "pairKey": "01127:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01127.json",
+      "sha256": "33cc4ba0c791112f37fb8cc498c3b278f8b33d0a6840f6947b9d5909ffc249f8",
+      "conflict": false
+    },
+    {
+      "pairKey": "01129:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01129.json",
+      "sha256": "2ddeea066c33d73f24c3b45459744714d5936fcda7b527a52898f7798bb95fc9",
+      "conflict": false
+    },
+    {
+      "pairKey": "01131:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01131.json",
+      "sha256": "2dcaa459576973ceffb9bd17754aa10064b4ec028dd5e83c3b0149040c08785b",
+      "conflict": false
+    },
+    {
+      "pairKey": "01133:tilletia-indica",
+      "projectionPath": "public/generated/research/AL/counties/01133.json",
+      "sha256": "c8d8e7535f009c478007fd4edbbb24db1d6373d0f79a7d068bab316dc1e077af",
+      "conflict": false
+    }
+  ]
+}

@@ -33189,6 +33189,63 @@
         "sha256": "f699946cdb5e0c6ff06eb7c7f3b0916f468ab5394e83417d7a3164b676aab6ad",
         "bytes": 4843
       }
+    },
+    {
+      "queueId": "queue-lease-karnal-bunt-al-precision-pilot-20260908-r9-1",
+      "jobId": "karnal-bunt-al-precision-pilot-20260908-r9",
+      "leaseId": "lease-karnal-bunt-al-precision-pilot-20260908-r9-1",
+      "decision": "accepted",
+      "submittedAt": "2026-09-08T06:58:30.499Z",
+      "manifestPath": "manifests/karnal-bunt-al-precision-pilot-20260908-r9__lease-karnal-bunt-al-precision-pilot-20260908-r9-1.json",
+      "manifestHash": "78f36741ae58f44d6c8800ebc7a80094e3a91f25ae360756f1ae6586d6543dc8",
+      "manifestBytes": 13346,
+      "workerCommit": "1eef3292b5266133fbb620071aecb6fc4db237ff",
+      "workerBranchHead": "1e2af94f3420627ca830150e3ab4dfb6aca5d88e",
+      "reviewedAt": "2026-09-08T06:58:37.127Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently verified null source dates, exact reviewed state scope, explicit source support, truthful independent agent reviews, 67 unchanged current county contradiction baselines, retained descriptors, frozen hashes, exact two-commit history and canonical immutable validation. One MAIN sparse dependency materialization was required, preserving pinned bytes. Process telemetry limitations remain explicitly unmeasured where reported; host resource monitoring is separate. No projected gains are claimed before compilation.",
+      "changedPaths": [
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/artifacts/reviewed-parent-and-conflict-baseline.json",
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/assertions.ndjson",
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/manifest.json",
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/outcomes.ndjson",
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/receipt.json",
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/rejections.ndjson",
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/reviews.ndjson",
+        "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "MAIN independent source semantics, null source dates and 67 unchanged current contradiction baseline hashes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r9-precision\\al\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7 --source-verification C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7\\source-verification.json --run-id 20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7 --source-id eppo-karnal-bunt-state-status --state-code AL --pair-keys-stdin true --code-commit 855c38e22f9795f6ab2f29d2dcd1d1f34da5bf56 --worker-task-id karnal_bunt_al_pilot_r9",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-karnal-bunt-al-precision-pilot-20260908-r9-1.json",
+        "sha256": "05dda96c4ede8951527c3b93964f2337b0c0fca18cecc8c5a66c1753b5aa4f5f",
+        "bytes": 4127
+      }
     }
   ]
 }
