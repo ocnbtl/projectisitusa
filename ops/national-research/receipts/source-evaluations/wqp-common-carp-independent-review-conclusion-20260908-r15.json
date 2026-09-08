@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "kind": "common-carp-independent-review-conclusion",
+  "recordedAt": "2026-09-08T14:48:09.158Z",
+  "sourceReviews": 2,
+  "leasedScope": 160,
+  "supportedCandidatePairs": 152,
+  "heldPairs": 8,
+  "newDeterminations": 0,
+  "methodRegistered": false,
+  "checks": [
+    {
+      "name": "in-before-close",
+      "passed": true
+    },
+    {
+      "name": "in-review-close",
+      "passed": true
+    },
+    {
+      "name": "in-after-close",
+      "passed": true
+    },
+    {
+      "name": "ok-before-close",
+      "passed": true
+    },
+    {
+      "name": "ok-review-close",
+      "passed": true
+    },
+    {
+      "name": "ok-after-close",
+      "passed": true
+    }
+  ],
+  "closedLeases": [
+    {
+      "leaseId": "lease-wqp-common-carp-in-source-review-20260908-r15-1",
+      "jobId": "wqp-common-carp-in-source-review-20260908-r15",
+      "state": "cancelled",
+      "review": {
+        "path": "ops/national-research/evaluations/wqp-common-carp-in-independent-review-20260908-r15.json",
+        "bytes": 235390,
+        "sha256": "a9004e9c180362c1ef9f92e9a00a654d29530d47f0b65a09bb16fdad837dc0d0",
+        "pairs": 87,
+        "heldPairs": 0
+      },
+      "meaning": "Proposal-only source review returned and retained by MAIN; no worker manifest, run, event, commit or integration queue submission was authorized."
+    },
+    {
+      "leaseId": "lease-wqp-common-carp-ok-source-review-20260908-r15-1",
+      "jobId": "wqp-common-carp-ok-source-review-20260908-r15",
+      "state": "cancelled",
+      "review": {
+        "path": "ops/national-research/evaluations/wqp-common-carp-ok-independent-review-20260908-r15.json",
+        "bytes": 175460,
+        "sha256": "6b1a6ff62a6f5472243270cc24ec1d9804c51aa72f1172a35b7c8f2701714945",
+        "pairs": 65,
+        "heldPairs": 8
+      },
+      "meaning": "Proposal-only source review returned and retained by MAIN; no worker manifest, run, event, commit or integration queue submission was authorized."
+    }
+  ],
+  "originalReportArchive": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-common-carp-independent-reviews-20260908-r15.json.gz",
+    "bytes": 44718,
+    "sha256": "df632d458c10dcead9e42cf5f274b02dd96a5e3acd958bb784ef2b7d8ebd444f"
+  },
+  "mainVerification": "All 152 original Result and Station raw hashes, physical end lines, dates, source taxon, fields, organization/site keys, positive values and active county joins independently checked. Indiana one-based records were explicitly converted to zero-based indexes; original reports remain unchanged.",
+  "statusCorrection": "Oklahoma has292Final and370Provisional rows, zeroAccepted. The lease focus mentioned assessing Accepted as a possibility; source verification disproved its occurrence here. Nothing is relabeled or automatically finalized.",
+  "holds": [
+    {
+      "pair": "40005:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    },
+    {
+      "pair": "40013:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    },
+    {
+      "pair": "40023:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    },
+    {
+      "pair": "40027:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    },
+    {
+      "pair": "40029:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    },
+    {
+      "pair": "40041:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    },
+    {
+      "pair": "40061:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    },
+    {
+      "pair": "40147:cyprinus-carpio",
+      "reason": "Only Provisional source records; no Final qualifying witness. Future source-specific QA and geography review or independent exact-site occurrence evidence is needed.",
+      "negativeDetermination": false
+    }
+  ],
+  "methodNotes": [
+    "All selected Indiana witnesses are Final Actual Group Summary Count/count or Individual Weight/kg; all selected Oklahoma witnesses are Final Actual Population Census Count/count.",
+    "Two Indiana Jasper rows have exact-date field/comment conflicts; a consistent independent activity supports the pair. Preserve row-level holds by raw hash.",
+    "Laboratory naming can describe identification or processing after wild field capture; selected witnesses avoid this ambiguity, while exact proposed field-collection exceptions can be reviewed separately.",
+    "Oklahoma McCurtain NARS witness uses publisher FIPS40089 with a126m coarse Red River boundary discrepancy; retain explicit caveat, never claim precise water jurisdiction or infer a reassignment.",
+    "Class counts, duplicate measurements, unclear individual identity and comments about other species do not become invented fish totals or blanket exclusions."
+  ],
+  "nextAction": "MAIN implements a separately versioned, reusable retained fish method contract with pinned input profiles, reviewed exact pairs, source-supported forms and hash-addressed holds, preserving historical adapters. Run two real state pilots and canonical source-row auditing before any count of new determinations."
+}
