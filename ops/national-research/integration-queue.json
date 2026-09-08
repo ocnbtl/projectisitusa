@@ -33297,7 +33297,7 @@
       "queueId": "queue-lease-karnal-bunt-tx-precision-pilot-20260908-r9-1",
       "jobId": "karnal-bunt-tx-precision-pilot-20260908-r9",
       "leaseId": "lease-karnal-bunt-tx-precision-pilot-20260908-r9-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-09-08T06:58:47.876Z",
       "manifestPath": "manifests/karnal-bunt-tx-precision-pilot-20260908-r9__lease-karnal-bunt-tx-precision-pilot-20260908-r9-1.json",
       "manifestHash": "b2c149a3bc68f732ff39b02ff7a51ab23906c88ff5dc84d4cd50561262f0549c",
@@ -33348,6 +33348,52 @@
         "path": "receipts/reviews/queue-lease-karnal-bunt-tx-precision-pilot-20260908-r9-1.json",
         "sha256": "010132edc8b688fda73cc6f9b23e31dec66d8a0973415c08a60a9bce69e5b7e6",
         "bytes": 4129
+      },
+      "integratedAt": "2026-09-08T06:59:11.008Z",
+      "integrator": "MAIN",
+      "integrationCommit": "6f3a31e20eb7c0b00dd7c85744b229b2c67f8052",
+      "integrationChecks": [
+        {
+          "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "MAIN independent source semantics, null source dates and 254 unchanged current contradiction baseline hashes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tx-precision-pilot-20260908-r9\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r9-precision\\tx\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tx-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063446Z__eppo-karnal-bunt-state-status__bcffb21382ce\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tx-precision-pilot-20260908-r9",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tx-precision-pilot-20260908-r9 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tx-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063446Z__eppo-karnal-bunt-state-status__bcffb21382ce --source-verification C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tx-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063446Z__eppo-karnal-bunt-state-status__bcffb21382ce\\source-verification.json --run-id 20260908T063446Z__eppo-karnal-bunt-state-status__bcffb21382ce --source-id eppo-karnal-bunt-state-status --state-code TX --pair-keys-stdin true --code-commit 855c38e22f9795f6ab2f29d2dcd1d1f34da5bf56 --worker-task-id karnal_bunt_tx_pilot_r9",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T063446Z__eppo-karnal-bunt-state-status__bcffb21382ce --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T063446Z__eppo-karnal-bunt-state-status__bcffb21382ce\\source-verification.json --run-id 20260908T063446Z__eppo-karnal-bunt-state-status__bcffb21382ce --source-id eppo-karnal-bunt-state-status --state-code TX --pair-keys-stdin true --code-commit 855c38e22f9795f6ab2f29d2dcd1d1f34da5bf56 --worker-task-id karnal_bunt_tx_pilot_r9",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN preserved original worker commit ancestry and integrated the exact reviewed run bytes without conflict. Fresh canonical immutable validation passed. Parent precision, original retrieval and explicit historical-conflict policy are preserved. Projected determination changes remain unclaimed until compilation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-karnal-bunt-tx-precision-pilot-20260908-r9-1.json",
+        "sha256": "db8cfbef8b14cd6b3f7ed6509f13dd1981e4dea47d84f7951add0a5b7062dd0c",
+        "bytes": 4844
       }
     }
   ]
