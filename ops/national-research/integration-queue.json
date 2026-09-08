@@ -33400,7 +33400,7 @@
       "queueId": "queue-lease-cdfa-ca-occurrence-pilot-20260908-r11-1",
       "jobId": "cdfa-ca-occurrence-pilot-20260908-r11",
       "leaseId": "lease-cdfa-ca-occurrence-pilot-20260908-r11-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-09-08T08:59:25.658Z",
       "manifestPath": "manifests/cdfa-ca-occurrence-pilot-20260908-r11__lease-cdfa-ca-occurrence-pilot-20260908-r11-1.json",
       "manifestHash": "40ef5caef2fdd7ac80c6c040e2abed11e34bf03a0c4ebf4e9c1df1c12ada9705",
@@ -33461,6 +33461,57 @@
         "path": "receipts/reviews/queue-lease-cdfa-ca-occurrence-pilot-20260908-r11-1.json",
         "sha256": "ff82c2bd91e407b6ce10fe6c5a263a6bbf2de93cc8ed93b8214f3bc255269359",
         "bytes": 4449
+      },
+      "integratedAt": "2026-09-08T09:00:26.139Z",
+      "integrator": "MAIN",
+      "integrationCommit": "9eae561da9e9c1a78fc4949cf2d645df78fbaa8d",
+      "integrationChecks": [
+        {
+          "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "MAIN independent exact source passages, original source/date precision and two unchanged scoped baseline hashes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r11-official-occurrence\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408 --source-verification C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408\\source-verification.json --run-id 20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408 --source-id cdfa-confirmed-pest-occurrences --state-code CA --pair-keys-stdin true --code-commit 9a7160ca494667a9caa648eb18628b76665e4fc7 --worker-task-id cdfa_ca_occurrence_pilot_r11",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Actual pilot canonical tamper tests",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "npm run check:research-integrity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408 --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408\\source-verification.json --run-id 20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408 --source-id cdfa-confirmed-pest-occurrences --state-code CA --pair-keys-stdin true --code-commit 9a7160ca494667a9caa648eb18628b76665e4fc7 --worker-task-id cdfa_ca_occurrence_pilot_r11",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN preserved original worker ancestry and exact reviewed immutable bytes. Fresh canonical run validation passed; national compilation and exact pair reconciliation follow separately.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-cdfa-ca-occurrence-pilot-20260908-r11-1.json",
+        "sha256": "d10dc053b5979049cb2bc5e184199741966a4c6c4f8652e0669cbc89f6c417c5",
+        "bytes": 4814
       }
     }
   ]
