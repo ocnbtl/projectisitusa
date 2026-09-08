@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-field-positive-national-reconciliation",
+  "recordedAt": "2026-09-08T12:39:35.480Z",
+  "sourceCommit": "bd92b35a1a67f307317f0ec5ab429e7399d68570",
+  "baselineCommit": "f088acf04ff9bea0a01a9214a3b9168218269346",
+  "asOf": "2026-09-08",
+  "jurisdictionsVerified": 51,
+  "jurisdictionsWithNewEvidence": 20,
+  "counties": 3144,
+  "catalogSpecies": 2504,
+  "denominator": 7872576,
+  "before": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 314741,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6246975,
+    "explicitOutcomePairCount": 1581247,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462175,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432045,
+    "rejectionRecordCount": 65855,
+    "researchRunCount": 2107
+  },
+  "after": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 314879,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306768,
+    "notResearched": 6246975,
+    "explicitOutcomePairCount": 1581247,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462313,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432183,
+    "rejectionRecordCount": 65920,
+    "researchRunCount": 2127
+  },
+  "delta": {
+    "countyCount": 0,
+    "totalPairs": 0,
+    "resolvablePairCount": 0,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 138,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": -138,
+    "notResearched": 0,
+    "explicitOutcomePairCount": 0,
+    "conflictCount": 0,
+    "evidenceRecordCount": 138,
+    "bootstrapEvidenceRecordCount": 0,
+    "runEvidenceRecordCount": 138,
+    "rejectionRecordCount": 65,
+    "researchRunCount": 20
+  },
+  "determinationCount": 318597,
+  "netUniqueDeterminations": 138,
+  "priorStatus": "researched-unresolved",
+  "countyFilesCompared": 296,
+  "removedPairs": 0,
+  "unexpectedExistingPairChanges": 0,
+  "derivedStateApplicabilityOnlyChanges": 165,
+  "applicabilityExplanation": "Accepted reviewed county presence establishes state-species applicability. Exactly165other rows changed only unknown to applicable; no other fields changed and these are not determinations.",
+  "addedExplicitNotResearchedRows": 0,
+  "heldPairsUnchanged": [
+    "18149:dreissena-polymorpha",
+    "20167:dreissena-polymorpha",
+    "36123:dreissena-polymorpha",
+    "40011:dreissena-polymorpha"
+  ],
+  "newImmutableRuns": 20,
+  "groupedRejectionRecords": 65,
+  "sourceReplayRequests": 0,
+  "mainSourceAndContextGets": 13,
+  "independentWorkerBrowserOperations": {
+    "CA": 10,
+    "KS": 12,
+    "qualification": "Browser operations are not measured HTTP requests; KS includes one failed direct EPA open."
+  },
+  "workerExecutionAttempts": 6,
+  "acceptedWorkerExecutionAttempts": 0,
+  "sharedMethodCorrections": 3,
+  "executionPolicy": "Two independent source reviews retained. Three bounded execution attempts per pilot found two pre-write contract gaps and one ancillary citation error. Failed attempts preserved; MAIN completed20corrected sequential runs after exhaustive independent row/line audit. No worker results were silently relabeled as successful.",
+  "checks": [
+    {
+      "name": "source-coverage-index",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --write",
+      "startedAt": "2026-09-08T12:28:15.925Z",
+      "finishedAt": "2026-09-08T12:28:22.034Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-source-coverage-index.log"
+    },
+    {
+      "name": "verify-all",
+      "command": "--import tsx scripts/verify-all-state-research.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T12:28:22.035Z",
+      "finishedAt": "2026-09-08T12:35:03.710Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-verify-all.log"
+    },
+    {
+      "name": "state-projections",
+      "command": "--import tsx scripts/check-state-research-projections.ts",
+      "startedAt": "2026-09-08T12:35:03.711Z",
+      "finishedAt": "2026-09-08T12:36:43.714Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-state-projections.log"
+    },
+    {
+      "name": "data-integrity",
+      "command": "--import tsx scripts/check-data-integrity.ts",
+      "startedAt": "2026-09-08T12:36:43.715Z",
+      "finishedAt": "2026-09-08T12:36:44.122Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-data-integrity.log"
+    },
+    {
+      "name": "national-config",
+      "command": "--import tsx scripts/test-national-research-compiler.ts",
+      "startedAt": "2026-09-08T12:36:44.123Z",
+      "finishedAt": "2026-09-08T12:36:44.346Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-national-config.log"
+    },
+    {
+      "name": "coverage-check",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --check",
+      "startedAt": "2026-09-08T12:36:44.347Z",
+      "finishedAt": "2026-09-08T12:36:50.171Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-coverage-check.log"
+    },
+    {
+      "name": "question-projection",
+      "command": "--import tsx scripts/check-question-assessment-projection.ts",
+      "startedAt": "2026-09-08T12:36:50.172Z",
+      "finishedAt": "2026-09-08T12:36:51.752Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-question-projection.log"
+    },
+    {
+      "name": "orchestration",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs validate --root ops/national-research",
+      "startedAt": "2026-09-08T12:36:51.753Z",
+      "finishedAt": "2026-09-08T12:36:52.420Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-orchestration.log"
+    },
+    {
+      "name": "operations-dashboard",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs dashboard --root ops/national-research --as-of 2026-09-08T12:28:15.924Z",
+      "startedAt": "2026-09-08T12:36:52.420Z",
+      "finishedAt": "2026-09-08T12:36:53.113Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-operations-dashboard.log"
+    },
+    {
+      "name": "readiness-dashboard",
+      "command": "--import tsx scripts/build-national-readiness-dashboard.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T12:36:53.114Z",
+      "finishedAt": "2026-09-08T12:36:54.050Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-readiness-dashboard.log"
+    }
+  ],
+  "fullResearchIntegritySuite": {
+    "status": "pending",
+    "qualification": "Runs after these national checks; its final result is recorded separately in the publication checkpoint."
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-field-positive-national-validation-20260908-r13.json.gz",
+    "bytes": 33107,
+    "sha256": "1ec4e2eeb0e5840a66babfe3a2bc7435167c13d7dcf5d30739bfc362bff30984"
+  },
+  "researchPublication": {
+    "uploaded": false,
+    "promoted": false,
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z"
+  },
+  "limitations": [
+    "Historical sampled occurrence does not prove current persistence, establishment or countywide prevalence.",
+    "Four fine-zooplankton method holds remain unresolved. Rejected, zero or unreviewed rows create no absence or non-detection.",
+    "Original acquisition timestamps, collection dates, source attribution and raw byte identities remain intact.",
+    "Research determination coverage and full-protocol completion remain separate."
+  ]
+}
