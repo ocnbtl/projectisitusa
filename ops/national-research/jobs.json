@@ -498117,6 +498117,238 @@
       "priority": 100,
       "state": "completed",
       "currentLeaseId": "lease-cdfa-ca-occurrence-pilot-20260908-r11-1"
+    },
+    {
+      "jobId": "honey-hi-source-review-20260908-r12",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "HI"
+        ],
+        "sourceFamilies": [
+          "aphis-honey-bee"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "varroa-destructor"
+        ],
+        "pairs": [
+          "15001:varroa-destructor",
+          "15003:varroa-destructor",
+          "15007:varroa-destructor",
+          "15009:varroa-destructor"
+        ]
+      },
+      "scopeClaims": [
+        "county/15001/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/15003/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/15007/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/15009/source/aphis-honey-bee/taxon/varroa-destructor"
+      ],
+      "branch": "codex/honey-hi-source-review-20260908-r12",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\honey-hi-source-review-20260908-r12",
+      "baseSha": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "expectedReceiptCodeCommit": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "permittedPaths": [
+        "src/data/research/worker-results/honey-hi-source-review-20260908-r12/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": false,
+        "maximumPublicReadRequests": 12,
+        "inputDirectory": "ops/national-research/inputs/honey-bee-positive-review-20260908-r12",
+        "retainedDataRun": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70",
+        "focus": "Independently evaluate the positive Varroa metric in the four exact Hawaii counties against primary agency survey and distribution context. Examine rare/outlying positive rows and whether location, taxon, dates, migratory or managed colonies, or explicit competing source evidence require a hold. Decide supported claims without a predetermined answer.",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Return independent findings in the agent final response: original/extraction/CSV hashes, row and page locators, taxonomy, geography, dates, context, reproduction terms, and explicit recommendation. No files, commits, source acquisition, immutable runs, events, projections, or provider writes. Up to 12 bounded public web reads for primary context are allowed; report URLs and counts."
+      },
+      "expiresAt": "2026-09-08T10:23:43.701Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen lease-bound preflight and verify retained source hashes.",
+        "Review exact leased pair records and full relevant source context independently; preserve contradictory evidence.",
+        "Return supported claims with caveats or precise holds, without asserting any new compiled determination or evidence-run completion."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-honey-hi-source-review-20260908-r12-1"
+    },
+    {
+      "jobId": "honey-ny-source-review-20260908-r12",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "NY"
+        ],
+        "sourceFamilies": [
+          "aphis-honey-bee"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "varroa-destructor"
+        ],
+        "pairs": [
+          "36003:varroa-destructor",
+          "36009:varroa-destructor"
+        ]
+      },
+      "scopeClaims": [
+        "county/36003/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/36009/source/aphis-honey-bee/taxon/varroa-destructor"
+      ],
+      "branch": "codex/honey-ny-source-review-20260908-r12",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\honey-ny-source-review-20260908-r12",
+      "baseSha": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "expectedReceiptCodeCommit": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "permittedPaths": [
+        "src/data/research/worker-results/honey-ny-source-review-20260908-r12/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": false,
+        "maximumPublicReadRequests": 12,
+        "inputDirectory": "ops/national-research/inputs/honey-bee-positive-review-20260908-r12",
+        "retainedDataRun": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70",
+        "focus": "Independently evaluate positive county occurrence evidence for the exact Allegany and Cattaraugus pairs: species mapping, original month precision, composite managed apiary sampling semantics, source identity, reproduction terms, exact named county, and retained row counts. Determine what the source supports and which caveats or blockers apply.",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Return independent findings in the agent final response: original/extraction/CSV hashes, row and page locators, taxonomy, geography, dates, context, reproduction terms, and explicit recommendation. No files, commits, source acquisition, immutable runs, events, projections, or provider writes. Up to 12 bounded public web reads for primary context are allowed; report URLs and counts."
+      },
+      "expiresAt": "2026-09-08T10:23:44.183Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen lease-bound preflight and verify retained source hashes.",
+        "Review exact leased pair records and full relevant source context independently; preserve contradictory evidence.",
+        "Return supported claims with caveats or precise holds, without asserting any new compiled determination or evidence-run completion."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-honey-ny-source-review-20260908-r12-1"
     }
   ]
 }

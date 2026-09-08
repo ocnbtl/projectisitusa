@@ -500708,6 +500708,222 @@
         "workerCommit": "25b8a562224f2b8584dd4956c66f01a4133e9873",
         "workerBranchHead": "7e84d4902ce0e77323757de95d1e41455c890471"
       }
+    },
+    {
+      "leaseId": "lease-honey-hi-source-review-20260908-r12-1",
+      "jobId": "honey-hi-source-review-20260908-r12",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "honey_hi_source_review_r12",
+      "state": "active",
+      "claimedAt": "2026-09-08T09:38:44.183Z",
+      "expiresAt": "2026-09-08T10:23:43.701Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "HI"
+        ],
+        "sourceFamilies": [
+          "aphis-honey-bee"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "varroa-destructor"
+        ],
+        "pairs": [
+          "15001:varroa-destructor",
+          "15003:varroa-destructor",
+          "15007:varroa-destructor",
+          "15009:varroa-destructor"
+        ]
+      },
+      "scopeClaims": [
+        "county/15001/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/15003/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/15007/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/15009/source/aphis-honey-bee/taxon/varroa-destructor"
+      ],
+      "branch": "codex/honey-hi-source-review-20260908-r12",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\honey-hi-source-review-20260908-r12",
+      "baseSha": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "expectedReceiptCodeCommit": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "permittedPaths": [
+        "src/data/research/worker-results/honey-hi-source-review-20260908-r12/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/honey-hi-source-review-20260908-r12/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen lease-bound preflight and verify retained source hashes.",
+        "Review exact leased pair records and full relevant source context independently; preserve contradictory evidence.",
+        "Return supported claims with caveats or precise holds, without asserting any new compiled determination or evidence-run completion."
+      ]
+    },
+    {
+      "leaseId": "lease-honey-ny-source-review-20260908-r12-1",
+      "jobId": "honey-ny-source-review-20260908-r12",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "honey_ny_source_review_r12",
+      "state": "active",
+      "claimedAt": "2026-09-08T09:38:44.576Z",
+      "expiresAt": "2026-09-08T10:23:44.183Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "NY"
+        ],
+        "sourceFamilies": [
+          "aphis-honey-bee"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "varroa-destructor"
+        ],
+        "pairs": [
+          "36003:varroa-destructor",
+          "36009:varroa-destructor"
+        ]
+      },
+      "scopeClaims": [
+        "county/36003/source/aphis-honey-bee/taxon/varroa-destructor",
+        "county/36009/source/aphis-honey-bee/taxon/varroa-destructor"
+      ],
+      "branch": "codex/honey-ny-source-review-20260908-r12",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\honey-ny-source-review-20260908-r12",
+      "baseSha": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "expectedReceiptCodeCommit": "2315419099db3893c5892c4b85a56c35c85855cf",
+      "permittedPaths": [
+        "src/data/research/worker-results/honey-ny-source-review-20260908-r12/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/honey-ny-source-review-20260908-r12/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen lease-bound preflight and verify retained source hashes.",
+        "Review exact leased pair records and full relevant source context independently; preserve contradictory evidence.",
+        "Return supported claims with caveats or precise holds, without asserting any new compiled determination or evidence-run completion."
+      ]
     }
   ]
 }
