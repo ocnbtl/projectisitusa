@@ -96,6 +96,17 @@ function projectDistinctRunAssertions(assertions: RunEvidenceAssertionEvent[]) {
   );
 }
 
+function publicRunEvidenceCaveat(entry: RunEvidenceAssertionEvent) {
+  if (entry.source_id !== "aphis-honey-bee" || entry.actor_id !== "aphis-honey-bee-survey@2.0.0") return entry.caveats.join(" ");
+  // This immutable adapter version retained mandatory publisher attribution in notes.
+  // Publish that credit without exposing internal row-audit paths or unrelated notes.
+  const credits = entry.notes.filter(note => note.startsWith("University of Maryland Bee Lab / US Bee Data, APHIS Honey Bee Survey:"));
+  if (credits.length !== 1 || !credits[0].includes("copyright University of Maryland") || !credits[0].includes("do not constitute endorsement")) {
+    throw new Error("Published honey bee evidence requires its retained UMD attribution and non-endorsement notice.");
+  }
+  return [...new Set([...entry.caveats, credits[0]])].join(" ");
+}
+
 export function compileAdditiveResearchEvidence(input: {
   bootstrapEvidence: EvidenceAssertion[];
   runAssertions: RunEvidenceAssertionEvent[];
@@ -150,7 +161,7 @@ export function compileAdditiveResearchEvidence(input: {
       reviewedAt: acceptedReviews.at(-1)?.created_at,
       accessedAt: entry.retrieved_at,
       lineage: "source-record" as const,
-      caveat: entry.caveats.join(" "),
+      caveat: publicRunEvidenceCaveat(entry),
       parentJurisdictionEvidenceId: entry.parent_jurisdiction_evidence_id,
     };
   });

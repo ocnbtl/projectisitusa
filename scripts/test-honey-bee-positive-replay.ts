@@ -1,3 +1,4 @@
+import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -22,6 +23,21 @@ try {
   assert.deepEqual(result.assertions.map(a => a.source_record_date), ["2020-08", "2020-08"]);
   assert(result.assertions.every(a => a.claim_type === "recorded-present" && a.scope === "survey-area" && a.retrieved_at === "2026-08-20T02:06:05.317Z"));
   assert.equal(result.upstreamRequests.length, 0);
+  const sources = JSON.parse(read("src/data/research/source-registry.json").toString()).sources;
+  const immutableBefore = JSON.stringify(result.assertions);
+  const compile = (assertions = result.assertions, reviews = result.reviews) => compileAdditiveResearchEvidence({bootstrapEvidence: [], runAssertions: assertions, reviewEvents: reviews, sources, asOf: "2026-09-08"});
+  const published = compile().runEvidence;
+  assert.equal(published.length, 2);
+  assert(published.every(e => e.caveat.includes("copyright University of Maryland") && e.caveat.includes("do not constitute endorsement")));
+  assert(published.every(e => !e.caveat.includes("src/data/research/runs/") && !e.caveat.includes("Method review src/")));
+  assert.equal(JSON.stringify(result.assertions), immutableBefore);
+  const missingCredit = structuredClone(result.assertions); missingCredit[0].notes = [];
+  assert.throws(() => compile(missingCredit), /requires its retained UMD attribution/u); rejected++;
+  const oldDir = "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/";
+  const ndjson = (p: string) => read(p).toString().split("\n").filter(Boolean).map(s => JSON.parse(s));
+  const oldAssertions = ndjson(oldDir + "assertions.ndjson"), oldReviews = ndjson(oldDir + "reviews.ndjson");
+  assert.equal(compile(oldAssertions, oldReviews).runEvidence[0].caveat, oldAssertions[0].caveats.join(" "));
+
   const artifact = JSON.parse(result.artifacts[0].contents.toString());
   assert.equal(artifact.biologicalRowsScanned, 12704); assert.equal(artifact.dictionaryRowsExcluded, 1);
   assert.deepEqual(artifact.witnesses.map((w: {positiveRows: number}) => w.positiveRows), [2, 13]);
