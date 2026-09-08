@@ -1,0 +1,1395 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-positive-survey-batch-integration",
+  "recordedAt": "2026-09-08T19:07:44.423Z",
+  "integrator": "MAIN",
+  "sourceId": "epa-nrsa-fish-counts",
+  "sourceCodeCommit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+  "methodReview": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+  "independentAudit": {
+    "recordedAt": "2026-09-08T19:07:14.553Z",
+    "passed": true,
+    "sourceCodeCommit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+    "phase": "all",
+    "originalCsvRows": {
+      "fishcount": 19925,
+      "fishcount_metadata": 19,
+      "fishtaxa": 911,
+      "fishtaxa_metadata": 16,
+      "siteinfo": 2143,
+      "siteinfo_metadata": 74
+    },
+    "totals": {
+      "positiveRows": 550,
+      "fishWitnesses": 557,
+      "siteWitnesses": 557,
+      "taxonWitnesses": 557,
+      "assertions": 445,
+      "excludedRows": 7
+    },
+    "reports": [
+      {
+        "stateCode": "AL",
+        "runId": "20260908T185759Z__epa-nrsa-fish-counts__01e3dc2a84e3",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "KS",
+        "runId": "20260908T185803Z__epa-nrsa-fish-counts__ef201dbeee93",
+        "pairs": 18,
+        "sourceRows": 23,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "AR",
+        "runId": "20260908T190205Z__epa-nrsa-fish-counts__aa9c46bd3323",
+        "pairs": 14,
+        "sourceRows": 16,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "AZ",
+        "runId": "20260908T190209Z__epa-nrsa-fish-counts__0f8ffd761db0",
+        "pairs": 2,
+        "sourceRows": 2,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "CA",
+        "runId": "20260908T190214Z__epa-nrsa-fish-counts__d6a489e8315a",
+        "pairs": 8,
+        "sourceRows": 9,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "CO",
+        "runId": "20260908T190218Z__epa-nrsa-fish-counts__20164e92d42d",
+        "pairs": 11,
+        "sourceRows": 12,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "FL",
+        "runId": "20260908T190223Z__epa-nrsa-fish-counts__bac833ae0127",
+        "pairs": 18,
+        "sourceRows": 19,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "GA",
+        "runId": "20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d",
+        "pairs": 8,
+        "sourceRows": 8,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "IA",
+        "runId": "20260908T190233Z__epa-nrsa-fish-counts__b31da9d51d33",
+        "pairs": 15,
+        "sourceRows": 20,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "ID",
+        "runId": "20260908T190237Z__epa-nrsa-fish-counts__b3a08482e176",
+        "pairs": 2,
+        "sourceRows": 2,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "IL",
+        "runId": "20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5",
+        "pairs": 14,
+        "sourceRows": 17,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "IN",
+        "runId": "20260908T190246Z__epa-nrsa-fish-counts__220743b79eb6",
+        "pairs": 4,
+        "sourceRows": 5,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "KY",
+        "runId": "20260908T190251Z__epa-nrsa-fish-counts__ca97493ea040",
+        "pairs": 11,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "LA",
+        "runId": "20260908T190256Z__epa-nrsa-fish-counts__d5eae57f497c",
+        "pairs": 8,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MA",
+        "runId": "20260908T190301Z__epa-nrsa-fish-counts__b9806867dac1",
+        "pairs": 6,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MD",
+        "runId": "20260908T190305Z__epa-nrsa-fish-counts__7c4c04def8e9",
+        "pairs": 2,
+        "sourceRows": 4,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MI",
+        "runId": "20260908T190309Z__epa-nrsa-fish-counts__1dfdf0ea42d2",
+        "pairs": 27,
+        "sourceRows": 33,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MN",
+        "runId": "20260908T190315Z__epa-nrsa-fish-counts__05d31a8e137c",
+        "pairs": 15,
+        "sourceRows": 17,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MO",
+        "runId": "20260908T190319Z__epa-nrsa-fish-counts__854425206125",
+        "pairs": 28,
+        "sourceRows": 32,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MS",
+        "runId": "20260908T190324Z__epa-nrsa-fish-counts__bf49e9f041de",
+        "pairs": 4,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MT",
+        "runId": "20260908T190328Z__epa-nrsa-fish-counts__6b5770957896",
+        "pairs": 7,
+        "sourceRows": 12,
+        "rejections": 1,
+        "passed": true
+      },
+      {
+        "stateCode": "NC",
+        "runId": "20260908T190333Z__epa-nrsa-fish-counts__15de3ca4d8d9",
+        "pairs": 2,
+        "sourceRows": 2,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "ND",
+        "runId": "20260908T190338Z__epa-nrsa-fish-counts__e5060dc28f59",
+        "pairs": 12,
+        "sourceRows": 17,
+        "rejections": 2,
+        "passed": true
+      },
+      {
+        "stateCode": "NE",
+        "runId": "20260908T190342Z__epa-nrsa-fish-counts__7c6e3f54c2c3",
+        "pairs": 29,
+        "sourceRows": 31,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NH",
+        "runId": "20260908T190347Z__epa-nrsa-fish-counts__3657127729f9",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NJ",
+        "runId": "20260908T190352Z__epa-nrsa-fish-counts__92346a26a53a",
+        "pairs": 12,
+        "sourceRows": 15,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NM",
+        "runId": "20260908T190356Z__epa-nrsa-fish-counts__b6a52036a3f5",
+        "pairs": 4,
+        "sourceRows": 4,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NV",
+        "runId": "20260908T190401Z__epa-nrsa-fish-counts__d4fd34ddf54a",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NY",
+        "runId": "20260908T190406Z__epa-nrsa-fish-counts__36de644a3939",
+        "pairs": 22,
+        "sourceRows": 31,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "OH",
+        "runId": "20260908T190410Z__epa-nrsa-fish-counts__68800009213c",
+        "pairs": 16,
+        "sourceRows": 18,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "OK",
+        "runId": "20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f",
+        "pairs": 5,
+        "sourceRows": 5,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "OR",
+        "runId": "20260908T190419Z__epa-nrsa-fish-counts__e77a035b9a64",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "PA",
+        "runId": "20260908T190424Z__epa-nrsa-fish-counts__93aa609ae4cd",
+        "pairs": 11,
+        "sourceRows": 17,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "RI",
+        "runId": "20260908T190429Z__epa-nrsa-fish-counts__0da35d940bca",
+        "pairs": 2,
+        "sourceRows": 3,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "SC",
+        "runId": "20260908T190433Z__epa-nrsa-fish-counts__301cdb242ec7",
+        "pairs": 7,
+        "sourceRows": 9,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "SD",
+        "runId": "20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4",
+        "pairs": 22,
+        "sourceRows": 34,
+        "rejections": 3,
+        "passed": true
+      },
+      {
+        "stateCode": "TN",
+        "runId": "20260908T190443Z__epa-nrsa-fish-counts__c53ffee3105b",
+        "pairs": 5,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "TX",
+        "runId": "20260908T190449Z__epa-nrsa-fish-counts__c72fff846d32",
+        "pairs": 16,
+        "sourceRows": 19,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "UT",
+        "runId": "20260908T190455Z__epa-nrsa-fish-counts__26af5e0e1653",
+        "pairs": 8,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "VA",
+        "runId": "20260908T190500Z__epa-nrsa-fish-counts__5d4c98877b64",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "VT",
+        "runId": "20260908T190506Z__epa-nrsa-fish-counts__6458bc727de0",
+        "pairs": 6,
+        "sourceRows": 9,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WA",
+        "runId": "20260908T190511Z__epa-nrsa-fish-counts__1bd29361bf3d",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WI",
+        "runId": "20260908T190518Z__epa-nrsa-fish-counts__9562154f4be3",
+        "pairs": 25,
+        "sourceRows": 38,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WV",
+        "runId": "20260908T190523Z__epa-nrsa-fish-counts__003addd9280d",
+        "pairs": 5,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WY",
+        "runId": "20260908T190529Z__epa-nrsa-fish-counts__1bb0ccd067d7",
+        "pairs": 8,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      }
+    ],
+    "providerRequests": 0,
+    "determinationsAdded": 0,
+    "method": "Independent Python csv and original byte-slice hashing; all staged file descriptors, scope completeness, full fish/site/taxon fields, dispositions, primary witnesses, dates, names and event relationships checked."
+  },
+  "workerAttemptsAccepted": 0,
+  "independentSourceReviews": [
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-a-independent-review-20260908-r18.json",
+      "bytes": 683232,
+      "sha256": "fb538ab0825a545aca49888b62920a65b3e790c15dbe8aa54ed45d183f9a5aad"
+    },
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-b-independent-review-20260908-r18.json",
+      "bytes": 678020,
+      "sha256": "6ecff4b00c8903d16d953e60395adc8390bd4f185cec3d169c6ecc9c63aeaf53"
+    },
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-c-independent-review-20260908-r18.json",
+      "bytes": 676161,
+      "sha256": "7233feaffe9e4c6106b0cd559c9e48ed510c9fe8cd27060479b10b5e52e16a9c"
+    }
+  ],
+  "canonicalTamperChecks": {
+    "observedAt": "2026-09-08T18:59:10.281Z",
+    "reports": [
+      {
+        "stateCode": "AL",
+        "actualPilotValidated": true,
+        "canonicalTamperCasesRejected": 16,
+        "immutableFilesModified": 0
+      },
+      {
+        "stateCode": "KS",
+        "actualPilotValidated": true,
+        "canonicalTamperCasesRejected": 16,
+        "immutableFilesModified": 0
+      }
+    ]
+  },
+  "stagedRuns": [
+    {
+      "stateCode": "AL",
+      "runId": "20260908T185759Z__epa-nrsa-fish-counts__01e3dc2a84e3",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T185759Z__epa-nrsa-fish-counts__01e3dc2a84e3/receipt.json",
+        "bytes": 5553,
+        "sha256": "8a4f5a608ba08e209811fb474865b90db9afcb5cf80b21ae3190c6cd18ad0fc6"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "KS",
+      "runId": "20260908T185803Z__epa-nrsa-fish-counts__ef201dbeee93",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T185803Z__epa-nrsa-fish-counts__ef201dbeee93/receipt.json",
+        "bytes": 7248,
+        "sha256": "49677d891411db330be60a9e46720df901551bba202d1be76a93066fb2b8f1c3"
+      },
+      "counts": {
+        "requested_pairs": 18,
+        "candidate_records": 23,
+        "assertion_events": 18,
+        "review_events": 18,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 18
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "AR",
+      "runId": "20260908T190205Z__epa-nrsa-fish-counts__aa9c46bd3323",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190205Z__epa-nrsa-fish-counts__aa9c46bd3323/receipt.json",
+        "bytes": 7018,
+        "sha256": "05c5e5f2acfd2254a3f210619dbaf89ad73e626a85876854d25c7731a28dcbbf"
+      },
+      "counts": {
+        "requested_pairs": 14,
+        "candidate_records": 16,
+        "assertion_events": 14,
+        "review_events": 14,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 14
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "AZ",
+      "runId": "20260908T190209Z__epa-nrsa-fish-counts__0f8ffd761db0",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190209Z__epa-nrsa-fish-counts__0f8ffd761db0/receipt.json",
+        "bytes": 5704,
+        "sha256": "b7c64497673196344c89e0fcc501434b367de010e512b174a820c95d007910bf"
+      },
+      "counts": {
+        "requested_pairs": 2,
+        "candidate_records": 2,
+        "assertion_events": 2,
+        "review_events": 2,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 2
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "CA",
+      "runId": "20260908T190214Z__epa-nrsa-fish-counts__d6a489e8315a",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190214Z__epa-nrsa-fish-counts__d6a489e8315a/receipt.json",
+        "bytes": 6220,
+        "sha256": "7e769010733d6c45a1e2d2ef6fe61e4868e582f016af8316e996f845cd5db9c4"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 9,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "CO",
+      "runId": "20260908T190218Z__epa-nrsa-fish-counts__20164e92d42d",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190218Z__epa-nrsa-fish-counts__20164e92d42d/receipt.json",
+        "bytes": 6514,
+        "sha256": "b7c9d8ab176705ad1439193ce0e8b2091cd3797e3d4cbe1d367f52856468895d"
+      },
+      "counts": {
+        "requested_pairs": 11,
+        "candidate_records": 12,
+        "assertion_events": 11,
+        "review_events": 11,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 11
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "FL",
+      "runId": "20260908T190223Z__epa-nrsa-fish-counts__bac833ae0127",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190223Z__epa-nrsa-fish-counts__bac833ae0127/receipt.json",
+        "bytes": 7566,
+        "sha256": "d48a51325aa688784ccda3e2f8be7609279fcdba12f6af4a18261ae25c9d60a5"
+      },
+      "counts": {
+        "requested_pairs": 18,
+        "candidate_records": 19,
+        "assertion_events": 18,
+        "review_events": 18,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 18
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "GA",
+      "runId": "20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d/receipt.json",
+        "bytes": 6304,
+        "sha256": "f3c30f2fd7102ed0322aba356f5a834d1b1acfeaa7a6f91f249cc019d7569bbb"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 8,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "IA",
+      "runId": "20260908T190233Z__epa-nrsa-fish-counts__b31da9d51d33",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190233Z__epa-nrsa-fish-counts__b31da9d51d33/receipt.json",
+        "bytes": 7076,
+        "sha256": "1fa8b13173afc86d2c5290617d9bb004d63d620796d5ac833165fdf265bac83a"
+      },
+      "counts": {
+        "requested_pairs": 15,
+        "candidate_records": 20,
+        "assertion_events": 15,
+        "review_events": 15,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 15
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "ID",
+      "runId": "20260908T190237Z__epa-nrsa-fish-counts__b3a08482e176",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190237Z__epa-nrsa-fish-counts__b3a08482e176/receipt.json",
+        "bytes": 5667,
+        "sha256": "bc81bc4c7458e3f998733ffef828a3f62bc430234300ed7e4c898ba11e84b794"
+      },
+      "counts": {
+        "requested_pairs": 2,
+        "candidate_records": 2,
+        "assertion_events": 2,
+        "review_events": 2,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 2
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "IL",
+      "runId": "20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5/receipt.json",
+        "bytes": 6956,
+        "sha256": "d00e7a784c03eb3e541e4558c36160cd15322d0b4dbae1d8bf7fe3b22454e25b"
+      },
+      "counts": {
+        "requested_pairs": 14,
+        "candidate_records": 17,
+        "assertion_events": 14,
+        "review_events": 14,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 14
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "IN",
+      "runId": "20260908T190246Z__epa-nrsa-fish-counts__220743b79eb6",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190246Z__epa-nrsa-fish-counts__220743b79eb6/receipt.json",
+        "bytes": 5957,
+        "sha256": "941b1d26c978d18948476a332161e8718e9071d77ce331f74695e85e5f3ad731"
+      },
+      "counts": {
+        "requested_pairs": 4,
+        "candidate_records": 5,
+        "assertion_events": 4,
+        "review_events": 4,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 4
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "KY",
+      "runId": "20260908T190251Z__epa-nrsa-fish-counts__ca97493ea040",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190251Z__epa-nrsa-fish-counts__ca97493ea040/receipt.json",
+        "bytes": 6679,
+        "sha256": "a649726f6820c4a74536be5ef04a4a869ea5ede3c6ad03573f6748638f5b0cd1"
+      },
+      "counts": {
+        "requested_pairs": 11,
+        "candidate_records": 11,
+        "assertion_events": 11,
+        "review_events": 11,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 11
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "LA",
+      "runId": "20260908T190256Z__epa-nrsa-fish-counts__d5eae57f497c",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190256Z__epa-nrsa-fish-counts__d5eae57f497c/receipt.json",
+        "bytes": 6396,
+        "sha256": "8e6f9270555124d34f36a0e0b988a38fb72998b6687e43f5b52b18fb3f0df128"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 11,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MA",
+      "runId": "20260908T190301Z__epa-nrsa-fish-counts__b9806867dac1",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190301Z__epa-nrsa-fish-counts__b9806867dac1/receipt.json",
+        "bytes": 6055,
+        "sha256": "23e804c3d1add0d75ab491103ab3e328e6b0a82badbd2d553629e7b6541a9785"
+      },
+      "counts": {
+        "requested_pairs": 6,
+        "candidate_records": 6,
+        "assertion_events": 6,
+        "review_events": 6,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 6
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MD",
+      "runId": "20260908T190305Z__epa-nrsa-fish-counts__7c4c04def8e9",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190305Z__epa-nrsa-fish-counts__7c4c04def8e9/receipt.json",
+        "bytes": 5654,
+        "sha256": "4c950ac0a5f50bf4f12c8256dddf5d7e5dbcadd45798403048eecb76fc10a381"
+      },
+      "counts": {
+        "requested_pairs": 2,
+        "candidate_records": 4,
+        "assertion_events": 2,
+        "review_events": 2,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 2
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MI",
+      "runId": "20260908T190309Z__epa-nrsa-fish-counts__1dfdf0ea42d2",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190309Z__epa-nrsa-fish-counts__1dfdf0ea42d2/receipt.json",
+        "bytes": 8188,
+        "sha256": "aa441fe9dcc101af2e7a2ec096b8cddfa7ea414cf4dc789342b81840f60774c7"
+      },
+      "counts": {
+        "requested_pairs": 27,
+        "candidate_records": 33,
+        "assertion_events": 27,
+        "review_events": 27,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 27
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MN",
+      "runId": "20260908T190315Z__epa-nrsa-fish-counts__05d31a8e137c",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190315Z__epa-nrsa-fish-counts__05d31a8e137c/receipt.json",
+        "bytes": 6951,
+        "sha256": "a0573502e97b44cb5d3d26d620db57ff821726f03d871a0540ea123f2f2c9077"
+      },
+      "counts": {
+        "requested_pairs": 15,
+        "candidate_records": 17,
+        "assertion_events": 15,
+        "review_events": 15,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 15
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MO",
+      "runId": "20260908T190319Z__epa-nrsa-fish-counts__854425206125",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190319Z__epa-nrsa-fish-counts__854425206125/receipt.json",
+        "bytes": 8487,
+        "sha256": "79f7d508459d268d720b729075696f8f2aa2a3d814f5dab22d4b8f3ad464b2a8"
+      },
+      "counts": {
+        "requested_pairs": 28,
+        "candidate_records": 32,
+        "assertion_events": 28,
+        "review_events": 28,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 28
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MS",
+      "runId": "20260908T190324Z__epa-nrsa-fish-counts__bf49e9f041de",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190324Z__epa-nrsa-fish-counts__bf49e9f041de/receipt.json",
+        "bytes": 5919,
+        "sha256": "cc585345242db0f7d5a4e5718723d2efe4248a6e9ee0e9513b7edf7257d3a0b9"
+      },
+      "counts": {
+        "requested_pairs": 4,
+        "candidate_records": 6,
+        "assertion_events": 4,
+        "review_events": 4,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 4
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MT",
+      "runId": "20260908T190328Z__epa-nrsa-fish-counts__6b5770957896",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190328Z__epa-nrsa-fish-counts__6b5770957896/receipt.json",
+        "bytes": 6122,
+        "sha256": "118e8a04d0539e5a605bacd9a6e3a5d2fd73d2c5c583978f7a142c3026034128"
+      },
+      "counts": {
+        "requested_pairs": 7,
+        "candidate_records": 12,
+        "assertion_events": 7,
+        "review_events": 7,
+        "rejection_records": 1,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 7
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NC",
+      "runId": "20260908T190333Z__epa-nrsa-fish-counts__15de3ca4d8d9",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190333Z__epa-nrsa-fish-counts__15de3ca4d8d9/receipt.json",
+        "bytes": 5654,
+        "sha256": "510c8d46d969292eded58bfd42cb3efc74ae400283ad830e528fce2093a5cacf"
+      },
+      "counts": {
+        "requested_pairs": 2,
+        "candidate_records": 2,
+        "assertion_events": 2,
+        "review_events": 2,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 2
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "ND",
+      "runId": "20260908T190338Z__epa-nrsa-fish-counts__e5060dc28f59",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190338Z__epa-nrsa-fish-counts__e5060dc28f59/receipt.json",
+        "bytes": 6631,
+        "sha256": "ace5fc9f57a9c6d276fd0ba01cf7dca76f9b01baba826869733472c903935900"
+      },
+      "counts": {
+        "requested_pairs": 12,
+        "candidate_records": 17,
+        "assertion_events": 12,
+        "review_events": 12,
+        "rejection_records": 2,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 12
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NE",
+      "runId": "20260908T190342Z__epa-nrsa-fish-counts__7c6e3f54c2c3",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190342Z__epa-nrsa-fish-counts__7c6e3f54c2c3/receipt.json",
+        "bytes": 8562,
+        "sha256": "53d7829aeb62c17bf2dbb46d9bb1585f0b8b06afec6e8f0486ae3db8ce127c04"
+      },
+      "counts": {
+        "requested_pairs": 29,
+        "candidate_records": 31,
+        "assertion_events": 29,
+        "review_events": 29,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 29
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NH",
+      "runId": "20260908T190347Z__epa-nrsa-fish-counts__3657127729f9",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190347Z__epa-nrsa-fish-counts__3657127729f9/receipt.json",
+        "bytes": 5553,
+        "sha256": "605b78b2544dc10f4ec0e068fc2c16a5c569525bd8b9c9e5e28f0a7a0e802115"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NJ",
+      "runId": "20260908T190352Z__epa-nrsa-fish-counts__92346a26a53a",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190352Z__epa-nrsa-fish-counts__92346a26a53a/receipt.json",
+        "bytes": 6626,
+        "sha256": "d350dd91025722270333214df08102cdbf2e163bdd79fe20b7a04695ff81d628"
+      },
+      "counts": {
+        "requested_pairs": 12,
+        "candidate_records": 15,
+        "assertion_events": 12,
+        "review_events": 12,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 12
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NM",
+      "runId": "20260908T190356Z__epa-nrsa-fish-counts__b6a52036a3f5",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190356Z__epa-nrsa-fish-counts__b6a52036a3f5/receipt.json",
+        "bytes": 5851,
+        "sha256": "b6966f85ef36721af3c81795e5b851312dbaab442762e9dbe6f1de51f52538ee"
+      },
+      "counts": {
+        "requested_pairs": 4,
+        "candidate_records": 4,
+        "assertion_events": 4,
+        "review_events": 4,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 4
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NV",
+      "runId": "20260908T190401Z__epa-nrsa-fish-counts__d4fd34ddf54a",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190401Z__epa-nrsa-fish-counts__d4fd34ddf54a/receipt.json",
+        "bytes": 5541,
+        "sha256": "346f6065837103924076541f06c790b0ae0d4e18d5c879d76439a2add1b17361"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NY",
+      "runId": "20260908T190406Z__epa-nrsa-fish-counts__36de644a3939",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190406Z__epa-nrsa-fish-counts__36de644a3939/receipt.json",
+        "bytes": 7657,
+        "sha256": "53cde48ed117b76a4f9e7bea1fc6ad06d7b60af99c3955eeb575e3a779dccbfa"
+      },
+      "counts": {
+        "requested_pairs": 22,
+        "candidate_records": 31,
+        "assertion_events": 22,
+        "review_events": 22,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 22
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "OH",
+      "runId": "20260908T190410Z__epa-nrsa-fish-counts__68800009213c",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190410Z__epa-nrsa-fish-counts__68800009213c/receipt.json",
+        "bytes": 7154,
+        "sha256": "57a5f4c8d89916c468c343e15551ae7cf1cea3c6710b4893971293f6dce9f453"
+      },
+      "counts": {
+        "requested_pairs": 16,
+        "candidate_records": 18,
+        "assertion_events": 16,
+        "review_events": 16,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 16
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "OK",
+      "runId": "20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f/receipt.json",
+        "bytes": 6057,
+        "sha256": "f57f271abbd548ac34eb3d911e0500377e7d9afee8150061803f53e62d9ac03d"
+      },
+      "counts": {
+        "requested_pairs": 5,
+        "candidate_records": 5,
+        "assertion_events": 5,
+        "review_events": 5,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 5
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "OR",
+      "runId": "20260908T190419Z__epa-nrsa-fish-counts__e77a035b9a64",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190419Z__epa-nrsa-fish-counts__e77a035b9a64/receipt.json",
+        "bytes": 5553,
+        "sha256": "6c4e201f9277174bc97543e69f03696450a42afd2716c7bce008537fa0467c81"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "PA",
+      "runId": "20260908T190424Z__epa-nrsa-fish-counts__93aa609ae4cd",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190424Z__epa-nrsa-fish-counts__93aa609ae4cd/receipt.json",
+        "bytes": 6517,
+        "sha256": "a9589dd753a2615186e059332ccb99a9d9fc64e577ad5bc377000893cd9cc933"
+      },
+      "counts": {
+        "requested_pairs": 11,
+        "candidate_records": 17,
+        "assertion_events": 11,
+        "review_events": 11,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 11
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "RI",
+      "runId": "20260908T190429Z__epa-nrsa-fish-counts__0da35d940bca",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190429Z__epa-nrsa-fish-counts__0da35d940bca/receipt.json",
+        "bytes": 5652,
+        "sha256": "cac170c63b06a8252e51c9377de192c352b368fdf37be1ebdad24492c9b1f80e"
+      },
+      "counts": {
+        "requested_pairs": 2,
+        "candidate_records": 3,
+        "assertion_events": 2,
+        "review_events": 2,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 2
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "SC",
+      "runId": "20260908T190433Z__epa-nrsa-fish-counts__301cdb242ec7",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190433Z__epa-nrsa-fish-counts__301cdb242ec7/receipt.json",
+        "bytes": 6225,
+        "sha256": "65315a03d1924f645dc2e50913f4690f7969f392de501ec9ed4cc6ca5a47ad5e"
+      },
+      "counts": {
+        "requested_pairs": 7,
+        "candidate_records": 9,
+        "assertion_events": 7,
+        "review_events": 7,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 7
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "SD",
+      "runId": "20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4/receipt.json",
+        "bytes": 7817,
+        "sha256": "c60742c185d17f7cc7360f32b1c9df4edaddd2e6b85ccc38a0d4ccbd768a8c5d"
+      },
+      "counts": {
+        "requested_pairs": 22,
+        "candidate_records": 34,
+        "assertion_events": 22,
+        "review_events": 22,
+        "rejection_records": 3,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 22
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "TN",
+      "runId": "20260908T190443Z__epa-nrsa-fish-counts__c53ffee3105b",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190443Z__epa-nrsa-fish-counts__c53ffee3105b/receipt.json",
+        "bytes": 5965,
+        "sha256": "a5be28a968aa6bf62b456ea48b748f0e3d0a6fa6b226ef943007429ef5269637"
+      },
+      "counts": {
+        "requested_pairs": 5,
+        "candidate_records": 6,
+        "assertion_events": 5,
+        "review_events": 5,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 5
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "TX",
+      "runId": "20260908T190449Z__epa-nrsa-fish-counts__c72fff846d32",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190449Z__epa-nrsa-fish-counts__c72fff846d32/receipt.json",
+        "bytes": 7244,
+        "sha256": "f568fc5769554e9ee56218637771598d0367d7719699b00f225899ab2e5b6cb6"
+      },
+      "counts": {
+        "requested_pairs": 16,
+        "candidate_records": 19,
+        "assertion_events": 16,
+        "review_events": 16,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 16
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "UT",
+      "runId": "20260908T190455Z__epa-nrsa-fish-counts__26af5e0e1653",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190455Z__epa-nrsa-fish-counts__26af5e0e1653/receipt.json",
+        "bytes": 6198,
+        "sha256": "a2eab4c431294323c973cd912aa4f11a6c7b5c4fd2266fdd26c9488f2c8b2e7a"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 11,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "VA",
+      "runId": "20260908T190500Z__epa-nrsa-fish-counts__5d4c98877b64",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190500Z__epa-nrsa-fish-counts__5d4c98877b64/receipt.json",
+        "bytes": 5553,
+        "sha256": "ad0d1b2f7f875d04d43ec00255cc61a2ed96e45797509cec9d42ebb8c5a85bf5"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "VT",
+      "runId": "20260908T190506Z__epa-nrsa-fish-counts__6458bc727de0",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190506Z__epa-nrsa-fish-counts__6458bc727de0/receipt.json",
+        "bytes": 5994,
+        "sha256": "287748335e4ab5b01667ea157ac67a36c105fd44e5b8a07bc6d56777a9d1d21e"
+      },
+      "counts": {
+        "requested_pairs": 6,
+        "candidate_records": 9,
+        "assertion_events": 6,
+        "review_events": 6,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 6
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WA",
+      "runId": "20260908T190511Z__epa-nrsa-fish-counts__1bd29361bf3d",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190511Z__epa-nrsa-fish-counts__1bd29361bf3d/receipt.json",
+        "bytes": 5553,
+        "sha256": "c41ec6d63cd802af12333b6c6358c4af784eddd9c26f30f6133fccdb1c0b2432"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WI",
+      "runId": "20260908T190518Z__epa-nrsa-fish-counts__9562154f4be3",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190518Z__epa-nrsa-fish-counts__9562154f4be3/receipt.json",
+        "bytes": 7829,
+        "sha256": "d7904adb23ec91b98ce81d8306bf712415186f9c17c471c44bde1732eac44f07"
+      },
+      "counts": {
+        "requested_pairs": 25,
+        "candidate_records": 38,
+        "assertion_events": 25,
+        "review_events": 25,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 25
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WV",
+      "runId": "20260908T190523Z__epa-nrsa-fish-counts__003addd9280d",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190523Z__epa-nrsa-fish-counts__003addd9280d/receipt.json",
+        "bytes": 5956,
+        "sha256": "457fc7aac1f985e7382d42bb365c95799e9d15e814fb02b0b738c6d760e21f42"
+      },
+      "counts": {
+        "requested_pairs": 5,
+        "candidate_records": 6,
+        "assertion_events": 5,
+        "review_events": 5,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 5
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WY",
+      "runId": "20260908T190529Z__epa-nrsa-fish-counts__1bb0ccd067d7",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T190529Z__epa-nrsa-fish-counts__1bb0ccd067d7/receipt.json",
+        "bytes": 6222,
+        "sha256": "d60329d0b4c49a751aed7a9e59c6d3199b359ae6b71c32379f16f7ea8ae801ef"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 11,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    }
+  ],
+  "totalStateRuns": 45,
+  "totalCandidatePairs": 445,
+  "pilotAssertionsIncluded": 19,
+  "mainBatchAssertions": 445,
+  "mainPilotFailures": 2,
+  "newDeterminations": null,
+  "providerRequests": 0,
+  "sharedCompilesDuringBatch": 0,
+  "heldPairs": [
+    "20207:cyprinus-carpio"
+  ],
+  "claim": "Historical positive species-specific EPA fish counts with exact published taxon and original site county-name/FIPS join, original collection dates and agency/WQP attribution. No countywide persistence, establishment, absence or non-detection claim.",
+  "limitations": [
+    "New determination gains remain pending national compiler reconciliation.",
+    "Original CSV is shared and not reacquired or copied per state.",
+    "R2 publication remains a separately budgeted and scheduled batch."
+  ]
+}

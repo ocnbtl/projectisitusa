@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T190406Z__epa-nrsa-fish-counts__36de644a3939",
+  "status": "complete",
+  "started_at": "2026-09-08T19:04:06.241Z",
+  "finished_at": "2026-09-08T19:04:09.713Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@1.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "81ea391d1177b3ad1aa9a5e19a80d10bf231352e467eeede1d7840b532be9c96",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+  "parameter_hash": "36de644a3939b12fb94952951f15390cfd360982e814dc575dc599ec32b30e4b",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+    "methodReviewSha256": "74733ec61f2db22be43b3e8a66dd650b6e298ea83b043b433a1785293497b3ec",
+    "mode": "retained-reviewed-fish-counts",
+    "stateCode": "NY",
+    "candidatePairs": [
+      "36007:misgurnus-anguillicaudatus",
+      "36009:cyprinus-carpio",
+      "36017:cyprinus-carpio",
+      "36019:salmo-trutta",
+      "36025:cyprinus-carpio",
+      "36035:salmo-trutta",
+      "36037:cyprinus-carpio",
+      "36039:salmo-trutta",
+      "36049:cyprinus-carpio",
+      "36051:salmo-trutta",
+      "36057:cyprinus-carpio",
+      "36065:cyprinus-carpio",
+      "36067:cyprinus-carpio",
+      "36071:cyprinus-carpio",
+      "36071:salmo-trutta",
+      "36073:cyprinus-carpio",
+      "36075:salmo-trutta",
+      "36089:salmo-trutta",
+      "36091:cyprinus-carpio",
+      "36101:cyprinus-carpio",
+      "36107:cyprinus-carpio",
+      "36111:cyprinus-carpio"
+    ],
+    "candidateLimit": 22
+  },
+  "requested_scope": {
+    "state_code": "NY",
+    "county_fips": [
+      "36007",
+      "36009",
+      "36017",
+      "36019",
+      "36025",
+      "36035",
+      "36037",
+      "36039",
+      "36049",
+      "36051",
+      "36057",
+      "36065",
+      "36067",
+      "36071",
+      "36073",
+      "36075",
+      "36089",
+      "36091",
+      "36101",
+      "36107",
+      "36111"
+    ],
+    "species_ids": [
+      "cyprinus-carpio",
+      "misgurnus-anguillicaudatus",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "36007:misgurnus-anguillicaudatus",
+      "36009:cyprinus-carpio",
+      "36017:cyprinus-carpio",
+      "36019:salmo-trutta",
+      "36025:cyprinus-carpio",
+      "36035:salmo-trutta",
+      "36037:cyprinus-carpio",
+      "36039:salmo-trutta",
+      "36049:cyprinus-carpio",
+      "36051:salmo-trutta",
+      "36057:cyprinus-carpio",
+      "36065:cyprinus-carpio",
+      "36067:cyprinus-carpio",
+      "36071:cyprinus-carpio",
+      "36071:salmo-trutta",
+      "36073:cyprinus-carpio",
+      "36075:salmo-trutta",
+      "36089:salmo-trutta",
+      "36091:cyprinus-carpio",
+      "36101:cyprinus-carpio",
+      "36107:cyprinus-carpio",
+      "36111:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T190406Z__epa-nrsa-fish-counts__36de644a3939/artifacts/epa-nrsa-fish-witnesses.json",
+      "sha256": "5b280b45c216c475ffa20d11340922b7c9338da98bd0241be513be4251e3cb6c",
+      "bytes": 293252,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T190406Z__epa-nrsa-fish-counts__36de644a3939/assertions.ndjson",
+      "sha256": "254b156c2e86693cefd516bb28317ba4acfd94547d23cbebb13b55d29ac06572",
+      "bytes": 98305,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190406Z__epa-nrsa-fish-counts__36de644a3939/reviews.ndjson",
+      "sha256": "f2641f43af2d821717c11ed0c3007277555889f7d347be5d5067a40e00747a01",
+      "bytes": 20362,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190406Z__epa-nrsa-fish-counts__36de644a3939/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190406Z__epa-nrsa-fish-counts__36de644a3939/outcomes.ndjson",
+      "sha256": "b877aa7c7c83105f24e6c82697ad9841b76c1fa15e7949e3c291011b06a916e7",
+      "bytes": 20054,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 22,
+    "candidate_records": 31,
+    "assertion_events": 22,
+    "review_events": 22,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 22
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory.",
+    "Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs.",
+    "FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection.",
+    "SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications.",
+    "Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference.",
+    "Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held.",
+    "EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status.",
+    "The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record.",
+    "Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state NY --candidate-file ops/national-research/plans/epa-nrsa-2324-20260908-r18/NY.json --output-root src/data/research/runs --stage-canonical true --pairs 36007:misgurnus-anguillicaudatus,36009:cyprinus-carpio,36017:cyprinus-carpio,36019:salmo-trutta,36025:cyprinus-carpio,36035:salmo-trutta,36037:cyprinus-carpio,36039:salmo-trutta,36049:cyprinus-carpio,36051:salmo-trutta,36057:cyprinus-carpio,36065:cyprinus-carpio,36067:cyprinus-carpio,36071:cyprinus-carpio,36071:salmo-trutta,36073:cyprinus-carpio,36075:salmo-trutta,36089:salmo-trutta,36091:cyprinus-carpio,36101:cyprinus-carpio,36107:cyprinus-carpio,36111:cyprinus-carpio"
+}

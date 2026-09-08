@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4",
+  "status": "complete",
+  "started_at": "2026-09-08T19:04:38.835Z",
+  "finished_at": "2026-09-08T19:04:42.458Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@1.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "81ea391d1177b3ad1aa9a5e19a80d10bf231352e467eeede1d7840b532be9c96",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+  "parameter_hash": "ae16a8c4d3d4cba4836cb1fb919996d24444d6dd87b50aff8b51dd6048535900",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+    "methodReviewSha256": "74733ec61f2db22be43b3e8a66dd650b6e298ea83b043b433a1785293497b3ec",
+    "mode": "retained-reviewed-fish-counts",
+    "stateCode": "SD",
+    "candidatePairs": [
+      "46005:hypophthalmichthys-molitrix",
+      "46013:hypophthalmichthys-molitrix",
+      "46019:cyprinus-carpio",
+      "46027:cyprinus-carpio",
+      "46031:cyprinus-carpio",
+      "46051:cyprinus-carpio",
+      "46061:cyprinus-carpio",
+      "46067:hypophthalmichthys-molitrix",
+      "46071:cyprinus-carpio",
+      "46075:cyprinus-carpio",
+      "46081:salmo-trutta",
+      "46085:cyprinus-carpio",
+      "46093:salmo-trutta",
+      "46099:cyprinus-carpio",
+      "46103:cyprinus-carpio",
+      "46111:cyprinus-carpio",
+      "46111:hypophthalmichthys-molitrix",
+      "46117:cyprinus-carpio",
+      "46121:cyprinus-carpio",
+      "46123:cyprinus-carpio",
+      "46127:cyprinus-carpio",
+      "46135:cyprinus-carpio"
+    ],
+    "candidateLimit": 22
+  },
+  "requested_scope": {
+    "state_code": "SD",
+    "county_fips": [
+      "46005",
+      "46013",
+      "46019",
+      "46027",
+      "46031",
+      "46051",
+      "46061",
+      "46067",
+      "46071",
+      "46075",
+      "46081",
+      "46085",
+      "46093",
+      "46099",
+      "46103",
+      "46111",
+      "46117",
+      "46121",
+      "46123",
+      "46127",
+      "46135"
+    ],
+    "species_ids": [
+      "cyprinus-carpio",
+      "hypophthalmichthys-molitrix",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "46005:hypophthalmichthys-molitrix",
+      "46013:hypophthalmichthys-molitrix",
+      "46019:cyprinus-carpio",
+      "46027:cyprinus-carpio",
+      "46031:cyprinus-carpio",
+      "46051:cyprinus-carpio",
+      "46061:cyprinus-carpio",
+      "46067:hypophthalmichthys-molitrix",
+      "46071:cyprinus-carpio",
+      "46075:cyprinus-carpio",
+      "46081:salmo-trutta",
+      "46085:cyprinus-carpio",
+      "46093:salmo-trutta",
+      "46099:cyprinus-carpio",
+      "46103:cyprinus-carpio",
+      "46111:cyprinus-carpio",
+      "46111:hypophthalmichthys-molitrix",
+      "46117:cyprinus-carpio",
+      "46121:cyprinus-carpio",
+      "46123:cyprinus-carpio",
+      "46127:cyprinus-carpio",
+      "46135:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4/artifacts/epa-nrsa-fish-witnesses.json",
+      "sha256": "0805cfb7a9e3154c1a1cf504e01e5a000c04d287eca9faed041e814a103b9241",
+      "bytes": 308451,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4/assertions.ndjson",
+      "sha256": "5d113dec9a6c30282382f9f7a37c9dcb97e100159fead2e44b9a754e97d6cd8a",
+      "bytes": 97785,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4/reviews.ndjson",
+      "sha256": "b9ae80611b974105be6029e76ecda65477f6f221fe11ceb8042cfb983b1abb3d",
+      "bytes": 20414,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4/rejections.ndjson",
+      "sha256": "985d5b85668b000aad07b05ad21fa81352db6a6f0764947e0542553fed2738bd",
+      "bytes": 2552,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4/outcomes.ndjson",
+      "sha256": "7c6887c49748161ffada7376907ee879de9333e7fbba3b027622984110c723c7",
+      "bytes": 20376,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 22,
+    "candidate_records": 34,
+    "assertion_events": 22,
+    "review_events": 22,
+    "rejection_records": 3,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 22
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory.",
+    "Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs.",
+    "FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection.",
+    "SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications.",
+    "Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference.",
+    "Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held.",
+    "EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status.",
+    "The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record.",
+    "Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state SD --candidate-file ops/national-research/plans/epa-nrsa-2324-20260908-r18/SD.json --output-root src/data/research/runs --stage-canonical true --pairs 46005:hypophthalmichthys-molitrix,46013:hypophthalmichthys-molitrix,46019:cyprinus-carpio,46027:cyprinus-carpio,46031:cyprinus-carpio,46051:cyprinus-carpio,46061:cyprinus-carpio,46067:hypophthalmichthys-molitrix,46071:cyprinus-carpio,46075:cyprinus-carpio,46081:salmo-trutta,46085:cyprinus-carpio,46093:salmo-trutta,46099:cyprinus-carpio,46103:cyprinus-carpio,46111:cyprinus-carpio,46111:hypophthalmichthys-molitrix,46117:cyprinus-carpio,46121:cyprinus-carpio,46123:cyprinus-carpio,46127:cyprinus-carpio,46135:cyprinus-carpio"
+}

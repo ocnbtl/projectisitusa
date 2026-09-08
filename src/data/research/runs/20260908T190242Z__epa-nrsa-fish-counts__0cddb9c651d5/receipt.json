@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5",
+  "status": "complete",
+  "started_at": "2026-09-08T19:02:42.164Z",
+  "finished_at": "2026-09-08T19:02:45.710Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@1.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "81ea391d1177b3ad1aa9a5e19a80d10bf231352e467eeede1d7840b532be9c96",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+  "parameter_hash": "0cddb9c651d554af64371b8acf96220e6f3644b3902cd95e79c0b74c7b293f13",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+    "methodReviewSha256": "74733ec61f2db22be43b3e8a66dd650b6e298ea83b043b433a1785293497b3ec",
+    "mode": "retained-reviewed-fish-counts",
+    "stateCode": "IL",
+    "candidatePairs": [
+      "17011:ctenopharyngodon-idella",
+      "17031:cyprinus-carpio",
+      "17031:neogobius-melanostomus",
+      "17089:cyprinus-carpio",
+      "17097:cyprinus-carpio",
+      "17099:cyprinus-carpio",
+      "17123:cyprinus-carpio",
+      "17141:cyprinus-carpio",
+      "17149:cyprinus-carpio",
+      "17151:cyprinus-carpio",
+      "17153:ctenopharyngodon-idella",
+      "17153:cyprinus-carpio",
+      "17157:cyprinus-carpio",
+      "17177:cyprinus-carpio"
+    ],
+    "candidateLimit": 14
+  },
+  "requested_scope": {
+    "state_code": "IL",
+    "county_fips": [
+      "17011",
+      "17031",
+      "17089",
+      "17097",
+      "17099",
+      "17123",
+      "17141",
+      "17149",
+      "17151",
+      "17153",
+      "17157",
+      "17177"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio",
+      "neogobius-melanostomus"
+    ],
+    "pair_keys": [
+      "17011:ctenopharyngodon-idella",
+      "17031:cyprinus-carpio",
+      "17031:neogobius-melanostomus",
+      "17089:cyprinus-carpio",
+      "17097:cyprinus-carpio",
+      "17099:cyprinus-carpio",
+      "17123:cyprinus-carpio",
+      "17141:cyprinus-carpio",
+      "17149:cyprinus-carpio",
+      "17151:cyprinus-carpio",
+      "17153:ctenopharyngodon-idella",
+      "17153:cyprinus-carpio",
+      "17157:cyprinus-carpio",
+      "17177:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5/artifacts/epa-nrsa-fish-witnesses.json",
+      "sha256": "a31690802e838a3a57fda8453133d6db7222628f827785139ea4c8501d6e62c6",
+      "bytes": 174569,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5/assertions.ndjson",
+      "sha256": "296b0e63d8d61662c92c16fe6294069df6f8d3f58bdad182448d825088366cd3",
+      "bytes": 62170,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5/reviews.ndjson",
+      "sha256": "2a012a344a0b68e8ca31323ee83705f26ffadfd9eaf1bd8430b5654acb0f41cf",
+      "bytes": 12987,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5/outcomes.ndjson",
+      "sha256": "dd56b65306ea213a2a08bcb560a65b61de4950d6d5dc93684a855d5674796d3a",
+      "bytes": 12791,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 17,
+    "assertion_events": 14,
+    "review_events": 14,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory.",
+    "Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs.",
+    "FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection.",
+    "SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications.",
+    "Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference.",
+    "Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held.",
+    "EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status.",
+    "The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record.",
+    "Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state IL --candidate-file ops/national-research/plans/epa-nrsa-2324-20260908-r18/IL.json --output-root src/data/research/runs --stage-canonical true --pairs 17011:ctenopharyngodon-idella,17031:cyprinus-carpio,17031:neogobius-melanostomus,17089:cyprinus-carpio,17097:cyprinus-carpio,17099:cyprinus-carpio,17123:cyprinus-carpio,17141:cyprinus-carpio,17149:cyprinus-carpio,17151:cyprinus-carpio,17153:ctenopharyngodon-idella,17153:cyprinus-carpio,17157:cyprinus-carpio,17177:cyprinus-carpio"
+}

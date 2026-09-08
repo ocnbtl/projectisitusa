@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f",
+  "status": "complete",
+  "started_at": "2026-09-08T19:04:15.264Z",
+  "finished_at": "2026-09-08T19:04:18.786Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@1.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "81ea391d1177b3ad1aa9a5e19a80d10bf231352e467eeede1d7840b532be9c96",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+  "parameter_hash": "9a149e7eb97f9600b7b32b4791f2aa6943939dea3123e16041d7ec568f7ac4a3",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+    "methodReviewSha256": "74733ec61f2db22be43b3e8a66dd650b6e298ea83b043b433a1785293497b3ec",
+    "mode": "retained-reviewed-fish-counts",
+    "stateCode": "OK",
+    "candidatePairs": [
+      "40005:cyprinus-carpio",
+      "40023:cyprinus-carpio",
+      "40051:ctenopharyngodon-idella",
+      "40101:ctenopharyngodon-idella",
+      "40119:ctenopharyngodon-idella"
+    ],
+    "candidateLimit": 5
+  },
+  "requested_scope": {
+    "state_code": "OK",
+    "county_fips": [
+      "40005",
+      "40023",
+      "40051",
+      "40101",
+      "40119"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio"
+    ],
+    "pair_keys": [
+      "40005:cyprinus-carpio",
+      "40023:cyprinus-carpio",
+      "40051:ctenopharyngodon-idella",
+      "40101:ctenopharyngodon-idella",
+      "40119:ctenopharyngodon-idella"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f/artifacts/epa-nrsa-fish-witnesses.json",
+      "sha256": "0a419d37a1a81764deb5227865f2b4153a49f984f485771c45ae6f691ce3d576",
+      "bytes": 60909,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f/assertions.ndjson",
+      "sha256": "75389013a3a5c8796ce52702022deb8c0674ef04d1032fb24e1bfe1ab6a20317",
+      "bytes": 22324,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f/reviews.ndjson",
+      "sha256": "42e736933fee52f6de680368a840a3439438248a89916cedfa608c7cdd1ac5f6",
+      "bytes": 4654,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f/outcomes.ndjson",
+      "sha256": "afe552e8ff0895b80825cd6eb80b10193e266c98a8359e53a3ca8d44e3f6750e",
+      "bytes": 4584,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 5,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory.",
+    "Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs.",
+    "FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection.",
+    "SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications.",
+    "Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference.",
+    "Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held.",
+    "EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status.",
+    "The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record.",
+    "Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state OK --candidate-file ops/national-research/plans/epa-nrsa-2324-20260908-r18/OK.json --output-root src/data/research/runs --stage-canonical true --pairs 40005:cyprinus-carpio,40023:cyprinus-carpio,40051:ctenopharyngodon-idella,40101:ctenopharyngodon-idella,40119:ctenopharyngodon-idella"
+}

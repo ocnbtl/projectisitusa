@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d",
+  "status": "complete",
+  "started_at": "2026-09-08T19:02:28.627Z",
+  "finished_at": "2026-09-08T19:02:32.159Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@1.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "81ea391d1177b3ad1aa9a5e19a80d10bf231352e467eeede1d7840b532be9c96",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+  "parameter_hash": "d33d8c2cb13d7bce29ef3bd2ebe6f4c2fa25ae41a986766cee44a02f49b080c6",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+    "methodReviewSha256": "74733ec61f2db22be43b3e8a66dd650b6e298ea83b043b433a1785293497b3ec",
+    "mode": "retained-reviewed-fish-counts",
+    "stateCode": "GA",
+    "candidatePairs": [
+      "13069:ctenopharyngodon-idella",
+      "13069:cyprinus-carpio",
+      "13079:cyprinus-carpio",
+      "13091:cyprinus-carpio",
+      "13115:cyprinus-carpio",
+      "13175:cyprinus-carpio",
+      "13187:salmo-trutta",
+      "13193:cyprinus-carpio"
+    ],
+    "candidateLimit": 8
+  },
+  "requested_scope": {
+    "state_code": "GA",
+    "county_fips": [
+      "13069",
+      "13079",
+      "13091",
+      "13115",
+      "13175",
+      "13187",
+      "13193"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "13069:ctenopharyngodon-idella",
+      "13069:cyprinus-carpio",
+      "13079:cyprinus-carpio",
+      "13091:cyprinus-carpio",
+      "13115:cyprinus-carpio",
+      "13175:cyprinus-carpio",
+      "13187:salmo-trutta",
+      "13193:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d/artifacts/epa-nrsa-fish-witnesses.json",
+      "sha256": "42629eaf91f6d94a351fae3eac871bfa934946e66090c3da9fd27fcbabf9ca4d",
+      "bytes": 93316,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d/assertions.ndjson",
+      "sha256": "4a33bdce8d575cfa94741e76a70c6c8e67d19eb1cea5f918f5f62e781b134b91",
+      "bytes": 35986,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d/reviews.ndjson",
+      "sha256": "98da6e74277731d0ef50ea1b4b18b18fa9428c3c1107167b637671046532891c",
+      "bytes": 7413,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d/outcomes.ndjson",
+      "sha256": "d277964ef56ed7216e8b58a19b075631831f3994bed3b3b838e4050c529d868a",
+      "bytes": 7301,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 8,
+    "candidate_records": 8,
+    "assertion_events": 8,
+    "review_events": 8,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 8
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory.",
+    "Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs.",
+    "FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection.",
+    "SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications.",
+    "Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference.",
+    "Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held.",
+    "EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status.",
+    "The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record.",
+    "Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state GA --candidate-file ops/national-research/plans/epa-nrsa-2324-20260908-r18/GA.json --output-root src/data/research/runs --stage-canonical true --pairs 13069:ctenopharyngodon-idella,13069:cyprinus-carpio,13079:cyprinus-carpio,13091:cyprinus-carpio,13115:cyprinus-carpio,13175:cyprinus-carpio,13187:salmo-trutta,13193:cyprinus-carpio"
+}
