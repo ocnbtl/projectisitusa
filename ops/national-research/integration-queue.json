@@ -33395,6 +33395,73 @@
         "sha256": "db8cfbef8b14cd6b3f7ed6509f13dd1981e4dea47d84f7951add0a5b7062dd0c",
         "bytes": 4844
       }
+    },
+    {
+      "queueId": "queue-lease-cdfa-ca-occurrence-pilot-20260908-r11-1",
+      "jobId": "cdfa-ca-occurrence-pilot-20260908-r11",
+      "leaseId": "lease-cdfa-ca-occurrence-pilot-20260908-r11-1",
+      "decision": "accepted",
+      "submittedAt": "2026-09-08T08:59:25.658Z",
+      "manifestPath": "manifests/cdfa-ca-occurrence-pilot-20260908-r11__lease-cdfa-ca-occurrence-pilot-20260908-r11-1.json",
+      "manifestHash": "40ef5caef2fdd7ac80c6c040e2abed11e34bf03a0c4ebf4e9c1df1c12ada9705",
+      "manifestBytes": 10474,
+      "workerCommit": "25b8a562224f2b8584dd4956c66f01a4133e9873",
+      "workerBranchHead": "7e84d4902ce0e77323757de95d1e41455c890471",
+      "reviewedAt": "2026-09-08T09:00:21.113Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN verified two exact agency-confirmed historical occurrences, independent source interpretations, original PDF/extraction hashes, source interval/year precision and unchanged two-county baselines. Actual reviewer responses confirm visual source date checks. Two sparse setup dependency rounds preserved exact pinned bytes. One MAIN receipt result-enum correction followed a transactional review rejection with no acceptance or merge. Full initial integrity suite and final focused interval/legacy freshness checks passed. Eight canonical tamper cases were rejected. No current persistence or negative claim; projected gains remain pending.",
+      "changedPaths": [
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/artifacts/reviewed-occurrence-witnesses.json",
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/assertions.ndjson",
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/manifest.json",
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/outcomes.ndjson",
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/receipt.json",
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/rejections.ndjson",
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/reviews.ndjson",
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "MAIN independent exact source passages, original source/date precision and two unchanged scoped baseline hashes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r11-official-occurrence\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408 --source-verification C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11\\src\\data\\research\\runs\\20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408\\source-verification.json --run-id 20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408 --source-id cdfa-confirmed-pest-occurrences --state-code CA --pair-keys-stdin true --code-commit 9a7160ca494667a9caa648eb18628b76665e4fc7 --worker-task-id cdfa_ca_occurrence_pilot_r11",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Actual pilot canonical tamper tests",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "npm run check:research-integrity",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 3,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-cdfa-ca-occurrence-pilot-20260908-r11-1.json",
+        "sha256": "ff82c2bd91e407b6ce10fe6c5a263a6bbf2de93cc8ed93b8214f3bc255269359",
+        "bytes": 4449
+      }
     }
   ]
 }

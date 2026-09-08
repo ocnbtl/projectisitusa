@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-08T08:42:32.257Z",
+  "runId": "20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408",
+  "sourceId": "cdfa-confirmed-pest-occurrences",
+  "stateCode": "CA",
+  "pairKeys": [
+    "06037:anastrepha-suspensa",
+    "06073:anastrepha-suspensa"
+  ],
+  "parameterHash": "47f17bc184088276252851ea5edb26d3f16874e014168c5840d597a6a594ec76",
+  "authority": {
+    "name": "CDFA March 18, 2026 Caribbean fruit fly emergency program report",
+    "sourceUrl": "https://www.cdfa.ca.gov/plant/pdep/treatment/2026/pep_cff_20260318_longbeach_losangeles_county.pdf",
+    "publisher": "California Department of Food and Agriculture"
+  },
+  "terms": {
+    "license": "California Conditions of Use Ownership section generally permits copying state-created information; third-party copyrighted material is excluded. Retention here is limited to the state-authored report for source auditing and attributed factual extracts. No blanket license for third-party images or other California content is asserted.",
+    "termsUrl": "https://www.ca.gov/legal/conditions-of-use/",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-09-08T08:42:32.257Z",
+    "freshnessDate": "2026-03-18"
+  },
+  "geography": {
+    "method": "Exact explicit Los Angeles County and San Diego County text in the confirmed and historical detection passages matches active CA county-equivalent registry FIPS 06037 and 06073 respectively. No treatment boundary or countywide infestation extent is inferred.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "No coordinate routing, polygon inference, locality-only inference, retired geography or successor substitution. Both source counties are explicitly named."
+  },
+  "taxonomy": {
+    "method": "Exact catalog binomial Anastrepha suspensa. The incident identifies Anastrepha suspensa (Loew), and the source pest profile explicitly binds Caribbean fruit fly to that binomial. Authorship is retained. No group, complex, synonym, fuzzy or host-list expansion.",
+    "targetSpeciesIds": [
+      "anastrepha-suspensa"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "recordId",
+      "recordSha256",
+      "source.decodedSha256",
+      "extraction.decodedSha256",
+      "supports.page",
+      "supports.textSha256",
+      "countyFips",
+      "speciesId",
+      "observationDate"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "This registered source and selected records support recorded occurrence only. Source silence, missing rows, failed retrieval, treatment polygons and rejected group identifications cannot support absence or non-detection.",
+      "Los Angeles dates remain the aggregate 2026-01-20/2026-02-09 interval. Two reported flies do not become two independent specimen records; no trap identifiers or individual dates are supplied.",
+      "San Diego remains a historical occurrence in 1983 at year precision. The source supplies no exact historical locality, trap, count, collection method or specimen identifier.",
+      "General subsequent eradication language does not provide a dated countywide absence declaration. Neither historical occurrence nor the program end date establishes current persistence, continuous establishment, current absence or non-detection.",
+      "Generic Florida-only distribution prose does not invalidate explicit California detections. The August 18, 2026 Oriental fruit fly group report is not one of the selected records and supplies no exact Bactrocera dorsalis assertion in this run."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/artifacts/reviewed-occurrence-witnesses.json",
+      "sha256": "649bfc8744c1c2780757fe3d94a6ee315c8f954c23c0dd19889d3c943fd31bf0",
+      "bytes": 7514
+    }
+  ],
+  "caveats": [
+    "Zero provider requests were made. Snapshot and pagination completeness refer only to the two selected admitted records and their complete retained 13-page PDF, not the full CDFA report corpus, a national agency search or the county-species research protocol. There is no provider page/cursor chain in this offline adapter.",
+    "verifiedAt and availability.checkedAt identify successful registered adapter completion of retained-input validation. Independent worker interpretation preceded execution; source-verification packaging occurred afterward. Availability is local retained-artifact availability, not a new live HTTP check.",
+    "Original source retrieval remains 2026-09-08T07:51:56.731Z. March 18, 2026 is the document date, not an occurrence date. The printed date was visually verified by MAIN and the independent source reviewers; this worker independently re-extracted all 13 pages with pypdf and matched all retained texts and hashes.",
+    "Original compressed PDF SHA-256 817265886a283ced0693f3010f6c733f205d7ba6bbc11685bd7bc4be1392eef3 and decoded PDF SHA-256 50b894f6585b056466ec86e46ee23259e77924a9e44a779d009082684e5f5e11 matched. The compressed extraction, decoded extraction, both admitted records and both independent review descriptors matched their pinned hashes.",
+    "Source supports are PDF pages 1 and 12 for Los Angeles and pages 3 and 12 for San Diego. Repetition in the same PDF is one source lineage. Both dates, counties, taxon identification and context were independently checked before accepting the generated events.",
+    "Source interpretation actors cff_la_source_review_r11 and cff_sd_history_review_r11, admission actor MAIN and lease evidence-review actor cdfa_ca_occurrence_pilot_r11 remain distinct. No human approval is claimed.",
+    "Retained California conditions of use at ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/california-conditions-of-use-20260908-r11.html.gz were independently read and verified: stored SHA-256 25736d5c666b23245d3848de8980e760efcb264fb76365f9c6d6f3b27f4ad37b, decoded SHA-256 5663109c93a0139329be68e63050c11390c9015573b71e08531853109fee33a8. Their original retrieval was 2026-09-08T08:30:23.874Z; no terms request was made by this worker.",
+    "Run counts are two accepted assertions, two agent reviews and two evidence-found outcomes, with zero rejections, duplicates and errors. MAIN must compile and compare the exact unique pair states before claiming determination gains."
+  ]
+}

@@ -500600,7 +500600,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "cdfa_ca_occurrence_pilot_r11",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-09-08T08:36:15.634Z",
       "expiresAt": "2026-09-08T09:21:15.595Z",
       "recoveryAt": null,
@@ -500698,7 +500698,16 @@
         "Create one immutable two-pair run using the exact committed plan and pinned start time with zero HTTP requests.",
         "Retain truthful source-verification and a closed manifest with exactly two commits: content then finalized manifest.",
         "No shared changes or projections. Report assertion/outcome counts, never net determination gains before MAIN compiles."
-      ]
+      ],
+      "transitionedAt": "2026-09-08T08:59:25.658Z",
+      "resultManifest": {
+        "path": "manifests/cdfa-ca-occurrence-pilot-20260908-r11__lease-cdfa-ca-occurrence-pilot-20260908-r11-1.json",
+        "sha256": "40ef5caef2fdd7ac80c6c040e2abed11e34bf03a0c4ebf4e9c1df1c12ada9705",
+        "bytes": 10474,
+        "status": "complete",
+        "workerCommit": "25b8a562224f2b8584dd4956c66f01a4133e9873",
+        "workerBranchHead": "7e84d4902ce0e77323757de95d1e41455c890471"
+      }
     }
   ]
 }
