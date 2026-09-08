@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-nrsa-canonical-pilot-retry",
+  "recordedAt": "2026-09-08T18:55:42.907Z",
+  "failedPilotSourceCommit": "e7b1ddbb5879133ccc178cb5861b2b432090f2f3",
+  "state": "AL",
+  "originalError": "uses unapproved coordinate-derived county geography",
+  "cause": "The canonical validator recognizes explicit denials with not or without coordinate-derived, but the initial adapter used no coordinate-derived reassignment. Geography was already an exact publisher county metadata join.",
+  "correction": "Adapter description now uses not coordinate-derived. Validator restrictions and all county/source predicates are unchanged.",
+  "failedAttempt": "Retained .cache/research/campaigns/20260908-r18-epa-nrsa/main-batch AL-run.stderr.log; no immutable run was completed or integrated.",
+  "retryBatchDirectory": ".cache/research/campaigns/20260908-r18-epa-nrsa/main-batch-2",
+  "newDeterminations": 0,
+  "providerRequests": 0,
+  "originalStderr": "Error: Assertion epa-nrsa-fish-assertion-0a39039ddb4a1c6755ba82a5a0d82bfdef71e82a924b01d7d7c6c9ca98f774b4 uses unapproved coordinate-derived county geography.\n    at assert (C:\\Code\\project-isitusa\\src\\lib\\research\\validate-run.ts:53:25)\n    at validateResearchRunInMemory (C:\\Code\\project-isitusa\\src\\lib\\research\\validate-run.ts:500:7)\n    at main (C:\\Code\\project-isitusa\\scripts\\research\\run-source.ts:1455:3)\n",
+  "originalStderrSha256": "f2a170edb57a929df95b69657e799ba90dd2fb31b43c5c290e91841a93322235"
+}
