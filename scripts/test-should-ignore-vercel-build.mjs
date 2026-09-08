@@ -89,4 +89,14 @@ const historicalApplicationChange = decideVercelBuild({
 assert.equal(historicalApplicationChange.ignoreBuild, false);
 assert.ok(historicalApplicationChange.buildRelevantPaths.includes("next.config.ts"));
 
+// Retained proposal bytes and review recipes never enter the static application.
+const proposalOnly = decideVercelBuild({
+  VERCEL_GIT_PREVIOUS_SHA: "4b9d8e104a52bd482afaefd4a246cdfde5200de2",
+  VERCEL_GIT_COMMIT_SHA: "db6349c255403935e1c6562903dd825082f7c02c",
+});
+assert.equal(proposalOnly.ignoreBuild, true);
+assert.ok(proposalOnly.changedPaths.some(p => p.endsWith("/review.py")));
+assert.equal(isDeploymentIndependentPath("src/data/research/worker-results-other/proposal.json"), false);
+assert.equal(classifyVercelBuild(["src/data/research/worker-results/example/proposal.json", "src/lib/research/epa-nrsa-1314-fish-counts.ts"]).ignoreBuild, false);
+assert.equal(classifyVercelBuild(["src/data/research/worker-results/example/proposal.json", "app/page.tsx"]).ignoreBuild, false);
 console.log("Vercel ignored-build classification tests passed.");

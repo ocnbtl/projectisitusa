@@ -14,6 +14,7 @@ const DEPLOYMENT_INDEPENDENT_PATHS = [
   /^src\/data\/research\/national-acquisitions\//u,
   /^src\/data\/research\/taxonomy-references\//u,
   /^src\/data\/research\/runs\//u,
+  /^src\/data\/research\/worker-results\//u,
   /^src\/data\/research\/question-assessments\//u,
   /^src\/data\/research\/official-occurrence-records\//u,
 ];

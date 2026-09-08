@@ -1,3 +1,4 @@
+import { EPA_NRSA_1314_VERSION, EPA_NRSA_1314_MODE, buildEpaNrsa1314Result } from "./epa-nrsa-1314-fish-counts";
 import { EPA_NRSA_1819_VERSION, EPA_NRSA_1819_MODE, buildEpaNrsa1819Result } from "./epa-nrsa-1819-fish-counts";
 import { EPA_NRSA_SOURCE, EPA_NRSA_ADAPTER, EPA_NRSA_VERSION, buildEpaNrsaResult } from "./epa-nrsa-fish-counts";
 import { WQP_REVIEWED_FISH_VERSION, buildWqpReviewedFishResult } from "./wqp-reviewed-fish";
@@ -65,6 +66,10 @@ export function isCommittedSnapshotReplayReceipt(
     && receipt.parameters.mode === EPA_NRSA_1819_MODE && typeof receipt.parameters.methodReviewSha256 === "string"
     && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256) && typeof receipt.parameters.methodReviewPath === "string"
     && /^src\/data\/research\/source-method-reviews\/epa-nrsa-fish-counts-1819-[a-z0-9-]+\.json$/u.test(receipt.parameters.methodReviewPath)) return true;
+  if (receipt.source_id === EPA_NRSA_SOURCE && receipt.adapter_id === EPA_NRSA_ADAPTER && receipt.adapter_version === EPA_NRSA_1314_VERSION
+    && receipt.parameters.mode === EPA_NRSA_1314_MODE && typeof receipt.parameters.methodReviewSha256 === "string"
+    && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256) && typeof receipt.parameters.methodReviewPath === "string"
+    && /^src\/data\/research\/source-method-reviews\/epa-nrsa-fish-counts-1314-[a-z0-9-]+\.json$/u.test(receipt.parameters.methodReviewPath)) return true;
   // WQP original query citations are pinned and reconstructed above; replay issues no new requests.
   if (receipt.source_id === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && receipt.adapter_version === WQP_VERSION
     && receipt.parameters.mode === "retained-field-positive-count" && typeof receipt.parameters.methodReviewSha256 === "string"
@@ -344,8 +349,8 @@ export function validateResearchRunInMemory(input: {
     assert(receipt.upstream_requests.length === 0, "Retained honey bee replay cannot claim fresh source requests.");
   }
   if (sourceId === EPA_NRSA_SOURCE) {
-    assert(receipt.adapter_id === EPA_NRSA_ADAPTER && [EPA_NRSA_VERSION, EPA_NRSA_1819_VERSION].includes(receipt.adapter_version), "Wrong EPA NRSA adapter version.");
-    const reconstruct = receipt.adapter_version === EPA_NRSA_1819_VERSION ? buildEpaNrsa1819Result : buildEpaNrsaResult;
+    assert(receipt.adapter_id === EPA_NRSA_ADAPTER && [EPA_NRSA_VERSION, EPA_NRSA_1819_VERSION, EPA_NRSA_1314_VERSION].includes(receipt.adapter_version), "Wrong EPA NRSA adapter version.");
+    const reconstruct = receipt.adapter_version === EPA_NRSA_1314_VERSION ? buildEpaNrsa1314Result : receipt.adapter_version === EPA_NRSA_1819_VERSION ? buildEpaNrsa1819Result : buildEpaNrsaResult;
     const expected = reconstruct({runId, sourceId, stateCode, runStartedAt: receipt.started_at, parameters: receipt.parameters,
       requestedPairs: requestedPairKeys.map(key => { const [countyFips, speciesId] = key.split(":"); return {countyFips, speciesId, countyName: "Pinned registry", scientificName: speciesById.get(speciesId)!.scientificName}; })},
       p => readCommittedBytes(root, receipt.code_commit, p));
@@ -544,7 +549,11 @@ export function validateResearchRunInMemory(input: {
       // Its canonical retained-row reconstruction above verifies that literal source value.
       ...(sourceId === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && [WQP_VERSION, WQP_FISH_VERSION, WQP_REVIEWED_FISH_VERSION].includes(receipt.adapter_version)
         ? { countyFips: assertion.geography_match.source_county }
-        : { countyName: assertion.geography_match.source_county }),
+        : sourceId === EPA_NRSA_SOURCE && receipt.adapter_id === EPA_NRSA_ADAPTER && receipt.adapter_version === EPA_NRSA_1314_VERSION
+          // Original EPA county names can be ambiguous (Baltimore). The version3
+          // reconstruction above checks both original publisher FIPS and name.
+          ? { countyFips: assertion.geography_match.county_fips, countyName: assertion.geography_match.source_county }
+          : { countyName: assertion.geography_match.source_county }),
       sourceId,
     });
     assert(
