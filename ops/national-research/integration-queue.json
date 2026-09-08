@@ -33636,7 +33636,7 @@
       "queueId": "queue-lease-honey-ny-positive-pilot-20260908-r12-1",
       "jobId": "honey-ny-positive-pilot-20260908-r12",
       "leaseId": "lease-honey-ny-positive-pilot-20260908-r12-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-09-08T10:24:03.072Z",
       "manifestPath": "manifests/honey-ny-positive-pilot-20260908-r12__lease-honey-ny-positive-pilot-20260908-r12-1.json",
       "manifestHash": "03fcf00acc167ab135d2ee2166047246c7a0e029fb736e949946fb22083e404d",
@@ -33697,6 +33697,57 @@
         "path": "receipts/reviews/queue-lease-honey-ny-positive-pilot-20260908-r12-1.json",
         "sha256": "5805e285d52ff6247d7599292b6f8aea05e1a49ae1144d91da9080e6ade87cc7",
         "bytes": 4236
+      },
+      "integratedAt": "2026-09-08T10:24:14.193Z",
+      "integrator": "MAIN",
+      "integrationCommit": "0a3f95ce4d2c1d9c40919b44e5daa2ea844a5ab4",
+      "integrationChecks": [
+        {
+          "command": "MAIN independently verify frozen trees, exact two-commit ancestry, clean worktree, leased eight paths, manifest bytes and county baseline hashes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r12-honey-bee\\ny-pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b --source-verification C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\source-verification.json --run-id 20260908T100226Z__aphis-honey-bee__050604009f3b --source-id aphis-honey-bee --state-code NY --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_ny_positive_pilot_r12",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Actual pilot canonical mutation tests",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "npm run check:research-integrity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "TypeScript noEmit check",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\source-verification.json --run-id 20260908T100226Z__aphis-honey-bee__050604009f3b --source-id aphis-honey-bee --state-code NY --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_ny_positive_pilot_r12",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN preserved worker ancestry and exact reviewed immutable bytes. Canonical validation passed after merge. National compilation and exact pair reconciliation remain separate.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-honey-ny-positive-pilot-20260908-r12-1.json",
+        "sha256": "0ed0969abcf287e0f362bea69bd79c30e2bf4da45de32bc47904968e4c5076e9",
+        "bytes": 4428
       }
     }
   ]

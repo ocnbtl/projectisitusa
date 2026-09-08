@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-honey-ny-positive-pilot-20260908-r12-1",
+  "jobId": "honey-ny-positive-pilot-20260908-r12",
+  "leaseId": "lease-honey-ny-positive-pilot-20260908-r12-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-09-08T10:24:14.193Z",
+  "integrationCommit": "0a3f95ce4d2c1d9c40919b44e5daa2ea844a5ab4",
+  "workerCommit": "302f6034ec8c1cbf0ab661d7d55b012bb775cf28",
+  "workerBranchHead": "5ac1721ba45d4faa3ccdb90e0feba5f5a7441b27",
+  "manifestHash": "03fcf00acc167ab135d2ee2166047246c7a0e029fb736e949946fb22083e404d",
+  "changedPaths": [
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/artifacts/honey-bee-positive-witnesses.json",
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/assertions.ndjson",
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/manifest.json",
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/outcomes.ndjson",
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/receipt.json",
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/rejections.ndjson",
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/reviews.ndjson",
+    "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "MAIN independently verify frozen trees, exact two-commit ancestry, clean worktree, leased eight paths, manifest bytes and county baseline hashes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r12-honey-bee\\ny-pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b --source-verification C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\source-verification.json --run-id 20260908T100226Z__aphis-honey-bee__050604009f3b --source-id aphis-honey-bee --state-code NY --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_ny_positive_pilot_r12",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "Actual pilot canonical mutation tests",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "npm run check:research-integrity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "TypeScript noEmit check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\source-verification.json --run-id 20260908T100226Z__aphis-honey-bee__050604009f3b --source-id aphis-honey-bee --state-code NY --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_ny_positive_pilot_r12",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN preserved worker ancestry and exact reviewed immutable bytes. Canonical validation passed after merge. National compilation and exact pair reconciliation remain separate."
+}
