@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-karnal-bunt-tn-precision-pilot-20260908-r9-1",
+  "jobId": "karnal-bunt-tn-precision-pilot-20260908-r9",
+  "leaseId": "lease-karnal-bunt-tn-precision-pilot-20260908-r9-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-09-08T06:57:54.245Z",
+  "workerCommit": "fd14f00853fc700e77b0d3918cc61fce4a137b10",
+  "workerBranchHead": "2047d208654ee837b66ce48f4d424a92aa1b153f",
+  "manifestHash": "a1054bb9326739c78b0f7d0709c31af10d872dcddedd6d625a8158e69bfc9cfe",
+  "changedPaths": [
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/artifacts/reviewed-parent-and-conflict-baseline.json",
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/assertions.ndjson",
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/manifest.json",
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/outcomes.ndjson",
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/receipt.json",
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/rejections.ndjson",
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/reviews.ndjson",
+    "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "MAIN independent source semantics, null source dates and 95 unchanged current contradiction baseline hashes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tn-precision-pilot-20260908-r9\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r9-precision\\tn\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tn-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tn-precision-pilot-20260908-r9",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tn-precision-pilot-20260908-r9 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tn-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f --source-verification C:\\Code\\project-isitusa-worktrees\\karnal-bunt-tn-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f\\source-verification.json --run-id 20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f --source-id eppo-karnal-bunt-state-status --state-code TN --pair-keys-stdin true --code-commit 855c38e22f9795f6ab2f29d2dcd1d1f34da5bf56 --worker-task-id karnal_bunt_tn_pilot_r9",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 1,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently verified null source dates, exact reviewed state scope, explicit source support, truthful independent agent reviews, 95 unchanged current county contradiction baselines, retained descriptors, frozen hashes, exact two-commit history and canonical immutable validation. One MAIN sparse dependency materialization was required, preserving pinned bytes. Process telemetry limitations remain explicitly unmeasured where reported; host resource monitoring is separate. No projected gains are claimed before compilation."
+}
