@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "methodVersion": "retained-wqp-reviewed-fish-measurement-v3",
+  "sourceId": "water-quality-portal",
+  "status": "approved-with-specific-holds",
+  "reviewedBy": "MAIN",
+  "reviewedAt": "2026-09-08T17:35:49.396Z",
+  "taxa": {
+    "cyprinus-carpio": "Cyprinus carpio"
+  },
+  "acquisitions": [
+    {
+      "id": "state-results",
+      "archive": {
+        "path": "ops/national-research/evaluations/artifacts/wqp-common-carp-state-preflight-20260908-r16.json.gz",
+        "bytes": 61674,
+        "sha256": "effeb927ab1da127e38c3a45f55090d4b57d9d06b7bb4f962ae707641c33823b"
+      },
+      "receipt": {
+        "path": ".cache/research/campaigns/20260908-r16-wqp-common-carp/state-retrieval-receipt.json",
+        "bytes": 3877,
+        "sha256": "d6b5bbbe40141ee7137e06db31c036c61f8eff8aaa766488fb337dc2b89cc6e4"
+      },
+      "recipe": {
+        "path": ".cache/research/campaigns/20260908-r16-wqp-common-carp/acquire-state-measurements.cjs",
+        "bytes": 2704,
+        "sha256": "22f4f934dc1825f2941ddad62bc495f596ed6b953db52506b2d058602f447725"
+      },
+      "additionalRecipes": [],
+      "repositoryBaseCommit": "2ec23a3b5a4333fac14f004db03fb0d0ea4777c1"
+    },
+    {
+      "id": "national-stations",
+      "archive": {
+        "path": "ops/national-research/evaluations/artifacts/wqp-expansion-preflight-20260908-r14.json.gz",
+        "bytes": 250033,
+        "sha256": "4a243ff435d46bdd54ca54a0d8f298534f9ab93f32b367123197e9c8fa003e00"
+      },
+      "receipt": {
+        "path": ".cache/research/campaigns/20260908-r14-wqp-expansion/inputs/retrieval-receipt.json",
+        "bytes": 9915,
+        "sha256": "991fe712b63570cb904c99ae2aea9f7a30bc6efaf28f6c28c772c74650b3fe76"
+      },
+      "recipe": {
+        "path": ".cache/research/campaigns/20260908-r14-wqp-expansion/acquire-remaining-candidates.cjs",
+        "bytes": 3511,
+        "sha256": "087ef88395de077706389af827a64643bbaba9eb58bacc8b42039f5b5f2a8a76"
+      },
+      "additionalRecipes": [
+        {
+          "path": ".cache/research/campaigns/20260908-r14-wqp-expansion/acquire-candidates.cjs",
+          "bytes": 3029,
+          "sha256": "6733bcd1031e960d93f66bd7da73456f979ce29ad47c14a8f955ccea1e5ae064"
+        }
+      ],
+      "repositoryBaseCommit": "bd92b35a1a67f307317f0ec5ab429e7399d68570"
+    }
+  ],
+  "context": [
+    {
+      "path": "ops/national-research/evaluations/artifacts/wqp-common-carp-independent-reviews-20260908-r16.json.gz",
+      "bytes": 28252,
+      "sha256": "56a8f4903b02abd3f5d6d41d76430f64550cf184cd54b064922e09bdb0b109ec"
+    },
+    {
+      "path": "ops/national-research/evaluations/wqp-fish-method-context-20260908-r14.json",
+      "bytes": 13071,
+      "sha256": "d546063aa81fad36abfbe065a88e78db5fd7a6e56ae9a51a06b109590f0b747b"
+    },
+    {
+      "path": "ops/national-research/evaluations/wqp-expansion-vocabulary-context-20260908-r14.json",
+      "bytes": 2410,
+      "sha256": "b17888162cd435aec2b593db7bc5f1d62ebdc73ea10d01ba0cf07ec335c0d390"
+    }
+  ],
+  "groups": [
+    {
+      "stateCode": "IA",
+      "speciesId": "cyprinus-carpio",
+      "review": {
+        "path": "ops/national-research/evaluations/wqp-common-carp-ia-independent-review-20260908-r16.json",
+        "bytes": 94083,
+        "sha256": "5a7421e9b3555ef9a87d164c784bdff0c1c7de5fe7e067040c5e3259cb222852"
+      },
+      "result": {
+        "acquisitionId": "state-results",
+        "path": ".cache/research/campaigns/20260908-r16-wqp-common-carp/cyprinus-carpio-ia-measurements-result.zip",
+        "encoding": "zip",
+        "decodedBytes": 41325,
+        "decodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+        "rowCount": 34
+      },
+      "station": {
+        "acquisitionId": "national-stations",
+        "path": ".cache/research/campaigns/20260908-r14-wqp-expansion/inputs/cyprinus-carpio-station.csv.gz",
+        "encoding": "gzip",
+        "decodedBytes": 901339,
+        "decodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+        "rowCount": 4164
+      }
+    },
+    {
+      "stateCode": "KS",
+      "speciesId": "cyprinus-carpio",
+      "review": {
+        "path": "ops/national-research/evaluations/wqp-common-carp-ks-independent-review-20260908-r16.json",
+        "bytes": 77940,
+        "sha256": "e19f5af985f6bc9dfb279bc7e9a32f9d3bc3d3b29785c9379243cabe75e111fd"
+      },
+      "result": {
+        "acquisitionId": "state-results",
+        "path": ".cache/research/campaigns/20260908-r16-wqp-common-carp/cyprinus-carpio-ks-measurements-result.zip",
+        "encoding": "zip",
+        "decodedBytes": 40747,
+        "decodedSha256": "2c3d40680e84f298e6153119c4c693f0a85eaf8a0a6c18de7fed049f8b22878d",
+        "rowCount": 34
+      },
+      "station": {
+        "acquisitionId": "national-stations",
+        "path": ".cache/research/campaigns/20260908-r14-wqp-expansion/inputs/cyprinus-carpio-station.csv.gz",
+        "encoding": "gzip",
+        "decodedBytes": 901339,
+        "decodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+        "rowCount": 4164
+      }
+    }
+  ],
+  "approvedPairs": [
+    "19005:cyprinus-carpio",
+    "19021:cyprinus-carpio",
+    "19049:cyprinus-carpio",
+    "19057:cyprinus-carpio",
+    "19061:cyprinus-carpio",
+    "19063:cyprinus-carpio",
+    "19071:cyprinus-carpio",
+    "19087:cyprinus-carpio",
+    "19089:cyprinus-carpio",
+    "19103:cyprinus-carpio",
+    "19105:cyprinus-carpio",
+    "19109:cyprinus-carpio",
+    "19119:cyprinus-carpio",
+    "19123:cyprinus-carpio",
+    "19125:cyprinus-carpio",
+    "19133:cyprinus-carpio",
+    "19149:cyprinus-carpio",
+    "19155:cyprinus-carpio",
+    "19161:cyprinus-carpio",
+    "19171:cyprinus-carpio",
+    "19177:cyprinus-carpio",
+    "19189:cyprinus-carpio",
+    "20007:cyprinus-carpio",
+    "20027:cyprinus-carpio",
+    "20043:cyprinus-carpio",
+    "20051:cyprinus-carpio",
+    "20053:cyprinus-carpio",
+    "20065:cyprinus-carpio",
+    "20075:cyprinus-carpio",
+    "20087:cyprinus-carpio",
+    "20089:cyprinus-carpio",
+    "20091:cyprinus-carpio",
+    "20105:cyprinus-carpio",
+    "20109:cyprinus-carpio",
+    "20113:cyprinus-carpio",
+    "20133:cyprinus-carpio",
+    "20139:cyprinus-carpio",
+    "20141:cyprinus-carpio",
+    "20155:cyprinus-carpio",
+    "20173:cyprinus-carpio",
+    "20191:cyprinus-carpio",
+    "20205:cyprinus-carpio"
+  ],
+  "heldPairs": [],
+  "heldResultRows": [],
+  "rationale": "Approve exactly42 independently reviewed historical common-carp county candidates from positive Final Actual Population Census Count/count field records in Iowa and Kansas. Reuse the registered v3 contract and unchanged v2 positive measurement predicate. All68 retained Result records were independently inspected, with65 records in the42-pair gap scope; one already-present Iowa pair is outside the new scope. Canonical replay and net-unique reconciliation remain required.",
+  "attribution": "Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+  "limitations": [
+    "These original field records support historical sampled occurrence, not current persistence, establishment, abundance, countywide prevalence or protocol completion.",
+    "Final Actual positive counts, individual fish lengths and weights retain their original units and biological intent. Separate measurements and duplicate submissions do not become unique fish totals.",
+    "The successful filtered Result responses and retained Station response are complete only for their recorded queries. Missing species or counties, zero values, failed requests and excluded rows create no absence or non-detection.",
+    "Publisher county FIPS is used through exact organization/site joins. Generalized cartography and source coordinates do not establish precise water jurisdiction; no coordinate-derived county reassignment occurs.",
+    "Source-specific exceptions for field specimens with subsequent laboratory handling, Frequency Class values and other result statuses remain outside this version unless separately reviewed and implemented. Their exclusion does not assert captive origin."
+  ],
+  "speciesCaveats": {
+    "cyprinus-carpio": [
+      "EPA NARS field counts retain positive species counts, collection dates and publisher site identities. Generic coastal-trawl prose occurs alongside river electroshock metadata; exact gear execution is not independently established.",
+      "Incomplete sampling effort does not negate an explicit positive count. Separate activities are not combined into a count of unique individual fish.",
+      "Historical field records support sampled occurrence without establishing persistence, establishment, countywide prevalence or a complete county inventory."
+    ]
+  },
+  "pairCaveats": {
+    "19149:cyprinus-carpio": [
+      "Publisher Station records assign Iowa/Plymouth19149 to Big Sioux River points. The selected2014-07-24 activity and Station coordinates differ by less than0.65m, while generalized Census topology diagnoses a238m river-boundary discrepancy near its quantization scale. Retain the explicit source county with this caveat; precise collection-side and water jurisdiction remain unresolved."
+    ],
+    "20087:cyprinus-carpio": [
+      "Publisher Station assigns Kansas/Jefferson20087 to NARS_WQX-FW08KS055, Kansas River, with a positive count on2009-05-27 and matching activity coordinates. Generalized Census topology diagnoses a303m discrepancy into20045 near its longitude quantization scale. No county reassignment or precise water-jurisdiction claim is made."
+    ],
+    "20091:cyprinus-carpio": [
+      "The selected independent EPA_R7 Blue River3 activity supports the publisher county within generalized topology. Two alternative NARS Kansas River records have169-170m generalized boundary discrepancies and remain traceable as qualified alternatives."
+    ]
+  }
+}

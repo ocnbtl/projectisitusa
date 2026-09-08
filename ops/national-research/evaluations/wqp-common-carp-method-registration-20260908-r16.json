@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-reviewed-fish-scope-registration",
+  "recordedAt": "2026-09-08T17:57:48.344Z",
+  "status": "offline-fixtures-passed-canonical-runs-pending",
+  "method": {
+    "path": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+    "bytes": 10008,
+    "sha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc"
+  },
+  "adapterVersion": "3.0.0",
+  "sourceCodeUnchanged": true,
+  "fixture": {
+    "recordedAt": "2026-09-08T17:51:21.173Z",
+    "methodReference": {
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc"
+    },
+    "methodLocation": "cache proposal supplied through injected read-only method reader; managed method not yet written",
+    "checks": [
+      {
+        "state": "IA",
+        "pairs": 22,
+        "assertions": 22,
+        "sourceRows": 31,
+        "rejections": 0,
+        "upstreamRequests": 0,
+        "primaryWitnessDatesMatch": true,
+        "latestSupportedDatesMatch": true,
+        "eventSchemasPassed": true,
+        "publicAttributionPassed": true,
+        "deterministicReplayPassed": true
+      },
+      {
+        "state": "KS",
+        "pairs": 20,
+        "assertions": 20,
+        "sourceRows": 34,
+        "rejections": 0,
+        "upstreamRequests": 0,
+        "primaryWitnessDatesMatch": true,
+        "latestSupportedDatesMatch": true,
+        "eventSchemasPassed": true,
+        "publicAttributionPassed": true,
+        "deterministicReplayPassed": true
+      }
+    ],
+    "primaryAndLatestDifferences": [
+      {
+        "pair": "20091:cyprinus-carpio",
+        "independentPrimaryDate": "2007-08-02",
+        "latestSupportedDate": "2013-07-19",
+        "temporalScope": "Positive field-sample dates span 2007-08-02 through 2013-07-19; latest supported collection date retained.",
+        "sourceRows": [
+          0,
+          25,
+          32
+        ]
+      }
+    ],
+    "newDeterminations": 0,
+    "canonicalRunsCompleted": false
+  },
+  "fixtureCorrection": {
+    "recordedAt": "2026-09-08T17:51:20.349Z",
+    "originalFailure": {
+      "pair": "20091:cyprinus-carpio",
+      "fixtureExpectedPrimaryDate": "2007-08-02",
+      "actualAssertionDate": "2013-07-19"
+    },
+    "cause": "The fixture incorrectly required the independently selected primary witness date to equal the aggregate latest-supported collection date. The existing v3 method explicitly retains all reviewed positive records and reports their date span and latest supported date.",
+    "correction": "Validate the original independent primary witness/date separately, then validate the assertion date against all supported source rows. Preserve boundary caveats and do not change source evidence or method admission to satisfy an incorrect test.",
+    "sourceCodeChanged": false,
+    "methodDocumentChanged": false,
+    "canonicalEvidenceChanged": false
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-common-carp-method-validation-20260908-r16.json.gz",
+    "bytes": 26024,
+    "sha256": "a5be46f7fea7d470a245ff80efca48da62a067a429de9812da04d7a228b106c7"
+  },
+  "baseline": {
+    "commit": "5917cbba408a6d79e74fd8d49afec00a2dd4139b",
+    "determinations": 318816,
+    "candidateStatusCounts": {
+      "not-researched": 42
+    }
+  },
+  "newDeterminations": 0,
+  "providerReplayRequests": 0,
+  "releaseStrategy": "Run canonical staged replay and source auditing, then consolidate national compilation/verification with the next independently reviewed source batch when possible. Count exact union gains once, never raw assertions or duplicate-source support."
+}
