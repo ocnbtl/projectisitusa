@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "kind": "common-carp-independent-review-conclusion",
+  "recordedAt": "2026-09-08T17:29:51.018Z",
+  "sourceReviews": 2,
+  "leasedScope": 42,
+  "supportedCandidatePairs": 42,
+  "heldPairs": 0,
+  "newDeterminations": 0,
+  "reusableMethodRegistered": true,
+  "methodScopeApproved": false,
+  "checks": [
+    {
+      "name": "ia-before-close",
+      "passed": true
+    },
+    {
+      "name": "ia-review-close",
+      "passed": true
+    },
+    {
+      "name": "ia-after-close",
+      "passed": true
+    },
+    {
+      "name": "ks-before-close",
+      "passed": true
+    },
+    {
+      "name": "ks-review-close",
+      "passed": true
+    },
+    {
+      "name": "ks-after-close",
+      "passed": true
+    }
+  ],
+  "closedLeases": [
+    {
+      "leaseId": "lease-wqp-common-carp-ia-source-review-20260908-r16-1",
+      "jobId": "wqp-common-carp-ia-source-review-20260908-r16",
+      "state": "cancelled",
+      "review": {
+        "path": "ops/national-research/evaluations/wqp-common-carp-ia-independent-review-20260908-r16.json",
+        "bytes": 94083,
+        "sha256": "5a7421e9b3555ef9a87d164c784bdff0c1c7de5fe7e067040c5e3259cb222852",
+        "pairs": 22,
+        "heldPairs": 0
+      },
+      "meaning": "Proposal-only source review returned and retained by MAIN; no worker manifest, run, event, commit or integration queue submission was authorized."
+    },
+    {
+      "leaseId": "lease-wqp-common-carp-ks-source-review-20260908-r16-1",
+      "jobId": "wqp-common-carp-ks-source-review-20260908-r16",
+      "state": "cancelled",
+      "review": {
+        "path": "ops/national-research/evaluations/wqp-common-carp-ks-independent-review-20260908-r16.json",
+        "bytes": 77940,
+        "sha256": "e19f5af985f6bc9dfb279bc7e9a32f9d3bc3d3b29785c9379243cabe75e111fd",
+        "pairs": 20,
+        "heldPairs": 0
+      },
+      "meaning": "Proposal-only source review returned and retained by MAIN; no worker manifest, run, event, commit or integration queue submission was authorized."
+    }
+  ],
+  "originalReportArchive": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-common-carp-independent-reviews-20260908-r16.json.gz",
+    "bytes": 28252,
+    "sha256": "56a8f4903b02abd3f5d6d41d76430f64550cf184cd54b064922e09bdb0b109ec"
+  },
+  "mainVerification": "All 42 original Result and Station raw hashes, physical end lines, dates, supplied source fields, organization/site keys, positive values and active county joins independently checked. Original zero-based witness indexes and reports are preserved.",
+  "methodNotes": [
+    "All selected witnesses are Final Actual Population Census Count/count. Iowa has31 in-scope records across22 pairs; Kansas has34 across20 pairs.",
+    "NARS generic coastal-trawl prose conflicts with river electroshock metadata. Occurrence rests on explicit field fish counts; precise gear execution is not claimed.",
+    "Plymouth19149 has a238m generalized Big Sioux River boundary discrepancy; Jefferson20087 has a303m generalized Kansas River discrepancy. Retain publisher FIPS and explicit geographic caveats.",
+    "Johnson20091 uses an independent EPA_R7 witness inside the stated county; alternative NARS boundary records remain traceable.",
+    "Partial-effort comments do not negate positive counts or support negative determinations."
+  ],
+  "nextAction": "MAIN prepares a hash-pinned r16 method document using the registered reviewed-fish v3 contract, validates all42 witnesses, then performs two canonical state runs and exact net-unique reconciliation before reporting determination gains."
+}
