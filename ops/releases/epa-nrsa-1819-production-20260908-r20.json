@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "kind": "verified-research-and-application-production-release",
+  "recordedAt": "2026-09-08T23:18:14.113Z",
+  "status": "production-verified-research-goal-active",
+  "application": {
+    "commit": "4b9d8e104a52bd482afaefd4a246cdfde5200de2",
+    "id": "dpl_BKquwzVxX7h3U1vxpCczXGkELjNm",
+    "url": "projectisitusa-ffjceh868-unigentamos.vercel.app",
+    "state": "READY",
+    "substate": "PROMOTED",
+    "target": "production",
+    "createdAt": 1788908284729,
+    "alias": "isitusa.com",
+    "providerObservedAt": "2026-09-08T23:03:50.332Z",
+    "gitPush": {
+      "startedAt": "2026-09-08T22:57:35.656Z",
+      "finishedAt": "2026-09-08T22:58:02.390Z",
+      "remoteBefore": "22be801ad3a2ac1fae425896282012947422cfbb",
+      "remoteAfter": "4b9d8e104a52bd482afaefd4a246cdfde5200de2",
+      "output": ""
+    },
+    "localBuildAndHostedBuildPassed": true,
+    "hostedCoherence": {
+      "counties": 67,
+      "mismatches": 0,
+      "releaseId": "research-7674fc93bc4f-25dacfee2d1a3835"
+    },
+    "promotionQualification": "Git deployment reached Ready but retained STAGED custom-domain state. MAIN explicitly promoted that exact verified deployment; the production alias then matched it. No duplicate deployment build was requested."
+  },
+  "research": {
+    "schemaVersion": 1,
+    "kind": "isitusa-research-projection-pointer",
+    "releaseId": "research-7674fc93bc4f-25dacfee2d1a3835",
+    "releaseManifestKey": "releases/research-7674fc93bc4f-25dacfee2d1a3835/manifest.json",
+    "releaseManifestSha256": "007b7d2387af05d1dda52bd093ff2abffb232e54a02f0f60164f3bca58cceefa",
+    "sourceCommit": "7674fc93bc4fadff8731118b9378a2785e05a7b2",
+    "promotedAt": "2026-09-08T22:56:09.326Z",
+    "totalDeterminations": 319584,
+    "verifiedPresent": 315866,
+    "verifiedAbsent": 3718,
+    "denominator": 7872576,
+    "fullPublishedBatch": {
+      "priorReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+      "priorDeterminations": 315098,
+      "netDeterminationCountIncrease": 4486,
+      "presentIncrease": 4012,
+      "absentIncrease": 474,
+      "stateSummariesVerified": 51
+    },
+    "round20": {
+      "newPresent": 293,
+      "withdrawnPresent": 5,
+      "netUniqueDeterminations": 288,
+      "sourceRuns": 40
+    },
+    "newDataObjects": 3195,
+    "newManifestObjects": 1,
+    "pointerPromotions": 1,
+    "fullObjectVerificationPassed": true,
+    "publicOriginsVerifiedBeforePromotion": [
+      "https://data.isitusa.com",
+      "https://isitusa.com/research-data"
+    ],
+    "cadenceOverride": {
+      "reason": "Urgent taxonomic correction: remove unsupported Clarias batrachus determinations from Lee County AL and Broward County FL; preserve the original observations as unresolved and publish matching research and app data.",
+      "qualification": "Existing project policy permits a specific urgent-correction reason. Five fresh hash-verified public reads show two withdrawn exact-species determinations are still public. Standing user production authority covers this correctness release; no paid resources or deletion is introduced.",
+      "liveCorrectionProof": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/live-clarias-correction-scope.json",
+      "policySource": "docs/architecture/evidence-research-system.md",
+      "scope": [
+        {
+          "pair": "01081:clarias-batrachus",
+          "liveStatus": "verified-present",
+          "candidateStatus": "researched-unresolved"
+        },
+        {
+          "pair": "12011:clarias-batrachus",
+          "liveStatus": "verified-present",
+          "candidateStatus": "researched-unresolved"
+        }
+      ]
+    }
+  },
+  "runtime": {
+    "uploadedObjects": 2,
+    "homeHtmlBytes": 11166,
+    "homeRscBytes": 6014,
+    "homeCache": "PRERENDER",
+    "bulkDataEmbeddedInHome": false,
+    "countyChanges": [
+      {
+        "countyFips": "01121",
+        "speciesId": "cyprinus-carpio",
+        "recordedPresence": true,
+        "countySpeciesCount": 206
+      },
+      {
+        "countyFips": "01081",
+        "speciesId": "clarias-batrachus",
+        "recordedPresence": false,
+        "countySpeciesCount": 506,
+        "qualification": "Withdrawn exact-species determination remains unresolved; this is not absence."
+      }
+    ]
+  },
+  "storage": {
+    "retainedBytes": 7971801011,
+    "objectCount": 32259,
+    "headroomBytes": 28198989,
+    "ceilingBytes": 8000000000,
+    "observedAt": "2026-09-08T23:10:24.413Z",
+    "paidResourcesCreated": 0,
+    "deletedObjects": 0,
+    "rollbackReleaseIds": [
+      "research-7674fc93bc4f-25dacfee2d1a3835",
+      "research-6927e5fe2efb-886700baca52fe1e",
+      "research-e2115f6a705f-163982b59c8351b2"
+    ],
+    "billingTimestampQualification": {
+      "schemaVersion": 1,
+      "recordedAt": "2026-09-08T23:12:48.264Z",
+      "kind": "post-publication-report-timestamp-qualification",
+      "originalReport": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/r2-reachability-after-publication.json",
+      "sourceObservation": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/r2-dashboard-observation-before-publish.json",
+      "suppliedDashboardObservedAt": "2026-09-09T02:43:55.000Z",
+      "actualDashboardObservedAt": "2026-09-08T22:43:55.874Z",
+      "reason": "PowerShell ConvertFrom-Json produced a DateTime. Passing it through a separate powershell.exe string argument dropped its timezone, and requiredDateArgument interpreted that local-form string four hours later. Original report retained; actual provider listing time and object sizes are unaffected.",
+      "correctedUsageSample": {
+        "dashboardObservedAt": "2026-09-08T22:43:55.874Z",
+        "currentClassARequests": 35000,
+        "currentClassBRequests": 74000,
+        "reportClassARequests": 33,
+        "reportClassBRequests": 13,
+        "projectedClassARequests": 35033,
+        "projectedClassBRequests": 74013,
+        "classASafetyRequests": 800000,
+        "classBSafetyRequests": 8000000
+      },
+      "providerInventoryObservedAt": "2026-09-08T23:10:24.413Z",
+      "readOnlyReport": true,
+      "storageCountsAffected": false,
+      "providerWrites": 0,
+      "qualification": "Use the original inventory for object counts and bytes, and this source-linked timestamp qualification for displayed billing freshness. No network rerun or historical source rewrite was performed."
+    }
+  },
+  "liveQa": {
+    "httpRequests": 13,
+    "decodedBytes": 16448575,
+    "correctedPairs": [
+      {
+        "pair": "01081:clarias-batrachus",
+        "displayStatus": "researched-unresolved",
+        "determinationStatus": "none",
+        "evidenceRecords": 0
+      },
+      {
+        "pair": "12011:clarias-batrachus",
+        "displayStatus": "researched-unresolved",
+        "determinationStatus": "none",
+        "evidenceRecords": 0
+      },
+      {
+        "pair": "12021:clarias-batrachus",
+        "displayStatus": "researched-unresolved",
+        "determinationStatus": "none",
+        "evidenceRecords": 0
+      },
+      {
+        "pair": "12085:clarias-batrachus",
+        "displayStatus": "researched-unresolved",
+        "determinationStatus": "none",
+        "evidenceRecords": 0
+      },
+      {
+        "pair": "12093:clarias-batrachus",
+        "displayStatus": "researched-unresolved",
+        "determinationStatus": "none",
+        "evidenceRecords": 0
+      }
+    ],
+    "browserChecks": {
+      "desktopSpeciesSelection": true,
+      "desktopCountyListContainsAcceptedCarp": true,
+      "newMapBundleObserved200": true,
+      "newCatalogBundleObserved200": true,
+      "mobileCountyCardVisible": true,
+      "mobileResearchCorrectionVisible": true,
+      "leeResearchPresentCount506": true,
+      "clariasUnresolvedAndNoDetermination": true,
+      "noObservedConsoleErrorsOrWarnings": true,
+      "noMobileHorizontalOverflow": true
+    },
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 900,
+        "role": "desktop"
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "role": "mobile viewport"
+      }
+    ]
+  },
+  "evidenceArchive": {
+    "path": "ops/releases/artifacts/epa-nrsa-1819-production-20260908-r20.json.gz",
+    "bytes": 8636636,
+    "sha256": "85205bc92607ecb0e9493d24450bf075da7a7ac5c7dc436e137dffc62e945ea2"
+  },
+  "predeploymentReceipt": "ops/releases/epa-nrsa-1819-predeployment-20260908-r20.json",
+  "followup": {
+    "supportedUnintegratedEpa2013Pairs": 230,
+    "identityHolds": 2,
+    "canonicalDeterminationsFromThoseProposals": 0,
+    "leasesClosed": true,
+    "next": "Register and validate the explicit 2013/2014 method, integrate accepted records, reconcile national output; keep research and app releases batched.",
+    "auditPush": "Local follow-up commits are deliberately batched with the next implementation push because worker-results currently trigger a build."
+  },
+  "limitations": [
+    "The full published batch delta and round20 exact pair delta use different explicitly stated baselines.",
+    "Historical presence records do not establish current persistence, establishment or complete county inventory. Withdrawn catfish determinations remain unresolved, not absent.",
+    "Mobile checks use viewport emulation, not a physical device. Browser network listings omit static requests by default; data requests and console results are separately retained.",
+    "The earlier bounded provider wait returned exit0 with a timeout warning; it was not treated as Ready proof. Later completed logs and the exact production alias establish success.",
+    "Original post-publication storage report retains a PowerShell timezone coercion error; its source-linked correction records the actual dashboard observation, while independently dated inventory counts remain unchanged.",
+    "No R2 historical deletion occurred. The next publication must recheck capacity and the ordinary seven-day cadence unless a specific urgent correction qualifies."
+  ]
+}
