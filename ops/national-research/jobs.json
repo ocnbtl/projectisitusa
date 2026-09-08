@@ -497652,6 +497652,336 @@
       "priority": 100,
       "state": "cancelled",
       "currentLeaseId": "lease-cbs-ca-containment-review-20260908-r10-1"
+    },
+    {
+      "jobId": "cff-la-source-review-20260908-r11",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "cdfa-confirmed-pest-occurrences"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "anastrepha-suspensa"
+        ],
+        "pairs": [
+          "06037:anastrepha-suspensa"
+        ]
+      },
+      "scopeClaims": [
+        "county/06037/source/cdfa-confirmed-pest-occurrences/taxon/anastrepha-suspensa"
+      ],
+      "branch": "codex/cff-la-source-review-20260908-r11",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\cff-la-source-review-20260908-r11",
+      "baseSha": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+      "expectedReceiptCodeCommit": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+      "permittedPaths": [
+        "src/data/research/worker-results/cff-la-source-review-20260908-r11/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": true,
+        "inputDirectory": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10",
+        "focus": "Independently assess the evidence, county, taxon, date precision, collection context and limitations for the Los Angeles County report. Determine what is supported; do not assume the desired disposition.",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Return independent findings in the agent final response, with exact original and extraction hashes, page/quote locators, taxonomy, geography, dates, competing interpretations and explicit recommendation. No file edits, commits, immutable runs, assertions, review events, outcomes, public generation or provider requests."
+      },
+      "expiresAt": "2026-09-08T08:53:10.875Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen lease-bound preflight and verify retained original/extraction hashes.",
+        "Read the full relevant original report context and independent extraction; inspect exact leased current county projection.",
+        "Return a supported claim and its limitations, or a specific hold. Do not fabricate human approval or evidence-run completion."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "cancelled",
+      "currentLeaseId": "lease-cff-la-source-review-20260908-r11-1"
+    },
+    {
+      "jobId": "cff-sd-source-review-20260908-r11",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "cdfa-confirmed-pest-occurrences"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "anastrepha-suspensa"
+        ],
+        "pairs": [
+          "06073:anastrepha-suspensa"
+        ]
+      },
+      "scopeClaims": [
+        "county/06073/source/cdfa-confirmed-pest-occurrences/taxon/anastrepha-suspensa"
+      ],
+      "branch": "codex/cff-sd-source-review-20260908-r11",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\cff-sd-source-review-20260908-r11",
+      "baseSha": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+      "expectedReceiptCodeCommit": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+      "permittedPaths": [
+        "src/data/research/worker-results/cff-sd-source-review-20260908-r11/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": true,
+        "inputDirectory": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10",
+        "focus": "Independently assess the San Diego County historical report, original date precision, report date versus biological date, and consequences of later eradication or reinvasion claims. Determine admissibility without an expected answer.",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Return independent findings in the agent final response, with exact original and extraction hashes, page/quote locators, taxonomy, geography, dates, competing interpretations and explicit recommendation. No file edits, commits, immutable runs, assertions, review events, outcomes, public generation or provider requests."
+      },
+      "expiresAt": "2026-09-08T08:53:11.359Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen lease-bound preflight and verify retained original/extraction hashes.",
+        "Read the full relevant original report context and independent extraction; inspect exact leased current county projection.",
+        "Return a supported claim and its limitations, or a specific hold. Do not fabricate human approval or evidence-run completion."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "cancelled",
+      "currentLeaseId": "lease-cff-sd-source-review-20260908-r11-1"
+    },
+    {
+      "jobId": "off-group-source-review-20260908-r11",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "cdfa-confirmed-pest-occurrences"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "bactrocera-dorsalis"
+        ],
+        "pairs": [
+          "06037:bactrocera-dorsalis"
+        ]
+      },
+      "scopeClaims": [
+        "county/06037/source/cdfa-confirmed-pest-occurrences/taxon/bactrocera-dorsalis"
+      ],
+      "branch": "codex/off-group-source-review-20260908-r11",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\off-group-source-review-20260908-r11",
+      "baseSha": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+      "expectedReceiptCodeCommit": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+      "permittedPaths": [
+        "src/data/research/worker-results/off-group-source-review-20260908-r11/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": true,
+        "inputDirectory": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10",
+        "focus": "Independently evaluate the source taxon concept in the oriental fruit fly report, including any group qualifiers and diagnostic limits, and decide whether the exact catalog taxon is supported. Do not rely on a substring match or desired gain.",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Return independent findings in the agent final response, with exact original and extraction hashes, page/quote locators, taxonomy, geography, dates, competing interpretations and explicit recommendation. No file edits, commits, immutable runs, assertions, review events, outcomes, public generation or provider requests."
+      },
+      "expiresAt": "2026-09-08T08:53:11.704Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen lease-bound preflight and verify retained original/extraction hashes.",
+        "Read the full relevant original report context and independent extraction; inspect exact leased current county projection.",
+        "Return a supported claim and its limitations, or a specific hold. Do not fabricate human approval or evidence-run completion."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "cancelled",
+      "currentLeaseId": "lease-off-group-source-review-20260908-r11-1"
     }
   ]
 }

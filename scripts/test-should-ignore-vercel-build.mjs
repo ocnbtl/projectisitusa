@@ -19,6 +19,8 @@ assert.equal(
   true,
 );
 
+assert.equal(isDeploymentIndependentPath("src/data/research/official-occurrence-records/cdfa-example.json"), true);
+assert.equal(isDeploymentIndependentPath("src/data/research/official-occurrence-records-other/data.json"), false);
 assert.equal(isDeploymentIndependentPath("src/data/research/question-assessments/pilot/assessments.ndjson"), true);
 assert.equal(isDeploymentIndependentPath("src/data/research/question-assessments-other/receipt.json"), false);
 assert.equal(isDeploymentIndependentPath("src/data/research/taxonomy-references/kew-v16/archive.zip"), true);

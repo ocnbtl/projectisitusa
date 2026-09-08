@@ -13,6 +13,7 @@ const DEPLOYMENT_INDEPENDENT_PATHS = [
   /^src\/data\/research\/taxonomy-references\//u,
   /^src\/data\/research\/runs\//u,
   /^src\/data\/research\/question-assessments\//u,
+  /^src\/data\/research\/official-occurrence-records\//u,
 ];
 
 function normalizeRepositoryPath(filePath) {

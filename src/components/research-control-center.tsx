@@ -1,5 +1,7 @@
 "use client";
 
+import { formatOccurrenceDate } from "@/lib/research/occurrence-date";
+
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 
 import {
@@ -235,18 +237,7 @@ function parseDate(value: string) {
   return new Date(normalized);
 }
 
-function formatDate(value: string | null | undefined) {
-  if (!value) return "Not recorded";
-  const date = parseDate(value);
-  if (Number.isNaN(date.getTime())) return value;
-
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(date);
-}
+const formatDate = formatOccurrenceDate;
 
 function formatTimestamp(value: string | null) {
   if (!value) return "Never";

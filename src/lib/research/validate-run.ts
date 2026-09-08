@@ -1,3 +1,4 @@
+import { OFFICIAL_OCCURRENCE_ADAPTER, OFFICIAL_OCCURRENCE_SOURCE, OFFICIAL_OCCURRENCE_VERSION, buildOfficialOccurrenceResult } from "./official-occurrence-review";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
@@ -300,6 +301,23 @@ export function validateResearchRunInMemory(input: {
       `Requested pair ${key} does not use an active county equivalent for ${stateCode}.`,
     );
     assert(speciesById.has(speciesId), `Requested pair ${key} has an unknown species.`);
+  }
+  if (sourceId === OFFICIAL_OCCURRENCE_SOURCE) {
+    assert(receipt.adapter_id === OFFICIAL_OCCURRENCE_ADAPTER && receipt.adapter_version === OFFICIAL_OCCURRENCE_VERSION, "Wrong official occurrence adapter.");
+    const expected = buildOfficialOccurrenceResult({ runId, sourceId, stateCode, runStartedAt: receipt.started_at,
+      parameters: receipt.parameters, requestedPairs: requestedPairKeys.map(key => {
+        const [countyFips, speciesId] = key.split(":");
+        return { countyFips, speciesId, countyName: "Validated from pinned registry", scientificName: speciesById.get(speciesId)!.scientificName };
+      }) }, p => readCommittedBytes(root, receipt.code_commit, p));
+    for (const field of ["assertions", "reviews", "rejections", "outcomes", "upstreamRequests"] as const) {
+      assert(stableJson(result[field]) === stableJson(expected[field]), "Official occurrence " + field + " differ from the committed reviewed witnesses.");
+    }
+    assert(receipt.artifacts.length === expected.artifacts.length, "Official occurrence witness artifact count differs.");
+    for (const artifact of expected.artifacts) {
+      const ref = receipt.artifacts.find(ref => path.posix.basename(ref.path) === artifact.filename);
+      assert(ref && ref.bytes === Buffer.byteLength(artifact.contents) && ref.sha256 === sha256(artifact.contents), "Official occurrence witness artifact differs.");
+    }
+    assert(receipt.upstream_requests.length === 0, "Retained official occurrence replay cannot claim fresh requests.");
   }
   const assertionById = new Map(result.assertions.map((entry) => [entry.eventId, entry]));
   const rejectionById = new Map(

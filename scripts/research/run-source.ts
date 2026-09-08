@@ -1,3 +1,5 @@
+import { officialOccurrenceAdapter } from "./adapters/official-confirmed-occurrence-report";
+import { officialOccurrenceInputPaths, type OfficialOccurrencePlan } from "@/lib/research/official-occurrence-review";
 import { execFileSync } from "node:child_process";
 import {
   existsSync,
@@ -94,6 +96,7 @@ type CandidateFile = {
   stateCode: string;
   candidates: Candidate[];
   agentJurisdiction?: AgentJurisdictionPlan;
+  officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
     downloadPageUrl: string;
     generatedHeaderExact: string;
@@ -545,6 +548,7 @@ function runTimestamp(value: string) {
 }
 
 function resolveAdapter(sourceId: string): ResearchSourceAdapter {
+  if (sourceId === officialOccurrenceAdapter.sourceId) return officialOccurrenceAdapter;
   if (sourceId === eddMapsSnapshotReplayAdapter.sourceId) {
     return eddMapsSnapshotReplayAdapter;
   }
@@ -603,6 +607,10 @@ function buildParameters(
   const state = getStateDefinition(stateCode);
   if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state ${stateCode}.`);
   const candidatePairs = canonicalCandidatePairKeys(requestedPairs);
+  if (sourceId === officialOccurrenceAdapter.sourceId) {
+    if (!candidateFile.officialOccurrence || candidateFile.sourceId !== sourceId) throw new Error("Official occurrence plan is missing or has wrong source.");
+    return { ...candidateFile.officialOccurrence, mode: "retained-reviewed-official-occurrence", stateCode, candidatePairs, candidateLimit: candidatePairs.length };
+  }
   if (candidateFile.agentJurisdiction && isAgentJurisdictionSource(sourceId)) {
     if (candidateFile.sourceId !== sourceId) throw new Error("Agent jurisdiction plan source differs.");
     return { ...candidateFile.agentJurisdiction, mode: "retained-agent-reviewed-jurisdiction", stateCode, candidatePairs, candidateLimit: candidatePairs.length };
@@ -938,6 +946,7 @@ async function main() {
     ...(options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
       ? [path.join(ROOT, EDDMAPS_SNAPSHOT_PATH)]
       : []),
+    ...(options.sourceId === officialOccurrenceAdapter.sourceId ? officialOccurrenceInputPaths(readJson<CandidateFile>(options.candidateFile).officialOccurrence!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(isAgentJurisdictionSource(options.sourceId) ? [
       ...agentParentInputPaths(ROOT).map(p => path.join(ROOT, p)),
       ...listCountyEquivalents(options.stateCode).map(c => path.join(ROOT, "public/generated/research", options.stateCode, "counties", c.countyFips + ".json")),
@@ -1037,7 +1046,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = isAgentJurisdictionSource(options.sourceId)
+    const expectedProviderRequests = options.sourceId === officialOccurrenceAdapter.sourceId
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-official-occurrence" }
+      : isAgentJurisdictionSource(options.sourceId)
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-agent-reviewed-jurisdiction" }
       : options.sourceId === aphisHoneyBeeSurveyAdapter.sourceId
       ? {

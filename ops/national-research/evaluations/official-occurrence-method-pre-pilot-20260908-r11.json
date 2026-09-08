@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "kind": "evaluated-source-method-pre-pilot",
+  "methodId": "official-confirmed-occurrence-report-v1",
+  "recordedAt": "2026-09-08T08:33:51.338Z",
+  "actorId": "MAIN",
+  "baseSha": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+  "status": "focused-gates-passed-pilot-pending",
+  "independentSourceReviews": 3,
+  "supportedRecordCandidates": 2,
+  "heldTaxonGroupCandidates": 1,
+  "sourceAssertions": 0,
+  "newDeterminations": 0,
+  "scope": [
+    "06037:anastrepha-suspensa",
+    "06073:anastrepha-suspensa"
+  ],
+  "checks": [
+    {
+      "command": "node --import tsx scripts/test-official-occurrence-report.ts",
+      "exitCode": 0,
+      "result": "Two real reviewed records and 29 rejected invalid cases, no network."
+    },
+    {
+      "command": "node --import tsx scripts/test-occurrence-date.ts",
+      "exitCode": 0,
+      "result": "Partial/year/month/interval conflicts and invalid dates, source-precision display and interval freshness passed."
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "exitCode": 0,
+      "result": "Packaging, ignored builds, R2 fetch, deep links and temporal display passed."
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "result": "Passed."
+    }
+  ],
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/official-occurrence-method-validation-20260908-r11.json.gz",
+    "bytes": 1969,
+    "sha256": "b97bb0e3c086e09326518cfac0944d1dc1ae00fd456d27f36450e92dacefe270"
+  },
+  "existingProjectionDateConflictChanges": 0,
+  "existingIntervalEvidencePairs": 4236,
+  "limitations": [
+    "Full shared research integrity and real immutable pilot remain pending.",
+    "Source interpretation recommendations do not create evidence events or projected determinations.",
+    "R2 research publication remains a separate batch and no upload occurred."
+  ]
+}

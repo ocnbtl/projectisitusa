@@ -1375,6 +1375,40 @@
         "claimPersistence": "current-only",
         "rateLimitRequestsPerSecond": 1
       }
+    },
+    {
+      "id": "cdfa-confirmed-pest-occurrences",
+      "label": "CDFA confirmed pest occurrence reports",
+      "aliases": [],
+      "authority": "California Department of Food and Agriculture",
+      "tier": "official-state",
+      "homepage": "https://www.cdfa.ca.gov/plant/pdep/treatment/treatment_maps.html",
+      "access": "download",
+      "geographicScope": [
+        "California"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
+      "negativeSemantics": "none",
+      "refreshCadenceDays": 365,
+      "status": "operational",
+      "adapter": null,
+      "caveat": "Incident-specific agency confirmation and explicit historical county detections support recorded occurrence. Group identifications, host lists, treatment polygons, sterile releases, administrative dates and source silence do not create exact species occurrences or negative evidence. Reports do not establish current persistence.",
+      "researchAdapter": {
+        "id": "official-confirmed-occurrence-report",
+        "module": "scripts/research/adapters/official-confirmed-occurrence-report.ts",
+        "allowedVersions": [
+          "1.0.0"
+        ],
+        "parameterSchema": "src/data/research/schemas/official-confirmed-occurrence-report-parameters.schema.json",
+        "publicationReviewGate": "agent-reviewed",
+        "taxonMatchingPolicy": "Exact incident-specific binomial with original authorship and qualifier retained; unresolved groups and complexes are held. Independent source interpretation and MAIN admission are hash pinned.",
+        "geographyMatchingPolicy": "Explicit named county in the actual occurrence passage must equal an active county registry alias in California. No treatment-polygon or coordinate inference.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     }
   ]
 }

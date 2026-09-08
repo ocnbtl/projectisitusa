@@ -1,3 +1,4 @@
+import { occurrenceDateBounds } from "./occurrence-date";
 import { createHash } from "node:crypto";
 import { isAcceptedJurisdictionReview, JURISDICTION_PRECISION_REVIEW_VERSION, strictJurisdictionDate, validateAgentJurisdictionReview } from "./jurisdiction-agent-review";
 
@@ -45,19 +46,6 @@ function dateOnlyTimestamp(value: string, label: string) {
   const timestamp = Date.parse(`${value}T00:00:00.000Z`);
   strictJurisdictionDate(value, label);
   return timestamp;
-}
-
-function occurrenceTimestamp(value: string | undefined) {
-  if (!value) return null;
-  const normalized = /^\d{4}$/u.test(value)
-    ? `${value}-01-01T00:00:00.000Z`
-    : /^\d{4}-\d{2}$/u.test(value)
-      ? `${value}-01T00:00:00.000Z`
-      : DATE_PATTERN.test(value)
-        ? `${value}T00:00:00.000Z`
-        : value;
-  const timestamp = Date.parse(normalized);
-  return Number.isFinite(timestamp) ? timestamp : null;
 }
 
 function sortedUnique(values: string[], label: string) {
@@ -229,8 +217,8 @@ export function resolveTemporalPairDetermination(input: {
     const conflictingPresence = input.presenceEvidence.find((evidence) => {
       if (selectedRecord.review?.gate === "agent-reviewed" && selectedRecord.review.methodVersion === JURISDICTION_PRECISION_REVIEW_VERSION
         && selectedRecord.review.presenceConflictPolicy === "all-presence") return true;
-      const observedAt = occurrenceTimestamp(evidence.observedAt);
-      return observedAt === null || observedAt >= conflictTimestamp;
+      const observed = occurrenceDateBounds(evidence.observedAt);
+      return observed === null || observed.end >= conflictTimestamp;
     });
     if (conflictingPresence) {
       currentDeterminationStatus = "present";
@@ -239,7 +227,7 @@ export function resolveTemporalPairDetermination(input: {
         && selectedRecord.review.presenceConflictPolicy === "all-presence"
         ? `Accepted presence ${conflictingPresence.evidenceId} requires specific adjudication; an invalid-record correction cannot clear unrelated presence.`
         : conflictingPresence.observedAt
-        ? `Accepted presence ${conflictingPresence.evidenceId} is on or after ${conflictCheckFrom}.`
+        ? `Accepted presence ${conflictingPresence.evidenceId} cannot be placed wholly before ${conflictCheckFrom} at its recorded date precision.`
         : `Accepted presence ${conflictingPresence.evidenceId} is undated.`;
     } else {
       currentDeterminationStatus = selectedRecord.statementType;

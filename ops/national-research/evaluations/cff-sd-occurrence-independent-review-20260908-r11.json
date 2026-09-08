@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-source-interpretation-proposal",
+  "actorId": "cff_sd_history_review_r11",
+  "recordedBy": "MAIN",
+  "representation": "MAIN structured summary of the actual independent agent final response; not a verbatim transcript or human approval.",
+  "recordedAt": "2026-09-08T08:19:33.020Z",
+  "jobId": "cff-sd-source-review-20260908-r11",
+  "leaseId": "lease-cff-sd-source-review-20260908-r11-1",
+  "baseSha": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+  "status": "supported-recorded-occurrence",
+  "scope": {
+    "stateCode": "CA",
+    "speciesId": "anastrepha-suspensa",
+    "pairs": [
+      "06073:anastrepha-suspensa"
+    ]
+  },
+  "recommendedClaim": {
+    "claimType": "recorded-present",
+    "countyFips": "06073",
+    "speciesId": "anastrepha-suspensa",
+    "scientificName": "Anastrepha suspensa",
+    "sourceRecordDate": "1983",
+    "sourceDecodedSha256": "50b894f6585b056466ec86e46ee23259e77924a9e44a779d009082684e5f5e11"
+  },
+  "sources": [
+    {
+      "path": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/cdfa-caribbean-fruit-fly-long-beach-2026.pdf.gz",
+      "bytes": 610811,
+      "sha256": "817265886a283ced0693f3010f6c733f205d7ba6bbc11685bd7bc4be1392eef3",
+      "decodedBytes": 772040,
+      "decodedSha256": "50b894f6585b056466ec86e46ee23259e77924a9e44a779d009082684e5f5e11"
+    },
+    {
+      "path": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/cdfa-caribbean-fruit-fly-long-beach-2026.text.json.gz",
+      "bytes": 12500,
+      "sha256": "32407691d6bd801d14e134fcbe6c111883dc3b452af52517a7bf42e70150d70f",
+      "decodedBytes": 37782,
+      "decodedSha256": "0fc40b84acd2d8c25ad7bbdb71fc8328533d3327c1ec60e8362bdba8fbea2377"
+    }
+  ],
+  "locators": [
+    {
+      "page": 3
+    },
+    {
+      "page": 5
+    },
+    {
+      "page": 12
+    }
+  ],
+  "independentFinding": "CDFA explicitly reports first California detections in San Diego County in 1983 on pages 3 and 12. Exact Anastrepha suspensa and named active county are supported. Repetition within one document is one source lineage.",
+  "limitations": [
+    "Preserve 1983 at year precision. Publication March 18, 2026 and September retrieval do not replace the observation year.",
+    "The report gives no 1983 trap, specimen count, locality, life stage, method or identifier. Do not import 2026 Long Beach trapping details or call this a preserved specimen.",
+    "General subsequent eradication prose is not a dated San Diego countywide status declaration. Historical occurrence does not establish current persistence, continuous establishment, current absence or non-detection.",
+    "October 15, 2026 pertains to the Los Angeles response. Florida-only distribution prose does not negate the historical county detection."
+  ],
+  "verification": {
+    "ownFrozenPreflightPassed": true,
+    "mainPreflight": {
+      "path": ".cache/research/campaigns/20260908-r11-official-occurrence/cff-sd-preflight.json",
+      "bytes": 274,
+      "sha256": "1d612e9eeb9d9d31030366aa27d171abf98c988c260cbb22e48015c6f5f910a0"
+    },
+    "allOriginalPagesIndependentlyExtracted": true,
+    "allRetainedPageTextsAndHashesMatched": true,
+    "pages": 13,
+    "workerHead": "aa59fe3fc0a4e0fb6bbf690ec232692b838a4713",
+    "worktreeClean": true
+  },
+  "projectionBaseline": {
+    "path": "public/generated/research/CA/counties/06073.json",
+    "bytes": 2058384,
+    "sha256": "a86e405862d0031b77deea955860824d7bc42a7b38f182cd88286d2d488e72ec",
+    "asOf": "2026-09-08",
+    "displayStatus": "not-researched",
+    "determinationStatus": "none",
+    "evidenceCount": 0,
+    "conflict": false
+  },
+  "providerRequests": 0,
+  "newAssertions": 0,
+  "newOutcomes": 0,
+  "newDeterminations": 0,
+  "newQuestionAssessments": 0,
+  "workerCommits": 0,
+  "methodRegistrationPending": true
+}
