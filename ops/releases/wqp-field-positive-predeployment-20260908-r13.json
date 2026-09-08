@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-field-positive-predeployment",
+  "recordedAt": "2026-09-08T13:03:52.187Z",
+  "status": "local-gates-passed-production-pending",
+  "baseCommit": "49d19087c6cdb89d63efee3798d9b74a60c20760",
+  "rollbackCommit": "7bf49304bdc00c61862788ef68fecce8d8347ef0",
+  "rollbackDeploymentId": "dpl_xCACXRAhYHFd1so1DfMG8jbPfdj2",
+  "behavior": "Retained Water Quality Portal field count replay produces reviewed historical sampled occurrences with exact station county joins, original dates, physical CSV line citations, publisher attribution and field-method limitations. Existing small application responses and direct immutable runtime delivery are preserved.",
+  "researchReconciliation": "ops/national-research/evaluations/wqp-field-positive-national-reconciliation-20260908-r13.json",
+  "localResearch": {
+    "verifiedPresent": 314879,
+    "verifiedAbsent": 3718,
+    "determinations": 318597,
+    "netUniqueDeterminations": 138,
+    "newRuns": 20,
+    "sourceReplayRequests": 0,
+    "heldPairs": 4,
+    "derivedApplicabilityOnlyChangesNotDeterminations": 165
+  },
+  "publicationBudget": "ops/national-research/publication/wqp-field-positive-candidate-budget-20260908-r13.json",
+  "nationalChecks": [
+    {
+      "name": "compile-all",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/compile-all-state-research.ts",
+        "--as-of",
+        "2026-09-08"
+      ],
+      "startedAt": "2026-09-08T12:24:56.047Z",
+      "finishedAt": "2026-09-08T12:28:15.887Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/compile-all-gate.log"
+    },
+    {
+      "name": "national-final",
+      "args": [
+        ".cache/research/campaigns/20260908-r13-water-quality/verify-national-final.cjs"
+      ],
+      "startedAt": "2026-09-08T12:28:15.888Z",
+      "finishedAt": "2026-09-08T12:36:54.055Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/national-final-gate.log"
+    },
+    {
+      "name": "research-integrity",
+      "args": [
+        "C:\\Code\\tools\\node-v22.23.2-win-x64\\node_modules\\npm\\bin\\npm-cli.js",
+        "run",
+        "check:research-integrity"
+      ],
+      "startedAt": "2026-09-08T12:36:54.056Z",
+      "finishedAt": "2026-09-08T13:01:14.805Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r13-water-quality/research-integrity-gate.log"
+    }
+  ],
+  "applicationChecks": [
+    {
+      "command": "npm run build",
+      "startedAt": "2026-09-08T13:01:38.999Z",
+      "finishedAt": "2026-09-08T13:02:51.179Z",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-09-08T13:02:51.181Z",
+      "finishedAt": "2026-09-08T13:02:55.769Z",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "startedAt": "2026-09-08T13:02:55.769Z",
+      "finishedAt": "2026-09-08T13:02:58.631Z",
+      "exitCode": 0,
+      "log": "check-runtime-assets.log"
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "startedAt": "2026-09-08T13:02:58.631Z",
+      "finishedAt": "2026-09-08T13:02:59.586Z",
+      "exitCode": 0,
+      "log": "check-vercel-publish.log"
+    }
+  ],
+  "runtimeAssetBundlesUnchanged": true,
+  "imagePreparation": {
+    "sources": 2090,
+    "originalBytes": 808459923,
+    "derivativeBytes": 295644698,
+    "generated": 0,
+    "restored": 0,
+    "reused": 4180,
+    "cache": {
+      "bytes": 295025492,
+      "objects": 4156,
+      "maxBytes": 335544320,
+      "removed": 0
+    },
+    "elapsedMs": 5345,
+    "bundles": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "bytes": 3854453,
+        "storedBytes": 715009
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "bytes": 4831012,
+        "storedBytes": 698125
+      }
+    }
+  },
+  "localPageBytes": {
+    "index.html": 11166,
+    "index.rsc": 6014,
+    "research.html": 14175,
+    "research.rsc": 8307
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/wqp-field-positive-validation-20260908-r13.json.gz",
+    "bytes": 24300,
+    "sha256": "cf4b6f96f11d7a9f50f5ef7aff4b29ff148ef68b8d753cea2e7470a86eef6744"
+  },
+  "r2Writes": 0,
+  "pointerPromotions": 0,
+  "nextRound": {
+    "previews": [
+      "ops/national-research/evaluations/wqp-expansion-preflight-20260908-r14.json",
+      "ops/national-research/evaluations/wqp-expansion-vocabulary-context-20260908-r14.json",
+      "ops/national-research/evaluations/wqp-expanded-form-candidates-20260908-r14.json"
+    ],
+    "candidateUpperBound": 67,
+    "newDeterminations": 0,
+    "methodApproved": false,
+    "sourceRequestsComplete": 8,
+    "sourceRequestsFailed": 2
+  },
+  "limitations": [
+    "The 138 new determinations are verified locally and queued in the research projection. They are not in the current R2 production pointer.",
+    "Ordinary research promotion opens September 13, subject to fresh exact inventory, storage and current-period operations checks.",
+    "A conservative application build may be triggered by shared research code and package changes. It does not publish the research candidate.",
+    "The 67 next-round candidates require independent source and method review. Two timed-out acquisitions remain incomplete and are not automatically retried.",
+    "Provider usage observations are dated; rolling window differences do not prove long-term optimization savings."
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-expansion-candidate-preflight",
+  "recordedAt": "2026-09-08T12:46:56.409Z",
+  "status": "candidate-only-not-integrated",
+  "baselineProjectionCommit": "49d19087c6cdb89d63efee3798d9b74a60c20760",
+  "scope": {
+    "recordedAt": "2026-09-08T12:34:52.626Z",
+    "repositoryBaseCommit": "bd92b35a1a67f307317f0ec5ab429e7399d68570",
+    "taxa": [
+      [
+        "cyprinus-carpio",
+        "Cyprinus carpio"
+      ],
+      [
+        "myriophyllum-spicatum",
+        "Myriophyllum spicatum"
+      ],
+      [
+        "potamogeton-crispus",
+        "Potamogeton crispus"
+      ],
+      [
+        "hypophthalmichthys-molitrix",
+        "Hypophthalmichthys molitrix"
+      ],
+      [
+        "neogobius-melanostomus",
+        "Neogobius melanostomus"
+      ]
+    ],
+    "maxGets": 10,
+    "maxBytesPerResponse": 20971520,
+    "timeoutPerRequestMs": 45000,
+    "retries": 0,
+    "providerWrites": 0,
+    "determinationChangesAuthorizedByThisPreflight": 0,
+    "method": "Candidate inspection only; r13 method is currently approved only for Corbicula and Dreissena. Do not auto-extend its approval."
+  },
+  "requestAccounting": {
+    "attempted": 10,
+    "complete": 8,
+    "failed": 2,
+    "retries": 0,
+    "providerWrites": 0
+  },
+  "failedQueries": [
+    {
+      "url": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "status": 200,
+      "startedAt": "2026-09-08T12:35:04.804Z",
+      "failedAt": "2026-09-08T12:35:49.819Z",
+      "error": "The operation was aborted due to timeout",
+      "partialBytes": 2024695
+    },
+    {
+      "url": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Myriophyllum+spicatum&mimeType=csv&zip=no&sorted=no",
+      "status": null,
+      "startedAt": "2026-09-08T12:40:45.674Z",
+      "failedAt": "2026-09-08T12:41:30.683Z",
+      "error": "The operation was aborted due to timeout",
+      "partialBytes": 0
+    }
+  ],
+  "completeProfiles": [
+    {
+      "speciesId": "potamogeton-crispus",
+      "stationRows": 5,
+      "resultRows": 5,
+      "genericPositiveFieldRows": 0,
+      "grossPairs": 0
+    },
+    {
+      "speciesId": "hypophthalmichthys-molitrix",
+      "stationRows": 299,
+      "resultRows": 524,
+      "genericPositiveFieldRows": 91,
+      "grossPairs": 49
+    },
+    {
+      "speciesId": "neogobius-melanostomus",
+      "stationRows": 84,
+      "resultRows": 1489,
+      "genericPositiveFieldRows": 27,
+      "grossPairs": 12
+    }
+  ],
+  "eligibleCandidates": 35,
+  "incompleteTaxa": [
+    "cyprinus-carpio",
+    "myriophyllum-spicatum"
+  ],
+  "candidateCountsByTaxon": {
+    "cyprinus-carpio": null,
+    "myriophyllum-spicatum": null,
+    "potamogeton-crispus": 0,
+    "hypophthalmichthys-molitrix": 24,
+    "neogobius-melanostomus": 11
+  },
+  "candidateCountsByState": {
+    "AR": 3,
+    "IA": 2,
+    "IN": 2,
+    "KS": 1,
+    "LA": 6,
+    "MI": 9,
+    "MO": 5,
+    "MS": 3,
+    "OH": 1,
+    "SD": 1,
+    "TN": 1,
+    "WI": 1
+  },
+  "knownPresentOverlaps": 26,
+  "knownAbsentConflicts": 0,
+  "newDeterminations": 0,
+  "archive": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-expansion-preflight-20260908-r14.json.gz",
+    "bytes": 250033,
+    "sha256": "4a243ff435d46bdd54ca54a0d8f298534f9ab93f32b367123197e9c8fa003e00",
+    "format": "gzip JSON; each files entry retains exact original bytes as base64 with path, length and hash"
+  },
+  "interpretation": [
+    "Only complete Result and Station profiles are screened. Missing or incomplete profiles have null counts, not zero biological findings.",
+    "Generic r13 field-count criteria identify candidates only. The approved v1 method remains limited to Corbicula and Dreissena.",
+    "Review fish collection context, stocking or laboratory flags, dates, taxonomy and county joins before admitting the35fish candidates.",
+    "Plant records outside Count/count need a separate method review; rejection here does not establish absence.",
+    "Original task-created recipe bytes are retained independently of the repository base commit."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-positive-measurement-review-candidate",
+  "recordedAt": "2026-09-08T12:50:25.915Z",
+  "source": {
+    "url": "https://cdx.epa.gov/WQXWeb/StaticPages/GlossaryWqx.htm",
+    "status": 200,
+    "startedAt": "2026-09-08T12:48:57.929Z",
+    "retrievedAt": "2026-09-08T12:49:07.691Z",
+    "path": ".cache/research/campaigns/20260908-r14-wqp-expansion/wqx-glossary.html.gz",
+    "storedBytes": 22095,
+    "storedSha256": "e9c5d741537c535e678ac46fcfc4e396f3e4f8a2e7c1a77053e2ccf02033f938",
+    "decodedBytes": 119338,
+    "decodedSha256": "835d9b3cb59f8d336cadae03dbbea129c6e0dc6f877d36ac908102630da41bff",
+    "getRequests": 1,
+    "providerWrites": 0
+  },
+  "archive": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-expansion-vocabulary-context-20260908-r14.json.gz",
+    "bytes": 24108,
+    "sha256": "325d54e7d5d2467b22c24e5763cfb7fabe935268cd02660e42930e205937c9df"
+  },
+  "primarySourceInterpretation": "EPA distinguishes total species counts, measurements on individual organisms, summaries of collected individuals, tissue analysis and toxicity testing. These different intents require different occurrence interpretation; Count/count with Population Census is one admissible form, not the entire biological record vocabulary.",
+  "observedCandidateForms": [
+    "Two Potamogeton records explicitly report Taxon Present (Y/N) (choice list) = Y in Final Actual field observations.",
+    "Silver carp includes Final Individual fish length/weight and Individual/Group Summary counts.",
+    "Round goby includes Individual length records as well as tissue chemical measurements; tissue analyte values must not be mistaken for organism counts."
+  ],
+  "proposedReview": "Evaluate positive individual measurements, positive group counts/weights and explicit Y with exact taxon, complete source identity, original collection date, verified field-sample location and no laboratory, transplant or toxicity context. Preserve original fields and qualifying-form labels. Do not re-label negative, zero, tissue analyte, incomplete or unreviewed rows as absence.",
+  "methodApproval": false,
+  "newDeterminations": 0,
+  "contextGets": 1,
+  "providerWrites": 0,
+  "webToolQualification": "The official glossary search result was readable, but direct web-tool opening timed out. MAIN independently retrieved the full119338-byte page with HTTP200 and retained its hash."
+}

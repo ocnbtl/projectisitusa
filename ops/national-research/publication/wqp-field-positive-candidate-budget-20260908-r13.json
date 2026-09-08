@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-research-candidate-storage-plan",
+  "recordedAt": "2026-09-08T12:41:30.560Z",
+  "releaseId": "research-49d19087c6cd-30afb52a9f67260e",
+  "sourceCommit": "49d19087c6cdb89d63efee3798d9b74a60c20760",
+  "manifest": {
+    "path": "ops/national-research/publication/research-data-manifest.json",
+    "bytes": 2047966,
+    "sha256": "9c7a2e3a5cc44cab93985dd9210b57ce849ec49319c60c423c1d6f3b757f115a"
+  },
+  "representationInventory": {
+    "path": ".cache/research/campaigns/20260906-r4-museum/taxonomy-main-batch/r2-inventory-20260907.json",
+    "observedAt": "2026-09-07T17:33:10.686Z",
+    "objects": 29057
+  },
+  "bucketBaseline": {
+    "observedAt": "2026-09-08T01:30:20.362Z",
+    "objects": 29059,
+    "bytes": 7837439604
+  },
+  "candidateNewObjects": 3195,
+  "candidateAdditionalBytes": 130097679,
+  "projectedBucketBytes": 7967537283,
+  "projectSafetyCeilingBytes": 8000000000,
+  "remainingSafetyHeadroomBytes": 32462717,
+  "supersededUnuploadedCandidate": {
+    "path": "ops/national-research/publication/honey-bee-positive-candidate-budget-20260908-r12.json",
+    "releaseId": "research-e4434322e97d-d203a77ba04a6139",
+    "reservationBytes": 129951378
+  },
+  "requiredResearchReservationBytes": 130097679,
+  "withinStorageCeiling": true,
+  "providerWrites": 0,
+  "pointerPromotions": 0,
+  "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+  "manifestCheck": {
+    "exitCode": 0,
+    "logSha256": "5014dc9c567b570fd88f7f96b3dcd712676803abe9a14ca138a445c25f722c38"
+  },
+  "offlinePlan": {
+    "mode": "plan",
+    "releaseId": "research-49d19087c6cd-30afb52a9f67260e",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1341897663,
+    "uniqueStoredBytes": 128049713,
+    "maximumNewClassARequests": 3197,
+    "maximumVerificationClassBRequests": 3196,
+    "currentClassARequests": 0,
+    "currentClassBRequests": 0,
+    "freeTierSafetyStorageBytes": 8000000000,
+    "freeTierSafetyClassARequests": 800000,
+    "freeTierSafetyClassBRequests": 8000000
+  },
+  "freshProviderUiObservation": {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-08T12:27:19.785Z",
+    "method": "Authenticated browser UI; billing and Vercel pages explicitly reloaded",
+    "cloudflare": {
+      "period": "2026-08-18 through 2026-09-17",
+      "observedThrough": "2026-09-08",
+      "classA": "29.77k",
+      "classB": "65.7k",
+      "storageGbMonths": 4.55,
+      "billableUsage": 0,
+      "observedCostUsd": 0,
+      "projectedCycleCostUsd": 0,
+      "bucket": "project-isitusa-research",
+      "bucketSizeDisplay": "7.84 GB",
+      "pointerModifiedDisplay": "06 Sep 2026 02:56:52 EDT"
+    },
+    "vercel": {
+      "scope": "All Projects, Unigentamos Hobby",
+      "window": "Last 30 Days; Aug9,9am-Sep8 displayed",
+      "isrReads": 747571,
+      "isrAllowance": 1000000,
+      "fastOriginTransferDisplay": "7.07 GB / 10 GB",
+      "fastDataTransferDisplay": "21.04 GB / 100 GB",
+      "deploymentStorageDisplay": "105.68 GB",
+      "functionsStorageDisplay": "1.42 GB"
+    },
+    "providerMutations": 0,
+    "limitations": [
+      "Vercel rolling window changes cannot be attributed solely to Isitusa optimizations.",
+      "Vercel historical deployment storage display is not a measurement of currently reclaimable bytes.",
+      "R2 bucket display is rounded; exact candidate headroom requires hashed inventory and current bucket byte totals.",
+      "Billing period operation counts are distinct from bucket overview operation counts."
+    ]
+  },
+  "limitations": [
+    "This replaces the preceding unuploaded candidate reservation; it is not an additional stored release.",
+    "Eligible representation inventory and later measured bucket baseline are dated planning evidence. Refresh inventory and current-period billable usage before upload.",
+    "Offline plan currentClassARequests and currentClassBRequests are zero placeholders, not dashboard usage observations.",
+    "Ordinary research promotion remains scheduled for September 13; no upload or pointer promotion occurred.",
+    "The exact remaining safety margin is recorded above. Further release growth requires a new exact storage plan; no automatic paid resource use is authorized."
+  ]
+}
