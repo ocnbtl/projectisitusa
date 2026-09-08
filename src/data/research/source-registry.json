@@ -988,7 +988,21 @@
       "refreshCadenceDays": 180,
       "status": "operational",
       "adapter": "scripts/import-wqp-alabama-biological-results.ts",
-      "caveat": "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+      "caveat": "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review.",
+      "researchAdapter": {
+        "id": "wqp-retained-field-counts",
+        "module": "scripts/research/adapters/wqp-retained-field-counts.ts",
+        "allowedVersions": [
+          "1.0.0"
+        ],
+        "parameterSchema": "src/data/research/schemas/wqp-field-counts-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact SubjectTaxonomicName agrees with the reviewed current-catalog binomial. No fuzzy, rank-collapse or inferred identity.",
+        "geographyMatchingPolicy": "Exact organization and monitoring-location identifier join to a single active publisher Station county FIPS. Source contradictions and method-specific holds are explicit; no automatic retired-county or coordinate-derived assignment.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "usgs-bbs",

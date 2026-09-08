@@ -1,3 +1,5 @@
+import { wqpFieldCountsAdapter } from "./adapters/wqp-retained-field-counts";
+import { wqpInputPaths, type WqpPlan } from "@/lib/research/wqp-field-positive-review";
 import { aphisHoneyBeePositiveAdapter } from "./adapters/aphis-honey-bee-positive";
 import { honeyPositiveInputPaths, type HoneyPositivePlan } from "@/lib/research/honey-bee-positive-review";
 import { officialOccurrenceAdapter } from "./adapters/official-confirmed-occurrence-report";
@@ -99,6 +101,7 @@ type CandidateFile = {
   candidates: Candidate[];
   agentJurisdiction?: AgentJurisdictionPlan;
   honeyBeePositive?: HoneyPositivePlan;
+  wqpFieldCounts?: WqpPlan;
   officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
     downloadPageUrl: string;
@@ -551,6 +554,7 @@ function runTimestamp(value: string) {
 }
 
 function resolveAdapter(sourceId: string, candidateFile?: CandidateFile): ResearchSourceAdapter {
+  if (sourceId === wqpFieldCountsAdapter.sourceId) return wqpFieldCountsAdapter;
   if (sourceId === aphisHoneyBeePositiveAdapter.sourceId && candidateFile?.honeyBeePositive) return aphisHoneyBeePositiveAdapter;
   if (sourceId === officialOccurrenceAdapter.sourceId) return officialOccurrenceAdapter;
   if (sourceId === eddMapsSnapshotReplayAdapter.sourceId) {
@@ -660,6 +664,10 @@ function buildParameters(
       sortField: "uuid",
       sortOrder: "asc",
     };
+  }
+  if (sourceId === wqpFieldCountsAdapter.sourceId) {
+    if (!candidateFile.wqpFieldCounts || candidateFile.sourceId !== sourceId) throw new Error("WQP requires its pinned reviewed field-count plan.");
+    return {...candidateFile.wqpFieldCounts, mode:"retained-field-positive-count", stateCode, candidatePairs, candidateLimit:candidatePairs.length};
   }
   if (sourceId === aphisHoneyBeeSurveyAdapter.sourceId) {
     if (candidateFile.honeyBeePositive) {
@@ -951,6 +959,7 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(adapter === wqpFieldCountsAdapter ? wqpInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFieldCounts!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === aphisHoneyBeePositiveAdapter ? honeyPositiveInputPaths(readJson<CandidateFile>(options.candidateFile).honeyBeePositive!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
       ? [path.join(ROOT, EDDMAPS_SNAPSHOT_PATH)]
@@ -1055,7 +1064,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = adapter === aphisHoneyBeePositiveAdapter
+    const expectedProviderRequests = adapter === wqpFieldCountsAdapter
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-field-positive-count" }
+      : adapter === aphisHoneyBeePositiveAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-positive-survey" }
       : options.sourceId === officialOccurrenceAdapter.sourceId
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-official-occurrence" }

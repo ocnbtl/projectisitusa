@@ -1,0 +1,6 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { buildWqpResult, WQP_ADAPTER, WQP_SOURCE, WQP_VERSION } from "@/lib/research/wqp-field-positive-review";
+import type { ResearchSourceAdapter } from "@/lib/research/source-adapter";
+export const wqpFieldCountsAdapter:ResearchSourceAdapter={adapterId:WQP_ADAPTER,adapterVersion:WQP_VERSION,sourceId:WQP_SOURCE,
+  async run(context){const result=buildWqpResult(context,p=>readFileSync(path.join(process.cwd(),p)));return {...result,completedAt:new Date().toISOString()};}};
