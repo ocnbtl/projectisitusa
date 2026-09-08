@@ -1,3 +1,4 @@
+import { CommittedFileReader } from "./committed-file-reader";
 import { WQP_SOURCE, WQP_ADAPTER, WQP_VERSION, buildWqpResult } from "./wqp-field-positive-review";
 import { HONEY_POSITIVE_SOURCE, HONEY_POSITIVE_ADAPTER, HONEY_POSITIVE_VERSION, buildHoneyPositiveResult } from "./honey-bee-positive-review";
 import { OFFICIAL_OCCURRENCE_ADAPTER, OFFICIAL_OCCURRENCE_SOURCE, OFFICIAL_OCCURRENCE_VERSION, buildOfficialOccurrenceResult } from "./official-occurrence-review";
@@ -141,35 +142,19 @@ function assertSafeRepositoryPath(value: string, label: string) {
   );
 }
 
+const committedFiles = new CommittedFileReader();
+
 function readCommittedFile(repositoryRoot: string, commit: string, filepath: string) {
-  assertSafeRepositoryPath(filepath, "Committed research path");
-  try {
-    return execFileSync(
-      "git",
-      ["-C", repositoryRoot, "show", `${commit}:${filepath}`],
-      { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 },
-    );
-  } catch (error) {
-    const detail = error instanceof Error ? error.message : String(error);
-    throw new Error(
-      `Cannot read ${filepath} at receipt code commit ${commit}: ${detail}`,
-    );
-  }
+  return readCommittedBytes(repositoryRoot, commit, filepath).toString("utf8");
 }
 
 function readCommittedBytes(repositoryRoot: string, commit: string, filepath: string) {
   assertSafeRepositoryPath(filepath, "Committed research path");
   try {
-    return execFileSync(
-      "git",
-      ["-C", repositoryRoot, "show", `${commit}:${filepath}`],
-      { maxBuffer: 20 * 1024 * 1024 },
-    );
+    return committedFiles.read(repositoryRoot, commit, filepath);
   } catch (error) {
     const detail = error instanceof Error ? error.message : String(error);
-    throw new Error(
-      `Cannot read ${filepath} at receipt code commit ${commit}: ${detail}`,
-    );
+    throw new Error("Cannot read " + filepath + " at receipt code commit " + commit + ": " + detail);
   }
 }
 

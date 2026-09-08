@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "kind": "committed-file-cache-validation",
+  "recordedAt": "2026-09-08T13:39:22.855Z",
+  "baseCommit": "97c7db56937807bafe0e512a72e3b7795a01e2ed",
+  "maximumRetainedBytes": 67108864,
+  "maximumEntryBytes": 8388608,
+  "maximumEntries": 512,
+  "scope": "Five existing r13 canonical runs only; no source acquisition, source edits, evidence or projection generation. execFileSync calls observed without altering returns. This is a bounded profile, not a full corpus speed forecast.",
+  "tests": {
+    "checks": [
+      {
+        "name": "typecheck",
+        "args": [
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false"
+        ],
+        "startedAt": "2026-09-08T13:32:03.714Z",
+        "finishedAt": "2026-09-08T13:32:15.697Z",
+        "exitCode": 0
+      },
+      {
+        "name": "run-validation",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/test-research-run-validation.ts"
+        ],
+        "startedAt": "2026-09-08T13:32:15.699Z",
+        "finishedAt": "2026-09-08T13:32:16.282Z",
+        "exitCode": 0
+      },
+      {
+        "name": "clam-replay-regression",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/test-wqp-field-counts.ts"
+        ],
+        "startedAt": "2026-09-08T13:32:16.282Z",
+        "finishedAt": "2026-09-08T13:32:25.074Z",
+        "exitCode": 0
+      }
+    ]
+  },
+  "fixtureTest": "scripts/test-committed-file-reader.cjs passed with real temporary repositories, exact bytes, immutable commit identity, failure handling and eviction",
+  "before": {
+    "schemaVersion": 1,
+    "kind": "read-only-canonical-replay-profile",
+    "startedAt": "2026-09-08T13:16:48.979Z",
+    "finishedAt": "2026-09-08T13:16:55.419Z",
+    "elapsedMs": 6439.3488,
+    "runs": [
+      {
+        "state": "CA",
+        "path": "src\\data\\research\\runs\\20260908T122111Z__water-quality-portal__2b144c7e4fa0",
+        "elapsedMs": 1146.5710000000001,
+        "passed": true
+      },
+      {
+        "state": "KS",
+        "path": "src\\data\\research\\runs\\20260908T122117Z__water-quality-portal__bf46b04cf8ef",
+        "elapsedMs": 1392.4061,
+        "passed": true
+      },
+      {
+        "state": "MD",
+        "path": "src\\data\\research\\runs\\20260908T122142Z__water-quality-portal__fc15ed8ea7a5",
+        "elapsedMs": 1145.5286,
+        "passed": true
+      },
+      {
+        "state": "OH",
+        "path": "src\\data\\research\\runs\\20260908T122216Z__water-quality-portal__65f8d5f7d639",
+        "elapsedMs": 1436.6204000000002,
+        "passed": true
+      },
+      {
+        "state": "TN",
+        "path": "src\\data\\research\\runs\\20260908T122225Z__water-quality-portal__2dc722704c03",
+        "elapsedMs": 1318.1145000000006,
+        "passed": true
+      }
+    ],
+    "gitCalls": 166,
+    "distinctGitCommands": 28,
+    "repeatedGitCalls": 138,
+    "gitElapsedMs": 4692.164099999998,
+    "calls": [
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/webservices.html.gz"
+        ],
+        "count": 10,
+        "totalMs": 371.8447999999994
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/userguide.html.gz"
+        ],
+        "count": 10,
+        "totalMs": 297.9566999999994
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/corbicula-fluminea-result.csv.gz"
+        ],
+        "count": 10,
+        "totalMs": 275.3980000000005
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/corbicula-fluminea-station.csv.gz"
+        ],
+        "count": 10,
+        "totalMs": 263.2241000000013
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/dreissena-polymorpha-station.csv.gz"
+        ],
+        "count": 8,
+        "totalMs": 248.30259999999998
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/dreissena-polymorpha-result.csv.gz"
+        ],
+        "count": 8,
+        "totalMs": 202.68350000000214
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/acquisition-recipe.cjs.gz"
+        ],
+        "count": 5,
+        "totalMs": 201.12739999999883
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/source-method-reviews/wqp-field-counts-v1.json"
+        ],
+        "count": 5,
+        "totalMs": 159.2189999999997
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/retrieval-receipt.json"
+        ],
+        "count": 5,
+        "totalMs": 152.92639999999926
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/ceden-about.html.gz"
+        ],
+        "count": 5,
+        "totalMs": 151.9764
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-technical.txt.gz"
+        ],
+        "count": 5,
+        "totalMs": 151.19019999999944
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/county-equivalent-registry.json"
+        ],
+        "count": 5,
+        "totalMs": 149.13850000000048
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/method-context-retrieval.json"
+        ],
+        "count": 5,
+        "totalMs": 148.71100000000058
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/evaluations/wqp-ca-independent-review-20260908-r13.json"
+        ],
+        "count": 5,
+        "totalMs": 136.15829999999983
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "cat-file",
+          "-e",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb^{commit}"
+        ],
+        "count": 5,
+        "totalMs": 136.04909999999938
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/evaluations/wqp-ks-independent-review-20260908-r13.json"
+        ],
+        "count": 5,
+        "totalMs": 132.2941000000003
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/county-coordinate-diagnostic.json"
+        ],
+        "count": 5,
+        "totalMs": 129.86930000000075
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/schemas/wqp-field-counts-parameters.schema.json"
+        ],
+        "count": 5,
+        "totalMs": 128.21499999999924
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:scripts/research/adapters/wqp-retained-field-counts.ts"
+        ],
+        "count": 5,
+        "totalMs": 127.62470000000042
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-display-retrieval.json"
+        ],
+        "count": 5,
+        "totalMs": 126.98720000000071
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/source-registry.json"
+        ],
+        "count": 5,
+        "totalMs": 126.76339999999976
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-ocr-retrieval.json"
+        ],
+        "count": 5,
+        "totalMs": 126.65659999999991
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/ceden-citation.html.gz"
+        ],
+        "count": 5,
+        "totalMs": 126.30750000000006
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-full-ocr.txt.gz"
+        ],
+        "count": 5,
+        "totalMs": 126.2978999999998
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/acquisition-provenance.json"
+        ],
+        "count": 5,
+        "totalMs": 126.18819999999948
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/swamp-bioassessment.html.gz"
+        ],
+        "count": 5,
+        "totalMs": 124.54620000000011
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/ceden-conditions.html.gz"
+        ],
+        "count": 5,
+        "totalMs": 122.32379999999955
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-technical-display.html.gz"
+        ],
+        "count": 5,
+        "totalMs": 122.18419999999855
+      }
+    ],
+    "scope": "Five existing r13 canonical runs only; no source acquisition, source edits, evidence or projection generation. execFileSync calls observed without altering returns. This is a bounded profile, not a full corpus speed forecast."
+  },
+  "after": {
+    "schemaVersion": 1,
+    "kind": "read-only-canonical-replay-profile",
+    "startedAt": "2026-09-08T13:38:13.948Z",
+    "finishedAt": "2026-09-08T13:38:16.442Z",
+    "elapsedMs": 2493.6022,
+    "runs": [
+      {
+        "state": "CA",
+        "path": "src\\data\\research\\runs\\20260908T122111Z__water-quality-portal__2b144c7e4fa0",
+        "elapsedMs": 1241.7382,
+        "passed": true
+      },
+      {
+        "state": "KS",
+        "path": "src\\data\\research\\runs\\20260908T122117Z__water-quality-portal__bf46b04cf8ef",
+        "elapsedMs": 350.0018,
+        "passed": true
+      },
+      {
+        "state": "MD",
+        "path": "src\\data\\research\\runs\\20260908T122142Z__water-quality-portal__fc15ed8ea7a5",
+        "elapsedMs": 237.5143999999998,
+        "passed": true
+      },
+      {
+        "state": "OH",
+        "path": "src\\data\\research\\runs\\20260908T122216Z__water-quality-portal__65f8d5f7d639",
+        "elapsedMs": 334.35289999999986,
+        "passed": true
+      },
+      {
+        "state": "TN",
+        "path": "src\\data\\research\\runs\\20260908T122225Z__water-quality-portal__2dc722704c03",
+        "elapsedMs": 329.8760000000002,
+        "passed": true
+      }
+    ],
+    "gitCalls": 32,
+    "distinctGitCommands": 28,
+    "repeatedGitCalls": 4,
+    "gitElapsedMs": 1047.5351999999998,
+    "calls": [
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "cat-file",
+          "-e",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb^{commit}"
+        ],
+        "count": 5,
+        "totalMs": 132.36089999999996
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/acquisition-recipe.cjs.gz"
+        ],
+        "count": 1,
+        "totalMs": 55.123899999999935
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/dreissena-polymorpha-station.csv.gz"
+        ],
+        "count": 1,
+        "totalMs": 41.4697000000001
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/dreissena-polymorpha-result.csv.gz"
+        ],
+        "count": 1,
+        "totalMs": 38.93380000000002
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/ceden-about.html.gz"
+        ],
+        "count": 1,
+        "totalMs": 36.41820000000001
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/source-method-reviews/wqp-field-counts-v1.json"
+        ],
+        "count": 1,
+        "totalMs": 35.30850000000004
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/county-equivalent-registry.json"
+        ],
+        "count": 1,
+        "totalMs": 35.242300000000114
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/retrieval-receipt.json"
+        ],
+        "count": 1,
+        "totalMs": 34.759199999999964
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/evaluations/wqp-ca-independent-review-20260908-r13.json"
+        ],
+        "count": 1,
+        "totalMs": 34.343399999999974
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/corbicula-fluminea-station.csv.gz"
+        ],
+        "count": 1,
+        "totalMs": 34.046499999999924
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/corbicula-fluminea-result.csv.gz"
+        ],
+        "count": 1,
+        "totalMs": 33.78909999999996
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/webservices.html.gz"
+        ],
+        "count": 1,
+        "totalMs": 33.25350000000003
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/source-registry.json"
+        ],
+        "count": 1,
+        "totalMs": 33.08679999999998
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/acquisition-provenance.json"
+        ],
+        "count": 1,
+        "totalMs": 32.650300000000016
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:scripts/research/adapters/wqp-retained-field-counts.ts"
+        ],
+        "count": 1,
+        "totalMs": 31.983600000000024
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-display-retrieval.json"
+        ],
+        "count": 1,
+        "totalMs": 31.865299999999934
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-technical-display.html.gz"
+        ],
+        "count": 1,
+        "totalMs": 31.750999999999976
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/ceden-citation.html.gz"
+        ],
+        "count": 1,
+        "totalMs": 31.725399999999922
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/county-coordinate-diagnostic.json"
+        ],
+        "count": 1,
+        "totalMs": 31.48879999999997
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/swamp-bioassessment.html.gz"
+        ],
+        "count": 1,
+        "totalMs": 31.26030000000003
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:src/data/research/schemas/wqp-field-counts-parameters.schema.json"
+        ],
+        "count": 1,
+        "totalMs": 31.245900000000006
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/userguide.html.gz"
+        ],
+        "count": 1,
+        "totalMs": 31.025999999999954
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/evaluations/wqp-ks-independent-review-20260908-r13.json"
+        ],
+        "count": 1,
+        "totalMs": 31.010899999999992
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/ceden-conditions.html.gz"
+        ],
+        "count": 1,
+        "totalMs": 30.938699999999926
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-full-ocr.txt.gz"
+        ],
+        "count": 1,
+        "totalMs": 30.9144
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/method-context-retrieval.json"
+        ],
+        "count": 1,
+        "totalMs": 30.715599999999995
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-ocr-retrieval.json"
+        ],
+        "count": 1,
+        "totalMs": 30.486699999999928
+      },
+      {
+        "args": [
+          "-C",
+          "C:\\Code\\project-isitusa",
+          "show",
+          "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb:ops/national-research/inputs/wqp-positive-review-20260908-r13/epa-nla2017-technical.txt.gz"
+        ],
+        "count": 1,
+        "totalMs": 30.3365
+      }
+    ],
+    "scope": "Five existing r13 canonical runs only; no source acquisition, source edits, evidence or projection generation. execFileSync calls observed without altering returns. This is a bounded profile, not a full corpus speed forecast."
+  },
+  "comparison": {
+    "gitCallsSaved": 134,
+    "elapsedMsSaved": 3945.7466,
+    "elapsedPercentReduction": 61.27555320500731
+  },
+  "limitations": [
+    "Single five-run before/after sample. Full corpus improvement is not yet measured.",
+    "The cache reuses only successful immutable Git file reads; canonical semantic checks and commit availability checks remain active.",
+    "No source requests, evidence determinations or public data changes from this optimization."
+  ]
+}
