@@ -1,3 +1,4 @@
+export { aphisHoneyBeePositiveAdapter } from "./aphis-honey-bee-positive";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 

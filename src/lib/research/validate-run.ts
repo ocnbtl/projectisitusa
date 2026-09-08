@@ -1,3 +1,4 @@
+import { HONEY_POSITIVE_SOURCE, HONEY_POSITIVE_ADAPTER, HONEY_POSITIVE_VERSION, buildHoneyPositiveResult } from "./honey-bee-positive-review";
 import { OFFICIAL_OCCURRENCE_ADAPTER, OFFICIAL_OCCURRENCE_SOURCE, OFFICIAL_OCCURRENCE_VERSION, buildOfficialOccurrenceResult } from "./official-occurrence-review";
 import { readFileSync } from "node:fs";
 import path from "node:path";
@@ -318,6 +319,20 @@ export function validateResearchRunInMemory(input: {
       assert(ref && ref.bytes === Buffer.byteLength(artifact.contents) && ref.sha256 === sha256(artifact.contents), "Official occurrence witness artifact differs.");
     }
     assert(receipt.upstream_requests.length === 0, "Retained official occurrence replay cannot claim fresh requests.");
+  }
+  if (sourceId === HONEY_POSITIVE_SOURCE && (receipt.adapter_version === HONEY_POSITIVE_VERSION || receipt.parameters.mode === "retained-positive-survey")) {
+    assert(receipt.adapter_id === HONEY_POSITIVE_ADAPTER && receipt.adapter_version === HONEY_POSITIVE_VERSION, "Wrong honey bee positive adapter version.");
+    const expected = buildHoneyPositiveResult({runId, sourceId, stateCode, runStartedAt: receipt.started_at, parameters: receipt.parameters,
+      requestedPairs: requestedPairKeys.map(key => { const [countyFips, speciesId] = key.split(":"); return {countyFips, speciesId, countyName: "Pinned registry", scientificName: speciesById.get(speciesId)!.scientificName}; })},
+      p => readCommittedBytes(root, receipt.code_commit, p));
+    for (const field of ["assertions", "reviews", "rejections", "outcomes", "upstreamRequests"] as const)
+      assert(stableJson(result[field]) === stableJson(expected[field]), "Honey bee positive " + field + " differ from canonical retained-source reconstruction.");
+    assert(result.candidateRecordCount === expected.candidateRecordCount && result.duplicateRecordCount === expected.duplicateRecordCount
+      && stableJson(result.errors) === stableJson(expected.errors) && stableJson(result.warnings) === stableJson(expected.warnings), "Honey bee canonical counts or diagnostics differ.");
+    assert(receipt.artifacts.length === expected.artifacts.length, "Honey bee witness count differs.");
+    for (const artifact of expected.artifacts) { const ref = receipt.artifacts.find(r => path.posix.basename(r.path) === artifact.filename);
+      assert(ref && ref.bytes === Buffer.byteLength(artifact.contents) && ref.sha256 === sha256(artifact.contents), "Honey bee witness artifact differs."); }
+    assert(receipt.upstream_requests.length === 0, "Retained honey bee replay cannot claim fresh source requests.");
   }
   const assertionById = new Map(result.assertions.map((entry) => [entry.eventId, entry]));
   const rejectionById = new Map(

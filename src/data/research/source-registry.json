@@ -269,7 +269,8 @@
         "id": "aphis-honey-bee-survey",
         "module": "scripts/research/adapters/aphis-honey-bee-survey.ts",
         "allowedVersions": [
-          "1.0.0"
+          "1.0.0",
+          "2.0.0"
         ],
         "parameterSchema": "src/data/research/schemas/aphis-honey-bee-survey-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
@@ -279,7 +280,7 @@
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       },
-      "caveat": "Zero-count rows support sample-level non-detection only, never countywide absence."
+      "caveat": "Zero-count rows support sample-level non-detection only, never countywide absence. Version 2.0.0 replays positive Varroa metrics from the retained public composite-apiary survey; source-specific program mapping, managed-host and migratory context, month precision, UMD attribution, and explicit Hawaii conflict holds are mandatory. It does not infer countywide establishment, persistence, absence or non-detection."
     },
     {
       "id": "usfws-invasive-carp-edna",

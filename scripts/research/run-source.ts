@@ -1,3 +1,5 @@
+import { aphisHoneyBeePositiveAdapter } from "./adapters/aphis-honey-bee-positive";
+import { honeyPositiveInputPaths, type HoneyPositivePlan } from "@/lib/research/honey-bee-positive-review";
 import { officialOccurrenceAdapter } from "./adapters/official-confirmed-occurrence-report";
 import { officialOccurrenceInputPaths, type OfficialOccurrencePlan } from "@/lib/research/official-occurrence-review";
 import { execFileSync } from "node:child_process";
@@ -96,6 +98,7 @@ type CandidateFile = {
   stateCode: string;
   candidates: Candidate[];
   agentJurisdiction?: AgentJurisdictionPlan;
+  honeyBeePositive?: HoneyPositivePlan;
   officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
     downloadPageUrl: string;
@@ -547,7 +550,8 @@ function runTimestamp(value: string) {
   return value.replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
 }
 
-function resolveAdapter(sourceId: string): ResearchSourceAdapter {
+function resolveAdapter(sourceId: string, candidateFile?: CandidateFile): ResearchSourceAdapter {
+  if (sourceId === aphisHoneyBeePositiveAdapter.sourceId && candidateFile?.honeyBeePositive) return aphisHoneyBeePositiveAdapter;
   if (sourceId === officialOccurrenceAdapter.sourceId) return officialOccurrenceAdapter;
   if (sourceId === eddMapsSnapshotReplayAdapter.sourceId) {
     return eddMapsSnapshotReplayAdapter;
@@ -658,6 +662,10 @@ function buildParameters(
     };
   }
   if (sourceId === aphisHoneyBeeSurveyAdapter.sourceId) {
+    if (candidateFile.honeyBeePositive) {
+      if (candidateFile.pilot || candidateFile.sourceId !== sourceId) throw new Error("Ambiguous or wrong-source honey bee positive plan.");
+      return { ...candidateFile.honeyBeePositive, mode: "retained-positive-survey", stateCode, candidatePairs, candidateLimit: candidatePairs.length };
+    }
     if (!candidateFile.pilot || candidateFile.sourceId !== sourceId) {
       throw new Error("APHIS Honey Bee Survey requires its committed pilot plan.");
     }
@@ -909,7 +917,7 @@ async function main() {
   }
   const researchAdapter = source.researchAdapter;
 
-  const adapter = resolveAdapter(options.sourceId);
+  const adapter = resolveAdapter(options.sourceId, readJson<CandidateFile>(options.candidateFile));
   if (researchAdapter.id !== adapter.adapterId) {
     throw new Error(`Registry adapter ${researchAdapter.id} does not match ${adapter.adapterId}.`);
   }
@@ -943,6 +951,7 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(adapter === aphisHoneyBeePositiveAdapter ? honeyPositiveInputPaths(readJson<CandidateFile>(options.candidateFile).honeyBeePositive!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
       ? [path.join(ROOT, EDDMAPS_SNAPSHOT_PATH)]
       : []),
@@ -1046,7 +1055,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = options.sourceId === officialOccurrenceAdapter.sourceId
+    const expectedProviderRequests = adapter === aphisHoneyBeePositiveAdapter
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-positive-survey" }
+      : options.sourceId === officialOccurrenceAdapter.sourceId
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-official-occurrence" }
       : isAgentJurisdictionSource(options.sourceId)
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-agent-reviewed-jurisdiction" }

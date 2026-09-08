@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-honey-bee-source-review",
+  "recordedBy": "MAIN",
+  "recordedAt": "2026-09-08T09:53:41.242Z",
+  "sourceDecodedSha256": "befb8b2bb4253c4167ee2b4cb2aacf112ea24af1be9fcb1fbdcb6df24d6bc6bc",
+  "taxonMapping": "supported-program-level-varroa-destructor",
+  "baseSha": "2315419099db3893c5892c4b85a56c35c85855cf",
+  "frozenPreflight": "passed",
+  "finalWorktreeStatus": "clean",
+  "proposalOnly": true,
+  "newDeterminations": 0,
+  "method": "2016-2017 APHIS report page 4 explicitly names Varroa destructor and mites per 100 bees from alcohol samples; the 2025 plan page 3 says Varroa spp. Preserve the program-level mapping and wording caveat.",
+  "caveats": [
+    "Composite eight-colony managed-apiary sampling; not every colony positive.",
+    "Migratory and stationary operations included; individual migration or local acquisition unknown.",
+    "Publisher county text uses 2020 TIGER/Line. No new coordinate routing.",
+    "Month precision; source generation, retrieval and review dates remain separate.",
+    "No absence or non-detection inference from surrounding zeros.",
+    "Anonymous source rows retain immutable archive, full row and exact row locator.",
+    "UMD ownership, copyright and non-endorsement acknowledgment required."
+  ],
+  "independentExtraction": {
+    "parser": "pypdf 6.10.0",
+    "reportPages": 22,
+    "planPages": 10,
+    "allRetainedPageTextsAndHashesMatched": true
+  },
+  "filesCreatedByWorker": 0,
+  "eventsCreatedByWorker": 0,
+  "commitsCreatedByWorker": 0,
+  "sourceDataReacquisitions": 0,
+  "actorId": "/root/honey_hi_source_review_r12",
+  "jobId": "honey-hi-source-review-20260908-r12",
+  "leaseId": "lease-honey-hi-source-review-20260908-r12-1",
+  "supportedPairs": [
+    "15001:varroa-destructor",
+    "15003:varroa-destructor"
+  ],
+  "heldPairs": [
+    "15007:varroa-destructor",
+    "15009:varroa-destructor"
+  ],
+  "reviewedRows": 255,
+  "positiveRows": 129,
+  "counties": [
+    {
+      "fips": "15001",
+      "rows": 130,
+      "positive": 87,
+      "zero": 40,
+      "blank": 3
+    },
+    {
+      "fips": "15003",
+      "rows": 39,
+      "positive": 37,
+      "zero": 1,
+      "blank": 1
+    },
+    {
+      "fips": "15007",
+      "rows": 36,
+      "positive": 2,
+      "zero": 34,
+      "blank": 0
+    },
+    {
+      "fips": "15009",
+      "rows": 50,
+      "positive": 3,
+      "zero": 46,
+      "blank": 1
+    }
+  ],
+  "heldPhysicalLines": [
+    89,
+    2496,
+    91,
+    92,
+    2517
+  ],
+  "heldReason": "University of Hawaii summary of the same 2009-2018 survey says neighboring islands remained Varroa-free after these five purported positive detections. This specific source inconsistency is unresolved; no contamination, miscoding or transient-incursion explanation is established.",
+  "negativeContextLimit": "2024 HDOA/HISC zero means not known established and acknowledges potentially missed populations. It cannot erase historical occurrence or establish countywide absence.",
+  "additionalSources": [
+    "https://cms.ctahr.hawaii.edu/pollinators/Resources/Beekeepers/National-Honey-Bee-Survey",
+    "https://hdoa.hawaii.gov/pi/files/2013/01/npa07-01-Varroa.pdf",
+    "https://dlnr.hawaii.gov/hisc/files/2024/09/Hawai%E2%80%98i-Limited-Distribution-List-SEPT2024.pdf"
+  ],
+  "webOperations": 12
+}

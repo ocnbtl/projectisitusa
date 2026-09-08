@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-honey-bee-source-review",
+  "recordedBy": "MAIN",
+  "recordedAt": "2026-09-08T09:53:41.242Z",
+  "sourceDecodedSha256": "befb8b2bb4253c4167ee2b4cb2aacf112ea24af1be9fcb1fbdcb6df24d6bc6bc",
+  "taxonMapping": "supported-program-level-varroa-destructor",
+  "baseSha": "2315419099db3893c5892c4b85a56c35c85855cf",
+  "frozenPreflight": "passed",
+  "finalWorktreeStatus": "clean",
+  "proposalOnly": true,
+  "newDeterminations": 0,
+  "method": "2016-2017 APHIS report page 4 explicitly names Varroa destructor and mites per 100 bees from alcohol samples; the 2025 plan page 3 says Varroa spp. Preserve the program-level mapping and wording caveat.",
+  "caveats": [
+    "Composite eight-colony managed-apiary sampling; not every colony positive.",
+    "Migratory and stationary operations included; individual migration or local acquisition unknown.",
+    "Publisher county text uses 2020 TIGER/Line. No new coordinate routing.",
+    "Month precision; source generation, retrieval and review dates remain separate.",
+    "No absence or non-detection inference from surrounding zeros.",
+    "Anonymous source rows retain immutable archive, full row and exact row locator.",
+    "UMD ownership, copyright and non-endorsement acknowledgment required."
+  ],
+  "independentExtraction": {
+    "parser": "pypdf 6.10.0",
+    "reportPages": 22,
+    "planPages": 10,
+    "allRetainedPageTextsAndHashesMatched": true
+  },
+  "filesCreatedByWorker": 0,
+  "eventsCreatedByWorker": 0,
+  "commitsCreatedByWorker": 0,
+  "sourceDataReacquisitions": 0,
+  "actorId": "/root/honey_ny_source_review_r12",
+  "jobId": "honey-ny-source-review-20260908-r12",
+  "leaseId": "lease-honey-ny-source-review-20260908-r12-1",
+  "supportedPairs": [
+    "36003:varroa-destructor",
+    "36009:varroa-destructor"
+  ],
+  "heldPairs": [],
+  "reviewedRows": 18,
+  "positiveRows": 15,
+  "zeroRows": 3,
+  "scope": [
+    {
+      "pair": "36003:varroa-destructor",
+      "positiveMonths": [
+        "2019-09",
+        "2020-08"
+      ],
+      "positivePhysicalLines": [
+        7298,
+        7895
+      ],
+      "zeroPhysicalLines": [
+        9281,
+        11991
+      ]
+    },
+    {
+      "pair": "36009:varroa-destructor",
+      "positivePhysicalLines": [
+        159,
+        531,
+        532,
+        1243,
+        1244,
+        2037,
+        2673,
+        5284,
+        5285,
+        6281,
+        6852,
+        7917,
+        7918
+      ],
+      "zeroPhysicalLines": [
+        7202
+      ]
+    }
+  ],
+  "representativeLineHashesWithoutTerminator": {
+    "7298": "9d74ca80cf7235fe371ad1d87272dddd138b9f5d7dc3d1663f5127ae7e1c29d3",
+    "7895": "576e393716e30e7124ad0562b1cd88b963935c78c3d7b1e8b316ddf1a3f09ca1"
+  },
+  "additionalSources": [
+    "https://www.usbeedata.org/terms-of-user/"
+  ],
+  "webOperations": 7
+}
