@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-positive-method-preflight",
+  "recordedAt": "2026-09-08T11:25:42.954Z",
+  "baselineCommit": "f088acf04ff9bea0a01a9214a3b9168218269346",
+  "sourceId": "water-quality-portal",
+  "sourceSpecies": 2,
+  "sourceResultRows": 7309,
+  "sourceStationRows": 2471,
+  "contextSelectedPairs": 265,
+  "existingPresenceOverlaps": 123,
+  "candidateNewPairs": 142,
+  "knownAbsenceConflicts": [],
+  "byState": {
+    "CA": 14,
+    "CO": 3,
+    "GA": 6,
+    "ID": 1,
+    "IN": 1,
+    "KS": 39,
+    "KY": 8,
+    "ME": 1,
+    "MD": 10,
+    "MO": 3,
+    "NV": 3,
+    "NJ": 1,
+    "NM": 1,
+    "NY": 7,
+    "OH": 17,
+    "OK": 1,
+    "PA": 1,
+    "TN": 19,
+    "TX": 2,
+    "UT": 2,
+    "WV": 1,
+    "WI": 1
+  },
+  "sourceRuns": [
+    {
+      "speciesId": "dreissena-polymorpha",
+      "stationRows": 342,
+      "resultRows": 2218,
+      "broadPositiveCountRows": 372,
+      "selectedContextPairs": 69
+    },
+    {
+      "speciesId": "corbicula-fluminea",
+      "stationRows": 2129,
+      "resultRows": 5091,
+      "broadPositiveCountRows": 2238,
+      "selectedContextPairs": 196
+    }
+  ],
+  "rejectionCounts": {
+    "requires-sampling-context-review": 556,
+    "not-a-final-positive-exact-count": 4699,
+    "missing-ambiguous-or-inactive-station-county": 5
+  },
+  "status": "candidate-only-independent-context-review-pending",
+  "newDeterminations": 0,
+  "sourceGetCount": 6,
+  "providerWrites": 0,
+  "sourceDataProfile": "WQP WQX 2.2 biological profile; the current user guide warns it does not include USGS data added after March 11, 2024. This retained candidate is historical and not a complete current national inventory.",
+  "method": "Exact canonical taxon, positive finite Count/count, Final or Accepted, explicit field Population Census or Species Density context, valid original date and source identities, exact organization plus monitoring-location join to one active official Station county FIPS. This is a proposed preflight screen, not an approved adapter.",
+  "reviewQuestions": [
+    "Whether final estimated counts support sampled historical occurrence while preserving value type.",
+    "Whether excluded Individual, Toxicity, Quality Control, positive density or biomass records can be interpreted safely, and which exclusions remain necessary.",
+    "Whether the official station join and activity locality/method context support exact county occurrence, including any contradictions.",
+    "How to cite the contributing agency, WQP DOI, exact query, access date and retained anonymous result-row identity without inventing a stable result ID."
+  ],
+  "interventions": [
+    "The initial preflight chose total-site-count ahead of total-result-count in Result headers and stopped before creating a candidate report. The corrected profile-specific count check passes for all four CSVs. No acquisition was repeated and source bytes were unchanged."
+  ],
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-positive-preflight-20260908-r13.json.gz",
+    "bytes": 222342,
+    "sha256": "e3ac77090833666355806297cb81cad6f2b7bdc22a69a7b109a709e094572a02"
+  }
+}
