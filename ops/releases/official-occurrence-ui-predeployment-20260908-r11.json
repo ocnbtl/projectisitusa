@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-occurrence-date-ui-predeployment",
+  "recordedAt": "2026-09-08T09:17:22.556Z",
+  "status": "local-gates-passed-production-pending",
+  "baseCommit": "4ad34faf37d332667dbf3a3db19a6e6b70054d52",
+  "rollbackCommit": "fb8d5500773e9bfe64dd103a5293c20993a2336f",
+  "rollbackDeploymentId": "dpl_6dhX2LkDoFXMMzgrPYTEawXVASGb",
+  "behavior": "Research evidence preserves reported year and month precision and formats complete ISO date intervals without inventing observation dates.",
+  "researchReconciliation": "ops/national-research/evaluations/official-occurrence-national-reconciliation-20260908-r11.json",
+  "publicationBudget": "ops/national-research/publication/official-occurrence-candidate-budget-20260908-r11.json",
+  "checks": [
+    {
+      "command": "npm run build",
+      "startedAt": "2026-09-08T09:14:02.301Z",
+      "finishedAt": "2026-09-08T09:15:03.902Z",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-09-08T09:15:03.903Z",
+      "finishedAt": "2026-09-08T09:15:07.246Z",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "startedAt": "2026-09-08T09:15:07.246Z",
+      "finishedAt": "2026-09-08T09:15:10.120Z",
+      "exitCode": 0,
+      "log": "check-runtime-assets.log"
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "startedAt": "2026-09-08T09:15:10.121Z",
+      "finishedAt": "2026-09-08T09:15:11.040Z",
+      "exitCode": 0,
+      "log": "check-vercel-publish.log"
+    }
+  ],
+  "runtimeAssetBundlesUnchanged": true,
+  "imagePreparation": {
+    "sources": 2090,
+    "originalBytes": 808459923,
+    "derivativeBytes": 295644698,
+    "generated": 0,
+    "restored": 0,
+    "reused": 4180,
+    "cache": {
+      "bytes": 295025492,
+      "objects": 4156,
+      "maxBytes": 335544320,
+      "removed": 0
+    },
+    "elapsedMs": 2427,
+    "bundles": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "bytes": 3854453,
+        "storedBytes": 715009
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "bytes": 4831012,
+        "storedBytes": 698125
+      }
+    }
+  },
+  "localPageBytes": {
+    "index.html": 11166,
+    "index.rsc": 6014,
+    "research.html": 14175,
+    "research.rsc": 8307
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/official-occurrence-ui-validation-20260908-r11.json.gz",
+    "bytes": 3161,
+    "sha256": "f66d21666b4024c914c78196e0f0bdbc40b1bb3817ca2dc5967d10c8a7385673"
+  },
+  "r2Writes": 0,
+  "pointerPromotions": 0,
+  "limitations": [
+    "Research data remains on its existing production pointer; this application release does not promote the queued two-occurrence batch.",
+    "Vercel warm image cache restoration must be measured on the actual production build.",
+    "Usage dashboard selected-range storage is not instantaneous retained bytes."
+  ]
+}
