@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "kind": "honey-bee-positive-predeployment",
+  "recordedAt": "2026-09-08T10:57:08.261Z",
+  "status": "local-gates-passed-production-pending",
+  "baseCommit": "e4434322e97dda934e6eeb105d431a241e3b8d03",
+  "rollbackCommit": "7c53e2ff3a8fdc824e52f96a84c78387c8559193",
+  "rollbackDeploymentId": "dpl_2WnPKsHKhesDvRLSB3oamuv6S1jt",
+  "behavior": "Versioned offline positive survey replay and public evidence compiler preserve original observation months, sampling limitations, publisher ownership and non-endorsement credit. Existing application runtime assets remain unchanged.",
+  "researchReconciliation": "ops/national-research/evaluations/honey-bee-positive-national-reconciliation-20260908-r12.json",
+  "researchReceiptCorrection": "ops/national-research/evaluations/honey-bee-positive-national-reconciliation-count-correction-20260908-r12.json",
+  "publicationBudget": "ops/national-research/publication/honey-bee-positive-candidate-budget-20260908-r12.json",
+  "checks": [
+    {
+      "command": "npm run build",
+      "startedAt": "2026-09-08T10:54:28.977Z",
+      "finishedAt": "2026-09-08T10:55:31.358Z",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-09-08T10:55:31.360Z",
+      "finishedAt": "2026-09-08T10:55:35.783Z",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "startedAt": "2026-09-08T10:55:35.783Z",
+      "finishedAt": "2026-09-08T10:55:38.660Z",
+      "exitCode": 0,
+      "log": "check-runtime-assets.log"
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "startedAt": "2026-09-08T10:55:38.661Z",
+      "finishedAt": "2026-09-08T10:55:39.608Z",
+      "exitCode": 0,
+      "log": "check-vercel-publish.log"
+    }
+  ],
+  "runtimeAssetBundlesUnchanged": true,
+  "imagePreparation": {
+    "sources": 2090,
+    "originalBytes": 808459923,
+    "derivativeBytes": 295644698,
+    "generated": 0,
+    "restored": 0,
+    "reused": 4180,
+    "cache": {
+      "bytes": 295025492,
+      "objects": 4156,
+      "maxBytes": 335544320,
+      "removed": 0
+    },
+    "elapsedMs": 3717,
+    "bundles": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "bytes": 3854453,
+        "storedBytes": 715009
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "bytes": 4831012,
+        "storedBytes": 698125
+      }
+    }
+  },
+  "localPageBytes": {
+    "index.html": 11166,
+    "index.rsc": 6014,
+    "research.html": 14175,
+    "research.rsc": 8307
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/honey-bee-positive-validation-20260908-r12.json.gz",
+    "bytes": 2929,
+    "sha256": "babb1ef2a63bcd761e8ace833ce949e7194b940edd4761822c2a58f3a942a91b"
+  },
+  "r2Writes": 0,
+  "pointerPromotions": 0,
+  "limitations": [
+    "The 1739 new determinations and public evidence credits are in the queued research projection, not the current R2 production pointer.",
+    "The next ordinary research promotion window opens September 13, subject to fresh storage and current-period operation usage checks.",
+    "An application build is conservatively triggered by shared compiler and package changes. It does not itself publish the research candidate."
+  ]
+}

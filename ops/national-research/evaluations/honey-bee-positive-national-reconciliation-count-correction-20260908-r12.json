@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "kind": "receipt-field-correction",
+  "recordedAt": "2026-09-08T10:53:33.138Z",
+  "corrects": "ops/national-research/evaluations/honey-bee-positive-national-reconciliation-20260908-r12.json",
+  "field": "sourceContextDocumentsRetrieved",
+  "originalValue": 8,
+  "correctValue": 7,
+  "evidence": [
+    {
+      "path": "ops/national-research/inputs/honey-bee-positive-review-20260908-r12/retrieval-receipt.json",
+      "successfulGets": 3
+    },
+    {
+      "path": "ops/national-research/inputs/honey-bee-positive-review-20260908-r12/conflict-and-terms-retrieval-receipt.json",
+      "successfulGets": 4
+    }
+  ],
+  "reason": "The national reconciliation summary accidentally counted eight context documents. The two original immutable retrieval receipts prove three plus four successful context GETs, seven total. Neither research counts nor zero-network survey replay claims change."
+}
