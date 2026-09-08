@@ -1,3 +1,4 @@
+import { isCommittedSnapshotReplayReceipt } from "@/lib/research/validate-run";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -14,6 +15,10 @@ const make=(state:string):SourceAdapterContext=>{const p=json(planRoot+state+".j
   requestedPairs:p.candidates.map((r:{countyFips:string;speciesId:string})=>({...r,countyName:"Pinned registry",scientificName:WQP_TAXA[r.speciesId]}))};};
 const originalFetch=globalThis.fetch;globalThis.fetch=async()=>{throw Error("Unexpected network access during retained replay.");};let rejected=0;
 try{
+  const replay={source_id:"water-quality-portal",adapter_id:"wqp-retained-field-counts",adapter_version:"1.0.0",parameters:{mode:"retained-field-positive-count",methodReviewSha256}};
+  assert(isCommittedSnapshotReplayReceipt(replay));
+  for(const override of [{source_id:"gbif-preserved-specimens"},{adapter_id:"other"},{adapter_version:"9.0.0"},{parameters:{mode:"live",methodReviewSha256}},{parameters:{mode:"retained-field-positive-count",methodReviewSha256:"bad"}}]){assert(!isCommittedSnapshotReplayReceipt({...replay,...override}));rejected++;}
+
   const ca=build(make("CA"),read),ks=build(make("KS"),read);
   assert.equal(ca.assertions.length,14);assert.equal(ca.candidateRecordCount,82);assert.equal(ks.assertions.length,38);assert.equal(ks.candidateRecordCount,426);
   const artifact=JSON.parse(ca.artifacts[0].contents.toString()),ksArtifact=JSON.parse(ks.artifacts[0].contents.toString());

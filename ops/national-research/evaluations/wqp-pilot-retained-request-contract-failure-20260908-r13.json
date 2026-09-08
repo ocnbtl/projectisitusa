@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "pre-write-retained-replay-contract-failure",
+  "recordedAt": "2026-09-08T12:05:35.081Z",
+  "failures": [
+    {
+      "state": "CA",
+      "leaseId": "lease-wqp-ca-positive-pilot-20260908-r13-2",
+      "baseSha": "4340d313ee44669c115600028df3cd8072a46ba7",
+      "expectedRunPath": "src/data/research/runs/20260908T120124Z__water-quality-portal__2b144c7e4fa0",
+      "exitCode": 1,
+      "error": "Scope-complete WQP outcome cites an unreported source request: API retained replay was not recognized by the generic request gate.",
+      "newRunFiles": 0,
+      "newCommits": 0,
+      "providerRequests": 0
+    },
+    {
+      "state": "KS",
+      "leaseId": "lease-wqp-ks-positive-pilot-20260908-r13-2",
+      "baseSha": "4340d313ee44669c115600028df3cd8072a46ba7",
+      "expectedRunPath": "src/data/research/runs/20260908T120127Z__water-quality-portal__bf46b04cf8ef",
+      "exitCode": 1,
+      "error": "Scope-complete WQP outcome cites an unreported source request: API retained replay was not recognized by the generic request gate.",
+      "newRunFiles": 0,
+      "newCommits": 0,
+      "providerRequests": 0,
+      "elapsedSeconds": 5.016821,
+      "observedPeakWorkingSetBytes": 309014528
+    }
+  ],
+  "correction": "Exact WQP source+adapter+version+mode+method-hash predicate permits original pinned query citations with zero new requests. Existing canonical reconstruction verifies exact citations, artifacts and outcomes before generic API receipt gates.",
+  "nextStep": "Run complete canonical staged runner validation centrally for both states before any further worker retry.",
+  "newDeterminations": 0
+}

@@ -50,8 +50,12 @@ function assert(condition: unknown, message: string): asserts condition {
 }
 
 export function isCommittedSnapshotReplayReceipt(
-  receipt: Pick<ImmutableResearchRunReceipt, "source_id" | "adapter_id" | "parameters">,
+  receipt: Pick<ImmutableResearchRunReceipt, "source_id" | "adapter_id" | "parameters"> & Partial<Pick<ImmutableResearchRunReceipt, "adapter_version">>,
 ) {
+  // WQP original query citations are pinned and reconstructed above; replay issues no new requests.
+  if (receipt.source_id === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && receipt.adapter_version === WQP_VERSION
+    && receipt.parameters.mode === "retained-field-positive-count" && typeof receipt.parameters.methodReviewSha256 === "string"
+    && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256)) return true;
   return receipt.source_id === "eddmaps" &&
     receipt.adapter_id === "eddmaps-snapshot-replay" &&
     receipt.parameters.mode === "committed-snapshot-replay" &&
