@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "kind": "bounded-primary-source-discovery",
+  "actorId": "MAIN",
+  "recordedAt": "2026-09-08T07:54:59.569Z",
+  "sources": [
+    {
+      "id": "cdfa-fruit-fly-treatment-index-current",
+      "url": "https://www.cdfa.ca.gov/plant/pdep/treatment/treatment_maps.html",
+      "finalUrl": "https://www.cdfa.ca.gov/plant/pdep/treatment/treatment_maps.html",
+      "status": 200,
+      "retrievedAt": "2026-09-08T07:54:58.808Z",
+      "contentType": "text/html",
+      "path": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/cdfa-fruit-fly-treatment-index-current.html.gz",
+      "bytes": 41130,
+      "sha256": "a5d4c656ca71654711ca7432884ee14b2bdea1546361306eb6f17ac9220c85c9",
+      "storedBytes": 8198,
+      "storedSha256": "ff40af31b5d1d381dd0c1eb9936b5d932f43b07d0c36c765235db85d0cfc0b68",
+      "encoding": "gzip"
+    },
+    {
+      "id": "cdfa-oriental-fruit-fly-long-beach-amendment-20260818",
+      "url": "https://www.cdfa.ca.gov/plant/pdep/treatment/2026/PEP_OFF_longbeach_LosAngelesCounty_AMD1_20260818.pdf",
+      "finalUrl": "https://www.cdfa.ca.gov/plant/pdep/treatment/2026/PEP_OFF_longbeach_LosAngelesCounty_AMD1_20260818.pdf",
+      "status": 200,
+      "retrievedAt": "2026-09-08T07:54:59.567Z",
+      "contentType": "application/pdf",
+      "path": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/cdfa-oriental-fruit-fly-long-beach-amendment-20260818.pdf.gz",
+      "bytes": 1576775,
+      "sha256": "bb2afd85a71421ab66c806cbe46fcaf60301085f2f9f24141e0549e87dda4ea8",
+      "storedBytes": 1462070,
+      "storedSha256": "272aebfec83bab5e0e47b272d6c2dfc347a56e460943bbe1fd21cb9c956b7281",
+      "encoding": "gzip"
+    }
+  ],
+  "providerRequests": 2,
+  "providerWrites": 0,
+  "newAssertions": 0,
+  "newDeterminations": 0,
+  "priorDiscovery": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/discovery-receipt.json",
+  "findings": [
+    {
+      "sourceId": "cdfa-fruit-fly-treatment-index-current",
+      "finding": "The primary CDFA index explicitly labels the Caribbean fruit fly Long Beach proclamation March 18, 2026. This supplies indexed document-date provenance distinct from the prior filename-only lead.",
+      "locator": "Caribbean Fruit Fly > Los Angeles County > Proclamation of an Emergency Program"
+    },
+    {
+      "sourceId": "cdfa-oriental-fruit-fly-long-beach-amendment-20260818",
+      "finding": "The report confirms four flies between June 30 and August 11, 2026 in Long Beach, but explicitly identifies Bactrocera dorsalis (Hendel) group.",
+      "pdfPagesOneBased": [
+        1,
+        3
+      ],
+      "taxonomicAdmission": "held-pending-group-concept-review",
+      "reason": "The report describes a closely related group whose species are difficult to distinguish. Do not strip the group qualifier and automatically create exact Bactrocera dorsalis occurrence."
+    }
+  ],
+  "candidatePolicy": "The two Caribbean fruit fly candidates remain unadmitted. The oriental fruit fly group report is retained as a taxonomy-adversarial example, not an added exact-species candidate.",
+  "nextAction": "Independent source review for the two Anastrepha suspensa pairs and a tested official confirmed-occurrence report method. Preserve interval/year date precision; reject treatment-area, host-list, program-expiry, sterile-release and group-to-species transformations."
+}

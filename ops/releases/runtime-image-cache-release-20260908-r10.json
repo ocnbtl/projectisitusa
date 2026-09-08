@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "kind": "runtime-image-cache-production-release",
+  "recordedAt": "2026-09-08T08:00:17.726Z",
+  "status": "released-live-smoke-passed",
+  "releasedCommit": "fb8d5500773e9bfe64dd103a5293c20993a2336f",
+  "rollbackCommit": "41080942ac34da5d8b1654558a183e88162a3d19",
+  "publicSite": "https://isitusa.com",
+  "productionAliasAndReadyStateVerified": true,
+  "providerVerifiedAt": "2026-09-08T07:57:26.905Z",
+  "localValidation": "ops/releases/runtime-image-cache-predeployment-20260908-r10.json",
+  "providerBuild": {
+    "imagePreparation": {
+      "sources": 2090,
+      "originalBytes": 808459923,
+      "derivativeBytes": 295644698,
+      "generated": 4156,
+      "restored": 0,
+      "reused": 24,
+      "cache": {
+        "bytes": 295025492,
+        "objects": 4156,
+        "maxBytes": 335544320,
+        "removed": 0
+      },
+      "elapsedMs": 323990,
+      "bundles": {
+        "map": {
+          "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+          "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+          "bytes": 3854453,
+          "storedBytes": 715009
+        },
+        "catalog": {
+          "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+          "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+          "bytes": 4831012,
+          "storedBytes": 698125
+        }
+      }
+    },
+    "buildCacheUploadDisplay": "455.00 MB",
+    "buildCacheUploaded": true,
+    "previousBuildCacheUploadDisplay": "173.34 MB",
+    "warmProviderBuildObserved": false,
+    "cacheLimitDocumentation": "https://vercel.com/docs/deployments/troubleshoot-a-build",
+    "limitation": "The first release populated the cache. A subsequent normal release must demonstrate restored provider cache reuse; no extra deployment was created solely for a benchmark."
+  },
+  "publicChecks": {
+    "observedAt": "2026-09-08T07:57:44.357Z",
+    "requests": [
+      {
+        "url": "https://isitusa.com/",
+        "status": 200,
+        "decodedBytes": 11166,
+        "sha256": "23f77104c9950b31831208a2dbc2ec4cd772012161dd2bb4bd235db20e85c9d8",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "cache": "PRERENDER",
+        "contentEncoding": "br",
+        "allowOrigin": "*",
+        "contentType": "text/html; charset=utf-8",
+        "embeddedAllSpecies": false,
+        "embeddedPresenceIndex": false
+      },
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200,
+        "decodedBytes": 14175,
+        "sha256": "453729d44e39eb0f6e4984186b3a606a99c7687c0cac9f636d5b967d87ab6378",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "cache": "PRERENDER",
+        "contentEncoding": "br",
+        "allowOrigin": "*",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://data.isitusa.com/current.json",
+        "status": 200,
+        "decodedBytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "cacheControl": "public, max-age=60, must-revalidate",
+        "cache": "REVALIDATED",
+        "contentEncoding": "br",
+        "allowOrigin": "https://isitusa.com",
+        "contentType": "application/json; charset=utf-8",
+        "pointer": {
+          "schemaVersion": 1,
+          "kind": "isitusa-research-projection-pointer",
+          "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+          "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+          "releaseManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+          "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+          "promotedAt": "2026-09-06T06:56:53.282Z"
+        }
+      },
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "status": 200,
+        "decodedBytes": 3854453,
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "cache": "HIT",
+        "contentEncoding": "gzip",
+        "allowOrigin": "https://isitusa.com",
+        "contentType": "application/json; charset=utf-8",
+        "expectedIntegrityMatched": true
+      },
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "status": 200,
+        "decodedBytes": 4831012,
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "cache": "HIT",
+        "contentEncoding": "gzip",
+        "allowOrigin": "https://isitusa.com",
+        "contentType": "application/json; charset=utf-8",
+        "expectedIntegrityMatched": true
+      }
+    ],
+    "localBuiltPages": [
+      {
+        "path": ".next/server/app/index.html",
+        "bytes": 11166,
+        "sha256": "349f8056a39fbf341c7fd32d0d0f0945edb44e4ec4ec6be38ee3b0b63fb92d93"
+      },
+      {
+        "path": ".next/server/app/index.rsc",
+        "bytes": 6014,
+        "sha256": "0facd93b87ff3a4b4f793efc3875b6f0aeabff0d1134938178b0c6850e4def0c"
+      }
+    ],
+    "browser": {
+      "recordedAt": "2026-09-08T08:00:17.727Z",
+      "method": "Fresh navigation in the existing production QA browser tab after alias verification; visible DOM, image load properties and error logs.",
+      "checks": [
+        {
+          "name": "Jefferson AL county deep link completes loading",
+          "url": "https://isitusa.com/?county=01073",
+          "reportedSpecies": 411,
+          "passed": true
+        },
+        {
+          "name": "County species list opens Yellow Sweetclover profile",
+          "url": "https://isitusa.com/species/melilotus-officinalis",
+          "passed": true
+        },
+        {
+          "name": "Optimized species image loads with Wikimedia Commons credit",
+          "imageUrl": "https://isitusa.com/optimized-species/e43b5a3b85ed6dd1abdbe3571216e9c851eff73dc7b4f0be791e296b2a48b88a.webp",
+          "complete": true,
+          "width": 1280,
+          "height": 960,
+          "passed": true
+        },
+        {
+          "name": "Research deep link and evidence disclosure preserve source citation and history/current distinction",
+          "url": "https://isitusa.com/research?state=AL&county=01001&species=Vespa+mandarinia",
+          "visibleAsOf": "2026-09-06",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "scope": "Core desktop smoke for unchanged UI and data. Full responsive, cold-client and failure-recovery checks remain separately dated in the original optimization release."
+    }
+  },
+  "research": {
+    "closure": "ops/national-research/evaluations/containment-source-review-closure-20260908-r10.json",
+    "reviewedLeasedPairs": 164,
+    "newAssertions": 0,
+    "newDeterminations": 0,
+    "newQuestionAssessments": 0,
+    "currentCounts": {
+      "asOf": "2026-09-08",
+      "jurisdictions": 51,
+      "species": 2504,
+      "countyCount": 3144,
+      "totalPairs": 7872576,
+      "verifiedPresent": 313000,
+      "verifiedAbsent": 3718,
+      "determinations": 316718,
+      "conflicts": 0
+    },
+    "newSourceDiscovery": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/discovery-receipt.json",
+    "additionalSourceContext": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/additional-discovery-receipt.json",
+    "unadmittedPositiveCandidatePairs": 2,
+    "liveReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "queuedReleaseId": "research-b212ab74d253-56b3dc291e4a4b05",
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+    "r9QueuedNewAbsences": 416,
+    "queuedDeterminationsAreLive": false
+  },
+  "resourceChanges": {
+    "r2Writes": 0,
+    "r2Promotions": 0,
+    "paidResourcesEnabled": 0,
+    "newRuntimeDataObjects": 0,
+    "changedRuntimeManifests": 0,
+    "packagedImageBytesChanged": 0
+  },
+  "limitations": [
+    "This batch records source-method conclusions and two unadmitted positive leads; it does not increase biological determination counts.",
+    "New county data requires independent method review, a registered adapter, immutable source runs, MAIN integration and deterministic compilation.",
+    "No long-term ISR, origin-transfer or deployment-storage savings are inferred from this unchanged-payload cache release."
+  ]
+}

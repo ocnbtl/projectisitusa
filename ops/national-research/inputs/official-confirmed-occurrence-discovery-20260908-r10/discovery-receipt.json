@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "bounded-primary-source-discovery",
+  "actorId": "MAIN",
+  "baseCommit": "fb8d5500773e9bfe64dd103a5293c20993a2336f",
+  "startedAt": "2026-09-08T07:51:55.848Z",
+  "recordedAt": "2026-09-08T07:51:56.766Z",
+  "sources": [
+    {
+      "id": "cdfa-caribbean-fruit-fly-long-beach-2026",
+      "url": "https://www.cdfa.ca.gov/plant/pdep/treatment/2026/pep_cff_20260318_longbeach_losangeles_county.pdf",
+      "finalUrl": "https://www.cdfa.ca.gov/plant/pdep/treatment/2026/pep_cff_20260318_longbeach_losangeles_county.pdf",
+      "status": 200,
+      "retrievedAt": "2026-09-08T07:51:56.731Z",
+      "contentType": "application/pdf",
+      "path": "ops/national-research/inputs/official-confirmed-occurrence-discovery-20260908-r10/cdfa-caribbean-fruit-fly-long-beach-2026.pdf.gz",
+      "bytes": 772040,
+      "sha256": "50b894f6585b056466ec86e46ee23259e77924a9e44a779d009082684e5f5e11",
+      "storedBytes": 610811,
+      "storedSha256": "817265886a283ced0693f3010f6c733f205d7ba6bbc11685bd7bc4be1392eef3",
+      "encoding": "gzip"
+    }
+  ],
+  "providerRequests": 1,
+  "providerWrites": 0,
+  "newAssertions": 0,
+  "newDeterminations": 0,
+  "newOutcomes": 0,
+  "newQuestionAssessments": 0,
+  "purpose": "Retain an explicit authority-confirmed occurrence report for evaluated-method admission, not an immutable county evidence run.",
+  "findings": [
+    {
+      "claim": "CDFA confirmed two Anastrepha suspensa trapped in Long Beach, Los Angeles County between January 20 and February 9, 2026.",
+      "pdfPagesOneBased": [
+        1,
+        3
+      ],
+      "datePrecision": "interval",
+      "period": {
+        "start": "2026-01-20",
+        "end": "2026-02-09"
+      },
+      "candidatePair": "06037:anastrepha-suspensa",
+      "individualSpecimenDates": null
+    },
+    {
+      "claim": "The document explicitly dates the first California detections to San Diego County in 1983.",
+      "pdfPagesOneBased": [
+        3,
+        12
+      ],
+      "datePrecision": "year",
+      "informationYear": 1983,
+      "candidatePair": "06073:anastrepha-suspensa",
+      "individualSpecimenDates": null
+    },
+    {
+      "claim": "The same document includes general US distribution restricted to peninsular or central/southern Florida while confirming the California detections.",
+      "pdfPagesOneBased": [
+        3,
+        12
+      ],
+      "meaning": "An actual counterexample to treating general restricted-distribution prose as universal current or historical absence outside its named region."
+    }
+  ],
+  "currentPairChecks": [
+    {
+      "countyFips": "06037",
+      "speciesId": "anastrepha-suspensa",
+      "path": "public/generated/research/CA/counties/06037.json",
+      "sha256": "e5f7f26887cffc85d2ba66071f217ccfd9646653b09b8af9bb9bd73000cc6c8d",
+      "asOf": "2026-09-08",
+      "status": "not-researched-sparse-default",
+      "evidenceCount": 0
+    },
+    {
+      "countyFips": "06073",
+      "speciesId": "anastrepha-suspensa",
+      "path": "public/generated/research/CA/counties/06073.json",
+      "sha256": "a86e405862d0031b77deea955860824d7bc42a7b38f182cd88286d2d488e72ec",
+      "asOf": "2026-09-08",
+      "status": "not-researched-sparse-default",
+      "evidenceCount": 0
+    }
+  ],
+  "netUndeterminedCandidatePairs": 2,
+  "sourceQualifiedProspectiveGains": null,
+  "methodStatus": "not-admitted",
+  "limitations": [
+    "The full original PDF is retained. Source wording was read through the PDF text extraction; one browser screenshot request for PDF page 3 failed with Cache miss. No visual signature date is asserted.",
+    "March 2026 is printed on the work plan. The day encoded in the filename is not assigned as the declaration date.",
+    "Program validity through October 15, 2026 is administrative authorization, not biological persistence or proved eradication.",
+    "Specific confirmed trapped organisms can support historical occurrence without obtaining every raw trap record. Independent semantic review and a registered tested adapter are required before integration.",
+    "Host lists, treatment boundaries, eradication aspirations and sterile release schedules are not wild occurrence evidence.",
+    "No source-silence negatives, establishment determination or research completion was created."
+  ],
+  "nextAction": "Evaluate and register a reusable retained authority-confirmed occurrence-report adapter with independent review, exact catalog/county mapping and original date precision. Pilot these two exact pairs before expanding to the CDFA emergency-program report collection."
+}
