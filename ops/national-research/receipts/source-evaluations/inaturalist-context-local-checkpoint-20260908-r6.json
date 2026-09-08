@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-local-integration-checkpoint",
+  "recordedAt": "2026-09-08T00:27:34.324Z",
+  "actor": {
+    "type": "agent",
+    "id": "MAIN"
+  },
+  "status": "integrated-local-pair-movement-verified-national-release-gate-pending",
+  "baseline": {
+    "determinations": 316240,
+    "pairSetSha256": "6258ef9cb90dc6637fcf0c1d73ff8104b5c50cbe91dc1968958d0a276af6880f"
+  },
+  "final": {
+    "verifiedPresent": 313000,
+    "verifiedAbsent": 3244,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6249190,
+    "totalPairs": 7872576,
+    "evidenceRecordCount": 459960,
+    "conflictCount": 0,
+    "determinations": 316244,
+    "pairSetSha256": "27c2a45e00e590e638413cb1f7077370de9ebefcd618609fa2a81aa5a4e0e401",
+    "stateCount": 51,
+    "countyCount": 3144
+  },
+  "movement": {
+    "addedPairs": [
+      "13073:streptopelia-decaocto",
+      "19193:anolis-sagrei",
+      "20055:columba-livia",
+      "20055:sturnus-vulgaris"
+    ],
+    "removedPairs": [],
+    "statusTransitions": []
+  },
+  "validation": {
+    "artifactPath": "ops/national-research/evaluations/artifacts/inaturalist-context-local-validation-20260908-r6.json.gz",
+    "storedBytes": 159126,
+    "storedSha256": "0368c2afa1cdbdf556bda5868dc17ef1b752cac96c3b08fcbe16f4605325c521",
+    "typecheckPassed": true,
+    "affectedStatesByteStable": [
+      "GA",
+      "KS",
+      "IA"
+    ],
+    "exactSourceWitnessesVerified": 4,
+    "fullResearchIntegrityPassed": false,
+    "blockingGate": "Approved jurisdiction national audit requires a shared as-of date; GA/KS/IA use 2026-09-07 and remaining states use 2026-09-06.",
+    "completedResearchChecks": "All preceding npm integrity commands, including core check-research-integrity.ts and registry check, passed before the shared-date audit failed. The downstream state projection check was not run."
+  },
+  "publication": {
+    "researchPromoted": false,
+    "currentPublicResearchRelease": "research-6927e5fe2efb-886700baca52fe1e"
+  },
+  "nextResearchAction": "Bring national projections to one explicit reporting date, rerun the failed audit and downstream coverage/publication checks, then remeasure exact movement. Current priority switched by user to Vercel usage optimization and production application release."
+}

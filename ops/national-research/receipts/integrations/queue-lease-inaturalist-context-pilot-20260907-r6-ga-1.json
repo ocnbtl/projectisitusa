@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-inaturalist-context-pilot-20260907-r6-ga-1",
+  "jobId": "inaturalist-context-pilot-20260907-r6-ga",
+  "leaseId": "lease-inaturalist-context-pilot-20260907-r6-ga-1",
+  "workerCommit": "4494eae356915dab4975050bd690707a9dbb9309",
+  "workerBranchHead": "8f7051aea800c0619444d322750c93270003a7bd",
+  "manifestHash": "567fdd6aeca3be03fd689112ba1861bdc84932169cb127f31dffc16e30126208",
+  "changedPaths": [
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-occurrences-streptopelia-decaocto-000000.json.gz",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/gbif-species-match-streptopelia-decaocto.json.gz",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/artifacts/inaturalist-retained-replay-provenance.json",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/assertions.ndjson",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/manifest.json",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/outcomes.ndjson",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/receipt.json",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/rejections.ndjson",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/reviews.ndjson",
+    "src/data/research/runs/20260907T184350Z__inaturalist-research-grade__e01f6358c2d1/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "Independently hashed frozen skill trees, exact two-commit history, manifest bytes and exact allowed changed paths",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "Pinned worker manifest validator executed by MAIN",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "Canonical immutable-run validator with exact source, state, pair and actor/code lineage",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "MAIN original provider row, complete page, retrieval date, metadata license and source-context audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 8ab408bfbc7811a3b3525be9e72254be12b1babc...8f7051aea800c0619444d322750c93270003a7bd",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "Fresh canonical immutable-run validation of the integrated exact GA scope and original worker code/actor lineage",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed Georgia content and manifest trees without conflict. Fresh canonical validation passed. The dated wild encounter supports historical occurrence only; provider retrieval, replay time, attribution and garden-center context remain explicit.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-09-07T19:14:03.207Z",
+  "integrationCommit": "d1139cfd700ff770bf7c9730e78ce960b0bf2ea8"
+}
