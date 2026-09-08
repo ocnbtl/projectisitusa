@@ -2,6 +2,8 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
+import { enforceHostedReleaseCoherence } from "./check-release-coherence.mjs";
+
 const COMMIT_SHA_PATTERN = /^[0-9a-f]{40}$/iu;
 
 const DEPLOYMENT_INDEPENDENT_PATHS = [
@@ -74,20 +76,19 @@ export function decideVercelBuild(environment = process.env, cwd = process.cwd()
   };
 }
 
+// Fail closed before allocating a full build, including when Git comparison is unavailable.
+export async function decideSafeVercelBuild(environment = process.env, cwd = process.cwd(), check = enforceHostedReleaseCoherence, classify = decideVercelBuild) {
+  let decision;
+  try { decision = classify(environment, cwd); }
+  catch (error) { decision = { ignoreBuild: false, reason: `Git classification unavailable: ${error.message}` }; }
+  if (decision.ignoreBuild) return decision;
+  try { await check(environment, cwd); return decision; }
+  catch (error) { return { ...decision, ignoreBuild: true, reason: `Release held: ${error.message}` }; }
+}
+
 const invokedPath = process.argv[1] ? pathToFileURL(path.resolve(process.argv[1])).href : null;
 if (invokedPath === import.meta.url) {
-  try {
-    const decision = decideVercelBuild();
-    console.log(
-      `${decision.ignoreBuild ? "Skipping" : "Running"} Vercel build: ${decision.reason}`,
-    );
-    process.exitCode = decision.ignoreBuild ? 0 : 1;
-  } catch (error) {
-    console.error(
-      `Running Vercel build because change classification failed: ${
-        error instanceof Error ? error.message : String(error)
-      }`,
-    );
-    process.exitCode = 1;
-  }
+  const decision = await decideSafeVercelBuild();
+  console.log(`${decision.ignoreBuild ? "Skipping" : "Running"} Vercel build: ${decision.reason}`);
+  process.exitCode = decision.ignoreBuild ? 0 : 1;
 }

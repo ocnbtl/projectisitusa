@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-wqp-app-release-rollback",
+  "recordedAt": "2026-09-08T20:27:41.648Z",
+  "status": "app-rolled-back-valid-research-retained-publication-held",
+  "attemptedCommit": "8c93d7a424668467fe479593ae6c66d8c95ade24",
+  "attemptedDeployment": {
+    "id": "dpl_Hq8KgFWV2aWB9zakEygpD58HPZGH",
+    "url": "projectisitusa-1zftixrz8-unigentamos.vercel.app",
+    "state": "READY",
+    "substate": "PROMOTED",
+    "target": "production",
+    "commit": "8c93d7a424668467fe479593ae6c66d8c95ade24",
+    "createdAt": 1788897546877
+  },
+  "restoredProduction": {
+    "id": "dpl_Bt1mkLJtfSubq62VJzVBQydtoyP5",
+    "url": "projectisitusa-puieaznrc-unigentamos.vercel.app",
+    "state": "READY",
+    "substate": "PROMOTED",
+    "target": "production",
+    "commit": "0fea5725577ca361dfe376aedc832867c1fcf943",
+    "createdAt": 1788889635297
+  },
+  "restoredAlias": "isitusa.com",
+  "providerVerifiedAt": "2026-09-08T20:11:17.129Z",
+  "incident": {
+    "countyFips": "01121",
+    "speciesId": "cyprinus-carpio",
+    "attemptedAppPresentCount": 206,
+    "publishedResearchPresentCount": 205,
+    "publishedResearchSpeciesStatus": "researched-unresolved",
+    "cause": "A build-relevant generated Alabama map addition was released while the separately published national research pointer remained on its prior scheduled release.",
+    "browserObservations": {
+      "kind": "assistant-transcribed-observations",
+      "beforeRollback": {
+        "mapUrl": "https://isitusa.com/?county=01121&q=Common+Carp",
+        "mapMatches": 1,
+        "researchUrl": "https://isitusa.com/research?state=AL&county=01121&species=Cyprinus+carpio",
+        "researchStatus": "Researched Unresolved",
+        "researchEvidenceCount": 0
+      },
+      "afterRollback": {
+        "mapUrl": "https://isitusa.com/?county=01121&q=Common+Carp",
+        "mapMatches": 0
+      },
+      "qualification": "A missing map record is not evidence of absence."
+    }
+  },
+  "research": {
+    "nationalReconciliation": "ops/national-research/evaluations/epa-wqp-national-reconciliation-20260908-r18.json",
+    "netUniqueNewDeterminations": 480,
+    "assertions": 487,
+    "overlappingPairs": 7,
+    "retractedEvidence": 0,
+    "deletedRuns": 0,
+    "localResearchCommitsPreserved": true
+  },
+  "publication": {
+    "activeResearchRelease": "research-6927e5fe2efb-886700baca52fe1e",
+    "queuedResearchRelease": "research-d97781bd1954-14588e7a570b4c3d",
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+    "researchObjectsUploaded": 0,
+    "pointerPromotions": 0,
+    "runtimeObjectsUploaded": 2,
+    "runtimeStoredBytes": 1413134,
+    "runtimeObjectsRetained": true,
+    "r2Deletes": 0,
+    "paidResourcesAdded": 0
+  },
+  "correctiveAction": {
+    "guard": "scripts/check-release-coherence.mjs",
+    "docs": "docs/research/app-research-release-coherence.md",
+    "enforcement": [
+      "Vercel ignored-build command",
+      "Hosted npm build before assets and pruning"
+    ],
+    "liveProof": {
+      "checkedAt": "2026-09-08T20:24:31.414Z",
+      "countiesChecked": 67,
+      "requestCount": 70,
+      "decodedBytes": 109570317,
+      "candidateMismatches": [
+        {
+          "countyFips": "01121",
+          "stateCode": "AL",
+          "appPresent": 206,
+          "publishedPresent": 205,
+          "addedInApp": [
+            "cyprinus-carpio"
+          ],
+          "missingInApp": []
+        }
+      ],
+      "restoredProductionMismatches": []
+    },
+    "gates": [
+      {
+        "name": "publish-regressions",
+        "startedAt": "2026-09-08T20:25:48.718Z",
+        "finishedAt": "2026-09-08T20:25:49.741Z",
+        "exitCode": 0,
+        "expectedExitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/coherence-publish-regressions.log",
+        "error": null
+      },
+      {
+        "name": "typecheck",
+        "startedAt": "2026-09-08T20:25:49.741Z",
+        "finishedAt": "2026-09-08T20:25:53.421Z",
+        "exitCode": 0,
+        "expectedExitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/coherence-typecheck.log",
+        "error": null
+      },
+      {
+        "name": "local-build-guard",
+        "startedAt": "2026-09-08T20:25:53.421Z",
+        "finishedAt": "2026-09-08T20:25:53.473Z",
+        "exitCode": 0,
+        "expectedExitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/coherence-local-build-guard.log",
+        "error": null
+      },
+      {
+        "name": "hosted-build-held",
+        "startedAt": "2026-09-08T20:25:53.473Z",
+        "finishedAt": "2026-09-08T20:25:54.703Z",
+        "exitCode": 1,
+        "expectedExitCode": 1,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/coherence-hosted-build-held.log",
+        "error": null
+      }
+    ]
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/epa-wqp-rollback-20260908-r18.json.gz",
+    "bytes": 48536,
+    "sha256": "46337e262070bc41e986d1674d6003dcb22061ad1f3c3ed05cb2349f45e8bd3d"
+  },
+  "limitations": [
+    "The preceding local and national gates passed; they did not check app presence against the currently published research release. This receipt preserves that distinction.",
+    "The active production alias was restored instead of reverting valid research commits. The attempted deployment still exists and must not be promoted without a fresh coherence check.",
+    "The production-mode build regression intentionally exits 1 because the queued candidate is incompatible with the live research release; this is a passing safety test, not a successful production build.",
+    "The check is a point-in-time release preflight, not an atomic guarantee across later pointer promotions or previously built deployment promotion.",
+    "Research-only states remain outside the legacy map parity contract until their explicit compatibility-publication promotion."
+  ]
+}
