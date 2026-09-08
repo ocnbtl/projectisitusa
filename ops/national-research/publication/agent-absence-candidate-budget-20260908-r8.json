@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-research-candidate-storage-plan",
+  "recordedAt": "2026-09-08T05:34:21.754Z",
+  "releaseId": "research-389246a03486-03adac830b0ec822",
+  "sourceCommit": "389246a034867b2437fc6c1ce5b7146530218501",
+  "manifest": {
+    "path": "ops/national-research/publication/research-data-manifest.json",
+    "bytes": 2047966,
+    "sha256": "0392d81d40c4ea50db6552143601bb0482eb78de7710606f4766b3fe4a2f36cb"
+  },
+  "representationInventory": {
+    "path": ".cache/research/campaigns/20260906-r4-museum/taxonomy-main-batch/r2-inventory-20260907.json",
+    "observedAt": "2026-09-07T17:33:10.686Z",
+    "objects": 29057
+  },
+  "bucketBaseline": {
+    "observedAt": "2026-09-08T01:30:20.362Z",
+    "objects": 29059,
+    "bytes": 7837439604
+  },
+  "candidateNewObjects": 3195,
+  "candidateAdditionalBytes": 127592883,
+  "projectedBucketBytes": 7965032487,
+  "projectSafetyCeilingBytes": 8000000000,
+  "remainingSafetyHeadroomBytes": 34967513,
+  "supersededUnuploadedCandidate": {
+    "path": "ops/national-research/publication/reconciliation-candidate-budget-20260908-r7.json",
+    "releaseId": "research-9f178e3eac7a-c87fbb15edb578a7",
+    "reservationBytes": 127548495
+  },
+  "requiredResearchReservationBytes": 127592883,
+  "withinStorageCeiling": true,
+  "providerWrites": 0,
+  "pointerPromotions": 0,
+  "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+  "manifestCheck": {
+    "exitCode": 0,
+    "logSha256": "8aff316bdf45f814f97ba8d55ed085714482c41156aac79eca16486f6763f2a2"
+  },
+  "offlinePlan": {
+    "mode": "plan",
+    "releaseId": "research-389246a03486-03adac830b0ec822",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1335092018,
+    "uniqueStoredBytes": 125544917,
+    "maximumNewClassARequests": 3197,
+    "maximumVerificationClassBRequests": 3196,
+    "currentClassARequests": 0,
+    "currentClassBRequests": 0,
+    "freeTierSafetyStorageBytes": 8000000000,
+    "freeTierSafetyClassARequests": 800000,
+    "freeTierSafetyClassBRequests": 8000000
+  },
+  "limitations": [
+    "This replaces the preceding unuploaded candidate reservation; it is not an additional stored release.",
+    "Eligible representation inventory and later measured bucket baseline are dated planning evidence. Refresh inventory and current-period billable usage before upload.",
+    "Offline plan currentClassARequests and currentClassBRequests are zero placeholders, not dashboard usage observations.",
+    "Ordinary research promotion remains scheduled for September 13; no upload or pointer promotion occurred.",
+    "A 34 MB safety margin is small. Further release growth requires a new exact storage plan; no automatic paid resource use is authorized."
+  ]
+}
