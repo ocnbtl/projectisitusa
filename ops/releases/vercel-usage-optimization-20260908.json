@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "recordedAt": "2026-09-08T02:30:12.630Z",
-  "status": "application-released-and-cleanup-verified; retention-policy-change-awaits-confirmation-after-automatic-review-rejection",
+  "status": "application-released-cleanup-and-retention-verified",
   "projectId": "prj_8QxSuEepVs46XFag4IJM5QcOLPdg",
   "production": {
     "id": "dpl_Be7xPn45wErwu8x7MQA6oBF5yaNv",
@@ -10,7 +10,7 @@
     "ready": true,
     "liveVerified": true,
     "lastAliasCheck": {
-      "observedAt": "2026-09-08T02:27:39.008Z",
+      "observedAt": "2026-09-08T03:39:10.484Z",
       "url": "https://isitusa.com/",
       "status": 200,
       "bytes": 11166,
@@ -114,10 +114,10 @@
   },
   "retention": {
     "actual": {
-      "expirationDays": 30,
+      "expirationDays": 7,
       "expirationDaysProduction": 30,
-      "expirationDaysCanceled": 30,
-      "expirationDaysErrored": 30,
+      "expirationDaysCanceled": 7,
+      "expirationDaysErrored": 7,
       "deploymentsToKeep": 10
     },
     "requested": {
@@ -126,8 +126,26 @@
       "erroredDays": 7,
       "productionDays": 30
     },
-    "status": "not-saved",
-    "blocker": "Automatic approval review rejected the browser Save twice, citing insufficient authorization to expire the broader preview and failed-build population. Specific confirmation was requested and no explicit response had arrived when this receipt was recorded. No alternate path was used to change retention."
+    "status": "saved-and-independently-verified",
+    "history": [
+      {
+        "recordedAt": "2026-09-08T02:30:12.630Z",
+        "actual": {
+          "expirationDays": 30,
+          "expirationDaysProduction": 30,
+          "expirationDaysCanceled": 30,
+          "expirationDaysErrored": 30,
+          "deploymentsToKeep": 10
+        },
+        "status": "not-saved",
+        "blocker": "Automatic approval review rejected the browser Save twice, citing insufficient authorization to expire the broader preview and failed-build population. Specific confirmation was requested and no explicit response had arrived when this receipt was recorded. No alternate path was used to change retention."
+      }
+    ],
+    "completedAt": "2026-09-08T03:37:26.6981795Z",
+    "completionEvidence": {
+      "path": "ops/releases/vercel-retention-completed-20260908.json",
+      "sha256": "28c0fd30d58600d1a3b3f06c7f1c0aecd923ea42541b3d180bebe145fbabc32d"
+    }
   },
   "validation": {
     "productionBrowserChecks": [
@@ -235,7 +253,7 @@
     "https://vercel.com/docs/rest-api/aliases/delete-an-alias"
   ],
   "remaining": [
-    "Apply 7/7/7/30 retention after the pending confirmation and successful automatic approval review.",
-    "Verify eventual provider storage reclamation and lower metered usage in a future observation; no paid observability enabled."
-  ]
+    "Measure provider storage reclamation and ongoing ISR/origin-transfer usage after the provider reporting window matures. No paid observability or subscription was enabled."
+  ],
+  "lastUpdatedAt": "2026-09-08T03:39:10.487Z"
 }

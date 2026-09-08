@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-08T03:37:26.6981795Z",
+  "projectId": "prj_8QxSuEepVs46XFag4IJM5QcOLPdg",
+  "productionId": "dpl_Be7xPn45wErwu8x7MQA6oBF5yaNv",
+  "productionSha": "79731da7a7f2442839b02d6673406118bcc06d87",
+  "state": "READY",
+  "retention": {
+    "expirationDays": 7,
+    "expirationDaysProduction": 30,
+    "expirationDaysCanceled": 7,
+    "expirationDaysErrored": 7,
+    "deploymentsToKeep": 10
+  },
+  "uiSaveResult": "Updated deployment retention policy successfully.",
+  "liveCheck": {
+    "observedAt": "2026-09-08T03:39:10.484Z",
+    "url": "https://isitusa.com/",
+    "status": 200,
+    "bytes": 11166,
+    "sha256": "e07ae9002b48678b86772eeb7aed5e331cf1a0d4a0ab3c737c3c6594c305948a"
+  },
+  "currentRetainedDeploymentCount": 6,
+  "preSaveInventoryObservedAt": "2026-09-08T03:35:55.8394910Z",
+  "protectedDeploymentIds": [
+    "dpl_Be7xPn45wErwu8x7MQA6oBF5yaNv",
+    "dpl_EeLCkcUkQej8LqaYEZxY4LGFQ6rD",
+    "dpl_ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+    "dpl_6wthX2sVXjP6LcMC9yyiCd8wZ5tw",
+    "dpl_AaT5oMcbmaD2kxGTsm8NkTehuVvC",
+    "dpl_AzhbqmhFeM8nhyShFtXbJD1Dqrdx"
+  ],
+  "previousApprovalBlockResolved": true,
+  "execution": "Saved through the same authenticated Vercel settings UI after the user requested continuation and a fresh inventory verified only the six protected releases remain. Independently read back the policy through the Vercel API. No alternate mutation path was used.",
+  "supersedesRetentionStatusIn": "ops/releases/vercel-usage-optimization-20260908.json"
+}
