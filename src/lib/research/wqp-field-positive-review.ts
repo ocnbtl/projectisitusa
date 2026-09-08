@@ -20,7 +20,19 @@ export const wqpParametersSchema = z.object({mode:z.literal("retained-field-posi
 export type WqpPlan = Pick<z.infer<typeof wqpParametersSchema>, "methodReviewSha256">;
 type Read = (p:string) => Buffer;
 type Row = Record<string,string>;
-type CsvEntry = {record:Row; raw:string; info:{lines:number}};
+type CsvEntry = {record:Row; raw:string; info:{lines:number;bytes:number}; physicalEndLineOneBased:number};
+export function parseWqpCsv(decoded:Buffer):CsvEntry[] {
+  const rows=parse(decoded,{columns:true,skip_empty_lines:true,raw:true,info:true}) as CsvEntry[];
+  let cursor=0,breaks=0;
+  for(const entry of rows) {
+    const end=entry.info.bytes;
+    if(!Number.isInteger(end)||end<cursor||end>decoded.length) throw Error("WQP CSV byte locator is outside retained input.");
+    // Count physical CRLF once, including embedded quoted newlines and the header.
+    for(;cursor<end;cursor++) if(decoded[cursor]===13||(decoded[cursor]===10&&decoded[cursor-1]!==13)) breaks++;
+    entry.physicalEndLineOneBased=breaks+(end>0&&decoded[end-1]!==10&&decoded[end-1]!==13?1:0);
+  }
+  return rows;
+}
 const methodSchema = z.object({schemaVersion:z.literal(1), methodVersion:z.literal(WQP_METHOD), sourceId:z.literal(WQP_SOURCE),
   status:z.literal("approved-with-specific-holds"), reviewedBy:z.literal("MAIN"), reviewedAt:z.string().datetime(),
   acquisitionReceipt:file, acquisitionProvenance:file, context:z.array(file).min(1), independentReviews:z.array(file).length(2),
@@ -88,7 +100,7 @@ export function buildWqpResult(context:SourceAdapterContext,read:Read):SourceAda
   for(const r of context.requestedPairs)assert(WQP_TAXA[r.speciesId]===r.scientificName&&active.get(r.countyFips)?.stateCode===p.stateCode,"WQP target species/county differs.");
   function csv(speciesId:string,profile:"station"|"result") {const filePath=WQP_INPUT+speciesId+"-"+profile+".csv.gz";
     const ref=acquisition.receipts.find((a:{path:string})=>a.path===filePath);assert(ref,"Missing WQP profile.");
-    const decoded=gunzipSync(read(filePath),{maxOutputLength:20_000_000});const rows=parse(decoded,{columns:true,skip_empty_lines:true,raw:true,info:true})as CsvEntry[];
+    const decoded=gunzipSync(read(filePath),{maxOutputLength:20_000_000});const rows=parseWqpCsv(decoded);
     assert(rows.length===Number(ref.headers[profile==="station"?"total-site-count":"total-result-count"]),"WQP profile row count differs.");return {ref,rows};}
   const result:SourceAdapterResult={completedAt:context.runStartedAt,assertions:[],reviews:[],rejections:[],outcomes:[],artifacts:[],upstreamRequests:[],candidateRecordCount:0,duplicateRecordCount:0,errors:[],warnings:method.limitations};
   const witnesses:unknown[]=[];
@@ -132,8 +144,8 @@ export function buildWqpResult(context:SourceAdapterContext,read:Read):SourceAda
       result.outcomes.push({schemaVersion:1,outcome_id:id("wqp-field-outcome",{runId:context.runId,key}),run_id:context.runId,source_id:WQP_SOURCE,state_code:p.stateCode,county_fips:countyFips,species_id:speciesId,status:"evidence-found",scope_complete:true,recorded_at:context.runStartedAt,
         assertion_event_ids:[assertionId],rejection_ids:rejectionIds,query_urls:[results.ref.url,stations.ref.url],notes:["Complete scan of the retained profiles for this selected positive pair only; no exhaustive current county inventory or protocol-completion claim."]});
       witnesses.push({...payload,attribution,resultUrl:results.ref.url,stationUrl:stations.ref.url,resultRetrievedAt:results.ref.retrievedAt,stationRetrievedAt:stations.ref.retrievedAt,
-        sourceRows:rows.map(r=>({parsedRowIndexZeroBased:r.index,physicalEndLineOneBased:r.entry.info.lines,rawRecordSha256:sha256(r.entry.raw),disposition:r.disposition,sourceFields:fields(r.entry.record),
-          stationRows:r.stations.map(s=>({parsedRowIndexZeroBased:s.index,physicalEndLineOneBased:s.entry.info.lines,rawRecordSha256:sha256(s.entry.raw),sourceFields:fields(s.entry.record)}))}))});
+        sourceRows:rows.map(r=>({parsedRowIndexZeroBased:r.index,physicalEndLineOneBased:r.entry.physicalEndLineOneBased,rawRecordSha256:sha256(r.entry.raw),disposition:r.disposition,sourceFields:fields(r.entry.record),
+          stationRows:r.stations.map(s=>({parsedRowIndexZeroBased:s.index,physicalEndLineOneBased:s.entry.physicalEndLineOneBased,rawRecordSha256:sha256(s.entry.raw),sourceFields:fields(s.entry.record)}))}))});
     }
   }
   result.artifacts.push({filename:"wqp-field-witnesses.json",mediaType:"application/json",contents:JSON.stringify({schemaVersion:1,method:WQP_METHOD,methodReviewSha256:p.methodReviewSha256,

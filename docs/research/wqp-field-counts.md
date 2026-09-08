@@ -17,3 +17,5 @@ The preflight acquisition receipt's codeCommit is repository HEAD during acquisi
 Cite the contributing agency, WQP DOI 10.5066/P9QRKUVJ, exact query and access date. CEDEN also receives its network credit. Public attribution is stored in assertion caveats so it reaches the website without leaking internal audit paths. No blanket CC0 license or provider endorsement is claimed.
 
 The WQX 2.2 responses exclude USGS records added after March 11, 2024. Complete response counts prove only the bounded profile/query retrieval, not a current national inventory, established population, current persistence, countywide prevalence or completed research protocol.
+
+Physical line numbers are counted from decoded source bytes through each parsed record byte offset, with CRLF counted once. The parser's info.lines counter is unsuitable for quoted CRLF fields. The r13 correction audit independently checked all 9,780 retained records with Python. Original failed pilot outputs and historical source-review records are preserved; their raw hashes remain valid and any inflated physical-line fields are superseded by corrected run witnesses.

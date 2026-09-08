@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import { parse } from "csv-parse/sync";
 import { z } from "zod";
-import { buildWqpResult as build, wqpInputPaths, wqpPositiveRowValue, resolveWqpStation, WQP_METHOD_PATH, WQP_INPUT, WQP_TAXA } from "@/lib/research/wqp-field-positive-review";
+import { buildWqpResult as build, parseWqpCsv, wqpInputPaths, wqpPositiveRowValue, resolveWqpStation, WQP_METHOD_PATH, WQP_INPUT, WQP_TAXA } from "@/lib/research/wqp-field-positive-review";
 import { sha256, stableJson } from "@/lib/research/run-files";
 import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
@@ -19,6 +19,9 @@ try{
   assert(isCommittedSnapshotReplayReceipt(replay));
   for(const override of [{source_id:"gbif-preserved-specimens"},{adapter_id:"other"},{adapter_version:"9.0.0"},{parameters:{mode:"live",methodReviewSha256}},{parameters:{mode:"retained-field-positive-count",methodReviewSha256:"bad"}}]){assert(!isCommittedSnapshotReplayReceipt({...replay,...override}));rejected++;}
 
+  for(const [csv,expected] of [["id,note\r\n1,\"a\r\nb\"\r\n\r\n2,last",[3,5]],["id,note\n1,\"a\nb\"\n2,café\n",[3,4]],["id,note\r1,\"a\rb\"\r2,last",[3,4]]] as const) assert.deepEqual(parseWqpCsv(Buffer.from(csv)).map(r=>r.physicalEndLineOneBased),expected);
+  const physicalRows=parseWqpCsv(gunzipSync(read(WQP_INPUT+"corbicula-fluminea-result.csv.gz")));
+  for(const [index,line] of [[1778,1794],[2114,2140],[2501,2542],[3318,3506]]) assert.equal(physicalRows[index].physicalEndLineOneBased,line);
   const ca=build(make("CA"),read),ks=build(make("KS"),read);
   assert.equal(ca.assertions.length,14);assert.equal(ca.candidateRecordCount,82);assert.equal(ks.assertions.length,38);assert.equal(ks.candidateRecordCount,426);
   const artifact=JSON.parse(ca.artifacts[0].contents.toString()),ksArtifact=JSON.parse(ks.artifacts[0].contents.toString());
