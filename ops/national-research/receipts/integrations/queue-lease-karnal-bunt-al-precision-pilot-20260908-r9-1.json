@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-karnal-bunt-al-precision-pilot-20260908-r9-1",
+  "jobId": "karnal-bunt-al-precision-pilot-20260908-r9",
+  "leaseId": "lease-karnal-bunt-al-precision-pilot-20260908-r9-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-09-08T06:58:43.497Z",
+  "integrationCommit": "7c752590c32edd95284f8e07ad6926152ef68ad6",
+  "workerCommit": "1eef3292b5266133fbb620071aecb6fc4db237ff",
+  "workerBranchHead": "1e2af94f3420627ca830150e3ab4dfb6aca5d88e",
+  "manifestHash": "78f36741ae58f44d6c8800ebc7a80094e3a91f25ae360756f1ae6586d6543dc8",
+  "changedPaths": [
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/artifacts/reviewed-parent-and-conflict-baseline.json",
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/assertions.ndjson",
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/manifest.json",
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/outcomes.ndjson",
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/receipt.json",
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/rejections.ndjson",
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/reviews.ndjson",
+    "src/data/research/runs/20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "MAIN independent filesystem frozen-skill hashes, clean worker, exact two-commit history, eight leased changed paths and committed manifest bytes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "MAIN independent source semantics, null source dates and 67 unchanged current contradiction baseline hashes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r9-precision\\al\\pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7 --source-verification C:\\Code\\project-isitusa-worktrees\\karnal-bunt-al-precision-pilot-20260908-r9\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7\\source-verification.json --run-id 20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7 --source-id eppo-karnal-bunt-state-status --state-code AL --pair-keys-stdin true --code-commit 855c38e22f9795f6ab2f29d2dcd1d1f34da5bf56 --worker-task-id karnal_bunt_al_pilot_r9",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7 --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7\\source-verification.json --run-id 20260908T063503Z__eppo-karnal-bunt-state-status__9fca4b18a1f7 --source-id eppo-karnal-bunt-state-status --state-code AL --pair-keys-stdin true --code-commit 855c38e22f9795f6ab2f29d2dcd1d1f34da5bf56 --worker-task-id karnal_bunt_al_pilot_r9",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN preserved original worker commit ancestry and integrated the exact reviewed run bytes without conflict. Fresh canonical immutable validation passed. Parent precision, original retrieval and explicit historical-conflict policy are preserved. Projected determination changes remain unclaimed until compilation."
+}
