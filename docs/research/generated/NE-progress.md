@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `4278`
+- Verified present: `4307`
 - Verified absent: `93`
 - Not detected: `0`
-- Researched unresolved: `39905`
-- Not researched: `188596`
-- Determination coverage: `1.88%`
-- Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0130%`
-- Applicable protocol cells: `318`
-- Current complete protocol cells: `92`
-- Protocol completion: `33.02%`
-- Current protocol completion: `28.93%`
-- Evidence records: `4885`
-- Research runs: `36`
+- Researched unresolved: `39900`
+- Not researched: `188572`
+- Determination coverage: `1.89%`
+- Research coverage: `19.02%`
+- Explicit outcome coverage: `19.0233%`
+- Applicable protocol cells: `322`
+- Current complete protocol cells: `93`
+- Protocol completion: `32.92%`
+- Current protocol completion: `28.88%`
+- Evidence records: `4914`
+- Research runs: `37`
 - Rejection records: `551`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Wild Parsnip (`pastinaca-sativa`) | plants | 92 | 0 | 1 |
 | Scots pine (`pinus-sylvestris`) | plants | 92 | 0 | 1 |
 | Norway rat (`rattus-norvegicus`) | wildlife | 92 | 0 | 1 |
+| Brown Trout (`salmo-trutta`) | wildlife | 92 | 0 | 1 |
 | Foxtail millet (`setaria-italica`) | plants | 92 | 0 | 1 |
 | Nightflowering silene (`silene-noctiflora`) | plants | 92 | 0 | 1 |
 | Field Sowthistle (`sonchus-arvensis`) | plants | 92 | 0 | 1 |
 | Sorghum (`sorghum-bicolor`) | plants | 92 | 0 | 1 |
-| Common lilac (`syringa-vulgaris`) | plants | 92 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:03:46.552Z | 29 | 4 |

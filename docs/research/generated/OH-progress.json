@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 426,
+    "applicableSpeciesCount": 428,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2078,
+    "unknownSpeciesCount": 2076,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 87,
-    "derivedApplicableSpeciesCount": 339,
+    "derivedApplicableSpeciesCount": 341,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 594,
+    "boundedAcquisitionSpeciesCount": 595,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 220352,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 10256,
+    "verifiedPresent": 10272,
     "verifiedAbsent": 88,
     "notDetected": 44,
-    "researchedUnresolved": 32046,
-    "notResearched": 177918,
-    "determinationCoveragePercent": 4.69,
+    "researchedUnresolved": 32045,
+    "notResearched": 177903,
+    "determinationCoveragePercent": 4.7,
     "researchCoveragePercent": 19.26,
-    "explicitOutcomePairCount": 42434,
-    "explicitOutcomeCoveragePercent": 19.2574,
+    "explicitOutcomePairCount": 42449,
+    "explicitOutcomeCoveragePercent": 19.2642,
     "conflictCount": 0,
-    "evidenceRecordCount": 11876,
+    "evidenceRecordCount": 11892,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11876,
+    "runEvidenceRecordCount": 11892,
     "rejectionRecordCount": 3181,
-    "researchRunCount": 41,
+    "researchRunCount": 42,
     "boundedAcquisition": {
-      "speciesCount": 594,
-      "totalPairs": 52272,
-      "verifiedPresent": 10256,
+      "speciesCount": 595,
+      "totalPairs": 52360,
+      "verifiedPresent": 10272,
       "verifiedAbsent": 88,
       "notDetected": 44,
-      "researchedUnresolved": 32046,
-      "notResearched": 9838,
-      "researchCoveragePercent": 81.18,
-      "explicitOutcomePairs": 42434,
-      "explicitOutcomeCoveragePercent": 81.1792
+      "researchedUnresolved": 32045,
+      "notResearched": 9911,
+      "researchCoveragePercent": 81.07,
+      "explicitOutcomePairs": 42449,
+      "explicitOutcomeCoveragePercent": 81.0714
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:04:14.221Z",
+      "evidencePairCount": 16,
+      "screenedSpeciesCount": 3
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2376,
-    "applicableCells": 461,
-    "notApplicableCells": 1915,
-    "completeCells": 154,
-    "incompleteCells": 306,
+    "totalCells": 2380,
+    "applicableCells": 463,
+    "notApplicableCells": 1917,
+    "completeCells": 155,
+    "incompleteCells": 307,
     "blockedCells": 1,
-    "currentCells": 141,
+    "currentCells": 142,
     "staleCells": 13,
-    "undatedCells": 307,
-    "applicableCompletionPercent": 33.41,
-    "currentCompletePercent": 30.59,
+    "undatedCells": 308,
+    "applicableCompletionPercent": 33.48,
+    "currentCompletePercent": 30.67,
     "regulatedAndHighApplicableCells": 73,
     "regulatedAndHighCurrentCompleteCells": 73,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 18,
-        "currentCompleteCells": 6,
-        "currentCompletePercent": 33.33
+        "applicableCells": 20,
+        "currentCompleteCells": 7,
+        "currentCompletePercent": 35
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 362,
-        "currentCompleteCells": 55,
-        "currentCompletePercent": 15.19
+        "applicableCells": 364,
+        "currentCompleteCells": 56,
+        "currentCompletePercent": 15.38
       },
       {
         "priority": "baseline",
@@ -608,8 +618,8 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 426,
-        "currentCompleteCells": 120,
+        "applicableCells": 428,
+        "currentCompleteCells": 121,
         "processed": false
       },
       {
@@ -1450,6 +1460,18 @@
       "priorityScore": 86001
     },
     {
+      "speciesId": "ctenopharyngodon-idella",
+      "commonName": "Grass Carp",
+      "scientificName": "Ctenopharyngodon idella",
+      "category": "wildlife",
+      "notResearchedCountyCount": 86,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 86001
+    },
+    {
       "speciesId": "cymbalaria-muralis",
       "commonName": "Kenilworth ivy",
       "scientificName": "Cymbalaria muralis",
@@ -1802,18 +1824,6 @@
       "commonName": "Rough Bluegrass",
       "scientificName": "Poa trivialis",
       "category": "plants",
-      "notResearchedCountyCount": 85,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 85001
-    },
-    {
-      "speciesId": "salmo-trutta",
-      "commonName": "Brown Trout",
-      "scientificName": "Salmo trutta",
-      "category": "wildlife",
       "notResearchedCountyCount": 85,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [

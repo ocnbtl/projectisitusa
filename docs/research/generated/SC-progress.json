@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 442,
+    "applicableSpeciesCount": 443,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2062,
+    "unknownSpeciesCount": 2061,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 389,
+    "derivedApplicableSpeciesCount": 390,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 559,
+    "boundedAcquisitionSpeciesCount": 560,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 115184,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 5527,
+    "verifiedPresent": 5534,
     "verifiedAbsent": 46,
     "notDetected": 0,
     "researchedUnresolved": 16380,
-    "notResearched": 93231,
+    "notResearched": 93224,
     "determinationCoveragePercent": 4.84,
-    "researchCoveragePercent": 19.06,
-    "explicitOutcomePairCount": 21953,
-    "explicitOutcomeCoveragePercent": 19.0591,
+    "researchCoveragePercent": 19.07,
+    "explicitOutcomePairCount": 21960,
+    "explicitOutcomeCoveragePercent": 19.0651,
     "conflictCount": 0,
-    "evidenceRecordCount": 5873,
+    "evidenceRecordCount": 5880,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 5873,
+    "runEvidenceRecordCount": 5880,
     "rejectionRecordCount": 286,
-    "researchRunCount": 41,
+    "researchRunCount": 42,
     "boundedAcquisition": {
-      "speciesCount": 559,
-      "totalPairs": 25714,
-      "verifiedPresent": 5527,
+      "speciesCount": 560,
+      "totalPairs": 25760,
+      "verifiedPresent": 5534,
       "verifiedAbsent": 46,
       "notDetected": 0,
       "researchedUnresolved": 16380,
-      "notResearched": 3761,
-      "researchCoveragePercent": 85.37,
-      "explicitOutcomePairs": 21953,
-      "explicitOutcomeCoveragePercent": 85.3737
+      "notResearched": 3800,
+      "researchCoveragePercent": 85.25,
+      "explicitOutcomePairs": 21960,
+      "explicitOutcomeCoveragePercent": 85.2484
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:04:37.761Z",
+      "evidencePairCount": 7,
+      "screenedSpeciesCount": 2
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2236,
-    "applicableCells": 477,
-    "notApplicableCells": 1759,
+    "totalCells": 2240,
+    "applicableCells": 478,
+    "notApplicableCells": 1762,
     "completeCells": 93,
-    "incompleteCells": 384,
+    "incompleteCells": 385,
     "blockedCells": 0,
     "currentCells": 80,
     "staleCells": 13,
-    "undatedCells": 384,
-    "applicableCompletionPercent": 19.5,
-    "currentCompletePercent": 16.77,
+    "undatedCells": 385,
+    "applicableCompletionPercent": 19.46,
+    "currentCompletePercent": 16.74,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 33,
     "regulatedAndHighCurrentCompletePercent": 94.29,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 14,
+        "applicableCells": 15,
         "currentCompleteCells": 4,
-        "currentCompletePercent": 28.57
+        "currentCompletePercent": 26.67
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 416,
+        "applicableCells": 417,
         "currentCompleteCells": 47,
-        "currentCompletePercent": 11.3
+        "currentCompletePercent": 11.27
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 442,
+        "applicableCells": 443,
         "currentCompleteCells": 58,
         "processed": false
       },
@@ -1294,18 +1304,6 @@
       "priorityScore": 44001
     },
     {
-      "speciesId": "cyprinus-carpio",
-      "commonName": "Common Carp",
-      "scientificName": "Cyprinus carpio",
-      "category": "wildlife",
-      "notResearchedCountyCount": 44,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 44001
-    },
-    {
       "speciesId": "fallopia-convolvulus",
       "commonName": "Black bindweed",
       "scientificName": "Fallopia convolvulus",
@@ -1474,6 +1472,18 @@
       "priorityScore": 43001
     },
     {
+      "speciesId": "ctenopharyngodon-idella",
+      "commonName": "Grass Carp",
+      "scientificName": "Ctenopharyngodon idella",
+      "category": "wildlife",
+      "notResearchedCountyCount": 43,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 43001
+    },
+    {
       "speciesId": "iris-domestica",
       "commonName": "Blackberry lily",
       "scientificName": "Iris domestica",
@@ -1604,6 +1614,18 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 41001
+    },
+    {
+      "speciesId": "cyprinus-carpio",
+      "commonName": "Common Carp",
+      "scientificName": "Cyprinus carpio",
+      "category": "wildlife",
+      "notResearchedCountyCount": 40,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 40001
     },
     {
       "speciesId": "verbena-bonariensis",
@@ -1784,16 +1806,6 @@
       "commonName": "Devil's horsewhip",
       "scientificName": "Achyranthes aspera",
       "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 46,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 460
-    },
-    {
-      "speciesId": "aclerda-takahashii",
-      "commonName": "Flat grass scale",
-      "scientificName": "Aclerda takahashii",
-      "category": "insects",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 46,
       "missingProtocolSourceIds": [],

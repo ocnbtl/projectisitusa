@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 423,
+    "applicableSpeciesCount": 425,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2081,
+    "unknownSpeciesCount": 2079,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 56,
-    "derivedApplicableSpeciesCount": 367,
+    "derivedApplicableSpeciesCount": 369,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 643,
+    "boundedAcquisitionSpeciesCount": 645,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 12520,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 1054,
+    "verifiedPresent": 1056,
     "verifiedAbsent": 5,
     "notDetected": 0,
     "researchedUnresolved": 1515,
-    "notResearched": 9946,
-    "determinationCoveragePercent": 8.46,
-    "researchCoveragePercent": 20.56,
-    "explicitOutcomePairCount": 2574,
-    "explicitOutcomeCoveragePercent": 20.5591,
+    "notResearched": 9944,
+    "determinationCoveragePercent": 8.47,
+    "researchCoveragePercent": 20.58,
+    "explicitOutcomePairCount": 2576,
+    "explicitOutcomeCoveragePercent": 20.5751,
     "conflictCount": 0,
-    "evidenceRecordCount": 1064,
+    "evidenceRecordCount": 1066,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 1064,
+    "runEvidenceRecordCount": 1066,
     "rejectionRecordCount": 274,
-    "researchRunCount": 42,
+    "researchRunCount": 43,
     "boundedAcquisition": {
-      "speciesCount": 643,
-      "totalPairs": 3215,
-      "verifiedPresent": 1054,
+      "speciesCount": 645,
+      "totalPairs": 3225,
+      "verifiedPresent": 1056,
       "verifiedAbsent": 5,
       "notDetected": 0,
       "researchedUnresolved": 1515,
-      "notResearched": 641,
-      "researchCoveragePercent": 80.06,
-      "explicitOutcomePairs": 2574,
-      "explicitOutcomeCoveragePercent": 80.0622
+      "notResearched": 649,
+      "researchCoveragePercent": 79.88,
+      "explicitOutcomePairs": 2576,
+      "explicitOutcomeCoveragePercent": 79.876
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:04:33.000Z",
+      "evidencePairCount": 2,
+      "screenedSpeciesCount": 2
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2572,
-    "applicableCells": 458,
-    "notApplicableCells": 2114,
+    "totalCells": 2580,
+    "applicableCells": 460,
+    "notApplicableCells": 2120,
     "completeCells": 69,
-    "incompleteCells": 389,
+    "incompleteCells": 391,
     "blockedCells": 0,
     "currentCells": 56,
     "staleCells": 13,
-    "undatedCells": 389,
-    "applicableCompletionPercent": 15.07,
-    "currentCompletePercent": 12.23,
+    "undatedCells": 391,
+    "applicableCompletionPercent": 15,
+    "currentCompletePercent": 12.17,
     "regulatedAndHighApplicableCells": 38,
     "regulatedAndHighCurrentCompleteCells": 10,
     "regulatedAndHighCurrentCompletePercent": 26.32,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 19,
+        "applicableCells": 21,
         "currentCompleteCells": 6,
-        "currentCompletePercent": 31.58
+        "currentCompletePercent": 28.57
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 394,
+        "applicableCells": 396,
         "currentCompleteCells": 46,
-        "currentCompletePercent": 11.68
+        "currentCompletePercent": 11.62
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 423,
+        "applicableCells": 425,
         "currentCompleteCells": 34,
         "processed": false
       },
@@ -1150,6 +1160,18 @@
       "priorityScore": 4001
     },
     {
+      "speciesId": "cyprinus-carpio",
+      "commonName": "Common Carp",
+      "scientificName": "Cyprinus carpio",
+      "category": "wildlife",
+      "notResearchedCountyCount": 4,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 4001
+    },
+    {
       "speciesId": "daphne-mezereum",
       "commonName": "Paradise plant",
       "scientificName": "Daphne mezereum",
@@ -1618,6 +1640,18 @@
       "priorityScore": 4001
     },
     {
+      "speciesId": "salmo-trutta",
+      "commonName": "Brown Trout",
+      "scientificName": "Salmo trutta",
+      "category": "wildlife",
+      "notResearchedCountyCount": 4,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 4001
+    },
+    {
       "speciesId": "salvia-aethiopis",
       "commonName": "Mediterranean sage",
       "scientificName": "Salvia aethiopis",
@@ -1789,30 +1823,6 @@
       "speciesId": "vaccaria-hispanica",
       "commonName": "Cow soapwort",
       "scientificName": "Vaccaria hispanica",
-      "category": "plants",
-      "notResearchedCountyCount": 4,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 4001
-    },
-    {
-      "speciesId": "veronica-chamaedrys",
-      "commonName": "Germander speedwell",
-      "scientificName": "Veronica chamaedrys",
-      "category": "plants",
-      "notResearchedCountyCount": 4,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 4001
-    },
-    {
-      "speciesId": "veronica-longifolia",
-      "commonName": "Longleaf speedwell",
-      "scientificName": "Veronica longifolia",
       "category": "plants",
       "notResearchedCountyCount": 4,
       "researchedUnresolvedCountyCount": 0,

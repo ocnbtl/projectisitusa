@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-wqp-national-reconciliation",
+  "recordedAt": "2026-09-08T19:24:27.296Z",
+  "sourceCommit": "c5e2eafbbaad997b3364e913818cfc7e00605e8e",
+  "baselineCommit": "f77d3ef3bb115bedf817b685ca2a1bf4aa7b64eb",
+  "asOf": "2026-09-08",
+  "jurisdictionsVerified": 51,
+  "jurisdictionsWithNewEvidence": 45,
+  "counties": 3144,
+  "catalogSpecies": 2504,
+  "denominator": 7872576,
+  "before": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 315098,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306725,
+    "notResearched": 6246799,
+    "explicitOutcomePairCount": 1581423,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462532,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432402,
+    "rejectionRecordCount": 66057,
+    "researchRunCount": 2142
+  },
+  "after": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 315578,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306699,
+    "notResearched": 6246345,
+    "explicitOutcomePairCount": 1581877,
+    "conflictCount": 0,
+    "evidenceRecordCount": 463019,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432889,
+    "rejectionRecordCount": 66063,
+    "researchRunCount": 2189
+  },
+  "delta": {
+    "countyCount": 0,
+    "totalPairs": 0,
+    "resolvablePairCount": 0,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 480,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": -26,
+    "notResearched": -454,
+    "explicitOutcomePairCount": 454,
+    "conflictCount": 0,
+    "evidenceRecordCount": 487,
+    "bootstrapEvidenceRecordCount": 0,
+    "runEvidenceRecordCount": 487,
+    "rejectionRecordCount": 6,
+    "researchRunCount": 47
+  },
+  "determinationCount": 319296,
+  "netUniqueDeterminations": 480,
+  "priorStatusCounts": {
+    "not-researched": 454,
+    "researched-unresolved": 26
+  },
+  "sourceAssertions": {
+    "epaNrsa": 445,
+    "waterQualityPortal": 42,
+    "total": 487,
+    "overlappingPairs": 7
+  },
+  "newImmutableRuns": 47,
+  "sourceReplayRequests": 0,
+  "countyFilesCompared": 2597,
+  "removedPairs": 0,
+  "unexpectedExistingPairChanges": 0,
+  "derivedStateApplicabilityOnlyChanges": 175,
+  "addedExplicitNotResearchedRows": 3927,
+  "defaultExplanation": "Newly explicit untouched rows already belonged to the denominator through sparse defaults. Derived state applicability changes do not create county research or determinations. The held Woodson County common-carp pair retains the same research meaning.",
+  "heldResolvedComparisons": [
+    {
+      "pair": "20207:cyprinus-carpio",
+      "displayStatus": "not-researched",
+      "researchMeaningUnchanged": true,
+      "before": {
+        "sparseDefault": true,
+        "applicabilityStatus": "unknown"
+      },
+      "after": {
+        "sparseDefault": false,
+        "applicabilityStatus": "applicable"
+      }
+    }
+  ],
+  "epaIndependentBatchAudit": {
+    "recordedAt": "2026-09-08T19:07:14.553Z",
+    "passed": true,
+    "sourceCodeCommit": "a124df2549d5997915ad60a7da795e75e6ebc0e3",
+    "phase": "all",
+    "originalCsvRows": {
+      "fishcount": 19925,
+      "fishcount_metadata": 19,
+      "fishtaxa": 911,
+      "fishtaxa_metadata": 16,
+      "siteinfo": 2143,
+      "siteinfo_metadata": 74
+    },
+    "totals": {
+      "positiveRows": 550,
+      "fishWitnesses": 557,
+      "siteWitnesses": 557,
+      "taxonWitnesses": 557,
+      "assertions": 445,
+      "excludedRows": 7
+    },
+    "reports": [
+      {
+        "stateCode": "AL",
+        "runId": "20260908T185759Z__epa-nrsa-fish-counts__01e3dc2a84e3",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "KS",
+        "runId": "20260908T185803Z__epa-nrsa-fish-counts__ef201dbeee93",
+        "pairs": 18,
+        "sourceRows": 23,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "AR",
+        "runId": "20260908T190205Z__epa-nrsa-fish-counts__aa9c46bd3323",
+        "pairs": 14,
+        "sourceRows": 16,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "AZ",
+        "runId": "20260908T190209Z__epa-nrsa-fish-counts__0f8ffd761db0",
+        "pairs": 2,
+        "sourceRows": 2,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "CA",
+        "runId": "20260908T190214Z__epa-nrsa-fish-counts__d6a489e8315a",
+        "pairs": 8,
+        "sourceRows": 9,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "CO",
+        "runId": "20260908T190218Z__epa-nrsa-fish-counts__20164e92d42d",
+        "pairs": 11,
+        "sourceRows": 12,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "FL",
+        "runId": "20260908T190223Z__epa-nrsa-fish-counts__bac833ae0127",
+        "pairs": 18,
+        "sourceRows": 19,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "GA",
+        "runId": "20260908T190228Z__epa-nrsa-fish-counts__d33d8c2cb13d",
+        "pairs": 8,
+        "sourceRows": 8,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "IA",
+        "runId": "20260908T190233Z__epa-nrsa-fish-counts__b31da9d51d33",
+        "pairs": 15,
+        "sourceRows": 20,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "ID",
+        "runId": "20260908T190237Z__epa-nrsa-fish-counts__b3a08482e176",
+        "pairs": 2,
+        "sourceRows": 2,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "IL",
+        "runId": "20260908T190242Z__epa-nrsa-fish-counts__0cddb9c651d5",
+        "pairs": 14,
+        "sourceRows": 17,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "IN",
+        "runId": "20260908T190246Z__epa-nrsa-fish-counts__220743b79eb6",
+        "pairs": 4,
+        "sourceRows": 5,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "KY",
+        "runId": "20260908T190251Z__epa-nrsa-fish-counts__ca97493ea040",
+        "pairs": 11,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "LA",
+        "runId": "20260908T190256Z__epa-nrsa-fish-counts__d5eae57f497c",
+        "pairs": 8,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MA",
+        "runId": "20260908T190301Z__epa-nrsa-fish-counts__b9806867dac1",
+        "pairs": 6,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MD",
+        "runId": "20260908T190305Z__epa-nrsa-fish-counts__7c4c04def8e9",
+        "pairs": 2,
+        "sourceRows": 4,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MI",
+        "runId": "20260908T190309Z__epa-nrsa-fish-counts__1dfdf0ea42d2",
+        "pairs": 27,
+        "sourceRows": 33,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MN",
+        "runId": "20260908T190315Z__epa-nrsa-fish-counts__05d31a8e137c",
+        "pairs": 15,
+        "sourceRows": 17,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MO",
+        "runId": "20260908T190319Z__epa-nrsa-fish-counts__854425206125",
+        "pairs": 28,
+        "sourceRows": 32,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MS",
+        "runId": "20260908T190324Z__epa-nrsa-fish-counts__bf49e9f041de",
+        "pairs": 4,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "MT",
+        "runId": "20260908T190328Z__epa-nrsa-fish-counts__6b5770957896",
+        "pairs": 7,
+        "sourceRows": 12,
+        "rejections": 1,
+        "passed": true
+      },
+      {
+        "stateCode": "NC",
+        "runId": "20260908T190333Z__epa-nrsa-fish-counts__15de3ca4d8d9",
+        "pairs": 2,
+        "sourceRows": 2,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "ND",
+        "runId": "20260908T190338Z__epa-nrsa-fish-counts__e5060dc28f59",
+        "pairs": 12,
+        "sourceRows": 17,
+        "rejections": 2,
+        "passed": true
+      },
+      {
+        "stateCode": "NE",
+        "runId": "20260908T190342Z__epa-nrsa-fish-counts__7c6e3f54c2c3",
+        "pairs": 29,
+        "sourceRows": 31,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NH",
+        "runId": "20260908T190347Z__epa-nrsa-fish-counts__3657127729f9",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NJ",
+        "runId": "20260908T190352Z__epa-nrsa-fish-counts__92346a26a53a",
+        "pairs": 12,
+        "sourceRows": 15,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NM",
+        "runId": "20260908T190356Z__epa-nrsa-fish-counts__b6a52036a3f5",
+        "pairs": 4,
+        "sourceRows": 4,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NV",
+        "runId": "20260908T190401Z__epa-nrsa-fish-counts__d4fd34ddf54a",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "NY",
+        "runId": "20260908T190406Z__epa-nrsa-fish-counts__36de644a3939",
+        "pairs": 22,
+        "sourceRows": 31,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "OH",
+        "runId": "20260908T190410Z__epa-nrsa-fish-counts__68800009213c",
+        "pairs": 16,
+        "sourceRows": 18,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "OK",
+        "runId": "20260908T190415Z__epa-nrsa-fish-counts__9a149e7eb97f",
+        "pairs": 5,
+        "sourceRows": 5,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "OR",
+        "runId": "20260908T190419Z__epa-nrsa-fish-counts__e77a035b9a64",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "PA",
+        "runId": "20260908T190424Z__epa-nrsa-fish-counts__93aa609ae4cd",
+        "pairs": 11,
+        "sourceRows": 17,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "RI",
+        "runId": "20260908T190429Z__epa-nrsa-fish-counts__0da35d940bca",
+        "pairs": 2,
+        "sourceRows": 3,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "SC",
+        "runId": "20260908T190433Z__epa-nrsa-fish-counts__301cdb242ec7",
+        "pairs": 7,
+        "sourceRows": 9,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "SD",
+        "runId": "20260908T190438Z__epa-nrsa-fish-counts__ae16a8c4d3d4",
+        "pairs": 22,
+        "sourceRows": 34,
+        "rejections": 3,
+        "passed": true
+      },
+      {
+        "stateCode": "TN",
+        "runId": "20260908T190443Z__epa-nrsa-fish-counts__c53ffee3105b",
+        "pairs": 5,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "TX",
+        "runId": "20260908T190449Z__epa-nrsa-fish-counts__c72fff846d32",
+        "pairs": 16,
+        "sourceRows": 19,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "UT",
+        "runId": "20260908T190455Z__epa-nrsa-fish-counts__26af5e0e1653",
+        "pairs": 8,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "VA",
+        "runId": "20260908T190500Z__epa-nrsa-fish-counts__5d4c98877b64",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "VT",
+        "runId": "20260908T190506Z__epa-nrsa-fish-counts__6458bc727de0",
+        "pairs": 6,
+        "sourceRows": 9,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WA",
+        "runId": "20260908T190511Z__epa-nrsa-fish-counts__1bd29361bf3d",
+        "pairs": 1,
+        "sourceRows": 1,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WI",
+        "runId": "20260908T190518Z__epa-nrsa-fish-counts__9562154f4be3",
+        "pairs": 25,
+        "sourceRows": 38,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WV",
+        "runId": "20260908T190523Z__epa-nrsa-fish-counts__003addd9280d",
+        "pairs": 5,
+        "sourceRows": 6,
+        "rejections": 0,
+        "passed": true
+      },
+      {
+        "stateCode": "WY",
+        "runId": "20260908T190529Z__epa-nrsa-fish-counts__1bb0ccd067d7",
+        "pairs": 8,
+        "sourceRows": 11,
+        "rejections": 0,
+        "passed": true
+      }
+    ],
+    "providerRequests": 0,
+    "determinationsAdded": 0,
+    "method": "Independent Python csv and original byte-slice hashing; all staged file descriptors, scope completeness, full fish/site/taxon fields, dispositions, primary witnesses, dates, names and event relationships checked."
+  },
+  "canonicalPilotTamperCasesRejected": 32,
+  "executionPolicy": "Three independently leased EPA reviews supplied 445 supported selections and one geographic hold. Their leases expired before closeout; terminal expiry and faithful MAIN transcriptions are recorded separately. MAIN replayed all45 states under the fixed committed adapter and independently rechecked557 full original row witnesses. The combined batch includes the previously integrated42 WQP assertions in two states.",
+  "checks": [
+    {
+      "name": "source-coverage-index",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --write",
+      "startedAt": "2026-09-08T19:12:33.709Z",
+      "finishedAt": "2026-09-08T19:12:39.845Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-source-coverage-index.log"
+    },
+    {
+      "name": "verify-all",
+      "command": "--import tsx scripts/verify-all-state-research.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T19:12:39.846Z",
+      "finishedAt": "2026-09-08T19:20:10.395Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-verify-all.log"
+    },
+    {
+      "name": "state-projections",
+      "command": "--import tsx scripts/check-state-research-projections.ts",
+      "startedAt": "2026-09-08T19:20:10.395Z",
+      "finishedAt": "2026-09-08T19:21:55.879Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-state-projections.log"
+    },
+    {
+      "name": "data-integrity",
+      "command": "--import tsx scripts/check-data-integrity.ts",
+      "startedAt": "2026-09-08T19:21:55.879Z",
+      "finishedAt": "2026-09-08T19:21:56.360Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-data-integrity.log"
+    },
+    {
+      "name": "national-config",
+      "command": "--import tsx scripts/test-national-research-compiler.ts",
+      "startedAt": "2026-09-08T19:21:56.361Z",
+      "finishedAt": "2026-09-08T19:21:56.616Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-national-config.log"
+    },
+    {
+      "name": "coverage-check",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --check",
+      "startedAt": "2026-09-08T19:21:56.617Z",
+      "finishedAt": "2026-09-08T19:22:02.810Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-coverage-check.log"
+    },
+    {
+      "name": "question-projection",
+      "command": "--import tsx scripts/check-question-assessment-projection.ts",
+      "startedAt": "2026-09-08T19:22:02.811Z",
+      "finishedAt": "2026-09-08T19:22:04.753Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-question-projection.log"
+    },
+    {
+      "name": "orchestration",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs validate --root ops/national-research",
+      "startedAt": "2026-09-08T19:22:04.754Z",
+      "finishedAt": "2026-09-08T19:22:05.747Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-orchestration.log"
+    },
+    {
+      "name": "operations-dashboard",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs dashboard --root ops/national-research --as-of 2026-09-08T19:12:33.708Z",
+      "startedAt": "2026-09-08T19:22:05.748Z",
+      "finishedAt": "2026-09-08T19:22:06.590Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-operations-dashboard.log"
+    },
+    {
+      "name": "readiness-dashboard",
+      "command": "--import tsx scripts/build-national-readiness-dashboard.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T19:22:06.590Z",
+      "finishedAt": "2026-09-08T19:22:07.644Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-readiness-dashboard.log"
+    }
+  ],
+  "fullResearchIntegritySuite": {
+    "status": "pending-after-fresh-publication-manifest",
+    "qualification": "The later release checkpoint must report the actual full-suite outcome."
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/epa-wqp-national-validation-20260908-r18.json.gz",
+    "bytes": 76694,
+    "sha256": "c249918b468ae4ef268ed39fb904bc9e0e8152a6b6259571454375eb66d4f891"
+  },
+  "researchPublication": {
+    "uploaded": false,
+    "promoted": false,
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z"
+  },
+  "limitations": [
+    "Historical sampled occurrence does not establish current persistence, establishment or countywide prevalence.",
+    "The Woodson County EPA geographic hold remains undetermined. Missing, zero, excluded and rejected records create no absence or non-detection.",
+    "Original source dates, raw-byte witnesses, attribution, effort qualifiers and geographic caveats remain intact.",
+    "Research completion, determination coverage and state applicability remain separate."
+  ]
+}

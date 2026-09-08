@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 677,
+    "applicableSpeciesCount": 679,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 1827,
+    "unknownSpeciesCount": 1825,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 624,
+    "derivedApplicableSpeciesCount": 626,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 777,
+    "boundedAcquisitionSpeciesCount": 779,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 636016,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 15503,
+    "verifiedPresent": 15519,
     "verifiedAbsent": 508,
     "notDetected": 0,
     "researchedUnresolved": 107425,
-    "notResearched": 512580,
+    "notResearched": 512564,
     "determinationCoveragePercent": 2.52,
     "researchCoveragePercent": 19.41,
-    "explicitOutcomePairCount": 123436,
-    "explicitOutcomeCoveragePercent": 19.4077,
+    "explicitOutcomePairCount": 123452,
+    "explicitOutcomeCoveragePercent": 19.4102,
     "conflictCount": 0,
-    "evidenceRecordCount": 18462,
+    "evidenceRecordCount": 18478,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 18462,
+    "runEvidenceRecordCount": 18478,
     "rejectionRecordCount": 1604,
-    "researchRunCount": 43,
+    "researchRunCount": 44,
     "boundedAcquisition": {
-      "speciesCount": 777,
-      "totalPairs": 197358,
-      "verifiedPresent": 15503,
+      "speciesCount": 779,
+      "totalPairs": 197866,
+      "verifiedPresent": 15519,
       "verifiedAbsent": 508,
       "notDetected": 0,
       "researchedUnresolved": 107425,
-      "notResearched": 73922,
-      "researchCoveragePercent": 62.54,
-      "explicitOutcomePairs": 123436,
-      "explicitOutcomeCoveragePercent": 62.5442
+      "notResearched": 74414,
+      "researchCoveragePercent": 62.39,
+      "explicitOutcomePairs": 123452,
+      "explicitOutcomeCoveragePercent": 62.3917
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:04:53.719Z",
+      "evidencePairCount": 16,
+      "screenedSpeciesCount": 4
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 3108,
-    "applicableCells": 712,
-    "notApplicableCells": 2396,
+    "totalCells": 3116,
+    "applicableCells": 714,
+    "notApplicableCells": 2402,
     "completeCells": 133,
-    "incompleteCells": 579,
+    "incompleteCells": 581,
     "blockedCells": 0,
     "currentCells": 120,
     "staleCells": 13,
-    "undatedCells": 579,
-    "applicableCompletionPercent": 18.68,
-    "currentCompletePercent": 16.85,
+    "undatedCells": 581,
+    "applicableCompletionPercent": 18.63,
+    "currentCompletePercent": 16.81,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 26,
+        "applicableCells": 28,
         "currentCompleteCells": 13,
-        "currentCompletePercent": 50
+        "currentCompletePercent": 46.43
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 651,
+        "applicableCells": 653,
         "currentCompleteCells": 72,
-        "currentCompletePercent": 11.06
+        "currentCompletePercent": 11.03
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 677,
+        "applicableCells": 679,
         "currentCompleteCells": 98,
         "processed": false
       },
@@ -1402,9 +1412,9 @@
       "priorityScore": 253001
     },
     {
-      "speciesId": "oreochromis-aureus",
-      "commonName": "Blue Tilapia",
-      "scientificName": "Oreochromis aureus",
+      "speciesId": "oreochromis-niloticus",
+      "commonName": "Nile tilapia",
+      "scientificName": "Oreochromis niloticus",
       "category": "wildlife",
       "notResearchedCountyCount": 253,
       "researchedUnresolvedCountyCount": 0,

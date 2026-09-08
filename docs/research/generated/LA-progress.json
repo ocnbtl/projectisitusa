@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 438,
+    "applicableSpeciesCount": 440,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2066,
+    "unknownSpeciesCount": 2064,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 52,
-    "derivedApplicableSpeciesCount": 386,
+    "derivedApplicableSpeciesCount": 388,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 553,
+    "boundedAcquisitionSpeciesCount": 555,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 160256,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 8490,
+    "verifiedPresent": 8498,
     "verifiedAbsent": 64,
     "notDetected": 0,
-    "researchedUnresolved": 21897,
-    "notResearched": 129805,
+    "researchedUnresolved": 21895,
+    "notResearched": 129799,
     "determinationCoveragePercent": 5.34,
-    "researchCoveragePercent": 19,
-    "explicitOutcomePairCount": 30451,
-    "explicitOutcomeCoveragePercent": 19.0015,
+    "researchCoveragePercent": 19.01,
+    "explicitOutcomePairCount": 30457,
+    "explicitOutcomeCoveragePercent": 19.0052,
     "conflictCount": 0,
-    "evidenceRecordCount": 11528,
+    "evidenceRecordCount": 11536,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11528,
+    "runEvidenceRecordCount": 11536,
     "rejectionRecordCount": 1907,
-    "researchRunCount": 40,
+    "researchRunCount": 41,
     "boundedAcquisition": {
-      "speciesCount": 553,
-      "totalPairs": 35392,
-      "verifiedPresent": 8490,
+      "speciesCount": 555,
+      "totalPairs": 35520,
+      "verifiedPresent": 8498,
       "verifiedAbsent": 64,
       "notDetected": 0,
-      "researchedUnresolved": 21897,
-      "notResearched": 4941,
-      "researchCoveragePercent": 86.04,
-      "explicitOutcomePairs": 30451,
-      "explicitOutcomeCoveragePercent": 86.0392
+      "researchedUnresolved": 21895,
+      "notResearched": 5063,
+      "researchCoveragePercent": 85.75,
+      "explicitOutcomePairs": 30457,
+      "explicitOutcomeCoveragePercent": 85.7461
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:02:59.975Z",
+      "evidencePairCount": 8,
+      "screenedSpeciesCount": 3
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2212,
-    "applicableCells": 473,
-    "notApplicableCells": 1739,
+    "totalCells": 2220,
+    "applicableCells": 475,
+    "notApplicableCells": 1745,
     "completeCells": 124,
-    "incompleteCells": 349,
+    "incompleteCells": 351,
     "blockedCells": 0,
     "currentCells": 111,
     "staleCells": 13,
-    "undatedCells": 349,
-    "applicableCompletionPercent": 26.22,
-    "currentCompletePercent": 23.47,
+    "undatedCells": 351,
+    "applicableCompletionPercent": 26.11,
+    "currentCompletePercent": 23.37,
     "regulatedAndHighApplicableCells": 36,
     "regulatedAndHighCurrentCompleteCells": 36,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 22,
+        "applicableCells": 24,
         "currentCompleteCells": 8,
-        "currentCompletePercent": 36.36
+        "currentCompletePercent": 33.33
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 411,
+        "applicableCells": 413,
         "currentCompleteCells": 62,
-        "currentCompletePercent": 15.09
+        "currentCompletePercent": 15.01
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 438,
+        "applicableCells": 440,
         "currentCompleteCells": 89,
         "processed": false
       },
@@ -1258,6 +1268,18 @@
       "priorityScore": 62001
     },
     {
+      "speciesId": "ctenopharyngodon-idella",
+      "commonName": "Grass Carp",
+      "scientificName": "Ctenopharyngodon idella",
+      "category": "wildlife",
+      "notResearchedCountyCount": 62,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 62001
+    },
+    {
       "speciesId": "dioscorea-bulbifera",
       "commonName": "Air yam",
       "scientificName": "Dioscorea bulbifera",
@@ -1454,6 +1476,18 @@
       "commonName": "Bushkiller",
       "scientificName": "Cayratia japonica",
       "category": "plants",
+      "notResearchedCountyCount": 60,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 60001
+    },
+    {
+      "speciesId": "cyprinus-carpio",
+      "commonName": "Common Carp",
+      "scientificName": "Cyprinus carpio",
+      "category": "wildlife",
       "notResearchedCountyCount": 60,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -1768,26 +1802,6 @@
       "commonName": "Litchi mite",
       "scientificName": "Aceria litchii",
       "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 64,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 640
-    },
-    {
-      "speciesId": "aclerda-takahashii",
-      "commonName": "Flat grass scale",
-      "scientificName": "Aclerda takahashii",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 64,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 640
-    },
-    {
-      "speciesId": "acleris-comariana",
-      "commonName": "Strawberry tortrix",
-      "scientificName": "Acleris comariana",
-      "category": "insects",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 64,
       "missingProtocolSourceIds": [],

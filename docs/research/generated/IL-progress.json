@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 440,
+    "applicableSpeciesCount": 442,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2064,
+    "unknownSpeciesCount": 2062,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 75,
-    "derivedApplicableSpeciesCount": 365,
+    "derivedApplicableSpeciesCount": 367,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 588,
+    "boundedAcquisitionSpeciesCount": 590,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 255408,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 11408,
+    "verifiedPresent": 11422,
     "verifiedAbsent": 202,
     "notDetected": 8,
     "researchedUnresolved": 37201,
-    "notResearched": 206589,
+    "notResearched": 206575,
     "determinationCoveragePercent": 4.55,
-    "researchCoveragePercent": 19.11,
-    "explicitOutcomePairCount": 48819,
-    "explicitOutcomeCoveragePercent": 19.1141,
+    "researchCoveragePercent": 19.12,
+    "explicitOutcomePairCount": 48833,
+    "explicitOutcomeCoveragePercent": 19.1196,
     "conflictCount": 0,
-    "evidenceRecordCount": 14029,
+    "evidenceRecordCount": 14043,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 14029,
+    "runEvidenceRecordCount": 14043,
     "rejectionRecordCount": 2126,
-    "researchRunCount": 40,
+    "researchRunCount": 41,
     "boundedAcquisition": {
-      "speciesCount": 588,
-      "totalPairs": 59976,
-      "verifiedPresent": 11408,
+      "speciesCount": 590,
+      "totalPairs": 60180,
+      "verifiedPresent": 11422,
       "verifiedAbsent": 202,
       "notDetected": 8,
       "researchedUnresolved": 37201,
-      "notResearched": 11157,
-      "researchCoveragePercent": 81.4,
-      "explicitOutcomePairs": 48819,
-      "explicitOutcomeCoveragePercent": 81.3976
+      "notResearched": 11347,
+      "researchCoveragePercent": 81.14,
+      "explicitOutcomePairs": 48833,
+      "explicitOutcomeCoveragePercent": 81.1449
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:02:45.710Z",
+      "evidencePairCount": 14,
+      "screenedSpeciesCount": 3
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2352,
-    "applicableCells": 475,
-    "notApplicableCells": 1877,
+    "totalCells": 2360,
+    "applicableCells": 477,
+    "notApplicableCells": 1883,
     "completeCells": 152,
-    "incompleteCells": 323,
+    "incompleteCells": 325,
     "blockedCells": 0,
     "currentCells": 139,
     "staleCells": 13,
-    "undatedCells": 323,
-    "applicableCompletionPercent": 32,
-    "currentCompletePercent": 29.26,
+    "undatedCells": 325,
+    "applicableCompletionPercent": 31.87,
+    "currentCompletePercent": 29.14,
     "regulatedAndHighApplicableCells": 59,
     "regulatedAndHighCurrentCompleteCells": 59,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 17,
+        "applicableCells": 19,
         "currentCompleteCells": 8,
-        "currentCompletePercent": 47.06
+        "currentCompletePercent": 42.11
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 390,
+        "applicableCells": 392,
         "currentCompleteCells": 67,
-        "currentCompletePercent": 17.18
+        "currentCompletePercent": 17.09
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 440,
+        "applicableCells": 442,
         "currentCompleteCells": 117,
         "processed": false
       },
@@ -850,18 +860,6 @@
       "priorityScore": 101001
     },
     {
-      "speciesId": "cyprinus-carpio",
-      "commonName": "Common Carp",
-      "scientificName": "Cyprinus carpio",
-      "category": "wildlife",
-      "notResearchedCountyCount": 101,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 101001
-    },
-    {
       "speciesId": "diplotaxis-muralis",
       "commonName": "Annual wallrocket",
       "scientificName": "Diplotaxis muralis",
@@ -1070,6 +1068,18 @@
       "commonName": "True forget-me-not",
       "scientificName": "Myosotis scorpioides",
       "category": "plants",
+      "notResearchedCountyCount": 101,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 101001
+    },
+    {
+      "speciesId": "neogobius-melanostomus",
+      "commonName": "Round Goby",
+      "scientificName": "Neogobius melanostomus",
+      "category": "wildlife",
       "notResearchedCountyCount": 101,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -1510,6 +1520,18 @@
       "priorityScore": 100001
     },
     {
+      "speciesId": "ctenopharyngodon-idella",
+      "commonName": "Grass Carp",
+      "scientificName": "Ctenopharyngodon idella",
+      "category": "wildlife",
+      "notResearchedCountyCount": 100,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 100001
+    },
+    {
       "speciesId": "descurainia-sophia",
       "commonName": "Herb sophia",
       "scientificName": "Descurainia sophia",
@@ -1801,18 +1823,6 @@
       "speciesId": "thlaspi-arvense",
       "commonName": "Field Pennycress",
       "scientificName": "Thlaspi arvense",
-      "category": "plants",
-      "notResearchedCountyCount": 99,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 99001
-    },
-    {
-      "speciesId": "vinca-minor",
-      "commonName": "Common Periwinkle",
-      "scientificName": "Vinca minor",
       "category": "plants",
       "notResearchedCountyCount": 99,
       "researchedUnresolvedCountyCount": 0,

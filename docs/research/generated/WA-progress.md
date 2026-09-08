@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `8861`
+- Verified present: `8862`
 - Verified absent: `38`
 - Not detected: `0`
 - Researched unresolved: `14323`
-- Not researched: `74434`
+- Not researched: `74433`
 - Determination coverage: `9.11%`
 - Research coverage: `23.78%`
-- Explicit outcome coverage: `23.7794%`
+- Explicit outcome coverage: `23.7804%`
 - Applicable protocol cells: `746`
 - Current complete protocol cells: `184`
 - Protocol completion: `26.41%`
 - Current protocol completion: `24.66%`
-- Evidence records: `14151`
-- Research runs: `51`
+- Evidence records: `14152`
+- Research runs: `52`
 - Rejection records: `1898`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,7 +45,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese dogwood (`cornus-kousa`) | plants | 38 | 0 | 1 |
 | Silverleaf cotoneaster (`cotoneaster-pannosus`) | plants | 38 | 0 | 1 |
 | Rose (`cotoneaster-salicifolius`) | plants | 38 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 38 | 0 | 1 |
 | Striated broom (`cytisus-striatus`) | plants | 38 | 0 | 1 |
 | Pricklyburr (`datura-inoxia`) | plants | 38 | 0 | 1 |
 | Threespike goosegrass (`eleusine-tristachya`) | plants | 38 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 38 | 0 | 1 |
 | Bloody geranium (`geranium-sanguineum`) | plants | 38 | 0 | 1 |
 | Saltlover (`halogeton-glomeratus`) | plants | 38 | 0 | 1 |
+| Bristly oxtongue (`helminthotheca-echioides`) | plants | 38 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:05:16.328Z | 1 | 1 |

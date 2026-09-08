@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 383,
+    "applicableSpeciesCount": 385,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2121,
+    "unknownSpeciesCount": 2119,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 330,
+    "derivedApplicableSpeciesCount": 332,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 540,
+    "boundedAcquisitionSpeciesCount": 542,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 300480,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 8896,
+    "verifiedPresent": 8907,
     "verifiedAbsent": 120,
     "notDetected": 12,
-    "researchedUnresolved": 47825,
-    "notResearched": 243627,
+    "researchedUnresolved": 47824,
+    "notResearched": 243617,
     "determinationCoveragePercent": 3,
     "researchCoveragePercent": 18.92,
-    "explicitOutcomePairCount": 56853,
-    "explicitOutcomeCoveragePercent": 18.9207,
+    "explicitOutcomePairCount": 56863,
+    "explicitOutcomeCoveragePercent": 18.9241,
     "conflictCount": 0,
-    "evidenceRecordCount": 10980,
+    "evidenceRecordCount": 10991,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 10980,
+    "runEvidenceRecordCount": 10991,
     "rejectionRecordCount": 669,
-    "researchRunCount": 42,
+    "researchRunCount": 43,
     "boundedAcquisition": {
-      "speciesCount": 540,
-      "totalPairs": 64800,
-      "verifiedPresent": 8896,
+      "speciesCount": 542,
+      "totalPairs": 65040,
+      "verifiedPresent": 8907,
       "verifiedAbsent": 120,
       "notDetected": 12,
-      "researchedUnresolved": 47825,
-      "notResearched": 7947,
-      "researchCoveragePercent": 87.74,
-      "explicitOutcomePairs": 56853,
-      "explicitOutcomeCoveragePercent": 87.7361
+      "researchedUnresolved": 47824,
+      "notResearched": 8177,
+      "researchCoveragePercent": 87.43,
+      "explicitOutcomePairs": 56863,
+      "explicitOutcomeCoveragePercent": 87.4277
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:02:55.454Z",
+      "evidencePairCount": 11,
+      "screenedSpeciesCount": 3
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2160,
-    "applicableCells": 418,
-    "notApplicableCells": 1742,
+    "totalCells": 2168,
+    "applicableCells": 420,
+    "notApplicableCells": 1748,
     "completeCells": 139,
-    "incompleteCells": 279,
+    "incompleteCells": 281,
     "blockedCells": 0,
     "currentCells": 126,
     "staleCells": 13,
-    "undatedCells": 279,
-    "applicableCompletionPercent": 33.25,
-    "currentCompletePercent": 30.14,
+    "undatedCells": 281,
+    "applicableCompletionPercent": 33.1,
+    "currentCompletePercent": 30,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 20,
+        "applicableCells": 22,
         "currentCompleteCells": 9,
-        "currentCompletePercent": 45
+        "currentCompletePercent": 40.91
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 357,
+        "applicableCells": 359,
         "currentCompleteCells": 78,
-        "currentCompletePercent": 21.85
+        "currentCompletePercent": 21.73
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 383,
+        "applicableCells": 385,
         "currentCompleteCells": 104,
         "processed": false
       },
@@ -1138,6 +1148,18 @@
       "priorityScore": 118001
     },
     {
+      "speciesId": "ctenopharyngodon-idella",
+      "commonName": "Grass Carp",
+      "scientificName": "Ctenopharyngodon idella",
+      "category": "wildlife",
+      "notResearchedCountyCount": 118,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 118001
+    },
+    {
       "speciesId": "fallopia-convolvulus",
       "commonName": "Black bindweed",
       "scientificName": "Fallopia convolvulus",
@@ -1406,6 +1428,18 @@
       "commonName": "Meadow brome",
       "scientificName": "Bromus commutatus",
       "category": "plants",
+      "notResearchedCountyCount": 112,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 112001
+    },
+    {
+      "speciesId": "cyprinus-carpio",
+      "commonName": "Common Carp",
+      "scientificName": "Cyprinus carpio",
+      "category": "wildlife",
       "notResearchedCountyCount": 112,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -1737,26 +1771,6 @@
       "speciesId": "alternanthera-brasiliana",
       "commonName": "Brazilian joyweed",
       "scientificName": "Alternanthera brasiliana",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 120,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1200
-    },
-    {
-      "speciesId": "alternanthera-ficoidea",
-      "commonName": "Sanguinaria",
-      "scientificName": "Alternanthera ficoidea",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 120,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 1200
-    },
-    {
-      "speciesId": "alternanthera-pungens",
-      "commonName": "Khakiweed",
-      "scientificName": "Alternanthera pungens",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 120,

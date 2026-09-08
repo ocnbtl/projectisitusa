@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `7018`
+- Verified present: `7032`
 - Verified absent: `75`
 - Not detected: `0`
-- Researched unresolved: `29005`
-- Not researched: `151702`
+- Researched unresolved: `29002`
+- Not researched: `151691`
 - Determination coverage: `3.78%`
-- Research coverage: `19.22%`
-- Explicit outcome coverage: `19.2215%`
-- Applicable protocol cells: `458`
+- Research coverage: `19.23%`
+- Explicit outcome coverage: `19.2274%`
+- Applicable protocol cells: `459`
 - Current complete protocol cells: `128`
-- Protocol completion: `30.79%`
-- Current protocol completion: `27.95%`
-- Evidence records: `10333`
-- Research runs: `45`
+- Protocol completion: `30.72%`
+- Current protocol completion: `27.89%`
+- Evidence records: `10347`
+- Research runs: `46`
 - Rejection records: `636`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,7 +45,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chinese hound's tongue (`cynoglossum-amabile`) | plants | 74 | 0 | 1 |
 | Bristly dogstail grass (`cynosurus-echinatus`) | plants | 74 | 0 | 1 |
 | Brown flatsedge (`cyperus-fuscus`) | plants | 74 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 74 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 74 | 0 | 1 |
 | Keeled wormseed (`dysphania-carinata`) | plants | 74 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 74 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Annual ryegrass (`lolium-multiflorum`) | plants | 74 | 0 | 1 |
 | Japanese yellow loosestrife (`lysimachia-japonica`) | plants | 74 | 0 | 1 |
 | Alfalfa (`medicago-sativa`) | plants | 74 | 0 | 1 |
+| Changing forget-me-not (`myosotis-discolor`) | plants | 74 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:02:08.900Z | 14 | 3 |

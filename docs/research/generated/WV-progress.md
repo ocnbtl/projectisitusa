@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `6452`
+- Verified present: `6457`
 - Verified absent: `55`
 - Not detected: `23`
 - Researched unresolved: `19748`
-- Not researched: `111442`
-- Determination coverage: `4.72%`
+- Not researched: `111437`
+- Determination coverage: `4.73%`
 - Research coverage: `19.08%`
-- Explicit outcome coverage: `19.0807%`
+- Explicit outcome coverage: `19.0844%`
 - Applicable protocol cells: `433`
 - Current complete protocol cells: `97`
 - Protocol completion: `25.40%`
 - Current protocol completion: `22.40%`
-- Evidence records: `7924`
-- Research runs: `38`
+- Evidence records: `7929`
+- Research runs: `39`
 - Rejection records: `233`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,7 +45,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chinese catalpa (`catalpa-ovata`) | plants | 54 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 54 | 0 | 1 |
 | Kenilworth ivy (`cymbalaria-muralis`) | plants | 54 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 54 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 54 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 54 | 0 | 1 |
 | Crested latesummer mint (`elsholtzia-ciliata`) | plants | 54 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Small geranium (`geranium-pusillum`) | plants | 54 | 0 | 1 |
 | Mouseear hawkweed (`hieracium-pilosella`) | plants | 54 | 0 | 1 |
 | Tall hawkweed (`hieracium-piloselloides`) | plants | 54 | 0 | 1 |
+| Hyacinthbean (`lablab-purpureus`) | plants | 54 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:05:27.856Z | 5 | 2 |

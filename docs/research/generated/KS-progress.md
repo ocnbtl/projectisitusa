@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `105`
 - County-species pairs: `262920`
-- Verified present: `6900`
+- Verified present: `6934`
 - Verified absent: `105`
 - Not detected: `26`
 - Researched unresolved: `43091`
-- Not researched: `212798`
-- Determination coverage: `2.66%`
-- Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0636%`
-- Applicable protocol cells: `387`
+- Not researched: `212764`
+- Determination coverage: `2.68%`
+- Research coverage: `19.08%`
+- Explicit outcome coverage: `19.0765%`
+- Applicable protocol cells: `388`
 - Current complete protocol cells: `108`
-- Protocol completion: `31.27%`
-- Current protocol completion: `27.91%`
-- Evidence records: `8084`
-- Research runs: `43`
+- Protocol completion: `31.19%`
+- Current protocol completion: `27.84%`
+- Evidence records: `8122`
+- Research runs: `45`
 - Rejection records: `751`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -93,7 +93,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-07T18:47:04.755Z | 317 | 10 |
-| Water Quality Portal biological results | operational | 2026-09-08T13:53:58.120Z | 39 | 3 |
+| Water Quality Portal biological results | operational | 2026-09-08T17:58:51.721Z | 59 | 4 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-09-04T19:49:51.676Z | 7 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | USDA APHIS northern giant hornet eradication statement (2024) | manual | 2026-09-01T19:16:53.000Z | 105 | 1 |
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T18:58:07.324Z | 18 | 1 |

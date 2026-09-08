@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `1940`
+- Verified present: `1941`
 - Verified absent: `10`
 - Not detected: `0`
 - Researched unresolved: `3471`
-- Not researched: `19619`
+- Not researched: `19618`
 - Determination coverage: `7.79%`
 - Research coverage: `21.65%`
-- Explicit outcome coverage: `21.6494%`
-- Applicable protocol cells: `463`
+- Explicit outcome coverage: `21.6534%`
+- Applicable protocol cells: `464`
 - Current complete protocol cells: `83`
-- Protocol completion: `20.73%`
-- Current protocol completion: `17.93%`
-- Evidence records: `1958`
-- Research runs: `45`
+- Protocol completion: `20.69%`
+- Current protocol completion: `17.89%`
+- Evidence records: `1959`
+- Research runs: `46`
 - Rejection records: `125`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 9 | 0 | 1 |
 | Narrowleaf hawksbeard (`crepis-tectorum`) | plants | 9 | 0 | 1 |
 | Garden cucumber (`cucumis-sativus`) | plants | 9 | 0 | 1 |
+| Common Carp (`cyprinus-carpio`) | wildlife | 9 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 9 | 0 | 1 |
 | Common dogmustard (`erucastrum-gallicum`) | plants | 9 | 0 | 1 |
 | Madwoman's milk (`euphorbia-helioscopia`) | plants | 9 | 0 | 1 |
 | Petty spurge (`euphorbia-peplus`) | plants | 9 | 0 | 1 |
-| Queen of the meadow (`filipendula-ulmaria`) | plants | 9 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:03:51.049Z | 1 | 1 |

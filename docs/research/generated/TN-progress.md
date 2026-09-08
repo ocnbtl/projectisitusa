@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `8152`
+- Verified present: `8157`
 - Verified absent: `190`
 - Not detected: `8`
 - Researched unresolved: `36795`
-- Not researched: `192735`
+- Not researched: `192730`
 - Determination coverage: `3.51%`
 - Research coverage: `18.98%`
-- Explicit outcome coverage: `18.9781%`
-- Applicable protocol cells: `442`
+- Explicit outcome coverage: `18.9802%`
+- Applicable protocol cells: `443`
 - Current complete protocol cells: `127`
-- Protocol completion: `31.67%`
-- Current protocol completion: `28.73%`
-- Evidence records: `10584`
-- Research runs: `41`
+- Protocol completion: `31.60%`
+- Current protocol completion: `28.67%`
+- Evidence records: `10589`
+- Research runs: `42`
 - Rejection records: `784`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,7 +45,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 94 | 0 | 1 |
 | Variable flatsedge (`cyperus-difformis`) | plants | 94 | 0 | 1 |
 | Ricefield flatsedge (`cyperus-iria`) | plants | 94 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 94 | 0 | 1 |
 | Herb sophia (`descurainia-sophia`) | plants | 94 | 0 | 1 |
 | Wormseed wallflower (`erysimum-cheiranthoides`) | plants | 94 | 0 | 1 |
 | Black bindweed (`fallopia-convolvulus`) | plants | 94 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common barley (`hordeum-vulgare`) | plants | 94 | 0 | 1 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 94 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 94 | 0 | 1 |
+| Lesser Swinecress (`lepidium-didymum`) | plants | 94 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | 2026-09-08T06:44:12.045Z | 95 | 1 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:04:47.675Z | 5 | 2 |

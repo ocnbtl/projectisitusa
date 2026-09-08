@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `2378`
+- Verified present: `2386`
 - Verified absent: `23`
 - Not detected: `0`
 - Researched unresolved: `9640`
-- Not researched: `45551`
-- Determination coverage: `4.17%`
-- Research coverage: `20.91%`
-- Explicit outcome coverage: `20.9074%`
+- Not researched: `45543`
+- Determination coverage: `4.18%`
+- Research coverage: `20.92%`
+- Explicit outcome coverage: `20.9213%`
 - Applicable protocol cells: `362`
 - Current complete protocol cells: `62`
 - Protocol completion: `20.72%`
 - Current protocol completion: `17.13%`
-- Evidence records: `2418`
-- Research runs: `44`
+- Evidence records: `2426`
+- Research runs: `45`
 - Rejection records: `81`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,7 +44,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Perennial cornflower (`centaurea-montana`) | plants | 22 | 0 | 1 |
 | Greater knapweed (`centaurea-scabiosa`) | plants | 22 | 0 | 1 |
 | Snow in summer (`cerastium-tomentosum`) | plants | 22 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 22 | 0 | 1 |
 | Maiden pink (`dianthus-deltoides`) | plants | 22 | 0 | 1 |
 | Great globethistle (`echinops-sphaerocephalus`) | plants | 22 | 0 | 1 |
 | Wilman lovegrass (`eragrostis-superba`) | plants | 22 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sweet alyssum (`lobularia-maritima`) | plants | 22 | 0 | 1 |
 | Annual ryegrass (`lolium-multiflorum`) | plants | 22 | 0 | 1 |
 | Onerow yellowcress (`nasturtium-microphyllum`) | plants | 22 | 0 | 1 |
+| Opium poppy (`papaver-somniferum`) | plants | 22 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:05:33.475Z | 8 | 2 |

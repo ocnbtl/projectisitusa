@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-05",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 447,
+    "applicableSpeciesCount": 449,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2057,
+    "unknownSpeciesCount": 2055,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 98,
-    "derivedApplicableSpeciesCount": 349,
+    "derivedApplicableSpeciesCount": 351,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 662,
+    "boundedAcquisitionSpeciesCount": 664,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 37560,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 1946,
+    "verifiedPresent": 1948,
     "verifiedAbsent": 15,
     "notDetected": 0,
     "researchedUnresolved": 6093,
-    "notResearched": 29506,
-    "determinationCoveragePercent": 5.22,
-    "researchCoveragePercent": 21.44,
-    "explicitOutcomePairCount": 8054,
-    "explicitOutcomeCoveragePercent": 21.443,
+    "notResearched": 29504,
+    "determinationCoveragePercent": 5.23,
+    "researchCoveragePercent": 21.45,
+    "explicitOutcomePairCount": 8056,
+    "explicitOutcomeCoveragePercent": 21.4483,
     "conflictCount": 0,
-    "evidenceRecordCount": 6528,
+    "evidenceRecordCount": 6530,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 6528,
+    "runEvidenceRecordCount": 6530,
     "rejectionRecordCount": 1075,
-    "researchRunCount": 44,
+    "researchRunCount": 45,
     "boundedAcquisition": {
-      "speciesCount": 662,
-      "totalPairs": 9930,
-      "verifiedPresent": 1946,
+      "speciesCount": 664,
+      "totalPairs": 9960,
+      "verifiedPresent": 1948,
       "verifiedAbsent": 15,
       "notDetected": 0,
       "researchedUnresolved": 6093,
-      "notResearched": 1876,
-      "researchCoveragePercent": 81.11,
-      "explicitOutcomePairs": 8054,
-      "explicitOutcomeCoveragePercent": 81.1078
+      "notResearched": 1904,
+      "researchCoveragePercent": 80.88,
+      "explicitOutcomePairs": 8056,
+      "explicitOutcomeCoveragePercent": 80.8835
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:02:13.373Z",
+      "evidencePairCount": 2,
+      "screenedSpeciesCount": 2
     }
   ],
   "protocol": {
     "protocolId": "national-pilot-multisource-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2648,
-    "applicableCells": 483,
-    "notApplicableCells": 2165,
+    "totalCells": 2656,
+    "applicableCells": 485,
+    "notApplicableCells": 2171,
     "completeCells": 140,
-    "incompleteCells": 342,
+    "incompleteCells": 344,
     "blockedCells": 1,
     "currentCells": 127,
     "staleCells": 13,
-    "undatedCells": 343,
-    "applicableCompletionPercent": 28.99,
-    "currentCompletePercent": 26.29,
+    "undatedCells": 345,
+    "applicableCompletionPercent": 28.87,
+    "currentCompletePercent": 26.19,
     "regulatedAndHighApplicableCells": 81,
     "regulatedAndHighCurrentCompleteCells": 72,
     "regulatedAndHighCurrentCompletePercent": 88.89,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 25,
+        "applicableCells": 27,
         "currentCompleteCells": 17,
-        "currentCompletePercent": 68
+        "currentCompletePercent": 62.96
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 376,
+        "applicableCells": 378,
         "currentCompleteCells": 42,
-        "currentCompletePercent": 11.17
+        "currentCompletePercent": 11.11
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 447,
+        "applicableCells": 449,
         "currentCompleteCells": 105,
         "processed": false
       },
@@ -1210,6 +1220,18 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "hypostomus-plecostomus",
+      "commonName": "Suckermouth Catfish",
+      "scientificName": "Hypostomus plecostomus",
+      "category": "wildlife",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "lepidium-didymum",
       "commonName": "Lesser Swinecress",
       "scientificName": "Lepidium didymum",
@@ -1310,6 +1332,18 @@
       "commonName": "Barbary fig",
       "scientificName": "Opuntia ficus-indica",
       "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "oreochromis-aureus",
+      "commonName": "Blue Tilapia",
+      "scientificName": "Oreochromis aureus",
+      "category": "wildlife",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -1789,30 +1823,6 @@
       "speciesId": "piptatherum-miliaceum",
       "commonName": "Rice millet",
       "scientificName": "Piptatherum miliaceum",
-      "category": "plants",
-      "notResearchedCountyCount": 13,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 13001
-    },
-    {
-      "speciesId": "rattus-rattus",
-      "commonName": "Black rat",
-      "scientificName": "Rattus rattus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 13,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 13001
-    },
-    {
-      "speciesId": "silybum-marianum",
-      "commonName": "Blessed milkthistle",
-      "scientificName": "Silybum marianum",
       "category": "plants",
       "notResearchedCountyCount": 13,
       "researchedUnresolvedCountyCount": 0,

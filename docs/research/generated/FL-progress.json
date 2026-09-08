@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 667,
+    "applicableSpeciesCount": 670,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 1837,
+    "unknownSpeciesCount": 1834,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 78,
-    "derivedApplicableSpeciesCount": 589,
+    "derivedApplicableSpeciesCount": 592,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 789,
+    "boundedAcquisitionSpeciesCount": 792,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 167768,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 8541,
+    "verifiedPresent": 8559,
     "verifiedAbsent": 67,
     "notDetected": 0,
     "researchedUnresolved": 25457,
-    "notResearched": 133703,
-    "determinationCoveragePercent": 5.13,
-    "researchCoveragePercent": 20.3,
-    "explicitOutcomePairCount": 34065,
-    "explicitOutcomeCoveragePercent": 20.3048,
+    "notResearched": 133685,
+    "determinationCoveragePercent": 5.14,
+    "researchCoveragePercent": 20.32,
+    "explicitOutcomePairCount": 34083,
+    "explicitOutcomeCoveragePercent": 20.3156,
     "conflictCount": 0,
-    "evidenceRecordCount": 19216,
+    "evidenceRecordCount": 19234,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 19216,
+    "runEvidenceRecordCount": 19234,
     "rejectionRecordCount": 5140,
-    "researchRunCount": 40,
+    "researchRunCount": 41,
     "boundedAcquisition": {
-      "speciesCount": 789,
-      "totalPairs": 52863,
-      "verifiedPresent": 8541,
+      "speciesCount": 792,
+      "totalPairs": 53064,
+      "verifiedPresent": 8559,
       "verifiedAbsent": 67,
       "notDetected": 0,
       "researchedUnresolved": 25457,
-      "notResearched": 18798,
-      "researchCoveragePercent": 64.44,
-      "explicitOutcomePairs": 34065,
-      "explicitOutcomeCoveragePercent": 64.4402
+      "notResearched": 18981,
+      "researchCoveragePercent": 64.23,
+      "explicitOutcomePairs": 34083,
+      "explicitOutcomeCoveragePercent": 64.23
     }
   },
   "migrationCandidates": {
@@ -526,23 +526,33 @@
       "lastRunAt": null,
       "evidencePairCount": 0,
       "screenedSpeciesCount": 0
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-09-08T19:02:26.937Z",
+      "evidencePairCount": 18,
+      "screenedSpeciesCount": 6
     }
   ],
   "protocol": {
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 3156,
-    "applicableCells": 702,
-    "notApplicableCells": 2454,
+    "totalCells": 3168,
+    "applicableCells": 705,
+    "notApplicableCells": 2463,
     "completeCells": 155,
-    "incompleteCells": 547,
+    "incompleteCells": 550,
     "blockedCells": 0,
     "currentCells": 142,
     "staleCells": 13,
-    "undatedCells": 547,
-    "applicableCompletionPercent": 22.08,
-    "currentCompletePercent": 20.23,
+    "undatedCells": 550,
+    "applicableCompletionPercent": 21.99,
+    "currentCompletePercent": 20.14,
     "regulatedAndHighApplicableCells": 62,
     "regulatedAndHighCurrentCompleteCells": 62,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -568,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 45,
+        "applicableCells": 48,
         "currentCompleteCells": 10,
-        "currentCompletePercent": 22.22
+        "currentCompletePercent": 20.83
       }
     ],
     "priorityCompletion": [
@@ -588,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 614,
+        "applicableCells": 617,
         "currentCompleteCells": 70,
-        "currentCompletePercent": 11.4
+        "currentCompletePercent": 11.35
       },
       {
         "priority": "baseline",
@@ -608,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 667,
+        "applicableCells": 670,
         "currentCompleteCells": 120,
         "processed": false
       },
@@ -958,30 +968,6 @@
       "priorityScore": 66001
     },
     {
-      "speciesId": "cichlasoma-bimaculatum",
-      "commonName": "Black Acara",
-      "scientificName": "Cichlasoma bimaculatum",
-      "category": "wildlife",
-      "notResearchedCountyCount": 66,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 66001
-    },
-    {
-      "speciesId": "clarias-batrachus",
-      "commonName": "Walking Catfish",
-      "scientificName": "Clarias batrachus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 66,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 66001
-    },
-    {
       "speciesId": "clerodendrum-glabrum",
       "commonName": "Natal glorybower",
       "scientificName": "Clerodendrum glabrum",
@@ -1310,6 +1296,18 @@
       "commonName": "Quickstick",
       "scientificName": "Gliricidia sepium",
       "category": "plants",
+      "notResearchedCountyCount": 66,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 66001
+    },
+    {
+      "speciesId": "hoplosternum-littorale",
+      "commonName": "Brown Hoplo",
+      "scientificName": "Hoplosternum littorale",
+      "category": "wildlife",
       "notResearchedCountyCount": 66,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -1702,18 +1700,6 @@
       "priorityScore": 66001
     },
     {
-      "speciesId": "oreochromis-aureus",
-      "commonName": "Blue Tilapia",
-      "scientificName": "Oreochromis aureus",
-      "category": "wildlife",
-      "notResearchedCountyCount": 66,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 66001
-    },
-    {
       "speciesId": "passiflora-edulis",
       "commonName": "Purple granadilla",
       "scientificName": "Passiflora edulis",
@@ -1814,6 +1800,30 @@
       "commonName": "Citrus leafminer",
       "scientificName": "Phyllocnistis citrella",
       "category": "insects",
+      "notResearchedCountyCount": 66,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 66001
+    },
+    {
+      "speciesId": "piper-auritum",
+      "commonName": "Vera cruz pepper",
+      "scientificName": "Piper auritum",
+      "category": "plants",
+      "notResearchedCountyCount": 66,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 66001
+    },
+    {
+      "speciesId": "pityrogramma-calomelanos",
+      "commonName": "Dixie silverback fern",
+      "scientificName": "Pityrogramma calomelanos",
+      "category": "plants",
       "notResearchedCountyCount": 66,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [

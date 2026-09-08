@@ -7,21 +7,21 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `66`
 - County-species pairs: `165264`
-- Verified present: `1780`
+- Verified present: `1802`
 - Verified absent: `66`
 - Not detected: `0`
-- Researched unresolved: `29636`
-- Not researched: `133782`
-- Determination coverage: `1.12%`
-- Research coverage: `19.05%`
-- Explicit outcome coverage: `19.0495%`
+- Researched unresolved: `29632`
+- Not researched: `133764`
+- Determination coverage: `1.13%`
+- Research coverage: `19.06%`
+- Explicit outcome coverage: `19.0604%`
 - Applicable protocol cells: `293`
 - Current complete protocol cells: `91`
 - Protocol completion: `31.06%`
 - Current protocol completion: `31.06%`
-- Evidence records: `1966`
-- Research runs: `38`
-- Rejection records: `214`
+- Evidence records: `1988`
+- Research runs: `39`
+- Rejection records: `217`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | True forget-me-not (`myosotis-scorpioides`) | plants | 65 | 0 | 1 |
 | Rough Bluegrass (`poa-trivialis`) | plants | 65 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 65 | 0 | 1 |
-| Brown Trout (`salmo-trutta`) | wildlife | 65 | 0 | 1 |
 | Nightflowering silene (`silene-noctiflora`) | plants | 65 | 0 | 1 |
 | False spiraea (`sorbaria-sorbifolia`) | plants | 65 | 0 | 1 |
 | Sorghum (`sorghum-bicolor`) | plants | 65 | 0 | 1 |
 | French tamarisk (`tamarix-gallica`) | plants | 65 | 0 | 1 |
+| Rock dandelion (`taraxacum-erythrospermum`) | plants | 65 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:04:42.458Z | 22 | 3 |

@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `11408`
+- Verified present: `11422`
 - Verified absent: `202`
 - Not detected: `8`
 - Researched unresolved: `37201`
-- Not researched: `206589`
+- Not researched: `206575`
 - Determination coverage: `4.55%`
-- Research coverage: `19.11%`
-- Explicit outcome coverage: `19.1141%`
-- Applicable protocol cells: `475`
+- Research coverage: `19.12%`
+- Explicit outcome coverage: `19.1196%`
+- Applicable protocol cells: `477`
 - Current complete protocol cells: `139`
-- Protocol completion: `32.00%`
-- Current protocol completion: `29.26%`
-- Evidence records: `14029`
-- Research runs: `40`
+- Protocol completion: `31.87%`
+- Current protocol completion: `29.14%`
+- Evidence records: `14043`
+- Research runs: `41`
 - Rejection records: `2126`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Crossflower (`chorispora-tenella`) | plants | 101 | 0 | 1 |
 | Job's tears (`coix-lacryma-jobi`) | plants | 101 | 0 | 1 |
 | Mute Swan (`cygnus-olor`) | wildlife | 101 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 101 | 0 | 1 |
 | Annual wallrocket (`diplotaxis-muralis`) | plants | 101 | 0 | 1 |
 | Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 101 | 0 | 1 |
 | Great globethistle (`echinops-sphaerocephalus`) | plants | 101 | 0 | 1 |
 | Feral horse (`equus-caballus`) | wildlife | 101 | 0 | 1 |
 | Gallant Soldier (`galinsoga-parviflora`) | plants | 101 | 0 | 1 |
+| False baby's breath (`galium-mollugo`) | plants | 101 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,3 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:02:45.710Z | 14 | 3 |
