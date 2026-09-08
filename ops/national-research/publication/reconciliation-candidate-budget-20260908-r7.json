@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-research-candidate-storage-plan",
+  "recordedAt": "2026-09-08T04:26:40.824Z",
+  "releaseId": "research-9f178e3eac7a-c87fbb15edb578a7",
+  "sourceCommit": "9f178e3eac7adcbef1788e9f4c7d73616dae60a5",
+  "manifest": {
+    "path": "ops/national-research/publication/research-data-manifest.json",
+    "bytes": 2047966,
+    "sha256": "7e1b8eda9cbd48b7e648995be2a1e5db15f3618ff07def48bd8fe4c633ecf188"
+  },
+  "representationInventory": {
+    "path": ".cache/research/campaigns/20260906-r4-museum/taxonomy-main-batch/r2-inventory-20260907.json",
+    "observedAt": "2026-09-07T17:33:10.686Z",
+    "objects": 29057
+  },
+  "bucketBaseline": {
+    "observedAt": "2026-09-08T01:30:20.362Z",
+    "objects": 29059,
+    "bytes": 7837439604
+  },
+  "candidateNewObjects": 3195,
+  "candidateAdditionalBytes": 127548495,
+  "projectedBucketBytes": 7964988099,
+  "projectSafetyCeilingBytes": 8000000000,
+  "remainingSafetyHeadroomBytes": 35011901,
+  "priorResearchReservationBytes": 95043571,
+  "requiredResearchReservationBytes": 127548495,
+  "withinStorageCeiling": true,
+  "providerWrites": 0,
+  "pointerPromotions": 0,
+  "limitations": [
+    "Storage estimate combines an eligible prior research representation inventory with the separately verified later bucket total that includes app assets. A new live inventory and current-period billable usage are required before actual publication.",
+    "The offline publisher plan uses zero placeholders for current usage; those are not dashboard usage observations.",
+    "The prior 95,043,571-byte research reservation is insufficient for this all-state date reconciliation. Reserve the exact candidateAdditionalBytes instead.",
+    "Ordinary research promotion cadence remains in force; no upload or promotion occurred."
+  ]
+}

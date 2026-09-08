@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "kind": "national-reconciliation-completion",
+  "completedAt": "2026-09-08T04:27:59.404Z",
+  "status": "all-required-checkpoint-gates-passed-publication-prepared",
+  "projectionCommit": "9f178e3eac7adcbef1788e9f4c7d73616dae60a5",
+  "verification": "ops/national-research/receipts/source-evaluations/national-reconciliation-20260908-r7.json",
+  "asOf": "2026-09-08",
+  "states": 51,
+  "counties": 3144,
+  "determinations": 316244,
+  "netNewDeterminationsThisReconciliation": 0,
+  "pairSetSha256": "27c2a45e00e590e638413cb1f7077370de9ebefcd618609fa2a81aa5a4e0e401",
+  "publicationChecks": {
+    "manifestCurrent": true,
+    "offlinePlanPassed": true,
+    "artifact": {
+      "path": "ops/national-research/evaluations/artifacts/national-reconciliation-publication-20260908-r7.json.gz",
+      "bytes": 1352,
+      "sha256": "eb340ba2043fcb33c1c3472c67a3bf47703808abc3934a9c3a7f56c43455ac7b"
+    }
+  },
+  "candidateRelease": "research-9f178e3eac7a-c87fbb15edb578a7",
+  "candidateStoragePlan": "ops/national-research/publication/reconciliation-candidate-budget-20260908-r7.json",
+  "requiredResearchReservationBytes": 127548495,
+  "projectionAndCheckpointCommits": "Local verified checkpoint. Hold the production batch while the next research method is implemented; no automatic app build is needed for unchanged runtime payloads.",
+  "publicationState": {
+    "uploaded": false,
+    "promoted": false,
+    "applicationDeploymentRequested": false,
+    "currentResearchReleaseUnchanged": "research-6927e5fe2efb-886700baca52fe1e",
+    "ordinaryCadence": "Existing weekly promotion policy remains in force; recheck live pointer and current-period R2 usage before publication."
+  },
+  "independentReview": "ops/national-research/evaluations/karnal-bunt-ca-independent-review-20260908-r7.json",
+  "next": "Implement and test the authorized agent-reviewed official-jurisdiction method, then register and independently pilot the 58 California Karnal bunt pairs. Preserve exact source hashes, chronology uncertainty, current corroboration, expiry and conflict handling. Continue local research before a meaningful production batch."
+}
