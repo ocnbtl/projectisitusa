@@ -1,0 +1,491 @@
+{
+  "record": {
+    "schemaVersion": 1,
+    "id": "tilletia-indica-ca-officially-eradicated-agent-20260908",
+    "speciesId": "tilletia-indica",
+    "statementType": "officially-eradicated",
+    "sourceDocuments": [
+      {
+        "sourceId": "nappo-karnal-bunt-eradication-2010",
+        "url": "https://www.pestalerts.org/nappo/official-pest-reports/525/",
+        "artifactPath": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/nappo-california-karnal-bunt-2010.html.gz",
+        "artifactSha256": "f89d7295a2ff42a0b9e32831674c314393c2e996265a1b5b896decc665615af9",
+        "supportText": "Under IPPC standards, Tilletia indica is considered to be a pest that is absent: eradicated in California in the United States.",
+        "supportTextSha256": "86678e9c85fee864af1d5c2bc652dae8351bfa11c7f093aca5f960bc78eb21cb",
+        "publishedAt": "2010-11-12",
+        "modifiedAt": null
+      },
+      {
+        "sourceId": "aphis-karnal-bunt-current",
+        "url": "https://www.aphis.usda.gov/plant-pests-diseases/karnal-bunt",
+        "artifactPath": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-current.html.gz",
+        "artifactSha256": "25d064bdfddb4432abcd058494eb975c0bc39837237d720e39d9a3215a9e0bff",
+        "supportText": "A successful quarantine and national survey program have confined Karnal bunt to portions of one State: Arizona.",
+        "supportTextSha256": "cd375c6821bcbddc5ead89fb7b271b98384f722f5aa774e8eb43e279c9a5622c",
+        "publishedAt": null,
+        "modifiedAt": "2026-06-09"
+      }
+    ],
+    "jurisdiction": {
+      "level": "state",
+      "id": "US-CA",
+      "stateCode": "CA",
+      "countyFips": [
+        "06001",
+        "06003",
+        "06005",
+        "06007",
+        "06009",
+        "06011",
+        "06013",
+        "06015",
+        "06017",
+        "06019",
+        "06021",
+        "06023",
+        "06025",
+        "06027",
+        "06029",
+        "06031",
+        "06033",
+        "06035",
+        "06037",
+        "06039",
+        "06041",
+        "06043",
+        "06045",
+        "06047",
+        "06049",
+        "06051",
+        "06053",
+        "06055",
+        "06057",
+        "06059",
+        "06061",
+        "06063",
+        "06065",
+        "06067",
+        "06069",
+        "06071",
+        "06073",
+        "06075",
+        "06077",
+        "06079",
+        "06081",
+        "06083",
+        "06085",
+        "06087",
+        "06089",
+        "06091",
+        "06093",
+        "06095",
+        "06097",
+        "06099",
+        "06101",
+        "06103",
+        "06105",
+        "06107",
+        "06109",
+        "06111",
+        "06113",
+        "06115"
+      ],
+      "countyFipsSha256": "e91a65f3ec9849187791559e1d490b4dcaa5a384c92cd3902ca8708aa49d551d",
+      "exclusions": []
+    },
+    "effectiveAt": "2010-11-12",
+    "conflictCheckFrom": "2010-01-01",
+    "reaffirmedAt": "2026-06-09",
+    "validThrough": "2027-06-09",
+    "review": {
+      "gate": "agent-reviewed",
+      "status": "agent-reviewed",
+      "actorId": "MAIN",
+      "reviewedAt": "2026-09-08T04:38:18.344Z",
+      "methodVersion": "official-jurisdiction-agent-review-v1",
+      "independentActorId": "karnal_bunt_review_r7",
+      "independentReview": {
+        "path": "ops/national-research/evaluations/karnal-bunt-ca-independent-review-20260908-r7.json",
+        "sha256": "081b07e6d992597af365a14515ec2d2a775b524b2061f25adf5c4f0dac85b752"
+      },
+      "reviewedAsOf": "2026-09-08",
+      "declarationSourceId": "nappo-karnal-bunt-eradication-2010",
+      "corroborationSourceId": "aphis-karnal-bunt-current",
+      "authorityDateKind": "modified",
+      "expiryPolicy": "authority-date-plus-365-days-v1"
+    },
+    "caveats": [
+      "effectiveAt preserves the public declaration date; it is not an exact biological eradication date or an assertion of continuous absence since 2010.",
+      "validThrough is a project review expiry, 365 days after the current authority page date. It is not a source-declared biological guarantee.",
+      "A USDA 2013 account places final quarantine release in early 2011. This administrative chronology discrepancy is retained in the independent review and does not establish reappearance.",
+      "conflictCheckFrom conservatively includes all of 2010 because the precise biological eradication date is unknown. Any accepted later or undated presence requires review.",
+      "The whole-state declaration supports exact county membership; it does not imply prior presence, individual eradication, or county-wide sampling in all 58 counties.",
+      "No quarantine, no survey detections, or no ledger records alone creates an absence determination."
+    ]
+  },
+  "parentSha256": "67df161affafe8ee4fad88148da2c3386d94604786164a2547939951f5a40393",
+  "originalAcquisition": {
+    "url": "https://www.pestalerts.org/nappo/official-pest-reports/525/",
+    "finalUrl": "https://www.pestalerts.org/nappo/official-pest-reports/525/",
+    "status": 200,
+    "retrievedAt": "2026-09-07T19:01:59.890Z",
+    "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/nappo-california-karnal-bunt-2010.html.gz",
+    "bytes": 14193,
+    "sha256": "24a0b309e710db009a7de5a92f236bc101c9a17c92e00b35364a8a4a3c14f6a1",
+    "contentType": "text/html; charset=utf-8",
+    "encoding": "gzip",
+    "storedBytes": 4267,
+    "storedSha256": "f89d7295a2ff42a0b9e32831674c314393c2e996265a1b5b896decc665615af9",
+    "originalDiscoveryReceipt": ".cache/research/campaigns/20260907-r6-absence-method/source-discovery-receipt.json"
+  },
+  "conflictChecks": [
+    {
+      "pairKey": "06001:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06001.json",
+      "sha256": "41977d785cb285c35f6a2436f13e638635a044a25170ff6b1ee9e92dd49f0c3f",
+      "conflict": false
+    },
+    {
+      "pairKey": "06003:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06003.json",
+      "sha256": "087b48e5a7910e6959f2b9f7097c0342d5f367899d67c4904ebb204c1819d538",
+      "conflict": false
+    },
+    {
+      "pairKey": "06005:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06005.json",
+      "sha256": "ff145ae694a677e9af2fa9ee4dd17771e6d504f841773ad9f8c84e29f78c320d",
+      "conflict": false
+    },
+    {
+      "pairKey": "06007:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06007.json",
+      "sha256": "04de6d928ccc7d05a50708324017de0fe4f8d007c3c177ee2cba0f852cf88681",
+      "conflict": false
+    },
+    {
+      "pairKey": "06009:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06009.json",
+      "sha256": "0f5bc422560896fb9add3c97deeab841a57241611b83ade6c511c21bd2f47a92",
+      "conflict": false
+    },
+    {
+      "pairKey": "06011:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06011.json",
+      "sha256": "dc1e21dfb357f6948872d50fb91e9f686d6265fb1fc08045db3a712a0f241d3a",
+      "conflict": false
+    },
+    {
+      "pairKey": "06013:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06013.json",
+      "sha256": "2e805e49d4bb3caed75f618ac793b0501b67be492745d153b771ac4ce2e81993",
+      "conflict": false
+    },
+    {
+      "pairKey": "06015:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06015.json",
+      "sha256": "58d20b3e653fa421eeea9da680e73fb88dfaa8e14a2d681019414dbead84b6a7",
+      "conflict": false
+    },
+    {
+      "pairKey": "06017:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06017.json",
+      "sha256": "a105a36c0e05d4f66f7a09112c9b356540d829f76ee1049109a152c69ab432a4",
+      "conflict": false
+    },
+    {
+      "pairKey": "06019:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06019.json",
+      "sha256": "6bbc5ffeb641b1f8a1d5e0ea3fd2c10f10126d5d44ccc7dc5c776e0fada74d6f",
+      "conflict": false
+    },
+    {
+      "pairKey": "06021:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06021.json",
+      "sha256": "3928b4875d42ea36e36f60a89e916a0c57d36ec40b15b573686884a0fdd3335a",
+      "conflict": false
+    },
+    {
+      "pairKey": "06023:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06023.json",
+      "sha256": "02e11db3584c168b317c04b2f74562a263e56f01d7c02ab13bd128ba9f308996",
+      "conflict": false
+    },
+    {
+      "pairKey": "06025:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06025.json",
+      "sha256": "097422f03b5bd9613d301fec3970ebdf9b20e6c84b2a53987d35c254b2b57a93",
+      "conflict": false
+    },
+    {
+      "pairKey": "06027:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06027.json",
+      "sha256": "a89e19e4d0c040e4d17a1bb4ca3e24b20d9b9903329b892cabcd3d9a7c5644bb",
+      "conflict": false
+    },
+    {
+      "pairKey": "06029:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06029.json",
+      "sha256": "17430556fa20370fd94a7cd7368a577f178637b1176ce7584b8150e353989fb5",
+      "conflict": false
+    },
+    {
+      "pairKey": "06031:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06031.json",
+      "sha256": "2361133831f3a9aed82796ff341e67cdafae0c9c511f300dda0658004ea95564",
+      "conflict": false
+    },
+    {
+      "pairKey": "06033:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06033.json",
+      "sha256": "28f07470f1c6e7f573a0732f846c87df1f71f17f766b64b5845ed781e2d2c1f3",
+      "conflict": false
+    },
+    {
+      "pairKey": "06035:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06035.json",
+      "sha256": "cbd3dff12da8d736af7a2279a97de270c2e797b774bb6b9a884883434f2b5893",
+      "conflict": false
+    },
+    {
+      "pairKey": "06037:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06037.json",
+      "sha256": "3a663792fe9cbf52f2674b6b4a043189b545ed74a1aadce845350777d57d9275",
+      "conflict": false
+    },
+    {
+      "pairKey": "06039:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06039.json",
+      "sha256": "0cfcd487c08ca60e0ee19c17c6beade913c1c1bc82dd4aa682211bd7ae85fe40",
+      "conflict": false
+    },
+    {
+      "pairKey": "06041:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06041.json",
+      "sha256": "34fd7d9dd20bfc27ceaa9dca4fb5c6c71a82f7553d5ff73f9a43d99edf2ad9e8",
+      "conflict": false
+    },
+    {
+      "pairKey": "06043:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06043.json",
+      "sha256": "72b325227d455d4b9ad9f50defdb6e8e6fa89193df4452ca9e382c19607455a0",
+      "conflict": false
+    },
+    {
+      "pairKey": "06045:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06045.json",
+      "sha256": "86f122d774d4d382fe11cb1e5663baf533955c8660abe8fe5ee5347a34aabf48",
+      "conflict": false
+    },
+    {
+      "pairKey": "06047:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06047.json",
+      "sha256": "385f4102a23371fbdce5d21b05bd9dc992ed8c3469217f19156642b4b372664f",
+      "conflict": false
+    },
+    {
+      "pairKey": "06049:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06049.json",
+      "sha256": "39a375c8e6cc5f4090b532e140b57b824564124252980e1d354af6a89bf77bbb",
+      "conflict": false
+    },
+    {
+      "pairKey": "06051:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06051.json",
+      "sha256": "519e0dbed158be0eac8ea41c9473b8ef65bb9e0aaad44fa4213db2d0bbca4b0b",
+      "conflict": false
+    },
+    {
+      "pairKey": "06053:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06053.json",
+      "sha256": "f467307afec1d9e70635ab266971b6b2907bb34c1ca5ad826c61a770cbb2846b",
+      "conflict": false
+    },
+    {
+      "pairKey": "06055:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06055.json",
+      "sha256": "4fc098e8e4f587ed68b9e8aaadb92326bae3d308e7f1fa2cd828cc6821af9318",
+      "conflict": false
+    },
+    {
+      "pairKey": "06057:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06057.json",
+      "sha256": "b604062aa47b4b4da7c35912c526819e03fa324424ccc7da70b67b3187213541",
+      "conflict": false
+    },
+    {
+      "pairKey": "06059:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06059.json",
+      "sha256": "b3078688bbbcca5910cfecaf7bb7e4b192df81c7ba171023fd87d7466ed1bc15",
+      "conflict": false
+    },
+    {
+      "pairKey": "06061:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06061.json",
+      "sha256": "b23c2464ccd4e27be0a581dd9f7cbc121d1348c89c5aed2813ea6fea8203b7be",
+      "conflict": false
+    },
+    {
+      "pairKey": "06063:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06063.json",
+      "sha256": "80a9d9b0f8fc3a2fd770a3e794dba6410bc832faccb5bcc8b6550382bafa0b08",
+      "conflict": false
+    },
+    {
+      "pairKey": "06065:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06065.json",
+      "sha256": "4463a57c3e50b3c16cf21a9400574f709fb730779c5d7abcb9d7f57531ba20d4",
+      "conflict": false
+    },
+    {
+      "pairKey": "06067:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06067.json",
+      "sha256": "c3294a21256071076675a5c496d7ad315206b663bf3b682409b10d15f37247ef",
+      "conflict": false
+    },
+    {
+      "pairKey": "06069:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06069.json",
+      "sha256": "d47d954005c67c44ad97dc23265e30c16f9dd9aa2009b1d6b05ce1a197c0a8fa",
+      "conflict": false
+    },
+    {
+      "pairKey": "06071:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06071.json",
+      "sha256": "77d6dd887a1f798173013ef1402d9f2d54753d7a5aa72c40b96ea854e1cd76f5",
+      "conflict": false
+    },
+    {
+      "pairKey": "06073:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06073.json",
+      "sha256": "ec48b4da55bae63fa01e065d1198f56f24b40e62cc044554d540c623c4d4b5fc",
+      "conflict": false
+    },
+    {
+      "pairKey": "06075:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06075.json",
+      "sha256": "e786e1820209bcc16d4a0f44f1371be0fe5a363660777a26e110a3915da0f225",
+      "conflict": false
+    },
+    {
+      "pairKey": "06077:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06077.json",
+      "sha256": "142d9028963322a73933fc360a6665f6378ce6cee5edd53be39713bd6cea023d",
+      "conflict": false
+    },
+    {
+      "pairKey": "06079:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06079.json",
+      "sha256": "34865fc05ee6b970aefd8eba43fa3a367a6f1aad79c91ec8bd816f43b253f1df",
+      "conflict": false
+    },
+    {
+      "pairKey": "06081:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06081.json",
+      "sha256": "aaf0bbefe138e0273b2cc5040e941affa95523c89517f40c8f41be8cfa9af59a",
+      "conflict": false
+    },
+    {
+      "pairKey": "06083:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06083.json",
+      "sha256": "77c50403ede43eb2cc4d434160de306a05c3eb731466939212c3ffd66d09f049",
+      "conflict": false
+    },
+    {
+      "pairKey": "06085:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06085.json",
+      "sha256": "0a63aae38c5ce08ae56e2b133a83642e7114210a82e41864557447c4626c7df8",
+      "conflict": false
+    },
+    {
+      "pairKey": "06087:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06087.json",
+      "sha256": "dac8602ae608b62383f9116f099e91245ad1fec6159c8c9c057887cd0f146347",
+      "conflict": false
+    },
+    {
+      "pairKey": "06089:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06089.json",
+      "sha256": "acf2c337eea4d8e2700f02cba6fb62fcee1d605f14356ed20e655623b6d5a533",
+      "conflict": false
+    },
+    {
+      "pairKey": "06091:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06091.json",
+      "sha256": "39d25a077963428bef8038c1827c4b95fb08a0fb057180f6e7e2ebd563f70a70",
+      "conflict": false
+    },
+    {
+      "pairKey": "06093:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06093.json",
+      "sha256": "248d27a1ceac36d1d6245da391252494b4760a7f9dbbebd1bd65b154351e569c",
+      "conflict": false
+    },
+    {
+      "pairKey": "06095:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06095.json",
+      "sha256": "7a3eed946bfc685892445696f77968899de8f3e297981c953c6f7c3244d4b6fb",
+      "conflict": false
+    },
+    {
+      "pairKey": "06097:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06097.json",
+      "sha256": "cc3d4e448d1b0e242ea7e735b84c8809d02c92ca2ee62c3743b82ce8ca388a05",
+      "conflict": false
+    },
+    {
+      "pairKey": "06099:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06099.json",
+      "sha256": "824488a469359810e3ae7afe5925193a9bcede30b9cf990504abefa703ba904f",
+      "conflict": false
+    },
+    {
+      "pairKey": "06101:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06101.json",
+      "sha256": "b8c80a39a0c18adaa6661419c544a6ebed4f657ca62e86b0a658ae2b9348ae04",
+      "conflict": false
+    },
+    {
+      "pairKey": "06103:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06103.json",
+      "sha256": "fb54fa02fd50eb60617b7e5fe8a14dbf54a78cc3647f948766cd5f8dfa7a5e30",
+      "conflict": false
+    },
+    {
+      "pairKey": "06105:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06105.json",
+      "sha256": "c63c6e6f8dcb5644589014fca3b176061d769b775f1612e39c4b5467bfb94f75",
+      "conflict": false
+    },
+    {
+      "pairKey": "06107:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06107.json",
+      "sha256": "2e071d7a012ff74f668797c656b0ce8df55c75cfdd24fd3ddd25f1015638a1b4",
+      "conflict": false
+    },
+    {
+      "pairKey": "06109:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06109.json",
+      "sha256": "892973013625a99f898394a8c8c7403294828dde3d037a32901b87190a6adb1d",
+      "conflict": false
+    },
+    {
+      "pairKey": "06111:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06111.json",
+      "sha256": "6f45f0db7d5079ae4097ca92b28de00ab4269bd782fc748517b79535205d6f84",
+      "conflict": false
+    },
+    {
+      "pairKey": "06113:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06113.json",
+      "sha256": "0580905e0d437105f4f860b2eaa35d3fe3febc0f249581ae7795ee0e3ab17e73",
+      "conflict": false
+    },
+    {
+      "pairKey": "06115:tilletia-indica",
+      "projectionPath": "public/generated/research/CA/counties/06115.json",
+      "sha256": "e97df36ba8d78e6e8ddfe0844fe6adf39cba23f6f8c1dcc4ff436e5598f1fef9",
+      "conflict": false
+    }
+  ]
+}
