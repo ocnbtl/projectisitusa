@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-jurisdiction-discovery-only",
+  "recordedAt": "2026-09-08T05:08:21.172Z",
+  "speciesId": "tilletia-indica",
+  "sources": [
+    {
+      "name": "nappo-texas-deregulation-2010",
+      "url": "https://www.pestalerts.org/nappo/official-pest-reports/496/",
+      "finalUrl": "https://www.pestalerts.org/nappo/official-pest-reports/496/",
+      "status": 200,
+      "retrievedAt": "2026-09-08T05:08:20.469Z",
+      "artifactPath": "ops/national-research/inputs/karnal-bunt-expansion-discovery-20260908-r8/nappo-texas-deregulation-2010.html.gz",
+      "storedBytes": 4501,
+      "storedSha256": "6442c694c5d982cc4ad28f4450fb26d642d770f03b7e16b26a670e9e37c793f8",
+      "bytes": 14942,
+      "sha256": "2696a06acb915e17795e4caf51004a6d75d339a78325e67cbaa936a8200438f8"
+    },
+    {
+      "name": "eppo-texas-status",
+      "url": "https://gd.eppo.int/taxon/NEOVIN/distribution/US_tx",
+      "finalUrl": "https://gd.eppo.int/taxon/NEOVIN/distribution/US_tx",
+      "status": 200,
+      "retrievedAt": "2026-09-08T05:08:21.044Z",
+      "artifactPath": "ops/national-research/inputs/karnal-bunt-expansion-discovery-20260908-r8/eppo-texas-status.html.gz",
+      "storedBytes": 4655,
+      "storedSha256": "d1d40dc312e911c2f6d2cb919c0735d88baf816b9894f646c9cf20b1be7aaf00",
+      "bytes": 15058,
+      "sha256": "84fb78484af87d96e0dc50955403f39695aa1771611c115603bdb8d96a527795"
+    },
+    {
+      "name": "eppo-distribution-table",
+      "url": "https://gd.eppo.int/taxon/NEOVIN/distribution",
+      "finalUrl": "https://gd.eppo.int/taxon/NEOVIN/distribution",
+      "status": 200,
+      "retrievedAt": "2026-09-08T05:08:21.172Z",
+      "artifactPath": "ops/national-research/inputs/karnal-bunt-expansion-discovery-20260908-r8/eppo-distribution-table.html.gz",
+      "storedBytes": 7342,
+      "storedSha256": "350ade6c86e7e2a9bc9400a8267a263dd80690b321c32e250838c8df89369ee3",
+      "bytes": 33641,
+      "sha256": "c8b9dc6818f747123c83b8d4cc35764ff96b449a80c662ef51e22e20d592c0b0"
+    }
+  ],
+  "findings": [
+    {
+      "source": "nappo-texas-deregulation-2010",
+      "publishedAt": "2010-04-19",
+      "finding": "Official report removes the final Texas quarantine areas after program criteria; its explicit IPPC status is United States present in some areas. This is not itself an explicit whole-Texas biological absence declaration."
+    },
+    {
+      "source": "eppo-texas-status",
+      "informationYear": 2012,
+      "eradicationYear": 2010,
+      "finding": "EPPO explicitly labels Texas absent, pest eradicated and retains historical occurrence. Year precision cannot be silently converted into an exact declaration publication date."
+    },
+    {
+      "source": "eppo-distribution-table",
+      "tableModifiedAt": "2024-12-10",
+      "finding": "EPPO table explicitly lists Texas and California eradicated, New Mexico no longer present, and Alabama and Tennessee invalid records. Its global table update is not automatically each state record determination date."
+    }
+  ],
+  "prospectiveStateScopes": [
+    {
+      "stateCode": "TX",
+      "counties": 254
+    },
+    {
+      "stateCode": "NM",
+      "counties": 33
+    },
+    {
+      "stateCode": "AL",
+      "counties": 67
+    },
+    {
+      "stateCode": "TN",
+      "counties": 95
+    }
+  ],
+  "currentCorroboration": "Retained APHIS page modified 2026-06-09 confines disease to parts of Arizona; evaluate alongside explicit status declarations.",
+  "status": "source-candidates-retained-independent-review-and-date-precision-method-pending",
+  "actualAssertions": 0,
+  "actualOutcomes": 0,
+  "actualDeterminations": 0,
+  "next": "Complete California pilot, then independently review explicit EPPO status classifications and date precision. Do not infer absence from Texas deregulation alone, invent a full date from a year, erase historical records without reviewed correction, or generalize beyond admitted scope."
+}
