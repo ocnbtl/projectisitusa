@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-08T10:06:35.107Z",
+  "runId": "20260908T100223Z__aphis-honey-bee__05730b61eeb1",
+  "sourceId": "aphis-honey-bee",
+  "stateCode": "HI",
+  "pairKeys": [
+    "15001:varroa-destructor",
+    "15003:varroa-destructor"
+  ],
+  "parameterHash": "05730b61eeb13fae5c1fc6b18f4ec527a6f8ee5f8070b79078d151bd060e105e",
+  "authority": {
+    "name": "USDA APHIS National Honey Bee Survey",
+    "sourceUrl": "https://www.usbeedata.org/state_reports/public_download/",
+    "publisher": "University of Maryland Bee Lab / US Bee Data; USDA APHIS National Honey Bee Survey"
+  },
+  "terms": {
+    "license": "University of Maryland Bee Lab / US Bee Data, APHIS Honey Bee Survey: APHIS Data Download (2026 database export; observations through December 31, 2025). Obtained August 20, 2026. Source data copyright University of Maryland. Reproduced for scientific and educational purposes. These results do not constitute endorsement of commercial products, protocols, or services. https://www.usbeedata.org/state_reports/public_download/",
+    "termsUrl": "https://www.usbeedata.org/state_reports/public_download/",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-09-08T10:06:35.107Z",
+    "freshnessDate": "2025-12-31"
+  },
+  "geography": {
+    "method": "Exact published Hawaii and Honolulu county text in state HI resolves uniquely to active registry FIPS 15001 and 15003. Publisher assigned county using 2020 TIGER/Line; no independent coordinate routing.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "No coordinates used, inferred, recovered or rerouted. No automatic retired-county successor mapping."
+  },
+  "taxonomy": {
+    "method": "Program-specific positive varroa_per_100_bees metric interpreted as Varroa destructor under the hash-pinned independent source reviews and APHIS 2016-2017 report page 4. Individual CSV rows contain the metric name, not a literal binomial; the 2025 plan uses Varroa spp.",
+    "targetSpeciesIds": [
+      "varroa-destructor"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "original compressed and decoded CSV SHA-256",
+      "parsedRowIndexZeroBased including dictionary row at zero",
+      "physicalLineOneBased including preamble and header",
+      "lineSha256Utf8WithoutTerminator",
+      "full original sourceRow fields",
+      "methodReviewSha256",
+      "county-species pair key"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "This positive-only method makes no negative claim. Forty-one zero measurements and four blank measurements in the selected counties are retained and grouped as excluded rows.",
+      "A complete selected-pair snapshot screen does not establish countywide absence, source exhaustiveness, protocol completion, local acquisition, wild establishment or current persistence."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/artifacts/honey-bee-positive-witnesses.json",
+      "sha256": "d8f0223eddf3587403d6f1701970b0174913ee2f62098490e42ab8af2e73db3d",
+      "bytes": 166763
+    }
+  ],
+  "caveats": [
+    "Composite apiary samples pool eight managed honey bee colonies; a positive result does not mean all eight colonies were infested.",
+    "The parasite was detected in a managed-host sampling context. Wild establishment, local acquisition, countywide prevalence and persistence today are not established.",
+    "Migratory and stationary operations participated; individual public rows do not disclose migration history or apiary identifiers.",
+    "The metric is mites per 100 bees, not a raw mite count. No sample denominator is available to reconstruct a raw count.",
+    "The CSV metric is mapped at program level to Varroa destructor using the official 2016-2017 report; raw rows do not literally name the species. The 2025 plan uses Varroa spp. wording.",
+    "Publisher county text comes from its 2020 TIGER/Line assignment; no coordinates or automatic retired-county successor assignment are used here.",
+    "Collection month precision is preserved. Export, acquisition and review timestamps are separate.",
+    "Zero, blank, invalid, ambiguous and held records create no positive or negative claim. A completed selected source screen does not certify a county or complete its research protocol.",
+    "Anonymous rows are retained by immutable archive and exact row locator. Similar or identical disclosed fields cannot prove that two sampling events are identical.",
+    "Offline retained-data replay: zero source HTTP requests during this worker run. Available and checkedAt refer to successful hash-checked local source access during the adapter run, not fresh remote availability.",
+    "The parent CSV was originally retrieved 2026-08-20T02:06:05.317Z under acquisition code commit b2542a8b32221451d4eeae99a62d72b06de816c2. This replay code commit is 4541ebc10b0afae1eb8b1b85d089689ef9771842. Source retrieval ancestry is unchanged.",
+    "The database export was generated 2026-06-05T13:15:49.160078Z and declares observations through 2025-12-31. The freshnessDate is that coverage boundary, not a new source retrieval or an individual occurrence date.",
+    "MAIN retained the download context from a successful request at 2026-09-08T09:35:23.794Z before this worker lease. Context and independent review descriptors are pinned in the committed method; no duplicated parent acquisition is claimed.",
+    "Independent Python standard-library CSV parsing verified the original archive hashes and every retained scoped row, physical line and line hash. Hawaii: 130 rows, 87 positive, 40 numeric zero, 3 blank, positive dates 2009-07 through 2025-05. Honolulu: 39 rows, 37 positive, 1 numeric zero, 1 blank, positive dates 2009-07 through 2024-02.",
+    "All 12704 biological rows in the retained snapshot were scanned; one dictionary row was excluded. The 169 candidates are only rows in these two exact counties. Similar anonymous rows are not presumed duplicate events.",
+    "Kauai 15007 and Maui 15009 are outside this lease and remain held by the reviewed method for unresolved conflicting survey context. This pilot does not adjudicate those holds.",
+    "Two assertions and two accepted machine-validated reviews create source evidence only. MAIN must independently integrate and compile before any exact new determination gain can be reported."
+  ]
+}
