@@ -103,3 +103,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Asian longhorned beetle program update (2026) | manual | 2026-09-01T19:16:53.000Z | 3 | 1 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
+| US NPPO / NAPPO California Karnal bunt eradication declaration (2010) | manual | not run | 0 | 0 |
+| USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
+| EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
+| CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |

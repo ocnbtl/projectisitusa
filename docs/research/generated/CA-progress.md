@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `12347`
+- Verified present: `12349`
 - Verified absent: `116`
 - Not detected: `0`
 - Researched unresolved: `21270`
-- Not researched: `111499`
+- Not researched: `111497`
 - Determination coverage: `8.58%`
 - Research coverage: `23.23%`
-- Explicit outcome coverage: `23.2270%`
-- Applicable protocol cells: `884`
+- Explicit outcome coverage: `23.2284%`
+- Applicable protocol cells: `885`
 - Current complete protocol cells: `186`
-- Protocol completion: `22.51%`
-- Current protocol completion: `21.04%`
-- Evidence records: `35405`
-- Research runs: `43`
+- Protocol completion: `22.49%`
+- Current protocol completion: `21.02%`
+- Evidence records: `35407`
+- Research runs: `44`
 - Rejection records: `2661`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -105,3 +105,5 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
 | US NPPO / NAPPO California Karnal bunt eradication declaration (2010) | manual | 2026-09-08T05:07:20.810Z | 58 | 1 |
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
+| EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
+| CDFA confirmed pest occurrence reports | operational | 2026-09-08T08:42:32.257Z | 2 | 1 |

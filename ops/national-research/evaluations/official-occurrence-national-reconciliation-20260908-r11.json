@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-occurrence-national-reconciliation",
+  "recordedAt": "2026-09-08T09:12:39.411Z",
+  "sourceBase": "299c7baefa7d61e09397c80f6001777b83b9419f",
+  "asOf": "2026-09-08",
+  "jurisdictions": 51,
+  "counties": 3144,
+  "catalogSpecies": 2504,
+  "denominator": 7872576,
+  "before": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 313000,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6248716,
+    "explicitOutcomePairCount": 1579506,
+    "conflictCount": 0,
+    "evidenceRecordCount": 460434,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 430304,
+    "rejectionRecordCount": 65259,
+    "researchRunCount": 2058
+  },
+  "after": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 313002,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6248714,
+    "explicitOutcomePairCount": 1579508,
+    "conflictCount": 0,
+    "evidenceRecordCount": 460436,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 430306,
+    "rejectionRecordCount": 65259,
+    "researchRunCount": 2059
+  },
+  "delta": {
+    "countyCount": 0,
+    "totalPairs": 0,
+    "resolvablePairCount": 0,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 2,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 0,
+    "notResearched": -2,
+    "explicitOutcomePairCount": 2,
+    "conflictCount": 0,
+    "evidenceRecordCount": 2,
+    "bootstrapEvidenceRecordCount": 0,
+    "runEvidenceRecordCount": 2,
+    "rejectionRecordCount": 0,
+    "researchRunCount": 1
+  },
+  "determinationCount": 316720,
+  "netUniqueDeterminations": 2,
+  "pairs": [
+    {
+      "county": "06037",
+      "speciesId": "anastrepha-suspensa",
+      "status": "verified-present",
+      "observedAt": [
+        "2026-01-20/2026-02-09"
+      ]
+    },
+    {
+      "county": "06073",
+      "speciesId": "anastrepha-suspensa",
+      "status": "verified-present",
+      "observedAt": [
+        "1983"
+      ]
+    }
+  ],
+  "existingPairFreshnessChanges": 3599,
+  "freshnessTransitions": {
+    "stale->current": 2,
+    "undated->stale": 3593,
+    "stale->aging": 3,
+    "undated->aging": 1
+  },
+  "existingPairOtherChanges": 0,
+  "removedPairs": 0,
+  "addedExplicitNotResearchedRows": 56,
+  "addedExplicitNotResearchedExplanation": "The newly assessed California species is materialized for all 58 counties. The other 56 remain not researched, matching their former sparse defaults. These rows are not research gains.",
+  "outputFiles": 425,
+  "nationalVerification": {
+    "command": "npm run research:verify:all -- --as-of 2026-09-08",
+    "finishedAt": "2026-09-08T09:07:10.4597374Z",
+    "exitCode": 0,
+    "startedAt": "2026-09-08T09:01:05.8387691Z"
+  },
+  "postCompileChecks": [
+    {
+      "label": "state-projections",
+      "command": "--import tsx scripts/check-state-research-projections.ts",
+      "startedAt": "2026-09-08T09:09:21.004Z",
+      "finishedAt": "2026-09-08T09:10:55.942Z",
+      "exitCode": 0
+    },
+    {
+      "label": "data-integrity",
+      "command": "--import tsx scripts/check-data-integrity.ts",
+      "startedAt": "2026-09-08T09:10:55.943Z",
+      "finishedAt": "2026-09-08T09:10:56.325Z",
+      "exitCode": 0
+    },
+    {
+      "label": "national-config",
+      "command": "--import tsx scripts/test-national-research-compiler.ts",
+      "startedAt": "2026-09-08T09:10:56.325Z",
+      "finishedAt": "2026-09-08T09:10:56.532Z",
+      "exitCode": 0
+    },
+    {
+      "label": "occurrence-contract",
+      "command": "--import tsx scripts/test-official-occurrence-report.ts",
+      "startedAt": "2026-09-08T09:10:56.532Z",
+      "finishedAt": "2026-09-08T09:10:56.876Z",
+      "exitCode": 0
+    },
+    {
+      "label": "date-contract",
+      "command": "--import tsx scripts/test-occurrence-date.ts",
+      "startedAt": "2026-09-08T09:10:56.877Z",
+      "finishedAt": "2026-09-08T09:10:57.030Z",
+      "exitCode": 0
+    }
+  ],
+  "fullIntegrity": {
+    "exitCode": 0,
+    "command": "npm run check:research-integrity",
+    "finishedAt": "2026-09-08T08:58:03.4306636Z",
+    "startedAt": "2026-09-08T08:36:59.0015302Z"
+  },
+  "fullIntegrityQualification": "The full integrity suite passed. Its initial date/freshness tests preceded commit 108bee1b1 that restricted new interval handling to ISO full-day ranges. The final source/date/freshness focused checks passed, and national byte verification used that final implementation.",
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/official-occurrence-national-validation-20260908-r11.json.gz",
+    "bytes": 28044,
+    "sha256": "56d353cb0fbc4bfb9c3701346d60393268619a0851987b28551c0f99b6c7b6c7"
+  },
+  "researchPublication": {
+    "uploaded": false,
+    "promoted": false,
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z"
+  },
+  "limitations": [
+    "Two official historical occurrence determinations do not prove continuing local persistence.",
+    "The Bactrocera dorsalis group report remains held for exact species resolution.",
+    "Freshness corrections and explicit default row materialization are not new determinations."
+  ]
+}

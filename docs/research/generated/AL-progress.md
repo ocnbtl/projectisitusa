@@ -106,3 +106,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | US NPPO / NAPPO California Karnal bunt eradication declaration (2010) | manual | not run | 0 | 0 |
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | 2026-09-08T06:44:12.038Z | 67 | 1 |
+| CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
