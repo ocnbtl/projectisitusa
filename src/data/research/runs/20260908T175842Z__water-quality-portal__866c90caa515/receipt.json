@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T175842Z__water-quality-portal__866c90caa515",
+  "status": "complete",
+  "started_at": "2026-09-08T17:58:42.930Z",
+  "finished_at": "2026-09-08T17:58:47.460Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@3.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "545bdc16a0130e2d7a3c54d9dd0f14e183bb03ad1ece5cc1f9e114c834b5642b",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "3.0.0",
+  "adapter_code_hash": "d0d8bb89ab7c6992aed206614c72ebaf4e45887f7cb9fe11b3d38a11fd2eaede",
+  "code_commit": "5f61ea7269b9478e5cb4e8e786d5566edb415269",
+  "parameter_hash": "866c90caa51597979244fda35b86dab0553f106e4f317976aa507eedd4379f5d",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+    "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+    "mode": "retained-reviewed-fish-measurement",
+    "stateCode": "IA",
+    "candidatePairs": [
+      "19005:cyprinus-carpio",
+      "19021:cyprinus-carpio",
+      "19049:cyprinus-carpio",
+      "19057:cyprinus-carpio",
+      "19061:cyprinus-carpio",
+      "19063:cyprinus-carpio",
+      "19071:cyprinus-carpio",
+      "19087:cyprinus-carpio",
+      "19089:cyprinus-carpio",
+      "19103:cyprinus-carpio",
+      "19105:cyprinus-carpio",
+      "19109:cyprinus-carpio",
+      "19119:cyprinus-carpio",
+      "19123:cyprinus-carpio",
+      "19125:cyprinus-carpio",
+      "19133:cyprinus-carpio",
+      "19149:cyprinus-carpio",
+      "19155:cyprinus-carpio",
+      "19161:cyprinus-carpio",
+      "19171:cyprinus-carpio",
+      "19177:cyprinus-carpio",
+      "19189:cyprinus-carpio"
+    ],
+    "candidateLimit": 22
+  },
+  "requested_scope": {
+    "state_code": "IA",
+    "county_fips": [
+      "19005",
+      "19021",
+      "19049",
+      "19057",
+      "19061",
+      "19063",
+      "19071",
+      "19087",
+      "19089",
+      "19103",
+      "19105",
+      "19109",
+      "19119",
+      "19123",
+      "19125",
+      "19133",
+      "19149",
+      "19155",
+      "19161",
+      "19171",
+      "19177",
+      "19189"
+    ],
+    "species_ids": [
+      "cyprinus-carpio"
+    ],
+    "pair_keys": [
+      "19005:cyprinus-carpio",
+      "19021:cyprinus-carpio",
+      "19049:cyprinus-carpio",
+      "19057:cyprinus-carpio",
+      "19061:cyprinus-carpio",
+      "19063:cyprinus-carpio",
+      "19071:cyprinus-carpio",
+      "19087:cyprinus-carpio",
+      "19089:cyprinus-carpio",
+      "19103:cyprinus-carpio",
+      "19105:cyprinus-carpio",
+      "19109:cyprinus-carpio",
+      "19119:cyprinus-carpio",
+      "19123:cyprinus-carpio",
+      "19125:cyprinus-carpio",
+      "19133:cyprinus-carpio",
+      "19149:cyprinus-carpio",
+      "19155:cyprinus-carpio",
+      "19161:cyprinus-carpio",
+      "19171:cyprinus-carpio",
+      "19177:cyprinus-carpio",
+      "19189:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T175842Z__water-quality-portal__866c90caa515/artifacts/wqp-reviewed-fish-witnesses.json",
+      "sha256": "7444ff991284f3216f4e823ee2831d6bfc108c9f541acdaf0d3b4b7b585559c8",
+      "bytes": 157841,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T175842Z__water-quality-portal__866c90caa515/assertions.ndjson",
+      "sha256": "f3d63a57001b701a7e9a32f62d97ef01a96459cb0eaf6882f17129296e1faa0f",
+      "bytes": 111025,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T175842Z__water-quality-portal__866c90caa515/reviews.ndjson",
+      "sha256": "1f201a179fdd1dc6121d1ae6a239f8605d37a6d40dc2409404eebcca2f9e0ad9",
+      "bytes": 21384,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T175842Z__water-quality-portal__866c90caa515/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T175842Z__water-quality-portal__866c90caa515/outcomes.ndjson",
+      "sha256": "63e49b7704cbe5aa6df1049de06955de6b384c8e5bbdaaec9fbb7256e5a86b30",
+      "bytes": 24948,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 22,
+    "candidate_records": 31,
+    "assertion_events": 22,
+    "review_events": 22,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 22
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "These original field records support historical sampled occurrence, not current persistence, establishment, abundance, countywide prevalence or protocol completion.",
+    "Final Actual positive counts, individual fish lengths and weights retain their original units and biological intent. Separate measurements and duplicate submissions do not become unique fish totals.",
+    "The successful filtered Result responses and retained Station response are complete only for their recorded queries. Missing species or counties, zero values, failed requests and excluded rows create no absence or non-detection.",
+    "Publisher county FIPS is used through exact organization/site joins. Generalized cartography and source coordinates do not establish precise water jurisdiction; no coordinate-derived county reassignment occurs.",
+    "Source-specific exceptions for field specimens with subsequent laboratory handling, Frequency Class values and other result statuses remain outside this version unless separately reviewed and implemented. Their exclusion does not assert captive origin."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state IA --candidate-file ops/national-research/plans/wqp-common-carp-20260908-r16/IA.json --output-root src/data/research/runs --stage-canonical true --pairs 19005:cyprinus-carpio,19021:cyprinus-carpio,19049:cyprinus-carpio,19057:cyprinus-carpio,19061:cyprinus-carpio,19063:cyprinus-carpio,19071:cyprinus-carpio,19087:cyprinus-carpio,19089:cyprinus-carpio,19103:cyprinus-carpio,19105:cyprinus-carpio,19109:cyprinus-carpio,19119:cyprinus-carpio,19123:cyprinus-carpio,19125:cyprinus-carpio,19133:cyprinus-carpio,19149:cyprinus-carpio,19155:cyprinus-carpio,19161:cyprinus-carpio,19171:cyprinus-carpio,19177:cyprinus-carpio,19189:cyprinus-carpio"
+}

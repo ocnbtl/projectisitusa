@@ -1,0 +1,2545 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-reviewed-fish-measurement-v3",
+  "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+  "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256s": [
+    "d6b5bbbe40141ee7137e06db31c036c61f8eff8aaa766488fb337dc2b89cc6e4",
+    "991fe712b63570cb904c99ae2aea9f7a30bc6efaf28f6c28c772c74650b3fe76"
+  ],
+  "acquisitionCodeQualification": "The original preflight repositoryBaseCommit identifies repository HEAD during acquisition. The executed recipes are separately hash-pinned inside their retained input archives. Failed requests remain failed. This offline run code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "19005:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 15,
+          "rowSha256": "c388db6e76976ca632b9be1670c92e60720a33399cb770db35854792e3e0da8a",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2934,
+              "rowSha256": "c40b725fdc2418b3c6cd45d38baf1ce9f06693032c7f17905539bdcd3cfe9df1"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 33,
+          "rowSha256": "a232b2eaab0fe7036dc5bb699c6f57c021c32f7df386fc90713c721c51b80919",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3416,
+              "rowSha256": "51a54cca923b4ab4bc515425c3d11f98b378bb9c58108972a3e7cdd30a6106d7"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 15,
+          "physicalEndLineOneBased": 17,
+          "rawRecordSha256": "c388db6e76976ca632b9be1670c92e60720a33399cb770db35854792e3e0da8a",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA034:20090825:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-08-25",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA034",
+            "ActivityLocation/LatitudeMeasure": "43.1097548100",
+            "ActivityLocation/LongitudeMeasure": "-91.1764526200",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "5",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2934,
+              "physicalEndLineOneBased": 2938,
+              "rawRecordSha256": "c40b725fdc2418b3c6cd45d38baf1ce9f06693032c7f17905539bdcd3cfe9df1",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA034",
+                "MonitoringLocationName": "Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07060001",
+                "LatitudeMeasure": "43.1097548100",
+                "LongitudeMeasure": "-91.1764526200",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "005",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 33,
+          "physicalEndLineOneBased": 35,
+          "rawRecordSha256": "a232b2eaab0fe7036dc5bb699c6f57c021c32f7df386fc90713c721c51b80919",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IAR9-0906:20140807:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-08-07",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0906",
+            "ActivityCommentText": "Upper Midwest",
+            "ActivityLocation/LatitudeMeasure": "43.1097500000",
+            "ActivityLocation/LongitudeMeasure": "-91.1764500000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3416,
+              "physicalEndLineOneBased": 3420,
+              "rawRecordSha256": "51a54cca923b4ab4bc515425c3d11f98b378bb9c58108972a3e7cdd30a6106d7",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0906",
+                "MonitoringLocationName": "Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversMajor",
+                "HUCEightDigitCode": "07060001",
+                "LatitudeMeasure": "43.1097548100",
+                "LongitudeMeasure": "-91.1764526100",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "196.13",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "005",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19021:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 11,
+          "rowSha256": "855754e046a84f667816d2f1d1f2763f8b87bbc002e532daf1f9f4644ca8aef3",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2938,
+              "rowSha256": "ca03b645349579411831c7145a3b6207f43c558979b2781de8777e87a87242ea"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 11,
+          "physicalEndLineOneBased": 13,
+          "rawRecordSha256": "855754e046a84f667816d2f1d1f2763f8b87bbc002e532daf1f9f4644ca8aef3",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA040:20090901:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-09-01",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA040",
+            "ActivityLocation/LatitudeMeasure": "42.9028115300",
+            "ActivityLocation/LongitudeMeasure": "-95.1930940000",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2938,
+              "physicalEndLineOneBased": 2942,
+              "rawRecordSha256": "ca03b645349579411831c7145a3b6207f43c558979b2781de8777e87a87242ea",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA040",
+                "MonitoringLocationName": "Little Sioux River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10230003",
+                "LatitudeMeasure": "42.9028115300",
+                "LongitudeMeasure": "-95.1930940000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "021",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19049:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 2,
+          "rowSha256": "61f475bedcb683a88f9a1d1a45579bd6f23184f4b000ab1ecfe0b7e521674cd7",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2933,
+              "rowSha256": "6d0eb7ee1f3793ecb8acac75993958564defad9401ce8b04fbbd96de871302be"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 2,
+          "physicalEndLineOneBased": 4,
+          "rawRecordSha256": "61f475bedcb683a88f9a1d1a45579bd6f23184f4b000ab1ecfe0b7e521674cd7",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA028:20080819:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-08-19",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA028",
+            "ActivityLocation/LatitudeMeasure": "41.8504603900",
+            "ActivityLocation/LongitudeMeasure": "-94.0261349000",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "6",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2933,
+              "physicalEndLineOneBased": 2937,
+              "rawRecordSha256": "6d0eb7ee1f3793ecb8acac75993958564defad9401ce8b04fbbd96de871302be",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA028",
+                "MonitoringLocationName": "Beaver Creek",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07100004",
+                "LatitudeMeasure": "41.8504603900",
+                "LongitudeMeasure": "-94.0261349000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "049",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19057:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 22,
+          "rowSha256": "3d7b8d7198f7fe089b08a16755f732a665fb7d301ae2c56964dc55baf30f2d73",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2937,
+              "rowSha256": "0d8fa92844a233a54ee63b43d6b429f77e4e056eb38481dc57f7e7a8ff3a55ea"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 27,
+          "rowSha256": "226694b44a2f61b0fb091b3a0a6470b3e1d92ad47abcfd34bbe1fb543d3b4469",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3418,
+              "rowSha256": "c3689e0c204ad7c3cbd5106f2746351cae3ecd1d6e1dc53db8ea78d8861fc26c"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 22,
+          "physicalEndLineOneBased": 24,
+          "rawRecordSha256": "3d7b8d7198f7fe089b08a16755f732a665fb7d301ae2c56964dc55baf30f2d73",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA037:20090811:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-08-11",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA037",
+            "ActivityLocation/LatitudeMeasure": "40.8746955300",
+            "ActivityLocation/LongitudeMeasure": "-91.0480926200",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "10",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-<20 CW SAMPLED,>500 INDIV",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2937,
+              "physicalEndLineOneBased": 2941,
+              "rawRecordSha256": "0d8fa92844a233a54ee63b43d6b429f77e4e056eb38481dc57f7e7a8ff3a55ea",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA037",
+                "MonitoringLocationName": "Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07080104",
+                "LatitudeMeasure": "40.8746955300",
+                "LongitudeMeasure": "-91.0480926200",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "057",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 27,
+          "physicalEndLineOneBased": 29,
+          "rawRecordSha256": "226694b44a2f61b0fb091b3a0a6470b3e1d92ad47abcfd34bbe1fb543d3b4469",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IAR9-0908:20140801:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-08-01",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0908",
+            "ActivityCommentText": "Temperate Plains",
+            "ActivityLocation/LatitudeMeasure": "40.8747000000",
+            "ActivityLocation/LongitudeMeasure": "-91.0480900000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "10",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3418,
+              "physicalEndLineOneBased": 3422,
+              "rawRecordSha256": "c3689e0c204ad7c3cbd5106f2746351cae3ecd1d6e1dc53db8ea78d8861fc26c",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0908",
+                "MonitoringLocationName": "Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversMajor",
+                "HUCEightDigitCode": "07080104",
+                "LatitudeMeasure": "40.8746955300",
+                "LongitudeMeasure": "-91.0480926200",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "159.41",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "057",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19061:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 32,
+          "rowSha256": "af02e23304439bd39b63ec136b63ef82104294535facf5030b04c2172d9218f2",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3421,
+              "rowSha256": "5fc991dbfb8ccc8b21819a0bf6bef61f95e4cea90a67b79059609026fc505632"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 32,
+          "physicalEndLineOneBased": 34,
+          "rawRecordSha256": "af02e23304439bd39b63ec136b63ef82104294535facf5030b04c2172d9218f2",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IARM-1001:20140731:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-07-31",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IARM-1001",
+            "ActivityCommentText": "Upper Midwest",
+            "ActivityLocation/LatitudeMeasure": "42.5070700000",
+            "ActivityLocation/LongitudeMeasure": "-90.6446300000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "9",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3421,
+              "physicalEndLineOneBased": 3425,
+              "rawRecordSha256": "5fc991dbfb8ccc8b21819a0bf6bef61f95e4cea90a67b79059609026fc505632",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IARM-1001",
+                "MonitoringLocationName": "Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversMajor",
+                "HUCEightDigitCode": "07060005",
+                "LatitudeMeasure": "42.5070700000",
+                "LongitudeMeasure": "-90.6446300000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "181.77",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "061",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19063:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 14,
+          "rowSha256": "40e8354e6958baabcbfe46abf87e43d27c31f09a1fb358af3459ee63d0150b64",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2932,
+              "rowSha256": "0c6ca8c9db9bf3d07d1290bef533c58e8bbff9e449806d8c15de7064bf8e6e5f"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 31,
+          "rowSha256": "6ec150c4b3760ea9cf247e2f453b42222008cd3688bedb3766b89fc09e053f6c",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3415,
+              "rowSha256": "2e2f34f48d669c16390ef5dc3dc65b7dcae44fa64c7451c991e4579bf519acc8"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 14,
+          "physicalEndLineOneBased": 16,
+          "rawRecordSha256": "40e8354e6958baabcbfe46abf87e43d27c31f09a1fb358af3459ee63d0150b64",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA024:20090729:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-07-29",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA024",
+            "ActivityLocation/LatitudeMeasure": "43.4510629900",
+            "ActivityLocation/LongitudeMeasure": "-94.8671593100",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "14",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2932,
+              "physicalEndLineOneBased": 2936,
+              "rawRecordSha256": "0c6ca8c9db9bf3d07d1290bef533c58e8bbff9e449806d8c15de7064bf8e6e5f",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA024",
+                "MonitoringLocationName": "Des Moines River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07100002",
+                "LatitudeMeasure": "43.4510629900",
+                "LongitudeMeasure": "-94.8671593100",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "063",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 31,
+          "physicalEndLineOneBased": 33,
+          "rawRecordSha256": "6ec150c4b3760ea9cf247e2f453b42222008cd3688bedb3766b89fc09e053f6c",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IAR9-0904:20140729:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-07-29",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0904",
+            "ActivityCommentText": "Temperate Plains",
+            "ActivityLocation/LatitudeMeasure": "43.4510600000",
+            "ActivityLocation/LongitudeMeasure": "-94.8671600000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "15",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3415,
+              "physicalEndLineOneBased": 3419,
+              "rawRecordSha256": "2e2f34f48d669c16390ef5dc3dc65b7dcae44fa64c7451c991e4579bf519acc8",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0904",
+                "MonitoringLocationName": "Des Moines River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversMajor",
+                "HUCEightDigitCode": "07100002",
+                "LatitudeMeasure": "43.4510629900",
+                "LongitudeMeasure": "-94.8671593200",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "385.23",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "063",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19071:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 3,
+          "rowSha256": "023ee446589556b3a52745896d6a02ce76d24e70e517a0c5832d2d599e07d9db",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2931,
+              "rowSha256": "a90819b75a8d1c9a6638da2709bdf74fc12db749a034e7764af9fca82ee5d126"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 3,
+          "physicalEndLineOneBased": 5,
+          "rawRecordSha256": "023ee446589556b3a52745896d6a02ce76d24e70e517a0c5832d2d599e07d9db",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA023:20080812:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-08-12",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA023",
+            "ActivityLocation/LatitudeMeasure": "40.8737329100",
+            "ActivityLocation/LongitudeMeasure": "-95.5977040000",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2931,
+              "physicalEndLineOneBased": 2935,
+              "rawRecordSha256": "a90819b75a8d1c9a6638da2709bdf74fc12db749a034e7764af9fca82ee5d126",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA023",
+                "MonitoringLocationName": "Unnamed Creek",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10240002",
+                "LatitudeMeasure": "40.8737329100",
+                "LongitudeMeasure": "-95.5977040000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "071",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19087:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 19,
+          "rowSha256": "c105685e4a2ba84079607080a9b2076ef6be9535fcab019cf2f528ae15091481",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2929,
+              "rowSha256": "f6a3e095ec93b206953c45d903e622e737c541b3d38af687055eaf225f6aef60"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 24,
+          "rowSha256": "e640d1ce4a92570b8559b39e1bc8173cbc0c903d863469fe626201cc3ef0627e",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3413,
+              "rowSha256": "8b103be3f0ac448227db15dbc3906e9d1b303dfe2b7009d11249e5c170be58e3"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 19,
+          "physicalEndLineOneBased": 21,
+          "rawRecordSha256": "c105685e4a2ba84079607080a9b2076ef6be9535fcab019cf2f528ae15091481",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA021:20091005:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-10-05",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA021",
+            "ActivityLocation/LatitudeMeasure": "41.0044554600",
+            "ActivityLocation/LongitudeMeasure": "-91.6652808300",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "12",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2929,
+              "physicalEndLineOneBased": 2933,
+              "rawRecordSha256": "f6a3e095ec93b206953c45d903e622e737c541b3d38af687055eaf225f6aef60",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA021",
+                "MonitoringLocationName": "Skunk River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07080107",
+                "LatitudeMeasure": "41.0044554600",
+                "LongitudeMeasure": "-91.6652808300",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "087",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 24,
+          "physicalEndLineOneBased": 26,
+          "rawRecordSha256": "e640d1ce4a92570b8559b39e1bc8173cbc0c903d863469fe626201cc3ef0627e",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IAR9-0902:20140803:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-08-03",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0902",
+            "ActivityCommentText": "Temperate Plains",
+            "ActivityLocation/LatitudeMeasure": "41.0044600000",
+            "ActivityLocation/LongitudeMeasure": "-91.6652800000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "5",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3413,
+              "physicalEndLineOneBased": 3417,
+              "rawRecordSha256": "8b103be3f0ac448227db15dbc3906e9d1b303dfe2b7009d11249e5c170be58e3",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0902",
+                "MonitoringLocationName": "Skunk River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversOther",
+                "HUCEightDigitCode": "07080107",
+                "LatitudeMeasure": "41.0044554600",
+                "LongitudeMeasure": "-91.6652808300",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "173.42",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "087",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19089:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 6,
+          "rowSha256": "2460d92ecb1d5c436b02fe2ed655cfe5205dcd9834c689ca59703d9a6ad8d51b",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2945,
+              "rowSha256": "bd7222d0cc4ddeff185e4972a747cbdf870299a5f38c2180ec3bdd42961ec68f"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 6,
+          "physicalEndLineOneBased": 8,
+          "rawRecordSha256": "2460d92ecb1d5c436b02fe2ed655cfe5205dcd9834c689ca59703d9a6ad8d51b",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA062:20090706:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-07-06",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA062",
+            "ActivityLocation/LatitudeMeasure": "43.4976168800",
+            "ActivityLocation/LongitudeMeasure": "-92.1901232500",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2945,
+              "physicalEndLineOneBased": 2949,
+              "rawRecordSha256": "bd7222d0cc4ddeff185e4972a747cbdf870299a5f38c2180ec3bdd42961ec68f",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA062",
+                "MonitoringLocationName": "Upper Iowa River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07060002",
+                "LatitudeMeasure": "43.4976168800",
+                "LongitudeMeasure": "-92.1901232500",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "089",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19103:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 9,
+          "rowSha256": "ede9e98d8d5505c7960d34c9b8453766252a683ccc200fd022adde11d069025b",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2925,
+              "rowSha256": "e511816aca478cf3a23e9615bb42c00e22a6fbebc201d9183c9f6c9bafa953cc"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 9,
+          "physicalEndLineOneBased": 11,
+          "rawRecordSha256": "ede9e98d8d5505c7960d34c9b8453766252a683ccc200fd022adde11d069025b",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA006:20090805:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-08-05",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA006",
+            "ActivityLocation/LatitudeMeasure": "41.5511806100",
+            "ActivityLocation/LongitudeMeasure": "-91.5461855100",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2925,
+              "physicalEndLineOneBased": 2929,
+              "rawRecordSha256": "e511816aca478cf3a23e9615bb42c00e22a6fbebc201d9183c9f6c9bafa953cc",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA006",
+                "MonitoringLocationName": "Old Mans Creek",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07080209",
+                "LatitudeMeasure": "41.5511806100",
+                "LongitudeMeasure": "-91.5461855100",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "103",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19105:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 21,
+          "rowSha256": "f9fa1291d9418e4d5f09fea3f54aa1243c3b368b6662c66531953881633f9a3b",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2944,
+              "rowSha256": "4c12bd3adbf677ccbbd4e1dc7754c8538c0283ce434cffa78f3bfbc912ce552c"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 21,
+          "physicalEndLineOneBased": 23,
+          "rawRecordSha256": "f9fa1291d9418e4d5f09fea3f54aa1243c3b368b6662c66531953881633f9a3b",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA057:20091014:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-10-14",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA057",
+            "ActivityLocation/LatitudeMeasure": "42.0026171900",
+            "ActivityLocation/LongitudeMeasure": "-91.0790392500",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2944,
+              "physicalEndLineOneBased": 2948,
+              "rawRecordSha256": "4c12bd3adbf677ccbbd4e1dc7754c8538c0283ce434cffa78f3bfbc912ce552c",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA057",
+                "MonitoringLocationName": "Wapsipinicon River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07080103",
+                "LatitudeMeasure": "42.0026171900",
+                "LongitudeMeasure": "-91.0790392500",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "105",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19109:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 0,
+          "rowSha256": "ffc07dba03e96a361ec2c5ba5530486e1b83c28832581183ef483be07149b364",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2942,
+              "rowSha256": "3a047706f219a8f39aefd9d06ee843dce65143e62c3db92ba084da8afee5df04"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 0,
+          "physicalEndLineOneBased": 2,
+          "rawRecordSha256": "ffc07dba03e96a361ec2c5ba5530486e1b83c28832581183ef483be07149b364",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA052:20080922:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-09-22",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA052",
+            "ActivityLocation/LatitudeMeasure": "42.9135110000",
+            "ActivityLocation/LongitudeMeasure": "-94.0575270600",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "35",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2942,
+              "physicalEndLineOneBased": 2946,
+              "rawRecordSha256": "3a047706f219a8f39aefd9d06ee843dce65143e62c3db92ba084da8afee5df04",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA052",
+                "MonitoringLocationName": "Prairie Creek",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07100005",
+                "LatitudeMeasure": "42.9135110000",
+                "LongitudeMeasure": "-94.0575270600",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "109",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19119:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 7,
+          "rowSha256": "96f9bf8bf572d8462434a9ffc5657c36049473639218539f4467d2ad47b55ed4",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2935,
+              "rowSha256": "079e0f4aec307ae62e219b5250bc615734cfe97bc6456dbfddfb53eb1cb559be"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 30,
+          "rowSha256": "3aa64d4aab39e2494486878254f97f875122b9cddb318b33cf668e9e14f66986",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3417,
+              "rowSha256": "21e36659617d4c809a8175eadbef7544ef0cff0dada78a15543bdebc8b33c249"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 7,
+          "physicalEndLineOneBased": 9,
+          "rawRecordSha256": "96f9bf8bf572d8462434a9ffc5657c36049473639218539f4467d2ad47b55ed4",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA035:20090819:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-08-19",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA035",
+            "ActivityLocation/LatitudeMeasure": "43.2684419600",
+            "ActivityLocation/LongitudeMeasure": "-96.2130322400",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "8",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2935,
+              "physicalEndLineOneBased": 2939,
+              "rawRecordSha256": "079e0f4aec307ae62e219b5250bc615734cfe97bc6456dbfddfb53eb1cb559be",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA035",
+                "MonitoringLocationName": "Little Rock River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10170204",
+                "LatitudeMeasure": "43.2684419600",
+                "LongitudeMeasure": "-96.2130322400",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "119",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 30,
+          "physicalEndLineOneBased": 32,
+          "rawRecordSha256": "3aa64d4aab39e2494486878254f97f875122b9cddb318b33cf668e9e14f66986",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IAR9-0907:20140730:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-07-30",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0907",
+            "ActivityCommentText": "Temperate Plains",
+            "ActivityLocation/LatitudeMeasure": "43.2684400000",
+            "ActivityLocation/LongitudeMeasure": "-96.2130300000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "9",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3417,
+              "physicalEndLineOneBased": 3421,
+              "rawRecordSha256": "21e36659617d4c809a8175eadbef7544ef0cff0dada78a15543bdebc8b33c249",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0907",
+                "MonitoringLocationName": "Little Rock River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversOther",
+                "HUCEightDigitCode": "10170204",
+                "LatitudeMeasure": "43.2684419600",
+                "LongitudeMeasure": "-96.2130322300",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "384.38",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "119",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19123:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 12,
+          "rowSha256": "d3cef141d7a29ae6fab380bcc2bd4dedbf6b9a0ad80bb2f366324dc240f34fb3",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2941,
+              "rowSha256": "ed86d15730c7ff7e63efd7508f1ec12ce3fb947f989daba0018fe727143bff85"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 12,
+          "physicalEndLineOneBased": 14,
+          "rawRecordSha256": "d3cef141d7a29ae6fab380bcc2bd4dedbf6b9a0ad80bb2f366324dc240f34fb3",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA049:20090730:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-07-30",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA049",
+            "ActivityLocation/LatitudeMeasure": "41.3175405500",
+            "ActivityLocation/LongitudeMeasure": "-92.5282867000",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "48",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2941,
+              "physicalEndLineOneBased": 2945,
+              "rawRecordSha256": "ed86d15730c7ff7e63efd7508f1ec12ce3fb947f989daba0018fe727143bff85",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA049",
+                "MonitoringLocationName": "South Skunk River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07080105",
+                "LatitudeMeasure": "41.3175405500",
+                "LongitudeMeasure": "-92.5282867000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "123",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19125:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 5,
+          "rowSha256": "465abc245f4a0229cccc810bfb0e71d74bcb02fc4e41777f3722955050e816c7",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2939,
+              "rowSha256": "6a13175af60180692a6a4713d3549ae07a6b72ff0f8eb499ff6c6f0038a7d5e6"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 5,
+          "physicalEndLineOneBased": 7,
+          "rawRecordSha256": "465abc245f4a0229cccc810bfb0e71d74bcb02fc4e41777f3722955050e816c7",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA044:20090806:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-08-06",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA044",
+            "ActivityLocation/LatitudeMeasure": "41.4855492100",
+            "ActivityLocation/LongitudeMeasure": "-92.9018200800",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "35",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2939,
+              "physicalEndLineOneBased": 2943,
+              "rawRecordSha256": "6a13175af60180692a6a4713d3549ae07a6b72ff0f8eb499ff6c6f0038a7d5e6",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA044",
+                "MonitoringLocationName": "South Skunk River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07080105",
+                "LatitudeMeasure": "41.4855492100",
+                "LongitudeMeasure": "-92.9018200800",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "125",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19133:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 16,
+          "rowSha256": "b0bc8342136c909bdb5e00c6d62718f1c6cf54023b263339af5c16b3dd9cf37d",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2924,
+              "rowSha256": "5bf6a26d433b08cb321e5b420183f8630ad50f7995a0f86d23efc610b82642e1"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 16,
+          "physicalEndLineOneBased": 18,
+          "rawRecordSha256": "b0bc8342136c909bdb5e00c6d62718f1c6cf54023b263339af5c16b3dd9cf37d",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA003:20090528:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-05-28",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA003",
+            "ActivityLocation/LatitudeMeasure": "42.0693397300",
+            "ActivityLocation/LongitudeMeasure": "-95.9195375000",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2924,
+              "physicalEndLineOneBased": 2928,
+              "rawRecordSha256": "5bf6a26d433b08cb321e5b420183f8630ad50f7995a0f86d23efc610b82642e1",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA003",
+                "MonitoringLocationName": "Maple River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10230005",
+                "LatitudeMeasure": "42.0693397300",
+                "LongitudeMeasure": "-95.9195375000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "133",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19149:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 8,
+          "rowSha256": "819f05a6d37db3e3dae5dcf438ce20e63e9c093d23a11757e14ede5e96b420c0",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2928,
+              "rowSha256": "b91c6fcb0ea5e59d9575f2d6f6f0a0aaddccd7df32c10183af466ef5f6c612dd"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 17,
+          "rowSha256": "5572cee0b34870bf3affb6ce0935bc1b99a2363b9d2ec17c92e3eba10168fd21",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2928,
+              "rowSha256": "b91c6fcb0ea5e59d9575f2d6f6f0a0aaddccd7df32c10183af466ef5f6c612dd"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 26,
+          "rowSha256": "66cabc419d9406b05c2c272b0af97f34e3682de7a847469b6cb72a86218673b1",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3412,
+              "rowSha256": "229a32ced7b62f7c84c9453b8d572fde5aefd6a97804e459276f10fc28880f1f"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 8,
+          "physicalEndLineOneBased": 10,
+          "rawRecordSha256": "819f05a6d37db3e3dae5dcf438ce20e63e9c093d23a11757e14ede5e96b420c0",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA019:20090929:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-09-29",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA019",
+            "ActivityLocation/LatitudeMeasure": "42.7918530900",
+            "ActivityLocation/LongitudeMeasure": "-96.6015676400",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "2",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "7",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2928,
+              "physicalEndLineOneBased": 2932,
+              "rawRecordSha256": "b91c6fcb0ea5e59d9575f2d6f6f0a0aaddccd7df32c10183af466ef5f6c612dd",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA019",
+                "MonitoringLocationName": "Big Sioux River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10170203",
+                "LatitudeMeasure": "42.7918530900",
+                "LongitudeMeasure": "-96.6015676400",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "149",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 17,
+          "physicalEndLineOneBased": 19,
+          "rawRecordSha256": "5572cee0b34870bf3affb6ce0935bc1b99a2363b9d2ec17c92e3eba10168fd21",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA019:20090831:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-08-31",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA019",
+            "ActivityLocation/LatitudeMeasure": "42.7918530900",
+            "ActivityLocation/LongitudeMeasure": "-96.6015676400",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "15",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2928,
+              "physicalEndLineOneBased": 2932,
+              "rawRecordSha256": "b91c6fcb0ea5e59d9575f2d6f6f0a0aaddccd7df32c10183af466ef5f6c612dd",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA019",
+                "MonitoringLocationName": "Big Sioux River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10170203",
+                "LatitudeMeasure": "42.7918530900",
+                "LongitudeMeasure": "-96.6015676400",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "149",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 26,
+          "physicalEndLineOneBased": 28,
+          "rawRecordSha256": "66cabc419d9406b05c2c272b0af97f34e3682de7a847469b6cb72a86218673b1",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IAR9-0901:20140724:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-07-24",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0901",
+            "ActivityCommentText": "Temperate Plains",
+            "ActivityLocation/LatitudeMeasure": "42.7918500000",
+            "ActivityLocation/LongitudeMeasure": "-96.6015700000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "50",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3412,
+              "physicalEndLineOneBased": 3416,
+              "rawRecordSha256": "229a32ced7b62f7c84c9453b8d572fde5aefd6a97804e459276f10fc28880f1f",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0901",
+                "MonitoringLocationName": "Big Sioux River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversMajor",
+                "HUCEightDigitCode": "10170203",
+                "LatitudeMeasure": "42.7918530900",
+                "LongitudeMeasure": "-96.6015676400",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "341.39",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "149",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19155:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 10,
+          "rowSha256": "5a7094724d7ed2b0351b6bac687c7d6d84bffe3462055f5de824889cc8825114",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2940,
+              "rowSha256": "320d1180aaade8b5c53977768e851e2b1476b618995dd1c949a0a5675f9758c6"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 13,
+          "rowSha256": "4b99000a6109f534e070c3afa349dce6e09210ebfdd7c03c317915e271e0f27f",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2940,
+              "rowSha256": "320d1180aaade8b5c53977768e851e2b1476b618995dd1c949a0a5675f9758c6"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 28,
+          "rowSha256": "9ad051d546add8108d56c4060c934a749158b8f9d4ed3760b5e1f48723008a1f",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3420,
+              "rowSha256": "bef5f7fef732787e487eda692f2f4e040192185f2eed61bae5df9cf8d35cdac1"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 10,
+          "physicalEndLineOneBased": 12,
+          "rawRecordSha256": "5a7094724d7ed2b0351b6bac687c7d6d84bffe3462055f5de824889cc8825114",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA047:20090930:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-09-30",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA047",
+            "ActivityLocation/LatitudeMeasure": "41.4675954700",
+            "ActivityLocation/LongitudeMeasure": "-95.9093053300",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "2",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "10",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2940,
+              "physicalEndLineOneBased": 2944,
+              "rawRecordSha256": "320d1180aaade8b5c53977768e851e2b1476b618995dd1c949a0a5675f9758c6",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA047",
+                "MonitoringLocationName": "Boyer River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10230007",
+                "LatitudeMeasure": "41.4675954700",
+                "LongitudeMeasure": "-95.9093053300",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "155",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 13,
+          "physicalEndLineOneBased": 15,
+          "rawRecordSha256": "4b99000a6109f534e070c3afa349dce6e09210ebfdd7c03c317915e271e0f27f",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA047:20090917:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-09-17",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA047",
+            "ActivityLocation/LatitudeMeasure": "41.4675954700",
+            "ActivityLocation/LongitudeMeasure": "-95.9093053300",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "16",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2940,
+              "physicalEndLineOneBased": 2944,
+              "rawRecordSha256": "320d1180aaade8b5c53977768e851e2b1476b618995dd1c949a0a5675f9758c6",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA047",
+                "MonitoringLocationName": "Boyer River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "10230007",
+                "LatitudeMeasure": "41.4675954700",
+                "LongitudeMeasure": "-95.9093053300",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "155",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 28,
+          "physicalEndLineOneBased": 30,
+          "rawRecordSha256": "9ad051d546add8108d56c4060c934a749158b8f9d4ed3760b5e1f48723008a1f",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-IAR9-0914:20140723:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-07-23",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0914",
+            "ActivityCommentText": "Temperate Plains",
+            "ActivityLocation/LatitudeMeasure": "41.4676000000",
+            "ActivityLocation/LongitudeMeasure": "-95.9093100000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "58",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3420,
+              "physicalEndLineOneBased": 3424,
+              "rawRecordSha256": "bef5f7fef732787e487eda692f2f4e040192185f2eed61bae5df9cf8d35cdac1",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-IAR9-0914",
+                "MonitoringLocationName": "Boyer River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversOther",
+                "HUCEightDigitCode": "10230007",
+                "LatitudeMeasure": "41.4675954600",
+                "LongitudeMeasure": "-95.9093053300",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "300.29",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "155",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19161:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 23,
+          "rowSha256": "8910e0415f475a82b3d8905adf14674ba414c3548cb2d69e5ec699d090ef7230",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2927,
+              "rowSha256": "aabf7e46f40cde56610b95f1f7a4935ac1c162655b3626c8d1afe59a4202bc89"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 23,
+          "physicalEndLineOneBased": 25,
+          "rawRecordSha256": "8910e0415f475a82b3d8905adf14674ba414c3548cb2d69e5ec699d090ef7230",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA015:20090601:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-06-01",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA015",
+            "ActivityLocation/LatitudeMeasure": "42.4105682800",
+            "ActivityLocation/LongitudeMeasure": "-94.9860864100",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "5",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2927,
+              "physicalEndLineOneBased": 2931,
+              "rawRecordSha256": "aabf7e46f40cde56610b95f1f7a4935ac1c162655b3626c8d1afe59a4202bc89",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA015",
+                "MonitoringLocationName": "North Raccoon River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07100006",
+                "LatitudeMeasure": "42.4105682800",
+                "LongitudeMeasure": "-94.9860864100",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "161",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19171:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4,
+          "rowSha256": "48531f42042ca4fb2a3c3429ccbe6d6028a6a2c00ef83ce6effb87ed64ec31d0",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2926,
+              "rowSha256": "aecb0d5e0145b8cd11614b8074f482666bdc1ed68ac81edf9903deec27d97428"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4,
+          "physicalEndLineOneBased": 6,
+          "rawRecordSha256": "48531f42042ca4fb2a3c3429ccbe6d6028a6a2c00ef83ce6effb87ed64ec31d0",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA014:20081013:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-10-13",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA014",
+            "ActivityLocation/LatitudeMeasure": "42.2185151300",
+            "ActivityLocation/LongitudeMeasure": "-92.7423882100",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2926,
+              "physicalEndLineOneBased": 2930,
+              "rawRecordSha256": "aecb0d5e0145b8cd11614b8074f482666bdc1ed68ac81edf9903deec27d97428",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA014",
+                "MonitoringLocationName": "Little Wolf Creek",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07080205",
+                "LatitudeMeasure": "42.2185151300",
+                "LongitudeMeasure": "-92.7423882100",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "171",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19177:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 20,
+          "rowSha256": "cb6f77e6f931b6c50382cdab81c5ef9c51698bbececae114a725a1d00b6fdbfd",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2943,
+              "rowSha256": "ddecea5347410d2e564a69561d57c6b0ecd91ba22b73d6561050638c1a430eb1"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 20,
+          "physicalEndLineOneBased": 22,
+          "rawRecordSha256": "cb6f77e6f931b6c50382cdab81c5ef9c51698bbececae114a725a1d00b6fdbfd",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA053:20091006:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-10-06",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA053",
+            "ActivityLocation/LatitudeMeasure": "40.7358450300",
+            "ActivityLocation/LongitudeMeasure": "-91.9359530000",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "39",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2943,
+              "physicalEndLineOneBased": 2947,
+              "rawRecordSha256": "ddecea5347410d2e564a69561d57c6b0ecd91ba22b73d6561050638c1a430eb1",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA053",
+                "MonitoringLocationName": "Des Moines River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07100009",
+                "LatitudeMeasure": "40.7358450300",
+                "LongitudeMeasure": "-91.9359530000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "177",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "19189:cyprinus-carpio",
+      "resultDecodedSha256": "7465ad39aea79940b6807c434db2a95808fe68a13c2f544d4b2ae91be1c8bbf6",
+      "stationDecodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "methodReviewPath": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+      "methodReviewSha256": "dfb11dc8bd9687bc61d7c38c9c27597489809970b86d245101bb25b7727a0afc",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 1,
+          "rowSha256": "95fb3ea40773c6b8d8fe472c0723f6d39eb97c81729327603ba454823dde4032",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2936,
+              "rowSha256": "a80e2d548052c32156020c6030370a40cd7dde5982d2e8b2d81f96a7f4d21e3d"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). Water Quality Portal, National Water Quality Monitoring Council, accessed2026-09-08; DOI https://doi.org/10.5066/P9QRKUVJ. Attribute the originating organizations retained in each Result record. No blanket CC0 license or publisher endorsement is asserted.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A19&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&characteristicName=Count%3BLength%3BLength%2C+Total+%28Fish%29%3BWeight%3BTotal+Sample+Weight&mimeType=csv&zip=yes&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T14:51:07.676Z",
+      "stationRetrievedAt": "2026-09-08T12:35:04.802Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 1,
+          "physicalEndLineOneBased": 3,
+          "rawRecordSha256": "95fb3ea40773c6b8d8fe472c0723f6d39eb97c81729327603ba454823dde4032",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08IA036:20080818:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-08-18",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08IA036",
+            "ActivityLocation/LatitudeMeasure": "43.3591496500",
+            "ActivityLocation/LongitudeMeasure": "-93.8684291600",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "11",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Cyprinus carpio",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2936,
+              "physicalEndLineOneBased": 2940,
+              "rawRecordSha256": "a80e2d548052c32156020c6030370a40cd7dde5982d2e8b2d81f96a7f4d21e3d",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08IA036",
+                "MonitoringLocationName": "Little Buffalo Creek",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "07100003",
+                "LatitudeMeasure": "43.3591496500",
+                "LongitudeMeasure": "-93.8684291600",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "19",
+                "CountyCode": "189",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

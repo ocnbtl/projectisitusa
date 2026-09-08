@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-positive-survey-batch-integration",
+  "recordedAt": "2026-09-08T18:00:40.904Z",
+  "integrator": "MAIN",
+  "sourceId": "water-quality-portal",
+  "sourceCodeCommit": "5f61ea7269b9478e5cb4e8e786d5566edb415269",
+  "methodReview": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r16.json",
+  "independentAudit": {
+    "checkedAt": "2026-09-08T17:59:58.428098+00:00",
+    "passed": true,
+    "actor": "MAIN",
+    "parser": "Independent Python stdlib csv parser and independently expressed acceptance checks",
+    "states": 2,
+    "counts": {
+      "originalProfileRows": 4232,
+      "resultWitnesses": 65,
+      "stationReferences": 65,
+      "positiveRows": 65,
+      "pairs": 42
+    },
+    "reports": [
+      {
+        "state": "IA",
+        "pairs": 22,
+        "run": "20260908T175842Z__water-quality-portal__866c90caa515",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "KS",
+        "pairs": 20,
+        "run": "20260908T175848Z__water-quality-portal__406e141e4505",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      }
+    ],
+    "providerRequests": 0,
+    "compiledGains": null
+  },
+  "workerAttemptsAccepted": 0,
+  "independentSourceReviews": [
+    {
+      "path": "ops/national-research/evaluations/wqp-common-carp-ia-independent-review-20260908-r16.json",
+      "bytes": 94083,
+      "sha256": "5a7421e9b3555ef9a87d164c784bdff0c1c7de5fe7e067040c5e3259cb222852"
+    },
+    {
+      "path": "ops/national-research/evaluations/wqp-common-carp-ks-independent-review-20260908-r16.json",
+      "bytes": 77940,
+      "sha256": "e19f5af985f6bc9dfb279bc7e9a32f9d3bc3d3b29785c9379243cabe75e111fd"
+    }
+  ],
+  "canonicalTamperChecks": {
+    "observedAt": "2026-09-08T18:00:03.934Z",
+    "reports": [
+      {
+        "stateCode": "IA",
+        "actualPilotValidated": true,
+        "canonicalTamperCasesRejected": 16,
+        "immutableFilesModified": 0
+      },
+      {
+        "stateCode": "KS",
+        "actualPilotValidated": true,
+        "canonicalTamperCasesRejected": 16,
+        "immutableFilesModified": 0
+      }
+    ]
+  },
+  "stagedRuns": [
+    {
+      "stateCode": "IA",
+      "runId": "20260908T175842Z__water-quality-portal__866c90caa515",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T175842Z__water-quality-portal__866c90caa515/receipt.json",
+        "bytes": 6700,
+        "sha256": "706a2dfe1d32d3b9ea2f7f9c81f15934e2382fb06eec3ebdbb930d5b8e926a07"
+      },
+      "counts": {
+        "requested_pairs": 22,
+        "candidate_records": 31,
+        "assertion_events": 22,
+        "review_events": 22,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 22
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "KS",
+      "runId": "20260908T175848Z__water-quality-portal__406e141e4505",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T175848Z__water-quality-portal__406e141e4505/receipt.json",
+        "bytes": 6502,
+        "sha256": "e48abaa9ee825090280c8dac0c03b65f4886952351436e43758b24dc7de03e63"
+      },
+      "counts": {
+        "requested_pairs": 20,
+        "candidate_records": 34,
+        "assertion_events": 20,
+        "review_events": 20,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 20
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    }
+  ],
+  "totalStateRuns": 2,
+  "totalCandidatePairs": 42,
+  "pilotAssertions": 0,
+  "mainBatchAssertions": 42,
+  "newDeterminations": null,
+  "providerRequests": 0,
+  "sharedCompilesDuringBatch": 0,
+  "heldPairs": [],
+  "claim": "Historical positive species-specific fish field measurements with exact published taxon and official Station county join, original collection dates and agency/WQP attribution. No countywide persistence, establishment, absence or non-detection claim.",
+  "limitations": [
+    "New determination gains remain pending national compiler reconciliation.",
+    "Original CSV is shared and not reacquired or copied per state.",
+    "R2 publication remains a separately budgeted and scheduled batch."
+  ]
+}
