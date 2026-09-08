@@ -499056,12 +499056,12 @@
       "scopeClaims": [
         "state/CA/source/water-quality-portal/taxon/corbicula-fluminea"
       ],
-      "branch": "codex/wqp-ca-positive-pilot-20260908-r13-a2",
-      "worktree": "C:\\Code\\project-isitusa-worktrees\\wqp-ca-positive-pilot-20260908-r13-a2",
-      "baseSha": "4340d313ee44669c115600028df3cd8072a46ba7",
-      "expectedReceiptCodeCommit": "4340d313ee44669c115600028df3cd8072a46ba7",
+      "branch": "codex/wqp-ca-positive-pilot-20260908-r13-a3",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\wqp-ca-positive-pilot-20260908-r13-a3",
+      "baseSha": "b3eef8122eb82f478e3e5ef7c6135bf80178cc6e",
+      "expectedReceiptCodeCommit": "b3eef8122eb82f478e3e5ef7c6135bf80178cc6e",
       "permittedPaths": [
-        "src/data/research/runs/20260908T120124Z__water-quality-portal__2b144c7e4fa0/**"
+        "src/data/research/runs/20260908T120836Z__water-quality-portal__2b144c7e4fa0/**"
       ],
       "prohibitedPaths": [
         ".agents/skills/**",
@@ -499111,10 +499111,11 @@
         "source-verification"
       ],
       "retryPolicy": {
-        "maxAttempts": 2,
+        "maxAttempts": 3,
         "backoffSeconds": [
           5,
-          30
+          30,
+          120
         ],
         "resumeRequired": true
       },
@@ -499134,9 +499135,9 @@
         },
         "candidateLimit": 14,
         "candidateLimitMeaning": "Exact reviewed WQP county-species candidates; all four fine-zooplankton method-held pairs remain excluded",
-        "startedAt": "2026-09-08T12:01:24.900Z",
+        "startedAt": "2026-09-08T12:08:36.852Z",
         "outputRoot": "src/data/research/runs",
-        "expectedRunPath": "src/data/research/runs/20260908T120124Z__water-quality-portal__2b144c7e4fa0",
+        "expectedRunPath": "src/data/research/runs/20260908T120836Z__water-quality-portal__2b144c7e4fa0",
         "expectedProviderRequests": {
           "providerNetworkRequests": 0,
           "additionalRequests": 0,
@@ -499167,7 +499168,7 @@
         },
         "methodReview": "Independently verify retained WQP Result and Station hashes, exact organization/site county join, positive field context, original date, agency attribution and method holds. Reconstruct witnesses with an independent parser. No fresh acquisition, current-persistence, absence or non-detection."
       },
-      "expiresAt": "2026-09-08T12:46:31.493Z",
+      "expiresAt": "2026-09-08T12:53:43.375Z",
       "recoveryState": "none",
       "completionCriteria": [
         "Pass frozen preflight; read the registered method and retained original source/review witnesses.",
@@ -499177,8 +499178,8 @@
       ],
       "dependencies": [],
       "priority": 100,
-      "state": "failed",
-      "currentLeaseId": "lease-wqp-ca-positive-pilot-20260908-r13-2"
+      "state": "leased",
+      "currentLeaseId": "lease-wqp-ca-positive-pilot-20260908-r13-3"
     },
     {
       "jobId": "wqp-ks-positive-pilot-20260908-r13",
@@ -499241,12 +499242,12 @@
         "state/KS/source/water-quality-portal/taxon/corbicula-fluminea",
         "state/KS/source/water-quality-portal/taxon/dreissena-polymorpha"
       ],
-      "branch": "codex/wqp-ks-positive-pilot-20260908-r13-a2",
-      "worktree": "C:\\Code\\project-isitusa-worktrees\\wqp-ks-positive-pilot-20260908-r13-a2",
-      "baseSha": "4340d313ee44669c115600028df3cd8072a46ba7",
-      "expectedReceiptCodeCommit": "4340d313ee44669c115600028df3cd8072a46ba7",
+      "branch": "codex/wqp-ks-positive-pilot-20260908-r13-a3",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\wqp-ks-positive-pilot-20260908-r13-a3",
+      "baseSha": "b3eef8122eb82f478e3e5ef7c6135bf80178cc6e",
+      "expectedReceiptCodeCommit": "b3eef8122eb82f478e3e5ef7c6135bf80178cc6e",
       "permittedPaths": [
-        "src/data/research/runs/20260908T120127Z__water-quality-portal__bf46b04cf8ef/**"
+        "src/data/research/runs/20260908T120839Z__water-quality-portal__bf46b04cf8ef/**"
       ],
       "prohibitedPaths": [
         ".agents/skills/**",
@@ -499296,10 +499297,11 @@
         "source-verification"
       ],
       "retryPolicy": {
-        "maxAttempts": 2,
+        "maxAttempts": 3,
         "backoffSeconds": [
           5,
-          30
+          30,
+          120
         ],
         "resumeRequired": true
       },
@@ -499319,9 +499321,9 @@
         },
         "candidateLimit": 38,
         "candidateLimitMeaning": "Exact reviewed WQP county-species candidates; all four fine-zooplankton method-held pairs remain excluded",
-        "startedAt": "2026-09-08T12:01:27.692Z",
+        "startedAt": "2026-09-08T12:08:39.532Z",
         "outputRoot": "src/data/research/runs",
-        "expectedRunPath": "src/data/research/runs/20260908T120127Z__water-quality-portal__bf46b04cf8ef",
+        "expectedRunPath": "src/data/research/runs/20260908T120839Z__water-quality-portal__bf46b04cf8ef",
         "expectedProviderRequests": {
           "providerNetworkRequests": 0,
           "additionalRequests": 0,
@@ -499376,7 +499378,7 @@
         },
         "methodReview": "Independently verify retained WQP Result and Station hashes, exact organization/site county join, positive field context, original date, agency attribution and method holds. Reconstruct witnesses with an independent parser. No fresh acquisition, current-persistence, absence or non-detection."
       },
-      "expiresAt": "2026-09-08T12:46:32.291Z",
+      "expiresAt": "2026-09-08T12:53:44.173Z",
       "recoveryState": "none",
       "completionCriteria": [
         "Pass frozen preflight; read the registered method and retained original source/review witnesses.",
@@ -499386,8 +499388,8 @@
       ],
       "dependencies": [],
       "priority": 100,
-      "state": "failed",
-      "currentLeaseId": "lease-wqp-ks-positive-pilot-20260908-r13-2"
+      "state": "leased",
+      "currentLeaseId": "lease-wqp-ks-positive-pilot-20260908-r13-3"
     }
   ]
 }
