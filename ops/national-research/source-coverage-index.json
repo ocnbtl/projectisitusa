@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-ea76699c5f988023a4ca",
-  "generatedFromCommit": "9da2ce09d2430f56e4436542423efe4c3b63d059",
+  "indexId": "source-coverage-a8abe062a607f3401059",
+  "generatedFromCommit": "df324f724324ef9f09b9613889137b4c8fecda08",
   "sourceRegistryPath": "src/data/research/source-registry.json",
-  "sourceRegistrySha256": "dd775d53eb69e5ea330c4a9ae97935ee0ebd62f54374d96a8096a6a9550eb20b",
-  "runReceiptDigestSha256": "da0c3ec58359e4cd0ae4943b4e740f6602e2239cb304a8479500feb44f9015cd",
-  "runCount": 2125,
+  "sourceRegistrySha256": "545bdc16a0130e2d7a3c54d9dd0f14e183bb03ad1ece5cc1f9e114c834b5642b",
+  "runReceiptDigestSha256": "600e0d8f6a40913208a1dd56f491ac660177bc81ba87be293e72d46cde58cdff",
+  "runCount": 2127,
   "sourceCount": 45,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -482,13 +482,13 @@
     {
       "sourceId": "water-quality-portal",
       "coverageState": "covered-by-immutable-runs",
-      "runCount": 33,
-      "completeRuns": 33,
+      "runCount": 35,
+      "completeRuns": 35,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 205,
-      "scopeCompletePairs": 205,
-      "latestFinishedAt": "2026-09-08T13:54:25.229Z"
+      "requestedPairs": 357,
+      "scopeCompletePairs": 357,
+      "latestFinishedAt": "2026-09-08T16:57:55.064Z"
     },
     {
       "sourceId": "wsda-northern-giant-hornet-eradication-2024",
@@ -66388,6 +66388,68 @@
       "outcomesPath": "src/data/research/runs/20260908T135422Z__water-quality-portal__0516cdca3380/outcomes.ndjson",
       "outcomesSha256": "9f990568733ce9f940120113e8b4806048363a2c4e6e88dfc9ffa1d1178000fb",
       "outcomesBytes": 2078
+    },
+    {
+      "coverageKey": "bd997ef28674c6aa13f2c84f73391b0178beb5de955487b917baf730b042e639",
+      "queryKey": "37cd1c97d4df6dc6866ba0b920b574c2f52c9e827f16f543d4c117fd2a769122",
+      "runId": "20260908T165743Z__water-quality-portal__ee91a3798b8b",
+      "receiptPath": "src/data/research/runs/20260908T165743Z__water-quality-portal__ee91a3798b8b/receipt.json",
+      "receiptSha256": "c293f8d2e91c0d8611224c86ba9f193b48eb22407dd11bff82d331e50872e014",
+      "sourceId": "water-quality-portal",
+      "sourceRegistryHash": "545bdc16a0130e2d7a3c54d9dd0f14e183bb03ad1ece5cc1f9e114c834b5642b",
+      "adapterId": "wqp-retained-field-counts",
+      "adapterVersion": "3.0.0",
+      "parameterHash": "ee91a3798b8bb50b8d032574157746c4887c5feb51c78935d58a6cb7d0ad838f",
+      "requestedScopeSha256": "f206c40c025104507506f495743ef0eeef05214ae194208c9cdec31ffec384c0",
+      "status": "complete",
+      "startedAt": "2026-09-08T16:57:43.798Z",
+      "finishedAt": "2026-09-08T16:57:49.384Z",
+      "refreshCadenceDays": 180,
+      "freshnessDeadline": "2027-03-07T16:57:49.384Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 87,
+      "outcomePairs": 87,
+      "scopeCompletePairs": 87,
+      "outcomeStatusCounts": {
+        "evidence-found": 87,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260908T165743Z__water-quality-portal__ee91a3798b8b/outcomes.ndjson",
+      "outcomesSha256": "6f9a20afb402d7a9f4df357198e18011c8dc368d4d09db6e4c78100533c7b0c9",
+      "outcomesBytes": 104303
+    },
+    {
+      "coverageKey": "4f44a50c44d5ea525aa056f97cd4165272df1f47299db8392e1f22bf86e8bc61",
+      "queryKey": "44516a4d27cf41ac44db9781e9fb97e1ddc1013b0cba9dd457b19571294ffdc9",
+      "runId": "20260908T165750Z__water-quality-portal__fd8e015f99c8",
+      "receiptPath": "src/data/research/runs/20260908T165750Z__water-quality-portal__fd8e015f99c8/receipt.json",
+      "receiptSha256": "fb849951790a6ec6b2a312c922a1ecf6c646bdad870db2ef6d8df47d5a3e9cba",
+      "sourceId": "water-quality-portal",
+      "sourceRegistryHash": "545bdc16a0130e2d7a3c54d9dd0f14e183bb03ad1ece5cc1f9e114c834b5642b",
+      "adapterId": "wqp-retained-field-counts",
+      "adapterVersion": "3.0.0",
+      "parameterHash": "fd8e015f99c8942f4bb1ae9e3adfb304c195882a9cc7bfde8a74114a07f292ca",
+      "requestedScopeSha256": "25628b077dccea492b3c5e208d04edc9061b9190d2d862ac7fe9bccfa9ee52bc",
+      "status": "complete",
+      "startedAt": "2026-09-08T16:57:50.671Z",
+      "finishedAt": "2026-09-08T16:57:55.064Z",
+      "refreshCadenceDays": 180,
+      "freshnessDeadline": "2027-03-07T16:57:55.064Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 65,
+      "outcomePairs": 65,
+      "scopeCompletePairs": 65,
+      "outcomeStatusCounts": {
+        "evidence-found": 65,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260908T165750Z__water-quality-portal__fd8e015f99c8/outcomes.ndjson",
+      "outcomesSha256": "9daef15ef99876d73ce08944f578d40fff0408d0a91cb1d614709cbe54124d3c",
+      "outcomesBytes": 80110
     }
   ]
 }
