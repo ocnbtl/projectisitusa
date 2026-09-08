@@ -8,19 +8,19 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Counties: `254`
 - County-species pairs: `636016`
 - Verified present: `15426`
-- Verified absent: `254`
+- Verified absent: `508`
 - Not detected: `0`
 - Researched unresolved: `107427`
-- Not researched: `512909`
-- Determination coverage: `2.47%`
-- Research coverage: `19.36%`
-- Explicit outcome coverage: `19.3560%`
+- Not researched: `512655`
+- Determination coverage: `2.51%`
+- Research coverage: `19.40%`
+- Explicit outcome coverage: `19.3959%`
 - Applicable protocol cells: `711`
 - Current complete protocol cells: `120`
 - Protocol completion: `18.71%`
 - Current protocol completion: `16.88%`
-- Evidence records: `18131`
-- Research runs: `40`
+- Evidence records: `18385`
+- Research runs: `41`
 - Rejection records: `1573`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -103,3 +103,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Asian longhorned beetle program update (2026) | manual | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
+| US NPPO / NAPPO California Karnal bunt eradication declaration (2010) | manual | not run | 0 | 0 |
+| USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
+| EPPO reviewed Karnal bunt state status | manual | 2026-09-08T06:44:11.532Z | 254 | 1 |
