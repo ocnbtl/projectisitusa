@@ -498349,6 +498349,352 @@
       "priority": 100,
       "state": "cancelled",
       "currentLeaseId": "lease-honey-ny-source-review-20260908-r12-1"
+    },
+    {
+      "jobId": "honey-hi-positive-pilot-20260908-r12",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "HI"
+        ],
+        "sourceFamilies": [
+          "aphis-honey-bee"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "varroa-destructor"
+        ],
+        "pairs": [
+          "15001:varroa-destructor",
+          "15003:varroa-destructor"
+        ]
+      },
+      "scopeClaims": [
+        "state/HI/source/aphis-honey-bee/taxon/varroa-destructor"
+      ],
+      "branch": "codex/honey-hi-positive-pilot-20260908-r12",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12",
+      "baseSha": "4541ebc10b0afae1eb8b1b85d089689ef9771842",
+      "expectedReceiptCodeCommit": "4541ebc10b0afae1eb8b1b85d089689ef9771842",
+      "permittedPaths": [
+        "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "honey-bee-positive-20260908-r12",
+        "candidateFile": {
+          "path": "ops/national-research/plans/honey-bee-positive-20260908-r12/hi.json",
+          "declaredCandidateCount": 2,
+          "selectedPairCount": 2,
+          "sha256": "1fa0efc3bec899195191d3316dda61bbe8195ae45520454eea9a7fa7d2383df6"
+        },
+        "candidateLimit": 2,
+        "candidateLimitMeaning": "Exact reviewed positive county-species candidates; no held Hawaiian pair is included",
+        "startedAt": "2026-09-08T10:02:23.551Z",
+        "outputRoot": "src/data/research/runs",
+        "expectedRunPath": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1",
+        "expectedProviderRequests": {
+          "providerNetworkRequests": 0,
+          "additionalRequests": 0,
+          "mode": "retained-positive-survey"
+        },
+        "explicitPairs": [
+          "15001:varroa-destructor",
+          "15003:varroa-destructor"
+        ],
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        },
+        "methodReview": "Independently verify original CSV source hashes, full selected county rows, exact published county, original month precision, program-level species mapping, composite managed-apiary/migratory caveats, UMD ownership attribution and explicit Hawaii holds. No new source retrieval, current establishment, absence or non-detection."
+      },
+      "expiresAt": "2026-09-08T10:48:44.187Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen preflight; read the registered method and retained original source/review witnesses.",
+        "Create one immutable state-partitioned retained-positive run with the exact committed plan/start and zero HTTP requests.",
+        "Validate and preserve the two-commit content/manifest sequence, truthful exact output counts and closed manifest.",
+        "No shared changes or projections; report zero compiled determination gains until MAIN reconciliation."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-honey-hi-positive-pilot-20260908-r12-1"
+    },
+    {
+      "jobId": "honey-ny-positive-pilot-20260908-r12",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "NY"
+        ],
+        "sourceFamilies": [
+          "aphis-honey-bee"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "varroa-destructor"
+        ],
+        "pairs": [
+          "36003:varroa-destructor",
+          "36009:varroa-destructor",
+          "36011:varroa-destructor",
+          "36013:varroa-destructor",
+          "36017:varroa-destructor",
+          "36019:varroa-destructor",
+          "36023:varroa-destructor",
+          "36029:varroa-destructor",
+          "36031:varroa-destructor",
+          "36033:varroa-destructor",
+          "36035:varroa-destructor",
+          "36037:varroa-destructor",
+          "36043:varroa-destructor",
+          "36045:varroa-destructor",
+          "36049:varroa-destructor",
+          "36053:varroa-destructor",
+          "36055:varroa-destructor",
+          "36057:varroa-destructor",
+          "36061:varroa-destructor",
+          "36063:varroa-destructor",
+          "36065:varroa-destructor",
+          "36067:varroa-destructor",
+          "36069:varroa-destructor",
+          "36071:varroa-destructor",
+          "36073:varroa-destructor",
+          "36075:varroa-destructor",
+          "36077:varroa-destructor",
+          "36089:varroa-destructor",
+          "36091:varroa-destructor",
+          "36093:varroa-destructor",
+          "36095:varroa-destructor",
+          "36097:varroa-destructor",
+          "36099:varroa-destructor",
+          "36103:varroa-destructor",
+          "36109:varroa-destructor",
+          "36111:varroa-destructor",
+          "36115:varroa-destructor",
+          "36117:varroa-destructor",
+          "36121:varroa-destructor",
+          "36123:varroa-destructor"
+        ]
+      },
+      "scopeClaims": [
+        "state/NY/source/aphis-honey-bee/taxon/varroa-destructor"
+      ],
+      "branch": "codex/honey-ny-positive-pilot-20260908-r12",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12",
+      "baseSha": "4541ebc10b0afae1eb8b1b85d089689ef9771842",
+      "expectedReceiptCodeCommit": "4541ebc10b0afae1eb8b1b85d089689ef9771842",
+      "permittedPaths": [
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "honey-bee-positive-20260908-r12",
+        "candidateFile": {
+          "path": "ops/national-research/plans/honey-bee-positive-20260908-r12/ny.json",
+          "declaredCandidateCount": 40,
+          "selectedPairCount": 40,
+          "sha256": "79de82a961c76df67c47972ca40973603adbea1b8c5564545d40c7fe2654253e"
+        },
+        "candidateLimit": 40,
+        "candidateLimitMeaning": "Exact reviewed positive county-species candidates; no held Hawaiian pair is included",
+        "startedAt": "2026-09-08T10:02:26.258Z",
+        "outputRoot": "src/data/research/runs",
+        "expectedRunPath": "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b",
+        "expectedProviderRequests": {
+          "providerNetworkRequests": 0,
+          "additionalRequests": 0,
+          "mode": "retained-positive-survey"
+        },
+        "explicitPairs": [
+          "36003:varroa-destructor",
+          "36009:varroa-destructor",
+          "36011:varroa-destructor",
+          "36013:varroa-destructor",
+          "36017:varroa-destructor",
+          "36019:varroa-destructor",
+          "36023:varroa-destructor",
+          "36029:varroa-destructor",
+          "36031:varroa-destructor",
+          "36033:varroa-destructor",
+          "36035:varroa-destructor",
+          "36037:varroa-destructor",
+          "36043:varroa-destructor",
+          "36045:varroa-destructor",
+          "36049:varroa-destructor",
+          "36053:varroa-destructor",
+          "36055:varroa-destructor",
+          "36057:varroa-destructor",
+          "36061:varroa-destructor",
+          "36063:varroa-destructor",
+          "36065:varroa-destructor",
+          "36067:varroa-destructor",
+          "36069:varroa-destructor",
+          "36071:varroa-destructor",
+          "36073:varroa-destructor",
+          "36075:varroa-destructor",
+          "36077:varroa-destructor",
+          "36089:varroa-destructor",
+          "36091:varroa-destructor",
+          "36093:varroa-destructor",
+          "36095:varroa-destructor",
+          "36097:varroa-destructor",
+          "36099:varroa-destructor",
+          "36103:varroa-destructor",
+          "36109:varroa-destructor",
+          "36111:varroa-destructor",
+          "36115:varroa-destructor",
+          "36117:varroa-destructor",
+          "36121:varroa-destructor",
+          "36123:varroa-destructor"
+        ],
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        },
+        "methodReview": "Independently verify original CSV source hashes, full selected county rows, exact published county, original month precision, program-level species mapping, composite managed-apiary/migratory caveats, UMD ownership attribution and explicit Hawaii holds. No new source retrieval, current establishment, absence or non-detection."
+      },
+      "expiresAt": "2026-09-08T10:48:45.023Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen preflight; read the registered method and retained original source/review witnesses.",
+        "Create one immutable state-partitioned retained-positive run with the exact committed plan/start and zero HTTP requests.",
+        "Validate and preserve the two-commit content/manifest sequence, truthful exact output counts and closed manifest.",
+        "No shared changes or projections; report zero compiled determination gains until MAIN reconciliation."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-honey-ny-positive-pilot-20260908-r12-1"
     }
   ]
 }
