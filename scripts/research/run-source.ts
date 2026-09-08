@@ -1,4 +1,5 @@
-import { wqpFieldCountsAdapter } from "./adapters/wqp-retained-field-counts";
+import { wqpFishInputPaths, type WqpFishPlan } from "@/lib/research/wqp-fish-positive-review";
+import { wqpFieldCountsAdapter, wqpFishMeasurementsAdapter } from "./adapters/wqp-retained-field-counts";
 import { wqpInputPaths, type WqpPlan } from "@/lib/research/wqp-field-positive-review";
 import { aphisHoneyBeePositiveAdapter } from "./adapters/aphis-honey-bee-positive";
 import { honeyPositiveInputPaths, type HoneyPositivePlan } from "@/lib/research/honey-bee-positive-review";
@@ -102,6 +103,7 @@ type CandidateFile = {
   agentJurisdiction?: AgentJurisdictionPlan;
   honeyBeePositive?: HoneyPositivePlan;
   wqpFieldCounts?: WqpPlan;
+  wqpFishMeasurements?: WqpFishPlan;
   officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
     downloadPageUrl: string;
@@ -554,7 +556,10 @@ function runTimestamp(value: string) {
 }
 
 function resolveAdapter(sourceId: string, candidateFile?: CandidateFile): ResearchSourceAdapter {
-  if (sourceId === wqpFieldCountsAdapter.sourceId) return wqpFieldCountsAdapter;
+  if (sourceId === wqpFieldCountsAdapter.sourceId) {
+    if (candidateFile?.wqpFishMeasurements && candidateFile.wqpFieldCounts) throw new Error("Ambiguous WQP method plans.");
+    return candidateFile?.wqpFishMeasurements ? wqpFishMeasurementsAdapter : wqpFieldCountsAdapter;
+  }
   if (sourceId === aphisHoneyBeePositiveAdapter.sourceId && candidateFile?.honeyBeePositive) return aphisHoneyBeePositiveAdapter;
   if (sourceId === officialOccurrenceAdapter.sourceId) return officialOccurrenceAdapter;
   if (sourceId === eddMapsSnapshotReplayAdapter.sourceId) {
@@ -666,6 +671,10 @@ function buildParameters(
     };
   }
   if (sourceId === wqpFieldCountsAdapter.sourceId) {
+    if (candidateFile.wqpFishMeasurements) {
+      if (candidateFile.wqpFieldCounts || candidateFile.sourceId !== sourceId) throw new Error("Ambiguous or wrong-source WQP fish plan.");
+      return {...candidateFile.wqpFishMeasurements, mode:"retained-fish-positive-measurement", stateCode, candidatePairs, candidateLimit:candidatePairs.length};
+    }
     if (!candidateFile.wqpFieldCounts || candidateFile.sourceId !== sourceId) throw new Error("WQP requires its pinned reviewed field-count plan.");
     return {...candidateFile.wqpFieldCounts, mode:"retained-field-positive-count", stateCode, candidatePairs, candidateLimit:candidatePairs.length};
   }
@@ -959,6 +968,7 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(adapter === wqpFishMeasurementsAdapter ? wqpFishInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFishMeasurements!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpFieldCountsAdapter ? wqpInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFieldCounts!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === aphisHoneyBeePositiveAdapter ? honeyPositiveInputPaths(readJson<CandidateFile>(options.candidateFile).honeyBeePositive!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
@@ -1064,7 +1074,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = adapter === wqpFieldCountsAdapter
+    const expectedProviderRequests = adapter === wqpFishMeasurementsAdapter
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-fish-positive-measurement" }
+      : adapter === wqpFieldCountsAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-field-positive-count" }
       : adapter === aphisHoneyBeePositiveAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-positive-survey" }

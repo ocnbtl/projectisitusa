@@ -993,9 +993,10 @@
         "id": "wqp-retained-field-counts",
         "module": "scripts/research/adapters/wqp-retained-field-counts.ts",
         "allowedVersions": [
-          "1.0.0"
+          "1.0.0",
+          "2.0.0"
         ],
-        "parameterSchema": "src/data/research/schemas/wqp-field-counts-parameters.schema.json",
+        "parameterSchema": "src/data/research/schemas/wqp-positive-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact SubjectTaxonomicName agrees with the reviewed current-catalog binomial. No fuzzy, rank-collapse or inferred identity.",
         "geographyMatchingPolicy": "Exact organization and monitoring-location identifier join to a single active publisher Station county FIPS. Source contradictions and method-specific holds are explicit; no automatic retired-county or coordinate-derived assignment.",

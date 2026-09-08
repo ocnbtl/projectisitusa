@@ -1,0 +1,1069 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-fish-method-registration",
+  "recordedAt": "2026-09-08T13:53:39.865Z",
+  "status": "method-and-regression-gates-passed-canonical-runs-pending",
+  "method": {
+    "path": "src/data/research/source-method-reviews/wqp-fish-measurements-v2.json",
+    "bytes": 9544,
+    "sha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c"
+  },
+  "methodVersion": "retained-wqp-fish-measurement-station-join-v2",
+  "adapterVersion": "2.0.0",
+  "checks": [
+    {
+      "name": "typecheck",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-09-08T13:51:51.997Z",
+      "finishedAt": "2026-09-08T13:52:03.220Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/typecheck-registration-2.log"
+    },
+    {
+      "name": "fish-method",
+      "args": [
+        "--max-old-space-size=768",
+        "--import",
+        "tsx",
+        "scripts/test-wqp-fish-measurements.ts"
+      ],
+      "startedAt": "2026-09-08T13:52:03.221Z",
+      "finishedAt": "2026-09-08T13:52:04.715Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/fish-method-registration-2.log"
+    },
+    {
+      "name": "clam-v1-regression",
+      "args": [
+        "--max-old-space-size=768",
+        "--import",
+        "tsx",
+        "scripts/test-wqp-field-counts.ts"
+      ],
+      "startedAt": "2026-09-08T13:52:04.716Z",
+      "finishedAt": "2026-09-08T13:52:14.204Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/clam-v1-regression-registration-2.log"
+    },
+    {
+      "name": "run-validation",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/test-research-run-validation.ts"
+      ],
+      "startedAt": "2026-09-08T13:52:14.204Z",
+      "finishedAt": "2026-09-08T13:52:14.672Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/run-validation-registration-2.log"
+    }
+  ],
+  "fixture": {
+    "passed": true,
+    "states": 13,
+    "reviewedPairWitnesses": 67,
+    "fixtureAssertions": 67,
+    "sourceRows": 611,
+    "positiveRows": 346,
+    "rejectionGroups": 9,
+    "invalidCasesRejected": 54,
+    "networkRequests": 0,
+    "actualNewDeterminations": 0
+  },
+  "priorFailedCheck": {
+    "checks": [
+      {
+        "name": "typecheck",
+        "args": [
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false"
+        ],
+        "startedAt": "2026-09-08T13:50:12.030Z",
+        "finishedAt": "2026-09-08T13:50:23.237Z",
+        "exitCode": 2,
+        "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/typecheck-registration.log"
+      }
+    ]
+  },
+  "failureResolution": "The mixed fixture override array inferred optional undefined values incompatible with the source Row type. Its explicit Record<string,string>[] annotation fixes the test type without changing runtime semantics.",
+  "baseline": {
+    "commit": "e11de84323ce38d0f64ff6ded8a3f47e74114760",
+    "counts": {
+      "countyCount": 3144,
+      "totalPairs": 7872576,
+      "resolvablePairCount": 7872576,
+      "notApplicablePairCount": 0,
+      "blockedPairCount": 0,
+      "verifiedPresent": 314879,
+      "verifiedAbsent": 3718,
+      "notDetected": 236,
+      "researchedUnresolved": 1306768,
+      "notResearched": 6246975,
+      "explicitOutcomePairCount": 1581247,
+      "conflictCount": 0,
+      "evidenceRecordCount": 462313,
+      "bootstrapEvidenceRecordCount": 30130,
+      "runEvidenceRecordCount": 432183,
+      "rejectionRecordCount": 65920,
+      "researchRunCount": 2127
+    },
+    "pairStatusCounts": {
+      "researched-unresolved": 43,
+      "not-researched": 24
+    },
+    "candidateScope": [
+      {
+        "pair": "05035:hypophthalmichthys-molitrix",
+        "countyFips": "05035",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "AR",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/AR/counties/05035.json",
+          "bytes": 354498,
+          "sha256": "765dd8cdddc8beb7638eef63ddbdd83863830d496f19603e71a4056923ae2dc4"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "05077:hypophthalmichthys-molitrix",
+        "countyFips": "05077",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "AR",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/AR/counties/05077.json",
+          "bytes": 362440,
+          "sha256": "1bee4d0c8c4a2be59ea27a845987fccc9f1734a00c7c8fe092ffbf404f6fefa9"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "05093:hypophthalmichthys-molitrix",
+        "countyFips": "05093",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "AR",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/AR/counties/05093.json",
+          "bytes": 338449,
+          "sha256": "da4214aee111a4a5142aeec7681e9820500b6edbeb59488d893ccdadc3bcd822"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18027:hypophthalmichthys-molitrix",
+        "countyFips": "18027",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18027.json",
+          "bytes": 354617,
+          "sha256": "5a627029e5f47ea28d460ab25e3dff7c95b42484b264504449a1f37cfa1c4154"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18043:hypophthalmichthys-molitrix",
+        "countyFips": "18043",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18043.json",
+          "bytes": 388981,
+          "sha256": "04cd02b9f0b771838ef586868d5c08c9b7ff7eb49afc9cac462e79fdd187f09d"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18045:hypophthalmichthys-molitrix",
+        "countyFips": "18045",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18045.json",
+          "bytes": 384679,
+          "sha256": "b8eb545c2bf65b200ddb126e7d1e528e61d18be8b176e1cf28b031df781fa0f2"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18051:hypophthalmichthys-molitrix",
+        "countyFips": "18051",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18051.json",
+          "bytes": 364502,
+          "sha256": "fce74799d31ca068365f2bdfcf4a1891bdaf9deae509c0e583cef5f4a5d76a97"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18055:hypophthalmichthys-molitrix",
+        "countyFips": "18055",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18055.json",
+          "bytes": 363678,
+          "sha256": "ed21a7883434aef506885630994ac63c28b3c2503ddcab46011c1aa904f383c2"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18061:hypophthalmichthys-molitrix",
+        "countyFips": "18061",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18061.json",
+          "bytes": 394970,
+          "sha256": "ae633eeb12ed9eb5c330bbe92b263bed036471c209d26017dcc159efca759fb7"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18089:neogobius-melanostomus",
+        "countyFips": "18089",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18089.json",
+          "bytes": 428030,
+          "sha256": "ef9260686271bdb8dd1f5c96a319b15783181980232618fe7bbdcdd1162d9d4b"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "18093:hypophthalmichthys-molitrix",
+        "countyFips": "18093",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18093.json",
+          "bytes": 404764,
+          "sha256": "cba32e31436d549c663d61a7fb332bfbd9d8caf29433949221765138c04ec496"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18097:hypophthalmichthys-molitrix",
+        "countyFips": "18097",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18097.json",
+          "bytes": 426476,
+          "sha256": "4143ca778132dadf80188e42a4c3ebf5dce8dee1ad69eb3e8c9e71306dd86951"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18101:hypophthalmichthys-molitrix",
+        "countyFips": "18101",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18101.json",
+          "bytes": 349463,
+          "sha256": "d6a911d46bc74db472cc5bf50398b8f5e69833cdf46793ea0879e5ac1d33c66e"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18109:hypophthalmichthys-molitrix",
+        "countyFips": "18109",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18109.json",
+          "bytes": 374624,
+          "sha256": "7f8ae0b99ca8b394b17a724676ccc5d21a6d4108bdc42e690069a8563a356dcb"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18119:hypophthalmichthys-molitrix",
+        "countyFips": "18119",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18119.json",
+          "bytes": 370181,
+          "sha256": "94e6f8ea6692a22a40769b8e8ea990815e4daa75467b7002698ed09d7b4002cd"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18121:hypophthalmichthys-molitrix",
+        "countyFips": "18121",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18121.json",
+          "bytes": 384858,
+          "sha256": "593e6ff2ef159ff6c7a54fb6df7c04a9842cb3e34cda9df371876af06994764d"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18123:hypophthalmichthys-molitrix",
+        "countyFips": "18123",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18123.json",
+          "bytes": 362680,
+          "sha256": "e0d648797743272f609f9362a9df6029d10fbdc821eac286936e9bfef9885c09"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18125:hypophthalmichthys-molitrix",
+        "countyFips": "18125",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18125.json",
+          "bytes": 350161,
+          "sha256": "f19dfb4f40141b8981f970cc9d194a84a142b6af02d8fa0d2a0c73dd6a96e96c"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18127:neogobius-melanostomus",
+        "countyFips": "18127",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18127.json",
+          "bytes": 421682,
+          "sha256": "d20b65354c5d721fc46cbf56c107f10977385705e5b811320de0e9734993ede9"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "18129:hypophthalmichthys-molitrix",
+        "countyFips": "18129",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18129.json",
+          "bytes": 393908,
+          "sha256": "1af145e133755baad05d6f9ba0e134f834e5a3ead6bf230cf883c32bd0feedc0"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18153:hypophthalmichthys-molitrix",
+        "countyFips": "18153",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18153.json",
+          "bytes": 380212,
+          "sha256": "0f79e719d3d8f0241d9b5ed902ba576b58d79f5cd2d2918c4a4818ea17fcc1ed"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18163:hypophthalmichthys-molitrix",
+        "countyFips": "18163",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18163.json",
+          "bytes": 358662,
+          "sha256": "33b3a6bcc917ee385522b31a0afb060c8e18fbb007affced72bf333f3bfc00a2"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18165:hypophthalmichthys-molitrix",
+        "countyFips": "18165",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18165.json",
+          "bytes": 372642,
+          "sha256": "78698135d369d99afa6b71e08b5a86f164d2a5e47e98c9086197c5d9b1e8134e"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "18167:hypophthalmichthys-molitrix",
+        "countyFips": "18167",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18167.json",
+          "bytes": 437169,
+          "sha256": "004f21f20d07a0d15d485a287ffed0402af66da31dda86f1c891db3070628184"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "19149:hypophthalmichthys-molitrix",
+        "countyFips": "19149",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IA/counties/19149.json",
+          "bytes": 295667,
+          "sha256": "0272cdc6bced2e604327a77cb4f6e3cf880979712a901a591df762b945d565f8"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "19155:hypophthalmichthys-molitrix",
+        "countyFips": "19155",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "IA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IA/counties/19155.json",
+          "bytes": 312858,
+          "sha256": "77b3afa0db0bafae36bfa2ece4459dec524906748d292a7ab6097aca5bd55a51"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "20043:hypophthalmichthys-molitrix",
+        "countyFips": "20043",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "KS",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/KS/counties/20043.json",
+          "bytes": 332756,
+          "sha256": "c4ad204892f27487929250bfc0c4af1df77d714e064d21f14570f979f9d9c2ab"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "21163:hypophthalmichthys-molitrix",
+        "countyFips": "21163",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "KY",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/KY/counties/21163.json",
+          "bytes": 315523,
+          "sha256": "9e4905c9cd763d8a68d24ae3810a086c22430fadf7cc0badaf1bad7ca2041571"
+        },
+        "rowSha256": "7f807f0bd736040b940ff3b4842487192d01affbb123826ac6f221d36dc54157"
+      },
+      {
+        "pair": "22029:hypophthalmichthys-molitrix",
+        "countyFips": "22029",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "LA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/LA/counties/22029.json",
+          "bytes": 354806,
+          "sha256": "1782b6a502c01dc42593f1745c8e25f70c2aa3f5184faea6bde3dbc917d0f31a"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "22035:hypophthalmichthys-molitrix",
+        "countyFips": "22035",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "LA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/LA/counties/22035.json",
+          "bytes": 363721,
+          "sha256": "61c0a445e95370bb3c58052774a5aceceefb2cefc534947cdefc0a7172d0e349"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "22065:hypophthalmichthys-molitrix",
+        "countyFips": "22065",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "LA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/LA/counties/22065.json",
+          "bytes": 378748,
+          "sha256": "3d0a40633214827279970f9c78be91b68f3c8e58f0ed9162620af645e2a88529"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "22107:hypophthalmichthys-molitrix",
+        "countyFips": "22107",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "LA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/LA/counties/22107.json",
+          "bytes": 381673,
+          "sha256": "4b1b20ff1c84320767940e7b93850ce6808d681dab214d4e12b9c0930d1a4933"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "22121:hypophthalmichthys-molitrix",
+        "countyFips": "22121",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "LA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/LA/counties/22121.json",
+          "bytes": 342161,
+          "sha256": "650fc8505095dab070c5bf4bbf95f5fb7f2876b3ccefffa84697c1c3821616ca"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "22125:hypophthalmichthys-molitrix",
+        "countyFips": "22125",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "LA",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/LA/counties/22125.json",
+          "bytes": 416054,
+          "sha256": "f9e103558ac26c156af14c2cb4bfc1a7a185ac3102f945743bc01765491d5ea5"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "26011:neogobius-melanostomus",
+        "countyFips": "26011",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26011.json",
+          "bytes": 335434,
+          "sha256": "ec3a0f6a3b184f654a2b046f6ec99e1847d711617575e84a877c1e8d58887d17"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26021:neogobius-melanostomus",
+        "countyFips": "26021",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26021.json",
+          "bytes": 473082,
+          "sha256": "1f6125f86e8f8bd2244b4d6a165e8beae47493f95369fe65b0785f93e2a7d471"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26031:neogobius-melanostomus",
+        "countyFips": "26031",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26031.json",
+          "bytes": 431930,
+          "sha256": "eb91be89015c4849f4969fe92ef3f59636bedb7bc8e760ba461a28561a4e888f"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26047:neogobius-melanostomus",
+        "countyFips": "26047",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26047.json",
+          "bytes": 432920,
+          "sha256": "e45642a626860e29fd9e2202c23ef691a8ce1977e670802069c508a133303c16"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26055:neogobius-melanostomus",
+        "countyFips": "26055",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26055.json",
+          "bytes": 362675,
+          "sha256": "05c61e43a77787f9888c4f4ea59f3b033254928625bab83726d175d46006a255"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26063:neogobius-melanostomus",
+        "countyFips": "26063",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26063.json",
+          "bytes": 340760,
+          "sha256": "38ff476680df8e712ff631c896c9f8aafd340e465a8819674966279c3b93fc72"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26099:neogobius-melanostomus",
+        "countyFips": "26099",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26099.json",
+          "bytes": 368466,
+          "sha256": "edc1b70c7cdefa386454d31725ddbf1d01846a66aa668be9b062e2173b469c68"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26115:neogobius-melanostomus",
+        "countyFips": "26115",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26115.json",
+          "bytes": 402049,
+          "sha256": "c85293b09718bba09dacff8a8f9afba17ad7e32fd04cb4e246f4500012418bdb"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26121:neogobius-melanostomus",
+        "countyFips": "26121",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26121.json",
+          "bytes": 387841,
+          "sha256": "08e0b2f6589a718e010603bb1e35e759bdd67130e909f38abe620d9f2fbdc9c5"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26127:neogobius-melanostomus",
+        "countyFips": "26127",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26127.json",
+          "bytes": 348917,
+          "sha256": "6a628f5050a00806a9ab482a6926f8f3d7e154eba4dfd8b1c80fbe99cab7ee61"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26139:neogobius-melanostomus",
+        "countyFips": "26139",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26139.json",
+          "bytes": 421312,
+          "sha256": "5cf140a16b20aa680b54bd0ce7925fba92a795910a8f9689418cc68a7203c01c"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26145:neogobius-melanostomus",
+        "countyFips": "26145",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26145.json",
+          "bytes": 362610,
+          "sha256": "cb6fc72e87cd66eea078faf5a5f8b1a601b865664d89e49ff5ab266fab2dee00"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "26147:neogobius-melanostomus",
+        "countyFips": "26147",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "MI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/MI/counties/26147.json",
+          "bytes": 411475,
+          "sha256": "9da5c567afb1019ab1e2d723cd2d77d630afae42b310e90053201a58b363dba5"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "28001:hypophthalmichthys-molitrix",
+        "countyFips": "28001",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MS",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MS/counties/28001.json",
+          "bytes": 340323,
+          "sha256": "d49ae23b12832cb0d069673f0e7e63aed8419abb3e9d72d78361e16144808e39"
+        },
+        "rowSha256": "7f807f0bd736040b940ff3b4842487192d01affbb123826ac6f221d36dc54157"
+      },
+      {
+        "pair": "28021:hypophthalmichthys-molitrix",
+        "countyFips": "28021",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MS",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MS/counties/28021.json",
+          "bytes": 302419,
+          "sha256": "ea3358e69be8cc17354f44ae21a284f36789a19d96f151e71432ee91a392952c"
+        },
+        "rowSha256": "7f807f0bd736040b940ff3b4842487192d01affbb123826ac6f221d36dc54157"
+      },
+      {
+        "pair": "28033:hypophthalmichthys-molitrix",
+        "countyFips": "28033",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MS",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MS/counties/28033.json",
+          "bytes": 338597,
+          "sha256": "e5d28f6333bad9995ef6edad1c8d34329f8a1a3a94a4b23effd57f21c6465e94"
+        },
+        "rowSha256": "7f807f0bd736040b940ff3b4842487192d01affbb123826ac6f221d36dc54157"
+      },
+      {
+        "pair": "29087:hypophthalmichthys-molitrix",
+        "countyFips": "29087",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MO",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MO/counties/29087.json",
+          "bytes": 311061,
+          "sha256": "a0e8e419be8d1c3fd66533c36241e8e71b04e522b064f80fee81bf055275eb56"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "29125:hypophthalmichthys-molitrix",
+        "countyFips": "29125",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MO",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MO/counties/29125.json",
+          "bytes": 301242,
+          "sha256": "a0edd7c0f15543ff3cdc626bb5ecf1a5121f797f7a89b3158b9a3c17cc0f7d06"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "29133:hypophthalmichthys-molitrix",
+        "countyFips": "29133",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MO",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MO/counties/29133.json",
+          "bytes": 308530,
+          "sha256": "bbde8795b60ea2fe861371e9d83a42502aa56cf2d8319d776585007d475d45aa"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "29143:hypophthalmichthys-molitrix",
+        "countyFips": "29143",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MO",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MO/counties/29143.json",
+          "bytes": 314303,
+          "sha256": "31e62578c59d0e96a8785c4d0e6f362b2596fd58398e2a341543d4af720e99af"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "29155:hypophthalmichthys-molitrix",
+        "countyFips": "29155",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "MO",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/MO/counties/29155.json",
+          "bytes": 302667,
+          "sha256": "7f01972d3f6adef9c15f308f669a84453f4dc42d1b8f183cdaef82416a9a6764"
+        },
+        "rowSha256": "c30e0a0716da47d1f0229fcf208292f4b80a980ecf4d66482dd742bafe94b9fc"
+      },
+      {
+        "pair": "39025:hypophthalmichthys-molitrix",
+        "countyFips": "39025",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "OH",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39025.json",
+          "bytes": 384377,
+          "sha256": "7fc643f03f285ddf2c5af3429cbbb6d7d6c04a99d1df23dc4ec63b95ead31fae"
+        },
+        "rowSha256": "92421c3426b668d2ccd8551de0c1da394763781bcdd1e694777953cf346967b4"
+      },
+      {
+        "pair": "39035:neogobius-melanostomus",
+        "countyFips": "39035",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "OH",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39035.json",
+          "bytes": 463219,
+          "sha256": "34a2dd64e6f15d979df07052a0f5e6844f6d313badcc8a9ee56945b580f002d4"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "39043:neogobius-melanostomus",
+        "countyFips": "39043",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "OH",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39043.json",
+          "bytes": 439763,
+          "sha256": "a8238baba8fda2cfb3349e3f7c9406d0f9a144f9f32bfdff7d5d38055b75e705"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "39085:neogobius-melanostomus",
+        "countyFips": "39085",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "OH",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39085.json",
+          "bytes": 426547,
+          "sha256": "69e56b5ef0e31f57b1572ea014e2187e53b72da4eab19da88da9b870c6180189"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "39093:neogobius-melanostomus",
+        "countyFips": "39093",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "OH",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39093.json",
+          "bytes": 421922,
+          "sha256": "7fb08ce3950419b2dfba393e343b40d440937a88ff1de8452ba0232839479d03"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "39095:neogobius-melanostomus",
+        "countyFips": "39095",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "OH",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39095.json",
+          "bytes": 400089,
+          "sha256": "2bf33062dec2f09810b813eb13d4dc16dc697aa4ac5715dbc1eb3252f0f0e4a0"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "39123:neogobius-melanostomus",
+        "countyFips": "39123",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "OH",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39123.json",
+          "bytes": 427741,
+          "sha256": "56370feb11d7aea2b8b1c284fbb5bdc6cdcfcc941262a7f47d55cec238fb8848"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "39143:neogobius-melanostomus",
+        "countyFips": "39143",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "OH",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OH/counties/39143.json",
+          "bytes": 361755,
+          "sha256": "58241fbfe55675439160c6cbca6bff29b08fbb63810d68615be749fa49d09bd1"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "46061:hypophthalmichthys-molitrix",
+        "countyFips": "46061",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "SD",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/SD/counties/46061.json",
+          "bytes": 267076,
+          "sha256": "a768b19e804632b8d77e26b1828bf8364e4da3d701d54012adebccb17e3a49a7"
+        },
+        "rowSha256": "92421c3426b668d2ccd8551de0c1da394763781bcdd1e694777953cf346967b4"
+      },
+      {
+        "pair": "47045:hypophthalmichthys-molitrix",
+        "countyFips": "47045",
+        "speciesId": "hypophthalmichthys-molitrix",
+        "stateCode": "TN",
+        "status": "researched-unresolved",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/TN/counties/47045.json",
+          "bytes": 305837,
+          "sha256": "833ae82a4251e3fd552e0a5816b8e1724cb8c9b58ad49f0652e9e6324c00e26a"
+        },
+        "rowSha256": "7f807f0bd736040b940ff3b4842487192d01affbb123826ac6f221d36dc54157"
+      },
+      {
+        "pair": "55075:neogobius-melanostomus",
+        "countyFips": "55075",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "WI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/WI/counties/55075.json",
+          "bytes": 381309,
+          "sha256": "511de1d6ba7323d45ea76b7f3b37df7ae1e415abe4e4533695e3e51ae15129a2"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "55083:neogobius-melanostomus",
+        "countyFips": "55083",
+        "speciesId": "neogobius-melanostomus",
+        "stateCode": "WI",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/WI/counties/55083.json",
+          "bytes": 370329,
+          "sha256": "9da1c35cf35aeacf7ddfb951156843e482a76fb0e5da59f294e22a27235afa5f"
+        },
+        "rowSha256": null
+      }
+    ]
+  },
+  "newDeterminations": 0,
+  "providerReplayRequests": 0,
+  "notes": [
+    "Old clam version 1 code and method bytes remain unchanged; the current adapter wrapper exports both versioned implementations.",
+    "Two independently retained source reviews support the scoped forms and primary witnesses. Canonical run acceptance and exact compiler reconciliation remain separate.",
+    "Round-goby pairs are untouched sparse defaults, not researched-unresolved. Fresh projection reads supersede any conversational shorthand."
+  ]
+}
