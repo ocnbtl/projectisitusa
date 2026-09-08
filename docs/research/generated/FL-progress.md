@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `8559`
+- Verified present: `8569`
 - Verified absent: `67`
 - Not detected: `0`
-- Researched unresolved: `25457`
-- Not researched: `133685`
-- Determination coverage: `5.14%`
+- Researched unresolved: `25460`
+- Not researched: `133672`
+- Determination coverage: `5.15%`
 - Research coverage: `20.32%`
-- Explicit outcome coverage: `20.3156%`
-- Applicable protocol cells: `705`
+- Explicit outcome coverage: `20.3233%`
+- Applicable protocol cells: `708`
 - Current complete protocol cells: `142`
-- Protocol completion: `21.99%`
-- Current protocol completion: `20.14%`
-- Evidence records: `19234`
-- Research runs: `41`
+- Protocol completion: `21.89%`
+- Current protocol completion: `20.06%`
+- Evidence records: `19244`
+- Research runs: `42`
 - Rejection records: `5140`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -85,7 +85,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Consortium of Pacific Northwest Herbaria preserved specimens | operational | 2026-09-03T22:46:46.819Z | 36 | 34 |
 | New York Botanical Garden preserved specimens | operational | 2026-09-06T18:21:47.471Z | 287 | 170 |
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:50:09.387Z | 65 | 50 |
-| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:31.361Z | 169 | 91 |
+| Smithsonian NMNH extant preserved specimens | operational | 2026-09-04T06:39:31.361Z | 168 | 91 |
 | Harvard University Herbaria United States preserved specimens | operational | 2026-09-06T07:43:44.068Z | 315 | 150 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1488 | 170 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:02:26.937Z | 18 | 6 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:35:41.681Z | 29 | 11 |

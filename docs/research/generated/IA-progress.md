@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6369`
+- Verified present: `6372`
 - Verified absent: `99`
 - Not detected: `9`
 - Researched unresolved: `40877`
-- Not researched: `200542`
+- Not researched: `200539`
 - Determination coverage: `2.61%`
 - Research coverage: `19.10%`
-- Explicit outcome coverage: `19.1024%`
+- Explicit outcome coverage: `19.1036%`
 - Applicable protocol cells: `356`
 - Current complete protocol cells: `119`
 - Protocol completion: `37.08%`
 - Current protocol completion: `33.43%`
-- Evidence records: `6738`
-- Research runs: `45`
+- Evidence records: `6741`
+- Research runs: `46`
 - Rejection records: `327`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,7 +45,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Greater knapweed (`centaurea-scabiosa`) | plants | 98 | 0 | 1 |
 | Crossflower (`chorispora-tenella`) | plants | 98 | 0 | 1 |
 | New world screwworm (`cochliomyia-hominivorax`) | insects | 98 | 0 | 1 |
-| Grass Carp (`ctenopharyngodon-idella`) | wildlife | 98 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 98 | 0 | 1 |
 | Yellow spring bedstraw (`galium-verum`) | plants | 98 | 0 | 1 |
 | Eurasian hemp moth (`grapholita-delineana`) | insects | 98 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Pineapple Weed (`matricaria-discoidea`) | plants | 98 | 0 | 1 |
 | Brown-dotted clothes moth (`niditinea-fuscella`) | insects | 98 | 0 | 1 |
 | Silver cinquefoil (`potentilla-argentea`) | plants | 98 | 0 | 1 |
+| Sour cherry (`prunus-cerasus`) | plants | 98 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:02:36.721Z | 15 | 4 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:39:55.435Z | 18 | 4 |

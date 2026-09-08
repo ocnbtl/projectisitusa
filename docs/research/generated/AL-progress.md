@@ -7,19 +7,19 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `15310`
+- Verified present: `15309`
 - Verified absent: `134`
 - Not detected: `9`
-- Researched unresolved: `98447`
+- Researched unresolved: `98448`
 - Not researched: `53868`
-- Determination coverage: `9.21%`
+- Determination coverage: `9.20%`
 - Research coverage: `67.89%`
 - Explicit outcome coverage: `41.4537%`
 - Applicable protocol cells: `14440`
 - Current complete protocol cells: `1349`
 - Protocol completion: `9.43%`
 - Current protocol completion: `9.34%`
-- Evidence records: `53972`
+- Evidence records: `53971`
 - Research runs: `74`
 - Rejection records: `6368`
 - Deferred source assertions remaining: `0`
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | TORCH BRIT preserved specimens | operational | 2026-09-04T04:49:52.284Z | 5 | 5 |
 | Smithsonian NMNH extant preserved specimens | operational | not run | 0 | 0 |
 | Harvard University Herbaria United States preserved specimens | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 6653 | 1016 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 6652 | 1016 |
 | GBIF coordinate-resolved preserved specimen records | operational | 2026-07-06T22:47:17.903Z | 904 | 68 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-06-26T11:22:25.724Z | 308 | 61 |
 | GBIF eBird Observation Dataset | operational | 2026-06-28T05:33:30.608Z | 292 | 10 |

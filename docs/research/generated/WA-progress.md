@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `8862`
+- Verified present: `8863`
 - Verified absent: `38`
 - Not detected: `0`
 - Researched unresolved: `14323`
-- Not researched: `74433`
+- Not researched: `74432`
 - Determination coverage: `9.11%`
 - Research coverage: `23.78%`
-- Explicit outcome coverage: `23.7804%`
+- Explicit outcome coverage: `23.7814%`
 - Applicable protocol cells: `746`
 - Current complete protocol cells: `184`
 - Protocol completion: `26.41%`
 - Current protocol completion: `24.66%`
-- Evidence records: `14152`
-- Research runs: `52`
+- Evidence records: `14153`
+- Research runs: `53`
 - Rejection records: `1898`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:05:16.328Z | 1 | 1 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:44:40.804Z | 2 | 1 |

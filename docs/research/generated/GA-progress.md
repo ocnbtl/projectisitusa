@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `8418`
+- Verified present: `8425`
 - Verified absent: `159`
 - Not detected: `0`
 - Researched unresolved: `67282`
-- Not researched: `322277`
-- Determination coverage: `2.15%`
-- Research coverage: `19.05%`
-- Explicit outcome coverage: `19.0535%`
+- Not researched: `322270`
+- Determination coverage: `2.16%`
+- Research coverage: `19.06%`
+- Explicit outcome coverage: `19.0553%`
 - Applicable protocol cells: `458`
 - Current complete protocol cells: `126`
 - Protocol completion: `30.35%`
 - Current protocol completion: `27.51%`
-- Evidence records: `11425`
-- Research runs: `45`
+- Evidence records: `11432`
+- Research runs: `46`
 - Rejection records: `979`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,7 +38,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Brown mustard (`brassica-juncea`) | plants | 158 | 0 | 1 |
 | Lambsquarters (`chenopodium-album`) | plants | 158 | 0 | 1 |
 | Ethiopian rattlebox (`crotalaria-brevidens`) | plants | 158 | 0 | 1 |
-| Grass Carp (`ctenopharyngodon-idella`) | wildlife | 158 | 0 | 1 |
 | Fuzzy flatsedge (`cyperus-pilosus`) | plants | 158 | 0 | 1 |
 | Jamaican crabgrass (`digitaria-horizontalis`) | plants | 158 | 0 | 1 |
 | Clammy goosefoot (`dysphania-pumilio`) | plants | 158 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Lesser Swinecress (`lepidium-didymum`) | plants | 158 | 0 | 1 |
 | Malaysian false pimpernel (`lindernia-crustacea`) | plants | 158 | 0 | 1 |
 | Red marshworm (`lumbricus-rubellus`) | wildlife | 158 | 0 | 1 |
+| Narrowleaf lupine (`lupinus-angustifolius`) | plants | 158 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:02:32.159Z | 8 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:39:46.625Z | 15 | 3 |

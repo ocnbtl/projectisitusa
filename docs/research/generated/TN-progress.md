@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `8157`
+- Verified present: `8160`
 - Verified absent: `190`
 - Not detected: `8`
 - Researched unresolved: `36795`
-- Not researched: `192730`
+- Not researched: `192727`
 - Determination coverage: `3.51%`
 - Research coverage: `18.98%`
-- Explicit outcome coverage: `18.9802%`
-- Applicable protocol cells: `443`
+- Explicit outcome coverage: `18.9814%`
+- Applicable protocol cells: `444`
 - Current complete protocol cells: `127`
-- Protocol completion: `31.60%`
-- Current protocol completion: `28.67%`
-- Evidence records: `10589`
-- Research runs: `42`
+- Protocol completion: `31.53%`
+- Current protocol completion: `28.60%`
+- Evidence records: `10592`
+- Research runs: `43`
 - Rejection records: `784`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,6 +42,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Woodland bittercress (`cardamine-flexuosa`) | plants | 94 | 0 | 1 |
 | Crossflower (`chorispora-tenella`) | plants | 94 | 0 | 1 |
 | Smooth hawksbeard (`crepis-capillaris`) | plants | 94 | 0 | 1 |
+| Grass Carp (`ctenopharyngodon-idella`) | wildlife | 94 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 94 | 0 | 1 |
 | Variable flatsedge (`cyperus-difformis`) | plants | 94 | 0 | 1 |
 | Ricefield flatsedge (`cyperus-iria`) | plants | 94 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Common barley (`hordeum-vulgare`) | plants | 94 | 0 | 1 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 94 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 94 | 0 | 1 |
-| Lesser Swinecress (`lepidium-didymum`) | plants | 94 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | 2026-09-08T06:44:12.045Z | 95 | 1 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:04:47.675Z | 5 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:43:56.343Z | 8 | 3 |

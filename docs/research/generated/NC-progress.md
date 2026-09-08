@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `10563`
+- Verified present: `10569`
 - Verified absent: `100`
 - Not detected: `0`
 - Researched unresolved: `37082`
-- Not researched: `202655`
+- Not researched: `202649`
 - Determination coverage: `4.26%`
 - Research coverage: `19.07%`
-- Explicit outcome coverage: `19.0675%`
-- Applicable protocol cells: `519`
+- Explicit outcome coverage: `19.0699%`
+- Applicable protocol cells: `520`
 - Current complete protocol cells: `129`
-- Protocol completion: `27.36%`
-- Current protocol completion: `24.86%`
-- Evidence records: `13821`
-- Research runs: `40`
+- Protocol completion: `27.31%`
+- Current protocol completion: `24.81%`
+- Evidence records: `13827`
+- Research runs: `41`
 - Rejection records: `1278`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -49,6 +49,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Oneseed hawthorn (`crataegus-monogyna`) | plants | 99 | 0 | 1 |
 | Ethiopian rattlebox (`crotalaria-brevidens`) | plants | 99 | 0 | 1 |
 | Japanese cedar (`cryptomeria-japonica`) | plants | 99 | 0 | 1 |
+| Grass Carp (`ctenopharyngodon-idella`) | wildlife | 99 | 0 | 1 |
 | Chinese fir (`cunninghamia-lanceolata`) | plants | 99 | 0 | 1 |
 | Ricefield flatsedge (`cyperus-iria`) | plants | 99 | 0 | 1 |
 | Purple foxglove (`digitalis-purpurea`) | plants | 99 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Crested latesummer mint (`elsholtzia-ciliata`) | plants | 99 | 0 | 1 |
 | Quackgrass (`elymus-repens`) | plants | 99 | 0 | 1 |
 | Madwoman's milk (`euphorbia-helioscopia`) | plants | 99 | 0 | 1 |
-| Buckwheat (`fagopyrum-esculentum`) | plants | 99 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:03:36.850Z | 2 | 1 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:42:00.226Z | 8 | 3 |

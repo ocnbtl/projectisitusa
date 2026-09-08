@@ -7,20 +7,20 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `66`
 - County-species pairs: `165264`
-- Verified present: `1802`
+- Verified present: `1808`
 - Verified absent: `66`
 - Not detected: `0`
-- Researched unresolved: `29632`
-- Not researched: `133764`
+- Researched unresolved: `29630`
+- Not researched: `133760`
 - Determination coverage: `1.13%`
 - Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0604%`
-- Applicable protocol cells: `293`
-- Current complete protocol cells: `91`
-- Protocol completion: `31.06%`
-- Current protocol completion: `31.06%`
-- Evidence records: `1988`
-- Research runs: `39`
+- Explicit outcome coverage: `19.0628%`
+- Applicable protocol cells: `295`
+- Current complete protocol cells: `92`
+- Protocol completion: `31.19%`
+- Current protocol completion: `31.19%`
+- Evidence records: `1994`
+- Research runs: `40`
 - Rejection records: `217`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,6 +43,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Siberian peashrub (`caragana-arborescens`) | plants | 65 | 0 | 1 |
 | Caraway (`carum-carvi`) | plants | 65 | 0 | 1 |
 | Hare's ear mustard (`conringia-orientalis`) | plants | 65 | 0 | 1 |
+| Grass Carp (`ctenopharyngodon-idella`) | wildlife | 65 | 0 | 1 |
 | Splitlip hempnettle (`galeopsis-bifida`) | plants | 65 | 0 | 1 |
 | Garden lettuce (`lactuca-sativa`) | plants | 65 | 0 | 1 |
 | Bird's-foot Trefoil (`lotus-corniculatus`) | plants | 65 | 0 | 1 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | False spiraea (`sorbaria-sorbifolia`) | plants | 65 | 0 | 1 |
 | Sorghum (`sorghum-bicolor`) | plants | 65 | 0 | 1 |
 | French tamarisk (`tamarix-gallica`) | plants | 65 | 0 | 1 |
-| Rock dandelion (`taraxacum-erythrospermum`) | plants | 65 | 0 | 1 |
 
 ## Source Operations
 
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:04:42.458Z | 22 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:43:47.550Z | 28 | 5 |
