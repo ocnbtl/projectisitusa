@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "kind": "interrupted-national-gate-reconciliation",
+  "recordedAt": "2026-09-08T04:22:08.955Z",
+  "baseSha": "c99ed547030cdc4256d7b58e5fd2851945d22ad2",
+  "asOf": "2026-09-08",
+  "status": "national-projections-verified-publication-manifest-awaits-projection-commit",
+  "priorCheckpoint": "ops/national-research/receipts/source-evaluations/inaturalist-context-local-checkpoint-20260908-r6.json",
+  "baselineDeterminations": 316244,
+  "finalDeterminations": 316244,
+  "present": 313000,
+  "absent": 3244,
+  "notDetected": 236,
+  "researchedUnresolved": 1306906,
+  "notResearched": 6249190,
+  "totalPairs": 7872576,
+  "states": 51,
+  "counties": 3144,
+  "evidenceRecords": 459960,
+  "conflicts": 0,
+  "pairSetSha256": "27c2a45e00e590e638413cb1f7077370de9ebefcd618609fa2a81aa5a4e0e401",
+  "pairStatusSha256": "383da8fe4547cebf075b4bf97a0ec7389c412e41390afed37c570d7ccaef2edd",
+  "netNewDeterminations": 0,
+  "removedDeterminations": 0,
+  "statusTransitions": 0,
+  "earlierBatchMovement": "The four previously integrated iNaturalist determinations remain preserved; this reconciliation does not recount them as new.",
+  "reproducibility": "All 51 states pass sequential two-run byte stability and protected shared-output checks.",
+  "verificationArtifact": {
+    "path": "ops/national-research/evaluations/artifacts/national-reconciliation-20260908-r7.json.gz",
+    "bytes": 1363889,
+    "sha256": "1a7bfc2433a656180348743378fec98534620a7101a964740c2203d1eabb628a"
+  },
+  "checks": [
+    {
+      "file": "compile-all.log",
+      "command": "Sequential national compile --as-of 2026-09-08",
+      "exitCode": 0,
+      "sha256": "318271179bbaed08828b2eb7af2620b42d4564927f17791c308a141fc9286029"
+    },
+    {
+      "file": "jurisdiction-audit.log",
+      "command": "Previously failed approved jurisdiction audit --check",
+      "exitCode": 0,
+      "sha256": "26d8819953cef2f75466f56ef10290637de58b4bcc519d05a19abd1fba094e76"
+    },
+    {
+      "file": "coverage-tests.log",
+      "command": "Source coverage index tests",
+      "exitCode": 0,
+      "sha256": "a92cbd34b25c1c0d201595d935a771f9d1e8ad683b979654563d93516f949579"
+    },
+    {
+      "file": "coverage-recheck.log",
+      "command": "Regenerated source coverage index --check",
+      "exitCode": 0,
+      "sha256": "360f139980bdc5c2d7895f445e5199d7da9d6eddc131786976ecf44be5ae2117"
+    },
+    {
+      "file": "publication-tests-fixed.log",
+      "command": "Corrected local HTTP publication tests",
+      "exitCode": 0,
+      "sha256": "b714c492bbd85a8b7b0082187344c3a204a10e1d29cfdc6c5146c79a510bc2ad"
+    },
+    {
+      "file": "verify-all.log",
+      "command": "research:verify:all --as-of 2026-09-08",
+      "exitCode": 0,
+      "sha256": "b6d23b31755a0ca6f550083665bab7ca0ac91ac98d495adb51e75a1fa9c0feb4"
+    },
+    {
+      "file": "state-projections.log",
+      "command": "check:state-research-projections",
+      "exitCode": 0,
+      "sha256": "8dc17144ce4b6f840598d6264a5da9500f8df75708b0b14aa55d37f278624fea"
+    },
+    {
+      "file": "national-config.log",
+      "command": "check:national-research-config",
+      "exitCode": 0,
+      "sha256": "ae7057f86f4e46544d16ce630e7979fa8ee32cacad31780090542470a552e87f"
+    },
+    {
+      "file": "data-integrity.log",
+      "command": "check:data-integrity",
+      "exitCode": 0,
+      "sha256": "fb65ffe654825a5844c26e69abb0395f0637b7098f594de76d01117f9c0c3ade"
+    },
+    {
+      "file": "typecheck.log",
+      "command": "tsc --noEmit",
+      "exitCode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "runtime-assets-verify.log",
+      "command": "Runtime image and data asset verification",
+      "exitCode": 0,
+      "sha256": "d602c7ea73547d75f49837f6a42bf0de2ac0986cb6b7bb61f575e110c1ceab44"
+    },
+    {
+      "file": "orchestration-final.json",
+      "command": "Frozen orchestration validation",
+      "exitCode": 0,
+      "sha256": "0103b26f0c1fd4f55a1affab9e44f2e715a7035adfd0d6d045ac2f759b6c0934"
+    }
+  ],
+  "corrections": [
+    "Recompiled mixed September 6/7 projections with one explicit September 8 date.",
+    "Regenerated the stale source coverage index.",
+    "Fixed the publication HTTP fixture to route absolute R2 request paths exclusively to the local test server; all four expected requests are now local."
+  ],
+  "publication": {
+    "r2Writes": 0,
+    "pointerPromotions": 0,
+    "appAssetsChanged": false,
+    "next": "Commit verified projections, generate the gzip publication manifest from committed bytes using an eligible R2 inventory, then check the sealed manifest offline. Batch production publication under existing cadence and capacity limits."
+  },
+  "researchNext": "Implement and adversarially test the agent-reviewed official-jurisdiction method using the independently reviewed CA Karnal bunt parent, preserving administrative chronology caveat and dated corroboration. Then dispatch a registered 58-pair immutable-run pilot."
+}

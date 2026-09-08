@@ -494639,6 +494639,172 @@
       "priority": 100,
       "state": "completed",
       "currentLeaseId": "lease-inaturalist-context-pilot-20260907-r6-ga-1"
+    },
+    {
+      "jobId": "karnal-bunt-ca-independent-review-20260908-r7",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "nappo-karnal-bunt-eradication-2010"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "tilletia-indica"
+        ],
+        "pairs": [
+          "06001:tilletia-indica",
+          "06003:tilletia-indica",
+          "06005:tilletia-indica",
+          "06007:tilletia-indica",
+          "06009:tilletia-indica",
+          "06011:tilletia-indica",
+          "06013:tilletia-indica",
+          "06015:tilletia-indica",
+          "06017:tilletia-indica",
+          "06019:tilletia-indica",
+          "06021:tilletia-indica",
+          "06023:tilletia-indica",
+          "06025:tilletia-indica",
+          "06027:tilletia-indica",
+          "06029:tilletia-indica",
+          "06031:tilletia-indica",
+          "06033:tilletia-indica",
+          "06035:tilletia-indica",
+          "06037:tilletia-indica",
+          "06039:tilletia-indica",
+          "06041:tilletia-indica",
+          "06043:tilletia-indica",
+          "06045:tilletia-indica",
+          "06047:tilletia-indica",
+          "06049:tilletia-indica",
+          "06051:tilletia-indica",
+          "06053:tilletia-indica",
+          "06055:tilletia-indica",
+          "06057:tilletia-indica",
+          "06059:tilletia-indica",
+          "06061:tilletia-indica",
+          "06063:tilletia-indica",
+          "06065:tilletia-indica",
+          "06067:tilletia-indica",
+          "06069:tilletia-indica",
+          "06071:tilletia-indica",
+          "06073:tilletia-indica",
+          "06075:tilletia-indica",
+          "06077:tilletia-indica",
+          "06079:tilletia-indica",
+          "06081:tilletia-indica",
+          "06083:tilletia-indica",
+          "06085:tilletia-indica",
+          "06087:tilletia-indica",
+          "06089:tilletia-indica",
+          "06091:tilletia-indica",
+          "06093:tilletia-indica",
+          "06095:tilletia-indica",
+          "06097:tilletia-indica",
+          "06099:tilletia-indica",
+          "06101:tilletia-indica",
+          "06103:tilletia-indica",
+          "06105:tilletia-indica",
+          "06107:tilletia-indica",
+          "06109:tilletia-indica",
+          "06111:tilletia-indica",
+          "06113:tilletia-indica",
+          "06115:tilletia-indica"
+        ]
+      },
+      "scopeClaims": [
+        "state/CA/source/nappo-karnal-bunt-eradication-2010/taxon/tilletia-indica"
+      ],
+      "branch": "codex/karnal-bunt-ca-independent-review-20260908-r7",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-independent-review-20260908-r7",
+      "baseSha": "c99ed547030cdc4256d7b58e5fd2851945d22ad2",
+      "expectedReceiptCodeCommit": "c99ed547030cdc4256d7b58e5fd2851945d22ad2",
+      "permittedPaths": [
+        "src/data/research/worker-results/karnal-bunt-ca-independent-review-20260908-r7/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 30,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": true,
+        "inputEvaluation": "ops/national-research/evaluations/karnal-bunt-ca-source-interpretation-20260907-r6.json",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Return independent source interpretation and a shared-method proposal. No biological assertions or immutable run may be claimed before MAIN registers the evaluated method. This proposal-only attempt cannot enter the evidence-run completion queue."
+      },
+      "expiresAt": "2026-09-08T04:36:34.726Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Independently verify retained source bytes, taxonomy, jurisdiction, temporal wording, contradiction limits and honest prospective county derivation.",
+        "Return a source-review proposal with explicit MAIN-only registration blockers. Do not emit assertions, reviews, outcomes or claim completed evidence-run coverage.",
+        "Do not modify MAIN, shared paths, frozen skills or generated outputs; read-only proposal may be returned in the agent response."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "cancelled",
+      "currentLeaseId": "lease-karnal-bunt-ca-independent-review-20260908-r7-1"
     }
   ]
 }

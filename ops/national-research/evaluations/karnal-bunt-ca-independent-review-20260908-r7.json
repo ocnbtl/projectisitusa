@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-source-interpretation-proposal",
+  "reviewId": "karnal-bunt-ca-independent-review-20260908-r7",
+  "recordedAt": "2026-09-08T04:13:38.831Z",
+  "actorId": "karnal_bunt_review_r7",
+  "recordedBy": "MAIN",
+  "status": "reviewed-proposal-method-implementation-pending",
+  "jobId": "karnal-bunt-ca-independent-review-20260908-r7",
+  "leaseId": "lease-karnal-bunt-ca-independent-review-20260908-r7-1",
+  "baseSha": "c99ed547030cdc4256d7b58e5fd2851945d22ad2",
+  "input": {
+    "path": "ops/national-research/evaluations/karnal-bunt-ca-source-interpretation-20260907-r6.json",
+    "sha256": "a221ac9cbda0d6c53972ae047af9c1868b4191275e3fdd6a8a38a3324d413f60"
+  },
+  "preflight": {
+    "passed": true,
+    "worktreeClean": true,
+    "writes": 0,
+    "commits": 0
+  },
+  "artifactVerification": {
+    "compressedAndDecodedHashesAndSizesMatched": true,
+    "documents": [
+      {
+        "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/nappo-california-karnal-bunt-2010.html.gz",
+        "storedSha256": "f89d7295a2ff42a0b9e32831674c314393c2e996265a1b5b896decc665615af9",
+        "sha256": "24a0b309e710db009a7de5a92f236bc101c9a17c92e00b35364a8a4a3c14f6a1"
+      },
+      {
+        "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-current.html.gz",
+        "storedSha256": "25d064bdfddb4432abcd058494eb975c0bc39837237d720e39d9a3215a9e0bff",
+        "sha256": "7922592fbb306b2b54d085b969c3b459dbf12ffde4815f392b4ad4ca230428cb"
+      },
+      {
+        "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/cdfa-tilletia-indica-2022.pdf.gz",
+        "storedSha256": "dd9f9323fff9f6614c930077ba228ad60f909cafe1b0556a1f08082502a3e4e6",
+        "sha256": "335915574ab852b05547f6caefb1087d0676fd1b0d3219825a47055e7b63051c"
+      },
+      {
+        "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-environmental-assessment-1996.pdf.gz",
+        "storedSha256": "effd91234da53eea2868479e876111610ec49e70f59052e1320f4b04d39efa04",
+        "sha256": "b9891371cd73639dbf2ad0b8b31dc85817076eba17c80bf51393d79aaeb37bd4"
+      },
+      {
+        "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/cdfa-karnal-bunt-quarantine-current.html.gz",
+        "storedSha256": "cc468499fd500ab6bed007709dac30e726021324fa0ceaffc1706bc1d05d562d",
+        "sha256": "7885441802aa4eee1964d252a559f2fc767056aabcbf00c175afa426c9d677bf"
+      }
+    ],
+    "internalScan": {
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/internal-ledger-contradiction-scan.json.gz",
+      "storedBytes": 225218,
+      "storedSha256": "163631c7b6281f0497a84d17bd4e0272bd55ee76a0dab5631e368ac8a5c36f16",
+      "decodedBytes": 1539110,
+      "decodedSha256": "252af4128428ca3765ca104ff3b0e862122882df7487d2b4a04bc4001e4d3613",
+      "fileCount": 6120,
+      "lineCount": 956931,
+      "matchCount": 0
+    },
+    "limitation": "Reviewer verified retained contradiction scan bytes, not every underlying ledger."
+  },
+  "independentFinding": "The explicit statewide US NPPO eradication statement supports a proposed California parent for exactly 58 counties. It does not imply 58 historical occurrences, 58 individual eradications, or 58 county-wide surveys.",
+  "temporalReview": {
+    "declarationPublishedDate": "2010-11-12",
+    "exactBiologicalEradicationDate": null,
+    "exactAdministrativeReleaseDate": null,
+    "corroborationModifiedDate": "2026-06-09",
+    "sourceDeclaredExpiry": null,
+    "requirement": "Keep declaration, biological event, legal quarantine release, page modification, retrieval, and review dates separate. The current APHIS Arizona confinement statement is corroboration, not a county survey or timeless negative."
+  },
+  "additionalOfficialChronology": {
+    "url": "https://www.usda.gov/sites/default/files/documents/18aphis2013notes.pdf",
+    "printedPage": "18-77",
+    "finding": "USDA 2013 Explanatory Notes place release of the same remaining 17,827 California acres in early 2011. Preserve this administrative chronology discrepancy separately from the November 2010 declaration; it is not evidence of reappearance.",
+    "retentionStatus": "Exact source bytes retained and MAIN independently verified the passage.",
+    "sourceArtifact": {
+      "id": "usda-aphis-explanatory-notes-2013",
+      "url": "https://www.usda.gov/sites/default/files/documents/18aphis2013notes.pdf",
+      "finalUrl": "https://www.usda.gov/sites/default/files/documents/18aphis2013notes.pdf",
+      "status": 200,
+      "retrievedAt": "2026-09-08T04:16:33.732Z",
+      "contentType": "application/pdf",
+      "path": "ops/national-research/inputs/official-jurisdiction-discovery-20260908-r7/usda-aphis-explanatory-notes-2013.pdf.gz",
+      "bytes": 1418464,
+      "sha256": "8f5051deebf4481fb9cddd186e3664eddbc924417cf9266e5db2b16993c85a2b",
+      "storedBytes": 1288532,
+      "storedSha256": "b3540e4b631eefbaa8d988a11174e60595827076bfe809be294df4f1a2657249",
+      "encoding": "gzip"
+    },
+    "pdfPageOneBased": 79
+  },
+  "constraints": [
+    "No national expansion in the pilot.",
+    "Historical detections in 1996 remain historical despite later document metadata or retrieval dates.",
+    "No quarantine, no interceptions, not established, or zero ledger matches alone cannot establish official absence.",
+    "Require whole-jurisdiction source support, exact active county set, parent hash lineage, current corroboration and a defined review-expiry policy.",
+    "Rerun contradiction scan against the actual integration baseline. Credible later or undated contrary records require review."
+  ],
+  "recommendedAdversarialTests": [
+    "Remove statewide eradication wording while retaining quarantine removal: reject whole-state negative.",
+    "Restrict source wording to part of Riverside: reject county/state expansion.",
+    "Substitute retrieval or indexing dates for source dates: reject.",
+    "Retain 1996 detections without inventing post-eradication reappearance.",
+    "Block affected current negatives on credible later or undated contrary records.",
+    "Fail current eligibility after corroboration expires.",
+    "Reject changed bytes, taxon, county set, actor or review lineage.",
+    "Reject 59 children, duplicates, non-CA children and county survey claims."
+  ],
+  "newAssertions": 0,
+  "newDeterminations": 0,
+  "newResearchOutcomes": 0,
+  "immutableRuns": 0,
+  "completionManifests": 0,
+  "nextAction": "MAIN implements a versioned agent-reviewed official-jurisdiction method with tested temporal and geographic safeguards, retains the chronology source, and then leases a registered immutable-run pilot. This proposal is not an accepted evidence-run integration."
+}

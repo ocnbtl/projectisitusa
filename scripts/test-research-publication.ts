@@ -123,10 +123,20 @@ async function main() {
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
   try {
     const origin = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
-    const fetcher = createResearchProjectionFetcher(deliveryConfig, (url, init) => fetch(new URL(String(url), origin), init));
+    const fixtureRequests: string[] = [];
+    const fetcher = createResearchProjectionFetcher(deliveryConfig, (url, init) => {
+      const configuredOrigin = deliveryConfig.r2.origin;
+      const target = new URL(String(url), configuredOrigin);
+      assert.equal(target.origin, new URL(configuredOrigin).origin, "Fixture received an unexpected data origin.");
+      fixtureRequests.push(target.pathname);
+      // Production uses absolute R2 URLs. Resolve only their paths against the local fixture.
+      return fetch(new URL(`/research-data${target.pathname}${target.search}`, origin), init);
+    });
     assert.deepEqual(await fetcher("AL/summary.json"), { state: "AL" });
+    assert.equal(fixtureRequests.length, 3, "The fixture must serve pointer, manifest, and object.");
     sendEncoding = false;
     await assert.rejects(fetcher("AL/summary.json"), /hash differs/iu);
+    assert.equal(fixtureRequests.length, 4, "The verified manifest is reused for the corrupt-object check.");
   } finally {
     server.closeAllConnections();
     await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));

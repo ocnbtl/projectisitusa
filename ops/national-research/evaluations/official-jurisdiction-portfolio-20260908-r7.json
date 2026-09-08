@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-jurisdiction-portfolio-preflight",
+  "reviewedAt": "2026-09-08T04:18:11.910Z",
+  "actorId": "MAIN",
+  "catalogCount": 2504,
+  "discoveryReceipt": "ops/national-research/inputs/official-jurisdiction-discovery-20260908-r7/discovery-receipt.json",
+  "leads": [
+    {
+      "speciesId": "globodera-pallida",
+      "sourceId": "aphis-pale-cyst-nematode-current",
+      "sourceModifiedAt": "2026-08-21",
+      "finding": "Current APHIS text describes successful containment to an 8.5-mile radius area in southeast Idaho, while separately warning that nonregulated fields cannot be assumed free of PCN.",
+      "decision": "Evaluate the explicit biological containment statement as a parent official-status assessment. Do not derive absence from quarantine boundaries or potato survey silence. Geographic and question-scope review remain pending.",
+      "prospectivePilotExclusion": "Exclude all Idaho counties initially; do not geospatially carve a radius into county negatives."
+    },
+    {
+      "speciesId": "phyllosticta-citricarpa",
+      "sourceId": "aphis-citrus-black-spot-current",
+      "finding": "Current APHIS page describes the disease as found only in southern Florida. A June 17, 2025 program update documents confirmed detections and new DeSoto and Highlands quarantine areas.",
+      "decision": "Evaluate a dated official distribution assessment outside Florida, subject to primary wording, taxonomy/synonym, freshness and contrary-evidence review. Named confirmed detections can support presence without using the quarantine itself as biological evidence.",
+      "prospectivePilotExclusion": "Exclude all Florida counties from any broad negative derivation; keep 2025 detections as positive source leads."
+    }
+  ],
+  "outsideCatalogLeads": [
+    "Anoplophora chinensis",
+    "Agrilus biguttatus",
+    "Dendrolimus sibiricus",
+    "Lymantria monacha",
+    "Trogoderma granarium",
+    "Chrysodeixis chalcites",
+    "Spodoptera littoralis",
+    "Bactrocera zonata",
+    "Bactrocera carambolae",
+    "Ceratitis rosa"
+  ],
+  "outsideCatalogDecision": "No denominator expansion to count easy negatives. Exact catalog matches were checked before admission.",
+  "newAssertions": 0,
+  "newDeterminations": 0,
+  "newResearchOutcomes": 0
+}
