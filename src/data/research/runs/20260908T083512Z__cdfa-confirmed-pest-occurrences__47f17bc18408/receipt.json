@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408",
+  "status": "complete",
+  "started_at": "2026-09-08T08:35:12.949Z",
+  "finished_at": "2026-09-08T08:42:32.257Z",
+  "actor_type": "adapter",
+  "actor_id": "official-confirmed-occurrence-report@1.0.0",
+  "source_id": "cdfa-confirmed-pest-occurrences",
+  "source_registry_hash": "35a63fc9a071150dd4e0b609dbdd921837f82ac89532e759b548a53c2bb14380",
+  "adapter_id": "official-confirmed-occurrence-report",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "34fafb43ab4177c5e6cd697a4bee9b2e4074e67c95708c0407b1ad9392673df2",
+  "code_commit": "9a7160ca494667a9caa648eb18628b76665e4fc7",
+  "parameter_hash": "47f17bc184088276252851ea5edb26d3f16874e014168c5840d597a6a594ec76",
+  "parameters": {
+    "asOf": "2026-09-08",
+    "reviewActorId": "cdfa_ca_occurrence_pilot_r11",
+    "records": [
+      {
+        "recordId": "cdfa-cff-la-confirmed-occurrence-20260318-v1",
+        "sha256": "e817535e71ac2f531e1182f040d344149a57c4fa1376f1451d5e52f44186cdb9"
+      },
+      {
+        "recordId": "cdfa-cff-sd-confirmed-occurrence-20260318-v1",
+        "sha256": "62dde57aa579874ffca3752998b2115f20a596e2b76f85c31baa062c89d2fdd7"
+      }
+    ],
+    "mode": "retained-reviewed-official-occurrence",
+    "stateCode": "CA",
+    "candidatePairs": [
+      "06037:anastrepha-suspensa",
+      "06073:anastrepha-suspensa"
+    ],
+    "candidateLimit": 2
+  },
+  "requested_scope": {
+    "state_code": "CA",
+    "county_fips": [
+      "06037",
+      "06073"
+    ],
+    "species_ids": [
+      "anastrepha-suspensa"
+    ],
+    "pair_keys": [
+      "06037:anastrepha-suspensa",
+      "06073:anastrepha-suspensa"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/artifacts/reviewed-occurrence-witnesses.json",
+      "sha256": "649bfc8744c1c2780757fe3d94a6ee315c8f954c23c0dd19889d3c943fd31bf0",
+      "bytes": 7514,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/assertions.ndjson",
+      "sha256": "f927bba33c6c40a63bcb8688895de92b15c689407284275697c91e4d4d210726",
+      "bytes": 5902,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/reviews.ndjson",
+      "sha256": "9a5fa641a55878b2657ad9f720e397f17804e5ae226f126fa0ea7120e5bbb374",
+      "bytes": 1882,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/outcomes.ndjson",
+      "sha256": "fd10ba5b7da9cd6f1a4d02f786016f58ee75be035986c9aec934f6f7950d74be",
+      "bytes": 1660,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/source-verification.json",
+      "sha256": "4ba4296e5c5a3d8e5d6f60a9973fabb2259f36f57d9d3715fdee9663ec529339",
+      "bytes": 6575,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Incident-specific agency confirmation and explicit historical county detections support recorded occurrence. Group identifications, host lists, treatment polygons, sterile releases, administrative dates and source silence do not create exact species occurrences or negative evidence. Reports do not establish current persistence."
+  ],
+  "source_warnings": [
+    "Offline replay of independently reviewed explicit agency occurrence reports. Only selected reports were reviewed; no exhaustive source search, current persistence, absence or non-detection is claimed."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source cdfa-confirmed-pest-occurrences --state CA --candidate-file ops/national-research/plans/official-confirmed-occurrence-20260908-r11/cdfa-ca.json --output-root src/data/research/runs --pairs 06037:anastrepha-suspensa,06073:anastrepha-suspensa"
+}
