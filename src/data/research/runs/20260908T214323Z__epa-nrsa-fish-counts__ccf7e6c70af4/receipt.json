@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T214323Z__epa-nrsa-fish-counts__ccf7e6c70af4",
+  "status": "complete",
+  "started_at": "2026-09-08T21:43:23.642Z",
+  "finished_at": "2026-09-08T21:43:29.981Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "ccf7e6c70af4c9d6ff3b3340fa481b5727ff28d1a600ad1f5d32834ed5c0d478",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "PA",
+    "candidatePairs": [
+      "42045:northern-snakehead",
+      "42049:neogobius-melanostomus",
+      "42065:salmo-trutta",
+      "42069:salmo-trutta",
+      "42101:salmo-trutta",
+      "42107:salmo-trutta"
+    ],
+    "candidateLimit": 6
+  },
+  "requested_scope": {
+    "state_code": "PA",
+    "county_fips": [
+      "42045",
+      "42049",
+      "42065",
+      "42069",
+      "42101",
+      "42107"
+    ],
+    "species_ids": [
+      "neogobius-melanostomus",
+      "northern-snakehead",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "42045:northern-snakehead",
+      "42049:neogobius-melanostomus",
+      "42065:salmo-trutta",
+      "42069:salmo-trutta",
+      "42101:salmo-trutta",
+      "42107:salmo-trutta"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T214323Z__epa-nrsa-fish-counts__ccf7e6c70af4/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "792bab09ec58e1ca0f1b39821010a133ea039b634bfb7068a3c419ba0a8d4ac1",
+      "bytes": 165464,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T214323Z__epa-nrsa-fish-counts__ccf7e6c70af4/assertions.ndjson",
+      "sha256": "56308726cb1ee179e5dffcfdc62bb4ea7db9df91e58058cfeb7f0c5512c34e23",
+      "bytes": 23086,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214323Z__epa-nrsa-fish-counts__ccf7e6c70af4/reviews.ndjson",
+      "sha256": "586d7fdc6a1666353e03652c60480e254b8c932effeb8beb44d88f60fc0a3a0a",
+      "bytes": 5686,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214323Z__epa-nrsa-fish-counts__ccf7e6c70af4/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214323Z__epa-nrsa-fish-counts__ccf7e6c70af4/outcomes.ndjson",
+      "sha256": "d94036a6a4f4b74ef364142399b9eb7511e5496098b10bebd04b46a8d5059b71",
+      "bytes": 6652,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 6,
+    "candidate_records": 7,
+    "assertion_events": 6,
+    "review_events": 6,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 6
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state PA --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/PA.json --output-root src/data/research/runs --stage-canonical true --pairs 42045:northern-snakehead,42049:neogobius-melanostomus,42065:salmo-trutta,42069:salmo-trutta,42101:salmo-trutta,42107:salmo-trutta"
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T213535Z__epa-nrsa-fish-counts__7d4cad70c7d9",
+  "status": "complete",
+  "started_at": "2026-09-08T21:35:35.417Z",
+  "finished_at": "2026-09-08T21:35:41.681Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "7d4cad70c7d9bae719662a4372db183a42f53a816acfc708199e55eedc9c0fc6",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "FL",
+    "candidatePairs": [
+      "12011:oreochromis-aureus",
+      "12011:tilapia-mariae",
+      "12013:ctenopharyngodon-idella",
+      "12021:cichlasoma-bimaculatum",
+      "12021:hoplosternum-littorale",
+      "12021:oreochromis-niloticus",
+      "12021:tilapia-mariae",
+      "12039:cyprinus-carpio",
+      "12055:hoplosternum-littorale",
+      "12055:oreochromis-aureus",
+      "12055:pterygoplichthys-disjunctivus",
+      "12055:pterygoplichthys-multiradiatus",
+      "12059:cyprinus-carpio",
+      "12093:hoplosternum-littorale"
+    ],
+    "candidateLimit": 14
+  },
+  "requested_scope": {
+    "state_code": "FL",
+    "county_fips": [
+      "12011",
+      "12013",
+      "12021",
+      "12039",
+      "12055",
+      "12059",
+      "12093"
+    ],
+    "species_ids": [
+      "cichlasoma-bimaculatum",
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio",
+      "hoplosternum-littorale",
+      "oreochromis-aureus",
+      "oreochromis-niloticus",
+      "pterygoplichthys-disjunctivus",
+      "pterygoplichthys-multiradiatus",
+      "tilapia-mariae"
+    ],
+    "pair_keys": [
+      "12011:oreochromis-aureus",
+      "12011:tilapia-mariae",
+      "12013:ctenopharyngodon-idella",
+      "12021:cichlasoma-bimaculatum",
+      "12021:hoplosternum-littorale",
+      "12021:oreochromis-niloticus",
+      "12021:tilapia-mariae",
+      "12039:cyprinus-carpio",
+      "12055:hoplosternum-littorale",
+      "12055:oreochromis-aureus",
+      "12055:pterygoplichthys-disjunctivus",
+      "12055:pterygoplichthys-multiradiatus",
+      "12059:cyprinus-carpio",
+      "12093:hoplosternum-littorale"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T213535Z__epa-nrsa-fish-counts__7d4cad70c7d9/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "e5405b27dadafc8880a5855e6156af243d327ab0d90b62955399be6ccf9e20aa",
+      "bytes": 327653,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T213535Z__epa-nrsa-fish-counts__7d4cad70c7d9/assertions.ndjson",
+      "sha256": "3feb1e6f8eff6da8cd827af0f00565d3d11c8273045e79039a74c19b40822b09",
+      "bytes": 54647,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T213535Z__epa-nrsa-fish-counts__7d4cad70c7d9/reviews.ndjson",
+      "sha256": "98375fb21736ba40ee4d938d71e0978ce96f273836efc35fd2242d70489ed03c",
+      "bytes": 13347,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T213535Z__epa-nrsa-fish-counts__7d4cad70c7d9/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T213535Z__epa-nrsa-fish-counts__7d4cad70c7d9/outcomes.ndjson",
+      "sha256": "4d56147badfc8eac157ece991bd35e3856e19c82c3aec12a9a51fa13a1732540",
+      "bytes": 15601,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 14,
+    "assertion_events": 14,
+    "review_events": 14,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state FL --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/FL.json --output-root src/data/research/runs --stage-canonical true --pairs 12011:oreochromis-aureus,12011:tilapia-mariae,12013:ctenopharyngodon-idella,12021:cichlasoma-bimaculatum,12021:hoplosternum-littorale,12021:oreochromis-niloticus,12021:tilapia-mariae,12039:cyprinus-carpio,12055:hoplosternum-littorale,12055:oreochromis-aureus,12055:pterygoplichthys-disjunctivus,12055:pterygoplichthys-multiradiatus,12059:cyprinus-carpio,12093:hoplosternum-littorale"
+}

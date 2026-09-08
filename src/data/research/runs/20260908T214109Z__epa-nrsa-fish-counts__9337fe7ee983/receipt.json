@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T214109Z__epa-nrsa-fish-counts__9337fe7ee983",
+  "status": "complete",
+  "started_at": "2026-09-08T21:41:09.310Z",
+  "finished_at": "2026-09-08T21:41:15.564Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "9337fe7ee983ee59bd492e40c2a66b3ffa2cdeed5626c922b75339f2d46d1d2b",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "MI",
+    "candidatePairs": [
+      "26021:cyprinus-carpio",
+      "26031:salmo-trutta",
+      "26045:cyprinus-carpio",
+      "26063:cyprinus-carpio",
+      "26067:cyprinus-carpio",
+      "26131:cyprinus-carpio",
+      "26131:salmo-trutta",
+      "26135:salmo-trutta",
+      "26139:cyprinus-carpio",
+      "26147:cyprinus-carpio",
+      "26155:cyprinus-carpio",
+      "26155:neogobius-melanostomus",
+      "26157:cyprinus-carpio",
+      "26159:neogobius-melanostomus"
+    ],
+    "candidateLimit": 14
+  },
+  "requested_scope": {
+    "state_code": "MI",
+    "county_fips": [
+      "26021",
+      "26031",
+      "26045",
+      "26063",
+      "26067",
+      "26131",
+      "26135",
+      "26139",
+      "26147",
+      "26155",
+      "26157",
+      "26159"
+    ],
+    "species_ids": [
+      "cyprinus-carpio",
+      "neogobius-melanostomus",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "26021:cyprinus-carpio",
+      "26031:salmo-trutta",
+      "26045:cyprinus-carpio",
+      "26063:cyprinus-carpio",
+      "26067:cyprinus-carpio",
+      "26131:cyprinus-carpio",
+      "26131:salmo-trutta",
+      "26135:salmo-trutta",
+      "26139:cyprinus-carpio",
+      "26147:cyprinus-carpio",
+      "26155:cyprinus-carpio",
+      "26155:neogobius-melanostomus",
+      "26157:cyprinus-carpio",
+      "26159:neogobius-melanostomus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T214109Z__epa-nrsa-fish-counts__9337fe7ee983/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "414a2e0e026fa7d917f363213471f07d4b62a34ee6a1aa5b8ac048e26bca793f",
+      "bytes": 374996,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T214109Z__epa-nrsa-fish-counts__9337fe7ee983/assertions.ndjson",
+      "sha256": "9fc008346365122815322a77912d7d41d7eb570adbe361858f88e9805a6634f7",
+      "bytes": 53798,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214109Z__epa-nrsa-fish-counts__9337fe7ee983/reviews.ndjson",
+      "sha256": "57ecd8524d2f07fc10b837100b663d62d66b303211ba36e78e15e5fd6fd1f9cc",
+      "bytes": 13277,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214109Z__epa-nrsa-fish-counts__9337fe7ee983/rejections.ndjson",
+      "sha256": "71554eb3398b7297d073e0a0c1c4f07a6679c1439e0a99f3b0f7a90b29281cd5",
+      "bytes": 875,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214109Z__epa-nrsa-fish-counts__9337fe7ee983/outcomes.ndjson",
+      "sha256": "7b89e898c0496ca81603821be5127b0f44523f33d17c45765981ef7442efcfcf",
+      "bytes": 15626,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 17,
+    "assertion_events": 14,
+    "review_events": 14,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state MI --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/MI.json --output-root src/data/research/runs --stage-canonical true --pairs 26021:cyprinus-carpio,26031:salmo-trutta,26045:cyprinus-carpio,26063:cyprinus-carpio,26067:cyprinus-carpio,26131:cyprinus-carpio,26131:salmo-trutta,26135:salmo-trutta,26139:cyprinus-carpio,26147:cyprinus-carpio,26155:cyprinus-carpio,26155:neogobius-melanostomus,26157:cyprinus-carpio,26159:neogobius-melanostomus"
+}

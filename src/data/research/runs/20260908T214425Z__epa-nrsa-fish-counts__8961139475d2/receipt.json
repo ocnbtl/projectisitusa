@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T214425Z__epa-nrsa-fish-counts__8961139475d2",
+  "status": "complete",
+  "started_at": "2026-09-08T21:44:25.852Z",
+  "finished_at": "2026-09-08T21:44:32.093Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "8961139475d2b21743c3207cb0f240e3dc9fc8e80d7ea3af763def7d855cc60c",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "VT",
+    "candidatePairs": [
+      "50025:cyprinus-carpio"
+    ],
+    "candidateLimit": 1
+  },
+  "requested_scope": {
+    "state_code": "VT",
+    "county_fips": [
+      "50025"
+    ],
+    "species_ids": [
+      "cyprinus-carpio"
+    ],
+    "pair_keys": [
+      "50025:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T214425Z__epa-nrsa-fish-counts__8961139475d2/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "77dacd74d46ab210dc29ca12d5a923982635f07cb1d8bd049b5e1833fa58921b",
+      "bytes": 51460,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T214425Z__epa-nrsa-fish-counts__8961139475d2/assertions.ndjson",
+      "sha256": "27a9d3e9726c41051440b3a261e7676c3f3df5b6f2ee076ee81a785640798806",
+      "bytes": 4105,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214425Z__epa-nrsa-fish-counts__8961139475d2/reviews.ndjson",
+      "sha256": "445a6d70eae033578ac59b4b63a5de825a23ea7d2aed69ddbd62aaab4224fec4",
+      "bytes": 948,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214425Z__epa-nrsa-fish-counts__8961139475d2/rejections.ndjson",
+      "sha256": "1c9838e61aceb1091fbadabed7b04233bb50c7370b14dedf593065aa54c1a255",
+      "bytes": 835,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214425Z__epa-nrsa-fish-counts__8961139475d2/outcomes.ndjson",
+      "sha256": "5f6c641c8fef2582fc6520e5f15c37218f84a681a43857f1d1fe365bd9f2869b",
+      "bytes": 1204,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 3,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state VT --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/VT.json --output-root src/data/research/runs --stage-canonical true --pairs 50025:cyprinus-carpio"
+}

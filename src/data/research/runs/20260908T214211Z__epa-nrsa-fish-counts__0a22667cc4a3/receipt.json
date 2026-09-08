@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T214211Z__epa-nrsa-fish-counts__0a22667cc4a3",
+  "status": "complete",
+  "started_at": "2026-09-08T21:42:11.792Z",
+  "finished_at": "2026-09-08T21:42:18.179Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "0a22667cc4a37216de3feee53c94c20e1b25e1b9a10ea6bd49bae3ce67f9cc5b",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "NE",
+    "candidatePairs": [
+      "31003:salmo-trutta",
+      "31017:cyprinus-carpio",
+      "31027:hypophthalmichthys-molitrix",
+      "31027:hypophthalmichthys-nobilis",
+      "31045:cyprinus-carpio",
+      "31051:ctenopharyngodon-idella",
+      "31051:cyprinus-carpio",
+      "31051:hypophthalmichthys-molitrix",
+      "31057:cyprinus-carpio",
+      "31063:cyprinus-carpio",
+      "31067:cyprinus-carpio",
+      "31079:cyprinus-carpio",
+      "31109:cyprinus-carpio",
+      "31121:cyprinus-carpio",
+      "31141:cyprinus-carpio",
+      "31155:cyprinus-carpio",
+      "31177:cyprinus-carpio",
+      "31177:hypophthalmichthys-molitrix",
+      "31185:cyprinus-carpio"
+    ],
+    "candidateLimit": 19
+  },
+  "requested_scope": {
+    "state_code": "NE",
+    "county_fips": [
+      "31003",
+      "31017",
+      "31027",
+      "31045",
+      "31051",
+      "31057",
+      "31063",
+      "31067",
+      "31079",
+      "31109",
+      "31121",
+      "31141",
+      "31155",
+      "31177",
+      "31185"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio",
+      "hypophthalmichthys-molitrix",
+      "hypophthalmichthys-nobilis",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "31003:salmo-trutta",
+      "31017:cyprinus-carpio",
+      "31027:hypophthalmichthys-molitrix",
+      "31027:hypophthalmichthys-nobilis",
+      "31045:cyprinus-carpio",
+      "31051:ctenopharyngodon-idella",
+      "31051:cyprinus-carpio",
+      "31051:hypophthalmichthys-molitrix",
+      "31057:cyprinus-carpio",
+      "31063:cyprinus-carpio",
+      "31067:cyprinus-carpio",
+      "31079:cyprinus-carpio",
+      "31109:cyprinus-carpio",
+      "31121:cyprinus-carpio",
+      "31141:cyprinus-carpio",
+      "31155:cyprinus-carpio",
+      "31177:cyprinus-carpio",
+      "31177:hypophthalmichthys-molitrix",
+      "31185:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T214211Z__epa-nrsa-fish-counts__0a22667cc4a3/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "8d5f2569cb7517694f230eed07328913e5c8ca80fd3a8e8326a2a009f5bb401b",
+      "bytes": 537729,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T214211Z__epa-nrsa-fish-counts__0a22667cc4a3/assertions.ndjson",
+      "sha256": "f70112b1969ce981d0b74fbb245968255e72008180e4ead46da895fcc1190b93",
+      "bytes": 75582,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214211Z__epa-nrsa-fish-counts__0a22667cc4a3/reviews.ndjson",
+      "sha256": "917001c3ad83b2b3a4e6db23b71562eaf4600fe33f2bd0c30e323b927d48916d",
+      "bytes": 18064,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214211Z__epa-nrsa-fish-counts__0a22667cc4a3/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214211Z__epa-nrsa-fish-counts__0a22667cc4a3/outcomes.ndjson",
+      "sha256": "55e9d7d5472ca1ee9267999ad8898cc55d8467b80b861fb73d7e071879c5d596",
+      "bytes": 21123,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 19,
+    "candidate_records": 24,
+    "assertion_events": 19,
+    "review_events": 19,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 19
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state NE --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/NE.json --output-root src/data/research/runs --stage-canonical true --pairs 31003:salmo-trutta,31017:cyprinus-carpio,31027:hypophthalmichthys-molitrix,31027:hypophthalmichthys-nobilis,31045:cyprinus-carpio,31051:ctenopharyngodon-idella,31051:cyprinus-carpio,31051:hypophthalmichthys-molitrix,31057:cyprinus-carpio,31063:cyprinus-carpio,31067:cyprinus-carpio,31079:cyprinus-carpio,31109:cyprinus-carpio,31121:cyprinus-carpio,31141:cyprinus-carpio,31155:cyprinus-carpio,31177:cyprinus-carpio,31177:hypophthalmichthys-molitrix,31185:cyprinus-carpio"
+}

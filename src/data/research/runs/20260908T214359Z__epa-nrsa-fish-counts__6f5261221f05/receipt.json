@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T214359Z__epa-nrsa-fish-counts__6f5261221f05",
+  "status": "complete",
+  "started_at": "2026-09-08T21:43:59.524Z",
+  "finished_at": "2026-09-08T21:44:05.888Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "6f5261221f053a70b69dce4c429c00fd7fad6b206d64ab74626fa7d2d21ffc07",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "TX",
+    "candidatePairs": [
+      "48029:pterygoplichthys-disjunctivus",
+      "48073:cyprinus-carpio",
+      "48097:cyprinus-carpio",
+      "48179:cyprinus-carpio",
+      "48201:oreochromis-aureus",
+      "48215:oreochromis-aureus",
+      "48215:pterygoplichthys-disjunctivus",
+      "48283:cyprinus-carpio",
+      "48297:cyprinus-carpio",
+      "48297:oreochromis-aureus",
+      "48307:cyprinus-carpio",
+      "48309:cyprinus-carpio",
+      "48315:cyprinus-carpio",
+      "48319:cyprinus-carpio",
+      "48321:cyprinus-carpio",
+      "48323:cyprinus-carpio",
+      "48325:cyprinus-carpio",
+      "48347:cyprinus-carpio",
+      "48373:cyprinus-carpio",
+      "48393:cyprinus-carpio",
+      "48399:cyprinus-carpio",
+      "48427:cyprinus-carpio",
+      "48427:pterygoplichthys-disjunctivus",
+      "48451:cyprinus-carpio",
+      "48465:cyprinus-carpio",
+      "48479:cyprinus-carpio",
+      "48479:oreochromis-aureus",
+      "48497:cyprinus-carpio"
+    ],
+    "candidateLimit": 28
+  },
+  "requested_scope": {
+    "state_code": "TX",
+    "county_fips": [
+      "48029",
+      "48073",
+      "48097",
+      "48179",
+      "48201",
+      "48215",
+      "48283",
+      "48297",
+      "48307",
+      "48309",
+      "48315",
+      "48319",
+      "48321",
+      "48323",
+      "48325",
+      "48347",
+      "48373",
+      "48393",
+      "48399",
+      "48427",
+      "48451",
+      "48465",
+      "48479",
+      "48497"
+    ],
+    "species_ids": [
+      "cyprinus-carpio",
+      "oreochromis-aureus",
+      "pterygoplichthys-disjunctivus"
+    ],
+    "pair_keys": [
+      "48029:pterygoplichthys-disjunctivus",
+      "48073:cyprinus-carpio",
+      "48097:cyprinus-carpio",
+      "48179:cyprinus-carpio",
+      "48201:oreochromis-aureus",
+      "48215:oreochromis-aureus",
+      "48215:pterygoplichthys-disjunctivus",
+      "48283:cyprinus-carpio",
+      "48297:cyprinus-carpio",
+      "48297:oreochromis-aureus",
+      "48307:cyprinus-carpio",
+      "48309:cyprinus-carpio",
+      "48315:cyprinus-carpio",
+      "48319:cyprinus-carpio",
+      "48321:cyprinus-carpio",
+      "48323:cyprinus-carpio",
+      "48325:cyprinus-carpio",
+      "48347:cyprinus-carpio",
+      "48373:cyprinus-carpio",
+      "48393:cyprinus-carpio",
+      "48399:cyprinus-carpio",
+      "48427:cyprinus-carpio",
+      "48427:pterygoplichthys-disjunctivus",
+      "48451:cyprinus-carpio",
+      "48465:cyprinus-carpio",
+      "48479:cyprinus-carpio",
+      "48479:oreochromis-aureus",
+      "48497:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T214359Z__epa-nrsa-fish-counts__6f5261221f05/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "fe139f2a76236a58f0a5a3f34fdb91f2859f0a3742716db8f6eec74fb37d6a3b",
+      "bytes": 758452,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T214359Z__epa-nrsa-fish-counts__6f5261221f05/assertions.ndjson",
+      "sha256": "9654a9c867d0fcecd454394ea450f8db3c697c632c5bd940ed56b952700770a1",
+      "bytes": 111481,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214359Z__epa-nrsa-fish-counts__6f5261221f05/reviews.ndjson",
+      "sha256": "0b85529436d171213502510fe84f09aca206aa5ba2f925c3f3a48399a552e351",
+      "bytes": 26598,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214359Z__epa-nrsa-fish-counts__6f5261221f05/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214359Z__epa-nrsa-fish-counts__6f5261221f05/outcomes.ndjson",
+      "sha256": "183786af2439e86bffcc958a4a8ca6de9420d7982e8a1d21f72f3204a64f0dce",
+      "bytes": 31106,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 28,
+    "candidate_records": 32,
+    "assertion_events": 28,
+    "review_events": 28,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 28
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state TX --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/TX.json --output-root src/data/research/runs --stage-canonical true --pairs 48029:pterygoplichthys-disjunctivus,48073:cyprinus-carpio,48097:cyprinus-carpio,48179:cyprinus-carpio,48201:oreochromis-aureus,48215:oreochromis-aureus,48215:pterygoplichthys-disjunctivus,48283:cyprinus-carpio,48297:cyprinus-carpio,48297:oreochromis-aureus,48307:cyprinus-carpio,48309:cyprinus-carpio,48315:cyprinus-carpio,48319:cyprinus-carpio,48321:cyprinus-carpio,48323:cyprinus-carpio,48325:cyprinus-carpio,48347:cyprinus-carpio,48373:cyprinus-carpio,48393:cyprinus-carpio,48399:cyprinus-carpio,48427:cyprinus-carpio,48427:pterygoplichthys-disjunctivus,48451:cyprinus-carpio,48465:cyprinus-carpio,48479:cyprinus-carpio,48479:oreochromis-aureus,48497:cyprinus-carpio"
+}

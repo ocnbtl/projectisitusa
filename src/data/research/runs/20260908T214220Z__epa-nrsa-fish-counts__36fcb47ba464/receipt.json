@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T214220Z__epa-nrsa-fish-counts__36fcb47ba464",
+  "status": "complete",
+  "started_at": "2026-09-08T21:42:20.689Z",
+  "finished_at": "2026-09-08T21:42:26.995Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "36fcb47ba464555ccda6eae4c1c8a244daaa4acb77ea8a7ad4cd02c86e1b3d45",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "NJ",
+    "candidatePairs": [
+      "34007:cyprinus-carpio",
+      "34007:northern-snakehead",
+      "34015:northern-snakehead",
+      "34017:cyprinus-carpio"
+    ],
+    "candidateLimit": 4
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34007",
+      "34015",
+      "34017"
+    ],
+    "species_ids": [
+      "cyprinus-carpio",
+      "northern-snakehead"
+    ],
+    "pair_keys": [
+      "34007:cyprinus-carpio",
+      "34007:northern-snakehead",
+      "34015:northern-snakehead",
+      "34017:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T214220Z__epa-nrsa-fish-counts__36fcb47ba464/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "97037d8209ef5b6ba9a288d29325335b7b9d5b85563a5e2dc3c6f0ee4fb673ba",
+      "bytes": 128718,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T214220Z__epa-nrsa-fish-counts__36fcb47ba464/assertions.ndjson",
+      "sha256": "21dc184f52b972729634dadb368b5326f0bfe65b77a9e8c12b5bc9b8cdc9d1d3",
+      "bytes": 16234,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214220Z__epa-nrsa-fish-counts__36fcb47ba464/reviews.ndjson",
+      "sha256": "f2d90a219641e9bd6d5a7db491ceb42cb09f50636bf89aae6620d3a0630ab54a",
+      "bytes": 3798,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214220Z__epa-nrsa-fish-counts__36fcb47ba464/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214220Z__epa-nrsa-fish-counts__36fcb47ba464/outcomes.ndjson",
+      "sha256": "9327f1c01d79c7f936f35ceb3d740995c2460a76845a06cbdb78ebad30ddc9b6",
+      "bytes": 4442,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 4,
+    "candidate_records": 5,
+    "assertion_events": 4,
+    "review_events": 4,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 4
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state NJ --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/NJ.json --output-root src/data/research/runs --stage-canonical true --pairs 34007:cyprinus-carpio,34007:northern-snakehead,34015:northern-snakehead,34017:cyprinus-carpio"
+}

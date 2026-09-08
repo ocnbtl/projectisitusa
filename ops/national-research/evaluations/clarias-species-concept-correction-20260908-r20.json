@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-exact-species-concept-correction",
+  "recordedAt": "2026-09-08T21:44:54.485Z",
+  "status": "review-events-appended-national-reconciliation-pending",
+  "scopeAudit": "ops/national-research/evaluations/clarias-species-concept-review-scope-20260908-r20.json",
+  "priorLedger": {
+    "path": "src/data/research/review-events.ndjson",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  "proposedEvents": {
+    "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/clarias-correction-events.ndjson",
+    "bytes": 10881,
+    "sha256": "7bb752e5f2a9cadaee87578e1d1831252e2377572b35deeabab45f30fcaf0f92"
+  },
+  "assertionEvents": 6,
+  "uniquePairs": 5,
+  "sourceNames": [
+    "gbif-preserved-specimens",
+    "smithsonian-nmnh-preserved-specimens",
+    "epa-nrsa-fish-counts"
+  ],
+  "beforePublishedAssertions": 6,
+  "afterPublishedAssertions": 0,
+  "beforeDistinctEvidence": 5,
+  "afterDistinctEvidence": 0,
+  "countyBaseline": [
+    {
+      "pair": "01081:clarias-batrachus",
+      "stateCode": "AL",
+      "path": "public/generated/research/AL/counties/01081.json",
+      "bytes": 3098522,
+      "sha256": "db82cdcc8c7c57d8a26a629deac6ffeedc68f2acc71e6283515c1661bdef485f",
+      "row": {
+        "speciesId": "clarias-batrachus",
+        "commonName": "Walking Catfish",
+        "scientificName": "Clarias batrachus",
+        "category": "wildlife",
+        "applicabilityStatus": "applicable",
+        "displayStatus": "verified-present",
+        "determinationStatus": "recorded-present",
+        "surveyStatus": "unassessed",
+        "researchStatus": "reviewed-evidence-found",
+        "freshnessStatus": "stale",
+        "reviewStatus": "machine-validated",
+        "conflict": false,
+        "evidence": [
+          {
+            "evidenceId": "gbif-assertion-259bab1adc89f430e85e242efa7396bebac405fb1771d4b01bd588c49f4e21e7",
+            "sourceId": "gbif-preserved-specimens",
+            "sourceLabel": "GBIF preserved specimen records",
+            "url": "https://www.gbif.org/occurrence/1024499800",
+            "assertion": "recorded-present",
+            "scope": "point",
+            "observedAt": "1969-09-01",
+            "reviewedAt": "2026-07-28T07:50:53.941Z",
+            "caveat": "GBIF is an aggregator and publisher record quality can vary. This preserved specimen occurrence supports historical presence only. Missing GBIF records never support absence or non-detection.",
+            "lineage": "source-record"
+          }
+        ],
+        "screenedBySourceIds": [
+          "eddmaps",
+          "gbif-preserved-specimens",
+          "idigbio-preserved-specimens"
+        ]
+      }
+    },
+    {
+      "pair": "12011:clarias-batrachus",
+      "stateCode": "FL",
+      "path": "public/generated/research/FL/counties/12011.json",
+      "bytes": 585407,
+      "sha256": "37629fa9ff96ff5c651eb2108d98541ee651989b33c140956c4b946c0a70f1b9",
+      "row": {
+        "speciesId": "clarias-batrachus",
+        "commonName": "Walking Catfish",
+        "scientificName": "Clarias batrachus",
+        "category": "wildlife",
+        "applicabilityStatus": "applicable",
+        "displayStatus": "verified-present",
+        "determinationStatus": "recorded-present",
+        "surveyStatus": "unassessed",
+        "researchStatus": "reviewed-evidence-found",
+        "freshnessStatus": "stale",
+        "reviewStatus": "machine-validated",
+        "conflict": false,
+        "evidence": [
+          {
+            "evidenceId": "smithsonian-nmnh-assertion-8f5cdd9da612610339bfb227cca2087ec5ac68f08d4b64e589c982fe17f10ee1",
+            "sourceId": "smithsonian-nmnh-preserved-specimens",
+            "sourceLabel": "Smithsonian NMNH extant preserved specimens",
+            "url": "https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_extant_dwc-a&v=1.112",
+            "assertion": "recorded-present",
+            "scope": "point",
+            "observedAt": "1968-08-04",
+            "reviewedAt": "2026-09-04T06:39:31.361Z",
+            "caveat": "Historical preserved specimen evidence supports recorded presence only. It does not establish current abundance, countywide distribution, or current establishment. Source silence, excluded cultivated records, missing geography, and every rejected row create no absence or non-detection claim.",
+            "lineage": "source-record"
+          }
+        ],
+        "screenedBySourceIds": [
+          "smithsonian-nmnh-preserved-specimens"
+        ]
+      }
+    },
+    {
+      "pair": "12021:clarias-batrachus",
+      "stateCode": "FL",
+      "path": "public/generated/research/FL/counties/12021.json",
+      "bytes": 697701,
+      "sha256": "9d33eab35fa1d3e2a2acdcd284b472ff42d722b93cdd4be06566ee552939d232",
+      "row": {
+        "speciesId": "clarias-batrachus",
+        "commonName": "Walking Catfish",
+        "scientificName": "Clarias batrachus",
+        "category": "wildlife",
+        "applicabilityStatus": "applicable",
+        "displayStatus": "verified-present",
+        "determinationStatus": "recorded-present",
+        "surveyStatus": "unassessed",
+        "researchStatus": "reviewed-evidence-found",
+        "freshnessStatus": "stale",
+        "reviewStatus": "machine-validated",
+        "conflict": false,
+        "evidence": [
+          {
+            "evidenceId": "epa-nrsa-fish-assertion-34d925033ca13a232ba5ff26fa39ef8fc7d9c40cb1ee4b8941dfc8d4426dc197",
+            "sourceId": "epa-nrsa-fish-counts",
+            "sourceLabel": "EPA National Rivers and Streams Assessment fish counts",
+            "url": "https://www.epa.gov/system/files/other-files/2026-06/nrsa2324_fishcount.csv",
+            "assertion": "recorded-present",
+            "scope": "survey-area",
+            "observedAt": "2023-07-11",
+            "reviewedAt": "2026-09-08T19:02:23.376Z",
+            "caveat": "U.S. Environmental Protection Agency, National Aquatic Resource Surveys, National Rivers and Streams Assessment 2023-2024; fish-count, site-information, fish-taxonomy and companion metadata files published June2026, accessed2026-09-08. Acknowledge participating field crews, laboratories, states, tribes and contributors. No EPA endorsement is implied. Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory. Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs. FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection. SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications. Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference. Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held. EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status. The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record. Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition.",
+            "lineage": "source-record"
+          }
+        ],
+        "screenedBySourceIds": [
+          "epa-nrsa-fish-counts"
+        ]
+      }
+    },
+    {
+      "pair": "12085:clarias-batrachus",
+      "stateCode": "FL",
+      "path": "public/generated/research/FL/counties/12085.json",
+      "bytes": 562158,
+      "sha256": "6481a6fe26c83e3e60e2bb32d513f726271cbe6b28272e0e7a62d002f338eb9c",
+      "row": {
+        "speciesId": "clarias-batrachus",
+        "commonName": "Walking Catfish",
+        "scientificName": "Clarias batrachus",
+        "category": "wildlife",
+        "applicabilityStatus": "applicable",
+        "displayStatus": "verified-present",
+        "determinationStatus": "recorded-present",
+        "surveyStatus": "unassessed",
+        "researchStatus": "reviewed-evidence-found",
+        "freshnessStatus": "stale",
+        "reviewStatus": "machine-validated",
+        "conflict": false,
+        "evidence": [
+          {
+            "evidenceId": "epa-nrsa-fish-assertion-e75cfaf8118cf5d556e77fdeacc492b07da3b4f56c2afc804e184c9ffa93dc35",
+            "sourceId": "epa-nrsa-fish-counts",
+            "sourceLabel": "EPA National Rivers and Streams Assessment fish counts",
+            "url": "https://www.epa.gov/system/files/other-files/2026-06/nrsa2324_fishcount.csv",
+            "assertion": "recorded-present",
+            "scope": "survey-area",
+            "observedAt": "2023-09-19",
+            "reviewedAt": "2026-09-08T19:02:23.376Z",
+            "caveat": "U.S. Environmental Protection Agency, National Aquatic Resource Surveys, National Rivers and Streams Assessment 2023-2024; fish-count, site-information, fish-taxonomy and companion metadata files published June2026, accessed2026-09-08. Acknowledge participating field crews, laboratories, states, tribes and contributors. No EPA endorsement is implied. Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory. Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs. FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection. SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications. Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference. Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held. EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status. The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record. Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition.",
+            "lineage": "source-record"
+          }
+        ],
+        "screenedBySourceIds": [
+          "epa-nrsa-fish-counts"
+        ]
+      }
+    },
+    {
+      "pair": "12093:clarias-batrachus",
+      "stateCode": "FL",
+      "path": "public/generated/research/FL/counties/12093.json",
+      "bytes": 728235,
+      "sha256": "98d6cc10b436d94d5b42905797e4c6a0613e1be61ce3679aa7eb1ea045104873",
+      "row": {
+        "speciesId": "clarias-batrachus",
+        "commonName": "Walking Catfish",
+        "scientificName": "Clarias batrachus",
+        "category": "wildlife",
+        "applicabilityStatus": "applicable",
+        "displayStatus": "verified-present",
+        "determinationStatus": "recorded-present",
+        "surveyStatus": "unassessed",
+        "researchStatus": "reviewed-evidence-found",
+        "freshnessStatus": "stale",
+        "reviewStatus": "machine-validated",
+        "conflict": false,
+        "evidence": [
+          {
+            "evidenceId": "epa-nrsa-fish-assertion-a9fd30bc042bcd5d1d274af5471f2842c3a82b88ebcb67f96feddf30b29206f0",
+            "sourceId": "epa-nrsa-fish-counts",
+            "sourceLabel": "EPA National Rivers and Streams Assessment fish counts",
+            "url": "https://www.epa.gov/system/files/other-files/2026-06/nrsa2324_fishcount.csv",
+            "assertion": "recorded-present",
+            "scope": "survey-area",
+            "observedAt": "2023-06-06",
+            "reviewedAt": "2026-09-08T19:02:23.376Z",
+            "caveat": "U.S. Environmental Protection Agency, National Aquatic Resource Surveys, National Rivers and Streams Assessment 2023-2024; fish-count, site-information, fish-taxonomy and companion metadata files published June2026, accessed2026-09-08. Acknowledge participating field crews, laboratories, states, tribes and contributors. No EPA endorsement is implied. Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory. Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs. FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection. SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications. Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference. Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held. EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status. The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record. Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition.",
+            "lineage": "source-record"
+          }
+        ],
+        "screenedBySourceIds": [
+          "epa-nrsa-fish-counts"
+        ]
+      }
+    }
+  ],
+  "expectedDeterminationMovement": -5,
+  "negativeDeterminationsCreated": 0,
+  "sourceRecordsRewritten": 0,
+  "interpretation": "The catalog currently names an exact binomial and has no approved broader historical taxon-concept bridge. Evidence under the specifically disputed introduced-population name is held from that exact determination until resolved; the original reported capture remains part of the immutable ledger.",
+  "canonicalCompilerReconciliationPending": true,
+  "appliedAt": "2026-09-08T21:48:04.742Z",
+  "contextArtifact": {
+    "path": "ops/national-research/evaluations/artifacts/clarias-concept-correction-20260908-r20.json.gz",
+    "bytes": 36521,
+    "sha256": "9f538e46b5ebe382ce7f648474b26282c299700a377651b93d1de94f5a8bd1ca"
+  },
+  "ledgerAfter": {
+    "path": "src/data/research/review-events.ndjson",
+    "bytes": 10882,
+    "sha256": "d8c374fb65bb34b8d1af85887c5dcb5179585a3d140b3ea19c2f3d5fd6f52e6b"
+  },
+  "originalRunFilesRewritten": 0
+}

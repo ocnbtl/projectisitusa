@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T214443Z__epa-nrsa-fish-counts__b57cf950d4bd",
+  "status": "complete",
+  "started_at": "2026-09-08T21:44:43.956Z",
+  "finished_at": "2026-09-08T21:44:50.360Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@2.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "cc3b9b5460625d06ca1d281af83efc533f06067e6286a40619a6a4e7631c0244",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "ebfb2b5d8b237e4544bb3ab3653f1c3711a3be25",
+  "parameter_hash": "b57cf950d4bda993edc8b0f9ea17561bd6be59d808f514a8510320fe63916e77",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20.json",
+    "methodReviewSha256": "e6dd2778afd21f9c3d3ed74872bbb5457ba749f23a7f2689d101dea397e510e2",
+    "mode": "retained-reviewed-fish-counts-1819",
+    "stateCode": "WI",
+    "candidatePairs": [
+      "55013:salmo-trutta",
+      "55021:cyprinus-carpio",
+      "55023:salmo-trutta",
+      "55043:ctenopharyngodon-idella",
+      "55043:cyprinus-carpio",
+      "55063:cyprinus-carpio",
+      "55065:cyprinus-carpio",
+      "55071:salmo-trutta",
+      "55075:cyprinus-carpio",
+      "55078:salmo-trutta",
+      "55083:salmo-trutta",
+      "55091:cyprinus-carpio",
+      "55093:cyprinus-carpio",
+      "55111:salmo-trutta",
+      "55127:cyprinus-carpio",
+      "55135:salmo-trutta",
+      "55137:cyprinus-carpio",
+      "55141:cyprinus-carpio"
+    ],
+    "candidateLimit": 18
+  },
+  "requested_scope": {
+    "state_code": "WI",
+    "county_fips": [
+      "55013",
+      "55021",
+      "55023",
+      "55043",
+      "55063",
+      "55065",
+      "55071",
+      "55075",
+      "55078",
+      "55083",
+      "55091",
+      "55093",
+      "55111",
+      "55127",
+      "55135",
+      "55137",
+      "55141"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "55013:salmo-trutta",
+      "55021:cyprinus-carpio",
+      "55023:salmo-trutta",
+      "55043:ctenopharyngodon-idella",
+      "55043:cyprinus-carpio",
+      "55063:cyprinus-carpio",
+      "55065:cyprinus-carpio",
+      "55071:salmo-trutta",
+      "55075:cyprinus-carpio",
+      "55078:salmo-trutta",
+      "55083:salmo-trutta",
+      "55091:cyprinus-carpio",
+      "55093:cyprinus-carpio",
+      "55111:salmo-trutta",
+      "55127:cyprinus-carpio",
+      "55135:salmo-trutta",
+      "55137:cyprinus-carpio",
+      "55141:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T214443Z__epa-nrsa-fish-counts__b57cf950d4bd/artifacts/epa-nrsa-1819-fish-witnesses.json",
+      "sha256": "fc839d46884a599b8baeb1a99e8aa49d88c5b715f30d95690563918f2cab884a",
+      "bytes": 498194,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T214443Z__epa-nrsa-fish-counts__b57cf950d4bd/assertions.ndjson",
+      "sha256": "8148ebf74688c3e2b96576a0e7df87ad1786281f9d9ecb6a272f271f7e1344d2",
+      "bytes": 70209,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214443Z__epa-nrsa-fish-counts__b57cf950d4bd/reviews.ndjson",
+      "sha256": "e3521873d29d83bfacce60c4920a820b8026d695eb105b24759ab805d3fcbd5b",
+      "bytes": 17051,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214443Z__epa-nrsa-fish-counts__b57cf950d4bd/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T214443Z__epa-nrsa-fish-counts__b57cf950d4bd/outcomes.ndjson",
+      "sha256": "381882469e2d611b8240688a069270ab37c6b8160668b1b27e5b4cdceee70fbe",
+      "bytes": 19949,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 18,
+    "candidate_records": 22,
+    "assertion_events": 18,
+    "review_events": 18,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 18
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state WI --candidate-file ops/national-research/plans/epa-nrsa-1819-20260908-r20/WI.json --output-root src/data/research/runs --stage-canonical true --pairs 55013:salmo-trutta,55021:cyprinus-carpio,55023:salmo-trutta,55043:ctenopharyngodon-idella,55043:cyprinus-carpio,55063:cyprinus-carpio,55065:cyprinus-carpio,55071:salmo-trutta,55075:cyprinus-carpio,55078:salmo-trutta,55083:salmo-trutta,55091:cyprinus-carpio,55093:cyprinus-carpio,55111:salmo-trutta,55127:cyprinus-carpio,55135:salmo-trutta,55137:cyprinus-carpio,55141:cyprinus-carpio"
+}
