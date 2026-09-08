@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-08T10:08:13.218Z",
+  "runId": "20260908T100226Z__aphis-honey-bee__050604009f3b",
+  "sourceId": "aphis-honey-bee",
+  "stateCode": "NY",
+  "pairKeys": [
+    "36003:varroa-destructor",
+    "36009:varroa-destructor",
+    "36011:varroa-destructor",
+    "36013:varroa-destructor",
+    "36017:varroa-destructor",
+    "36019:varroa-destructor",
+    "36023:varroa-destructor",
+    "36029:varroa-destructor",
+    "36031:varroa-destructor",
+    "36033:varroa-destructor",
+    "36035:varroa-destructor",
+    "36037:varroa-destructor",
+    "36043:varroa-destructor",
+    "36045:varroa-destructor",
+    "36049:varroa-destructor",
+    "36053:varroa-destructor",
+    "36055:varroa-destructor",
+    "36057:varroa-destructor",
+    "36061:varroa-destructor",
+    "36063:varroa-destructor",
+    "36065:varroa-destructor",
+    "36067:varroa-destructor",
+    "36069:varroa-destructor",
+    "36071:varroa-destructor",
+    "36073:varroa-destructor",
+    "36075:varroa-destructor",
+    "36077:varroa-destructor",
+    "36089:varroa-destructor",
+    "36091:varroa-destructor",
+    "36093:varroa-destructor",
+    "36095:varroa-destructor",
+    "36097:varroa-destructor",
+    "36099:varroa-destructor",
+    "36103:varroa-destructor",
+    "36109:varroa-destructor",
+    "36111:varroa-destructor",
+    "36115:varroa-destructor",
+    "36117:varroa-destructor",
+    "36121:varroa-destructor",
+    "36123:varroa-destructor"
+  ],
+  "parameterHash": "050604009f3b77a659896c6cead6592fdae9742e500e9afd16b3bb5e63a1dd37",
+  "authority": {
+    "name": "APHIS National Honey Bee Survey",
+    "sourceUrl": "https://www.usbeedata.org/state_reports/public_download/",
+    "publisher": "University of Maryland Bee Lab / US Bee Data with USDA APHIS"
+  },
+  "terms": {
+    "license": "University of Maryland Bee Lab / US Bee Data, APHIS Honey Bee Survey: APHIS Data Download (2026 database export; observations through December 31, 2025). Obtained August 20, 2026. Source data copyright University of Maryland. Reproduced for scientific and educational purposes. These results do not constitute endorsement of commercial products, protocols, or services. https://www.usbeedata.org/state_reports/public_download/",
+    "termsUrl": "https://www.usbeedata.org/state_reports/public_download/",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-09-08T10:08:13.218Z",
+    "freshnessDate": "2025-12-31"
+  },
+  "geography": {
+    "method": "Exact publisher-supplied New York county names resolve uniquely to the 40 leased active county equivalents. Publisher assignments use 2020 TIGER/Line; no county is derived from new coordinates.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are unavailable and unused; no automatic retired-county successor mapping."
+  },
+  "taxonomy": {
+    "method": "Program-level interpretation of varroa_per_100_bees as Varroa destructor, supported explicitly by the official 2016-2017 report page 4 and the committed independently reviewed method. Individual CSV rows contain a metric name, not a literal binomial; the 2025 plan page 3 uses Varroa spp. wording.",
+    "targetSpeciesIds": [
+      "varroa-destructor"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "original archive decoded SHA-256",
+      "parsed source row index including dictionary at zero",
+      "physical source line including both preambles and header",
+      "SHA-256 of exact UTF-8 source line without terminator",
+      "full original source row values"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "This positive-only replay does not evaluate negative evidence; 19 retained numeric zero rows create neither absence nor non-detection.",
+      "A complete selected-pair snapshot scan does not imply countywide surveillance completeness, current establishment, or protocol completion."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/artifacts/honey-bee-positive-witnesses.json",
+      "sha256": "dedba1c43d5c080b13df818beaae060583e9dce68b9ac04ad5c2d6d014e8f4c4",
+      "bytes": 330036
+    }
+  ],
+  "caveats": [
+    "Offline replay only. No network request was issued by this worker. Availability refers to the immutable retained source bytes, checked by the adapter through its recorded completion time; the original CSV was acquired 2026-08-20T02:06:05.317Z. Primary source context was separately retrieved by MAIN on 2026-09-08 and pinned by the method review.",
+    "This supplemental worker attestation was authored 2026-09-08T10:10:18.590077Z after execution. verifiedAt and checkedAt identify the adapter verification completion, not a new source retrieval.",
+    "The complete 12,704-biological-row immutable CSV snapshot was scanned; one dictionary row was excluded. All 320 source rows in the 40 selected counties are retained: 301 positive and 19 numeric zero rows.",
+    "Independent Python csv parsing matched all 320 exact original row values, row indexes, physical-line locators and line hashes; all 40 latest positive month dates and original retrieval timestamps matched emitted assertions. No day precision was invented.",
+    "Physical-line locators count the two preamble lines, CSV header and dictionary row. No public apiary ID or specimen ID is fabricated.",
+    "Positive samples combine eight managed honey bee colonies at each apiary; not every colony need be infested. Migratory and stationary operations participated. Individual migration history, local acquisition, wild establishment, countywide prevalence and persistence today remain unknown.",
+    "Mites per 100 bees is a measured load, not a raw mite count. Other viral and spore metrics are outside this method.",
+    "Kauai and Maui positive source conflicts remain held in the pinned national method; neither county is part of this New York lease.",
+    "Original acquisition code lineage b2542a8b32221451d4eeae99a62d72b06de816c2 and decoded CSV SHA-256 befb8b2bb4253c4167ee2b4cb2aacf112ea24af1be9fcb1fbdcb6df24d6bc6bc are preserved by the witness and committed input snapshot. The current replay code identity remains 4541ebc10b0afae1eb8b1b85d089689ef9771842.",
+    "Worker outputs add 40 publication-eligible assertion events and 40 completed selected source screens; zero compiled determination gains are claimed before MAIN reconciliation.",
+    "University of Maryland Bee Lab / US Bee Data, APHIS Honey Bee Survey: APHIS Data Download (2026 database export; observations through December 31, 2025). Obtained August 20, 2026. Source data copyright University of Maryland. Reproduced for scientific and educational purposes. These results do not constitute endorsement of commercial products, protocols, or services. https://www.usbeedata.org/state_reports/public_download/"
+  ]
+}

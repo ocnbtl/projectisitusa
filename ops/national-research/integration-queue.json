@@ -33631,6 +33631,73 @@
         "sha256": "cdfdd44ab94030f661bdde644f98f2eb0d0cee74281bd98959ca5f87c0e8661e",
         "bytes": 4428
       }
+    },
+    {
+      "queueId": "queue-lease-honey-ny-positive-pilot-20260908-r12-1",
+      "jobId": "honey-ny-positive-pilot-20260908-r12",
+      "leaseId": "lease-honey-ny-positive-pilot-20260908-r12-1",
+      "decision": "accepted",
+      "submittedAt": "2026-09-08T10:24:03.072Z",
+      "manifestPath": "manifests/honey-ny-positive-pilot-20260908-r12__lease-honey-ny-positive-pilot-20260908-r12-1.json",
+      "manifestHash": "03fcf00acc167ab135d2ee2166047246c7a0e029fb736e949946fb22083e404d",
+      "manifestBytes": 8955,
+      "workerCommit": "302f6034ec8c1cbf0ab661d7d55b012bb775cf28",
+      "workerBranchHead": "5ac1721ba45d4faa3ccdb90e0feba5f5a7441b27",
+      "reviewedAt": "2026-09-08T10:24:08.734Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN verified original CSV hashes, all scoped row hashes and publisher counties, original latest positive month, composite managed-apiary and migratory caveats, explicit method-level species mapping, UMD attribution, zero network requests, unchanged baseline projections, exact two-commit ancestry and committed closed manifest. Grouped zero/blank exclusions create no negative claim. The two Hawaiian source-conflict holds remain outside scope. Initial integrity suite stale-index failure was resolved by regeneration and passing remaining coverage/publication checks; all prior checks passed. HI MAIN receipt result enum was corrected after a transactional rejection with no acceptance or merge. Projected gains remain pending compilation.",
+      "changedPaths": [
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/artifacts/honey-bee-positive-witnesses.json",
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/assertions.ndjson",
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/manifest.json",
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/outcomes.ndjson",
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/receipt.json",
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/rejections.ndjson",
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/reviews.ndjson",
+        "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "MAIN independently verify frozen trees, exact two-commit ancestry, clean worktree, leased eight paths, manifest bytes and county baseline hashes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r12-honey-bee\\ny-pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b --source-verification C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\source-verification.json --run-id 20260908T100226Z__aphis-honey-bee__050604009f3b --source-id aphis-honey-bee --state-code NY --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_ny_positive_pilot_r12",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Actual pilot canonical mutation tests",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "npm run check:research-integrity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "TypeScript noEmit check",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-honey-ny-positive-pilot-20260908-r12-1.json",
+        "sha256": "5805e285d52ff6247d7599292b6f8aea05e1a49ae1144d91da9080e6ade87cc7",
+        "bytes": 4236
+      }
     }
   ]
 }

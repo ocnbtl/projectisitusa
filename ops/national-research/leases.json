@@ -501048,7 +501048,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "honey_ny_positive_pilot_r12",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-09-08T10:03:45.023Z",
       "expiresAt": "2026-09-08T10:48:45.023Z",
       "recoveryAt": null,
@@ -501184,7 +501184,16 @@
         "Create one immutable state-partitioned retained-positive run with the exact committed plan/start and zero HTTP requests.",
         "Validate and preserve the two-commit content/manifest sequence, truthful exact output counts and closed manifest.",
         "No shared changes or projections; report zero compiled determination gains until MAIN reconciliation."
-      ]
+      ],
+      "transitionedAt": "2026-09-08T10:24:03.072Z",
+      "resultManifest": {
+        "path": "manifests/honey-ny-positive-pilot-20260908-r12__lease-honey-ny-positive-pilot-20260908-r12-1.json",
+        "sha256": "03fcf00acc167ab135d2ee2166047246c7a0e029fb736e949946fb22083e404d",
+        "bytes": 8955,
+        "status": "complete",
+        "workerCommit": "302f6034ec8c1cbf0ab661d7d55b012bb775cf28",
+        "workerBranchHead": "5ac1721ba45d4faa3ccdb90e0feba5f5a7441b27"
+      }
     }
   ]
 }
