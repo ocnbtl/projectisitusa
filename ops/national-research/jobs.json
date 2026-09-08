@@ -500546,6 +500546,364 @@
       "priority": 100,
       "state": "cancelled",
       "currentLeaseId": "lease-wqp-common-carp-ok-source-review-20260908-r15-1"
+    },
+    {
+      "jobId": "wqp-common-carp-ia-source-review-20260908-r16",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "IA"
+        ],
+        "sourceFamilies": [
+          "water-quality-portal"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "cyprinus-carpio"
+        ],
+        "pairs": [
+          "19005:cyprinus-carpio",
+          "19021:cyprinus-carpio",
+          "19049:cyprinus-carpio",
+          "19057:cyprinus-carpio",
+          "19061:cyprinus-carpio",
+          "19063:cyprinus-carpio",
+          "19071:cyprinus-carpio",
+          "19087:cyprinus-carpio",
+          "19089:cyprinus-carpio",
+          "19103:cyprinus-carpio",
+          "19105:cyprinus-carpio",
+          "19109:cyprinus-carpio",
+          "19119:cyprinus-carpio",
+          "19123:cyprinus-carpio",
+          "19125:cyprinus-carpio",
+          "19133:cyprinus-carpio",
+          "19149:cyprinus-carpio",
+          "19155:cyprinus-carpio",
+          "19161:cyprinus-carpio",
+          "19171:cyprinus-carpio",
+          "19177:cyprinus-carpio",
+          "19189:cyprinus-carpio"
+        ]
+      },
+      "scopeClaims": [
+        "county/19005/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19021/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19049/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19057/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19061/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19063/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19071/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19087/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19089/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19103/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19105/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19109/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19119/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19123/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19125/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19133/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19149/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19155/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19161/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19171/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19177/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/19189/source/water-quality-portal/taxon/cyprinus-carpio"
+      ],
+      "branch": "codex/wqp-common-carp-ia-source-review-20260908-r16",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\wqp-common-carp-ia-source-review-20260908-r16",
+      "baseSha": "b49902374a517689bfae8580b82650b960d32ec5",
+      "expectedReceiptCodeCommit": "b49902374a517689bfae8580b82650b960d32ec5",
+      "permittedPaths": [
+        "src/data/research/worker-results/wqp-common-carp-ia-source-review-20260908-r16/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": true,
+        "maximumPublicReadRequests": 8,
+        "inputArtifacts": [
+          "ops/national-research/evaluations/artifacts/wqp-common-carp-state-preflight-20260908-r16.json.gz",
+          "ops/national-research/evaluations/artifacts/wqp-expansion-preflight-20260908-r14.json.gz",
+          "ops/national-research/evaluations/artifacts/wqp-expansion-vocabulary-context-20260908-r14.json.gz",
+          "ops/national-research/evaluations/artifacts/wqp-fish-method-context-20260908-r14.json.gz"
+        ],
+        "exactCandidatePairs": [
+          "19005:cyprinus-carpio",
+          "19021:cyprinus-carpio",
+          "19049:cyprinus-carpio",
+          "19057:cyprinus-carpio",
+          "19061:cyprinus-carpio",
+          "19063:cyprinus-carpio",
+          "19071:cyprinus-carpio",
+          "19087:cyprinus-carpio",
+          "19089:cyprinus-carpio",
+          "19103:cyprinus-carpio",
+          "19105:cyprinus-carpio",
+          "19109:cyprinus-carpio",
+          "19119:cyprinus-carpio",
+          "19123:cyprinus-carpio",
+          "19125:cyprinus-carpio",
+          "19133:cyprinus-carpio",
+          "19149:cyprinus-carpio",
+          "19155:cyprinus-carpio",
+          "19161:cyprinus-carpio",
+          "19171:cyprinus-carpio",
+          "19177:cyprinus-carpio",
+          "19189:cyprinus-carpio"
+        ],
+        "focus": "Independently review every leased common-carp pair using complete state Result CSV and retained national Station CSV. Verify original ZIP CRC and decoded bytes, exact source taxon, counts/lengths/weights, status, units, field collection context, dates, full source fields, station FIPS, material geography contradictions and raw row locators. Independently determine whether each exact field survey record supports historical occurrence; preserve Final/Provisional distinctions. Investigate any conflicting source date, county or collection context. Assess Weight/g, total Length/mm and composite field sample forms when present. Frequency Class and zero values require their own source support and do not automatically establish occurrence. Check failed capture, introduced-test organisms, tissue chemistry, quality control, and comments referring to other species. Recommend exact supported pairs and source-form rules with explicit holds; a good independent activity can support a pair even if another activity is held.",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Proposal-only response: no files, commits, source acquisitions, source runs, events, shared edits, projections or provider writes. Decode retained bundles and original ZIP/CSV in memory with independent Python csv/zipfile, preserving original row bytes and physical lines. Return one JSON object with supportedPairs, heldPairs, witnesses and caveats. Each witness must include pairKey, parsedRowIndexZeroBased, physicalEndLineOneBased, rawRecordSha256, stationParsedRowIndexZeroBased, stationPhysicalEndLineOneBased, stationRawRecordSha256, date, organization, site, intent, characteristic, unit and value. Indexes are zero-based data records excluding the header; physical end lines are one-based including multiline fields. Independently choose a defensible primary source row for every supported pair; do not treat the preliminary candidate diagnostic as review evidence. For every unsupported pair identify the precise limitation and whether another review is possible, without absence from silence. Report method/county caveats, exclusions with raw row locators, original input hashes and exact optional web tool operation counts. Up to 8 primary-context web operations only if needed; no WQP query/retry and no third-party summaries. Mark diagnosis and candidate recommendation separate from determination approval."
+      },
+      "expiresAt": "2026-09-08T17:48:58.784Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen lease preflight and maintain a clean isolated worktree.",
+        "Independently review all exact leased pairs from original retained bytes; report complete source-supported witnesses or exact blockers.",
+        "Return proposal and method conditions without claiming approval or new compiled determinations."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-wqp-common-carp-ia-source-review-20260908-r16-1"
+    },
+    {
+      "jobId": "wqp-common-carp-ks-source-review-20260908-r16",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "KS"
+        ],
+        "sourceFamilies": [
+          "water-quality-portal"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "cyprinus-carpio"
+        ],
+        "pairs": [
+          "20007:cyprinus-carpio",
+          "20027:cyprinus-carpio",
+          "20043:cyprinus-carpio",
+          "20051:cyprinus-carpio",
+          "20053:cyprinus-carpio",
+          "20065:cyprinus-carpio",
+          "20075:cyprinus-carpio",
+          "20087:cyprinus-carpio",
+          "20089:cyprinus-carpio",
+          "20091:cyprinus-carpio",
+          "20105:cyprinus-carpio",
+          "20109:cyprinus-carpio",
+          "20113:cyprinus-carpio",
+          "20133:cyprinus-carpio",
+          "20139:cyprinus-carpio",
+          "20141:cyprinus-carpio",
+          "20155:cyprinus-carpio",
+          "20173:cyprinus-carpio",
+          "20191:cyprinus-carpio",
+          "20205:cyprinus-carpio"
+        ]
+      },
+      "scopeClaims": [
+        "county/20007/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20027/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20043/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20051/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20053/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20065/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20075/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20087/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20089/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20091/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20105/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20109/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20113/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20133/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20139/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20141/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20155/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20173/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20191/source/water-quality-portal/taxon/cyprinus-carpio",
+        "county/20205/source/water-quality-portal/taxon/cyprinus-carpio"
+      ],
+      "branch": "codex/wqp-common-carp-ks-source-review-20260908-r16",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\wqp-common-carp-ks-source-review-20260908-r16",
+      "baseSha": "b49902374a517689bfae8580b82650b960d32ec5",
+      "expectedReceiptCodeCommit": "b49902374a517689bfae8580b82650b960d32ec5",
+      "permittedPaths": [
+        "src/data/research/worker-results/wqp-common-carp-ks-source-review-20260908-r16/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "noNetworkAcquisition": true,
+        "maximumPublicReadRequests": 8,
+        "inputArtifacts": [
+          "ops/national-research/evaluations/artifacts/wqp-common-carp-state-preflight-20260908-r16.json.gz",
+          "ops/national-research/evaluations/artifacts/wqp-expansion-preflight-20260908-r14.json.gz",
+          "ops/national-research/evaluations/artifacts/wqp-expansion-vocabulary-context-20260908-r14.json.gz",
+          "ops/national-research/evaluations/artifacts/wqp-fish-method-context-20260908-r14.json.gz"
+        ],
+        "exactCandidatePairs": [
+          "20007:cyprinus-carpio",
+          "20027:cyprinus-carpio",
+          "20043:cyprinus-carpio",
+          "20051:cyprinus-carpio",
+          "20053:cyprinus-carpio",
+          "20065:cyprinus-carpio",
+          "20075:cyprinus-carpio",
+          "20087:cyprinus-carpio",
+          "20089:cyprinus-carpio",
+          "20091:cyprinus-carpio",
+          "20105:cyprinus-carpio",
+          "20109:cyprinus-carpio",
+          "20113:cyprinus-carpio",
+          "20133:cyprinus-carpio",
+          "20139:cyprinus-carpio",
+          "20141:cyprinus-carpio",
+          "20155:cyprinus-carpio",
+          "20173:cyprinus-carpio",
+          "20191:cyprinus-carpio",
+          "20205:cyprinus-carpio"
+        ],
+        "focus": "Independently review every leased common-carp pair using complete state Result CSV and retained national Station CSV. Verify original ZIP CRC and decoded bytes, exact source taxon, counts/lengths/weights, status, units, field collection context, dates, full source fields, station FIPS, material geography contradictions and raw row locators. Independently determine whether each exact field survey record supports historical occurrence; preserve Final/Provisional distinctions. Investigate any conflicting source date, county or collection context. Assess Weight/g, total Length/mm and composite field sample forms when present. Frequency Class and zero values require their own source support and do not automatically establish occurrence. Check failed capture, introduced-test organisms, tissue chemistry, quality control, and comments referring to other species. Recommend exact supported pairs and source-form rules with explicit holds; a good independent activity can support a pair even if another activity is held.",
+        "methodRegistrationPending": true,
+        "outputInstruction": "Proposal-only response: no files, commits, source acquisitions, source runs, events, shared edits, projections or provider writes. Decode retained bundles and original ZIP/CSV in memory with independent Python csv/zipfile, preserving original row bytes and physical lines. Return one JSON object with supportedPairs, heldPairs, witnesses and caveats. Each witness must include pairKey, parsedRowIndexZeroBased, physicalEndLineOneBased, rawRecordSha256, stationParsedRowIndexZeroBased, stationPhysicalEndLineOneBased, stationRawRecordSha256, date, organization, site, intent, characteristic, unit and value. Indexes are zero-based data records excluding the header; physical end lines are one-based including multiline fields. Independently choose a defensible primary source row for every supported pair; do not treat the preliminary candidate diagnostic as review evidence. For every unsupported pair identify the precise limitation and whether another review is possible, without absence from silence. Report method/county caveats, exclusions with raw row locators, original input hashes and exact optional web tool operation counts. Up to 8 primary-context web operations only if needed; no WQP query/retry and no third-party summaries. Mark diagnosis and candidate recommendation separate from determination approval."
+      },
+      "expiresAt": "2026-09-08T17:48:59.702Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen lease preflight and maintain a clean isolated worktree.",
+        "Independently review all exact leased pairs from original retained bytes; report complete source-supported witnesses or exact blockers.",
+        "Return proposal and method conditions without claiming approval or new compiled determinations."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-wqp-common-carp-ks-source-review-20260908-r16-1"
     }
   ]
 }
