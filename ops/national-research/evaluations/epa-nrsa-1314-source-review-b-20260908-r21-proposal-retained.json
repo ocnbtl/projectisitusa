@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-independent-method-proposal",
+  "recordedAt": "2026-09-08T22:59:51.830Z",
+  "actorId": "epa_nrsa_1314_review_b_r21",
+  "jobId": "epa-nrsa-1314-source-review-b-20260908-r21",
+  "leaseId": "lease-epa-nrsa-1314-source-review-b-20260908-r21-1",
+  "originalCommit": "7ce3c8ca28be8357545d44a8eb426d9c46b87f0f",
+  "baseSha": "712d93f6fbcd7df7c87d81645d1cf9c6f95b373f",
+  "files": [
+    {
+      "path": "src/data/research/worker-results/epa-nrsa-1314-source-review-b-20260908-r21/proposal.json",
+      "bytes": 1434459,
+      "sha256": "290bf7b15e9731efa964f1cab2b773c58912bf1423bd503710af0180d1acbd9b"
+    },
+    {
+      "path": "src/data/research/worker-results/epa-nrsa-1314-source-review-b-20260908-r21/review.py",
+      "bytes": 42280,
+      "sha256": "aba6f3c9aed7bd68d6c105c5c91c689ca6a4aca221f28d815a0bc9b49aee7113"
+    }
+  ],
+  "leaseState": "recovered",
+  "jobState": "blocked",
+  "reason": "Bounded independent method review returned exact committed proposals. Shared method registration is MAIN-only; no completed canonical evidence-run manifest exists. Proposals retained as method context, not accepted queue results.",
+  "contractQualification": "The explanatory executionContract field existed in the job JSON, not the generated lease. CompletionCriteria explicitly required proposal-only output. Original lease, job and proposal qualifications remain preserved.",
+  "mainOfflineVerification": {
+    "passed": true,
+    "recordedAt": "2026-09-08T22:59:51.831Z",
+    "command": "python review.py --verify",
+    "timeQualification": "Retention timestamp for the prior successful MAIN verification, not an exact execution timestamp.",
+    "proposalSha256": "290bf7b15e9731efa964f1cab2b773c58912bf1423bd503710af0180d1acbd9b",
+    "measuredElapsedSeconds": 0.603728,
+    "peakWorkingSetMiB": 149.062
+  },
+  "acceptedDeterminations": 0,
+  "canonicalEvents": 0
+}
