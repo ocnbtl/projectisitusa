@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-state-status-source-interpretation",
+  "actorId": "MAIN",
+  "recordedAt": "2026-09-08T06:00:06.988Z",
+  "species": {
+    "id": "tilletia-indica",
+    "canonicalName": "Tilletia indica",
+    "documentedSynonym": "Neovossia indica",
+    "synonymAuthority": "https://www.aphis.usda.gov/sites/default/files/kbea.pdf"
+  },
+  "scope": {
+    "level": "state",
+    "stateCode": "NM",
+    "countyCount": 33,
+    "countyFips": [
+      "35001",
+      "35003",
+      "35005",
+      "35006",
+      "35007",
+      "35009",
+      "35011",
+      "35013",
+      "35015",
+      "35017",
+      "35019",
+      "35021",
+      "35023",
+      "35025",
+      "35027",
+      "35028",
+      "35029",
+      "35031",
+      "35033",
+      "35035",
+      "35037",
+      "35039",
+      "35041",
+      "35043",
+      "35045",
+      "35047",
+      "35049",
+      "35051",
+      "35053",
+      "35055",
+      "35057",
+      "35059",
+      "35061"
+    ]
+  },
+  "sources": [
+    {
+      "name": "eppo-nm-status",
+      "url": "https://gd.eppo.int/taxon/NEOVIN/distribution/US_nm",
+      "finalUrl": "https://gd.eppo.int/taxon/NEOVIN/distribution/US_nm",
+      "status": 200,
+      "retrievedAt": "2026-09-08T05:54:13.516Z",
+      "path": "ops/national-research/inputs/karnal-bunt-state-status-20260908-r9/eppo-nm-status.html.gz",
+      "storedBytes": 4328,
+      "storedSha256": "ae5c0825b07b22313969c3ea691d2f60a6039d6b8d014060577dc8db1509094a",
+      "bytes": 14455,
+      "sha256": "5dc5584b98aa67027f22f18fc3caea5df22e3b871427112de288313141104057"
+    },
+    {
+      "name": "aphis-karnal-bunt-current",
+      "url": "https://www.aphis.usda.gov/plant-pests-diseases/karnal-bunt",
+      "finalUrl": "https://www.aphis.usda.gov/plant-pests-diseases/karnal-bunt",
+      "status": 200,
+      "retrievedAt": "2026-09-07T19:02:02.665Z",
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-current.html.gz",
+      "storedBytes": 21658,
+      "storedSha256": "25d064bdfddb4432abcd058494eb975c0bc39837237d720e39d9a3215a9e0bff",
+      "bytes": 92974,
+      "sha256": "7922592fbb306b2b54d085b969c3b459dbf12ffde4815f392b4ad4ca230428cb"
+    }
+  ],
+  "interpretation": [
+    {
+      "source": "eppo-nm-status",
+      "publishedAt": null,
+      "modifiedAt": null,
+      "informationYear": 2012,
+      "sourceDatePrecision": "year",
+      "dateMeaning": "Year of underlying information reported by EPPO; publication day and record modification day are not given.",
+      "status": "Absent, pest no longer present",
+      "supportText": "Current pest situation evaluated by EPPO on the basis of information dated 2012: Absent, pest no longer present",
+      "statementType": "officially-absent",
+      "geographicMeaning": "Explicit state status entry; prospective county derivation would use the entire named state, not individual county surveys."
+    },
+    {
+      "source": "aphis-karnal-bunt-current",
+      "publishedAt": null,
+      "modifiedAt": "2026-06-09",
+      "supportText": "A successful quarantine and national survey program have confined Karnal bunt to portions of one State: Arizona.",
+      "geographicMeaning": "Current NPPO national confinement statement corroborates the separately explicit state negative; no survey completeness claim."
+    }
+  ],
+  "proposedDateMethod": {
+    "methodVersion": "official-jurisdiction-agent-review-precision-v2",
+    "declarationPublicationDate": null,
+    "declarationInformationYear": 2012,
+    "effectiveAt": "2026-06-09",
+    "effectiveDateMeaning": "Eligibility begins at the separate corroboration authority date, not an invented declaration or eradication day.",
+    "reaffirmedAt": "2026-06-09",
+    "conflictCheckFrom": "2012-01-01",
+    "conflictBoundaryMeaning": "Conservative start of the source information year; not a claimed event or publication date.",
+    "sourceRecordDate": null,
+    "validThrough": "2027-06-09",
+    "expiryMeaning": "Project review expiry at authority date plus 365 days, not biological guarantee.",
+    "reviewedAsOf": "2026-09-08"
+  },
+  "caveats": [
+    "The EPPO global distribution-table modification date and retrieval timestamps cannot supply a missing state publication day.",
+    "An explicit absent classification supports a proposed official status; missing county rows and failed searches supply no negative evidence.",
+    "Historical records remain visible. Later or undated credible presence must block current negatives until adjudication.",
+    "No assertion, outcome or determination is created by this interpretation."
+  ],
+  "independentReviewRequired": true
+}
