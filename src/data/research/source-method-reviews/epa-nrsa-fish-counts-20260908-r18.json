@@ -1,0 +1,1126 @@
+{
+  "schemaVersion": 1,
+  "methodVersion": "retained-epa-nrsa-reviewed-fish-counts-v1",
+  "sourceId": "epa-nrsa-fish-counts",
+  "status": "approved-with-specific-holds",
+  "reviewedBy": "MAIN",
+  "reviewedAt": "2026-09-08T18:40:44.266Z",
+  "acquisition": {
+    "archive": {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-2324-preflight-20260908-r18.json.gz",
+      "bytes": 641929,
+      "sha256": "aa2dbf89a6b995ba6dc99ce011c0ba78dd457916c37268dfb450137e22bcf371"
+    },
+    "receipt": {
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/retrieval-receipt.json",
+      "bytes": 7075,
+      "sha256": "62b1b5e1ff908cb4cb64b7b940c139819343c1a87e538362b358cc866f27a6fc"
+    },
+    "recipe": {
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/acquire-official-files.cjs",
+      "bytes": 2920,
+      "sha256": "b2b1ad5e0d341792a57dd33b10a682ee99bd2d8a28228771369d187cab789b71"
+    },
+    "repositoryBaseCommit": "980877ec95c6e67e1fc12ebc69786d5fe65a8909"
+  },
+  "profiles": [
+    {
+      "name": "fishcount",
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/nrsa2324_fishcount.csv.gz",
+      "decodedBytes": 2188892,
+      "decodedSha256": "d79bf68a592318b718e2d38072c436f0fbdf55fb709777cbc2fcab84dc2b51b3",
+      "rowCount": 19925,
+      "columns": [
+        "PUBLICATION_DATE",
+        "UNIQUE_ID",
+        "UID",
+        "SITE_ID",
+        "VISIT_NO",
+        "DATE_COL",
+        "PSTL_CODE",
+        "FISH_SAMPLING",
+        "SAMPLED_FISH",
+        "TAXA_ID",
+        "FINAL_NAME",
+        "TOTAL",
+        "IS_DISTINCT",
+        "ANOM_CT",
+        "COUNT_6",
+        "COUNT_12",
+        "COUNT_18",
+        "COUNT_19",
+        "NON_NATIVE"
+      ]
+    },
+    {
+      "name": "fishcount_metadata",
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/nrsa2324_fishcount_metadata.csv.gz",
+      "decodedBytes": 1623,
+      "decodedSha256": "ab8ad3205559dd0583609eb5a22126a717ed8d9b8bd4c4e84a55ccaf4bef25f5",
+      "rowCount": 19,
+      "columns": [
+        "COLUMN_NAME",
+        "LABEL",
+        "LEGAL_VALUES"
+      ]
+    },
+    {
+      "name": "fishtaxa",
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/nrsa2324_fishtaxa.csv.gz",
+      "decodedBytes": 85757,
+      "decodedSha256": "0608bfa50c4ac45bf221c76433cab341e20e66b41c4641d2479b2d7f819b7405",
+      "rowCount": 911,
+      "columns": [
+        "PUBLICATION_DATE",
+        "TAXA_ID",
+        "FAM_OR_CLS",
+        "FAMILY",
+        "FINAL_NAME",
+        "GENUS",
+        "HABITAT_NRSA",
+        "ITISTSN",
+        "MIGR_NRSA",
+        "REPROD_NRSA",
+        "SPECIES",
+        "TEMP_NRSA",
+        "TOLERANCE_NRSA",
+        "TROPHIC_NRSA",
+        "VEL_NRSA",
+        "TOL_VAL_EMAPW"
+      ]
+    },
+    {
+      "name": "fishtaxa_metadata",
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/nrsa2324_fishtaxa_metadata.csv.gz",
+      "decodedBytes": 932,
+      "decodedSha256": "084b6047f9a3294daee3eb6701703949e24ddf5ee5c06bd25b0b283ba88744ca",
+      "rowCount": 16,
+      "columns": [
+        "COLUMN_NAME",
+        "LABEL"
+      ]
+    },
+    {
+      "name": "siteinfo",
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/nrsa2324_siteinfo.csv.gz",
+      "decodedBytes": 1715870,
+      "decodedSha256": "f7d14cf1574d12828b3aa97bd7b08b95f22aec2115753d5b75514f8eed43d013",
+      "rowCount": 2143,
+      "columns": [
+        "PUBLICATION_DATE",
+        "SITE_ID",
+        "UNIQUE_ID",
+        "UID",
+        "DATE_COL",
+        "DSGN_CYCLE",
+        "IND_DOMAIN",
+        "STUDY",
+        "AG_ECO3",
+        "AG_ECO3_NM",
+        "AG_ECO9",
+        "AG_ECO9_NM",
+        "BORD_RIV",
+        "CNTYNAME",
+        "COMID",
+        "ELEVATION",
+        "EPA_REG",
+        "EVAL_CAT",
+        "FCODE",
+        "FED_NONFED",
+        "FEOW_ID",
+        "FLOW_SIZE",
+        "FRAME23",
+        "FS_EW",
+        "FTYPE",
+        "HUC10",
+        "HUC10_NM",
+        "HUC12",
+        "HUC12_NM",
+        "HUC2",
+        "HUC2_NM",
+        "HUC8",
+        "HUC8_NM",
+        "LAT_DD83",
+        "LENGTH_KM",
+        "LON_DD83",
+        "MAJ_BAS_NM",
+        "MAJ_BASIN",
+        "MEAN_FLOW",
+        "MIS_BAS_NM",
+        "MIS_BASIN",
+        "MISS_BASIN",
+        "NA_L1CODE",
+        "NA_L1NAME",
+        "NA_L2CODE",
+        "NA_L2NAME",
+        "NHDPLUSID",
+        "OWN_NARS",
+        "PANEL_USE",
+        "PERM_ID",
+        "PROB_CAT",
+        "PSTL_CODE",
+        "REACHCODE",
+        "SITETYPE",
+        "STATE_NM",
+        "STATECTY",
+        "STRAH_CAL",
+        "STRAH_CAT",
+        "STRAH_ORD",
+        "STRATUM",
+        "URBN_NRS08",
+        "URBN_NRS18",
+        "URBN_NRS23",
+        "US_L3CODE",
+        "US_L3NAME",
+        "US_L4CODE",
+        "US_L4NAME",
+        "USFS",
+        "XCOORD",
+        "YCOORD",
+        "GNIS_ID",
+        "GNIS_NAME",
+        "NARS_NAME",
+        "VALXSITE",
+        "VISIT_NO",
+        "YEAR",
+        "WSAREASQKM"
+      ]
+    },
+    {
+      "name": "siteinfo_metadata",
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/nrsa2324_siteinfo_metadata.csv.gz",
+      "decodedBytes": 11187,
+      "decodedSha256": "3302df23be8490059668038a945c67400ba5f8b8653a6b3f51b6f60de822e703",
+      "rowCount": 74,
+      "columns": [
+        "COLUMN_NAME",
+        "LABEL",
+        "LEGAL_VALUES"
+      ]
+    }
+  ],
+  "context": [
+    {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-independent-reviews-20260908-r18.json.gz",
+      "bytes": 410220,
+      "sha256": "26f19d25b8170758778ec7e8ac15f79118fd88d0e8cae71b9c8bd56bfb070eec"
+    }
+  ],
+  "independentReviews": [
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-a-independent-review-20260908-r18.json",
+      "bytes": 683232,
+      "sha256": "fb538ab0825a545aca49888b62920a65b3e790c15dbe8aa54ed45d183f9a5aad"
+    },
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-b-independent-review-20260908-r18.json",
+      "bytes": 678020,
+      "sha256": "6ecff4b00c8903d16d953e60395adc8390bd4f185cec3d169c6ecc9c63aeaf53"
+    },
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-c-independent-review-20260908-r18.json",
+      "bytes": 676161,
+      "sha256": "7233feaffe9e4c6106b0cd559c9e48ed510c9fe8cd27060479b10b5e52e16a9c"
+    }
+  ],
+  "taxa": {
+    "cichlasoma-bimaculatum": "Cichlasoma bimaculatum",
+    "clarias-batrachus": "Clarias batrachus",
+    "ctenopharyngodon-idella": "Ctenopharyngodon idella",
+    "cyprinus-carpio": "Cyprinus carpio",
+    "hoplosternum-littorale": "Hoplosternum littorale",
+    "hypophthalmichthys-molitrix": "Hypophthalmichthys molitrix",
+    "hypostomus-plecostomus": "Hypostomus plecostomus",
+    "misgurnus-anguillicaudatus": "Misgurnus anguillicaudatus",
+    "monopterus-albus": "Monopterus albus",
+    "mylopharyngodon-piceus": "Mylopharyngodon piceus",
+    "neogobius-melanostomus": "Neogobius melanostomus",
+    "northern-snakehead": "Channa argus",
+    "oreochromis-aureus": "Oreochromis aureus",
+    "oreochromis-niloticus": "Oreochromis niloticus",
+    "pterygoplichthys-disjunctivus": "Pterygoplichthys disjunctivus",
+    "salmo-trutta": "Salmo trutta"
+  },
+  "approvedPairs": [
+    "01121:cyprinus-carpio",
+    "04027:hypostomus-plecostomus",
+    "04027:oreochromis-aureus",
+    "05017:cyprinus-carpio",
+    "05017:hypophthalmichthys-molitrix",
+    "05029:cyprinus-carpio",
+    "05031:ctenopharyngodon-idella",
+    "05031:hypophthalmichthys-molitrix",
+    "05033:cyprinus-carpio",
+    "05041:cyprinus-carpio",
+    "05063:cyprinus-carpio",
+    "05067:ctenopharyngodon-idella",
+    "05067:cyprinus-carpio",
+    "05067:hypophthalmichthys-molitrix",
+    "05083:cyprinus-carpio",
+    "05111:cyprinus-carpio",
+    "05143:cyprinus-carpio",
+    "06017:salmo-trutta",
+    "06045:salmo-trutta",
+    "06047:cyprinus-carpio",
+    "06051:salmo-trutta",
+    "06063:cyprinus-carpio",
+    "06063:salmo-trutta",
+    "06077:cyprinus-carpio",
+    "06101:cyprinus-carpio",
+    "08011:cyprinus-carpio",
+    "08021:cyprinus-carpio",
+    "08035:salmo-trutta",
+    "08043:salmo-trutta",
+    "08045:salmo-trutta",
+    "08069:salmo-trutta",
+    "08075:cyprinus-carpio",
+    "08077:salmo-trutta",
+    "08097:salmo-trutta",
+    "08117:salmo-trutta",
+    "08123:cyprinus-carpio",
+    "12011:monopterus-albus",
+    "12021:clarias-batrachus",
+    "12021:oreochromis-aureus",
+    "12021:pterygoplichthys-disjunctivus",
+    "12049:monopterus-albus",
+    "12049:oreochromis-aureus",
+    "12049:pterygoplichthys-disjunctivus",
+    "12081:monopterus-albus",
+    "12085:cichlasoma-bimaculatum",
+    "12085:clarias-batrachus",
+    "12085:hoplosternum-littorale",
+    "12085:oreochromis-aureus",
+    "12085:pterygoplichthys-disjunctivus",
+    "12093:clarias-batrachus",
+    "12093:oreochromis-aureus",
+    "12093:pterygoplichthys-disjunctivus",
+    "12117:oreochromis-aureus",
+    "12117:pterygoplichthys-disjunctivus",
+    "13069:ctenopharyngodon-idella",
+    "13069:cyprinus-carpio",
+    "13079:cyprinus-carpio",
+    "13091:cyprinus-carpio",
+    "13115:cyprinus-carpio",
+    "13175:cyprinus-carpio",
+    "13187:salmo-trutta",
+    "13193:cyprinus-carpio",
+    "16045:cyprinus-carpio",
+    "16065:salmo-trutta",
+    "17011:ctenopharyngodon-idella",
+    "17031:cyprinus-carpio",
+    "17031:neogobius-melanostomus",
+    "17089:cyprinus-carpio",
+    "17097:cyprinus-carpio",
+    "17099:cyprinus-carpio",
+    "17123:cyprinus-carpio",
+    "17141:cyprinus-carpio",
+    "17149:cyprinus-carpio",
+    "17151:cyprinus-carpio",
+    "17153:ctenopharyngodon-idella",
+    "17153:cyprinus-carpio",
+    "17157:cyprinus-carpio",
+    "17177:cyprinus-carpio",
+    "18015:ctenopharyngodon-idella",
+    "18083:ctenopharyngodon-idella",
+    "18101:ctenopharyngodon-idella",
+    "18125:ctenopharyngodon-idella",
+    "19005:salmo-trutta",
+    "19013:cyprinus-carpio",
+    "19041:cyprinus-carpio",
+    "19043:cyprinus-carpio",
+    "19049:cyprinus-carpio",
+    "19055:cyprinus-carpio",
+    "19057:cyprinus-carpio",
+    "19077:cyprinus-carpio",
+    "19103:ctenopharyngodon-idella",
+    "19103:cyprinus-carpio",
+    "19103:hypophthalmichthys-molitrix",
+    "19191:salmo-trutta",
+    "19193:cyprinus-carpio",
+    "19193:hypophthalmichthys-molitrix",
+    "19195:cyprinus-carpio",
+    "20015:cyprinus-carpio",
+    "20023:cyprinus-carpio",
+    "20033:cyprinus-carpio",
+    "20045:cyprinus-carpio",
+    "20059:cyprinus-carpio",
+    "20061:cyprinus-carpio",
+    "20103:cyprinus-carpio",
+    "20113:cyprinus-carpio",
+    "20115:cyprinus-carpio",
+    "20117:cyprinus-carpio",
+    "20143:cyprinus-carpio",
+    "20161:cyprinus-carpio",
+    "20167:cyprinus-carpio",
+    "20173:cyprinus-carpio",
+    "20183:cyprinus-carpio",
+    "20191:cyprinus-carpio",
+    "20195:cyprinus-carpio",
+    "20205:cyprinus-carpio",
+    "21007:cyprinus-carpio",
+    "21031:cyprinus-carpio",
+    "21031:hypophthalmichthys-molitrix",
+    "21039:ctenopharyngodon-idella",
+    "21039:cyprinus-carpio",
+    "21055:ctenopharyngodon-idella",
+    "21073:cyprinus-carpio",
+    "21117:cyprinus-carpio",
+    "21127:cyprinus-carpio",
+    "21139:cyprinus-carpio",
+    "21145:cyprinus-carpio",
+    "22017:ctenopharyngodon-idella",
+    "22017:cyprinus-carpio",
+    "22025:cyprinus-carpio",
+    "22025:hypophthalmichthys-molitrix",
+    "22029:cyprinus-carpio",
+    "22089:cyprinus-carpio",
+    "22101:ctenopharyngodon-idella",
+    "22101:hypophthalmichthys-molitrix",
+    "24021:cyprinus-carpio",
+    "24043:cyprinus-carpio",
+    "25003:salmo-trutta",
+    "25009:cyprinus-carpio",
+    "25013:salmo-trutta",
+    "25015:cyprinus-carpio",
+    "25017:cyprinus-carpio",
+    "25025:cyprinus-carpio",
+    "26005:cyprinus-carpio",
+    "26005:neogobius-melanostomus",
+    "26009:salmo-trutta",
+    "26017:cyprinus-carpio",
+    "26017:neogobius-melanostomus",
+    "26049:cyprinus-carpio",
+    "26049:neogobius-melanostomus",
+    "26055:salmo-trutta",
+    "26061:cyprinus-carpio",
+    "26065:cyprinus-carpio",
+    "26069:salmo-trutta",
+    "26075:cyprinus-carpio",
+    "26101:neogobius-melanostomus",
+    "26101:salmo-trutta",
+    "26109:cyprinus-carpio",
+    "26111:cyprinus-carpio",
+    "26111:neogobius-melanostomus",
+    "26115:cyprinus-carpio",
+    "26121:salmo-trutta",
+    "26125:cyprinus-carpio",
+    "26127:salmo-trutta",
+    "26145:cyprinus-carpio",
+    "26149:cyprinus-carpio",
+    "26157:neogobius-melanostomus",
+    "26163:cyprinus-carpio",
+    "26163:neogobius-melanostomus",
+    "26165:salmo-trutta",
+    "27009:cyprinus-carpio",
+    "27011:cyprinus-carpio",
+    "27015:cyprinus-carpio",
+    "27019:cyprinus-carpio",
+    "27069:cyprinus-carpio",
+    "27089:cyprinus-carpio",
+    "27093:cyprinus-carpio",
+    "27097:cyprinus-carpio",
+    "27119:cyprinus-carpio",
+    "27133:cyprinus-carpio",
+    "27135:cyprinus-carpio",
+    "27139:cyprinus-carpio",
+    "27141:cyprinus-carpio",
+    "27167:cyprinus-carpio",
+    "27169:cyprinus-carpio",
+    "28053:ctenopharyngodon-idella",
+    "28127:cyprinus-carpio",
+    "28149:ctenopharyngodon-idella",
+    "28149:cyprinus-carpio",
+    "29023:cyprinus-carpio",
+    "29037:cyprinus-carpio",
+    "29045:ctenopharyngodon-idella",
+    "29045:cyprinus-carpio",
+    "29045:hypophthalmichthys-molitrix",
+    "29053:cyprinus-carpio",
+    "29053:hypophthalmichthys-molitrix",
+    "29071:cyprinus-carpio",
+    "29071:hypophthalmichthys-molitrix",
+    "29085:cyprinus-carpio",
+    "29099:cyprinus-carpio",
+    "29099:hypophthalmichthys-molitrix",
+    "29111:cyprinus-carpio",
+    "29137:cyprinus-carpio",
+    "29143:cyprinus-carpio",
+    "29151:cyprinus-carpio",
+    "29151:hypophthalmichthys-molitrix",
+    "29153:cyprinus-carpio",
+    "29155:cyprinus-carpio",
+    "29157:cyprinus-carpio",
+    "29183:cyprinus-carpio",
+    "29185:cyprinus-carpio",
+    "29186:cyprinus-carpio",
+    "29186:hypophthalmichthys-molitrix",
+    "29195:ctenopharyngodon-idella",
+    "29195:cyprinus-carpio",
+    "29195:hypophthalmichthys-molitrix",
+    "29213:salmo-trutta",
+    "30001:salmo-trutta",
+    "30007:cyprinus-carpio",
+    "30013:salmo-trutta",
+    "30027:salmo-trutta",
+    "30057:salmo-trutta",
+    "30059:salmo-trutta",
+    "30089:salmo-trutta",
+    "31015:cyprinus-carpio",
+    "31021:ctenopharyngodon-idella",
+    "31021:cyprinus-carpio",
+    "31021:hypophthalmichthys-molitrix",
+    "31025:cyprinus-carpio",
+    "31027:cyprinus-carpio",
+    "31031:cyprinus-carpio",
+    "31035:cyprinus-carpio",
+    "31037:cyprinus-carpio",
+    "31047:cyprinus-carpio",
+    "31049:cyprinus-carpio",
+    "31055:ctenopharyngodon-idella",
+    "31055:cyprinus-carpio",
+    "31055:hypophthalmichthys-molitrix",
+    "31083:cyprinus-carpio",
+    "31087:cyprinus-carpio",
+    "31089:cyprinus-carpio",
+    "31107:cyprinus-carpio",
+    "31131:ctenopharyngodon-idella",
+    "31131:cyprinus-carpio",
+    "31131:hypophthalmichthys-molitrix",
+    "31147:ctenopharyngodon-idella",
+    "31147:cyprinus-carpio",
+    "31147:hypophthalmichthys-molitrix",
+    "31151:cyprinus-carpio",
+    "31153:cyprinus-carpio",
+    "31153:hypophthalmichthys-molitrix",
+    "31165:salmo-trutta",
+    "31169:cyprinus-carpio",
+    "32033:salmo-trutta",
+    "33005:cyprinus-carpio",
+    "34003:cyprinus-carpio",
+    "34005:cyprinus-carpio",
+    "34013:cyprinus-carpio",
+    "34019:salmo-trutta",
+    "34027:salmo-trutta",
+    "34033:cyprinus-carpio",
+    "34033:northern-snakehead",
+    "34037:cyprinus-carpio",
+    "34037:northern-snakehead",
+    "34037:salmo-trutta",
+    "34041:cyprinus-carpio",
+    "34041:salmo-trutta",
+    "35015:cyprinus-carpio",
+    "35039:cyprinus-carpio",
+    "35039:salmo-trutta",
+    "35053:cyprinus-carpio",
+    "36007:misgurnus-anguillicaudatus",
+    "36009:cyprinus-carpio",
+    "36017:cyprinus-carpio",
+    "36019:salmo-trutta",
+    "36025:cyprinus-carpio",
+    "36035:salmo-trutta",
+    "36037:cyprinus-carpio",
+    "36039:salmo-trutta",
+    "36049:cyprinus-carpio",
+    "36051:salmo-trutta",
+    "36057:cyprinus-carpio",
+    "36065:cyprinus-carpio",
+    "36067:cyprinus-carpio",
+    "36071:cyprinus-carpio",
+    "36071:salmo-trutta",
+    "36073:cyprinus-carpio",
+    "36075:salmo-trutta",
+    "36089:salmo-trutta",
+    "36091:cyprinus-carpio",
+    "36101:cyprinus-carpio",
+    "36107:cyprinus-carpio",
+    "36111:cyprinus-carpio",
+    "37063:cyprinus-carpio",
+    "37111:cyprinus-carpio",
+    "38007:cyprinus-carpio",
+    "38015:cyprinus-carpio",
+    "38037:cyprinus-carpio",
+    "38049:cyprinus-carpio",
+    "38053:cyprinus-carpio",
+    "38055:cyprinus-carpio",
+    "38055:salmo-trutta",
+    "38057:cyprinus-carpio",
+    "38057:salmo-trutta",
+    "38065:cyprinus-carpio",
+    "38073:cyprinus-carpio",
+    "38087:cyprinus-carpio",
+    "39007:cyprinus-carpio",
+    "39031:cyprinus-carpio",
+    "39059:cyprinus-carpio",
+    "39081:cyprinus-carpio",
+    "39087:cyprinus-carpio",
+    "39105:cyprinus-carpio",
+    "39109:cyprinus-carpio",
+    "39119:ctenopharyngodon-idella",
+    "39119:cyprinus-carpio",
+    "39125:cyprinus-carpio",
+    "39129:ctenopharyngodon-idella",
+    "39145:cyprinus-carpio",
+    "39163:cyprinus-carpio",
+    "39169:cyprinus-carpio",
+    "39169:mylopharyngodon-piceus",
+    "39173:cyprinus-carpio",
+    "40005:cyprinus-carpio",
+    "40023:cyprinus-carpio",
+    "40051:ctenopharyngodon-idella",
+    "40101:ctenopharyngodon-idella",
+    "40119:ctenopharyngodon-idella",
+    "41021:cyprinus-carpio",
+    "42023:salmo-trutta",
+    "42033:salmo-trutta",
+    "42047:salmo-trutta",
+    "42057:salmo-trutta",
+    "42073:salmo-trutta",
+    "42095:northern-snakehead",
+    "42101:northern-snakehead",
+    "42103:salmo-trutta",
+    "42113:salmo-trutta",
+    "42117:salmo-trutta",
+    "42121:salmo-trutta",
+    "44007:cyprinus-carpio",
+    "44007:salmo-trutta",
+    "45005:cyprinus-carpio",
+    "45007:cyprinus-carpio",
+    "45019:ctenopharyngodon-idella",
+    "45029:ctenopharyngodon-idella",
+    "45029:cyprinus-carpio",
+    "45059:ctenopharyngodon-idella",
+    "45059:cyprinus-carpio",
+    "46005:hypophthalmichthys-molitrix",
+    "46013:hypophthalmichthys-molitrix",
+    "46019:cyprinus-carpio",
+    "46027:cyprinus-carpio",
+    "46031:cyprinus-carpio",
+    "46051:cyprinus-carpio",
+    "46061:cyprinus-carpio",
+    "46067:hypophthalmichthys-molitrix",
+    "46071:cyprinus-carpio",
+    "46075:cyprinus-carpio",
+    "46081:salmo-trutta",
+    "46085:cyprinus-carpio",
+    "46093:salmo-trutta",
+    "46099:cyprinus-carpio",
+    "46103:cyprinus-carpio",
+    "46111:cyprinus-carpio",
+    "46111:hypophthalmichthys-molitrix",
+    "46117:cyprinus-carpio",
+    "46121:cyprinus-carpio",
+    "46123:cyprinus-carpio",
+    "46127:cyprinus-carpio",
+    "46135:cyprinus-carpio",
+    "47059:salmo-trutta",
+    "47065:cyprinus-carpio",
+    "47105:cyprinus-carpio",
+    "47149:cyprinus-carpio",
+    "47157:cyprinus-carpio",
+    "48061:pterygoplichthys-disjunctivus",
+    "48089:cyprinus-carpio",
+    "48091:cyprinus-carpio",
+    "48141:cyprinus-carpio",
+    "48159:cyprinus-carpio",
+    "48163:cyprinus-carpio",
+    "48201:cyprinus-carpio",
+    "48201:pterygoplichthys-disjunctivus",
+    "48283:oreochromis-aureus",
+    "48289:cyprinus-carpio",
+    "48293:cyprinus-carpio",
+    "48343:cyprinus-carpio",
+    "48363:cyprinus-carpio",
+    "48401:cyprinus-carpio",
+    "48467:cyprinus-carpio",
+    "48479:oreochromis-niloticus",
+    "49009:cyprinus-carpio",
+    "49009:salmo-trutta",
+    "49015:salmo-trutta",
+    "49017:salmo-trutta",
+    "49019:cyprinus-carpio",
+    "49051:salmo-trutta",
+    "49057:cyprinus-carpio",
+    "49057:salmo-trutta",
+    "50001:salmo-trutta",
+    "50003:salmo-trutta",
+    "50007:salmo-trutta",
+    "50021:salmo-trutta",
+    "50025:salmo-trutta",
+    "50027:salmo-trutta",
+    "51191:cyprinus-carpio",
+    "53007:cyprinus-carpio",
+    "54007:cyprinus-carpio",
+    "54051:cyprinus-carpio",
+    "54053:cyprinus-carpio",
+    "54075:salmo-trutta",
+    "54083:salmo-trutta",
+    "55007:salmo-trutta",
+    "55011:cyprinus-carpio",
+    "55023:cyprinus-carpio",
+    "55025:cyprinus-carpio",
+    "55025:salmo-trutta",
+    "55033:salmo-trutta",
+    "55045:cyprinus-carpio",
+    "55045:salmo-trutta",
+    "55049:cyprinus-carpio",
+    "55049:salmo-trutta",
+    "55053:salmo-trutta",
+    "55055:cyprinus-carpio",
+    "55057:cyprinus-carpio",
+    "55063:salmo-trutta",
+    "55065:salmo-trutta",
+    "55071:cyprinus-carpio",
+    "55077:cyprinus-carpio",
+    "55087:cyprinus-carpio",
+    "55093:salmo-trutta",
+    "55103:salmo-trutta",
+    "55105:cyprinus-carpio",
+    "55115:cyprinus-carpio",
+    "55133:cyprinus-carpio",
+    "55135:cyprinus-carpio",
+    "55139:cyprinus-carpio",
+    "56001:cyprinus-carpio",
+    "56007:salmo-trutta",
+    "56011:cyprinus-carpio",
+    "56015:salmo-trutta",
+    "56021:salmo-trutta",
+    "56031:cyprinus-carpio",
+    "56033:cyprinus-carpio",
+    "56033:salmo-trutta"
+  ],
+  "heldPairs": [
+    "20207:cyprinus-carpio"
+  ],
+  "heldFishRows": [
+    {
+      "parsedRowIndexZeroBased": 4852,
+      "rawRecordSha256": "6a9fe6762bfb7fbe8cfe4c2fbf4320a1a778b172e80512b5bd03246dfddcc5a9",
+      "reason": "Only matching visit has unresolved source-location contradiction: publisher Woodson F20207 but NHD sampling-frame point about2049m outside Woodson in generalized Coffey20031. No alternative visit or exact capture geometry. Hold without reassignment, absence or non-detection."
+    }
+  ],
+  "attribution": "U.S. Environmental Protection Agency, National Aquatic Resource Surveys, National Rivers and Streams Assessment 2023-2024; fish-count, site-information, fish-taxonomy and companion metadata files published June2026, accessed2026-09-08. Acknowledge participating field crews, laboratories, states, tribes and contributors. No EPA endorsement is implied.",
+  "rationale": "Three independent leased source reviews supported445 exact county/species pairs and held one source-location contradiction. MAIN independently reconstructed every selected original fish/site/taxon row with exact byte hashes and physical lines, verified count/identity/date/active-county constraints, and retained the reviewers selection reports and method limitations. Canonical adapter and immutable-run tests remain required before evidence integration.",
+  "limitations": [
+    "Historical sampled occurrence on original2023/2024 collection dates only; not current persistence, establishment, reproduction, countywide prevalence, legal invasive status or complete county inventory.",
+    "Source fish TOTAL is positive and consistent with size-class counts; original counts and morph categories are retained without reconstructing abundance across rows, visits or morphs.",
+    "FISH_SAMPLING means sampling not conducted or suspended; this initial method admits blank values only. Nonblank flags and non-distinct rows are held from this method, not interpreted as absence or non-detection.",
+    "SAMPLED_FISH reports sufficient assessment effort, not whether positive captures occurred. Partial/interrupted reaches, statistical-frame exclusions and hand-picked sites can carry direct positive evidence with explicit qualifications.",
+    "Exact source UID joins to unique visit information and TAXA_ID joins to taxonomy; exact case-normalized source binomial and active publisher county FIPS/name/state. No fuzzy taxon mapping, retired-county conversion or neighboring-county inference.",
+    "Publisher NAD83 NHD sampling-frame coordinates are contextual, not exact fish capture geometry. Generalized boundary discrepancies and border rivers remain explicit, and unresolved larger source-location contradictions are held.",
+    "EPA identification and program QA support the published source, but individual specimens were not independently reidentified or universally voucher-verified. FINAL_NAME is a taxonomic field, not Final/Provisional result status.",
+    "The cited field manuals permit alternative specimen collection in some conditions; permission does not prove which gear or sequence produced a particular record.",
+    "Original publication and acquisition provenance are retained. Replay performs zero provider requests; its code commit identifies interpretation rather than a new source acquisition."
+  ],
+  "speciesCaveats": {},
+  "pairCaveats": {
+    "01121:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 80.3 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "04027:hypostomus-plecostomus": [
+      "Original2023-04-26 collection date retained; not shifted into nominal summer window.",
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "04027:oreochromis-aureus": [
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "05017:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 156.6 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag AR:MS. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "05017:hypophthalmichthys-molitrix": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 157 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag AR:MS. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "05041:cyprinus-carpio": [
+      "Selected source site has border-river flag AR:MS. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "05063:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES-<20 CW SAMPLED, >500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "06077:cyprinus-carpio": [
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "08035:salmo-trutta": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 3.8 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "08043:salmo-trutta": [
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "12011:monopterus-albus": [
+      "FRAME23=Exclude while actual visit is Target_Sampled; statistical-frame exclusion does not negate original positive capture.",
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "12081:monopterus-albus": [
+      "Selected original fish row reports sampling sufficiency YES-50-90% OF REACH. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "13069:ctenopharyngodon-idella": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 64.7 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "13069:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 65 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "13187:salmo-trutta": [
+      "Hand-picked field site; direct positive capture does not imply probability-based county coverage."
+    ],
+    "17097:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "17153:cyprinus-carpio": [
+      "Original date2024-10-02 retained, no nominal sampling-window adjustment."
+    ],
+    "18083:ctenopharyngodon-idella": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 104 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "19043:cyprinus-carpio": [
+      "Selected source site has border-river flag IA:WI. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "19057:cyprinus-carpio": [
+      "Selected source site has border-river flag IA:IL. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "19191:salmo-trutta": [
+      "Hand-picked field site; no probability-based county coverage."
+    ],
+    "19193:cyprinus-carpio": [
+      "Selected source site has border-river flag IA:SD. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "19193:hypophthalmichthys-molitrix": [
+      "Selected source site has border-river flag IA:SD. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "20015:cyprinus-carpio": [
+      "Original2024-05-22 date retained; no sampling-window compliance claim."
+    ],
+    "20103:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 9 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag KS:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "20117:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES-50-90% OF REACH. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "20167:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES-50-90% OF REACH. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site mode INTWADE is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "20205:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "21007:cyprinus-carpio": [
+      "Selected source site has border-river flag IL:KY. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "21031:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "21031:hypophthalmichthys-molitrix": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "21039:cyprinus-carpio": [
+      "Original date2024-10-03 retained, no nominal sampling-window adjustment."
+    ],
+    "21127:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 34 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag KY:WV. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "21145:cyprinus-carpio": [
+      "Selected source site has border-river flag IL:KY. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "22025:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 42.2 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "22025:hypophthalmichthys-molitrix": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 42 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "26017:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "26017:neogobius-melanostomus": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "26109:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 3 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag MI:WI. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "26125:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES-50-90% OF REACH. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "27009:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "27011:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 42.4 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "27015:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 448 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "27019:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES-50-90% OF REACH. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "27069:cyprinus-carpio": [
+      "Selected source site has border-river flag MN:ND. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "27089:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site has border-river flag MN:ND. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "27119:cyprinus-carpio": [
+      "Selected source site has border-river flag MN:ND. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "27167:cyprinus-carpio": [
+      "Selected source site has border-river flag MN:ND. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "27169:cyprinus-carpio": [
+      "Selected source site has border-river flag MN:WI. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "28127:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 94.6 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "29085:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "29099:cyprinus-carpio": [
+      "Selected source site has border-river flag IL:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "29099:hypophthalmichthys-molitrix": [
+      "Selected source site has border-river flag IL:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "29143:cyprinus-carpio": [
+      "Selected source site has border-river flag KY:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "29155:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 69.9 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag MO:TN. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "29157:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 76 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag IL:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "29183:cyprinus-carpio": [
+      "Selected source site has border-river flag IL:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "29186:cyprinus-carpio": [
+      "Selected source site has border-river flag IL:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "29186:hypophthalmichthys-molitrix": [
+      "Selected source site has border-river flag IL:MO. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "30007:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "31015:cyprinus-carpio": [
+      "Selected source site has border-river flag NE:SD. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31021:ctenopharyngodon-idella": [
+      "Selected source site has border-river flag IA:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31021:cyprinus-carpio": [
+      "Selected source site has border-river flag IA:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31021:hypophthalmichthys-molitrix": [
+      "Selected source site has border-river flag IA:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31027:cyprinus-carpio": [
+      "Selected source site has border-river flag NE:SD. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31055:ctenopharyngodon-idella": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 75 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag IA:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31055:cyprinus-carpio": [
+      "Selected source site has border-river flag IA:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31055:hypophthalmichthys-molitrix": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 75.1 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag IA:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31107:cyprinus-carpio": [
+      "Selected source site has border-river flag NE:SD. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31131:ctenopharyngodon-idella": [
+      "Selected source site has border-river flag MO:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31131:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 7.9 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag MO:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31131:hypophthalmichthys-molitrix": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 8 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag MO:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31147:ctenopharyngodon-idella": [
+      "Selected source site has border-river flag MO:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31147:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 93 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag MO:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "31147:hypophthalmichthys-molitrix": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 93 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag MO:NE. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "33005:cyprinus-carpio": [
+      "Selected source site has border-river flag NH:VT. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "34003:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 26.9 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "34005:cyprinus-carpio": [
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "34033:northern-snakehead": [
+      "TAXA_ID5023 NORTHERN SNAKEHEAD explicitly maps to CHANNA ARGUS."
+    ],
+    "34037:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 52 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag PA:NJ. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "34037:northern-snakehead": [
+      "Selected source site has border-river flag PA:NJ. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "34037:salmo-trutta": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 51.6 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag PA:NJ. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "34041:cyprinus-carpio": [
+      "Selected source site has border-river flag PA:NJ. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "34041:salmo-trutta": [
+      "Selected source site has border-river flag PA:NJ. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "35015:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "35039:salmo-trutta": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "36019:salmo-trutta": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "36075:salmo-trutta": [
+      "Selected source site mode PARBYWADE is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "36091:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 104 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "36111:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 156 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected original fish row reports sampling sufficiency NO->20 CW SAMPLED, <500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site mode PARBYBOAT is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "38055:cyprinus-carpio": [
+      "HUC12_NM contains Garrison Dam National Fish Hatchery-Missouri River; GNIS_NAME and NARS_NAME identify Missouri River. Watershed name alone is not evidence of captive sampling."
+    ],
+    "38057:salmo-trutta": [
+      "Primary fish9839/site1108,UID2022264,2023-07-06,total2,blank sampling flag and sufficient effort. Earlier fish9835,UID2021997,2023-06-08,total1 has NO_FISH_OTHER and NO-SITE CONDITIONS; its exact gear/interruption reason is unknown. This corrects an earlier preliminary UID typo and missed alternate.",
+      "FRAME23=Exclude but actual visit is Target_Sampled; preserve both.",
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "39081:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 126 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag OH:WV. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "39105:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 94 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag OH:WV. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "39119:ctenopharyngodon-idella": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "39119:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "39145:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 38.9 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag KY:OH. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "39169:mylopharyngodon-piceus": [
+      "Published BLACK CARP at Killbuck Creek,fish12527,UID2023409,2024-06-20,total5,explicit MYLOPHARYNGODON PICEUS. No independent specimen voucher or additional range-extension verification."
+    ],
+    "40119:ctenopharyngodon-idella": [
+      "Selected original fish row reports sampling sufficiency SEINING ONLY. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "42095:northern-snakehead": [
+      "Selected source site has border-river flag PA:NJ. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "44007:salmo-trutta": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site mode PARBYBOAT is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "45005:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 362.6 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag GA:SC. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "45007:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 122 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment.",
+      "Selected source site has border-river flag GA:SC. Publisher county attribution is retained; no additional neighboring county is inferred."
+    ],
+    "45029:ctenopharyngodon-idella": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 109.4 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "45029:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 109 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "46051:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "46117:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 173.7 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "48061:pterygoplichthys-disjunctivus": [
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "48091:cyprinus-carpio": [
+      "VALXSITE=PARBYBOAT; retain limited effort.",
+      "Selected source site mode PARBYBOAT is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "48141:cyprinus-carpio": [
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ],
+    "48159:cyprinus-carpio": [
+      "Selected source site mode INTWADE is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "48163:cyprinus-carpio": [
+      "VALXSITE=INTWADE and NO-SITE CONDITIONS; actual positive capture is2024-05-29, outside usual summer window. No sampling-window compliance claim.",
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site mode INTWADE is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "48363:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site mode PARBYBOAT is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "48401:cyprinus-carpio": [
+      "Selected source site mode PARBYBOAT is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "48479:oreochromis-niloticus": [
+      "Selected original fish row reports sampling sufficiency YES-50-90% OF REACH. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site mode PARBYBOAT is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "49015:salmo-trutta": [
+      "Selected original fish row reports sampling sufficiency NO->50% OF REACH,<25 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank.",
+      "Selected source site mode PARBYWADE is preserved; no full assemblage coverage or gear execution is inferred."
+    ],
+    "49057:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "54053:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "54075:salmo-trutta": [
+      "Hand-picked field site; no probability-based county coverage."
+    ],
+    "54083:salmo-trutta": [
+      "Selected original fish row reports sampling sufficiency YES->20 CW SAMPLED,<500 INDIV. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "55011:cyprinus-carpio": [
+      "Independent reviewer generalized-topology diagnostic places selected source sampling-frame point approximately 157 metres outside the publisher county polygon. River-edge uncertainty is retained; this is not exact capture geometry or a county reassignment."
+    ],
+    "55087:cyprinus-carpio": [
+      "Selected original fish row reports sampling sufficiency NO-SITE CONDITIONS. Positive capture is retained with limited assessment effort; FISH_SAMPLING is blank."
+    ],
+    "56001:cyprinus-carpio": [
+      "TAXA_ID301 MIRROR CARP explicitly maps to CYPRINUS CARPIO and ITISTSN163344. Treat as same species, not a new inferred alias or independently summed species."
+    ],
+    "56021:salmo-trutta": [
+      "Statistical FRAME23=Exclude coexists with actual EVAL_CAT=Target_Sampled; positive record remains historical sampled occurrence."
+    ]
+  }
+}

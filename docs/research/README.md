@@ -450,3 +450,9 @@ A captured reference is not an accepted taxonomic mapping and emits no county ev
 The [retained specimen taxonomy extension](retained-specimen-taxonomy-recovery.md) adds an opt-in, evaluated WCVP v16 concept-mapping path for the retained NYBG infraspecific review inventory. It preserves original source names, reference lineage and all non-taxonomy checks; source and catalog scope are hash-pinned.
 
 Year-precision official-status research uses the precision-v2 contract in docs/architecture/evidence-research-system.md. Preserve null declaration/source dates, require explicit independent conditional support, and apply all-presence conflict blocking to invalid-record corrections. Source-method reviews and fixture children are not determination gains.
+
+## EPA NRSA retained fish counts
+
+The registered `epa-nrsa-fish-counts` source replays retained official NRSA2023-2024 fish-count, site-information, taxonomy and metadata files through a reviewed, hash-pinned method. Exact visit and taxon joins, active publisher county metadata, positive distinct counts and valid original dates support historical sampled occurrence. Sampling sufficiency is distinct from a positive capture; border reaches, partial effort, statistical-frame exclusions and source-specific holds remain explicit. No source silence or sampling flag supplies absence or non-detection.
+
+The initial method admits445 independently reviewed pairs and holds Woodson County KS20207 common carp for an unresolved source-location contradiction. Canonical run and projection reconciliation establish actual progress. Original EPA row hashes include complete line terminators, sliced from retained bytes using parsed byte boundaries. `npm run check:epa-nrsa-fish` covers admission, raw parsing, all reviewed states, event schemas, public attribution and adverse-source tests. Research remains static and offline at runtime.

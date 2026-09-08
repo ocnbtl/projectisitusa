@@ -1,3 +1,5 @@
+import { epaNrsaInputPaths, type EpaNrsaPlan } from "@/lib/research/epa-nrsa-fish-counts";
+import { epaNrsaFishAdapter } from "./adapters/epa-nrsa-fish-counts";
 import { wqpReviewedFishInputPaths, type WqpReviewedFishPlan } from "@/lib/research/wqp-reviewed-fish";
 import { wqpFishInputPaths, type WqpFishPlan } from "@/lib/research/wqp-fish-positive-review";
 import { wqpFieldCountsAdapter, wqpFishMeasurementsAdapter, wqpReviewedFishAdapter } from "./adapters/wqp-retained-field-counts";
@@ -105,6 +107,7 @@ type CandidateFile = {
   honeyBeePositive?: HoneyPositivePlan;
   wqpFieldCounts?: WqpPlan;
   wqpFishMeasurements?: WqpFishPlan;
+  epaNrsaFish?: EpaNrsaPlan;
   wqpReviewedFish?: WqpReviewedFishPlan;
   officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
@@ -558,6 +561,7 @@ function runTimestamp(value: string) {
 }
 
 function resolveAdapter(sourceId: string, candidateFile?: CandidateFile): ResearchSourceAdapter {
+  if (sourceId === epaNrsaFishAdapter.sourceId) return epaNrsaFishAdapter;
   if (sourceId === wqpFieldCountsAdapter.sourceId) {
     if ([candidateFile?.wqpFieldCounts, candidateFile?.wqpFishMeasurements, candidateFile?.wqpReviewedFish].filter(Boolean).length > 1) throw new Error("Ambiguous WQP method plans.");
     if (candidateFile?.wqpReviewedFish) return wqpReviewedFishAdapter;
@@ -672,6 +676,10 @@ function buildParameters(
       sortField: "uuid",
       sortOrder: "asc",
     };
+  }
+  if (sourceId === epaNrsaFishAdapter.sourceId) {
+    if (!candidateFile.epaNrsaFish || candidateFile.sourceId !== sourceId) throw new Error("EPA NRSA requires its pinned reviewed source plan.");
+    return {...candidateFile.epaNrsaFish, mode: "retained-reviewed-fish-counts", stateCode, candidatePairs, candidateLimit: candidatePairs.length};
   }
   if (sourceId === wqpFieldCountsAdapter.sourceId) {
     if (candidateFile.wqpReviewedFish) {
@@ -975,6 +983,7 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(adapter === epaNrsaFishAdapter ? epaNrsaInputPaths(readJson<CandidateFile>(options.candidateFile).epaNrsaFish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpReviewedFishAdapter ? wqpReviewedFishInputPaths(readJson<CandidateFile>(options.candidateFile).wqpReviewedFish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpFishMeasurementsAdapter ? wqpFishInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFishMeasurements!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpFieldCountsAdapter ? wqpInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFieldCounts!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
@@ -1082,7 +1091,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = adapter === wqpReviewedFishAdapter
+    const expectedProviderRequests = adapter === epaNrsaFishAdapter
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-fish-counts" }
+      : adapter === wqpReviewedFishAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-fish-measurement" }
       : adapter === wqpFishMeasurementsAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-fish-positive-measurement" }

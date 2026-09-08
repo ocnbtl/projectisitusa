@@ -1426,6 +1426,40 @@
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1
       }
+    },
+    {
+      "id": "epa-nrsa-fish-counts",
+      "label": "EPA National Rivers and Streams Assessment fish counts",
+      "aliases": [],
+      "authority": "U.S. Environmental Protection Agency",
+      "tier": "official-national",
+      "homepage": "https://www.epa.gov/national-aquatic-resource-surveys/data-national-aquatic-resource-surveys",
+      "access": "download",
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
+      "negativeSemantics": "none",
+      "refreshCadenceDays": 365,
+      "status": "operational",
+      "adapter": "scripts/research/adapters/epa-nrsa-fish-counts.ts",
+      "caveat": "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags.",
+      "researchAdapter": {
+        "id": "epa-nrsa-retained-fish-counts",
+        "module": "scripts/research/adapters/epa-nrsa-fish-counts.ts",
+        "allowedVersions": [
+          "1.0.0"
+        ],
+        "parameterSchema": "src/data/research/schemas/epa-nrsa-fish-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact case-normalized source GENUS and SPECIES through unique TAXA_ID, with common-name consistency; no fuzzy mapping or unreviewed rank collapse.",
+        "geographyMatchingPolicy": "Exact site-visit join to active publisher STATECTY FIPS and county name/state. Sampling-frame coordinates remain contextual; unresolved source contradictions held, no retired-county conversion.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     }
   ]
 }

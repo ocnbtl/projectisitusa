@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-nrsa-source-and-method-registration",
+  "recordedAt": "2026-09-08T18:50:13.069Z",
+  "status": "all-source-fixtures-passed-canonical-runs-pending",
+  "method": {
+    "path": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+    "bytes": 57031,
+    "sha256": "74733ec61f2db22be43b3e8a66dd650b6e298ea83b043b433a1785293497b3ec"
+  },
+  "adapterVersion": "1.0.0",
+  "independentReviews": 3,
+  "reviewedPairs": 445,
+  "heldPairs": [
+    "20207:cyprinus-carpio"
+  ],
+  "sourceRows": 557,
+  "positiveSourceRows": 550,
+  "groupedRejections": 6,
+  "fixtureAdverseCases": 44,
+  "predicateAdverseCases": 38,
+  "parserChecks": "Exact CRLF/LF, multiline quoted metadata, missing final newline, duplicate headers, column count and invalid UTF8 tested. EPA raw hashes use original byte boundaries; historical WQP semantics unchanged.",
+  "typecheckPassed": true,
+  "publicAttributionPassed": true,
+  "eventSchemasPassed": true,
+  "deterministicStates": [
+    "AL",
+    "KS",
+    "FL"
+  ],
+  "sourceAcquisitions": 0,
+  "fixture": {
+    "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/retained-replay-validation.json",
+    "bytes": 6618,
+    "sha256": "206c559c013123ff300a41fd9367ed44a5286ed2277ccf0fd6869cf2d3d271b6"
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/epa-nrsa-method-validation-20260908-r18.json.gz",
+    "bytes": 80426,
+    "sha256": "8ce2c267fedc08d1351a2d7cef404a5ea21965441e531fdc137174acbfdc8f02"
+  },
+  "baseline": {
+    "compiledDeterminations": 318816,
+    "combinedPotentialUniqueMovement": 480,
+    "overlaps": 7,
+    "alreadyIntegratedUncompiledWqpAssertions": 42
+  },
+  "newDeterminations": 0,
+  "releaseStrategy": "Two canonical pilot state runs and fresh tamper validation, then sequential remaining state runs. Integrate immutable evidence, compile the exact union once, seal regenerated publication manifest before full final integrity gates, and batch deployment within current free resource and R2 cadence limits.",
+  "referenceFormattingCorrection": "Uncommitted MAIN-generated review JSON normalized to LF with unchanged parsed values and source witness hashes; all method/plan references refreshed. Original documents and prior validation retained in the review archive.",
+  "postFormattingValidation": {
+    "recordedAt": "2026-09-08T18:52:20.332Z",
+    "all445RawWitnessesReverified": true,
+    "method": {
+      "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-20260908-r18.json",
+      "methodReviewSha256": "74733ec61f2db22be43b3e8a66dd650b6e298ea83b043b433a1785293497b3ec"
+    },
+    "checks": [
+      {
+        "stateCode": "AL",
+        "assertions": 1,
+        "sourceRows": 1
+      },
+      {
+        "stateCode": "KS",
+        "assertions": 18,
+        "sourceRows": 23
+      }
+    ],
+    "semanticSourceValuesUnchanged": true,
+    "determinationsAdded": 0
+  }
+}

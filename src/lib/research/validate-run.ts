@@ -1,3 +1,4 @@
+import { EPA_NRSA_SOURCE, EPA_NRSA_ADAPTER, EPA_NRSA_VERSION, buildEpaNrsaResult } from "./epa-nrsa-fish-counts";
 import { WQP_REVIEWED_FISH_VERSION, buildWqpReviewedFishResult } from "./wqp-reviewed-fish";
 import { WQP_FISH_VERSION, buildWqpFishResult } from "./wqp-fish-positive-review";
 import { CommittedFileReader } from "./committed-file-reader";
@@ -55,6 +56,10 @@ function assert(condition: unknown, message: string): asserts condition {
 export function isCommittedSnapshotReplayReceipt(
   receipt: Pick<ImmutableResearchRunReceipt, "source_id" | "adapter_id" | "parameters"> & Partial<Pick<ImmutableResearchRunReceipt, "adapter_version">>,
 ) {
+  if (receipt.source_id === EPA_NRSA_SOURCE && receipt.adapter_id === EPA_NRSA_ADAPTER && receipt.adapter_version === EPA_NRSA_VERSION
+    && receipt.parameters.mode === "retained-reviewed-fish-counts" && typeof receipt.parameters.methodReviewSha256 === "string"
+    && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256) && typeof receipt.parameters.methodReviewPath === "string"
+    && /^src\/data\/research\/source-method-reviews\/epa-nrsa-fish-counts-[a-z0-9-]+\.json$/u.test(receipt.parameters.methodReviewPath)) return true;
   // WQP original query citations are pinned and reconstructed above; replay issues no new requests.
   if (receipt.source_id === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && receipt.adapter_version === WQP_VERSION
     && receipt.parameters.mode === "retained-field-positive-count" && typeof receipt.parameters.methodReviewSha256 === "string"
@@ -332,6 +337,20 @@ export function validateResearchRunInMemory(input: {
     for (const artifact of expected.artifacts) { const ref = receipt.artifacts.find(r => path.posix.basename(r.path) === artifact.filename);
       assert(ref && ref.bytes === Buffer.byteLength(artifact.contents) && ref.sha256 === sha256(artifact.contents), "Honey bee witness artifact differs."); }
     assert(receipt.upstream_requests.length === 0, "Retained honey bee replay cannot claim fresh source requests.");
+  }
+  if (sourceId === EPA_NRSA_SOURCE) {
+    assert(receipt.adapter_id === EPA_NRSA_ADAPTER && receipt.adapter_version === EPA_NRSA_VERSION, "Wrong EPA NRSA adapter version.");
+    const expected = buildEpaNrsaResult({runId, sourceId, stateCode, runStartedAt: receipt.started_at, parameters: receipt.parameters,
+      requestedPairs: requestedPairKeys.map(key => { const [countyFips, speciesId] = key.split(":"); return {countyFips, speciesId, countyName: "Pinned registry", scientificName: speciesById.get(speciesId)!.scientificName}; })},
+      p => readCommittedBytes(root, receipt.code_commit, p));
+    for (const field of ["assertions", "reviews", "rejections", "outcomes", "upstreamRequests"] as const)
+      assert(stableJson(result[field]) === stableJson(expected[field]), "EPA NRSA " + field + " differ from canonical reconstruction.");
+    assert(result.candidateRecordCount === expected.candidateRecordCount && result.duplicateRecordCount === expected.duplicateRecordCount
+      && stableJson(result.errors) === stableJson(expected.errors) && stableJson(result.warnings) === stableJson(expected.warnings), "EPA NRSA canonical counts or diagnostics differ.");
+    assert(receipt.artifacts.length === expected.artifacts.length, "EPA NRSA witness count differs.");
+    for (const artifact of expected.artifacts) { const ref = receipt.artifacts.find(r => path.posix.basename(r.path) === artifact.filename);
+      assert(ref && ref.bytes === Buffer.byteLength(artifact.contents) && ref.sha256 === sha256(artifact.contents), "EPA NRSA witness artifact differs."); }
+    assert(receipt.upstream_requests.length === 0, "EPA NRSA retained replay cannot claim fresh requests.");
   }
   if (sourceId === WQP_SOURCE) {
     assert(receipt.adapter_id === WQP_ADAPTER && [WQP_VERSION, WQP_FISH_VERSION, WQP_REVIEWED_FISH_VERSION].includes(receipt.adapter_version), "Wrong WQP field positive adapter version.");
