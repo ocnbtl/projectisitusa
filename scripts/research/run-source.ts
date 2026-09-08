@@ -1,5 +1,6 @@
+import { wqpReviewedFishInputPaths, type WqpReviewedFishPlan } from "@/lib/research/wqp-reviewed-fish";
 import { wqpFishInputPaths, type WqpFishPlan } from "@/lib/research/wqp-fish-positive-review";
-import { wqpFieldCountsAdapter, wqpFishMeasurementsAdapter } from "./adapters/wqp-retained-field-counts";
+import { wqpFieldCountsAdapter, wqpFishMeasurementsAdapter, wqpReviewedFishAdapter } from "./adapters/wqp-retained-field-counts";
 import { wqpInputPaths, type WqpPlan } from "@/lib/research/wqp-field-positive-review";
 import { aphisHoneyBeePositiveAdapter } from "./adapters/aphis-honey-bee-positive";
 import { honeyPositiveInputPaths, type HoneyPositivePlan } from "@/lib/research/honey-bee-positive-review";
@@ -104,6 +105,7 @@ type CandidateFile = {
   honeyBeePositive?: HoneyPositivePlan;
   wqpFieldCounts?: WqpPlan;
   wqpFishMeasurements?: WqpFishPlan;
+  wqpReviewedFish?: WqpReviewedFishPlan;
   officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
     downloadPageUrl: string;
@@ -557,7 +559,8 @@ function runTimestamp(value: string) {
 
 function resolveAdapter(sourceId: string, candidateFile?: CandidateFile): ResearchSourceAdapter {
   if (sourceId === wqpFieldCountsAdapter.sourceId) {
-    if (candidateFile?.wqpFishMeasurements && candidateFile.wqpFieldCounts) throw new Error("Ambiguous WQP method plans.");
+    if ([candidateFile?.wqpFieldCounts, candidateFile?.wqpFishMeasurements, candidateFile?.wqpReviewedFish].filter(Boolean).length > 1) throw new Error("Ambiguous WQP method plans.");
+    if (candidateFile?.wqpReviewedFish) return wqpReviewedFishAdapter;
     return candidateFile?.wqpFishMeasurements ? wqpFishMeasurementsAdapter : wqpFieldCountsAdapter;
   }
   if (sourceId === aphisHoneyBeePositiveAdapter.sourceId && candidateFile?.honeyBeePositive) return aphisHoneyBeePositiveAdapter;
@@ -671,6 +674,10 @@ function buildParameters(
     };
   }
   if (sourceId === wqpFieldCountsAdapter.sourceId) {
+    if (candidateFile.wqpReviewedFish) {
+      if (candidateFile.wqpFieldCounts || candidateFile.wqpFishMeasurements || candidateFile.sourceId !== sourceId) throw new Error("Ambiguous or wrong-source reviewed WQP fish plan.");
+      return {...candidateFile.wqpReviewedFish, mode:"retained-reviewed-fish-measurement", stateCode, candidatePairs, candidateLimit:candidatePairs.length};
+    }
     if (candidateFile.wqpFishMeasurements) {
       if (candidateFile.wqpFieldCounts || candidateFile.sourceId !== sourceId) throw new Error("Ambiguous or wrong-source WQP fish plan.");
       return {...candidateFile.wqpFishMeasurements, mode:"retained-fish-positive-measurement", stateCode, candidatePairs, candidateLimit:candidatePairs.length};
@@ -968,6 +975,7 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(adapter === wqpReviewedFishAdapter ? wqpReviewedFishInputPaths(readJson<CandidateFile>(options.candidateFile).wqpReviewedFish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpFishMeasurementsAdapter ? wqpFishInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFishMeasurements!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpFieldCountsAdapter ? wqpInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFieldCounts!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === aphisHoneyBeePositiveAdapter ? honeyPositiveInputPaths(readJson<CandidateFile>(options.candidateFile).honeyBeePositive!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
@@ -1074,7 +1082,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = adapter === wqpFishMeasurementsAdapter
+    const expectedProviderRequests = adapter === wqpReviewedFishAdapter
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-fish-measurement" }
+      : adapter === wqpFishMeasurementsAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-fish-positive-measurement" }
       : adapter === wqpFieldCountsAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-field-positive-count" }

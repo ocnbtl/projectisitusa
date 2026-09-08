@@ -1,3 +1,4 @@
+import { WQP_REVIEWED_FISH_VERSION, buildWqpReviewedFishResult } from "./wqp-reviewed-fish";
 import { WQP_FISH_VERSION, buildWqpFishResult } from "./wqp-fish-positive-review";
 import { CommittedFileReader } from "./committed-file-reader";
 import { WQP_SOURCE, WQP_ADAPTER, WQP_VERSION, buildWqpResult } from "./wqp-field-positive-review";
@@ -61,6 +62,10 @@ export function isCommittedSnapshotReplayReceipt(
   if (receipt.source_id === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && receipt.adapter_version === WQP_FISH_VERSION
     && receipt.parameters.mode === "retained-fish-positive-measurement" && typeof receipt.parameters.methodReviewSha256 === "string"
     && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256)) return true;
+  if (receipt.source_id === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && receipt.adapter_version === WQP_REVIEWED_FISH_VERSION
+    && receipt.parameters.mode === "retained-reviewed-fish-measurement" && typeof receipt.parameters.methodReviewSha256 === "string"
+    && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256) && typeof receipt.parameters.methodReviewPath === "string"
+    && /^src\/data\/research\/source-method-reviews\/wqp-reviewed-fish-[a-z0-9-]+\.json$/u.test(receipt.parameters.methodReviewPath)) return true;
   return receipt.source_id === "eddmaps" &&
     receipt.adapter_id === "eddmaps-snapshot-replay" &&
     receipt.parameters.mode === "committed-snapshot-replay" &&
@@ -329,8 +334,9 @@ export function validateResearchRunInMemory(input: {
     assert(receipt.upstream_requests.length === 0, "Retained honey bee replay cannot claim fresh source requests.");
   }
   if (sourceId === WQP_SOURCE) {
-    assert(receipt.adapter_id === WQP_ADAPTER && [WQP_VERSION, WQP_FISH_VERSION].includes(receipt.adapter_version), "Wrong WQP field positive adapter version.");
-    const reconstruct = receipt.adapter_version === WQP_FISH_VERSION ? buildWqpFishResult : buildWqpResult;
+    assert(receipt.adapter_id === WQP_ADAPTER && [WQP_VERSION, WQP_FISH_VERSION, WQP_REVIEWED_FISH_VERSION].includes(receipt.adapter_version), "Wrong WQP field positive adapter version.");
+    const reconstruct = receipt.adapter_version === WQP_REVIEWED_FISH_VERSION ? buildWqpReviewedFishResult
+      : receipt.adapter_version === WQP_FISH_VERSION ? buildWqpFishResult : buildWqpResult;
     const expected = reconstruct({runId, sourceId, stateCode, runStartedAt: receipt.started_at, parameters: receipt.parameters,
       requestedPairs: requestedPairKeys.map(key => { const [countyFips, speciesId] = key.split(":"); return {countyFips, speciesId, countyName: "Pinned registry", scientificName: speciesById.get(speciesId)!.scientificName}; })},
       p => readCommittedBytes(root, receipt.code_commit, p));
@@ -511,7 +517,7 @@ export function validateResearchRunInMemory(input: {
       stateCode,
       // WQP discloses an exact Station FIPS, not a county-name field.
       // Its canonical retained-row reconstruction above verifies that literal source value.
-      ...(sourceId === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && [WQP_VERSION, WQP_FISH_VERSION].includes(receipt.adapter_version)
+      ...(sourceId === WQP_SOURCE && receipt.adapter_id === WQP_ADAPTER && [WQP_VERSION, WQP_FISH_VERSION, WQP_REVIEWED_FISH_VERSION].includes(receipt.adapter_version)
         ? { countyFips: assertion.geography_match.source_county }
         : { countyName: assertion.geography_match.source_county }),
       sourceId,

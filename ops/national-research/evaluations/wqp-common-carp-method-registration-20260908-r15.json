@@ -1,0 +1,2496 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-reviewed-fish-method-registration",
+  "recordedAt": "2026-09-08T16:57:06.804Z",
+  "status": "method-and-regression-gates-passed-canonical-runs-pending",
+  "method": {
+    "path": "src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r15.json",
+    "bytes": 14747,
+    "sha256": "0f20dbc6967c12b3482a8835180a45ee1f7cd8fca2cac3758d7d76c29076385c"
+  },
+  "adapterVersion": "3.0.0",
+  "checks": [
+    {
+      "name": "typecheck",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-09-08T16:54:39.491Z",
+      "finishedAt": "2026-09-08T16:54:51.519Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/typecheck-registration-2.log"
+    },
+    {
+      "name": "zip",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/test-single-csv-zip.cjs"
+      ],
+      "startedAt": "2026-09-08T16:54:51.520Z",
+      "finishedAt": "2026-09-08T16:54:51.736Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/zip-registration-2.log"
+    },
+    {
+      "name": "reviewed-fish-v3",
+      "args": [
+        "--max-old-space-size=768",
+        "--import",
+        "tsx",
+        "scripts/test-wqp-reviewed-fish.ts"
+      ],
+      "startedAt": "2026-09-08T16:54:51.736Z",
+      "finishedAt": "2026-09-08T16:54:57.981Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/reviewed-fish-v3-registration-2.log"
+    },
+    {
+      "name": "fish-v2-regression",
+      "args": [
+        "--max-old-space-size=768",
+        "--import",
+        "tsx",
+        "scripts/test-wqp-fish-measurements.ts"
+      ],
+      "startedAt": "2026-09-08T16:54:57.982Z",
+      "finishedAt": "2026-09-08T16:54:59.483Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/fish-v2-regression-registration-2.log"
+    },
+    {
+      "name": "clam-v1-regression",
+      "args": [
+        "--max-old-space-size=768",
+        "--import",
+        "tsx",
+        "scripts/test-wqp-field-counts.ts"
+      ],
+      "startedAt": "2026-09-08T16:54:59.483Z",
+      "finishedAt": "2026-09-08T16:55:08.361Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/clam-v1-regression-registration-2.log"
+    },
+    {
+      "name": "run-validation",
+      "args": [
+        "--max-old-space-size=768",
+        "--import",
+        "tsx",
+        "scripts/test-research-run-validation.ts"
+      ],
+      "startedAt": "2026-09-08T16:55:08.362Z",
+      "finishedAt": "2026-09-08T16:55:08.891Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/run-validation-registration-2.log"
+    }
+  ],
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-common-carp-method-validation-20260908-r15.json.gz",
+    "bytes": 33873,
+    "sha256": "73df3e7e83db4b011fa912ca91284b20cbe7226e5024bb8a2b9d764ba997177d"
+  },
+  "fixture": {
+    "passed": true,
+    "states": 2,
+    "fixtureAssertions": 152,
+    "sourceRows": 2411,
+    "positiveRows": 1785,
+    "heldRows": 2,
+    "rejectionGroups": 128,
+    "invalidCasesRejected": 51,
+    "invalidCases": [
+      "invalid replay receipt 0",
+      "invalid replay receipt 1",
+      "invalid replay receipt 2",
+      "invalid replay receipt 3",
+      "invalid replay receipt 4",
+      "invalid replay receipt 5",
+      "source",
+      "state",
+      "limit",
+      "method hash",
+      "method path",
+      "taxon",
+      "chronology",
+      "negative mode",
+      "pair order",
+      "duplicate pair",
+      "cross-method parameter",
+      "provisional-only pair",
+      "unregistered county",
+      "changed pinned input ops/national-research/evaluations/artifacts/wqp-common-carp-independent-reviews-20260908-r15.json.gz",
+      "changed pinned input ops/national-research/evaluations/artifacts/wqp-common-carp-method-context-20260908-r15.json.gz",
+      "changed pinned input ops/national-research/evaluations/artifacts/wqp-common-carp-state-preflight-20260908-r15.json.gz",
+      "changed pinned input ops/national-research/evaluations/artifacts/wqp-expansion-preflight-20260908-r14.json.gz",
+      "changed pinned input ops/national-research/evaluations/wqp-common-carp-in-independent-review-20260908-r15.json",
+      "changed pinned input ops/national-research/evaluations/wqp-common-carp-ok-independent-review-20260908-r15.json",
+      "changed pinned input ops/national-research/evaluations/wqp-expansion-vocabulary-context-20260908-r14.json",
+      "changed pinned input ops/national-research/evaluations/wqp-fish-method-context-20260908-r14.json",
+      "changed pinned input src/data/research/source-method-reviews/wqp-reviewed-fish-common-carp-20260908-r15.json",
+      "unreviewed scope",
+      "acquisition lineage",
+      "duplicate acquisition",
+      "duplicate group",
+      "wrong profile encoding",
+      "wrong decoded profile",
+      "wrong profile count",
+      "wrong profile taxon",
+      "held row changed",
+      "held profile missing",
+      "review predates source",
+      "reviewer is MAIN",
+      "reviewers are same actor",
+      "review witness rawRecordSha256",
+      "review witness stationRawRecordSha256",
+      "review witness date",
+      "review witness physicalEndLineOneBased",
+      "review witness stationPhysicalEndLineOneBased",
+      "review raw field",
+      "review county field",
+      "review receipt",
+      "review archive missing",
+      "duplicate archive entry"
+    ],
+    "networkRequests": 0,
+    "actualNewDeterminations": 0
+  },
+  "zipFixture": {
+    "recordedAt": "2026-09-08T16:54:51.720Z",
+    "passed": true,
+    "validVariants": 5,
+    "malformedCasesRejected": 22,
+    "names": [
+      "truncated EOCD",
+      "trailing bytes",
+      "wrong disk",
+      "multiple entries",
+      "bad directory size",
+      "bad directory signature",
+      "encryption flag",
+      "unsupported method",
+      "ZIP64 version",
+      "prefixed local entry",
+      "decoded cap",
+      "false decoded length",
+      "local flags disagree",
+      "local filename differs",
+      "non-CSV name",
+      "path traversal name",
+      "central CRC tamper",
+      "descriptor CRC tamper",
+      "compressed corruption",
+      "stream local length mismatch",
+      "invalid output cap",
+      "oversized output cap"
+    ],
+    "sourceAcquisitions": 0,
+    "newDeterminations": 0
+  },
+  "priorFailedCheck": {
+    "checks": [
+      {
+        "name": "typecheck",
+        "args": [
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false"
+        ],
+        "startedAt": "2026-09-08T16:53:40.497Z",
+        "finishedAt": "2026-09-08T16:53:52.067Z",
+        "exitCode": 2,
+        "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/typecheck-registration.log"
+      }
+    ]
+  },
+  "failureResolution": "The test helper used an unsupported TypeScript overload of assert.throws(action, undefined, name). It now uses the supported assert.throws(action, name). Runtime acceptance rules were unaffected. A tool-call string syntax failure occurred before any shell command executed.",
+  "baseline": {
+    "commit": "2ec23a3b5a4333fac14f004db03fb0d0ea4777c1",
+    "counts": {
+      "countyCount": 3144,
+      "totalPairs": 7872576,
+      "resolvablePairCount": 7872576,
+      "notApplicablePairCount": 0,
+      "blockedPairCount": 0,
+      "verifiedPresent": 314946,
+      "verifiedAbsent": 3718,
+      "notDetected": 236,
+      "researchedUnresolved": 1306725,
+      "notResearched": 6246951,
+      "explicitOutcomePairCount": 1581271,
+      "conflictCount": 0,
+      "evidenceRecordCount": 462380,
+      "bootstrapEvidenceRecordCount": 30130,
+      "runEvidenceRecordCount": 432250,
+      "rejectionRecordCount": 65929,
+      "researchRunCount": 2140
+    },
+    "pairStatusCounts": {
+      "not-researched": 152
+    },
+    "candidateScope": [
+      {
+        "pair": "18001:cyprinus-carpio",
+        "countyFips": "18001",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18001.json",
+          "bytes": 334095,
+          "sha256": "049bc3510ff5025d5277328df3134aaea0d07ec570b88b279f09b831aa981187"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18003:cyprinus-carpio",
+        "countyFips": "18003",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18003.json",
+          "bytes": 366991,
+          "sha256": "941179500b92ee00cd430a9199ea946480fbdc93c76607badf9a7841aebfd9e8"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18005:cyprinus-carpio",
+        "countyFips": "18005",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18005.json",
+          "bytes": 369156,
+          "sha256": "19b84bbdb95844eeae28f0f7992ea36b82e8c288a9edfda2c4042a3b7d047f20"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18007:cyprinus-carpio",
+        "countyFips": "18007",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18007.json",
+          "bytes": 334312,
+          "sha256": "0ff6c83c53987e12f7b019c07649ddb44514f2bbd6608d56bad6a4d5430e1d80"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18009:cyprinus-carpio",
+        "countyFips": "18009",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18009.json",
+          "bytes": 343287,
+          "sha256": "898f4e7aa3742d6edc896d9b6dd33a94bdec27812f01ac4726ac6a5e40da1fb8"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18011:cyprinus-carpio",
+        "countyFips": "18011",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18011.json",
+          "bytes": 354693,
+          "sha256": "67637aaf8f9fab9a56e700249c151f5937bfc9e697545bd132894b2536c419c8"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18013:cyprinus-carpio",
+        "countyFips": "18013",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18013.json",
+          "bytes": 382918,
+          "sha256": "5d8ab17a3e0c04b0e927e418332c46369554dee4fc76b52455901c0ace00ba19"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18017:cyprinus-carpio",
+        "countyFips": "18017",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18017.json",
+          "bytes": 371214,
+          "sha256": "b2f6fc2fb5d776b4fcf9d132d898b1171702e54023d1c9b02116da3b4f5cf690"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18019:cyprinus-carpio",
+        "countyFips": "18019",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18019.json",
+          "bytes": 392356,
+          "sha256": "c314d7e08ef54679968d8fd66e2a683df25cdd077dfd515b6bca669362d7b9f1"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18021:cyprinus-carpio",
+        "countyFips": "18021",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18021.json",
+          "bytes": 353971,
+          "sha256": "3a6510afdd35aaea0710ac7404a21531500f2d11aa5db95875770a4eb1cf69b7"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18023:cyprinus-carpio",
+        "countyFips": "18023",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18023.json",
+          "bytes": 335242,
+          "sha256": "27575a583e88cb98c3a4c111086265850230414b27b967676d1c21ab3ca8535d"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18025:cyprinus-carpio",
+        "countyFips": "18025",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18025.json",
+          "bytes": 376855,
+          "sha256": "c5310c349ec4ee9ab0a0107ad3e138e8f7dac78ed810c7f5b4edab3ed6ca2550"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18027:cyprinus-carpio",
+        "countyFips": "18027",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18027.json",
+          "bytes": 357882,
+          "sha256": "b123e4cbbfe1e3eff40fe15ca8e0acc24fa1513e1e7e07f892b87890ef1dcb96"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18029:cyprinus-carpio",
+        "countyFips": "18029",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18029.json",
+          "bytes": 371518,
+          "sha256": "4d8d5afaead9be8b7d0caca797f67eabfc37a30d35fc66a0d9e8d763cb759be2"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18033:cyprinus-carpio",
+        "countyFips": "18033",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18033.json",
+          "bytes": 350041,
+          "sha256": "5cdf0e2a357bfb1f2a33fb41a77bece8a1d3304b8a568568481aaad27f307f4a"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18035:cyprinus-carpio",
+        "countyFips": "18035",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18035.json",
+          "bytes": 350136,
+          "sha256": "026c67f3c8a699cbaa5ada77e0753bd5e7ea4315c55596f9759527034e830e12"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18037:cyprinus-carpio",
+        "countyFips": "18037",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18037.json",
+          "bytes": 353789,
+          "sha256": "9be3151701c8373cdf902a7b2824e7b866ddde662ddaa3d7c90c8518384600d0"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18039:cyprinus-carpio",
+        "countyFips": "18039",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18039.json",
+          "bytes": 383540,
+          "sha256": "8a869d4e1189461618c63debf7b96e42d70d2de47d2ab3d235e04199278cf9cf"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18041:cyprinus-carpio",
+        "countyFips": "18041",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18041.json",
+          "bytes": 345403,
+          "sha256": "f77f7d601732b3f8b6c8f963dd114e620fed555b2fa08a445da08e427b52fd11"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18043:cyprinus-carpio",
+        "countyFips": "18043",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18043.json",
+          "bytes": 392234,
+          "sha256": "f30de5d2ea3ca397bddebfccc476aa4db3d0f9a644502a9772fe032e96694feb"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18045:cyprinus-carpio",
+        "countyFips": "18045",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18045.json",
+          "bytes": 387884,
+          "sha256": "dd3cc2a4309a5c67549a2420066f3e56eb91deb85cd832133c7f37db69124e38"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18047:cyprinus-carpio",
+        "countyFips": "18047",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18047.json",
+          "bytes": 356717,
+          "sha256": "14b06b98cd80900b85957f0e8204b048edd400e29ed009b44a8faf1151f2add4"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18049:cyprinus-carpio",
+        "countyFips": "18049",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18049.json",
+          "bytes": 350715,
+          "sha256": "34b0bd5fd9594b3280cc14b2d9f7d9348275a5e7a4f44e724d21974e482c32c7"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18051:cyprinus-carpio",
+        "countyFips": "18051",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18051.json",
+          "bytes": 367765,
+          "sha256": "fdff0331289997ebc6f866b23ef5a4ce2bc6d477aa6452089681a3df0ec15277"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18053:cyprinus-carpio",
+        "countyFips": "18053",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18053.json",
+          "bytes": 350245,
+          "sha256": "039fd2c55a6d0234e0b71ed2ae7e559b79565ae585eab4a94723a9a7e0c5976a"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18055:cyprinus-carpio",
+        "countyFips": "18055",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18055.json",
+          "bytes": 366888,
+          "sha256": "b911ae0fed0617721f127b3f988b3bd2d62156f0a14076d8198610a82edc0ce2"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18057:cyprinus-carpio",
+        "countyFips": "18057",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18057.json",
+          "bytes": 365194,
+          "sha256": "1cce9ad97c5d7db64be8e9f3189a80c706d583c49bfe2f03591dbfa3baab92af"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18061:cyprinus-carpio",
+        "countyFips": "18061",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18061.json",
+          "bytes": 398223,
+          "sha256": "e02067e3d210dd1416d91c33ea3433d487baad56b45059053daef4184419fb93"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18063:cyprinus-carpio",
+        "countyFips": "18063",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18063.json",
+          "bytes": 356338,
+          "sha256": "06833afac2e1f8047db10a919f05764847574c8b9baa131f675bdce8c762f7fb"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18065:cyprinus-carpio",
+        "countyFips": "18065",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18065.json",
+          "bytes": 360236,
+          "sha256": "bae59d3bd5b8096a846cd58fbf397530dcc02e821c4481d3d56d4625275b083a"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18067:cyprinus-carpio",
+        "countyFips": "18067",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18067.json",
+          "bytes": 385109,
+          "sha256": "4df801e71464cac75fad0b9a644ea7737368d957773e40ec81b97d0325b0d165"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18069:cyprinus-carpio",
+        "countyFips": "18069",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18069.json",
+          "bytes": 359706,
+          "sha256": "807cf90c96437525008ac3bebbfdeeb0a27ecc32fe54c9e1e887b3e1ffdf10a5"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18071:cyprinus-carpio",
+        "countyFips": "18071",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18071.json",
+          "bytes": 392962,
+          "sha256": "1ef2bc942363a7379aa8c86f53eb08edb7861b6ef515f653dc930b6eb1ee90a1"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18073:cyprinus-carpio",
+        "countyFips": "18073",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18073.json",
+          "bytes": 401621,
+          "sha256": "2ea5bb1ebaed773a029a65ceea69467ff13af6122b0d99253c4ef4adc6cef73b"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18075:cyprinus-carpio",
+        "countyFips": "18075",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18075.json",
+          "bytes": 339117,
+          "sha256": "9d66f93371777893571f3a45cabb918b580bb40c51cfd7e2f71fdf6f4e80c0ac"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18077:cyprinus-carpio",
+        "countyFips": "18077",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18077.json",
+          "bytes": 415729,
+          "sha256": "2c6b2da5b41a92275d4b0a18de3dc0e6fd5455bf3f5128190eff14854e7d4b7a"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18079:cyprinus-carpio",
+        "countyFips": "18079",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18079.json",
+          "bytes": 363185,
+          "sha256": "9129216571a21c78e3d92aada0c1f58a6981eabe6d5bc5f55755f4afd459598c"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18081:cyprinus-carpio",
+        "countyFips": "18081",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18081.json",
+          "bytes": 372995,
+          "sha256": "b5c78d37c4fdc865a7d37d583fe2c2fb4e3595ef10ea4ed831752d25a3af99cb"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18083:cyprinus-carpio",
+        "countyFips": "18083",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18083.json",
+          "bytes": 399783,
+          "sha256": "bf5d721eaf6baeb7a59a6268be953bd8b60f6f99e241c7bc8af6f647be816bf9"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18085:cyprinus-carpio",
+        "countyFips": "18085",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18085.json",
+          "bytes": 382523,
+          "sha256": "81f93252fa5447bb723aed35b7b8f7d3d1be90d99f4354b647894127eee340cb"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18087:cyprinus-carpio",
+        "countyFips": "18087",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18087.json",
+          "bytes": 378785,
+          "sha256": "4ce4ea2d6fbf84fcf500bdbd8e9c362709d166a74e40c374172fc9498711a45f"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18089:cyprinus-carpio",
+        "countyFips": "18089",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18089.json",
+          "bytes": 431334,
+          "sha256": "85f98a9f388d83f0ab72d9be8164fa0e5d8d968e5dde8e79b4c6f973bc366861"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18091:cyprinus-carpio",
+        "countyFips": "18091",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18091.json",
+          "bytes": 404437,
+          "sha256": "f30c4d63f7dd2454acac8049d9e1e5f07eab57c3f358e3b06e66a7086cf0198c"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18093:cyprinus-carpio",
+        "countyFips": "18093",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18093.json",
+          "bytes": 408030,
+          "sha256": "d5e1f1ebe59402f11ce2531a41a4d7b41eb1f4fc1ab52a67b5abd6e7a06d282d"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18095:cyprinus-carpio",
+        "countyFips": "18095",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18095.json",
+          "bytes": 357203,
+          "sha256": "3a41c9256b11cfa8f1907ea0592442b5cdde5ddf6b715a94fc0108b802ef07fe"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18097:cyprinus-carpio",
+        "countyFips": "18097",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18097.json",
+          "bytes": 429682,
+          "sha256": "f34eb74505cc6357e7829125d2b784f8187e6acd03d6b71ae2888194f2a0112f"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18099:cyprinus-carpio",
+        "countyFips": "18099",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18099.json",
+          "bytes": 355578,
+          "sha256": "46042bcf66e0eddbb6118d3ccda4c33cb166c777e51cee2adefc0f8c19247aa7"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18101:cyprinus-carpio",
+        "countyFips": "18101",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18101.json",
+          "bytes": 352728,
+          "sha256": "fdc6557051d4e541b76796afec7a04e24e7b49719de94b44629f7601890dadcb"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18103:cyprinus-carpio",
+        "countyFips": "18103",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18103.json",
+          "bytes": 351135,
+          "sha256": "93f1658331d93651ff65bac639923871c4c4d9d376554eac654a320fce58b751"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18105:cyprinus-carpio",
+        "countyFips": "18105",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18105.json",
+          "bytes": 508045,
+          "sha256": "eeaff7b8f82ba57b566ff976454dfe2e99cdb2656446a502307c87e1276dabde"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18107:cyprinus-carpio",
+        "countyFips": "18107",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18107.json",
+          "bytes": 392905,
+          "sha256": "131ef0271c18e27b6f4417f53771bea0a3e8a661a9ae6b68228becd79e364d8b"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18109:cyprinus-carpio",
+        "countyFips": "18109",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18109.json",
+          "bytes": 377828,
+          "sha256": "6e9ab9ceaa828cc0e29df04c1af4f94a8601715f5ebcbb83933c7eb8e83dc91b"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18111:cyprinus-carpio",
+        "countyFips": "18111",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18111.json",
+          "bytes": 412406,
+          "sha256": "fe9831602f6016e33c9684bc059bec06828168ae9bc07af552002725bcd2002c"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18113:cyprinus-carpio",
+        "countyFips": "18113",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18113.json",
+          "bytes": 370926,
+          "sha256": "d7ccd4ee580af4741e0ce12f1b10f352e8769ffa14a95c52a791821aa048907e"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18115:cyprinus-carpio",
+        "countyFips": "18115",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18115.json",
+          "bytes": 346491,
+          "sha256": "48a79bb15c9d6d35bbfa0cdcf102f7d1740df3fc52035043d257a98fc1399efb"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18117:cyprinus-carpio",
+        "countyFips": "18117",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18117.json",
+          "bytes": 358326,
+          "sha256": "20639052457bccce2711b9c90d6f8df4771bbfb21259e3c0b6c01f44e37b8322"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18119:cyprinus-carpio",
+        "countyFips": "18119",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18119.json",
+          "bytes": 373386,
+          "sha256": "f41a37f701539a57c5b579a2bf81e61d5bc3584281158ea70c31b48fec3bd0f9"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18121:cyprinus-carpio",
+        "countyFips": "18121",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18121.json",
+          "bytes": 388124,
+          "sha256": "89f44377e9b44697d4a4a4b4584301a86e07eefb393b48259eec498e4c2f779e"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18123:cyprinus-carpio",
+        "countyFips": "18123",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18123.json",
+          "bytes": 365935,
+          "sha256": "7862681a9c0e5abc77cf0e4c93022e08afed930009d06b7ddcf0c1bab2090922"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18125:cyprinus-carpio",
+        "countyFips": "18125",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18125.json",
+          "bytes": 353367,
+          "sha256": "792e5f7f0675354746fa5e1e2aac239a98d11bb12ca51f60ccb9a7b25cb53101"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18127:cyprinus-carpio",
+        "countyFips": "18127",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18127.json",
+          "bytes": 424988,
+          "sha256": "f47bbd64bb037f7ee00ae4eda130b355cd78177a41dad1831b90db5885ab3785"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18129:cyprinus-carpio",
+        "countyFips": "18129",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18129.json",
+          "bytes": 397185,
+          "sha256": "d908423c4129fd4c46a4dae2d51949aa47280b7192527ac4b18792ff404c2529"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18131:cyprinus-carpio",
+        "countyFips": "18131",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18131.json",
+          "bytes": 340961,
+          "sha256": "f408673072a2674f4227b6d393f26b3cf90dbc4368ca09038a7406d3e08f92ec"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18133:cyprinus-carpio",
+        "countyFips": "18133",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18133.json",
+          "bytes": 392777,
+          "sha256": "7b7401503ac27c48a010528a9950a150576d3d1e8e2819be77b49b82dde9547a"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18135:cyprinus-carpio",
+        "countyFips": "18135",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18135.json",
+          "bytes": 344422,
+          "sha256": "e7ffa169eba7dd72c229457cc936e59ff1ee7ddd0b7035501739ea9065bbf838"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18137:cyprinus-carpio",
+        "countyFips": "18137",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18137.json",
+          "bytes": 368369,
+          "sha256": "0207ab08c4ba8d471db1401cc966390d77a87c16c0c3a0a1e019429c4b6fc924"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18139:cyprinus-carpio",
+        "countyFips": "18139",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18139.json",
+          "bytes": 350139,
+          "sha256": "f42a659d5c84a6c651adebc6993908f804bb38b0948cefd52605740d6da07f5d"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18141:cyprinus-carpio",
+        "countyFips": "18141",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18141.json",
+          "bytes": 405921,
+          "sha256": "63c7f8dbc9d39640d5bf3615794398e127379c4a7cd774f8a73bae14c2f9be31"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18145:cyprinus-carpio",
+        "countyFips": "18145",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18145.json",
+          "bytes": 361595,
+          "sha256": "1d48b7710ed5b1959002b7750e4af11c0c87fa4247b77806b7e3b2656de73720"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18147:cyprinus-carpio",
+        "countyFips": "18147",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18147.json",
+          "bytes": 374305,
+          "sha256": "18526330f5086d7fe8ab06c133696b81096c75e7e941a14dfed10d03e0d415f0"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18149:cyprinus-carpio",
+        "countyFips": "18149",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18149.json",
+          "bytes": 373770,
+          "sha256": "ec47cb5040755d7d212910b14d2a555bc5a2f4e1a97ec89a017c0494a97ecde6"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18151:cyprinus-carpio",
+        "countyFips": "18151",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18151.json",
+          "bytes": 374215,
+          "sha256": "10f21c6a7a6e6d293de11c3c0b1509130a3d691eab5807d10e60a50c09bb4bc9"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18153:cyprinus-carpio",
+        "countyFips": "18153",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18153.json",
+          "bytes": 383418,
+          "sha256": "40d9c20a08ba7b1efbcd220755f9c723f158c04c409cf5ad2772bb2085e13228"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18155:cyprinus-carpio",
+        "countyFips": "18155",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18155.json",
+          "bytes": 365318,
+          "sha256": "c49276a9e065c74ee44197f8ae15b4d58a57d8b877c394bec5b06ac8d827de98"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18157:cyprinus-carpio",
+        "countyFips": "18157",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18157.json",
+          "bytes": 443855,
+          "sha256": "f6f36ba8570db5d21c98d96559bf1a563d8ba009626c06d105b4f57292813a74"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18159:cyprinus-carpio",
+        "countyFips": "18159",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18159.json",
+          "bytes": 352606,
+          "sha256": "f43d16aab9734743584ec25c86ecec7f5590c838aee2e23c82a73ed170d9f9e5"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18161:cyprinus-carpio",
+        "countyFips": "18161",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18161.json",
+          "bytes": 335465,
+          "sha256": "514cc307b4e1931451a635d383a73990a80791627c800f706320ddac52567c6a"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18163:cyprinus-carpio",
+        "countyFips": "18163",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18163.json",
+          "bytes": 361910,
+          "sha256": "1f4aea9dda7792ea313af37efb188b1285d002ad87f6e830aff9219613c48531"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18165:cyprinus-carpio",
+        "countyFips": "18165",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18165.json",
+          "bytes": 375907,
+          "sha256": "c88e7259586a148c995c448f8ba4056e025d11823f0aacf87de069b6ae51b97c"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18169:cyprinus-carpio",
+        "countyFips": "18169",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18169.json",
+          "bytes": 348191,
+          "sha256": "368c8b997bf18894b520c5727441550e2b14f56b52eb5c025795240cfdf355d0"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18171:cyprinus-carpio",
+        "countyFips": "18171",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18171.json",
+          "bytes": 366522,
+          "sha256": "e9ba2ddad603123a478cbb139934055155805fb7f4acf2126eeb43e84abf5bf2"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18173:cyprinus-carpio",
+        "countyFips": "18173",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18173.json",
+          "bytes": 353887,
+          "sha256": "f6f0ae0e7279d016af036fb90c05f8d7ab8c65eff4a7511f2c8aab0464d85efa"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18175:cyprinus-carpio",
+        "countyFips": "18175",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18175.json",
+          "bytes": 365344,
+          "sha256": "9ef11d9fc08570f2fcdac839fa1a70e52b3c957a75eaac8b3da84fcc60da8b58"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18177:cyprinus-carpio",
+        "countyFips": "18177",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18177.json",
+          "bytes": 397287,
+          "sha256": "3d28fcc01b7b3e1ea45a39c403c3f07f4eb6d37af21ee141ccc6ffc08e7fd971"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18179:cyprinus-carpio",
+        "countyFips": "18179",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18179.json",
+          "bytes": 379297,
+          "sha256": "1593ef0df13d51414f7d1c3f53d330a062e6178241bef853b86efbb2e03eaaf7"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18181:cyprinus-carpio",
+        "countyFips": "18181",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18181.json",
+          "bytes": 354418,
+          "sha256": "7b266b92e138b255511a52c9eb6d21053e5c36627d96526508f5bd9d7de04d21"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "18183:cyprinus-carpio",
+        "countyFips": "18183",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "IN",
+        "status": "not-researched",
+        "explicit": true,
+        "projection": {
+          "path": "public/generated/research/IN/counties/18183.json",
+          "bytes": 345191,
+          "sha256": "854572c702ca3ec38d11d8c5a6de1511c9e56a4d842854bf2e5187f5a1d0ce36"
+        },
+        "rowSha256": "c8c90f1971e0b90146ee3594803e768b86d1b057be7d5ee66766da4e013793b9"
+      },
+      {
+        "pair": "40001:cyprinus-carpio",
+        "countyFips": "40001",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40001.json",
+          "bytes": 327142,
+          "sha256": "52aa8f7909f525ff413eaa7e973e174e30774f21272e0b641a60b57deebd96d7"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40003:cyprinus-carpio",
+        "countyFips": "40003",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40003.json",
+          "bytes": 314802,
+          "sha256": "dd946cc80dbb15c0a18bf28ef5bb31edb258431915666136840c20c1d0d82cd5"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40007:cyprinus-carpio",
+        "countyFips": "40007",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40007.json",
+          "bytes": 293431,
+          "sha256": "aea3b27adc08f5dd3656556564f9b88187afa49ac9bebb495a6e0fbe4e4c8454"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40009:cyprinus-carpio",
+        "countyFips": "40009",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40009.json",
+          "bytes": 295823,
+          "sha256": "09a7bf062349c01ff6b71766df6799f511cadaa6bd9609048c49300a008ce712"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40015:cyprinus-carpio",
+        "countyFips": "40015",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40015.json",
+          "bytes": 326209,
+          "sha256": "77f9b3cec113d91f8a850ce8d74577e5bfcda34e4bffd1fd7b28bd44f501779b"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40017:cyprinus-carpio",
+        "countyFips": "40017",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40017.json",
+          "bytes": 327524,
+          "sha256": "acabf12f4e1bc263b1dabe125e0e2b817e14701b248639fb4dd0102e856d204a"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40019:cyprinus-carpio",
+        "countyFips": "40019",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40019.json",
+          "bytes": 319174,
+          "sha256": "cf7aee35e56c3e474e9cf45f50950596e9898d58314e11355180bebd8391c9eb"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40021:cyprinus-carpio",
+        "countyFips": "40021",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40021.json",
+          "bytes": 362909,
+          "sha256": "5c2fd706dcc7383c2e7ebe2b3d3c987d9fe2be26fc22e87d4066eae65811a6a9"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40025:cyprinus-carpio",
+        "countyFips": "40025",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40025.json",
+          "bytes": 313115,
+          "sha256": "6b8eeac4a81acea0004b58f62b84694351ace746b2d89cc0ac101f9398c04c22"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40031:cyprinus-carpio",
+        "countyFips": "40031",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40031.json",
+          "bytes": 349417,
+          "sha256": "7610513c43ec455ef33065dc904ca925641a461bad10bcedba633ec985895517"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40033:cyprinus-carpio",
+        "countyFips": "40033",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40033.json",
+          "bytes": 306989,
+          "sha256": "ff9665b264e812d2bc99a20ba38c4f2e3604befb8071e65ae395b7041469a270"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40035:cyprinus-carpio",
+        "countyFips": "40035",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40035.json",
+          "bytes": 301944,
+          "sha256": "55c24370039d2eb65aa3d08bcb43d363cf213508533122f9a99d30f08b97351f"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40037:cyprinus-carpio",
+        "countyFips": "40037",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40037.json",
+          "bytes": 326926,
+          "sha256": "8db7a4ee7c6f42d78ec92c074387c18a0683ffa248db5045be4df118edcd4721"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40039:cyprinus-carpio",
+        "countyFips": "40039",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40039.json",
+          "bytes": 305611,
+          "sha256": "c1465d99fc59b1f875af75a48087727e7121a82329f02d3c046b9c5dada364ac"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40043:cyprinus-carpio",
+        "countyFips": "40043",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40043.json",
+          "bytes": 293694,
+          "sha256": "ce27d02e0b33b66b5af006a4139a6d498f2e936763beb048c1ffce27d0f64adb"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40045:cyprinus-carpio",
+        "countyFips": "40045",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40045.json",
+          "bytes": 293808,
+          "sha256": "c011ed758a88aba867b215b00b298b618ffeeb6b19fc8ec27e0071eb0ed3e0f7"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40047:cyprinus-carpio",
+        "countyFips": "40047",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40047.json",
+          "bytes": 311703,
+          "sha256": "9f88ee7ace81cf79fbdafcab4438532d1c14ba454bb7b4cbb3abcb5df4a8ff25"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40049:cyprinus-carpio",
+        "countyFips": "40049",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40049.json",
+          "bytes": 306045,
+          "sha256": "c48baa96d2a29a24e23ce953619ac95429bcad805078d84837a805d08394dab5"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40051:cyprinus-carpio",
+        "countyFips": "40051",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40051.json",
+          "bytes": 333274,
+          "sha256": "a1c8a865e9319bd8b9d3672ccebd4296400b8bf36454446c429ed66797111d32"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40053:cyprinus-carpio",
+        "countyFips": "40053",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40053.json",
+          "bytes": 296597,
+          "sha256": "9efd2669dee3e26571ca31abd7937c221b0589204e9d333a599d805928abe3f6"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40055:cyprinus-carpio",
+        "countyFips": "40055",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40055.json",
+          "bytes": 292424,
+          "sha256": "3153b547b90dc4047782a14a932333e11e67b18b581551efc840429f054ed490"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40059:cyprinus-carpio",
+        "countyFips": "40059",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40059.json",
+          "bytes": 303356,
+          "sha256": "0b93029f9620e54a668dab760a62f9322c5a5183f982267ccc384dc18d1cabb3"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40063:cyprinus-carpio",
+        "countyFips": "40063",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40063.json",
+          "bytes": 290987,
+          "sha256": "3bf7442340b4f6bc6713e47b61bf5dfba1ebb84a9ffd6ff08b54fb67489148ef"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40065:cyprinus-carpio",
+        "countyFips": "40065",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40065.json",
+          "bytes": 305895,
+          "sha256": "53ef31ea4e5d9a214946219b2c9609566222bb7958c4fff891ef22de2e2a7b8a"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40067:cyprinus-carpio",
+        "countyFips": "40067",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40067.json",
+          "bytes": 298481,
+          "sha256": "73c9f00767d29e9eb2ee005c1f32129fc6f6554c4b4f08fdc85175d18e0316b5"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40069:cyprinus-carpio",
+        "countyFips": "40069",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40069.json",
+          "bytes": 331499,
+          "sha256": "380eb2c895bf739a227aa9ca3e895c0264a2b21ca64676374dd92bf359d0dc55"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40071:cyprinus-carpio",
+        "countyFips": "40071",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40071.json",
+          "bytes": 317272,
+          "sha256": "2ae2c497409d65271bd9d0e8704949f302074a698d392333a34624e821838f37"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40073:cyprinus-carpio",
+        "countyFips": "40073",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40073.json",
+          "bytes": 305833,
+          "sha256": "7377ec65ede41d2d27b3f80d06443900ba7073fb41afbc6f43873b9c9af91fc8"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40075:cyprinus-carpio",
+        "countyFips": "40075",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40075.json",
+          "bytes": 296677,
+          "sha256": "99dd46aac012f23813957ffc0cabf24582beed59083b460eef41d52fcf018efa"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40077:cyprinus-carpio",
+        "countyFips": "40077",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40077.json",
+          "bytes": 312538,
+          "sha256": "71c9177c62e31b16b25b211d83264a2017eff6bd38c103068dbb7e81513f38fd"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40079:cyprinus-carpio",
+        "countyFips": "40079",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40079.json",
+          "bytes": 343900,
+          "sha256": "a34a55b42f8e05343cd2aaa3cf116415bd3998bac3934b0500b5ba466e8fc732"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40081:cyprinus-carpio",
+        "countyFips": "40081",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40081.json",
+          "bytes": 320540,
+          "sha256": "820be45003ef3e4a1d97051c799cdc75701aa4fe68ae5818d740515428e474ee"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40083:cyprinus-carpio",
+        "countyFips": "40083",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40083.json",
+          "bytes": 321614,
+          "sha256": "9fcee0a72f4b54aa9a5046245af49c349eff6eb226808e46a703a35fc70a33aa"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40085:cyprinus-carpio",
+        "countyFips": "40085",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40085.json",
+          "bytes": 315266,
+          "sha256": "3fa60cdec00692c65a4109a4fc797155e9d1fd17f3971cc21c368d4d12014faa"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40087:cyprinus-carpio",
+        "countyFips": "40087",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40087.json",
+          "bytes": 319123,
+          "sha256": "cc658064db4ffb370bc228973b487d13d093e1a0c9e27a2fc5e732b4c3e2f592"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40089:cyprinus-carpio",
+        "countyFips": "40089",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40089.json",
+          "bytes": 384155,
+          "sha256": "6b20a98458a34ac4a8a21fc2c733b78357095b075b33e2bad23432ec891f6acb"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40091:cyprinus-carpio",
+        "countyFips": "40091",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40091.json",
+          "bytes": 310571,
+          "sha256": "2d8c474a291db2e3f82278e01410e73c6da988effeab28f1b7cca0d807698843"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40093:cyprinus-carpio",
+        "countyFips": "40093",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40093.json",
+          "bytes": 295021,
+          "sha256": "0dacd72f00dffa5eb5bcf8d063b4cf0bcfbb15803dfb5c42a8bbc3b635423071"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40097:cyprinus-carpio",
+        "countyFips": "40097",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40097.json",
+          "bytes": 338868,
+          "sha256": "85464252b4e2ad85d0238212ca2006fca92540e44c3c1d6c6851cfa1859525c1"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40099:cyprinus-carpio",
+        "countyFips": "40099",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40099.json",
+          "bytes": 347005,
+          "sha256": "cf188a49dd3b3faea99a19fc0f31bb161753581e3dbf78870bb83b650b69720c"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40101:cyprinus-carpio",
+        "countyFips": "40101",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40101.json",
+          "bytes": 356027,
+          "sha256": "ac8d89b065842c6914db79a2d151c4600420ad76bebf02efb93286ca56e54033"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40103:cyprinus-carpio",
+        "countyFips": "40103",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40103.json",
+          "bytes": 307334,
+          "sha256": "4757c7c743ada9c591ad04d51760289350fb178c8aa14516e42a22f682de1410"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40105:cyprinus-carpio",
+        "countyFips": "40105",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40105.json",
+          "bytes": 290016,
+          "sha256": "24856fde1cc30e86a73494c3f2219aa1850d1c0967cc1156ffbb3244bd8f4c64"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40107:cyprinus-carpio",
+        "countyFips": "40107",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40107.json",
+          "bytes": 300587,
+          "sha256": "39733da27bcfc26e338a760ee49e40a43617f45c388aab8a52e9b9d9a8bf7daa"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40109:cyprinus-carpio",
+        "countyFips": "40109",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40109.json",
+          "bytes": 378661,
+          "sha256": "020fe2ec18e6fd6b8893a4a0ac47260c35fad78ab3eb8473991aab4eb2ca46cc"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40111:cyprinus-carpio",
+        "countyFips": "40111",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40111.json",
+          "bytes": 313415,
+          "sha256": "e45ea1ae9010b66f92ea9bf1fd6fdd200630424a49ff2a2552b08494d8c5e461"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40113:cyprinus-carpio",
+        "countyFips": "40113",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40113.json",
+          "bytes": 333712,
+          "sha256": "955f0d131a8ed41f4963023d8ee0cf4b8234c8f86138c4f3abc041f56c5bb31e"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40115:cyprinus-carpio",
+        "countyFips": "40115",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40115.json",
+          "bytes": 331429,
+          "sha256": "3b2c3817dab05066443c57e99b5546688905a2c7483937310ab1f8f88b1ab8e6"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40117:cyprinus-carpio",
+        "countyFips": "40117",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40117.json",
+          "bytes": 311560,
+          "sha256": "e77e2fb6956feeb85855f10efb4ba7a7183c6d0d6c9d6141667916beef83315f"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40119:cyprinus-carpio",
+        "countyFips": "40119",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40119.json",
+          "bytes": 404373,
+          "sha256": "af5e16ba4688f7370132ad9415f92d659ad59d7017e3329b7ecbb0de5ef2fe9b"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40121:cyprinus-carpio",
+        "countyFips": "40121",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40121.json",
+          "bytes": 314902,
+          "sha256": "35f4803113147902a631b50a0fa7fb3b0cbff7f3822680fc30c4e10772168268"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40125:cyprinus-carpio",
+        "countyFips": "40125",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40125.json",
+          "bytes": 335272,
+          "sha256": "1b169ae4d69066af3417e4dd3f7899761b7e9c46cc8bcabab5fa99839da7a2cb"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40127:cyprinus-carpio",
+        "countyFips": "40127",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40127.json",
+          "bytes": 326026,
+          "sha256": "06057d4e3e205f42600d139d7cda3ce730a5db4ea5052138eb12232abbe0b143"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40129:cyprinus-carpio",
+        "countyFips": "40129",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40129.json",
+          "bytes": 311330,
+          "sha256": "b94ac692f88cacd4645e33bbc1fc9a3a1bd39edab412412435828233eb25fea5"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40131:cyprinus-carpio",
+        "countyFips": "40131",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40131.json",
+          "bytes": 334994,
+          "sha256": "6ec1a5707612accbc453dd05b558a6122c8044d359bc941eb01d21c5cb68db98"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40133:cyprinus-carpio",
+        "countyFips": "40133",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40133.json",
+          "bytes": 311414,
+          "sha256": "b2fefd18bcd797d2ca485478242b6cfc76c551780a3a74d0974ad3dbc0b4c5e0"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40135:cyprinus-carpio",
+        "countyFips": "40135",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40135.json",
+          "bytes": 337418,
+          "sha256": "5761b7e9ae98cee5f446748aba73c56808f9870835524bed188e6312547c51bd"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40137:cyprinus-carpio",
+        "countyFips": "40137",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40137.json",
+          "bytes": 301839,
+          "sha256": "ddb1585baf4b994da853f39e51449b5a1de41c7ffdf8b14b22bb6e94a7f749da"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40139:cyprinus-carpio",
+        "countyFips": "40139",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40139.json",
+          "bytes": 298140,
+          "sha256": "1f2676c87f3f10d2eaf7e22639ea0363ab1ab303e736d0c900b6ea0fa42561ba"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40141:cyprinus-carpio",
+        "countyFips": "40141",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40141.json",
+          "bytes": 304240,
+          "sha256": "d1f67f9d3b6e73d0c6ca5e11e353b7e9782399561065289da9c267475422a8dc"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40143:cyprinus-carpio",
+        "countyFips": "40143",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40143.json",
+          "bytes": 354270,
+          "sha256": "fd0db7c896a2a52542c327e5c400bec824d627f1a7aa67a73522a098b998d77d"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40145:cyprinus-carpio",
+        "countyFips": "40145",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40145.json",
+          "bytes": 324673,
+          "sha256": "8ebf1c5fd591d617e27653b00696fcb142c8e187701ccc0f7028727ef1d1f1a8"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40149:cyprinus-carpio",
+        "countyFips": "40149",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40149.json",
+          "bytes": 293276,
+          "sha256": "d4f843e0177b04a4e2351d491c69c9d0233cde1cdcf81680842257a91e874647"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40151:cyprinus-carpio",
+        "countyFips": "40151",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40151.json",
+          "bytes": 342605,
+          "sha256": "e9b960d6a7c6b8559682e28dfa5e47dfb3afcde6f8f552ca0822b0ebf2da1a42"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40153:cyprinus-carpio",
+        "countyFips": "40153",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40153.json",
+          "bytes": 313146,
+          "sha256": "75af46973a2b027915398cfa3c5797dc82d62f761351a1c291136751ba5cbdcd"
+        },
+        "rowSha256": null
+      }
+    ],
+    "heldPairs": [
+      {
+        "pair": "40005:cyprinus-carpio",
+        "countyFips": "40005",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40005.json",
+          "bytes": 314566,
+          "sha256": "9b99a9a0b95ab0ec806d587ce43f447f62188f27a36e53854af22bfef0f038fc"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40013:cyprinus-carpio",
+        "countyFips": "40013",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40013.json",
+          "bytes": 367913,
+          "sha256": "61b97884f47f82dc24c9a00635ed6651b9f875e74adb5f45d79a26972a587d76"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40023:cyprinus-carpio",
+        "countyFips": "40023",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40023.json",
+          "bytes": 333064,
+          "sha256": "aba6e54fc87bf114d8bb8f30bb09415d84ff8037c01ef9c20f25952e9d2a0eec"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40027:cyprinus-carpio",
+        "countyFips": "40027",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40027.json",
+          "bytes": 390913,
+          "sha256": "8bedaafa2fbcf344c155cbf1615a13d78545584375ac28c6e957efdac4473eed"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40029:cyprinus-carpio",
+        "countyFips": "40029",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40029.json",
+          "bytes": 289060,
+          "sha256": "4ba9c7d167a3e9084ad3d97e2068284bf4ac97e29804bf82ca07407d0a065d2c"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40041:cyprinus-carpio",
+        "countyFips": "40041",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40041.json",
+          "bytes": 348747,
+          "sha256": "e3a6b9c97c349b395fda0b261357229ef9671ea73dc7247b3c5b6fe06410d5f0"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40061:cyprinus-carpio",
+        "countyFips": "40061",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40061.json",
+          "bytes": 305022,
+          "sha256": "cd6b453eecdd01231ea81841754323f55a7d761d271c3f953c7a03755533cf63"
+        },
+        "rowSha256": null
+      },
+      {
+        "pair": "40147:cyprinus-carpio",
+        "countyFips": "40147",
+        "speciesId": "cyprinus-carpio",
+        "stateCode": "OK",
+        "status": "not-researched",
+        "explicit": false,
+        "projection": {
+          "path": "public/generated/research/OK/counties/40147.json",
+          "bytes": 321652,
+          "sha256": "de3c802078fe3c127c3949f56ab1edb430eecc3e72ad6e77fd98e9262dd05614"
+        },
+        "rowSha256": null
+      }
+    ]
+  },
+  "newDeterminations": 0,
+  "providerReplayRequests": 0,
+  "notes": [
+    "Original version 1 and 2 implementation and method bytes verified unchanged.",
+    "All 152 candidates are not-researched sparse or explicit rows at the current projection baseline.",
+    "Two canonical state runs and exact compiler reconciliation remain pending.",
+    "Future reviewed method documents reuse this adapter without widening historical replay scope."
+  ],
+  "commitWhitespaceCheck": {
+    "initialStatus": "failed-before-commit",
+    "paths": [
+      "scripts/fixtures/wqp-single-csv-zip.json",
+      "scripts/test-single-csv-zip.cjs"
+    ],
+    "resolution": "Normalized newly authored test text from CRLF to LF; original provider ZIP bytes and fixture base64 payloads are unchanged."
+  }
+}
