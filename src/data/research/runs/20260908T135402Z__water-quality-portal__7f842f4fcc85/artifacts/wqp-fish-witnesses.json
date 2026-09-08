@@ -1,0 +1,726 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-fish-measurement-station-join-v2",
+  "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "991fe712b63570cb904c99ae2aea9f7a30bc6efaf28f6c28c772c74650b3fe76",
+  "acquisitionCodeQualification": "The original preflight repositoryBaseCommit identifies repository HEAD during acquisition. Both executed recipes are separately hash-pinned inside the retained input archive. Failed requests remain failed. This offline run code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "22029:hypophthalmichthys-molitrix",
+      "resultDecodedSha256": "1c5dca5ffae69cfad866cd8b67979749e4d9331d7b78efe207b09c35e8bba382",
+      "stationDecodedSha256": "e7b16fb9039331b9c561a12ff8d2bc4012e1edba9d6f0428c56803ab7cffe398",
+      "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 88,
+          "rowSha256": "62ab4b129d70e7f967cb1161ad446426e29251bac62016e77852eafab17a263c",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 240,
+              "rowSha256": "22561c98c090aff488abec28b352cf89b28d7342c6da60d536df3ef6dd7f52ef"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 91,
+          "rowSha256": "54fca3c5e378e4c4608448e25ff81b139b93bc22de04df86513e145f5a2642ed",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 241,
+              "rowSha256": "fb43ccf81c3ef05762cb5068685e02a078bf6cbad0964844d0e9e550d91d0d2f"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Original query URLs, exact contributing publishers and source dates are retained. Public factual evidence is attributed; no blanket CC0 license or provider endorsement is claimed.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T12:43:38.935Z",
+      "stationRetrievedAt": "2026-09-08T12:43:14.223Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 88,
+          "physicalEndLineOneBased": 90,
+          "rawRecordSha256": "62ab4b129d70e7f967cb1161ad446426e29251bac62016e77852eafab17a263c",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA096:20080909:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-09-09",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA096",
+            "ActivityLocation/LatitudeMeasure": "31.6306163100",
+            "ActivityLocation/LongitudeMeasure": "-91.3992470400",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 240,
+              "physicalEndLineOneBased": 242,
+              "rawRecordSha256": "22561c98c090aff488abec28b352cf89b28d7342c6da60d536df3ef6dd7f52ef",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA096",
+                "MonitoringLocationName": "Lower Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08060100",
+                "LatitudeMeasure": "31.6306163100",
+                "LongitudeMeasure": "-91.3992470400",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "029",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 91,
+          "physicalEndLineOneBased": 93,
+          "rawRecordSha256": "54fca3c5e378e4c4608448e25ff81b139b93bc22de04df86513e145f5a2642ed",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA100:20080917:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-09-17",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA100",
+            "ActivityLocation/LatitudeMeasure": "30.9972218900",
+            "ActivityLocation/LongitudeMeasure": "-91.6424489100",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "4",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 241,
+              "physicalEndLineOneBased": 243,
+              "rawRecordSha256": "fb43ccf81c3ef05762cb5068685e02a078bf6cbad0964844d0e9e550d91d0d2f",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA100",
+                "MonitoringLocationName": "Lower Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08070100",
+                "LatitudeMeasure": "30.9972218900",
+                "LongitudeMeasure": "-91.6424489100",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "029",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "22035:hypophthalmichthys-molitrix",
+      "resultDecodedSha256": "1c5dca5ffae69cfad866cd8b67979749e4d9331d7b78efe207b09c35e8bba382",
+      "stationDecodedSha256": "e7b16fb9039331b9c561a12ff8d2bc4012e1edba9d6f0428c56803ab7cffe398",
+      "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 244,
+          "rowSha256": "030f04c38c71e33323c87894f50dccf7b5489315e8f48f85613e1b74e8316923",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 287,
+              "rowSha256": "44d8eab35a55410446200d2bb68c919870530086898e84eeaee09d8628d0b34c"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Original query URLs, exact contributing publishers and source dates are retained. Public factual evidence is attributed; no blanket CC0 license or provider endorsement is claimed.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T12:43:38.935Z",
+      "stationRetrievedAt": "2026-09-08T12:43:14.223Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 244,
+          "physicalEndLineOneBased": 246,
+          "rawRecordSha256": "030f04c38c71e33323c87894f50dccf7b5489315e8f48f85613e1b74e8316923",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-LAR9-0907:20140819:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2014-08-19",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-LAR9-0907",
+            "ActivityCommentText": "Coastal Plains",
+            "ActivityLocation/LatitudeMeasure": "32.6529700000",
+            "ActivityLocation/LongitudeMeasure": "-91.1407200000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "21",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 287,
+              "physicalEndLineOneBased": 289,
+              "rawRecordSha256": "44d8eab35a55410446200d2bb68c919870530086898e84eeaee09d8628d0b34c",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-LAR9-0907",
+                "MonitoringLocationName": "Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversMajor",
+                "HUCEightDigitCode": "08030100",
+                "LatitudeMeasure": "32.6529700000",
+                "LongitudeMeasure": "-91.1407200000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "25.41",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "035",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "22065:hypophthalmichthys-molitrix",
+      "resultDecodedSha256": "1c5dca5ffae69cfad866cd8b67979749e4d9331d7b78efe207b09c35e8bba382",
+      "stationDecodedSha256": "e7b16fb9039331b9c561a12ff8d2bc4012e1edba9d6f0428c56803ab7cffe398",
+      "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 83,
+          "rowSha256": "0adbb29abfefb10e759292a633e1aa8ea597c190d7ba52cf13ac3ef74cb4f5ba",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 242,
+              "rowSha256": "633086fc41411d650e5afcde4ee342a73280ffc3807b4dfb3e4750fb16cce5ae"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Original query URLs, exact contributing publishers and source dates are retained. Public factual evidence is attributed; no blanket CC0 license or provider endorsement is claimed.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T12:43:38.935Z",
+      "stationRetrievedAt": "2026-09-08T12:43:14.223Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 83,
+          "physicalEndLineOneBased": 85,
+          "rawRecordSha256": "0adbb29abfefb10e759292a633e1aa8ea597c190d7ba52cf13ac3ef74cb4f5ba",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA108:20080929:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-09-29",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA108",
+            "ActivityLocation/LatitudeMeasure": "32.4096389300",
+            "ActivityLocation/LongitudeMeasure": "-90.9959210900",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "5",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 242,
+              "physicalEndLineOneBased": 244,
+              "rawRecordSha256": "633086fc41411d650e5afcde4ee342a73280ffc3807b4dfb3e4750fb16cce5ae",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA108",
+                "MonitoringLocationName": "Lower Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08030100",
+                "LatitudeMeasure": "32.4096389300",
+                "LongitudeMeasure": "-90.9959210900",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "065",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "22107:hypophthalmichthys-molitrix",
+      "resultDecodedSha256": "1c5dca5ffae69cfad866cd8b67979749e4d9331d7b78efe207b09c35e8bba382",
+      "stationDecodedSha256": "e7b16fb9039331b9c561a12ff8d2bc4012e1edba9d6f0428c56803ab7cffe398",
+      "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 138,
+          "rowSha256": "775bddcc46582685f6d9d1ca546f9b87d42ea21030fe6a702c4cd65b13f31dc3",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 243,
+              "rowSha256": "e80a317ba8a2ea4843cf588c31a69a483395adbcdd71d02a22db9da3f0487dd4"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Original query URLs, exact contributing publishers and source dates are retained. Public factual evidence is attributed; no blanket CC0 license or provider endorsement is claimed.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T12:43:38.935Z",
+      "stationRetrievedAt": "2026-09-08T12:43:14.223Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 138,
+          "physicalEndLineOneBased": 140,
+          "rawRecordSha256": "775bddcc46582685f6d9d1ca546f9b87d42ea21030fe6a702c4cd65b13f31dc3",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA160:20090718:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2009-07-18",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA160",
+            "ActivityLocation/LatitudeMeasure": "31.8792187600",
+            "ActivityLocation/LongitudeMeasure": "-91.5433311600",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 243,
+              "physicalEndLineOneBased": 245,
+              "rawRecordSha256": "e80a317ba8a2ea4843cf588c31a69a483395adbcdd71d02a22db9da3f0487dd4",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA160",
+                "MonitoringLocationName": "Chocatow River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08050003",
+                "LatitudeMeasure": "31.8792187600",
+                "LongitudeMeasure": "-91.5433311600",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "107",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "22121:hypophthalmichthys-molitrix",
+      "resultDecodedSha256": "1c5dca5ffae69cfad866cd8b67979749e4d9331d7b78efe207b09c35e8bba382",
+      "stationDecodedSha256": "e7b16fb9039331b9c561a12ff8d2bc4012e1edba9d6f0428c56803ab7cffe398",
+      "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 94,
+          "rowSha256": "114871c45213992d2961a25e1b7816788fc81114742d82c4a8dfc7ec4e1eb2a9",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 239,
+              "rowSha256": "9f4ae3f9a85d9af913bce384080621938b489ce5f0d7632fec0a981a2bdbe53e"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 108,
+          "rowSha256": "f46c51188050f376cce77a2cd2eac335f6cb4202fc92296bd5e13a1307583c8e",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 244,
+              "rowSha256": "e02365f5bb71b4d4c5513f542b91a7339d522586116caebbefe62a14732c1ab8"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Original query URLs, exact contributing publishers and source dates are retained. Public factual evidence is attributed; no blanket CC0 license or provider endorsement is claimed.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T12:43:38.935Z",
+      "stationRetrievedAt": "2026-09-08T12:43:14.223Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 94,
+          "physicalEndLineOneBased": 96,
+          "rawRecordSha256": "114871c45213992d2961a25e1b7816788fc81114742d82c4a8dfc7ec4e1eb2a9",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA068:20081021:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-10-21",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA068",
+            "ActivityLocation/LatitudeMeasure": "30.5056571800",
+            "ActivityLocation/LongitudeMeasure": "-91.2590743000",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "27",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 239,
+              "physicalEndLineOneBased": 241,
+              "rawRecordSha256": "9f4ae3f9a85d9af913bce384080621938b489ce5f0d7632fec0a981a2bdbe53e",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA068",
+                "MonitoringLocationName": "Lower Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08070100",
+                "LatitudeMeasure": "30.5056571800",
+                "LongitudeMeasure": "-91.2590743000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "121",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 108,
+          "physicalEndLineOneBased": 110,
+          "rawRecordSha256": "f46c51188050f376cce77a2cd2eac335f6cb4202fc92296bd5e13a1307583c8e",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA180:20081020:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-10-20",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA180",
+            "ActivityLocation/LatitudeMeasure": "30.5748944600",
+            "ActivityLocation/LongitudeMeasure": "-91.3123690200",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "4",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 244,
+              "physicalEndLineOneBased": 246,
+              "rawRecordSha256": "e02365f5bb71b4d4c5513f542b91a7339d522586116caebbefe62a14732c1ab8",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA180",
+                "MonitoringLocationName": "Lower Mississippi River- Profit Island",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08070100",
+                "LatitudeMeasure": "30.5748944600",
+                "LongitudeMeasure": "-91.3123690200",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "121",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "22125:hypophthalmichthys-molitrix",
+      "resultDecodedSha256": "1c5dca5ffae69cfad866cd8b67979749e4d9331d7b78efe207b09c35e8bba382",
+      "stationDecodedSha256": "e7b16fb9039331b9c561a12ff8d2bc4012e1edba9d6f0428c56803ab7cffe398",
+      "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 102,
+          "rowSha256": "9dc1b6924344155ef298df2cd085d28783d1d0ea5cf90809c4ad72672c4754a2",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 236,
+              "rowSha256": "c8a60d7985d03400538c7cd329030cf80aaf49415c7d763617418dbdfd135957"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 113,
+          "rowSha256": "6d2cbf11d40794a187d0773be392c63751b032d3ce5b2f760d0648c4e1cc26e5",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 238,
+              "rowSha256": "1bd8583e5c3c4928baa8bea88234b7f80e480393d0320a54eae8db386f57ab76"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Original query URLs, exact contributing publishers and source dates are retained. Public factual evidence is attributed; no blanket CC0 license or provider endorsement is claimed.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T12:43:38.935Z",
+      "stationRetrievedAt": "2026-09-08T12:43:14.223Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 102,
+          "physicalEndLineOneBased": 104,
+          "rawRecordSha256": "9dc1b6924344155ef298df2cd085d28783d1d0ea5cf90809c4ad72672c4754a2",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA036:20081028:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-10-28",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA036",
+            "ActivityLocation/LatitudeMeasure": "30.7550589200",
+            "ActivityLocation/LongitudeMeasure": "-91.5955188500",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 236,
+              "physicalEndLineOneBased": 238,
+              "rawRecordSha256": "c8a60d7985d03400538c7cd329030cf80aaf49415c7d763617418dbdfd135957",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA036",
+                "MonitoringLocationName": "Lower Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08070100",
+                "LatitudeMeasure": "30.7550589200",
+                "LongitudeMeasure": "-91.5955188500",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "125",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 113,
+          "physicalEndLineOneBased": 115,
+          "rawRecordSha256": "6d2cbf11d40794a187d0773be392c63751b032d3ce5b2f760d0648c4e1cc26e5",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-FW08LA052:20081027:SR:FULLMETRICS",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-10-27",
+            "ProjectIdentifier": "NARS_NRSA2008_2009",
+            "MonitoringLocationIdentifier": "NARS_WQX-FW08LA052",
+            "ActivityLocation/LatitudeMeasure": "30.7423109000",
+            "ActivityLocation/LongitudeMeasure": "-91.3627265800",
+            "AssemblageSampledName": "Fish/Nekton",
+            "PassCount": "1",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "YES-SUFFICIENT",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 238,
+              "physicalEndLineOneBased": 240,
+              "rawRecordSha256": "1bd8583e5c3c4928baa8bea88234b7f80e480393d0320a54eae8db386f57ab76",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-FW08LA052",
+                "MonitoringLocationName": "Lower Mississippi River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "NonUrban",
+                "HUCEightDigitCode": "08070100",
+                "LatitudeMeasure": "30.7423109000",
+                "LongitudeMeasure": "-91.3627265800",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "22",
+                "CountyCode": "125",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

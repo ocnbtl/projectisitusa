@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T135348Z__water-quality-portal__5a5a03f69839",
+  "status": "complete",
+  "started_at": "2026-09-08T13:53:48.599Z",
+  "finished_at": "2026-09-08T13:53:51.365Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@2.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "dd775d53eb69e5ea330c4a9ae97935ee0ebd62f54374d96a8096a6a9550eb20b",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "b0a17f962c611c07c646e195bb064e09f70827a9a04daf737e0859b8f2e5dfa2",
+  "code_commit": "cb9b4c6e29b6757a4673cb2f3fa63e139194a570",
+  "parameter_hash": "5a5a03f69839a97d542e408fb3a1791f780e5b34f0f1a5bd7d35c0a61ef002d4",
+  "parameters": {
+    "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+    "mode": "retained-fish-positive-measurement",
+    "stateCode": "AR",
+    "candidatePairs": [
+      "05035:hypophthalmichthys-molitrix",
+      "05077:hypophthalmichthys-molitrix",
+      "05093:hypophthalmichthys-molitrix"
+    ],
+    "candidateLimit": 3
+  },
+  "requested_scope": {
+    "state_code": "AR",
+    "county_fips": [
+      "05035",
+      "05077",
+      "05093"
+    ],
+    "species_ids": [
+      "hypophthalmichthys-molitrix"
+    ],
+    "pair_keys": [
+      "05035:hypophthalmichthys-molitrix",
+      "05077:hypophthalmichthys-molitrix",
+      "05093:hypophthalmichthys-molitrix"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T135348Z__water-quality-portal__5a5a03f69839/artifacts/wqp-fish-witnesses.json",
+      "sha256": "79812079a08ea14f473d7047ef32dbef772fdb77818058f66c511db3748f8370",
+      "bytes": 33231,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T135348Z__water-quality-portal__5a5a03f69839/assertions.ndjson",
+      "sha256": "132d93b17868405759be0f2691b3de625f58b660c477860d6dad5f5e694ae1c7",
+      "bytes": 14385,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T135348Z__water-quality-portal__5a5a03f69839/reviews.ndjson",
+      "sha256": "ef331c33193e9b0154da82eacf7118024743d7f67cbc6a6bf9a2dadde999cd4f",
+      "bytes": 2898,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T135348Z__water-quality-portal__5a5a03f69839/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T135348Z__water-quality-portal__5a5a03f69839/outcomes.ndjson",
+      "sha256": "98b06fade3f173144ad0548dcfc403c385d99a60b3878fbbc7be22e49fb31865",
+      "bytes": 3162,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 7,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only. Current persistence, establishment, abundance, countywide prevalence, absence, non-detection and protocol completion are not established.",
+    "County assignment follows the exact organization and site join to unambiguous active publisher Station county FIPS. Generalized land polygons can omit open water and differ at river edges; they do not replace publisher county metadata or verify precise water jurisdiction.",
+    "The WQX 2.2 profile excludes USGS data added after March 11, 2024. A complete retained query response is not a complete current national inventory.",
+    "Zero, blank, negative, provisional, qualified, unidentified, toxicity, tissue analyte and unreviewed metric rows do not create absence or non-detection.",
+    "Original activity, site, taxon, date and raw row hashes are retained. Repeated rows and measurements without individual identifiers cannot be counted as independent fish or additional county determinations.",
+    "Generic field manuals corroborate measurement meaning. Their gear descriptions and revision dates do not prove the exact gear or effort used for a historical source row."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state AR --candidate-file ops/national-research/plans/wqp-fish-measurements-20260908-r14/AR.json --output-root src/data/research/runs --stage-canonical true --pairs 05035:hypophthalmichthys-molitrix,05077:hypophthalmichthys-molitrix,05093:hypophthalmichthys-molitrix"
+}

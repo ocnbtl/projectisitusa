@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T135422Z__water-quality-portal__0516cdca3380",
+  "status": "complete",
+  "started_at": "2026-09-08T13:54:22.495Z",
+  "finished_at": "2026-09-08T13:54:25.229Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@2.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "dd775d53eb69e5ea330c4a9ae97935ee0ebd62f54374d96a8096a6a9550eb20b",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "b0a17f962c611c07c646e195bb064e09f70827a9a04daf737e0859b8f2e5dfa2",
+  "code_commit": "cb9b4c6e29b6757a4673cb2f3fa63e139194a570",
+  "parameter_hash": "0516cdca33807ed8daf40adf35fcb24fc53f2a10a2da05c2278879a947e4e851",
+  "parameters": {
+    "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+    "mode": "retained-fish-positive-measurement",
+    "stateCode": "WI",
+    "candidatePairs": [
+      "55075:neogobius-melanostomus",
+      "55083:neogobius-melanostomus"
+    ],
+    "candidateLimit": 2
+  },
+  "requested_scope": {
+    "state_code": "WI",
+    "county_fips": [
+      "55075",
+      "55083"
+    ],
+    "species_ids": [
+      "neogobius-melanostomus"
+    ],
+    "pair_keys": [
+      "55075:neogobius-melanostomus",
+      "55083:neogobius-melanostomus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T135422Z__water-quality-portal__0516cdca3380/artifacts/wqp-fish-witnesses.json",
+      "sha256": "70174b04f600c6731005df8bcc96a3d44451f7e3556cbea67f851ba39a417f2c",
+      "bytes": 101205,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T135422Z__water-quality-portal__0516cdca3380/assertions.ndjson",
+      "sha256": "e74c7901556387bb9a3e89de23319708b5524fb240e9eb8e46c4166bf8f70dbc",
+      "bytes": 9688,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T135422Z__water-quality-portal__0516cdca3380/reviews.ndjson",
+      "sha256": "58002ed033e5a5f15e8e6ba482f79f07ab36cc4f575fdca08e168217dd622694",
+      "bytes": 1922,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T135422Z__water-quality-portal__0516cdca3380/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T135422Z__water-quality-portal__0516cdca3380/outcomes.ndjson",
+      "sha256": "9f990568733ce9f940120113e8b4806048363a2c4e6e88dfc9ffa1d1178000fb",
+      "bytes": 2078,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 23,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only. Current persistence, establishment, abundance, countywide prevalence, absence, non-detection and protocol completion are not established.",
+    "County assignment follows the exact organization and site join to unambiguous active publisher Station county FIPS. Generalized land polygons can omit open water and differ at river edges; they do not replace publisher county metadata or verify precise water jurisdiction.",
+    "The WQX 2.2 profile excludes USGS data added after March 11, 2024. A complete retained query response is not a complete current national inventory.",
+    "Zero, blank, negative, provisional, qualified, unidentified, toxicity, tissue analyte and unreviewed metric rows do not create absence or non-detection.",
+    "Original activity, site, taxon, date and raw row hashes are retained. Repeated rows and measurements without individual identifiers cannot be counted as independent fish or additional county determinations.",
+    "Generic field manuals corroborate measurement meaning. Their gear descriptions and revision dates do not prove the exact gear or effort used for a historical source row."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state WI --candidate-file ops/national-research/plans/wqp-fish-measurements-20260908-r14/WI.json --output-root src/data/research/runs --stage-canonical true --pairs 55075:neogobius-melanostomus,55083:neogobius-melanostomus"
+}

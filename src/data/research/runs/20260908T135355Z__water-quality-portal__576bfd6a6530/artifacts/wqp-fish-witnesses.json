@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-fish-measurement-station-join-v2",
+  "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "991fe712b63570cb904c99ae2aea9f7a30bc6efaf28f6c28c772c74650b3fe76",
+  "acquisitionCodeQualification": "The original preflight repositoryBaseCommit identifies repository HEAD during acquisition. Both executed recipes are separately hash-pinned inside the retained input archive. Failed requests remain failed. This offline run code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "20043:hypophthalmichthys-molitrix",
+      "resultDecodedSha256": "1c5dca5ffae69cfad866cd8b67979749e4d9331d7b78efe207b09c35e8bba382",
+      "stationDecodedSha256": "e7b16fb9039331b9c561a12ff8d2bc4012e1edba9d6f0428c56803ab7cffe398",
+      "methodReviewSha256": "f191d0c8db7f439b26cfb8fc5c88a2d95868677eadf2d181fdb7ca717b9d484c",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 199,
+          "rowSha256": "dcfe4a1ae54ccea57e8244ca432fa263a133c6ac474c318799034304278a300c",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 283,
+              "rowSha256": "7e592b5a5b681499338b9fafcc1c69197c3e0007d5c1b2bf11232b290333cba8"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA National Aquatic Resources Survey (NARS) (NARS_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Original query URLs, exact contributing publishers and source dates are retained. Public factual evidence is attributed; no blanket CC0 license or provider endorsement is claimed.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Hypophthalmichthys+molitrix&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T12:43:38.935Z",
+      "stationRetrievedAt": "2026-09-08T12:43:14.223Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 199,
+          "physicalEndLineOneBased": 201,
+          "rawRecordSha256": "dcfe4a1ae54ccea57e8244ca432fa263a133c6ac474c318799034304278a300c",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NARS_WQX",
+            "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+            "ActivityIdentifier": "NARS_WQX-KSR9-0905:20130715:SR:BE",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2013-07-15",
+            "ProjectIdentifier": "NARS_NRSA2013_2014",
+            "MonitoringLocationIdentifier": "NARS_WQX-KSR9-0905",
+            "ActivityCommentText": "Temperate Plains",
+            "ActivityLocation/LatitudeMeasure": "39.7262400000",
+            "ActivityLocation/LongitudeMeasure": "-94.9112200000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Fish/Nekton",
+            "SampleCollectionMethod/MethodIdentifier": "Fish Abundance Samp",
+            "SampleCollectionMethod/MethodIdentifierContext": "NARS_WQX",
+            "SampleCollectionMethod/MethodName": "NCA Standard Fish Sample",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NARS_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Fish and Ephibenthic Invertebrate Collection Fish trawls were conducted at each site to collect fish/shellfish for community structure and abundance estimates, target species for contaminant analyses, and specimens for histopathological examination. Trawls were conducted by using a 16-ft otter trawl and the duration of the trawl will be for 10±2 minutes; replicate (two) trawls will be performed. In open water, the trawl should be conducted in a straight line with the site location near center. The speed over bottom should be approximately 3-4 knots.",
+            "SampleCollectionEquipmentName": "Backpack Electroshock",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "8",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Hypophthalmichthys molitrix",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 283,
+              "physicalEndLineOneBased": 285,
+              "rawRecordSha256": "7e592b5a5b681499338b9fafcc1c69197c3e0007d5c1b2bf11232b290333cba8",
+              "sourceFields": {
+                "OrganizationIdentifier": "NARS_WQX",
+                "OrganizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+                "MonitoringLocationIdentifier": "NARS_WQX-KSR9-0905",
+                "MonitoringLocationName": "Missouri River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "RiversMajor",
+                "HUCEightDigitCode": "10240011",
+                "LatitudeMeasure": "39.7262400000",
+                "LongitudeMeasure": "-94.9112200000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "245.14",
+                "VerticalMeasure/MeasureUnitCode": "m",
+                "VerticalCollectionMethodName": "Unknown",
+                "VerticalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "20",
+                "CountyCode": "043",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
