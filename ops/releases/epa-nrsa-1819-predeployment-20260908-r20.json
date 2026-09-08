@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-nrsa-1819-predeployment",
+  "recordedAt": "2026-09-08T22:47:34.139Z",
+  "status": "all-local-gates-passed-runtime-published-research-and-app-promotion-pending",
+  "baseCommit": "3b955c710d36c216fe43595b4f993783749dc60c",
+  "sourceCommit": "7674fc93bc4fadff8731118b9378a2785e05a7b2",
+  "releaseId": "research-7674fc93bc4f-25dacfee2d1a3835",
+  "rollback": {
+    "app": {
+      "id": "dpl_Bt1mkLJtfSubq62VJzVBQydtoyP5",
+      "url": "projectisitusa-puieaznrc-unigentamos.vercel.app",
+      "state": "READY",
+      "substate": "PROMOTED",
+      "target": "production",
+      "commit": "0fea5725577ca361dfe376aedc832867c1fcf943",
+      "createdAt": 1788889635297
+    },
+    "researchReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+    "manifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af"
+  },
+  "behavior": "Integrate 293 historically recorded EPA 2018/2019 county-species determinations and withdraw five unsupported exact Clarias species determinations using append-only corrections. Publish the nationally reconciled research package together with the matching Alabama runtime bundles: remove Lee County Clarias batrachus and expose the previously accepted Talladega common-carp record.",
+  "researchReconciliation": "ops/national-research/evaluations/epa-nrsa-1819-national-reconciliation-20260908-r20.json",
+  "localResearch": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 315866,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306688,
+    "notResearched": 6246068,
+    "explicitOutcomePairCount": 1582154,
+    "conflictCount": 0,
+    "evidenceRecordCount": 463307,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 433177,
+    "rejectionRecordCount": 66065,
+    "researchRunCount": 2229,
+    "determinations": 319584,
+    "additions": 293,
+    "withdrawals": 5,
+    "netUniqueDeterminations": 288,
+    "newRuns": 40,
+    "sourceAssertions": 293,
+    "sourceReplayRequests": 0,
+    "priorStatusCounts": {
+      "not-researched": 277,
+      "researched-unresolved": 16
+    },
+    "addedExplicitNotResearchedRowsNotProgress": 815
+  },
+  "publicationBudget": "ops/national-research/publication/epa-nrsa-1819-candidate-budget-20260908-r20.json",
+  "cadenceOverride": {
+    "reason": "Urgent taxonomic correction: remove unsupported Clarias batrachus determinations from Lee County AL and Broward County FL; preserve the original observations as unresolved and publish matching research and app data.",
+    "qualification": "Existing project policy permits a specific urgent-correction reason. Five fresh hash-verified public reads show two withdrawn exact-species determinations are still public. Standing user production authority covers this correctness release; no paid resources or deletion is introduced.",
+    "liveCorrectionProof": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/live-clarias-correction-scope.json",
+    "policySource": "docs/architecture/evidence-research-system.md",
+    "scope": [
+      {
+        "pair": "01081:clarias-batrachus",
+        "liveStatus": "verified-present",
+        "candidateStatus": "researched-unresolved"
+      },
+      {
+        "pair": "12011:clarias-batrachus",
+        "liveStatus": "verified-present",
+        "candidateStatus": "researched-unresolved"
+      }
+    ]
+  },
+  "requiredGates": {
+    "schemaVersion": 1,
+    "kind": "research-integrity-sequential-gate-completion",
+    "recordedAt": "2026-09-08T22:35:52.437Z",
+    "status": "all-required-checks-passed",
+    "nationalSequence": [
+      {
+        "name": "compile-all",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/compile-all-state-research.ts",
+          "--as-of",
+          "2026-09-08"
+        ],
+        "startedAt": "2026-09-08T21:50:20.197Z",
+        "finishedAt": "2026-09-08T21:54:06.311Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/compile-all-gate.log"
+      },
+      {
+        "name": "national-final",
+        "args": [
+          ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/verify-national-final.cjs"
+        ],
+        "startedAt": "2026-09-08T21:54:06.312Z",
+        "finishedAt": "2026-09-08T22:03:02.235Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/national-final-gate.log"
+      }
+    ],
+    "publicationIntegritySequence": [
+      {
+        "name": "runtime-assets-prepare",
+        "args": [
+          "scripts/prepare-runtime-assets.mjs",
+          "--write"
+        ],
+        "startedAt": "2026-09-08T22:05:52.639Z",
+        "finishedAt": "2026-09-08T22:05:58.898Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/runtime-assets-prepare-gate.log"
+      },
+      {
+        "name": "publication-manifest-write",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/build-research-publication-manifest.ts",
+          "--write",
+          "--gzip",
+          "--r2-inventory",
+          ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/r2-inventory-20260908.json"
+        ],
+        "startedAt": "2026-09-08T22:05:58.899Z",
+        "finishedAt": "2026-09-08T22:06:09.668Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/publication-manifest-write-gate.log"
+      },
+      {
+        "name": "research-integrity",
+        "args": [
+          "C:/Code/tools/node-v22.23.2-win-x64/node_modules/npm/bin/npm-cli.js",
+          "run",
+          "check:research-integrity"
+        ],
+        "startedAt": "2026-09-08T22:06:09.669Z",
+        "finishedAt": "2026-09-08T22:34:15.308Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/research-integrity-gate.log"
+      }
+    ],
+    "originalFullCommandPassed": true,
+    "logicalRequiredGateSetPassed": true,
+    "ordering": "National reconciliation was committed, runtime declarations and the compressed publication manifest were refreshed, then the complete research-integrity suite passed. Independent next-source discovery and a separately leased method proposal did not modify any canonical research run, source implementation or generated research projection during this gate.",
+    "logs": [
+      {
+        "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/runtime-assets-prepare-gate.log",
+        "bytes": 1047,
+        "sha256": "78ef67d19e6c1c0171ded959d190789cc066b2ac970922421bac1b016de911c9"
+      },
+      {
+        "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/publication-manifest-write-gate.log",
+        "bytes": 169,
+        "sha256": "d2c5e77f3217dd217ee4a93ad92f7f380d281805780565e23853798bcbbbca6b"
+      },
+      {
+        "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/research-integrity-gate.log",
+        "bytes": 72846,
+        "sha256": "2f0737b89703e107c6db0d97329f7c303a72f8aeaaf80fc7ef085b41a8abb583"
+      }
+    ]
+  },
+  "applicationChecks": [
+    {
+      "command": "npm run build",
+      "startedAt": "2026-09-08T22:35:53.178Z",
+      "finishedAt": "2026-09-08T22:37:21.186Z",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-09-08T22:37:21.186Z",
+      "finishedAt": "2026-09-08T22:37:30.578Z",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "startedAt": "2026-09-08T22:37:30.578Z",
+      "finishedAt": "2026-09-08T22:37:35.095Z",
+      "exitCode": 0,
+      "log": "check-runtime-assets.log"
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "startedAt": "2026-09-08T22:37:35.096Z",
+      "finishedAt": "2026-09-08T22:37:36.262Z",
+      "exitCode": 0,
+      "log": "check-vercel-publish.log"
+    }
+  ],
+  "runtimePublication": {
+    "observedAt": "2026-09-08T22:43:56.259Z",
+    "mode": "publish",
+    "preflightFile": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/runtime-publication-preflight.json",
+    "preflightSha256": "6d63058cbb38784f2b5815e2c388b100eb7ccb838232b1560dfdc9afa6a454c9",
+    "incrementalBytesUpperBound": 1413132,
+    "projectedBytesWithResearchReserve": 7971802035,
+    "artifacts": [
+      {
+        "name": "map",
+        "url": "https://data.isitusa.com/app-data/sha256/1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87.json",
+        "sha256": "1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87",
+        "bytes": 3854452,
+        "storedBytes": 715006,
+        "action": "uploaded",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "https://isitusa.com",
+          "access-control-expose-headers": "ETag,Content-Length,Content-Encoding",
+          "cache-control": "public, max-age=31536000, immutable",
+          "cf-cache-status": "MISS",
+          "cf-ray": "a38179977fe9c665-CVG",
+          "connection": "keep-alive",
+          "content-encoding": "gzip",
+          "content-length": "715006",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Tue, 08 Sep 2026 22:43:56 GMT",
+          "etag": "\"b0644f2a2ac87bc3a692adfe5d8a67b2\"",
+          "last-modified": "Tue, 08 Sep 2026 22:43:56 GMT",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2FDIexeNNO7wm586p3XQqFtcpGfgK7wBCbhieAFsH%2FHuegYPDlj53P4OeXbtUTGQdXnR%2BBtgRm8DXt867abZ4dZV0lYiv%2B12BjPrVDwitfarRq00VZsxEzMSKm1%2BAX8EaBdy2xFXVQPIJTP0vewDc\"}]}",
+          "server": "cloudflare",
+          "vary": "Origin, accept-encoding"
+        }
+      },
+      {
+        "name": "catalog",
+        "url": "https://data.isitusa.com/app-data/sha256/0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5.json",
+        "sha256": "0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5",
+        "bytes": 4831012,
+        "storedBytes": 698126,
+        "action": "uploaded",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "https://isitusa.com",
+          "access-control-expose-headers": "ETag,Content-Length,Content-Encoding",
+          "cache-control": "public, max-age=31536000, immutable",
+          "cf-cache-status": "MISS",
+          "cf-ray": "a381799b3d50c665-CVG",
+          "connection": "keep-alive",
+          "content-encoding": "gzip",
+          "content-length": "698126",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Tue, 08 Sep 2026 22:43:57 GMT",
+          "etag": "\"64a0a4d85a8c42b1693282d03a66731e\"",
+          "last-modified": "Tue, 08 Sep 2026 22:43:57 GMT",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=arSXVe%2BjogRtktjFt56tlClnooCyMnl%2B6SeB2haQFCVRz%2BCnX%2BZEzx6vv23rbELbhwM2FVUyIb0ia%2FYI6vjfNOP%2FHn2POCSifA6B9tx%2BJYDzyn0RWta54SUBO9sawPYKJhAHhG8Tpw8Clq%2FSnVMJ\"}]}",
+          "server": "cloudflare",
+          "vary": "Origin, accept-encoding"
+        }
+      }
+    ]
+  },
+  "runtimeDelta": {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-08T22:24:42.126Z",
+    "baselineCommit": "0fea5725577ca361dfe376aedc832867c1fcf943",
+    "passed": true,
+    "baseline": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "bytes": 3854453,
+        "storedBytes": 715009
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "bytes": 4831012,
+        "storedBytes": 698125
+      }
+    },
+    "candidate": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87.json",
+        "sha256": "1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87",
+        "bytes": 3854452,
+        "storedBytes": 715006
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5.json",
+        "sha256": "0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5",
+        "bytes": 4831012,
+        "storedBytes": 698126
+      }
+    },
+    "changedCountyCount": 2,
+    "scope": [
+      {
+        "countyFips": "01081",
+        "speciesId": "clarias-batrachus",
+        "action": "remove",
+        "before": 507,
+        "after": 506
+      },
+      {
+        "countyFips": "01121",
+        "speciesId": "cyprinus-carpio",
+        "action": "add",
+        "before": 205,
+        "after": 206
+      }
+    ],
+    "unrelatedCountyChanges": 0,
+    "otherMapDataUnchanged": true,
+    "metadataChanges": [
+      {
+        "path": "map/allSpecies/24/registry/mappedCountyCount",
+        "before": 1573,
+        "after": 1574
+      },
+      {
+        "path": "map/allSpecies/207/registry/mappedCountyCount",
+        "before": 36,
+        "after": 35
+      },
+      {
+        "path": "catalog/24/registry/mappedCountyCount",
+        "before": 1573,
+        "after": 1574
+      },
+      {
+        "path": "catalog/207/registry/mappedCountyCount",
+        "before": 36,
+        "after": 35
+      }
+    ],
+    "sourceRequests": 0,
+    "qualification": "The production-compatible map remains Alabama-authoritative. The only map-presence differences from active production are the earlier accepted Talladega common-carp addition and the documented Lee County Clarias taxonomic withdrawal. National research counts are verified separately."
+  },
+  "localPageBytes": {
+    "index.html": 11166,
+    "index.rsc": 6014,
+    "research.html": 14175,
+    "research.rsc": 8307
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/epa-nrsa-1819-validation-20260908-r20.json.gz",
+    "bytes": 5403573,
+    "sha256": "64a3d66010641699120c54b40a9b2a70fe3b84c38297ca0a1abdc138b0b47e7a"
+  },
+  "runtimeObjectsUploaded": 2,
+  "researchObjectsUploaded": 0,
+  "pointerPromotions": 0,
+  "plannedReleaseOrder": [
+    "Upload and hash-verify every missing immutable research object and manifest",
+    "Verify direct R2 and app-origin research samples",
+    "Promote current.json using documented urgent taxonomic correction reason",
+    "Verify full Alabama app/research coherence against stable public pointer",
+    "Push exact candidate and verify Vercel Ready state and production alias",
+    "Verify live corrected pairs, runtime bundles and compact static responses"
+  ],
+  "limitations": [
+    "This receipt precedes research and app promotion; it is not production proof.",
+    "Source observations are historical records, not proof of current persistence or countywide completeness. No new absence or survey non-detection is inferred.",
+    "The 115 supported candidates in the separately retained EPA 2013/2014 review are proposals only and not included in determination counts. The second review remains leased independently.",
+    "National research publication and matching app deployment are sequential, not atomic. The existing release coherence guard must pass before app deployment.",
+    "R2 retained history remains intact; no historical object deletion is authorized or performed. Displayed provider usage is rounded and can lag; budget includes request headroom and publisher re-lists actual storage before writing.",
+    "No new UI design or marketing change is included. The autonomous research goal remains active."
+  ]
+}

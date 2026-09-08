@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-research-and-runtime-candidate-storage-plan",
+  "recordedAt": "2026-09-08T22:35:52.487Z",
+  "releaseId": "research-7674fc93bc4f-25dacfee2d1a3835",
+  "sourceCommit": "7674fc93bc4fadff8731118b9378a2785e05a7b2",
+  "manifest": {
+    "path": "ops/national-research/publication/research-data-manifest.json",
+    "bytes": 2047966,
+    "sha256": "007b7d2387af05d1dda52bd093ff2abffb232e54a02f0f60164f3bca58cceefa"
+  },
+  "representationInventory": {
+    "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/r2-inventory-20260908.json",
+    "bytes": 19809249,
+    "sha256": "e7166ea35bac489d3e897dd079b59cab26738f0024c04d59789127088921d04f",
+    "observedAt": "2026-09-08T21:59:09.546Z"
+  },
+  "bucketBaseline": {
+    "observedAt": "2026-09-08T21:59:09.546Z",
+    "bytes": 7838852738,
+    "objects": 29061
+  },
+  "candidateNewObjects": 3195,
+  "candidateAdditionalBytes": 131536165,
+  "pointerReserveBytes": 1024,
+  "appDataAdditionalBytesUpperBound": 1413132,
+  "projectedBucketBytes": 7971802035,
+  "projectSafetyCeilingBytes": 8000000000,
+  "remainingSafetyHeadroomBytes": 28197965,
+  "supersededUnuploadedCandidate": {
+    "path": "ops/national-research/publication/epa-wqp-candidate-budget-20260908-r18.json",
+    "releaseId": "research-d97781bd1954-14588e7a570b4c3d",
+    "reservationBytes": 131250785
+  },
+  "requiredResearchReservationBytes": 131536165,
+  "withinStorageCeiling": true,
+  "providerWritesAtPlanning": 0,
+  "pointerPromotions": 0,
+  "ordinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+  "plannedCadenceOverride": {
+    "reason": "Urgent taxonomic correction: remove unsupported Clarias batrachus determinations from Lee County AL and Broward County FL; preserve the original observations as unresolved and publish matching research and app data.",
+    "qualification": "Existing project policy permits a specific urgent-correction reason. Five fresh hash-verified public reads show two withdrawn exact-species determinations are still public. Standing user production authority covers this correctness release; no paid resources or deletion is introduced.",
+    "liveCorrectionProof": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/live-clarias-correction-scope.json",
+    "policySource": "docs/architecture/evidence-research-system.md",
+    "scope": [
+      {
+        "pair": "01081:clarias-batrachus",
+        "liveStatus": "verified-present",
+        "candidateStatus": "researched-unresolved"
+      },
+      {
+        "pair": "12011:clarias-batrachus",
+        "liveStatus": "verified-present",
+        "candidateStatus": "researched-unresolved"
+      }
+    ]
+  },
+  "providerUsage": {
+    "products": "R2 only",
+    "limitation": "Rounded provider UI values may lag; planning inputs intentionally include additional request headroom. Storage GB-months is not retained object bytes.",
+    "kind": "assistant-transcribed-provider-ui-observation",
+    "planningUpperBounds": {
+      "classA": 31000,
+      "classB": 68000
+    },
+    "sourceUrl": "https://dash.cloudflare.com/0fe57401a5fd98319e16832ee97de02d/billing/billable-usage",
+    "schemaVersion": 1,
+    "observedAt": "2026-09-08T21:58:30.2872833+00:00",
+    "displayed": {
+      "cycle": "Aug 18 - Sep 17, 2026",
+      "storage": "4.55 GB-months",
+      "classA": "29.77k",
+      "projectedCycleCost": "$0.00",
+      "totalCost": "$0.00",
+      "observedPeriod": "Aug 18 - Sep 8, 2026",
+      "classB": "65.7k",
+      "billableUsage": "0"
+    }
+  },
+  "limitations": [
+    "The research candidate replaces the prior unuploaded reservation; they are not additive.",
+    "Runtime storage is conservatively reserved as two new objects even if an immutable matching object already exists.",
+    "Exact dated inventory and local compressed sizes are planning evidence; publisher re-lists and rechecks limits before writing. Refresh displayed counters before publication.",
+    "The cadence exception is for a verified public taxonomic correction, not for bypassing a failed app/research coherence check. Full data verification precedes pointer mutation, followed by matching app deployment and live QA.",
+    "Historical release deletion is not performed or authorized by this plan.",
+    "Displayed billing may lag and is rounded; operation inputs include explicit additional headroom."
+  ]
+}
