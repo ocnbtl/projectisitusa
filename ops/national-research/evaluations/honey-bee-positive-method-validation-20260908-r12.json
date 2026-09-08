@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "kind": "retained-positive-method-validation",
+  "recordedAt": "2026-09-08T10:22:45.771Z",
+  "methodCommit": "4541ebc10b0afae1eb8b1b85d089689ef9771842",
+  "status": "gates-passed-pilots-reviewed-integration-pending",
+  "independentSourceReviews": 2,
+  "actualPilotStates": 2,
+  "actualPilotAssertions": 42,
+  "candidateNationalPairs": 1739,
+  "heldPairs": 2,
+  "compiledNewDeterminations": 0,
+  "gate": {
+    "command": "Research integrity gate sequence: initial suite, generated source-index refresh, remaining coverage and publication checks",
+    "startedAt": "2026-09-08T09:57:51.580Z",
+    "finishedAt": "2026-09-08T10:21:32.1099820Z",
+    "exitCode": 0,
+    "originalSuiteExitCode": 1,
+    "originalFailure": "Generated source coverage index was stale after source registration changed",
+    "remediation": "Regenerated index and reran check:research-coverage plus check:research-publication; earlier suite checks had passed",
+    "followupStartedAt": "2026-09-08T10:21:15.6228565Z"
+  },
+  "types": {
+    "command": "tsc --noEmit --incremental false",
+    "startedAt": "2026-09-08T10:21:32.1379054Z",
+    "finishedAt": "2026-09-08T10:21:44.3628127Z",
+    "exitCode": 0
+  },
+  "canonicalTamperCases": 32,
+  "sourceIndexRemediation": "Registration changed the generated index identity. The initial suite exited1 at stale-index check after prior tests passed; index regenerated and remaining coverage/publication checks passed. No source bytes or historical receipts changed.",
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/honey-bee-positive-method-validation-20260908-r12.json.gz",
+    "bytes": 13619,
+    "sha256": "d5ba905ec7f3fa893167089b2e61438a25d146d961b375c6464c3e36879c618a"
+  },
+  "production": {
+    "activeDeployment": "dpl_2WnPKsHKhesDvRLSB3oamuv6S1jt",
+    "activeCommit": "7c53e2ff3a8fdc824e52f96a84c78387c8559193",
+    "receiptOnlyDeployment": "dpl_31ba9PTbMCrgP4aWiDkSrVfZSwep",
+    "receiptOnlyState": "CANCELED",
+    "observedAt": "2026-09-08T10:05:21.241Z",
+    "r2Writes": 0
+  }
+}
