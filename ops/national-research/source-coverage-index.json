@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-0eee8bdd23a7aae2cbe3",
-  "generatedFromCommit": "edb362eb48d622189413cde4113713acc6028768",
+  "indexId": "source-coverage-9deca15b3631b5b2bf80",
+  "generatedFromCommit": "7e84d4902ce0e77323757de95d1e41455c890471",
   "sourceRegistryPath": "src/data/research/source-registry.json",
   "sourceRegistrySha256": "35a63fc9a071150dd4e0b609dbdd921837f82ac89532e759b548a53c2bb14380",
-  "runReceiptDigestSha256": "e31d8c9b79a3aa900758bb35e7a235ee0d7b1ccb097e8352122a1cf8d5e611ae",
-  "runCount": 2043,
+  "runReceiptDigestSha256": "26f86b3b7367d31abcb9224928f006d18a193a918516a2154f190ec18e2203c5",
+  "runCount": 2044,
   "sourceCount": 45,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -140,14 +140,14 @@
     },
     {
       "sourceId": "cdfa-confirmed-pest-occurrences",
-      "coverageState": "no-immutable-run-coverage",
-      "runCount": 0,
-      "completeRuns": 0,
+      "coverageState": "covered-by-immutable-runs",
+      "runCount": 1,
+      "completeRuns": 1,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 0,
-      "scopeCompletePairs": 0,
-      "latestFinishedAt": null
+      "requestedPairs": 2,
+      "scopeCompletePairs": 2,
+      "latestFinishedAt": "2026-09-08T08:42:32.257Z"
     },
     {
       "sourceId": "cpnwh-preserved-specimens",
@@ -63846,6 +63846,37 @@
       "outcomesPath": "src/data/research/runs/20260908T063510Z__eppo-karnal-bunt-state-status__44cc4df5462f/outcomes.ndjson",
       "outcomesSha256": "b8d34b53753d3de5b23d3bd49c40812ac0c27bfcbb2e67e7943ead509bea4cc6",
       "outcomesBytes": 66690
+    },
+    {
+      "coverageKey": "1a43d9d3dce94f574603e607b868ab5323186ccc68a25fbe0156d44faede8cd7",
+      "queryKey": "05e8cf06885f20ced7f83becc403ae3f399d82a6256afd4981510cd7016d801e",
+      "runId": "20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408",
+      "receiptPath": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/receipt.json",
+      "receiptSha256": "481f02d72d59db025834f2a1cba73114734c20ce4556594767e5ed78f686c47c",
+      "sourceId": "cdfa-confirmed-pest-occurrences",
+      "sourceRegistryHash": "35a63fc9a071150dd4e0b609dbdd921837f82ac89532e759b548a53c2bb14380",
+      "adapterId": "official-confirmed-occurrence-report",
+      "adapterVersion": "1.0.0",
+      "parameterHash": "47f17bc184088276252851ea5edb26d3f16874e014168c5840d597a6a594ec76",
+      "requestedScopeSha256": "ce3a70b237967952d9e4fb553489f374a94aba3d3c71ddfcfd13bd7b0742a6c6",
+      "status": "complete",
+      "startedAt": "2026-09-08T08:35:12.949Z",
+      "finishedAt": "2026-09-08T08:42:32.257Z",
+      "refreshCadenceDays": 365,
+      "freshnessDeadline": "2027-09-08T08:42:32.257Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 2,
+      "outcomePairs": 2,
+      "scopeCompletePairs": 2,
+      "outcomeStatusCounts": {
+        "evidence-found": 2,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/outcomes.ndjson",
+      "outcomesSha256": "fd10ba5b7da9cd6f1a4d02f786016f58ee75be035986c9aec934f6f7950d74be",
+      "outcomesBytes": 1660
     }
   ]
 }
