@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-08T07:21:39.469Z",
+  "status": "application-released-research-batch-queued",
+  "releasedCommit": "41080942ac34da5d8b1654558a183e88162a3d19",
+  "rollbackCommit": "47aab36b9095e12a1da233510e598c4cf7f01f22",
+  "publicSite": "https://isitusa.com",
+  "productionAliasAndReadyStateVerified": true,
+  "providerVerifiedAt": "2026-09-08T07:19:34.653Z",
+  "publicChecks": {
+    "observedAt": "2026-09-08T07:19:45.100Z",
+    "homepage": {
+      "url": "https://isitusa.com/",
+      "status": 200,
+      "decodedBytes": 11166,
+      "sha256": "9c1eb9a13db40639560f18742fb9401807326898cb59ce98dc7207816edc0267",
+      "embeddedAllSpecies": false,
+      "embeddedPresenceIndex": false
+    },
+    "researchPage": [
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200,
+        "decodedBytes": 14175
+      }
+    ],
+    "runtimeBundles": [
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "decodedBytes": 3854453,
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "integrityMatched": true,
+        "cacheControl": "public, max-age=31536000, immutable",
+        "allowOrigin": "https://isitusa.com"
+      },
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "decodedBytes": 4831012,
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "integrityMatched": true,
+        "cacheControl": "public, max-age=31536000, immutable",
+        "allowOrigin": "https://isitusa.com"
+      }
+    ],
+    "browser": {
+      "recordedAt": "2026-09-08T07:21:39.432Z",
+      "releasedCommit": "41080942ac34da5d8b1654558a183e88162a3d19",
+      "method": "Fresh production browser navigation and visible DOM inspection through the existing Isitusa QA tab",
+      "checks": [
+        {
+          "name": "County deep link finishes loading and selects Jefferson, AL",
+          "url": "https://isitusa.com/?county=01073",
+          "passed": true,
+          "reportedSpecies": 411
+        },
+        {
+          "name": "County species cards open Yellow Sweetclover profile",
+          "url": "https://isitusa.com/species/melilotus-officinalis",
+          "passed": true
+        },
+        {
+          "name": "Optimized image loads at 1280 by 960 and Wikimedia Commons attribution is visible",
+          "url": "https://isitusa.com/optimized-species/e43b5a3b85ed6dd1abdbe3571216e9c851eff73dc7b4f0be791e296b2a48b88a.webp",
+          "passed": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 960,
+          "imageComplete": true
+        },
+        {
+          "name": "Research deep link selects Autauga and Vespa mandarinia; evidence disclosure shows official source link and separate occurrence/current explanation",
+          "url": "https://isitusa.com/research?state=AL&county=01001&species=Vespa+mandarinia",
+          "passed": true,
+          "visibleResearchAsOf": "2026-09-06"
+        }
+      ],
+      "errors": [],
+      "errorsEvidence": "Browser error log returned an empty array after the navigation and disclosure checks.",
+      "scopeLimit": "Fresh core-flow desktop smoke only. Earlier full responsive, cold-cache, repeat-visit and failure-recovery optimization checks are separate dated evidence."
+    }
+  },
+  "research": {
+    "completionReceipt": "ops/national-research/receipts/source-evaluations/precision-jurisdiction-completion-20260908-r9.json",
+    "newUniqueDeterminations": 416,
+    "newPresent": 0,
+    "newAbsent": 416,
+    "removed": 0,
+    "statusTransitions": 0,
+    "verifiedPresent": 313000,
+    "verifiedAbsent": 3718,
+    "determinations": 316718,
+    "fullDenominator": 7872576,
+    "liveReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "queuedReleaseId": "research-b212ab74d253-56b3dc291e4a4b05",
+    "queuedDeterminationsAreLive": false,
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+    "publicationBudget": "ops/national-research/publication/precision-absence-candidate-budget-20260908-r9.json",
+    "r2UploadsThisRound": 0,
+    "pointerPromotionsThisRound": 0
+  },
+  "validation": [
+    "Full shared-method integrity, all three immutable workers, affected-state byte stability, all-state consistency, data integrity and source-coverage checks passed.",
+    "Production build and Vercel packaging, projection-fetch, deep-link and temporal-presentation regressions passed.",
+    "The runtime asset manifests stayed unchanged and required no asset uploads."
+  ],
+  "scopeLimit": "This release has fresh core-flow browser smoke. The earlier full desktop/mobile optimization checks remain recorded in ops/releases/vercel-usage-optimization-20260908.json. New queued research is not yet visible through the production research pointer.",
+  "nextResearch": {
+    "geographicInventory": "ops/national-research/evaluations/next-jurisdiction-geographic-scope-20260908-r9.json",
+    "firstCandidate": "globodera-pallida outside Idaho",
+    "admittedNewDeterminations": 0,
+    "needed": "Independent review of explicit containment wording and geographic/biological question scope before method admission."
+  }
+}

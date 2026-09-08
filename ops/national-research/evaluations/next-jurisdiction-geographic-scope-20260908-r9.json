@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "kind": "next-jurisdiction-geographic-opportunity-not-admitted",
+  "recordedAt": "2026-09-08T07:16:42.533Z",
+  "baselineCommit": "41080942ac34da5d8b1654558a183e88162a3d19",
+  "asOf": "2026-09-08",
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/next-jurisdiction-geographic-scope-20260908-r9.json.gz",
+    "bytes": 34101,
+    "sha256": "8a142d7cac7f9b115876486430a17e45794ca094b2239b424d7b63b5ec30af56"
+  },
+  "sourceDiscovery": "ops/national-research/inputs/official-jurisdiction-discovery-20260908-r7/discovery-receipt.json",
+  "scopes": [
+    {
+      "speciesId": "globodera-pallida",
+      "excludedState": "ID",
+      "sourceId": "aphis-pale-cyst-nematode-current",
+      "interpretationCaution": "Explicit containment is potentially useful; source also warns that nonregulated fields must not be assumed free. Independent scope and question review is required.",
+      "sourceModifiedAt": "2026-08-21",
+      "pageAgeDays": 18,
+      "geographicPairs": 3100,
+      "undeterminedGeographicPairs": 3100,
+      "alreadyDetermined": 0,
+      "acceptedHistoricalPresence": 0,
+      "conflicts": 0,
+      "undeterminedPairSetSha256": "64d71936dc13ffb89f80163ff07848577d428a9b4a7bd5a26fa4dfc5f4b450ef"
+    },
+    {
+      "speciesId": "phyllosticta-citricarpa",
+      "excludedState": "FL",
+      "sourceId": "aphis-citrus-black-spot-current",
+      "interpretationCaution": "Only-found wording is under Quarantine Boundaries. Verify biological versus regulatory meaning and newer authority evidence. Page modification is more than 365 days old and retrieval does not renew it.",
+      "sourceModifiedAt": "2025-07-30",
+      "pageAgeDays": 405,
+      "geographicPairs": 3077,
+      "undeterminedGeographicPairs": 3077,
+      "alreadyDetermined": 0,
+      "acceptedHistoricalPresence": 0,
+      "conflicts": 0,
+      "undeterminedPairSetSha256": "5820f44109dca4cfaec451fc688edde14c743add4e6eb6674fb36727acecead8"
+    }
+  ],
+  "sourceQualifiedProspectiveGains": null,
+  "newDeterminations": 0,
+  "newAssertions": 0,
+  "dispatchAuthorizedByThisArtifact": false,
+  "limitations": [
+    "These are exact geographic counts after subtracting current determinations, not qualified evidence or promised gains.",
+    "All Idaho counties and all Florida counties are excluded from the respective prospective scopes. No radius or partial quarantine is generalized to county absence.",
+    "Source wording, freshness, taxonomy and contrary-evidence review must pass before a versioned parent or worker evidence plan is admitted.",
+    "The citrus source needs specific freshness review; its year-old modification cannot be replaced with current retrieval.",
+    "No new source acquisition, assertion, protocol outcome or absence was created."
+  ]
+}
