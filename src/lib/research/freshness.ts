@@ -8,7 +8,7 @@ function dateTimestamp(value: string | undefined) {
     return undefined;
   }
   // Use the earliest possible day for conservative age, without discarding a reported interval.
-  if (value.includes("/")) return occurrenceDateBounds(value)?.start;
+  if (/^\d{4}-\d{2}-\d{2}\//u.test(value)) return occurrenceDateBounds(value)?.start;
   const normalized = /^\d{4}$/.test(value)
     ? `${value}-01-01`
     : /^\d{4}-\d{2}$/.test(value)

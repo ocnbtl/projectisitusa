@@ -23,6 +23,7 @@ assert.equal(format("2026-01"), "Jan 2026");
 assert.equal(format("2026-01-20/2026-02-09"), "Jan 20, 2026 to Feb 9, 2026");
 assert.equal(format("2024-02-30"), "2024-02-30");
 assert.equal(format(null), "Not recorded");
+assert.equal(evidenceFreshnessStatus([{ observedAt: "9/1/95" } as EvidenceAssertion], "2026-09-08"), "stale", "Legacy non-ISO interpretation is unchanged by interval support");
 assert.equal(evidenceFreshnessStatus([{ observedAt: "2026-01-20/2026-02-09" } as EvidenceAssertion], "2026-09-08"), "current");
 assert.equal(evidenceFreshnessStatus([{ observedAt: "2026-02-30/2026-03-01" } as EvidenceAssertion], "2026-09-08"), "undated");
 console.log(JSON.stringify({ partialDatesAndIntervalsBlockOverlappingAbsence: true, whollyEarlierPresenceRetained: true, invalidDatesFailClosed: true, sourcePrecisionDisplayed: true }));

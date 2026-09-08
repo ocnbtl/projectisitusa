@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "kind": "interval-freshness-evaluation",
+  "actorId": "MAIN",
+  "recordedAt": "2026-09-08T08:45:58.850Z",
+  "scope": "Recognize valid ISO day intervals using the earliest possible day for conservative freshness; preserve prior handling for non-ISO legacy values.",
+  "expectedFreshnessOnlyChanges": 3599,
+  "transitions": {
+    "undated->stale": 3593,
+    "stale->current": 2,
+    "stale->aging": 3,
+    "undated->aging": 1
+  },
+  "states": {
+    "AK": 1,
+    "AL": 14,
+    "AZ": 2,
+    "CA": 38,
+    "CO": 4,
+    "DE": 3,
+    "FL": 32,
+    "GA": 10,
+    "HI": 11,
+    "IN": 1,
+    "KS": 1,
+    "KY": 2,
+    "LA": 1,
+    "MA": 1196,
+    "MD": 1,
+    "ME": 777,
+    "MI": 1,
+    "MS": 3,
+    "MT": 1,
+    "NC": 4,
+    "ND": 2,
+    "NE": 2,
+    "NH": 557,
+    "NJ": 8,
+    "NM": 3,
+    "NV": 2,
+    "NY": 39,
+    "PA": 17,
+    "RI": 237,
+    "TN": 2,
+    "TX": 23,
+    "UT": 2,
+    "VA": 19,
+    "VT": 571,
+    "WA": 2,
+    "WV": 7,
+    "WY": 3
+  },
+  "determinationChanges": 0,
+  "sourceDatesRewritten": 0,
+  "projectionsRegenerated": false,
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/interval-freshness-impact-20260908-r11.json.gz",
+    "bytes": 43979,
+    "sha256": "47d10c14f33e2100e2fe7492b22598f22f9a8fe157b5318c7903f561d56f2093"
+  },
+  "checks": [
+    {
+      "command": "node --import tsx scripts/test-occurrence-date.ts",
+      "exitCode": 0,
+      "result": "Calendar validation, interval conflict boundaries, interval age, source precision and unchanged legacy-format age passed."
+    }
+  ],
+  "note": "Earlier audit showed ten additional changes from intercepting every slash-containing legacy date. Restricting to ISO interval syntax preserves those existing interpretations. Final expected freshness delta is 3599, not 3609. Full national regeneration remains pending."
+}
