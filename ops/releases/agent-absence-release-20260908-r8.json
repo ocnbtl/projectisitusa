@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-08T05:49:43.091Z",
+  "status": "application-released-research-batch-queued",
+  "releasedCommit": "47aab36b9095e12a1da233510e598c4cf7f01f22",
+  "publicSite": "https://isitusa.com",
+  "productionAliasAndReadyStateVerified": true,
+  "publicChecks": {
+    "homepage": {
+      "url": "https://isitusa.com/",
+      "status": 200,
+      "decodedBytes": 11166,
+      "sha256": "ac30c53ee57b96fac98315868105df22cbbc5b945c1ca16ef12583127e6db11c",
+      "embeddedAllSpecies": false,
+      "embeddedPresenceIndex": false
+    },
+    "researchPage": {
+      "url": "https://isitusa.com/research",
+      "status": 200,
+      "decodedBytes": 14175
+    },
+    "runtimeBundleIntegrity": [
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "decodedBytes": 3854453,
+        "immutableCache": true,
+        "allowedOrigin": "https://isitusa.com"
+      },
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "decodedBytes": 4831012,
+        "immutableCache": true,
+        "allowedOrigin": "https://isitusa.com"
+      }
+    ],
+    "browserChecks": [
+      {
+        "name": "Fresh county deep link selects Jefferson, AL",
+        "passed": true,
+        "url": "https://isitusa.com/?county=01073",
+        "reportedSpecies": 411
+      },
+      {
+        "name": "County species cards and Yellow Sweetclover profile navigation",
+        "passed": true
+      },
+      {
+        "name": "Optimized full profile image and attribution render",
+        "passed": true
+      },
+      {
+        "name": "390px mobile profile and research page fit without horizontal overflow",
+        "passed": true,
+        "windowWidth": 390,
+        "documentWidth": 375
+      },
+      {
+        "name": "Mobile research deep link and official-absence evidence disclosure",
+        "passed": true,
+        "url": "https://isitusa.com/research?state=AL&county=01001&species=Vespa+mandarinia"
+      }
+    ],
+    "browserErrors": [],
+    "temporaryViewportReset": true
+  },
+  "research": {
+    "completionReceipt": "ops/national-research/receipts/source-evaluations/agent-jurisdiction-completion-20260908-r8.json",
+    "verifiedPresent": 313000,
+    "verifiedAbsent": 3302,
+    "determinations": 316302,
+    "newUniqueDeterminations": 58,
+    "pilotSpecies": "tilletia-indica",
+    "pilotState": "CA",
+    "fullDenominator": 7872576,
+    "livePointer": "https://data.isitusa.com/current.json",
+    "livePointerUnchanged": true,
+    "liveReleaseId": "research-6927e5fe2efb-886700baca52fe1e",
+    "queuedReleaseId": "research-389246a03486-03adac830b0ec822",
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+    "queuedDeterminationsAreLive": false
+  },
+  "validation": [
+    "Full shared-method research-integrity suite passed before the bounded pilot integration.",
+    "Integrated immutable run, all-state projection checks, California byte stability and data integrity passed.",
+    "Production build and Vercel packaging, projection fetch, deep-link and temporal-presentation tests passed."
+  ],
+  "scopeLimit": "Fresh core-flow browser smoke after this release. Earlier complete optimization checks remain recorded in ops/releases/vercel-usage-optimization-20260908.json.",
+  "nextResearch": "Independently review retained TX/NM/AL/TN official-status scope and date precision before method extension or determination runs. The 449 prospective pairs remain unaccepted."
+}
