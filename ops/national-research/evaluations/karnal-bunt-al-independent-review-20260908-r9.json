@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "actorId": "eppo_al_review_r9",
+  "retention": {
+    "recordedBy": "MAIN",
+    "recordedAt": "2026-09-08T06:16:17.150Z",
+    "format": "Structured retention of independent response, followed by reviewer-confirmed summary and explicitly requested amendments."
+  },
+  "preflight": {
+    "passed": true,
+    "baseSha": "4b8ff6aadef457e003eda3872129ab7f4919571d",
+    "branch": "codex/karnal-bunt-al-precision-review-20260908-r9",
+    "worktreeClean": true,
+    "writes": 0,
+    "commits": 0
+  },
+  "input": {
+    "path": "ops/national-research/evaluations/karnal-bunt-al-source-interpretation-20260908-r9.json",
+    "sha256": "c338b9fbb3520de8f4655c9cbc76222394702269260582eee507a2cd930df4ee"
+  },
+  "independentFinding": "Conditionally support the source interpretation, subject to precision-method admission and the corrections below. This is a proposal, not evidence-run completion or county-ledger clearance.",
+  "supportedStatementType": "officially-absent",
+  "sourceConflictDisposition": "no-unresolved-current-conflict",
+  "scope": {
+    "stateCode": "AL",
+    "exactActiveCountyCount": 67,
+    "registryAndLeaseMatch": true,
+    "currentCountyLedgersCleared": 0
+  },
+  "inspectedSourceHashes": [
+    {
+      "path": "ops/national-research/inputs/karnal-bunt-state-status-20260908-r9/eppo-al-status.html.gz",
+      "storedSha256": "c973c3e85a9af2f4d8c9becade79c56644863c5e1840a7425ee8adbe1715fb96",
+      "decodedSha256": "2c2a83ae30962133df4cb4ff7f26f26042634dbc5d6455cb1f71718b184b3ef4",
+      "storedBytes": 4484,
+      "decodedBytes": 14948,
+      "verified": true
+    },
+    {
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-current.html.gz",
+      "storedSha256": "25d064bdfddb4432abcd058494eb975c0bc39837237d720e39d9a3215a9e0bff",
+      "decodedSha256": "7922592fbb306b2b54d085b969c3b459dbf12ffde4815f392b4ad4ca230428cb",
+      "storedBytes": 21658,
+      "decodedBytes": 92974,
+      "verified": true
+    },
+    {
+      "path": "ops/national-research/inputs/karnal-bunt-state-status-20260908-r9/eppo-misidentification-report-2000.html.gz",
+      "storedSha256": "7e29bf2a8942ceda9eadaf9be03ae9f190b22d84e67ccb0af1c3bafbc9208ded",
+      "decodedSha256": "d70d0f7c361275b78c557516c869b15d6d80b92bac4ad9b7c8c972271c12b40b",
+      "storedBytes": 4098,
+      "decodedBytes": 13963,
+      "verified": true
+    }
+  ],
+  "supplementalSources": [
+    {
+      "name": "aphis-taxonomy-1996",
+      "url": "https://www.aphis.usda.gov/sites/default/files/kbea.pdf",
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-environmental-assessment-1996.pdf.gz",
+      "storedBytes": 29137,
+      "storedSha256": "effd91234da53eea2868479e876111610ec49e70f59052e1320f4b04d39efa04",
+      "decodedBytes": 37920,
+      "decodedSha256": "b9891371cd73639dbf2ad0b8b31dc85817076eba17c80bf51393d79aaeb37bd4",
+      "meaning": "Retained synonym authority independently inspected. Admission uses exact Tilletia indica, not synonym expansion."
+    }
+  ],
+  "dateConstraints": {
+    "declarationPublicationDate": null,
+    "declarationModificationDate": null,
+    "declarationInformationYear": 1999,
+    "sourceRecordDate": null,
+    "corroboratingPagePublishedAt": "2023-06-21T09:03:22-0400",
+    "corroboratingPageModifiedAt": "2026-06-09T11:19:36-0400",
+    "effectiveAt": "2026-06-09",
+    "reaffirmedAt": "2026-06-09",
+    "dateMeaning": "Project eligibility/freshness anchor from page modification metadata, not a demonstrated statement-specific reaffirmation, declaration day, biological event, county observation or continuous absence.",
+    "conflictCheckFrom": "1999-01-01",
+    "reviewedAsOf": "2026-09-08",
+    "backdatingProhibited": true,
+    "validThrough": "2027-06-09",
+    "expiryMeaning": "Project review expiry after 365 days, not a biological guarantee."
+  },
+  "requiredCaveats": [
+    "EPPO Alabama explicitly states Absent, invalid record as its evaluated situation and From NPPO.",
+    "EPPO Reporting Service 2000/010 concludes T. indica is not present in Alabama and attributes earlier reports to distinct T. walkeri. Preserve issue 01 of 2000 without invented publication day.",
+    "Mobile, Perry and Geneva historical reports have specific correction context. Do not automatically retract or remap unrelated older records. Invalid record is not eradication.",
+    "Year-only information remains year precision; no global table modification, retrieval, January 1, or corroborating source date substitution for source_record_date.",
+    "The old v1 adapter cannot issue these children. Admit and test separate precision-v2 with null source_record_date and truthful temporal_scope.",
+    "Exact state membership supports derived jurisdiction-status children, not independent county surveys. Quarantine geography, missing records, failed retrieval, and survey silence alone supply no absence.",
+    "Separate county-baseline and MAIN integration checks must block ANY accepted genuine T. indica positive regardless of date until specific adjudication. Invalid-record correction cannot clear unrelated pre-1999 presence.",
+    "Current APHIS confinement text supplies substantive corroboration; page metadata alone does not."
+  ],
+  "recommendedAdversarialTests": [
+    "Missing/wrong/future year; fabricated publication day; retrieval or global-table substitution.",
+    "Misidentification cannot become eradication; source-level undated presence remains blocked.",
+    "Exact inclusive conflict boundary, year-only/interval/unknown dates, and historical evidence preservation.",
+    "No backdated assessments; stale/future corroboration; expiry boundaries.",
+    "Exact active FIPS set, taxon, independent actor, retained compressed/decoded hashes and review input hash.",
+    "Offline adapter, null source date, truthful page-date anchor, fresh integration contradiction baseline.",
+    "Unrelated accepted pre-1999 presence blocks child absence; no blanket correction or deletion."
+  ],
+  "zeroAssertions": true,
+  "zeroDeterminations": true,
+  "confirmation": {
+    "actorId": "eppo_al_review_r9",
+    "retainedSummarySha256": "79b19dc1adbc6b714bcb0e32654d6d1946201109cdb2988c7c6ce82cad130d64",
+    "retentionFaithful": true,
+    "confirmedScope": "No unresolved current-status contradiction among inspected retained documents; no county-ledger clearance or exhaustive source search.",
+    "allPresenceCorrectionConfirmed": true
+  },
+  "admissionRecommendation": "conditional-support",
+  "presenceConflictPolicy": "all-presence",
+  "sourceConflictScope": "Consistency among inspected retained documents only; never county-ledger clearance."
+}

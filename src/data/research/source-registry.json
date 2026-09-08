@@ -1336,6 +1336,45 @@
       "status": "manual",
       "adapter": null,
       "caveat": "Current-status corroboration only. Its voluntary grain surveys do not establish all-county non-detection or absence, and quarantine silence is not biological evidence."
+    },
+    {
+      "id": "eppo-karnal-bunt-state-status",
+      "label": "EPPO reviewed Karnal bunt state status",
+      "aliases": [
+        "EPPO Global Database NEOVIN state status"
+      ],
+      "authority": "European and Mediterranean Plant Protection Organization; current US APHIS corroboration",
+      "tier": "official-national",
+      "homepage": "https://gd.eppo.int/taxon/NEOVIN/distribution",
+      "access": "manual",
+      "geographicScope": [
+        "Texas",
+        "Alabama",
+        "Tennessee"
+      ],
+      "evidenceCapabilities": [
+        "officially-absent"
+      ],
+      "negativeSemantics": "explicit-authority-only",
+      "refreshCadenceDays": 365,
+      "dataFreshThrough": "2027-06-09",
+      "status": "manual",
+      "adapter": null,
+      "caveat": "Explicit named-state official status, year-precision source information and separate current corroboration. Invalid-record correction is distinct from eradication; all accepted presence blocks invalid-record children. Source and county contradictions require review. No survey, missing-row or quarantine-omission inference.",
+      "researchAdapter": {
+        "id": "official-jurisdiction-agent-reviewed",
+        "module": "scripts/research/adapters/official-jurisdiction-agent-reviewed.ts",
+        "allowedVersions": [
+          "1.1.0"
+        ],
+        "parameterSchema": "src/data/research/schemas/official-jurisdiction-agent-reviewed-parameters.schema.json",
+        "publicationReviewGate": "agent-reviewed",
+        "taxonMatchingPolicy": "Exact reviewed canonical binomial; no fuzzy taxon expansion.",
+        "geographyMatchingPolicy": "Exact active county children of independently reviewed named-state status; original information year and null source dates preserved. Fresh contradiction baseline and explicit independent support required.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "current-only",
+        "rateLimitRequestsPerSecond": 1
+      }
     }
   ]
 }

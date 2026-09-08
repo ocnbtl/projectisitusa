@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "actorId": "eppo_tn_review_r9",
+  "retention": {
+    "recordedBy": "MAIN",
+    "recordedAt": "2026-09-08T06:22:32.564Z",
+    "format": "Structured retention of independent initial dissent and subsequent revised-method response. Exact final finding retained."
+  },
+  "admissionRecommendation": "conditional-support",
+  "supportedStatementType": "officially-absent",
+  "presenceConflictPolicy": "all-presence",
+  "sourceConflictDisposition": "no-unresolved-current-conflict",
+  "sourceConflictScope": "The retained source documents inspected in this review only; this is not county contradiction clearance.",
+  "preflight": {
+    "passed": true,
+    "baseSha": "4b8ff6aadef457e003eda3872129ab7f4919571d",
+    "branch": "codex/karnal-bunt-tn-precision-review-20260908-r9",
+    "worktreeClean": true,
+    "writes": 0,
+    "commits": 0
+  },
+  "input": {
+    "path": "ops/national-research/evaluations/karnal-bunt-tn-source-interpretation-20260908-r9.json",
+    "sha256": "8d0aca7d243a09cbbe61665370e7af654ca869b4eb29c27f3526c952010f1ada"
+  },
+  "independentFinding": "Conditional support is now warranted for the revised Tennessee source-method candidate. The retained EPPO entry explicitly supports officially-absent with the invalid-record qualification, information year 1999, and unknown declaration dates. The historical EPPO correction and APHIS confinement statement present no unresolved current conflict within the inspected source documents. The revised implementation preserves null source_record_date, explicitly treats the APHIS page date as an operational metadata anchor rather than demonstrated statement-specific reaffirmation, requires all-presence conflict blocking for officially-absent, and requires an explicitly supportive independent-review disposition. These changes resolve my previous source-method objections. This does not approve the original proposal's scientific interpretation of effectiveAt or reaffirmedAt, establish county-level absence, clear county contradictions, or certify tests or production admission.",
+  "previousDisposition": {
+    "value": "needs-revision-before-method-admission",
+    "reasons": [
+      "Page modification cannot establish claim-specific reaffirmation or declaration date.",
+      "Original 1999 cutoff could clear unrelated older genuine presence without adjudication.",
+      "A structurally valid nonempty review finding cannot override substantive dissent."
+    ],
+    "resolution": "Separate v2 operational metadata semantics and null source dates; all-presence policy; explicit conditional-support gate. Original proposedDateMethod retained as superseded proposal, never rewritten."
+  },
+  "scope": {
+    "stateCode": "TN",
+    "exactActiveCountyCount": 95,
+    "registryAndLeaseMatch": true,
+    "currentCountyLedgersCleared": 0
+  },
+  "inspectedSourceHashes": [
+    {
+      "path": "ops/national-research/inputs/karnal-bunt-state-status-20260908-r9/eppo-tn-status.html.gz",
+      "storedSha256": "d9446518800946c2d9bb284aabac83cf3c673412960a4d5c7fe3fb3afae78c46",
+      "decodedSha256": "1bfac751d6fceae9ed3fd7290e67a0a51b7e83353bec3cf7012afb9699757817",
+      "storedBytes": 4442,
+      "decodedBytes": 14863,
+      "verified": true
+    },
+    {
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-current.html.gz",
+      "storedSha256": "25d064bdfddb4432abcd058494eb975c0bc39837237d720e39d9a3215a9e0bff",
+      "decodedSha256": "7922592fbb306b2b54d085b969c3b459dbf12ffde4815f392b4ad4ca230428cb",
+      "storedBytes": 21658,
+      "decodedBytes": 92974,
+      "verified": true
+    },
+    {
+      "path": "ops/national-research/inputs/karnal-bunt-state-status-20260908-r9/eppo-misidentification-report-2000.html.gz",
+      "storedSha256": "7e29bf2a8942ceda9eadaf9be03ae9f190b22d84e67ccb0af1c3bafbc9208ded",
+      "decodedSha256": "d70d0f7c361275b78c557516c869b15d6d80b92bac4ad9b7c8c972271c12b40b",
+      "storedBytes": 4098,
+      "decodedBytes": 13963,
+      "verified": true
+    }
+  ],
+  "supplementalSources": [
+    {
+      "name": "aphis-taxonomy-1996",
+      "url": "https://www.aphis.usda.gov/sites/default/files/kbea.pdf",
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-environmental-assessment-1996.pdf.gz",
+      "storedBytes": 29137,
+      "storedSha256": "effd91234da53eea2868479e876111610ec49e70f59052e1320f4b04d39efa04",
+      "decodedBytes": 37920,
+      "decodedSha256": "b9891371cd73639dbf2ad0b8b31dc85817076eba17c80bf51393d79aaeb37bd4",
+      "meaning": "Retained synonym authority independently inspected. Admission uses exact Tilletia indica, not synonym expansion."
+    }
+  ],
+  "dateConstraints": {
+    "declarationPublicationDate": null,
+    "declarationModificationDate": null,
+    "declarationInformationYear": 1999,
+    "sourceRecordDate": null,
+    "corroboratingPagePublishedAt": "2023-06-21T09:03:22-0400",
+    "corroboratingPageModifiedAt": "2026-06-09T11:19:36-0400",
+    "effectiveAt": "2026-06-09",
+    "reaffirmedAt": "2026-06-09",
+    "dateMeaning": "Project eligibility/freshness anchor from page modification metadata, not a demonstrated statement-specific reaffirmation, declaration day, biological event, county observation or continuous absence.",
+    "conflictCheckFrom": "1999-01-01",
+    "reviewedAsOf": "2026-09-08",
+    "backdatingProhibited": true,
+    "validThrough": "2027-06-09",
+    "expiryMeaning": "Project review expiry after 365 days, not a biological guarantee."
+  },
+  "requiredCaveats": [
+    "The source supports Absent, invalid record; it does not establish eradication or a county survey.",
+    "ANY accepted genuine T. indica presence regardless of date blocks child absence until specific adjudication; retain original evidence and correction lineage.",
+    "For v2, reaffirmedAt is solely a page metadata anchor, never a demonstrated scientific reaffirmation. No backdated scientific assessment.",
+    "The original interpretation remains immutable; this review supports revised method semantics, not its superseded proposedDateMethod wording.",
+    "EPPO and APHIS may share underlying authority; two publishers do not establish independent surveys.",
+    "Exact95 active TN counties require fresh contradiction checks and MAIN integration verification. No county clearance or determination is claimed."
+  ],
+  "recommendedAdversarialTests": [
+    "Null dates survive parent, child, serialization and projection.",
+    "Unrelated accepted1998 presence blocks; no blanket T.walkeri correction.",
+    "Reject dissenting review, stale metadata, date substitutions, missing/extra/duplicate FIPS and altered source hashes.",
+    "Preserve original v1 method and source dates."
+  ],
+  "zeroAssertions": true,
+  "zeroDeterminations": true
+}

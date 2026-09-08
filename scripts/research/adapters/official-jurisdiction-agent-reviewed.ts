@@ -3,7 +3,7 @@ import path from "node:path";
 import type { ResearchSourceAdapter, SourceAdapterContext, SourceAdapterResult } from "@/lib/research/source-adapter";
 import type { ResearchCountyFile, ResearchPairOutcome, RunEvidenceAssertionEvent, EvidenceReviewEvent } from "@/lib/research/types";
 import { resolveTemporalPairDetermination } from "@/lib/research/jurisdiction-evidence";
-import { strictJurisdictionDate } from "@/lib/research/jurisdiction-agent-review";
+import { strictJurisdictionDate, jurisdictionDeclarationRecordDate, jurisdictionAgentAdapterVersion, jurisdictionTemporalScope } from "@/lib/research/jurisdiction-agent-review";
 import { sha256, stableJson } from "@/lib/research/run-files";
 import { approvedAgentParentRecords, loadAgentParent } from "../agent-jurisdiction-records";
 
@@ -17,7 +17,10 @@ export function isAgentJurisdictionSource(sourceId: string): boolean {
   return approvedAgentParentRecords(process.cwd()).some(r => r.review.gate === "agent-reviewed" && r.review.declarationSourceId === sourceId);
 }
 export function agentJurisdictionAdapter(sourceId: string): ResearchSourceAdapter {
-  return { adapterId: AGENT_JURISDICTION_ADAPTER_ID, adapterVersion: AGENT_JURISDICTION_ADAPTER_VERSION, sourceId, run: runAgentJurisdictionDetermination };
+  const parents = approvedAgentParentRecords(process.cwd()).filter(r => r.review.gate === "agent-reviewed" && r.review.declarationSourceId === sourceId);
+  const versions = new Set(parents.map(jurisdictionAgentAdapterVersion));
+  assert(versions.size === 1, "Source requires one admitted agent adapter version.");
+  return { adapterId: AGENT_JURISDICTION_ADAPTER_ID, adapterVersion: jurisdictionAgentAdapterVersion(parents[0]), sourceId, run: runAgentJurisdictionDetermination };
 }
 export async function runAgentJurisdictionDetermination(context: SourceAdapterContext): Promise<SourceAdapterResult> {
   const root = process.cwd();
@@ -27,6 +30,8 @@ export async function runAgentJurisdictionDetermination(context: SourceAdapterCo
   assert(context.runStartedAt.slice(0, 10) >= parameters.asOf && Date.parse(context.runStartedAt) <= Date.now(), "Run date is future or precedes assessment.");
   const { record, original } = loadAgentParent(root, parameters.parentId, parameters.parentSha256);
   assert(record.review.gate === "agent-reviewed" && record.review.declarationSourceId === context.sourceId, "Source differs from the reviewed declaration.");
+  const adapterVersion = jurisdictionAgentAdapterVersion(record);
+  const sourceRecordDate = jurisdictionDeclarationRecordDate(record);
   assert(parameters.asOf >= record.review.reviewedAsOf, "Assessment precedes the independent review scope.");
   assert(parameters.reviewActorId.length > 0 && parameters.reviewActorId !== record.review.actorId
     && parameters.reviewActorId !== record.review.independentActorId, "Child review requires an independent lease actor.");
@@ -54,18 +59,18 @@ export async function runAgentJurisdictionDetermination(context: SourceAdapterCo
     conflictChecks.push({ pairKey: key, projectionPath, sha256: sha256(projectionBytes), conflict: temporal.conflict });
     const assertionIds: string[] = [];
     if (!temporal.conflict) {
-      const payload = { parentId: record.id, parentSha256: parameters.parentSha256, pairKey: key, sourceDate: record.effectiveAt, originalRetrievedAt: sourceArtifact.retrievedAt };
+      const payload = { parentId: record.id, parentSha256: parameters.parentSha256, pairKey: key, sourceDate: sourceRecordDate, originalRetrievedAt: sourceArtifact.retrievedAt };
       const eventId = id("agent-jurisdiction-assertion", { runId: context.runId, ...payload });
       const assertion: RunEvidenceAssertionEvent = {
         schemaVersion: 1, eventId, event_type: "evidence.asserted", created_at: context.runStartedAt,
-        actor_type: "adapter", actor_id: AGENT_JURISDICTION_ADAPTER_ID + "@" + AGENT_JURISDICTION_ADAPTER_VERSION,
+        actor_type: "adapter", actor_id: AGENT_JURISDICTION_ADAPTER_ID + "@" + adapterVersion,
         run_id: context.runId, source_id: context.sourceId, state_code: context.stateCode, county_fips: pair.countyFips, species_id: pair.speciesId,
         claim_type: "officially-absent", evidence_kind: "absence-statement", scope: "county",
-        source_record_id: record.id + ":" + pair.countyFips, source_url: source.url, source_record_date: record.effectiveAt,
+        source_record_id: record.id + ":" + pair.countyFips, source_url: source.url, source_record_date: sourceRecordDate,
         retrieved_at: sourceArtifact.retrievedAt,
         taxon_match: { method: "Exact canonical binomial in the independently reviewed official declaration.", target_scientific_name: pair.scientificName, source_scientific_name: original.species.canonicalName, source_taxon_key: null },
         geography_match: { method: "Deterministic child of the explicit whole-jurisdiction declaration and exact active county FIPS set; no coordinate inference.", source_state: original.scope.stateCode, source_county: "Not individually named; derived from parent " + record.jurisdiction.id, county_fips: pair.countyFips },
-        temporal_scope: "Official declaration dated " + record.effectiveAt + ", corroborated at authority date " + record.reaffirmedAt + "; project review expiry " + record.validThrough + ". No exact biological eradication date or continuous historical absence is asserted.",
+        temporal_scope: jurisdictionTemporalScope(record),
         spatial_scope: "Exact child county of parent " + record.id + "; the source states whole-jurisdiction absence, not a county survey.",
         survey_scope: null, normalized_payload_hash: sha256(stableJson(payload)), caveats: record.caveats,
         notes: [source.supportText, "Explicit authoritative absence derived from reviewed parent " + record.id + ".", "Independent source interpretation: " + record.review.independentReview.path + " (" + record.review.independentReview.sha256 + ")."],

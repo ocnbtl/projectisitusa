@@ -40,7 +40,7 @@ validateJurisdictionEvidenceRegistry({
 });
 const humanRecords = committedRegistry.records.filter(record => record.review.gate === "human-approved");
 assert.equal(humanRecords.length, 4, "Original human-approved jurisdiction evidence count differs.");
-assert.equal(committedRegistry.records.length, 5);
+assert.deepEqual(committedRegistry.records.filter(record => record.review.gate === "agent-reviewed").map(record => record.jurisdiction.stateCode).sort(), ["AL", "CA", "TN", "TX"]);
 assert.deepEqual(
   humanRecords.map((record) => record.id),
   [

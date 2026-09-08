@@ -155,6 +155,8 @@ export interface JurisdictionEvidenceSourceDocument {
   supportTextSha256: string;
   publishedAt: string | null;
   modifiedAt: string | null;
+  /** Underlying information year; never an invented publication day. */
+  informationYear?: number;
 }
 
 export type JurisdictionEvidenceReview = {
@@ -162,12 +164,11 @@ export type JurisdictionEvidenceReview = {
   status: "human-approved";
   actorId: string;
   reviewedAt: string;
-} | {
+} | ({
   gate: "agent-reviewed";
   status: "agent-reviewed";
   actorId: string;
   reviewedAt: string;
-  methodVersion: "official-jurisdiction-agent-review-v1";
   independentActorId: string;
   independentReview: { path: string; sha256: string };
   reviewedAsOf: string;
@@ -175,7 +176,13 @@ export type JurisdictionEvidenceReview = {
   corroborationSourceId: string;
   authorityDateKind: "published" | "modified";
   expiryPolicy: "authority-date-plus-365-days-v1";
-};
+} & ({ methodVersion: "official-jurisdiction-agent-review-v1" } | {
+  methodVersion: "official-jurisdiction-agent-review-precision-v2";
+  declarationInformationYear: number;
+  effectiveDateKind: "corroboration-authority-date";
+  sourceConflictDisposition: "no-unresolved-current-conflict";
+  presenceConflictPolicy: "all-presence" | "from-conservative-boundary";
+}));
 
 export interface JurisdictionEvidenceRecord {
   schemaVersion: 1;
@@ -192,7 +199,7 @@ export interface JurisdictionEvidenceRecord {
     exclusions: string[];
   };
   effectiveAt: string;
-  /** Earliest possible eradication date when the authority reports an interval. */
+  /** Conservative inclusive contradiction boundary, not an inferred biological event date. */
   conflictCheckFrom?: string;
   reaffirmedAt: string | null;
   validThrough: string;

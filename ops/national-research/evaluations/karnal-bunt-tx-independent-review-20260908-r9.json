@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "actorId": "eppo_tx_review_r9",
+  "retention": {
+    "recordedBy": "MAIN",
+    "recordedAt": "2026-09-08T06:16:17.145Z",
+    "format": "Structured retention of independent response, followed by reviewer-confirmed summary and explicitly requested amendments."
+  },
+  "preflight": {
+    "passed": true,
+    "baseSha": "4b8ff6aadef457e003eda3872129ab7f4919571d",
+    "branch": "codex/karnal-bunt-tx-precision-review-20260908-r9",
+    "worktreeClean": true,
+    "writes": 0,
+    "commits": 0
+  },
+  "input": {
+    "path": "ops/national-research/evaluations/karnal-bunt-tx-source-interpretation-20260908-r9.json",
+    "sha256": "63ee8bb38c99b59aa350ff9daee1c3fb7e3cb4ee881b581a8e8f1550672a295f"
+  },
+  "independentFinding": "Conditionally support admission of this Texas source interpretation under a separately evaluated precision-v2 method. EPPO explicitly evaluates the named Texas jurisdiction as absent with pest eradicated, using information dated 2012 and reporting eradication in 2010. The separately retained APHIS page supplies substantive current corroboration by confining Karnal bunt to Arizona. Together these can support a reviewed current official-status proposal despite the old underlying declaration; new retrieval alone cannot. June 9, 2026 is defensible as a disclosed project eligibility and freshness anchor derived from APHIS page modification metadata, but not as a proven declaration publication day, biological event date, or statement-specific reaffirmation date. This finding does not establish that any county ledger is conflict-free or authorize county assertions.",
+  "supportedStatementType": "officially-eradicated",
+  "sourceConflictDisposition": "no-unresolved-current-conflict",
+  "scope": {
+    "stateCode": "TX",
+    "exactActiveCountyCount": 254,
+    "registryAndLeaseMatch": true,
+    "currentCountyLedgersCleared": 0
+  },
+  "inspectedSourceHashes": [
+    {
+      "path": "ops/national-research/inputs/karnal-bunt-expansion-discovery-20260908-r8/eppo-texas-status.html.gz",
+      "storedSha256": "d1d40dc312e911c2f6d2cb919c0735d88baf816b9894f646c9cf20b1be7aaf00",
+      "decodedSha256": "84fb78484af87d96e0dc50955403f39695aa1771611c115603bdb8d96a527795",
+      "storedBytes": 4655,
+      "decodedBytes": 15058,
+      "verified": true
+    },
+    {
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-current.html.gz",
+      "storedSha256": "25d064bdfddb4432abcd058494eb975c0bc39837237d720e39d9a3215a9e0bff",
+      "decodedSha256": "7922592fbb306b2b54d085b969c3b459dbf12ffde4815f392b4ad4ca230428cb",
+      "storedBytes": 21658,
+      "decodedBytes": 92974,
+      "verified": true
+    }
+  ],
+  "supplementalSources": [
+    {
+      "name": "aphis-taxonomy-1996",
+      "url": "https://www.aphis.usda.gov/sites/default/files/kbea.pdf",
+      "path": "ops/national-research/inputs/official-jurisdiction-agent-review-20260907-r6/aphis-karnal-bunt-environmental-assessment-1996.pdf.gz",
+      "storedBytes": 29137,
+      "storedSha256": "effd91234da53eea2868479e876111610ec49e70f59052e1320f4b04d39efa04",
+      "decodedBytes": 37920,
+      "decodedSha256": "b9891371cd73639dbf2ad0b8b31dc85817076eba17c80bf51393d79aaeb37bd4",
+      "meaning": "Retained synonym authority independently inspected. Admission uses exact Tilletia indica, not synonym expansion."
+    },
+    {
+      "path": "ops/national-research/inputs/karnal-bunt-expansion-discovery-20260908-r8/nappo-texas-deregulation-2010.html.gz",
+      "storedSha256": "6442c694c5d982cc4ad28f4450fb26d642d770f03b7e16b26a670e9e37c793f8",
+      "decodedSha256": "2696a06acb915e17795e4caf51004a6d75d339a78325e67cbaa936a8200438f8",
+      "meaning": "Administrative chronology caveat only; not standalone state absence."
+    }
+  ],
+  "dateConstraints": {
+    "declarationPublicationDate": null,
+    "declarationModificationDate": null,
+    "declarationInformationYear": 2012,
+    "sourceRecordDate": null,
+    "corroboratingPagePublishedAt": "2023-06-21T09:03:22-0400",
+    "corroboratingPageModifiedAt": "2026-06-09T11:19:36-0400",
+    "effectiveAt": "2026-06-09",
+    "reaffirmedAt": "2026-06-09",
+    "dateMeaning": "Project eligibility/freshness anchor from page modification metadata, not a demonstrated statement-specific reaffirmation, declaration day, biological event, county observation or continuous absence.",
+    "conflictCheckFrom": "2010-01-01",
+    "reviewedAsOf": "2026-09-08",
+    "backdatingProhibited": true,
+    "validThrough": "2027-06-09",
+    "expiryMeaning": "Project review expiry after 365 days, not a biological guarantee."
+  },
+  "requiredCaveats": [
+    "EPPO reports eradication year 2010; publication and modification days remain unknown.",
+    "Retain 1997 San Saba and 2001 Young County historical detections. Any credible later, undated, overlapping, or unresolved statewide presence blocks admission pending review.",
+    "NAPPO April 19, 2010 quarantine removal is administrative corroboration, not standalone whole-state absence or an exact biological eradication date.",
+    "Year-only information remains year precision; no global table modification, retrieval, January 1, or corroborating source date substitution for source_record_date.",
+    "The old v1 adapter cannot issue these children. Admit and test separate precision-v2 with null source_record_date and truthful temporal_scope.",
+    "Exact state membership supports derived jurisdiction-status children, not independent county surveys. Quarantine geography, missing records, failed retrieval, and survey silence alone supply no absence.",
+    "Separate county-baseline review and MAIN integration-time recheck are still required. Preserve historical evidence and block later or undated credible occurrence.",
+    "Current APHIS confinement text supplies substantive corroboration; page metadata alone does not."
+  ],
+  "recommendedAdversarialTests": [
+    "Missing/wrong/future year; fabricated publication day; retrieval or global-table substitution.",
+    "Misidentification cannot become eradication; source-level undated presence remains blocked.",
+    "Exact inclusive conflict boundary, year-only/interval/unknown dates, and historical evidence preservation.",
+    "No backdated assessments; stale/future corroboration; expiry boundaries.",
+    "Exact active FIPS set, taxon, independent actor, retained compressed/decoded hashes and review input hash.",
+    "Offline adapter, null source date, truthful page-date anchor, fresh integration contradiction baseline."
+  ],
+  "zeroAssertions": true,
+  "zeroDeterminations": true,
+  "confirmation": {
+    "actorId": "eppo_tx_review_r9",
+    "retainedSummarySha256": "afd9fdd675d32151f0d9a6b415a586020d521c290f5489f70ee55429596525c2",
+    "retentionFaithful": true,
+    "confirmedScope": "No unresolved current-status contradiction among inspected retained documents; no county-ledger clearance or exhaustive source search.",
+    "allPresenceCorrectionConfirmed": false
+  },
+  "admissionRecommendation": "conditional-support",
+  "presenceConflictPolicy": "from-conservative-boundary",
+  "sourceConflictScope": "Consistency among inspected retained documents only; never county-ledger clearance."
+}

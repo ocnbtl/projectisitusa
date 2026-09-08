@@ -86,6 +86,11 @@
         },
         "modifiedAt": {
           "$ref": "#/$defs/dateOrNull"
+        },
+        "informationYear": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 9999
         }
       }
     },
@@ -249,6 +254,107 @@
             },
             "expiryPolicy": {
               "const": "authority-date-plus-365-days-v1"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "gate",
+            "status",
+            "actorId",
+            "reviewedAt",
+            "methodVersion",
+            "independentActorId",
+            "independentReview",
+            "reviewedAsOf",
+            "declarationSourceId",
+            "corroborationSourceId",
+            "authorityDateKind",
+            "expiryPolicy",
+            "declarationInformationYear",
+            "effectiveDateKind",
+            "sourceConflictDisposition",
+            "presenceConflictPolicy"
+          ],
+          "properties": {
+            "gate": {
+              "const": "agent-reviewed"
+            },
+            "status": {
+              "const": "agent-reviewed"
+            },
+            "actorId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "methodVersion": {
+              "const": "official-jurisdiction-agent-review-precision-v2"
+            },
+            "independentActorId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "independentReview": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "pattern": "^ops/national-research/evaluations/"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            },
+            "reviewedAsOf": {
+              "type": "string",
+              "format": "date"
+            },
+            "declarationSourceId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "corroborationSourceId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "authorityDateKind": {
+              "enum": [
+                "published",
+                "modified"
+              ]
+            },
+            "expiryPolicy": {
+              "const": "authority-date-plus-365-days-v1"
+            },
+            "declarationInformationYear": {
+              "type": "integer",
+              "minimum": 1000,
+              "maximum": 9999
+            },
+            "effectiveDateKind": {
+              "const": "corroboration-authority-date"
+            },
+            "sourceConflictDisposition": {
+              "const": "no-unresolved-current-conflict"
+            },
+            "presenceConflictPolicy": {
+              "enum": [
+                "all-presence",
+                "from-conservative-boundary"
+              ]
             }
           }
         }

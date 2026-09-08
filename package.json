@@ -117,7 +117,7 @@
     "check:taxonomy-reference-acquisition": "node --import tsx scripts/test-taxonomy-reference-acquisition.ts",
     "assets:prepare": "node scripts/prepare-runtime-assets.mjs --write",
     "check:runtime-assets": "node --import tsx scripts/test-runtime-assets.ts",
-    "check:agent-jurisdiction-review": "node --import tsx scripts/test-agent-jurisdiction-review.ts"
+    "check:agent-jurisdiction-review": "node --import tsx scripts/test-agent-jurisdiction-review.ts && node --import tsx scripts/test-precision-jurisdiction-review.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

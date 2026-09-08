@@ -19,7 +19,7 @@ import {
   USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
 } from "@/lib/research/coordinate-geography-contract";
 
-import { verifyIndependentJurisdictionReview } from "./jurisdiction-agent-review";
+import { verifyIndependentJurisdictionReview, jurisdictionDeclarationRecordDate, jurisdictionAgentAdapterVersion } from "./jurisdiction-agent-review";
 
 import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type {
@@ -521,7 +521,8 @@ export function validateResearchRunInMemory(input: {
         `Assertion ${assertion.eventId} references unknown parent jurisdiction evidence.`,
       );
       if (parentJurisdictionEvidence.review.gate === "agent-reviewed") {
-        assert(receipt.adapter_id === "official-jurisdiction-agent-reviewed" && assertion.source_record_date === parentJurisdictionEvidence.effectiveAt
+        assert(receipt.adapter_id === "official-jurisdiction-agent-reviewed" && receipt.adapter_version === jurisdictionAgentAdapterVersion(parentJurisdictionEvidence)
+          && assertion.source_record_date === jurisdictionDeclarationRecordDate(parentJurisdictionEvidence)
           && assertion.source_id === parentJurisdictionEvidence.review.declarationSourceId, `Assertion ${assertion.eventId} has the wrong agent method, declaration source, or source date.`);
         verifyIndependentJurisdictionReview(parentJurisdictionEvidence, Buffer.from(readCommittedFile(root, receipt.code_commit, parentJurisdictionEvidence.review.independentReview.path)));
       }

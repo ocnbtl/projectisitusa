@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { isAcceptedJurisdictionReview, strictJurisdictionDate, validateAgentJurisdictionReview } from "./jurisdiction-agent-review";
+import { isAcceptedJurisdictionReview, JURISDICTION_PRECISION_REVIEW_VERSION, strictJurisdictionDate, validateAgentJurisdictionReview } from "./jurisdiction-agent-review";
 
 import type {
   CurrentDeterminationStatus,
@@ -192,7 +192,7 @@ export function validateJurisdictionEvidenceRegistry(input: {
 
 export function resolveTemporalPairDetermination(input: {
   presenceEvidence: PresenceEvidence[];
-  jurisdictionEvidence: Array<Pick<JurisdictionEvidenceRecord, "id" | "statementType" | "effectiveAt" | "conflictCheckFrom" | "reaffirmedAt" | "validThrough">>;
+  jurisdictionEvidence: Array<Pick<JurisdictionEvidenceRecord, "id" | "statementType" | "effectiveAt" | "conflictCheckFrom" | "reaffirmedAt" | "validThrough"> & Partial<Pick<JurisdictionEvidenceRecord, "review">>>;
   asOf: string;
 }) {
   const asOfTimestamp = dateOnlyTimestamp(input.asOf, "Temporal determination asOf");
@@ -201,7 +201,9 @@ export function resolveTemporalPairDetermination(input: {
     .filter((record) => {
       const effectiveAt = dateOnlyTimestamp(record.effectiveAt, `${record.id}: effectiveAt`);
       const validThrough = dateOnlyTimestamp(record.validThrough, `${record.id}: validThrough`);
-      return effectiveAt <= asOfTimestamp && validThrough >= asOfTimestamp;
+      const precisionReviewStarted = record.review?.gate === "agent-reviewed" && record.review.methodVersion === JURISDICTION_PRECISION_REVIEW_VERSION
+        ? dateOnlyTimestamp(record.review.reviewedAsOf, `${record.id}: reviewedAsOf`) <= asOfTimestamp : true;
+      return precisionReviewStarted && effectiveAt <= asOfTimestamp && validThrough >= asOfTimestamp;
     })
     .sort((left, right) => {
       const leftAuthority = left.reaffirmedAt ?? left.effectiveAt;
@@ -225,13 +227,18 @@ export function resolveTemporalPairDetermination(input: {
     const conflictTimestamp = dateOnlyTimestamp(conflictCheckFrom, `${selectedRecord.id}: conflictCheckFrom`);
     assert(conflictTimestamp <= effectiveAt, `${selectedRecord.id}: conflictCheckFrom follows effectiveAt.`);
     const conflictingPresence = input.presenceEvidence.find((evidence) => {
+      if (selectedRecord.review?.gate === "agent-reviewed" && selectedRecord.review.methodVersion === JURISDICTION_PRECISION_REVIEW_VERSION
+        && selectedRecord.review.presenceConflictPolicy === "all-presence") return true;
       const observedAt = occurrenceTimestamp(evidence.observedAt);
       return observedAt === null || observedAt >= conflictTimestamp;
     });
     if (conflictingPresence) {
       currentDeterminationStatus = "present";
       conflict = true;
-      conflictReason = conflictingPresence.observedAt
+      conflictReason = selectedRecord.review?.gate === "agent-reviewed" && selectedRecord.review.methodVersion === JURISDICTION_PRECISION_REVIEW_VERSION
+        && selectedRecord.review.presenceConflictPolicy === "all-presence"
+        ? `Accepted presence ${conflictingPresence.evidenceId} requires specific adjudication; an invalid-record correction cannot clear unrelated presence.`
+        : conflictingPresence.observedAt
         ? `Accepted presence ${conflictingPresence.evidenceId} is on or after ${conflictCheckFrom}.`
         : `Accepted presence ${conflictingPresence.evidenceId} is undated.`;
     } else {
