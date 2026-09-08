@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 437,
+    "applicableSpeciesCount": 438,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2067,
+    "unknownSpeciesCount": 2066,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 52,
-    "derivedApplicableSpeciesCount": 385,
+    "derivedApplicableSpeciesCount": 386,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 552,
+    "boundedAcquisitionSpeciesCount": 553,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 160256,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 8450,
+    "verifiedPresent": 8484,
     "verifiedAbsent": 64,
     "notDetected": 0,
     "researchedUnresolved": 21903,
-    "notResearched": 129839,
-    "determinationCoveragePercent": 5.31,
-    "researchCoveragePercent": 18.98,
-    "explicitOutcomePairCount": 30417,
-    "explicitOutcomeCoveragePercent": 18.9803,
+    "notResearched": 129805,
+    "determinationCoveragePercent": 5.33,
+    "researchCoveragePercent": 19,
+    "explicitOutcomePairCount": 30451,
+    "explicitOutcomeCoveragePercent": 19.0015,
     "conflictCount": 0,
-    "evidenceRecordCount": 11488,
+    "evidenceRecordCount": 11522,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11488,
-    "rejectionRecordCount": 1896,
-    "researchRunCount": 38,
+    "runEvidenceRecordCount": 11522,
+    "rejectionRecordCount": 1907,
+    "researchRunCount": 39,
     "boundedAcquisition": {
-      "speciesCount": 552,
-      "totalPairs": 35328,
-      "verifiedPresent": 8450,
+      "speciesCount": 553,
+      "totalPairs": 35392,
+      "verifiedPresent": 8484,
       "verifiedAbsent": 64,
       "notDetected": 0,
       "researchedUnresolved": 21903,
-      "notResearched": 4911,
-      "researchCoveragePercent": 86.1,
-      "explicitOutcomePairs": 30417,
-      "explicitOutcomeCoveragePercent": 86.0988
+      "notResearched": 4941,
+      "researchCoveragePercent": 86.04,
+      "explicitOutcomePairs": 30451,
+      "explicitOutcomeCoveragePercent": 86.0392
     }
   },
   "migrationCandidates": {
@@ -183,9 +183,9 @@
       "authority": "USDA Animal and Plant Health Inspection Service",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-08T10:25:26.469Z",
+      "evidencePairCount": 34,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "usfws-invasive-carp-edna",
@@ -532,17 +532,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2208,
-    "applicableCells": 472,
-    "notApplicableCells": 1736,
+    "totalCells": 2212,
+    "applicableCells": 473,
+    "notApplicableCells": 1739,
     "completeCells": 124,
-    "incompleteCells": 348,
+    "incompleteCells": 349,
     "blockedCells": 0,
     "currentCells": 111,
     "staleCells": 13,
-    "undatedCells": 348,
-    "applicableCompletionPercent": 26.27,
-    "currentCompletePercent": 23.52,
+    "undatedCells": 349,
+    "applicableCompletionPercent": 26.22,
+    "currentCompletePercent": 23.47,
     "regulatedAndHighApplicableCells": 36,
     "regulatedAndHighCurrentCompleteCells": 36,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -568,9 +568,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 21,
+        "applicableCells": 22,
         "currentCompleteCells": 8,
-        "currentCompletePercent": 38.1
+        "currentCompletePercent": 36.36
       }
     ],
     "priorityCompletion": [
@@ -588,9 +588,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 410,
+        "applicableCells": 411,
         "currentCompleteCells": 62,
-        "currentCompletePercent": 15.12
+        "currentCompletePercent": 15.09
       },
       {
         "priority": "baseline",
@@ -608,7 +608,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 437,
+        "applicableCells": 438,
         "currentCompleteCells": 89,
         "processed": false
       },
@@ -1570,6 +1570,18 @@
       "priorityScore": 53001
     },
     {
+      "speciesId": "varroa-destructor",
+      "commonName": "Honey bee mite",
+      "scientificName": "Varroa destructor",
+      "category": "wildlife",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
       "speciesId": "anarsia-lineatella",
       "commonName": "Peach twig borer",
       "scientificName": "Anarsia lineatella",
@@ -1775,16 +1787,6 @@
       "speciesId": "acleris-comariana",
       "commonName": "Strawberry tortrix",
       "scientificName": "Acleris comariana",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 64,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 640
-    },
-    {
-      "speciesId": "acyrthosiphon-kondoi",
-      "commonName": "Blue alfalfa aphid",
-      "scientificName": "Acyrthosiphon kondoi",
       "category": "insects",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 64,

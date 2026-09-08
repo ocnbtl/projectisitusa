@@ -7,21 +7,21 @@ Generated: `2026-09-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `2973`
+- Verified present: `2988`
 - Verified absent: `16`
 - Not detected: `0`
 - Researched unresolved: `5740`
-- Not researched: `31335`
-- Determination coverage: `7.46%`
-- Research coverage: `21.79%`
-- Explicit outcome coverage: `21.7876%`
-- Applicable protocol cells: `492`
+- Not researched: `31320`
+- Determination coverage: `7.50%`
+- Research coverage: `21.83%`
+- Explicit outcome coverage: `21.8251%`
+- Applicable protocol cells: `493`
 - Current complete protocol cells: `111`
-- Protocol completion: `25.20%`
-- Current protocol completion: `22.56%`
-- Evidence records: `3370`
-- Research runs: `35`
-- Rejection records: `292`
+- Protocol completion: `25.15%`
+- Current protocol completion: `22.52%`
+- Evidence records: `3385`
+- Research runs: `36`
+- Rejection records: `305`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -72,7 +72,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
 | APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 16 | 17 |
-| APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
+| APHIS National Honey Bee Survey | operational | 2026-09-08T10:25:38.352Z | 15 | 1 |
 | USFWS invasive carp eDNA sample layer | operational | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 61 | 13 |

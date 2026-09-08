@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "kind": "honey-bee-positive-national-reconciliation",
+  "recordedAt": "2026-09-08T10:52:25.356Z",
+  "sourceCommit": "2a6c00c89b0b135b2c0cf09c6dd49f0589e478e1",
+  "baselineCommit": "352972fadf45fd429a0a887f42bb7639c51221ae",
+  "asOf": "2026-09-08",
+  "jurisdictionsVerified": 51,
+  "jurisdictionsWithNewEvidence": 48,
+  "counties": 3144,
+  "catalogSpecies": 2504,
+  "denominator": 7872576,
+  "before": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 313002,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6248714,
+    "explicitOutcomePairCount": 1579508,
+    "conflictCount": 0,
+    "evidenceRecordCount": 460436,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 430306,
+    "rejectionRecordCount": 65259,
+    "researchRunCount": 2059
+  },
+  "after": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 314741,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306906,
+    "notResearched": 6246975,
+    "explicitOutcomePairCount": 1581247,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462175,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432045,
+    "rejectionRecordCount": 65855,
+    "researchRunCount": 2107
+  },
+  "delta": {
+    "countyCount": 0,
+    "totalPairs": 0,
+    "resolvablePairCount": 0,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 1739,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 0,
+    "notResearched": -1739,
+    "explicitOutcomePairCount": 1739,
+    "conflictCount": 0,
+    "evidenceRecordCount": 1739,
+    "bootstrapEvidenceRecordCount": 0,
+    "runEvidenceRecordCount": 1739,
+    "rejectionRecordCount": 596,
+    "researchRunCount": 48
+  },
+  "determinationCount": 318459,
+  "netUniqueDeterminations": 1739,
+  "countyFilesCompared": 3053,
+  "removedPairs": 0,
+  "unexpectedExistingPairChanges": 0,
+  "addedExplicitNotResearchedRows": 1314,
+  "addedDefaultExplanation": "Materialized not-researched rows preserve prior sparse defaults and are not research or determination gains.",
+  "heldPairsUnchanged": [
+    "15007:varroa-destructor",
+    "15009:varroa-destructor"
+  ],
+  "sourceReplayRequests": 0,
+  "sourceContextDocumentsRetrieved": 8,
+  "newImmutableRuns": 48,
+  "groupedRejectionRecords": 596,
+  "outputFiles": 3344,
+  "checks": [
+    {
+      "name": "source-coverage-index",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --write",
+      "startedAt": "2026-09-08T10:36:36.134Z",
+      "finishedAt": "2026-09-08T10:36:42.027Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-source-coverage-index.log"
+    },
+    {
+      "name": "verify-all",
+      "command": "--import tsx scripts/verify-all-state-research.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T10:36:42.028Z",
+      "finishedAt": "2026-09-08T10:42:46.504Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-verify-all.log"
+    },
+    {
+      "name": "state-projections",
+      "command": "--import tsx scripts/check-state-research-projections.ts",
+      "startedAt": "2026-09-08T10:42:46.504Z",
+      "finishedAt": "2026-09-08T10:44:22.722Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-state-projections.log"
+    },
+    {
+      "name": "data-integrity",
+      "command": "--import tsx scripts/check-data-integrity.ts",
+      "startedAt": "2026-09-08T10:44:22.723Z",
+      "finishedAt": "2026-09-08T10:44:23.130Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-data-integrity.log"
+    },
+    {
+      "name": "national-config",
+      "command": "--import tsx scripts/test-national-research-compiler.ts",
+      "startedAt": "2026-09-08T10:44:23.130Z",
+      "finishedAt": "2026-09-08T10:44:23.344Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-national-config.log"
+    },
+    {
+      "name": "coverage-check",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --check",
+      "startedAt": "2026-09-08T10:44:23.344Z",
+      "finishedAt": "2026-09-08T10:44:29.106Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-coverage-check.log"
+    },
+    {
+      "name": "question-projection",
+      "command": "--import tsx scripts/check-question-assessment-projection.ts",
+      "startedAt": "2026-09-08T10:44:29.106Z",
+      "finishedAt": "2026-09-08T10:44:30.681Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-question-projection.log"
+    },
+    {
+      "name": "orchestration",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs validate --root ops/national-research",
+      "startedAt": "2026-09-08T10:44:30.681Z",
+      "finishedAt": "2026-09-08T10:44:31.323Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-orchestration.log"
+    },
+    {
+      "name": "operations-dashboard",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs dashboard --root ops/national-research --as-of 2026-09-08T10:36:36.133Z",
+      "startedAt": "2026-09-08T10:44:31.323Z",
+      "finishedAt": "2026-09-08T10:44:32.026Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-operations-dashboard.log"
+    },
+    {
+      "name": "readiness-dashboard",
+      "command": "--import tsx scripts/build-national-readiness-dashboard.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T10:44:32.027Z",
+      "finishedAt": "2026-09-08T10:44:32.913Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r12-honey-bee/national-final-readiness-dashboard.log"
+    }
+  ],
+  "originalFullGate": {
+    "command": "Research integrity gate sequence: initial suite, generated source-index refresh, remaining coverage and publication checks",
+    "startedAt": "2026-09-08T09:57:51.580Z",
+    "finishedAt": "2026-09-08T10:21:32.1099820Z",
+    "exitCode": 0,
+    "originalSuiteExitCode": 1,
+    "originalFailure": "Generated source coverage index was stale after source registration changed",
+    "remediation": "Regenerated index and reran check:research-coverage plus check:research-publication; earlier suite checks had passed",
+    "followupStartedAt": "2026-09-08T10:21:15.6228565Z"
+  },
+  "attributionFix": {
+    "commit": "2a6c00c89b0b135b2c0cf09c6dd49f0589e478e1",
+    "qualification": "The initial national pass was intentionally stopped after public projection omitted publisher credit stored in immutable notes. The compiler now publishes the required source-specific credit. Source bytes and assertions remain unchanged. Focused positive replay, event-model and type checks passed; final all-state byte verification and the ten listed national checks passed after this fix."
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/honey-bee-positive-national-validation-20260908-r12.json.gz",
+    "bytes": 52642,
+    "sha256": "4d97a839a40e0d4122f613c9db0348aa3d8fd90aafb505003a0a361e2ab2470e"
+  },
+  "researchPublication": {
+    "uploaded": false,
+    "promoted": false,
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z"
+  },
+  "limitations": [
+    "Positive managed-apiary samples establish recorded parasite occurrence at the sampled location, not wild establishment, local acquisition, countywide prevalence or current persistence.",
+    "Original positive observation months are preserved. Most records are historical; freshness is a separate axis.",
+    "The two Hawaii source-conflict holds remain unresolved. Nonpositive source rows are not absence or non-detection determinations.",
+    "The original combined integrity command exited1 on the stale source index. Regeneration and remaining coverage/publication checks passed; the original failure is retained."
+  ]
+}
