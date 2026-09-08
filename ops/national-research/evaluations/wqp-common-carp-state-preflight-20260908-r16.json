@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-common-carp-state-preflight",
+  "recordedAt": "2026-09-08T17:02:33.068Z",
+  "status": "independent-source-review-pending",
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-common-carp-state-preflight-20260908-r16.json.gz",
+    "bytes": 61674,
+    "sha256": "effeb927ab1da127e38c3a45f55090d4b57d9d06b7bb4f962ae707641c33823b"
+  },
+  "sourceAcquisitionBaseCommit": "2ec23a3b5a4333fac14f004db03fb0d0ea4777c1",
+  "sourceRecipe": {
+    "path": ".cache/research/campaigns/20260908-r16-wqp-common-carp/acquire-state-measurements.cjs",
+    "sha256": "22f4f934dc1825f2941ddad62bc495f596ed6b953db52506b2d058602f447725"
+  },
+  "selectedReviewPairs": {
+    "IA": 22,
+    "KS": 20
+  },
+  "sourceProfiles": [
+    {
+      "state": "IA",
+      "resultRows": 34,
+      "positiveRowsInCandidateScope": 31,
+      "diagnosticCandidates": 22,
+      "forms": {
+        "Population Census/Count/count": 34
+      },
+      "rejections": {},
+      "knownAbsentConflicts": [],
+      "alreadyPresent": 1
+    },
+    {
+      "state": "KS",
+      "resultRows": 34,
+      "positiveRowsInCandidateScope": 34,
+      "diagnosticCandidates": 20,
+      "forms": {
+        "Population Census/Count/count": 34
+      },
+      "rejections": {},
+      "knownAbsentConflicts": [],
+      "alreadyPresent": 0
+    }
+  ],
+  "stationSource": {
+    "inputArchive": {
+      "path": "ops/national-research/evaluations/artifacts/wqp-expansion-preflight-20260908-r14.json.gz",
+      "bytes": 250033,
+      "sha256": "4a243ff435d46bdd54ca54a0d8f298534f9ab93f32b367123197e9c8fa003e00"
+    },
+    "profile": {
+      "url": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "status": 200,
+      "startedAt": "2026-09-08T12:34:52.674Z",
+      "retrievedAt": "2026-09-08T12:35:04.802Z",
+      "path": ".cache/research/campaigns/20260908-r14-wqp-expansion/inputs/cyprinus-carpio-station.csv.gz",
+      "bytes": 119346,
+      "sha256": "86104ebcdccf145eaaa43562f2204f429701066fdb6cb898a9da7e4f97278ad2",
+      "decodedBytes": 901339,
+      "decodedSha256": "47efdfbcf1ba1f742285e1a3e11b18de0cd02e7fa125bb771a2fc8db002686aa",
+      "headers": {
+        "content-type": "text/csv;charset=UTF-8",
+        "date": "Tue, 08 Sep 2026 12:35:04 GMT",
+        "storet-site-count": "4164",
+        "total-site-count": "4164",
+        "x-content-type-options": "nosniff"
+      }
+    }
+  },
+  "acquisition": {
+    "programmaticGets": 2,
+    "successfulGets": 2,
+    "failedGets": 0,
+    "stateResultBytes": 7023,
+    "stateResultRows": 68,
+    "automaticRetries": 0,
+    "providerWrites": 0
+  },
+  "newDeterminations": 0,
+  "limitations": [
+    "These are preliminary candidates, not admitted evidence. Independent review must verify all exact leased pairs and field context from the raw sources.",
+    "One already-present Iowa pair is outside the leased gap scope.",
+    "A filtered species measurement query is not an exhaustive current county inventory. Silence creates no negative determination.",
+    "National Station candidate scope is broader than this filtered Result scope; reasons require additional source review rather than inference."
+  ]
+}
