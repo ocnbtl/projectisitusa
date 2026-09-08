@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-research-candidate-storage-plan",
+  "recordedAt": "2026-09-08T17:42:28.578Z",
+  "releaseId": "research-f77d3ef3bb11-f990aa9747ec71ce",
+  "sourceCommit": "f77d3ef3bb115bedf817b685ca2a1bf4aa7b64eb",
+  "manifest": {
+    "path": "ops/national-research/publication/research-data-manifest.json",
+    "bytes": 2047966,
+    "sha256": "ede8bba804f4f23941465882008295735eaf45ddbcce167e93038e6f91460c20"
+  },
+  "representationInventory": {
+    "path": ".cache/research/campaigns/20260908-r15-wqp-common-carp/r2-inventory-20260908.json",
+    "bytes": 19808943,
+    "sha256": "f34a6e5ed5046a3af9f9af2dfeff3c13842c00cbc2b4a87a26ca4149a626a3a8",
+    "observedAt": "2026-09-08T17:32:49.285Z"
+  },
+  "bucketBaseline": {
+    "observedAt": "2026-09-08T17:32:49.285Z",
+    "bytes": 7837439604,
+    "objects": 29059
+  },
+  "candidateNewObjects": 3195,
+  "candidateAdditionalBytes": 130441650,
+  "projectedBucketBytes": 7967881254,
+  "projectSafetyCeilingBytes": 8000000000,
+  "remainingSafetyHeadroomBytes": 32118746,
+  "supersededUnuploadedCandidate": {
+    "path": "ops/national-research/publication/wqp-fish-positive-candidate-budget-20260908-r14.json",
+    "releaseId": "research-bdb18551b689-94db4ce047eee163",
+    "reservationBytes": 130206409
+  },
+  "requiredResearchReservationBytes": 130441650,
+  "withinStorageCeiling": true,
+  "providerWrites": 0,
+  "pointerPromotions": 0,
+  "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+  "offlinePlan": {
+    "mode": "plan",
+    "releaseId": "research-f77d3ef3bb11-f990aa9747ec71ce",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1342795696,
+    "uniqueStoredBytes": 128393684,
+    "maximumNewClassARequests": 3197,
+    "maximumVerificationClassBRequests": 3196,
+    "currentClassARequests": 0,
+    "currentClassBRequests": 0,
+    "freeTierSafetyStorageBytes": 8000000000,
+    "freeTierSafetyClassARequests": 800000,
+    "freeTierSafetyClassBRequests": 8000000
+  },
+  "providerUsage": {
+    "schemaVersion": 1,
+    "observedAt": "2026-09-08T17:32:34.0851053Z",
+    "source": "Cloudflare signed-in Billing / Billable usage",
+    "cycle": "2026-08-18 through 2026-09-17",
+    "usageThrough": "2026-09-08",
+    "classADisplayed": "29.77k",
+    "classBDisplayed": "65.7k",
+    "storageDisplayed": "4.55 GB-months",
+    "billableUsage": 0,
+    "displayedCostUsd": 0,
+    "displayedProjectedCostUsd": 0,
+    "conservativeClassAInput": 29780,
+    "conservativeClassBInput": 65800,
+    "bucketSizeDisplayed": "7.84 GB",
+    "qualification": "Rounded dashboard values are conservatively rounded upward for this read-only report. Provider aggregation may lag; this is not an upload authorization or invoice forecast."
+  },
+  "limitations": [
+    "This replaces the prior unuploaded reservation; it does not add another stored research release.",
+    "Refresh exact inventory and current-period usage before any eventual upload. No upload or deletion occurred.",
+    "Offline plan zero usage values are placeholders, not measured counters; the separately recorded dashboard observation supplies current rounded billing evidence.",
+    "Ordinary research promotion remains held until September13 under the existing release cadence.",
+    "This dated storage calculation is not a guarantee of future account usage."
+  ]
+}

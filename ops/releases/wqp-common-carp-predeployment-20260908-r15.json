@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-common-carp-predeployment",
+  "recordedAt": "2026-09-08T17:46:11.555Z",
+  "status": "local-required-gates-passed-production-pending",
+  "baseCommit": "1610112891d016d0d61ea201acccaa107814c657",
+  "rollbackCommit": "bb74776679cf28ce6685b375b63f2642dd1a5775",
+  "rollbackDeploymentId": "dpl_2YAqDdcTieyW6xhjSvhVcMBgRRXW",
+  "behavior": "Reusable hash-pinned WQP reviewed-fish replay validates original single-CSV ZIP sources and152 historical county occurrences. It retains original dates, source-row citations, publisher attribution, geographic caveats and explicit provisional/date holds. Static application responses and immutable runtime bundles remain preserved.",
+  "researchReconciliation": "ops/national-research/evaluations/wqp-common-carp-national-reconciliation-20260908-r15.json",
+  "localResearch": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 315098,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306725,
+    "notResearched": 6246799,
+    "explicitOutcomePairCount": 1581423,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462532,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432402,
+    "rejectionRecordCount": 66057,
+    "researchRunCount": 2142,
+    "determinations": 318816,
+    "netUniqueDeterminations": 152,
+    "newRuns": 2,
+    "sourceReplayRequests": 0,
+    "priorStatusCounts": {
+      "not-researched": 152
+    },
+    "heldPairsRemainingUndetermined": 8,
+    "addedExplicitDefaultsNotResearchProgress": 12
+  },
+  "publicationBudget": "ops/national-research/publication/wqp-common-carp-candidate-budget-20260908-r15.json",
+  "requiredGateCompletion": {
+    "schemaVersion": 1,
+    "kind": "research-integrity-sequential-gate-completion",
+    "recordedAt": "2026-09-08T17:42:28.522Z",
+    "status": "all-required-checks-passed-with-publication-followup",
+    "originalSequence": [
+      {
+        "name": "compile-all",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/compile-all-state-research.ts",
+          "--as-of",
+          "2026-09-08"
+        ],
+        "startedAt": "2026-09-08T17:01:12.022Z",
+        "finishedAt": "2026-09-08T17:04:33.337Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/compile-all-gate.log"
+      },
+      {
+        "name": "national-final",
+        "args": [
+          ".cache/research/campaigns/20260908-r15-wqp-common-carp/verify-national-final.cjs"
+        ],
+        "startedAt": "2026-09-08T17:04:33.338Z",
+        "finishedAt": "2026-09-08T17:13:40.494Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/national-final-gate.log"
+      },
+      {
+        "name": "research-integrity",
+        "args": [
+          "C:\\Code\\tools\\node-v22.23.2-win-x64\\node_modules\\npm\\bin\\npm-cli.js",
+          "run",
+          "check:research-integrity"
+        ],
+        "startedAt": "2026-09-08T17:13:40.495Z",
+        "finishedAt": "2026-09-08T17:35:54.509Z",
+        "exitCode": 1,
+        "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/research-integrity-gate.log"
+      }
+    ],
+    "originalFullCommandPassed": false,
+    "originalFailure": "The last top-level gate reached publication-manifest checking and found the previous manifest stale. All preceding commands chained with && passed, including research integrity, jurisdiction registry/batch audit, coverage and publication fixture checks.",
+    "resolution": "After sealing verified projections and refreshing read-only R2 inventory, regenerated the compressed manifest and reran the entire final check:research-publication command successfully. No biological/source-code correction was required.",
+    "followupChecks": [
+      {
+        "name": "publication-manifest-write",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/build-research-publication-manifest.ts",
+          "--write",
+          "--gzip",
+          "--r2-inventory",
+          ".cache/research/campaigns/20260908-r15-wqp-common-carp/r2-inventory-20260908.json"
+        ],
+        "startedAt": "2026-09-08T17:37:07.590Z",
+        "finishedAt": "2026-09-08T17:37:18.481Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/publication-manifest-write.log"
+      },
+      {
+        "name": "publication-gate",
+        "args": [
+          "C:/Code/tools/node-v22.23.2-win-x64/node_modules/npm/bin/npm-cli.js",
+          "run",
+          "check:research-publication"
+        ],
+        "startedAt": "2026-09-08T17:37:18.484Z",
+        "finishedAt": "2026-09-08T17:37:21.866Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r15-wqp-common-carp/publication-gate.log"
+      }
+    ],
+    "originalLogSha256": "12d0d3de391e8e64cb9fee8f07db25ccce2b2cfb17dbd194767cbfe4dd9f65fc",
+    "followupLogSha256": "5264407c8a3bb9fabe817413981e9961de2c97c6403e0cb5b06e8f78265a49df",
+    "logicalRequiredGateSetPassed": true,
+    "unchangedPassingChecksRerun": false
+  },
+  "applicationChecks": [
+    {
+      "command": "npm run build",
+      "startedAt": "2026-09-08T17:42:54.659Z",
+      "finishedAt": "2026-09-08T17:43:58.158Z",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-09-08T17:43:58.159Z",
+      "finishedAt": "2026-09-08T17:44:01.920Z",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "startedAt": "2026-09-08T17:44:01.921Z",
+      "finishedAt": "2026-09-08T17:44:05.010Z",
+      "exitCode": 0,
+      "log": "check-runtime-assets.log"
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "startedAt": "2026-09-08T17:44:05.010Z",
+      "finishedAt": "2026-09-08T17:44:05.997Z",
+      "exitCode": 0,
+      "log": "check-vercel-publish.log"
+    }
+  ],
+  "runtimeAssetBundlesUnchanged": true,
+  "imagePreparation": {
+    "sources": 2090,
+    "originalBytes": 808459923,
+    "derivativeBytes": 295644698,
+    "generated": 0,
+    "restored": 0,
+    "reused": 4180,
+    "cache": {
+      "bytes": 295025492,
+      "objects": 4156,
+      "maxBytes": 335544320,
+      "removed": 0
+    },
+    "elapsedMs": 5531,
+    "bundles": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "bytes": 3854453,
+        "storedBytes": 715009
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "bytes": 4831012,
+        "storedBytes": 698125
+      }
+    }
+  },
+  "localPageBytes": {
+    "index.html": 11166,
+    "index.rsc": 6014,
+    "research.html": 14175,
+    "research.rsc": 8307
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/wqp-common-carp-validation-20260908-r15.json.gz",
+    "bytes": 4421831,
+    "sha256": "a0bcdcf3b0c56e201903a4b9aebe29e0edc6afb8cb7ba8e8dbafbd9da1307909"
+  },
+  "r2Writes": 0,
+  "pointerPromotions": 0,
+  "nextWork": {
+    "wqp": {
+      "independentlyReviewedCandidates": 42,
+      "methodDocumentPrepared": true,
+      "canonicalRunsCompleted": false,
+      "newDeterminations": 0
+    },
+    "epaNrsa": {
+      "preliminaryCandidates": 446,
+      "independentReviews": 3,
+      "status": "active-proposal-only",
+      "sourceAdapterRegistered": false,
+      "newDeterminations": 0
+    }
+  },
+  "limitations": [
+    "These152 determinations are committed and nationally verified, but queued for the separate R2 research publication. This application deployment does not promote research data.",
+    "The initial full integrity command exited1 at its stale publication-manifest check. Its preceding checks passed; after regeneration the entire final publication gate passed. The original failure remains preserved.",
+    "Ordinary research promotion opens September13 subject to fresh exact inventory and current billing checks. This candidate replaces the prior unuploaded reservation, with32118746bytes of planned headroom under the8GB ceiling.",
+    "No new UI, current persistence, complete county inventory or negative determination is claimed from historical positive counts.",
+    "The autonomous national research goal remains active."
+  ]
+}
