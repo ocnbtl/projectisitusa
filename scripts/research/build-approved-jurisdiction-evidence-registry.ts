@@ -4,6 +4,7 @@ import path from "node:path";
 
 import { z } from "zod";
 import { approvedAlbParentRecords } from "./alb-approved-batch";
+import { approvedAgentParentRecords } from "./agent-jurisdiction-records";
 
 import { validateJurisdictionEvidenceRegistry } from "@/lib/research/jurisdiction-evidence";
 import type {
@@ -171,8 +172,8 @@ function buildRegistry() {
   });
   const registry: JurisdictionEvidenceRegistry = {
     schemaVersion: 1,
-    updatedAt: "2026-09-05",
-    records: [...records, ...approvedAlbParentRecords(ROOT)],
+    updatedAt: "2026-09-08",
+    records: [...records, ...approvedAlbParentRecords(ROOT), ...approvedAgentParentRecords(ROOT)],
   };
   const schema = readJson<Parameters<typeof z.fromJSONSchema>[0]>(
     "src/data/research/schemas/jurisdiction-evidence-registry.schema.json",
@@ -192,4 +193,4 @@ if (mode === "--write") {
   const current = readFileSync(absoluteRegistryPath, "utf8");
   assert(current === generated, `${REGISTRY_PATH} differs from the approved deterministic registry.`);
 }
-process.stdout.write(`${JSON.stringify({ mode, path: REGISTRY_PATH, recordCount: 4, sha256: sha256(generated) }, null, 2)}\n`);
+process.stdout.write(`${JSON.stringify({ mode, path: REGISTRY_PATH, recordCount: JSON.parse(generated).records.length, sha256: sha256(generated) }, null, 2)}\n`);

@@ -13,6 +13,8 @@ import path from "node:path";
 import { z } from "zod";
 import type { SpecimenMetadataRecovery } from "./specimen-record-metadata";
 
+import { agentJurisdictionAdapter, isAgentJurisdictionSource, type AgentJurisdictionPlan } from "./adapters/official-jurisdiction-agent-reviewed";
+import { agentParentInputPaths } from "./agent-jurisdiction-records";
 import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specimens";
 import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
 import { aphisHoneyBeeSurveyAdapter } from "./adapters/aphis-honey-bee-survey";
@@ -91,6 +93,7 @@ type CandidateFile = {
   sourceId?: string;
   stateCode: string;
   candidates: Candidate[];
+  agentJurisdiction?: AgentJurisdictionPlan;
   pilot?: {
     downloadPageUrl: string;
     generatedHeaderExact: string;
@@ -587,6 +590,7 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === inaturalistGbifResearchGradeAdapter.sourceId) {
     return inaturalistGbifResearchGradeAdapter;
   }
+  if (isAgentJurisdictionSource(sourceId)) return agentJurisdictionAdapter(sourceId);
   throw new Error(`No registered runner implementation exists for ${sourceId}.`);
 }
 
@@ -599,6 +603,10 @@ function buildParameters(
   const state = getStateDefinition(stateCode);
   if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state ${stateCode}.`);
   const candidatePairs = canonicalCandidatePairKeys(requestedPairs);
+  if (candidateFile.agentJurisdiction && isAgentJurisdictionSource(sourceId)) {
+    if (candidateFile.sourceId !== sourceId) throw new Error("Agent jurisdiction plan source differs.");
+    return { ...candidateFile.agentJurisdiction, mode: "retained-agent-reviewed-jurisdiction", stateCode, candidatePairs, candidateLimit: candidatePairs.length };
+  }
   if (sourceId === eddMapsSnapshotReplayAdapter.sourceId) {
     if (!candidateFile.eddmapsReplay || candidateFile.sourceId !== sourceId) {
       throw new Error("EDDMapS research requires its committed snapshot replay plan.");
@@ -930,6 +938,10 @@ async function main() {
     ...(options.sourceId === eddMapsSnapshotReplayAdapter.sourceId
       ? [path.join(ROOT, EDDMAPS_SNAPSHOT_PATH)]
       : []),
+    ...(isAgentJurisdictionSource(options.sourceId) ? [
+      ...agentParentInputPaths(ROOT).map(p => path.join(ROOT, p)),
+      ...listCountyEquivalents(options.stateCode).map(c => path.join(ROOT, "public/generated/research", options.stateCode, "counties", c.countyFips + ".json")),
+    ] : []),
     ...(options.taxonomyCache ? [options.taxonomyCache] : []),
   ]);
   persistAttemptTelemetry({ status: "committed-input-snapshot-verified" });
@@ -1025,7 +1037,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = options.sourceId === aphisHoneyBeeSurveyAdapter.sourceId
+    const expectedProviderRequests = isAgentJurisdictionSource(options.sourceId)
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-agent-reviewed-jurisdiction" }
+      : options.sourceId === aphisHoneyBeeSurveyAdapter.sourceId
       ? {
           providerNetworkRequests: 2,
           requestSequence: [

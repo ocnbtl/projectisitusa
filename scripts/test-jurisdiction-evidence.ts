@@ -38,9 +38,11 @@ validateJurisdictionEvidenceRegistry({
   countyRegistry,
   stateRegistry,
 });
-assert.equal(committedRegistry.records.length, 4, "Approved jurisdiction evidence registry count differs.");
+const humanRecords = committedRegistry.records.filter(record => record.review.gate === "human-approved");
+assert.equal(humanRecords.length, 4, "Original human-approved jurisdiction evidence count differs.");
+assert.equal(committedRegistry.records.length, 5);
 assert.deepEqual(
-  committedRegistry.records.map((record) => record.id),
+  humanRecords.map((record) => record.id),
   [
     "vespa-mandarinia-us-officially-eradicated-2024",
     "asian-longhorned-beetle-nj-officially-eradicated-2013",
@@ -285,7 +287,7 @@ console.log(
       incompleteJurisdictionRejected: true,
       unresolvedExclusionRejected: true,
       supportTextDriftRejected: true,
-      humanApprovalRequired: true,
+      originalHumanApprovalProvenancePreserved: true,
     },
     null,
     2,

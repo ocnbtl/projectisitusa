@@ -157,6 +157,26 @@ export interface JurisdictionEvidenceSourceDocument {
   modifiedAt: string | null;
 }
 
+export type JurisdictionEvidenceReview = {
+  gate: "human-approved";
+  status: "human-approved";
+  actorId: string;
+  reviewedAt: string;
+} | {
+  gate: "agent-reviewed";
+  status: "agent-reviewed";
+  actorId: string;
+  reviewedAt: string;
+  methodVersion: "official-jurisdiction-agent-review-v1";
+  independentActorId: string;
+  independentReview: { path: string; sha256: string };
+  reviewedAsOf: string;
+  declarationSourceId: string;
+  corroborationSourceId: string;
+  authorityDateKind: "published" | "modified";
+  expiryPolicy: "authority-date-plus-365-days-v1";
+};
+
 export interface JurisdictionEvidenceRecord {
   schemaVersion: 1;
   id: string;
@@ -176,12 +196,7 @@ export interface JurisdictionEvidenceRecord {
   conflictCheckFrom?: string;
   reaffirmedAt: string | null;
   validThrough: string;
-  review: {
-    gate: "human-approved";
-    status: "human-approved";
-    actorId: string;
-    reviewedAt: string;
-  };
+  review: JurisdictionEvidenceReview;
   caveats: string[];
 }
 

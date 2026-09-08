@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { isAcceptedJurisdictionReview, strictJurisdictionDate, validateAgentJurisdictionReview } from "./jurisdiction-agent-review";
 
 import type {
   CurrentDeterminationStatus,
@@ -42,7 +43,7 @@ function compareText(left: string, right: string) {
 function dateOnlyTimestamp(value: string, label: string) {
   assert(DATE_PATTERN.test(value), `${label} must be a YYYY-MM-DD date.`);
   const timestamp = Date.parse(`${value}T00:00:00.000Z`);
-  assert(Number.isFinite(timestamp), `${label} is not a valid date.`);
+  strictJurisdictionDate(value, label);
   return timestamp;
 }
 
@@ -139,11 +140,12 @@ export function validateJurisdictionEvidenceRegistry(input: {
     assert(reaffirmedAt >= effectiveAt, `${record.id}: reaffirmedAt precedes effectiveAt.`);
     assert(validThrough >= reaffirmedAt, `${record.id}: validThrough precedes its latest authority date.`);
     assert(
-      record.review.gate === "human-approved" && record.review.status === "human-approved",
-      `${record.id}: jurisdiction evidence requires human approval.`,
+      isAcceptedJurisdictionReview(record.review),
+      `${record.id}: jurisdiction evidence requires an accepted registered review method.`,
     );
-    assert(record.review.actorId.length > 0, `${record.id}: human review actor is missing.`);
-    assert(Number.isFinite(Date.parse(record.review.reviewedAt)), `${record.id}: human review time is invalid.`);
+    validateAgentJurisdictionReview(record);
+    assert(record.review.actorId.length > 0, `${record.id}: review actor is missing.`);
+    assert(Number.isFinite(Date.parse(record.review.reviewedAt)), `${record.id}: review time is invalid.`);
 
     const countyFips = sortedUnique(record.jurisdiction.countyFips, `${record.id}: county FIPS`);
     const exclusions = sortedUnique(record.jurisdiction.exclusions, `${record.id}: exclusions`);

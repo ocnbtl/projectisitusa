@@ -1,17 +1,23 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-08",
   "sources": [
     {
       "id": "eddmaps",
       "label": "EDDMaps",
-      "aliases": ["EDDMaps county presence snapshot"],
+      "aliases": [
+        "EDDMaps county presence snapshot"
+      ],
       "authority": "University of Georgia Center for Invasive Species and Ecosystem Health",
       "tier": "structured-aggregator",
       "homepage": "https://www.eddmaps.org/",
       "access": "api",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -20,7 +26,9 @@
       "researchAdapter": {
         "id": "eddmaps-snapshot-replay",
         "module": "scripts/research/adapters/eddmaps-snapshot-replay.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/eddmaps-snapshot-replay-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact committed EDDMapS snapshot species identity and subject ID must map to exactly one current Project Isitusa catalog taxon. Missing, changed, ambiguous, and unmapped identities are rejected.",
@@ -38,8 +46,12 @@
       "tier": "official-national",
       "homepage": "https://nas.er.usgs.gov/",
       "access": "download",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -48,7 +60,9 @@
       "researchAdapter": {
         "id": "usgs-nas-archive",
         "module": "scripts/research/adapters/usgs-nas-archive.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/usgs-nas-archive-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact canonical binomial agreement between the state plan, Project Isitusa catalog, and retained Darwin Core scientificName.",
@@ -66,8 +80,12 @@
       "tier": "official-national",
       "homepage": "https://nas.er.usgs.gov/api/documentation.aspx",
       "access": "api",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -82,8 +100,12 @@
       "tier": "academic",
       "homepage": "https://sernecportal.org/",
       "access": "api",
-      "geographicScope": ["US-Southeast"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US-Southeast"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -98,8 +120,12 @@
       "tier": "structured-aggregator",
       "homepage": "https://www.invasiveplantatlas.org/list.html?id=71",
       "access": "api",
-      "geographicScope": ["AL"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "AL"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -114,8 +140,12 @@
       "tier": "academic",
       "homepage": "http://floraofalabama.org/",
       "access": "api",
-      "geographicScope": ["AL"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "AL"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -130,8 +160,12 @@
       "tier": "official-state",
       "homepage": "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer",
       "access": "arcgis",
-      "geographicScope": ["AL"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "AL"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -146,8 +180,12 @@
       "tier": "official-state",
       "homepage": "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/AerialDetectionP/FeatureServer/0",
       "access": "arcgis",
-      "geographicScope": ["AL"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "AL"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -162,8 +200,12 @@
       "tier": "official-national",
       "homepage": "https://www.aphis.usda.gov/plant-pests-diseases/eab",
       "access": "arcgis",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -178,8 +220,12 @@
       "tier": "official-national",
       "homepage": "https://www.aphis.usda.gov/plant-pests-diseases",
       "access": "arcgis",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "explicit-authority-only",
       "refreshCadenceDays": 30,
       "status": "operational",
@@ -188,7 +234,9 @@
       "researchAdapter": {
         "id": "aphis-federal-quarantine-national",
         "module": "scripts/research/national-aphis-federal-quarantine.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/aphis-federal-quarantine-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact reviewed one-to-one mapping from an APHIS Quarantine_Program value to one Project Isitusa catalog species. Unmapped or ambiguous programs remain review-only and never publish.",
@@ -206,8 +254,13 @@
       "tier": "official-national",
       "homepage": "https://www.usbeedata.org/state_reports/public_download/",
       "access": "download",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present", "not-detected"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "not-detected"
+      ],
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 365,
       "status": "operational",
@@ -215,7 +268,9 @@
       "researchAdapter": {
         "id": "aphis-honey-bee-survey",
         "module": "scripts/research/adapters/aphis-honey-bee-survey.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/aphis-honey-bee-survey-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact APHIS varroa_per_100_bees metric to the Project Isitusa Varroa destructor catalog species. Missing, blank, negative, or nonnumeric metrics never create an assertion.",
@@ -234,8 +289,13 @@
       "tier": "official-national",
       "homepage": "https://services.arcgis.com/QVENGdaPbd4LUkLV/arcgis/rest/services/USFWS_Great_Lakes_Region_3_Bighead_and_Silver_Carp_eDNA_Data_Feature_Layer_View/FeatureServer/0",
       "access": "arcgis",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present", "not-detected"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "not-detected"
+      ],
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 365,
       "status": "operational",
@@ -244,7 +304,9 @@
       "researchAdapter": {
         "id": "usfws-invasive-carp-edna-snapshot",
         "module": "scripts/research/adapters/usfws-invasive-carp-edna-snapshot.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/usfws-invasive-carp-edna-snapshot-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact canonical binomial mapping to the official Bighead Carp and Silver Carp eDNA program targets. Only the exact No eDNA detected label is eligible; positive labels, No detection data, blanks, and source silence never publish.",
@@ -262,8 +324,12 @@
       "tier": "official-national",
       "homepage": "https://www.fs.usda.gov/foresthealth/",
       "access": "arcgis",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -278,8 +344,12 @@
       "tier": "academic",
       "homepage": "https://purr.purdue.edu/publications/4479",
       "access": "download",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 365,
       "dataFreshThrough": "2023-04-30",
@@ -289,7 +359,9 @@
       "researchAdapter": {
         "id": "usfs-afpe-archive",
         "module": "scripts/research/adapters/usfs-afpe-archive.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/usfs-afpe-archive-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact versioned mapping from one published AFPE DCA column and dictionary label to one reviewed Project Isitusa catalog species. Only the 13 hash-pinned mappings are authorized.",
@@ -307,8 +379,12 @@
       "tier": "official-national",
       "homepage": "https://apps.fs.usda.gov/fia/datamart/datamart.html",
       "access": "download",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 365,
       "status": "operational",
@@ -317,7 +393,10 @@
       "researchAdapter": {
         "id": "usfs-fia-national",
         "module": "scripts/research/adapters/usfs-fia-invasive-plants.ts",
-        "allowedVersions": ["1.0.0", "1.1.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.1.0"
+        ],
         "parameterSchema": "src/data/research/schemas/usfs-fia-invasive-plants-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Each state-listed FIA symbol must resolve through the hash-pinned plant dictionary to exactly one catalog scientific name. Multiple exact source symbols may converge on one catalog species and are collapsed at the county-species pair level. Ambiguous and unmatched symbols never publish.",
@@ -330,13 +409,20 @@
     {
       "id": "blm-nisims",
       "label": "BLM National Invasive Species Information Management System plants",
-      "aliases": ["BLM NISIMS", "National Invasive Species Information Management System"],
+      "aliases": [
+        "BLM NISIMS",
+        "National Invasive Species Information Management System"
+      ],
       "authority": "U.S. Bureau of Land Management via GBIF-US",
       "tier": "official-national",
       "homepage": "https://www.gbif.org/dataset/cc63e998-fe1b-468d-94f1-6afcf494d0e4",
       "access": "download",
-      "geographicScope": ["Sampled BLM lands in the United States"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "Sampled BLM lands in the United States"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 365,
       "status": "operational",
@@ -345,7 +431,9 @@
       "researchAdapter": {
         "id": "blm-nisims-retained-snapshot",
         "module": "scripts/research/adapters/retained-gbif-human-observations.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/retained-gbif-human-observations-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "The source scientific name must resolve exactly and unambiguously to one Project Isitusa catalog species after Unicode, whitespace, and case normalization. Unmatched and ambiguous names never publish.",
@@ -358,13 +446,19 @@
     {
       "id": "blm-aim-terrestrial-invasive-plants",
       "label": "BLM AIM Terrestrial Invasive Plant Indicators",
-      "aliases": ["BLM Assessment, Inventory, and Monitoring terrestrial species indicators"],
+      "aliases": [
+        "BLM Assessment, Inventory, and Monitoring terrestrial species indicators"
+      ],
       "authority": "U.S. Bureau of Land Management",
       "tier": "official-national",
       "homepage": "https://gbp-blm-egis.hub.arcgis.com/datasets/blm-national-aim-terrestrial-species-indicators-public/about",
       "access": "arcgis",
-      "geographicScope": ["Sampled BLM lands in the United States"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "Sampled BLM lands in the United States"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -373,7 +467,9 @@
       "researchAdapter": {
         "id": "blm-aim-terrestrial-invasive-plants-targeted",
         "module": "scripts/research/adapters/blm-aim-terrestrial-invasive-plants.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/blm-aim-terrestrial-invasive-plants-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "The retained provider ScientificName must exactly match one Project Isitusa catalog binomial after Unicode, whitespace, and case normalization. Informal taxa, higher taxa, ambiguous names, and unmatched names never publish.",
@@ -391,8 +487,12 @@
       "tier": "official-national",
       "homepage": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0",
       "access": "arcgis",
-      "geographicScope": ["USFS lands"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "USFS lands"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -401,7 +501,10 @@
       "researchAdapter": {
         "id": "usfs-current-invasive-plants-targeted",
         "module": "scripts/research/adapters/usfs-current-invasive-plants-targeted.ts",
-        "allowedVersions": ["1.0.0", "1.1.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.1.0"
+        ],
         "parameterSchema": "src/data/research/schemas/usfs-current-invasive-plants-targeted-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "The retained provider accepted scientific name must exactly match one requested Project Isitusa catalog scientific name after whitespace and case normalization. Missing, genus-only, ambiguous, changed, or unmatched names are rejected.",
@@ -419,8 +522,12 @@
       "tier": "official-national",
       "homepage": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0",
       "access": "arcgis",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -435,8 +542,12 @@
       "tier": "official-national",
       "homepage": "https://plants.usda.gov/",
       "access": "arcgis",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -445,7 +556,9 @@
       "researchAdapter": {
         "id": "usda-nrcs-plants-national",
         "module": "scripts/research/national-usda-nrcs-plants.ts",
-        "allowedVersions": ["1.0.3"],
+        "allowedVersions": [
+          "1.0.3"
+        ],
         "parameterSchema": "src/data/research/schemas/usda-nrcs-plants-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, L48 Introduced profile status, and stable Introduced/Both layer-6 establishment fingerprint. The misleading layer-6 Symbol field is establishment text, not the plant symbol; profile and CSV fields remain the plant-symbol authorities. Drift or ambiguity blocks the taxon.",
@@ -498,13 +611,21 @@
     {
       "id": "nybg-preserved-specimens",
       "label": "New York Botanical Garden preserved specimens",
-      "aliases": ["NYBG Herbarium Darwin Core Archive", "Steere Herbarium specimen records"],
+      "aliases": [
+        "NYBG Herbarium Darwin Core Archive",
+        "Steere Herbarium specimen records"
+      ],
       "authority": "The New York Botanical Garden",
       "tier": "academic",
       "homepage": "https://sweetgum.nybg.org/science/vh/",
       "access": "download",
-      "geographicScope": ["United States", "Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "United States",
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "dataFreshThrough": "2026-08-25",
@@ -513,8 +634,12 @@
       "researchAdapter": {
         "id": "nybg-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
-          "1.2.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.0.1",
+          "1.1.0",
+          "1.2.0"
+        ],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected. Adapter 1.2.0 adds an opt-in evaluated WCVP v16 infraspecific-concept mapping for the hash-verified NYBG review inventory. Exact authoritative authorship or an explicit source autonym parent must resolve inside one catalog concept; original names and references remain retained. It does not enable arbitrary synonyms or fuzzy matches.",
@@ -528,13 +653,22 @@
     {
       "id": "torch-brit-preserved-specimens",
       "label": "TORCH BRIT preserved specimens",
-      "aliases": ["TORCH BRIT Darwin Core Archive", "Botanical Research Institute of Texas specimen records"],
+      "aliases": [
+        "TORCH BRIT Darwin Core Archive",
+        "Botanical Research Institute of Texas specimen records"
+      ],
       "authority": "Botanical Research Institute of Texas and TORCH Portal",
       "tier": "academic",
       "homepage": "https://portal.torcherbaria.org/portal/collections/misc/collprofiles.php?collid=370",
       "access": "download",
-      "geographicScope": ["United States", "Texas", "Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "United States",
+        "Texas",
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "dataFreshThrough": "2026-09-03",
@@ -543,8 +677,12 @@
       "researchAdapter": {
         "id": "torch-brit-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
-          "1.2.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.0.1",
+          "1.1.0",
+          "1.2.0"
+        ],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial. Source taxon rank must be species and identification qualifier must be blank. Fuzzy, synonym, subspecies, and ambiguous matches are rejected.",
@@ -558,13 +696,21 @@
     {
       "id": "smithsonian-nmnh-preserved-specimens",
       "label": "Smithsonian NMNH extant preserved specimens",
-      "aliases": ["NMNH Extant Specimen Records", "USNM preserved specimen archive"],
+      "aliases": [
+        "NMNH Extant Specimen Records",
+        "USNM preserved specimen archive"
+      ],
       "authority": "National Museum of Natural History, Smithsonian Institution",
       "tier": "academic",
       "homepage": "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a",
       "access": "download",
-      "geographicScope": ["United States", "Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "United States",
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 30,
       "dataFreshThrough": "2026-09-02",
@@ -573,8 +719,12 @@
       "researchAdapter": {
         "id": "smithsonian-nmnh-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
-          "1.2.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.0.1",
+          "1.1.0",
+          "1.2.0"
+        ],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact structured source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog binomial and a blank identification qualifier. A blank source rank is accepted only when the full scientific name is the same binomial and infraspecific epithet is blank. Fuzzy, synonym, infraspecific, and ambiguous matches are rejected.",
@@ -588,13 +738,20 @@
     {
       "id": "harvard-huh-usa-preserved-specimens",
       "label": "Harvard University Herbaria United States preserved specimens",
-      "aliases": ["HUH USA Darwin Core Archive", "Harvard United States specimen records"],
+      "aliases": [
+        "HUH USA Darwin Core Archive",
+        "Harvard United States specimen records"
+      ],
       "authority": "Harvard University Herbaria",
       "tier": "academic",
       "homepage": "https://ipt.huh.harvard.edu/ipt/resource?r=huh_usa",
       "access": "download",
-      "geographicScope": ["United States"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "United States"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 7,
       "dataFreshThrough": "2026-08-29",
@@ -603,8 +760,12 @@
       "researchAdapter": {
         "id": "harvard-huh-usa-preserved-specimens-snapshot",
         "module": "scripts/research/adapters/retained-herbarium-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.1.0",
-          "1.2.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.0.1",
+          "1.1.0",
+          "1.2.0"
+        ],
         "parameterSchema": "src/data/research/schemas/retained-herbarium-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact structured source genus plus specific epithet agreement with exactly one two-token Project Isitusa catalog plant binomial, blank identification qualifier, and blank infraspecific epithet. The source scientific name must be the same binomial with at most its declared authorship appended. Fuzzy, synonym, infraspecific, and ambiguous matches are rejected.",
@@ -618,13 +779,20 @@
     {
       "id": "gbif-preserved-specimens",
       "label": "GBIF preserved specimen records",
-      "aliases": ["GBIF national preserved specimen evidence", "GBIF Alabama preserved specimen snapshot"],
+      "aliases": [
+        "GBIF national preserved specimen evidence",
+        "GBIF Alabama preserved specimen snapshot"
+      ],
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "homepage": "https://www.gbif.org/",
       "access": "api",
-      "geographicScope": ["Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -632,7 +800,16 @@
       "researchAdapter": {
         "id": "gbif-preserved-specimens",
         "module": "scripts/research/adapters/gbif-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.0.2", "1.1.0", "1.2.0", "1.3.0", "1.3.1", "1.4.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.0.1",
+          "1.0.2",
+          "1.1.0",
+          "1.2.0",
+          "1.3.0",
+          "1.3.1",
+          "1.4.0"
+        ],
         "parameterSchema": "src/data/research/schemas/gbif-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Strict GBIF species match with EXACT match type, confidence at least 95, and exact canonical binomial agreement.",
@@ -651,8 +828,12 @@
       "tier": "structured-aggregator",
       "homepage": "https://www.gbif.org/",
       "access": "api",
-      "geographicScope": ["Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -667,8 +848,12 @@
       "tier": "structured-aggregator",
       "homepage": "https://www.gbif.org/dataset/d587c7e5-d442-437a-a6d7-d1a78ecf2300",
       "access": "download",
-      "geographicScope": ["US-Southeast"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US-Southeast"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -677,7 +862,9 @@
       "researchAdapter": {
         "id": "gbif-ipams-retained-snapshot",
         "module": "scripts/research/adapters/retained-gbif-human-observations.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/retained-gbif-human-observations-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "The source scientific name must resolve exactly and unambiguously to one Project Isitusa catalog species after Unicode, whitespace, and case normalization. Unmatched and ambiguous names never publish.",
@@ -695,8 +882,12 @@
       "tier": "structured-aggregator",
       "homepage": "https://www.gbif.org/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e",
       "access": "api",
-      "geographicScope": ["Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -706,13 +897,20 @@
     {
       "id": "idigbio-preserved-specimens",
       "label": "iDigBio preserved specimen records",
-      "aliases": ["iDigBio national preserved specimen evidence", "iDigBio Alabama preserved specimen snapshot"],
+      "aliases": [
+        "iDigBio national preserved specimen evidence",
+        "iDigBio Alabama preserved specimen snapshot"
+      ],
       "authority": "Integrated Digitized Biocollections",
       "tier": "structured-aggregator",
       "homepage": "https://www.idigbio.org/",
       "access": "api",
-      "geographicScope": ["Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -720,7 +918,11 @@
       "researchAdapter": {
         "id": "idigbio-preserved-specimens",
         "module": "scripts/research/adapters/idigbio-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.1.0", "1.1.1"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.1.0",
+          "1.1.1"
+        ],
         "parameterSchema": "src/data/research/schemas/idigbio-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact canonical binomial agreement across normalized iDigBio taxon terms and retained provider scientific name, with ambiguous taxon flags rejected.",
@@ -739,8 +941,12 @@
       "tier": "community-occurrence",
       "homepage": "https://www.inaturalist.org/",
       "access": "api",
-      "geographicScope": ["Global"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "Global"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": 90,
       "status": "operational",
@@ -749,7 +955,10 @@
       "researchAdapter": {
         "id": "inaturalist-gbif-research-grade",
         "module": "scripts/research/adapters/inaturalist-gbif-research-grade.ts",
-        "allowedVersions": ["1.0.0", "1.1.0"],
+        "allowedVersions": [
+          "1.0.0",
+          "1.1.0"
+        ],
         "parameterSchema": "src/data/research/schemas/inaturalist-gbif-research-grade-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact GBIF species match with confidence at least 95 and exact canonical binomial agreement between the current Project Isitusa catalog and the licensed weekly iNaturalist Research Grade dataset.",
@@ -767,8 +976,13 @@
       "tier": "official-national",
       "homepage": "https://www.waterqualitydata.us/",
       "access": "api",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present", "not-detected"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "not-detected"
+      ],
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 180,
       "status": "operational",
@@ -783,8 +997,13 @@
       "tier": "official-national",
       "homepage": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
       "access": "download",
-      "geographicScope": ["North America"],
-      "evidenceCapabilities": ["recorded-present", "not-detected"],
+      "geographicScope": [
+        "North America"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "not-detected"
+      ],
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 365,
       "status": "operational",
@@ -819,8 +1038,13 @@
       "tier": "academic",
       "homepage": "https://data.neonscience.org/data-products/DP1.10058.001",
       "access": "download",
-      "geographicScope": ["NEON sites"],
-      "evidenceCapabilities": ["recorded-present", "not-detected"],
+      "geographicScope": [
+        "NEON sites"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "not-detected"
+      ],
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 365,
       "status": "operational",
@@ -830,13 +1054,19 @@
     {
       "id": "aphis-northern-giant-hornet-eradication-2024",
       "label": "USDA APHIS northern giant hornet eradication statement (2024)",
-      "aliases": ["APHIS northern giant hornet eradication announcement"],
+      "aliases": [
+        "APHIS northern giant hornet eradication announcement"
+      ],
       "authority": "USDA Animal and Plant Health Inspection Service",
       "tier": "official-national",
       "homepage": "https://www.aphis.usda.gov/news/agency-announcements/aphis-action-victory-over-worlds-largest-hornet-species",
       "access": "manual",
-      "geographicScope": ["United States"],
-      "evidenceCapabilities": ["officially-absent"],
+      "geographicScope": [
+        "United States"
+      ],
+      "evidenceCapabilities": [
+        "officially-absent"
+      ],
       "negativeSemantics": "explicit-authority-only",
       "refreshCadenceDays": 365,
       "dataFreshThrough": "2026-11-03",
@@ -846,7 +1076,9 @@
       "researchAdapter": {
         "id": "official-eradication-determination",
         "module": "scripts/research/adapters/official-eradication-determination.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/official-eradication-determination-parameters.schema.json",
         "publicationReviewGate": "human-approved",
         "taxonMatchingPolicy": "Exact canonical binomial agreement with the Project Isitusa catalog taxon named in the approved batch artifact.",
@@ -859,13 +1091,21 @@
     {
       "id": "wsda-northern-giant-hornet-eradication-2024",
       "label": "WSDA northern giant hornet eradication statement (2024)",
-      "aliases": ["WSDA northern giant hornet eradication announcement"],
+      "aliases": [
+        "WSDA northern giant hornet eradication announcement"
+      ],
       "authority": "Washington State Department of Agriculture",
       "tier": "official-state",
       "homepage": "https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=41658",
       "access": "manual",
-      "geographicScope": ["Washington", "Whatcom County"],
-      "evidenceCapabilities": ["recorded-present", "officially-absent"],
+      "geographicScope": [
+        "Washington",
+        "Whatcom County"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "officially-absent"
+      ],
       "negativeSemantics": "explicit-authority-only",
       "refreshCadenceDays": 365,
       "dataFreshThrough": "2026-11-03",
@@ -875,7 +1115,9 @@
       "researchAdapter": {
         "id": "official-eradication-determination",
         "module": "scripts/research/adapters/official-eradication-determination.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/official-eradication-determination-parameters.schema.json",
         "publicationReviewGate": "human-approved",
         "taxonMatchingPolicy": "Exact canonical binomial agreement with the Project Isitusa catalog taxon named in the approved batch artifact.",
@@ -888,13 +1130,19 @@
     {
       "id": "wsda-northern-giant-hornet-surveillance-2025",
       "label": "WSDA 2025 northern giant hornet surveillance update",
-      "aliases": ["WSDA 2025 pest survey season update"],
+      "aliases": [
+        "WSDA 2025 pest survey season update"
+      ],
       "authority": "Washington State Department of Agriculture",
       "tier": "official-state",
       "homepage": "https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=45115",
       "access": "manual",
-      "geographicScope": ["Washington"],
-      "evidenceCapabilities": ["officially-absent"],
+      "geographicScope": [
+        "Washington"
+      ],
+      "evidenceCapabilities": [
+        "officially-absent"
+      ],
       "negativeSemantics": "explicit-authority-only",
       "refreshCadenceDays": 365,
       "dataFreshThrough": "2026-11-03",
@@ -905,13 +1153,23 @@
     {
       "id": "njdep-asian-longhorned-beetle-eradication-current",
       "label": "NJDEP Asian longhorned beetle eradication status",
-      "aliases": ["NJDEP Forest Health Asian longhorned beetle"],
+      "aliases": [
+        "NJDEP Forest Health Asian longhorned beetle"
+      ],
       "authority": "New Jersey Department of Environmental Protection",
       "tier": "official-state",
       "homepage": "https://dep.nj.gov/parksandforests/conservation/forest-health/",
       "access": "manual",
-      "geographicScope": ["New Jersey", "Hudson County", "Middlesex County", "Union County"],
-      "evidenceCapabilities": ["recorded-present", "officially-absent"],
+      "geographicScope": [
+        "New Jersey",
+        "Hudson County",
+        "Middlesex County",
+        "Union County"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "officially-absent"
+      ],
       "negativeSemantics": "explicit-authority-only",
       "refreshCadenceDays": 365,
       "dataFreshThrough": "2027-07-30",
@@ -921,7 +1179,9 @@
       "researchAdapter": {
         "id": "official-eradication-determination",
         "module": "scripts/research/adapters/official-eradication-determination.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": [
+          "1.0.0"
+        ],
         "parameterSchema": "src/data/research/schemas/official-eradication-determination-parameters.schema.json",
         "publicationReviewGate": "human-approved",
         "taxonMatchingPolicy": "Exact canonical binomial agreement with the Project Isitusa catalog taxon named in the approved batch artifact.",
@@ -976,13 +1236,21 @@
     {
       "id": "manual-authoritative",
       "label": "Manual authoritative evidence",
-      "aliases": ["Manual authoritative county presence overrides"],
+      "aliases": [
+        "Manual authoritative county presence overrides"
+      ],
       "authority": "Named agency, academic, or regulatory source stored on each evidence record",
       "tier": "manual-authority",
       "homepage": "https://isitusa.com/",
       "access": "manual",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present", "officially-absent", "not-detected"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present",
+        "officially-absent",
+        "not-detected"
+      ],
       "negativeSemantics": "explicit-authority-only",
       "refreshCadenceDays": null,
       "status": "manual",
@@ -992,18 +1260,82 @@
     {
       "id": "legacy-merged-presence",
       "label": "Legacy merged presence lineage",
-      "aliases": ["Merged county presence snapshot"],
+      "aliases": [
+        "Merged county presence snapshot"
+      ],
       "authority": "Project Isitusa migration record",
       "tier": "legacy",
       "homepage": "https://isitusa.com/",
       "access": "legacy-snapshot",
-      "geographicScope": ["US"],
-      "evidenceCapabilities": ["recorded-present"],
+      "geographicScope": [
+        "US"
+      ],
+      "evidenceCapabilities": [
+        "recorded-present"
+      ],
       "negativeSemantics": "none",
       "refreshCadenceDays": null,
       "status": "legacy-migration",
       "adapter": "scripts/migrate-research-ledger.ts",
       "caveat": "Preserves an existing verified-present pair whose exact source-to-county edge cannot be reconstructed from current source snapshots. Replace through source-family rebuilds, never by guessing lineage."
+    },
+    {
+      "id": "nappo-karnal-bunt-eradication-2010",
+      "label": "US NPPO / NAPPO California Karnal bunt eradication declaration (2010)",
+      "aliases": [
+        "NAPPO official pest report 525"
+      ],
+      "authority": "United States National Plant Protection Organization via NAPPO",
+      "tier": "official-national",
+      "homepage": "https://www.pestalerts.org/nappo/official-pest-reports/525/",
+      "access": "manual",
+      "geographicScope": [
+        "California"
+      ],
+      "evidenceCapabilities": [
+        "officially-absent"
+      ],
+      "negativeSemantics": "explicit-authority-only",
+      "refreshCadenceDays": 365,
+      "dataFreshThrough": "2027-06-09",
+      "status": "manual",
+      "adapter": null,
+      "caveat": "Explicit statewide eradication declaration with separately dated APHIS current corroboration. County claims inherit reviewed parent scope and project review expiry; no silence, quarantine-removal-only, or county survey inference.",
+      "researchAdapter": {
+        "id": "official-jurisdiction-agent-reviewed",
+        "module": "scripts/research/adapters/official-jurisdiction-agent-reviewed.ts",
+        "allowedVersions": [
+          "1.0.0"
+        ],
+        "parameterSchema": "src/data/research/schemas/official-jurisdiction-agent-reviewed-parameters.schema.json",
+        "publicationReviewGate": "agent-reviewed",
+        "taxonMatchingPolicy": "Exact reviewed canonical binomial; no fuzzy taxon expansion.",
+        "geographyMatchingPolicy": "Exact active county children of an independently reviewed, explicit whole-jurisdiction declaration. Parent lineage, scope and contradiction baseline are mandatory.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "current-only",
+        "rateLimitRequestsPerSecond": 1
+      }
+    },
+    {
+      "id": "aphis-karnal-bunt-current",
+      "label": "USDA APHIS Karnal bunt current official status",
+      "aliases": [],
+      "authority": "USDA Animal and Plant Health Inspection Service",
+      "tier": "official-national",
+      "homepage": "https://www.aphis.usda.gov/plant-pests-diseases/karnal-bunt",
+      "access": "manual",
+      "geographicScope": [
+        "United States"
+      ],
+      "evidenceCapabilities": [
+        "officially-absent"
+      ],
+      "negativeSemantics": "explicit-authority-only",
+      "refreshCadenceDays": 365,
+      "dataFreshThrough": "2027-06-09",
+      "status": "manual",
+      "adapter": null,
+      "caveat": "Current-status corroboration only. Its voluntary grain surveys do not establish all-county non-detection or absence, and quarantine silence is not biological evidence."
     }
   ]
 }

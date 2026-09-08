@@ -19,6 +19,8 @@ import {
   USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
 } from "@/lib/research/coordinate-geography-contract";
 
+import { verifyIndependentJurisdictionReview } from "./jurisdiction-agent-review";
+
 import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type {
   ImmutableResearchRunBundle,
@@ -469,8 +471,11 @@ export function validateResearchRunInMemory(input: {
       sourceId,
     });
     assert(
-      sourceCounty.status === "resolved" &&
-        sourceCounty.county.countyFips === assertion.county_fips,
+      (sourceCounty.status === "resolved" &&
+        sourceCounty.county.countyFips === assertion.county_fips) ||
+        (receipt.adapter_id === "official-jurisdiction-agent-reviewed"
+          && Boolean(assertion.parent_jurisdiction_evidence_id)
+          && assertion.geography_match.source_county === "Not individually named; derived from parent " + jurisdictionEvidenceById.get(assertion.parent_jurisdiction_evidence_id!)?.jurisdiction.id),
       `Assertion ${assertion.eventId} source county does not resolve to its declared county FIPS.`,
     );
     const acceptedSourceStates = new Set(
@@ -515,6 +520,11 @@ export function validateResearchRunInMemory(input: {
         parentJurisdictionEvidence,
         `Assertion ${assertion.eventId} references unknown parent jurisdiction evidence.`,
       );
+      if (parentJurisdictionEvidence.review.gate === "agent-reviewed") {
+        assert(receipt.adapter_id === "official-jurisdiction-agent-reviewed" && assertion.source_record_date === parentJurisdictionEvidence.effectiveAt
+          && assertion.source_id === parentJurisdictionEvidence.review.declarationSourceId, `Assertion ${assertion.eventId} has the wrong agent method, declaration source, or source date.`);
+        verifyIndependentJurisdictionReview(parentJurisdictionEvidence, Buffer.from(readCommittedFile(root, receipt.code_commit, parentJurisdictionEvidence.review.independentReview.path)));
+      }
       assert(
         parentJurisdictionEvidence.speciesId === assertion.species_id &&
           parentJurisdictionEvidence.jurisdiction.countyFips.includes(assertion.county_fips),
@@ -570,6 +580,12 @@ export function validateResearchRunInMemory(input: {
     assert(review.run_id === runId, `Review ${review.eventId} has the wrong run.`);
     assert(review.source_id === sourceId, `Review ${review.eventId} has the wrong source.`);
     assert(review.state_code === stateCode, `Review ${review.eventId} has the wrong state.`);
+    const reviewedParent = assertion.parent_jurisdiction_evidence_id ? jurisdictionEvidenceById.get(assertion.parent_jurisdiction_evidence_id) : undefined;
+    if (reviewedParent?.review.gate === "agent-reviewed") {
+      assert(review.actor_type === "agent" && review.review_level === "agent-reviewed"
+        && review.actor_id !== reviewedParent.review.actorId && review.actor_id !== reviewedParent.review.independentActorId,
+        `Review ${review.eventId} must use a distinct child review agent and cannot claim human approval.`);
+    }
     if (input.workerTaskId) {
       assertWorkerActor(
         review,

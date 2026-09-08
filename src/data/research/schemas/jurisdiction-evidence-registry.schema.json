@@ -4,20 +4,36 @@
   "title": "Project Isitusa parent jurisdiction evidence registry",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "updatedAt", "records"],
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "records"
+  ],
   "properties": {
-    "schemaVersion": { "const": 1 },
-    "updatedAt": { "type": "string", "format": "date" },
+    "schemaVersion": {
+      "const": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
     "records": {
       "type": "array",
-      "items": { "$ref": "#/$defs/record" }
+      "items": {
+        "$ref": "#/$defs/record"
+      }
     }
   },
   "$defs": {
     "dateOrNull": {
       "oneOf": [
-        { "type": "string", "format": "date" },
-        { "type": "null" }
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "sha256": {
@@ -42,17 +58,35 @@
         "modifiedAt"
       ],
       "properties": {
-        "sourceId": { "type": "string", "minLength": 1 },
-        "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "sourceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
         "artifactPath": {
           "type": "string",
           "minLength": 1
         },
-        "artifactSha256": { "$ref": "#/$defs/sha256" },
-        "supportText": { "type": "string", "minLength": 1 },
-        "supportTextSha256": { "$ref": "#/$defs/sha256" },
-        "publishedAt": { "$ref": "#/$defs/dateOrNull" },
-        "modifiedAt": { "$ref": "#/$defs/dateOrNull" }
+        "artifactSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "supportText": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supportTextSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "publishedAt": {
+          "$ref": "#/$defs/dateOrNull"
+        },
+        "modifiedAt": {
+          "$ref": "#/$defs/dateOrNull"
+        }
       }
     },
     "jurisdiction": {
@@ -67,39 +101,158 @@
         "exclusions"
       ],
       "properties": {
-        "level": { "enum": ["nation", "state", "county-set"] },
-        "id": { "type": "string", "minLength": 1 },
+        "level": {
+          "enum": [
+            "nation",
+            "state",
+            "county-set"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
         "stateCode": {
           "oneOf": [
-            { "type": "string", "pattern": "^[A-Z]{2}$" },
-            { "type": "null" }
+            {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
+            },
+            {
+              "type": "null"
+            }
           ]
         },
         "countyFips": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/countyFips" }
+          "items": {
+            "$ref": "#/$defs/countyFips"
+          }
         },
-        "countyFipsSha256": { "$ref": "#/$defs/sha256" },
+        "countyFipsSha256": {
+          "$ref": "#/$defs/sha256"
+        },
         "exclusions": {
           "type": "array",
           "maxItems": 0,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/countyFips" }
+          "items": {
+            "$ref": "#/$defs/countyFips"
+          }
         }
       }
     },
     "review": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["gate", "status", "actorId", "reviewedAt"],
-      "properties": {
-        "gate": { "const": "human-approved" },
-        "status": { "const": "human-approved" },
-        "actorId": { "type": "string", "minLength": 1 },
-        "reviewedAt": { "type": "string", "format": "date-time" }
-      }
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "gate",
+            "status",
+            "actorId",
+            "reviewedAt"
+          ],
+          "properties": {
+            "gate": {
+              "const": "human-approved"
+            },
+            "status": {
+              "const": "human-approved"
+            },
+            "actorId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "gate",
+            "status",
+            "actorId",
+            "reviewedAt",
+            "methodVersion",
+            "independentActorId",
+            "independentReview",
+            "reviewedAsOf",
+            "declarationSourceId",
+            "corroborationSourceId",
+            "authorityDateKind",
+            "expiryPolicy"
+          ],
+          "properties": {
+            "gate": {
+              "const": "agent-reviewed"
+            },
+            "status": {
+              "const": "agent-reviewed"
+            },
+            "actorId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "methodVersion": {
+              "const": "official-jurisdiction-agent-review-v1"
+            },
+            "independentActorId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "independentReview": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "pattern": "^ops/national-research/evaluations/"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            },
+            "reviewedAsOf": {
+              "type": "string",
+              "format": "date"
+            },
+            "declarationSourceId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "corroborationSourceId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "authorityDateKind": {
+              "enum": [
+                "published",
+                "modified"
+              ]
+            },
+            "expiryPolicy": {
+              "const": "authority-date-plus-365-days-v1"
+            }
+          }
+        }
+      ]
     },
     "record": {
       "type": "object",
@@ -118,24 +271,56 @@
         "caveats"
       ],
       "properties": {
-        "schemaVersion": { "const": 1 },
-        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
-        "speciesId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
-        "statementType": { "enum": ["officially-eradicated", "officially-absent"] },
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]+$"
+        },
+        "speciesId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]+$"
+        },
+        "statementType": {
+          "enum": [
+            "officially-eradicated",
+            "officially-absent"
+          ]
+        },
         "sourceDocuments": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/sourceDocument" }
+          "items": {
+            "$ref": "#/$defs/sourceDocument"
+          }
         },
-        "jurisdiction": { "$ref": "#/$defs/jurisdiction" },
-        "effectiveAt": { "type": "string", "format": "date" },
-        "conflictCheckFrom": { "type": "string", "format": "date" },
-        "reaffirmedAt": { "$ref": "#/$defs/dateOrNull" },
-        "validThrough": { "type": "string", "format": "date" },
-        "review": { "$ref": "#/$defs/review" },
+        "jurisdiction": {
+          "$ref": "#/$defs/jurisdiction"
+        },
+        "effectiveAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "conflictCheckFrom": {
+          "type": "string",
+          "format": "date"
+        },
+        "reaffirmedAt": {
+          "$ref": "#/$defs/dateOrNull"
+        },
+        "validThrough": {
+          "type": "string",
+          "format": "date"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
         "caveats": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       }
     }
