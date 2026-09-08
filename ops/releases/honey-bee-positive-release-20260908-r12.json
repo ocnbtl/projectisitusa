@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "kind": "honey-bee-positive-production-release",
+  "recordedAt": "2026-09-08T11:06:20.248Z",
+  "status": "application-released-research-candidate-queued",
+  "releasedCommit": "7bf49304bdc00c61862788ef68fecce8d8347ef0",
+  "vercelDeploymentId": "dpl_xCACXRAhYHFd1so1DfMG8jbPfdj2",
+  "vercelDeploymentUrl": "https://projectisitusa-qvtj0n384-unigentamos.vercel.app",
+  "publicSite": "https://isitusa.com",
+  "rollbackCommit": "7c53e2ff3a8fdc824e52f96a84c78387c8559193",
+  "rollbackDeploymentId": "dpl_2WnPKsHKhesDvRLSB3oamuv6S1jt",
+  "productionAliasAndReadyStateVerified": true,
+  "providerVerifiedAt": "2026-09-08T11:02:41.076Z",
+  "localValidation": "ops/releases/honey-bee-positive-predeployment-20260908-r12.json",
+  "nationalReconciliation": "ops/national-research/evaluations/honey-bee-positive-national-reconciliation-20260908-r12.json",
+  "researchReceiptCorrection": "ops/national-research/evaluations/honey-bee-positive-national-reconciliation-count-correction-20260908-r12.json",
+  "localResearch": {
+    "verifiedPresent": 314741,
+    "verifiedAbsent": 3718,
+    "determinations": 318459,
+    "netUniqueDeterminations": 1739,
+    "newRuns": 48,
+    "sourceReplayRequests": 0,
+    "heldPairs": 2,
+    "removedPairs": 0,
+    "unexpectedExistingPairChanges": 0,
+    "defaultRowsMaterializedNotGains": 1314
+  },
+  "publicChecks": {
+    "observedAt": "2026-09-08T11:03:04.425Z",
+    "requests": [
+      {
+        "url": "https://isitusa.com/",
+        "status": 200,
+        "decodedBytes": 11166,
+        "sha256": "437cf8bee231562c572425c894e9fe6d6727e90af08d96a06444bf142a626f7e",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "cache": "HIT",
+        "contentEncoding": "br",
+        "allowOrigin": "*",
+        "contentType": "text/html; charset=utf-8",
+        "embeddedAllSpecies": false,
+        "embeddedPresenceIndex": false
+      },
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200,
+        "decodedBytes": 14175,
+        "sha256": "c34e0abfe3bc01a980e3ea5244dfcacaae582ad05895ae483b6f91591528cf9c",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "cache": "PRERENDER",
+        "contentEncoding": "br",
+        "allowOrigin": "*",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://data.isitusa.com/current.json",
+        "status": 200,
+        "decodedBytes": 421,
+        "sha256": "0f39f04a59a0fd43e7381679eb68d822eb0a3ca6d2fa03aa607d6876899bb22b",
+        "cacheControl": "public, max-age=60, must-revalidate",
+        "cache": "REVALIDATED",
+        "contentEncoding": "br",
+        "allowOrigin": "https://isitusa.com",
+        "contentType": "application/json; charset=utf-8",
+        "pointer": {
+          "schemaVersion": 1,
+          "kind": "isitusa-research-projection-pointer",
+          "releaseId": "research-6927e5fe2efb-886700baca52fe1e",
+          "releaseManifestKey": "releases/research-6927e5fe2efb-886700baca52fe1e/manifest.json",
+          "releaseManifestSha256": "8be4df7b66d8cc58b1d7c7679faa9745864b7b400a566c237d4a56ac56dba5af",
+          "sourceCommit": "6927e5fe2efbbbad808c488b01129f5ff33a2e68",
+          "promotedAt": "2026-09-06T06:56:53.282Z"
+        }
+      },
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "status": 200,
+        "decodedBytes": 3854453,
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "cache": "HIT",
+        "contentEncoding": "gzip",
+        "allowOrigin": "https://isitusa.com",
+        "contentType": "application/json; charset=utf-8",
+        "expectedIntegrityMatched": true
+      },
+      {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "status": 200,
+        "decodedBytes": 4831012,
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "cache": "HIT",
+        "contentEncoding": "gzip",
+        "allowOrigin": "https://isitusa.com",
+        "contentType": "application/json; charset=utf-8",
+        "expectedIntegrityMatched": true
+      }
+    ],
+    "localBuiltPages": [
+      {
+        "path": ".next/server/app/index.html",
+        "bytes": 11166,
+        "sha256": "75df53580eec248105aec2572c40636231f80349786eeabbb5550103f92cbbf0"
+      },
+      {
+        "path": ".next/server/app/index.rsc",
+        "bytes": 6014,
+        "sha256": "a7f796fdd16df54d2133b9ff018d19c2f76e717eb4b8b1d44d3f3e688c193dde"
+      }
+    ]
+  },
+  "browser": {
+    "recordedAt": "2026-09-08T11:06:20.240Z",
+    "method": "Fresh navigation and current accessibility text, read-only image properties and error logs through the existing Brave CUA tab after exact production alias verification.",
+    "checks": [
+      {
+        "name": "Map county deep link",
+        "url": "https://isitusa.com/?county=01073",
+        "county": "Jefferson, AL",
+        "reportedSpecies": 411,
+        "passed": true
+      },
+      {
+        "name": "Research deep link, source evidence and caveats",
+        "url": "https://isitusa.com/research?state=CA&county=06037&species=Centaurea+melitensis",
+        "county": "Los Angeles",
+        "matchingSpecies": 1,
+        "status": "Verified Present",
+        "evidenceCount": 264,
+        "productionResearchAsOf": "2026-09-06",
+        "errors": [],
+        "passed": true
+      },
+      {
+        "name": "Historical date precision",
+        "observedYear": "1937",
+        "observedInterval": "Jul 20, 1917 to Jul 25, 1917",
+        "passed": true
+      },
+      {
+        "name": "Species photo and credit",
+        "url": "https://isitusa.com/species/melilotus-officinalis",
+        "photo": "https://isitusa.com/optimized-species/e43b5a3b85ed6dd1abdbe3571216e9c851eff73dc7b4f0be791e296b2a48b88a.webp",
+        "complete": true,
+        "width": 1280,
+        "height": 960,
+        "credit": "Image credit: Wikimedia Commons",
+        "errors": [],
+        "viewportWidth": 1757,
+        "documentWidth": 1742,
+        "passed": true
+      }
+    ],
+    "scope": "Focused desktop smoke for this research/tooling release; full responsive, cold-client and failure-recovery results remain separately dated in the initial optimization release."
+  },
+  "providerBuild": {
+    "imagePreparation": {
+      "sources": 2090,
+      "originalBytes": 808459923,
+      "derivativeBytes": 295644698,
+      "generated": 0,
+      "restored": 4156,
+      "reused": 24,
+      "cache": {
+        "bytes": 295025492,
+        "objects": 4156,
+        "maxBytes": 335544320,
+        "removed": 0
+      },
+      "elapsedMs": 4769,
+      "bundles": {
+        "map": {
+          "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+          "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+          "bytes": 3854453,
+          "storedBytes": 715009
+        },
+        "catalog": {
+          "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+          "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+          "bytes": 4831012,
+          "storedBytes": 698125
+        }
+      }
+    },
+    "warmProviderBuildObserved": true,
+    "buildCacheRestoredFrom": "dpl_2WnPKsHKhesDvRLSB3oamuv6S1jt",
+    "buildCacheUploadDisplay": "455.22 MB",
+    "buildCacheUploaded": true,
+    "cloneElapsedMs": 152894,
+    "ignoredBuildClassification": "The prior successful commit was unavailable in the shallow checkout, so classification safely proceeded with an application build. Shared compiler and package changes were included in this release."
+  },
+  "publication": {
+    "candidate": "research-e4434322e97d-d203a77ba04a6139",
+    "r2Writes": 0,
+    "pointerPromotions": 0,
+    "livePointer": "research-6927e5fe2efb-886700baca52fe1e",
+    "liveResearchPromotedAt": "2026-09-06T06:56:53.282Z",
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+    "budget": "ops/national-research/publication/honey-bee-positive-candidate-budget-20260908-r12.json",
+    "projectedBucketBytes": 7967390982,
+    "remainingPlannedSafetyHeadroomBytes": 32609018
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/honey-bee-positive-production-20260908-r12.json.gz",
+    "bytes": 23119,
+    "sha256": "acc4ad02d090c99ae1a73fdef3419207d93f017938a2955cbeb4745591db9a84"
+  },
+  "nextPriorities": [
+    "Choose the next high-yield retained-source or explicit negative-evidence pathway using exact unmet catalog pairs; the secondary Nosema/Vairimorpha metric has no exact current catalog match.",
+    "Keep the source-conflict holds explicit and preserve historical observation scope.",
+    "Refresh R2 object inventory and current-period usage before the September 13 publication window. Further candidate growth requires a fresh exact storage plan."
+  ],
+  "limitations": [
+    "The 1739 research gains and their source credits are verified locally and committed but await the separate R2 publication batch. They are not yet visible in current production research data.",
+    "No new paid service or plan was created. Dated usage charts and this build do not establish account-specific charges or long-term usage savings.",
+    "Provider image preparation took 4769ms and reused the warmed cache. Git cloning took 152894ms; these are observations for this build, not guaranteed future timings.",
+    "The entire project remains incomplete and the autonomous MAIN goal remains active."
+  ]
+}
