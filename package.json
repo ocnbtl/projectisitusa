@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:clean": "node scripts/clean-next.mjs && next dev",
-    "build": "node scripts/prepare-vercel-build.mjs && next build",
+    "build": "node scripts/prepare-runtime-assets.mjs && node scripts/prepare-vercel-build.mjs && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
@@ -114,7 +114,9 @@
     "research:acquire:taxonomy-reference": "node --import tsx scripts/research/acquire-taxonomy-reference.ts",
     "check:retained-specimen-taxonomy": "node --import tsx scripts/test-wcvp-infraspecific-candidates.ts && node --import tsx scripts/test-retained-specimen-taxonomy.ts",
     "research:preflight:retained-taxonomy": "node --import tsx scripts/research/build-reviewed-specimen-taxonomy-preflight.ts",
-    "check:taxonomy-reference-acquisition": "node --import tsx scripts/test-taxonomy-reference-acquisition.ts"
+    "check:taxonomy-reference-acquisition": "node --import tsx scripts/test-taxonomy-reference-acquisition.ts",
+    "assets:prepare": "node scripts/prepare-runtime-assets.mjs --write",
+    "check:runtime-assets": "node --import tsx scripts/test-runtime-assets.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

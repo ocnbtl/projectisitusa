@@ -23,7 +23,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://upload.wikimedia.org",
       "font-src 'self' data:",
-      `connect-src 'self'${isDevelopment ? " ws: http: https:" : ""}`,
+      `connect-src 'self' https://data.isitusa.com${isDevelopment ? " ws: http: https:" : ""}`,
       "manifest-src 'self'",
       "upgrade-insecure-requests",
     ].join("; "),
@@ -73,6 +73,7 @@ const nextConfig: NextConfig = {
     }
 
     return [
+      { source: "/optimized-species/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       {
         source: "/:path*",
         headers: securityHeaders,

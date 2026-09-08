@@ -49,9 +49,9 @@ async function main() {
 
   const calls: string[] = [];
   const bodies = new Map<string, BodyInit>([
-    ["/research-data/current.json", JSON.stringify(pointer)],
-    [`/research-data/${pointer.releaseManifestKey}`, manifestBody],
-    [`/research-data/${objectKey}`, objectBody],
+    ["https://data.isitusa.com/current.json", JSON.stringify(pointer)],
+    [`https://data.isitusa.com/${pointer.releaseManifestKey}`, manifestBody],
+    [`https://data.isitusa.com/${objectKey}`, objectBody],
   ]);
   const request = async (input: RequestInfo | URL) => {
     const url = String(input);
@@ -62,15 +62,15 @@ async function main() {
   const fetchProjection = createResearchProjectionFetcher(delivery, request);
   assert.deepEqual(await fetchProjection("MD/summary.json"), { stateCode: "MD" });
   assert.deepEqual(calls, [
-    "/research-data/current.json",
-    `/research-data/${pointer.releaseManifestKey}`,
-    `/research-data/${objectKey}`,
+    "https://data.isitusa.com/current.json",
+    `https://data.isitusa.com/${pointer.releaseManifestKey}`,
+    `https://data.isitusa.com/${objectKey}`,
   ]);
 
   const badManifestRequest = async (input: RequestInfo | URL) => {
     const url = String(input);
-    if (url === "/research-data/current.json") return new Response(JSON.stringify(pointer));
-    if (url === `/research-data/${pointer.releaseManifestKey}`) {
+    if (url === "https://data.isitusa.com/current.json") return new Response(JSON.stringify(pointer));
+    if (url === `https://data.isitusa.com/${pointer.releaseManifestKey}`) {
       return new Response(`${JSON.stringify({ ...manifest, sourceCommit: "d".repeat(40) })}\n`);
     }
     return new Response(objectBody);

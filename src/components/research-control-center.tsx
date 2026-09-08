@@ -1,5 +1,7 @@
 "use client";
 
+import { loadRuntimeData } from "@/lib/data/runtime-fetch";
+
 import {
   AlertCircle,
   ArrowDown,
@@ -908,20 +910,15 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
       setCountyData(null);
 
       try {
-        const [countyProjection, catalogResponse] = await Promise.all([
+        const [countyProjection, catalog] = await Promise.all([
           fetchResearchProjectionJson(
             `${encodeURIComponent(summary.stateCode)}/counties/${encodeURIComponent(selectedCountyFips)}.json`,
             { cache: "no-store", signal: controller.signal },
           ),
-          fetch("/generated/species.json", {
-            cache: "no-store",
-            signal: controller.signal,
-          }),
+          loadRuntimeData<unknown>("catalog"),
         ]);
-        if (!catalogResponse.ok) {
-          throw new Error(`Species catalog request failed with status ${catalogResponse.status}.`);
-        }
 
+        if (controller.signal.aborted) return;
         const data: unknown = countyProjection;
         if (!isCountyResearchFile(data)) {
           throw new Error("County file has an invalid research data shape.");
@@ -939,7 +936,6 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
           throw new Error("County file scope does not match the state summary.");
         }
 
-        const catalog: unknown = await catalogResponse.json();
         if (!Array.isArray(catalog)) {
           throw new Error("Species catalog has an invalid data shape.");
         }
@@ -964,6 +960,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
         });
         setLoadState("success");
       } catch (error) {
+        if (controller.signal.aborted) return;
         if (error instanceof Error && error.name === "AbortError") return;
         setLoadError(
           error instanceof Error ? error.message : "County research data could not be loaded.",
@@ -1755,6 +1752,7 @@ export function ResearchControlCenter({
         }
         setSummary(data);
       } catch (error) {
+        if (controller.signal.aborted) return;
         if (error instanceof Error && error.name === "AbortError") return;
         setLoadError(
           error instanceof Error ? error.message : "Research summary could not be loaded.",

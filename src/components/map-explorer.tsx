@@ -255,7 +255,7 @@ export function MapExplorer({
   const [zipLookup, setZipLookup] = useState<ZipLookupResult | null>(null);
   const [isSearchingZip, setIsSearchingZip] = useState(false);
   const deferredSpeciesQuery = useDeferredValue(speciesQuery);
-  const { store, error } = useClientDataStore(initialStore);
+  const { store, error, retry } = useClientDataStore(initialStore);
   const dataStore = store ?? EMPTY_DATA_STORE;
   const {
     allSpecies,
@@ -629,7 +629,8 @@ export function MapExplorer({
     return (
       <div className="mx-auto grid w-full max-w-[1600px] items-start gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-[360px_minmax(0,1fr)] lg:px-8">
         <div className="glass-panel rounded-[28px] p-6 text-sm text-[var(--muted)]">
-          {error}
+          <p role="alert">{error}</p>
+          <button type="button" onClick={retry} className="mt-4 rounded-full border border-[var(--border)] px-4 py-2 text-[var(--foreground)] hover:border-[var(--accent)]">Try again</button>
         </div>
       </div>
     );
@@ -639,10 +640,10 @@ export function MapExplorer({
     return (
       <div className="mx-auto grid w-full max-w-[1600px] items-start gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-[360px_minmax(0,1fr)] lg:px-8">
         <div className="glass-panel rounded-[28px] p-6 text-sm text-[var(--muted)]">
-          Loading local species and county snapshot…
+          <span role="status">Loading species and county snapshot...</span>
         </div>
         <div className="glass-panel rounded-[28px] p-6 text-sm text-[var(--muted)]">
-          Preparing the county explorer…
+          <div role="status" aria-busy="true" className="min-h-[360px] animate-pulse">Preparing the county explorer...</div>
         </div>
       </div>
     );

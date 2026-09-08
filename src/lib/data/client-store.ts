@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 
 import type {
   CountyDetail,
@@ -42,25 +43,6 @@ export interface ClientDataStore {
 
 let storePromise: Promise<ClientDataStore> | null = null;
 let cachedStore: ClientDataStore | null = null;
-const DATASET_FETCH_TIMEOUT_MS = 15000;
-
-async function fetchJson<T>(path: string) {
-  const controller = new AbortController();
-  const timeout = window.setTimeout(() => controller.abort(), DATASET_FETCH_TIMEOUT_MS);
-  const response = await fetch(path, {
-    cache: "force-cache",
-    signal: controller.signal,
-  }).finally(() => {
-    window.clearTimeout(timeout);
-  });
-
-  if (!response.ok) {
-    throw new Error(`Failed to load ${path}`);
-  }
-
-  return (await response.json()) as T;
-}
-
 export function createClientDataStore(payload: ClientDataStorePayload): ClientDataStore {
   return {
     allSpecies: payload.allSpecies,
@@ -74,22 +56,7 @@ export function createClientDataStore(payload: ClientDataStorePayload): ClientDa
 }
 
 async function loadClientDataStore(): Promise<ClientDataStore> {
-  const [allSpecies, countyIndex, countyDetails, presenceIndex, datasetSnapshot] =
-    await Promise.all([
-    fetchJson<ExplorerSpecies[]>("/generated/explorer-species.json"),
-    fetchJson<Record<string, CountyRecord>>("/generated/counties.json"),
-    fetchJson<Record<string, CountyDetail>>("/generated/county-details.json"),
-    fetchJson<ExplorerPresenceIndex>("/generated/explorer-presence.json"),
-    fetchJson<DatasetSnapshot>("/generated/snapshot.json"),
-  ]);
-
-  return createClientDataStore({
-    allSpecies,
-    countyIndex,
-    countyDetails,
-    presenceIndex,
-    datasetSnapshot,
-  });
+  return createClientDataStore(await loadRuntimeData<ClientDataStorePayload>("map"));
 }
 
 function getClientDataStore() {
@@ -117,11 +84,13 @@ export function useClientDataStore(initialPayload?: ClientDataStorePayload) {
     initialPayload ? createClientDataStore(initialPayload) : null,
   );
   const [error, setError] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (initialPayload) return;
 
     let cancelled = false;
+    setError(null);
 
     getClientDataStore()
       .then((nextStore) => {
@@ -130,15 +99,15 @@ export function useClientDataStore(initialPayload?: ClientDataStorePayload) {
       })
       .catch(() => {
         if (cancelled) return;
-        setError("Static dataset failed to load. Refresh and try again.");
+        setError("The species and county snapshot could not be loaded. Check your connection and try again.");
       });
 
     return () => {
       cancelled = true;
     };
-  }, [initialPayload]);
+  }, [initialPayload, attempt]);
 
-  return { store, error };
+  return { store, error, retry: () => setAttempt((value) => value + 1) };
 }
 
 export function speciesHasCountyData(species: ExplorerSpecies) {

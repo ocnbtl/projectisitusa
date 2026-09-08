@@ -72,7 +72,7 @@ export function SpeciesCard({
         <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-[var(--border)] bg-transparent">
           {species.image && !imageFailed ? (
             <Image
-              src={species.image.src}
+              src={species.image.thumbnail ?? species.image.src}
               alt={species.image.alt}
               fill
               sizes="64px"

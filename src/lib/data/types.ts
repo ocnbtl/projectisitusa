@@ -102,6 +102,7 @@ export interface Species {
   eddMapsSubjectId?: number;
   image?: {
     src: string;
+    thumbnail?: string;
     alt: string;
     credit: string;
   };
@@ -147,6 +148,7 @@ export interface ExplorerSpecies {
   summary: string;
   image?: {
     src: string;
+    thumbnail?: string;
     alt: string;
     credit: string;
   };

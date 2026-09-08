@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 import { ArrowLeft } from "lucide-react";
 import { notFound, redirect } from "next/navigation";
 
@@ -82,6 +83,8 @@ export default async function SpeciesProfilePage({
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
+  const legacyImage = getSpeciesImageAsset(`/species/${resolvedParams.slug}`);
+  if (legacyImage) redirect(legacyImage.full.src);
   const canonicalSlug = speciesSlugAliases.get(resolvedParams.slug);
 
   if (canonicalSlug) {

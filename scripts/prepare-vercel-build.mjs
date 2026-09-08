@@ -12,6 +12,8 @@ export const REQUIRED_VERCEL_RUNTIME_PATHS = Object.freeze([
   "src/data/generated/county-details.json",
   "src/data/generated/explorer-presence.json",
   "src/data/generated/snapshot.json",
+  "src/data/runtime/image-assets.json",
+  "src/data/runtime/data-assets.json",
 ]);
 
 export const EXCLUDED_VERCEL_BUILD_PATHS = Object.freeze([
@@ -24,6 +26,8 @@ export const EXCLUDED_VERCEL_BUILD_PATHS = Object.freeze([
   "ops",
   "docs",
 ]);
+
+export const GENERATED_BUILD_INPUT_PATHS = Object.freeze(["public/species", "public/generated"]);
 
 function assertRequiredRuntimeFile(projectRoot, relativePath) {
   const absolutePath = path.join(projectRoot, relativePath);
@@ -60,8 +64,21 @@ export function prepareVercelBuild(root, environment = process.env) {
     }
   }
 
+  // The preceding asset build checks every derivative and both data declarations.
+  // Keep source images in the canonical checkout; prune only the disposable Vercel build.
+  const inputPathsRemoved = [];
+  for (const relativePath of GENERATED_BUILD_INPUT_PATHS) {
+    const absolutePath = path.join(projectRoot, relativePath);
+    assertChildPath(projectRoot, absolutePath);
+    if (existsSync(absolutePath)) {
+      rmSync(absolutePath, { recursive: true, force: false });
+      inputPathsRemoved.push(relativePath);
+    }
+  }
+
   return {
     mode: "vercel",
+    inputPathsRemoved,
     requiredRuntimeFileCount: REQUIRED_VERCEL_RUNTIME_PATHS.length,
     excludedPathCount: EXCLUDED_VERCEL_BUILD_PATHS.length,
     removedPathCount: removedPaths.length,

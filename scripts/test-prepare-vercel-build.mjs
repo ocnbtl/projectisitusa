@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import {
   EXCLUDED_VERCEL_BUILD_PATHS,
+  GENERATED_BUILD_INPUT_PATHS,
   REQUIRED_VERCEL_RUNTIME_PATHS,
   prepareVercelBuild,
 } from "./prepare-vercel-build.mjs";
@@ -35,15 +36,21 @@ try {
     writeFileSync(fixturePath, "retained in Git; pruned only from the Vercel workspace\n");
   }
 
+  for (const relativePath of GENERATED_BUILD_INPUT_PATHS) {
+    mkdirSync(path.join(root, relativePath), { recursive: true });
+    writeFileSync(path.join(root, relativePath, "input.txt"), "preserved original");
+  }
   const localResult = prepareVercelBuild(root, {});
   assert.deepEqual(localResult, { mode: "local" });
   for (const relativePath of EXCLUDED_VERCEL_BUILD_PATHS) {
     assert.equal(existsSync(path.join(root, relativePath)), true);
   }
 
+  for (const relativePath of GENERATED_BUILD_INPUT_PATHS) assert.equal(existsSync(path.join(root, relativePath, "input.txt")), true);
   const vercelResult = prepareVercelBuild(root, { VERCEL: "1" });
   assert.deepEqual(vercelResult, {
     mode: "vercel",
+    inputPathsRemoved: [...GENERATED_BUILD_INPUT_PATHS],
     requiredRuntimeFileCount: REQUIRED_VERCEL_RUNTIME_PATHS.length,
     excludedPathCount: EXCLUDED_VERCEL_BUILD_PATHS.length,
     removedPathCount: EXCLUDED_VERCEL_BUILD_PATHS.length,
@@ -51,6 +58,8 @@ try {
   for (const relativePath of EXCLUDED_VERCEL_BUILD_PATHS) {
     assert.equal(existsSync(path.join(root, relativePath)), false);
   }
+
+  for (const relativePath of GENERATED_BUILD_INPUT_PATHS) assert.equal(existsSync(path.join(root, relativePath)), false);
 
   const missingRuntimeFile = path.join(root, REQUIRED_VERCEL_RUNTIME_PATHS[0]);
   rmSync(missingRuntimeFile);

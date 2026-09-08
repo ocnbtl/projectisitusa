@@ -138,14 +138,14 @@ async function loadManifest(
     throw new Error("R2 research delivery is not active.");
   }
   const pointerResponse = await request(
-    `/research-data/${validatedDelivery.r2.pointerPath}`,
+    `${validatedDelivery.r2.origin}/${validatedDelivery.r2.pointerPath}`,
     { cache: "no-store" },
   );
   if (!pointerResponse.ok) {
     throw new Error(`Research release pointer request failed with status ${pointerResponse.status}.`);
   }
   const pointer = validatePublishedPointer(await pointerResponse.json());
-  const manifestResponse = await request(`/research-data/${pointer.releaseManifestKey}`, {
+  const manifestResponse = await request(`${validatedDelivery.r2.origin}/${pointer.releaseManifestKey}`, {
     cache: "force-cache",
   });
   const manifestBytes = await verifiedResponseBytes(
@@ -190,7 +190,7 @@ export function createResearchProjectionFetcher(
     if (!artifact) {
       throw new Error(`Research release does not declare ${logicalPath}.`);
     }
-    const response = await request(`/research-data/${artifact.objectKey}`, {
+    const response = await request(`${validatedDelivery.r2.origin}/${artifact.objectKey}`, {
       ...init,
       cache: "force-cache",
     });
