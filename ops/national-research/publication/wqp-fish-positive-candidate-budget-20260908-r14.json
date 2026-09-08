@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-research-candidate-storage-plan",
+  "recordedAt": "2026-09-08T14:21:21.792Z",
+  "releaseId": "research-bdb18551b689-94db4ce047eee163",
+  "sourceCommit": "bdb18551b68990ea7724ea3328ae9517b33667f3",
+  "manifest": {
+    "path": "ops/national-research/publication/research-data-manifest.json",
+    "bytes": 2047966,
+    "sha256": "a705b4bd8db5e4a4dbb747ede992fe2fa0cf83c39f0378908331dc58a26a6f2f"
+  },
+  "representationInventory": {
+    "path": ".cache/research/campaigns/20260906-r4-museum/taxonomy-main-batch/r2-inventory-20260907.json",
+    "observedAt": "2026-09-07T17:33:10.686Z",
+    "objects": 29057
+  },
+  "bucketBaseline": {
+    "observedAt": "2026-09-08T01:30:20.362Z",
+    "objects": 29059,
+    "bytes": 7837439604
+  },
+  "candidateNewObjects": 3195,
+  "candidateAdditionalBytes": 130206409,
+  "projectedBucketBytes": 7967646013,
+  "projectSafetyCeilingBytes": 8000000000,
+  "remainingSafetyHeadroomBytes": 32353987,
+  "supersededUnuploadedCandidate": {
+    "path": "ops/national-research/publication/wqp-field-positive-candidate-budget-20260908-r13.json",
+    "releaseId": "research-49d19087c6cd-30afb52a9f67260e",
+    "reservationBytes": 130097679
+  },
+  "requiredResearchReservationBytes": 130206409,
+  "withinStorageCeiling": true,
+  "providerWrites": 0,
+  "pointerPromotions": 0,
+  "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+  "manifestCheck": {
+    "exitCode": 0,
+    "logSha256": "33c56872ced871ad0880d9f004979a63ef36e68bac382772b17953f093b3c394"
+  },
+  "offlinePlan": {
+    "mode": "plan",
+    "releaseId": "research-bdb18551b689-94db4ce047eee163",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1342257064,
+    "uniqueStoredBytes": 128158443,
+    "maximumNewClassARequests": 3197,
+    "maximumVerificationClassBRequests": 3196,
+    "currentClassARequests": 0,
+    "currentClassBRequests": 0,
+    "freeTierSafetyStorageBytes": 8000000000,
+    "freeTierSafetyClassARequests": 800000,
+    "freeTierSafetyClassBRequests": 8000000
+  },
+  "datedProviderUsageEvidence": "ops/releases/wqp-field-positive-release-20260908-r13.json",
+  "limitations": [
+    "This replaces the previous unuploaded candidate reservation; it is not an additional stored release.",
+    "Representation inventory and measured bucket baseline are dated planning evidence. Refresh exact inventory and current-period billable usage before upload.",
+    "Offline Class A and Class B zeros are planning placeholders, not measured current usage.",
+    "Ordinary research promotion remains scheduled for September 13; no upload or pointer promotion occurred.",
+    "The storage margin is a plan under the recorded baseline, not a current account guarantee. No automatic paid-resource use is authorized."
+  ]
+}

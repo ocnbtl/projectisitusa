@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-fish-positive-predeployment",
+  "recordedAt": "2026-09-08T14:32:49.384Z",
+  "status": "local-gates-passed-production-pending",
+  "baseCommit": "8f690f1e02fe417d3d81623bf84f3ccd91eac694",
+  "rollbackCommit": "6764f807429ba95fb88d0e7c83822a5d6268df42",
+  "rollbackDeploymentId": "dpl_3Q9Dvs5t9nMqXAUZuj1RE873RzA3",
+  "behavior": "Reviewed retained WQP fish measurements establish 67 historical county occurrences with original field dates, exact station county joins, physical CSV citations and measurement caveats. Immutable Git-file caching reduces repeated source validation reads. Small static application responses and direct immutable runtime delivery remain preserved.",
+  "researchReconciliation": "ops/national-research/evaluations/wqp-fish-positive-national-reconciliation-20260908-r14.json",
+  "localResearch": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 314946,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306725,
+    "notResearched": 6246951,
+    "explicitOutcomePairCount": 1581271,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462380,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432250,
+    "rejectionRecordCount": 65929,
+    "researchRunCount": 2140,
+    "determinations": 318664,
+    "netUniqueDeterminations": 67,
+    "newRuns": 13,
+    "sourceReplayRequests": 0,
+    "priorStatusCounts": {
+      "researched-unresolved": 43,
+      "not-researched": 24
+    },
+    "derivedApplicabilityOnlyChangesNotDeterminations": 152,
+    "addedExplicitDefaultsNotResearchProgress": 311
+  },
+  "publicationBudget": "ops/national-research/publication/wqp-fish-positive-candidate-budget-20260908-r14.json",
+  "nationalChecks": [
+    {
+      "name": "compile-all",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/compile-all-state-research.ts",
+        "--as-of",
+        "2026-09-08"
+      ],
+      "startedAt": "2026-09-08T13:57:44.482Z",
+      "finishedAt": "2026-09-08T14:01:03.226Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/compile-all-gate.log"
+    },
+    {
+      "name": "national-final",
+      "args": [
+        ".cache/research/campaigns/20260908-r14-wqp-expansion/verify-national-final.cjs"
+      ],
+      "startedAt": "2026-09-08T14:01:03.227Z",
+      "finishedAt": "2026-09-08T14:09:44.392Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-gate.log"
+    },
+    {
+      "name": "research-integrity",
+      "args": [
+        "C:\\Code\\tools\\node-v22.23.2-win-x64\\node_modules\\npm\\bin\\npm-cli.js",
+        "run",
+        "check:research-integrity"
+      ],
+      "startedAt": "2026-09-08T14:09:44.393Z",
+      "finishedAt": "2026-09-08T14:30:12.878Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/research-integrity-gate.log"
+    }
+  ],
+  "applicationChecks": [
+    {
+      "command": "npm run build",
+      "startedAt": "2026-09-08T14:30:34.030Z",
+      "finishedAt": "2026-09-08T14:31:44.604Z",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-09-08T14:31:44.606Z",
+      "finishedAt": "2026-09-08T14:31:49.575Z",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "startedAt": "2026-09-08T14:31:49.575Z",
+      "finishedAt": "2026-09-08T14:31:52.592Z",
+      "exitCode": 0,
+      "log": "check-runtime-assets.log"
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "startedAt": "2026-09-08T14:31:52.592Z",
+      "finishedAt": "2026-09-08T14:31:53.547Z",
+      "exitCode": 0,
+      "log": "check-vercel-publish.log"
+    }
+  ],
+  "integrityGateTiming": {
+    "previousMillis": 1460749,
+    "currentMillis": 1228485,
+    "limitation": "Sequential whole-command elapsed times include different corpus sizes and other test phases; they are observations, not an isolated cache benchmark or forecast."
+  },
+  "runtimeAssetBundlesUnchanged": true,
+  "imagePreparation": {
+    "sources": 2090,
+    "originalBytes": 808459923,
+    "derivativeBytes": 295644698,
+    "generated": 0,
+    "restored": 0,
+    "reused": 4180,
+    "cache": {
+      "bytes": 295025492,
+      "objects": 4156,
+      "maxBytes": 335544320,
+      "removed": 0
+    },
+    "elapsedMs": 4162,
+    "bundles": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+        "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+        "bytes": 3854453,
+        "storedBytes": 715009
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+        "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+        "bytes": 4831012,
+        "storedBytes": 698125
+      }
+    }
+  },
+  "localPageBytes": {
+    "index.html": 11166,
+    "index.rsc": 6014,
+    "research.html": 14175,
+    "research.rsc": 8307
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/wqp-fish-positive-validation-20260908-r14.json.gz",
+    "bytes": 24553,
+    "sha256": "49971dcaad8f9130338ba0579c34cd2704b9ea18b3cc47c538921bc56f9819da"
+  },
+  "r2Writes": 0,
+  "pointerPromotions": 0,
+  "nextRound": {
+    "preflight": "ops/national-research/evaluations/wqp-common-carp-state-preflight-20260908-r15.json",
+    "reviewedScope": 160,
+    "diagnosticCandidates": 152,
+    "newDeterminations": 0,
+    "methodApproved": false,
+    "status": "independent-source-review-in-progress"
+  },
+  "limitations": [
+    "The 67 new determinations are locally verified and queued for the separate R2 research publication; this application release does not publish that candidate.",
+    "Ordinary research promotion opens September 13, subject to fresh exact inventory, storage and current-period operations checks. Only 32.35 MB of planned headroom remains below the project safety ceiling under the dated baseline.",
+    "An application build may be triggered by shared research code and package changes. No research-only intermediate batch is pushed individually.",
+    "Common-carp previews and source-review findings require a separately versioned method and canonical validation before becoming determinations. Provisional-only rows are not silently finalized.",
+    "Provider usage observations are dated; rolling window differences do not prove long-term optimization savings. No R2 write or new paid resource is part of this release."
+  ]
+}
