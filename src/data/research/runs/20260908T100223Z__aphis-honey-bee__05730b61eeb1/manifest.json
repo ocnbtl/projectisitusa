@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "jobId": "honey-hi-positive-pilot-20260908-r12",
+  "leaseId": "lease-honey-hi-positive-pilot-20260908-r12-1",
+  "status": "complete",
+  "branch": "codex/honey-hi-positive-pilot-20260908-r12",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12",
+  "baseSha": "4541ebc10b0afae1eb8b1b85d089689ef9771842",
+  "commitSha": "c116ce1de757af3d8a26672fc000d514fac1d5bf",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "aphis-honey-bee",
+    "adapterVersion": "2.0.0",
+    "methodReviewSha256": "e8f8f388459d3a0b197284da241312a6b0725db89cc79b50e5b1d570ec51a51c",
+    "mode": "retained-positive-survey",
+    "stateCode": "HI",
+    "candidatePairs": [
+      "15001:varroa-destructor",
+      "15003:varroa-destructor"
+    ],
+    "candidateLimit": 2,
+    "geographyPolicyApproved": false
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/artifacts/honey-bee-positive-witnesses.json",
+      "sha256": "d8f0223eddf3587403d6f1701970b0174913ee2f62098490e42ab8af2e73db3d",
+      "bytes": 166763
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/assertions.ndjson",
+      "sha256": "cfb3c8406352608bce27ad64981c7084e6feb3a1240d2a984ae2dd792e5edff3",
+      "bytes": 8379,
+      "count": 2
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/reviews.ndjson",
+      "sha256": "8b3f144e436d2aaed1f86284d1644bad8dc6e9161e3a35a56b80214f476f3b29",
+      "bytes": 1964,
+      "count": 2
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/rejections.ndjson",
+      "sha256": "7ba1b69fb82564f1c6c946ed89f290930da3ee0f4f08d1f9ba0a85aed0e2295a",
+      "bytes": 3951,
+      "count": 4
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/outcomes.ndjson",
+      "sha256": "61f87b6656bc7792642df095129b29af0cad9f5fa5595135df9beee19e57596c",
+      "bytes": 1906,
+      "count": 2
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/receipt.json",
+    "sha256": "86337fabe9653733c46aac370fbc4c948886a8b50763468f2cd6312ab479d865",
+    "bytes": 5400
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/source-verification.json",
+    "sha256": "5667f0850cd8a53b580df37f617beb112a7061d034bea8c065f607ce7567c499",
+    "bytes": 6615
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 1,
+      "retainedArtifactBytes": 166763,
+      "sourceRequests": 0,
+      "providerCandidates": 169,
+      "assertionEvents": 2,
+      "publicationEligibleAssertions": 2,
+      "reviewEvents": 2,
+      "rejectionRecords": 4,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 2,
+      "completeOutcomePairs": 2,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 1,
+      "retainedArtifactBytes": 166763,
+      "sourceRequests": 0,
+      "providerCandidates": 169,
+      "assertionEvents": 2,
+      "publicationEligibleAssertions": 2,
+      "reviewEvents": 2,
+      "rejectionRecords": 4,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 2,
+      "completeOutcomePairs": 2,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease C:/Code/project-isitusa/.cache/research/campaigns/20260908-r12-honey-bee/hi-pilot-lease.json --repo C:/Code/project-isitusa-worktrees/honey-hi-positive-pilot-20260908-r12",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --max-old-space-size=256 --import tsx scripts/research/run-source.ts --source aphis-honey-bee --state HI --candidate-file ops/national-research/plans/honey-bee-positive-20260908-r12/hi.json --candidate-limit 2 --pairs 15001:varroa-destructor,15003:varroa-destructor --started-at 2026-09-08T10:02:23.551Z",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --max-old-space-size=256 --import tsx scripts/research/validate-immutable-run.ts --repository-root . --validation-root . --run-directory src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-verification src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/source-verification.json --run-id 20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-id aphis-honey-bee --state-code HI --pair-keys 15001:varroa-destructor,15003:varroa-destructor --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_hi_positive_pilot_r12",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 4541ebc10b0afae1eb8b1b85d089689ef9771842...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --max-old-space-size=256 .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease C:/Code/project-isitusa/.cache/research/campaigns/20260908-r12-honey-bee/hi-pilot-lease.json --manifest src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/manifest.json --repo C:/Code/project-isitusa-worktrees/honey-hi-positive-pilot-20260908-r12",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "operationalNotes": [
+      "Initial exact-path git add was declined by sparse-checkout rules; no content commit was made. Retried with git add --sparse for the same seven permitted paths. No source run retry or output regeneration occurred."
+    ]
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 458.881,
+    "peakMemoryMb": 226.086,
+    "validPairsScreened": 2,
+    "manualInterventions": 0,
+    "adapterWallSeconds": 3.8035348,
+    "measurementScope": "Observed adapter process peak working set in MiB from Windows process telemetry sampled every 30 ms; not total operating-system or shared MAIN memory."
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-honey-hi-positive-pilot-20260908-r12-1",
+  "jobId": "honey-hi-positive-pilot-20260908-r12",
+  "leaseId": "lease-honey-hi-positive-pilot-20260908-r12-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-09-08T10:23:53.259Z",
+  "workerCommit": "c116ce1de757af3d8a26672fc000d514fac1d5bf",
+  "workerBranchHead": "bf7468cf70d2c103c66dab1032a64bda4a1ded17",
+  "manifestHash": "05db9df9275c9c0d3f817f8e11b54d11eda328dbc5849fa1fb4dbea5e3024b0a",
+  "changedPaths": [
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/artifacts/honey-bee-positive-witnesses.json",
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/assertions.ndjson",
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/manifest.json",
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/outcomes.ndjson",
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/receipt.json",
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/rejections.ndjson",
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/reviews.ndjson",
+    "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "MAIN independently verify frozen trees, exact two-commit ancestry, clean worktree, leased eight paths, manifest bytes and county baseline hashes",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r12-honey-bee\\hi-pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-verification C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1\\source-verification.json --run-id 20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-id aphis-honey-bee --state-code HI --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_hi_positive_pilot_r12",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "Actual pilot canonical mutation tests",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "npm run check:research-integrity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "TypeScript noEmit check",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 2,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN verified original CSV hashes, all scoped row hashes and publisher counties, original latest positive month, composite managed-apiary and migratory caveats, explicit method-level species mapping, UMD attribution, zero network requests, unchanged baseline projections, exact two-commit ancestry and committed closed manifest. Grouped zero/blank exclusions create no negative claim. The two Hawaiian source-conflict holds remain outside scope. Initial integrity suite stale-index failure was resolved by regeneration and passing remaining coverage/publication checks; all prior checks passed. HI MAIN receipt result enum was corrected after a transactional rejection with no acceptance or merge. Projected gains remain pending compilation."
+}
