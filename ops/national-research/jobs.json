@@ -497982,6 +497982,141 @@
       "priority": 100,
       "state": "cancelled",
       "currentLeaseId": "lease-off-group-source-review-20260908-r11-1"
+    },
+    {
+      "jobId": "cdfa-ca-occurrence-pilot-20260908-r11",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "cdfa-confirmed-pest-occurrences"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "anastrepha-suspensa"
+        ],
+        "pairs": [
+          "06037:anastrepha-suspensa",
+          "06073:anastrepha-suspensa"
+        ]
+      },
+      "scopeClaims": [
+        "state/CA/source/cdfa-confirmed-pest-occurrences/taxon/anastrepha-suspensa"
+      ],
+      "branch": "codex/cdfa-ca-occurrence-pilot-20260908-r11",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\cdfa-ca-occurrence-pilot-20260908-r11",
+      "baseSha": "9a7160ca494667a9caa648eb18628b76665e4fc7",
+      "expectedReceiptCodeCommit": "9a7160ca494667a9caa648eb18628b76665e4fc7",
+      "permittedPaths": [
+        "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "official-occurrence-20260908-r11",
+        "candidateFile": {
+          "path": "ops/national-research/plans/official-confirmed-occurrence-20260908-r11/cdfa-ca.json",
+          "declaredCandidateCount": 2,
+          "selectedPairCount": 2,
+          "sha256": "de410187c1079f4b6458e7ff9350f02a4f1c70eb44d76d68d759c8dcdb132773"
+        },
+        "candidateLimit": 2,
+        "candidateLimitMeaning": "Two exact independently reviewed CDFA occurrence reports",
+        "startedAt": "2026-09-08T08:35:12.949Z",
+        "outputRoot": "src/data/research/runs",
+        "expectedRunPath": "src/data/research/runs/20260908T083512Z__cdfa-confirmed-pest-occurrences__47f17bc18408",
+        "expectedProviderRequests": {
+          "providerNetworkRequests": 0,
+          "additionalRequests": 0,
+          "mode": "retained-reviewed-official-occurrence"
+        },
+        "explicitPairs": [
+          "06037:anastrepha-suspensa",
+          "06073:anastrepha-suspensa"
+        ],
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        },
+        "methodReview": "Independently verify explicit CDFA confirmed county occurrence, exact species rank, original observation date precision, source/decoded/page/independent-review hashes and attributed limitations. No current persistence, absence, non-detection, raw specimen claim or invented human approval."
+      },
+      "expiresAt": "2026-09-08T09:21:15.595Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Run own frozen preflight and read the registered method and the original source/review witnesses.",
+        "Create one immutable two-pair run using the exact committed plan and pinned start time with zero HTTP requests.",
+        "Retain truthful source-verification and a closed manifest with exactly two commits: content then finalized manifest.",
+        "No shared changes or projections. Report assertion/outcome counts, never net determination gains before MAIN compiles."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-cdfa-ca-occurrence-pilot-20260908-r11-1"
     }
   ]
 }
