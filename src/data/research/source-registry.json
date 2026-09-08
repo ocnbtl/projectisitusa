@@ -1450,12 +1450,13 @@
         "id": "epa-nrsa-retained-fish-counts",
         "module": "scripts/research/adapters/epa-nrsa-fish-counts.ts",
         "allowedVersions": [
-          "1.0.0"
+          "1.0.0",
+          "2.0.0"
         ],
         "parameterSchema": "src/data/research/schemas/epa-nrsa-fish-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
-        "taxonMatchingPolicy": "Exact case-normalized source GENUS and SPECIES through unique TAXA_ID, with common-name consistency; no fuzzy mapping or unreviewed rank collapse.",
-        "geographyMatchingPolicy": "Exact site-visit join to active publisher STATECTY FIPS and county name/state. Sampling-frame coordinates remain contextual; unresolved source contradictions held, no retired-county conversion.",
+        "taxonMatchingPolicy": "Version1 uses exact current source TAXA_ID, common name and scientific name. Version2 additionally requires reviewed historical taxonomy corroboration and original 2018/2019 common-name agreement; unresolved species concepts held.",
+        "geographyMatchingPolicy": "Version1 uses matching original UID and visit fields. Version2 uses unique complete site/date/visit/state joins with distinct original fish UID preserved and sampling/site UID agreement. Both require active publisher county FIPS/name/state; gross contradictions held and no retired-county conversion.",
         "artifactRetention": "versioned",
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-verified-epa-nrsa-1819-taxonomy-manual",
+  "reviewedBy": "MAIN",
+  "reviewedAt": "2026-09-08T21:24:01.367Z",
+  "source": {
+    "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/nrsa1819-field-manual-appendix.pdf",
+    "bytes": 3975397,
+    "sha256": "80ae7ab47d461ac6bdb8bb8f076b2e6880a4247828f4d2d0ca76ca5bf65027d7"
+  },
+  "sourceUrl": "https://19january2021snapshot.epa.gov/sites/static/files/2018-10/documents/nrsa1819_fom_appendix_version_1.1_april_2018.pdf",
+  "retrievalReceipt": {
+    "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/retrieval-receipt.json",
+    "bytes": 1973,
+    "sha256": "941251e905285057ada8e7585b31e2cf2587fbb086fef55c8dfe41e6a3b1e185"
+  },
+  "extraction": {
+    "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/manual-page-extraction.json",
+    "bytes": 10416,
+    "sha256": "ca131af3e9f4346b1e7f3b5d9bba326bb54c903573e0aa23e470014c0fbf995f"
+  },
+  "extractionRecipe": {
+    "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/extract-manual-context.py",
+    "bytes": 1361,
+    "sha256": "c24fda97ab1811ece78ee62606024c201d8800a0ee00f928e4cea8b035b7df83"
+  },
+  "entries": [
+    {
+      "speciesId": "cichlasoma-bimaculatum",
+      "scientificName": "Cichlasoma bimaculatum",
+      "commonName": "black acara",
+      "pdfPageOneBased": 77,
+      "exactExtractedLine": "Perciformes                Cichlidae              Cichlasoma bimaculatum                 black acara"
+    },
+    {
+      "speciesId": "oreochromis-niloticus",
+      "scientificName": "Oreochromis niloticus",
+      "commonName": "nile tilapia",
+      "pdfPageOneBased": 78,
+      "exactExtractedLine": "Perciformes               Cichlidae               Oreochromis niloticus                  nile tilapia"
+    },
+    {
+      "speciesId": "tilapia-mariae",
+      "scientificName": "Tilapia mariae",
+      "commonName": "spotted tilapia",
+      "pdfPageOneBased": 78,
+      "exactExtractedLine": "Perciformes               Cichlidae               Tilapia mariae                         spotted tilapia"
+    }
+  ],
+  "visualVerification": "MAIN inspected Poppler-rendered original PDF pages77 and78, printed D-15 and D-16. All three scientific/common-name table rows agree with extracted text and 2018 original fish common names. Manual contains no numeric TAXA_ID crosswalk; exact original name and later taxon-row ID agreement are separately required. Poppler warned about unused display-font mappings; inspected table text was legible. Pypdf omitted rotated marginal text; full pages retained."
+}

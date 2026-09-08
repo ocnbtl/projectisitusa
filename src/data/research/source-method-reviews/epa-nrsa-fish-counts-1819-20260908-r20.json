@@ -1,0 +1,2355 @@
+{
+  "schemaVersion": 1,
+  "methodVersion": "retained-epa-nrsa-1819-reviewed-fish-counts-v1",
+  "sourceId": "epa-nrsa-fish-counts",
+  "status": "approved-with-specific-holds",
+  "reviewedBy": "MAIN",
+  "reviewedAt": "2026-09-08T21:24:01.611Z",
+  "acquisitions": [
+    {
+      "name": "primary2018",
+      "archive": {
+        "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-preflight-20260908-r20.json.gz",
+        "bytes": 2027641,
+        "sha256": "2d9fa00357ebaba1a9b87481be69a2de3918748836fa752c2b3a2fcc1825cf8b"
+      },
+      "receipt": {
+        "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/primary-reacquisition-1/retrieval-receipt.json",
+        "bytes": 7516,
+        "sha256": "f2f302b3099c34921c51f93f727ae3fc306a29ad1c9313e3695c64822504228b"
+      },
+      "recipe": {
+        "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/primary-reacquisition-1/acquire-official-files.cjs",
+        "bytes": 3549,
+        "sha256": "866929d9140f50f7b00acdb09d532a169434416826cc642f20c0f18ebdeb37d6"
+      },
+      "repositoryBaseCommit": "22be801ad3a2ac1fae425896282012947422cfbb"
+    },
+    {
+      "name": "taxonomy2013",
+      "archive": {
+        "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-preflight-20260908-r20.json.gz",
+        "bytes": 2027641,
+        "sha256": "2d9fa00357ebaba1a9b87481be69a2de3918748836fa752c2b3a2fcc1825cf8b"
+      },
+      "receipt": {
+        "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/taxonomy-retrieval-receipt.json",
+        "bytes": 3047,
+        "sha256": "d37726b523dc0dc95a8e8db6e653b4c1d7d190838e3dc43c811808f11c6d0b62"
+      },
+      "recipe": {
+        "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/acquire-taxonomy-reference.cjs",
+        "bytes": 3392,
+        "sha256": "97a900ec2e59a19ee94ad7b130d383c18a418561326421d919c4e9922d2779b2"
+      },
+      "repositoryBaseCommit": "22be801ad3a2ac1fae425896282012947422cfbb"
+    },
+    {
+      "name": "taxonomy2023",
+      "archive": {
+        "path": "ops/national-research/evaluations/artifacts/epa-nrsa-2324-preflight-20260908-r18.json.gz",
+        "bytes": 641929,
+        "sha256": "aa2dbf89a6b995ba6dc99ce011c0ba78dd457916c37268dfb450137e22bcf371"
+      },
+      "receipt": {
+        "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/retrieval-receipt.json",
+        "bytes": 7075,
+        "sha256": "62b1b5e1ff908cb4cb64b7b940c139819343c1a87e538362b358cc866f27a6fc"
+      },
+      "recipe": {
+        "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/acquire-official-files.cjs",
+        "bytes": 2920,
+        "sha256": "b2b1ad5e0d341792a57dd33b10a682ee99bd2d8a28228771369d187cab789b71"
+      },
+      "repositoryBaseCommit": "980877ec95c6e67e1fc12ebc69786d5fe65a8909"
+    }
+  ],
+  "profiles": [
+    {
+      "name": "fishcount",
+      "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/primary-reacquisition-1/nrsa-1819-fish-count-data.csv.gz",
+      "decodedBytes": 1981262,
+      "decodedSha256": "1cee6cceb4382308d6e2e639a29f6d4bac2cea2edaeff03c175a5845066c927c",
+      "rowCount": 22057,
+      "columns": [
+        "PUBLICATION_DATE",
+        "UID",
+        "SITE_ID",
+        "DATE_COL",
+        "VISIT_NO",
+        "AG_ECO9",
+        "EPA_REG",
+        "STATE",
+        "ANOM_CT",
+        "IS_DISTINCT",
+        "NON_NATIVE",
+        "TOTAL",
+        "FINAL_NAME",
+        "TAXA_ID"
+      ],
+      "headerBom": false
+    },
+    {
+      "name": "sampling",
+      "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/primary-reacquisition-1/nrsa-1819-fish-sampling-information-data.csv.gz",
+      "decodedBytes": 699522,
+      "decodedSha256": "14dc68b1f3cf497311e31da45671354f128187e0e68b96aaa384eb23d3488267",
+      "rowCount": 2221,
+      "columns": [
+        "UID",
+        "PUBLICATION_DATE",
+        "SITE_ID",
+        "DATE_COL",
+        "VISIT_NO",
+        "AG_ECO9",
+        "EPA_REG",
+        "STATE",
+        "SAMPLE_TYPE",
+        "ACTUAL_DATE",
+        "CONDUCTIVITY",
+        "CORRECTED",
+        "FISH_PROTOCOL",
+        "FISH_RESPONSE",
+        "FISH_SAMPLING",
+        "FISH_SAMPLING_SUFFICIENT",
+        "FISHGEAR_REVIEW",
+        "HIGH_GRADIENT",
+        "PRIM_AMPS",
+        "PRIM_ANODE",
+        "PRIM_AVG_HAUL",
+        "PRIM_CREW",
+        "PRIM_FSHTIME",
+        "PRIM_GEAR",
+        "PRIM_HAULS",
+        "PRIM_HEIGHT",
+        "PRIM_LENGTH",
+        "PRIM_LENGTH_FISHED",
+        "PRIM_LENGTH_SEINE",
+        "PRIM_MESH",
+        "PRIM_MODEL",
+        "PRIM_NET_DIAM",
+        "PRIM_NET_UNITS",
+        "PRIM_NETTERS",
+        "PRIM_POWER",
+        "PRIM_PULSRATE",
+        "PRIM_PULSWID",
+        "PRIM_SEINE",
+        "PRIM_SHKTIME",
+        "PRIM_TOT_SEINE",
+        "PRIM_VOLTS",
+        "PRIM_WATTS",
+        "PRIM_WAVEFORM",
+        "RCH_LENGTH",
+        "SAMPLED_FISH",
+        "SEC_AMPS",
+        "SEC_ANODE",
+        "SEC_AVG_HAUL",
+        "SEC_CREW",
+        "SEC_FSHTIME",
+        "SEC_GEAR",
+        "SEC_HAULS",
+        "SEC_HEIGHT",
+        "SEC_LENGTH",
+        "SEC_LENGTH_FISHED",
+        "SEC_LENGTH_SEINE",
+        "SEC_MESH",
+        "SEC_MODEL",
+        "SEC_NET_DIAM",
+        "SEC_NET_UNITS",
+        "SEC_NETTERS",
+        "SEC_POWER",
+        "SEC_PULSRATE",
+        "SEC_PULSWID",
+        "SEC_SEINE",
+        "SEC_SHKTIME",
+        "SEC_TOT_SEINE",
+        "SEC_VOLTS",
+        "SEC_WATTS",
+        "SEC_WAVEFORM",
+        "TEMPERATURE",
+        "WATER_VIS",
+        "FISH_PROTOCOL_FLAG",
+        "FISH_SAMPLING_FLAG",
+        "PRIM_AMPS_FLAG",
+        "PRIM_ANODE_FLAG",
+        "PRIM_AVG_HAUL_FLAG",
+        "PRIM_CREW_FLAG",
+        "PRIM_FSHTIME_FLAG",
+        "PRIM_GEAR_FLAG",
+        "PRIM_HAULS_FLAG",
+        "PRIM_HEIGHT_FLAG",
+        "PRIM_LENGTH_FISHED_FLAG",
+        "PRIM_LENGTH_FLAG",
+        "PRIM_LENGTH_SEINE_FLAG",
+        "PRIM_MESH_FLAG",
+        "PRIM_MODEL_FLAG",
+        "PRIM_NET_DIAM_FLAG",
+        "PRIM_NET_UNITS_FLAG",
+        "PRIM_NETTERS_FLAG",
+        "PRIM_POWER_FLAG",
+        "PRIM_PULSRATE_FLAG",
+        "PRIM_PULSWID_FLAG",
+        "PRIM_SEINE_FLAG",
+        "PRIM_SHKTIME_FLAG",
+        "PRIM_TOT_SEINE_FLAG",
+        "PRIM_VOLTS_FLAG",
+        "PRIM_WATTS_FLAG",
+        "PRIM_WAVEFORM_FLAG",
+        "SEC_AMPS_FLAG",
+        "SEC_ANODE_FLAG",
+        "SEC_AVG_HAUL_FLAG",
+        "SEC_CREW_FLAG",
+        "SEC_FSHTIME_FLAG",
+        "SEC_GEAR_FLAG",
+        "SEC_HAULS_FLAG",
+        "SEC_HEIGHT_FLAG",
+        "SEC_LENGTH_FISHED_FLAG",
+        "SEC_LENGTH_FLAG",
+        "SEC_LENGTH_SEINE_FLAG",
+        "SEC_MESH_FLAG",
+        "SEC_MODEL_FLAG",
+        "SEC_NET_DIAM_FLAG",
+        "SEC_NET_UNITS_FLAG",
+        "SEC_NETTERS_FLAG",
+        "SEC_POWER_FLAG",
+        "SEC_PULSRATE_FLAG",
+        "SEC_PULSWID_FLAG",
+        "SEC_SEINE_FLAG",
+        "SEC_SHKTIME_FLAG",
+        "SEC_TOT_SEINE_FLAG",
+        "SEC_VOLTS_FLAG",
+        "SEC_WATTS_FLAG",
+        "SEC_WAVEFORM_FLAG"
+      ],
+      "headerBom": false
+    },
+    {
+      "name": "siteinfo",
+      "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/primary-reacquisition-1/NRSA_1819_SiteInfo.csv.gz",
+      "decodedBytes": 1881191,
+      "decodedSha256": "1b5b2119c881290191edeb47f1d80a7711f10440e9851574cfa86fd57be770e3",
+      "rowCount": 2112,
+      "columns": [
+        "UID",
+        "PUBLICATION_DATE",
+        "SITE_ID",
+        "DATE_COL",
+        "VISIT_NO",
+        "RCHDOWN",
+        "RCHUP",
+        "YEAR",
+        "UNIQUE_ID",
+        "DSGN_CYCLE",
+        "AG_ECO3",
+        "AG_ECO3_NM",
+        "AG_ECO9",
+        "AG_ECO9_NM",
+        "BORD_RIV",
+        "CNTYNAME",
+        "COMID",
+        "DES_FTYPE",
+        "ELEVATION",
+        "EPA_REG",
+        "EVAL_CAT",
+        "FCODE",
+        "FED_NONFED",
+        "FEOW_ID",
+        "FRAME08",
+        "FRAME13",
+        "FRAME18",
+        "FRAMEEW",
+        "FRAMEWS",
+        "FS_EW",
+        "FTYPE",
+        "GNIS_ID",
+        "GNIS_NAME",
+        "HUC2",
+        "HUC2_NM",
+        "HUC8",
+        "HUC8_NM",
+        "LAT_DD83",
+        "LON_DD83",
+        "MAJ_BAS_NM",
+        "MAJ_BASIN",
+        "MAJ_RIV_NM",
+        "MAJ_RIVER",
+        "MIS_BAS_NM",
+        "MIS_BASIN",
+        "MISS_BASIN",
+        "NA_L1CODE",
+        "NA_L1NAME",
+        "NA_L2CODE",
+        "NA_L2NAME",
+        "NARS_NAME",
+        "OWN_NARS",
+        "PANEL_RVST",
+        "PANEL_SOT",
+        "PANEL_USE",
+        "PANEL_WGT",
+        "PROB_CAT",
+        "PSTL_CODE",
+        "REACHCODE",
+        "SF_ST_ID",
+        "SITETYPE",
+        "SOURCE",
+        "STATE_NM",
+        "STATE_SF",
+        "STATECTY",
+        "STRAH_CAL",
+        "STRAH_CAT",
+        "STRAH_ORD",
+        "STRATUM",
+        "TNT_CAT",
+        "URBN_NRS08",
+        "URBN_NRS18",
+        "US_L3CODE",
+        "US_L3NAME",
+        "US_L4CODE",
+        "US_L4NAME",
+        "USFS",
+        "WGT_CAT",
+        "WGT_DSGN",
+        "WGT_TP_EXTENT",
+        "XCOORD",
+        "YCOORD",
+        "WGT_TP_CORE"
+      ],
+      "headerBom": true
+    },
+    {
+      "name": "taxa2013",
+      "path": ".cache/research/campaigns/20260908-r20-epa-nrsa-1819/nrsa1314_fishtaxa_02042019.csv.gz",
+      "decodedBytes": 80537,
+      "decodedSha256": "197e62852dd739c6b2c079a302c6365c878f2fdacf6bda164b535347ff5628c7",
+      "rowCount": 850,
+      "columns": [
+        "PUBLICATION_DATE",
+        "TAXA_ID",
+        "FAM_OR_CLS",
+        "FAMILY",
+        "FINAL_NAME",
+        "GENUS",
+        "HABITAT_NRSA",
+        "HERP",
+        "ITISTSN",
+        "MIGR_NRSA",
+        "REPROD_NRSA",
+        "SPECIES",
+        "TEMP_NRSA",
+        "TOL_VAL_EMAPW",
+        "TOLERANCE_NRSA",
+        "TROPHIC_NRSA",
+        "VEL_NRSA"
+      ],
+      "headerBom": false
+    },
+    {
+      "name": "taxa2023",
+      "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/nrsa2324_fishtaxa.csv.gz",
+      "decodedBytes": 85757,
+      "decodedSha256": "0608bfa50c4ac45bf221c76433cab341e20e66b41c4641d2479b2d7f819b7405",
+      "rowCount": 911,
+      "columns": [
+        "PUBLICATION_DATE",
+        "TAXA_ID",
+        "FAM_OR_CLS",
+        "FAMILY",
+        "FINAL_NAME",
+        "GENUS",
+        "HABITAT_NRSA",
+        "ITISTSN",
+        "MIGR_NRSA",
+        "REPROD_NRSA",
+        "SPECIES",
+        "TEMP_NRSA",
+        "TOLERANCE_NRSA",
+        "TROPHIC_NRSA",
+        "VEL_NRSA",
+        "TOL_VAL_EMAPW"
+      ],
+      "headerBom": false
+    }
+  ],
+  "manualTaxonomy": {
+    "path": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20-manual.json",
+    "bytes": 2688,
+    "sha256": "f5105095a3ed7acc64818612f5b8e1094f669f6b433f8480b3e8bd12abf1a7f3"
+  },
+  "context": [
+    {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/nrsa1819-field-manual-appendix.pdf",
+      "bytes": 3975397,
+      "sha256": "80ae7ab47d461ac6bdb8bb8f076b2e6880a4247828f4d2d0ca76ca5bf65027d7"
+    },
+    {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/usgs-nas-clarias-batrachus.html",
+      "bytes": 60578,
+      "sha256": "d5a6ec80ea7b2a0e16f5fcab5f5fe45c5392b1c02f8dacb181f937fdf89352cd"
+    },
+    {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/retrieval-receipt.json",
+      "bytes": 1973,
+      "sha256": "941251e905285057ada8e7585b31e2cf2587fbb086fef55c8dfe41e6a3b1e185"
+    },
+    {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/manual-page-extraction.json",
+      "bytes": 10416,
+      "sha256": "ca131af3e9f4346b1e7f3b5d9bba326bb54c903573e0aa23e470014c0fbf995f"
+    },
+    {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/extract-manual-context.py",
+      "bytes": 1361,
+      "sha256": "c24fda97ab1811ece78ee62606024c201d8800a0ee00f928e4cea8b035b7df83"
+    },
+    {
+      "path": "ops/national-research/evaluations/artifacts/epa-nrsa-1819-context-20260908-r20/retain-supplementary-context.cjs",
+      "bytes": 2175,
+      "sha256": "123c7aaa52f21037e0a48b963d959bbf4d57b98c148704efa1d13d78d8c9c628"
+    },
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-1819-preflight-20260908-r20.json",
+      "bytes": 12834,
+      "sha256": "f4565838fd69878bacf4e9f30af2aec3a943e0a1fcddc91631caf7c1b9599319"
+    },
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-1819-source-review-a-20260908-r20-proposal-retained.json",
+      "bytes": 1478,
+      "sha256": "cfb3ff43f4c96a36933d66d910b6078d8273f96579c2fe37e7c4cff04ab35c01"
+    },
+    {
+      "path": "ops/national-research/evaluations/epa-nrsa-1819-source-review-b-20260908-r20-proposal-retained.json",
+      "bytes": 1705,
+      "sha256": "5e8deb4bd0eb20cdc1834f3b83a0320b4a9dd826a8fa9b5f4b4db3975a4eed9d"
+    }
+  ],
+  "independentReviews": [
+    {
+      "path": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20-review-a.json",
+      "bytes": 1020121,
+      "sha256": "5aba0a21a59451a92d459426a391c29c6f8aef447c4cffaabad2a7be78fd579d"
+    },
+    {
+      "path": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1819-20260908-r20-review-b.json",
+      "bytes": 1032225,
+      "sha256": "f34d7500905110426041720a5a67d7bbcf778ae93e0c3f6eaad7cfd34c247aa9"
+    }
+  ],
+  "taxa": {
+    "cyprinus-carpio": "Cyprinus carpio",
+    "hypophthalmichthys-nobilis": "Hypophthalmichthys nobilis",
+    "ctenopharyngodon-idella": "Ctenopharyngodon idella",
+    "hypophthalmichthys-molitrix": "Hypophthalmichthys molitrix",
+    "neogobius-melanostomus": "Neogobius melanostomus",
+    "clarias-batrachus": "Clarias batrachus",
+    "oreochromis-aureus": "Oreochromis aureus",
+    "salmo-trutta": "Salmo trutta",
+    "pterygoplichthys-disjunctivus": "Pterygoplichthys disjunctivus",
+    "hoplosternum-littorale": "Hoplosternum littorale",
+    "tilapia-mariae": "Tilapia mariae",
+    "northern-snakehead": "Channa argus",
+    "pterygoplichthys-multiradiatus": "Pterygoplichthys multiradiatus",
+    "cichlasoma-bimaculatum": "Cichlasoma bimaculatum",
+    "oreochromis-niloticus": "Oreochromis niloticus"
+  },
+  "taxonReviews": {
+    "33": {
+      "speciesId": "hypophthalmichthys-nobilis",
+      "commonName": "BIGHEAD CARP",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 31,
+        "physicalEndLineOneBased": 33,
+        "rawRecordSha256": "792b1a06f5acde607042f749aa2c391ab1220694157254b5cf3a199b23e33f79",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "33",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "BIGHEAD CARP",
+          "GENUS": "HYPOPHTHALMICHTHYS",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "163692",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "NOBILIS",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 256,
+        "physicalEndLineOneBased": 258,
+        "rawRecordSha256": "11f334572a99281762863c7d48c4ee8c87230233d78f91514929aa59a3ba2d45",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "33",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "BIGHEAD CARP",
+          "GENUS": "HYPOPHTHALMICHTHYS",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "163692",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "NOBILIS",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "68": {
+      "speciesId": "oreochromis-aureus",
+      "commonName": "BLUE TILAPIA",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 66,
+        "physicalEndLineOneBased": 68,
+        "rawRecordSha256": "413ff9dc1961a68b1290c6bdda0980f9209c5e89d7bf03a1173153f63204e8bd",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "68",
+          "FAM_OR_CLS": "CICHLIDAE",
+          "FAMILY": "CICHLIDAE",
+          "FINAL_NAME": "BLUE TILAPIA",
+          "GENUS": "OREOCHROMIS",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "553308",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "AUREUS",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "P"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 814,
+        "physicalEndLineOneBased": 816,
+        "rawRecordSha256": "c0ceb7fd0e17d9f59d14dfb12de98a0d5e2ab01860d963db0be1d6822f233010",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "68",
+          "FAM_OR_CLS": "CICHLIDAE",
+          "FAMILY": "CICHLIDAE",
+          "FINAL_NAME": "BLUE TILAPIA",
+          "GENUS": "OREOCHROMIS",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "553308",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "AUREUS",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "P"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "105": {
+      "speciesId": "salmo-trutta",
+      "commonName": "BROWN TROUT",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 103,
+        "physicalEndLineOneBased": 105,
+        "rawRecordSha256": "1f800aaafbbe3f69f54f11b039953fdb2b2a83344b43c7522cd3a97cc94edaa4",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "105",
+          "FAM_OR_CLS": "SALMONIDAE",
+          "FAMILY": "SALMONIDAE",
+          "FINAL_NAME": "BROWN TROUT",
+          "GENUS": "SALMO",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "161997",
+          "MIGR_NRSA": "Y",
+          "REPROD_NRSA": "C",
+          "SPECIES": "TRUTTA",
+          "TEMP_NRSA": "CD",
+          "TOLERANCE_NRSA": "I",
+          "TROPHIC_NRSA": "C",
+          "VEL_NRSA": "R",
+          "TOL_VAL_EMAPW": "2.7"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 7,
+        "physicalEndLineOneBased": 9,
+        "rawRecordSha256": "2d1431deaaed74536eb257ef9a5ab01e48fca9deb602fc47a258b9df341e6018",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "105",
+          "FAM_OR_CLS": "SALMONIDAE",
+          "FAMILY": "SALMONIDAE",
+          "FINAL_NAME": "BROWN TROUT",
+          "GENUS": "SALMO",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "161997",
+          "MIGR_NRSA": "Y",
+          "REPROD_NRSA": "C",
+          "SPECIES": "TRUTTA",
+          "TEMP_NRSA": "CD",
+          "TOL_VAL_EMAPW": "2.7",
+          "TOLERANCE_NRSA": "I",
+          "TROPHIC_NRSA": "C",
+          "VEL_NRSA": "R"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "143": {
+      "speciesId": "cyprinus-carpio",
+      "commonName": "COMMON CARP",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 139,
+        "physicalEndLineOneBased": 141,
+        "rawRecordSha256": "bfb9894861cf43e78f82ba5bb9a7baabd64f7d2122fb0fb39209a975c184cc6b",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "143",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "COMMON CARP",
+          "GENUS": "CYPRINUS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "163344",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "CARPIO",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "O",
+          "TOL_VAL_EMAPW": "9.1"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 49,
+        "physicalEndLineOneBased": 51,
+        "rawRecordSha256": "7815a114e69952b5e33c9b14a8d883fd120b312e7d198dbd935e9164094656d1",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "143",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "COMMON CARP",
+          "GENUS": "CYPRINUS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "163344",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "CARPIO",
+          "TEMP_NRSA": "WM",
+          "TOL_VAL_EMAPW": "9.1",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "213": {
+      "speciesId": "ctenopharyngodon-idella",
+      "commonName": "GRASS CARP",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 209,
+        "physicalEndLineOneBased": 211,
+        "rawRecordSha256": "d65948bc29914150d68251ac0b891f444426db0d5530825c7da9c954c4c93ba2",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "213",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "GRASS CARP",
+          "GENUS": "CTENOPHARYNGODON",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "163537",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "IDELLA",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O",
+          "TOL_VAL_EMAPW": "9"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 127,
+        "physicalEndLineOneBased": 129,
+        "rawRecordSha256": "0971ce61eeb4114dab7043bd0076b4702a555af37d97a41d42fc9c2b478b20c8",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "213",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "GRASS CARP",
+          "GENUS": "CTENOPHARYNGODON",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "163537",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "IDELLA",
+          "TEMP_NRSA": "WM",
+          "TOL_VAL_EMAPW": "9",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "301": {
+      "speciesId": "cyprinus-carpio",
+      "commonName": "MIRROR CARP",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 297,
+        "physicalEndLineOneBased": 299,
+        "rawRecordSha256": "02d9bd398a1d131ed514608ecd814df1f3d93c6c56093a57dbe26fa369cebb6c",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "301",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "MIRROR CARP",
+          "GENUS": "CYPRINUS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "163344",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "CARPIO",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "O"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 225,
+        "physicalEndLineOneBased": 227,
+        "rawRecordSha256": "fb697c492006637eed022063a94755f99e6dca3b87a4e5360361bfed9f6f8c51",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "301",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "MIRROR CARP",
+          "GENUS": "CYPRINUS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "163344",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "CARPIO",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "337": {
+      "speciesId": "pterygoplichthys-multiradiatus",
+      "commonName": "ORINOCO SAILFIN CATFISH",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 333,
+        "physicalEndLineOneBased": 335,
+        "rawRecordSha256": "a3565289dd6fe48cf666a446153f5692f1a90bcbde11bea9f7926c23c99dd964",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "337",
+          "FAM_OR_CLS": "LORICARIIDAE",
+          "FAMILY": "LORICARIIDAE",
+          "FINAL_NAME": "ORINOCO SAILFIN CATFISH",
+          "GENUS": "PTERYGOPLICHTHYS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "164375",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "MULTIRADIATUS",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 264,
+        "physicalEndLineOneBased": 266,
+        "rawRecordSha256": "288cb9fa3d85272e7578a82921507b9026d0950363a8ecc82dd748e6c97a9970",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "337",
+          "FAM_OR_CLS": "LORICARIIDAE",
+          "FAMILY": "LORICARIIDAE",
+          "FINAL_NAME": "ORINOCO SAILFIN CATFISH",
+          "GENUS": "PTERYGOPLICHTHYS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "164375",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "MULTIRADIATUS",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "425": {
+      "speciesId": "neogobius-melanostomus",
+      "commonName": "ROUND GOBY",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 418,
+        "physicalEndLineOneBased": 420,
+        "rawRecordSha256": "0708f67cf47d179460ae957970eca9c02acb9cf7ee986cf2ba6439e4634a3c29",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "425",
+          "FAM_OR_CLS": "GOBIIDAE",
+          "FAMILY": "GOBIIDAE",
+          "FINAL_NAME": "ROUND GOBY",
+          "GENUS": "NEOGOBIUS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "172072",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "MELANOSTOMUS",
+          "TEMP_NRSA": "CL",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "C",
+          "VEL_NRSA": "O"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 362,
+        "physicalEndLineOneBased": 364,
+        "rawRecordSha256": "215871e4a1f9ac3f933bf27d78ba6a8f935ade96fd8cf68051ab5a5345598f75",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "425",
+          "FAM_OR_CLS": "GOBIIDAE",
+          "FAMILY": "GOBIIDAE",
+          "FINAL_NAME": "ROUND GOBY",
+          "GENUS": "NEOGOBIUS",
+          "HABITAT_NRSA": "B",
+          "ITISTSN": "172072",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "MELANOSTOMUS",
+          "TEMP_NRSA": "CL",
+          "TROPHIC_NRSA": "C",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "463": {
+      "speciesId": "hypophthalmichthys-molitrix",
+      "commonName": "SILVER CARP",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 456,
+        "physicalEndLineOneBased": 458,
+        "rawRecordSha256": "70d291c08c62b99c53ff40768a064e29906b636ef02075df2afea63df3e12209",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "463",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "SILVER CARP",
+          "GENUS": "HYPOPHTHALMICHTHYS",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "163691",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "MOLITRIX",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 501,
+        "physicalEndLineOneBased": 503,
+        "rawRecordSha256": "b23a36e3eacd2fea00c9cd0113614a6020ae40e380c9c9e60f147c6382209eaf",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "463",
+          "FAM_OR_CLS": "CYPRINIDAE",
+          "FAMILY": "CYPRINIDAE",
+          "FINAL_NAME": "SILVER CARP",
+          "GENUS": "HYPOPHTHALMICHTHYS",
+          "HABITAT_NRSA": "W",
+          "ITISTSN": "163691",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "O",
+          "SPECIES": "MOLITRIX",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "H",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "4994": {
+      "speciesId": "hoplosternum-littorale",
+      "commonName": "BROWN HOPLO",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 707,
+        "physicalEndLineOneBased": 709,
+        "rawRecordSha256": "240dfb5a066363bbc2f176791d6fbf516fa90ae18dd10e1eb866161c01dbf791",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "4994",
+          "FAM_OR_CLS": "CALLICHTHYIDAE",
+          "FAMILY": "CALLICHTHYIDAE",
+          "FINAL_NAME": "BROWN HOPLO",
+          "GENUS": "HOPLOSTERNUM",
+          "HABITAT_NRSA": "B",
+          "REPROD_NRSA": "O",
+          "SPECIES": "LITTORALE",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "I",
+          "VEL_NRSA": "P"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 555,
+        "physicalEndLineOneBased": 557,
+        "rawRecordSha256": "67fb0ad647e7811ba0be3f462af664196f5df0e225c8f9e8e279f1a6d35e1f22",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "4994",
+          "FAM_OR_CLS": "CALLICHTHYIDAE",
+          "FAMILY": "CALLICHTHYIDAE",
+          "FINAL_NAME": "BROWN HOPLO",
+          "GENUS": "HOPLOSTERNUM",
+          "HABITAT_NRSA": "B",
+          "REPROD_NRSA": "O",
+          "SPECIES": "LITTORALE",
+          "TEMP_NRSA": "WM",
+          "TROPHIC_NRSA": "I",
+          "VEL_NRSA": "P"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "5023": {
+      "speciesId": "northern-snakehead",
+      "commonName": "NORTHERN SNAKEHEAD",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 735,
+        "physicalEndLineOneBased": 737,
+        "rawRecordSha256": "97be258260056e7b4774fc44272c0e15cadf5154eaa799641b977b4e66d0aaec",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "5023",
+          "FAM_OR_CLS": "CHANNIDAE",
+          "FAMILY": "CHANNIDAE",
+          "FINAL_NAME": "NORTHERN SNAKEHEAD",
+          "GENUS": "CHANNA",
+          "HABITAT_NRSA": "B",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "D/G",
+          "SPECIES": "ARGUS",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "C",
+          "VEL_NRSA": "O"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 588,
+        "physicalEndLineOneBased": 590,
+        "rawRecordSha256": "4f06c58c7b94f55a35bf3fca079756324effba01b6f77f64c169aef7a1f8b3e5",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "5023",
+          "FAM_OR_CLS": "CHANNIDAE",
+          "FAMILY": "CHANNIDAE",
+          "FINAL_NAME": "NORTHERN SNAKEHEAD",
+          "GENUS": "CHANNA",
+          "HABITAT_NRSA": "B",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "D/G",
+          "SPECIES": "ARGUS",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "C",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "5049": {
+      "speciesId": "pterygoplichthys-disjunctivus",
+      "commonName": "VERMICULATED SAILFIN CATFISH",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 760,
+        "physicalEndLineOneBased": 762,
+        "rawRecordSha256": "93c4b201fee45cc4ee1bc84c415e0485a156c2aaa071a4b9bd31878fb97a2299",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "5049",
+          "FAM_OR_CLS": "LORICARIIDAE",
+          "FAMILY": "LORICARIIDAE",
+          "FINAL_NAME": "VERMICULATED SAILFIN CATFISH",
+          "GENUS": "PTERYGOPLICHTHYS",
+          "HABITAT_NRSA": "B",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "DISJUNCTIVUS",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "O"
+        }
+      },
+      "taxon2013": {
+        "parsedRowIndexZeroBased": 615,
+        "physicalEndLineOneBased": 617,
+        "rawRecordSha256": "d9bb748c9ddd79109dde5516fb426a30582387bfbb3a182f5cca4cd8944b5925",
+        "sourceFields": {
+          "PUBLICATION_DATE": "2/4/2019",
+          "TAXA_ID": "5049",
+          "FAM_OR_CLS": "LORICARIIDAE",
+          "FAMILY": "LORICARIIDAE",
+          "FINAL_NAME": "VERMICULATED SAILFIN CATFISH",
+          "GENUS": "PTERYGOPLICHTHYS",
+          "HABITAT_NRSA": "B",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "DISJUNCTIVUS",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "O"
+        }
+      },
+      "rationale": "The independently retained 2013 and2023 exact numeric ID/common name/scientific name agree with the original2018 count label. Source-specific bridge only, no universal ID stability assumption.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "5155": {
+      "speciesId": "cichlasoma-bimaculatum",
+      "commonName": "BLACK ACARA",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 813,
+        "physicalEndLineOneBased": 815,
+        "rawRecordSha256": "28dc8d7f83ecaa0a4dbcfde4e0f95e88177975e2a8ea22f0a34b5d99951f1a73",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "5155",
+          "FAM_OR_CLS": "CICHLIDAE",
+          "FAMILY": "CICHLIDAE",
+          "FINAL_NAME": "BLACK ACARA",
+          "GENUS": "CICHLASOMA",
+          "HABITAT_NRSA": "W",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "BIMACULATUM",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "P/O"
+        }
+      },
+      "taxon2013": null,
+      "rationale": "Original2018 common name agrees with the retained2018 manual exact scientific/common-name row and the later exact TAXA_ID/common-name reference. No historical numeric crosswalk is claimed.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "5176": {
+      "speciesId": "oreochromis-niloticus",
+      "commonName": "NILE TILAPIA",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 834,
+        "physicalEndLineOneBased": 836,
+        "rawRecordSha256": "bfc4c44114a76e139f0e76ba5626d51aa68e772e9eea39fecf3d344dce3e8b46",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "5176",
+          "FAM_OR_CLS": "CICHLIDAE",
+          "FAMILY": "CICHLIDAE",
+          "FINAL_NAME": "NILE TILAPIA",
+          "GENUS": "OREOCHROMIS",
+          "HABITAT_NRSA": "W",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "NILOTICUS",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "T",
+          "TROPHIC_NRSA": "H (O)",
+          "VEL_NRSA": "P"
+        }
+      },
+      "taxon2013": null,
+      "rationale": "Original2018 common name agrees with the retained2018 manual exact scientific/common-name row and the later exact TAXA_ID/common-name reference. No historical numeric crosswalk is claimed.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    },
+    "5183": {
+      "speciesId": "tilapia-mariae",
+      "commonName": "SPOTTED TILAPIA",
+      "taxon2023": {
+        "parsedRowIndexZeroBased": 841,
+        "physicalEndLineOneBased": 843,
+        "rawRecordSha256": "3cfe7c8163de7562cb85fb2726b27b429fd1786846f6c96ae64454077a8ed276",
+        "sourceFields": {
+          "PUBLICATION_DATE": "6/3/2026",
+          "TAXA_ID": "5183",
+          "FAM_OR_CLS": "CICHLIDAE",
+          "FAMILY": "CICHLIDAE",
+          "FINAL_NAME": "SPOTTED TILAPIA",
+          "GENUS": "TILAPIA",
+          "HABITAT_NRSA": "W",
+          "MIGR_NRSA": "N",
+          "REPROD_NRSA": "G",
+          "SPECIES": "MARIAE",
+          "TEMP_NRSA": "WM",
+          "TOLERANCE_NRSA": "I",
+          "TROPHIC_NRSA": "O",
+          "VEL_NRSA": "P"
+        }
+      },
+      "taxon2013": null,
+      "rationale": "Original2018 common name agrees with the retained2018 manual exact scientific/common-name row and the later exact TAXA_ID/common-name reference. No historical numeric crosswalk is claimed.",
+      "caveats": [
+        "Reported field identification; individual voucher verification is not asserted."
+      ]
+    }
+  },
+  "approvedPairs": [
+    "05023:salmo-trutta",
+    "05031:cyprinus-carpio",
+    "05031:hypophthalmichthys-nobilis",
+    "05057:cyprinus-carpio",
+    "05077:hypophthalmichthys-nobilis",
+    "05093:ctenopharyngodon-idella",
+    "05093:cyprinus-carpio",
+    "08007:cyprinus-carpio",
+    "08007:salmo-trutta",
+    "08013:salmo-trutta",
+    "08015:salmo-trutta",
+    "08047:salmo-trutta",
+    "08059:salmo-trutta",
+    "08067:cyprinus-carpio",
+    "08067:salmo-trutta",
+    "08071:cyprinus-carpio",
+    "08079:salmo-trutta",
+    "08087:cyprinus-carpio",
+    "08115:cyprinus-carpio",
+    "12011:oreochromis-aureus",
+    "12011:tilapia-mariae",
+    "12013:ctenopharyngodon-idella",
+    "12021:cichlasoma-bimaculatum",
+    "12021:hoplosternum-littorale",
+    "12021:oreochromis-niloticus",
+    "12021:tilapia-mariae",
+    "12039:cyprinus-carpio",
+    "12055:hoplosternum-littorale",
+    "12055:oreochromis-aureus",
+    "12055:pterygoplichthys-disjunctivus",
+    "12055:pterygoplichthys-multiradiatus",
+    "12059:cyprinus-carpio",
+    "12093:hoplosternum-littorale",
+    "13007:ctenopharyngodon-idella",
+    "13007:cyprinus-carpio",
+    "13015:cyprinus-carpio",
+    "13067:cyprinus-carpio",
+    "13121:cyprinus-carpio",
+    "13153:cyprinus-carpio",
+    "13191:cyprinus-carpio",
+    "16017:salmo-trutta",
+    "16031:cyprinus-carpio",
+    "16051:salmo-trutta",
+    "17003:ctenopharyngodon-idella",
+    "17003:cyprinus-carpio",
+    "17013:ctenopharyngodon-idella",
+    "17013:cyprinus-carpio",
+    "17021:cyprinus-carpio",
+    "17067:ctenopharyngodon-idella",
+    "17067:cyprinus-carpio",
+    "17077:cyprinus-carpio",
+    "17091:cyprinus-carpio",
+    "17093:cyprinus-carpio",
+    "17095:ctenopharyngodon-idella",
+    "17095:cyprinus-carpio",
+    "17095:hypophthalmichthys-molitrix",
+    "17103:cyprinus-carpio",
+    "17127:cyprinus-carpio",
+    "17151:ctenopharyngodon-idella",
+    "17195:cyprinus-carpio",
+    "17201:cyprinus-carpio",
+    "18051:hypophthalmichthys-nobilis",
+    "18119:ctenopharyngodon-idella",
+    "18129:ctenopharyngodon-idella",
+    "18167:ctenopharyngodon-idella",
+    "18169:ctenopharyngodon-idella",
+    "19041:ctenopharyngodon-idella",
+    "19083:cyprinus-carpio",
+    "19193:ctenopharyngodon-idella",
+    "20013:cyprinus-carpio",
+    "20103:hypophthalmichthys-molitrix",
+    "20111:cyprinus-carpio",
+    "21007:ctenopharyngodon-idella",
+    "21031:ctenopharyngodon-idella",
+    "21041:cyprinus-carpio",
+    "21055:cyprinus-carpio",
+    "21115:cyprinus-carpio",
+    "21139:ctenopharyngodon-idella",
+    "21149:cyprinus-carpio",
+    "21159:cyprinus-carpio",
+    "21177:ctenopharyngodon-idella",
+    "21177:cyprinus-carpio",
+    "21205:cyprinus-carpio",
+    "21225:ctenopharyngodon-idella",
+    "21225:cyprinus-carpio",
+    "22057:cyprinus-carpio",
+    "22057:hypophthalmichthys-molitrix",
+    "22097:cyprinus-carpio",
+    "22111:cyprinus-carpio",
+    "24001:salmo-trutta",
+    "24011:cyprinus-carpio",
+    "24011:northern-snakehead",
+    "25011:salmo-trutta",
+    "25027:salmo-trutta",
+    "26021:cyprinus-carpio",
+    "26031:salmo-trutta",
+    "26045:cyprinus-carpio",
+    "26063:cyprinus-carpio",
+    "26067:cyprinus-carpio",
+    "26131:cyprinus-carpio",
+    "26131:salmo-trutta",
+    "26135:salmo-trutta",
+    "26139:cyprinus-carpio",
+    "26147:cyprinus-carpio",
+    "26155:cyprinus-carpio",
+    "26155:neogobius-melanostomus",
+    "26157:cyprinus-carpio",
+    "26159:neogobius-melanostomus",
+    "27027:cyprinus-carpio",
+    "27045:salmo-trutta",
+    "27049:cyprinus-carpio",
+    "27055:cyprinus-carpio",
+    "27055:salmo-trutta",
+    "27063:cyprinus-carpio",
+    "27073:cyprinus-carpio",
+    "27111:cyprinus-carpio",
+    "27123:cyprinus-carpio",
+    "27143:cyprinus-carpio",
+    "27145:cyprinus-carpio",
+    "27155:cyprinus-carpio",
+    "27157:cyprinus-carpio",
+    "27157:salmo-trutta",
+    "27171:cyprinus-carpio",
+    "28027:cyprinus-carpio",
+    "28137:cyprinus-carpio",
+    "29031:cyprinus-carpio",
+    "29053:ctenopharyngodon-idella",
+    "29113:cyprinus-carpio",
+    "29133:cyprinus-carpio",
+    "29185:ctenopharyngodon-idella",
+    "29197:cyprinus-carpio",
+    "29197:hypophthalmichthys-molitrix",
+    "29201:cyprinus-carpio",
+    "29201:hypophthalmichthys-nobilis",
+    "30007:salmo-trutta",
+    "30009:salmo-trutta",
+    "30013:cyprinus-carpio",
+    "30017:cyprinus-carpio",
+    "30085:cyprinus-carpio",
+    "30097:salmo-trutta",
+    "30099:salmo-trutta",
+    "30109:cyprinus-carpio",
+    "31003:salmo-trutta",
+    "31017:cyprinus-carpio",
+    "31027:hypophthalmichthys-molitrix",
+    "31027:hypophthalmichthys-nobilis",
+    "31045:cyprinus-carpio",
+    "31051:ctenopharyngodon-idella",
+    "31051:cyprinus-carpio",
+    "31051:hypophthalmichthys-molitrix",
+    "31057:cyprinus-carpio",
+    "31063:cyprinus-carpio",
+    "31067:cyprinus-carpio",
+    "31079:cyprinus-carpio",
+    "31109:cyprinus-carpio",
+    "31121:cyprinus-carpio",
+    "31141:cyprinus-carpio",
+    "31155:cyprinus-carpio",
+    "31177:cyprinus-carpio",
+    "31177:hypophthalmichthys-molitrix",
+    "31185:cyprinus-carpio",
+    "32031:salmo-trutta",
+    "34007:cyprinus-carpio",
+    "34007:northern-snakehead",
+    "34015:northern-snakehead",
+    "34017:cyprinus-carpio",
+    "35047:salmo-trutta",
+    "36001:cyprinus-carpio",
+    "36007:cyprinus-carpio",
+    "36013:cyprinus-carpio",
+    "36045:cyprinus-carpio",
+    "36049:salmo-trutta",
+    "36053:neogobius-melanostomus",
+    "36077:cyprinus-carpio",
+    "36093:cyprinus-carpio",
+    "36103:salmo-trutta",
+    "36105:salmo-trutta",
+    "36115:cyprinus-carpio",
+    "37017:cyprinus-carpio",
+    "37085:ctenopharyngodon-idella",
+    "37087:salmo-trutta",
+    "37131:cyprinus-carpio",
+    "37173:salmo-trutta",
+    "37189:salmo-trutta",
+    "38001:cyprinus-carpio",
+    "38011:cyprinus-carpio",
+    "38021:cyprinus-carpio",
+    "38025:cyprinus-carpio",
+    "38029:cyprinus-carpio",
+    "38041:cyprinus-carpio",
+    "38089:cyprinus-carpio",
+    "39013:cyprinus-carpio",
+    "39037:cyprinus-carpio",
+    "39049:cyprinus-carpio",
+    "39061:ctenopharyngodon-idella",
+    "39061:cyprinus-carpio",
+    "39141:cyprinus-carpio",
+    "39143:cyprinus-carpio",
+    "39157:cyprinus-carpio",
+    "39167:cyprinus-carpio",
+    "40013:cyprinus-carpio",
+    "40023:ctenopharyngodon-idella",
+    "40027:cyprinus-carpio",
+    "40131:ctenopharyngodon-idella",
+    "41031:salmo-trutta",
+    "41035:salmo-trutta",
+    "41045:cyprinus-carpio",
+    "42045:northern-snakehead",
+    "42049:neogobius-melanostomus",
+    "42065:salmo-trutta",
+    "42069:salmo-trutta",
+    "42101:salmo-trutta",
+    "42107:salmo-trutta",
+    "45039:cyprinus-carpio",
+    "45055:ctenopharyngodon-idella",
+    "45055:cyprinus-carpio",
+    "45087:cyprinus-carpio",
+    "45091:cyprinus-carpio",
+    "46007:cyprinus-carpio",
+    "46017:cyprinus-carpio",
+    "46055:cyprinus-carpio",
+    "46061:hypophthalmichthys-nobilis",
+    "46135:ctenopharyngodon-idella",
+    "46135:hypophthalmichthys-molitrix",
+    "47027:cyprinus-carpio",
+    "47029:cyprinus-carpio",
+    "47119:ctenopharyngodon-idella",
+    "48029:pterygoplichthys-disjunctivus",
+    "48073:cyprinus-carpio",
+    "48097:cyprinus-carpio",
+    "48179:cyprinus-carpio",
+    "48201:oreochromis-aureus",
+    "48215:oreochromis-aureus",
+    "48215:pterygoplichthys-disjunctivus",
+    "48283:cyprinus-carpio",
+    "48297:cyprinus-carpio",
+    "48297:oreochromis-aureus",
+    "48307:cyprinus-carpio",
+    "48309:cyprinus-carpio",
+    "48315:cyprinus-carpio",
+    "48319:cyprinus-carpio",
+    "48321:cyprinus-carpio",
+    "48323:cyprinus-carpio",
+    "48325:cyprinus-carpio",
+    "48347:cyprinus-carpio",
+    "48373:cyprinus-carpio",
+    "48393:cyprinus-carpio",
+    "48399:cyprinus-carpio",
+    "48427:cyprinus-carpio",
+    "48427:pterygoplichthys-disjunctivus",
+    "48451:cyprinus-carpio",
+    "48465:cyprinus-carpio",
+    "48479:cyprinus-carpio",
+    "48479:oreochromis-aureus",
+    "48497:cyprinus-carpio",
+    "49007:cyprinus-carpio",
+    "49007:salmo-trutta",
+    "49013:salmo-trutta",
+    "49033:cyprinus-carpio",
+    "49037:salmo-trutta",
+    "49043:salmo-trutta",
+    "49047:salmo-trutta",
+    "50025:cyprinus-carpio",
+    "51005:salmo-trutta",
+    "51163:cyprinus-carpio",
+    "51173:salmo-trutta",
+    "51183:cyprinus-carpio",
+    "51191:salmo-trutta",
+    "53047:cyprinus-carpio",
+    "54019:cyprinus-carpio",
+    "54037:cyprinus-carpio",
+    "54059:cyprinus-carpio",
+    "54089:cyprinus-carpio",
+    "55013:salmo-trutta",
+    "55021:cyprinus-carpio",
+    "55023:salmo-trutta",
+    "55043:ctenopharyngodon-idella",
+    "55043:cyprinus-carpio",
+    "55063:cyprinus-carpio",
+    "55065:cyprinus-carpio",
+    "55071:salmo-trutta",
+    "55075:cyprinus-carpio",
+    "55078:salmo-trutta",
+    "55083:salmo-trutta",
+    "55091:cyprinus-carpio",
+    "55093:cyprinus-carpio",
+    "55111:salmo-trutta",
+    "55127:cyprinus-carpio",
+    "55135:salmo-trutta",
+    "55137:cyprinus-carpio",
+    "55141:cyprinus-carpio",
+    "56031:salmo-trutta",
+    "56045:cyprinus-carpio"
+  ],
+  "heldPairs": [
+    "05143:hypophthalmichthys-molitrix",
+    "12055:clarias-batrachus",
+    "31089:ctenopharyngodon-idella",
+    "31089:hypophthalmichthys-molitrix",
+    "39063:cyprinus-carpio"
+  ],
+  "heldFishRows": [
+    {
+      "parsedRowIndexZeroBased": 864,
+      "rawRecordSha256": "67fabe8aa68030c3ddc9b32352e7dd2e7c49e2d28ca24e1b352c0c1a73228d1c",
+      "reason": "gross-frame-versus-declared-county-contradiction; material-publisher-river-border-county-contradiction"
+    },
+    {
+      "parsedRowIndexZeroBased": 1977,
+      "rawRecordSha256": "a15ae1b9504e940492bd61dac0e258f8ef5729f56472d087c16f9854cff6d96a",
+      "reason": "introduced-us-walking-catfish-species-concept-unresolved"
+    },
+    {
+      "parsedRowIndexZeroBased": 11376,
+      "rawRecordSha256": "f90efb4653b118c773dbc8c221f5f00c6465d6fa71bb56b10b0575c475cabc73",
+      "reason": "material-frame-versus-declared-county-conflict; sampling-adverse-flag-data_lost; sampling-qualification-without-positive-effort"
+    },
+    {
+      "parsedRowIndexZeroBased": 11383,
+      "rawRecordSha256": "d7ac5afd9ac3d139d4006e82b208f62c955aa0eba41a6ecf825ab21c3ddf4a07",
+      "reason": "gross-frame-versus-declared-county-contradiction; material-publisher-river-border-county-contradiction; sampling-qualification-needs-original-detail"
+    },
+    {
+      "parsedRowIndexZeroBased": 11393,
+      "rawRecordSha256": "950677167eff180b2cb9664775d970e450b7cb2f1197ed04630fd4f33c5d4551",
+      "reason": "material-frame-versus-declared-county-conflict"
+    },
+    {
+      "parsedRowIndexZeroBased": 11398,
+      "rawRecordSha256": "1ac9caf41275d6afc8e5f86a2eccc89db62b3eb4ba4da5688f7f169687431a00",
+      "reason": "gross-frame-versus-declared-county-contradiction; material-publisher-river-border-county-contradiction"
+    },
+    {
+      "parsedRowIndexZeroBased": 13924,
+      "rawRecordSha256": "c3ecf6802bd55883319f1b7187ffcd766d7c4a93a6ee189a9637cb688de4dfae",
+      "reason": "material-frame-versus-declared-county-conflict"
+    }
+  ],
+  "attribution": "U.S. Environmental Protection Agency, National Rivers and Streams Assessment2018/2019 fish counts, sampling information and site information; official2013/2014 and2023/2024 taxon reference files and2018 field manual.",
+  "rationale": "MAIN adopts293 independently supported exact county-species positive candidates after retaining and visually verifying the manual bridge for three B holds. Exact source bodies, original proposals, recipe hashes, visit keys and row witnesses are reconstructed offline; county contradictions and introduced walking-catfish concept remain held.",
+  "limitations": [
+    "Historical positive reports at sampled sites only. Retrieval does not establish current survival, countywide prevalence or a complete inventory.",
+    "Absence, non-detection and protocol completion cannot be inferred from missing rows, counts, effort flags or held identities.",
+    "Fish UID differs from sampling/site UID in this release. Unique complete site/date/visit/state joins and sampling/site UID agreement are required; original values are never rewritten.",
+    "Publisher county geography is authoritative only when current FIPS/name/state match and the independent geography review has no material contradiction. Frame points and river borders diagnose conflicts; they do not assign an alternative county.",
+    "The original primary receipt path was overwritten during supplementary acquisition. Fresh six-file reacquisition receipts and exact original-body parity are retained; overwritten receipt history is not reconstructed.",
+    "Independent agent proposals are not canonical completed worker manifests or human specimen verification. MAIN method adoption and canonical run checks supply separate acceptance."
+  ],
+  "speciesCaveats": {
+    "pterygoplichthys-disjunctivus": [
+      "Reported original species identification retained; historical sailfin-catfish identification confusion is not resolved by an exact name match."
+    ],
+    "pterygoplichthys-multiradiatus": [
+      "Reported original species identification retained; no specimen-specific redetermination is asserted."
+    ],
+    "clarias-batrachus": [
+      "New2018 candidate held: retained USGS NAS identification section says introduced-US species identity is in doubt following the2008 restriction to Java. Separate audit is needed for prior accepted records."
+    ]
+  },
+  "pairCaveats": {
+    "05023:salmo-trutta": [],
+    "05031:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "05031:hypophthalmichthys-nobilis": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "05057:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "05077:hypophthalmichthys-nobilis": [],
+    "05093:ctenopharyngodon-idella": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "05093:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred.",
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "08007:cyprinus-carpio": [],
+    "08007:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "08013:salmo-trutta": [
+      "Effort qualification retained: SAMPLED_FISH='NO-SITE CONDITIONS'; sufficiency='N'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "08015:salmo-trutta": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "08047:salmo-trutta": [],
+    "08059:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "08067:cyprinus-carpio": [],
+    "08067:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "08071:cyprinus-carpio": [],
+    "08079:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "08087:cyprinus-carpio": [],
+    "08115:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12011:oreochromis-aureus": [],
+    "12011:tilapia-mariae": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12013:ctenopharyngodon-idella": [],
+    "12021:cichlasoma-bimaculatum": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12021:hoplosternum-littorale": [],
+    "12021:oreochromis-niloticus": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12021:tilapia-mariae": [
+      "2013 reference has no TAXA_ID 5183. The 2023 official row matches source ID and common name, while the contemporaneous 2018 field manual Appendix D PDF page 78 lists Tilapia mariae as spotted tilapia. This explicit newer-reference-only crosswalk is proposed; global numeric ID stability is not assumed."
+    ],
+    "12039:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12055:hoplosternum-littorale": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12055:oreochromis-aureus": [],
+    "12055:pterygoplichthys-disjunctivus": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12055:pterygoplichthys-multiradiatus": [
+      "USGS documents historical sailfin catfish misidentifications. Both official reference cycles here retain the exact species and ID without hybrid qualifiers. Support is for the original reported identification, not independent specimen re-identification."
+    ],
+    "12059:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "12093:hoplosternum-littorale": [],
+    "13007:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "13007:cyprinus-carpio": [],
+    "13015:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "13067:cyprinus-carpio": [],
+    "13121:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "13153:cyprinus-carpio": [],
+    "13191:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "16017:salmo-trutta": [],
+    "16031:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint."
+    ],
+    "16051:salmo-trutta": [],
+    "17003:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17003:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "17013:ctenopharyngodon-idella": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17013:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred.",
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "17021:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence."
+    ],
+    "17067:ctenopharyngodon-idella": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "17067:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17077:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-50-90% OF REACH'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "17091:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17093:cyprinus-carpio": [],
+    "17095:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17095:cyprinus-carpio": [],
+    "17095:hypophthalmichthys-molitrix": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17103:cyprinus-carpio": [],
+    "17127:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17151:ctenopharyngodon-idella": [],
+    "17195:cyprinus-carpio": [
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "17201:cyprinus-carpio": [],
+    "18051:hypophthalmichthys-nobilis": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "18119:ctenopharyngodon-idella": [],
+    "18129:ctenopharyngodon-idella": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "18167:ctenopharyngodon-idella": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "18169:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "19041:ctenopharyngodon-idella": [],
+    "19083:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "19193:ctenopharyngodon-idella": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "20013:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "20103:hypophthalmichthys-molitrix": [
+      "Effort qualification retained: SAMPLED_FISH='NO-SITE CONDITIONS'; sufficiency='N'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "20111:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "21007:ctenopharyngodon-idella": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "21031:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "21041:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "21055:cyprinus-carpio": [
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "21115:cyprinus-carpio": [],
+    "21139:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "21149:cyprinus-carpio": [],
+    "21159:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "21177:ctenopharyngodon-idella": [],
+    "21177:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "21205:cyprinus-carpio": [],
+    "21225:ctenopharyngodon-idella": [
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "21225:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "22057:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "22057:hypophthalmichthys-molitrix": [],
+    "22097:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "22111:cyprinus-carpio": [],
+    "24001:salmo-trutta": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "24011:cyprinus-carpio": [],
+    "24011:northern-snakehead": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "25011:salmo-trutta": [],
+    "25027:salmo-trutta": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "26021:cyprinus-carpio": [],
+    "26031:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "26045:cyprinus-carpio": [],
+    "26063:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "26067:cyprinus-carpio": [],
+    "26131:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "26131:salmo-trutta": [],
+    "26135:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "26139:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='N'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "26147:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "26155:cyprinus-carpio": [],
+    "26155:neogobius-melanostomus": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "26157:cyprinus-carpio": [],
+    "26159:neogobius-melanostomus": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "27027:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "27045:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence."
+    ],
+    "27049:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "27055:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "27055:salmo-trutta": [],
+    "27063:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "27073:cyprinus-carpio": [],
+    "27111:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "27123:cyprinus-carpio": [],
+    "27143:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "27145:cyprinus-carpio": [],
+    "27155:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "27157:cyprinus-carpio": [],
+    "27157:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "27171:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "28027:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "28137:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "29031:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "29053:ctenopharyngodon-idella": [],
+    "29113:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "29133:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "29185:ctenopharyngodon-idella": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "29197:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "29197:hypophthalmichthys-molitrix": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "29201:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "29201:hypophthalmichthys-nobilis": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "30007:salmo-trutta": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "30009:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail."
+    ],
+    "30013:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "30017:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "30085:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='NO->20 CW SAMPLED,<500 INDIV'; sufficiency='Y'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "30097:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "30099:salmo-trutta": [],
+    "30109:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31003:salmo-trutta": [],
+    "31017:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31027:hypophthalmichthys-molitrix": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "31027:hypophthalmichthys-nobilis": [
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31045:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "31051:ctenopharyngodon-idella": [
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31051:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "31051:hypophthalmichthys-molitrix": [
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31057:cyprinus-carpio": [],
+    "31063:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31067:cyprinus-carpio": [],
+    "31079:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31109:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='N'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "31121:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31141:cyprinus-carpio": [],
+    "31155:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "31177:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='N'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred.",
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "31177:hypophthalmichthys-molitrix": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography."
+    ],
+    "31185:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-50-90% OF REACH'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "32031:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "34007:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "34007:northern-snakehead": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "34015:northern-snakehead": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "34017:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "35047:salmo-trutta": [],
+    "36001:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail."
+    ],
+    "36007:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "36013:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "36045:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "36049:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "36053:neogobius-melanostomus": [],
+    "36077:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "36093:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "36103:salmo-trutta": [
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "36105:salmo-trutta": [],
+    "36115:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "37017:cyprinus-carpio": [],
+    "37085:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "37087:salmo-trutta": [],
+    "37131:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "37173:salmo-trutta": [],
+    "37189:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "38001:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-<50% OF REACH,>=25 INDIV'; sufficiency='Y'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "38011:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "38021:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "38025:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "38029:cyprinus-carpio": [],
+    "38041:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence."
+    ],
+    "38089:cyprinus-carpio": [],
+    "39013:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "39037:cyprinus-carpio": [],
+    "39049:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "39061:ctenopharyngodon-idella": [],
+    "39061:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "39141:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "39143:cyprinus-carpio": [],
+    "39157:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "39167:cyprinus-carpio": [],
+    "40013:cyprinus-carpio": [
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography."
+    ],
+    "40023:ctenopharyngodon-idella": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "40027:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "40131:ctenopharyngodon-idella": [],
+    "41031:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "41035:salmo-trutta": [],
+    "41045:cyprinus-carpio": [
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "42045:northern-snakehead": [],
+    "42049:neogobius-melanostomus": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "42065:salmo-trutta": [],
+    "42069:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "42101:salmo-trutta": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "42107:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "45039:cyprinus-carpio": [],
+    "45055:ctenopharyngodon-idella": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "45055:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='NOT_SURE'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "45087:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "45091:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "46007:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "46017:cyprinus-carpio": [],
+    "46055:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint."
+    ],
+    "46061:hypophthalmichthys-nobilis": [],
+    "46135:ctenopharyngodon-idella": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "46135:hypophthalmichthys-molitrix": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "47027:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "47029:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "47119:ctenopharyngodon-idella": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48029:pterygoplichthys-disjunctivus": [
+      "USGS documents historical sailfin catfish misidentifications. Both official reference cycles here retain the exact species and ID without hybrid qualifiers. Support is for the original reported identification, not independent specimen re-identification."
+    ],
+    "48073:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48097:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-50-90% OF REACH'; sufficiency='Y'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "48179:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint."
+    ],
+    "48201:oreochromis-aureus": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "48215:oreochromis-aureus": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48215:pterygoplichthys-disjunctivus": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred.",
+      "USGS documents historical sailfin catfish misidentifications. Both official reference cycles here retain the exact species and ID without hybrid qualifiers. Support is for the original reported identification, not independent specimen re-identification."
+    ],
+    "48283:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48297:cyprinus-carpio": [],
+    "48297:oreochromis-aureus": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48307:cyprinus-carpio": [],
+    "48309:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48315:cyprinus-carpio": [],
+    "48319:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48321:cyprinus-carpio": [],
+    "48323:cyprinus-carpio": [
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48325:cyprinus-carpio": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "48347:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48373:cyprinus-carpio": [],
+    "48393:cyprinus-carpio": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48399:cyprinus-carpio": [],
+    "48427:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48427:pterygoplichthys-disjunctivus": [
+      "Effort qualification retained: SAMPLED_FISH='NO->20 CW SAMPLED,<500 INDIV'; sufficiency='Y'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred.",
+      "USGS documents historical sailfin catfish misidentifications. Both official reference cycles here retain the exact species and ID without hybrid qualifiers. Support is for the original reported identification, not independent specimen re-identification."
+    ],
+    "48451:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48465:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "48479:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "48479:oreochromis-aureus": [],
+    "48497:cyprinus-carpio": [
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "49007:cyprinus-carpio": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='N'. Positive count and positive recorded effort support capture only, not a complete survey.",
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "49007:salmo-trutta": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "49013:salmo-trutta": [],
+    "49033:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "49037:salmo-trutta": [
+      "Effort qualification retained: SAMPLED_FISH='YES-SUFFICIENT'; sufficiency='N'. Positive count and positive recorded effort support capture only, not a complete survey."
+    ],
+    "49043:salmo-trutta": [
+      "Partial or uncertain effort; positive TOTAL does not imply survey completeness. NO-prefixed reach/individual thresholds describe effort, not species absence.",
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "49047:salmo-trutta": [],
+    "50025:cyprinus-carpio": [
+      "Protocol and gear flags retained; comment labels do not reject the positive taxon record without supporting detail.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "51005:salmo-trutta": [],
+    "51163:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "51173:salmo-trutta": [],
+    "51183:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "51191:salmo-trutta": [],
+    "53047:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "54019:cyprinus-carpio": [],
+    "54037:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "54059:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "54089:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55013:salmo-trutta": [
+      "Original protocol/gear comment flags are retained. Comment text is absent from these tables. Flags alone do not negate a distinct positive count; precise gear execution is not inferred."
+    ],
+    "55021:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55023:salmo-trutta": [],
+    "55043:ctenopharyngodon-idella": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55043:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "55063:cyprinus-carpio": [
+      "Border-river positive remains at publisher assigned county and sampled-reach scale; no adjacent-county expansion.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55065:cyprinus-carpio": [],
+    "55071:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55075:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "55078:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55083:salmo-trutta": [],
+    "55091:cyprinus-carpio": [
+      "Frame point outside current simplified declared-county geometry is diagnostic only. Limited border displacement does not replace exact publisher geography.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55093:cyprinus-carpio": [
+      "Boundary river flagged. Explicit publisher FIPS/name/state remain the positive geographic evidence. Frame coordinates are diagnostics only; bank-level position, ownership and countywide extent are not inferred."
+    ],
+    "55111:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55127:cyprinus-carpio": [],
+    "55135:salmo-trutta": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "55137:cyprinus-carpio": [],
+    "55141:cyprinus-carpio": [
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ],
+    "56031:salmo-trutta": [],
+    "56045:cyprinus-carpio": [
+      "ANOM_CT counts anomalies, not distinct fish; no unsupported ANOM_CT <= TOTAL constraint.",
+      "Original fish UID differs from sampling/site UID; unique composite visit join preserves all identifiers."
+    ]
+  }
+}

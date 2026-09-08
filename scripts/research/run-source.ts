@@ -1,3 +1,5 @@
+import { epaNrsa1819InputPaths, EPA_NRSA_1819_MODE, type EpaNrsa1819Plan } from "@/lib/research/epa-nrsa-1819-fish-counts";
+import { epaNrsa1819FishAdapter } from "./adapters/epa-nrsa-1819-fish-counts";
 import { epaNrsaInputPaths, type EpaNrsaPlan } from "@/lib/research/epa-nrsa-fish-counts";
 import { epaNrsaFishAdapter } from "./adapters/epa-nrsa-fish-counts";
 import { wqpReviewedFishInputPaths, type WqpReviewedFishPlan } from "@/lib/research/wqp-reviewed-fish";
@@ -108,6 +110,7 @@ type CandidateFile = {
   wqpFieldCounts?: WqpPlan;
   wqpFishMeasurements?: WqpFishPlan;
   epaNrsaFish?: EpaNrsaPlan;
+  epaNrsa1819Fish?: EpaNrsa1819Plan;
   wqpReviewedFish?: WqpReviewedFishPlan;
   officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
@@ -561,7 +564,10 @@ function runTimestamp(value: string) {
 }
 
 function resolveAdapter(sourceId: string, candidateFile?: CandidateFile): ResearchSourceAdapter {
-  if (sourceId === epaNrsaFishAdapter.sourceId) return epaNrsaFishAdapter;
+  if (sourceId === epaNrsaFishAdapter.sourceId) {
+    if (candidateFile?.epaNrsaFish && candidateFile.epaNrsa1819Fish) throw new Error("Ambiguous EPA NRSA method plans.");
+    return candidateFile?.epaNrsa1819Fish ? epaNrsa1819FishAdapter : epaNrsaFishAdapter;
+  }
   if (sourceId === wqpFieldCountsAdapter.sourceId) {
     if ([candidateFile?.wqpFieldCounts, candidateFile?.wqpFishMeasurements, candidateFile?.wqpReviewedFish].filter(Boolean).length > 1) throw new Error("Ambiguous WQP method plans.");
     if (candidateFile?.wqpReviewedFish) return wqpReviewedFishAdapter;
@@ -678,6 +684,10 @@ function buildParameters(
     };
   }
   if (sourceId === epaNrsaFishAdapter.sourceId) {
+    if (candidateFile.epaNrsa1819Fish) {
+      if (candidateFile.epaNrsaFish || candidateFile.sourceId !== sourceId) throw new Error("Ambiguous or wrong-source EPA NRSA2018 plan.");
+      return {...candidateFile.epaNrsa1819Fish, mode: EPA_NRSA_1819_MODE, stateCode, candidatePairs, candidateLimit: candidatePairs.length};
+    }
     if (!candidateFile.epaNrsaFish || candidateFile.sourceId !== sourceId) throw new Error("EPA NRSA requires its pinned reviewed source plan.");
     return {...candidateFile.epaNrsaFish, mode: "retained-reviewed-fish-counts", stateCode, candidatePairs, candidateLimit: candidatePairs.length};
   }
@@ -983,6 +993,7 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(adapter === epaNrsa1819FishAdapter ? epaNrsa1819InputPaths(readJson<CandidateFile>(options.candidateFile).epaNrsa1819Fish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === epaNrsaFishAdapter ? epaNrsaInputPaths(readJson<CandidateFile>(options.candidateFile).epaNrsaFish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpReviewedFishAdapter ? wqpReviewedFishInputPaths(readJson<CandidateFile>(options.candidateFile).wqpReviewedFish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === wqpFishMeasurementsAdapter ? wqpFishInputPaths(readJson<CandidateFile>(options.candidateFile).wqpFishMeasurements!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
@@ -1091,7 +1102,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = adapter === epaNrsaFishAdapter
+    const expectedProviderRequests = adapter === epaNrsa1819FishAdapter
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: EPA_NRSA_1819_MODE }
+      : adapter === epaNrsaFishAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-fish-counts" }
       : adapter === wqpReviewedFishAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: "retained-reviewed-fish-measurement" }
