@@ -1,0 +1,1132 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-positive-survey-batch-integration",
+  "recordedAt": "2026-09-08T10:30:08.898Z",
+  "integrator": "MAIN",
+  "sourceId": "aphis-honey-bee",
+  "sourceCodeCommit": "b2545bae5ee6dec7b7a5f3e5c6339abf800d36e0",
+  "methodReview": "src/data/research/source-method-reviews/aphis-honey-bee-positive-v1.json",
+  "pilots": [
+    {
+      "stateCode": "HI",
+      "integration": {
+        "schemaVersion": 1,
+        "queueId": "queue-lease-honey-hi-positive-pilot-20260908-r12-1",
+        "jobId": "honey-hi-positive-pilot-20260908-r12",
+        "leaseId": "lease-honey-hi-positive-pilot-20260908-r12-1",
+        "integrator": "MAIN",
+        "integratedAt": "2026-09-08T10:23:58.596Z",
+        "integrationCommit": "13db612cd4741a4602947bbf9d22c1966feaf494",
+        "workerCommit": "c116ce1de757af3d8a26672fc000d514fac1d5bf",
+        "workerBranchHead": "bf7468cf70d2c103c66dab1032a64bda4a1ded17",
+        "manifestHash": "05db9df9275c9c0d3f817f8e11b54d11eda328dbc5849fa1fb4dbea5e3024b0a",
+        "changedPaths": [
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/artifacts/honey-bee-positive-witnesses.json",
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/assertions.ndjson",
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/manifest.json",
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/outcomes.ndjson",
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/receipt.json",
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/rejections.ndjson",
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/reviews.ndjson",
+          "src/data/research/runs/20260908T100223Z__aphis-honey-bee__05730b61eeb1/source-verification.json"
+        ],
+        "checks": [
+          {
+            "command": "MAIN independently verify frozen trees, exact two-commit ancestry, clean worktree, leased eight paths, manifest bytes and county baseline hashes",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r12-honey-bee\\hi-pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-verification C:\\Code\\project-isitusa-worktrees\\honey-hi-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1\\source-verification.json --run-id 20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-id aphis-honey-bee --state-code HI --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_hi_positive_pilot_r12",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "Actual pilot canonical mutation tests",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "npm run check:research-integrity",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "TypeScript noEmit check",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100223Z__aphis-honey-bee__05730b61eeb1\\source-verification.json --run-id 20260908T100223Z__aphis-honey-bee__05730b61eeb1 --source-id aphis-honey-bee --state-code HI --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_hi_positive_pilot_r12",
+            "exitCode": 0,
+            "result": "pass"
+          }
+        ],
+        "conflicts": 0,
+        "manualInterventions": 0,
+        "criticalSafetyViolations": 0,
+        "evidenceSemanticViolations": 0,
+        "forbiddenWrites": 0,
+        "reason": "MAIN preserved worker ancestry and exact reviewed immutable bytes. Canonical validation passed after merge. National compilation and exact pair reconciliation remain separate."
+      }
+    },
+    {
+      "stateCode": "NY",
+      "integration": {
+        "schemaVersion": 1,
+        "queueId": "queue-lease-honey-ny-positive-pilot-20260908-r12-1",
+        "jobId": "honey-ny-positive-pilot-20260908-r12",
+        "leaseId": "lease-honey-ny-positive-pilot-20260908-r12-1",
+        "integrator": "MAIN",
+        "integratedAt": "2026-09-08T10:24:14.193Z",
+        "integrationCommit": "0a3f95ce4d2c1d9c40919b44e5daa2ea844a5ab4",
+        "workerCommit": "302f6034ec8c1cbf0ab661d7d55b012bb775cf28",
+        "workerBranchHead": "5ac1721ba45d4faa3ccdb90e0feba5f5a7441b27",
+        "manifestHash": "03fcf00acc167ab135d2ee2166047246c7a0e029fb736e949946fb22083e404d",
+        "changedPaths": [
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/artifacts/honey-bee-positive-witnesses.json",
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/assertions.ndjson",
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/manifest.json",
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/outcomes.ndjson",
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/receipt.json",
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/rejections.ndjson",
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/reviews.ndjson",
+          "src/data/research/runs/20260908T100226Z__aphis-honey-bee__050604009f3b/source-verification.json"
+        ],
+        "checks": [
+          {
+            "command": "MAIN independently verify frozen trees, exact two-commit ancestry, clean worktree, leased eight paths, manifest bytes and county baseline hashes",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\.agents\\skills\\isitusa-evidence-worker\\scripts\\validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\.cache\\research\\campaigns\\20260908-r12-honey-bee\\ny-pilot-lease.json --manifest C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\manifest.json --repo C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12 --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b --source-verification C:\\Code\\project-isitusa-worktrees\\honey-ny-positive-pilot-20260908-r12\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\source-verification.json --run-id 20260908T100226Z__aphis-honey-bee__050604009f3b --source-id aphis-honey-bee --state-code NY --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_ny_positive_pilot_r12",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "Actual pilot canonical mutation tests",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "npm run check:research-integrity",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "TypeScript noEmit check",
+            "exitCode": 0,
+            "result": "pass"
+          },
+          {
+            "command": "--import tsx scripts/research/validate-immutable-run.ts --repository-root C:\\Code\\project-isitusa --validation-root C:\\Code\\project-isitusa --run-directory C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b --source-verification C:\\Code\\project-isitusa\\src\\data\\research\\runs\\20260908T100226Z__aphis-honey-bee__050604009f3b\\source-verification.json --run-id 20260908T100226Z__aphis-honey-bee__050604009f3b --source-id aphis-honey-bee --state-code NY --pair-keys-stdin true --code-commit 4541ebc10b0afae1eb8b1b85d089689ef9771842 --worker-task-id honey_ny_positive_pilot_r12",
+            "exitCode": 0,
+            "result": "pass"
+          }
+        ],
+        "conflicts": 0,
+        "manualInterventions": 0,
+        "criticalSafetyViolations": 0,
+        "evidenceSemanticViolations": 0,
+        "forbiddenWrites": 0,
+        "reason": "MAIN preserved worker ancestry and exact reviewed immutable bytes. Canonical validation passed after merge. National compilation and exact pair reconciliation remain separate."
+      }
+    }
+  ],
+  "stagedRuns": [
+    {
+      "stateCode": "AK",
+      "runId": "20260908T102426Z__aphis-honey-bee__40ee09ccf932",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102426Z__aphis-honey-bee__40ee09ccf932/receipt.json",
+        "bytes": 5362,
+        "sha256": "fc86aa942ef5ded28c52a097c65dc10bb614e52594292b96607e241dc77bef67"
+      },
+      "counts": {
+        "requested_pairs": 4,
+        "candidate_records": 85,
+        "assertion_events": 4,
+        "review_events": 4,
+        "rejection_records": 4,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 4
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "AR",
+      "runId": "20260908T102430Z__aphis-honey-bee__3aa4a1d17f34",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102430Z__aphis-honey-bee__3aa4a1d17f34/receipt.json",
+        "bytes": 11147,
+        "sha256": "e349a1693ab3ef9901022465ac0a793917188ac09f492d5b110e520777242cd7"
+      },
+      "counts": {
+        "requested_pairs": 59,
+        "candidate_records": 322,
+        "assertion_events": 59,
+        "review_events": 59,
+        "rejection_records": 4,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 59
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "CA",
+      "runId": "20260908T102434Z__aphis-honey-bee__8c15dbd6ae8d",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102434Z__aphis-honey-bee__8c15dbd6ae8d/receipt.json",
+        "bytes": 9154,
+        "sha256": "7eaa262b893b8a3e966e80c0b3d41c8e305ed8bed7226115885110248c4e453e"
+      },
+      "counts": {
+        "requested_pairs": 40,
+        "candidate_records": 649,
+        "assertion_events": 40,
+        "review_events": 40,
+        "rejection_records": 28,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 40
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "CO",
+      "runId": "20260908T102438Z__aphis-honey-bee__af84bb399192",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102438Z__aphis-honey-bee__af84bb399192/receipt.json",
+        "bytes": 7789,
+        "sha256": "2559341315d7004988d82a40cca78a885672ab76ade95eea45c673850ddb5d49"
+      },
+      "counts": {
+        "requested_pairs": 27,
+        "candidate_records": 177,
+        "assertion_events": 27,
+        "review_events": 27,
+        "rejection_records": 13,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 27
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "DC",
+      "runId": "20260908T102442Z__aphis-honey-bee__a5b72e286198",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102442Z__aphis-honey-bee__a5b72e286198/receipt.json",
+        "bytes": 5046,
+        "sha256": "b6c16ab761ba0e3d293ca9041c3abf6ad93dbdcfe36a855ce5f3c28053f70178"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 183,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 2,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "DE",
+      "runId": "20260908T102446Z__aphis-honey-bee__c45c1b796d60",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102446Z__aphis-honey-bee__c45c1b796d60/receipt.json",
+        "bytes": 5259,
+        "sha256": "abbe4765cfc1bafe3e12333eca09cbd3f23471e95877068d2740cae1e883e338"
+      },
+      "counts": {
+        "requested_pairs": 3,
+        "candidate_records": 229,
+        "assertion_events": 3,
+        "review_events": 3,
+        "rejection_records": 3,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 3
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "FL",
+      "runId": "20260908T102450Z__aphis-honey-bee__b3c833739e5c",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102450Z__aphis-honey-bee__b3c833739e5c/receipt.json",
+        "bytes": 10939,
+        "sha256": "bd662f6d2418e21033373d415842c6cced63349bd058a13cef9e75cac45649b4"
+      },
+      "counts": {
+        "requested_pairs": 57,
+        "candidate_records": 366,
+        "assertion_events": 57,
+        "review_events": 57,
+        "rejection_records": 21,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 57
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "GA",
+      "runId": "20260908T102454Z__aphis-honey-bee__b5c1124322ac",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102454Z__aphis-honey-bee__b5c1124322ac/receipt.json",
+        "bytes": 11884,
+        "sha256": "0e70c6f59e0dd23fb42f05d2c1775a087141d1594b3013613b320c8ad51c3ef8"
+      },
+      "counts": {
+        "requested_pairs": 66,
+        "candidate_records": 372,
+        "assertion_events": 66,
+        "review_events": 66,
+        "rejection_records": 20,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 66
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "IA",
+      "runId": "20260908T102458Z__aphis-honey-bee__c87da090813f",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102458Z__aphis-honey-bee__c87da090813f/receipt.json",
+        "bytes": 9469,
+        "sha256": "f0673f6c29b07ed3ce9136c6788edbff272bc20e80bb8630b6d2097854945843"
+      },
+      "counts": {
+        "requested_pairs": 43,
+        "candidate_records": 144,
+        "assertion_events": 43,
+        "review_events": 43,
+        "rejection_records": 11,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 43
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "ID",
+      "runId": "20260908T102502Z__aphis-honey-bee__1975845c6487",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102502Z__aphis-honey-bee__1975845c6487/receipt.json",
+        "bytes": 8734,
+        "sha256": "c35fe4ea8e0e1d19cf19c688ca0719f8198576ecdee4c7b3d92ffb5a55de698b"
+      },
+      "counts": {
+        "requested_pairs": 36,
+        "candidate_records": 292,
+        "assertion_events": 36,
+        "review_events": 36,
+        "rejection_records": 22,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 36
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "IL",
+      "runId": "20260908T102506Z__aphis-honey-bee__4e03a09f35eb",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102506Z__aphis-honey-bee__4e03a09f35eb/receipt.json",
+        "bytes": 12302,
+        "sha256": "69486b101afd3570d93d0282ccfe9549c02b46ab06495e153b23f34ebf102d7f"
+      },
+      "counts": {
+        "requested_pairs": 70,
+        "candidate_records": 212,
+        "assertion_events": 70,
+        "review_events": 70,
+        "rejection_records": 4,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 70
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "IN",
+      "runId": "20260908T102511Z__aphis-honey-bee__3b613c6cd11d",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102511Z__aphis-honey-bee__3b613c6cd11d/receipt.json",
+        "bytes": 9994,
+        "sha256": "3b2ed403cf446c8bacb22aa973a95d97b3f1180ae1978e3d26f5ccc62e9e879b"
+      },
+      "counts": {
+        "requested_pairs": 48,
+        "candidate_records": 361,
+        "assertion_events": 48,
+        "review_events": 48,
+        "rejection_records": 13,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 48
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "KS",
+      "runId": "20260908T102515Z__aphis-honey-bee__6d1f6abe735b",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102515Z__aphis-honey-bee__6d1f6abe735b/receipt.json",
+        "bytes": 7364,
+        "sha256": "d8a82ac5a80f6dfde492b15dcd78dc2901a423d172fa5083b8bb11cc55fa8a45"
+      },
+      "counts": {
+        "requested_pairs": 23,
+        "candidate_records": 48,
+        "assertion_events": 23,
+        "review_events": 23,
+        "rejection_records": 3,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 23
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "KY",
+      "runId": "20260908T102519Z__aphis-honey-bee__79c2801a0343",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102519Z__aphis-honey-bee__79c2801a0343/receipt.json",
+        "bytes": 13564,
+        "sha256": "3bd9ca8f26629f40e9d8f1f651e7e1c105ceac22a19ea87a4d83b1271eb54115"
+      },
+      "counts": {
+        "requested_pairs": 82,
+        "candidate_records": 233,
+        "assertion_events": 82,
+        "review_events": 82,
+        "rejection_records": 24,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 82
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "LA",
+      "runId": "20260908T102523Z__aphis-honey-bee__ab7c7ebf75f4",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102523Z__aphis-honey-bee__ab7c7ebf75f4/receipt.json",
+        "bytes": 8524,
+        "sha256": "8b85f5fa016b11a86e0ee416ed4de1bea18e7bfe270459068cde69b97faec547"
+      },
+      "counts": {
+        "requested_pairs": 34,
+        "candidate_records": 210,
+        "assertion_events": 34,
+        "review_events": 34,
+        "rejection_records": 11,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 34
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MA",
+      "runId": "20260908T102527Z__aphis-honey-bee__19f5ca2d4959",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102527Z__aphis-honey-bee__19f5ca2d4959/receipt.json",
+        "bytes": 6421,
+        "sha256": "48604fbf6b8ddc4d9d1cdb451256f22ceb5ed724ff1b9d7166662a643e5f7c86"
+      },
+      "counts": {
+        "requested_pairs": 14,
+        "candidate_records": 248,
+        "assertion_events": 14,
+        "review_events": 14,
+        "rejection_records": 8,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 14
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MD",
+      "runId": "20260908T102531Z__aphis-honey-bee__70bd4bbba182",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102531Z__aphis-honey-bee__70bd4bbba182/receipt.json",
+        "bytes": 7157,
+        "sha256": "ebe971e3428ef867eba5727a5a5f73140d8834a8baa5666f6bd1b4d73171bf41"
+      },
+      "counts": {
+        "requested_pairs": 21,
+        "candidate_records": 262,
+        "assertion_events": 21,
+        "review_events": 21,
+        "rejection_records": 10,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 21
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "ME",
+      "runId": "20260908T102535Z__aphis-honey-bee__f1e0e05aa0ba",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102535Z__aphis-honey-bee__f1e0e05aa0ba/receipt.json",
+        "bytes": 6528,
+        "sha256": "ccc7242b0201cee63175afae01e3822c16296dace890df7352fd2813846a60c7"
+      },
+      "counts": {
+        "requested_pairs": 15,
+        "candidate_records": 165,
+        "assertion_events": 15,
+        "review_events": 15,
+        "rejection_records": 13,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 15
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MI",
+      "runId": "20260908T102539Z__aphis-honey-bee__f79390840c87",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102539Z__aphis-honey-bee__f79390840c87/receipt.json",
+        "bytes": 10204,
+        "sha256": "4d032d698f4d0f97a7cd58f637124ce6e7da71a9b0f1537107740297f20dc099"
+      },
+      "counts": {
+        "requested_pairs": 50,
+        "candidate_records": 343,
+        "assertion_events": 50,
+        "review_events": 50,
+        "rejection_records": 15,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 50
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MN",
+      "runId": "20260908T102543Z__aphis-honey-bee__00be12b3c9d9",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102543Z__aphis-honey-bee__00be12b3c9d9/receipt.json",
+        "bytes": 10204,
+        "sha256": "837b05ad15c5672e7705eb74bc62e564fd18e51a3d36825d09e7dab60206c55b"
+      },
+      "counts": {
+        "requested_pairs": 50,
+        "candidate_records": 347,
+        "assertion_events": 50,
+        "review_events": 50,
+        "rejection_records": 25,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 50
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MO",
+      "runId": "20260908T102547Z__aphis-honey-bee__38205b2e089b",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102547Z__aphis-honey-bee__38205b2e089b/receipt.json",
+        "bytes": 8100,
+        "sha256": "0aa75f848717e451913de311b11248c1fba9268401f1f3c27ec7b7a75891ed13"
+      },
+      "counts": {
+        "requested_pairs": 30,
+        "candidate_records": 44,
+        "assertion_events": 30,
+        "review_events": 30,
+        "rejection_records": 2,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 30
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MS",
+      "runId": "20260908T102551Z__aphis-honey-bee__e5160aba9fce",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102551Z__aphis-honey-bee__e5160aba9fce/receipt.json",
+        "bytes": 7259,
+        "sha256": "33aba4750077b051fc9cc7c1a47eb87db99c12bca6ea31fa6fecfb52d4ebae8f"
+      },
+      "counts": {
+        "requested_pairs": 22,
+        "candidate_records": 35,
+        "assertion_events": 22,
+        "review_events": 22,
+        "rejection_records": 5,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 22
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MT",
+      "runId": "20260908T102555Z__aphis-honey-bee__c891c4c8cb0b",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102555Z__aphis-honey-bee__c891c4c8cb0b/receipt.json",
+        "bytes": 9469,
+        "sha256": "a12ef00672e492dad6b70f410d6010ad4ea69f25e18f46ba139828902ce0f592"
+      },
+      "counts": {
+        "requested_pairs": 43,
+        "candidate_records": 320,
+        "assertion_events": 43,
+        "review_events": 43,
+        "rejection_records": 34,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 43
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NC",
+      "runId": "20260908T102559Z__aphis-honey-bee__87b576b51f83",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102559Z__aphis-honey-bee__87b576b51f83/receipt.json",
+        "bytes": 10096,
+        "sha256": "44079a1b23cdb259f513c06de080b25188b06865c8af6c448f381024e7238fd8"
+      },
+      "counts": {
+        "requested_pairs": 49,
+        "candidate_records": 108,
+        "assertion_events": 49,
+        "review_events": 49,
+        "rejection_records": 1,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 49
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "ND",
+      "runId": "20260908T102603Z__aphis-honey-bee__bebd8de01ee3",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102603Z__aphis-honey-bee__bebd8de01ee3/receipt.json",
+        "bytes": 9259,
+        "sha256": "6b7744498ee4e746138bdea4a7912d97ebac90255b906718515be314ee30e641"
+      },
+      "counts": {
+        "requested_pairs": 41,
+        "candidate_records": 279,
+        "assertion_events": 41,
+        "review_events": 41,
+        "rejection_records": 48,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 41
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NE",
+      "runId": "20260908T102607Z__aphis-honey-bee__9f2d733f6c67",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102607Z__aphis-honey-bee__9f2d733f6c67/receipt.json",
+        "bytes": 9259,
+        "sha256": "6e7cd940f9c25b4dbb70e6f42402d40b264c9bc8419515fddf01ac47d2cca553"
+      },
+      "counts": {
+        "requested_pairs": 41,
+        "candidate_records": 283,
+        "assertion_events": 41,
+        "review_events": 41,
+        "rejection_records": 15,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 41
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NH",
+      "runId": "20260908T102610Z__aphis-honey-bee__7ba534801de8",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102610Z__aphis-honey-bee__7ba534801de8/receipt.json",
+        "bytes": 5779,
+        "sha256": "e1109950e7fb1cd09473151a97a82ba9fa1bd9c3532fdce00b3f0ce69d488650"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 25,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NJ",
+      "runId": "20260908T102614Z__aphis-honey-bee__40c4f06b14f7",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102614Z__aphis-honey-bee__40c4f06b14f7/receipt.json",
+        "bytes": 7051,
+        "sha256": "3a7f4eb516ecd6ee8e806410692d8b52b856fe4a35daaa8d4339316a1bc32970"
+      },
+      "counts": {
+        "requested_pairs": 20,
+        "candidate_records": 223,
+        "assertion_events": 20,
+        "review_events": 20,
+        "rejection_records": 8,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 20
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NM",
+      "runId": "20260908T102618Z__aphis-honey-bee__8df94f4cf479",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102618Z__aphis-honey-bee__8df94f4cf479/receipt.json",
+        "bytes": 6946,
+        "sha256": "a32358059b04c3330b7fcbb90168c466e2493982089342d4f5f0d3fb847df1d3"
+      },
+      "counts": {
+        "requested_pairs": 19,
+        "candidate_records": 165,
+        "assertion_events": 19,
+        "review_events": 19,
+        "rejection_records": 5,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 19
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NV",
+      "runId": "20260908T102622Z__aphis-honey-bee__6c555b3ca104",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102622Z__aphis-honey-bee__6c555b3ca104/receipt.json",
+        "bytes": 6423,
+        "sha256": "d915ebd95e3a0b9ee33a6b2c2253fbd6a054f433b110f7273b6f1aac844c2a96"
+      },
+      "counts": {
+        "requested_pairs": 14,
+        "candidate_records": 202,
+        "assertion_events": 14,
+        "review_events": 14,
+        "rejection_records": 12,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 14
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "OH",
+      "runId": "20260908T102626Z__aphis-honey-bee__5c4e87d72dc8",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102626Z__aphis-honey-bee__5c4e87d72dc8/receipt.json",
+        "bytes": 11882,
+        "sha256": "1492e053b8cc69eb5f23ab1457e75c17241efdfaacdd34794de05a07163e4732"
+      },
+      "counts": {
+        "requested_pairs": 66,
+        "candidate_records": 172,
+        "assertion_events": 66,
+        "review_events": 66,
+        "rejection_records": 3,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 66
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "OK",
+      "runId": "20260908T102630Z__aphis-honey-bee__ec7b586eefa0",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102630Z__aphis-honey-bee__ec7b586eefa0/receipt.json",
+        "bytes": 8415,
+        "sha256": "98d64db23bcea5534015048eb21095b8e9f45630ca212b1b34989f8ec6c924d2"
+      },
+      "counts": {
+        "requested_pairs": 33,
+        "candidate_records": 61,
+        "assertion_events": 33,
+        "review_events": 33,
+        "rejection_records": 3,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 33
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "OR",
+      "runId": "20260908T102634Z__aphis-honey-bee__979050a41cf3",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102634Z__aphis-honey-bee__979050a41cf3/receipt.json",
+        "bytes": 7894,
+        "sha256": "8bfe0562a3c97b4804fd26035b24593366606e1dd022b4a0424e35962c6dce90"
+      },
+      "counts": {
+        "requested_pairs": 28,
+        "candidate_records": 231,
+        "assertion_events": 28,
+        "review_events": 28,
+        "rejection_records": 14,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 28
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "PA",
+      "runId": "20260908T102638Z__aphis-honey-bee__7e71090fc35d",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102638Z__aphis-honey-bee__7e71090fc35d/receipt.json",
+        "bytes": 10729,
+        "sha256": "16fce598ec5887efa47b6cbc58a9e98f55426c1451288839f51a41670772b84a"
+      },
+      "counts": {
+        "requested_pairs": 55,
+        "candidate_records": 370,
+        "assertion_events": 55,
+        "review_events": 55,
+        "rejection_records": 17,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 55
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "RI",
+      "runId": "20260908T102643Z__aphis-honey-bee__f59b11b679d9",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102643Z__aphis-honey-bee__f59b11b679d9/receipt.json",
+        "bytes": 5467,
+        "sha256": "a19da9b3d5644dffa308990edc597482e0f3abb308d878dbf9f92a8586436aad"
+      },
+      "counts": {
+        "requested_pairs": 5,
+        "candidate_records": 48,
+        "assertion_events": 5,
+        "review_events": 5,
+        "rejection_records": 3,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 5
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "SC",
+      "runId": "20260908T102647Z__aphis-honey-bee__014614026bc6",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102647Z__aphis-honey-bee__014614026bc6/receipt.json",
+        "bytes": 8838,
+        "sha256": "30dead368448b301887ce346006bfb6bca0dd14641271b5a2a7d739a0c5e5a1d"
+      },
+      "counts": {
+        "requested_pairs": 37,
+        "candidate_records": 309,
+        "assertion_events": 37,
+        "review_events": 37,
+        "rejection_records": 10,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 37
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "SD",
+      "runId": "20260908T102651Z__aphis-honey-bee__5294c544881b",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102651Z__aphis-honey-bee__5294c544881b/receipt.json",
+        "bytes": 10834,
+        "sha256": "f2418d60991cfa141165a4d473a1674b553ef1a8400ccc3be186b2b43d546ed0"
+      },
+      "counts": {
+        "requested_pairs": 56,
+        "candidate_records": 381,
+        "assertion_events": 56,
+        "review_events": 56,
+        "rejection_records": 19,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 56
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "TN",
+      "runId": "20260908T102655Z__aphis-honey-bee__5c7441f5bc75",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102655Z__aphis-honey-bee__5c7441f5bc75/receipt.json",
+        "bytes": 11779,
+        "sha256": "2c3d6471b61d768f4bb8751cbd2cf8fb4f0270bdf063b947ce5c1fc262dad70c"
+      },
+      "counts": {
+        "requested_pairs": 65,
+        "candidate_records": 244,
+        "assertion_events": 65,
+        "review_events": 65,
+        "rejection_records": 20,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 65
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "TX",
+      "runId": "20260908T102659Z__aphis-honey-bee__1a65b7324e69",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102659Z__aphis-honey-bee__1a65b7324e69/receipt.json",
+        "bytes": 12829,
+        "sha256": "8175d3d7b2a5fbb6e5057f234d899009ed93a6d76855166084622eb01f370bb9"
+      },
+      "counts": {
+        "requested_pairs": 75,
+        "candidate_records": 362,
+        "assertion_events": 75,
+        "review_events": 75,
+        "rejection_records": 31,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 75
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "UT",
+      "runId": "20260908T102703Z__aphis-honey-bee__4341b1aa2dff",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102703Z__aphis-honey-bee__4341b1aa2dff/receipt.json",
+        "bytes": 7263,
+        "sha256": "0c025be7ea5730fc0f6770cc6eed86fd15f31ea01f13c1bd9085f5979041860f"
+      },
+      "counts": {
+        "requested_pairs": 22,
+        "candidate_records": 323,
+        "assertion_events": 22,
+        "review_events": 22,
+        "rejection_records": 17,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 22
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "VA",
+      "runId": "20260908T102707Z__aphis-honey-bee__64ebe992671e",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102707Z__aphis-honey-bee__64ebe992671e/receipt.json",
+        "bytes": 12512,
+        "sha256": "7bdc8aeb2b14f4bc33e0299a184ddad502a9df5c9b50857b62a0fa78bd85f609"
+      },
+      "counts": {
+        "requested_pairs": 72,
+        "candidate_records": 310,
+        "assertion_events": 72,
+        "review_events": 72,
+        "rejection_records": 5,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 72
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "VT",
+      "runId": "20260908T102711Z__aphis-honey-bee__85cf5971771a",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102711Z__aphis-honey-bee__85cf5971771a/receipt.json",
+        "bytes": 5889,
+        "sha256": "ea6a95c6e5a34785652e5a2bc45ab936747dd71ce8c3875f1aad3b97f024ae6e"
+      },
+      "counts": {
+        "requested_pairs": 9,
+        "candidate_records": 261,
+        "assertion_events": 9,
+        "review_events": 9,
+        "rejection_records": 5,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 9
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WA",
+      "runId": "20260908T102715Z__aphis-honey-bee__259f39a98854",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102715Z__aphis-honey-bee__259f39a98854/receipt.json",
+        "bytes": 7789,
+        "sha256": "af037f25c6882c3d450468730732f67cccca35ed8a857e6a90b1001ee048da36"
+      },
+      "counts": {
+        "requested_pairs": 27,
+        "candidate_records": 188,
+        "assertion_events": 27,
+        "review_events": 27,
+        "rejection_records": 15,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 27
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WI",
+      "runId": "20260908T102719Z__aphis-honey-bee__acbeca72b8fb",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102719Z__aphis-honey-bee__acbeca72b8fb/receipt.json",
+        "bytes": 11044,
+        "sha256": "8e4ec8b2d4ab71c2a4dac753ef505ea5aca3cf84c32ef6078ff0e86431a91de6"
+      },
+      "counts": {
+        "requested_pairs": 58,
+        "candidate_records": 326,
+        "assertion_events": 58,
+        "review_events": 58,
+        "rejection_records": 18,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 58
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WV",
+      "runId": "20260908T102724Z__aphis-honey-bee__caac75f2efea",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102724Z__aphis-honey-bee__caac75f2efea/receipt.json",
+        "bytes": 10624,
+        "sha256": "ef20d73687a27f4e772dfdb9da777d12c44f427e0ce61b5748c5b4448648f10b"
+      },
+      "counts": {
+        "requested_pairs": 54,
+        "candidate_records": 336,
+        "assertion_events": 54,
+        "review_events": 54,
+        "rejection_records": 17,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 54
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WY",
+      "runId": "20260908T102728Z__aphis-honey-bee__80f08e648e37",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T102728Z__aphis-honey-bee__80f08e648e37/receipt.json",
+        "bytes": 5463,
+        "sha256": "a94c0b4256ec38ef4c6b581ff7639957b1a90e4f255359b5d719e616176b2caf"
+      },
+      "counts": {
+        "requested_pairs": 5,
+        "candidate_records": 9,
+        "assertion_events": 5,
+        "review_events": 5,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 5
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    }
+  ],
+  "totalStateRuns": 48,
+  "totalCandidatePairs": 1739,
+  "pilotAssertions": 42,
+  "mainBatchAssertions": 1697,
+  "newDeterminations": null,
+  "providerRequests": 0,
+  "sharedCompilesDuringBatch": 0,
+  "heldPairs": [
+    "15007:varroa-destructor",
+    "15009:varroa-destructor"
+  ],
+  "claim": "Historical recorded-positive composite-apiary occurrence, with original month and program-level taxon mapping. No countywide persistence, establishment, absence or non-detection claim.",
+  "limitations": [
+    "New determination gains remain pending national compiler reconciliation.",
+    "Original CSV is shared and not reacquired or copied per state.",
+    "R2 publication remains a separately budgeted and scheduled batch."
+  ]
+}

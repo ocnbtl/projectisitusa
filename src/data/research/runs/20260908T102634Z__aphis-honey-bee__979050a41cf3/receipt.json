@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T102634Z__aphis-honey-bee__979050a41cf3",
+  "status": "complete",
+  "started_at": "2026-09-08T10:26:34.896Z",
+  "finished_at": "2026-09-08T10:26:38.012Z",
+  "actor_type": "adapter",
+  "actor_id": "aphis-honey-bee-survey@2.0.0",
+  "source_id": "aphis-honey-bee",
+  "source_registry_hash": "8d58bb9ed12579b52820da3e305c16355008163718cee4928c63f1366b09a575",
+  "adapter_id": "aphis-honey-bee-survey",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "a23f15f7158859be034d00e5614e8dd338392a3c5f193a51e7d9ea4ee3094dfe",
+  "code_commit": "b2545bae5ee6dec7b7a5f3e5c6339abf800d36e0",
+  "parameter_hash": "979050a41cf3cc8df2174186d73acc56d55823271cb4d311ba8e473854f7e586",
+  "parameters": {
+    "methodReviewSha256": "e8f8f388459d3a0b197284da241312a6b0725db89cc79b50e5b1d570ec51a51c",
+    "mode": "retained-positive-survey",
+    "stateCode": "OR",
+    "candidatePairs": [
+      "41001:varroa-destructor",
+      "41003:varroa-destructor",
+      "41005:varroa-destructor",
+      "41007:varroa-destructor",
+      "41009:varroa-destructor",
+      "41013:varroa-destructor",
+      "41017:varroa-destructor",
+      "41019:varroa-destructor",
+      "41021:varroa-destructor",
+      "41023:varroa-destructor",
+      "41027:varroa-destructor",
+      "41029:varroa-destructor",
+      "41031:varroa-destructor",
+      "41033:varroa-destructor",
+      "41039:varroa-destructor",
+      "41041:varroa-destructor",
+      "41043:varroa-destructor",
+      "41045:varroa-destructor",
+      "41047:varroa-destructor",
+      "41049:varroa-destructor",
+      "41051:varroa-destructor",
+      "41053:varroa-destructor",
+      "41057:varroa-destructor",
+      "41059:varroa-destructor",
+      "41061:varroa-destructor",
+      "41065:varroa-destructor",
+      "41067:varroa-destructor",
+      "41071:varroa-destructor"
+    ],
+    "candidateLimit": 28
+  },
+  "requested_scope": {
+    "state_code": "OR",
+    "county_fips": [
+      "41001",
+      "41003",
+      "41005",
+      "41007",
+      "41009",
+      "41013",
+      "41017",
+      "41019",
+      "41021",
+      "41023",
+      "41027",
+      "41029",
+      "41031",
+      "41033",
+      "41039",
+      "41041",
+      "41043",
+      "41045",
+      "41047",
+      "41049",
+      "41051",
+      "41053",
+      "41057",
+      "41059",
+      "41061",
+      "41065",
+      "41067",
+      "41071"
+    ],
+    "species_ids": [
+      "varroa-destructor"
+    ],
+    "pair_keys": [
+      "41001:varroa-destructor",
+      "41003:varroa-destructor",
+      "41005:varroa-destructor",
+      "41007:varroa-destructor",
+      "41009:varroa-destructor",
+      "41013:varroa-destructor",
+      "41017:varroa-destructor",
+      "41019:varroa-destructor",
+      "41021:varroa-destructor",
+      "41023:varroa-destructor",
+      "41027:varroa-destructor",
+      "41029:varroa-destructor",
+      "41031:varroa-destructor",
+      "41033:varroa-destructor",
+      "41039:varroa-destructor",
+      "41041:varroa-destructor",
+      "41043:varroa-destructor",
+      "41045:varroa-destructor",
+      "41047:varroa-destructor",
+      "41049:varroa-destructor",
+      "41051:varroa-destructor",
+      "41053:varroa-destructor",
+      "41057:varroa-destructor",
+      "41059:varroa-destructor",
+      "41061:varroa-destructor",
+      "41065:varroa-destructor",
+      "41067:varroa-destructor",
+      "41071:varroa-destructor"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T102634Z__aphis-honey-bee__979050a41cf3/artifacts/honey-bee-positive-witnesses.json",
+      "sha256": "408bb63a1fef11b296a9e0c4673138ee711387abd6f945e6654968b04b1288dd",
+      "bytes": 248744,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T102634Z__aphis-honey-bee__979050a41cf3/assertions.ndjson",
+      "sha256": "a9732a5f9e36c5d77cdf3009d4e7eab83ca5327d9189ee6d06e9c34f3b151538",
+      "bytes": 117248,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T102634Z__aphis-honey-bee__979050a41cf3/reviews.ndjson",
+      "sha256": "b746b81b88c767d3f38733b818195498bf6387787a4a903533c620c9669369f8",
+      "bytes": 27496,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T102634Z__aphis-honey-bee__979050a41cf3/rejections.ndjson",
+      "sha256": "1611d5ce52da3c6cf2f9120b2bb5ab4dc5c5b30f5fd4af53b0ad46de87e52e5a",
+      "bytes": 13888,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T102634Z__aphis-honey-bee__979050a41cf3/outcomes.ndjson",
+      "sha256": "92633d4b848c9f09409a16ebe6b02018a9a50abd34d052a7dbbbaa3744b30fa4",
+      "bytes": 22834,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 28,
+    "candidate_records": 231,
+    "assertion_events": 28,
+    "review_events": 28,
+    "rejection_records": 14,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 28
+  },
+  "errors": [],
+  "known_caveats": [
+    "Zero-count rows support sample-level non-detection only, never countywide absence. Version 2.0.0 replays positive Varroa metrics from the retained public composite-apiary survey; source-specific program mapping, managed-host and migratory context, month precision, UMD attribution, and explicit Hawaii conflict holds are mandatory. It does not infer countywide establishment, persistence, absence or non-detection."
+  ],
+  "source_warnings": [
+    "Composite apiary samples pool eight managed honey bee colonies; a positive result does not mean all eight colonies were infested.",
+    "The parasite was detected in a managed-host sampling context. Wild establishment, local acquisition, countywide prevalence and persistence today are not established.",
+    "Migratory and stationary operations participated; individual public rows do not disclose migration history or apiary identifiers.",
+    "The metric is mites per 100 bees, not a raw mite count. No sample denominator is available to reconstruct a raw count.",
+    "The CSV metric is mapped at program level to Varroa destructor using the official 2016-2017 report; raw rows do not literally name the species. The 2025 plan uses Varroa spp. wording.",
+    "Publisher county text comes from its 2020 TIGER/Line assignment; no coordinates or automatic retired-county successor assignment are used here.",
+    "Collection month precision is preserved. Export, acquisition and review timestamps are separate.",
+    "Zero, blank, invalid, ambiguous and held records create no positive or negative claim. A completed selected source screen does not certify a county or complete its research protocol.",
+    "Anonymous rows are retained by immutable archive and exact row locator. Similar or identical disclosed fields cannot prove that two sampling events are identical."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source aphis-honey-bee --state OR --candidate-file ops/national-research/plans/honey-bee-positive-20260908-r12/or.json --output-root src/data/research/runs --stage-canonical true --pairs 41001:varroa-destructor,41003:varroa-destructor,41005:varroa-destructor,41007:varroa-destructor,41009:varroa-destructor,41013:varroa-destructor,41017:varroa-destructor,41019:varroa-destructor,41021:varroa-destructor,41023:varroa-destructor,41027:varroa-destructor,41029:varroa-destructor,41031:varroa-destructor,41033:varroa-destructor,41039:varroa-destructor,41041:varroa-destructor,41043:varroa-destructor,41045:varroa-destructor,41047:varroa-destructor,41049:varroa-destructor,41051:varroa-destructor,41053:varroa-destructor,41057:varroa-destructor,41059:varroa-destructor,41061:varroa-destructor,41065:varroa-destructor,41067:varroa-destructor,41071:varroa-destructor"
+}

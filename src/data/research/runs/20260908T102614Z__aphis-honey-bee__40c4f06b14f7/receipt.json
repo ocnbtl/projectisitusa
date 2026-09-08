@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T102614Z__aphis-honey-bee__40c4f06b14f7",
+  "status": "complete",
+  "started_at": "2026-09-08T10:26:14.871Z",
+  "finished_at": "2026-09-08T10:26:17.953Z",
+  "actor_type": "adapter",
+  "actor_id": "aphis-honey-bee-survey@2.0.0",
+  "source_id": "aphis-honey-bee",
+  "source_registry_hash": "8d58bb9ed12579b52820da3e305c16355008163718cee4928c63f1366b09a575",
+  "adapter_id": "aphis-honey-bee-survey",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "a23f15f7158859be034d00e5614e8dd338392a3c5f193a51e7d9ea4ee3094dfe",
+  "code_commit": "b2545bae5ee6dec7b7a5f3e5c6339abf800d36e0",
+  "parameter_hash": "40c4f06b14f79aa68fc41dd6731a6e7a81330db7c9d6dbbe2798ab67d0111520",
+  "parameters": {
+    "methodReviewSha256": "e8f8f388459d3a0b197284da241312a6b0725db89cc79b50e5b1d570ec51a51c",
+    "mode": "retained-positive-survey",
+    "stateCode": "NJ",
+    "candidatePairs": [
+      "34001:varroa-destructor",
+      "34003:varroa-destructor",
+      "34005:varroa-destructor",
+      "34007:varroa-destructor",
+      "34009:varroa-destructor",
+      "34011:varroa-destructor",
+      "34013:varroa-destructor",
+      "34015:varroa-destructor",
+      "34017:varroa-destructor",
+      "34019:varroa-destructor",
+      "34021:varroa-destructor",
+      "34023:varroa-destructor",
+      "34025:varroa-destructor",
+      "34027:varroa-destructor",
+      "34029:varroa-destructor",
+      "34031:varroa-destructor",
+      "34033:varroa-destructor",
+      "34035:varroa-destructor",
+      "34037:varroa-destructor",
+      "34041:varroa-destructor"
+    ],
+    "candidateLimit": 20
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34001",
+      "34003",
+      "34005",
+      "34007",
+      "34009",
+      "34011",
+      "34013",
+      "34015",
+      "34017",
+      "34019",
+      "34021",
+      "34023",
+      "34025",
+      "34027",
+      "34029",
+      "34031",
+      "34033",
+      "34035",
+      "34037",
+      "34041"
+    ],
+    "species_ids": [
+      "varroa-destructor"
+    ],
+    "pair_keys": [
+      "34001:varroa-destructor",
+      "34003:varroa-destructor",
+      "34005:varroa-destructor",
+      "34007:varroa-destructor",
+      "34009:varroa-destructor",
+      "34011:varroa-destructor",
+      "34013:varroa-destructor",
+      "34015:varroa-destructor",
+      "34017:varroa-destructor",
+      "34019:varroa-destructor",
+      "34021:varroa-destructor",
+      "34023:varroa-destructor",
+      "34025:varroa-destructor",
+      "34027:varroa-destructor",
+      "34029:varroa-destructor",
+      "34031:varroa-destructor",
+      "34033:varroa-destructor",
+      "34035:varroa-destructor",
+      "34037:varroa-destructor",
+      "34041:varroa-destructor"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T102614Z__aphis-honey-bee__40c4f06b14f7/artifacts/honey-bee-positive-witnesses.json",
+      "sha256": "6be53819d4656c79a60db3cc29a16ebda71ff192497950f4e1135be50cb6a277",
+      "bytes": 228753,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T102614Z__aphis-honey-bee__40c4f06b14f7/assertions.ndjson",
+      "sha256": "ca6940fa5a5e64c28f33369855c07142de1f9acbc3b68bf40bf33ebbf6c2e1f1",
+      "bytes": 83760,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T102614Z__aphis-honey-bee__40c4f06b14f7/reviews.ndjson",
+      "sha256": "6bab937a2128d3a69e318f3b9ce9faa7d2c5cec1b94090ab1927babd3fef6f2e",
+      "bytes": 19640,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T102614Z__aphis-honey-bee__40c4f06b14f7/rejections.ndjson",
+      "sha256": "c4c22153206b20072eeb33086423c1a5829310915f1926eea93b434baa2774a3",
+      "bytes": 7967,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T102614Z__aphis-honey-bee__40c4f06b14f7/outcomes.ndjson",
+      "sha256": "b79a3e6f0b81a211bfd9083fa59672e3a8f848dcf93c46ab12929131794beaea",
+      "bytes": 16128,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 20,
+    "candidate_records": 223,
+    "assertion_events": 20,
+    "review_events": 20,
+    "rejection_records": 8,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 20
+  },
+  "errors": [],
+  "known_caveats": [
+    "Zero-count rows support sample-level non-detection only, never countywide absence. Version 2.0.0 replays positive Varroa metrics from the retained public composite-apiary survey; source-specific program mapping, managed-host and migratory context, month precision, UMD attribution, and explicit Hawaii conflict holds are mandatory. It does not infer countywide establishment, persistence, absence or non-detection."
+  ],
+  "source_warnings": [
+    "Composite apiary samples pool eight managed honey bee colonies; a positive result does not mean all eight colonies were infested.",
+    "The parasite was detected in a managed-host sampling context. Wild establishment, local acquisition, countywide prevalence and persistence today are not established.",
+    "Migratory and stationary operations participated; individual public rows do not disclose migration history or apiary identifiers.",
+    "The metric is mites per 100 bees, not a raw mite count. No sample denominator is available to reconstruct a raw count.",
+    "The CSV metric is mapped at program level to Varroa destructor using the official 2016-2017 report; raw rows do not literally name the species. The 2025 plan uses Varroa spp. wording.",
+    "Publisher county text comes from its 2020 TIGER/Line assignment; no coordinates or automatic retired-county successor assignment are used here.",
+    "Collection month precision is preserved. Export, acquisition and review timestamps are separate.",
+    "Zero, blank, invalid, ambiguous and held records create no positive or negative claim. A completed selected source screen does not certify a county or complete its research protocol.",
+    "Anonymous rows are retained by immutable archive and exact row locator. Similar or identical disclosed fields cannot prove that two sampling events are identical."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source aphis-honey-bee --state NJ --candidate-file ops/national-research/plans/honey-bee-positive-20260908-r12/nj.json --output-root src/data/research/runs --stage-canonical true --pairs 34001:varroa-destructor,34003:varroa-destructor,34005:varroa-destructor,34007:varroa-destructor,34009:varroa-destructor,34011:varroa-destructor,34013:varroa-destructor,34015:varroa-destructor,34017:varroa-destructor,34019:varroa-destructor,34021:varroa-destructor,34023:varroa-destructor,34025:varroa-destructor,34027:varroa-destructor,34029:varroa-destructor,34031:varroa-destructor,34033:varroa-destructor,34035:varroa-destructor,34037:varroa-destructor,34041:varroa-destructor"
+}
