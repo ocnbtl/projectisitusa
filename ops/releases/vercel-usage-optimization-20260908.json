@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-08T02:30:12.630Z",
+  "status": "application-released-and-cleanup-verified; retention-policy-change-awaits-confirmation-after-automatic-review-rejection",
+  "projectId": "prj_8QxSuEepVs46XFag4IJM5QcOLPdg",
+  "production": {
+    "id": "dpl_Be7xPn45wErwu8x7MQA6oBF5yaNv",
+    "commit": "79731da7a7f2442839b02d6673406118bcc06d87",
+    "url": "https://isitusa.com",
+    "ready": true,
+    "liveVerified": true,
+    "lastAliasCheck": {
+      "observedAt": "2026-09-08T02:27:39.008Z",
+      "url": "https://isitusa.com/",
+      "status": 200,
+      "bytes": 11166,
+      "sha256": "e07ae9002b48678b86772eeb7aed5e331cf1a0d4a0ab3c737c3c6594c305948a"
+    }
+  },
+  "improvements": {
+    "htmlBytes": {
+      "before": 3817627,
+      "after": 11166,
+      "reductionPercent": 99.70751464194905
+    },
+    "rscBytes": {
+      "before": 3543960,
+      "after": 6014,
+      "reductionPercent": 99.83030282508832
+    },
+    "speciesImageFilesBytes": {
+      "before": 815114828,
+      "after": 295025492,
+      "reductionPercent": 63.805652668117084
+    },
+    "firstMapRequestTransferredBytes": 716390,
+    "repeatMapRequestTransferredBytes": 0
+  },
+  "delivery": {
+    "mapAndCatalog": "direct public R2; gzip; versioned immutable URLs; decoded SHA256 and byte verification; one request per browser session; failure retry",
+    "research": "direct configured R2 origin; existing integrity checks preserved",
+    "photos": "hashed WebP full images and thumbnails stay on Vercel; legacy image redirects; canonical originals preserved",
+    "newR2Bytes": 1413134
+  },
+  "research": {
+    "publishedRelease": "research-6927e5fe2efb-886700baca52fe1e",
+    "publicationPointerUnchanged": true,
+    "speciesCount": 2504,
+    "countySemanticsAndProvenancePreserved": true
+  },
+  "r2": {
+    "inventoryObservedAt": "2026-09-08T01:30:20.362Z",
+    "objects": 29059,
+    "storedBytes": 7837439604,
+    "reservedResearchBytes": 95043571,
+    "projectedWithReserve": 7932483175,
+    "safetyCeilingBytes": 8000000000,
+    "noPaidResourcesAdded": true
+  },
+  "cleanup": {
+    "completedAt": "2026-09-08T01:32:19.974Z",
+    "deletedDeployments": 141,
+    "deletedByState": {
+      "READY": 86,
+      "CANCELED": 47,
+      "ERROR": 8
+    },
+    "removedStaleAlias": "projectisitusa-ocn-unigentamos.vercel.app",
+    "retained": [
+      {
+        "id": "dpl_Be7xPn45wErwu8x7MQA6oBF5yaNv",
+        "state": "READY",
+        "url": "projectisitusa-idy1hx8w8-unigentamos.vercel.app",
+        "target": "production",
+        "sha": "79731da7a7f2442839b02d6673406118bcc06d87"
+      },
+      {
+        "id": "dpl_EeLCkcUkQej8LqaYEZxY4LGFQ6rD",
+        "state": "READY",
+        "url": "projectisitusa-1t6lgtgs6-unigentamos.vercel.app",
+        "target": "production",
+        "sha": "14d878d44eb8cf75ea5963c79d6e5829f72ae303"
+      },
+      {
+        "id": "dpl_ELvQZ3PzufvYtEyfSGwUZX69SvQw",
+        "state": "READY",
+        "url": "projectisitusa-lc3gwjzke-unigentamos.vercel.app",
+        "target": "production",
+        "sha": "e8333516369cf74e0b353a84c922b56ea994c630"
+      },
+      {
+        "id": "dpl_6wthX2sVXjP6LcMC9yyiCd8wZ5tw",
+        "state": "READY",
+        "url": "projectisitusa-qfot1nvzs-unigentamos.vercel.app",
+        "target": "production",
+        "sha": "58c9345b05885a9144eff77af2628fb9a5687153"
+      },
+      {
+        "id": "dpl_AaT5oMcbmaD2kxGTsm8NkTehuVvC",
+        "state": "READY",
+        "url": "projectisitusa-5kg7jbo6r-unigentamos.vercel.app",
+        "target": null,
+        "sha": "eeeb3be787f376ee268f0e3b24c04d326a512770"
+      },
+      {
+        "id": "dpl_AzhbqmhFeM8nhyShFtXbJD1Dqrdx",
+        "state": "READY",
+        "url": "projectisitusa-3rif1wc1m-unigentamos.vercel.app",
+        "target": null,
+        "sha": "f629ea2a8f3daf86babffe2ccb0a718f2e2f87bb"
+      }
+    ],
+    "retainedAliases": 7
+  },
+  "retention": {
+    "actual": {
+      "expirationDays": 30,
+      "expirationDaysProduction": 30,
+      "expirationDaysCanceled": 30,
+      "expirationDaysErrored": 30,
+      "deploymentsToKeep": 10
+    },
+    "requested": {
+      "previewDays": 7,
+      "canceledDays": 7,
+      "erroredDays": 7,
+      "productionDays": 30
+    },
+    "status": "not-saved",
+    "blocker": "Automatic approval review rejected the browser Save twice, citing insufficient authorization to expire the broader preview and failed-build population. Specific confirmation was requested and no explicit response had arrived when this receipt was recorded. No alternate path was used to change retention."
+  },
+  "validation": {
+    "productionBrowserChecks": [
+      {
+        "name": "desktop map loads",
+        "passed": true
+      },
+      {
+        "name": "ZIP lookup selects Jefferson county",
+        "passed": true
+      },
+      {
+        "name": "county species cards load optimized thumbnails",
+        "passed": true
+      },
+      {
+        "name": "category and species filtering respond",
+        "passed": true
+      },
+      {
+        "name": "profile navigation, full image, and attribution",
+        "passed": true
+      },
+      {
+        "name": "repeat visit uses browser cache for immutable map data",
+        "passed": true,
+        "mapRequests": [
+          {
+            "fromDiskCache": false,
+            "encodedDataLength": 716390
+          },
+          {
+            "fromDiskCache": true,
+            "encodedDataLength": 0
+          }
+        ]
+      },
+      {
+        "name": "direct county link survives deferred data load",
+        "passed": true
+      },
+      {
+        "name": "research state, county, and species deep link",
+        "passed": true
+      },
+      {
+        "name": "research evidence disclosure renders",
+        "passed": true
+      },
+      {
+        "name": "research text filtering remains responsive",
+        "passed": true
+      },
+      {
+        "name": "county switching reuses the catalog",
+        "passed": true,
+        "catalogRequests": 1
+      },
+      {
+        "name": "research and catalog requests bypass Vercel",
+        "passed": true
+      },
+      {
+        "name": "390px mobile map, county, and profile navigation without horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "390px mobile research evidence without horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "no application console errors",
+        "passed": true
+      }
+    ],
+    "applicationConsoleErrors": [],
+    "localFailureRecoveryPassed": true,
+    "runtimeAssetParityPassed": true,
+    "typecheckPassed": true,
+    "publicProjectionFetcherTestsPassed": true,
+    "vercelPreparationTestsPassed": true,
+    "buildIgnoreTestsPassed": true,
+    "existingDataIntegrityPassed": true,
+    "localAndLinuxProductionBuildPassed": true
+  },
+  "meteredUsageSnapshot": {
+    "date": "2026-09-08",
+    "context": "Authenticated team overview after cleanup, before the chat interruption; rolling selected dashboard window",
+    "isrReadUnits": 768061,
+    "isrAllowance": 1000000,
+    "fastOriginTransferDisplay": "7.51 GB / 10 GB",
+    "fastDataTransferDisplay": "19.87 GB / 100 GB",
+    "deploymentStorageDisplay": "0 B",
+    "interpretation": "Storage display was already inconsistent before cleanup; it is not proof of reclaimed bytes. Rolling usage changes are not attributed to this release. Long-term metered reductions remain unverified."
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/vercel-usage-optimization-20260908.json.gz",
+    "bytes": 23164,
+    "sha256": "5ac40369c76286e075942c61db26ca93d3aee5e124de7be9d42e2cfe6157cc58"
+  },
+  "references": [
+    "https://developers.cloudflare.com/r2/buckets/cors/",
+    "https://vercel.com/docs/deployment-retention",
+    "https://vercel.com/docs/deployments/managing-deployments",
+    "https://vercel.com/docs/rest-api/aliases/delete-an-alias"
+  ],
+  "remaining": [
+    "Apply 7/7/7/30 retention after the pending confirmation and successful automatic approval review.",
+    "Verify eventual provider storage reclamation and lower metered usage in a future observation; no paid observability enabled."
+  ]
+}
