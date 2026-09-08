@@ -494805,6 +494805,253 @@
       "priority": 100,
       "state": "cancelled",
       "currentLeaseId": "lease-karnal-bunt-ca-independent-review-20260908-r7-1"
+    },
+    {
+      "jobId": "karnal-bunt-ca-agent-pilot-20260908-r8",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "nappo-karnal-bunt-eradication-2010"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "tilletia-indica"
+        ],
+        "pairs": [
+          "06001:tilletia-indica",
+          "06003:tilletia-indica",
+          "06005:tilletia-indica",
+          "06007:tilletia-indica",
+          "06009:tilletia-indica",
+          "06011:tilletia-indica",
+          "06013:tilletia-indica",
+          "06015:tilletia-indica",
+          "06017:tilletia-indica",
+          "06019:tilletia-indica",
+          "06021:tilletia-indica",
+          "06023:tilletia-indica",
+          "06025:tilletia-indica",
+          "06027:tilletia-indica",
+          "06029:tilletia-indica",
+          "06031:tilletia-indica",
+          "06033:tilletia-indica",
+          "06035:tilletia-indica",
+          "06037:tilletia-indica",
+          "06039:tilletia-indica",
+          "06041:tilletia-indica",
+          "06043:tilletia-indica",
+          "06045:tilletia-indica",
+          "06047:tilletia-indica",
+          "06049:tilletia-indica",
+          "06051:tilletia-indica",
+          "06053:tilletia-indica",
+          "06055:tilletia-indica",
+          "06057:tilletia-indica",
+          "06059:tilletia-indica",
+          "06061:tilletia-indica",
+          "06063:tilletia-indica",
+          "06065:tilletia-indica",
+          "06067:tilletia-indica",
+          "06069:tilletia-indica",
+          "06071:tilletia-indica",
+          "06073:tilletia-indica",
+          "06075:tilletia-indica",
+          "06077:tilletia-indica",
+          "06079:tilletia-indica",
+          "06081:tilletia-indica",
+          "06083:tilletia-indica",
+          "06085:tilletia-indica",
+          "06087:tilletia-indica",
+          "06089:tilletia-indica",
+          "06091:tilletia-indica",
+          "06093:tilletia-indica",
+          "06095:tilletia-indica",
+          "06097:tilletia-indica",
+          "06099:tilletia-indica",
+          "06101:tilletia-indica",
+          "06103:tilletia-indica",
+          "06105:tilletia-indica",
+          "06107:tilletia-indica",
+          "06109:tilletia-indica",
+          "06111:tilletia-indica",
+          "06113:tilletia-indica",
+          "06115:tilletia-indica"
+        ]
+      },
+      "scopeClaims": [
+        "state/CA/source/nappo-karnal-bunt-eradication-2010/taxon/tilletia-indica"
+      ],
+      "branch": "codex/karnal-bunt-ca-agent-pilot-20260908-r8",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\karnal-bunt-ca-agent-pilot-20260908-r8",
+      "baseSha": "546e90d1b08ff9365511c0677a09bd49d69fa6a4",
+      "expectedReceiptCodeCommit": "546e90d1b08ff9365511c0677a09bd49d69fa6a4",
+      "permittedPaths": [
+        "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20971520,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "agent-jurisdiction-20260908-r8",
+        "candidateFile": {
+          "path": "ops/national-research/plans/agent-jurisdiction-20260908-r8/karnal-bunt-ca.json",
+          "declaredCandidateCount": 58,
+          "selectedPairCount": 58,
+          "sha256": "0c2efa959ca6b26bf8fb8263f235d59b6d4e37a96e56bf1ea2cd37e0b1ee841b"
+        },
+        "candidateLimit": 58,
+        "candidateLimitMeaning": "Exact complete California county partition",
+        "startedAt": "2026-09-08T04:56:22.851Z",
+        "outputRoot": "src/data/research/runs",
+        "expectedRunPath": "src/data/research/runs/20260908T045622Z__nappo-karnal-bunt-eradication-2010__a9cbd4fcc591",
+        "expectedProviderRequests": {
+          "providerNetworkRequests": 0,
+          "additionalRequests": 0,
+          "mode": "retained-agent-reviewed-jurisdiction"
+        },
+        "explicitPairs": [
+          "06001:tilletia-indica",
+          "06003:tilletia-indica",
+          "06005:tilletia-indica",
+          "06007:tilletia-indica",
+          "06009:tilletia-indica",
+          "06011:tilletia-indica",
+          "06013:tilletia-indica",
+          "06015:tilletia-indica",
+          "06017:tilletia-indica",
+          "06019:tilletia-indica",
+          "06021:tilletia-indica",
+          "06023:tilletia-indica",
+          "06025:tilletia-indica",
+          "06027:tilletia-indica",
+          "06029:tilletia-indica",
+          "06031:tilletia-indica",
+          "06033:tilletia-indica",
+          "06035:tilletia-indica",
+          "06037:tilletia-indica",
+          "06039:tilletia-indica",
+          "06041:tilletia-indica",
+          "06043:tilletia-indica",
+          "06045:tilletia-indica",
+          "06047:tilletia-indica",
+          "06049:tilletia-indica",
+          "06051:tilletia-indica",
+          "06053:tilletia-indica",
+          "06055:tilletia-indica",
+          "06057:tilletia-indica",
+          "06059:tilletia-indica",
+          "06061:tilletia-indica",
+          "06063:tilletia-indica",
+          "06065:tilletia-indica",
+          "06067:tilletia-indica",
+          "06069:tilletia-indica",
+          "06071:tilletia-indica",
+          "06073:tilletia-indica",
+          "06075:tilletia-indica",
+          "06077:tilletia-indica",
+          "06079:tilletia-indica",
+          "06081:tilletia-indica",
+          "06083:tilletia-indica",
+          "06085:tilletia-indica",
+          "06087:tilletia-indica",
+          "06089:tilletia-indica",
+          "06091:tilletia-indica",
+          "06093:tilletia-indica",
+          "06095:tilletia-indica",
+          "06097:tilletia-indica",
+          "06099:tilletia-indica",
+          "06101:tilletia-indica",
+          "06103:tilletia-indica",
+          "06105:tilletia-indica",
+          "06107:tilletia-indica",
+          "06109:tilletia-indica",
+          "06111:tilletia-indica",
+          "06113:tilletia-indica",
+          "06115:tilletia-indica"
+        ],
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        },
+        "methodReview": "Independently verify retained explicit declaration and current corroboration, exact taxonomy, complete state scope, declaration versus biological date, project expiry and baseline conflicts. Emit truthful agent review; no human approval or county survey inference. Zero provider requests."
+      },
+      "expiresAt": "2026-09-08T05:43:10.146Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Independently review the retained source interpretation and hashes; use the committed registered method and exact 58 requested pairs.",
+        "No later or undated accepted presence may become an absence assertion. Preserve source date, retrieval date, parent lineage and all caveats.",
+        "Create an immutable run with source verification and a closed two-commit manifest, bind every agent actor to karnal_bunt_pilot_r8, validate frozen skills and exact canonical code lineage.",
+        "Only leased run output may change; never edit shared files, projections, MAIN, or publish. Report exact operational counts and do not claim projected determination gains before MAIN compiles."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-karnal-bunt-ca-agent-pilot-20260908-r8-1"
     }
   ]
 }

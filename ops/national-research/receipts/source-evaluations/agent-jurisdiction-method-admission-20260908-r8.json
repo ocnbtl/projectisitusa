@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "kind": "agent-jurisdiction-method-admission",
+  "recordedAt": "2026-09-08T05:02:08.281Z",
+  "actorId": "MAIN",
+  "methodVersion": "official-jurisdiction-agent-review-v1",
+  "adapterId": "official-jurisdiction-agent-reviewed",
+  "adapterVersion": "1.0.0",
+  "sourceId": "nappo-karnal-bunt-eradication-2010",
+  "codeCommit": "546e90d1b08ff9365511c0677a09bd49d69fa6a4",
+  "status": "bounded-evidence-pilot-admitted-projection-integration-pending",
+  "scope": {
+    "stateCode": "CA",
+    "speciesId": "tilletia-indica",
+    "pairs": 58
+  },
+  "sourceInterpretation": "ops/national-research/evaluations/karnal-bunt-ca-source-interpretation-20260907-r6.json",
+  "independentInterpretation": "ops/national-research/evaluations/karnal-bunt-ca-independent-review-20260908-r7.json",
+  "adversarialFixture": {
+    "command": "node --import tsx scripts/test-agent-jurisdiction-review.ts",
+    "result": "pass",
+    "rejectedInvalidCases": 28,
+    "exactCountyFixtureChildren": 58,
+    "networkRequests": 0
+  },
+  "checks": [
+    {
+      "command": "node --import tsx scripts/test-jurisdiction-evidence.ts",
+      "result": "pass",
+      "outputSha256": "f4d9ebc0d2a267af645bb86b2b8105a1299c40743240b4fba446c33c26f7c9b3"
+    },
+    {
+      "command": "node --import tsx scripts/test-official-eradication-determination-adapter.ts",
+      "result": "pass",
+      "outputSha256": "46438950865f0a0a69848d3a497cfcd24f727850adbefc6082c9136940bf2ebd"
+    },
+    {
+      "command": "node --import tsx scripts/test-research-run-validation.ts",
+      "result": "pass",
+      "outputSha256": "ff64dbe21cfe78a8f285a237d922a51103aacbec8aa12a86f30151736b9f3bef"
+    },
+    {
+      "command": "node --import tsx scripts/test-research-event-model.ts",
+      "result": "pass",
+      "outputSha256": "eecba672d25b3674e8c59354e657da9ddd48e658cf8e118b5b234affee9eb879"
+    },
+    {
+      "command": "node --import tsx scripts/test-source-coverage-index.ts",
+      "result": "pass",
+      "outputSha256": "a92cbd34b25c1c0d201595d935a771f9d1e8ad683b979654563d93516f949579"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "pass"
+    },
+    {
+      "command": "registered run-source semantic dry run",
+      "result": "pass",
+      "parameterHash": "a9cbd4fcc5914f5ca8872f157cb2b61c5af7879f28e4a7e124668a8d09d96bcb",
+      "selectedPairHash": "dbab5c81ba652876da4f669a0059a58a1ac2a2b258339664d437555569e2ee8a",
+      "providerNetworkRequests": 0
+    }
+  ],
+  "baseline": {
+    "capturedAt": "2026-09-08T05:00:38.801Z",
+    "counts": {
+      "speciesCount": 127704,
+      "countyCount": 3144,
+      "totalPairs": 7872576,
+      "resolvablePairCount": 7872576,
+      "notApplicablePairCount": 0,
+      "blockedPairCount": 0,
+      "verifiedPresent": 313000,
+      "verifiedAbsent": 3244,
+      "notDetected": 236,
+      "researchedUnresolved": 1306906,
+      "notResearched": 6249190,
+      "explicitOutcomePairCount": 1579032,
+      "conflictCount": 0,
+      "evidenceRecordCount": 459960,
+      "bootstrapEvidenceRecordCount": 30130,
+      "runEvidenceRecordCount": 429830,
+      "rejectionRecordCount": 65259,
+      "researchRunCount": 2054
+    },
+    "determinations": 316244,
+    "pairStatusSha256": "383da8fe4547cebf075b4bf97a0ec7389c412e41390afed37c570d7ccaef2edd",
+    "artifact": {
+      "path": "ops/national-research/evaluations/artifacts/agent-jurisdiction-baseline-20260908-r8.json.gz",
+      "sha256": "9d71d67afc65d0bc06a0ab87b11068af010250897850aec78ce7b27af472a39a",
+      "bytes": 1346173,
+      "decodedSha256": "e44978de3aeb5f5579589ccd17476994677d0393b55e71442e79d6e08c27e1ca",
+      "decodedBytes": 14971523
+    }
+  },
+  "actualNewDeterminations": 0,
+  "limitations": [
+    "Admission permits an exact leased evidence run; it does not create county data or claim completed projected gains.",
+    "The existing complete research-integrity command is still running at receipt creation; no broad-gate completion is claimed here.",
+    "The 365-day period is project review freshness, not continuous biological absence. No protocol or research-question completion is claimed."
+  ]
+}
