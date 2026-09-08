@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "55073:dreissena-polymorpha",
+      "resultDecodedSha256": "d685b647c72af78f51670dde90bc43b53e437f754a04568e1e8873e8718b2c8b",
+      "stationDecodedSha256": "dee51be4211adb8b8a85261eb3c0c216b04c1b7bc7b5ad064412a8653ffec828",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 39,
+          "rowSha256": "f8a3e0feede0320899dec89303bcff98cafc6e33e2f6264221937ce2184aa420",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 221,
+              "rowSha256": "568c9232c9734e4ad04a5fc16aa5663a3795295d9124c51fcf758d81f90385b1"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Wisconsin Department of Natural Resources (WIDNR_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Dreissena+polymorpha&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Dreissena+polymorpha&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:19:50.565Z",
+      "stationRetrievedAt": "2026-09-08T11:19:15.995Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 39,
+          "physicalEndLineOneBased": 60,
+          "rawRecordSha256": "f8a3e0feede0320899dec89303bcff98cafc6e33e2f6264221937ce2184aa420",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "WIDNR_WQX",
+            "OrganizationFormalName": "Wisconsin Department of Natural Resources",
+            "ActivityIdentifier": "WIDNR_WQX-36601077",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2004-05-12",
+            "ActivityEndDate": "2004-05-12",
+            "ProjectIdentifier": "UWSP_BUGS",
+            "ActivityConductingOrganizationText": "WIDNR_WQX",
+            "MonitoringLocationIdentifier": "WIDNR_WQX-10009173",
+            "ActivityCommentText": "5 taxa were reported at a higher level than originally identified. Please contact Wisconsin DNR for details. Note that metrics were calculated based on the full dataset.",
+            "ActivityLocation/LatitudeMeasure": "44.7388800000",
+            "ActivityLocation/LongitudeMeasure": "-89.2980350000",
+            "ActivityLocation/HorizontalCollectionMethodName": "Interpolation-Other",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GRAB SAMPLE",
+            "SampleCollectionMethod/MethodIdentifierContext": "WIDNR_WQX",
+            "SampleCollectionMethod/MethodName": "WATER GRAB SAMPLE",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Dreissena polymorpha",
+            "LaboratoryName": "UWSP",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 221,
+              "physicalEndLineOneBased": 225,
+              "rawRecordSha256": "568c9232c9734e4ad04a5fc16aa5663a3795295d9124c51fcf758d81f90385b1",
+              "sourceFields": {
+                "OrganizationIdentifier": "WIDNR_WQX",
+                "OrganizationFormalName": "Wisconsin Department of Natural Resources",
+                "MonitoringLocationIdentifier": "WIDNR_WQX-10009173",
+                "MonitoringLocationName": "Little Wolf River - River Rd (Site 19)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "Fisheries and Habitat Station",
+                "HUCEightDigitCode": "04030202",
+                "LatitudeMeasure": "44.7388800000",
+                "LongitudeMeasure": "-89.2980350000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD27",
+                "CountryCode": "US",
+                "StateCode": "55",
+                "CountyCode": "073",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

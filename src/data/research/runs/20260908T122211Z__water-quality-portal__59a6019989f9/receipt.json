@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T122211Z__water-quality-portal__59a6019989f9",
+  "status": "complete",
+  "started_at": "2026-09-08T12:22:11.550Z",
+  "finished_at": "2026-09-08T12:22:15.079Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@1.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "81f4f11469ded06e8beb405368987337b2ffc8b0348f66350840a03bb420781c",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "1e336b124c322c4ad49daebb0d9fc5b275ccf68de66ee22c9bd4e4097ea4d3e9",
+  "code_commit": "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb",
+  "parameter_hash": "59a6019989f9f950f90c70953e6ed67b5b9c3557de3478a55a4abd685b83d256",
+  "parameters": {
+    "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+    "mode": "retained-field-positive-count",
+    "stateCode": "NY",
+    "candidatePairs": [
+      "36013:dreissena-polymorpha",
+      "36045:dreissena-polymorpha",
+      "36063:dreissena-polymorpha",
+      "36073:dreissena-polymorpha",
+      "36075:dreissena-polymorpha",
+      "36117:dreissena-polymorpha"
+    ],
+    "candidateLimit": 6
+  },
+  "requested_scope": {
+    "state_code": "NY",
+    "county_fips": [
+      "36013",
+      "36045",
+      "36063",
+      "36073",
+      "36075",
+      "36117"
+    ],
+    "species_ids": [
+      "dreissena-polymorpha"
+    ],
+    "pair_keys": [
+      "36013:dreissena-polymorpha",
+      "36045:dreissena-polymorpha",
+      "36063:dreissena-polymorpha",
+      "36073:dreissena-polymorpha",
+      "36075:dreissena-polymorpha",
+      "36117:dreissena-polymorpha"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T122211Z__water-quality-portal__59a6019989f9/artifacts/wqp-field-witnesses.json",
+      "sha256": "cee85d71713c3eea712dba03955a72817eabd78f18c0076305062d89edc3d1e9",
+      "bytes": 503583,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T122211Z__water-quality-portal__59a6019989f9/assertions.ndjson",
+      "sha256": "dddc5ea50f718c2b48e91f660519f1c1786cb63ad22ad23c3c69d326709b602b",
+      "bytes": 24750,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122211Z__water-quality-portal__59a6019989f9/reviews.ndjson",
+      "sha256": "e6baed79e12235592a591f4f2ee08aefacf2021d5c91195dbda1df1e68831106",
+      "bytes": 5700,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122211Z__water-quality-portal__59a6019989f9/rejections.ndjson",
+      "sha256": "318df62c33eb13570603d4a29863eb1c2511fe36410ec3c0d06567389c633659",
+      "bytes": 5161,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122211Z__water-quality-portal__59a6019989f9/outcomes.ndjson",
+      "sha256": "e2654a110700a2a0c5423e71d207e9f7561b1ecb3479d5445c01329ae12a3b6b",
+      "bytes": 6727,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 6,
+    "candidate_records": 126,
+    "assertion_events": 6,
+    "review_events": 6,
+    "rejection_records": 6,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 6
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only; current persistence, establishment, countywide prevalence and protocol completion are not established.",
+    "The WQX 2.2 profile excludes USGS data added after March 11,2024; complete query response counts are not a complete current national inventory.",
+    "Zero, blank, negative, provisional, quality-control, toxicity, unidentified and method-held rows create no absence or non-detection claim.",
+    "Organization/activity/site identities and anonymous raw result locators are preserved. Identical disclosed fields need not identify the same specimen; repeated rows are never summed into progress.",
+    "County assignment follows unambiguous official Station metadata. Coarse generalized map boundaries may omit open water or differ at river borders; explicit source county is not replaced by an approximate map.",
+    "Public source facts are reproduced with agency and WQP attribution; no blanketCC0 license or provider endorsement is claimed."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state NY --candidate-file ops/national-research/plans/wqp-field-counts-20260908-r13/NY.json --output-root src/data/research/runs --stage-canonical true --pairs 36013:dreissena-polymorpha,36045:dreissena-polymorpha,36063:dreissena-polymorpha,36073:dreissena-polymorpha,36075:dreissena-polymorpha,36117:dreissena-polymorpha"
+}

@@ -1,0 +1,818 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "32003:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 1943,
+          "rowSha256": "3187ca879e70bcb81c3be320ca3dc02a685041512b6ffab20c513bb228fd2066",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 857,
+              "rowSha256": "86a319dfd285ea3d0ee2915fa0be87040b3d5859420644b62bc548992a1e8c46"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Nevada Division of Environmental Protection (21NEV1_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 1943,
+          "physicalEndLineOneBased": 1959,
+          "rawRecordSha256": "3187ca879e70bcb81c3be320ca3dc02a685041512b6ffab20c513bb228fd2066",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0000265R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2003-05-13",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Colorado River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-COL01Mud-5",
+            "ActivityLocation/LatitudeMeasure": "36.5281181000",
+            "ActivityLocation/LongitudeMeasure": "-114.4229965000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "NNDF",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 857,
+              "physicalEndLineOneBased": 859,
+              "rawRecordSha256": "86a319dfd285ea3d0ee2915fa0be87040b3d5859420644b62bc548992a1e8c46",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-COL01Mud-5",
+                "MonitoringLocationName": "Muddy River below Overton @ NDOW Wildlife Refuge &[BIO-053]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SEDIMENT SAMPLING SITE",
+                "HUCEightDigitCode": "15010012",
+                "LatitudeMeasure": "36.5281181000",
+                "LongitudeMeasure": "-114.4229965000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "003",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "32019:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 1374,
+          "rowSha256": "1788e2fa52e0bc71d62334d1e2b0c33a9b1f0766d06d7d06e300be086538cdd7",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 856,
+              "rowSha256": "2ec2df8135f3731668852c375e4002b0c510447ed3fc2655948e05441c1d3163"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 1735,
+          "rowSha256": "bc2dd8d3eabfa9412a6353313eb44e3126dae4457716851884f2ce69c73e2131",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 860,
+              "rowSha256": "5db1f482f5538474ef14089a6b12a63af16ea4635db78505376afe1f4826d473"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4711,
+          "rowSha256": "24ff381092abbc28fdc09ead6b96fa71bf236adf84a205c0b37240c3e2c320c2",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 856,
+              "rowSha256": "2ec2df8135f3731668852c375e4002b0c510447ed3fc2655948e05441c1d3163"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4714,
+          "rowSha256": "de4f7cb92c01a6755cdfdeaba43b4ddc4092a787d724c98bbb797875f6b223de",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 859,
+              "rowSha256": "7e812388991bf4ea3c9c6fde55326819c0fcf2a951c2fc68ffc048c3731c8d52"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4781,
+          "rowSha256": "f8b3f34f730e340134f6eaecef6210271ba361c6e22a0459e1b2732011d9d0a3",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 861,
+              "rowSha256": "308cc18eb4ac9d07d20ccf666faee77081d5a6ed97f343b7e2a3062d0ff725e1"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4782,
+          "rowSha256": "cbd10f676c788384697456b4a92b0e76303c914cdc85d94c277cb539067f22a1",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 860,
+              "rowSha256": "5db1f482f5538474ef14089a6b12a63af16ea4635db78505376afe1f4826d473"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4789,
+          "rowSha256": "658857f200f08c2a9397e5962c658caaed22af756c628cb75f19fc38a2c6f9f2",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 862,
+              "rowSha256": "ff14c49599d664b30635fa3ab0b103a07e49706b5dcc17f8cf6736a16aa9a4b0"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Nevada Division of Environmental Protection (21NEV1_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 1374,
+          "physicalEndLineOneBased": 1386,
+          "rawRecordSha256": "1788e2fa52e0bc71d62334d1e2b0c33a9b1f0766d06d7d06e300be086538cdd7",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0000070R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2000-07-21",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Carson River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-CAR01Carson-8",
+            "ActivityLocation/LatitudeMeasure": "39.2876396000",
+            "ActivityLocation/LongitudeMeasure": "-119.2382965000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "NNAF",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "8",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 856,
+              "physicalEndLineOneBased": 858,
+              "rawRecordSha256": "2ec2df8135f3731668852c375e4002b0c510447ed3fc2655948e05441c1d3163",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-CAR01Carson-8",
+                "MonitoringLocationName": "Carson River below Weeks Bridge @ State Park &[BIO-043]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SAMPLING SITE SAMPLED 7/6/2009",
+                "HUCEightDigitCode": "16050202",
+                "LatitudeMeasure": "39.2876396000",
+                "LongitudeMeasure": "-119.2382965000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 1702,
+          "physicalEndLineOneBased": 1718,
+          "rawRecordSha256": "636dde964ec8abecba7bfd34f9260ae1b2f6b18faaff3f89372b8debe2b603d3",
+          "disposition": "no-positive-finite-count",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0000068R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2001-06-12",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Carson River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-CAR01Carson-8",
+            "ActivityLocation/LatitudeMeasure": "39.2876396000",
+            "ActivityLocation/LongitudeMeasure": "-119.2382965000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "NNDF",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "0",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 856,
+              "physicalEndLineOneBased": 858,
+              "rawRecordSha256": "2ec2df8135f3731668852c375e4002b0c510447ed3fc2655948e05441c1d3163",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-CAR01Carson-8",
+                "MonitoringLocationName": "Carson River below Weeks Bridge @ State Park &[BIO-043]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SAMPLING SITE SAMPLED 7/6/2009",
+                "HUCEightDigitCode": "16050202",
+                "LatitudeMeasure": "39.2876396000",
+                "LongitudeMeasure": "-119.2382965000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 1735,
+          "physicalEndLineOneBased": 1751,
+          "rawRecordSha256": "bc2dd8d3eabfa9412a6353313eb44e3126dae4457716851884f2ce69c73e2131",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0001293R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2001-07-09",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Walker River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-WALK01Walker-2",
+            "ActivityLocation/LatitudeMeasure": "39.1062012000",
+            "ActivityLocation/LongitudeMeasure": "-119.1239014000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "NNDF",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 860,
+              "physicalEndLineOneBased": 862,
+              "rawRecordSha256": "5db1f482f5538474ef14089a6b12a63af16ea4635db78505376afe1f4826d473",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-WALK01Walker-2",
+                "MonitoringLocationName": "Walker River @ Mason Valley Refuge &[BIO-074]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SAMPLING SITE SAMPLED 8/7/2009",
+                "HUCEightDigitCode": "16050303",
+                "LatitudeMeasure": "39.1062012000",
+                "LongitudeMeasure": "-119.1239014000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4711,
+          "physicalEndLineOneBased": 4987,
+          "rawRecordSha256": "24ff381092abbc28fdc09ead6b96fa71bf236adf84a205c0b37240c3e2c320c2",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0001666R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2020-07-01",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Carson River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-CAR01Carson-8",
+            "ActivityCommentText": "Tricaudatus Complex",
+            "ActivityLocation/LatitudeMeasure": "39.2876396000",
+            "ActivityLocation/LongitudeMeasure": "-119.2382965000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "Unknown",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "629",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 856,
+              "physicalEndLineOneBased": 858,
+              "rawRecordSha256": "2ec2df8135f3731668852c375e4002b0c510447ed3fc2655948e05441c1d3163",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-CAR01Carson-8",
+                "MonitoringLocationName": "Carson River below Weeks Bridge @ State Park &[BIO-043]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SAMPLING SITE SAMPLED 7/6/2009",
+                "HUCEightDigitCode": "16050202",
+                "LatitudeMeasure": "39.2876396000",
+                "LongitudeMeasure": "-119.2382965000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4714,
+          "physicalEndLineOneBased": 4990,
+          "rawRecordSha256": "de4f7cb92c01a6755cdfdeaba43b4ddc4092a787d724c98bbb797875f6b223de",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0001669R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2020-07-09",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Walker River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-p-NVW04485-073",
+            "ActivityCommentText": "Tricaudatus Complex",
+            "ActivityLocation/LatitudeMeasure": "38.8164215000",
+            "ActivityLocation/LongitudeMeasure": "-119.0565033000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "Unknown",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "603",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 859,
+              "physicalEndLineOneBased": 861,
+              "rawRecordSha256": "7e812388991bf4ea3c9c6fde55326819c0fcf2a951c2fc68ffc048c3731c8d52",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-p-NVW04485-073",
+                "MonitoringLocationName": "East Fork Walker River in East Mason Valley &[BIOP-0042]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SAMPLING SITE SAMPLED 6/6/2007",
+                "HUCEightDigitCode": "16050301",
+                "LatitudeMeasure": "38.8164215000",
+                "LongitudeMeasure": "-119.0565033000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4781,
+          "physicalEndLineOneBased": 5059,
+          "rawRecordSha256": "f8b3f34f730e340134f6eaecef6210271ba361c6e22a0459e1b2732011d9d0a3",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0002020R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2021-08-16",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Black Rock Desert Region",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-WALK02EFkWalk-7",
+            "ActivityCommentText": "ref early",
+            "ActivityLocation/LatitudeMeasure": "38.8494100000",
+            "ActivityLocation/LongitudeMeasure": "-119.0940600000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "Unknown",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "538",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 861,
+              "physicalEndLineOneBased": 863,
+              "rawRecordSha256": "308cc18eb4ac9d07d20ccf666faee77081d5a6ed97f343b7e2a3062d0ff725e1",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-WALK02EFkWalk-7",
+                "MonitoringLocationName": "East Fork Walker River @ Riverbend Campground",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "16050301",
+                "LatitudeMeasure": "38.8494100000",
+                "LongitudeMeasure": "-119.0940600000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4782,
+          "physicalEndLineOneBased": 5060,
+          "rawRecordSha256": "cbd10f676c788384697456b4a92b0e76303c914cdc85d94c277cb539067f22a1",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0002008R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2021-08-16",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Walker River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-WALK01Walker-2",
+            "ActivityCommentText": "ref",
+            "ActivityLocation/LatitudeMeasure": "39.1062012000",
+            "ActivityLocation/LongitudeMeasure": "-119.1239014000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "Unknown",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "94",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 860,
+              "physicalEndLineOneBased": 862,
+              "rawRecordSha256": "5db1f482f5538474ef14089a6b12a63af16ea4635db78505376afe1f4826d473",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-WALK01Walker-2",
+                "MonitoringLocationName": "Walker River @ Mason Valley Refuge &[BIO-074]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SAMPLING SITE SAMPLED 8/7/2009",
+                "HUCEightDigitCode": "16050303",
+                "LatitudeMeasure": "39.1062012000",
+                "LongitudeMeasure": "-119.1239014000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4789,
+          "physicalEndLineOneBased": 5067,
+          "rawRecordSha256": "658857f200f08c2a9397e5962c658caaed22af756c628cb75f19fc38a2c6f9f2",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0002007R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2021-08-18",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Walker River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-WALK02WFkWalk-3",
+            "ActivityCommentText": "ref early",
+            "ActivityLocation/LatitudeMeasure": "38.8098106000",
+            "ActivityLocation/LongitudeMeasure": "-119.2317963000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "Unknown",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "619",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 862,
+              "physicalEndLineOneBased": 864,
+              "rawRecordSha256": "ff14c49599d664b30635fa3ab0b103a07e49706b5dcc17f8cf6736a16aa9a4b0",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-WALK02WFkWalk-3",
+                "MonitoringLocationName": "West Fork Walker River @ Upper Wilson Canyon &[BIO-080]",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "BIOASSESSMENT SAMPLING SITE SAMPLED 8/6/2009",
+                "HUCEightDigitCode": "16050302",
+                "LatitudeMeasure": "38.8098106000",
+                "LongitudeMeasure": "-119.2317963000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "019",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "32510:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4073,
+          "rowSha256": "b4069a8f804bd5ceba73a041fdfb46809cd3e28985177db24904d5eb1bbe7463",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 858,
+              "rowSha256": "985957e1c3d87f726e9f4b0af64ed80bd01dba157bd726666d01277cacfe20b8"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4744,
+          "rowSha256": "40d4730587ef16dd0e14a6d43d791c80770dfa79a6e751f7cf8c935ce5528bca",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 858,
+              "rowSha256": "985957e1c3d87f726e9f4b0af64ed80bd01dba157bd726666d01277cacfe20b8"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Nevada Division of Environmental Protection (21NEV1_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4073,
+          "physicalEndLineOneBased": 4342,
+          "rawRecordSha256": "b4069a8f804bd5ceba73a041fdfb46809cd3e28985177db24904d5eb1bbe7463",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0001424R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2015-07-09",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Carson River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-P-NVW04485-0611",
+            "ActivityLocation/LatitudeMeasure": "39.1284900000",
+            "ActivityLocation/LongitudeMeasure": "-119.7061800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "Unknown",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 858,
+              "physicalEndLineOneBased": 860,
+              "rawRecordSha256": "985957e1c3d87f726e9f4b0af64ed80bd01dba157bd726666d01277cacfe20b8",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-P-NVW04485-0611",
+                "MonitoringLocationName": "Carson River below Mexican Dam",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "16050201",
+                "LatitudeMeasure": "39.1284900000",
+                "LongitudeMeasure": "-119.7061800000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "510",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4744,
+          "physicalEndLineOneBased": 5021,
+          "rawRecordSha256": "40d4730587ef16dd0e14a6d43d791c80770dfa79a6e751f7cf8c935ce5528bca",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NEV1_WQX",
+            "OrganizationFormalName": "Nevada Division of Environmental Protection",
+            "ActivityIdentifier": "21NEV1_WQX-B0001680R09",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2020-07-02",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "PST",
+            "ProjectIdentifier": "Carson River Basin",
+            "MonitoringLocationIdentifier": "21NEV1_WQX-P-NVW04485-0611",
+            "ActivityCommentText": "Tricaudatus Complex",
+            "ActivityLocation/LatitudeMeasure": "39.1284900000",
+            "ActivityLocation/LongitudeMeasure": "-119.7061800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "1",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NEV1_WQX",
+            "SampleCollectionMethod/MethodName": "Unknown",
+            "SampleCollectionMethod/MethodDescriptionText": "Unknown Value",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "SampleCollectionMethod/SampleCollectionEquipmentCommentText": "Unknown",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "613",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Corbicula fluminea",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 858,
+              "physicalEndLineOneBased": 860,
+              "rawRecordSha256": "985957e1c3d87f726e9f4b0af64ed80bd01dba157bd726666d01277cacfe20b8",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NEV1_WQX",
+                "OrganizationFormalName": "Nevada Division of Environmental Protection",
+                "MonitoringLocationIdentifier": "21NEV1_WQX-P-NVW04485-0611",
+                "MonitoringLocationName": "Carson River below Mexican Dam",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "16050201",
+                "LatitudeMeasure": "39.1284900000",
+                "LongitudeMeasure": "-119.7061800000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "32",
+                "CountyCode": "510",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

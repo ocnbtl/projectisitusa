@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "13059:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4428,
+          "rowSha256": "216cc0e658baee038a6530f142d73b64d6724e5f69f2a7ed6effc5d43cb6e3ab",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 11,
+              "rowSha256": "5ab81d6dd51887c19617f6170379af08d263deb455311fd2e0133414ba852a4a"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Georgia DNR Environmental Protection Division (21GAEPD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4428,
+          "physicalEndLineOneBased": 4697,
+          "rawRecordSha256": "216cc0e658baee038a6530f142d73b64d6724e5f69f2a7ed6effc5d43cb6e3ab",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21GAEPD_WQX",
+            "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+            "ActivityIdentifier": "21GAEPD_WQX-A00345841",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2017-02-14",
+            "ActivityStartTime/Time": "12:55:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2017-02-14",
+            "ActivityEndTime/Time": "13:30:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "EPDAMU",
+            "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_03_16352",
+            "ActivityCommentText": "Please note this is not be a complete list of all taxa for this activity as some taxon names are not listed in WQX/STORET. For a complete list of taxa, please contact the state.",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "34.0206300000",
+            "ActivityLocation/LongitudeMeasure": "-83.3671000000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GA_005",
+            "SampleCollectionMethod/MethodIdentifierContext": "GA EPD",
+            "SampleCollectionMethod/MethodName": "WPMP Macroinvertebrate Assessment SOP",
+            "SampleCollectionMethod/MethodQualifierTypeName": "GA EPD",
+            "SampleCollectionMethod/MethodDescriptionText": "WPMP Macroinvertebrate Assessment SOP. http://www.gaepd.org/Documents/WPB_Macroinvertebrate_SOP.html",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BM_RBP",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "21GAEPD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Benthic Macroinvertebrate RBP, multi-habitat, 1m",
+            "MethodDescriptionText": "http://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/Macroinvertebrate_Wadeable_Streams.pdf",
+            "AnalysisStartDate": "2017-06-12",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 11,
+              "physicalEndLineOneBased": 13,
+              "rawRecordSha256": "5ab81d6dd51887c19617f6170379af08d263deb455311fd2e0133414ba852a4a",
+              "sourceFields": {
+                "OrganizationIdentifier": "21GAEPD_WQX",
+                "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+                "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_03_16352",
+                "MonitoringLocationName": "East Sandy Creek at Nowhere Road",
+                "MonitoringLocationTypeName": "River/Stream Perennial",
+                "HUCEightDigitCode": "03070101",
+                "LatitudeMeasure": "34.0210000000",
+                "LongitudeMeasure": "-83.3690000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "13",
+                "CountyCode": "059",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "13179:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 2745,
+          "rowSha256": "266ec1eb69f7129595dc7a9820d07bd886723428835c452f95abe37d78e79625",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 9,
+              "rowSha256": "bb9ff746f4e4971f4cc4e08eab86e771bede7172c8489d3ee679ae3c9ebb7c3d"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Georgia DNR Environmental Protection Division (21GAEPD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 2745,
+          "physicalEndLineOneBased": 2791,
+          "rawRecordSha256": "266ec1eb69f7129595dc7a9820d07bd886723428835c452f95abe37d78e79625",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21GAEPD_WQX",
+            "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+            "ActivityIdentifier": "21GAEPD_WQX-A00195927",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2006-01-05",
+            "ActivityStartTime/Time": "15:00:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2006-01-05",
+            "ActivityEndTime/Time": "15:00:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "EPDAMU",
+            "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_02_465",
+            "ActivityCommentText": "Stations Table Comments: 2006 sampling - lat. 31.85640, long. 81.57426  |  Gear Type: Net/Non-Tow  |  Gear Name: NNDF  |  FieldGearConfig Specifications:  D_20Jab  |  Activity Category: Routine Sample  |  Activity Type: Sample  |  Collection Method Name: Benthic - Low Gradient/20 jabs reallocated  |  Project Name: EPD -75f  |  Project Description: 75f Metric Refinement / Region 4 Proability and Joint Comparability Study  |  Project Comment: Continous Monitoring  |  Macroinvertebrate Sampling Notes: Corbicula abundant, saw gambusia; lost a crayfish that was caught under bank  |  Subecoregion Index: 55  |  Subecoregion Numeric Rank: 4  |  Subecoregion Narrative Description: poor  |  Subecoregion Stream Rating: C",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "31.8556830000",
+            "ActivityLocation/LongitudeMeasure": "-81.5740350000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GA_005",
+            "SampleCollectionMethod/MethodIdentifierContext": "GA EPD",
+            "SampleCollectionMethod/MethodName": "WPMP Macroinvertebrate Assessment SOP",
+            "SampleCollectionMethod/MethodQualifierTypeName": "GA EPD",
+            "SampleCollectionMethod/MethodDescriptionText": "WPMP Macroinvertebrate Assessment SOP. http://www.gaepd.org/Documents/WPB_Macroinvertebrate_SOP.html",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "55",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BM_RBP",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "21GAEPD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Benthic Macroinvertebrate RBP, multi-habitat, 1m",
+            "MethodDescriptionText": "http://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/Macroinvertebrate_Wadeable_Streams.pdf",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 9,
+              "physicalEndLineOneBased": 11,
+              "rawRecordSha256": "bb9ff746f4e4971f4cc4e08eab86e771bede7172c8489d3ee679ae3c9ebb7c3d",
+              "sourceFields": {
+                "OrganizationIdentifier": "21GAEPD_WQX",
+                "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+                "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_02_465",
+                "MonitoringLocationName": "Newport River nr Oglethorpe Hwy (US 84) nr Flemmington, GA",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "03060204",
+                "LatitudeMeasure": "31.8557000000",
+                "LongitudeMeasure": "-81.5740000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "13",
+                "CountyCode": "179",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "13187:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 3405,
+          "rowSha256": "946aeb341ff13e3e2d94ed639079e8a66ac81f281e71ec01be6511511948284a",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 45,
+              "rowSha256": "5106ea6d46b6415a34e6fa444b830c5044da30a694911fbc6731ec21c1dfe9b8"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Georgia DNR Environmental Protection Division (21GAEPD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 3405,
+          "physicalEndLineOneBased": 3615,
+          "rawRecordSha256": "946aeb341ff13e3e2d94ed639079e8a66ac81f281e71ec01be6511511948284a",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21GAEPD_WQX",
+            "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+            "ActivityIdentifier": "21GAEPD_WQX-A00345668",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2012-02-15",
+            "ActivityStartTime/Time": "16:20:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2012-02-15",
+            "ActivityEndTime/Time": "16:50:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "EPDAMU",
+            "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_12_4285",
+            "ActivityCommentText": "Please note this is not be a complete list of all taxa for this activity as some taxon names are not listed in WQX/STORET. For a complete list of taxa, please contact the state.",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "34.5207700000",
+            "ActivityLocation/LongitudeMeasure": "-84.0072800000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GA_005",
+            "SampleCollectionMethod/MethodIdentifierContext": "GA EPD",
+            "SampleCollectionMethod/MethodName": "WPMP Macroinvertebrate Assessment SOP",
+            "SampleCollectionMethod/MethodQualifierTypeName": "GA EPD",
+            "SampleCollectionMethod/MethodDescriptionText": "WPMP Macroinvertebrate Assessment SOP. http://www.gaepd.org/Documents/WPB_Macroinvertebrate_SOP.html",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BM_RBP",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "21GAEPD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Benthic Macroinvertebrate RBP, multi-habitat, 1m",
+            "MethodDescriptionText": "http://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/Macroinvertebrate_Wadeable_Streams.pdf",
+            "AnalysisStartDate": "2013-02-08",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 45,
+              "physicalEndLineOneBased": 47,
+              "rawRecordSha256": "5106ea6d46b6415a34e6fa444b830c5044da30a694911fbc6731ec21c1dfe9b8",
+              "sourceFields": {
+                "OrganizationIdentifier": "21GAEPD_WQX",
+                "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+                "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_12_4285",
+                "MonitoringLocationName": "Cane Creek at Radio Rd. nr Dahlonega, GA",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "03130001",
+                "LatitudeMeasure": "34.5027000000",
+                "LongitudeMeasure": "-83.9951000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "13",
+                "CountyCode": "187",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "13195:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4371,
+          "rowSha256": "1f9c74781d9f7df3abff9ece0e952106ca78c6c6f91aaf3a60caaa5051f746a7",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 7,
+              "rowSha256": "540cdb82b4e737301a7f83555a44285d78a1a9de4ea5b8d9aa5ca63cfa6eb945"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Georgia DNR Environmental Protection Division (21GAEPD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4371,
+          "physicalEndLineOneBased": 4640,
+          "rawRecordSha256": "1f9c74781d9f7df3abff9ece0e952106ca78c6c6f91aaf3a60caaa5051f746a7",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21GAEPD_WQX",
+            "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+            "ActivityIdentifier": "21GAEPD_WQX-A00345827",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2017-02-23",
+            "ActivityStartTime/Time": "15:53:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2017-02-23",
+            "ActivityEndTime/Time": "16:25:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "EPDAMU",
+            "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_01_16345",
+            "ActivityCommentText": "Please note this is not be a complete list of all taxa for this activity as some taxon names are not listed in WQX/STORET. For a complete list of taxa, please contact the state.",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "34.0569500000",
+            "ActivityLocation/LongitudeMeasure": "-83.2407200000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GA_005",
+            "SampleCollectionMethod/MethodIdentifierContext": "GA EPD",
+            "SampleCollectionMethod/MethodName": "WPMP Macroinvertebrate Assessment SOP",
+            "SampleCollectionMethod/MethodQualifierTypeName": "GA EPD",
+            "SampleCollectionMethod/MethodDescriptionText": "WPMP Macroinvertebrate Assessment SOP. http://www.gaepd.org/Documents/WPB_Macroinvertebrate_SOP.html",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BM_RBP",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "21GAEPD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Benthic Macroinvertebrate RBP, multi-habitat, 1m",
+            "MethodDescriptionText": "http://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/Macroinvertebrate_Wadeable_Streams.pdf",
+            "AnalysisStartDate": "2017-06-14",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 7,
+              "physicalEndLineOneBased": 9,
+              "rawRecordSha256": "540cdb82b4e737301a7f83555a44285d78a1a9de4ea5b8d9aa5ca63cfa6eb945",
+              "sourceFields": {
+                "OrganizationIdentifier": "21GAEPD_WQX",
+                "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+                "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_01_16345",
+                "MonitoringLocationName": "Biger Creek at Diamond Hill Colbert Rd",
+                "MonitoringLocationTypeName": "River/Stream Perennial",
+                "HUCEightDigitCode": "03060104",
+                "LatitudeMeasure": "34.0540000000",
+                "LongitudeMeasure": "-83.2410000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "13",
+                "CountyCode": "195",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "13221:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4234,
+          "rowSha256": "0822b1825c04c218a9f769212580fce5e013ca89a35d84a27d19ee6fcf82a39e",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 8,
+              "rowSha256": "520a72abbc8899449a84106b1f2db63241e7ba0c98d1163b967439546be664e3"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4388,
+          "rowSha256": "854c9882e23c3c09617c39ce6c5fcb00af43983fb0d32404d06e1320e7ab7665",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 15,
+              "rowSha256": "5ba87bcbb191a63e2e8d081ac1aab5830ea35cd17835b27eecb5f4335ae8a191"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Georgia DNR Environmental Protection Division (21GAEPD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4234,
+          "physicalEndLineOneBased": 4503,
+          "rawRecordSha256": "0822b1825c04c218a9f769212580fce5e013ca89a35d84a27d19ee6fcf82a39e",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21GAEPD_WQX",
+            "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+            "ActivityIdentifier": "21GAEPD_WQX-A00348599",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2016-02-01",
+            "ActivityStartTime/Time": "12:40:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2016-02-01",
+            "ActivityEndTime/Time": "13:18:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "EPDAMU",
+            "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_01_253",
+            "ActivityCommentText": "Please note this is not be a complete list of all taxa for this activity as some taxon names are not listed in WQX/STORET. For a complete list of taxa, please contact the state.",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "33.8411800000",
+            "ActivityLocation/LongitudeMeasure": "-82.9466800000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GA_005",
+            "SampleCollectionMethod/MethodIdentifierContext": "GA EPD",
+            "SampleCollectionMethod/MethodName": "WPMP Macroinvertebrate Assessment SOP",
+            "SampleCollectionMethod/MethodQualifierTypeName": "GA EPD",
+            "SampleCollectionMethod/MethodDescriptionText": "WPMP Macroinvertebrate Assessment SOP. http://www.gaepd.org/Documents/WPB_Macroinvertebrate_SOP.html",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BM_RBP",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "21GAEPD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Benthic Macroinvertebrate RBP, multi-habitat, 1m",
+            "MethodDescriptionText": "http://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/Macroinvertebrate_Wadeable_Streams.pdf",
+            "AnalysisStartDate": "2016-07-21",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 8,
+              "physicalEndLineOneBased": 10,
+              "rawRecordSha256": "520a72abbc8899449a84106b1f2db63241e7ba0c98d1163b967439546be664e3",
+              "sourceFields": {
+                "OrganizationIdentifier": "21GAEPD_WQX",
+                "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+                "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_01_253",
+                "MonitoringLocationName": "Dry Fork Creek at Centerville Rd, nr Lexington, GA",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "03060104",
+                "LatitudeMeasure": "33.8411000000",
+                "LongitudeMeasure": "-82.9503000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "13",
+                "CountyCode": "221",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4388,
+          "physicalEndLineOneBased": 4657,
+          "rawRecordSha256": "854c9882e23c3c09617c39ce6c5fcb00af43983fb0d32404d06e1320e7ab7665",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21GAEPD_WQX",
+            "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+            "ActivityIdentifier": "21GAEPD_WQX-A00348622",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2017-12-05",
+            "ActivityStartTime/Time": "13:44:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2017-12-05",
+            "ActivityEndTime/Time": "14:26:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "EPDAMU",
+            "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_03_16786",
+            "ActivityCommentText": "Please note this is not be a complete list of all taxa for this activity as some taxon names are not listed in WQX/STORET. For a complete list of taxa, please contact the state.",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "33.7817200000",
+            "ActivityLocation/LongitudeMeasure": "-83.2542500000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GA_005",
+            "SampleCollectionMethod/MethodIdentifierContext": "GA EPD",
+            "SampleCollectionMethod/MethodName": "WPMP Macroinvertebrate Assessment SOP",
+            "SampleCollectionMethod/MethodQualifierTypeName": "GA EPD",
+            "SampleCollectionMethod/MethodDescriptionText": "WPMP Macroinvertebrate Assessment SOP. http://www.gaepd.org/Documents/WPB_Macroinvertebrate_SOP.html",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BM_RBP",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "21GAEPD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Benthic Macroinvertebrate RBP, multi-habitat, 1m",
+            "MethodDescriptionText": "http://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/Macroinvertebrate_Wadeable_Streams.pdf",
+            "AnalysisStartDate": "2018-06-20",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 15,
+              "physicalEndLineOneBased": 17,
+              "rawRecordSha256": "5ba87bcbb191a63e2e8d081ac1aab5830ea35cd17835b27eecb5f4335ae8a191",
+              "sourceFields": {
+                "OrganizationIdentifier": "21GAEPD_WQX",
+                "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+                "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_03_16786",
+                "MonitoringLocationName": "Falling Creek at CR 87 (Wire Bridge Rd)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "03070101",
+                "LatitudeMeasure": "33.7810000000",
+                "LongitudeMeasure": "-83.2557000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "13",
+                "CountyCode": "221",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "13297:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4510,
+          "rowSha256": "d4559473515d19b591e186d920120bdb6adf391f0ca92585c39d8476cce7316b",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 16,
+              "rowSha256": "b9fd6639feb552606e02bed2ade0afd8979988b30655b954e5df8ac83263d082"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Georgia DNR Environmental Protection Division (21GAEPD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4510,
+          "physicalEndLineOneBased": 4779,
+          "rawRecordSha256": "d4559473515d19b591e186d920120bdb6adf391f0ca92585c39d8476cce7316b",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21GAEPD_WQX",
+            "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+            "ActivityIdentifier": "21GAEPD_WQX-A00348618",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2018-01-09",
+            "ActivityStartTime/Time": "12:41:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2018-01-09",
+            "ActivityEndTime/Time": "13:12:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "EPDAMU",
+            "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_03_16788",
+            "ActivityCommentText": "Please note this is not be a complete list of all taxa for this activity as some taxon names are not listed in WQX/STORET. For a complete list of taxa, please contact the state.",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "33.8436700000",
+            "ActivityLocation/LongitudeMeasure": "-83.5780300000",
+            "ActivityLocation/HorizontalCollectionMethodName": "GPS-Unspecified",
+            "ActivityLocation/HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GA_005",
+            "SampleCollectionMethod/MethodIdentifierContext": "GA EPD",
+            "SampleCollectionMethod/MethodName": "WPMP Macroinvertebrate Assessment SOP",
+            "SampleCollectionMethod/MethodQualifierTypeName": "GA EPD",
+            "SampleCollectionMethod/MethodDescriptionText": "WPMP Macroinvertebrate Assessment SOP. http://www.gaepd.org/Documents/WPB_Macroinvertebrate_SOP.html",
+            "SampleCollectionEquipmentName": "Miscellaneous (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "10",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BM_RBP",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "21GAEPD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Benthic Macroinvertebrate RBP, multi-habitat, 1m",
+            "MethodDescriptionText": "http://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/Macroinvertebrate_Wadeable_Streams.pdf",
+            "AnalysisStartDate": "2018-06-20",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 16,
+              "physicalEndLineOneBased": 18,
+              "rawRecordSha256": "b9fd6639feb552606e02bed2ade0afd8979988b30655b954e5df8ac83263d082",
+              "sourceFields": {
+                "OrganizationIdentifier": "21GAEPD_WQX",
+                "OrganizationFormalName": "Georgia DNR Environmental Protection Division",
+                "MonitoringLocationIdentifier": "21GAEPD_WQX-RV_03_16788",
+                "MonitoringLocationName": "Turkey Creek at CR 311 (Mount Caramel Church Rd) near Monroe, GA",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "03070101",
+                "LatitudeMeasure": "33.8434000000",
+                "LongitudeMeasure": "-83.5768000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "13",
+                "CountyCode": "297",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

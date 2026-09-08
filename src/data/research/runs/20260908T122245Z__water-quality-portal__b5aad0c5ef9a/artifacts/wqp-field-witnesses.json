@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "54089:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 2931,
+          "rowSha256": "3be04754023b468beb064aec70c12968210d3e78b2172a09e268aabd0e1a7af1",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 4,
+              "rowSha256": "5b7cb52c61c1539164503d09556302cd5ddc5d2f59e793953acd9801ec4bc5f9"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3035,
+          "rowSha256": "426ad0aee3e6965c1ff10040c55d54950a420247e4a04bd729eefadd84337b05",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 5,
+              "rowSha256": "d9ce46778929a53ddf1a402f5d95eda5637931a452d4553710bca7f767ded090"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3141,
+          "rowSha256": "385b802ab2c33eeb54a3dfce7a127f2b244a745d4785714ab1da352cf8800b0d",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 5,
+              "rowSha256": "d9ce46778929a53ddf1a402f5d95eda5637931a452d4553710bca7f767ded090"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3209,
+          "rowSha256": "5abc8e0a98a44bce6a851448b2f3db96bdeaf4f6800ca814a773f9efa66eec93",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 4,
+              "rowSha256": "5b7cb52c61c1539164503d09556302cd5ddc5d2f59e793953acd9801ec4bc5f9"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3364,
+          "rowSha256": "8db00269f03bf99aa292bf7668cb95396cfb87b24c67dc7283c33a0ee05d0997",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 5,
+              "rowSha256": "d9ce46778929a53ddf1a402f5d95eda5637931a452d4553710bca7f767ded090"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3365,
+          "rowSha256": "712a0f2a76e7b16da97d2c433171acf46759a8e39a2943bf4f9ad019ea17ab98",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 4,
+              "rowSha256": "5b7cb52c61c1539164503d09556302cd5ddc5d2f59e793953acd9801ec4bc5f9"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: National Park Service Water Resources Division (11NPSWRD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 2931,
+          "physicalEndLineOneBased": 2990,
+          "rawRecordSha256": "3be04754023b468beb064aec70c12968210d3e78b2172a09e268aabd0e1a7af1",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001_20081024_BMI",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-10-24",
+            "ProjectIdentifier": "ERMN_PWSM",
+            "ActivityConductingOrganizationText": "ERMN",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001",
+            "ActivityLocation/LatitudeMeasure": "37.6006000000",
+            "ActivityLocation/LongitudeMeasure": "-80.9485000000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "ERMN_BMI",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Protocol",
+            "SampleCollectionMethod/MethodQualifierTypeName": "11NPSWRD",
+            "SampleCollectionMethod/MethodDescriptionText": "This SOP describes procedures for benthic macroinvertebrate (BMI) sampling reach delineation and sample collection. These procedures have been slightly modified from protocols developed for the USGS National Water-Quality Assessment Program (Moulton et al., 2002). The primary difference between this SOP and USGS methods is that ERMN uses ethanol, instead of formalin, as a preservative because it poses lower human and environmental health risk. Otherwise, this SOP is a streamlined version of the USGS approach - methods (e.g., fine sediment sampling) that are described in the USGS protocol that are not used by ERMN are not included in this document.  See: https://irma.nps.gov/DataStore/DownloadFile/549060 for more information.",
+            "SampleCollectionEquipmentName": "Kick Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "ERMN_BMI",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Procedure",
+            "LaboratoryName": "Eastern Rivers and Mountains Network BMI Lab",
+            "AnalysisStartDate": "2009-05-05",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 4,
+              "physicalEndLineOneBased": 6,
+              "rawRecordSha256": "5b7cb52c61c1539164503d09556302cd5ddc5d2f59e793953acd9801ec4bc5f9",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001",
+                "MonitoringLocationName": "Bluestone River (Mouth)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "05050002",
+                "LatitudeMeasure": "37.6006000000",
+                "LongitudeMeasure": "-80.9485000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "54",
+                "CountyCode": "089",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3035,
+          "physicalEndLineOneBased": 3125,
+          "rawRecordSha256": "426ad0aee3e6965c1ff10040c55d54950a420247e4a04bd729eefadd84337b05",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002_20081024_BMI",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2008-10-24",
+            "ProjectIdentifier": "ERMN_PWSM",
+            "ActivityConductingOrganizationText": "ERMN",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002",
+            "ActivityLocation/LatitudeMeasure": "37.5414000000",
+            "ActivityLocation/LongitudeMeasure": "-81.0096000000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "ERMN_BMI",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Protocol",
+            "SampleCollectionMethod/MethodQualifierTypeName": "11NPSWRD",
+            "SampleCollectionMethod/MethodDescriptionText": "This SOP describes procedures for benthic macroinvertebrate (BMI) sampling reach delineation and sample collection. These procedures have been slightly modified from protocols developed for the USGS National Water-Quality Assessment Program (Moulton et al., 2002). The primary difference between this SOP and USGS methods is that ERMN uses ethanol, instead of formalin, as a preservative because it poses lower human and environmental health risk. Otherwise, this SOP is a streamlined version of the USGS approach - methods (e.g., fine sediment sampling) that are described in the USGS protocol that are not used by ERMN are not included in this document.  See: https://irma.nps.gov/DataStore/DownloadFile/549060 for more information.",
+            "SampleCollectionEquipmentName": "Kick Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "ERMN_BMI",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Procedure",
+            "LaboratoryName": "Eastern Rivers and Mountains Network BMI Lab",
+            "AnalysisStartDate": "2009-05-06",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 5,
+              "physicalEndLineOneBased": 7,
+              "rawRecordSha256": "d9ce46778929a53ddf1a402f5d95eda5637931a452d4553710bca7f767ded090",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002",
+                "MonitoringLocationName": "Bluestone River (Tramway)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "05050002",
+                "LatitudeMeasure": "37.5414000000",
+                "LongitudeMeasure": "-81.0096000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "54",
+                "CountyCode": "089",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3141,
+          "physicalEndLineOneBased": 3239,
+          "rawRecordSha256": "385b802ab2c33eeb54a3dfce7a127f2b244a745d4785714ab1da352cf8800b0d",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002_20100914_BMI",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2010-09-14",
+            "ProjectIdentifier": "ERMN_PWSM",
+            "ActivityConductingOrganizationText": "ERMN",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002",
+            "ActivityLocation/LatitudeMeasure": "37.5414000000",
+            "ActivityLocation/LongitudeMeasure": "-81.0096000000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "ERMN_BMI",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Protocol",
+            "SampleCollectionMethod/MethodQualifierTypeName": "11NPSWRD",
+            "SampleCollectionMethod/MethodDescriptionText": "This SOP describes procedures for benthic macroinvertebrate (BMI) sampling reach delineation and sample collection. These procedures have been slightly modified from protocols developed for the USGS National Water-Quality Assessment Program (Moulton et al., 2002). The primary difference between this SOP and USGS methods is that ERMN uses ethanol, instead of formalin, as a preservative because it poses lower human and environmental health risk. Otherwise, this SOP is a streamlined version of the USGS approach - methods (e.g., fine sediment sampling) that are described in the USGS protocol that are not used by ERMN are not included in this document.  See: https://irma.nps.gov/DataStore/DownloadFile/549060 for more information.",
+            "SampleCollectionEquipmentName": "Kick Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "ERMN_BMI",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Procedure",
+            "LaboratoryName": "Eastern Rivers and Mountains Network BMI Lab",
+            "AnalysisStartDate": "2010-09-20",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 5,
+              "physicalEndLineOneBased": 7,
+              "rawRecordSha256": "d9ce46778929a53ddf1a402f5d95eda5637931a452d4553710bca7f767ded090",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002",
+                "MonitoringLocationName": "Bluestone River (Tramway)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "05050002",
+                "LatitudeMeasure": "37.5414000000",
+                "LongitudeMeasure": "-81.0096000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "54",
+                "CountyCode": "089",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3209,
+          "physicalEndLineOneBased": 3323,
+          "rawRecordSha256": "5abc8e0a98a44bce6a851448b2f3db96bdeaf4f6800ca814a773f9efa66eec93",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001_20100914_BMI",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2010-09-14",
+            "ProjectIdentifier": "ERMN_PWSM",
+            "ActivityConductingOrganizationText": "ERMN",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001",
+            "ActivityLocation/LatitudeMeasure": "37.6006000000",
+            "ActivityLocation/LongitudeMeasure": "-80.9485000000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "ERMN_BMI",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Protocol",
+            "SampleCollectionMethod/MethodQualifierTypeName": "11NPSWRD",
+            "SampleCollectionMethod/MethodDescriptionText": "This SOP describes procedures for benthic macroinvertebrate (BMI) sampling reach delineation and sample collection. These procedures have been slightly modified from protocols developed for the USGS National Water-Quality Assessment Program (Moulton et al., 2002). The primary difference between this SOP and USGS methods is that ERMN uses ethanol, instead of formalin, as a preservative because it poses lower human and environmental health risk. Otherwise, this SOP is a streamlined version of the USGS approach - methods (e.g., fine sediment sampling) that are described in the USGS protocol that are not used by ERMN are not included in this document.  See: https://irma.nps.gov/DataStore/DownloadFile/549060 for more information.",
+            "SampleCollectionEquipmentName": "Kick Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "ERMN_BMI",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Procedure",
+            "LaboratoryName": "Eastern Rivers and Mountains Network BMI Lab",
+            "AnalysisStartDate": "2010-09-16",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 4,
+              "physicalEndLineOneBased": 6,
+              "rawRecordSha256": "5b7cb52c61c1539164503d09556302cd5ddc5d2f59e793953acd9801ec4bc5f9",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001",
+                "MonitoringLocationName": "Bluestone River (Mouth)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "05050002",
+                "LatitudeMeasure": "37.6006000000",
+                "LongitudeMeasure": "-80.9485000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "54",
+                "CountyCode": "089",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3364,
+          "physicalEndLineOneBased": 3571,
+          "rawRecordSha256": "8db00269f03bf99aa292bf7668cb95396cfb87b24c67dc7283c33a0ee05d0997",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002_20120925_BMI",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2012-09-25",
+            "ProjectIdentifier": "ERMN_PWSM",
+            "ActivityConductingOrganizationText": "ERMN",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002",
+            "ActivityLocation/LatitudeMeasure": "37.5414000000",
+            "ActivityLocation/LongitudeMeasure": "-81.0096000000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "ERMN_BMI",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Protocol",
+            "SampleCollectionMethod/MethodQualifierTypeName": "11NPSWRD",
+            "SampleCollectionMethod/MethodDescriptionText": "This SOP describes procedures for benthic macroinvertebrate (BMI) sampling reach delineation and sample collection. These procedures have been slightly modified from protocols developed for the USGS National Water-Quality Assessment Program (Moulton et al., 2002). The primary difference between this SOP and USGS methods is that ERMN uses ethanol, instead of formalin, as a preservative because it poses lower human and environmental health risk. Otherwise, this SOP is a streamlined version of the USGS approach - methods (e.g., fine sediment sampling) that are described in the USGS protocol that are not used by ERMN are not included in this document.  See: https://irma.nps.gov/DataStore/DownloadFile/549060 for more information.",
+            "SampleCollectionEquipmentName": "Kick Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "4",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "ERMN_BMI",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Procedure",
+            "LaboratoryName": "Eastern Rivers and Mountains Network BMI Lab",
+            "AnalysisStartDate": "2013-01-30",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 5,
+              "physicalEndLineOneBased": 7,
+              "rawRecordSha256": "d9ce46778929a53ddf1a402f5d95eda5637931a452d4553710bca7f767ded090",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2002",
+                "MonitoringLocationName": "Bluestone River (Tramway)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "05050002",
+                "LatitudeMeasure": "37.5414000000",
+                "LongitudeMeasure": "-81.0096000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "54",
+                "CountyCode": "089",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3365,
+          "physicalEndLineOneBased": 3572,
+          "rawRecordSha256": "712a0f2a76e7b16da97d2c433171acf46759a8e39a2943bf4f9ad019ea17ab98",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001_20120925_BMI",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2012-09-25",
+            "ProjectIdentifier": "ERMN_PWSM",
+            "ActivityConductingOrganizationText": "ERMN",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001",
+            "ActivityLocation/LatitudeMeasure": "37.6006000000",
+            "ActivityLocation/LongitudeMeasure": "-80.9485000000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "ERMN_BMI",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Protocol",
+            "SampleCollectionMethod/MethodQualifierTypeName": "11NPSWRD",
+            "SampleCollectionMethod/MethodDescriptionText": "This SOP describes procedures for benthic macroinvertebrate (BMI) sampling reach delineation and sample collection. These procedures have been slightly modified from protocols developed for the USGS National Water-Quality Assessment Program (Moulton et al., 2002). The primary difference between this SOP and USGS methods is that ERMN uses ethanol, instead of formalin, as a preservative because it poses lower human and environmental health risk. Otherwise, this SOP is a streamlined version of the USGS approach - methods (e.g., fine sediment sampling) that are described in the USGS protocol that are not used by ERMN are not included in this document.  See: https://irma.nps.gov/DataStore/DownloadFile/549060 for more information.",
+            "SampleCollectionEquipmentName": "Kick Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "ERMN_BMI",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Eastern Rivers and Mountains Network Benthic Macroinvertebrate Procedure",
+            "LaboratoryName": "Eastern Rivers and Mountains Network BMI Lab",
+            "AnalysisStartDate": "2013-01-23",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 4,
+              "physicalEndLineOneBased": 6,
+              "rawRecordSha256": "5b7cb52c61c1539164503d09556302cd5ddc5d2f59e793953acd9801ec4bc5f9",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-ERMN_BLUE_PWSM_2001",
+                "MonitoringLocationName": "Bluestone River (Mouth)",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "05050002",
+                "LatitudeMeasure": "37.6006000000",
+                "LongitudeMeasure": "-80.9485000000",
+                "SourceMapScaleNumeric": "0",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "54",
+                "CountyCode": "089",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "16087:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 1092,
+          "rowSha256": "e0a46dc91879084c64e11051e88b71c6c205f0b7c45c7567f78b328d919efe03",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1195,
+              "rowSha256": "3f35c4ef22f974fb65e6a66dbeded40385cc67c9ce313bf3af565f214e5950db"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Idaho Department Of Environmental Quality DEQ (IDEQ_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 1092,
+          "physicalEndLineOneBased": 1104,
+          "rawRecordSha256": "e0a46dc91879084c64e11051e88b71c6c205f0b7c45c7567f78b328d919efe03",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "IDEQ_WQX",
+            "OrganizationFormalName": "Idaho Department Of Environmental Quality DEQ",
+            "ActivityIdentifier": "IDEQ_WQX-1998SBOIB026:19980630:0000:SR:BM",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1998-06-30",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "MDT",
+            "ProjectIdentifier": "BURP",
+            "MonitoringLocationIdentifier": "IDEQ_WQX-1998SBOIB026",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "44.2892990000",
+            "ActivityLocation/LongitudeMeasure": "-117.0536670000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "Grab Sample Method",
+            "SampleCollectionMethod/MethodIdentifierContext": "IDEQ_WQX",
+            "SampleCollectionMethod/MethodName": "Grab Sample Method",
+            "SampleCollectionMethod/MethodQualifierTypeName": "IDEQ_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Grab sample method for collecting bacteria samples from water bodies",
+            "SampleCollectionEquipmentName": "Hess Sampler",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "4",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BURP Macros",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "IDEQ_WQX",
+            "ResultAnalyticalMethod/MethodName": "BURP Macros",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1195,
+              "physicalEndLineOneBased": 1197,
+              "rawRecordSha256": "3f35c4ef22f974fb65e6a66dbeded40385cc67c9ce313bf3af565f214e5950db",
+              "sourceFields": {
+                "OrganizationIdentifier": "IDEQ_WQX",
+                "OrganizationFormalName": "Idaho Department Of Environmental Quality DEQ",
+                "MonitoringLocationIdentifier": "IDEQ_WQX-1998SBOIB026",
+                "MonitoringLocationName": "Warm Springs Creek",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "17050201",
+                "LatitudeMeasure": "44.2892990000",
+                "LongitudeMeasure": "-117.0536670000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "16",
+                "CountyCode": "087",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

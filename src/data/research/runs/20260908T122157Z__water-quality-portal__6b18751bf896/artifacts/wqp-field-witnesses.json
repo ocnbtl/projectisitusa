@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "34041:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4385,
+          "rowSha256": "4728f1a1914741aedee331274dcb788d1a419ed5f8c86b62adbe7a446e5916f6",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1795,
+              "rowSha256": "67963201d50dc09cfcba9f822fb4d1c29442b7066862b34e7aa839b7ca0332c4"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4529,
+          "rowSha256": "f5b6e28aadbca8077a019c52dc9e47018a56a10dbec5927c768bfb5a95c5e569",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1796,
+              "rowSha256": "2d7c261f581403fc1e695190aec161335c7f8287049b006797f4fbdbedcf6e14"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: NJDEP Bureau of Freshwater and Biological Monitoring (NJDEP_BFBM). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4385,
+          "physicalEndLineOneBased": 4654,
+          "rawRecordSha256": "4728f1a1914741aedee331274dcb788d1a419ed5f8c86b62adbe7a446e5916f6",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NJDEP_BFBM",
+            "OrganizationFormalName": "NJDEP Bureau of Freshwater and Biological Monitoring",
+            "ActivityIdentifier": "NJDEP_BFBM-AN00431114",
+            "ActivityTypeCode": "Sample-Composite Without Parents",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2017-11-14",
+            "ProjectIdentifier": "DEL6",
+            "MonitoringLocationIdentifier": "NJDEP_BFBM-AN0043",
+            "ActivityLocation/LatitudeMeasure": "40.8305000000",
+            "ActivityLocation/LongitudeMeasure": "-74.9777770000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "DEL6",
+            "SampleCollectionMethod/MethodIdentifierContext": "NJDEP_BFBM",
+            "SampleCollectionMethod/MethodName": "RBP2 Kick Net",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NJDEP_BFBM",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Calculated",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "10500-C",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "APHA",
+            "ResultAnalyticalMethod/MethodName": "10500 C ~ Benthic Macroinvertebrate Sample Processing and Analysis",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1795,
+              "physicalEndLineOneBased": 1797,
+              "rawRecordSha256": "67963201d50dc09cfcba9f822fb4d1c29442b7066862b34e7aa839b7ca0332c4",
+              "sourceFields": {
+                "OrganizationIdentifier": "NJDEP_BFBM",
+                "OrganizationFormalName": "NJDEP Bureau of Freshwater and Biological Monitoring",
+                "MonitoringLocationIdentifier": "NJDEP_BFBM-AN0043",
+                "MonitoringLocationName": "PEQUEST R RT 625 PEQUEST FURNACE RD USGS GAUGE",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "02040105",
+                "LatitudeMeasure": "40.8305000000",
+                "LongitudeMeasure": "-74.9777770000",
+                "HorizontalCollectionMethodName": "Unknown",
+                "HorizontalCoordinateReferenceSystemDatumName": "UNKWN",
+                "CountryCode": "US",
+                "StateCode": "34",
+                "CountyCode": "041",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4529,
+          "physicalEndLineOneBased": 4798,
+          "rawRecordSha256": "f5b6e28aadbca8077a019c52dc9e47018a56a10dbec5927c768bfb5a95c5e569",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "NJDEP_BFBM",
+            "OrganizationFormalName": "NJDEP Bureau of Freshwater and Biological Monitoring",
+            "ActivityIdentifier": "NJDEP_BFBM-AN00720503",
+            "ActivityTypeCode": "Sample-Composite Without Parents",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2018-05-03",
+            "ProjectIdentifier": "DEL6",
+            "MonitoringLocationIdentifier": "NJDEP_BFBM-AN0072",
+            "ActivityLocation/LatitudeMeasure": "40.7230540000",
+            "ActivityLocation/LongitudeMeasure": "-74.9599440000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "DEL6",
+            "SampleCollectionMethod/MethodIdentifierContext": "NJDEP_BFBM",
+            "SampleCollectionMethod/MethodName": "RBP2 Kick Net",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NJDEP_BFBM",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Calculated",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "10500-C",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "APHA",
+            "ResultAnalyticalMethod/MethodName": "10500 C ~ Benthic Macroinvertebrate Sample Processing and Analysis",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1796,
+              "physicalEndLineOneBased": 1798,
+              "rawRecordSha256": "2d7c261f581403fc1e695190aec161335c7f8287049b006797f4fbdbedcf6e14",
+              "sourceFields": {
+                "OrganizationIdentifier": "NJDEP_BFBM",
+                "OrganizationFormalName": "NJDEP Bureau of Freshwater and Biological Monitoring",
+                "MonitoringLocationIdentifier": "NJDEP_BFBM-AN0072",
+                "MonitoringLocationName": "MUSCONETCONG RIVER AT SPRINGTOWN ROAD & NEW HAMPTON ROAD",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "02040105",
+                "LatitudeMeasure": "40.7230540000",
+                "LongitudeMeasure": "-74.9599440000",
+                "HorizontalCollectionMethodName": "GPS Code (Pseudo Range) Differential",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "34",
+                "CountyCode": "041",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

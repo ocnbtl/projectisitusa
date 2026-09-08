@@ -1,0 +1,588 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-positive-survey-batch-integration",
+  "recordedAt": "2026-09-08T12:23:41.137Z",
+  "integrator": "MAIN",
+  "sourceId": "water-quality-portal",
+  "sourceCodeCommit": "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb",
+  "methodReview": "src/data/research/source-method-reviews/wqp-field-counts-v1.json",
+  "independentAudit": {
+    "checkedAt": "2026-09-08T12:23:18.144180+00:00",
+    "passed": true,
+    "parser": "Python stdlib csv with newline preservation",
+    "states": 20,
+    "counts": {
+      "resultWitnesses": 2120,
+      "stationReferences": 2120,
+      "positiveRows": 1117,
+      "pairs": 138
+    },
+    "reports": [
+      {
+        "state": "CA",
+        "pairs": 14,
+        "run": "20260908T122111Z__water-quality-portal__2b144c7e4fa0",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "KS",
+        "pairs": 38,
+        "run": "20260908T122117Z__water-quality-portal__bf46b04cf8ef",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "CO",
+        "pairs": 3,
+        "run": "20260908T122122Z__water-quality-portal__c4c3789b3a6f",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "GA",
+        "pairs": 6,
+        "run": "20260908T122127Z__water-quality-portal__0acbea294515",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "ID",
+        "pairs": 1,
+        "run": "20260908T122132Z__water-quality-portal__cb8957bcdd6a",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "KY",
+        "pairs": 8,
+        "run": "20260908T122136Z__water-quality-portal__0e6adde223fe",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "MD",
+        "pairs": 10,
+        "run": "20260908T122142Z__water-quality-portal__fc15ed8ea7a5",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "ME",
+        "pairs": 1,
+        "run": "20260908T122147Z__water-quality-portal__f004c836ea34",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "MO",
+        "pairs": 3,
+        "run": "20260908T122151Z__water-quality-portal__de3e33146bda",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "NJ",
+        "pairs": 1,
+        "run": "20260908T122157Z__water-quality-portal__6b18751bf896",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "NM",
+        "pairs": 1,
+        "run": "20260908T122201Z__water-quality-portal__6a004b011d82",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "NV",
+        "pairs": 3,
+        "run": "20260908T122206Z__water-quality-portal__430fd3f2fcd6",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "NY",
+        "pairs": 6,
+        "run": "20260908T122211Z__water-quality-portal__59a6019989f9",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "OH",
+        "pairs": 17,
+        "run": "20260908T122216Z__water-quality-portal__65f8d5f7d639",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "PA",
+        "pairs": 1,
+        "run": "20260908T122221Z__water-quality-portal__dba64478a326",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "TN",
+        "pairs": 19,
+        "run": "20260908T122225Z__water-quality-portal__2dc722704c03",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "TX",
+        "pairs": 2,
+        "run": "20260908T122231Z__water-quality-portal__79cf3ce7b145",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "UT",
+        "pairs": 2,
+        "run": "20260908T122235Z__water-quality-portal__542d5e1d9b5b",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "WI",
+        "pairs": 1,
+        "run": "20260908T122240Z__water-quality-portal__59760c419e39",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      },
+      {
+        "state": "WV",
+        "pairs": 1,
+        "run": "20260908T122245Z__water-quality-portal__b5aad0c5ef9a",
+        "sourceFieldsHashesPhysicalLinesAndJoinsPassed": true
+      }
+    ],
+    "providerRequests": 0,
+    "compiledGains": null
+  },
+  "workerAttemptsAccepted": 0,
+  "workerFailureAudit": "ops/national-research/evaluations/wqp-physical-line-correction-20260908-r13.json",
+  "stagedRuns": [
+    {
+      "stateCode": "CA",
+      "runId": "20260908T122111Z__water-quality-portal__2b144c7e4fa0",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122111Z__water-quality-portal__2b144c7e4fa0/receipt.json",
+        "bytes": 5813,
+        "sha256": "0efd1daf3711c25cf9b7f44e22cb31ad617bea7c86784e1157c5d4645145279d"
+      },
+      "counts": {
+        "requested_pairs": 14,
+        "candidate_records": 82,
+        "assertion_events": 14,
+        "review_events": 14,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 14
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "KS",
+      "runId": "20260908T122117Z__water-quality-portal__bf46b04cf8ef",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122117Z__water-quality-portal__bf46b04cf8ef/receipt.json",
+        "bytes": 8414,
+        "sha256": "9c91d06852d7b61890dda1e048a40ca2816498f92ae1f060591d392fbd17c482"
+      },
+      "counts": {
+        "requested_pairs": 38,
+        "candidate_records": 426,
+        "assertion_events": 38,
+        "review_events": 38,
+        "rejection_records": 3,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 38
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "CO",
+      "runId": "20260908T122122Z__water-quality-portal__c4c3789b3a6f",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122122Z__water-quality-portal__c4c3789b3a6f/receipt.json",
+        "bytes": 4618,
+        "sha256": "f4f3b53706f5f2da85ee26d8bbb64b132f366cd6efbbedc1a9f02cd3d92bf320"
+      },
+      "counts": {
+        "requested_pairs": 3,
+        "candidate_records": 77,
+        "assertion_events": 3,
+        "review_events": 3,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 3
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "GA",
+      "runId": "20260908T122127Z__water-quality-portal__0acbea294515",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122127Z__water-quality-portal__0acbea294515/receipt.json",
+        "bytes": 4940,
+        "sha256": "2dfb255ddf470199ca085e9bb2a4496f3b56489b099e7e2409c5d9176b093497"
+      },
+      "counts": {
+        "requested_pairs": 6,
+        "candidate_records": 7,
+        "assertion_events": 6,
+        "review_events": 6,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 6
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "ID",
+      "runId": "20260908T122132Z__water-quality-portal__cb8957bcdd6a",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122132Z__water-quality-portal__cb8957bcdd6a/receipt.json",
+        "bytes": 4397,
+        "sha256": "3f49e0aebdd1c5fe5348d62a2e19f29df931a4928ff122a2d10bb12db577b89f"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "KY",
+      "runId": "20260908T122136Z__water-quality-portal__0e6adde223fe",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122136Z__water-quality-portal__0e6adde223fe/receipt.json",
+        "bytes": 5198,
+        "sha256": "8ea6a0fe0813ad2b5c1507e1417a74c7591eebdd501c25cd4f668ce2c54a30d2"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 164,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 8,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MD",
+      "runId": "20260908T122142Z__water-quality-portal__fc15ed8ea7a5",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122142Z__water-quality-portal__fc15ed8ea7a5/receipt.json",
+        "bytes": 5384,
+        "sha256": "ab4d1d673d0df9dc53b4cfce8b488bc699ef830b28fc01e238de542f2e0dc000"
+      },
+      "counts": {
+        "requested_pairs": 10,
+        "candidate_records": 119,
+        "assertion_events": 10,
+        "review_events": 10,
+        "rejection_records": 2,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 10
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "ME",
+      "runId": "20260908T122147Z__water-quality-portal__f004c836ea34",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122147Z__water-quality-portal__f004c836ea34/receipt.json",
+        "bytes": 4397,
+        "sha256": "c774171da2fcd167728a9b2da4613788217a7d83e799d7b5354b7a12dfb9d758"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "MO",
+      "runId": "20260908T122151Z__water-quality-portal__de3e33146bda",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122151Z__water-quality-portal__de3e33146bda/receipt.json",
+        "bytes": 4619,
+        "sha256": "029b781ff64597ec91575423576ecada3f1923f48f55861830c0209e53ad0cb7"
+      },
+      "counts": {
+        "requested_pairs": 3,
+        "candidate_records": 9,
+        "assertion_events": 3,
+        "review_events": 3,
+        "rejection_records": 2,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 3
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NJ",
+      "runId": "20260908T122157Z__water-quality-portal__6b18751bf896",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122157Z__water-quality-portal__6b18751bf896/receipt.json",
+        "bytes": 4397,
+        "sha256": "f5fecd3f8ada943c32e78a41b5ff11e2a7841fba999384e14dbf04b54b98a706"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 2,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NM",
+      "runId": "20260908T122201Z__water-quality-portal__6a004b011d82",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122201Z__water-quality-portal__6a004b011d82/receipt.json",
+        "bytes": 4397,
+        "sha256": "d28fa08fb4a985ef312ba28bae447be5b4d55294fdd6819a52027be973054143"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NV",
+      "runId": "20260908T122206Z__water-quality-portal__430fd3f2fcd6",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122206Z__water-quality-portal__430fd3f2fcd6/receipt.json",
+        "bytes": 4619,
+        "sha256": "14dc7126459472f288138932ca2da86fe81da9a3992704014173b7f5d7929eb8"
+      },
+      "counts": {
+        "requested_pairs": 3,
+        "candidate_records": 11,
+        "assertion_events": 3,
+        "review_events": 3,
+        "rejection_records": 1,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 3
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "NY",
+      "runId": "20260908T122211Z__water-quality-portal__59a6019989f9",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122211Z__water-quality-portal__59a6019989f9/receipt.json",
+        "bytes": 4984,
+        "sha256": "cdc82ebea0c50af256f60fc4be41de5b6695a4c1d180bb6bc147b14c848aa0a3"
+      },
+      "counts": {
+        "requested_pairs": 6,
+        "candidate_records": 126,
+        "assertion_events": 6,
+        "review_events": 6,
+        "rejection_records": 6,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 6
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "OH",
+      "runId": "20260908T122216Z__water-quality-portal__65f8d5f7d639",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122216Z__water-quality-portal__65f8d5f7d639/receipt.json",
+        "bytes": 6162,
+        "sha256": "aa7e377f19a3eb8d43591b6826fb2890147670f910f1b12b8b346dd18f4c44ff"
+      },
+      "counts": {
+        "requested_pairs": 17,
+        "candidate_records": 488,
+        "assertion_events": 17,
+        "review_events": 17,
+        "rejection_records": 19,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 17
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "PA",
+      "runId": "20260908T122221Z__water-quality-portal__dba64478a326",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122221Z__water-quality-portal__dba64478a326/receipt.json",
+        "bytes": 4411,
+        "sha256": "501b1575e4df1d470cef94c86d8efa98949fa49441493e698e80db7e78ca4dc8"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 85,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 2,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "TN",
+      "runId": "20260908T122225Z__water-quality-portal__2dc722704c03",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122225Z__water-quality-portal__2dc722704c03/receipt.json",
+        "bytes": 6372,
+        "sha256": "94fb0861ca79b6216894f261ddee7b7b034cc178c032ba9d5bc64cc6c9764448"
+      },
+      "counts": {
+        "requested_pairs": 19,
+        "candidate_records": 482,
+        "assertion_events": 19,
+        "review_events": 19,
+        "rejection_records": 18,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 19
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "TX",
+      "runId": "20260908T122231Z__water-quality-portal__79cf3ce7b145",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122231Z__water-quality-portal__79cf3ce7b145/receipt.json",
+        "bytes": 4507,
+        "sha256": "ccf1da478e52e6cbd66414bbab9cf77c488f98e3074cbc075f9a25cf939b7367"
+      },
+      "counts": {
+        "requested_pairs": 2,
+        "candidate_records": 8,
+        "assertion_events": 2,
+        "review_events": 2,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 2
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "UT",
+      "runId": "20260908T122235Z__water-quality-portal__542d5e1d9b5b",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122235Z__water-quality-portal__542d5e1d9b5b/receipt.json",
+        "bytes": 4511,
+        "sha256": "f718c3f5df8061b2a6436a2abeab43955328731ef079101d0553a3f68c071a35"
+      },
+      "counts": {
+        "requested_pairs": 2,
+        "candidate_records": 24,
+        "assertion_events": 2,
+        "review_events": 2,
+        "rejection_records": 4,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 2
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WI",
+      "runId": "20260908T122240Z__water-quality-portal__59760c419e39",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122240Z__water-quality-portal__59760c419e39/receipt.json",
+        "bytes": 4405,
+        "sha256": "da403efbd05ea5fb6c8b16b49a1eee6b3b97effc6bd8e9a10c4a9c13ac42cbfb"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 1,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    },
+    {
+      "stateCode": "WV",
+      "runId": "20260908T122245Z__water-quality-portal__b5aad0c5ef9a",
+      "receipt": {
+        "path": "src/data/research/runs/20260908T122245Z__water-quality-portal__b5aad0c5ef9a/receipt.json",
+        "bytes": 4398,
+        "sha256": "599b86114e9a8d551d4838a8f824730f80dfd1b67c8600dad86eabd12506b53b"
+      },
+      "counts": {
+        "requested_pairs": 1,
+        "candidate_records": 6,
+        "assertion_events": 1,
+        "review_events": 1,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 1
+      },
+      "canonicalValidation": "passed",
+      "originalSourceRequests": 0
+    }
+  ],
+  "totalStateRuns": 20,
+  "totalCandidatePairs": 138,
+  "pilotAssertions": 0,
+  "mainBatchAssertions": 138,
+  "newDeterminations": null,
+  "providerRequests": 0,
+  "sharedCompilesDuringBatch": 0,
+  "heldPairs": [
+    "18149:dreissena-polymorpha",
+    "20167:dreissena-polymorpha",
+    "36123:dreissena-polymorpha",
+    "40011:dreissena-polymorpha"
+  ],
+  "claim": "Historical positive environmental field counts with exact published taxon and official Station county join, original collection dates and agency/WQP attribution. No countywide persistence, establishment, absence or non-detection claim.",
+  "limitations": [
+    "New determination gains remain pending national compiler reconciliation.",
+    "Original CSV is shared and not reacquired or copied per state.",
+    "R2 publication remains a separately budgeted and scheduled batch."
+  ]
+}

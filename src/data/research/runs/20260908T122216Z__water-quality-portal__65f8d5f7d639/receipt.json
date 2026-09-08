@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T122216Z__water-quality-portal__65f8d5f7d639",
+  "status": "complete",
+  "started_at": "2026-09-08T12:22:16.178Z",
+  "finished_at": "2026-09-08T12:22:19.967Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@1.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "81f4f11469ded06e8beb405368987337b2ffc8b0348f66350840a03bb420781c",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "1e336b124c322c4ad49daebb0d9fc5b275ccf68de66ee22c9bd4e4097ea4d3e9",
+  "code_commit": "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb",
+  "parameter_hash": "65f8d5f7d63962a3caf557b9853e8c402a08233d9d3b2c3c08d11778cc882688",
+  "parameters": {
+    "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+    "mode": "retained-field-positive-count",
+    "stateCode": "OH",
+    "candidatePairs": [
+      "39007:dreissena-polymorpha",
+      "39013:corbicula-fluminea",
+      "39015:corbicula-fluminea",
+      "39025:corbicula-fluminea",
+      "39027:corbicula-fluminea",
+      "39035:corbicula-fluminea",
+      "39035:dreissena-polymorpha",
+      "39049:corbicula-fluminea",
+      "39067:corbicula-fluminea",
+      "39071:corbicula-fluminea",
+      "39079:corbicula-fluminea",
+      "39093:corbicula-fluminea",
+      "39093:dreissena-polymorpha",
+      "39137:corbicula-fluminea",
+      "39155:corbicula-fluminea",
+      "39157:corbicula-fluminea",
+      "39159:corbicula-fluminea"
+    ],
+    "candidateLimit": 17
+  },
+  "requested_scope": {
+    "state_code": "OH",
+    "county_fips": [
+      "39007",
+      "39013",
+      "39015",
+      "39025",
+      "39027",
+      "39035",
+      "39049",
+      "39067",
+      "39071",
+      "39079",
+      "39093",
+      "39137",
+      "39155",
+      "39157",
+      "39159"
+    ],
+    "species_ids": [
+      "corbicula-fluminea",
+      "dreissena-polymorpha"
+    ],
+    "pair_keys": [
+      "39007:dreissena-polymorpha",
+      "39013:corbicula-fluminea",
+      "39015:corbicula-fluminea",
+      "39025:corbicula-fluminea",
+      "39027:corbicula-fluminea",
+      "39035:corbicula-fluminea",
+      "39035:dreissena-polymorpha",
+      "39049:corbicula-fluminea",
+      "39067:corbicula-fluminea",
+      "39071:corbicula-fluminea",
+      "39079:corbicula-fluminea",
+      "39093:corbicula-fluminea",
+      "39093:dreissena-polymorpha",
+      "39137:corbicula-fluminea",
+      "39155:corbicula-fluminea",
+      "39157:corbicula-fluminea",
+      "39159:corbicula-fluminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T122216Z__water-quality-portal__65f8d5f7d639/artifacts/wqp-field-witnesses.json",
+      "sha256": "7891eaa3d5f48b5e3d09e6f2476fe5e6bd223c2111be74740f2404f5ee463706",
+      "bytes": 2033903,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T122216Z__water-quality-portal__65f8d5f7d639/assertions.ndjson",
+      "sha256": "956859ba5f9c9a414e8539061d66fec75f7fbbf274323833cf2a1b467b07dd12",
+      "bytes": 69864,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122216Z__water-quality-portal__65f8d5f7d639/reviews.ndjson",
+      "sha256": "9b4d72fe02c15ed76a0a62c4e313f64300107d9ce48859ed6a185e0990ddf8b8",
+      "bytes": 16122,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122216Z__water-quality-portal__65f8d5f7d639/rejections.ndjson",
+      "sha256": "30966175be644207f9fc72c4b69448b180b54950192ee34845a3355c389bdcc6",
+      "bytes": 16135,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122216Z__water-quality-portal__65f8d5f7d639/outcomes.ndjson",
+      "sha256": "6d8ad5e23c3ad9cd3d4e757ba749f5067c6f49e0a452075f4fdecbc915f31751",
+      "bytes": 19150,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 17,
+    "candidate_records": 488,
+    "assertion_events": 17,
+    "review_events": 17,
+    "rejection_records": 19,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 17
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only; current persistence, establishment, countywide prevalence and protocol completion are not established.",
+    "The WQX 2.2 profile excludes USGS data added after March 11,2024; complete query response counts are not a complete current national inventory.",
+    "Zero, blank, negative, provisional, quality-control, toxicity, unidentified and method-held rows create no absence or non-detection claim.",
+    "Organization/activity/site identities and anonymous raw result locators are preserved. Identical disclosed fields need not identify the same specimen; repeated rows are never summed into progress.",
+    "County assignment follows unambiguous official Station metadata. Coarse generalized map boundaries may omit open water or differ at river borders; explicit source county is not replaced by an approximate map.",
+    "Public source facts are reproduced with agency and WQP attribution; no blanketCC0 license or provider endorsement is claimed."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state OH --candidate-file ops/national-research/plans/wqp-field-counts-20260908-r13/OH.json --output-root src/data/research/runs --stage-canonical true --pairs 39007:dreissena-polymorpha,39013:corbicula-fluminea,39015:corbicula-fluminea,39025:corbicula-fluminea,39027:corbicula-fluminea,39035:corbicula-fluminea,39035:dreissena-polymorpha,39049:corbicula-fluminea,39067:corbicula-fluminea,39071:corbicula-fluminea,39079:corbicula-fluminea,39093:corbicula-fluminea,39093:dreissena-polymorpha,39137:corbicula-fluminea,39155:corbicula-fluminea,39157:corbicula-fluminea,39159:corbicula-fluminea"
+}

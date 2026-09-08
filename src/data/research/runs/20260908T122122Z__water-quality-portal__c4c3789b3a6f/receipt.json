@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T122122Z__water-quality-portal__c4c3789b3a6f",
+  "status": "complete",
+  "started_at": "2026-09-08T12:21:22.296Z",
+  "finished_at": "2026-09-08T12:21:25.893Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@1.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "81f4f11469ded06e8beb405368987337b2ffc8b0348f66350840a03bb420781c",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "1e336b124c322c4ad49daebb0d9fc5b275ccf68de66ee22c9bd4e4097ea4d3e9",
+  "code_commit": "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb",
+  "parameter_hash": "c4c3789b3a6fefe803d920e8a1680435f517173f0e5de45dc2385f9302736e65",
+  "parameters": {
+    "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+    "mode": "retained-field-positive-count",
+    "stateCode": "CO",
+    "candidatePairs": [
+      "08001:corbicula-fluminea",
+      "08031:corbicula-fluminea",
+      "08123:corbicula-fluminea"
+    ],
+    "candidateLimit": 3
+  },
+  "requested_scope": {
+    "state_code": "CO",
+    "county_fips": [
+      "08001",
+      "08031",
+      "08123"
+    ],
+    "species_ids": [
+      "corbicula-fluminea"
+    ],
+    "pair_keys": [
+      "08001:corbicula-fluminea",
+      "08031:corbicula-fluminea",
+      "08123:corbicula-fluminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T122122Z__water-quality-portal__c4c3789b3a6f/artifacts/wqp-field-witnesses.json",
+      "sha256": "a75fe81807aa46c83f5ae7f76b9e43d56eb96a5f85002b2ef1c23a7109c35492",
+      "bytes": 259467,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T122122Z__water-quality-portal__c4c3789b3a6f/assertions.ndjson",
+      "sha256": "1bcd21c19d47faff5de11af927ab7c23defe8e623e8d192decb748b2abb240a5",
+      "bytes": 12463,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122122Z__water-quality-portal__c4c3789b3a6f/reviews.ndjson",
+      "sha256": "ce394bd25ccdff36486839d26d179cdcd8e369c6e4ac7a5514a5e3b97bcfee73",
+      "bytes": 2844,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122122Z__water-quality-portal__c4c3789b3a6f/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122122Z__water-quality-portal__c4c3789b3a6f/outcomes.ndjson",
+      "sha256": "a737d4c01347022e03deda96b023acbaf5f70be28e49711a2851ec94411dff41",
+      "bytes": 3087,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 77,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only; current persistence, establishment, countywide prevalence and protocol completion are not established.",
+    "The WQX 2.2 profile excludes USGS data added after March 11,2024; complete query response counts are not a complete current national inventory.",
+    "Zero, blank, negative, provisional, quality-control, toxicity, unidentified and method-held rows create no absence or non-detection claim.",
+    "Organization/activity/site identities and anonymous raw result locators are preserved. Identical disclosed fields need not identify the same specimen; repeated rows are never summed into progress.",
+    "County assignment follows unambiguous official Station metadata. Coarse generalized map boundaries may omit open water or differ at river borders; explicit source county is not replaced by an approximate map.",
+    "Public source facts are reproduced with agency and WQP attribution; no blanketCC0 license or provider endorsement is claimed."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state CO --candidate-file ops/national-research/plans/wqp-field-counts-20260908-r13/CO.json --output-root src/data/research/runs --stage-canonical true --pairs 08001:corbicula-fluminea,08031:corbicula-fluminea,08123:corbicula-fluminea"
+}

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "35035:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 2344,
+          "rowSha256": "22f4fc168c55f3008e1825736592406ff5f54f12f03730d3582cd31cfa1dcfcb",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 871,
+              "rowSha256": "f1b7a16815f06107d813a1537868d495dd3ca851c4b67b03b3c249ea5ed9febe"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: NM Environmental Dept./SWQB (21NMEX_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 2344,
+          "physicalEndLineOneBased": 2381,
+          "rawRecordSha256": "22f4fc168c55f3008e1825736592406ff5f54f12f03730d3582cd31cfa1dcfcb",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21NMEX_WQX",
+            "OrganizationFormalName": "NM Environmental Dept./SWQB",
+            "ActivityIdentifier": "21NMEX_WQX-Ben_48DogCan002.7_05_0",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2005-11-02",
+            "ProjectIdentifier": "BEN99-07",
+            "MonitoringLocationIdentifier": "21NMEX_WQX-48DogCan002.7",
+            "ActivityCommentText": "composite of 3, 0.09 sq m samples from riffle = 0.27 square meters",
+            "ActivityLocation/LatitudeMeasure": "32.7495200000",
+            "ActivityLocation/LongitudeMeasure": "-105.9123700000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "Ben_01",
+            "SampleCollectionMethod/MethodIdentifierContext": "21NMEX_WQX",
+            "SampleCollectionMethod/MethodName": "Canton Modified Hess",
+            "SampleCollectionMethod/MethodQualifierTypeName": "NMENV-SWQB",
+            "SampleCollectionEquipmentName": "Hess Sampler",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 871,
+              "physicalEndLineOneBased": 873,
+              "rawRecordSha256": "f1b7a16815f06107d813a1537868d495dd3ca851c4b67b03b3c249ea5ed9febe",
+              "sourceFields": {
+                "OrganizationIdentifier": "21NMEX_WQX",
+                "OrganizationFormalName": "NM Environmental Dept./SWQB",
+                "MonitoringLocationIdentifier": "21NMEX_WQX-48DogCan002.7",
+                "MonitoringLocationName": "Dog Canyon at Nature Trail - 48DogCan002.7",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "13050003",
+                "LatitudeMeasure": "32.7495200000",
+                "LongitudeMeasure": "-105.9123700000",
+                "SourceMapScaleNumeric": "24000",
+                "HorizontalCollectionMethodName": "Interpolation-Other",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "VerticalMeasure/MeasureValue": "4521",
+                "VerticalMeasure/MeasureUnitCode": "ft",
+                "VerticalCollectionMethodName": "GPS Code (Pseudo Range) Differential",
+                "VerticalCoordinateReferenceSystemDatumName": "NGVD29",
+                "CountryCode": "US",
+                "StateCode": "35",
+                "CountyCode": "035",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "23007:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 2239,
+          "rowSha256": "5b6389902a1f974e89c7f3dffc1c0c2015729b46ba827e20e3dcfe480786d862",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1690,
+              "rowSha256": "d1d4fc5960cf6b711474e3c31657bd72393096e75cab029d40e8292fbe58d500"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Maine Department of Environmental Protection (MEDEP_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 2239,
+          "physicalEndLineOneBased": 2272,
+          "rawRecordSha256": "5b6389902a1f974e89c7f3dffc1c0c2015729b46ba827e20e3dcfe480786d862",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "MEDEP_WQX",
+            "OrganizationFormalName": "Maine Department of Environmental Protection",
+            "ActivityIdentifier": "MEDEP_WQX-775MI-1_1492_8-9-2004",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2004-08-11",
+            "ActivityStartTime/Time": "00:00:00",
+            "ActivityStartTime/TimeZoneCode": "EST",
+            "ActivityEndDate": "2004-09-08",
+            "ActivityEndTime/Time": "00:00:00",
+            "ActivityEndTime/TimeZoneCode": "EST",
+            "ProjectIdentifier": "57517",
+            "ActivityConductingOrganizationText": "BIOMONITORING - STREAM-RIVER",
+            "MonitoringLocationIdentifier": "MEDEP_WQX-60203",
+            "ActivityLocation/LatitudeMeasure": "44.9908230000",
+            "ActivityLocation/LongitudeMeasure": "-70.5317850000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "RBG",
+            "SampleCollectionMethod/MethodIdentifierContext": "MEDEP_WQX",
+            "SampleCollectionMethod/MethodName": "ROCK BAG",
+            "SampleCollectionMethod/MethodQualifierTypeName": "MEDEP_WQX",
+            "SampleCollectionEquipmentName": "Rock Bag",
+            "CharacteristicName": "Count",
+            "ResultSampleFractionText": "Total",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "CO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "MEDEP_WQX",
+            "ResultAnalyticalMethod/MethodName": "COUNT - ORGANISMS",
+            "LaboratoryName": "LOTIC INC.",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1690,
+              "physicalEndLineOneBased": 1692,
+              "rawRecordSha256": "d1d4fc5960cf6b711474e3c31657bd72393096e75cab029d40e8292fbe58d500",
+              "sourceFields": {
+                "OrganizationIdentifier": "MEDEP_WQX",
+                "OrganizationFormalName": "Maine Department of Environmental Protection",
+                "MonitoringLocationIdentifier": "MEDEP_WQX-60203",
+                "MonitoringLocationName": "775 MI-1",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "01030002",
+                "LatitudeMeasure": "44.9908230000",
+                "LongitudeMeasure": "-70.5317850000",
+                "SourceMapScaleNumeric": "2400",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "23",
+                "CountyCode": "007",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

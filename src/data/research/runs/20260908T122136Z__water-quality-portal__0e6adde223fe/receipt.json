@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T122136Z__water-quality-portal__0e6adde223fe",
+  "status": "complete",
+  "started_at": "2026-09-08T12:21:36.934Z",
+  "finished_at": "2026-09-08T12:21:40.810Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@1.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "81f4f11469ded06e8beb405368987337b2ffc8b0348f66350840a03bb420781c",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "1e336b124c322c4ad49daebb0d9fc5b275ccf68de66ee22c9bd4e4097ea4d3e9",
+  "code_commit": "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb",
+  "parameter_hash": "0e6adde223fe28d69f34fe6f1f2b1ca71f7261614946eeb663b59f5d8829e107",
+  "parameters": {
+    "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+    "mode": "retained-field-positive-count",
+    "stateCode": "KY",
+    "candidatePairs": [
+      "21033:corbicula-fluminea",
+      "21053:corbicula-fluminea",
+      "21095:corbicula-fluminea",
+      "21143:dreissena-polymorpha",
+      "21147:corbicula-fluminea",
+      "21221:corbicula-fluminea",
+      "21231:corbicula-fluminea",
+      "21235:corbicula-fluminea"
+    ],
+    "candidateLimit": 8
+  },
+  "requested_scope": {
+    "state_code": "KY",
+    "county_fips": [
+      "21033",
+      "21053",
+      "21095",
+      "21143",
+      "21147",
+      "21221",
+      "21231",
+      "21235"
+    ],
+    "species_ids": [
+      "corbicula-fluminea",
+      "dreissena-polymorpha"
+    ],
+    "pair_keys": [
+      "21033:corbicula-fluminea",
+      "21053:corbicula-fluminea",
+      "21095:corbicula-fluminea",
+      "21143:dreissena-polymorpha",
+      "21147:corbicula-fluminea",
+      "21221:corbicula-fluminea",
+      "21231:corbicula-fluminea",
+      "21235:corbicula-fluminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T122136Z__water-quality-portal__0e6adde223fe/artifacts/wqp-field-witnesses.json",
+      "sha256": "eaecd9b741e325d2e08d09f4d3c6c5ebde17c2bc2531f00eedcd8db4b360e479",
+      "bytes": 622522,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T122136Z__water-quality-portal__0e6adde223fe/assertions.ndjson",
+      "sha256": "05b77def7e5cb857ca88d525c0cbf5ec2d0e9ec4d8a2d6fb4546a819ee89439e",
+      "bytes": 32948,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122136Z__water-quality-portal__0e6adde223fe/reviews.ndjson",
+      "sha256": "b801361b9b669b3cd5b9278845ab50c7dc74fb5f0cfb779dd1fb439733494dd4",
+      "bytes": 7586,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122136Z__water-quality-portal__0e6adde223fe/rejections.ndjson",
+      "sha256": "9869072d7cbe4dcbc0d605a908b19c2016c2e9d7dea4b0908175731c48379f0f",
+      "bytes": 6866,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122136Z__water-quality-portal__0e6adde223fe/outcomes.ndjson",
+      "sha256": "b5ac4ee5aa535d45786625dacc1b49d93e9daa02d01e715bbe342827a127ab95",
+      "bytes": 8926,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 8,
+    "candidate_records": 164,
+    "assertion_events": 8,
+    "review_events": 8,
+    "rejection_records": 8,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 8
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only; current persistence, establishment, countywide prevalence and protocol completion are not established.",
+    "The WQX 2.2 profile excludes USGS data added after March 11,2024; complete query response counts are not a complete current national inventory.",
+    "Zero, blank, negative, provisional, quality-control, toxicity, unidentified and method-held rows create no absence or non-detection claim.",
+    "Organization/activity/site identities and anonymous raw result locators are preserved. Identical disclosed fields need not identify the same specimen; repeated rows are never summed into progress.",
+    "County assignment follows unambiguous official Station metadata. Coarse generalized map boundaries may omit open water or differ at river borders; explicit source county is not replaced by an approximate map.",
+    "Public source facts are reproduced with agency and WQP attribution; no blanketCC0 license or provider endorsement is claimed."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state KY --candidate-file ops/national-research/plans/wqp-field-counts-20260908-r13/KY.json --output-root src/data/research/runs --stage-canonical true --pairs 21033:corbicula-fluminea,21053:corbicula-fluminea,21095:corbicula-fluminea,21143:dreissena-polymorpha,21147:corbicula-fluminea,21221:corbicula-fluminea,21231:corbicula-fluminea,21235:corbicula-fluminea"
+}

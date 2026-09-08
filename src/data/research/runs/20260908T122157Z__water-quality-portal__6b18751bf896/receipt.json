@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T122157Z__water-quality-portal__6b18751bf896",
+  "status": "complete",
+  "started_at": "2026-09-08T12:21:57.004Z",
+  "finished_at": "2026-09-08T12:22:00.731Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@1.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "81f4f11469ded06e8beb405368987337b2ffc8b0348f66350840a03bb420781c",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "1e336b124c322c4ad49daebb0d9fc5b275ccf68de66ee22c9bd4e4097ea4d3e9",
+  "code_commit": "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb",
+  "parameter_hash": "6b18751bf8969953e2c6f23338c4396645afebff45cc10e440cc639bbf79db78",
+  "parameters": {
+    "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+    "mode": "retained-field-positive-count",
+    "stateCode": "NJ",
+    "candidatePairs": [
+      "34041:corbicula-fluminea"
+    ],
+    "candidateLimit": 1
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34041"
+    ],
+    "species_ids": [
+      "corbicula-fluminea"
+    ],
+    "pair_keys": [
+      "34041:corbicula-fluminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T122157Z__water-quality-portal__6b18751bf896/artifacts/wqp-field-witnesses.json",
+      "sha256": "0e492131ee96f5b45ea211f4e980e55aa14adb0dda75cfd37ef94d449bc4bedf",
+      "bytes": 9137,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T122157Z__water-quality-portal__6b18751bf896/assertions.ndjson",
+      "sha256": "3de1e7812e9a156b0ef808b3c962afdb0fec1651b8750b4c4e0a7b11f0e75d22",
+      "bytes": 4123,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122157Z__water-quality-portal__6b18751bf896/reviews.ndjson",
+      "sha256": "158ca053b6b156827f2699f0fbc12c21e2199480ac48d82cb99c464653cd65bb",
+      "bytes": 948,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122157Z__water-quality-portal__6b18751bf896/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122157Z__water-quality-portal__6b18751bf896/outcomes.ndjson",
+      "sha256": "c4543025f78039989cbaa1142a8eb7a826923acd018706fdef96386dab6a5cd1",
+      "bytes": 1029,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 2,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only; current persistence, establishment, countywide prevalence and protocol completion are not established.",
+    "The WQX 2.2 profile excludes USGS data added after March 11,2024; complete query response counts are not a complete current national inventory.",
+    "Zero, blank, negative, provisional, quality-control, toxicity, unidentified and method-held rows create no absence or non-detection claim.",
+    "Organization/activity/site identities and anonymous raw result locators are preserved. Identical disclosed fields need not identify the same specimen; repeated rows are never summed into progress.",
+    "County assignment follows unambiguous official Station metadata. Coarse generalized map boundaries may omit open water or differ at river borders; explicit source county is not replaced by an approximate map.",
+    "Public source facts are reproduced with agency and WQP attribution; no blanketCC0 license or provider endorsement is claimed."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state NJ --candidate-file ops/national-research/plans/wqp-field-counts-20260908-r13/NJ.json --output-root src/data/research/runs --stage-canonical true --pairs 34041:corbicula-fluminea"
+}

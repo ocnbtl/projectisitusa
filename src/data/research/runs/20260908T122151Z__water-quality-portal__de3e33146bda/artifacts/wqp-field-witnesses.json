@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "29047:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4950,
+          "rowSha256": "43ffd088391a41070be222b341368225a33a5a159e5aaa2a4702df97f5a6e7b3",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1193,
+              "rowSha256": "68d695026c2c2c7c0189071d1b946c928e513ad54dace35bec261755d9a2e848"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA R7 (EPA_R7_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4950,
+          "physicalEndLineOneBased": 5229,
+          "rawRecordSha256": "43ffd088391a41070be222b341368225a33a5a159e5aaa2a4702df97f5a6e7b3",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "EPA_R7_WQX",
+            "OrganizationFormalName": "EPA R7",
+            "ActivityIdentifier": "EPA_R7_WQX-Shoal2Bugs23",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2023-08-08",
+            "ProjectIdentifier": "URBSTM",
+            "MonitoringLocationIdentifier": "EPA_R7_WQX-Shoal2",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "39.2175600000",
+            "ActivityLocation/LongitudeMeasure": "-94.5111200000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "CollectionDuration/MeasureValue": "5",
+            "CollectionDuration/MeasureUnitCode": "minutes",
+            "SampleCollectionMethod/MethodIdentifier": "2334.29B",
+            "SampleCollectionMethod/MethodIdentifierContext": "EPA_R7_WQX",
+            "SampleCollectionMethod/MethodName": "Sample Collection for Ambient Water Monitoring",
+            "SampleCollectionMethod/MethodQualifierTypeName": "EPA_R7_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Water - Water samples are collected in the appropriate containers defined by thesample type.  These could be 1 L cubi-containers or plastic bottles, TOC vials, amber vials or bottles for organic parameters, plastic bottles for chlorophyll or TNTP, or sterile bottles for bacteria samples.  Sediment - Sediment samples are collected with a metal spoon or scoop.  For composited samples, a pie plate is used to collect sediment from the entire stream reach.  The sample is mixed and placed in 8 oz glass jars.  Periphyton - Periphyton is collected using an aspirator from the flat surface of rocks or other items in the stream.  The aspirated sample is collected in a VOA vial and removed from light.  Benthic macroinvertebrates - macroinvertebrate samples are collected with a D-frame collecting net.  A total of five 60 second kick samples are taken at each monitoring site and composited into one sample.  The composite sample is put into labeled sample jars and preserved with ethanol.",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "10",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Distinct; early instar",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1193,
+              "physicalEndLineOneBased": 1195,
+              "rawRecordSha256": "68d695026c2c2c7c0189071d1b946c928e513ad54dace35bec261755d9a2e848",
+              "sourceFields": {
+                "OrganizationIdentifier": "EPA_R7_WQX",
+                "OrganizationFormalName": "EPA R7",
+                "MonitoringLocationIdentifier": "EPA_R7_WQX-Shoal2",
+                "MonitoringLocationName": "Shoal Creek 2",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "10300101",
+                "LatitudeMeasure": "39.2175600000",
+                "LongitudeMeasure": "-94.5111200000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "047",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 4967,
+          "physicalEndLineOneBased": 5246,
+          "rawRecordSha256": "83701c1be5264909c65498ea75d8ea886d1be450ae404ec7cbd78403fde30720",
+          "disposition": "nonfield-or-unreviewed-biological-context",
+          "sourceFields": {
+            "OrganizationIdentifier": "EPA_R7_WQX",
+            "OrganizationFormalName": "EPA R7",
+            "ActivityIdentifier": "EPA_R7_WQX-Shoal2Bugs23-DUP",
+            "ActivityTypeCode": "Quality Control Sample-Field Replicate",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2023-08-08",
+            "ProjectIdentifier": "URBSTM",
+            "MonitoringLocationIdentifier": "EPA_R7_WQX-Shoal2",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "39.2175600000",
+            "ActivityLocation/LongitudeMeasure": "-94.5111200000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "CollectionDuration/MeasureValue": "5",
+            "CollectionDuration/MeasureUnitCode": "minutes",
+            "SampleCollectionMethod/MethodIdentifier": "2334.29B",
+            "SampleCollectionMethod/MethodIdentifierContext": "EPA_R7_WQX",
+            "SampleCollectionMethod/MethodName": "Sample Collection for Ambient Water Monitoring",
+            "SampleCollectionMethod/MethodQualifierTypeName": "EPA_R7_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Water - Water samples are collected in the appropriate containers defined by thesample type.  These could be 1 L cubi-containers or plastic bottles, TOC vials, amber vials or bottles for organic parameters, plastic bottles for chlorophyll or TNTP, or sterile bottles for bacteria samples.  Sediment - Sediment samples are collected with a metal spoon or scoop.  For composited samples, a pie plate is used to collect sediment from the entire stream reach.  The sample is mixed and placed in 8 oz glass jars.  Periphyton - Periphyton is collected using an aspirator from the flat surface of rocks or other items in the stream.  The aspirated sample is collected in a VOA vial and removed from light.  Benthic macroinvertebrates - macroinvertebrate samples are collected with a D-frame collecting net.  A total of five 60 second kick samples are taken at each monitoring site and composited into one sample.  The composite sample is put into labeled sample jars and preserved with ethanol.",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "4",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Distinct; early instar",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1193,
+              "physicalEndLineOneBased": 1195,
+              "rawRecordSha256": "68d695026c2c2c7c0189071d1b946c928e513ad54dace35bec261755d9a2e848",
+              "sourceFields": {
+                "OrganizationIdentifier": "EPA_R7_WQX",
+                "OrganizationFormalName": "EPA R7",
+                "MonitoringLocationIdentifier": "EPA_R7_WQX-Shoal2",
+                "MonitoringLocationName": "Shoal Creek 2",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "10300101",
+                "LatitudeMeasure": "39.2175600000",
+                "LongitudeMeasure": "-94.5111200000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "047",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "29095:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 2635,
+          "rowSha256": "fa9d0cd968afd8d513164749467aebbe8f1013cc06bd529d2b9cfd34cd2270e1",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1186,
+              "rowSha256": "6151257013b1ad53855e8a3674a80ab1a1f8146d3b8b524dd388a9f4d67ee1f8"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3326,
+          "rowSha256": "e32e72afd23c2491d873426c3a0f47cb8eae98529ec9436ae4e613b518aa993d",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1187,
+              "rowSha256": "2dc879f77809d56810a5bcd904e3c72ff2a9f72fd2babf79f1a2d7afad64944a"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: EPA R7 (EPA_R7_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 2300,
+          "physicalEndLineOneBased": 2337,
+          "rawRecordSha256": "58bb0ed063eb7b3c67d3d44a8c2b39b4867c828415d5db1bca5a2ab9dbce86e5",
+          "disposition": "outside-positive-count-method",
+          "sourceFields": {
+            "OrganizationIdentifier": "EMAP_GRE",
+            "OrganizationFormalName": "EMAP-Great Rivers Ecosystems",
+            "ActivityIdentifier": "EMAP_GRE-914-MRL675B",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2005-09-14",
+            "ActivityRelativeDepthName": "Bottom",
+            "ProjectIdentifier": "EMAP-GRE",
+            "MonitoringLocationIdentifier": "EMAP_GRE-GRW04449-675",
+            "ActivityLocation/LatitudeMeasure": "39.2036200000",
+            "ActivityLocation/LongitudeMeasure": "-94.1996550000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "GRE:BEN-Snag",
+            "SampleCollectionMethod/MethodIdentifierContext": "EMAP_GRE",
+            "SampleCollectionMethod/MethodName": "Benthic macroinvertebrate snag net sample in current",
+            "SampleCollectionMethod/MethodQualifierTypeName": "EMAP_GRE",
+            "SampleCollectionMethod/MethodDescriptionText": "Approach snag slowly in flowing waters. Place net against snag facing up-current just below where the snag breaks surface. Use long-handled brush to scrub and wash organisms into net in a traveling sample >1 m down the snag. Brush sides. Sweep net through clean water to consolidate contents to cod end. Transfer contents directly to 250-mL jar; rinse organisms from cod end into jar w/wash bottle.",
+            "SampleCollectionEquipmentName": "Net/Non Tow (Other)",
+            "SamplePreparationMethod/MethodIdentifier": "GRE:Benthic",
+            "SamplePreparationMethod/MethodIdentifierContext": "EMAP-GRE",
+            "SamplePreparationMethod/MethodName": "Benthic macroinvertebrates",
+            "SamplePreparationMethod/MethodDescriptionText": "Dump contents of composite bucket (current and slack water samples) into 0.3-m diameter 500-um mesh sieve; wash sample gently (no nozzle) using onboard washdown hose. Gravel, large organic particles, and macrophytes should be thoroughly washed, inspected for clinging organisms and discarded. Transfer washed composite sample to 500-mL jar using wide-bore funnel; wash bottle w/ minimal water. Fill jar 1/3 full; top w/10% carbonate-buffered formalin (pH10) and concentrated rose bengal solution.",
+            "SampleContainerTypeName": "HDPE Bottle",
+            "SampleContainerColorName": "Opaque",
+            "ChemicalPreservativeUsedName": "10% carbonate-buffered formalin (pH10); top w/concentrated rose bengal solution.",
+            "SampleTransportStorageDescription": "Store the preserved sample upright in a secondary container until transport or shipment to the laboratory.",
+            "CharacteristicName": "Macroinvertebrates",
+            "ResultMeasureValue": "5",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "ResultCommentText": "Lab identified as:Corbicula fluminea; Life stage:NA; Functional feeding group:FILTERER; Habit:BURROWER",
+            "BiologicalIntentName": "Individual",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "GRE:BEN-Abundance",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "EMAP_GRE",
+            "ResultAnalyticalMethod/MethodName": "Laboratory Processing: Benthic Macroinvertebrates",
+            "ResultAnalyticalMethod/MethodQualifierTypeName": "...",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1131,
+              "physicalEndLineOneBased": 1133,
+              "rawRecordSha256": "362315d3052991eee470cc038847708a3b1038712b4733894eb350911a932b96",
+              "sourceFields": {
+                "OrganizationIdentifier": "EMAP_GRE",
+                "OrganizationFormalName": "EMAP-Great Rivers Ecosystems",
+                "MonitoringLocationIdentifier": "EMAP_GRE-GRW04449-675",
+                "MonitoringLocationName": "Missouri: Lower",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "10300101",
+                "LatitudeMeasure": "39.2036200000",
+                "LongitudeMeasure": "-94.1996550000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "095",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 2635,
+          "physicalEndLineOneBased": 2678,
+          "rawRecordSha256": "fa9d0cd968afd8d513164749467aebbe8f1013cc06bd529d2b9cfd34cd2270e1",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "EPA_R7_WQX",
+            "OrganizationFormalName": "EPA R7",
+            "ActivityIdentifier": "EPA_R7_WQX-BlueRiv2Bugs06",
+            "ActivityTypeCode": "Field Msr/Obs",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2006-09-13",
+            "ProjectIdentifier": "URBSTM",
+            "MonitoringLocationIdentifier": "EPA_R7_WQX-BlueRiv2",
+            "ActivityLocation/LatitudeMeasure": "38.9578700000",
+            "ActivityLocation/LongitudeMeasure": "-94.5591500000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "R7UAA1",
+            "SampleCollectionMethod/MethodIdentifierContext": "EPA_R7_WQX",
+            "SampleCollectionMethod/MethodName": "UAA Quality Assurance Project Plan",
+            "SampleCollectionMethod/MethodQualifierTypeName": "EPA_R7_WQX",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "30",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1186,
+              "physicalEndLineOneBased": 1188,
+              "rawRecordSha256": "6151257013b1ad53855e8a3674a80ab1a1f8146d3b8b524dd388a9f4d67ee1f8",
+              "sourceFields": {
+                "OrganizationIdentifier": "EPA_R7_WQX",
+                "OrganizationFormalName": "EPA R7",
+                "MonitoringLocationIdentifier": "EPA_R7_WQX-BlueRiv2",
+                "MonitoringLocationName": "Blue River 2",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "10300101",
+                "LatitudeMeasure": "38.9578700000",
+                "LongitudeMeasure": "-94.5591500000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "095",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3326,
+          "physicalEndLineOneBased": 3514,
+          "rawRecordSha256": "e32e72afd23c2491d873426c3a0f47cb8eae98529ec9436ae4e613b518aa993d",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "EPA_R7_WQX",
+            "OrganizationFormalName": "EPA R7",
+            "ActivityIdentifier": "EPA_R7_WQX-Brush1Bugs11",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "2011-07-05",
+            "ProjectIdentifier": "URBSTM",
+            "MonitoringLocationIdentifier": "EPA_R7_WQX-Brush1",
+            "HydrologicEvent": "Flood",
+            "ActivityLocation/LatitudeMeasure": "39.0342400000",
+            "ActivityLocation/LongitudeMeasure": "-94.6024900000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "2334.29B",
+            "SampleCollectionMethod/MethodIdentifierContext": "EPA_R7_WQX",
+            "SampleCollectionMethod/MethodName": "Sample Collection for Ambient Water Monitoring",
+            "SampleCollectionMethod/MethodQualifierTypeName": "EPA_R7_WQX",
+            "SampleCollectionMethod/MethodDescriptionText": "Water - Water samples are collected in the appropriate containers defined by thesample type.  These could be 1 L cubi-containers or plastic bottles, TOC vials, amber vials or bottles for organic parameters, plastic bottles for chlorophyll or TNTP, or sterile bottles for bacteria samples.  Sediment - Sediment samples are collected with a metal spoon or scoop.  For composited samples, a pie plate is used to collect sediment from the entire stream reach.  The sample is mixed and placed in 8 oz glass jars.  Periphyton - Periphyton is collected using an aspirator from the flat surface of rocks or other items in the stream.  The aspirated sample is collected in a VOA vial and removed from light.  Benthic macroinvertebrates - macroinvertebrate samples are collected with a D-frame collecting net.  A total of five 60 second kick samples are taken at each monitoring site and composited into one sample.  The composite sample is put into labeled sample jars and preserved with ethanol.",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "3",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1187,
+              "physicalEndLineOneBased": 1189,
+              "rawRecordSha256": "2dc879f77809d56810a5bcd904e3c72ff2a9f72fd2babf79f1a2d7afad64944a",
+              "sourceFields": {
+                "OrganizationIdentifier": "EPA_R7_WQX",
+                "OrganizationFormalName": "EPA R7",
+                "MonitoringLocationIdentifier": "EPA_R7_WQX-Brush1",
+                "MonitoringLocationName": "Brush Creek 1",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "10300101",
+                "LatitudeMeasure": "39.0342400000",
+                "LongitudeMeasure": "-94.6024900000",
+                "HorizontalCollectionMethodName": "GPS-Unspecified",
+                "HorizontalCoordinateReferenceSystemDatumName": "WGS84",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "095",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "29097:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 61,
+          "rowSha256": "eba3744202475c8bc976bce6abfeebb07e15dbddfd2b64118e6ef10fd2ed15a2",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "rowSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 160,
+          "rowSha256": "2024178f3d3888b48fa3649a0930fcab7088402999018ab8e85f12166c90244c",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "rowSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 211,
+          "rowSha256": "07536a3231120bb040bceffad161ebdbb0804c4e3be3655cb212fd4e2e1619af",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "rowSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 326,
+          "rowSha256": "461cbde1338523d7718b08c70cc53a78fe4dfd591c5a7b27124021757d01e722",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "rowSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: Kansas Department Of Health And Environment (21KAN001_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 61,
+          "physicalEndLineOneBased": 63,
+          "rawRecordSha256": "eba3744202475c8bc976bce6abfeebb07e15dbddfd2b64118e6ef10fd2ed15a2",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21KAN001_WQX",
+            "OrganizationFormalName": "Kansas Department Of Health And Environment",
+            "ActivityIdentifier": "21KAN001_WQX-SB20919840925",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1984-09-25",
+            "ProjectIdentifier": "SB",
+            "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+            "ActivityLocation/LatitudeMeasure": "37.2455500000",
+            "ActivityLocation/LongitudeMeasure": "-94.5664800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "STD_SB",
+            "SampleCollectionMethod/MethodIdentifierContext": "21KAN001_WQX",
+            "SampleCollectionMethod/MethodName": "Standard sampling method",
+            "SampleCollectionMethod/MethodQualifierTypeName": "KDHE",
+            "SampleCollectionMethod/MethodDescriptionText": "as outlined in http://www.kdheks.gov/environment/qmp_2000/download/2007/SCMP_QAMP.pdf",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "physicalEndLineOneBased": 88,
+              "rawRecordSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518",
+              "sourceFields": {
+                "OrganizationIdentifier": "21KAN001_WQX",
+                "OrganizationFormalName": "Kansas Department Of Health And Environment",
+                "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+                "MonitoringLocationName": "Spring River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "11070207",
+                "LatitudeMeasure": "37.2455500000",
+                "LongitudeMeasure": "-94.5664800000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "097",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 160,
+          "physicalEndLineOneBased": 162,
+          "rawRecordSha256": "2024178f3d3888b48fa3649a0930fcab7088402999018ab8e85f12166c90244c",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21KAN001_WQX",
+            "OrganizationFormalName": "Kansas Department Of Health And Environment",
+            "ActivityIdentifier": "21KAN001_WQX-SB20919860625",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1986-06-25",
+            "ProjectIdentifier": "SB",
+            "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+            "ActivityLocation/LatitudeMeasure": "37.2455500000",
+            "ActivityLocation/LongitudeMeasure": "-94.5664800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "STD_SB",
+            "SampleCollectionMethod/MethodIdentifierContext": "21KAN001_WQX",
+            "SampleCollectionMethod/MethodName": "Standard sampling method",
+            "SampleCollectionMethod/MethodQualifierTypeName": "KDHE",
+            "SampleCollectionMethod/MethodDescriptionText": "as outlined in http://www.kdheks.gov/environment/qmp_2000/download/2007/SCMP_QAMP.pdf",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "physicalEndLineOneBased": 88,
+              "rawRecordSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518",
+              "sourceFields": {
+                "OrganizationIdentifier": "21KAN001_WQX",
+                "OrganizationFormalName": "Kansas Department Of Health And Environment",
+                "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+                "MonitoringLocationName": "Spring River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "11070207",
+                "LatitudeMeasure": "37.2455500000",
+                "LongitudeMeasure": "-94.5664800000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "097",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 211,
+          "physicalEndLineOneBased": 217,
+          "rawRecordSha256": "07536a3231120bb040bceffad161ebdbb0804c4e3be3655cb212fd4e2e1619af",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21KAN001_WQX",
+            "OrganizationFormalName": "Kansas Department Of Health And Environment",
+            "ActivityIdentifier": "21KAN001_WQX-SB20919870922",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1987-09-22",
+            "ProjectIdentifier": "SB",
+            "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+            "ActivityLocation/LatitudeMeasure": "37.2455500000",
+            "ActivityLocation/LongitudeMeasure": "-94.5664800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "STD_SB",
+            "SampleCollectionMethod/MethodIdentifierContext": "21KAN001_WQX",
+            "SampleCollectionMethod/MethodName": "Standard sampling method",
+            "SampleCollectionMethod/MethodQualifierTypeName": "KDHE",
+            "SampleCollectionMethod/MethodDescriptionText": "as outlined in http://www.kdheks.gov/environment/qmp_2000/download/2007/SCMP_QAMP.pdf",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "physicalEndLineOneBased": 88,
+              "rawRecordSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518",
+              "sourceFields": {
+                "OrganizationIdentifier": "21KAN001_WQX",
+                "OrganizationFormalName": "Kansas Department Of Health And Environment",
+                "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+                "MonitoringLocationName": "Spring River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "11070207",
+                "LatitudeMeasure": "37.2455500000",
+                "LongitudeMeasure": "-94.5664800000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "097",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 326,
+          "physicalEndLineOneBased": 332,
+          "rawRecordSha256": "461cbde1338523d7718b08c70cc53a78fe4dfd591c5a7b27124021757d01e722",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "21KAN001_WQX",
+            "OrganizationFormalName": "Kansas Department Of Health And Environment",
+            "ActivityIdentifier": "21KAN001_WQX-SB20919890807",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1989-08-07",
+            "ProjectIdentifier": "SB",
+            "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+            "ActivityLocation/LatitudeMeasure": "37.2455500000",
+            "ActivityLocation/LongitudeMeasure": "-94.5664800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "STD_SB",
+            "SampleCollectionMethod/MethodIdentifierContext": "21KAN001_WQX",
+            "SampleCollectionMethod/MethodName": "Standard sampling method",
+            "SampleCollectionMethod/MethodQualifierTypeName": "KDHE",
+            "SampleCollectionMethod/MethodDescriptionText": "as outlined in http://www.kdheks.gov/environment/qmp_2000/download/2007/SCMP_QAMP.pdf",
+            "SampleCollectionEquipmentName": "D-Frame Net",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Final",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 86,
+              "physicalEndLineOneBased": 88,
+              "rawRecordSha256": "c281ee1048a5ab0d39749905a687f1e3cf49befce6ba9ccb4f309ca6b5df4518",
+              "sourceFields": {
+                "OrganizationIdentifier": "21KAN001_WQX",
+                "OrganizationFormalName": "Kansas Department Of Health And Environment",
+                "MonitoringLocationIdentifier": "21KAN001_WQX-SB209",
+                "MonitoringLocationName": "Spring River",
+                "MonitoringLocationTypeName": "River/Stream",
+                "HUCEightDigitCode": "11070207",
+                "LatitudeMeasure": "37.2455500000",
+                "LongitudeMeasure": "-94.5664800000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "29",
+                "CountyCode": "097",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

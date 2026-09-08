@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 1,
+  "method": "retained-wqp-field-count-station-join-v1",
+  "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+  "locatorConvention": "Zero-based parsed data-row index excludes header. Physical end line is one-based in the original CSV, including multiline fields. SHA-256 hashes exact csv-parse raw record bytes including its original trailing line terminator. Nonempty field values are lossless; omitted CSV fields were empty.",
+  "acquisitionReceiptSha256": "5e79b0c2c2b1e1eade17979f5902e50677bb27281aba876164c8f43eaa328c40",
+  "acquisitionCodeQualification": "The original preflight receipt codeCommit identifies repository HEAD during acquisition; its separately pinned recipe contains the actual executed acquisition bytes. This offline run's code_commit identifies interpretation code, not a new provider acquisition.",
+  "witnesses": [
+    {
+      "pairKey": "48291:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 1,
+          "rowSha256": "22c0c82753e600aa77ede6395c5b7e6d77ee8b2f47d9415561ef3502d510db01",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "rowSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 2,
+          "rowSha256": "54faaecdaf6be89cdb798cd0eee481ba8837262a1acae9c2c50e272478dffe16",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "rowSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3,
+          "rowSha256": "d703f98b7c74fd522d50028a84d8a80b61755b4415b549484543c528e83bdc8a",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "rowSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 6,
+          "rowSha256": "e2f582efe5f361845e732145b649ed1230e76f8d35238a0193b4b67b4915e4f7",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "rowSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 7,
+          "rowSha256": "864f90c448ceb070f4f53b9ff9c2430fbb099e7f0d8de014fb84f3ee68f0a6f4",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1,
+              "rowSha256": "5192e82c32d43a15b9674535907a05d135cddcf8ba5d5727dd2cf6c8bf1cfdad"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: National Park Service Water Resources Division (11NPSWRD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 1,
+          "physicalEndLineOneBased": 3,
+          "rawRecordSha256": "22c0c82753e600aa77ede6395c5b7e6d77ee8b2f47d9415561ef3502d510db01",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MCMC_197811180001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1978-11-18",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MCMC_197811180001",
+            "ActivityLocation/LatitudeMeasure": "30.4814138900",
+            "ActivityLocation/LongitudeMeasure": "-94.7797083340",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "87",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "physicalEndLineOneBased": 5,
+              "rawRecordSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+                "MonitoringLocationName": "Menard Creek at Hwy 146 Bridge",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "This station is positioned in the lower portion of the Menard Creek watershed.  Menard Creek is the only stream within the Preserve that drains to the Trinity River.  All other Preserve streams are part of the Neches watershed.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.4814138900",
+                "LongitudeMeasure": "-94.7797083340",
+                "HorizontalCollectionMethodName": "Interpolation-Satellite",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "291",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 2,
+          "physicalEndLineOneBased": 4,
+          "rawRecordSha256": "54faaecdaf6be89cdb798cd0eee481ba8837262a1acae9c2c50e272478dffe16",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MCMC_197903180001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1979-03-18",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MCMC_197903180001",
+            "ActivityLocation/LatitudeMeasure": "30.4814138900",
+            "ActivityLocation/LongitudeMeasure": "-94.7797083340",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "10",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "physicalEndLineOneBased": 5,
+              "rawRecordSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+                "MonitoringLocationName": "Menard Creek at Hwy 146 Bridge",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "This station is positioned in the lower portion of the Menard Creek watershed.  Menard Creek is the only stream within the Preserve that drains to the Trinity River.  All other Preserve streams are part of the Neches watershed.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.4814138900",
+                "LongitudeMeasure": "-94.7797083340",
+                "HorizontalCollectionMethodName": "Interpolation-Satellite",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "291",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 3,
+          "physicalEndLineOneBased": 5,
+          "rawRecordSha256": "d703f98b7c74fd522d50028a84d8a80b61755b4415b549484543c528e83bdc8a",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MCMC_197905180001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1979-05-18",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MCMC_197905180001",
+            "ActivityLocation/LatitudeMeasure": "30.4814138900",
+            "ActivityLocation/LongitudeMeasure": "-94.7797083340",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "11",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "physicalEndLineOneBased": 5,
+              "rawRecordSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+                "MonitoringLocationName": "Menard Creek at Hwy 146 Bridge",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "This station is positioned in the lower portion of the Menard Creek watershed.  Menard Creek is the only stream within the Preserve that drains to the Trinity River.  All other Preserve streams are part of the Neches watershed.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.4814138900",
+                "LongitudeMeasure": "-94.7797083340",
+                "HorizontalCollectionMethodName": "Interpolation-Satellite",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "291",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 6,
+          "physicalEndLineOneBased": 8,
+          "rawRecordSha256": "e2f582efe5f361845e732145b649ed1230e76f8d35238a0193b4b67b4915e4f7",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MCMC_197808140001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1978-08-14",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MCMC_197808140001",
+            "ActivityLocation/LatitudeMeasure": "30.4814138900",
+            "ActivityLocation/LongitudeMeasure": "-94.7797083340",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "11",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 3,
+              "physicalEndLineOneBased": 5,
+              "rawRecordSha256": "52d086bc6de13ed5d5e53d83c1e69a4b7188b7204d64dfa3376e8fd2d7e84048",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MCMC",
+                "MonitoringLocationName": "Menard Creek at Hwy 146 Bridge",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "This station is positioned in the lower portion of the Menard Creek watershed.  Menard Creek is the only stream within the Preserve that drains to the Trinity River.  All other Preserve streams are part of the Neches watershed.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.4814138900",
+                "LongitudeMeasure": "-94.7797083340",
+                "HorizontalCollectionMethodName": "Interpolation-Satellite",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "291",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 7,
+          "physicalEndLineOneBased": 9,
+          "rawRecordSha256": "864f90c448ceb070f4f53b9ff9c2430fbb099e7f0d8de014fb84f3ee68f0a6f4",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MC3_197903180001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1979-03-18",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC3",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MC3_197903180001",
+            "ActivityLocation/LatitudeMeasure": "30.4561800000",
+            "ActivityLocation/LongitudeMeasure": "-94.7368500000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "1",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 1,
+              "physicalEndLineOneBased": 3,
+              "rawRecordSha256": "5192e82c32d43a15b9674535907a05d135cddcf8ba5d5727dd2cf6c8bf1cfdad",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC3",
+                "MonitoringLocationName": "Menard Creek 3 - At Fuqua Hoop 'n Holler Road",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "Site established by R.C. Harrel (1975).  Menard Creek, approximately 50 meters above bridge (1976-1977) or 100 meters downstream (1978-1979) on Fuqua Hoop 'n Holler Road off Hwy 105-787.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.4561800000",
+                "LongitudeMeasure": "-94.7368500000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "291",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pairKey": "48373:corbicula-fluminea",
+      "resultDecodedSha256": "9c65bbc591505c8360af95d489febe28a44eb95e8d3e05233e6f762a82ea4425",
+      "stationDecodedSha256": "4699429f14dcce5547809914446b03fe42998951643459ddb07017c3b09ac25b",
+      "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+      "positiveRows": [
+        {
+          "parsedRowIndexZeroBased": 4,
+          "rowSha256": "d10efc1a65f4b2a6ec9cce0f8c6a2d09b77b329ef4f49d78bec06a3ef8efae5d",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 0,
+              "rowSha256": "9441ec87605685108f624cab0682368ffb73a61d453ef5dd644e5cb9cae9ff84"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 5,
+          "rowSha256": "a0ba36704163600e2ca01ff2996be2dfb1c3eae3c925a1d194ca99105a5badbd",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2,
+              "rowSha256": "0bd12dbe9ece54b3a5fd91dbf88d225c2475e51b156a84dc5df8be6ffa0ed3a0"
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 8,
+          "rowSha256": "080f1d043f7399b642b4f30f31f50daeafa39673707b4442482d26c390840ec2",
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2,
+              "rowSha256": "0bd12dbe9ece54b3a5fd91dbf88d225c2475e51b156a84dc5df8be6ffa0ed3a0"
+            }
+          ]
+        }
+      ],
+      "attribution": "Data contributors: National Park Service Water Resources Division (11NPSWRD_WQX). National Water Quality Monitoring Council (2026), Water Quality Portal, accessed 2026-09-08, https://doi.org/10.5066/P9QRKUVJ. Exact queries are linked from the source record. CEDEN: California Environmental Data Exchange Network, State Water Resources Control Board, accessed 2026-09-08, https://ceden.waterboards.ca.gov/.",
+      "resultUrl": "https://www.waterqualitydata.us/data/Result/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no&dataProfile=biological",
+      "stationUrl": "https://www.waterqualitydata.us/data/Station/search?countrycode=US&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "resultRetrievedAt": "2026-09-08T11:20:42.312Z",
+      "stationRetrievedAt": "2026-09-08T11:20:00.192Z",
+      "sourceRows": [
+        {
+          "parsedRowIndexZeroBased": 4,
+          "physicalEndLineOneBased": 6,
+          "rawRecordSha256": "d10efc1a65f4b2a6ec9cce0f8c6a2d09b77b329ef4f49d78bec06a3ef8efae5d",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MC1_197811180001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1978-11-18",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC1",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MC1_197811180001",
+            "ActivityLocation/LatitudeMeasure": "30.5691700000",
+            "ActivityLocation/LongitudeMeasure": "-94.7003500000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "2",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 0,
+              "physicalEndLineOneBased": 2,
+              "rawRecordSha256": "9441ec87605685108f624cab0682368ffb73a61d453ef5dd644e5cb9cae9ff84",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC1",
+                "MonitoringLocationName": "Menard Creek 1 - 30m Downstream from FR943 West of Segno",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "Site established by R.C. Harrel (1975).  Menard Creek, approximately 30 meters downstream from bridge crossing FR 943 west of Segno.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.5691700000",
+                "LongitudeMeasure": "-94.7003500000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "373",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 5,
+          "physicalEndLineOneBased": 7,
+          "rawRecordSha256": "a0ba36704163600e2ca01ff2996be2dfb1c3eae3c925a1d194ca99105a5badbd",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MC5_197811180001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1978-11-18",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC5",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MC5_197811180001",
+            "ActivityLocation/LatitudeMeasure": "30.4934700000",
+            "ActivityLocation/LongitudeMeasure": "-94.8306800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "31",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2,
+              "physicalEndLineOneBased": 4,
+              "rawRecordSha256": "0bd12dbe9ece54b3a5fd91dbf88d225c2475e51b156a84dc5df8be6ffa0ed3a0",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC5",
+                "MonitoringLocationName": "Menard Creek 5 - At Hwy 2610 Bridge",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "Site established by R.C. Harrel (1975).  Menard Creek, approximately 30 meters downstream from bridge crossing Hwy 2610.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.4934700000",
+                "LongitudeMeasure": "-94.8306800000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "373",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        },
+        {
+          "parsedRowIndexZeroBased": 8,
+          "physicalEndLineOneBased": 10,
+          "rawRecordSha256": "080f1d043f7399b642b4f30f31f50daeafa39673707b4442482d26c390840ec2",
+          "disposition": "positive",
+          "sourceFields": {
+            "OrganizationIdentifier": "11NPSWRD_WQX",
+            "OrganizationFormalName": "National Park Service Water Resources Division",
+            "ActivityIdentifier": "11NPSWRD_WQX-BITH_MC5_197808140001",
+            "ActivityTypeCode": "Sample-Routine",
+            "ActivityMediaName": "Biological",
+            "ActivityStartDate": "1978-08-14",
+            "ProjectIdentifier": "BITH_HAR",
+            "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC5",
+            "ActivityCommentText": "Note: Observed taxa (from 1977-1981) may have been updated during data entry due to changes in ITIS taxonomy since the data were collected.  If a taxon was changed, the original taxon is noted in the Result Comment.  Organization ActivityID=BITH_MC5_197808140001",
+            "ActivityLocation/LatitudeMeasure": "30.4934700000",
+            "ActivityLocation/LongitudeMeasure": "-94.8306800000",
+            "AssemblageSampledName": "Benthic Macroinvertebrates",
+            "SampleCollectionMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "SampleCollectionMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "SampleCollectionMethod/MethodName": "Harrel's Benthic Macroinvertebrate Sample Collection Procedure",
+            "SampleCollectionMethod/MethodDescriptionText": "Benthic macroinvertebrates were collected seasonally using a petite Ponar dredge (15.24 cm by 15.24 cm).  Six samples were collected at each station.  Each sample was washed through a No. 30 mesh wash bucket, placed in quart jars, and preserved and stained with a mixture of 10 percent formalin and rose bengal dye (Mason and Yevich, 1967).  The samples were later washed in the laboratory through a No. 30 U.S. Standard Soil Sieve.  The organisms were later picked and stored in 70 percent ethanol until they were sorted, identified, and enumerated.  Harrel, R.C. and S.D. Commander; 1980; Water Quality Monitoring in the Big Thicket National Preserve (4 of 5), Turkey Creek Unit; Lamar Univerity; 94p",
+            "SampleCollectionEquipmentName": "Benthic Dredge (Other)",
+            "CharacteristicName": "Count",
+            "ResultMeasureValue": "32",
+            "ResultMeasure/MeasureUnitCode": "count",
+            "ResultStatusIdentifier": "Accepted",
+            "ResultValueTypeName": "Actual",
+            "BiologicalIntentName": "Population Census",
+            "SubjectTaxonomicName": "Corbicula fluminea",
+            "ResultAnalyticalMethod/MethodIdentifier": "BITH_HAR_BIO",
+            "ResultAnalyticalMethod/MethodIdentifierContext": "11NPSWRD_WQX",
+            "ResultAnalyticalMethod/MethodName": "Harrel's Benthic Macroinvertebrate Analytical Procedure",
+            "ProviderName": "STORET"
+          },
+          "stationRows": [
+            {
+              "parsedRowIndexZeroBased": 2,
+              "physicalEndLineOneBased": 4,
+              "rawRecordSha256": "0bd12dbe9ece54b3a5fd91dbf88d225c2475e51b156a84dc5df8be6ffa0ed3a0",
+              "sourceFields": {
+                "OrganizationIdentifier": "11NPSWRD_WQX",
+                "OrganizationFormalName": "National Park Service Water Resources Division",
+                "MonitoringLocationIdentifier": "11NPSWRD_WQX-BITH_MC5",
+                "MonitoringLocationName": "Menard Creek 5 - At Hwy 2610 Bridge",
+                "MonitoringLocationTypeName": "River/Stream",
+                "MonitoringLocationDescriptionText": "Site established by R.C. Harrel (1975).  Menard Creek, approximately 30 meters downstream from bridge crossing Hwy 2610.",
+                "HUCEightDigitCode": "12030202",
+                "LatitudeMeasure": "30.4934700000",
+                "LongitudeMeasure": "-94.8306800000",
+                "HorizontalCollectionMethodName": "Interpolation-Digital Map Source",
+                "HorizontalCoordinateReferenceSystemDatumName": "NAD83",
+                "CountryCode": "US",
+                "StateCode": "48",
+                "CountyCode": "373",
+                "ProviderName": "STORET"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

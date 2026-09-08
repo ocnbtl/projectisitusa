@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T122111Z__water-quality-portal__2b144c7e4fa0",
+  "status": "complete",
+  "started_at": "2026-09-08T12:21:11.999Z",
+  "finished_at": "2026-09-08T12:21:15.827Z",
+  "actor_type": "adapter",
+  "actor_id": "wqp-retained-field-counts@1.0.0",
+  "source_id": "water-quality-portal",
+  "source_registry_hash": "81f4f11469ded06e8beb405368987337b2ffc8b0348f66350840a03bb420781c",
+  "adapter_id": "wqp-retained-field-counts",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "1e336b124c322c4ad49daebb0d9fc5b275ccf68de66ee22c9bd4e4097ea4d3e9",
+  "code_commit": "04e78aaa8f2e0ad3ea57ec28c2a654cacc162ebb",
+  "parameter_hash": "2b144c7e4fa0569ce212e34e4052cc2c9916e05a0bc6759ee26a76d43427e1a7",
+  "parameters": {
+    "methodReviewSha256": "b254bb37bff9d8bbcd9a5455764f41b1ab5a7c7ceb03cb513269a458c4d9e009",
+    "mode": "retained-field-positive-count",
+    "stateCode": "CA",
+    "candidatePairs": [
+      "06001:corbicula-fluminea",
+      "06013:corbicula-fluminea",
+      "06037:corbicula-fluminea",
+      "06041:corbicula-fluminea",
+      "06049:corbicula-fluminea",
+      "06053:corbicula-fluminea",
+      "06055:corbicula-fluminea",
+      "06065:corbicula-fluminea",
+      "06067:corbicula-fluminea",
+      "06069:corbicula-fluminea",
+      "06079:corbicula-fluminea",
+      "06085:corbicula-fluminea",
+      "06087:corbicula-fluminea",
+      "06093:corbicula-fluminea"
+    ],
+    "candidateLimit": 14
+  },
+  "requested_scope": {
+    "state_code": "CA",
+    "county_fips": [
+      "06001",
+      "06013",
+      "06037",
+      "06041",
+      "06049",
+      "06053",
+      "06055",
+      "06065",
+      "06067",
+      "06069",
+      "06079",
+      "06085",
+      "06087",
+      "06093"
+    ],
+    "species_ids": [
+      "corbicula-fluminea"
+    ],
+    "pair_keys": [
+      "06001:corbicula-fluminea",
+      "06013:corbicula-fluminea",
+      "06037:corbicula-fluminea",
+      "06041:corbicula-fluminea",
+      "06049:corbicula-fluminea",
+      "06053:corbicula-fluminea",
+      "06055:corbicula-fluminea",
+      "06065:corbicula-fluminea",
+      "06067:corbicula-fluminea",
+      "06069:corbicula-fluminea",
+      "06079:corbicula-fluminea",
+      "06085:corbicula-fluminea",
+      "06087:corbicula-fluminea",
+      "06093:corbicula-fluminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T122111Z__water-quality-portal__2b144c7e4fa0/artifacts/wqp-field-witnesses.json",
+      "sha256": "5bf250b23147526567404baa424e83875133be8812ca2e23b6c889dbfea10aff",
+      "bytes": 342168,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T122111Z__water-quality-portal__2b144c7e4fa0/assertions.ndjson",
+      "sha256": "f46c97101bfdc0b586ffdf0257d2592b88334b32b1ec37074d9e5ef766bb745e",
+      "bytes": 57569,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122111Z__water-quality-portal__2b144c7e4fa0/reviews.ndjson",
+      "sha256": "63cd9995031a1995ad3012f092ec37c7b9da998cab8e4ffd634db8333968cf9f",
+      "bytes": 13272,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122111Z__water-quality-portal__2b144c7e4fa0/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T122111Z__water-quality-portal__2b144c7e4fa0/outcomes.ndjson",
+      "sha256": "fc397bc6f27cbf5d0539876218b3cf6ae97060602cae636da7c5567d68e4e2e6",
+      "bytes": 14406,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 82,
+    "assertion_events": 14,
+    "review_events": 14,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Positive biological results support sampled occurrence. Zero or missing rows require explicit protocol review."
+  ],
+  "source_warnings": [
+    "Historical sampled occurrence only; current persistence, establishment, countywide prevalence and protocol completion are not established.",
+    "The WQX 2.2 profile excludes USGS data added after March 11,2024; complete query response counts are not a complete current national inventory.",
+    "Zero, blank, negative, provisional, quality-control, toxicity, unidentified and method-held rows create no absence or non-detection claim.",
+    "Organization/activity/site identities and anonymous raw result locators are preserved. Identical disclosed fields need not identify the same specimen; repeated rows are never summed into progress.",
+    "County assignment follows unambiguous official Station metadata. Coarse generalized map boundaries may omit open water or differ at river borders; explicit source county is not replaced by an approximate map.",
+    "Public source facts are reproduced with agency and WQP attribution; no blanketCC0 license or provider endorsement is claimed."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source water-quality-portal --state CA --candidate-file ops/national-research/plans/wqp-field-counts-20260908-r13/CA.json --output-root src/data/research/runs --stage-canonical true --pairs 06001:corbicula-fluminea,06013:corbicula-fluminea,06037:corbicula-fluminea,06041:corbicula-fluminea,06049:corbicula-fluminea,06053:corbicula-fluminea,06055:corbicula-fluminea,06065:corbicula-fluminea,06067:corbicula-fluminea,06069:corbicula-fluminea,06079:corbicula-fluminea,06085:corbicula-fluminea,06087:corbicula-fluminea,06093:corbicula-fluminea"
+}
