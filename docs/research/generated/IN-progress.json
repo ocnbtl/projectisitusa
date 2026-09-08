@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 414,
+    "applicableSpeciesCount": 415,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2090,
+    "unknownSpeciesCount": 2089,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 103,
-    "derivedApplicableSpeciesCount": 311,
+    "derivedApplicableSpeciesCount": 312,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 600,
+    "boundedAcquisitionSpeciesCount": 601,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 230368,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 9795,
+    "verifiedPresent": 9816,
     "verifiedAbsent": 92,
     "notDetected": 0,
-    "researchedUnresolved": 34810,
-    "notResearched": 185671,
-    "determinationCoveragePercent": 4.29,
+    "researchedUnresolved": 34791,
+    "notResearched": 185669,
+    "determinationCoveragePercent": 4.3,
     "researchCoveragePercent": 19.4,
-    "explicitOutcomePairCount": 44697,
-    "explicitOutcomeCoveragePercent": 19.4024,
+    "explicitOutcomePairCount": 44699,
+    "explicitOutcomeCoveragePercent": 19.4033,
     "conflictCount": 0,
-    "evidenceRecordCount": 11483,
+    "evidenceRecordCount": 11504,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11483,
-    "rejectionRecordCount": 1444,
-    "researchRunCount": 41,
+    "runEvidenceRecordCount": 11504,
+    "rejectionRecordCount": 1446,
+    "researchRunCount": 42,
     "boundedAcquisition": {
-      "speciesCount": 600,
-      "totalPairs": 55200,
-      "verifiedPresent": 9795,
+      "speciesCount": 601,
+      "totalPairs": 55292,
+      "verifiedPresent": 9816,
       "verifiedAbsent": 92,
       "notDetected": 0,
-      "researchedUnresolved": 34810,
-      "notResearched": 10503,
-      "researchCoveragePercent": 80.97,
-      "explicitOutcomePairs": 44697,
-      "explicitOutcomeCoveragePercent": 80.9728
+      "researchedUnresolved": 34791,
+      "notResearched": 10593,
+      "researchCoveragePercent": 80.84,
+      "explicitOutcomePairs": 44699,
+      "explicitOutcomeCoveragePercent": 80.8417
     }
   },
   "migrationCandidates": {
@@ -393,9 +393,9 @@
       "authority": "National Water Quality Monitoring Council",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-08T13:53:44.347Z",
+      "evidencePairCount": 21,
+      "screenedSpeciesCount": 2
     },
     {
       "id": "usgs-bbs",
@@ -532,17 +532,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2400,
-    "applicableCells": 449,
-    "notApplicableCells": 1951,
+    "totalCells": 2404,
+    "applicableCells": 450,
+    "notApplicableCells": 1954,
     "completeCells": 166,
-    "incompleteCells": 283,
+    "incompleteCells": 284,
     "blockedCells": 0,
     "currentCells": 153,
     "staleCells": 13,
-    "undatedCells": 283,
-    "applicableCompletionPercent": 36.97,
-    "currentCompletePercent": 34.08,
+    "undatedCells": 284,
+    "applicableCompletionPercent": 36.89,
+    "currentCompletePercent": 34,
     "regulatedAndHighApplicableCells": 87,
     "regulatedAndHighCurrentCompleteCells": 86,
     "regulatedAndHighCurrentCompletePercent": 98.85,
@@ -568,9 +568,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 21,
+        "applicableCells": 22,
         "currentCompleteCells": 8,
-        "currentCompletePercent": 38.1
+        "currentCompletePercent": 36.36
       }
     ],
     "priorityCompletion": [
@@ -588,9 +588,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 336,
+        "applicableCells": 337,
         "currentCompleteCells": 54,
-        "currentCompletePercent": 16.07
+        "currentCompletePercent": 16.02
       },
       {
         "priority": "baseline",
@@ -608,7 +608,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 414,
+        "applicableCells": 415,
         "currentCompleteCells": 131,
         "processed": false
       },
@@ -1474,6 +1474,18 @@
       "priorityScore": 90001
     },
     {
+      "speciesId": "neogobius-melanostomus",
+      "commonName": "Round Goby",
+      "scientificName": "Neogobius melanostomus",
+      "category": "wildlife",
+      "notResearchedCountyCount": 90,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 90001
+    },
+    {
       "speciesId": "salix-alba",
       "commonName": "White willow",
       "scientificName": "Salix alba",
@@ -1801,18 +1813,6 @@
       "speciesId": "nicandra-physalodes",
       "commonName": "Apple of Peru",
       "scientificName": "Nicandra physalodes",
-      "category": "plants",
-      "notResearchedCountyCount": 88,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 88001
-    },
-    {
-      "speciesId": "persicaria-maculosa",
-      "commonName": "Lady's Thumb",
-      "scientificName": "Persicaria maculosa",
       "category": "plants",
       "notResearchedCountyCount": 88,
       "researchedUnresolvedCountyCount": 0,

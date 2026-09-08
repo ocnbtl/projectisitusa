@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "kind": "wqp-fish-positive-national-reconciliation",
+  "recordedAt": "2026-09-08T14:12:43.668Z",
+  "sourceCommit": "9da2ce09d2430f56e4436542423efe4c3b63d059",
+  "baselineCommit": "e11de84323ce38d0f64ff6ded8a3f47e74114760",
+  "asOf": "2026-09-08",
+  "jurisdictionsVerified": 51,
+  "jurisdictionsWithNewEvidence": 13,
+  "counties": 3144,
+  "catalogSpecies": 2504,
+  "denominator": 7872576,
+  "before": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 314879,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306768,
+    "notResearched": 6246975,
+    "explicitOutcomePairCount": 1581247,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462313,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432183,
+    "rejectionRecordCount": 65920,
+    "researchRunCount": 2127
+  },
+  "after": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 314946,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306725,
+    "notResearched": 6246951,
+    "explicitOutcomePairCount": 1581271,
+    "conflictCount": 0,
+    "evidenceRecordCount": 462380,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432250,
+    "rejectionRecordCount": 65929,
+    "researchRunCount": 2140
+  },
+  "delta": {
+    "countyCount": 0,
+    "totalPairs": 0,
+    "resolvablePairCount": 0,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 67,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": -43,
+    "notResearched": -24,
+    "explicitOutcomePairCount": 24,
+    "conflictCount": 0,
+    "evidenceRecordCount": 67,
+    "bootstrapEvidenceRecordCount": 0,
+    "runEvidenceRecordCount": 67,
+    "rejectionRecordCount": 9,
+    "researchRunCount": 13
+  },
+  "determinationCount": 318664,
+  "netUniqueDeterminations": 67,
+  "priorStatusCounts": {
+    "researched-unresolved": 43,
+    "not-researched": 24
+  },
+  "countyFilesCompared": 423,
+  "removedPairs": 0,
+  "unexpectedExistingPairChanges": 0,
+  "derivedStateApplicabilityOnlyChanges": 152,
+  "applicabilityExplanation": "Exactly 152 existing noncandidate rows changed only unknown to applicable because reviewed county presence establishes state applicability. These are not new determinations.",
+  "addedExplicitNotResearchedRows": 311,
+  "defaultExplanation": "The 311 newly explicit untouched rows were already included through sparse defaults in the full denominator. They are neither newly researched pairs nor determinations.",
+  "oldClamHoldsUnchanged": [
+    "18149:dreissena-polymorpha",
+    "20167:dreissena-polymorpha",
+    "36123:dreissena-polymorpha",
+    "40011:dreissena-polymorpha"
+  ],
+  "newImmutableRuns": 13,
+  "groupedRejectionRecords": 9,
+  "sourceReplayRequests": 0,
+  "sourceAudit": {
+    "checkedAt": "2026-09-08T13:55:59.549192+00:00",
+    "passed": true,
+    "actor": "MAIN",
+    "parser": "Independent Python stdlib csv parser and independently expressed acceptance checks",
+    "states": 13,
+    "counts": {
+      "originalProfileRows": 2396,
+      "resultWitnesses": 611,
+      "stationReferences": 611,
+      "positiveRows": 346,
+      "pairs": 67,
+      "excludedRows": 265
+    },
+    "reports": [
+      {
+        "state": "IN",
+        "pairs": 21,
+        "run": "20260908T135340Z__water-quality-portal__9f6860a40e13",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "OH",
+        "pairs": 8,
+        "run": "20260908T135345Z__water-quality-portal__4a35cd5133ef",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "AR",
+        "pairs": 3,
+        "run": "20260908T135348Z__water-quality-portal__5a5a03f69839",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "IA",
+        "pairs": 2,
+        "run": "20260908T135351Z__water-quality-portal__711695bc2a33",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "KS",
+        "pairs": 1,
+        "run": "20260908T135355Z__water-quality-portal__576bfd6a6530",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "KY",
+        "pairs": 1,
+        "run": "20260908T135358Z__water-quality-portal__6b9321ac9bfb",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "LA",
+        "pairs": 6,
+        "run": "20260908T135402Z__water-quality-portal__7f842f4fcc85",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "MI",
+        "pairs": 13,
+        "run": "20260908T135405Z__water-quality-portal__eb608c5008dc",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "MO",
+        "pairs": 5,
+        "run": "20260908T135409Z__water-quality-portal__4d4226fb8589",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "MS",
+        "pairs": 3,
+        "run": "20260908T135412Z__water-quality-portal__fd1da22de672",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "SD",
+        "pairs": 1,
+        "run": "20260908T135415Z__water-quality-portal__9c8286491687",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "TN",
+        "pairs": 1,
+        "run": "20260908T135419Z__water-quality-portal__4e9c7508de36",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      },
+      {
+        "state": "WI",
+        "pairs": 2,
+        "run": "20260908T135422Z__water-quality-portal__0516cdca3380",
+        "sourceFieldsHashesPhysicalLinesJoinsAndDispositionsPassed": true
+      }
+    ],
+    "providerRequests": 0,
+    "compiledGains": null
+  },
+  "canonicalTamperCasesRejected": 32,
+  "originalAcquisitionAccounting": {
+    "candidateGets": 10,
+    "candidateSuccesses": 8,
+    "candidateFailures": 2,
+    "methodContextGets": 6,
+    "mainContextWebOperations": 6,
+    "independentReviewerWebOperations": {
+      "silverCarp": 11,
+      "roundGoby": 12
+    },
+    "qualification": "Programmatic GET counts and web-tool operations are separate. No new source requests occurred during canonical replay."
+  },
+  "workerExecutionAttempts": 0,
+  "acceptedWorkerExecutionAttempts": 0,
+  "executionPolicy": "Two independently leased source reviews supplied original witnesses. MAIN registered the method, passed all 67 witness fixtures and version 1 regression, then executed 13 sequential canonical runs. A separate Python parser audited every scoped source row and disposition.",
+  "checks": [
+    {
+      "name": "source-coverage-index",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --write",
+      "startedAt": "2026-09-08T14:01:03.267Z",
+      "finishedAt": "2026-09-08T14:01:09.489Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-source-coverage-index.log"
+    },
+    {
+      "name": "verify-all",
+      "command": "--import tsx scripts/verify-all-state-research.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T14:01:09.490Z",
+      "finishedAt": "2026-09-08T14:07:58.095Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-verify-all.log"
+    },
+    {
+      "name": "state-projections",
+      "command": "--import tsx scripts/check-state-research-projections.ts",
+      "startedAt": "2026-09-08T14:07:58.095Z",
+      "finishedAt": "2026-09-08T14:09:33.860Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-state-projections.log"
+    },
+    {
+      "name": "data-integrity",
+      "command": "--import tsx scripts/check-data-integrity.ts",
+      "startedAt": "2026-09-08T14:09:33.860Z",
+      "finishedAt": "2026-09-08T14:09:34.278Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-data-integrity.log"
+    },
+    {
+      "name": "national-config",
+      "command": "--import tsx scripts/test-national-research-compiler.ts",
+      "startedAt": "2026-09-08T14:09:34.279Z",
+      "finishedAt": "2026-09-08T14:09:34.496Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-national-config.log"
+    },
+    {
+      "name": "coverage-check",
+      "command": "--import tsx scripts/build-source-coverage-index.ts --check",
+      "startedAt": "2026-09-08T14:09:34.497Z",
+      "finishedAt": "2026-09-08T14:09:40.400Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-coverage-check.log"
+    },
+    {
+      "name": "question-projection",
+      "command": "--import tsx scripts/check-question-assessment-projection.ts",
+      "startedAt": "2026-09-08T14:09:40.400Z",
+      "finishedAt": "2026-09-08T14:09:42.055Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-question-projection.log"
+    },
+    {
+      "name": "orchestration",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs validate --root ops/national-research",
+      "startedAt": "2026-09-08T14:09:42.056Z",
+      "finishedAt": "2026-09-08T14:09:42.717Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-orchestration.log"
+    },
+    {
+      "name": "operations-dashboard",
+      "command": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs dashboard --root ops/national-research --as-of 2026-09-08T14:01:03.266Z",
+      "startedAt": "2026-09-08T14:09:42.717Z",
+      "finishedAt": "2026-09-08T14:09:43.461Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-operations-dashboard.log"
+    },
+    {
+      "name": "readiness-dashboard",
+      "command": "--import tsx scripts/build-national-readiness-dashboard.ts --as-of 2026-09-08",
+      "startedAt": "2026-09-08T14:09:43.462Z",
+      "finishedAt": "2026-09-08T14:09:44.388Z",
+      "exitCode": 0,
+      "log": ".cache/research/campaigns/20260908-r14-wqp-expansion/national-final-readiness-dashboard.log"
+    }
+  ],
+  "fullResearchIntegritySuite": {
+    "status": "running",
+    "qualification": "Final outcome is recorded in the later release checkpoint; not claimed complete here."
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/wqp-fish-positive-national-validation-20260908-r14.json.gz",
+    "bytes": 34761,
+    "sha256": "1468099911c2f3d21844c02ebde992bbb625cf19f822020a2e72e990919b5ee9"
+  },
+  "researchPublication": {
+    "uploaded": false,
+    "promoted": false,
+    "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z"
+  },
+  "limitations": [
+    "Historical sampled occurrence does not establish current persistence, establishment or countywide prevalence.",
+    "Existing clam holds remain unchanged. Zero, rejected or unreviewed rows create no absence or non-detection.",
+    "Source dates, publisher attribution, raw bytes, measurement units and location caveats remain intact.",
+    "Research completion, determination coverage and applicability accounting remain separate."
+  ]
+}
