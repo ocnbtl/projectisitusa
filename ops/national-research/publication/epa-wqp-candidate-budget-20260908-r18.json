@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-research-and-runtime-candidate-storage-plan",
+  "recordedAt": "2026-09-08T19:56:04.758Z",
+  "releaseId": "research-d97781bd1954-14588e7a570b4c3d",
+  "sourceCommit": "d97781bd1954c93f00ab5e62d106a45b41a3c0fe",
+  "manifest": {
+    "path": "ops/national-research/publication/research-data-manifest.json",
+    "bytes": 2047966,
+    "sha256": "5e1452bd741fcb3a2466f8fb6b7fb29eaf37fa4d15aec668587f52e179d139bd"
+  },
+  "representationInventory": {
+    "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/r2-inventory-20260908.json",
+    "bytes": 19808943,
+    "sha256": "1aafd8d09933279abdb9b8d99bae4035944455379093411662a6c5a28e2dbd85",
+    "observedAt": "2026-09-08T19:18:48.825Z"
+  },
+  "bucketBaseline": {
+    "observedAt": "2026-09-08T19:18:48.825Z",
+    "bytes": 7837439604,
+    "objects": 29059
+  },
+  "candidateNewObjects": 3195,
+  "candidateAdditionalBytes": 131250785,
+  "appDataAdditionalBytesUpperBound": 1413134,
+  "projectedBucketBytes": 7970103523,
+  "projectSafetyCeilingBytes": 8000000000,
+  "remainingSafetyHeadroomBytes": 29896477,
+  "supersededUnuploadedCandidate": {
+    "path": "ops/national-research/publication/wqp-common-carp-candidate-budget-20260908-r15.json",
+    "releaseId": "research-f77d3ef3bb11-f990aa9747ec71ce",
+    "reservationBytes": 130441650
+  },
+  "requiredResearchReservationBytes": 131250785,
+  "withinStorageCeiling": true,
+  "providerWritesAtPlanning": 0,
+  "pointerPromotions": 0,
+  "nextOrdinaryPromotionAt": "2026-09-13T06:56:53.282Z",
+  "providerUsage": {
+    "schemaVersion": 1,
+    "observedAt": "2026-09-08T19:18:33.3171065+00:00",
+    "source": "Cloudflare signed-in Billing / Billable usage visible tab",
+    "cycle": "2026-08-18 through 2026-09-17",
+    "usageThrough": "2026-09-08",
+    "classADisplayed": "29.77k",
+    "classBDisplayed": "65.7k",
+    "storageDisplayed": "4.55 GB-months",
+    "billableUsage": 0,
+    "displayedCostUsd": 0,
+    "displayedProjectedCostUsd": 0,
+    "conservativeClassAInput": 31000,
+    "conservativeClassBInput": 67000,
+    "qualification": "Visible current billing view reobserved; provider aggregation may lag. Inputs include margin above rounded values and recent bounded verification operations. Exact bucket inventory is acquired separately."
+  },
+  "limitations": [
+    "The research candidate replaces the prior unuploaded reservation; both are not additive.",
+    "Runtime data is budgeted conservatively as two new objects even if a matching immutable object exists.",
+    "This is an exact dated inventory plus an offline compressed-size estimate. Refresh inventory and usage before eventual research upload.",
+    "Ordinary national research promotion remains held until September13. Runtime app-data publication is separate and does not change the research pointer.",
+    "Dashboard aggregation may lag; operation inputs include explicit headroom above the displayed rounded counters."
+  ]
+}

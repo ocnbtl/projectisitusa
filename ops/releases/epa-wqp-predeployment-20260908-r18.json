@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-wqp-predeployment",
+  "recordedAt": "2026-09-08T19:58:21.603Z",
+  "status": "local-required-gates-passed-production-pending",
+  "baseCommit": "d97781bd1954c93f00ab5e62d106a45b41a3c0fe",
+  "rollbackCommit": "0fea5725577ca361dfe376aedc832867c1fcf943",
+  "rollbackDeploymentId": "dpl_Bt1mkLJtfSubq62VJzVBQydtoyP5",
+  "behavior": "A reusable offline EPA fish-count adapter now validates original counts, site and taxon witnesses across45 states. Together with42 WQP source assertions it adds480 unique historical county-species determinations. Updated immutable app bundles expose the compiled Alabama common-carp record for Talladega County while retaining the small static page response.",
+  "researchReconciliation": "ops/national-research/evaluations/epa-wqp-national-reconciliation-20260908-r18.json",
+  "localResearch": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 315578,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306699,
+    "notResearched": 6246345,
+    "explicitOutcomePairCount": 1581877,
+    "conflictCount": 0,
+    "evidenceRecordCount": 463019,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 432889,
+    "rejectionRecordCount": 66063,
+    "researchRunCount": 2189,
+    "determinations": 319296,
+    "netUniqueDeterminations": 480,
+    "newRuns": 47,
+    "sourceAssertions": 487,
+    "overlappingPairs": 7,
+    "sourceReplayRequests": 0,
+    "priorStatusCounts": {
+      "not-researched": 454,
+      "researched-unresolved": 26
+    },
+    "heldPairsRemainingUndetermined": 1,
+    "addedExplicitDefaultsNotResearchProgress": 3927
+  },
+  "publicationBudget": "ops/national-research/publication/epa-wqp-candidate-budget-20260908-r18.json",
+  "requiredGateCompletion": {
+    "schemaVersion": 1,
+    "kind": "research-integrity-sequential-gate-completion",
+    "recordedAt": "2026-09-08T19:56:04.709Z",
+    "status": "all-required-checks-passed",
+    "nationalSequence": [
+      {
+        "name": "compile-all",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/compile-all-state-research.ts",
+          "--as-of",
+          "2026-09-08"
+        ],
+        "startedAt": "2026-09-08T19:09:02.310Z",
+        "finishedAt": "2026-09-08T19:12:33.670Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/compile-all-gate.log"
+      },
+      {
+        "name": "national-final",
+        "args": [
+          ".cache/research/campaigns/20260908-r18-epa-nrsa/verify-national-final.cjs"
+        ],
+        "startedAt": "2026-09-08T19:12:33.671Z",
+        "finishedAt": "2026-09-08T19:22:07.649Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/national-final-gate.log"
+      }
+    ],
+    "publicationIntegritySequence": [
+      {
+        "name": "runtime-assets-prepare",
+        "args": [
+          "scripts/prepare-runtime-assets.mjs",
+          "--write"
+        ],
+        "startedAt": "2026-09-08T19:24:49.987Z",
+        "finishedAt": "2026-09-08T19:24:55.885Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/runtime-assets-prepare-gate.log"
+      },
+      {
+        "name": "publication-manifest-write",
+        "args": [
+          "--import",
+          "tsx",
+          "scripts/build-research-publication-manifest.ts",
+          "--write",
+          "--gzip",
+          "--r2-inventory",
+          ".cache/research/campaigns/20260908-r18-epa-nrsa/r2-inventory-20260908.json"
+        ],
+        "startedAt": "2026-09-08T19:24:55.885Z",
+        "finishedAt": "2026-09-08T19:25:06.134Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/publication-manifest-write-gate.log"
+      },
+      {
+        "name": "research-integrity",
+        "args": [
+          "C:/Code/tools/node-v22.23.2-win-x64/node_modules/npm/bin/npm-cli.js",
+          "run",
+          "check:research-integrity"
+        ],
+        "startedAt": "2026-09-08T19:25:06.135Z",
+        "finishedAt": "2026-09-08T19:49:59.137Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r18-epa-nrsa/research-integrity-gate.log"
+      }
+    ],
+    "originalFullCommandPassed": true,
+    "logicalRequiredGateSetPassed": true,
+    "ordering": "National reconciliation was committed, then runtime declarations and the compressed research manifest were refreshed before the complete research-integrity suite.",
+    "logs": [
+      {
+        "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/runtime-assets-prepare-gate.log",
+        "bytes": 1047,
+        "sha256": "65bd666e5ea3aa9dbdc3cae3e07acf4427455c5051e0472870ae3a74c8f38a61"
+      },
+      {
+        "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/publication-manifest-write-gate.log",
+        "bytes": 169,
+        "sha256": "68b6c60b4abfa7913e3306f7897d39d802a4a784bb78b1adc388b104199b378d"
+      },
+      {
+        "path": ".cache/research/campaigns/20260908-r18-epa-nrsa/research-integrity-gate.log",
+        "bytes": 66148,
+        "sha256": "9577f3f8ecb3911cc38b0262c13a1108bf5413413d1b9b32022cb56f014800e6"
+      }
+    ]
+  },
+  "applicationChecks": [
+    {
+      "command": "npm run build",
+      "startedAt": "2026-09-08T19:56:06.339Z",
+      "finishedAt": "2026-09-08T19:57:25.723Z",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-09-08T19:57:25.723Z",
+      "finishedAt": "2026-09-08T19:57:33.047Z",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "startedAt": "2026-09-08T19:57:33.047Z",
+      "finishedAt": "2026-09-08T19:57:36.810Z",
+      "exitCode": 0,
+      "log": "check-runtime-assets.log"
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "startedAt": "2026-09-08T19:57:36.810Z",
+      "finishedAt": "2026-09-08T19:57:37.727Z",
+      "exitCode": 0,
+      "log": "check-vercel-publish.log"
+    }
+  ],
+  "runtimeAssetBundlesChanged": true,
+  "imagePreparation": {
+    "sources": 2090,
+    "originalBytes": 808459923,
+    "derivativeBytes": 295644698,
+    "generated": 0,
+    "restored": 0,
+    "reused": 4180,
+    "cache": {
+      "bytes": 295025492,
+      "objects": 4156,
+      "maxBytes": 335544320,
+      "removed": 0
+    },
+    "elapsedMs": 5610,
+    "bundles": {
+      "map": {
+        "url": "https://data.isitusa.com/app-data/sha256/26305ec3dfbeded3fcc43b786f9b092ba40ac4a40badd3fe15644124ccc80b1f.json",
+        "sha256": "26305ec3dfbeded3fcc43b786f9b092ba40ac4a40badd3fe15644124ccc80b1f",
+        "bytes": 3854456,
+        "storedBytes": 715009
+      },
+      "catalog": {
+        "url": "https://data.isitusa.com/app-data/sha256/964cc2eb8cb91b33b798588c987ae8c9a4a7fa366456366f456d7fe4e8cf4c6f.json",
+        "sha256": "964cc2eb8cb91b33b798588c987ae8c9a4a7fa366456366f456d7fe4e8cf4c6f",
+        "bytes": 4831012,
+        "storedBytes": 698125
+      }
+    }
+  },
+  "runtimePublication": {
+    "observedAt": "2026-09-08T19:56:05.021Z",
+    "mode": "publish",
+    "preflightFile": ".cache/research/campaigns/20260908-r18-epa-nrsa/runtime-publication-preflight.json",
+    "preflightSha256": "d71403773cebbecbc8d7e63c86460499d509f5b2194f346488c61e8ed34e6eb4",
+    "incrementalBytesUpperBound": 1413134,
+    "projectedBytesWithResearchReserve": 7970103523,
+    "artifacts": [
+      {
+        "name": "map",
+        "url": "https://data.isitusa.com/app-data/sha256/26305ec3dfbeded3fcc43b786f9b092ba40ac4a40badd3fe15644124ccc80b1f.json",
+        "sha256": "26305ec3dfbeded3fcc43b786f9b092ba40ac4a40badd3fe15644124ccc80b1f",
+        "bytes": 3854456,
+        "storedBytes": 715009,
+        "action": "uploaded",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "https://isitusa.com",
+          "access-control-expose-headers": "ETag,Content-Length,Content-Encoding",
+          "cache-control": "public, max-age=31536000, immutable",
+          "cf-cache-status": "MISS",
+          "cf-ray": "a38083b62bb3f733-CVG",
+          "connection": "keep-alive",
+          "content-encoding": "gzip",
+          "content-length": "715009",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Tue, 08 Sep 2026 19:56:05 GMT",
+          "etag": "\"f7d76cec259242c0752f637a1d3a3a98\"",
+          "last-modified": "Tue, 08 Sep 2026 19:56:05 GMT",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=8xbBa%2BYyI9eRvQWx%2B45Fvg1D5dQFPoTxW%2B3iKKKbEdDQmTEy2VzBCIY8VAccZ2H8fSCcZIVJXLDcyR99xToAKOLkVIp4phNj9pMH11960etex3OwobUBLFgTy34CEhIRrw%2Brjktr3GpCMwa4yZ%2B%2F\"}]}",
+          "server": "cloudflare",
+          "vary": "Origin, accept-encoding"
+        }
+      },
+      {
+        "name": "catalog",
+        "url": "https://data.isitusa.com/app-data/sha256/964cc2eb8cb91b33b798588c987ae8c9a4a7fa366456366f456d7fe4e8cf4c6f.json",
+        "sha256": "964cc2eb8cb91b33b798588c987ae8c9a4a7fa366456366f456d7fe4e8cf4c6f",
+        "bytes": 4831012,
+        "storedBytes": 698125,
+        "action": "uploaded",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "https://isitusa.com",
+          "access-control-expose-headers": "ETag,Content-Length,Content-Encoding",
+          "cache-control": "public, max-age=31536000, immutable",
+          "cf-cache-status": "MISS",
+          "cf-ray": "a38083b96d40f733-CVG",
+          "connection": "keep-alive",
+          "content-encoding": "gzip",
+          "content-length": "698125",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Tue, 08 Sep 2026 19:56:06 GMT",
+          "etag": "\"6f83dfa7b0a91fb8045604d0b621b8e7\"",
+          "last-modified": "Tue, 08 Sep 2026 19:56:05 GMT",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Cv476GmAacOuDUu4Uq0eixBG4Uw4EhaM4QXNgnG9zCwLrv1hjJwciWDjTcc0Eix4dcUOAJUDoMM4maiWI3TEtwUUrHh2crFrm27g9VMf%2FtA3ViqE2fz7AyBYcziD25u4JfdE7EDYR1jDvsxmZ%2F1b\"}]}",
+          "server": "cloudflare",
+          "vary": "Origin, accept-encoding"
+        }
+      }
+    ]
+  },
+  "localPageBytes": {
+    "index.html": 11166,
+    "index.rsc": 6014,
+    "research.html": 14175,
+    "research.rsc": 8307
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/epa-wqp-validation-20260908-r18.json.gz",
+    "bytes": 4418628,
+    "sha256": "7c7198c67bbd666381452e8ac42349093844b408bbdf0f41202006eaf4161720"
+  },
+  "runtimeDataObjectsUploaded": 2,
+  "researchObjectsUploaded": 0,
+  "pointerPromotions": 0,
+  "limitations": [
+    "National research determinations are committed and nationally verified but remain queued for separate R2 publication. This application release exposes the compiler-owned Alabama compatibility change only; it does not promote the national research pointer.",
+    "One held EPA Woodson County common-carp pair remains undetermined. Missing or rejected records create no absence or survey non-detection.",
+    "The complete research-integrity command passed after manifest regeneration; earlier EPA pilot and parser failures remain separately retained.",
+    "The budget reserves the replacement research package and both runtime bundles under the8GB project ceiling. Eventual research publication requires a fresh inventory and usage check.",
+    "No new UI design, countywide inventory completeness, current persistence or establishment is claimed from historical positive records.",
+    "The autonomous national research goal remains active."
+  ]
+}
