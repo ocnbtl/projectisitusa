@@ -499802,6 +499802,482 @@
         "workerCommit": "fd14f00853fc700e77b0d3918cc61fce4a137b10",
         "workerBranchHead": "2047d208654ee837b66ce48f4d424a92aa1b153f"
       }
+    },
+    {
+      "leaseId": "lease-pcn-al-containment-review-20260908-r10-1",
+      "jobId": "pcn-al-containment-review-20260908-r10",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "pcn_al_source_review_r10",
+      "state": "cancelled",
+      "claimedAt": "2026-09-08T07:25:32.712Z",
+      "expiresAt": "2026-09-08T08:10:32.029Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "AL"
+        ],
+        "sourceFamilies": [
+          "aphis-pale-cyst-nematode-current"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "globodera-pallida"
+        ],
+        "pairs": [
+          "01001:globodera-pallida",
+          "01003:globodera-pallida",
+          "01005:globodera-pallida",
+          "01007:globodera-pallida",
+          "01009:globodera-pallida",
+          "01011:globodera-pallida",
+          "01013:globodera-pallida",
+          "01015:globodera-pallida",
+          "01017:globodera-pallida",
+          "01019:globodera-pallida",
+          "01021:globodera-pallida",
+          "01023:globodera-pallida",
+          "01025:globodera-pallida",
+          "01027:globodera-pallida",
+          "01029:globodera-pallida",
+          "01031:globodera-pallida",
+          "01033:globodera-pallida",
+          "01035:globodera-pallida",
+          "01037:globodera-pallida",
+          "01039:globodera-pallida",
+          "01041:globodera-pallida",
+          "01043:globodera-pallida",
+          "01045:globodera-pallida",
+          "01047:globodera-pallida",
+          "01049:globodera-pallida",
+          "01051:globodera-pallida",
+          "01053:globodera-pallida",
+          "01055:globodera-pallida",
+          "01057:globodera-pallida",
+          "01059:globodera-pallida",
+          "01061:globodera-pallida",
+          "01063:globodera-pallida",
+          "01065:globodera-pallida",
+          "01067:globodera-pallida",
+          "01069:globodera-pallida",
+          "01071:globodera-pallida",
+          "01073:globodera-pallida",
+          "01075:globodera-pallida",
+          "01077:globodera-pallida",
+          "01079:globodera-pallida",
+          "01081:globodera-pallida",
+          "01083:globodera-pallida",
+          "01085:globodera-pallida",
+          "01087:globodera-pallida",
+          "01089:globodera-pallida",
+          "01091:globodera-pallida",
+          "01093:globodera-pallida",
+          "01095:globodera-pallida",
+          "01097:globodera-pallida",
+          "01099:globodera-pallida",
+          "01101:globodera-pallida",
+          "01103:globodera-pallida",
+          "01105:globodera-pallida",
+          "01107:globodera-pallida",
+          "01109:globodera-pallida",
+          "01111:globodera-pallida",
+          "01113:globodera-pallida",
+          "01115:globodera-pallida",
+          "01117:globodera-pallida",
+          "01119:globodera-pallida",
+          "01121:globodera-pallida",
+          "01123:globodera-pallida",
+          "01125:globodera-pallida",
+          "01127:globodera-pallida",
+          "01129:globodera-pallida",
+          "01131:globodera-pallida",
+          "01133:globodera-pallida"
+        ]
+      },
+      "scopeClaims": [
+        "state/AL/source/aphis-pale-cyst-nematode-current/taxon/globodera-pallida"
+      ],
+      "branch": "codex/pcn-al-containment-review-20260908-r10",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\pcn-al-containment-review-20260908-r10",
+      "baseSha": "f47d1bc260af070bf3c9353d1c58618d3ad4af49",
+      "expectedReceiptCodeCommit": "f47d1bc260af070bf3c9353d1c58618d3ad4af49",
+      "permittedPaths": [
+        "src/data/research/worker-results/pcn-al-containment-review-20260908-r10/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/pcn-al-containment-review-20260908-r10/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Read frozen evidence-worker skill and pass lease-bound preflight. Verify retained source compressed and decoded hashes, exact taxonomy, state scope and original dates.",
+        "Independently assess the entire relevant source context; distinguish declared biological status from known range, surveillance, quarantine or inference. Preserve uncertainty and specific contrary evidence.",
+        "Return supported claim, unsupported claims, geographic/time limits, source hashes and independently observed facts with a clear recommendation. No fabricated human approval or evidence-run completion."
+      ],
+      "transitionedAt": "2026-09-08T07:38:13.576Z"
+    },
+    {
+      "leaseId": "lease-pcn-wa-containment-review-20260908-r10-1",
+      "jobId": "pcn-wa-containment-review-20260908-r10",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "pcn_wa_contrary_review_r10",
+      "state": "cancelled",
+      "claimedAt": "2026-09-08T07:25:33.193Z",
+      "expiresAt": "2026-09-08T08:10:32.713Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "WA"
+        ],
+        "sourceFamilies": [
+          "aphis-pale-cyst-nematode-current"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "globodera-pallida"
+        ],
+        "pairs": [
+          "53001:globodera-pallida",
+          "53003:globodera-pallida",
+          "53005:globodera-pallida",
+          "53007:globodera-pallida",
+          "53009:globodera-pallida",
+          "53011:globodera-pallida",
+          "53013:globodera-pallida",
+          "53015:globodera-pallida",
+          "53017:globodera-pallida",
+          "53019:globodera-pallida",
+          "53021:globodera-pallida",
+          "53023:globodera-pallida",
+          "53025:globodera-pallida",
+          "53027:globodera-pallida",
+          "53029:globodera-pallida",
+          "53031:globodera-pallida",
+          "53033:globodera-pallida",
+          "53035:globodera-pallida",
+          "53037:globodera-pallida",
+          "53039:globodera-pallida",
+          "53041:globodera-pallida",
+          "53043:globodera-pallida",
+          "53045:globodera-pallida",
+          "53047:globodera-pallida",
+          "53049:globodera-pallida",
+          "53051:globodera-pallida",
+          "53053:globodera-pallida",
+          "53055:globodera-pallida",
+          "53057:globodera-pallida",
+          "53059:globodera-pallida",
+          "53061:globodera-pallida",
+          "53063:globodera-pallida",
+          "53065:globodera-pallida",
+          "53067:globodera-pallida",
+          "53069:globodera-pallida",
+          "53071:globodera-pallida",
+          "53073:globodera-pallida",
+          "53075:globodera-pallida",
+          "53077:globodera-pallida"
+        ]
+      },
+      "scopeClaims": [
+        "state/WA/source/aphis-pale-cyst-nematode-current/taxon/globodera-pallida"
+      ],
+      "branch": "codex/pcn-wa-containment-review-20260908-r10",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\pcn-wa-containment-review-20260908-r10",
+      "baseSha": "f47d1bc260af070bf3c9353d1c58618d3ad4af49",
+      "expectedReceiptCodeCommit": "f47d1bc260af070bf3c9353d1c58618d3ad4af49",
+      "permittedPaths": [
+        "src/data/research/worker-results/pcn-wa-containment-review-20260908-r10/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/pcn-wa-containment-review-20260908-r10/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Read frozen evidence-worker skill and pass lease-bound preflight. Verify retained source compressed and decoded hashes, exact taxonomy, state scope and original dates.",
+        "Independently assess the entire relevant source context; distinguish declared biological status from known range, surveillance, quarantine or inference. Preserve uncertainty and specific contrary evidence.",
+        "Return supported claim, unsupported claims, geographic/time limits, source hashes and independently observed facts with a clear recommendation. No fabricated human approval or evidence-run completion."
+      ],
+      "transitionedAt": "2026-09-08T07:38:16.127Z"
+    },
+    {
+      "leaseId": "lease-cbs-ca-containment-review-20260908-r10-1",
+      "jobId": "cbs-ca-containment-review-20260908-r10",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "cbs_ca_source_review_r10",
+      "state": "cancelled",
+      "claimedAt": "2026-09-08T07:25:33.682Z",
+      "expiresAt": "2026-09-08T08:10:33.194Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "aphis-citrus-black-spot-current"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "phyllosticta-citricarpa"
+        ],
+        "pairs": [
+          "06001:phyllosticta-citricarpa",
+          "06003:phyllosticta-citricarpa",
+          "06005:phyllosticta-citricarpa",
+          "06007:phyllosticta-citricarpa",
+          "06009:phyllosticta-citricarpa",
+          "06011:phyllosticta-citricarpa",
+          "06013:phyllosticta-citricarpa",
+          "06015:phyllosticta-citricarpa",
+          "06017:phyllosticta-citricarpa",
+          "06019:phyllosticta-citricarpa",
+          "06021:phyllosticta-citricarpa",
+          "06023:phyllosticta-citricarpa",
+          "06025:phyllosticta-citricarpa",
+          "06027:phyllosticta-citricarpa",
+          "06029:phyllosticta-citricarpa",
+          "06031:phyllosticta-citricarpa",
+          "06033:phyllosticta-citricarpa",
+          "06035:phyllosticta-citricarpa",
+          "06037:phyllosticta-citricarpa",
+          "06039:phyllosticta-citricarpa",
+          "06041:phyllosticta-citricarpa",
+          "06043:phyllosticta-citricarpa",
+          "06045:phyllosticta-citricarpa",
+          "06047:phyllosticta-citricarpa",
+          "06049:phyllosticta-citricarpa",
+          "06051:phyllosticta-citricarpa",
+          "06053:phyllosticta-citricarpa",
+          "06055:phyllosticta-citricarpa",
+          "06057:phyllosticta-citricarpa",
+          "06059:phyllosticta-citricarpa",
+          "06061:phyllosticta-citricarpa",
+          "06063:phyllosticta-citricarpa",
+          "06065:phyllosticta-citricarpa",
+          "06067:phyllosticta-citricarpa",
+          "06069:phyllosticta-citricarpa",
+          "06071:phyllosticta-citricarpa",
+          "06073:phyllosticta-citricarpa",
+          "06075:phyllosticta-citricarpa",
+          "06077:phyllosticta-citricarpa",
+          "06079:phyllosticta-citricarpa",
+          "06081:phyllosticta-citricarpa",
+          "06083:phyllosticta-citricarpa",
+          "06085:phyllosticta-citricarpa",
+          "06087:phyllosticta-citricarpa",
+          "06089:phyllosticta-citricarpa",
+          "06091:phyllosticta-citricarpa",
+          "06093:phyllosticta-citricarpa",
+          "06095:phyllosticta-citricarpa",
+          "06097:phyllosticta-citricarpa",
+          "06099:phyllosticta-citricarpa",
+          "06101:phyllosticta-citricarpa",
+          "06103:phyllosticta-citricarpa",
+          "06105:phyllosticta-citricarpa",
+          "06107:phyllosticta-citricarpa",
+          "06109:phyllosticta-citricarpa",
+          "06111:phyllosticta-citricarpa",
+          "06113:phyllosticta-citricarpa",
+          "06115:phyllosticta-citricarpa"
+        ]
+      },
+      "scopeClaims": [
+        "state/CA/source/aphis-citrus-black-spot-current/taxon/phyllosticta-citricarpa"
+      ],
+      "branch": "codex/cbs-ca-containment-review-20260908-r10",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\cbs-ca-containment-review-20260908-r10",
+      "baseSha": "f47d1bc260af070bf3c9353d1c58618d3ad4af49",
+      "expectedReceiptCodeCommit": "f47d1bc260af070bf3c9353d1c58618d3ad4af49",
+      "permittedPaths": [
+        "src/data/research/worker-results/cbs-ca-containment-review-20260908-r10/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/cbs-ca-containment-review-20260908-r10/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2097152,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Read frozen evidence-worker skill and pass lease-bound preflight. Verify retained source compressed and decoded hashes, exact taxonomy, state scope and original dates.",
+        "Independently assess the entire relevant source context; distinguish declared biological status from known range, surveillance, quarantine or inference. Preserve uncertainty and specific contrary evidence.",
+        "Return supported claim, unsupported claims, geographic/time limits, source hashes and independently observed facts with a clear recommendation. No fabricated human approval or evidence-run completion."
+      ],
+      "transitionedAt": "2026-09-08T07:38:18.615Z"
     }
   ]
 }

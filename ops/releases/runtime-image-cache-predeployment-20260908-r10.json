@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "kind": "runtime-image-cache-predeployment-validation",
+  "recordedAt": "2026-09-08T07:46:15.098Z",
+  "status": "local-gates-passed-production-pending",
+  "baseCommit": "f47d1bc260af070bf3c9353d1c58618d3ad4af49",
+  "priorProductionCommit": "41080942ac34da5d8b1654558a183e88162a3d19",
+  "cacheDirectory": ".next/cache/isitusa-runtime-images-v1",
+  "cacheMaxBytes": 335544320,
+  "fullCatalogRestoration": {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-08T07:44:52.282Z",
+    "startedAt": "2026-09-08T07:44:48.323Z",
+    "method": "Full real catalog in a test-created temporary workspace, source files and restored build cache copied, no public derivatives initially present.",
+    "report": {
+      "sources": 2090,
+      "originalBytes": 808459923,
+      "derivativeBytes": 295644698,
+      "generated": 0,
+      "restored": 4156,
+      "reused": 24,
+      "cache": {
+        "bytes": 295025492,
+        "objects": 4156,
+        "maxBytes": 335544320,
+        "removed": 0
+      },
+      "elapsedMs": 3437,
+      "bundles": {
+        "map": {
+          "url": "https://data.isitusa.com/app-data/sha256/3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e.json",
+          "sha256": "3df4de7209de7273cd8932d61640997b738e3117add17695d3b3cb63caf55a3e",
+          "bytes": 3854453,
+          "storedBytes": 715009
+        },
+        "catalog": {
+          "url": "https://data.isitusa.com/app-data/sha256/655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5.json",
+          "sha256": "655c6f6fc2c5bcd597eb8570bb5d9676f2bc950730fa6512634ca8cb23ff77b5",
+          "bytes": 4831012,
+          "storedBytes": 698125
+        }
+      }
+    },
+    "verifiedUniqueDerivatives": 4156,
+    "manifestHashes": [
+      {
+        "name": "image-assets.json",
+        "sha256": "57319995ebfe105ec48d0a780d7837d09edb5a2faf7907b2a3c0349350c2c56e"
+      },
+      {
+        "name": "data-assets.json",
+        "sha256": "26d17cff7a99a9839d4600c1a94bea84034d1ebd4d35228103e9e8bcd4b98184"
+      }
+    ],
+    "sourceCount": 2090,
+    "r2Writes": 0,
+    "productionWarmBuildObserved": false
+  },
+  "checks": [
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run check:runtime-assets",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run check:vercel-publish",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "validationArchive": {
+    "path": "ops/releases/artifacts/runtime-image-cache-validation-20260908-r10.json.gz",
+    "bytes": 2445,
+    "sha256": "53408d31dc18acbe98574d9b64e28fdafe7f83b7f6b2c988b1d7cf1630057175"
+  },
+  "researchClosure": "ops/national-research/evaluations/containment-source-review-closure-20260908-r10.json",
+  "newCountyDeterminations": 0,
+  "r2Writes": 0,
+  "changedRuntimeManifests": 0,
+  "limitations": [
+    "First provider build must populate the image cache. Actual provider warm-build reduction remains unmeasured.",
+    "Packaged image bytes and already retained deployment storage are unchanged by this build cache.",
+    "The queued research release retains its September 13 ordinary promotion gate."
+  ]
+}

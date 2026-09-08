@@ -26,3 +26,15 @@ Species photos remain on Vercel because the existing R2 reserve cannot accommoda
 The September 8, 2026 local verification measured homepage HTML 3,817,627 -> 11,166 bytes, RSC 3,543,960 -> 6,014 bytes, and unique packaged image derivatives of 295,025,492 bytes versus 815,114,828 original public image bytes. The two R2 bundles occupy 1,413,134 compressed bytes total. These are measured file/response sizes, not provider-billed storage or a forecast of metered savings.
 
 Validate the exact production SHA and Ready deployment separately from the live alias. Exercise desktop/mobile map and county selection, filters, species profiles and attribution, deep links, research evidence, caching and retries. Confirm old image redirects on production where the original public files are absent. Retention and cleanup receipts belong with operations evidence; protect current production, useful rollbacks, and active branch previews. Historical storage charts and asynchronous provider cleanup cannot prove immediate reclaimed storage.
+
+## Reusable image build cache
+
+The asset preparer keeps verified derivative copies under `.next/cache/isitusa-runtime-images-v1`, which uses the framework's existing build-cache lifecycle. Cache reuse requires the unchanged committed recipe and source-image SHA-256, plus matching derivative URL, byte count and SHA-256. Missing or corrupt entries are regenerated. Changed source or recipe inputs still require explicit manifest regeneration; cache reuse cannot silently change a declared asset.
+
+The retained cache is capped at 320 MiB and only the current build's selected image objects are retained. Cleanup removes recognized regular files only inside the dedicated cache directory. It does not touch source photos, public research files, unrelated Next.js cache content, R2 or prior deployments. A cold cache remains a valid build path.
+
+The September 8, 2026 full-catalog restoration test began with no public derivatives and restored all 4,156 unique objects in 3,437 ms locally. All hashes and both runtime manifests matched. The cache occupied 295,025,492 bytes. This is a local measurement, not a measured Vercel warm-build speedup. The preceding production build generated 4,156 derivatives and uploaded a 173.34 MB framework cache; the first deployment of this cache implementation must populate its image namespace before a later build can reuse it.
+
+Vercel documents a 1 GB build-cache limit and restoration before the build command. Next.js documents `.next/cache` as the shared build cache. Keep image retention bounded and inspect actual provider cache upload size; cache availability is an optimization, never a correctness requirement. This build cache does not reduce the packaged image bytes or change storage already retained by older deployments.
+
+References: [Vercel build troubleshooting and caching](https://vercel.com/docs/deployments/troubleshoot-a-build), [Next.js CI build caching](https://nextjs.org/docs/app/guides/ci-build-caching).

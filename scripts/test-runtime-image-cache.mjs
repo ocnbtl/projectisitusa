@@ -1,0 +1,63 @@
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import sharp from 'sharp';
+import { createRuntimeImageCache, validImageDescriptor } from './runtime-image-cache.mjs';
+
+const root = mkdtempSync(path.join(tmpdir(), 'isitusa-image-cache-'));
+const script = path.resolve('scripts/prepare-runtime-assets.mjs');
+const sha = bytes => createHash('sha256').update(bytes).digest('hex');
+const load = file => JSON.parse(readFileSync(path.join(root, file)));
+const save = (file, value) => { mkdirSync(path.dirname(path.join(root, file)), { recursive: true }); writeFileSync(path.join(root, file), JSON.stringify(value) + '\n'); };
+const run = (args = []) => { execFileSync(process.execPath, [script, ...args], { cwd: root, windowsHide: true, stdio: 'pipe' }); return load('.cache/runtime-assets/build-report.json'); };
+// Every destructive path below is an exact child of this test-created temp root.
+const clearPublic = () => { const target = path.join(root, 'public/optimized-species'); assert.equal(path.dirname(target), path.join(root, 'public')); rmSync(target, { recursive: true, force: true }); };
+try {
+  save('src/data/generated/species.json', [{ id: 'test', image: { src: '/species/test.png', credit: 'Preserved fixture credit' } }]);
+  save('src/data/generated/explorer-species.json', load('src/data/generated/species.json'));
+  for (const name of ['counties', 'county-details', 'explorer-presence', 'snapshot']) save(`src/data/generated/${name}.json`, {});
+  mkdirSync(path.join(root, 'public/species'), { recursive: true });
+  const source = path.join(root, 'public/species/test.png');
+  const png = color => sharp({ create: { width: 240, height: 180, channels: 3, background: color } }).png().toBuffer();
+  writeFileSync(source, await png('#295b32'));
+  assert.equal(run(['--write']).generated, 2, 'First build creates the declared outputs');
+  const imageManifest = readFileSync(path.join(root, 'src/data/runtime/image-assets.json'));
+  const dataManifest = readFileSync(path.join(root, 'src/data/runtime/data-assets.json'));
+  clearPublic();
+  const warm = run();
+  assert.equal(warm.generated, 0); assert.equal(warm.restored, 2);
+  assert.deepEqual(readFileSync(path.join(root, 'src/data/runtime/image-assets.json')), imageManifest);
+  assert.deepEqual(readFileSync(path.join(root, 'src/data/runtime/data-assets.json')), dataManifest);
+  const asset = load('src/data/runtime/image-assets.json').assets['/species/test.png'].full;
+  clearPublic();
+  writeFileSync(path.join(root, '.next/cache/isitusa-runtime-images-v1', `${asset.sha256}.webp`), Buffer.alloc(asset.bytes));
+  const corrupt = run(); assert.equal(corrupt.generated, 1); assert.equal(corrupt.restored, 1);
+  assert.deepEqual(readFileSync(path.join(root, 'src/data/runtime/data-assets.json')), dataManifest);
+  writeFileSync(source, await png('#73482b'));
+  const changed = spawnSync(process.execPath, [script], { cwd: root, windowsHide: true, encoding: 'utf8' });
+  assert.notEqual(changed.status, 0); assert.match(changed.stderr, /Runtime assets changed/);
+  assert.deepEqual(readFileSync(path.join(root, 'src/data/runtime/image-assets.json')), imageManifest, 'Source changes cannot silently rewrite declarations');
+  assert.equal(run(['--write']).generated, 2);
+  const manifest = load('src/data/runtime/image-assets.json'); manifest.recipeSha256 = '0'.repeat(64); save('src/data/runtime/image-assets.json', manifest);
+  assert.equal(run(['--write']).generated, 2, 'Changed recipe invalidates the cache eligibility');
+  assert.equal(validImageDescriptor({ ...asset, src: '/../outside.webp' }), false);
+  assert.equal(validImageDescriptor({ ...asset, bytes: -1 }), false);
+  const outside = path.join(root, '.next/cache/unrelated.txt'); writeFileSync(outside, 'preserve');
+  const cache = createRuntimeImageCache(root, 3);
+  const bytes = Buffer.from('abc'), digest = sha(bytes), small = { src: `/optimized-species/${digest}.webp`, sha256: digest, bytes: 3 };
+  cache.remember(small, bytes); cache.remember(small, bytes);
+  const other = Buffer.from('xyz'), otherDigest = sha(other);
+  cache.remember({ src: `/optimized-species/${otherDigest}.webp`, sha256: otherDigest, bytes: 3 }, other);
+  assert.throws(() => cache.remember(small, other), /Invalid image cache content/);
+  const final = cache.finish(); assert.equal(final.bytes, 3); assert.equal(final.objects, 1);
+  assert.equal(readdirSync(path.join(root, '.next/cache/isitusa-runtime-images-v1')).length, 1);
+  assert.equal(readFileSync(outside, 'utf8'), 'preserve');
+  assert.ok(existsSync(source));
+  console.log('Image build cache passed: cold/warm byte parity, corrupt-cache regeneration, changed-source and recipe invalidation, fixed paths, bounded retention, and unrelated-file preservation.');
+} finally {
+  assert.ok(path.dirname(root) === path.resolve(tmpdir()) && path.basename(root).startsWith('isitusa-image-cache-'));
+  rmSync(root, { recursive: true, force: true });
+}
