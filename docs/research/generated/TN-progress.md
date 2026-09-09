@@ -1,26 +1,26 @@
 # Tennessee Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `8160`
+- Verified present: `8161`
 - Verified absent: `190`
 - Not detected: `8`
 - Researched unresolved: `36795`
-- Not researched: `192727`
+- Not researched: `192726`
 - Determination coverage: `3.51%`
 - Research coverage: `18.98%`
-- Explicit outcome coverage: `18.9814%`
+- Explicit outcome coverage: `18.9818%`
 - Applicable protocol cells: `444`
 - Current complete protocol cells: `127`
 - Protocol completion: `31.53%`
 - Current protocol completion: `28.60%`
-- Evidence records: `10592`
-- Research runs: `43`
+- Evidence records: `10593`
+- Research runs: `44`
 - Rejection records: `784`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | 2026-09-08T06:44:12.045Z | 95 | 1 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:43:56.343Z | 8 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:59:24.229Z | 9 | 3 |

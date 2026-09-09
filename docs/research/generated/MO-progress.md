@@ -1,27 +1,27 @@
 # Missouri Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `8451`
+- Verified present: `8462`
 - Verified absent: `115`
 - Not detected: `0`
-- Researched unresolved: `46308`
-- Not researched: `233086`
-- Determination coverage: `2.97%`
+- Researched unresolved: `46305`
+- Not researched: `233078`
+- Determination coverage: `2.98%`
 - Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0561%`
+- Explicit outcome coverage: `19.0589%`
 - Applicable protocol cells: `421`
 - Current complete protocol cells: `120`
 - Protocol completion: `31.59%`
 - Current protocol completion: `28.50%`
-- Evidence records: `9407`
-- Research runs: `43`
-- Rejection records: `1472`
+- Evidence records: `9418`
+- Research runs: `44`
+- Rejection records: `1473`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:41:33.226Z | 37 | 5 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:53:05.018Z | 48 | 5 |

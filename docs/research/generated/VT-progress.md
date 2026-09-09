@@ -1,26 +1,26 @@
 # Vermont Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `2413`
+- Verified present: `2415`
 - Verified absent: `14`
 - Not detected: `0`
 - Researched unresolved: `4950`
-- Not researched: `27679`
-- Determination coverage: `6.92%`
-- Research coverage: `21.04%`
-- Explicit outcome coverage: `21.0435%`
+- Not researched: `27677`
+- Determination coverage: `6.93%`
+- Research coverage: `21.05%`
+- Explicit outcome coverage: `21.0492%`
 - Applicable protocol cells: `482`
 - Current complete protocol cells: `90`
 - Protocol completion: `21.37%`
 - Current protocol completion: `18.67%`
-- Evidence records: `2664`
-- Research runs: `38`
+- Evidence records: `2666`
+- Research runs: `39`
 - Rejection records: `177`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:44:32.093Z | 7 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:59:55.377Z | 9 | 2 |

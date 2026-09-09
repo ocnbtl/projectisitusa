@@ -1,26 +1,26 @@
 # Kentucky Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `8920`
+- Verified present: `8925`
 - Verified absent: `120`
 - Not detected: `12`
 - Researched unresolved: `47824`
-- Not researched: `243604`
+- Not researched: `243599`
 - Determination coverage: `3.01%`
 - Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9284%`
-- Applicable protocol cells: `420`
+- Explicit outcome coverage: `18.9300%`
+- Applicable protocol cells: `421`
 - Current complete protocol cells: `126`
-- Protocol completion: `33.10%`
-- Current protocol completion: `30.00%`
-- Evidence records: `11004`
-- Research runs: `44`
+- Protocol completion: `33.02%`
+- Current protocol completion: `29.93%`
+- Evidence records: `11009`
+- Research runs: `45`
 - Rejection records: `669`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:40:39.857Z | 24 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:56:48.508Z | 29 | 4 |

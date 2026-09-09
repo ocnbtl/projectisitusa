@@ -1,26 +1,26 @@
 # Idaho Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `6331`
+- Verified present: `6336`
 - Verified absent: `44`
 - Not detected: `0`
 - Researched unresolved: `17756`
-- Not researched: `86045`
+- Not researched: `86040`
 - Determination coverage: `5.79%`
-- Research coverage: `21.90%`
-- Explicit outcome coverage: `21.9022%`
+- Research coverage: `21.91%`
+- Explicit outcome coverage: `21.9068%`
 - Applicable protocol cells: `588`
 - Current complete protocol cells: `90`
 - Protocol completion: `17.52%`
 - Current protocol completion: `15.31%`
-- Evidence records: `6908`
-- Research runs: `44`
+- Evidence records: `6913`
+- Research runs: `45`
 - Rejection records: `466`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:40:04.057Z | 5 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:56:25.583Z | 10 | 2 |

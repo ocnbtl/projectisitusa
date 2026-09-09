@@ -1,26 +1,26 @@
 # North Dakota Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `1867`
+- Verified present: `1872`
 - Verified absent: `53`
 - Not detected: `0`
 - Researched unresolved: `23302`
-- Not researched: `107490`
+- Not researched: `107485`
 - Determination coverage: `1.45%`
 - Research coverage: `19.01%`
-- Explicit outcome coverage: `19.0051%`
+- Explicit outcome coverage: `19.0088%`
 - Applicable protocol cells: `256`
 - Current complete protocol cells: `90`
 - Protocol completion: `40.23%`
 - Current protocol completion: `35.16%`
-- Evidence records: `2245`
-- Research runs: `41`
+- Evidence records: `2250`
+- Research runs: `42`
 - Rejection records: `239`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:42:09.237Z | 19 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:57:50.933Z | 24 | 2 |

@@ -1,26 +1,26 @@
 # Maryland Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `24`
 - County-species pairs: `60096`
-- Verified present: `3661`
+- Verified present: `3663`
 - Verified absent: `24`
 - Not detected: `0`
 - Researched unresolved: `8474`
-- Not researched: `47937`
-- Determination coverage: `6.13%`
-- Research coverage: `20.23%`
-- Explicit outcome coverage: `20.2326%`
+- Not researched: `47935`
+- Determination coverage: `6.14%`
+- Research coverage: `20.24%`
+- Explicit outcome coverage: `20.2360%`
 - Applicable protocol cells: `607`
 - Current complete protocol cells: `98`
 - Protocol completion: `18.29%`
 - Current protocol completion: `16.14%`
-- Evidence records: `3954`
-- Research runs: `41`
+- Evidence records: `3956`
+- Research runs: `42`
 - Rejection records: `955`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:41:06.923Z | 5 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:52:57.523Z | 7 | 3 |

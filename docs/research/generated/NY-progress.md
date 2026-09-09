@@ -1,26 +1,26 @@
 # New York Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `9963`
+- Verified present: `9977`
 - Verified absent: `62`
 - Not detected: `10`
 - Researched unresolved: `20995`
-- Not researched: `124218`
-- Determination coverage: `6.46%`
-- Research coverage: `19.99%`
-- Explicit outcome coverage: `19.9874%`
-- Applicable protocol cells: `749`
+- Not researched: `124204`
+- Determination coverage: `6.47%`
+- Research coverage: `20.00%`
+- Explicit outcome coverage: `19.9964%`
+- Applicable protocol cells: `750`
 - Current complete protocol cells: `110`
-- Protocol completion: `16.42%`
-- Current protocol completion: `14.69%`
-- Evidence records: `11085`
-- Research runs: `45`
+- Protocol completion: `16.40%`
+- Current protocol completion: `14.67%`
+- Evidence records: `11099`
+- Research runs: `46`
 - Rejection records: `1072`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:42:54.107Z | 33 | 4 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:58:29.910Z | 47 | 5 |

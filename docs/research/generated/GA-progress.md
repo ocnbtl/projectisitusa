@@ -1,26 +1,26 @@
 # Georgia Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `8425`
+- Verified present: `8433`
 - Verified absent: `159`
 - Not detected: `0`
 - Researched unresolved: `67282`
-- Not researched: `322270`
+- Not researched: `322262`
 - Determination coverage: `2.16%`
 - Research coverage: `19.06%`
-- Explicit outcome coverage: `19.0553%`
+- Explicit outcome coverage: `19.0573%`
 - Applicable protocol cells: `458`
 - Current complete protocol cells: `126`
 - Protocol completion: `30.35%`
 - Current protocol completion: `27.51%`
-- Evidence records: `11432`
-- Research runs: `46`
+- Evidence records: `11440`
+- Research runs: `47`
 - Rejection records: `979`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:39:46.625Z | 15 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:56:09.713Z | 23 | 3 |

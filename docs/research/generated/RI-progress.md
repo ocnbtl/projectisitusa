@@ -1,26 +1,26 @@
 # Rhode Island Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `1056`
+- Verified present: `1057`
 - Verified absent: `5`
 - Not detected: `0`
 - Researched unresolved: `1515`
-- Not researched: `9944`
-- Determination coverage: `8.47%`
+- Not researched: `9943`
+- Determination coverage: `8.48%`
 - Research coverage: `20.58%`
-- Explicit outcome coverage: `20.5751%`
+- Explicit outcome coverage: `20.5831%`
 - Applicable protocol cells: `460`
 - Current complete protocol cells: `56`
 - Protocol completion: `15.00%`
 - Current protocol completion: `12.17%`
-- Evidence records: `1066`
-- Research runs: `43`
+- Evidence records: `1067`
+- Research runs: `44`
 - Rejection records: `274`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T19:04:33.000Z | 2 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:59:01.197Z | 3 | 2 |

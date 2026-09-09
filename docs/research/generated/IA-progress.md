@@ -1,26 +1,26 @@
 # Iowa Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `6372`
+- Verified present: `6382`
 - Verified absent: `99`
 - Not detected: `9`
-- Researched unresolved: `40877`
-- Not researched: `200539`
+- Researched unresolved: `40876`
+- Not researched: `200530`
 - Determination coverage: `2.61%`
-- Research coverage: `19.10%`
-- Explicit outcome coverage: `19.1036%`
+- Research coverage: `19.11%`
+- Explicit outcome coverage: `19.1072%`
 - Applicable protocol cells: `356`
 - Current complete protocol cells: `119`
 - Protocol completion: `37.08%`
 - Current protocol completion: `33.43%`
-- Evidence records: `6741`
-- Research runs: `46`
+- Evidence records: `6751`
+- Research runs: `47`
 - Rejection records: `327`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:39:55.435Z | 18 | 4 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:56:18.037Z | 28 | 4 |

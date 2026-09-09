@@ -1,26 +1,26 @@
 # New Jersey Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `4247`
+- Verified present: `4250`
 - Verified absent: `21`
 - Not detected: `0`
 - Researched unresolved: `6383`
-- Not researched: `41933`
+- Not researched: `41930`
 - Determination coverage: `8.12%`
 - Research coverage: `20.26%`
-- Explicit outcome coverage: `20.2552%`
+- Explicit outcome coverage: `20.2609%`
 - Applicable protocol cells: `592`
 - Current complete protocol cells: `124`
 - Protocol completion: `23.14%`
 - Current protocol completion: `20.95%`
-- Evidence records: `5746`
-- Research runs: `48`
+- Evidence records: `5749`
+- Research runs: `49`
 - Rejection records: `1005`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:42:26.995Z | 16 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:58:06.268Z | 19 | 3 |

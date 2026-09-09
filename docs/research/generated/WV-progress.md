@@ -1,26 +1,26 @@
 # West Virginia Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `6461`
+- Verified present: `6464`
 - Verified absent: `55`
 - Not detected: `23`
 - Researched unresolved: `19748`
-- Not researched: `111433`
+- Not researched: `111430`
 - Determination coverage: `4.73%`
 - Research coverage: `19.09%`
-- Explicit outcome coverage: `19.0873%`
+- Explicit outcome coverage: `19.0895%`
 - Applicable protocol cells: `433`
 - Current complete protocol cells: `97`
 - Protocol completion: `25.40%`
 - Current protocol completion: `22.40%`
-- Evidence records: `7933`
-- Research runs: `40`
+- Evidence records: `7936`
+- Research runs: `41`
 - Rejection records: `233`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:44:59.178Z | 9 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-09T00:00:18.667Z | 12 | 2 |

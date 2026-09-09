@@ -1,26 +1,26 @@
 # Nebraska Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `4326`
+- Verified present: `4338`
 - Verified absent: `93`
 - Not detected: `0`
-- Researched unresolved: `39896`
-- Not researched: `188557`
+- Researched unresolved: `39895`
+- Not researched: `188546`
 - Determination coverage: `1.90%`
 - Research coverage: `19.03%`
-- Explicit outcome coverage: `19.0298%`
+- Explicit outcome coverage: `19.0345%`
 - Applicable protocol cells: `322`
 - Current complete protocol cells: `93`
 - Protocol completion: `32.92%`
 - Current protocol completion: `28.88%`
-- Evidence records: `4933`
-- Research runs: `38`
+- Evidence records: `4945`
+- Research runs: `39`
 - Rejection records: `551`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:42:18.179Z | 48 | 5 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:57:58.485Z | 60 | 5 |

@@ -1,26 +1,26 @@
 # Nevada Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `1814`
+- Verified present: `1816`
 - Verified absent: `17`
 - Not detected: `0`
 - Researched unresolved: `7194`
-- Not researched: `33543`
-- Determination coverage: `4.30%`
-- Research coverage: `21.20%`
-- Explicit outcome coverage: `21.2014%`
+- Not researched: `33541`
+- Determination coverage: `4.31%`
+- Research coverage: `21.21%`
+- Explicit outcome coverage: `21.2061%`
 - Applicable protocol cells: `410`
 - Current complete protocol cells: `89`
 - Protocol completion: `24.88%`
 - Current protocol completion: `21.71%`
-- Evidence records: `2155`
-- Research runs: `42`
+- Evidence records: `2157`
+- Research runs: `43`
 - Rejection records: `264`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:42:45.291Z | 2 | 1 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:58:22.275Z | 4 | 2 |

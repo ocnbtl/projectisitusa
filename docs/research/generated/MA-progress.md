@@ -1,26 +1,26 @@
 # Massachusetts Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `4572`
+- Verified present: `4577`
 - Verified absent: `15`
 - Not detected: `0`
 - Researched unresolved: `3943`
-- Not researched: `26526`
-- Determination coverage: `13.08%`
-- Research coverage: `24.33%`
-- Explicit outcome coverage: `24.3325%`
+- Not researched: `26521`
+- Determination coverage: `13.10%`
+- Research coverage: `24.35%`
+- Explicit outcome coverage: `24.3468%`
 - Applicable protocol cells: `736`
 - Current complete protocol cells: `87`
 - Protocol completion: `13.59%`
 - Current protocol completion: `11.82%`
-- Evidence records: `4639`
-- Research runs: `48`
+- Evidence records: `4644`
+- Research runs: `49`
 - Rejection records: `580`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:40:57.396Z | 8 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:57:04.536Z | 13 | 2 |

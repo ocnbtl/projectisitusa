@@ -1,26 +1,26 @@
 # Michigan Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `83`
 - County-species pairs: `207832`
-- Verified present: `7697`
+- Verified present: `7706`
 - Verified absent: `83`
 - Not detected: `26`
 - Researched unresolved: `32051`
-- Not researched: `167975`
-- Determination coverage: `3.74%`
+- Not researched: `167966`
+- Determination coverage: `3.75%`
 - Research coverage: `19.18%`
-- Explicit outcome coverage: `19.1775%`
+- Explicit outcome coverage: `19.1818%`
 - Applicable protocol cells: `456`
 - Current complete protocol cells: `128`
 - Protocol completion: `30.92%`
 - Current protocol completion: `28.07%`
-- Evidence records: `10450`
-- Research runs: `44`
+- Evidence records: `10459`
+- Research runs: `45`
 - Rejection records: `1745`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:41:15.564Z | 41 | 3 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:57:12.144Z | 50 | 3 |

@@ -1,26 +1,26 @@
 # Montana Research Progress
 
-Generated: `2026-09-08T00:00:00.000Z`
+Generated: `2026-09-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `5877`
+- Verified present: `5889`
 - Verified absent: `56`
 - Not detected: `0`
 - Researched unresolved: `23632`
-- Not researched: `110659`
-- Determination coverage: `4.23%`
-- Research coverage: `21.08%`
-- Explicit outcome coverage: `21.0841%`
+- Not researched: `110647`
+- Determination coverage: `4.24%`
+- Research coverage: `21.09%`
+- Explicit outcome coverage: `21.0927%`
 - Applicable protocol cells: `474`
 - Current complete protocol cells: `74`
 - Protocol completion: `18.35%`
 - Current protocol completion: `15.61%`
-- Evidence records: `5980`
-- Research runs: `47`
+- Evidence records: `5992`
+- Research runs: `48`
 - Rejection records: `172`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -107,4 +107,4 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA APHIS Karnal bunt current official status | manual | not run | 0 | 0 |
 | EPPO reviewed Karnal bunt state status | manual | not run | 0 | 0 |
 | CDFA confirmed pest occurrence reports | operational | not run | 0 | 0 |
-| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T21:41:51.476Z | 15 | 2 |
+| EPA National Rivers and Streams Assessment fish counts | operational | 2026-09-08T23:57:35.799Z | 27 | 2 |
