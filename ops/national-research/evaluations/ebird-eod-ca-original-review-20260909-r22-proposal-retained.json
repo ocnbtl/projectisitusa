@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-independent-method-proposal",
+  "recordedAt": "2026-09-09T02:12:15.446Z",
+  "actorId": "ebird_eod_ca_review_r22",
+  "jobId": "ebird-eod-ca-original-review-20260909-r22",
+  "leaseId": "lease-ebird-eod-ca-original-review-20260909-r22-1",
+  "originalCommit": "300d1c2d7ba508d351ef9d41287914e57b370e47",
+  "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+  "files": [
+    {
+      "path": "src/data/research/worker-results/ebird-eod-ca-original-review-20260909-r22/proposal.json",
+      "bytes": 364236,
+      "sha256": "705598f8d41a2a1aefb878f9936c74ee552b5a8ebacccf257d86b9a10b46496e"
+    },
+    {
+      "path": "src/data/research/worker-results/ebird-eod-ca-original-review-20260909-r22/review.py",
+      "bytes": 36818,
+      "sha256": "f2502481dbe4646b82a960b44853753dd1838a6e30fe55b97f34dbe0eb8c825e"
+    }
+  ],
+  "leaseState": "recovered",
+  "jobState": "blocked",
+  "reason": "Independent original EOD review returned committed reproducible proposals. MAIN source-method registration is pending; these are retained method inputs, not a completed canonical run or accepted queue item.",
+  "contractQualification": "executionContract is retained in the registered job. The frozen lease completionCriteria and permitted paths explicitly require a proposal; generic evidence-run output vocabulary is preserved without fabricating a completed manifest.",
+  "mainOfflineVerification": {
+    "passed": true,
+    "startedAt": "2026-09-09T02:12:12.066Z",
+    "finishedAt": "2026-09-09T02:12:12.262Z",
+    "command": "python src/data/research/worker-results/ebird-eod-ca-original-review-20260909-r22/review.py --verify",
+    "exitCode": 0,
+    "result": {
+      "ok": true,
+      "mode": "verified",
+      "status": "proposal-ready-main-method-required",
+      "proposal": "C:\\Code\\project-isitusa-worktrees\\ebird-eod-ca-original-review-20260909-r22\\src\\data\\research\\worker-results\\ebird-eod-ca-original-review-20260909-r22\\proposal.json",
+      "proposalSha256": "705598f8d41a2a1aefb878f9936c74ee552b5a8ebacccf257d86b9a10b46496e",
+      "proposalBytes": 364236,
+      "recipeSha256": "f2502481dbe4646b82a960b44853753dd1838a6e30fe55b97f34dbe0eb8c825e",
+      "reviewedRecords": 18,
+      "supportingRecords": 18,
+      "recordHolds": 0,
+      "supportedPairs": 2,
+      "canonicalEvents": 0,
+      "newDeterminations": 0,
+      "elapsedSeconds": 0.115848,
+      "peakProcessMemoryMiB": 60.438
+    },
+    "log": {
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/ca-r22-main-verify.log",
+      "sha256": "b40da2adff91dbe4ea8d13f3028022b8e80ffa5e062819b65bf80bcf16b73894"
+    }
+  },
+  "independentProjection": {
+    "actorId": "ebird_eod_ca_review_r22",
+    "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+    "pairs": [
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "06037:brotogeris-versicolurus",
+        "primaryKey": 5436343111,
+        "recordKeys": [
+          5315638471,
+          5330928463,
+          5338852372,
+          5350839891,
+          5376675097,
+          5431373154,
+          5436343111,
+          5441709942,
+          5492317009,
+          5600538237,
+          5611277854,
+          5657423761,
+          5708534681,
+          5714456750
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "06085:brotogeris-versicolurus",
+        "primaryKey": 5435483133,
+        "recordKeys": [
+          5297997915,
+          5418005552,
+          5435483133,
+          5584839919
+        ]
+      }
+    ],
+    "status": "proposal-ready-main-method-required"
+  },
+  "qualification": "Lexical context flags in a reviewer recipe are confined to this reviewed input set. No universal rule that home, zoo or similar locality words prove captivity is adopted. Possible shared observations cannot be summed into independent bird abundance.",
+  "acceptedDeterminations": 0,
+  "canonicalEvents": 0
+}

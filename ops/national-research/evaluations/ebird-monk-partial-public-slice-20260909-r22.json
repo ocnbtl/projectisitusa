@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "kind": "retained-incomplete-ebird-public-slice",
+  "recordedAt": "2026-09-09T01:58:05.529Z",
+  "status": "partial-source-material-not-canonical-evidence",
+  "sourceId": "gbif-ebird",
+  "speciesId": "myiopsitta-monachus",
+  "sourceYear": 2024,
+  "baselineCommit": "1bf4c0998cbf8d0e167b7617130672bc62ac9f44",
+  "parameters": {
+    "datasetKey": "4fa7b334-ce0d-4e88-aaae-2e0c138d049e",
+    "country": "US",
+    "year": "2024",
+    "taxonKey": "2479407",
+    "limit": "300"
+  },
+  "requestAccounting": {
+    "successfulPages": 50,
+    "attemptedGets": 51,
+    "networkTimeouts": 1,
+    "resumeAttempts": 1,
+    "automaticRetries": 0,
+    "authenticatedRequests": 0,
+    "downloadRequestsSubmitted": 0,
+    "providerWrites": 0
+  },
+  "pagination": {
+    "complete": false,
+    "declaredCount": 21878,
+    "receivedRows": 15000,
+    "uniqueRecordKeys": 15000,
+    "uniqueOccurrenceIds": 15000,
+    "remainingUnretrievedRows": 6878,
+    "contiguousOffsets": [
+      0,
+      14700
+    ],
+    "terminalPages": 0,
+    "sourceMutability": "Public search pages are not a frozen provider transaction."
+  },
+  "bytes": {
+    "stored": 2238910,
+    "decoded": 74380753
+  },
+  "stops": [
+    {
+      "startedAt": "2026-09-09T01:13:16.809Z",
+      "finishedAt": "2026-09-09T01:15:33.194Z",
+      "elapsedMs": 136385,
+      "errors": [
+        {
+          "page": 35,
+          "offset": 10500,
+          "url": "https://api.gbif.org/v1/occurrence/search?datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e&country=US&year=2024&taxonKey=2479407&limit=300&offset=10500",
+          "at": "2026-09-09T01:15:33.193Z",
+          "message": "TimeoutError: The operation was aborted due to timeout"
+        },
+        {
+          "at": "2026-09-09T01:15:33.194Z",
+          "message": "AssertionError [ERR_ASSERTION]: Acquisition did not reach a complete bounded terminal page"
+        }
+      ]
+    },
+    {
+      "startedAt": "2026-09-09T01:20:24.624Z",
+      "finishedAt": "2026-09-09T01:30:44.452Z",
+      "elapsedMs": 619828,
+      "errors": [
+        {
+          "at": "2026-09-09T01:30:44.452Z",
+          "message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(Date.now()-begin<600000)\n"
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "firstTenMeanMs": 800.2,
+    "lastTenMeanMs": 40123.5,
+    "maximumMs": 63575
+  },
+  "exactActiveCountyNameCandidatePairs": 78,
+  "baselineCounts": {
+    "not-researched": 77,
+    "verified-present": 1
+  },
+  "potentialPreviouslyUndeterminedPairs": 77,
+  "unmappedRowLabels": {
+    "Connecticut / Hartford": 56,
+    "Connecticut / Fairfield": 202,
+    "Connecticut / New Haven": 86,
+    "New Mexico / Dona Ana": 15,
+    "Connecticut / Middlesex": 26
+  },
+  "interpretedChecks": {
+    "exactAcceptedTaxon": 15000,
+    "positiveHumanObservation": 15000,
+    "exactCalendarDate": 15000,
+    "missingUncertainty": 15000,
+    "nonemptyEstablishment": 0
+  },
+  "issues": {
+    "CONTINENT_DERIVED_FROM_COORDINATES": 15000,
+    "TAXON_CONCEPT_ID_NOT_FOUND": 15000
+  },
+  "licenses": {
+    "http://creativecommons.org/licenses/by/4.0/legalcode": 15000
+  },
+  "sourceCodeLineage": [
+    {
+      "baseCommit": "d4d860e6b27296e09cada8cfadde35e734668522",
+      "recipe": {
+        "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/acquire-monk-parakeet-public-2024-20260909.cjs",
+        "sha256": "cf1fe5df1a89858f8568be24d97d54043dc73a23644e80ca826465d4d5cd309c"
+      }
+    },
+    {
+      "baseCommit": "d4d860e6b27296e09cada8cfadde35e734668522",
+      "recipe": {
+        "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/resume-monk-parakeet-public-2024-20260909.cjs",
+        "sha256": "4152d75bd2703e7e296668afb79832c51e05f9d27292922526eae67364a702e8"
+      }
+    }
+  ],
+  "originalVerbatimRecordsForThisSlice": 0,
+  "sourceRuns": 0,
+  "canonicalEvents": 0,
+  "newDeterminations": 0,
+  "productionWrites": 0,
+  "verification": {
+    "all50OriginalPageHashes": true,
+    "allDecodedHashesAndBytes": true,
+    "contiguousOffsets": true,
+    "constantDeclaredTotal": true,
+    "uniqueRecordKeys": 15000,
+    "offlineDiagnosticByteReproduction": true,
+    "independentCountyPresenceReview": false
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/ebird-monk-partial-public-slice-20260909-r22.json.gz",
+    "bytes": 2934198,
+    "sha256": "4e901e30602c6318e05bff08b2fdf01598628779b00f1f71b0bcc3b14a1abb17",
+    "files": 56
+  },
+  "next": "Prefer the pending authenticated bounded six-taxon DWCA acquisition; do not run a third deep-pagination retry. A selected exact positive witness can be reviewed without treating the entire incomplete source slice as a completed screen. Retain original publisher fields before acceptance and keep retired/ambiguous county cases separate.",
+  "limitations": [
+    "Incomplete pagination cannot close a source-family screen, certify research, or support absence or non-detection.",
+    "Rows and county-name candidate groups are not accepted determinations. All candidates require original field witnesses and independent source-method review.",
+    "This diagnostic uses exact active county/state names and registered aliases only; it does not reassign retired county geographies or derive county from coordinates.",
+    "Observed public API latency supports switching to the pending authenticated bulk download instead of another deep-pagination attempt.",
+    "Historical 2024 positive occurrences do not establish current persistence, establishment or invasive impact.",
+    "The 600000ms resume wall guard was checked before each request; the final in-flight request finished at 619828ms. This is not a strict end-to-end 600000ms limit and no request was submitted after the guard stopped the loop.",
+    "Dona Ana versus the registry spelling is a candidate for explicit deterministic name normalization review, not a silent accepted crosswalk.",
+    "Both attempts retain the actual original recipe hashes and errors; the final acquisition result is incomplete despite 50 successful pages."
+  ]
+}

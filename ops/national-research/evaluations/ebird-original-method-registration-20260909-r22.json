@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-approved-original-ebird-method-registration",
+  "recordedAt": "2026-09-09T02:31:18.118Z",
+  "status": "source-method-tested-canonical-runs-pending",
+  "sourceId": "gbif-ebird",
+  "method": "src/data/research/source-method-reviews/ebird-original-20260909-r22.json",
+  "independentReviews": [
+    {
+      "actorId": "ebird_eod_ca_review_r22",
+      "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+      "originalCommit": "300d1c2d7ba508d351ef9d41287914e57b370e47",
+      "proposal": {
+        "path": "src/data/research/worker-results/ebird-eod-ca-original-review-20260909-r22/proposal.json",
+        "bytes": 364236,
+        "sha256": "705598f8d41a2a1aefb878f9936c74ee552b5a8ebacccf257d86b9a10b46496e"
+      },
+      "recipe": {
+        "path": "src/data/research/worker-results/ebird-eod-ca-original-review-20260909-r22/review.py",
+        "bytes": 36818,
+        "sha256": "f2502481dbe4646b82a960b44853753dd1838a6e30fe55b97f34dbe0eb8c825e"
+      },
+      "retention": {
+        "path": "ops/national-research/evaluations/ebird-eod-ca-original-review-20260909-r22-proposal-retained.json",
+        "bytes": 3979,
+        "sha256": "d79389e469c04b2b202154f6d2061d3aec6c0f74abd02e4f525ee5c1afbf7853"
+      }
+    },
+    {
+      "actorId": "ebird_eod_fl_review_r22",
+      "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+      "originalCommit": "f85a4bbb1ff7346fbfb19d3b9ea15757821d8f12",
+      "proposal": {
+        "path": "src/data/research/worker-results/ebird-eod-fl-original-review-20260909-r22/proposal.json",
+        "bytes": 733254,
+        "sha256": "49913da16d7a92193270c06aa57eeccc2b887cc1be3477afbd8edd8a64da138d"
+      },
+      "recipe": {
+        "path": "src/data/research/worker-results/ebird-eod-fl-original-review-20260909-r22/review.py",
+        "bytes": 34098,
+        "sha256": "19d28235b8e0025ac80c0306b4bf20d27573a3ad3d83701d54044f051fa08476"
+      },
+      "retention": {
+        "path": "ops/national-research/evaluations/ebird-eod-fl-original-review-20260909-r22-proposal-retained.json",
+        "bytes": 4631,
+        "sha256": "26197e0ea01b38737a85efbcdf1f2e7bd7ab11480579286f826d250a40099ee5"
+      }
+    }
+  ],
+  "originalSourceRows": 41,
+  "reviewedCandidatePairs": 5,
+  "heldCandidatePairs": 0,
+  "canonicalEvents": 0,
+  "newDeterminations": 0,
+  "baselineDeterminations": 319814,
+  "expectedNetUniqueMovement": 5,
+  "originalFieldAdverseCases": 61,
+  "methodScopeAdverseCases": 21,
+  "gates": {
+    "updatedAt": "2026-09-09T02:23:21.101Z",
+    "checks": [
+      {
+        "name": "ebird-original",
+        "startedAt": "2026-09-09T02:23:12.701Z",
+        "finishedAt": "2026-09-09T02:23:12.966Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-ebird-original.log",
+        "error": null
+      },
+      {
+        "name": "ebird-method",
+        "startedAt": "2026-09-09T02:23:12.967Z",
+        "finishedAt": "2026-09-09T02:23:13.681Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-ebird-method.log",
+        "error": null
+      },
+      {
+        "name": "retained-human-observations",
+        "startedAt": "2026-09-09T02:23:13.682Z",
+        "finishedAt": "2026-09-09T02:23:14.132Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-retained-human-observations.log",
+        "error": null
+      },
+      {
+        "name": "inaturalist",
+        "startedAt": "2026-09-09T02:23:14.132Z",
+        "finishedAt": "2026-09-09T02:23:15.699Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-inaturalist.log",
+        "error": null
+      },
+      {
+        "name": "research-run-validation",
+        "startedAt": "2026-09-09T02:23:15.700Z",
+        "finishedAt": "2026-09-09T02:23:16.283Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-research-run-validation.log",
+        "error": null
+      },
+      {
+        "name": "epa1314",
+        "startedAt": "2026-09-09T02:23:16.284Z",
+        "finishedAt": "2026-09-09T02:23:16.577Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-epa1314.log",
+        "error": null
+      },
+      {
+        "name": "typecheck",
+        "startedAt": "2026-09-09T02:23:16.578Z",
+        "finishedAt": "2026-09-09T02:23:20.369Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-typecheck.log",
+        "error": null
+      },
+      {
+        "name": "orchestration",
+        "startedAt": "2026-09-09T02:23:20.370Z",
+        "finishedAt": "2026-09-09T02:23:21.101Z",
+        "exitCode": 0,
+        "log": ".cache/research/campaigns/20260908-r19-ebird-bulk/r22-register-orchestration.log",
+        "error": null
+      }
+    ]
+  },
+  "resourcePolicyPassed": true,
+  "activeLeases": 0,
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/ebird-original-method-registration-20260909-r22.json.gz",
+    "bytes": 37392,
+    "sha256": "64f70558e039380a68cb68fcb10843a42ae0c5a18b4af0c56386045cdcb621e1",
+    "files": 33
+  },
+  "parallelResearch": {
+    "receipt": "ops/national-research/evaluations/ebird-monk-partial-public-slice-20260909-r22.json",
+    "retainedRows": 15000,
+    "declaredRows": 21878,
+    "paginationComplete": false,
+    "candidatePairs": 78,
+    "previouslyNotResearchedPairs": 77,
+    "canonicalDeterminations": 0
+  },
+  "publication": {
+    "activeApplicationCommit": "e13234c9133f5d469921f6dbe63b7f69bfe006c6",
+    "activeResearchRelease": "research-7674fc93bc4f-25dacfee2d1a3835",
+    "productionWrites": 0,
+    "r2Uploads": 0,
+    "r2Deletions": 0,
+    "paidResourcesCreated": 0
+  },
+  "limitations": [
+    "Registration tests reconstruct fixture assertions; they are not canonical evidence events or determination gains.",
+    "Version1 validates this retained single-page original-field acquisition profile. Authenticated DWCA or multi-page sources require an explicitly tested acquisition profile.",
+    "Both proposal leases closed through recovery with a MAIN-only method blocker, without a fabricated completed evidence-run manifest or accepted worker queue item.",
+    "Full canonical replay tamper tests, source-run integration and projection reconciliation follow this clean committed input checkpoint."
+  ]
+}

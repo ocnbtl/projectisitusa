@@ -1,3 +1,4 @@
+import { EBIRD_SOURCE, EBIRD_ADAPTER, EBIRD_VERSION, EBIRD_MODE, buildEbirdResult } from "./ebird-original-observations";
 import { EPA_NRSA_1314_VERSION, EPA_NRSA_1314_MODE, buildEpaNrsa1314Result } from "./epa-nrsa-1314-fish-counts";
 import { EPA_NRSA_1819_VERSION, EPA_NRSA_1819_MODE, buildEpaNrsa1819Result } from "./epa-nrsa-1819-fish-counts";
 import { EPA_NRSA_SOURCE, EPA_NRSA_ADAPTER, EPA_NRSA_VERSION, buildEpaNrsaResult } from "./epa-nrsa-fish-counts";
@@ -58,6 +59,10 @@ function assert(condition: unknown, message: string): asserts condition {
 export function isCommittedSnapshotReplayReceipt(
   receipt: Pick<ImmutableResearchRunReceipt, "source_id" | "adapter_id" | "parameters"> & Partial<Pick<ImmutableResearchRunReceipt, "adapter_version">>,
 ) {
+  if (receipt.source_id === EBIRD_SOURCE && receipt.adapter_id === EBIRD_ADAPTER && receipt.adapter_version === EBIRD_VERSION
+    && receipt.parameters.mode === EBIRD_MODE && typeof receipt.parameters.methodReviewSha256 === "string"
+    && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256) && typeof receipt.parameters.methodReviewPath === "string"
+    && /^src\/data\/research\/source-method-reviews\/ebird-original-[a-z0-9-]+\.json$/u.test(receipt.parameters.methodReviewPath)) return true;
   if (receipt.source_id === EPA_NRSA_SOURCE && receipt.adapter_id === EPA_NRSA_ADAPTER && receipt.adapter_version === EPA_NRSA_VERSION
     && receipt.parameters.mode === "retained-reviewed-fish-counts" && typeof receipt.parameters.methodReviewSha256 === "string"
     && /^[a-f0-9]{64}$/u.test(receipt.parameters.methodReviewSha256) && typeof receipt.parameters.methodReviewPath === "string"
@@ -347,6 +352,20 @@ export function validateResearchRunInMemory(input: {
     for (const artifact of expected.artifacts) { const ref = receipt.artifacts.find(r => path.posix.basename(r.path) === artifact.filename);
       assert(ref && ref.bytes === Buffer.byteLength(artifact.contents) && ref.sha256 === sha256(artifact.contents), "Honey bee witness artifact differs."); }
     assert(receipt.upstream_requests.length === 0, "Retained honey bee replay cannot claim fresh source requests.");
+  }
+  if (sourceId === EBIRD_SOURCE) {
+    assert(receipt.adapter_id === EBIRD_ADAPTER && receipt.adapter_version === EBIRD_VERSION, "Wrong EOD original-field adapter version.");
+    const expected = buildEbirdResult({runId, sourceId, stateCode, runStartedAt: receipt.started_at, parameters: receipt.parameters,
+      requestedPairs: requestedPairKeys.map(key => { const [countyFips, speciesId] = key.split(":"); return {countyFips, speciesId, countyName: "Pinned registry", scientificName: speciesById.get(speciesId)!.scientificName}; })},
+      p => readCommittedBytes(root, receipt.code_commit, p));
+    for (const field of ["assertions", "reviews", "rejections", "outcomes", "upstreamRequests"] as const)
+      assert(stableJson(result[field]) === stableJson(expected[field]), "EOD " + field + " differ from original-field reconstruction.");
+    assert(result.candidateRecordCount === expected.candidateRecordCount && result.duplicateRecordCount === expected.duplicateRecordCount
+      && stableJson(result.errors) === stableJson(expected.errors) && stableJson(result.warnings) === stableJson(expected.warnings), "EOD canonical counts or diagnostics differ.");
+    assert(receipt.artifacts.length === expected.artifacts.length, "EOD witness count differs.");
+    for (const artifact of expected.artifacts) { const ref = receipt.artifacts.find(r => path.posix.basename(r.path) === artifact.filename);
+      assert(ref && ref.bytes === Buffer.byteLength(artifact.contents) && ref.sha256 === sha256(artifact.contents), "EOD original witness artifact differs."); }
+    assert(receipt.upstream_requests.length === 0, "Retained EOD replay cannot claim fresh requests.");
   }
   if (sourceId === EPA_NRSA_SOURCE) {
     assert(receipt.adapter_id === EPA_NRSA_ADAPTER && [EPA_NRSA_VERSION, EPA_NRSA_1819_VERSION, EPA_NRSA_1314_VERSION].includes(receipt.adapter_version), "Wrong EPA NRSA adapter version.");

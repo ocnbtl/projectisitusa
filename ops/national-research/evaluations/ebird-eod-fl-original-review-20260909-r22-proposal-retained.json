@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-independent-method-proposal",
+  "recordedAt": "2026-09-09T02:11:34.518Z",
+  "actorId": "ebird_eod_fl_review_r22",
+  "jobId": "ebird-eod-fl-original-review-20260909-r22",
+  "leaseId": "lease-ebird-eod-fl-original-review-20260909-r22-1",
+  "originalCommit": "f85a4bbb1ff7346fbfb19d3b9ea15757821d8f12",
+  "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+  "files": [
+    {
+      "path": "src/data/research/worker-results/ebird-eod-fl-original-review-20260909-r22/proposal.json",
+      "bytes": 733254,
+      "sha256": "49913da16d7a92193270c06aa57eeccc2b887cc1be3477afbd8edd8a64da138d"
+    },
+    {
+      "path": "src/data/research/worker-results/ebird-eod-fl-original-review-20260909-r22/review.py",
+      "bytes": 34098,
+      "sha256": "19d28235b8e0025ac80c0306b4bf20d27573a3ad3d83701d54044f051fa08476"
+    }
+  ],
+  "leaseState": "recovered",
+  "jobState": "blocked",
+  "reason": "Independent original EOD review returned committed reproducible proposals. MAIN source-method registration is pending; these are retained method inputs, not a completed canonical run or accepted queue item.",
+  "contractQualification": "executionContract is retained in the registered job. The frozen lease completionCriteria and permitted paths explicitly require a proposal; generic evidence-run output vocabulary is preserved without fabricating a completed manifest.",
+  "mainOfflineVerification": {
+    "passed": true,
+    "startedAt": "2026-09-09T02:11:31.183Z",
+    "finishedAt": "2026-09-09T02:11:31.353Z",
+    "command": "python src/data/research/worker-results/ebird-eod-fl-original-review-20260909-r22/review.py --verify",
+    "exitCode": 0,
+    "result": {
+      "counts": {
+        "assertionEvents": 0,
+        "canonicalDeterminations": 0,
+        "canonicalResearchCompletedPairs": 0,
+        "canonicalRuns": 0,
+        "duplicateSourceIds": 0,
+        "methodHeldPairs": 3,
+        "methodHeldRecords": 23,
+        "notDetected": 0,
+        "outcomeEvents": 0,
+        "possibleSharedEventGroups": 3,
+        "recordSpecificHolds": 0,
+        "rejectionEvents": 0,
+        "reviewEvents": 0,
+        "reviewedMaterialRecords": 23,
+        "reviewedPairs": 3,
+        "selectedWitnesses": 3,
+        "sourceRequests": 0,
+        "supportingProposalPairs": 3,
+        "supportingProposalRecords": 23,
+        "verifiedAbsent": 0
+      },
+      "measurement": "Windows GetProcessMemoryInfo PeakWorkingSetSize for this independent Python process",
+      "peakWorkingSetBytes": 53551104,
+      "proposalSha256": "49913da16d7a92193270c06aa57eeccc2b887cc1be3477afbd8edd8a64da138d",
+      "reviewPayloadSha256": "952183ff5916f5560e670dfdf8dfebcf3fd792ef5d6e662fe0e1001480e0610f",
+      "status": "verified",
+      "verificationElapsedSeconds": 0.09755
+    },
+    "log": {
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/fl-r22-main-verify.log",
+      "sha256": "f4d97f1cea551b87f1328cb237ba623d2a2cf6cbcfe88fbb9b5aa1abb4e0c173"
+    }
+  },
+  "independentProjection": {
+    "actorId": "ebird_eod_fl_review_r22",
+    "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+    "pairs": [
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "12086:brotogeris-versicolurus",
+        "primaryKey": 5308062365,
+        "recordKeys": [
+          5306649413,
+          5306981525,
+          5308062365,
+          5339034134,
+          5342814530,
+          5361581845,
+          5364499176,
+          5415832708,
+          5437741165,
+          5482340067,
+          5507517293,
+          5601415075,
+          5680915009
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "12087:brotogeris-versicolurus",
+        "primaryKey": 5480839584,
+        "recordKeys": [
+          5361436626,
+          5374145703,
+          5480839584,
+          5483957662,
+          5508149178,
+          5518490296,
+          5550761275,
+          5570674233,
+          5701747153
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "12103:brotogeris-versicolurus",
+        "primaryKey": 5527580017,
+        "recordKeys": [
+          5527580017
+        ]
+      }
+    ],
+    "status": "proposal-ready-main-method-required"
+  },
+  "qualification": "Lexical context flags in a reviewer recipe are confined to this reviewed input set. No universal rule that home, zoo or similar locality words prove captivity is adopted. Possible shared observations cannot be summed into independent bird abundance.",
+  "acceptedDeterminations": 0,
+  "canonicalEvents": 0
+}

@@ -893,7 +893,21 @@
       "refreshCadenceDays": 90,
       "status": "operational",
       "adapter": "scripts/import-gbif-ebird-alabama-birds.ts",
-      "caveat": "Observation evidence only. Checklist non-reporting is not absence."
+      "caveat": "Annual EOD historical occurrence evidence only, with source-specific original-field and independent method review. No checklist non-detection, absence, establishment, current persistence or individual human expert-approval inference.",
+      "researchAdapter": {
+        "id": "gbif-ebird-retained-original-observations",
+        "module": "scripts/research/adapters/ebird-original-observations.ts",
+        "allowedVersions": [
+          "1.0.0"
+        ],
+        "parameterSchema": "src/data/research/schemas/ebird-original-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact original publisher binomial and accepted GBIF species identity with independently reviewed source classifications. Unresolved concept annotations are retained without inventing individual human expert approval.",
+        "geographyMatchingPolicy": "Unique active original publisher county name or registered alias in its explicit original state. No coordinate routing or retired-geography successor inference. Original/interpreted coordinate contradictions fail; missing uncertainty alone does not negate an exact publisher county.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "idigbio-preserved-specimens",
