@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "kind": "epa-nrsa-1314-predeployment",
+  "recordedAt": "2026-09-09T01:26:01.933Z",
+  "status": "all-local-gates-passed-app-publication-pending-research-publication-held",
+  "baseCommit": "d4d860e6b27296e09cada8cfadde35e734668522",
+  "behavior": "Retain 230 new independently reviewed EPA2013/2014 county-species presence determinations in the canonical national research projections. Exclude worker proposal files from the disposable Vercel workspace and skip proposal-only Git builds. Application runtime bundles remain identical to the already published release.",
+  "researchReconciliation": "ops/national-research/evaluations/epa-nrsa-1314-national-reconciliation-20260908-r21.json",
+  "localResearch": {
+    "countyCount": 3144,
+    "totalPairs": 7872576,
+    "resolvablePairCount": 7872576,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 316096,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306678,
+    "notResearched": 6245848,
+    "explicitOutcomePairCount": 1582374,
+    "conflictCount": 0,
+    "evidenceRecordCount": 463537,
+    "bootstrapEvidenceRecordCount": 30130,
+    "runEvidenceRecordCount": 433407,
+    "rejectionRecordCount": 66066,
+    "researchRunCount": 2269,
+    "determinations": 319814,
+    "newUniquePresent": 230,
+    "withdrawals": 0,
+    "newAbsent": 0,
+    "newNotDetected": 0,
+    "netUniqueDeterminations": 230
+  },
+  "validation": {
+    "fullUnmodifiedResearchIntegrity": {
+      "name": "research-integrity",
+      "args": [
+        "C:/Code/tools/node-v22.23.2-win-x64/node_modules/npm/bin/npm-cli.js",
+        "run",
+        "check:research-integrity"
+      ],
+      "startedAt": "2026-09-09T00:40:32.898Z",
+      "finishedAt": "2026-09-09T01:16:10.787Z",
+      "exitCode": 0,
+      "error": null,
+      "log": ".cache/research/campaigns/20260908-r21-epa-nrsa-1314/research-integrity-gate.log"
+    },
+    "runtimePreparation": {
+      "name": "runtime-assets-prepare",
+      "args": [
+        "scripts/prepare-runtime-assets.mjs",
+        "--write"
+      ],
+      "startedAt": "2026-09-09T00:40:26.142Z",
+      "finishedAt": "2026-09-09T00:40:32.897Z",
+      "exitCode": 0,
+      "error": null,
+      "log": ".cache/research/campaigns/20260908-r21-epa-nrsa-1314/runtime-assets-prepare-gate.log"
+    },
+    "applicationChecks": [
+      {
+        "command": "npm run build",
+        "startedAt": "2026-09-09T01:18:24.569Z",
+        "finishedAt": "2026-09-09T01:19:54.967Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260908-r21-epa-nrsa-1314/build.log"
+      },
+      {
+        "command": "npm run typecheck",
+        "startedAt": "2026-09-09T01:19:54.968Z",
+        "finishedAt": "2026-09-09T01:19:59.403Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260908-r21-epa-nrsa-1314/typecheck.log"
+      },
+      {
+        "command": "npm run check:runtime-assets",
+        "startedAt": "2026-09-09T01:19:59.403Z",
+        "finishedAt": "2026-09-09T01:20:03.676Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260908-r21-epa-nrsa-1314/check-runtime-assets.log"
+      },
+      {
+        "command": "npm run check:vercel-publish",
+        "startedAt": "2026-09-09T01:20:03.676Z",
+        "finishedAt": "2026-09-09T01:20:04.918Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260908-r21-epa-nrsa-1314/check-vercel-publish.log"
+      }
+    ],
+    "orchestration": {
+      "recordedAt": "2026-09-09T01:22:16.592Z",
+      "checks": [
+        {
+          "name": "validate-before",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "name": "dashboard",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "name": "validate-after",
+          "exitCode": 0,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "runtimeBundles": {
+    "map": {
+      "url": "https://data.isitusa.com/app-data/sha256/1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87.json",
+      "sha256": "1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87",
+      "bytes": 3854452,
+      "storedBytes": 715006
+    },
+    "catalog": {
+      "url": "https://data.isitusa.com/app-data/sha256/0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5.json",
+      "sha256": "0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5",
+      "bytes": 4831012,
+      "storedBytes": 698126
+    }
+  },
+  "localPageBytes": {
+    ".next/server/app/index.html": 11166,
+    ".next/server/app/index.rsc": 6014
+  },
+  "liveCoherence": {
+    "coherent": true,
+    "releaseId": "research-7674fc93bc4f-25dacfee2d1a3835",
+    "manifestSha256": "007b7d2387af05d1dda52bd093ff2abffb232e54a02f0f60164f3bca58cceefa",
+    "countiesChecked": 67,
+    "mismatches": 0,
+    "requests": 70,
+    "finishedAt": "2026-09-09T01:22:17.744Z"
+  },
+  "rollbackApp": {
+    "id": "dpl_BKquwzVxX7h3U1vxpCczXGkELjNm",
+    "url": "projectisitusa-ffjceh868-unigentamos.vercel.app",
+    "state": "READY",
+    "substate": "PROMOTED",
+    "target": "production",
+    "commit": "4b9d8e104a52bd482afaefd4a246cdfde5200de2",
+    "createdAt": 1788908284729
+  },
+  "researchPublication": {
+    "localReleaseId": "research-d4d860e6b272-632dcfb8e051fbfc",
+    "localManifestSha256": "e7a4b48a9335b361184c6a62e66fd71662e4976f9e6722594ad96652dc3e8f5f",
+    "activeReleaseId": "research-7674fc93bc4f-25dacfee2d1a3835",
+    "promoted": false,
+    "uploadedObjects": 0,
+    "nextOrdinaryPromotionAt": "2026-09-15T22:56:09.326Z",
+    "storagePlan": "ops/national-research/publication/r2-historical-removal-review-plan-20260909-r21.json",
+    "projectedBytesWithoutCleanup": 8103554430,
+    "deletionAuthorized": false,
+    "deletionPerformed": false
+  },
+  "nextSourcePilot": "ops/national-research/evaluations/ebird-eod-original-field-pilot-20260909-r19.json",
+  "artifact": {
+    "path": "ops/releases/artifacts/epa-nrsa-1314-validation-20260909-r21.json.gz",
+    "sha256": "27223bc9201a633971a92229fdf804deb5a7798aeacf30ea3de7327fe4f5dba2",
+    "bytes": 7947745,
+    "files": 31
+  },
+  "limitations": [
+    "This receipt is predeployment evidence; it is not proof of a pushed commit, provider Ready state or production alias.",
+    "The public research release remains r20 with 319584 determinations. The 230 new determinations are local and not yet published to R2.",
+    "Twenty-two date-only freshness changes and 853 newly explicit sparse-default rows are not research gains.",
+    "No R2 object was uploaded, promoted or deleted in this batch. The removal plan awaits explicit approval and a fresh pre-execution inventory.",
+    "The new eBird pilot has 41 original records across five candidate pairs, with zero canonical evidence events or determinations; source-method review is pending.",
+    "Dashboard metering was visibly 13 hours old and showed a load warning; no causal long-term usage saving or account-specific billing assertion is made.",
+    "The ongoing autonomous research and product goal is not complete."
+  ]
+}

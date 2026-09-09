@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "kind": "ebird-complete-public-pilot-retention",
+  "recordedAt": "2026-09-09T00:58:26.332Z",
+  "status": "review-candidate-not-canonical-evidence",
+  "sourceId": "gbif-ebird",
+  "baseCommit": "d4d860e6b27296e09cada8cfadde35e734668522",
+  "datasetKey": "4fa7b334-ce0d-4e88-aaae-2e0c138d049e",
+  "sourceYear": 2024,
+  "planningTaxonKey": 2479582,
+  "taxon": "Brotogeris versicolurus",
+  "publicRequests": {
+    "search": 1,
+    "verbatim": 41,
+    "methodContext": 5,
+    "total": 47,
+    "retries": 0,
+    "providerFailures": 0,
+    "parserFailures": 1,
+    "authenticatedRequests": 0,
+    "downloadRequestsSubmitted": 0
+  },
+  "completeSinglePageRecords": 41,
+  "originalRecordsRetained": 41,
+  "candidatePairs": [
+    {
+      "pair": "06037:brotogeris-versicolurus",
+      "stateCode": "CA",
+      "records": 14,
+      "baseline": "not-researched",
+      "projectionSha256": "ca5572e41a8bab682bc00ffbe6660cecc5126719dd8493b2fb3ec5dd6fa9e0db"
+    },
+    {
+      "pair": "06085:brotogeris-versicolurus",
+      "stateCode": "CA",
+      "records": 4,
+      "baseline": "not-researched",
+      "projectionSha256": "5e0322f109a8494e907aeb8c7578357b2e2962d8be4189f461b37bdb8618f0e9"
+    },
+    {
+      "pair": "12086:brotogeris-versicolurus",
+      "stateCode": "FL",
+      "records": 13,
+      "baseline": "not-researched",
+      "projectionSha256": "bf459a7b48b3edce9522c8d55cefaf4a54959f4c917e7ee5b9e3384acbe4a693"
+    },
+    {
+      "pair": "12087:brotogeris-versicolurus",
+      "stateCode": "FL",
+      "records": 9,
+      "baseline": "not-researched",
+      "projectionSha256": "f08504719c7147b9078e6e47b8400a9fbabffcf49ef24f3d9887199a8e75030b"
+    },
+    {
+      "pair": "12103:brotogeris-versicolurus",
+      "stateCode": "FL",
+      "records": 1,
+      "baseline": "not-researched",
+      "projectionSha256": "606cc231d66a760b88f5de55f6daf58191ec8994cd4a232400d6acd5070d9b7b"
+    }
+  ],
+  "canonicalEvidenceEvents": 0,
+  "newDeterminations": 0,
+  "metadataDependency": "ops/national-research/evaluations/ebird-eod-public-metadata-20260909-r19.json",
+  "metadataArchive": "ops/national-research/evaluations/artifacts/ebird-eod-public-metadata-20260909-r19.json.gz",
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/ebird-eod-original-field-pilot-20260909-r19.json.gz",
+    "sha256": "d9ed8aeeeb0240f6b054a224c0ada8f579552bfbd4f162a6f92d57daf46c203b",
+    "bytes": 144204,
+    "files": 59
+  },
+  "mechanicalChecks": [
+    "One terminal search page: count equals 41 rows with 41 unique GBIF keys.",
+    "All 41 exact interpreted/original identities, original source names, explicit county/state and source dates agree.",
+    "Each original county maps uniquely to an active registry county within the original state.",
+    "All five candidate pairs are currently sparse not-researched at exact d4d860e6b27296e09cada8cfadde35e734668522 projections.",
+    "Every retained original response, recipe and diagnostic passes byte/hash round-trip validation.",
+    "All 41 opaque status/crawl/omit values match older dataset-level machine tags."
+  ],
+  "qualifications": [
+    "The first verbatim GET succeeded and was retained, but a speculative core-object response shape failed. The public API actually returned flat full-URI keys. The remaining 40 keys were acquired with the corrected field contract; the first key was never reacquired.",
+    "Source-level quality interpretation and a new canonical adapter remain pending independent review. The frozen evidence-run profile is not satisfied by these diagnostic receipts.",
+    "The initial core-object parser assumption failed after a successful retained GET. The corrected flat full-URI contract reused that original response and acquired only the remaining keys.",
+    "The dataset-level not_reviewed tag is retained with its namespace and timestamps; it is not labeled an individual eBird rejection or human approval.",
+    "County labels can support recorded occurrence without a mandatory coordinate uncertainty or photograph field. Context-specific contradictions remain material.",
+    "Historical occurrence, wild observation, current persistence, establishment, invasive impact, absence and research completion remain distinct.",
+    "The larger authenticated 239701-record EOD download is still unsubmitted while the reopened human-verification/sign-in tab awaits user completion."
+  ],
+  "nextStep": "MAIN registers bounded nonoverlapping CA and FL evidence-review leases for these five pairs, independently reviews the shared method and original fields, then implements and tests an explicit EOD retained-source adapter before canonical evidence integration."
+}
