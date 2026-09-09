@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260909T023428Z__gbif-ebird__d4a26b7db3ae",
+  "status": "complete",
+  "started_at": "2026-09-09T02:34:28.626Z",
+  "finished_at": "2026-09-09T02:34:31.949Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ebird-retained-original-observations@1.0.0",
+  "source_id": "gbif-ebird",
+  "source_registry_hash": "12bca4e67345f78e06272034c264f5c7ad38415156b479e6eb8e45c3848ec281",
+  "adapter_id": "gbif-ebird-retained-original-observations",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "502ae617ae95b7825a1d077df0b1baf0628be130f8005cf7dc361e8b0a9e803f",
+  "code_commit": "d7f5bef4c7807f4eb7063f5e17c40aceb0b35f3c",
+  "parameter_hash": "d4a26b7db3ae3dbd7ceff79458a74cdca543d1ab95813d683e4fc71dbe51ad49",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/ebird-original-20260909-r22.json",
+    "methodReviewSha256": "4ca5963a63006020fa72b29cd35ae54bb5b5a3a6002f8f94546f7de9cdffe69d",
+    "mode": "retained-reviewed-original-ebird-observations",
+    "stateCode": "FL",
+    "candidatePairs": [
+      "12086:brotogeris-versicolurus",
+      "12087:brotogeris-versicolurus",
+      "12103:brotogeris-versicolurus"
+    ],
+    "candidateLimit": 3
+  },
+  "requested_scope": {
+    "state_code": "FL",
+    "county_fips": [
+      "12086",
+      "12087",
+      "12103"
+    ],
+    "species_ids": [
+      "brotogeris-versicolurus"
+    ],
+    "pair_keys": [
+      "12086:brotogeris-versicolurus",
+      "12087:brotogeris-versicolurus",
+      "12103:brotogeris-versicolurus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260909T023428Z__gbif-ebird__d4a26b7db3ae/artifacts/ebird-original-witnesses.json",
+      "sha256": "13605bfa38c7793dd47998c5d270ba5e2362d31af10fb99750e5d992ff868e96",
+      "bytes": 317283,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260909T023428Z__gbif-ebird__d4a26b7db3ae/assertions.ndjson",
+      "sha256": "42ce84fd76ba345e07202c105a944a9d48ddae5fabd2ddb76837b2f7a6451c9b",
+      "bytes": 12009,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T023428Z__gbif-ebird__d4a26b7db3ae/reviews.ndjson",
+      "sha256": "dcc1a0a12db1f946f484ecb3de6d0dfbf9d822ef50c24dbc018efaabec1bbd74",
+      "bytes": 2838,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T023428Z__gbif-ebird__d4a26b7db3ae/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T023428Z__gbif-ebird__d4a26b7db3ae/outcomes.ndjson",
+      "sha256": "b6350dbafbea60f04815cc64f702ccc202c9c443c98bf55c00517210e481532f",
+      "bytes": 2904,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 23,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Annual EOD historical occurrence evidence only, with source-specific original-field and independent method review. No checklist non-detection, absence, establishment, current persistence or individual human expert-approval inference."
+  ],
+  "source_warnings": [
+    "Historical 2024 recorded occurrence only; no current persistence, breeding, establishment, population size or invasive-impact claim.",
+    "EOD omits sampling-effort and complete-checklist metadata. Source silence and unfinished acquisition never create absence or non-detection.",
+    "The complete retained single-page query defines this bounded record scope, not all years, all eBird data, or a completed county protocol.",
+    "Original county/state names resolve uniquely to current active county entries; coordinates are consistency evidence only. Missing coordinate uncertainty does not negate this explicit county authority.",
+    "Matching dataset machine tags support a qualified annotation-propagation inference. The exact GBIF flattening transformation and individual human expert approval are not proved.",
+    "Cornell asks for living unrestrained birds and permits suspected escapes. Home, park, hotel, golf-course or zoo locality words alone do not establish captivity; concrete record contradictions still require review.",
+    "Multiple observers may report the same birds or event. Source record counts are not summed or described as independent sightings.",
+    "The first verbatim response was successfully retained before a local parser-shape failure. It was reused, and the remaining 40 originals were acquired once; no failure bytes or code identities were rewritten.",
+    "The context acquisition receipt pins its executed recipe but declares no repository commit. Earlier taxonomy metadata and later occurrence acquisition preserve their distinct actual commits."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ebird --state FL --candidate-file ops/national-research/plans/ebird-original-20260909-r22/FL.json --output-root src/data/research/runs --stage-canonical true --pairs 12086:brotogeris-versicolurus,12087:brotogeris-versicolurus,12103:brotogeris-versicolurus"
+}
