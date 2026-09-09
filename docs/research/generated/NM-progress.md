@@ -7,20 +7,20 @@ Generated: `2026-09-09T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `2774`
+- Verified present: `2775`
 - Verified absent: `33`
 - Not detected: `0`
 - Researched unresolved: `13965`
-- Not researched: `65860`
+- Not researched: `65859`
 - Determination coverage: `3.40%`
 - Research coverage: `20.30%`
-- Explicit outcome coverage: `20.2972%`
-- Applicable protocol cells: `388`
+- Explicit outcome coverage: `20.2984%`
+- Applicable protocol cells: `389`
 - Current complete protocol cells: `63`
-- Protocol completion: `19.59%`
-- Current protocol completion: `16.24%`
-- Evidence records: `2814`
-- Research runs: `44`
+- Protocol completion: `19.54%`
+- Current protocol completion: `16.20%`
+- Evidence records: `2815`
+- Research runs: `45`
 - Rejection records: `501`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -54,9 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Annual ryegrass (`lolium-multiflorum`) | plants | 32 | 0 | 1 |
 | Low mallow (`malva-pusilla`) | plants | 32 | 0 | 1 |
 | Guineagrass (`megathyrsus-maximus`) | plants | 32 | 0 | 1 |
+| Monk Parakeet (`myiopsitta-monachus`) | wildlife | 32 | 0 | 1 |
 | Anise (`myrrhis-odorata`) | plants | 32 | 0 | 1 |
 | Wild Parsnip (`pastinaca-sativa`) | plants | 32 | 0 | 1 |
-| Parsley (`petroselinum-crispum`) | plants | 32 | 0 | 1 |
 
 ## Source Operations
 
@@ -90,7 +90,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 44 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-09-04T20:30:16.534Z | 2 | 1 |
-| GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
+| GBIF eBird Observation Dataset | operational | 2026-09-09T05:05:17.634Z | 1 | 1 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T23:37:30.357Z | 167 | 10 |
 | Water Quality Portal biological results | operational | 2026-09-08T12:22:05.506Z | 1 | 1 |

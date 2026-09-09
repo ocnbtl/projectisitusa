@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 387,
+    "applicableSpeciesCount": 388,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2117,
+    "unknownSpeciesCount": 2116,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 334,
+    "derivedApplicableSpeciesCount": 335,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 595,
+    "boundedAcquisitionSpeciesCount": 596,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 180288,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 7164,
+    "verifiedPresent": 7165,
     "verifiedAbsent": 72,
     "notDetected": 29,
     "researchedUnresolved": 27254,
-    "notResearched": 145769,
+    "notResearched": 145768,
     "determinationCoveragePercent": 4.01,
     "researchCoveragePercent": 19.15,
-    "explicitOutcomePairCount": 34519,
-    "explicitOutcomeCoveragePercent": 19.1466,
+    "explicitOutcomePairCount": 34520,
+    "explicitOutcomeCoveragePercent": 19.1471,
     "conflictCount": 0,
-    "evidenceRecordCount": 11461,
+    "evidenceRecordCount": 11462,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 11461,
+    "runEvidenceRecordCount": 11462,
     "rejectionRecordCount": 1559,
-    "researchRunCount": 44,
+    "researchRunCount": 45,
     "boundedAcquisition": {
-      "speciesCount": 595,
-      "totalPairs": 42840,
-      "verifiedPresent": 7164,
+      "speciesCount": 596,
+      "totalPairs": 42912,
+      "verifiedPresent": 7165,
       "verifiedAbsent": 72,
       "notDetected": 29,
       "researchedUnresolved": 27254,
-      "notResearched": 8321,
-      "researchCoveragePercent": 80.58,
-      "explicitOutcomePairs": 34519,
-      "explicitOutcomeCoveragePercent": 80.5766
+      "notResearched": 8392,
+      "researchCoveragePercent": 80.44,
+      "explicitOutcomePairs": 34520,
+      "explicitOutcomeCoveragePercent": 80.4437
     }
   },
   "migrationCandidates": {
@@ -363,9 +363,9 @@
       "authority": "Cornell Lab of Ornithology via GBIF",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-09T05:06:26.321Z",
+      "evidencePairCount": 1,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "idigbio-preserved-specimens",
@@ -542,17 +542,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2380,
-    "applicableCells": 422,
-    "notApplicableCells": 1958,
+    "totalCells": 2384,
+    "applicableCells": 423,
+    "notApplicableCells": 1961,
     "completeCells": 141,
-    "incompleteCells": 280,
+    "incompleteCells": 281,
     "blockedCells": 1,
     "currentCells": 128,
     "staleCells": 13,
-    "undatedCells": 281,
-    "applicableCompletionPercent": 33.41,
-    "currentCompletePercent": 30.33,
+    "undatedCells": 282,
+    "applicableCompletionPercent": 33.33,
+    "currentCompletePercent": 30.26,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 35,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -578,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 18,
+        "applicableCells": 19,
         "currentCompleteCells": 7,
-        "currentCompletePercent": 38.89
+        "currentCompletePercent": 36.84
       }
     ],
     "priorityCompletion": [
@@ -598,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 361,
+        "applicableCells": 362,
         "currentCompleteCells": 80,
-        "currentCompletePercent": 22.16
+        "currentCompletePercent": 22.1
       },
       {
         "priority": "baseline",
@@ -618,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 387,
+        "applicableCells": 388,
         "currentCompleteCells": 107,
         "processed": false
       },
@@ -1188,6 +1188,18 @@
       "commonName": "Low mallow",
       "scientificName": "Malva pusilla",
       "category": "plants",
+      "notResearchedCountyCount": 71,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 71001
+    },
+    {
+      "speciesId": "myiopsitta-monachus",
+      "commonName": "Monk Parakeet",
+      "scientificName": "Myiopsitta monachus",
+      "category": "wildlife",
       "notResearchedCountyCount": 71,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
@@ -1811,18 +1823,6 @@
       "speciesId": "lotus-corniculatus",
       "commonName": "Bird's-foot Trefoil",
       "scientificName": "Lotus corniculatus",
-      "category": "plants",
-      "notResearchedCountyCount": 69,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 69001
-    },
-    {
-      "speciesId": "medicago-sativa",
-      "commonName": "Alfalfa",
-      "scientificName": "Medicago sativa",
       "category": "plants",
       "notResearchedCountyCount": 69,
       "researchedUnresolvedCountyCount": 0,
