@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260909T034105Z__gbif-ebird__ae361bf34a19",
+  "status": "complete",
+  "started_at": "2026-09-09T03:41:05.681Z",
+  "finished_at": "2026-09-09T03:41:10.983Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ebird-retained-original-observations@2.0.0",
+  "source_id": "gbif-ebird",
+  "source_registry_hash": "af52a785a808ec7e3b58c3e8c009b7bdd645e7d51a1d1116d73b0d22ff26e636",
+  "adapter_id": "gbif-ebird-retained-original-observations",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "502ae617ae95b7825a1d077df0b1baf0628be130f8005cf7dc361e8b0a9e803f",
+  "code_commit": "c68e4e60b5414c086146aa5f6095d58fd7b9ff54",
+  "parameter_hash": "ae361bf34a198962715d97f952b0fc04fbd779d88fdef77f2e344c0d5195b77d",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/ebird-selected-original-20260909-r23.json",
+    "methodReviewSha256": "d9d97da80331f2800cb0c307f9bf5a95dab4197e81ba9806de96c2be6c7ff2d4",
+    "mode": "retained-reviewed-selected-ebird-observations",
+    "stateCode": "FL",
+    "candidatePairs": [
+      "12009:myiopsitta-monachus",
+      "12011:myiopsitta-monachus",
+      "12015:myiopsitta-monachus",
+      "12021:myiopsitta-monachus",
+      "12057:myiopsitta-monachus",
+      "12069:myiopsitta-monachus",
+      "12071:myiopsitta-monachus",
+      "12073:myiopsitta-monachus",
+      "12081:myiopsitta-monachus",
+      "12085:myiopsitta-monachus",
+      "12087:myiopsitta-monachus",
+      "12095:myiopsitta-monachus",
+      "12097:myiopsitta-monachus",
+      "12099:myiopsitta-monachus",
+      "12101:myiopsitta-monachus",
+      "12103:myiopsitta-monachus",
+      "12105:myiopsitta-monachus",
+      "12115:myiopsitta-monachus",
+      "12117:myiopsitta-monachus",
+      "12129:myiopsitta-monachus"
+    ],
+    "candidateLimit": 20
+  },
+  "requested_scope": {
+    "state_code": "FL",
+    "county_fips": [
+      "12009",
+      "12011",
+      "12015",
+      "12021",
+      "12057",
+      "12069",
+      "12071",
+      "12073",
+      "12081",
+      "12085",
+      "12087",
+      "12095",
+      "12097",
+      "12099",
+      "12101",
+      "12103",
+      "12105",
+      "12115",
+      "12117",
+      "12129"
+    ],
+    "species_ids": [
+      "myiopsitta-monachus"
+    ],
+    "pair_keys": [
+      "12009:myiopsitta-monachus",
+      "12011:myiopsitta-monachus",
+      "12015:myiopsitta-monachus",
+      "12021:myiopsitta-monachus",
+      "12057:myiopsitta-monachus",
+      "12069:myiopsitta-monachus",
+      "12071:myiopsitta-monachus",
+      "12073:myiopsitta-monachus",
+      "12081:myiopsitta-monachus",
+      "12085:myiopsitta-monachus",
+      "12087:myiopsitta-monachus",
+      "12095:myiopsitta-monachus",
+      "12097:myiopsitta-monachus",
+      "12099:myiopsitta-monachus",
+      "12101:myiopsitta-monachus",
+      "12103:myiopsitta-monachus",
+      "12105:myiopsitta-monachus",
+      "12115:myiopsitta-monachus",
+      "12117:myiopsitta-monachus",
+      "12129:myiopsitta-monachus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260909T034105Z__gbif-ebird__ae361bf34a19/artifacts/ebird-selected-original-witnesses.json",
+      "sha256": "5a8a36280e8e39e087754569b67fcf321ceb47087c4a2eeb86c39002ebbaee87",
+      "bytes": 613783,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260909T034105Z__gbif-ebird__ae361bf34a19/assertions.ndjson",
+      "sha256": "ff899227814b6f7c4f8f90926057ceba30f02e2f055f04ae163c3153aaaa9fa2",
+      "bytes": 97435,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T034105Z__gbif-ebird__ae361bf34a19/reviews.ndjson",
+      "sha256": "90dcaa74a935f666692287448d3ea7002352f232cf5730d82ce83930e86a698b",
+      "bytes": 19200,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T034105Z__gbif-ebird__ae361bf34a19/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T034105Z__gbif-ebird__ae361bf34a19/outcomes.ndjson",
+      "sha256": "feea924be419fa2b4395b3b0897c9ed327acf48f4686d8251ebfb3a7228056d1",
+      "bytes": 19726,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 20,
+    "candidate_records": 38,
+    "assertion_events": 20,
+    "review_events": 20,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 20
+  },
+  "errors": [],
+  "known_caveats": [
+    "Annual EOD historical occurrence evidence only, with source-specific original-field and independent method review. No checklist non-detection, absence, establishment, current persistence or individual human expert-approval inference."
+  ],
+  "source_warnings": [
+    "Historical 2024 recorded occurrence only; no current persistence, breeding, establishment, abundance or invasive-impact claim.",
+    "The parent public search is incomplete:15000 records retained of21878 declared. No source silence, failed request, rejected record or incomplete scope supports absence, non-detection or completed no-evidence research.",
+    "scope_complete on positive outcomes refers only to the explicit finite original-record set listed in the pinned method and query URLs. It does not claim exhaustive national source acquisition or county protocol completion.",
+    "Only97 selected originals in the51 approved county pairs have independent original-field approval in this method. Other retained interpreted records and26 deferred county pairs are not silently approved.",
+    "Original county/state names resolve uniquely to active counties; coordinates and GADM are retained context, not county assignment authority. Missing coordinate uncertainty alone does not defeat an explicit original county.",
+    "The explicit collection allowlist is EBIRD, EBIRD_ATL_NY and EBIRD_ATL_NC. Original and interpreted collection codes, catalog numbers and full occurrence URNs must match without rewriting the source.",
+    "Cornell pages describe New York and North Carolina eBird atlas portals. Interpreting the corresponding internal collection codes as portal identities is qualified; the pages do not define the GBIF collection-code mapping, and atlas participation does not establish breeding or expert review.",
+    "Opaque not_reviewed and crawler fields match retained dataset annotations; metadata propagation is qualified inference, not individual rejection or individual human expert approval.",
+    "Home, park, cemetery, golf-course or zoo locality words alone do not establish captivity. Specific source-record contradictions and negated captivity instructions are reviewed in context.",
+    "Distinct occurrence identifiers may share observers, birds or events; selected counts are not summed as independent animals.",
+    "The initial partial search timeout, bounded resume stop and failed Cornell block-page context request remain preserved. No failure is rewritten as a successful acquisition.",
+    "Two partial search acquisitions containing50 retained pages,141 selected original responses and their distinct executed code identities remain retained across shared archives; only declared selected originals are used as positive witnesses."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ebird --state FL --candidate-file ops/national-research/plans/ebird-selected-original-20260909-r23/FL.json --output-root src/data/research/runs --stage-canonical true --pairs 12009:myiopsitta-monachus,12011:myiopsitta-monachus,12015:myiopsitta-monachus,12021:myiopsitta-monachus,12057:myiopsitta-monachus,12069:myiopsitta-monachus,12071:myiopsitta-monachus,12073:myiopsitta-monachus,12081:myiopsitta-monachus,12085:myiopsitta-monachus,12087:myiopsitta-monachus,12095:myiopsitta-monachus,12097:myiopsitta-monachus,12099:myiopsitta-monachus,12101:myiopsitta-monachus,12103:myiopsitta-monachus,12105:myiopsitta-monachus,12115:myiopsitta-monachus,12117:myiopsitta-monachus,12129:myiopsitta-monachus"
+}

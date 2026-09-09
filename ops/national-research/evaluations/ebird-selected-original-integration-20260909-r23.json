@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-original-ebird-canonical-integration",
+  "recordedAt": "2026-09-09T03:43:46.077Z",
+  "sourceCodeCommit": "c68e4e60b5414c086146aa5f6095d58fd7b9ff54",
+  "methodReview": "src/data/research/source-method-reviews/ebird-selected-original-20260909-r23.json",
+  "status": "canonical-validated-projection-reconciliation-pending",
+  "runs": [
+    {
+      "stateCode": "TX",
+      "runId": "20260909T034058Z__gbif-ebird__d8fce73e0bcc",
+      "receipt": {
+        "path": "src/data/research/runs/20260909T034058Z__gbif-ebird__d8fce73e0bcc/receipt.json",
+        "bytes": 8561,
+        "sha256": "84a05ba7f620adb4717d347418f8b15fd168be02c85e7a3dd6cc2fe036192e8f"
+      },
+      "counts": {
+        "requested_pairs": 23,
+        "candidate_records": 43,
+        "assertion_events": 23,
+        "review_events": 23,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 23
+      },
+      "canonicalValidation": "passed"
+    },
+    {
+      "stateCode": "FL",
+      "runId": "20260909T034105Z__gbif-ebird__ae361bf34a19",
+      "receipt": {
+        "path": "src/data/research/runs/20260909T034105Z__gbif-ebird__ae361bf34a19/receipt.json",
+        "bytes": 8227,
+        "sha256": "e1888eaa252ad0bba47308b02d5a3b4ed96ec796a9e93bd9f2be0500fb46cd4f"
+      },
+      "counts": {
+        "requested_pairs": 20,
+        "candidate_records": 38,
+        "assertion_events": 20,
+        "review_events": 20,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 20
+      },
+      "canonicalValidation": "passed"
+    },
+    {
+      "stateCode": "NY",
+      "runId": "20260909T034112Z__gbif-ebird__b7ad0ee6bd86",
+      "receipt": {
+        "path": "src/data/research/runs/20260909T034112Z__gbif-ebird__b7ad0ee6bd86/receipt.json",
+        "bytes": 6888,
+        "sha256": "ef58d3c80b550a869801605f712b3da1bea2466cc0c1dbd45b66b7123c335c45"
+      },
+      "counts": {
+        "requested_pairs": 8,
+        "candidate_records": 16,
+        "assertion_events": 8,
+        "review_events": 8,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 8
+      },
+      "canonicalValidation": "passed"
+    }
+  ],
+  "independentAudit": {
+    "recordedAt": "2026-09-09T03:42:29.156059Z",
+    "passed": true,
+    "sourceCodeCommit": "c68e4e60b5414c086146aa5f6095d58fd7b9ff54",
+    "independentImplementation": "Python standard library; no adapter or compiler imports",
+    "originalRows": 97,
+    "uniquePairs": 51,
+    "runs": [
+      {
+        "state": "TX",
+        "receiptSha256": "84a05ba7f620adb4717d347418f8b15fd168be02c85e7a3dd6cc2fe036192e8f",
+        "assertions": 23,
+        "sourceRows": 43
+      },
+      {
+        "state": "FL",
+        "receiptSha256": "e1888eaa252ad0bba47308b02d5a3b4ed96ec796a9e93bd9f2be0500fb46cd4f",
+        "assertions": 20,
+        "sourceRows": 38
+      },
+      {
+        "state": "NY",
+        "receiptSha256": "ef58d3c80b550a869801605f712b3da1bea2466cc0c1dbd45b66b7123c335c45",
+        "assertions": 8,
+        "sourceRows": 16
+      }
+    ],
+    "pairs": [
+      {
+        "pair": "48003:myiopsitta-monachus",
+        "primaryKey": 5570935239,
+        "date": "2024-06-28",
+        "sourceUrl": "https://www.gbif.org/occurrence/5570935239",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-e53645966f7c5bae0225466a57f9ae097adb5583c110d7e9a45e55236d420522"
+      },
+      {
+        "pair": "48027:myiopsitta-monachus",
+        "primaryKey": 5567711371,
+        "date": "2024-04-07",
+        "sourceUrl": "https://www.gbif.org/occurrence/5567711371",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-6482bdbd977f0cafcf60f73c74559ee865daf775e7119fb17db1b50133bc8b9a"
+      },
+      {
+        "pair": "48029:myiopsitta-monachus",
+        "primaryKey": 5344802692,
+        "date": "2024-09-12",
+        "sourceUrl": "https://www.gbif.org/occurrence/5344802692",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-0180816fd8e6c9267a5af26ed620c6d01d056e29c751741f92a2b0341746c9c3"
+      },
+      {
+        "pair": "48039:myiopsitta-monachus",
+        "primaryKey": 5461397719,
+        "date": "2024-09-28",
+        "sourceUrl": "https://www.gbif.org/occurrence/5461397719",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-37162b21c49f4790fa727feafad9e892bdbc0e09f891f9cd47d57de4d04143f1"
+      },
+      {
+        "pair": "48061:myiopsitta-monachus",
+        "primaryKey": 5337260213,
+        "date": "2024-04-19",
+        "sourceUrl": "https://www.gbif.org/occurrence/5337260213",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-185a3ea925d508bd8140d8b8f865c802edaf2e728d1717f6598b68f36e26af7a"
+      },
+      {
+        "pair": "48099:myiopsitta-monachus",
+        "primaryKey": 5512534041,
+        "date": "2024-06-23",
+        "sourceUrl": "https://www.gbif.org/occurrence/5512534041",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-ca37903e2bdb77a8e1e0ad5a5dd834c9130f99375b20015ce2d28b0a53dde967"
+      },
+      {
+        "pair": "48113:myiopsitta-monachus",
+        "primaryKey": 5380783278,
+        "date": "2024-09-29",
+        "sourceUrl": "https://www.gbif.org/occurrence/5380783278",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-bd5e8a7bcbddbe4ae4b14f79558738cc61a2105c6d8d9a7b77500dbf74a761a9"
+      },
+      {
+        "pair": "48121:myiopsitta-monachus",
+        "primaryKey": 5685474547,
+        "date": "2024-08-13",
+        "sourceUrl": "https://www.gbif.org/occurrence/5685474547",
+        "sourceRecords": 1,
+        "assertionId": "ebird-selected-original-assertion-085e31fa5bc463fc5b6aae182b20339e1d84eec3bf8373d0d18ee101520dc951"
+      },
+      {
+        "pair": "48141:myiopsitta-monachus",
+        "primaryKey": 5441390551,
+        "date": "2024-08-16",
+        "sourceUrl": "https://www.gbif.org/occurrence/5441390551",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-f9b96fcf32f79466ec3cccbcf131294537a7a00391bdee1093aa659b82647826"
+      },
+      {
+        "pair": "48157:myiopsitta-monachus",
+        "primaryKey": 5586688184,
+        "date": "2024-08-25",
+        "sourceUrl": "https://www.gbif.org/occurrence/5586688184",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-b1a982eceb9240cb47e49258093dd6e6df13c6903b6ad63904d5c2d59bde4219"
+      },
+      {
+        "pair": "48167:myiopsitta-monachus",
+        "primaryKey": 5301132390,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5301132390",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-c9dc1a92be9d342f83a98c7a37c9273215cf1c0a79ef3f79705a7cc2adacf898"
+      },
+      {
+        "pair": "48201:myiopsitta-monachus",
+        "primaryKey": 5489168416,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5489168416",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-8b319e39a9180084dc2734d1a222adb7199cbae30159b8be4e167eea564d8050"
+      },
+      {
+        "pair": "48209:myiopsitta-monachus",
+        "primaryKey": 5568435870,
+        "date": "2024-05-02",
+        "sourceUrl": "https://www.gbif.org/occurrence/5568435870",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-186ba93babd45e31e9fa7da0d5a9f8c2b6a24cbc0ca9e2a1c350e17439bb4340"
+      },
+      {
+        "pair": "48215:myiopsitta-monachus",
+        "primaryKey": 5460622528,
+        "date": "2024-08-20",
+        "sourceUrl": "https://www.gbif.org/occurrence/5460622528",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-f925192f43c5a86c3b7f0169832e2a74392c51c0b4bd889dc25ecd3ea7079839"
+      },
+      {
+        "pair": "48249:myiopsitta-monachus",
+        "primaryKey": 5357797096,
+        "date": "2024-05-17",
+        "sourceUrl": "https://www.gbif.org/occurrence/5357797096",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-f1178a241a03c6eb4adcc93c6927a76fcb57c5aee5f0a22afbaa48d2e088be78"
+      },
+      {
+        "pair": "48325:myiopsitta-monachus",
+        "primaryKey": 5308031399,
+        "date": "2024-06-14",
+        "sourceUrl": "https://www.gbif.org/occurrence/5308031399",
+        "sourceRecords": 1,
+        "assertionId": "ebird-selected-original-assertion-a1e7f22412cfeb39a25c7209065a9e91e67254a9df47c44a795c0e4b90713b8e"
+      },
+      {
+        "pair": "48329:myiopsitta-monachus",
+        "primaryKey": 5629620924,
+        "date": "2024-08-23",
+        "sourceUrl": "https://www.gbif.org/occurrence/5629620924",
+        "sourceRecords": 1,
+        "assertionId": "ebird-selected-original-assertion-d0a1da40be1637ef57710232949f26a0d4f0df9b5af48d1b027b338870c11724"
+      },
+      {
+        "pair": "48339:myiopsitta-monachus",
+        "primaryKey": 5416294987,
+        "date": "2024-05-15",
+        "sourceUrl": "https://www.gbif.org/occurrence/5416294987",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-316ec31aaedc8ddadc1afdad766ed6e8b6c2e582aff76320c7bc37877e1b7840"
+      },
+      {
+        "pair": "48355:myiopsitta-monachus",
+        "primaryKey": 5313097808,
+        "date": "2024-09-29",
+        "sourceUrl": "https://www.gbif.org/occurrence/5313097808",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-f734fdf3af7f7a5f3876f136bf30a8f70532948b6c51791243cb3c347d52ffcc"
+      },
+      {
+        "pair": "48439:myiopsitta-monachus",
+        "primaryKey": 5316294520,
+        "date": "2024-07-21",
+        "sourceUrl": "https://www.gbif.org/occurrence/5316294520",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-55ccf4c94541b2812614a1d42f80f331b127e8650d5cd5849082d980af7b7456"
+      },
+      {
+        "pair": "48453:myiopsitta-monachus",
+        "primaryKey": 5316224228,
+        "date": "2024-09-29",
+        "sourceUrl": "https://www.gbif.org/occurrence/5316224228",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-3cb8d75f2c96daf2ab824be2e7a101d536506f193233416252e5dd2103b04cea"
+      },
+      {
+        "pair": "48479:myiopsitta-monachus",
+        "primaryKey": 5474270049,
+        "date": "2024-09-27",
+        "sourceUrl": "https://www.gbif.org/occurrence/5474270049",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-fc2940f215c09668530d8fadd2380acc5938b184418399840d199914fbaf4548"
+      },
+      {
+        "pair": "48491:myiopsitta-monachus",
+        "primaryKey": 5481089972,
+        "date": "2024-09-24",
+        "sourceUrl": "https://www.gbif.org/occurrence/5481089972",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-63f87f1935b6d46656a00f36b57988f1bc2865822e34fbf2e60271d178af3fbd"
+      },
+      {
+        "pair": "12009:myiopsitta-monachus",
+        "primaryKey": 5326013332,
+        "date": "2024-05-31",
+        "sourceUrl": "https://www.gbif.org/occurrence/5326013332",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-eeedfb131ce1b7e559df7b039c210b5147d93456ca3d4dfdb72481eb970cba0c"
+      },
+      {
+        "pair": "12011:myiopsitta-monachus",
+        "primaryKey": 5402404813,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5402404813",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-3c0bdc1c247e4f1bdf6320871152c4bb0810c10b3405bbb59cd77b61570f3006"
+      },
+      {
+        "pair": "12015:myiopsitta-monachus",
+        "primaryKey": 5475778473,
+        "date": "2024-09-29",
+        "sourceUrl": "https://www.gbif.org/occurrence/5475778473",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-a1dd711564603a7244baeae67cda70dc9487908ba9e0e174a78d3563afb6fd39"
+      },
+      {
+        "pair": "12021:myiopsitta-monachus",
+        "primaryKey": 5665117015,
+        "date": "2024-08-17",
+        "sourceUrl": "https://www.gbif.org/occurrence/5665117015",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-ae5022993e9727728beec17cc3b666bcf260edba85ad757700cba05505feb98c"
+      },
+      {
+        "pair": "12057:myiopsitta-monachus",
+        "primaryKey": 5412932310,
+        "date": "2024-09-23",
+        "sourceUrl": "https://www.gbif.org/occurrence/5412932310",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-59804a051842255f41091d39594a36bafb0a46fed51e165df07070e7d1cc2b7a"
+      },
+      {
+        "pair": "12069:myiopsitta-monachus",
+        "primaryKey": 5321735154,
+        "date": "2024-01-31",
+        "sourceUrl": "https://www.gbif.org/occurrence/5321735154",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-86448e7aa695d013fca60ba7005660adb2e2a30abc49fd6f70a3d348d4a83a55"
+      },
+      {
+        "pair": "12071:myiopsitta-monachus",
+        "primaryKey": 5418470841,
+        "date": "2024-09-22",
+        "sourceUrl": "https://www.gbif.org/occurrence/5418470841",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-c2184cfc7a0fd6b8f72760d67dd8a243df1303687380fed30313d53bb34bc65f"
+      },
+      {
+        "pair": "12073:myiopsitta-monachus",
+        "primaryKey": 5695503034,
+        "date": "2024-08-23",
+        "sourceUrl": "https://www.gbif.org/occurrence/5695503034",
+        "sourceRecords": 1,
+        "assertionId": "ebird-selected-original-assertion-7b1873f17ae8b8e1590e85a2c567e9a16180f12b22ceccf39e0405bd79f5fd44"
+      },
+      {
+        "pair": "12081:myiopsitta-monachus",
+        "primaryKey": 5373134805,
+        "date": "2024-09-12",
+        "sourceUrl": "https://www.gbif.org/occurrence/5373134805",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-75714231cf863efc598e0e4162108a0de7cb30f59eb464a999c0ac474945c72e"
+      },
+      {
+        "pair": "12085:myiopsitta-monachus",
+        "primaryKey": 5345335827,
+        "date": "2024-09-20",
+        "sourceUrl": "https://www.gbif.org/occurrence/5345335827",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-3ba607a8743a7f8b17130eb09d801ea9e305c2a45d91a481bb22e05ac9124981"
+      },
+      {
+        "pair": "12087:myiopsitta-monachus",
+        "primaryKey": 5304163896,
+        "date": "2024-09-28",
+        "sourceUrl": "https://www.gbif.org/occurrence/5304163896",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-b6fa4bc2664aae93bc9978492bcc3169b6ed257556fedece9a110f5604d4f667"
+      },
+      {
+        "pair": "12095:myiopsitta-monachus",
+        "primaryKey": 5477626179,
+        "date": "2024-09-17",
+        "sourceUrl": "https://www.gbif.org/occurrence/5477626179",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-df3e8092ff4b0a205d6f6286a87f0aa291c4f2b393237db7c5c0fe9770d5e5b4"
+      },
+      {
+        "pair": "12097:myiopsitta-monachus",
+        "primaryKey": 5448889286,
+        "date": "2024-09-25",
+        "sourceUrl": "https://www.gbif.org/occurrence/5448889286",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-ab1d63a30b3163a75ecae25cff3f399033a94889788f6ae912577d1568191754"
+      },
+      {
+        "pair": "12099:myiopsitta-monachus",
+        "primaryKey": 5325388241,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5325388241",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-6e9979093efe15338d6b29ebae34c17a8c524e988876a63bed78049373b6bca2"
+      },
+      {
+        "pair": "12101:myiopsitta-monachus",
+        "primaryKey": 5671398642,
+        "date": "2024-08-28",
+        "sourceUrl": "https://www.gbif.org/occurrence/5671398642",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-20c528fb26924af630737edd537e4d60dcd116c959b371e6f234c3894cee818a"
+      },
+      {
+        "pair": "12103:myiopsitta-monachus",
+        "primaryKey": 5463927511,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5463927511",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-f38f38682e6b175a02a0ce1857f96802f5a1eaa4484aff1e350930089f457f04"
+      },
+      {
+        "pair": "12105:myiopsitta-monachus",
+        "primaryKey": 5311168910,
+        "date": "2024-06-11",
+        "sourceUrl": "https://www.gbif.org/occurrence/5311168910",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-3d40162e17f68a562ae5a55ff4385b52208961fd4ff1ac2f522115206e1dd6a4"
+      },
+      {
+        "pair": "12115:myiopsitta-monachus",
+        "primaryKey": 5461674469,
+        "date": "2024-09-28",
+        "sourceUrl": "https://www.gbif.org/occurrence/5461674469",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-95c9847f3068653f5d8858b236b230c3e85dc13adeb2d437c59f9a289c03e9ca"
+      },
+      {
+        "pair": "12117:myiopsitta-monachus",
+        "primaryKey": 5533415279,
+        "date": "2024-03-23",
+        "sourceUrl": "https://www.gbif.org/occurrence/5533415279",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-b96c00fe8d8b75ca584f5123cc73f3c8860749ce320a21bd7469576b52246eb8"
+      },
+      {
+        "pair": "12129:myiopsitta-monachus",
+        "primaryKey": 5508844764,
+        "date": "2024-08-26",
+        "sourceUrl": "https://www.gbif.org/occurrence/5508844764",
+        "sourceRecords": 1,
+        "assertionId": "ebird-selected-original-assertion-a568166c4dfad826dc24ca3f48fb32e4861888500e7811a2573965989ec6962f"
+      },
+      {
+        "pair": "36005:myiopsitta-monachus",
+        "primaryKey": 5475030852,
+        "date": "2024-09-08",
+        "sourceUrl": "https://www.gbif.org/occurrence/5475030852",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-a3c7ccf1ddd53d5097ded67c54c8eeb112d9c907396b8b087f9dc52787de2788"
+      },
+      {
+        "pair": "36047:myiopsitta-monachus",
+        "primaryKey": 5402404971,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5402404971",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-711132049adcdf284982acdde667e3bcdc62230f5bd047354804b585f0638702"
+      },
+      {
+        "pair": "36059:myiopsitta-monachus",
+        "primaryKey": 5359314289,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5359314289",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-29c8630946710f35dd2718962553d666638aa1616148247a252424b6fa70eb1d"
+      },
+      {
+        "pair": "36061:myiopsitta-monachus",
+        "primaryKey": 5575566363,
+        "date": "2024-08-22",
+        "sourceUrl": "https://www.gbif.org/occurrence/5575566363",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-8f7f60af89cd4dd1d1a71b3fb52e7cacf2c02a0720165c26bfbeb2a32471e1f0"
+      },
+      {
+        "pair": "36081:myiopsitta-monachus",
+        "primaryKey": 5420991483,
+        "date": "2024-09-23",
+        "sourceUrl": "https://www.gbif.org/occurrence/5420991483",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-21e99f3bf7f7e13f1aabc6baa2c3f94a8a1e0e108c19c0257f899d9d2784cabf"
+      },
+      {
+        "pair": "36085:myiopsitta-monachus",
+        "primaryKey": 5378697112,
+        "date": "2024-09-02",
+        "sourceUrl": "https://www.gbif.org/occurrence/5378697112",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-274a8508bf244affaf2802c93ffddb9a1456297e86d0c73c77b3b3194a29d7e1"
+      },
+      {
+        "pair": "36103:myiopsitta-monachus",
+        "primaryKey": 5412520849,
+        "date": "2024-09-22",
+        "sourceUrl": "https://www.gbif.org/occurrence/5412520849",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-2ae743ff8b69927bfe545667329ffe5348de51a14b4a3b24e089937fde85ceeb"
+      },
+      {
+        "pair": "36119:myiopsitta-monachus",
+        "primaryKey": 5377353911,
+        "date": "2024-09-18",
+        "sourceUrl": "https://www.gbif.org/occurrence/5377353911",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-c44c45569705fdc439f405968be773694ce4562154196888fb98c1f984d7fe18"
+      }
+    ],
+    "providerRequests": 0,
+    "canonicalWrites": 0,
+    "newDeterminations": null,
+    "qualification": "Exact source-to-staged-event audit. Determination changes require canonical integration and projection reconciliation."
+  },
+  "canonicalTamperChecks": {
+    "recordedAt": "2026-09-09T03:43:13.623Z",
+    "reports": [
+      {
+        "stateCode": "TX",
+        "runId": "20260909T034058Z__gbif-ebird__d8fce73e0bcc",
+        "actualRunValidated": true,
+        "canonicalTamperCasesRejected": 24,
+        "rejectedCases": [
+          "observation-date",
+          "absence-claim",
+          "source-identity",
+          "source-url",
+          "geography-county",
+          "geography-fips",
+          "geography-state",
+          "retrieval-date",
+          "caveat-removal",
+          "attribution-removal",
+          "taxon-substitution",
+          "expert-review-inflation",
+          "publication-eligibility",
+          "protocol-completion-inflation",
+          "negative-outcome",
+          "candidate-count",
+          "duplicate-count",
+          "warning-removal",
+          "unrecorded-fresh-request",
+          "assertion-scope",
+          "assertion-deletion",
+          "outcome-deletion",
+          "artifact-hash",
+          "receipt-fresh-request"
+        ],
+        "immutableFilesModified": 0
+      },
+      {
+        "stateCode": "FL",
+        "runId": "20260909T034105Z__gbif-ebird__ae361bf34a19",
+        "actualRunValidated": true,
+        "canonicalTamperCasesRejected": 24,
+        "rejectedCases": [
+          "observation-date",
+          "absence-claim",
+          "source-identity",
+          "source-url",
+          "geography-county",
+          "geography-fips",
+          "geography-state",
+          "retrieval-date",
+          "caveat-removal",
+          "attribution-removal",
+          "taxon-substitution",
+          "expert-review-inflation",
+          "publication-eligibility",
+          "protocol-completion-inflation",
+          "negative-outcome",
+          "candidate-count",
+          "duplicate-count",
+          "warning-removal",
+          "unrecorded-fresh-request",
+          "assertion-scope",
+          "assertion-deletion",
+          "outcome-deletion",
+          "artifact-hash",
+          "receipt-fresh-request"
+        ],
+        "immutableFilesModified": 0
+      },
+      {
+        "stateCode": "NY",
+        "runId": "20260909T034112Z__gbif-ebird__b7ad0ee6bd86",
+        "actualRunValidated": true,
+        "canonicalTamperCasesRejected": 24,
+        "rejectedCases": [
+          "observation-date",
+          "absence-claim",
+          "source-identity",
+          "source-url",
+          "geography-county",
+          "geography-fips",
+          "geography-state",
+          "retrieval-date",
+          "caveat-removal",
+          "attribution-removal",
+          "taxon-substitution",
+          "expert-review-inflation",
+          "publication-eligibility",
+          "protocol-completion-inflation",
+          "negative-outcome",
+          "candidate-count",
+          "duplicate-count",
+          "warning-removal",
+          "unrecorded-fresh-request",
+          "assertion-scope",
+          "assertion-deletion",
+          "outcome-deletion",
+          "artifact-hash",
+          "receipt-fresh-request"
+        ],
+        "immutableFilesModified": 0
+      }
+    ]
+  },
+  "sourceRows": 97,
+  "assertions": 51,
+  "reviews": 51,
+  "outcomes": 51,
+  "rejections": 0,
+  "baselineDeterminations": 319819,
+  "expectedNetUniqueMovement": 51,
+  "newDeterminations": null,
+  "providerRequests": 0,
+  "productionWrites": 0,
+  "r2Uploads": 0,
+  "r2Deletions": 0,
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/ebird-selected-original-integration-20260909-r23.json.gz",
+    "bytes": 21648,
+    "sha256": "0d42508d719bc6fd21dad465b8a2426ac018e11f8df40e1e2217da9334b96664"
+  },
+  "qualifications": [
+    "Original acquisition identities and bytes are preserved; canonical source code identity belongs to the offline replay.",
+    "Fifty-one historical recorded presences do not establish current persistence, establishment, absence or protocol completion."
+  ]
+}
