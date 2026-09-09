@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T235259Z__epa-nrsa-fish-counts__6c1a660842a1",
+  "status": "complete",
+  "started_at": "2026-09-08T23:52:59.459Z",
+  "finished_at": "2026-09-08T23:53:05.018Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@3.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "37539d9b2bc6d47186e69864486e586739e7f140ec549170fe1388d9b9a77e59",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "3.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "b13f943e3ea0f5f71c72e409768335298d399bcb",
+  "parameter_hash": "6c1a660842a116e0a42beb6d3653acafa3fee4a67a15b1bb3862aeda2c452d59",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1314-20260908-r21.json",
+    "methodReviewSha256": "247318635d06ed8838df3ef184ef81b0a69812549bb248b7a04745b2ede9e374",
+    "mode": "retained-reviewed-fish-counts-1314",
+    "stateCode": "MO",
+    "candidatePairs": [
+      "29031:ctenopharyngodon-idella",
+      "29107:ctenopharyngodon-idella",
+      "29107:cyprinus-carpio",
+      "29107:hypophthalmichthys-molitrix",
+      "29107:hypophthalmichthys-nobilis",
+      "29143:ctenopharyngodon-idella",
+      "29183:ctenopharyngodon-idella",
+      "29186:ctenopharyngodon-idella",
+      "29186:hypophthalmichthys-nobilis",
+      "29197:ctenopharyngodon-idella",
+      "29223:cyprinus-carpio"
+    ],
+    "candidateLimit": 11
+  },
+  "requested_scope": {
+    "state_code": "MO",
+    "county_fips": [
+      "29031",
+      "29107",
+      "29143",
+      "29183",
+      "29186",
+      "29197",
+      "29223"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio",
+      "hypophthalmichthys-molitrix",
+      "hypophthalmichthys-nobilis"
+    ],
+    "pair_keys": [
+      "29031:ctenopharyngodon-idella",
+      "29107:ctenopharyngodon-idella",
+      "29107:cyprinus-carpio",
+      "29107:hypophthalmichthys-molitrix",
+      "29107:hypophthalmichthys-nobilis",
+      "29143:ctenopharyngodon-idella",
+      "29183:ctenopharyngodon-idella",
+      "29186:ctenopharyngodon-idella",
+      "29186:hypophthalmichthys-nobilis",
+      "29197:ctenopharyngodon-idella",
+      "29223:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T235259Z__epa-nrsa-fish-counts__6c1a660842a1/artifacts/epa-nrsa-1314-fish-witnesses.json",
+      "sha256": "713116c0094c13f442a4cbd2a34f7e1311bf54ced303c0a89af1c8082f3d7149",
+      "bytes": 198063,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T235259Z__epa-nrsa-fish-counts__6c1a660842a1/assertions.ndjson",
+      "sha256": "087cb919cd7a4d6d5b2da8f77c5fb34de4f48101851e4ee056995b564730f27d",
+      "bytes": 40506,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235259Z__epa-nrsa-fish-counts__6c1a660842a1/reviews.ndjson",
+      "sha256": "fcede9574373c34ed19cca7c3cfe707f60c4a89813e72920529587122d8e4a48",
+      "bytes": 10510,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235259Z__epa-nrsa-fish-counts__6c1a660842a1/rejections.ndjson",
+      "sha256": "01127a89b91e8b02892141aa33a3597c06ec1d24c206b7c177a320bec7a9e834",
+      "bytes": 879,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235259Z__epa-nrsa-fish-counts__6c1a660842a1/outcomes.ndjson",
+      "sha256": "52f129a34ec2b7966d0bc475c3761f972be2050ba55e70f5b436754faf32cc70",
+      "bytes": 10539,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 11,
+    "candidate_records": 14,
+    "assertion_events": 11,
+    "review_events": 11,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 11
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled presence only; retrieval does not establish current persistence, reproduction, establishment, countywide abundance or completeness.",
+    "Missing rows, excluded records, repeat visits, effort flags and taxonomic holds never establish absence or non-detection.",
+    "Original numeric county codes restore one leading zero only when active county name and primary postal-state identity agree independently. Retired or contradictory geography is not reassigned.",
+    "A two-state publisher STATE qualifier is usable only when it exactly equals BORD_RIV and includes the independently matching primary postal state.",
+    "Generalized county polygons and source frame coordinates diagnose conflicts. Small boundary offsets alone neither reject exact publisher identity nor assign a different county.",
+    "The pinned site CSV contains exactly two original 0xF1 bytes in one Rio Penasco record. Reversible ISO-8859-1 interpretation is local to this file; source bytes, row hashes and line terminators are unchanged.",
+    "Independent agent review and machine reconstruction are not individual human specimen verification. Original INDEX_VISIT, NON_NATIVE, anomaly and sampling flags remain retained."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state MO --candidate-file ops/national-research/plans/epa-nrsa-1314-20260908-r21/MO.json --output-root src/data/research/runs --stage-canonical true --pairs 29031:ctenopharyngodon-idella,29107:ctenopharyngodon-idella,29107:cyprinus-carpio,29107:hypophthalmichthys-molitrix,29107:hypophthalmichthys-nobilis,29143:ctenopharyngodon-idella,29183:ctenopharyngodon-idella,29186:ctenopharyngodon-idella,29186:hypophthalmichthys-nobilis,29197:ctenopharyngodon-idella,29223:cyprinus-carpio"
+}

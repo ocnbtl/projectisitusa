@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T235730Z__epa-nrsa-fish-counts__d33e6a13a33c",
+  "status": "complete",
+  "started_at": "2026-09-08T23:57:30.148Z",
+  "finished_at": "2026-09-08T23:57:35.799Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@3.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "37539d9b2bc6d47186e69864486e586739e7f140ec549170fe1388d9b9a77e59",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "3.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "b13f943e3ea0f5f71c72e409768335298d399bcb",
+  "parameter_hash": "d33e6a13a33cc60824e01892b9a05f5eeb9f5d81f4108b63cd3d59881f03cfcc",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1314-20260908-r21.json",
+    "methodReviewSha256": "247318635d06ed8838df3ef184ef81b0a69812549bb248b7a04745b2ede9e374",
+    "mode": "retained-reviewed-fish-counts-1314",
+    "stateCode": "MT",
+    "candidatePairs": [
+      "30005:cyprinus-carpio",
+      "30021:cyprinus-carpio",
+      "30023:salmo-trutta",
+      "30041:cyprinus-carpio",
+      "30041:salmo-trutta",
+      "30055:cyprinus-carpio",
+      "30063:salmo-trutta",
+      "30065:cyprinus-carpio",
+      "30069:cyprinus-carpio",
+      "30071:cyprinus-carpio",
+      "30083:cyprinus-carpio",
+      "30105:cyprinus-carpio"
+    ],
+    "candidateLimit": 12
+  },
+  "requested_scope": {
+    "state_code": "MT",
+    "county_fips": [
+      "30005",
+      "30021",
+      "30023",
+      "30041",
+      "30055",
+      "30063",
+      "30065",
+      "30069",
+      "30071",
+      "30083",
+      "30105"
+    ],
+    "species_ids": [
+      "cyprinus-carpio",
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "30005:cyprinus-carpio",
+      "30021:cyprinus-carpio",
+      "30023:salmo-trutta",
+      "30041:cyprinus-carpio",
+      "30041:salmo-trutta",
+      "30055:cyprinus-carpio",
+      "30063:salmo-trutta",
+      "30065:cyprinus-carpio",
+      "30069:cyprinus-carpio",
+      "30071:cyprinus-carpio",
+      "30083:cyprinus-carpio",
+      "30105:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T235730Z__epa-nrsa-fish-counts__d33e6a13a33c/artifacts/epa-nrsa-1314-fish-witnesses.json",
+      "sha256": "600a85765eee71757cb7a4196bee0bdde46564309fbc7f8b600a4980c9fd4eeb",
+      "bytes": 256780,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T235730Z__epa-nrsa-fish-counts__d33e6a13a33c/assertions.ndjson",
+      "sha256": "5ab6318380678b0b017c6505c442d18bae4ff9083baf88b2058ee66b0eff459a",
+      "bytes": 43643,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235730Z__epa-nrsa-fish-counts__d33e6a13a33c/reviews.ndjson",
+      "sha256": "6fc60a4d9d1ae331308f914fec7313de0b8c160b92f53c4f14ad908ceccc7aa4",
+      "bytes": 11367,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235730Z__epa-nrsa-fish-counts__d33e6a13a33c/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235730Z__epa-nrsa-fish-counts__d33e6a13a33c/outcomes.ndjson",
+      "sha256": "41e3fcee442190c73c7097e545bd638aa0fb5933614888cabe098c36c7eaa439",
+      "bytes": 11295,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 12,
+    "candidate_records": 19,
+    "assertion_events": 12,
+    "review_events": 12,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 12
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled presence only; retrieval does not establish current persistence, reproduction, establishment, countywide abundance or completeness.",
+    "Missing rows, excluded records, repeat visits, effort flags and taxonomic holds never establish absence or non-detection.",
+    "Original numeric county codes restore one leading zero only when active county name and primary postal-state identity agree independently. Retired or contradictory geography is not reassigned.",
+    "A two-state publisher STATE qualifier is usable only when it exactly equals BORD_RIV and includes the independently matching primary postal state.",
+    "Generalized county polygons and source frame coordinates diagnose conflicts. Small boundary offsets alone neither reject exact publisher identity nor assign a different county.",
+    "The pinned site CSV contains exactly two original 0xF1 bytes in one Rio Penasco record. Reversible ISO-8859-1 interpretation is local to this file; source bytes, row hashes and line terminators are unchanged.",
+    "Independent agent review and machine reconstruction are not individual human specimen verification. Original INDEX_VISIT, NON_NATIVE, anomaly and sampling flags remain retained."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state MT --candidate-file ops/national-research/plans/epa-nrsa-1314-20260908-r21/MT.json --output-root src/data/research/runs --stage-canonical true --pairs 30005:cyprinus-carpio,30021:cyprinus-carpio,30023:salmo-trutta,30041:cyprinus-carpio,30041:salmo-trutta,30055:cyprinus-carpio,30063:salmo-trutta,30065:cyprinus-carpio,30069:cyprinus-carpio,30071:cyprinus-carpio,30083:cyprinus-carpio,30105:cyprinus-carpio"
+}

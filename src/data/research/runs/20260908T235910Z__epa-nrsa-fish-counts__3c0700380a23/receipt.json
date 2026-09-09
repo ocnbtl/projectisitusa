@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260908T235910Z__epa-nrsa-fish-counts__3c0700380a23",
+  "status": "complete",
+  "started_at": "2026-09-08T23:59:10.846Z",
+  "finished_at": "2026-09-08T23:59:16.484Z",
+  "actor_type": "adapter",
+  "actor_id": "epa-nrsa-retained-fish-counts@3.0.0",
+  "source_id": "epa-nrsa-fish-counts",
+  "source_registry_hash": "37539d9b2bc6d47186e69864486e586739e7f140ec549170fe1388d9b9a77e59",
+  "adapter_id": "epa-nrsa-retained-fish-counts",
+  "adapter_version": "3.0.0",
+  "adapter_code_hash": "c0e1a213d6a0985820dd753f74b29fe342688fbc23d8d1ac56d3b954651b188e",
+  "code_commit": "b13f943e3ea0f5f71c72e409768335298d399bcb",
+  "parameter_hash": "3c0700380a235aad0b3f74d0298abb1dab65a49bdc4df2b5f8a5442d04bad18b",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/epa-nrsa-fish-counts-1314-20260908-r21.json",
+    "methodReviewSha256": "247318635d06ed8838df3ef184ef81b0a69812549bb248b7a04745b2ede9e374",
+    "mode": "retained-reviewed-fish-counts-1314",
+    "stateCode": "SD",
+    "candidatePairs": [
+      "46005:hypophthalmichthys-nobilis",
+      "46035:ctenopharyngodon-idella",
+      "46035:cyprinus-carpio",
+      "46035:hypophthalmichthys-molitrix",
+      "46079:cyprinus-carpio"
+    ],
+    "candidateLimit": 5
+  },
+  "requested_scope": {
+    "state_code": "SD",
+    "county_fips": [
+      "46005",
+      "46035",
+      "46079"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "cyprinus-carpio",
+      "hypophthalmichthys-molitrix",
+      "hypophthalmichthys-nobilis"
+    ],
+    "pair_keys": [
+      "46005:hypophthalmichthys-nobilis",
+      "46035:ctenopharyngodon-idella",
+      "46035:cyprinus-carpio",
+      "46035:hypophthalmichthys-molitrix",
+      "46079:cyprinus-carpio"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260908T235910Z__epa-nrsa-fish-counts__3c0700380a23/artifacts/epa-nrsa-1314-fish-witnesses.json",
+      "sha256": "1c02e846ed5728fae0ecba75c20e24816a03956c8527388312a5fd349f0876e7",
+      "bytes": 100388,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260908T235910Z__epa-nrsa-fish-counts__3c0700380a23/assertions.ndjson",
+      "sha256": "4d40bc90d4efb20e1f1cf6ef8cd8dfd7007a4b6946330b39403475799a1bfd76",
+      "bytes": 18284,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235910Z__epa-nrsa-fish-counts__3c0700380a23/reviews.ndjson",
+      "sha256": "e5cc7deb69e9bdea9d2853be29892f92c233deb148c67b6905fa18ae8210b5eb",
+      "bytes": 4771,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235910Z__epa-nrsa-fish-counts__3c0700380a23/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260908T235910Z__epa-nrsa-fish-counts__3c0700380a23/outcomes.ndjson",
+      "sha256": "449faef43ac12b9111aa71a4cd123565f17ecd9010d9e0e5327a328aac2d50f0",
+      "bytes": 4741,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 7,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical species-specific positive fish counts at sampled locations. Partial effort, sampling-frame geography and source-specific holds remain explicit; no absence follows from missing records or sampling flags."
+  ],
+  "source_warnings": [
+    "Historical sampled presence only; retrieval does not establish current persistence, reproduction, establishment, countywide abundance or completeness.",
+    "Missing rows, excluded records, repeat visits, effort flags and taxonomic holds never establish absence or non-detection.",
+    "Original numeric county codes restore one leading zero only when active county name and primary postal-state identity agree independently. Retired or contradictory geography is not reassigned.",
+    "A two-state publisher STATE qualifier is usable only when it exactly equals BORD_RIV and includes the independently matching primary postal state.",
+    "Generalized county polygons and source frame coordinates diagnose conflicts. Small boundary offsets alone neither reject exact publisher identity nor assign a different county.",
+    "The pinned site CSV contains exactly two original 0xF1 bytes in one Rio Penasco record. Reversible ISO-8859-1 interpretation is local to this file; source bytes, row hashes and line terminators are unchanged.",
+    "Independent agent review and machine reconstruction are not individual human specimen verification. Original INDEX_VISIT, NON_NATIVE, anomaly and sampling flags remain retained."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source epa-nrsa-fish-counts --state SD --candidate-file ops/national-research/plans/epa-nrsa-1314-20260908-r21/SD.json --output-root src/data/research/runs --stage-canonical true --pairs 46005:hypophthalmichthys-nobilis,46035:ctenopharyngodon-idella,46035:cyprinus-carpio,46035:hypophthalmichthys-molitrix,46079:cyprinus-carpio"
+}
