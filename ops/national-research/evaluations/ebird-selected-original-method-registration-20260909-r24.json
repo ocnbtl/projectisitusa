@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-selected-original-ebird-method-extension",
+  "recordedAt": "2026-09-09T04:07:02.414Z",
+  "baseCommit": "3aad970c0741af18457406fe8ce8e4fd5f18295f",
+  "status": "method-tested-canonical-runs-pending",
+  "method": "src/data/research/source-method-reviews/ebird-selected-original-20260909-r24.json",
+  "newIndependentReviews": [
+    {
+      "actorId": "ebird_monk_az_review_r24",
+      "baseSha": "afd2d95233e8712fa16edd0cd99065dc4b674c7b",
+      "originalCommit": "ae804553b4b567b45e9c29bc9c82ac7b1f6d45bc",
+      "proposal": {
+        "path": "src/data/research/worker-results/ebird-monk-az-original-review-20260909-r24/proposal.json",
+        "bytes": 706702,
+        "sha256": "82c57236184a06f2ae49afc1bae0f959b99eefd50655c52cc471126747c18b47"
+      },
+      "recipe": {
+        "path": "src/data/research/worker-results/ebird-monk-az-original-review-20260909-r24/review.py",
+        "bytes": 32424,
+        "sha256": "af4ce7e36139bea810bc9285efb79085ac0f47d7946c18266646d9d445522265"
+      },
+      "retention": {
+        "path": "ops/national-research/evaluations/ebird-monk-az-original-review-20260909-r24-proposal-retained.json",
+        "bytes": 4828,
+        "sha256": "edb848b3004fff05cf4f687766dc4dd461ee1c9f6fbf8b401d59e659f0966a21"
+      }
+    },
+    {
+      "actorId": "ebird_monk_il_review_r24",
+      "baseSha": "afd2d95233e8712fa16edd0cd99065dc4b674c7b",
+      "originalCommit": "edc14cf9808d1c0c9479b0582e11e4991cd5765f",
+      "proposal": {
+        "path": "src/data/research/worker-results/ebird-monk-il-original-review-20260909-r24/proposal.json",
+        "bytes": 817079,
+        "sha256": "e7d519e3619eea7194673933852b02f1ca4ebc7df0a2757eb8b83912878d5c94"
+      },
+      "recipe": {
+        "path": "src/data/research/worker-results/ebird-monk-il-original-review-20260909-r24/review.py",
+        "bytes": 24325,
+        "sha256": "20b64db1d9c48c6712235fa1466973ac69f58135008e39bbf39784722fc763af"
+      },
+      "retention": {
+        "path": "ops/national-research/evaluations/ebird-monk-il-original-review-20260909-r24-proposal-retained.json",
+        "bytes": 4701,
+        "sha256": "2eb78d45202d8a87dfe240546b053cc3818789b6bf31d023ca0db6214b5b2288"
+      }
+    },
+    {
+      "actorId": "ebird_monk_la_review_r24",
+      "baseSha": "afd2d95233e8712fa16edd0cd99065dc4b674c7b",
+      "originalCommit": "82c2cbf5118f989c74e9d8b8bcb3ae6aa78d682d",
+      "proposal": {
+        "path": "src/data/research/worker-results/ebird-monk-la-original-review-20260909-r24/proposal.json",
+        "bytes": 1109657,
+        "sha256": "eb273d820e6266c661837c49aeefa0a088f96739ef1cf4d49dc2d058f9810895"
+      },
+      "recipe": {
+        "path": "src/data/research/worker-results/ebird-monk-la-original-review-20260909-r24/review.py",
+        "bytes": 28724,
+        "sha256": "fdbc87de145605230a8bca1938eaa4097fc9f54935ddf5222b2f2e70c65d1a01"
+      },
+      "retention": {
+        "path": "ops/national-research/evaluations/ebird-monk-la-original-review-20260909-r24-proposal-retained.json",
+        "bytes": 4653,
+        "sha256": "e4627d97bc3cdeba758a4f9d0cae33b6eeae89fee78bdde3d5cf664d02fa4602"
+      }
+    }
+  ],
+  "fixtureChecks": {
+    "recordedAt": "2026-09-09T04:06:07.625Z",
+    "passed": true,
+    "methodReviewSha256": "c7aedf4055aafe9bd6ae41481437a796a8f000b3190f8ed1b3a45efd41e6c6e5",
+    "independentReviewers": 6,
+    "parentSearchComplete": false,
+    "states": [
+      {
+        "stateCode": "AZ",
+        "fixtureAssertions": 3,
+        "originalRecords": 6
+      },
+      {
+        "stateCode": "IL",
+        "fixtureAssertions": 3,
+        "originalRecords": 5
+      },
+      {
+        "stateCode": "LA",
+        "fixtureAssertions": 3,
+        "originalRecords": 6
+      }
+    ],
+    "fixtureAssertions": 9,
+    "newDeterminations": 0
+  },
+  "newReviewedOriginals": 17,
+  "newReviewedPairs": 9,
+  "allApprovedPairs": 60,
+  "remainingDeferredPairs": 17,
+  "canonicalEvents": 0,
+  "newDeterminations": 0,
+  "baselineDeterminations": 319870,
+  "expectedNetUniqueMovement": 9,
+  "resources": {
+    "initialDispatch": "blocked before any mutation because compiler-time samples failed reserved-memory margin",
+    "recovery": "Fresh seven-sample postcompile window passed unchanged three-worker384MiB plus MAIN2048MiB budget and policy thresholds"
+  },
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/ebird-selected-original-method-registration-20260909-r24.json.gz",
+    "bytes": 55176,
+    "sha256": "2ea5ea7ff621d6b88902a8418e9d758969c227508141916553c7cc1be1e136cc"
+  },
+  "publication": {
+    "productionWrites": 0,
+    "r2Uploads": 0,
+    "r2Deletions": 0,
+    "paidResourcesCreated": 0
+  },
+  "limitations": [
+    "Only method approval data and independent source reviews change; version2 replay semantics and earlier method files remain unchanged.",
+    "New fixture events are not canonical evidence or compiled determination gains.",
+    "Parent search stays incomplete; no negative evidence or complete exhaustive source screen.",
+    "Proposal leases close recovered with honest MAIN method blocker; no completed evidence-run manifests or accepted queue items fabricated."
+  ]
+}
