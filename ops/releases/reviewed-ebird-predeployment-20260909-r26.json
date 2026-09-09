@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "kind": "reviewed-ebird-predeployment",
+  "recordedAt": "2026-09-09T06:05:02.729Z",
+  "status": "local-gates-passed-git-and-app-publication-pending-research-publication-held",
+  "baseCommit": "ab74f813f12291d88e297acdcfa2daf28cec84f2",
+  "previousRemoteCommit": "e13234c9133f5d469921f6dbe63b7f69bfe006c6",
+  "behavior": "Retain 82 additional independently reviewed historical eBird county presences and their source-method validation. The existing application and runtime data bundles are unchanged. Public research remains on its existing R2 release until cadence and capacity requirements are met.",
+  "researchReconciliation": "ops/national-research/evaluations/ebird-selected-original-national-reconciliation-20260909-r25.json",
+  "localResearch": {
+    "asOf": "2026-09-09",
+    "verifiedPresent": 316178,
+    "verifiedAbsent": 3718,
+    "notDetected": 236,
+    "researchedUnresolved": 1306678,
+    "notResearched": 6245766,
+    "evidenceRecordCount": 463619,
+    "rejectionRecordCount": 66066,
+    "researchRunCount": 2287,
+    "conflictCount": 0,
+    "totalPairs": 7872576,
+    "countyCount": 3144,
+    "determinations": 319896
+  },
+  "changeFromPreviousRemote": {
+    "newUniquePresent": 82,
+    "newAbsent": 0,
+    "newNonDetection": 0,
+    "withdrawals": 0,
+    "scope": "Five original-field pilot gains plus 77 selected-original Monk Parakeet gains; exact pair reconciliation is retained in the r22-r25 receipts."
+  },
+  "validation": {
+    "runtimePreparation": {
+      "name": "runtime-assets-prepare",
+      "args": [
+        "scripts/prepare-runtime-assets.mjs",
+        "--write"
+      ],
+      "startedAt": "2026-09-09T05:25:50.051Z",
+      "finishedAt": "2026-09-09T05:25:56.872Z",
+      "exitCode": 0,
+      "error": null,
+      "log": ".cache/research/campaigns/20260909-r26-ebird-release/runtime-assets-prepare-gate.log"
+    },
+    "fullUnmodifiedResearchIntegrity": {
+      "name": "research-integrity",
+      "args": [
+        "C:/Code/tools/node-v22.23.2-win-x64/node_modules/npm/bin/npm-cli.js",
+        "run",
+        "check:research-integrity"
+      ],
+      "startedAt": "2026-09-09T05:25:56.873Z",
+      "finishedAt": "2026-09-09T05:59:09.057Z",
+      "exitCode": 0,
+      "error": null,
+      "log": ".cache/research/campaigns/20260909-r26-ebird-release/research-integrity-gate.log"
+    },
+    "applicationChecks": [
+      {
+        "command": "npm run build",
+        "startedAt": "2026-09-09T06:02:27.934Z",
+        "finishedAt": "2026-09-09T06:03:51.802Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260909-r26-ebird-release/build.log"
+      },
+      {
+        "command": "npm run typecheck",
+        "startedAt": "2026-09-09T06:03:51.803Z",
+        "finishedAt": "2026-09-09T06:03:55.642Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260909-r26-ebird-release/typecheck.log"
+      },
+      {
+        "command": "npm run check:runtime-assets",
+        "startedAt": "2026-09-09T06:03:55.642Z",
+        "finishedAt": "2026-09-09T06:04:00.043Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260909-r26-ebird-release/check-runtime-assets.log"
+      },
+      {
+        "command": "npm run check:vercel-publish",
+        "startedAt": "2026-09-09T06:04:00.044Z",
+        "finishedAt": "2026-09-09T06:04:01.201Z",
+        "exitCode": 0,
+        "error": null,
+        "log": ".cache/research/campaigns/20260909-r26-ebird-release/check-vercel-publish.log"
+      }
+    ]
+  },
+  "runtimeBundles": {
+    "map": {
+      "url": "https://data.isitusa.com/app-data/sha256/1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87.json",
+      "sha256": "1e6bd2cd3c8ac9051225326c4b9b1db87b7abece8b4ff24e56704054915a9c87",
+      "bytes": 3854452,
+      "storedBytes": 715006
+    },
+    "catalog": {
+      "url": "https://data.isitusa.com/app-data/sha256/0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5.json",
+      "sha256": "0d2289be108e6546af4c0ff9c2d210ff85723c69c77ae933fcb358593572fec5",
+      "bytes": 4831012,
+      "storedBytes": 698126
+    }
+  },
+  "localPageBytes": {
+    ".next/server/app/index.html": 11166,
+    ".next/server/app/index.rsc": 6014
+  },
+  "liveCoherence": {
+    "coherent": true,
+    "releaseId": "research-7674fc93bc4f-25dacfee2d1a3835",
+    "manifestSha256": "007b7d2387af05d1dda52bd093ff2abffb232e54a02f0f60164f3bca58cceefa",
+    "countiesChecked": 67,
+    "mismatches": 0,
+    "requests": 70,
+    "finishedAt": "2026-09-09T06:04:36.309Z"
+  },
+  "rollbackApp": {
+    "id": "dpl_AceAAtCuGZm13Xs4ePXKwpvKd3P4",
+    "url": "projectisitusa-d42brb7bj-unigentamos.vercel.app",
+    "state": "READY",
+    "substate": "PROMOTED",
+    "target": "production",
+    "commit": "e13234c9133f5d469921f6dbe63b7f69bfe006c6",
+    "createdAt": 1788917278071
+  },
+  "researchPublication": {
+    "localReleaseId": "research-ab74f813f122-ca813aa21b032d3b",
+    "localManifestSha256": "ba03ff6e3a6384e42f9b5b77b53d5b70e3108d8469061b15fcc1d1a4309fed92",
+    "activeReleaseId": "research-7674fc93bc4f-25dacfee2d1a3835",
+    "publicDeterminations": 319584,
+    "pendingLocalDeterminations": 312,
+    "promoted": false,
+    "uploadedObjects": 0,
+    "deletedObjects": 0,
+    "nextOrdinaryPromotionAt": "2026-09-15T22:56:09.326Z",
+    "currentInventoryBytes": 7971801011,
+    "safetyLimitBytes": 8000000000,
+    "newObjectBytes": 129880996,
+    "decodedObjectBytes": 1348761830,
+    "projectedInventoryPlusObjectBytes": 8101682007,
+    "projectionExcludesNewManifestAndPointerBytes": true,
+    "cleanupPlan": "ops/national-research/publication/r2-historical-removal-review-plan-20260909-r21.json",
+    "deletionAuthority": "pending-exact-plan-approval",
+    "dashboardTimestampQualification": ".cache/research/campaigns/20260909-r26-ebird-release/r2-dashboard-timestamp-qualification.json"
+  },
+  "artifact": {
+    "path": "ops/releases/artifacts/reviewed-ebird-validation-20260909-r26.json.gz",
+    "sha256": "348c6c35d84125f2f6c184c4d438ff0ad4b78be7948e877bdf38487ff2a738ea",
+    "bytes": 7491755,
+    "files": 43
+  },
+  "limitations": [
+    "This is predeployment evidence, not proof of remote synchronization, provider Ready status, or production alias.",
+    "The 82 additional local presences are historical observations; they do not prove current establishment, breeding, abundance, or protocol-complete research.",
+    "The selected source search remains incomplete at 15000 of 21878 declared records. Review of all 141 selected originals does not make the parent search exhaustive.",
+    "Sparse default rows are not gains. No new absence or non-detection was inferred.",
+    "Cloudflare dashboard counts are rounded and may lag. Vercel dashboard observations are stale team-wide history with a load warning, not causal usage-savings evidence.",
+    "No R2 objects are uploaded, promoted, or deleted in this batch.",
+    "The continuing national research and product objective remains unfinished."
+  ]
+}

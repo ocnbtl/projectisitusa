@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "73fa2ad21abf5bfbb226e8fe436bbdd146e05bdb",
   "acquiredAt": "2026-09-06T04:30:32.231Z",
-  "lastReverifiedAt": "2026-09-09T05:19:00.462Z",
-  "currentCheckpointSha": "962824d7eb3b4aa34328c53f6e384830fdf79ec3",
-  "localHeadAtLastReverification": "962824d7eb3b4aa34328c53f6e384830fdf79ec3",
-  "state": "selected-original-ebird-remaining-gains-verified-release-gates-next",
+  "lastReverifiedAt": "2026-09-09T06:05:02.729Z",
+  "currentCheckpointSha": "ab74f813f12291d88e297acdcfa2daf28cec84f2",
+  "localHeadAtLastReverification": "ab74f813f12291d88e297acdcfa2daf28cec84f2",
+  "state": "reviewed-ebird-local-gates-passed-batched-release-pending",
   "ownershipEvidence": {
     "museumRecovery20260906r4": {
       "observedAt": "2026-09-06T10:52:47.059Z",
@@ -1979,6 +1979,19 @@
       "activeLeases": 0,
       "publishedDeterminationsAtLastVerification": 319584,
       "nextWork": "Complete batched full research-integrity and application release checks; assess next bounded source acquisition. GBIF sign-in and scoped R2 cleanup approval may remain pending. Respect existing research publication cadence and capacity gates."
+    },
+    "reviewedEbirdRelease20260909r26": {
+      "observedAt": "2026-09-09T06:05:02.729Z",
+      "checkpointSha": "ab74f813f12291d88e297acdcfa2daf28cec84f2",
+      "previousRemoteCommit": "e13234c9133f5d469921f6dbe63b7f69bfe006c6",
+      "localDeterminations": 319896,
+      "newUniquePresentSinceRemote": 82,
+      "pendingR2Determinations": 312,
+      "predeploymentReceipt": "ops/releases/reviewed-ebird-predeployment-20260909-r26.json",
+      "fullIntegrityPassed": true,
+      "applicationBuildPassed": true,
+      "researchPublication": "cadence-and-capacity-held",
+      "nextWork": "Complete bounded GBIF download after human sign-in; develop archive source contract with independent review and fresh marginal-yield reconciliation."
     }
   },
   "reverificationHistory": [
