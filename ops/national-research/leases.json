@@ -506690,6 +506690,414 @@
         "Return committed proposal and independent verification recipe without claiming evidence-run completion or canonical determinations; MAIN owns source-method registration."
       ],
       "transitionedAt": "2026-09-09T02:11:32.325Z"
+    },
+    {
+      "leaseId": "lease-ebird-monk-tx-original-review-20260909-r23-1",
+      "jobId": "ebird-monk-tx-original-review-20260909-r23",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "ebird_monk_tx_review_r23",
+      "state": "active",
+      "claimedAt": "2026-09-09T02:50:37.192Z",
+      "expiresAt": "2026-09-09T03:35:36.738Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "TX"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "myiopsitta-monachus"
+        ],
+        "pairs": [
+          "48003:myiopsitta-monachus",
+          "48027:myiopsitta-monachus",
+          "48029:myiopsitta-monachus",
+          "48039:myiopsitta-monachus",
+          "48061:myiopsitta-monachus",
+          "48099:myiopsitta-monachus",
+          "48113:myiopsitta-monachus",
+          "48121:myiopsitta-monachus",
+          "48141:myiopsitta-monachus",
+          "48157:myiopsitta-monachus",
+          "48167:myiopsitta-monachus",
+          "48201:myiopsitta-monachus",
+          "48209:myiopsitta-monachus",
+          "48215:myiopsitta-monachus",
+          "48249:myiopsitta-monachus",
+          "48325:myiopsitta-monachus",
+          "48329:myiopsitta-monachus",
+          "48339:myiopsitta-monachus",
+          "48355:myiopsitta-monachus",
+          "48439:myiopsitta-monachus",
+          "48453:myiopsitta-monachus",
+          "48479:myiopsitta-monachus",
+          "48491:myiopsitta-monachus"
+        ]
+      },
+      "scopeClaims": [
+        "county/48003/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48027/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48029/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48039/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48061/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48099/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48113/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48121/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48141/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48157/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48167/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48201/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48209/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48215/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48249/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48325/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48329/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48339/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48355/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48439/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48453/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48479/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/48491/source/gbif-ebird/taxon/myiopsitta-monachus"
+      ],
+      "branch": "codex/ebird-monk-tx-original-review-20260909-r23",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-monk-tx-original-review-20260909-r23",
+      "baseSha": "f34b7b1868250986043594913ed49f1a36b3b9dd",
+      "expectedReceiptCodeCommit": "0a451f65a2c46fde2102ceeb1c7eee3017aafb0f",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-monk-tx-original-review-20260909-r23/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/ebird-monk-tx-original-review-20260909-r23/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every selected original and all retained interpreted material in the exact leased county scope, retaining supported and held dispositions.",
+        "Return committed reproducible proposal and independent Python recipe only; shared selected-witness method is MAIN-owned, and no completed evidence-run manifest is fabricated."
+      ]
+    },
+    {
+      "leaseId": "lease-ebird-monk-fl-original-review-20260909-r23-1",
+      "jobId": "ebird-monk-fl-original-review-20260909-r23",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "ebird_monk_fl_review_r23",
+      "state": "active",
+      "claimedAt": "2026-09-09T02:50:37.634Z",
+      "expiresAt": "2026-09-09T03:35:37.193Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "FL"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "myiopsitta-monachus"
+        ],
+        "pairs": [
+          "12009:myiopsitta-monachus",
+          "12011:myiopsitta-monachus",
+          "12015:myiopsitta-monachus",
+          "12021:myiopsitta-monachus",
+          "12057:myiopsitta-monachus",
+          "12069:myiopsitta-monachus",
+          "12071:myiopsitta-monachus",
+          "12073:myiopsitta-monachus",
+          "12081:myiopsitta-monachus",
+          "12085:myiopsitta-monachus",
+          "12087:myiopsitta-monachus",
+          "12095:myiopsitta-monachus",
+          "12097:myiopsitta-monachus",
+          "12099:myiopsitta-monachus",
+          "12101:myiopsitta-monachus",
+          "12103:myiopsitta-monachus",
+          "12105:myiopsitta-monachus",
+          "12115:myiopsitta-monachus",
+          "12117:myiopsitta-monachus",
+          "12129:myiopsitta-monachus"
+        ]
+      },
+      "scopeClaims": [
+        "county/12009/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12011/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12015/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12021/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12057/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12069/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12071/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12073/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12081/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12085/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12087/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12095/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12097/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12099/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12101/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12103/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12105/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12115/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12117/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/12129/source/gbif-ebird/taxon/myiopsitta-monachus"
+      ],
+      "branch": "codex/ebird-monk-fl-original-review-20260909-r23",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-monk-fl-original-review-20260909-r23",
+      "baseSha": "f34b7b1868250986043594913ed49f1a36b3b9dd",
+      "expectedReceiptCodeCommit": "0a451f65a2c46fde2102ceeb1c7eee3017aafb0f",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-monk-fl-original-review-20260909-r23/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/ebird-monk-fl-original-review-20260909-r23/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every selected original and all retained interpreted material in the exact leased county scope, retaining supported and held dispositions.",
+        "Return committed reproducible proposal and independent Python recipe only; shared selected-witness method is MAIN-owned, and no completed evidence-run manifest is fabricated."
+      ]
+    },
+    {
+      "leaseId": "lease-ebird-monk-ny-original-review-20260909-r23-1",
+      "jobId": "ebird-monk-ny-original-review-20260909-r23",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "ebird_monk_ny_review_r23",
+      "state": "active",
+      "claimedAt": "2026-09-09T02:50:38.076Z",
+      "expiresAt": "2026-09-09T03:35:37.635Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "NY"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "myiopsitta-monachus"
+        ],
+        "pairs": [
+          "36005:myiopsitta-monachus",
+          "36047:myiopsitta-monachus",
+          "36059:myiopsitta-monachus",
+          "36061:myiopsitta-monachus",
+          "36081:myiopsitta-monachus",
+          "36085:myiopsitta-monachus",
+          "36103:myiopsitta-monachus",
+          "36119:myiopsitta-monachus"
+        ]
+      },
+      "scopeClaims": [
+        "county/36005/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/36047/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/36059/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/36061/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/36081/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/36085/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/36103/source/gbif-ebird/taxon/myiopsitta-monachus",
+        "county/36119/source/gbif-ebird/taxon/myiopsitta-monachus"
+      ],
+      "branch": "codex/ebird-monk-ny-original-review-20260909-r23",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-monk-ny-original-review-20260909-r23",
+      "baseSha": "f34b7b1868250986043594913ed49f1a36b3b9dd",
+      "expectedReceiptCodeCommit": "0a451f65a2c46fde2102ceeb1c7eee3017aafb0f",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-monk-ny-original-review-20260909-r23/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/ebird-monk-ny-original-review-20260909-r23/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every selected original and all retained interpreted material in the exact leased county scope, retaining supported and held dispositions.",
+        "Return committed reproducible proposal and independent Python recipe only; shared selected-witness method is MAIN-owned, and no completed evidence-run manifest is fabricated."
+      ]
     }
   ]
 }
