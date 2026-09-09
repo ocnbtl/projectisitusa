@@ -508076,6 +508076,318 @@
         "Return committed reproducible proposal and independent Python recipe only; shared selected-witness method is MAIN-owned, and no completed evidence-run manifest is fabricated."
       ],
       "transitionedAt": "2026-09-09T04:48:34.537Z"
+    },
+    {
+      "leaseId": "lease-ebird-monk-nm-original-review-20260909-r25-1",
+      "jobId": "ebird-monk-nm-original-review-20260909-r25",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "ebird_monk_nm_review_r25",
+      "state": "active",
+      "claimedAt": "2026-09-09T04:50:30.191Z",
+      "expiresAt": "2026-09-09T05:35:29.668Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "NM"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "myiopsitta-monachus"
+        ],
+        "pairs": [
+          "35053:myiopsitta-monachus"
+        ]
+      },
+      "scopeClaims": [
+        "county/35053/source/gbif-ebird/taxon/myiopsitta-monachus"
+      ],
+      "branch": "codex/ebird-monk-nm-original-review-20260909-r25",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-monk-nm-original-review-20260909-r25",
+      "baseSha": "4373b154c43c5fe216cd58155799c6512a3e0af1",
+      "expectedReceiptCodeCommit": "0a451f65a2c46fde2102ceeb1c7eee3017aafb0f",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-monk-nm-original-review-20260909-r25/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/ebird-monk-nm-original-review-20260909-r25/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every selected original and all retained interpreted material in the exact leased county scope, retaining supported and held dispositions.",
+        "Return committed reproducible proposal and independent Python recipe only; shared selected-witness method is MAIN-owned, and no completed evidence-run manifest is fabricated."
+      ]
+    },
+    {
+      "leaseId": "lease-ebird-monk-sc-original-review-20260909-r25-1",
+      "jobId": "ebird-monk-sc-original-review-20260909-r25",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "ebird_monk_sc_review_r25",
+      "state": "active",
+      "claimedAt": "2026-09-09T04:50:30.635Z",
+      "expiresAt": "2026-09-09T05:35:30.192Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "SC"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "myiopsitta-monachus"
+        ],
+        "pairs": [
+          "45019:myiopsitta-monachus"
+        ]
+      },
+      "scopeClaims": [
+        "county/45019/source/gbif-ebird/taxon/myiopsitta-monachus"
+      ],
+      "branch": "codex/ebird-monk-sc-original-review-20260909-r25",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-monk-sc-original-review-20260909-r25",
+      "baseSha": "4373b154c43c5fe216cd58155799c6512a3e0af1",
+      "expectedReceiptCodeCommit": "0a451f65a2c46fde2102ceeb1c7eee3017aafb0f",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-monk-sc-original-review-20260909-r25/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/ebird-monk-sc-original-review-20260909-r25/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every selected original and all retained interpreted material in the exact leased county scope, retaining supported and held dispositions.",
+        "Return committed reproducible proposal and independent Python recipe only; shared selected-witness method is MAIN-owned, and no completed evidence-run manifest is fabricated."
+      ]
+    },
+    {
+      "leaseId": "lease-ebird-monk-tn-original-review-20260909-r25-1",
+      "jobId": "ebird-monk-tn-original-review-20260909-r25",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "ebird_monk_tn_review_r25",
+      "state": "active",
+      "claimedAt": "2026-09-09T04:50:31.184Z",
+      "expiresAt": "2026-09-09T05:35:30.636Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "TN"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "myiopsitta-monachus"
+        ],
+        "pairs": [
+          "47157:myiopsitta-monachus"
+        ]
+      },
+      "scopeClaims": [
+        "county/47157/source/gbif-ebird/taxon/myiopsitta-monachus"
+      ],
+      "branch": "codex/ebird-monk-tn-original-review-20260909-r25",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-monk-tn-original-review-20260909-r25",
+      "baseSha": "4373b154c43c5fe216cd58155799c6512a3e0af1",
+      "expectedReceiptCodeCommit": "0a451f65a2c46fde2102ceeb1c7eee3017aafb0f",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-monk-tn-original-review-20260909-r25/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/worker-results/ebird-monk-tn-original-review-20260909-r25/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every selected original and all retained interpreted material in the exact leased county scope, retaining supported and held dispositions.",
+        "Return committed reproducible proposal and independent Python recipe only; shared selected-witness method is MAIN-owned, and no completed evidence-run manifest is fabricated."
+      ]
     }
   ]
 }
