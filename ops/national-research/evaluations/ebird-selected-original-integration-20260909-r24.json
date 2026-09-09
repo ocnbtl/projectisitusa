@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-original-ebird-canonical-integration",
+  "recordedAt": "2026-09-09T04:11:02.381Z",
+  "sourceCodeCommit": "e72fb4f501cccb78ce3f7345eb9176ecbc0e165e",
+  "methodReview": "src/data/research/source-method-reviews/ebird-selected-original-20260909-r24.json",
+  "status": "canonical-validated-projection-reconciliation-pending",
+  "runs": [
+    {
+      "stateCode": "AZ",
+      "runId": "20260909T040704Z__gbif-ebird__524b9fbd7945",
+      "receipt": {
+        "path": "src/data/research/runs/20260909T040704Z__gbif-ebird__524b9fbd7945/receipt.json",
+        "bytes": 6326,
+        "sha256": "b328c1eca1fa498f4d0d9f6c3dabc28d11a74c434ad09c2b6c273e2557dc5ef9"
+      },
+      "counts": {
+        "requested_pairs": 3,
+        "candidate_records": 6,
+        "assertion_events": 3,
+        "review_events": 3,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 3
+      },
+      "canonicalValidation": "passed"
+    },
+    {
+      "stateCode": "IL",
+      "runId": "20260909T040712Z__gbif-ebird__193967c67f6f",
+      "receipt": {
+        "path": "src/data/research/runs/20260909T040712Z__gbif-ebird__193967c67f6f/receipt.json",
+        "bytes": 6326,
+        "sha256": "a6a34563c3a9b9b7da19c6026f1f1cd9f99b55a8939bfe16e4e63f13509fcb29"
+      },
+      "counts": {
+        "requested_pairs": 3,
+        "candidate_records": 5,
+        "assertion_events": 3,
+        "review_events": 3,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 3
+      },
+      "canonicalValidation": "passed"
+    },
+    {
+      "stateCode": "LA",
+      "runId": "20260909T040720Z__gbif-ebird__90743f02af79",
+      "receipt": {
+        "path": "src/data/research/runs/20260909T040720Z__gbif-ebird__90743f02af79/receipt.json",
+        "bytes": 6326,
+        "sha256": "3d5fc134cb65da118d7ae06923621eef71497764012362ee11b7e3d5422bd2d2"
+      },
+      "counts": {
+        "requested_pairs": 3,
+        "candidate_records": 6,
+        "assertion_events": 3,
+        "review_events": 3,
+        "rejection_records": 0,
+        "duplicate_records": 0,
+        "error_count": 0,
+        "pair_outcomes": 3
+      },
+      "canonicalValidation": "passed"
+    }
+  ],
+  "independentAudit": {
+    "recordedAt": "2026-09-09T04:08:35.372660Z",
+    "passed": true,
+    "sourceCodeCommit": "e72fb4f501cccb78ce3f7345eb9176ecbc0e165e",
+    "independentImplementation": "Python standard library; no adapter or compiler imports",
+    "originalRows": 17,
+    "uniquePairs": 9,
+    "runs": [
+      {
+        "state": "AZ",
+        "receiptSha256": "b328c1eca1fa498f4d0d9f6c3dabc28d11a74c434ad09c2b6c273e2557dc5ef9",
+        "assertions": 3,
+        "sourceRows": 6
+      },
+      {
+        "state": "IL",
+        "receiptSha256": "a6a34563c3a9b9b7da19c6026f1f1cd9f99b55a8939bfe16e4e63f13509fcb29",
+        "assertions": 3,
+        "sourceRows": 5
+      },
+      {
+        "state": "LA",
+        "receiptSha256": "3d5fc134cb65da118d7ae06923621eef71497764012362ee11b7e3d5422bd2d2",
+        "assertions": 3,
+        "sourceRows": 6
+      }
+    ],
+    "pairs": [
+      {
+        "pair": "04013:myiopsitta-monachus",
+        "primaryKey": 5306954725,
+        "date": "2024-09-25",
+        "sourceUrl": "https://www.gbif.org/occurrence/5306954725",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-2eeef806d3331dce201b0df1f53183f538300dc904c14f6a2f331217634b0af9"
+      },
+      {
+        "pair": "04019:myiopsitta-monachus",
+        "primaryKey": 5377509063,
+        "date": "2024-05-25",
+        "sourceUrl": "https://www.gbif.org/occurrence/5377509063",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-88d93f04ee5bc1470a3dee0553338b44610772b851a750aa5dda68760c232a24"
+      },
+      {
+        "pair": "04021:myiopsitta-monachus",
+        "primaryKey": 5390084613,
+        "date": "2024-02-19",
+        "sourceUrl": "https://www.gbif.org/occurrence/5390084613",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-79865be619d403dad3e2e8509a56a3666ca4e4f155c8e88abc2d7aaff917f98e"
+      },
+      {
+        "pair": "17031:myiopsitta-monachus",
+        "primaryKey": 5400220724,
+        "date": "2024-09-30",
+        "sourceUrl": "https://www.gbif.org/occurrence/5400220724",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-35bc688bc6d01d8cd6b996630f2c6c9b83d10f253458f8f14afff8c459183a39"
+      },
+      {
+        "pair": "17043:myiopsitta-monachus",
+        "primaryKey": 5473973960,
+        "date": "2024-09-29",
+        "sourceUrl": "https://www.gbif.org/occurrence/5473973960",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-8100b013eb9e77e1f3b6032e3091c91c2b98a889dbd7cdd5257ea258b72b555f"
+      },
+      {
+        "pair": "17197:myiopsitta-monachus",
+        "primaryKey": 5502373614,
+        "date": "2024-06-27",
+        "sourceUrl": "https://www.gbif.org/occurrence/5502373614",
+        "sourceRecords": 1,
+        "assertionId": "ebird-selected-original-assertion-fbc099da167089fb3bb79e89a4be1e5f07e061c3d384bf001da4a82e99cec926"
+      },
+      {
+        "pair": "22051:myiopsitta-monachus",
+        "primaryKey": 5349939442,
+        "date": "2024-09-25",
+        "sourceUrl": "https://www.gbif.org/occurrence/5349939442",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-5078055b312f12961e9dd0ba0d1978cfdf868be44d95539ef9f1bd3e24503226"
+      },
+      {
+        "pair": "22071:myiopsitta-monachus",
+        "primaryKey": 5371556583,
+        "date": "2024-09-29",
+        "sourceUrl": "https://www.gbif.org/occurrence/5371556583",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-88db2fbf7a734c3c0c463ec3932b041779b5644051de18e5cb86c38e859c52e5"
+      },
+      {
+        "pair": "22087:myiopsitta-monachus",
+        "primaryKey": 5344226933,
+        "date": "2024-09-26",
+        "sourceUrl": "https://www.gbif.org/occurrence/5344226933",
+        "sourceRecords": 2,
+        "assertionId": "ebird-selected-original-assertion-22ac4e8b86eef979b44ad113992948acc470e6bb8a7882084825751c941c8e4b"
+      }
+    ],
+    "providerRequests": 0,
+    "canonicalWrites": 0,
+    "newDeterminations": null,
+    "qualification": "Exact source-to-staged-event audit. Determination changes require canonical integration and projection reconciliation."
+  },
+  "canonicalTamperChecks": {
+    "recordedAt": "2026-09-09T04:09:38.954Z",
+    "reports": [
+      {
+        "stateCode": "AZ",
+        "runId": "20260909T040704Z__gbif-ebird__524b9fbd7945",
+        "actualRunValidated": true,
+        "canonicalTamperCasesRejected": 24,
+        "rejectedCases": [
+          "observation-date",
+          "absence-claim",
+          "source-identity",
+          "source-url",
+          "geography-county",
+          "geography-fips",
+          "geography-state",
+          "retrieval-date",
+          "caveat-removal",
+          "attribution-removal",
+          "taxon-substitution",
+          "expert-review-inflation",
+          "publication-eligibility",
+          "protocol-completion-inflation",
+          "negative-outcome",
+          "candidate-count",
+          "duplicate-count",
+          "warning-removal",
+          "unrecorded-fresh-request",
+          "assertion-scope",
+          "assertion-deletion",
+          "outcome-deletion",
+          "artifact-hash",
+          "receipt-fresh-request"
+        ],
+        "immutableFilesModified": 0
+      },
+      {
+        "stateCode": "IL",
+        "runId": "20260909T040712Z__gbif-ebird__193967c67f6f",
+        "actualRunValidated": true,
+        "canonicalTamperCasesRejected": 24,
+        "rejectedCases": [
+          "observation-date",
+          "absence-claim",
+          "source-identity",
+          "source-url",
+          "geography-county",
+          "geography-fips",
+          "geography-state",
+          "retrieval-date",
+          "caveat-removal",
+          "attribution-removal",
+          "taxon-substitution",
+          "expert-review-inflation",
+          "publication-eligibility",
+          "protocol-completion-inflation",
+          "negative-outcome",
+          "candidate-count",
+          "duplicate-count",
+          "warning-removal",
+          "unrecorded-fresh-request",
+          "assertion-scope",
+          "assertion-deletion",
+          "outcome-deletion",
+          "artifact-hash",
+          "receipt-fresh-request"
+        ],
+        "immutableFilesModified": 0
+      },
+      {
+        "stateCode": "LA",
+        "runId": "20260909T040720Z__gbif-ebird__90743f02af79",
+        "actualRunValidated": true,
+        "canonicalTamperCasesRejected": 24,
+        "rejectedCases": [
+          "observation-date",
+          "absence-claim",
+          "source-identity",
+          "source-url",
+          "geography-county",
+          "geography-fips",
+          "geography-state",
+          "retrieval-date",
+          "caveat-removal",
+          "attribution-removal",
+          "taxon-substitution",
+          "expert-review-inflation",
+          "publication-eligibility",
+          "protocol-completion-inflation",
+          "negative-outcome",
+          "candidate-count",
+          "duplicate-count",
+          "warning-removal",
+          "unrecorded-fresh-request",
+          "assertion-scope",
+          "assertion-deletion",
+          "outcome-deletion",
+          "artifact-hash",
+          "receipt-fresh-request"
+        ],
+        "immutableFilesModified": 0
+      }
+    ]
+  },
+  "sourceRows": 17,
+  "assertions": 9,
+  "reviews": 9,
+  "outcomes": 9,
+  "rejections": 0,
+  "baselineDeterminations": 319870,
+  "expectedNetUniqueMovement": 9,
+  "newDeterminations": null,
+  "providerRequests": 0,
+  "productionWrites": 0,
+  "r2Uploads": 0,
+  "r2Deletions": 0,
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/ebird-selected-original-integration-20260909-r24.json.gz",
+    "bytes": 16859,
+    "sha256": "a9d3601b0fa7ada5dfd46d544109fd29fa4ed6cf07921f38aaf8a54a95c75490"
+  },
+  "qualifications": [
+    "Original acquisition identities and bytes are preserved; canonical source code identity belongs to the offline replay.",
+    "Nine historical recorded presences do not establish current persistence, establishment, absence or protocol completion."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260909T040720Z__gbif-ebird__90743f02af79",
+  "status": "complete",
+  "started_at": "2026-09-09T04:07:20.828Z",
+  "finished_at": "2026-09-09T04:07:27.052Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ebird-retained-original-observations@2.0.0",
+  "source_id": "gbif-ebird",
+  "source_registry_hash": "af52a785a808ec7e3b58c3e8c009b7bdd645e7d51a1d1116d73b0d22ff26e636",
+  "adapter_id": "gbif-ebird-retained-original-observations",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "502ae617ae95b7825a1d077df0b1baf0628be130f8005cf7dc361e8b0a9e803f",
+  "code_commit": "e72fb4f501cccb78ce3f7345eb9176ecbc0e165e",
+  "parameter_hash": "90743f02af79c3afd2b1d27c29496c73704d54ee1f17e72765b8783d7bb1ee5c",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/ebird-selected-original-20260909-r24.json",
+    "methodReviewSha256": "c7aedf4055aafe9bd6ae41481437a796a8f000b3190f8ed1b3a45efd41e6c6e5",
+    "mode": "retained-reviewed-selected-ebird-observations",
+    "stateCode": "LA",
+    "candidatePairs": [
+      "22051:myiopsitta-monachus",
+      "22071:myiopsitta-monachus",
+      "22087:myiopsitta-monachus"
+    ],
+    "candidateLimit": 3
+  },
+  "requested_scope": {
+    "state_code": "LA",
+    "county_fips": [
+      "22051",
+      "22071",
+      "22087"
+    ],
+    "species_ids": [
+      "myiopsitta-monachus"
+    ],
+    "pair_keys": [
+      "22051:myiopsitta-monachus",
+      "22071:myiopsitta-monachus",
+      "22087:myiopsitta-monachus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260909T040720Z__gbif-ebird__90743f02af79/artifacts/ebird-selected-original-witnesses.json",
+      "sha256": "7d4221d4b5cc45b8bae45cb58780129907f6e5fb8677052676e62b473cabbdd2",
+      "bytes": 174342,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260909T040720Z__gbif-ebird__90743f02af79/assertions.ndjson",
+      "sha256": "f791773362132004c94127e957d157e56e72464d646e3024822c4916c8ad63d7",
+      "bytes": 14610,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T040720Z__gbif-ebird__90743f02af79/reviews.ndjson",
+      "sha256": "56740b8e060768fac1ff7cb1958f3a6d92f36f8646804edfc4c5074be86b811d",
+      "bytes": 2880,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T040720Z__gbif-ebird__90743f02af79/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T040720Z__gbif-ebird__90743f02af79/outcomes.ndjson",
+      "sha256": "e7a7f238d08b04b1950d7e154dc6216a091d62bbc18704d1861c8cbb0599e4a3",
+      "bytes": 2976,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 6,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Annual EOD historical occurrence evidence only, with source-specific original-field and independent method review. No checklist non-detection, absence, establishment, current persistence or individual human expert-approval inference."
+  ],
+  "source_warnings": [
+    "Historical 2024 recorded occurrence only; no current persistence, breeding, establishment, abundance or invasive-impact claim.",
+    "The parent public search is incomplete:15000 records retained of21878 declared. No source silence, failed request, rejected record or incomplete scope supports absence, non-detection or completed no-evidence research.",
+    "scope_complete on positive outcomes refers only to the explicit finite original-record set listed in the pinned method and query URLs. It does not claim exhaustive national source acquisition or county protocol completion.",
+    "Original county/state names resolve uniquely to active counties; coordinates and GADM are retained context, not county assignment authority. Missing coordinate uncertainty alone does not defeat an explicit original county.",
+    "The explicit collection allowlist is EBIRD, EBIRD_ATL_NY and EBIRD_ATL_NC. Original and interpreted collection codes, catalog numbers and full occurrence URNs must match without rewriting the source.",
+    "Cornell pages describe New York and North Carolina eBird atlas portals. Interpreting the corresponding internal collection codes as portal identities is qualified; the pages do not define the GBIF collection-code mapping, and atlas participation does not establish breeding or expert review.",
+    "Opaque not_reviewed and crawler fields match retained dataset annotations; metadata propagation is qualified inference, not individual rejection or individual human expert approval.",
+    "Home, park, cemetery, golf-course or zoo locality words alone do not establish captivity. Specific source-record contradictions and negated captivity instructions are reviewed in context.",
+    "Distinct occurrence identifiers may share observers, birds or events; selected counts are not summed as independent animals.",
+    "The initial partial search timeout, bounded resume stop and failed Cornell block-page context request remain preserved. No failure is rewritten as a successful acquisition.",
+    "Two partial search acquisitions containing50 retained pages,141 selected original responses and their distinct executed code identities remain retained across shared archives; only declared selected originals are used as positive witnesses.",
+    "This pinned review contains 60 supported pairs, 0 held pairs and 17 deferred pairs. 114 selected originals have independent dispositions. Prior method files, runs and source bytes remain immutable."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ebird --state LA --candidate-file ops/national-research/plans/ebird-selected-original-20260909-r24/LA.json --output-root src/data/research/runs --stage-canonical true --pairs 22051:myiopsitta-monachus,22071:myiopsitta-monachus,22087:myiopsitta-monachus"
+}
