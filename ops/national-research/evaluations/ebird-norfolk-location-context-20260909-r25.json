@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "kind": "supplemental-original-county-consistency-context",
+  "recordedAt": "2026-09-09T04:30:26.862Z",
+  "status": "primary-context-retained-independent-re-review-pending",
+  "originalRecordKey": 5344669437,
+  "originalPair": "25021:myiopsitta-monachus",
+  "originalPublisherCounty": "Norfolk",
+  "originalLocality": "2 Bridge St, Dedham US-MA 42.27067, -71.17349",
+  "secondaryGbifGadmCounty": "Suffolk",
+  "acquisitionCodeCommit": "c2e6c0109cb73991c0b85f3ccb99d18f15a40bbe",
+  "artifact": {
+    "path": "ops/national-research/evaluations/artifacts/ebird-norfolk-location-context-20260909-r25.json.gz",
+    "bytes": 15720,
+    "sha256": "ab98b19d2400d5d6b8313b830e2f3622b97fca73951ea34fc25fbb21e4a8c667"
+  },
+  "receipt": {
+    "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/norfolk-location-context-r25/receipt.json",
+    "bytes": 3617,
+    "sha256": "e1511b6907e43a7abf5b9bc3d0673b81cd288a56eea1d9b1887578841e4dde80"
+  },
+  "recipe": {
+    "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/acquire-norfolk-context-r25.cjs",
+    "bytes": 3191,
+    "sha256": "67c4439e0bf28ea79538062aee2606cd571cf2933a9af0230ae29785a3d1f156"
+  },
+  "sourceResponses": [
+    {
+      "url": "https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-71.17349&y=42.270668&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "finalUrl": "https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-71.17349&y=42.270668&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "status": 200,
+      "startedAt": "2026-09-09T04:26:56.829Z",
+      "retrievedAt": "2026-09-09T04:26:57.195Z",
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/norfolk-location-context-r25/0.body.gz",
+      "bytes": 1570,
+      "sha256": "41f1848a029b9397f89c393cbd542841d83b2447ab34fc8813b2cceabf08dda8",
+      "decodedBytes": 4661,
+      "decodedSha256": "b68060605e5b82a454fdebb8eeb7202f9ff19e4e151377a7082f45204cab58ab",
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=2%20Bridge%20St&city=Dedham&state=MA&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "finalUrl": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=2%20Bridge%20St&city=Dedham&state=MA&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "status": 200,
+      "startedAt": "2026-09-09T04:26:57.196Z",
+      "retrievedAt": "2026-09-09T04:26:57.470Z",
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/norfolk-location-context-r25/1.body.gz",
+      "bytes": 1781,
+      "sha256": "e05382deb04567fee87c54053d7fe6dd20f42aeb3bb573da093f51fd4a5b669c",
+      "decodedBytes": 5093,
+      "decodedSha256": "e3b05d69d629a54d4e66bfe5c0355dc613f1a8e36c0721eaab63ae61578df137",
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+      "finalUrl": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+      "status": 200,
+      "startedAt": "2026-09-09T04:26:57.470Z",
+      "retrievedAt": "2026-09-09T04:26:57.769Z",
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/norfolk-location-context-r25/2.body.gz",
+      "bytes": 7378,
+      "sha256": "6fbc3fc1b3b9745e7c76314ac83240270b5b0e2f77edd2b568e524cdd04df72b",
+      "decodedBytes": 46478,
+      "decodedSha256": "6cefb7f5c0f6581752412b58517251e8f8ae9822fe37c7e445dea1c3b3102c5d",
+      "contentType": "text/html"
+    }
+  ],
+  "findings": {
+    "coordinateCounty": "25021",
+    "coordinateCountyName": "Norfolk County",
+    "coordinateTown": "Dedham town",
+    "addressMatched": "2 BRIDGE ST, DEDHAM, MA, 02026",
+    "addressCounty": "25021",
+    "addressMatchCount": 1
+  },
+  "providerGets": 3,
+  "automaticRetries": 0,
+  "providerWrites": 0,
+  "canonicalEvents": 0,
+  "newDeterminations": 0,
+  "qualifications": [
+    "The original eBird county remains the assignment authority. This does not create a coordinate-derived county assertion.",
+    "Two current US Census geography lookups corroborate the original Norfolk/Dedham fields; original and interpreted source bytes, including the secondary GADM Suffolk disagreement, remain unchanged.",
+    "Current benchmark/vintage values can change. Retained responses pin the observed context; this does not establish historical boundary invariance, coordinate uncertainty or current bird persistence.",
+    "The first MA proposal retains its original hold. New context requires a separate independently reproducible re-review before a MAIN approval."
+  ]
+}

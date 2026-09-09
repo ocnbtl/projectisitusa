@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-independent-method-proposal",
+  "recordedAt": "2026-09-09T04:31:36.471Z",
+  "actorId": "ebird_monk_ca_review_r25",
+  "jobId": "ebird-monk-ca-original-review-20260909-r25",
+  "leaseId": "lease-ebird-monk-ca-original-review-20260909-r25-1",
+  "originalCommit": "abb671a589515ebcea4f6685adc4ddb5e8b90fb9",
+  "baseSha": "a376652295797ad9957eaadda4f9e5bd3c73c880",
+  "files": [
+    {
+      "path": "src/data/research/worker-results/ebird-monk-ca-original-review-20260909-r25/proposal.json",
+      "bytes": 472403,
+      "sha256": "c697f86b7c518835910cbc4d4e69cf1c6b2389b3fff3c9846693be592b472c18"
+    },
+    {
+      "path": "src/data/research/worker-results/ebird-monk-ca-original-review-20260909-r25/review.py",
+      "bytes": 29800,
+      "sha256": "23210572421e026a50a4b5ee478b9f25476d75d58a6b5e1690b5d0ac39204b93"
+    }
+  ],
+  "leaseState": "recovered",
+  "jobState": "blocked",
+  "reason": "Independent selected-original Monk Parakeet review returned committed reproducible proposals. MAIN source-method registration is pending; these are retained method inputs, not a completed canonical run or accepted queue item.",
+  "contractQualification": "executionContract is retained in the registered job. The frozen lease completionCriteria and permitted paths explicitly require a proposal; generic evidence-run output vocabulary is preserved without fabricating a completed manifest.",
+  "mainOfflineVerification": {
+    "passed": true,
+    "startedAt": "2026-09-09T04:31:32.518Z",
+    "finishedAt": "2026-09-09T04:31:33.304Z",
+    "command": "python src/data/research/worker-results/ebird-monk-ca-original-review-20260909-r25/review.py --verify",
+    "exitCode": 0,
+    "result": {
+      "adapterReview": {
+        "actorId": "ebird_monk_ca_review_r25",
+        "baseSha": "a376652295797ad9957eaadda4f9e5bd3c73c880",
+        "pairs": [
+          {
+            "disposition": "supported",
+            "heldKeys": [],
+            "pairKey": "06025:myiopsitta-monachus",
+            "primaryKey": 5365708130,
+            "recordKeys": [
+              5365708130,
+              5673117396
+            ]
+          },
+          {
+            "disposition": "supported",
+            "heldKeys": [],
+            "pairKey": "06073:myiopsitta-monachus",
+            "primaryKey": 5345138559,
+            "recordKeys": [
+              5345138559,
+              5384946390
+            ]
+          }
+        ],
+        "status": "proposal-ready-main-method-required"
+      },
+      "elapsedSeconds": 0.70903,
+      "materialRows": 55,
+      "mode": "verify",
+      "ok": true,
+      "peakMemoryMiB": 55.117,
+      "proposal": {
+        "bytes": 472403,
+        "path": "src/data/research/worker-results/ebird-monk-ca-original-review-20260909-r25/proposal.json",
+        "sha256": "c697f86b7c518835910cbc4d4e69cf1c6b2389b3fff3c9846693be592b472c18"
+      },
+      "secondaryGadmConflicts": 0
+    },
+    "log": {
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/ca-r25-main-verify.log",
+      "sha256": "cef10f70d60b1953aeaef6496f40e7f62e3dfdf74ed59d51fc5189464a9cd73a"
+    }
+  },
+  "independentProjection": {
+    "actorId": "ebird_monk_ca_review_r25",
+    "baseSha": "a376652295797ad9957eaadda4f9e5bd3c73c880",
+    "pairs": [
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "06025:myiopsitta-monachus",
+        "primaryKey": 5365708130,
+        "recordKeys": [
+          5365708130,
+          5673117396
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "06073:myiopsitta-monachus",
+        "primaryKey": 5345138559,
+        "recordKeys": [
+          5345138559,
+          5384946390
+        ]
+      }
+    ],
+    "status": "proposal-ready-main-method-required"
+  },
+  "qualification": "Lexical context flags in a reviewer recipe are confined to this reviewed input set. No universal rule that home, zoo or similar locality words prove captivity is adopted. Possible shared observations cannot be summed into independent bird abundance.",
+  "acceptedDeterminations": 0,
+  "canonicalEvents": 0
+}

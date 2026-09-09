@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-independent-method-proposal",
+  "recordedAt": "2026-09-09T04:31:32.137Z",
+  "actorId": "ebird_monk_nj_review_r25",
+  "jobId": "ebird-monk-nj-original-review-20260909-r25",
+  "leaseId": "lease-ebird-monk-nj-original-review-20260909-r25-1",
+  "originalCommit": "70f18ef802e0f9e03b5fd341d0f75e98270fefe9",
+  "baseSha": "a376652295797ad9957eaadda4f9e5bd3c73c880",
+  "files": [
+    {
+      "path": "src/data/research/worker-results/ebird-monk-nj-original-review-20260909-r25/proposal.json",
+      "bytes": 894365,
+      "sha256": "bdf44b2f81efc92602df749bf65d5a3a98c91575873dc1c09dbb7691ed82eebd"
+    },
+    {
+      "path": "src/data/research/worker-results/ebird-monk-nj-original-review-20260909-r25/review.py",
+      "bytes": 31158,
+      "sha256": "e911bebcf7ce0a81761d4ccc98b4f41d1e3be56a328dd872e9877581a8412b1d"
+    }
+  ],
+  "leaseState": "recovered",
+  "jobState": "blocked",
+  "reason": "Independent selected-original Monk Parakeet review returned committed reproducible proposals. MAIN source-method registration is pending; these are retained method inputs, not a completed canonical run or accepted queue item.",
+  "contractQualification": "executionContract is retained in the registered job. The frozen lease completionCriteria and permitted paths explicitly require a proposal; generic evidence-run output vocabulary is preserved without fabricating a completed manifest.",
+  "mainOfflineVerification": {
+    "passed": true,
+    "startedAt": "2026-09-09T04:31:27.979Z",
+    "finishedAt": "2026-09-09T04:31:28.805Z",
+    "command": "python src/data/research/worker-results/ebird-monk-nj-original-review-20260909-r25/review.py --verify",
+    "exitCode": 0,
+    "result": {
+      "adapterReview": {
+        "actorId": "ebird_monk_nj_review_r25",
+        "baseSha": "a376652295797ad9957eaadda4f9e5bd3c73c880",
+        "pairs": [
+          {
+            "disposition": "supported",
+            "heldKeys": [],
+            "pairKey": "34003:myiopsitta-monachus",
+            "primaryKey": 5424850761,
+            "recordKeys": [
+              5424850761,
+              5437174669
+            ]
+          },
+          {
+            "disposition": "supported",
+            "heldKeys": [],
+            "pairKey": "34013:myiopsitta-monachus",
+            "primaryKey": 5376017540,
+            "recordKeys": [
+              5376017540
+            ]
+          },
+          {
+            "disposition": "supported",
+            "heldKeys": [],
+            "pairKey": "34017:myiopsitta-monachus",
+            "primaryKey": 5337715259,
+            "recordKeys": [
+              5337715259,
+              5377761044
+            ]
+          }
+        ],
+        "status": "proposal-ready-main-method-required"
+      },
+      "elapsedSeconds": 0.711763,
+      "materialRows": 315,
+      "mode": "verify",
+      "ok": true,
+      "peakMemoryMiB": 55.234,
+      "proposal": {
+        "bytes": 894365,
+        "path": "src/data/research/worker-results/ebird-monk-nj-original-review-20260909-r25/proposal.json",
+        "sha256": "bdf44b2f81efc92602df749bf65d5a3a98c91575873dc1c09dbb7691ed82eebd"
+      },
+      "secondaryGadmConflicts": 0
+    },
+    "log": {
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/nj-r25-main-verify.log",
+      "sha256": "252d78b0003212213bd8379b2643d2cb84c2d88223397a3ee23a5bff5d453144"
+    }
+  },
+  "independentProjection": {
+    "actorId": "ebird_monk_nj_review_r25",
+    "baseSha": "a376652295797ad9957eaadda4f9e5bd3c73c880",
+    "pairs": [
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "34003:myiopsitta-monachus",
+        "primaryKey": 5424850761,
+        "recordKeys": [
+          5424850761,
+          5437174669
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "34013:myiopsitta-monachus",
+        "primaryKey": 5376017540,
+        "recordKeys": [
+          5376017540
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "34017:myiopsitta-monachus",
+        "primaryKey": 5337715259,
+        "recordKeys": [
+          5337715259,
+          5377761044
+        ]
+      }
+    ],
+    "status": "proposal-ready-main-method-required"
+  },
+  "qualification": "Lexical context flags in a reviewer recipe are confined to this reviewed input set. No universal rule that home, zoo or similar locality words prove captivity is adopted. Possible shared observations cannot be summed into independent bird abundance.",
+  "acceptedDeterminations": 0,
+  "canonicalEvents": 0
+}
