@@ -504968,6 +504968,253 @@
       "priority": 100,
       "state": "blocked",
       "currentLeaseId": "lease-epa-nrsa-1314-source-review-b-20260908-r21-1"
+    },
+    {
+      "jobId": "ebird-eod-ca-original-review-20260909-r22",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "CA"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "brotogeris-versicolurus"
+        ],
+        "pairs": [
+          "06037:brotogeris-versicolurus",
+          "06085:brotogeris-versicolurus"
+        ]
+      },
+      "scopeClaims": [
+        "county/06037/source/gbif-ebird/taxon/brotogeris-versicolurus",
+        "county/06085/source/gbif-ebird/taxon/brotogeris-versicolurus"
+      ],
+      "branch": "codex/ebird-eod-ca-original-review-20260909-r22",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-eod-ca-original-review-20260909-r22",
+      "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+      "expectedReceiptCodeCommit": "d4d860e6b27296e09cada8cfadde35e734668522",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-eod-ca-original-review-20260909-r22/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "proposalOnly": true,
+        "noNetworkAcquisition": true,
+        "maximumPublicReadRequests": 0,
+        "inputArtifacts": [
+          "ops/national-research/evaluations/ebird-eod-original-field-pilot-20260909-r19.json",
+          "ops/national-research/evaluations/ebird-eod-public-metadata-20260909-r19.json"
+        ],
+        "exactCandidatePairs": [
+          "06037:brotogeris-versicolurus",
+          "06085:brotogeris-versicolurus"
+        ],
+        "sourceMethodRegistrationPending": true,
+        "resourceReservationMb": 384,
+        "focus": "Independently assess the exact leased EOD candidate pairs from retained original provider responses, metadata, terms and Cornell method references. Verify archive and embedded hashes, every interpreted and original verbatim record in your scope, original record identity, explicit publisher county and state against the current registry, exact original and accepted taxon, collection date, presence/basis, quality flags, locality, wild/captive context and license. Inspect all material original rows for each pair. Independently assess opaque not_reviewed and crawler fields using the retained dataset metadata and primary method context; distinguish source-supported facts from inferences. Missing uncertainty alone need not invalidate an explicit unambiguous publisher county. Neither at-home locality nor a dataset annotation alone establishes captivity, individual rejection or individual expert approval. Do not accept a row when a concrete identity or geography contradiction remains. Existing MAIN diagnostic conclusions are review candidates, not approval; document disagreements. Retain original fields and exact byte witnesses. This annual occurrence dataset provides no complete-checklist negatives, county absence, current persistence or establishment proof.",
+        "outputInstruction": "Run the frozen evidence-worker preflight before any edits. Write only proposal.json and an independent reproducible Python review.py in the permitted worker-results root. Return status proposal-ready-main-method-required. No canonical evidence run or completed manifest may be fabricated while source-method registration is pending. Include actorId, lease/base/actual acquisition code identities, exact pairs, per-record original field witnesses and source response path/hash, selected strongest witness or explicit holds, method conclusions with source references and uncertainty, all material record dispositions, exact baseline/final/net (canonical events and determinations stay zero), validation commands, elapsed time and peak process memory. The proposal must reproduce offline with review.py --verify; do not import MAIN analysis code. No network requests, package installs, authentication interaction, shared code changes, projection generation, builds, deployment or orchestration transitions. Commit only permitted proposal and recipe; return exact SHA within 25 minutes so MAIN can independently validate and retain the proposal before lease expiry."
+      },
+      "expiresAt": "2026-09-09T02:36:26.220Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every exact leased pair and all original material records with reproducible byte witnesses or explicit holds.",
+        "Return committed proposal and independent verification recipe without claiming evidence-run completion or canonical determinations; MAIN owns source-method registration."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-ebird-eod-ca-original-review-20260909-r22-1"
+    },
+    {
+      "jobId": "ebird-eod-fl-original-review-20260909-r22",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "FL"
+        ],
+        "sourceFamilies": [
+          "gbif-ebird"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "brotogeris-versicolurus"
+        ],
+        "pairs": [
+          "12086:brotogeris-versicolurus",
+          "12087:brotogeris-versicolurus",
+          "12103:brotogeris-versicolurus"
+        ]
+      },
+      "scopeClaims": [
+        "county/12086/source/gbif-ebird/taxon/brotogeris-versicolurus",
+        "county/12087/source/gbif-ebird/taxon/brotogeris-versicolurus",
+        "county/12103/source/gbif-ebird/taxon/brotogeris-versicolurus"
+      ],
+      "branch": "codex/ebird-eod-fl-original-review-20260909-r22",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\ebird-eod-fl-original-review-20260909-r22",
+      "baseSha": "9469aa3863680cf9950e9acb9db38d60d455f56e",
+      "expectedReceiptCodeCommit": "d4d860e6b27296e09cada8cfadde35e734668522",
+      "permittedPaths": [
+        "src/data/research/worker-results/ebird-eod-fl-original-review-20260909-r22/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 8388608,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 384
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "reviewOnly": true,
+        "proposalOnly": true,
+        "noNetworkAcquisition": true,
+        "maximumPublicReadRequests": 0,
+        "inputArtifacts": [
+          "ops/national-research/evaluations/ebird-eod-original-field-pilot-20260909-r19.json",
+          "ops/national-research/evaluations/ebird-eod-public-metadata-20260909-r19.json"
+        ],
+        "exactCandidatePairs": [
+          "12086:brotogeris-versicolurus",
+          "12087:brotogeris-versicolurus",
+          "12103:brotogeris-versicolurus"
+        ],
+        "sourceMethodRegistrationPending": true,
+        "resourceReservationMb": 384,
+        "focus": "Independently assess the exact leased EOD candidate pairs from retained original provider responses, metadata, terms and Cornell method references. Verify archive and embedded hashes, every interpreted and original verbatim record in your scope, original record identity, explicit publisher county and state against the current registry, exact original and accepted taxon, collection date, presence/basis, quality flags, locality, wild/captive context and license. Inspect all material original rows for each pair. Independently assess opaque not_reviewed and crawler fields using the retained dataset metadata and primary method context; distinguish source-supported facts from inferences. Missing uncertainty alone need not invalidate an explicit unambiguous publisher county. Neither at-home locality nor a dataset annotation alone establishes captivity, individual rejection or individual expert approval. Do not accept a row when a concrete identity or geography contradiction remains. Existing MAIN diagnostic conclusions are review candidates, not approval; document disagreements. Retain original fields and exact byte witnesses. This annual occurrence dataset provides no complete-checklist negatives, county absence, current persistence or establishment proof.",
+        "outputInstruction": "Run the frozen evidence-worker preflight before any edits. Write only proposal.json and an independent reproducible Python review.py in the permitted worker-results root. Return status proposal-ready-main-method-required. No canonical evidence run or completed manifest may be fabricated while source-method registration is pending. Include actorId, lease/base/actual acquisition code identities, exact pairs, per-record original field witnesses and source response path/hash, selected strongest witness or explicit holds, method conclusions with source references and uncertainty, all material record dispositions, exact baseline/final/net (canonical events and determinations stay zero), validation commands, elapsed time and peak process memory. The proposal must reproduce offline with review.py --verify; do not import MAIN analysis code. No network requests, package installs, authentication interaction, shared code changes, projection generation, builds, deployment or orchestration transitions. Commit only permitted proposal and recipe; return exact SHA within 25 minutes so MAIN can independently validate and retain the proposal before lease expiry."
+      },
+      "expiresAt": "2026-09-09T02:36:27.097Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "Pass frozen preflight in the isolated lease worktree.",
+        "Independently review every exact leased pair and all original material records with reproducible byte witnesses or explicit holds.",
+        "Return committed proposal and independent verification recipe without claiming evidence-run completion or canonical determinations; MAIN owns source-method registration."
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "leased",
+      "currentLeaseId": "lease-ebird-eod-fl-original-review-20260909-r22-1"
     }
   ]
 }
