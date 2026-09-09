@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260909T050434Z__gbif-ebird__a475568f457d",
+  "status": "complete",
+  "started_at": "2026-09-09T05:04:34.430Z",
+  "finished_at": "2026-09-09T05:04:42.382Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-ebird-retained-original-observations@2.0.0",
+  "source_id": "gbif-ebird",
+  "source_registry_hash": "af52a785a808ec7e3b58c3e8c009b7bdd645e7d51a1d1116d73b0d22ff26e636",
+  "adapter_id": "gbif-ebird-retained-original-observations",
+  "adapter_version": "2.0.0",
+  "adapter_code_hash": "502ae617ae95b7825a1d077df0b1baf0628be130f8005cf7dc361e8b0a9e803f",
+  "code_commit": "7881664c01b067396a4611964e00a9002e841299",
+  "parameter_hash": "a475568f457d6f73e8f2d89a4fd7b47eacdf9ba095f69f37e9a49e3f1108e42e",
+  "parameters": {
+    "methodReviewPath": "src/data/research/source-method-reviews/ebird-selected-original-20260909-r25.json",
+    "methodReviewSha256": "235eec4ba74bdbf524876eefff429193d2578b6291d3798a3aa828fff878ad30",
+    "mode": "retained-reviewed-selected-ebird-observations",
+    "stateCode": "IN",
+    "candidatePairs": [
+      "18089:myiopsitta-monachus",
+      "18091:myiopsitta-monachus"
+    ],
+    "candidateLimit": 2
+  },
+  "requested_scope": {
+    "state_code": "IN",
+    "county_fips": [
+      "18089",
+      "18091"
+    ],
+    "species_ids": [
+      "myiopsitta-monachus"
+    ],
+    "pair_keys": [
+      "18089:myiopsitta-monachus",
+      "18091:myiopsitta-monachus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260909T050434Z__gbif-ebird__a475568f457d/artifacts/ebird-selected-original-witnesses.json",
+      "sha256": "a61311e5f546e2175cf6b84fc79b24970bf6b87e5f5dea0a1c4f69567a1768ff",
+      "bytes": 133322,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260909T050434Z__gbif-ebird__a475568f457d/assertions.ndjson",
+      "sha256": "a9858ce475c7c33e6c87d7410ee47c9a82a736f4c6c5021e1541ffb9ade82016",
+      "bytes": 10527,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T050434Z__gbif-ebird__a475568f457d/reviews.ndjson",
+      "sha256": "132fdc839ff51982daaa2d9ca807aaafe31ac4fa786fab5df8f70469ba15d320",
+      "bytes": 1920,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T050434Z__gbif-ebird__a475568f457d/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260909T050434Z__gbif-ebird__a475568f457d/outcomes.ndjson",
+      "sha256": "483006de0319b51d38471c34dff2dd98fb3309805faa8e9cd0b1ac93890b604d",
+      "bytes": 1927,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 2,
+    "candidate_records": 3,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 2
+  },
+  "errors": [],
+  "known_caveats": [
+    "Annual EOD historical occurrence evidence only, with source-specific original-field and independent method review. No checklist non-detection, absence, establishment, current persistence or individual human expert-approval inference."
+  ],
+  "source_warnings": [
+    "Historical 2024 recorded occurrence only; no current persistence, breeding, establishment, abundance or invasive-impact claim.",
+    "The parent public search is incomplete:15000 records retained of21878 declared. No source silence, failed request, rejected record or incomplete scope supports absence, non-detection or completed no-evidence research.",
+    "scope_complete on positive outcomes refers only to the explicit finite original-record set listed in the pinned method and query URLs. It does not claim exhaustive national source acquisition or county protocol completion.",
+    "Original county/state names resolve uniquely to active counties; coordinates and GADM are retained context, not county assignment authority. Missing coordinate uncertainty alone does not defeat an explicit original county.",
+    "The explicit collection allowlist is EBIRD, EBIRD_ATL_NY and EBIRD_ATL_NC. Original and interpreted collection codes, catalog numbers and full occurrence URNs must match without rewriting the source.",
+    "Cornell pages describe New York and North Carolina eBird atlas portals. Interpreting the corresponding internal collection codes as portal identities is qualified; the pages do not define the GBIF collection-code mapping, and atlas participation does not establish breeding or expert review.",
+    "Opaque not_reviewed and crawler fields match retained dataset annotations; metadata propagation is qualified inference, not individual rejection or individual human expert approval.",
+    "Home, park, cemetery, golf-course or zoo locality words alone do not establish captivity. Specific source-record contradictions and negated captivity instructions are reviewed in context.",
+    "Distinct occurrence identifiers may share observers, birds or events; selected counts are not summed as independent animals.",
+    "The initial partial search timeout, bounded resume stop and failed Cornell block-page context request remain preserved. No failure is rewritten as a successful acquisition.",
+    "Two partial search acquisitions containing50 retained pages,141 selected original responses and their distinct executed code identities remain retained across shared archives; only declared selected originals are used as positive witnesses.",
+    "For the Norfolk County, Massachusetts witness, original publisher Norfolk conflicts with secondary GADM Suffolk. Independent review of retained Census address and exact-coordinate responses corroborates the explicit publisher county using current geography. This does not prove historical boundaries or observation precision. The initial held proposal and geographic disagreement remain preserved.",
+    "This pinned review contains 77 supported pairs, 0 held pairs and 0 deferred pairs. 141 selected originals have independent dispositions. Prior method files, runs and source bytes remain immutable."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-ebird --state IN --candidate-file ops/national-research/plans/ebird-selected-original-20260909-r25/IN.json --output-root src/data/research/runs --stage-canonical true --pairs 18089:myiopsitta-monachus,18091:myiopsitta-monachus"
+}
