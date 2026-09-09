@@ -7,20 +7,20 @@ Generated: `2026-09-09T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `11447`
+- Verified present: `11450`
 - Verified absent: `202`
 - Not detected: `8`
 - Researched unresolved: `37199`
-- Not researched: `206552`
+- Not researched: `206549`
 - Determination coverage: `4.56%`
 - Research coverage: `19.13%`
-- Explicit outcome coverage: `19.1286%`
-- Applicable protocol cells: `477`
+- Explicit outcome coverage: `19.1298%`
+- Applicable protocol cells: `478`
 - Current complete protocol cells: `139`
-- Protocol completion: `31.87%`
-- Current protocol completion: `29.14%`
-- Evidence records: `14068`
-- Research runs: `43`
+- Protocol completion: `31.80%`
+- Current protocol completion: `29.08%`
+- Evidence records: `14071`
+- Research runs: `44`
 - Rejection records: `2126`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -90,7 +90,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1019 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
-| GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
+| GBIF eBird Observation Dataset | operational | 2026-09-09T04:07:18.619Z | 3 | 1 |
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | 2026-09-02T20:05:05.525Z | 319 | 10 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |

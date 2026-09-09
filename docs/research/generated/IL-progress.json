@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 442,
+    "applicableSpeciesCount": 443,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2062,
+    "unknownSpeciesCount": 2061,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 75,
-    "derivedApplicableSpeciesCount": 367,
+    "derivedApplicableSpeciesCount": 368,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 590,
+    "boundedAcquisitionSpeciesCount": 591,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 255408,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 11447,
+    "verifiedPresent": 11450,
     "verifiedAbsent": 202,
     "notDetected": 8,
     "researchedUnresolved": 37199,
-    "notResearched": 206552,
+    "notResearched": 206549,
     "determinationCoveragePercent": 4.56,
     "researchCoveragePercent": 19.13,
-    "explicitOutcomePairCount": 48856,
-    "explicitOutcomeCoveragePercent": 19.1286,
+    "explicitOutcomePairCount": 48859,
+    "explicitOutcomeCoveragePercent": 19.1298,
     "conflictCount": 0,
-    "evidenceRecordCount": 14068,
+    "evidenceRecordCount": 14071,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 14068,
+    "runEvidenceRecordCount": 14071,
     "rejectionRecordCount": 2126,
-    "researchRunCount": 43,
+    "researchRunCount": 44,
     "boundedAcquisition": {
-      "speciesCount": 590,
-      "totalPairs": 60180,
-      "verifiedPresent": 11447,
+      "speciesCount": 591,
+      "totalPairs": 60282,
+      "verifiedPresent": 11450,
       "verifiedAbsent": 202,
       "notDetected": 8,
       "researchedUnresolved": 37199,
-      "notResearched": 11324,
-      "researchCoveragePercent": 81.18,
-      "explicitOutcomePairs": 48856,
-      "explicitOutcomeCoveragePercent": 81.1831
+      "notResearched": 11423,
+      "researchCoveragePercent": 81.05,
+      "explicitOutcomePairs": 48859,
+      "explicitOutcomeCoveragePercent": 81.0507
     }
   },
   "migrationCandidates": {
@@ -363,9 +363,9 @@
       "authority": "Cornell Lab of Ornithology via GBIF",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-09-09T04:07:18.619Z",
+      "evidencePairCount": 3,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "idigbio-preserved-specimens",
@@ -542,17 +542,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 2360,
-    "applicableCells": 477,
-    "notApplicableCells": 1883,
+    "totalCells": 2364,
+    "applicableCells": 478,
+    "notApplicableCells": 1886,
     "completeCells": 152,
-    "incompleteCells": 325,
+    "incompleteCells": 326,
     "blockedCells": 0,
     "currentCells": 139,
     "staleCells": 13,
-    "undatedCells": 325,
-    "applicableCompletionPercent": 31.87,
-    "currentCompletePercent": 29.14,
+    "undatedCells": 326,
+    "applicableCompletionPercent": 31.8,
+    "currentCompletePercent": 29.08,
     "regulatedAndHighApplicableCells": 59,
     "regulatedAndHighCurrentCompleteCells": 59,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -578,9 +578,9 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 19,
+        "applicableCells": 20,
         "currentCompleteCells": 8,
-        "currentCompletePercent": 42.11
+        "currentCompletePercent": 40
       }
     ],
     "priorityCompletion": [
@@ -598,9 +598,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 392,
+        "applicableCells": 393,
         "currentCompleteCells": 67,
-        "currentCompletePercent": 17.09
+        "currentCompletePercent": 17.05
       },
       {
         "priority": "baseline",
@@ -618,7 +618,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 442,
+        "applicableCells": 443,
         "currentCompleteCells": 117,
         "processed": false
       },
@@ -1772,6 +1772,18 @@
       "priorityScore": 99001
     },
     {
+      "speciesId": "myiopsitta-monachus",
+      "commonName": "Monk Parakeet",
+      "scientificName": "Myiopsitta monachus",
+      "category": "wildlife",
+      "notResearchedCountyCount": 99,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 99001
+    },
+    {
       "speciesId": "persicaria-longiseta",
       "commonName": "Bristly Lady's Thumb",
       "scientificName": "Persicaria longiseta",
@@ -1811,18 +1823,6 @@
       "speciesId": "thlaspi-arvense",
       "commonName": "Field Pennycress",
       "scientificName": "Thlaspi arvense",
-      "category": "plants",
-      "notResearchedCountyCount": 99,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 99001
-    },
-    {
-      "speciesId": "vinca-minor",
-      "commonName": "Common Periwinkle",
-      "scientificName": "Vinca minor",
       "category": "plants",
       "notResearchedCountyCount": 99,
       "researchedUnresolvedCountyCount": 0,
