@@ -126,7 +126,8 @@
     "check:release-coherence": "node scripts/check-release-coherence.mjs",
     "check:epa-nrsa-1819-fish": "node --import tsx scripts/test-epa-nrsa-1819-fish-counts.ts && node --import tsx scripts/test-epa-nrsa-1819-retained-replay.ts",
     "check:epa-nrsa-1314-fish": "node --import tsx scripts/test-epa-nrsa-1314-fish-counts.ts && node --import tsx scripts/test-epa-nrsa-1314-retained-replay.ts",
-    "check:ebird-original": "node --import tsx scripts/test-ebird-original-observations.ts && node --import tsx scripts/test-ebird-original-method.ts"
+    "check:ebird-original": "node --import tsx scripts/test-ebird-original-observations.ts && node --import tsx scripts/test-ebird-original-method.ts && npm run check:ebird-selected-original",
+    "check:ebird-selected-original": "node --max-old-space-size=1024 --import tsx scripts/test-ebird-selected-original.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

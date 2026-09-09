@@ -1,47 +1,95 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://isitusa.com/schemas/research/ebird-original-parameters.schema.json",
-  "title": "Independently reviewed retained eBird original observations",
-  "type": "object",
-  "additionalProperties": false,
-  "required": [
-    "mode",
-    "stateCode",
-    "methodReviewPath",
-    "methodReviewSha256",
-    "candidatePairs",
-    "candidateLimit"
-  ],
-  "properties": {
-    "mode": {
-      "const": "retained-reviewed-original-ebird-observations"
-    },
-    "stateCode": {
-      "type": "string",
-      "pattern": "^[A-Z]{2}$"
-    },
-    "methodReviewPath": {
-      "type": "string",
-      "pattern": "^src/data/research/source-method-reviews/ebird-original-[a-z0-9-]+\\.json$"
-    },
-    "methodReviewSha256": {
-      "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
-    },
-    "candidatePairs": {
-      "type": "array",
-      "minItems": 1,
-      "maxItems": 5000,
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "pattern": "^[0-9]{5}:[a-z0-9][a-z0-9-]*$"
+  "title": "Reviewed complete-query or finite selected-original eBird observations",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "stateCode",
+        "methodReviewPath",
+        "methodReviewSha256",
+        "candidatePairs",
+        "candidateLimit"
+      ],
+      "properties": {
+        "mode": {
+          "const": "retained-reviewed-original-ebird-observations"
+        },
+        "stateCode": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "methodReviewPath": {
+          "type": "string",
+          "pattern": "^src/data/research/source-method-reviews/ebird-original-[a-z0-9-]+\\.json$"
+        },
+        "methodReviewSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "candidatePairs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5000,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9]{5}:[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "candidateLimit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        }
       }
     },
-    "candidateLimit": {
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 5000
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "stateCode",
+        "methodReviewPath",
+        "methodReviewSha256",
+        "candidatePairs",
+        "candidateLimit"
+      ],
+      "properties": {
+        "mode": {
+          "const": "retained-reviewed-selected-ebird-observations"
+        },
+        "stateCode": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "methodReviewPath": {
+          "type": "string",
+          "pattern": "^src/data/research/source-method-reviews/ebird-selected-original-[a-z0-9-]+\\.json$"
+        },
+        "methodReviewSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "candidatePairs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5000,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9]{5}:[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "candidateLimit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        }
+      }
     }
-  }
+  ]
 }

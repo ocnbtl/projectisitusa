@@ -31,16 +31,18 @@ export function ebirdOriginalDate(original: EbirdRecord) {
 // An explicit, unambiguous original county can support a historical occurrence
 // without a coordinate-uncertainty field. Source review must still check every
 // original field; this predicate does not replace independent witness review.
-export function qualifyEbirdOriginal(record: EbirdRecord, original: EbirdRecord, counties: EbirdCounty[], scientificName: string, taxonKey: number, machineTags: EbirdMachineTag[]) {
+export function qualifyEbirdOriginal(record: EbirdRecord, original: EbirdRecord, counties: EbirdCounty[], scientificName: string, taxonKey: number, machineTags: EbirdMachineTag[], reviewedCollections: readonly string[] = ['EBIRD']) {
   const fail = (reason: string) => ({county: null, date: null, reason});
+  const collection = original[term('collectionCode')];
+  if (typeof collection !== 'string' || !reviewedCollections.includes(collection) || !/^EBIRD(?:_ATL_[A-Z]{2})?$/u.test(collection)) return fail('publisher-or-country-identity');
   if (!Number.isSafeInteger(record.key) || original.key !== record.key || record.datasetKey !== EBIRD_DATASET || original.datasetKey !== EBIRD_DATASET) return fail('record-or-dataset-identity');
   if (record.publishingOrgKey !== 'e2e717bf-551a-4917-bdc9-4fa0f342c530' || original.publishingOrgKey !== record.publishingOrgKey || record.gbifID !== String(record.key)) return fail('publisher-or-gbif-identity');
-  if (record.countryCode !== 'US' || original[term('country')] !== 'United States' || original[term('institutionCode')] !== 'CLO' || original[term('collectionCode')] !== 'EBIRD') return fail('publisher-or-country-identity');
+  if (record.countryCode !== 'US' || original[term('country')] !== 'United States' || original[term('institutionCode')] !== 'CLO' || record.collectionCode !== collection) return fail('publisher-or-country-identity');
   if (original[term('scientificName')] !== scientificName || record.species !== scientificName || record.speciesKey !== taxonKey || record.acceptedTaxonKey !== taxonKey || record.taxonRank !== 'SPECIES' || record.taxonomicStatus !== 'ACCEPTED' || original[term('class')] !== 'Aves') return fail('exact-reviewed-taxon');
   if (record.basisOfRecord !== 'HUMAN_OBSERVATION' || original[term('basisOfRecord')] !== 'HumanObservation' || record.occurrenceStatus !== 'PRESENT' || original[term('occurrenceStatus')] !== 'PRESENT') return fail('positive-human-observation');
   const id = original[term('occurrenceID')];
-  if (typeof id !== 'string' || !/^URN:catalog:CLO:EBIRD:OBS\d+$/u.test(id) || id !== record.occurrenceID || original['http://rs.gbif.org/terms/1.0/gbifID'] !== String(record.key)) return fail('stable-original-occurrence-identity');
-  if (record.institutionCode !== 'CLO' || record.collectionCode !== 'EBIRD' || record.class !== 'Aves' || record.taxonKey !== taxonKey || original[term('catalogNumber')] !== record.catalogNumber || original['http://purl.org/dc/terms/identifier'] !== record.identifier || id !== 'URN:catalog:CLO:EBIRD:' + String(original[term('catalogNumber')])) return fail('publisher-classification-or-catalog-identity');
+  if (typeof id !== 'string' || !/^URN:catalog:CLO:EBIRD(?:_ATL_[A-Z]{2})?:OBS\d+$/u.test(id) || id !== record.occurrenceID || original['http://rs.gbif.org/terms/1.0/gbifID'] !== String(record.key)) return fail('stable-original-occurrence-identity');
+  if (record.institutionCode !== 'CLO' || record.collectionCode !== collection || record.class !== 'Aves' || record.taxonKey !== taxonKey || original[term('catalogNumber')] !== record.catalogNumber || original['http://purl.org/dc/terms/identifier'] !== record.identifier || id !== 'URN:catalog:CLO:' + collection + ':' + String(original[term('catalogNumber')])) return fail('publisher-classification-or-catalog-identity');
   const classification = record.classifications;
   if (!classification || typeof classification !== 'object' || !Object.keys(classification).length) return fail('missing-reviewed-classifications');
   for (const value of Object.values(classification)) {

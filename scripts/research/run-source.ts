@@ -1,4 +1,6 @@
 import { ebirdInputPaths, EBIRD_MODE, type EbirdPlan } from "@/lib/research/ebird-original-observations";
+import { ebirdSelectedOriginalAdapter } from "./adapters/ebird-selected-original-observations";
+import { ebirdSelectedInputPaths, EBIRD_SELECTED_MODE, type EbirdSelectedPlan } from "@/lib/research/ebird-selected-original-observations";
 import { ebirdOriginalAdapter } from "./adapters/ebird-original-observations";
 import { epaNrsa1314InputPaths, EPA_NRSA_1314_MODE, type EpaNrsa1314Plan } from "@/lib/research/epa-nrsa-1314-fish-counts";
 import { epaNrsa1314FishAdapter } from "./adapters/epa-nrsa-1314-fish-counts";
@@ -117,6 +119,7 @@ type CandidateFile = {
   epaNrsa1819Fish?: EpaNrsa1819Plan;
   epaNrsa1314Fish?: EpaNrsa1314Plan;
   ebirdOriginal?: EbirdPlan;
+  ebirdSelectedOriginal?: EbirdSelectedPlan;
   wqpReviewedFish?: WqpReviewedFishPlan;
   officialOccurrence?: OfficialOccurrencePlan;
   pilot?: {
@@ -570,7 +573,10 @@ function runTimestamp(value: string) {
 }
 
 function resolveAdapter(sourceId: string, candidateFile?: CandidateFile): ResearchSourceAdapter {
-  if (sourceId === ebirdOriginalAdapter.sourceId) return ebirdOriginalAdapter;
+  if (sourceId === ebirdOriginalAdapter.sourceId) {
+    if (candidateFile?.ebirdOriginal && candidateFile?.ebirdSelectedOriginal) throw new Error("Ambiguous eBird original method plans.");
+    return candidateFile?.ebirdSelectedOriginal ? ebirdSelectedOriginalAdapter : ebirdOriginalAdapter;
+  }
   if (sourceId === epaNrsaFishAdapter.sourceId) {
     if ([candidateFile?.epaNrsaFish, candidateFile?.epaNrsa1819Fish, candidateFile?.epaNrsa1314Fish].filter(Boolean).length > 1) throw new Error("Ambiguous EPA NRSA method plans.");
     return candidateFile?.epaNrsa1314Fish ? epaNrsa1314FishAdapter : candidateFile?.epaNrsa1819Fish ? epaNrsa1819FishAdapter : epaNrsaFishAdapter;
@@ -691,6 +697,10 @@ function buildParameters(
     };
   }
   if (sourceId === ebirdOriginalAdapter.sourceId) {
+    if (candidateFile.ebirdSelectedOriginal) {
+      if (candidateFile.sourceId !== sourceId || candidateFile.ebirdOriginal) throw new Error("EOD requires one exact selected-original plan.");
+      return {...candidateFile.ebirdSelectedOriginal, mode: EBIRD_SELECTED_MODE, stateCode, candidatePairs, candidateLimit: candidatePairs.length};
+    }
     if (!candidateFile.ebirdOriginal || candidateFile.sourceId !== sourceId) throw new Error("EOD requires its exact pinned original-field review plan.");
     return {...candidateFile.ebirdOriginal, mode: EBIRD_MODE, stateCode, candidatePairs, candidateLimit: candidatePairs.length};
   }
@@ -1008,6 +1018,7 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(adapter === ebirdSelectedOriginalAdapter ? ebirdSelectedInputPaths(readJson<CandidateFile>(options.candidateFile).ebirdSelectedOriginal!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === ebirdOriginalAdapter ? ebirdInputPaths(readJson<CandidateFile>(options.candidateFile).ebirdOriginal!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === epaNrsa1819FishAdapter ? epaNrsa1819InputPaths(readJson<CandidateFile>(options.candidateFile).epaNrsa1819Fish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
     ...(adapter === epaNrsa1314FishAdapter ? epaNrsa1314InputPaths(readJson<CandidateFile>(options.candidateFile).epaNrsa1314Fish!, p => readFileSync(path.join(ROOT, p))).map(p => path.join(ROOT, p)) : []),
@@ -1119,7 +1130,9 @@ async function main() {
       objectIdsPerRequest?: number;
       targets?: Array<{ objectId: number }>;
     };
-    const expectedProviderRequests = adapter === ebirdOriginalAdapter
+    const expectedProviderRequests = adapter === ebirdSelectedOriginalAdapter
+      ? { providerNetworkRequests: 0, additionalRequests: 0, mode: EBIRD_SELECTED_MODE }
+      : adapter === ebirdOriginalAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: EBIRD_MODE }
       : adapter === epaNrsa1314FishAdapter
       ? { providerNetworkRequests: 0, additionalRequests: 0, mode: EPA_NRSA_1314_MODE }

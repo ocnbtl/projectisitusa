@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-ebird-atlas-collection-context",
+  "recordedAt": "2026-09-09T03:21:18.107Z",
+  "collectionContext": {
+    "archive": {
+      "path": "ops/national-research/evaluations/artifacts/ebird-atlas-portal-context-20260909-r23.json.gz",
+      "bytes": 98723,
+      "sha256": "696c03ab8ed88f99f387ea1159b2c814650a342778140c3c6660f76ef774f4a8"
+    },
+    "receipt": {
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/atlas-portal-context-r23/receipt.json",
+      "bytes": 2114,
+      "sha256": "41fefcc06ba04581d2796d8dba5f0589f9b9dc3d23f3db4d419ec1caf1a74bd3"
+    },
+    "recipe": {
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/acquire-atlas-context-r23.cjs",
+      "bytes": 2322,
+      "sha256": "74e9665fd8adfd8e79d0e83584be0342c79b05d3d721867f922ad95b82ef0665"
+    },
+    "repositoryBaseCommit": "43100a57f20839e2a2222592f45016afa5692cc6"
+  },
+  "reviewedCollections": [
+    "EBIRD",
+    "EBIRD_ATL_NY",
+    "EBIRD_ATL_NC"
+  ],
+  "observedSelectedAtlasKeys": [
+    5449276834,
+    5420991483,
+    5380656227,
+    5607797302
+  ],
+  "successfulPrimaryPages": [
+    {
+      "url": "https://ebird.org/atlasnc/about/setting-your-portal",
+      "sha256": "b28363356e8a9bc17061a49627648f3203ac9ffb3c757c6387dd22f9650e805c",
+      "retrievedAt": "2026-09-09T03:18:04.425Z"
+    },
+    {
+      "url": "https://ebird.org/atlasny/news/big-atlas-weekend-2023",
+      "sha256": "428d518ff6a78f535b1fdfc8e19702be41cc13882224f8c94a8e6db3c36f4979",
+      "retrievedAt": "2026-09-09T03:18:04.705Z"
+    }
+  ],
+  "failedRequests": [
+    {
+      "url": "https://ebird.org/atlasny/block/42078G5CW?atlasPeriod=EBIRD_ATL_NY_2020&m=",
+      "at": "2026-09-09T03:18:04.737Z",
+      "message": "TypeError: fetch failed"
+    }
+  ],
+  "requestAccounting": {
+    "publicGetsAttempted": 3,
+    "successfulResponses": 2,
+    "networkFailures": 1,
+    "automaticRetries": 0
+  },
+  "findings": [
+    "Cornell New York and North Carolina atlas pages direct users to their respective eBird portals.",
+    "The selected source records use CLO institutional identity and matching original/interpreted atlas collection codes. Each full occurrence URN includes its unchanged original collection code and OBS catalog identifier.",
+    "Connecting the literal internal atlas collection code to the corresponding public portal is an explicitly qualified interpretation; the primary pages do not define the GBIF collection-code mapping. Reputable EOD publisher identity and original record concordance supply the occurrence provenance.",
+    "Atlas membership is not proof of breeding, establishment, current persistence, individual human expert approval or survey negatives."
+  ],
+  "limitations": [
+    "The third direct Cornell block request failed; its body is not cited as successfully acquired.",
+    "Earlier web-tool about-page retrieval timed out; cached web content is not represented as these raw HTTP bytes.",
+    "Only the explicitly reviewed collection allowlist is proposed. Unknown or contradictory collection and URN identities remain rejected."
+  ],
+  "canonicalEvents": 0,
+  "newDeterminations": 0
+}

@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "kind": "main-retained-independent-method-proposal",
+  "recordedAt": "2026-09-09T03:20:21.720Z",
+  "actorId": "ebird_monk_tx_review_r23",
+  "jobId": "ebird-monk-tx-original-review-20260909-r23",
+  "leaseId": "lease-ebird-monk-tx-original-review-20260909-r23-1",
+  "originalCommit": "64786b0c7a5ffe4d0dedf54696ad3c2351942707",
+  "baseSha": "f34b7b1868250986043594913ed49f1a36b3b9dd",
+  "files": [
+    {
+      "path": "src/data/research/worker-results/ebird-monk-tx-original-review-20260909-r23/proposal.json",
+      "bytes": 2354411,
+      "sha256": "124261617c0ad7d9b2b06cdffe68d6b45571ac2b189e8bafd6385935fa39f1c3"
+    },
+    {
+      "path": "src/data/research/worker-results/ebird-monk-tx-original-review-20260909-r23/review.py",
+      "bytes": 29867,
+      "sha256": "4034658796fbaa70d13a7d11c94eb2f8adc5056b6932a9c9b46b8afa339ecca5"
+    }
+  ],
+  "leaseState": "recovered",
+  "jobState": "blocked",
+  "reason": "Independent selected-original Monk Parakeet review returned committed reproducible proposals. MAIN source-method registration is pending; these are retained method inputs, not a completed canonical run or accepted queue item.",
+  "contractQualification": "executionContract is retained in the registered job. The frozen lease completionCriteria and permitted paths explicitly require a proposal; generic evidence-run output vocabulary is preserved without fabricating a completed manifest.",
+  "mainOfflineVerification": {
+    "passed": true,
+    "startedAt": "2026-09-09T03:20:16.419Z",
+    "finishedAt": "2026-09-09T03:20:18.285Z",
+    "command": "python src/data/research/worker-results/ebird-monk-tx-original-review-20260909-r23/review.py --verify",
+    "exitCode": 0,
+    "result": {
+      "counts": {
+        "baseline": {
+          "canonicalEvents": 0,
+          "completedRuns": 0,
+          "completedSourceFamilyScreens": 0,
+          "newDeterminations": 0,
+          "proposalSupportedOriginals": 0,
+          "proposalSupportedPairs": 0
+        },
+        "final": {
+          "canonicalEvents": 0,
+          "completedRuns": 0,
+          "completedSourceFamilyScreens": 0,
+          "newDeterminations": 0,
+          "proposalSupportedOriginals": 43,
+          "proposalSupportedPairs": 23
+        },
+        "materialInterpretedConflictRecords": 2,
+        "net": {
+          "canonicalEvents": 0,
+          "completedRuns": 0,
+          "completedSourceFamilyScreens": 0,
+          "newDeterminations": 0,
+          "proposalSupportedOriginals": 43,
+          "proposalSupportedPairs": 23
+        },
+        "selectedOriginalHolds": 0
+      },
+      "mode": "verify",
+      "ok": true,
+      "pairs": [
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48003:myiopsitta-monachus",
+          "primaryKey": 5570935239,
+          "recordKeys": [
+            5432256464,
+            5570935239
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48027:myiopsitta-monachus",
+          "primaryKey": 5567711371,
+          "recordKeys": [
+            5567711371,
+            5691459781
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48029:myiopsitta-monachus",
+          "primaryKey": 5344802692,
+          "recordKeys": [
+            5344802692,
+            5376883614
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48039:myiopsitta-monachus",
+          "primaryKey": 5461397719,
+          "recordKeys": [
+            5461397719,
+            5472435308
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48061:myiopsitta-monachus",
+          "primaryKey": 5337260213,
+          "recordKeys": [
+            5304123916,
+            5337260213
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48099:myiopsitta-monachus",
+          "primaryKey": 5512534041,
+          "recordKeys": [
+            5512534041,
+            5632171139
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48113:myiopsitta-monachus",
+          "primaryKey": 5380783278,
+          "recordKeys": [
+            5299354213,
+            5380783278
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48121:myiopsitta-monachus",
+          "primaryKey": 5685474547,
+          "recordKeys": [
+            5685474547
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48141:myiopsitta-monachus",
+          "primaryKey": 5441390551,
+          "recordKeys": [
+            5441390551,
+            5486953269
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48157:myiopsitta-monachus",
+          "primaryKey": 5586688184,
+          "recordKeys": [
+            5333162005,
+            5586688184
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48167:myiopsitta-monachus",
+          "primaryKey": 5301132390,
+          "recordKeys": [
+            5301132390,
+            5451313267
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48201:myiopsitta-monachus",
+          "primaryKey": 5489168416,
+          "recordKeys": [
+            5450332907,
+            5489168416
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48209:myiopsitta-monachus",
+          "primaryKey": 5568435870,
+          "recordKeys": [
+            5464335051,
+            5568435870
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48215:myiopsitta-monachus",
+          "primaryKey": 5460622528,
+          "recordKeys": [
+            5460622528,
+            5624292361
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48249:myiopsitta-monachus",
+          "primaryKey": 5357797096,
+          "recordKeys": [
+            5357797096,
+            5359394157
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48325:myiopsitta-monachus",
+          "primaryKey": 5308031399,
+          "recordKeys": [
+            5308031399
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48329:myiopsitta-monachus",
+          "primaryKey": 5629620924,
+          "recordKeys": [
+            5629620924
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48339:myiopsitta-monachus",
+          "primaryKey": 5416294987,
+          "recordKeys": [
+            5416294987,
+            5585465340
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48355:myiopsitta-monachus",
+          "primaryKey": 5313097808,
+          "recordKeys": [
+            5313097808,
+            5341629204
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48439:myiopsitta-monachus",
+          "primaryKey": 5316294520,
+          "recordKeys": [
+            5316294520,
+            5555295873
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48453:myiopsitta-monachus",
+          "primaryKey": 5316224228,
+          "recordKeys": [
+            5316224228,
+            5321686513
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48479:myiopsitta-monachus",
+          "primaryKey": 5474270049,
+          "recordKeys": [
+            5314318958,
+            5474270049
+          ]
+        },
+        {
+          "disposition": "supported",
+          "heldKeys": [],
+          "pairKey": "48491:myiopsitta-monachus",
+          "primaryKey": 5481089972,
+          "recordKeys": [
+            5443740669,
+            5481089972
+          ]
+        }
+      ],
+      "peakWorkingSetBytes": 57720832,
+      "peakWorkingSetMiB": 55.047,
+      "proposalBytes": 2354411,
+      "proposalSha256": "124261617c0ad7d9b2b06cdffe68d6b45571ac2b189e8bafd6385935fa39f1c3",
+      "wallSeconds": 1.788303
+    },
+    "log": {
+      "path": ".cache/research/campaigns/20260908-r19-ebird-bulk/tx-r23-main-verify.log",
+      "sha256": "a564abd917f9d311503dad59232bdf440498cb6f4c30b09b059239761b68b38b"
+    }
+  },
+  "independentProjection": {
+    "actorId": "ebird_monk_tx_review_r23",
+    "baseSha": "f34b7b1868250986043594913ed49f1a36b3b9dd",
+    "pairs": [
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48003:myiopsitta-monachus",
+        "primaryKey": 5570935239,
+        "recordKeys": [
+          5432256464,
+          5570935239
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48027:myiopsitta-monachus",
+        "primaryKey": 5567711371,
+        "recordKeys": [
+          5567711371,
+          5691459781
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48029:myiopsitta-monachus",
+        "primaryKey": 5344802692,
+        "recordKeys": [
+          5344802692,
+          5376883614
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48039:myiopsitta-monachus",
+        "primaryKey": 5461397719,
+        "recordKeys": [
+          5461397719,
+          5472435308
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48061:myiopsitta-monachus",
+        "primaryKey": 5337260213,
+        "recordKeys": [
+          5304123916,
+          5337260213
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48099:myiopsitta-monachus",
+        "primaryKey": 5512534041,
+        "recordKeys": [
+          5512534041,
+          5632171139
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48113:myiopsitta-monachus",
+        "primaryKey": 5380783278,
+        "recordKeys": [
+          5299354213,
+          5380783278
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48121:myiopsitta-monachus",
+        "primaryKey": 5685474547,
+        "recordKeys": [
+          5685474547
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48141:myiopsitta-monachus",
+        "primaryKey": 5441390551,
+        "recordKeys": [
+          5441390551,
+          5486953269
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48157:myiopsitta-monachus",
+        "primaryKey": 5586688184,
+        "recordKeys": [
+          5333162005,
+          5586688184
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48167:myiopsitta-monachus",
+        "primaryKey": 5301132390,
+        "recordKeys": [
+          5301132390,
+          5451313267
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48201:myiopsitta-monachus",
+        "primaryKey": 5489168416,
+        "recordKeys": [
+          5450332907,
+          5489168416
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48209:myiopsitta-monachus",
+        "primaryKey": 5568435870,
+        "recordKeys": [
+          5464335051,
+          5568435870
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48215:myiopsitta-monachus",
+        "primaryKey": 5460622528,
+        "recordKeys": [
+          5460622528,
+          5624292361
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48249:myiopsitta-monachus",
+        "primaryKey": 5357797096,
+        "recordKeys": [
+          5357797096,
+          5359394157
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48325:myiopsitta-monachus",
+        "primaryKey": 5308031399,
+        "recordKeys": [
+          5308031399
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48329:myiopsitta-monachus",
+        "primaryKey": 5629620924,
+        "recordKeys": [
+          5629620924
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48339:myiopsitta-monachus",
+        "primaryKey": 5416294987,
+        "recordKeys": [
+          5416294987,
+          5585465340
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48355:myiopsitta-monachus",
+        "primaryKey": 5313097808,
+        "recordKeys": [
+          5313097808,
+          5341629204
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48439:myiopsitta-monachus",
+        "primaryKey": 5316294520,
+        "recordKeys": [
+          5316294520,
+          5555295873
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48453:myiopsitta-monachus",
+        "primaryKey": 5316224228,
+        "recordKeys": [
+          5316224228,
+          5321686513
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48479:myiopsitta-monachus",
+        "primaryKey": 5474270049,
+        "recordKeys": [
+          5314318958,
+          5474270049
+        ]
+      },
+      {
+        "disposition": "supported",
+        "heldKeys": [],
+        "pairKey": "48491:myiopsitta-monachus",
+        "primaryKey": 5481089972,
+        "recordKeys": [
+          5443740669,
+          5481089972
+        ]
+      }
+    ],
+    "status": "proposal-ready-main-method-required"
+  },
+  "qualification": "Lexical context flags in a reviewer recipe are confined to this reviewed input set. No universal rule that home, zoo or similar locality words prove captivity is adopted. Possible shared observations cannot be summed into independent bird abundance.",
+  "acceptedDeterminations": 0,
+  "canonicalEvents": 0
+}
