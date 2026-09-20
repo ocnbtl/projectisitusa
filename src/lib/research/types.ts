@@ -243,6 +243,27 @@ export interface PairEvidenceSummary {
   parentJurisdictionEvidenceId?: string;
 }
 
+export interface OfficialDiseaseStatusBasis {
+  kind: "official-disease-distribution";
+  sourceId: "aphis-cbs-current-disease-status";
+  authority: "USDA APHIS";
+  diseaseName: "citrus black spot";
+  declarationPublishedAt: string;
+  parentJurisdictionEvidenceId: string;
+}
+
+export interface OfficialKnownDistributionBasis {
+  kind: "official-known-distribution";
+  sourceId: "aphis-pcn-reported-distribution";
+  authority: "USDA APHIS";
+  speciesName: "pale cyst nematode";
+  scientificName: "Globodera pallida";
+  authorityStatusAsOf: string;
+  parentJurisdictionEvidenceId: string;
+}
+
+export type QualifiedAuthorityBasis = OfficialDiseaseStatusBasis | OfficialKnownDistributionBasis;
+
 export interface ResearchPairRecord {
   questionAssessment?: PairQuestionAssessmentProjection;
   speciesId: string;
@@ -254,6 +275,8 @@ export interface ResearchPairRecord {
   determinationStatus: DeterminationStatus;
   historicalOccurrenceStatus?: HistoricalOccurrenceStatus;
   currentDeterminationStatus?: CurrentDeterminationStatus;
+  /** Attributed authority distribution, never universal organism absence or county survey. */
+  currentDeterminationBasis?: QualifiedAuthorityBasis;
   surveyStatus: SurveyStatus;
   researchStatus: ResearchStatus;
   freshnessStatus: FreshnessStatus;
