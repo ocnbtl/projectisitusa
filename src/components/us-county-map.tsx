@@ -136,7 +136,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
       </g>
     </svg>
     <div className="atlas-regions glass-panel" role="group" aria-label="Map region">
-      {regions.map(([id, label]) => <button key={id} type="button" aria-label={label} aria-pressed={region === id} onClick={() => { pendingFocus.current = null; setRegion(id); setView({ x: 0, y: 0, k: 1 }); }}><span className="region-label-full">{label}</span><span className="region-label-short" aria-hidden="true">{id === "US" ? "U.S." : label}</span></button>)}
+      {regions.map(([id, label]) => <button key={id} type="button" aria-label={label} aria-pressed={region === id} onClick={() => { pendingFocus.current = null; setRegion(id); setView({ x: 0, y: 0, k: 1 }); }}><span className="region-label-full">{label}</span><span className="region-label-short" aria-hidden="true">{id === "US" ? "U.S." : id}</span></button>)}
     </div>
     <div className="atlas-zoom glass-panel" role="group" aria-label="Map controls">
       <button type="button" aria-label="Zoom in" onClick={() => zoom(1.4)} disabled={view.k >= 12}><Plus size={19} /></button>
