@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { speciesMatchesFilters } from "@/lib/data/client-store";
 import type { CountyRecord, ExplorerSpecies, SpeciesFilters } from "@/lib/data/types";
-import { formatOccurrenceDate } from "@/lib/research/occurrence-date";
+import { formatOccurrenceDate, occurrenceDateBounds } from "@/lib/research/occurrence-date";
 import {
   resolveSparseCountyPairs,
   type ResolvedResearchPair,
@@ -164,6 +164,7 @@ function citationHref(value: string) {
 
 function PairDetails({ pair, species, county }: { pair: ResolvedResearchPair; species?: ExplorerSpecies; county: CountyRecord }) {
   const temporal = describeTemporalDetermination(pair);
+  const orderedEvidence = useMemo(() => [...pair.evidence].sort((a, b) => (occurrenceDateBounds(b.observedAt)?.end ?? -Infinity) - (occurrenceDateBounds(a.observedAt)?.end ?? -Infinity) || a.evidenceId.localeCompare(b.evidenceId)), [pair.evidence]);
   const [visibleEvidenceCount, setVisibleEvidenceCount] = useState(EVIDENCE_PAGE_SIZE);
 
   return (
@@ -208,7 +209,7 @@ function PairDetails({ pair, species, county }: { pair: ResolvedResearchPair; sp
       {pair.evidence.length > 0 ? (
         <>
           <ol className="evidence-citations">
-            {pair.evidence.slice(0, visibleEvidenceCount).map((evidence) => {
+            {orderedEvidence.slice(0, visibleEvidenceCount).map((evidence) => {
               const href = citationHref(evidence.url);
               const label = evidence.sourceLabel || evidence.sourceId;
               return (
@@ -262,6 +263,7 @@ function PairDetails({ pair, species, county }: { pair: ResolvedResearchPair; sp
 function EvidencePair({ pair, species, county }: { pair: ResolvedResearchPair; species?: ExplorerSpecies; county: CountyRecord }) {
   const [open, setOpen] = useState(false);
   const temporal = describeTemporalDetermination(pair);
+  const orderedEvidence = useMemo(() => [...pair.evidence].sort((a, b) => (occurrenceDateBounds(b.observedAt)?.end ?? -Infinity) - (occurrenceDateBounds(a.observedAt)?.end ?? -Infinity) || a.evidenceId.localeCompare(b.evidenceId)), [pair.evidence]);
   const statusLabel = pair.conflict
     ? "Conflicting evidence"
     : pair.displayStatus === "verified-absent"
@@ -396,7 +398,7 @@ export function CountyEvidence({ county, allSpecies, filters }: CountyEvidencePr
     <div className="county-evidence">
       <div className="county-section-heading"><h3>County evidence</h3></div>
       <p className="county-note">
-        Research is a separate published release. Occurrence, current agency
+        Source records for this county. Occurrence, current agency
         status, and survey non-detection answer different questions. Missing
         evidence does not establish absence.
       </p>
@@ -412,10 +414,8 @@ export function CountyEvidence({ county, allSpecies, filters }: CountyEvidencePr
         <>
           <p className="county-evidence-date">Research as of {formatOccurrenceDate(currentData.asOf)}</p>
           <p className="county-note">
-            {currentData.scope.compatibilityPublication
-              ? "This state participates in compatibility publication. The map and research release dates may differ."
-              : "This state's research is published separately from the compatibility map."}
-            {" "}Expand a species for dates, source scope, and caveats.
+            Observation dates may be historical. A record does not establish presence today.
+            Expand a species for dates, source scope, and caveats.
           </p>
           <EvidenceList key={JSON.stringify(filters)} pairs={matchingPairs} speciesById={speciesById} county={county} />
         </>
