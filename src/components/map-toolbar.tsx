@@ -1,359 +1,90 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Info, LoaderCircle, LocateFixed, Search, X } from "lucide-react";
-
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { ArrowUpRight, ChevronDown, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
 import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
-import type { EnvironmentTag, ExplorerSpecies, SpeciesCategory } from "@/lib/data/types";
-import { cn, formatCategoryLabel } from "@/lib/utils";
-
-interface ZipInsight {
-  title: string;
-  body: string;
-}
+import type { CountyRecord, EnvironmentTag, ExplorerSpecies, SpeciesCategory } from "@/lib/data/types";
 
 interface MapToolbarProps {
+  counties: Record<string, CountyRecord>;
+  species: ExplorerSpecies[];
   categories: SpeciesCategory[];
   environment: EnvironmentTag | null;
   speciesId: string | null;
-  speciesQuery: string;
-  speciesOptions: ExplorerSpecies[];
-  zipInput: string;
+  query: string;
   zipStatus: string | null;
-  zipInsight: ZipInsight | null;
   isSearching: boolean;
-  onCategoryToggle: (value: SpeciesCategory) => void;
-  onClearCategories: () => void;
-  onEnvironmentChange: (value: EnvironmentTag | null) => void;
-  onSpeciesQueryChange: (value: string) => void;
-  onSpeciesChange: (value: string | null) => void;
-  onZipChange: (value: string) => void;
-  onZipSearch: () => void;
-  onClearAll: () => void;
+  onCountySelect: (fips: string) => void;
+  onSpeciesSelect: (id: string | null) => void;
+  onQueryChange: (query: string) => void;
+  onCategoryToggle: (category: SpeciesCategory) => void;
+  onEnvironmentChange: (environment: EnvironmentTag | null) => void;
+  onZipSearch: (zip: string) => void;
+  onClearFilters: () => void;
 }
 
-export function MapToolbar({
-  categories,
-  environment,
-  speciesId,
-  speciesQuery,
-  speciesOptions,
-  zipInput,
-  zipStatus,
-  zipInsight,
-  isSearching,
-  onCategoryToggle,
-  onClearCategories,
-  onEnvironmentChange,
-  onSpeciesQueryChange,
-  onSpeciesChange,
-  onZipChange,
-  onZipSearch,
-  onClearAll,
-}: MapToolbarProps) {
-  const [hoveredCategory, setHoveredCategory] = useState<SpeciesCategory | null>(null);
-  const [openInfo, setOpenInfo] = useState<"environment" | null>(null);
-
-  const selectedSpecies = speciesId
-    ? speciesOptions.find((species) => species.id === speciesId) ?? null
-    : null;
-
-  const suggestedSpecies = speciesQuery
-    ? speciesOptions
-        .filter((species) => {
-          const query = speciesQuery.toLowerCase();
-          return `${species.commonName} ${species.scientificName}`
-            .toLowerCase()
-            .includes(query);
-        })
-        .slice(0, 10)
-    : speciesOptions.slice(0, 6);
-
-  const hoveredCategoryOption = useMemo(
-    () =>
-      hoveredCategory
-        ? CATEGORY_OPTIONS.find((option) => option.value === hoveredCategory) ?? null
-        : null,
-    [hoveredCategory],
-  );
-
-  return (
-    <section className="glass-panel relative z-20 min-w-0 rounded-[28px] p-5">
-      <div className="flex justify-end">
-        <button
-          type="button"
-          onClick={onClearAll}
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3 py-2 text-xs uppercase tracking-[0.2em] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--foreground)]"
-        >
-          <X size={14} />
-          Reset
-        </button>
-      </div>
-
-      <div className="pt-4">
-        <h2 className="font-[family-name:var(--font-display)] text-[1.5rem] font-semibold leading-[1.08] text-[var(--foreground)] sm:text-[1.65rem] xl:text-[1.8rem]">
-          <span className="block sm:whitespace-nowrap">Find information about</span>
-          <span className="block sm:whitespace-nowrap">invasive species near you</span>
-        </h2>
-      </div>
-
-      <div className="mt-5 grid gap-5">
-        <div className="grid gap-2">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <label
-              htmlFor="zip-search"
-              className="text-sm font-medium text-[var(--foreground)]"
-            >
-              ZIP code
-            </label>
-            <span className="text-right text-[11px] uppercase tracking-[0.18em] text-[var(--accent-strong)]">
-              Quick local lookup
-            </span>
-          </div>
-          <div className="flex gap-2">
-            <div className="relative min-w-0 flex-1">
-              <LocateFixed
-                size={16}
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[var(--muted)]"
-              />
-              <input
-                id="zip-search"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                maxLength={5}
-                value={zipInput}
-                onChange={(event) => onZipChange(event.target.value.replace(/\D/g, ""))}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
-                    onZipSearch();
-                  }
-                }}
-                placeholder="Try 43210"
-                className="w-full rounded-2xl border border-[var(--border)] bg-[var(--surface-strong)] py-3 pl-11 pr-4 text-base text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
-              />
-            </div>
-            <button
-              type="button"
-              onClick={onZipSearch}
-              disabled={isSearching}
-              className="locate-button inline-flex min-w-28 shrink-0 items-center justify-center gap-2 rounded-2xl bg-[var(--accent)] px-3 py-3 text-sm font-medium text-[#041009] hover:bg-[var(--accent-strong)] disabled:cursor-not-allowed disabled:opacity-70 sm:px-4"
-            >
-              {isSearching ? (
-                <LoaderCircle size={16} className="animate-spin" />
-              ) : (
-                <Search size={16} />
-              )}
-              <span>Locate</span>
-            </button>
-          </div>
-          {zipStatus ? (
-            <p className="text-sm text-[var(--muted)]">{zipStatus}</p>
-          ) : null}
-          {zipInsight ? (
-            <div className="rounded-[22px] border border-[color:color-mix(in_srgb,var(--accent)_24%,var(--border))] bg-[color:color-mix(in_srgb,var(--accent)_12%,transparent)] px-4 py-4">
-              <p className="text-xs uppercase tracking-[0.24em] text-[var(--accent-strong)]">
-                {zipInsight.title}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">
-                {zipInsight.body}
-              </p>
-            </div>
-          ) : null}
-        </div>
-
-        <div className="grid gap-2">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <label
-              htmlFor="species-search"
-              className="text-[13px] font-medium text-[var(--foreground)]"
-            >
-              Species search
-            </label>
-            <span className="text-right text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">
-              Common or scientific name
-            </span>
-          </div>
-          <input
-            id="species-search"
-            value={selectedSpecies ? selectedSpecies.commonName : speciesQuery}
-            onChange={(event) => {
-              onSpeciesChange(null);
-              onSpeciesQueryChange(event.target.value);
-            }}
-            placeholder="Search by common or scientific name"
-            className="w-full rounded-2xl border border-[var(--border)] bg-[var(--surface-strong)] px-4 py-3 text-base text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
-          />
-          {selectedSpecies ? (
-            <div className="rounded-[22px] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--foreground)]">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <div className="font-medium">{selectedSpecies.commonName}</div>
-                  <div className="text-[var(--muted)]">
-                    <em>{selectedSpecies.scientificName}</em> ·{" "}
-                    {formatCategoryLabel(selectedSpecies.category)} ·{" "}
-                    {selectedSpecies.displayGroup}
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    onSpeciesChange(null);
-                    onSpeciesQueryChange("");
-                  }}
-                  className="text-xs uppercase tracking-[0.18em] text-[var(--muted)] hover:text-[var(--foreground)]"
-                >
-                  Clear
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="max-h-64 overflow-auto rounded-[22px] border border-[var(--border)] bg-[var(--surface)]">
-              {suggestedSpecies.map((species) => (
-                <button
-                  key={species.id}
-                  type="button"
-                  onClick={() => {
-                    onSpeciesChange(species.id);
-                    onSpeciesQueryChange(species.commonName);
-                  }}
-                  className="flex w-full items-start justify-between gap-3 border-b border-[var(--border)] px-4 py-3 text-left last:border-b-0 hover:bg-[color:color-mix(in_srgb,var(--accent)_10%,transparent)]"
-                >
-                  <div className="min-w-0">
-                    <div className="text-sm font-medium text-[var(--foreground)]">
-                      {species.commonName}
-                    </div>
-                    <div className="break-words text-xs text-[var(--muted)]">
-                      <em>{species.scientificName}</em> · {species.displayGroup}
-                    </div>
-                  </div>
-                  <div className="shrink-0 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
-                    {species.registry?.hasCountyData ? "Mapped" : "Catalog"}
-                  </div>
-                </button>
-              ))}
-              {suggestedSpecies.length === 0 ? (
-                <div className="px-4 py-3 text-sm text-[var(--muted)]">
-                  No species match the current filters.
-                </div>
-              ) : null}
-            </div>
-          )}
-          <p className="text-sm text-[var(--muted)]">
-            {speciesOptions.length.toLocaleString()} species match the active filters.
-          </p>
-        </div>
-
-        <div className="grid gap-3">
-          <div className="flex items-center justify-between gap-3">
-            <span className="text-sm font-medium text-[var(--foreground)]">
-              Categories
-            </span>
-            {categories.length > 0 ? (
-              <button
-                type="button"
-                onClick={onClearCategories}
-                className="text-xs uppercase tracking-[0.18em] text-[var(--muted)] hover:text-[var(--foreground)]"
-              >
-                Clear categories
-              </button>
-            ) : null}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={onClearCategories}
-              className={cn(
-                "rounded-full border px-3 py-2 text-sm",
-                categories.length === 0
-                  ? "border-[var(--accent)] bg-[color:color-mix(in_srgb,var(--accent)_18%,transparent)] text-[var(--foreground)]"
-                  : "border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--foreground)]",
-              )}
-            >
-              All categories
-            </button>
-            {CATEGORY_OPTIONS.map((option) => {
-              const isActive = categories.includes(option.value);
-
-              return (
-                <button
-                  key={option.value}
-                  type="button"
-                  onMouseEnter={() => setHoveredCategory(option.value)}
-                  onMouseLeave={() => setHoveredCategory((current) => (current === option.value ? null : current))}
-                  onFocus={() => setHoveredCategory(option.value)}
-                  onBlur={() => setHoveredCategory((current) => (current === option.value ? null : current))}
-                  onClick={() => onCategoryToggle(option.value)}
-                  className={cn(
-                    "rounded-full border px-3 py-2 text-sm",
-                    isActive
-                      ? "border-[var(--accent)] bg-[color:color-mix(in_srgb,var(--accent)_18%,transparent)] text-[var(--foreground)]"
-                      : "border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--foreground)]",
-                  )}
-                >
-                  {option.label}
-                </button>
-              );
-            })}
-          </div>
-          <div className="min-h-14 rounded-[18px] border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
-            {hoveredCategoryOption ? (
-              <p className="text-sm leading-6 text-[var(--muted)]">
-                <span className="font-medium text-[var(--foreground)]">
-                  {hoveredCategoryOption.label}:
-                </span>{" "}
-                {hoveredCategoryOption.description}
-              </p>
-            ) : (
-              <p className="text-sm leading-6 text-[var(--muted)]">
-                Hover over a category to see a short description, or combine several
-                categories to compare broader patterns.
-              </p>
-            )}
-          </div>
-        </div>
-
-        <div className="grid gap-2">
-          <div className="flex items-center gap-2">
-            <label
-              htmlFor="environment-filter"
-              className="text-sm font-medium text-[var(--foreground)]"
-            >
-              Environment
-            </label>
-            <button
-              type="button"
-              onClick={() =>
-                setOpenInfo((current) => (current === "environment" ? null : "environment"))
-              }
-              className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--foreground)]"
-              aria-label="About environment filtering"
-            >
-              <Info size={13} />
-            </button>
-          </div>
-          {openInfo === "environment" ? (
-            <div className="rounded-[18px] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
-              Use environment to narrow the catalog by where a species tends to
-              show up, like forests, freshwater, wetlands, farms, or urban areas.
-            </div>
-          ) : null}
-          <select
-            id="environment-filter"
-            value={environment ?? ""}
-            onChange={(event) =>
-              onEnvironmentChange((event.target.value as EnvironmentTag) || null)
-            }
-            className="rounded-2xl border border-[var(--border)] bg-[var(--surface-strong)] px-4 py-3 text-sm text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
-          >
-            {ENVIRONMENT_OPTIONS.map((option) => (
-              <option key={option.label} value={option.value ?? ""}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-    </section>
-  );
+export function MapToolbar(props: MapToolbarProps) {
+  const [search, setSearch] = useState("");
+  const [open, setOpen] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [active, setActive] = useState(-1);
+  const root = useRef<HTMLDivElement>(null);
+  const input = useRef<HTMLInputElement>(null);
+  const resultsId = useId();
+  const filtersId = useId();
+  const selectedSpecies = props.species.find(s => s.id === props.speciesId);
+  const normalized = search.trim().toLowerCase();
+  const zip = /^\d{5}$/.test(normalized);
+  const results = useMemo(() => {
+    if (normalized.length < 2 || zip) return [];
+    const counties = Object.values(props.counties).filter(c => Number(c.countyFips.slice(0, 2)) < 60).filter(c => `${c.name} ${c.stateCode} ${c.countyFips}`.toLowerCase().includes(normalized)).slice(0, 5).map(c => ({ id: c.countyFips, label: c.name, detail: c.stateCode, kind: "county" as const }));
+    const species = props.species.filter(s => `${s.commonName} ${s.scientificName}`.toLowerCase().includes(normalized)).slice(0, 5).map(s => ({ id: s.id, label: s.commonName, detail: s.scientificName, kind: "species" as const }));
+    return [...counties, ...species];
+  }, [normalized, zip, props.counties, props.species]);
+  useEffect(() => { setActive(-1); }, [search]);
+  useEffect(() => {
+    function close(event: PointerEvent) { if (!root.current?.contains(event.target as Node)) { setOpen(false); setFilterOpen(false); } }
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, []);
+  function choose(result: (typeof results)[number]) {
+    if (result.kind === "county") props.onCountySelect(result.id); else props.onSpeciesSelect(result.id);
+    setSearch(""); setOpen(false); input.current?.focus();
+  }
+  function submit() {
+    if (zip) { props.onZipSearch(normalized); setOpen(false); }
+    else if (active >= 0 && results[active]) choose(results[active]);
+    else if (results[0]) choose(results[0]);
+    else if (normalized.length >= 2) { props.onQueryChange(search.trim()); setOpen(false); }
+  }
+  const filterCount = props.categories.length + Number(Boolean(props.environment));
+  return <div className="atlas-toolbar" ref={root} onKeyDown={event => { if (event.key === "Escape") { setOpen(false); setFilterOpen(false); input.current?.focus(); } }}>
+    <form className="atlas-search glass-panel" role="search" onSubmit={event => { event.preventDefault(); submit(); }}>
+      <Search size={20} aria-hidden="true" />
+      <input ref={input} role="combobox" aria-label="Search county, ZIP, or species" aria-expanded={open && normalized.length >= 2} aria-controls={resultsId} aria-autocomplete="list" aria-activedescendant={open && active >= 0 && results[active] ? `${resultsId}-${active}` : undefined} placeholder="County, ZIP, or species" value={search}
+        onChange={event => { setSearch(event.target.value); setOpen(true); setFilterOpen(false); }} onFocus={() => setOpen(true)}
+        onKeyDown={event => { if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); setOpen(true); setActive(current => results.length ? Math.max(0, Math.min(results.length - 1, current + (event.key === "ArrowDown" ? 1 : -1))) : -1); } }} />
+      {search ? <button type="button" aria-label="Clear search" onClick={() => { setSearch(""); input.current?.focus(); }}><X size={17} /></button> : <span className="search-key">Search</span>}
+      <button className="search-submit" type="submit" aria-label="Find location or species" disabled={props.isSearching || normalized.length < 2}><ArrowUpRight size={20} /></button>
+    </form>
+    {open && normalized.length >= 2 ? <div className="search-results" id={resultsId} role="listbox" aria-label="Search results">
+      {zip ? <button type="button" role="option" aria-selected={false} onClick={submit}><MapPin size={17} /><span><strong>Find ZIP {normalized}</strong><small>County lookup</small></span></button> : results.length ? results.map((result, index) => <button id={`${resultsId}-${index}`} key={`${result.kind}-${result.id}`} type="button" role="option" aria-selected={active === index} onMouseDown={event => event.preventDefault()} onClick={() => choose(result)}>
+        {result.kind === "county" ? <MapPin size={17} /> : <Sprout size={17} />}<span><strong>{result.label}</strong><small>{result.detail}</small></span><em>{result.kind === "county" ? "County" : "Species"}</em>
+      </button>) : <div className="search-empty"><p>No named locations or species found.</p><button type="button" onClick={() => { props.onQueryChange(search.trim()); setOpen(false); }}>Filter species by "{search}"</button></div>}
+    </div> : null}
+    <div className="atlas-filter-row">
+      <button type="button" className="filter-trigger glass-panel" aria-expanded={filterOpen} aria-controls={filtersId} onClick={() => { setFilterOpen(!filterOpen); setOpen(false); }}><SlidersHorizontal size={16} /> Filters {filterCount ? <span className="filter-count">{filterCount}</span> : null}<ChevronDown size={14} /></button>
+      {selectedSpecies ? <button className="filter-chip" type="button" onClick={() => props.onSpeciesSelect(null)} aria-label={`Remove ${selectedSpecies.commonName} filter`}>{selectedSpecies.commonName}<X size={14} /></button> : null}
+      {props.query ? <button className="filter-chip" type="button" onClick={() => props.onQueryChange("")}>{props.query}<X size={14} /></button> : null}
+      {props.categories.map(category => <button className="filter-chip" type="button" key={category} onClick={() => props.onCategoryToggle(category)}>{CATEGORY_OPTIONS.find(c => c.value === category)?.label}<X size={14} /></button>)}
+      {props.environment ? <button className="filter-chip" type="button" onClick={() => props.onEnvironmentChange(null)}>{ENVIRONMENT_OPTIONS.find(e => e.value === props.environment)?.label}<X size={14} /></button> : null}
+    </div>
+    {filterOpen ? <section className="atlas-filter-panel" id={filtersId} aria-label="Species filters">
+      <div className="filter-heading"><h2>Refine the map</h2><button type="button" onClick={props.onClearFilters}>Clear filters</button></div>
+      <fieldset><legend>Species groups</legend>{CATEGORY_OPTIONS.map(category => <label key={category.value}><input type="checkbox" checked={props.categories.includes(category.value)} onChange={() => props.onCategoryToggle(category.value)} /><span>{category.label}</span></label>)}</fieldset>
+      <label className="environment-label">Environment<select value={props.environment ?? ""} onChange={event => props.onEnvironmentChange(event.target.value as EnvironmentTag || null)}>{ENVIRONMENT_OPTIONS.map(option => <option key={option.value ?? "all"} value={option.value ?? ""}>{option.label}</option>)}</select></label>
+      <button type="button" className="primary-button" onClick={() => setFilterOpen(false)}>Show map</button>
+    </section> : null}
+    {props.zipStatus || props.isSearching ? <p className="atlas-search-status" role="status">{props.isSearching ? "Finding your county..." : props.zipStatus}</p> : null}
+  </div>;
 }

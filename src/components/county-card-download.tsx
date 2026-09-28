@@ -1,172 +1,33 @@
 "use client";
-
-import { useEffect, useMemo, useState } from "react";
-import NextImage from "next/image";
-import { ArrowRight, Check } from "lucide-react";
-
+import { useMemo, useState } from "react";
+import { Download } from "lucide-react";
 import type { CountyCategorySignal } from "@/lib/county-detail";
 import type { CountyDetail, CountyRecord, ExplorerSpecies } from "@/lib/data/types";
-import {
-  COUNTY_CARD_PRESETS,
-  buildCountyCardSvg,
-  countyCardPresetById,
-  svgToDataUri,
-} from "@/lib/county-card";
-
-function slugify(value: string) {
-  return value
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-export function CountyCardDownload({
-  county,
-  detail,
-  focalSpecies,
-  nearbySpecies,
-  countyCategorySignal,
-}: {
-  county: CountyRecord;
-  detail: CountyDetail | null;
-  focalSpecies: ExplorerSpecies[];
-  nearbySpecies: ExplorerSpecies[];
-  countyCategorySignal: CountyCategorySignal | null;
+const xml = (value: string) => value.replace(/[<>&"']/g, character => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[character]!);
+export function CountyCardDownload({ county, focalSpecies, snapshotDate }: {
+  county: CountyRecord; detail: CountyDetail | null; focalSpecies: ExplorerSpecies[];
+  nearbySpecies: ExplorerSpecies[]; countyCategorySignal: CountyCategorySignal | null; snapshotDate: string;
 }) {
-  const [presetId, setPresetId] = useState("landscape");
-  const [downloadState, setDownloadState] = useState<"idle" | "rendering" | "done">("idle");
-  const preset = countyCardPresetById(presetId);
-
-  useEffect(() => {
-    if (downloadState !== "done") return;
-    const timeout = window.setTimeout(() => setDownloadState("idle"), 1500);
-    return () => window.clearTimeout(timeout);
-  }, [downloadState]);
-
-  const svgMarkup = useMemo(
-    () =>
-      buildCountyCardSvg({
-        preset,
-        county,
-        detail,
-        focalSpecies,
-        nearbySpecies,
-        countyCategorySignal,
-      }),
-    [county, countyCategorySignal, detail, focalSpecies, nearbySpecies, preset],
-  );
-  const previewSrc = useMemo(() => svgToDataUri(svgMarkup), [svgMarkup]);
-
-  async function handleDownloadPng() {
-    setDownloadState("rendering");
-
-    try {
-      const image = new window.Image();
-      image.decoding = "async";
-
-      await new Promise<void>((resolve, reject) => {
-        image.onload = () => resolve();
-        image.onerror = () => reject(new Error("County card image failed to render."));
-        image.src = previewSrc;
-      });
-
-      const canvas = document.createElement("canvas");
-      canvas.width = preset.width;
-      canvas.height = preset.height;
-      const context = canvas.getContext("2d");
-
-      if (!context) {
-        throw new Error("Canvas rendering is not available in this browser.");
-      }
-
-      context.drawImage(image, 0, 0, preset.width, preset.height);
-
-      const blob = await new Promise<Blob | null>((resolve) =>
-        canvas.toBlob(resolve, "image/png", 1),
-      );
-
-      if (!blob) {
-        throw new Error("County card export failed.");
-      }
-
-      const url = URL.createObjectURL(blob);
-      const anchor = document.createElement("a");
-      anchor.href = url;
-      anchor.download = `${slugify(county.name)}-${county.stateCode.toLowerCase()}-county-card-${preset.id}.png`;
-      anchor.click();
-      URL.revokeObjectURL(url);
-      setDownloadState("done");
-    } catch {
-      setDownloadState("idle");
-    }
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const svg = useMemo(() => {
+    const rows = focalSpecies.slice(0, 6).map((species, index) => `<text x="55" y="${265 + index * 48}" font-size="21" font-weight="600">${xml(species.commonName.length > 36 ? species.commonName.slice(0, 35) + "…" : species.commonName)}</text><text x="530" y="${265 + index * 48}" font-size="16" font-style="italic">${xml(species.scientificName.slice(0, 43))}</text>`).join('');
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720"><rect width="1000" height="720" fill="#edf2ef"/><g fill="#173c38" font-family="Segoe UI,Arial,sans-serif"><text x="55" y="65" font-size="20">ISITUSA / COUNTY RECORDS</text><text x="55" y="128" font-size="40" font-weight="600">${xml(county.name.slice(0, 37))}, ${xml(county.stateCode)}</text><text x="55" y="170" font-size="18">Map snapshot: ${xml(snapshotDate || 'Date not supplied')} / FIPS ${xml(county.countyFips)}</text><text x="55" y="215" font-size="24">${focalSpecies.length} mapped species matching the selected filters</text><path d="M55 235H945" stroke="#b9cbc2"/>${rows || '<text x="55" y="285" font-size="21">No matching mapped records in this view.</text>'}<path d="M55 580H945" stroke="#b9cbc2"/><text x="55" y="612" font-size="17">Records may be historical. Counts do not establish current presence, abundance or impact.</text><text x="55" y="640" font-size="17">Missing records do not establish absence. Research evidence is published separately.</text><text x="55" y="681" font-size="17">isitusa.com/?county=${xml(county.countyFips)} / ${focalSpecies.length > 6 ? 'First 6 matching species shown' : 'Matching species shown above'}</text></g></svg>`;
+  }, [county, focalSpecies, snapshotDate]);
+  function save(blob: Blob, extension: string) {
+    const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = `isitusa-${county.countyFips}-records.${extension}`; link.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
-
-  const svgDownloadHref = useMemo(() => previewSrc, [previewSrc]);
-  const isRendering = downloadState === "rendering";
-  const isDone = downloadState === "done";
-
-  return (
-    <section className="grid gap-4 xl:sticky xl:top-6">
-      <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(160deg,rgba(9,19,16,0.98),rgba(15,28,23,0.92))] p-3 shadow-[var(--shadow)]">
-        <NextImage
-          src={previewSrc}
-          alt={`${county.name}, ${county.stateCode} county card preview`}
-          width={preset.width}
-          height={preset.height}
-          unoptimized
-          className="h-auto w-full rounded-[22px]"
-        />
-      </div>
-
-      <div className="grid grid-cols-[0.78fr_0.88fr_0.76fr_1fr_0.7fr_1.08fr] gap-2">
-        {COUNTY_CARD_PRESETS.map((option) => (
-          <button
-            key={option.id}
-            type="button"
-            onClick={() => setPresetId(option.id)}
-            className={`min-w-0 overflow-hidden text-ellipsis whitespace-nowrap rounded-full border px-1.5 py-2 text-center text-[10px] font-medium leading-none sm:text-[11px] ${
-              option.id === preset.id
-                ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)]"
-                : "border-[var(--border)] bg-[var(--background)] text-[var(--foreground)]"
-            }`}
-          >
-            {option.label}
-          </button>
-        ))}
-      </div>
-
-      <div className="grid gap-2">
-        <button
-          type="button"
-          onClick={handleDownloadPng}
-          disabled={isRendering}
-          className={`county-download-button group inline-flex items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold ${
-            isDone ? "is-done" : ""
-          }`}
-        >
-          {isDone ? (
-            <>
-              <Check size={16} />
-              <span>Downloaded</span>
-            </>
-          ) : (
-            <>
-              <span>{isRendering ? "Rendering PNG..." : "Download PNG"}</span>
-              <ArrowRight
-                size={16}
-                className={`county-download-arrow ${isRendering ? "opacity-50" : ""}`}
-              />
-            </>
-          )}
-        </button>
-        <a
-          href={svgDownloadHref}
-          download={`${slugify(county.name)}-${county.stateCode.toLowerCase()}-county-card-${preset.id}.svg`}
-          className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm font-semibold text-[var(--foreground)]"
-        >
-          Download SVG
-        </a>
-      </div>
-    </section>
-  );
+  async function downloadPng() {
+    setBusy(true); setError(null);
+    const url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+    try {
+      const image = new window.Image(); image.src = url; await image.decode();
+      const canvas = document.createElement('canvas'); canvas.width = 1000; canvas.height = 720;
+      const context = canvas.getContext('2d'); if (!context) throw Error('Canvas unavailable'); context.drawImage(image, 0, 0);
+      const blob = await new Promise<Blob>((resolve, reject) => canvas.toBlob(result => result ? resolve(result) : reject(Error('Export failed')), 'image/png'));
+      save(blob, 'png');
+    } catch { setError('The image could not be exported. Try the SVG download.'); }
+    finally { URL.revokeObjectURL(url); setBusy(false); }
+  }
+  return <div className="county-record-export"><p className="county-note">A dated card of this filtered map snapshot, with its limitations included.</p><img src={`data:image/svg+xml,${encodeURIComponent(svg)}`} alt={`Preview of ${county.name} record card`} width={1000} height={720} className="my-4 h-auto w-full rounded-lg" /><div className="flex flex-wrap gap-2"><button className="primary-button" type="button" disabled={busy} onClick={downloadPng}><Download size={16} />{busy ? 'Preparing...' : 'Download PNG'}</button><button className="county-load-more" type="button" onClick={() => save(new Blob([svg], { type: 'image/svg+xml' }), 'svg')}>Download SVG</button></div>{error ? <p role="alert" className="county-note">{error}</p> : null}</div>;
 }

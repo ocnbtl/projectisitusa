@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Invasive Species in the USA",
   description:
-    "Explore invasive species across the United States with a dark-first county map, ZIP search, and practical species profiles.",
+    "Explore invasive species across the United States with a county map, ZIP search, and practical species profiles.",
   icons: {
     icon: [{ url: "/isitusa-logo.png", type: "image/png", sizes: "512x496" }],
     shortcut: "/isitusa-logo.png",
@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="font-[family-name:var(--font-body)] antialiased">
         <Providers>
-          <div className="min-h-screen pb-10">
+          <div className="app-frame">
             <SiteHeader />
             {children}
           </div>

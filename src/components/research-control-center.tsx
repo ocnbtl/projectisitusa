@@ -1591,25 +1591,25 @@ function ResearchControlCenterContent({
   ];
 
   return (
-    <main className="mx-auto w-full max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
+    <main id="main-content" className="reading-page research-page">
       <header className="border-b border-[var(--border)] pb-5 pt-2">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="flex items-center gap-2 text-xs font-medium text-[var(--muted)]">
               <LockKeyhole aria-hidden="true" size={14} />
-              Read-only research operations
+              The evidence behind the map
             </div>
             <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)]">
-              Research control center
+              How much do we know?
             </h1>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-              {summary.stateName} county evidence coverage and source workflow status.
+              Explore the published county evidence for {summary.stateName}. A source screen can leave a question unresolved; only reviewed evidence supports a determination.
             </p>
           </div>
           <div className="text-xs leading-5 text-[var(--muted)] sm:text-right">
             <div className="mb-3 min-w-52 text-left sm:ml-auto">
               <SelectField
-                label="State research projection"
+                label="Explore a state"
                 value={summary.stateCode}
                 options={availableStates.map((entry) => ({
                   value: entry.stateCode,
@@ -1620,12 +1620,20 @@ function ResearchControlCenterContent({
             </div>
             <p>Research as of {formatDate(summary.asOf)}</p>
             <p>Registry snapshot {formatDate(summary.sourceSnapshotDate)}</p>
-            <p>Generated {formatTimestamp(summary.generatedAt)}</p>
-            <p>Schema {String(summary.schemaVersion)}</p>
+            <details><summary>Publication details</summary><p>Generated {formatTimestamp(summary.generatedAt)}</p><p>Map and research releases are published separately.</p></details>
+
           </div>
         </div>
       </header>
 
+      <section className="research-overview" aria-label="Published research coverage">
+        <p><strong>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)}</strong> of {formatNumber(summary.summary.totalPairs)} county-species pairs have reviewed presence or absence determinations. Survey non-detections are counted separately.</p>
+        <dl className="research-status-strip">
+          {[["Recorded present", summary.summary.verifiedPresent], ["Absence determinations", summary.summary.verifiedAbsent], ["Survey non-detections", summary.summary.notDetected], ["Research unresolved", summary.summary.researchedUnresolved], ["Not researched", summary.summary.notResearched]].map(([label, value]) => <div key={String(label)}><dt>{label}</dt><dd>{formatNumber(Number(value))}</dd></div>)}
+        </dl>
+        <p className="county-note">A record can be historical. Agency findings retain their source, geographic scope and dates. Missing information is not an absence finding.</p>
+      </section>
+      <details className="research-accounting"><summary>How scope and research coverage are counted</summary>
       <div
         className={`border-b px-4 py-3 text-sm leading-6 ${
           summary.scope.certificationScope === "bounded-pilot"
@@ -1644,12 +1652,15 @@ function ResearchControlCenterContent({
         )}
       </div>
 
+      </details>
+      <details className="research-accounting"><summary>Full research accounting and denominators</summary>
       <dl className="grid grid-cols-2 divide-x divide-y divide-[var(--border)] border-b border-[var(--border)] sm:grid-cols-3 lg:grid-cols-6">
         {stateMetrics.map(([label, value]) => (
           <Metric key={label} label={label} value={value} />
         ))}
       </dl>
 
+      </details>
       <div className="overflow-x-auto border-b border-[var(--border)] pt-5">
         <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">
           {VIEW_OPTIONS.map((view) => {

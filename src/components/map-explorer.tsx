@@ -1,731 +1,86 @@
 "use client";
 
+/* THESIS: An open field atlas where place leads and evidence stays within reach.
+ * OWN-WORLD: Mineral canvas, teal county shading, glass controls, solid reading panels.
+ * STORY: Find a place, inspect mapped species, then read the source and its limits.
+ * FIRST VIEWPORT: Full map, compact header, upper-left search, lower-left legend.
+ * FORM: User-pinned map workspace; county selection opens a side panel or mobile sheet.
+ */
 import Link from "next/link";
-import { useDeferredValue, useEffect, useMemo, useState, useTransition } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
+import { useCallback, useMemo, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { ArrowDown, ArrowUp, ArrowUpRight, Compass, X } from "lucide-react";
 import { CountyInsightPanel } from "@/components/county-insight-panel";
 import { MapToolbar } from "@/components/map-toolbar";
 import { UsCountyMap } from "@/components/us-county-map";
-import {
-  type ClientDataStorePayload,
-  getCountyRecord,
-  getSpeciesForCounties,
-  getSpeciesForCounty,
-  getSpeciesWithoutCountyCoverage,
-  speciesMatchesFilters,
-  useClientDataStore,
-} from "@/lib/data/client-store";
-import type { CountyCategorySignal } from "@/lib/county-detail";
-import type {
-  CountyDetail,
-  CountyRecord,
-  EnvironmentTag,
-  ExplorerPresenceIndex,
-  ExplorerSpecies,
-  SpeciesCategory,
-  SpeciesFilters,
-  ZipLookupResult,
-} from "@/lib/data/types";
-import { buildSearchParams } from "@/lib/url-state";
-import { formatNaturalList } from "@/lib/utils";
+import { type ClientDataStorePayload, getSpeciesForCounty, getSpeciesForCounties, speciesMatchesFilters, useClientDataStore } from "@/lib/data/client-store";
+import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
+import type { EnvironmentTag, SpeciesCategory, SpeciesFilters, ZipLookupResult } from "@/lib/data/types";
 
-const EMPTY_DATASET_SNAPSHOT = {
-  snapshotDate: "",
-  sourceRefs: [],
-  coverageSummary: undefined,
-};
-
-const EMPTY_DATA_STORE = {
-  allSpecies: [] as ExplorerSpecies[],
-  speciesById: new Map<string, ExplorerSpecies>(),
-  speciesByOrdinal: [] as ExplorerSpecies[],
-  countyIndex: {} as Record<string, CountyRecord>,
-  countyDetails: {} as Record<string, CountyDetail>,
-  presenceIndex: {} as ExplorerPresenceIndex,
-  datasetSnapshot: EMPTY_DATASET_SNAPSHOT,
-};
-
-function AboutDataPanel({
-  coverageSummary,
-  snapshotDate,
-  isNavigating,
-  variant,
-}: {
-  coverageSummary: ClientDataStorePayload["datasetSnapshot"]["coverageSummary"];
-  snapshotDate: string;
-  isNavigating: boolean;
-  variant: "horizontal" | "vertical";
-}) {
-  const isVertical = variant === "vertical";
-  const sourceFamilies = Object.entries(coverageSummary?.sourceSpeciesCounts ?? {})
-    .sort((left, right) => (right[1] ?? 0) - (left[1] ?? 0) || left[0].localeCompare(right[0]));
-  const displayedSources = sourceFamilies.slice(0, 6);
-  const formattedSnapshotDate = snapshotDate
-    ? new Intl.DateTimeFormat("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        timeZone: "UTC",
-      }).format(new Date(snapshotDate))
-    : "the current generated snapshot";
-
-  return (
-    <div className="glass-panel rounded-[28px] p-5 text-sm leading-7 text-[var(--muted)]">
-      <div
-        className={`flex gap-4 ${
-          isVertical
-            ? "flex-col"
-            : "flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8"
-        }`}
-      >
-        <div className="min-w-0 flex-1">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
-            About the data
-          </p>
-          <p className="mt-3">
-            This release combines the full verified lower-48 invasive species
-            catalog from US-RIIS with a merged county presence snapshot captured on{" "}
-            {formattedSnapshotDate}. County-level records currently draw from{" "}
-            {sourceFamilies.length.toLocaleString()} tracked source families where
-            verified public evidence is available.
-          </p>
-          <p className="mt-3">
-            {coverageSummary ? (
-              <>
-                {coverageSummary.mappedSpeciesCount.toLocaleString()} of{" "}
-                {coverageSummary.catalogSpeciesCount.toLocaleString()} catalog
-                species currently have county-level source coverage. Counties marked
-                with <strong> *</strong> still have some species whose county-level
-                records are being filled in.
-              </>
-            ) : (
-              <>
-                Species marked <strong>Catalog</strong> are in the verified
-                nationwide registry, and county-level source coverage is still being
-                added.
-              </>
-            )}
-          </p>
-        </div>
-        <div
-          className={`rounded-[22px] border border-[var(--border)] bg-[var(--surface)] px-4 py-4 ${
-            isVertical ? "" : "lg:w-[340px] lg:shrink-0"
-          }`}
-        >
-          <p className="text-sm leading-6 text-[var(--foreground)]">
-            Data snapshot on {formattedSnapshotDate}
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {displayedSources.map(([label, count]) => (
-              <span
-                key={label}
-                className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--background)] px-3 py-1.5 text-xs font-medium tracking-[0.12em] text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent-strong)]"
-              >
-                {label} ({count?.toLocaleString() ?? 0})
-              </span>
-            ))}
-          </div>
-          <Link
-            href="/research"
-            className="mt-3 inline-flex text-sm font-medium text-[var(--accent-strong)] underline-offset-4 hover:underline"
-          >
-            View all sources and research status
-          </Link>
-          {isNavigating ? (
-            <p className="mt-3 text-sm text-[var(--accent-strong)]">
-              Updating URL state…
-            </p>
-          ) : null}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function sortSpeciesByMappedCountyCount(species: ExplorerSpecies[]) {
-  return [...species].sort((left, right) => {
-    const leftCount = left.registry?.mappedCountyCount ?? 0;
-    const rightCount = right.registry?.mappedCountyCount ?? 0;
-
-    if (leftCount !== rightCount) {
-      return rightCount - leftCount;
-    }
-
-    return left.commonName.localeCompare(right.commonName);
-  });
-}
-
-function parseCategoriesParam(value: string | null, fallback: string | null) {
-  const raw = value
-    ? value.split(",")
-    : fallback
-      ? [fallback]
-      : [];
-
-  return raw.filter(Boolean) as SpeciesCategory[];
-}
-
-function buildZipInsight({
-  zipLookup,
-    focalSpecies,
-    nearbySpecies,
-    unresolvedCount,
-  }: {
-    zipLookup: ZipLookupResult | null;
-    focalSpecies: ExplorerSpecies[];
-    nearbySpecies: ExplorerSpecies[];
-    unresolvedCount: number;
-  }) {
-  if (!zipLookup) return null;
-
-  const topFocal = focalSpecies.slice(0, 3).map((species) => species.commonName);
-  const topNearby = nearbySpecies.slice(0, 2).map((species) => species.commonName);
-  const introSpecies = [...focalSpecies, ...nearbySpecies].find(
-    (species) => species.registry?.introDateNumber,
-  );
-  const countyLabel = `${zipLookup.countyName}`;
-  const seed = Number(zipLookup.zip) % 4;
-  const gapNote =
-    unresolvedCount > 0
-      ? " County-level coverage is still being filled in for some matching species."
-      : "";
-
-  if (topFocal.length > 0) {
-    const focalList = formatNaturalList(topFocal);
-
-    const variants = [
-      `${countyLabel} currently shows ${focalSpecies.length} mapped species in this view. The clearest ones to watch for are ${focalList}.${gapNote}`,
-      `Around ${zipLookup.city}, the strongest current watchlist is ${focalList}.${topNearby.length ? ` ${formatNaturalList(topNearby)} is also mapped in nearby counties.` : ""}${gapNote}`,
-      `${countyLabel} has verified county records for ${focalList}.${introSpecies?.registry?.introDateNumber ? ` ${introSpecies.commonName} is listed in the current national registry snapshot with an introduction year of ${introSpecies.registry.introDateNumber}.` : ""}${gapNote}`,
-      `If you are checking your area first, start with ${focalList} in ${countyLabel}.${topNearby.length ? ` Nearby counties also show ${formatNaturalList(topNearby)}.` : ""}${gapNote}`,
-    ];
-
-    return {
-      title: `Near ${zipLookup.zip}`,
-      body: variants[seed],
-    };
-  }
-
-  if (topNearby.length > 0) {
-    return {
-      title: `Near ${zipLookup.zip}`,
-      body: `${countyLabel} does not show a direct county match for the current filters, but ${formatNaturalList(topNearby)} is verified nearby.${gapNote}`,
-    };
-  }
-
-  return {
-    title: `Near ${zipLookup.zip}`,
-    body: `No county-level matches are visible for the current filters in ${countyLabel} right now. Try broadening the filters or clicking a nearby county for more context.${gapNote}`,
-  };
-}
-
-export function MapExplorer({
-  initialStore,
-}: {
-  initialStore?: ClientDataStorePayload;
-}) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const [isNavigating, startTransition] = useTransition();
-
-  const initialCategories = parseCategoriesParam(
-    searchParams.get("categories"),
-    searchParams.get("category"),
-  );
-  const initialSpeciesId = searchParams.get("species");
-  const initialCounty = searchParams.get("county");
-  const initialEnvironment = searchParams.get("environment") as EnvironmentTag | null;
-  const initialQuery = searchParams.get("q") ?? "";
-
-  const [selectedCategories, setSelectedCategories] =
-    useState<SpeciesCategory[]>(initialCategories);
-  const [selectedSpeciesId, setSelectedSpeciesId] = useState<string | null>(
-    initialSpeciesId,
-  );
-  const [selectedEnvironment, setSelectedEnvironment] =
-    useState<EnvironmentTag | null>(initialEnvironment);
-  const [speciesQuery, setSpeciesQuery] = useState(initialQuery);
-  const [selectedCountyFips, setSelectedCountyFips] = useState<string | null>(
-    initialCounty,
-  );
-  const [zipInput, setZipInput] = useState("");
-  const [zipStatus, setZipStatus] = useState<string | null>(null);
-  const [zipLookup, setZipLookup] = useState<ZipLookupResult | null>(null);
-  const [isSearchingZip, setIsSearchingZip] = useState(false);
-  const deferredSpeciesQuery = useDeferredValue(speciesQuery);
+export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePayload }) {
+  const params = useSearchParams();
   const { store, error, retry } = useClientDataStore(initialStore);
-  const dataStore = store ?? EMPTY_DATA_STORE;
-  const {
-    allSpecies,
-    countyIndex,
-    countyDetails,
-    presenceIndex,
-    datasetSnapshot,
-    speciesById,
-    speciesByOrdinal,
-  } = dataStore;
-
-  useEffect(() => {
-    if (!store) return;
-    const selectedSpecies = selectedSpeciesId ? speciesById.get(selectedSpeciesId) : null;
-    if (!selectedSpecies) return;
-
-    if (!selectedCategories.includes(selectedSpecies.category)) {
-      setSelectedCategories((current) =>
-        current.length === 0 ? [selectedSpecies.category] : [...current, selectedSpecies.category],
-      );
-    }
-  }, [selectedCategories, selectedSpeciesId, speciesById, store]);
-
-  useEffect(() => {
-    if (!store) return;
-    if (selectedCountyFips && !countyIndex[selectedCountyFips]) {
-      setSelectedCountyFips(null);
-    }
-  }, [countyIndex, selectedCountyFips, store]);
-
-  useEffect(() => {
-    const query = buildSearchParams({
-      categories: selectedCategories.length ? selectedCategories.join(",") : null,
-      species: selectedSpeciesId,
-      county: selectedCountyFips,
-      environment: selectedEnvironment,
-      q: !selectedSpeciesId && speciesQuery ? speciesQuery : null,
-    });
-    const current = searchParams.toString();
-
-    if (query === current) return;
-
-    startTransition(() => {
-      const nextUrl = query ? `${pathname}?${query}` : pathname;
-      router.replace(nextUrl as Parameters<typeof router.replace>[0], {
-        scroll: false,
-      });
-    });
-  }, [
-    pathname,
-    router,
-    searchParams,
-    selectedCategories,
-    selectedCountyFips,
-    selectedEnvironment,
-    selectedSpeciesId,
-    speciesQuery,
-    zipInput,
-    zipLookup?.zip,
-  ]);
-
-  const filters = useMemo<SpeciesFilters>(
-    () => ({
-      categories: selectedCategories,
-      speciesId: selectedSpeciesId,
-      environment: selectedEnvironment,
-      query: selectedSpeciesId ? null : deferredSpeciesQuery,
-    }),
-    [
-      selectedCategories,
-      deferredSpeciesQuery,
-      selectedEnvironment,
-      selectedSpeciesId,
-    ],
-  );
-
-  const speciesOptions = useMemo(() => {
-    return allSpecies.filter((species) => {
-      if (
-        filters.categories?.length &&
-        !filters.categories.includes(species.category)
-      ) {
-        return false;
-      }
-      if (
-        filters.environment &&
-        !species.registry?.environmentTags.includes(filters.environment)
-      ) {
-        return false;
-      }
-      return true;
-    });
-  }, [allSpecies, filters.categories, filters.environment]);
-
+  const [zipStatus, setZipStatus] = useState<string | null>(null);
+  const [searching, setSearching] = useState(false);
+  const [expanded, setExpanded] = useState(true);
+  const lookupSequence = useRef(0);
+  const countyFips = params.get("county");
+  const speciesId = params.get("species");
+  const query = params.get("q") ?? "";
+  const categoryParam = params.get("categories") ?? params.get("category") ?? "";
+  const categories = useMemo(() => categoryParam.split(",").filter((value): value is SpeciesCategory => CATEGORY_OPTIONS.some(option => option.value === value)), [categoryParam]);
+  const environment = ENVIRONMENT_OPTIONS.some(option => option.value === params.get("environment")) ? params.get("environment") as EnvironmentTag | null : null;
+  const filters = useMemo<SpeciesFilters>(() => ({ categories, speciesId, environment, query: speciesId ? null : query }), [categories, speciesId, environment, query]);
+  const update = useCallback((patch: Record<string, string | null>) => {
+    const next = new URLSearchParams(window.location.search);
+    if (next.has("category") && !next.has("categories")) next.set("categories", next.get("category")!);
+    next.delete("category");
+    for (const [key, value] of Object.entries(patch)) { if (value) next.set(key, value); else next.delete(key); }
+    const search = next.toString();
+    // Native history integrates with Next without duplicate URL state or a server fetch.
+    window.history.pushState(null, "", search ? `/?${search}` : "/");
+  }, []);
+  const selectCounty = useCallback((fips: string) => { lookupSequence.current++; setSearching(false); setZipStatus(null); setExpanded(true); update({ county: fips }); }, [update]);
+  const county = store && countyFips ? store.countyIndex[countyFips] ?? null : null;
   const countyMatchCounts = useMemo(() => {
+    if (!store) return {} as Record<string, number>;
     const counts: Record<string, number> = {};
-
-    for (const [countyFips, countyPresence] of Object.entries(presenceIndex)) {
-      let count = 0;
-
-      for (const speciesIndex of countyPresence) {
-        const species = speciesByOrdinal[speciesIndex];
-        if (species && speciesMatchesFilters(species, filters)) {
-          count += 1;
-        }
-      }
-
-      counts[countyFips] = count;
-    }
-
+    const matches = store.speciesByOrdinal.map(species => speciesMatchesFilters(species, filters));
+    for (const [fips, ordinals] of Object.entries(store.presenceIndex)) counts[fips] = ordinals.reduce((count, ordinal) => count + Number(matches[ordinal] ?? false), 0);
     return counts;
-  }, [filters, presenceIndex, speciesByOrdinal]);
-
-  const matchingCountyFips = useMemo(
-    () =>
-      new Set(
-        Object.entries(countyMatchCounts)
-          .filter(([, count]) => count > 0)
-          .map(([countyFips]) => countyFips),
-      ),
-    [countyMatchCounts],
-  );
-
-  const maxCountyMatchCount = useMemo(
-    () => Math.max(0, ...Object.values(countyMatchCounts)),
-    [countyMatchCounts],
-  );
-
-  const selectedCounty = getCountyRecord(countyIndex, selectedCountyFips);
-  const selectedCountyDetail = selectedCounty
-    ? countyDetails[selectedCounty.countyFips] ?? null
-    : null;
-  const neighborCountyFips = useMemo(
-    () => selectedCounty?.neighborFips ?? [],
-    [selectedCounty],
-  );
-  const focalSpecies = useMemo(
-    () =>
-      sortSpeciesByMappedCountyCount(
-        getSpeciesForCounty(
-          presenceIndex,
-          speciesByOrdinal,
-          selectedCountyFips,
-          filters,
-        ),
-      ),
-    [filters, presenceIndex, selectedCountyFips, speciesByOrdinal],
-  );
-  const nearbySpecies = useMemo(
-    () =>
-      sortSpeciesByMappedCountyCount(
-        getSpeciesForCounties(
-          presenceIndex,
-          speciesByOrdinal,
-          neighborCountyFips,
-          filters,
-        ).filter((species) => !focalSpecies.some((focal) => focal.id === species.id)),
-      ),
-    [filters, focalSpecies, neighborCountyFips, presenceIndex, speciesByOrdinal],
-  );
-  const speciesWithoutCountyCoverage = getSpeciesWithoutCountyCoverage(allSpecies, filters);
-  const countyCategorySignal = useMemo<CountyCategorySignal | null>(() => {
-    if (!selectedCounty) return null;
-
-    const categoryCounts = new Map<SpeciesCategory, number>();
-    for (const species of focalSpecies) {
-      categoryCounts.set(species.category, (categoryCounts.get(species.category) ?? 0) + 1);
-    }
-
-    const categoryPreference: Record<SpeciesCategory, number> = {
-      insects: 4,
-      wildlife: 3,
-      "fungi-diseases": 2,
-      plants: 1,
-    };
-
-    const signals = [...categoryCounts.entries()]
-      .filter(([, count]) => count > 0)
-      .map(([category, count]) => {
-        const countyCategoryCounts = Object.entries(presenceIndex).map(
-          ([countyFips, countyPresence]) => {
-            let categoryCount = 0;
-
-            for (const speciesIndex of countyPresence) {
-              const species = speciesByOrdinal[speciesIndex];
-              if (
-                species &&
-                species.category === category &&
-                speciesMatchesFilters(species, filters)
-              ) {
-                categoryCount += 1;
-              }
-            }
-
-            return {
-              countyFips,
-              stateCode: countyIndex[countyFips]?.stateCode ?? "",
-              count: categoryCount,
-            };
-          },
-        );
-
-        const nationalSorted = countyCategoryCounts
-          .filter((item) => item.count > 0)
-          .sort(
-            (left, right) =>
-              right.count - left.count || left.countyFips.localeCompare(right.countyFips),
-          );
-        const stateSorted = nationalSorted.filter(
-          (item) => item.stateCode === selectedCounty.stateCode,
-        );
-
-        const nationalRank =
-          nationalSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
-        const stateRank =
-          stateSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
-
-        return {
-          category,
-          count,
-          stateCode: selectedCounty.stateCode,
-          stateRank: stateRank || 9999,
-          nationalRank: nationalRank || 9999,
-        };
-      });
-
-    if (signals.length === 0) return null;
-
-    function getSignalScore(signal: CountyCategorySignal) {
-      let score = Math.min(signal.count, 24);
-
-      if (signal.nationalRank === 1) {
-        score += 320;
-      } else if (signal.nationalRank <= 5) {
-        score += 220 - signal.nationalRank * 18;
-      } else if (signal.nationalRank <= 10) {
-        score += 150 - signal.nationalRank * 8;
-      } else if (signal.nationalRank <= 25) {
-        score += 90 - signal.nationalRank * 2;
-      }
-
-      if (signal.stateRank === 1) {
-        score += 90;
-      } else if (signal.stateRank <= 3) {
-        score += 54 - signal.stateRank * 10;
-      } else if (signal.stateRank <= 6) {
-        score += 24 - signal.stateRank * 3;
-      }
-
-      score += categoryPreference[signal.category] * 6;
-      return score;
-    }
-
-    return signals.sort((left, right) => {
-      const scoreDelta = getSignalScore(right) - getSignalScore(left);
-      if (scoreDelta !== 0) return scoreDelta;
-      if (left.nationalRank !== right.nationalRank) {
-        return left.nationalRank - right.nationalRank;
-      }
-      if (left.stateRank !== right.stateRank) {
-        return left.stateRank - right.stateRank;
-      }
-      if (left.count !== right.count) {
-        return right.count - left.count;
-      }
-      return categoryPreference[right.category] - categoryPreference[left.category];
-    })[0];
-  }, [selectedCounty, focalSpecies, presenceIndex, speciesByOrdinal, filters, countyIndex]);
-  const coverageSummary = datasetSnapshot.coverageSummary;
-  const hasExpandedCountyDetail = Boolean(selectedCounty);
-  const zipInsight = useMemo(
-    () =>
-      buildZipInsight({
-        zipLookup,
-        focalSpecies,
-        nearbySpecies,
-        unresolvedCount: speciesWithoutCountyCoverage.length,
-      }),
-    [focalSpecies, nearbySpecies, speciesWithoutCountyCoverage.length, zipLookup],
-  );
-  async function handleZipSearch() {
-    if (zipInput.length !== 5) {
-      setZipStatus("Enter a valid 5-digit U.S. ZIP code.");
-      return;
-    }
-
-    setIsSearchingZip(true);
-    setZipStatus(null);
-
+  }, [store, filters]);
+  const maxCount = useMemo(() => Math.max(0, ...Object.values(countyMatchCounts)), [countyMatchCounts]);
+  const focalSpecies = useMemo(() => store ? getSpeciesForCounty(store.presenceIndex, store.speciesByOrdinal, countyFips, filters) : [], [store, countyFips, filters]);
+  const nearbySpecies = useMemo(() => {
+    if (!store || !county) return [];
+    const focalIds = new Set(focalSpecies.map(s => s.id));
+    return getSpeciesForCounties(store.presenceIndex, store.speciesByOrdinal, county.neighborFips, filters).filter(s => !focalIds.has(s.id));
+  }, [store, county, filters, focalSpecies]);
+  async function searchZip(zip: string) {
+    const sequence = ++lookupSequence.current;
+    setSearching(true); setZipStatus(null);
     try {
-      const response = await fetch("/api/lookup/zip", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        cache: "no-store",
-        body: JSON.stringify({ zip: zipInput }),
-      });
-      const payload = (await response.json()) as
-        | { ok: true; data: ZipLookupResult }
-        | { ok: false; message: string };
-
-      if (!response.ok || !payload.ok) {
-        setZipLookup(null);
-        setZipStatus(payload.ok ? "ZIP lookup failed." : payload.message);
-        return;
-      }
-
-      setZipLookup(payload.data);
-      setSelectedCountyFips(payload.data.countyFips);
-      setZipInput(payload.data.zip);
-      setZipStatus(
-        `${payload.data.zip} resolves to ${payload.data.countyName}. Nearby counties are outlined in amber.`,
-      );
-    } catch {
-      setZipStatus("ZIP lookup failed. Try another ZIP or click a county on the map.");
-    } finally {
-      setIsSearchingZip(false);
-    }
+      const response = await fetch("/api/lookup/zip", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ zip }), signal: AbortSignal.timeout(15000) });
+      const payload = await response.json() as { ok: true; data: ZipLookupResult } | { ok: false; message: string };
+      if (sequence !== lookupSequence.current) return;
+      if (!response.ok || !payload.ok) { setZipStatus(payload.ok ? "ZIP lookup failed. Try county search." : payload.message); return; }
+      setExpanded(true); update({ county: payload.data.countyFips }); setZipStatus(`${zip}: ${payload.data.countyName}`);
+    } catch { if (sequence === lookupSequence.current) setZipStatus("ZIP lookup is unavailable. Search a county name or try again."); }
+    finally { if (sequence === lookupSequence.current) setSearching(false); }
   }
-
-  function handleCategoryToggle(nextCategory: SpeciesCategory) {
-    setSelectedCategories((current) => {
-      const exists = current.includes(nextCategory);
-      const next = exists
-        ? current.filter((category) => category !== nextCategory)
-        : [...current, nextCategory];
-
-      if (selectedSpeciesId) {
-        const selectedSpecies = speciesById.get(selectedSpeciesId);
-        if (selectedSpecies && next.length > 0 && !next.includes(selectedSpecies.category)) {
-          setSelectedSpeciesId(null);
-        }
-      }
-
-      return next;
-    });
-  }
-
-  function handleClearCategories() {
-    setSelectedCategories([]);
-  }
-
-  function handleSpeciesChange(nextSpeciesId: string | null) {
-    setSelectedSpeciesId(nextSpeciesId);
-    if (nextSpeciesId) {
-      const selectedSpecies = speciesById.get(nextSpeciesId);
-      if (selectedSpecies && !selectedCategories.includes(selectedSpecies.category)) {
-        setSelectedCategories((current) =>
-          current.length === 0
-            ? [selectedSpecies.category]
-            : [...current, selectedSpecies.category],
-        );
-      }
-    }
-  }
-
-  function handleClearAll() {
-    setSelectedCategories([]);
-    setSelectedSpeciesId(null);
-    setSelectedEnvironment(null);
-    setSpeciesQuery("");
-    setSelectedCountyFips(null);
-    setZipInput("");
-    setZipLookup(null);
-    setZipStatus(null);
-  }
-
-  if (error) {
-    return (
-      <div className="mx-auto grid w-full max-w-[1600px] items-start gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-[360px_minmax(0,1fr)] lg:px-8">
-        <div className="glass-panel rounded-[28px] p-6 text-sm text-[var(--muted)]">
-          <p role="alert">{error}</p>
-          <button type="button" onClick={retry} className="mt-4 rounded-full border border-[var(--border)] px-4 py-2 text-[var(--foreground)] hover:border-[var(--accent)]">Try again</button>
-        </div>
-      </div>
-    );
-  }
-
-  if (!store) {
-    return (
-      <div className="mx-auto grid w-full max-w-[1600px] items-start gap-5 px-4 pb-12 sm:px-6 lg:grid-cols-[360px_minmax(0,1fr)] lg:px-8">
-        <div className="glass-panel rounded-[28px] p-6 text-sm text-[var(--muted)]">
-          <span role="status">Loading species and county snapshot...</span>
-        </div>
-        <div className="glass-panel rounded-[28px] p-6 text-sm text-[var(--muted)]">
-          <div role="status" aria-busy="true" className="min-h-[360px] animate-pulse">Preparing the county explorer...</div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="mx-auto w-full max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
-      <div className="grid items-start gap-5 lg:grid-cols-[360px_minmax(0,1fr)]">
-        <div className="grid min-w-0 content-start gap-5">
-          <MapToolbar
-            categories={selectedCategories}
-            environment={selectedEnvironment}
-            speciesId={selectedSpeciesId}
-            speciesQuery={speciesQuery}
-            speciesOptions={speciesOptions}
-            zipInput={zipInput}
-            zipStatus={zipStatus}
-            zipInsight={zipInsight}
-            isSearching={isSearchingZip}
-            onCategoryToggle={handleCategoryToggle}
-            onClearCategories={handleClearCategories}
-            onEnvironmentChange={setSelectedEnvironment}
-            onSpeciesQueryChange={setSpeciesQuery}
-            onSpeciesChange={handleSpeciesChange}
-            onZipChange={setZipInput}
-            onZipSearch={handleZipSearch}
-            onClearAll={handleClearAll}
-          />
-          <div
-            className={`overflow-hidden transition-all duration-300 ease-out ${
-              hasExpandedCountyDetail
-                ? "max-h-[900px] translate-y-0 opacity-100"
-                : "max-h-0 -translate-y-2 opacity-0 pointer-events-none"
-            }`}
-          >
-            <AboutDataPanel
-              coverageSummary={coverageSummary}
-              snapshotDate={datasetSnapshot.snapshotDate}
-              isNavigating={isNavigating}
-              variant="vertical"
-            />
-          </div>
-        </div>
-
-        <div className="grid min-w-0 content-start self-start gap-5">
-          <UsCountyMap
-            countyIndex={countyIndex}
-            presenceIndex={presenceIndex}
-            selectedCountyFips={selectedCountyFips}
-            neighboringCountyFips={neighborCountyFips}
-            matchingCountyFips={matchingCountyFips}
-            countyMatchCounts={countyMatchCounts}
-            maxCountyMatchCount={maxCountyMatchCount}
-            selectedCountyHasCoverageGaps={speciesWithoutCountyCoverage.length > 0}
-            onCountySelect={setSelectedCountyFips}
-          />
-          <CountyInsightPanel
-            selectedCounty={selectedCounty}
-            selectedCountyDetail={selectedCountyDetail}
-            selectedCategories={selectedCategories}
-            focalSpecies={focalSpecies}
-            nearbySpecies={nearbySpecies}
-            countyCategorySignal={countyCategorySignal}
-            speciesWithoutCountyCoverage={speciesWithoutCountyCoverage}
-          />
-        </div>
-      </div>
-
-      <div
-        className={`mt-5 overflow-hidden transition-all duration-300 ease-out ${
-          hasExpandedCountyDetail
-            ? "max-h-0 translate-y-2 opacity-0 pointer-events-none"
-            : "max-h-[900px] translate-y-0 opacity-100"
-        }`}
-      >
-        <AboutDataPanel
-          coverageSummary={coverageSummary}
-          snapshotDate={datasetSnapshot.snapshotDate}
-          isNavigating={isNavigating}
-          variant="horizontal"
-        />
-      </div>
-    </div>
-  );
+  if (!store) return <main id="main-content" className="atlas-loading"><Compass size={36} /><h1>{error ? "The map could not load" : "Opening the field atlas"}</h1><p role={error ? "alert" : "status"}>{error || "Loading the versioned county and species snapshot..."}</p>{error ? <button type="button" className="primary-button" onClick={retry}>Try again</button> : null}<Link href="/research" className="text-link">Explore research status</Link></main>;
+  return <main id="main-content" className={`atlas ${county ? "has-county" : ""} ${expanded ? "sheet-expanded" : "sheet-collapsed"}`}>
+    <UsCountyMap countyIndex={store.countyIndex} presenceIndex={store.presenceIndex} selectedCountyFips={county?.countyFips ?? null} neighboringCountyFips={county?.neighborFips ?? []} countyMatchCounts={countyMatchCounts} maxCountyMatchCount={maxCount} onCountySelect={selectCounty} />
+    <MapToolbar counties={store.countyIndex} species={store.allSpecies} categories={categories} environment={environment} speciesId={speciesId} query={query} zipStatus={zipStatus} isSearching={searching}
+      onCountySelect={selectCounty} onSpeciesSelect={id => update({ species: id, q: null })} onQueryChange={value => update({ q: value, species: null })}
+      onCategoryToggle={category => { const next = categories.includes(category) ? categories.filter(c => c !== category) : [...categories, category]; update({ categories: next.join(","), species: null }); }}
+      onEnvironmentChange={value => update({ environment: value })} onZipSearch={searchZip} onClearFilters={() => update({ categories: null, species: null, environment: null, q: null })} />
+    {!county ? <div className="atlas-intro"><p className="atlas-eyebrow">A living record of introduced species</p><h1>Get to know <br />your surroundings.</h1><p>Explore a county. Discover its species. <br />See the evidence behind each record.</p><Link href="/species">Browse the species directory <ArrowUpRight size={16} /></Link></div> : null}
+    {countyFips && !county ? <div className="atlas-notice" role="status">This county code is not in the current geography. Search for a county or planning region.<button onClick={() => update({ county: null })}>Clear selection</button></div> : null}
+    {county ? <aside className="county-sheet" aria-label={`${county.name} county details`} onKeyDown={event => { if (event.key === "Escape") { update({ county: null }); document.querySelector<HTMLInputElement>('[aria-label="Search county, ZIP, or species"]')?.focus(); } }}>
+      <div className="county-sheet-heading"><div><p>{county.stateCode} / County explorer</p><h2>{county.name}</h2></div><div className="county-sheet-actions"><button className="sheet-toggle icon-button" type="button" aria-label={expanded ? "Collapse county details" : "Expand county details"} aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? <ArrowDown size={18} /> : <ArrowUp size={18} />}</button><button type="button" className="icon-button" aria-label="Close county details" onClick={() => { lookupSequence.current++; update({ county: null }); document.querySelector<HTMLInputElement>('[aria-label="Search county, ZIP, or species"]')?.focus(); }}><X size={19} /></button></div></div>
+      <div className="county-sheet-body"><CountyInsightPanel key={county.countyFips} selectedCounty={county} selectedCountyDetail={store.countyDetails[county.countyFips] ?? null} focalSpecies={focalSpecies} nearbySpecies={nearbySpecies} allSpecies={store.allSpecies} filters={filters} snapshotDate={store.datasetSnapshot.snapshotDate} /></div>
+    </aside> : null}
+    <div className="atlas-footer"><span>Project Isitusa</span><Link href="/about">Methods & limitations</Link><Link href="/research">Research status <ArrowUpRight size={13} /></Link></div>
+  </main>;
 }

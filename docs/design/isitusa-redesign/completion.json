@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "kind": "isitusa-ui-implementation-checkpoint",
+  "recordedAt": "2026-09-28T02:13:51.514Z",
+  "workerTaskId": "01a0e59e-58e4-7840-98dd-358f873a449b",
+  "mainTaskId": "01a06f1e-a9ed-77c2-8c4e-21213ababf8b",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\isitusa-map-redesign",
+  "branch": "codex/isitusa-map-redesign",
+  "baseSha": "b0fb531d78fc612199fad3b26116634a4a57a32b",
+  "leaseId": "lease-isitusa-map-redesign-20260928-2",
+  "completionState": "Implementation ready for MAIN review; production build, final rendered regression checks and release remain pending.",
+  "changedPaths": [
+    "DESIGN.md",
+    "PRODUCT.md",
+    "app/about/page.tsx",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/species/[slug]/page.tsx",
+    "app/species/page.tsx",
+    "docs/design/isitusa-redesign/completion.json",
+    "scripts/test-ui-geography.mjs",
+    "src/components/county-card-download.tsx",
+    "src/components/county-evidence.tsx",
+    "src/components/county-insight-panel.tsx",
+    "src/components/map-explorer.tsx",
+    "src/components/map-toolbar.tsx",
+    "src/components/providers.tsx",
+    "src/components/research-control-center.tsx",
+    "src/components/site-header.tsx",
+    "src/components/species-directory.tsx",
+    "src/components/species-image.tsx",
+    "src/components/us-county-map.tsx"
+  ],
+  "sourceSha256": {
+    "app/about/page.tsx": "ec547c51a0457d205cacb90c267088fc4b662ae38844ce68df130772e6dfbc48",
+    "app/globals.css": "f8dd5fab3f0533cc673de491d10c050902e50f35193bc41bd21d4cc6f5ba36ec",
+    "app/layout.tsx": "75c1b8b3cdc4a4f0a9388acc303bed0acaf8f56413912a667769620f911e562e",
+    "app/species/[slug]/page.tsx": "0a851583e0e499f399465fdc77a4bbbf468d97c042aa331d5cae59b2f94bf9ef",
+    "src/components/county-card-download.tsx": "63412a80ce1bf066b67a14058502bbb04924ef16b77158644d03c163f5bb46d3",
+    "src/components/county-insight-panel.tsx": "d29a316399d194753653c92e12e4c105515983061ad74296fdfce28ddb6f6310",
+    "src/components/map-explorer.tsx": "dda97b0ebafac5f0f28720e60db298d1a4ca1bcab6e4c8ee9f5a19fa29645ee9",
+    "src/components/map-toolbar.tsx": "bc06d3e8535fd57a8ef986ac0da1beba62a44c8dd71b3b9a97c6fbeb60e91813",
+    "src/components/providers.tsx": "965a44118a55f3e42c3d62688a4c8151fd125bc41fdd7ca99b994794df11832b",
+    "src/components/research-control-center.tsx": "c7d39af95c6a6bf4828d562928019a81958e595e7cd9d856774b6bf9eeba4433",
+    "src/components/site-header.tsx": "419c99d152ade75a26d931c9fd3706f6acd26a93954d46b1db12cb1f08dd34eb",
+    "src/components/species-image.tsx": "c650a2b6fd9a3efedc73892883132c2dbd40edefc642854cc0329ef2a8a54a48",
+    "src/components/us-county-map.tsx": "9ee8630cab4fb37e987bfed294098c5a80d83521cda72bf5d4015354cb767c69",
+    "app/species/page.tsx": "f1400b705c987576d3153ad0af77c367b922ea461fc01953c79e357d49d73695",
+    "scripts/test-ui-geography.mjs": "857293b0b1cb127cb87edfa61bcdc398e8d060941d46970a75613704dff12de8",
+    "src/components/county-evidence.tsx": "1f9e324f970f81687ac79809a6b7ea2d5dcca043ae83effb0bfc08245648054e",
+    "src/components/species-directory.tsx": "ab9b308e2b174c2de5bb832d31daf28795236313d5dbf56b25250392db3243f3"
+  },
+  "childAllocations": [
+    {
+      "agent": "/root/county_evidence",
+      "ownedPaths": [
+        "src/components/county-insight-panel.tsx",
+        "src/components/county-evidence.tsx"
+      ],
+      "status": "completed; file ownership released before parent fixes",
+      "independentReview": "Read-only map/header/style review and one scoped mechanical design detector (zero mechanical findings)"
+    },
+    {
+      "agent": "/root/species_about",
+      "ownedPaths": [
+        "app/about/page.tsx",
+        "app/species/page.tsx",
+        "app/species/[slug]/page.tsx",
+        "src/components/species-directory.tsx"
+      ],
+      "status": "completed; file ownership released before parent fixes",
+      "independentReview": "Read-only county evidence/export review"
+    }
+  ],
+  "implemented": [
+    "Fullscreen county map with US, Alaska and Hawaii views; exact configured geography including current Connecticut planning regions and DC.",
+    "Unified keyboard county/species/ZIP search, URL filters and native Back/Forward history.",
+    "Responsive county sheet with separate map-species and lazy published-evidence views.",
+    "Source citations, observation/review date precision, independent status axes, sparse defaults and temporal authority labels retained.",
+    "Client-loaded searchable species directory, curated/sparse profiles, informational About/contribution routes and simplified Research presentation.",
+    "Light/dark tokens, reduced motion, focus/touch controls and dated neutral county SVG/PNG exports."
+  ],
+  "dataContractPreservation": {
+    "researchDataModified": false,
+    "generatedDataModified": false,
+    "manifestsModified": false,
+    "packageOrDeploymentConfigModified": false,
+    "canonicalDeterminationDelta": 0,
+    "initialCatalogFetch": false,
+    "initialResearchFetch": false,
+    "countyEvidence": "Only requested after opening Evidence; shared hash-checked immutable fetcher; resolveSparseCountyPairs using supplied map catalog and schema guard.",
+    "profileGeneration": "Existing on-demand rendering, image route, slug aliases and redirects preserved.",
+    "acquisition": "No offline research acquisition, regeneration, publication or deployment performed."
+  },
+  "completedChecks": {
+    "browser": {
+      "count": 24,
+      "report": "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/qa-report.json",
+      "qualification": "Earlier local implementation snapshot; exact-byte fixtures and bounded real-data transport proxy. Not final source or production verification.",
+      "checks": [
+        "3144 county shapes",
+        "No catalog/research eager requests",
+        "Anchorage deep link",
+        "Alaska selected",
+        "AK 30 county geometries",
+        "Hawaii 5 counties",
+        "Back restores county",
+        "Forward restores county",
+        "Species URL filter",
+        "Category URL filter",
+        "ZIP resolves DC",
+        "Mobile collapsed panel",
+        "Mobile expanded panel",
+        "Mobile no horizontal overflow",
+        "Current CT geography",
+        "Directory search",
+        "Profile spotted-lanternfly",
+        "Profile overflow spotted-lanternfly",
+        "Profile acacia-melanoxylon",
+        "Profile overflow acacia-melanoxylon",
+        "About readable",
+        "Published Research route",
+        "Reduced motion",
+        "No runtime errors"
+      ],
+      "sourceSnapshotIdentity": {
+        "baseSha": "b0fb531d78fc612199fad3b26116634a4a57a32b",
+        "branch": "codex/isitusa-map-redesign",
+        "worktree": "C:\\Code\\project-isitusa-worktrees\\isitusa-map-redesign",
+        "reportModifiedAt": "2026-09-28T02:00:14.079Z",
+        "sourceState": "uncommitted earlier implementation",
+        "exactSourceDigest": null,
+        "limitation": "No immutable full-source fingerprint was captured before later review corrections; the24 checks cannot be attributed to the final commit. Final source file fingerprints are recorded separately."
+      }
+    },
+    "pure": [
+      {
+        "command": "scripts/test-ui-geography.mjs",
+        "exitCode": 0,
+        "output": "PASS: exact 3144 configured county geometries, 30 AK, 5 HI, 9 current CT, antimeridian region projections and representative national paths."
+      },
+      {
+        "command": "--import tsx scripts/test-temporal-determination-presentation.ts",
+        "exitCode": 0,
+        "output": "Temporal determination presentation tests passed: real Whatcom history, legacy data, expiry, conflict, absence, and presence.\nQualified disease-status labels passed: attribution, scope, conflict, expiry, presence and legacy behavior.\nQualified public schema passed valid context and six invalid date/identity/scope cases."
+      },
+      {
+        "command": "--import tsx scripts/test-research-deep-links.ts",
+        "exitCode": 0,
+        "output": "Research deep-link and compact species-entrypoint tests passed."
+      },
+      {
+        "command": "--import tsx scripts/test-public-projection-fetch.ts",
+        "exitCode": 0,
+        "output": "Public R2 projection fetch tests passed."
+      }
+    ],
+    "source": "git diff --check passed after final owned-file normalization."
+  },
+  "interruptedChecks": [
+    {
+      "name": "Focused regression pass",
+      "completedBeforeInterruption": [
+        "Legacy category retained on selection",
+        "Reset leaves national overview camera",
+        "Reset leaves US region",
+        "Mobile marker upper bound above panel",
+        "Tablet marker upper bound left of panel",
+        "Expanded evidence citations visible"
+      ],
+      "reason": "Test selector matched multiple summaries. Locator corrected. Marker checks only enforced upper bounds; final source adds resize recentering, and final assertions now also require positive visible coordinates."
+    },
+    {
+      "name": "Focused regression rerun",
+      "report": "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/regression-report.json",
+      "completedBeforeInterruption": [
+        "Legacy category retained on selection",
+        "Reset leaves national overview camera",
+        "Reset leaves US region"
+      ],
+      "reason": "Route resource preflight saw page reads1998/s; closed browser and stopped owned dev server."
+    },
+    {
+      "name": "TypeScript full project",
+      "command": "NODE_OPTIONS=--max-old-space-size=1024 node-v22.23.2 node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 1,
+      "result": "V8 heap exhaustion near1020MiB. No TypeScript diagnostics; verification incomplete; no retry or heap increase.",
+      "sequencingError": "Started in compound tool call before evaluating final recovery sample (1224 page reads/s). Attempt had exited by stop inspection. Recorded as process-control error, not an application defect or pass."
+    }
+  ],
+  "pendingAssertions": [
+    "Final TypeScript validation with MAIN approved resource budget.",
+    "Production build, selective release compatibility and published asset coherence.",
+    "Selected county marker on screen and unobscured after desktop-to-mobile/tablet resize, including AK/HI.",
+    "Tablet region controls and legend do not overlap after final CSS change.",
+    "PNG download and rendered neutral export, including long names; SVG download.",
+    "Dark-theme route rendering.",
+    "Directory pagination and no-results state.",
+    "Missing-image fallback.",
+    "Unmocked runtime asset failure followed by Retry recovery.",
+    "20-second stalled-evidence timeout, Retry, and rapid county switch cancellation.",
+    "Final mobile active filter chips versus region controls and touch targets."
+  ],
+  "fixtureDisclosure": {
+    "runtimeAssets": [
+      {
+        "kind": "map",
+        "sha256": "39b634bdf90660a47e327a372ccca8d043fd04e31bee539667bdb80b6eb10fd1",
+        "bytes": 3854510
+      },
+      {
+        "kind": "catalog",
+        "sha256": "f1b686abfaee77acdeadbe64b32f45b9c19b6c8903d3f472575c6419cf88a455",
+        "bytes": 4831011
+      }
+    ],
+    "runtime": "Canonical-base public URLs returned404. Browser-only exact URL interception used existing canonical gzip cache, validating decoded bytes and SHA-256. Application manifests unchanged.",
+    "images": "Browser-only exact localhost optimized-species URLs from canonical image files; pinned manifest descriptor, SHA-256, byte count and RIFF/WEBP checked. Image bytes/catalog entries unchanged.",
+    "research": "Actual published pointer/manifest/declared artifacts fetched with Origin https://isitusa.com, no cookies/auth/redirects; test-only localhost ACAO adapted while retaining status, body and content type; decompressed stale headers omitted.",
+    "researchRelease": "research-7674fc93bc4f-25dacfee2d1a3835",
+    "upstreamResearchRequests": 8,
+    "upstreamResearchDecodedBytes": 7352926,
+    "researchBudget": {
+      "requests": 16,
+      "decodedBytes": 67108864
+    },
+    "fixtureScripts": [
+      "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/fixture.cjs",
+      "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/research-proxy.cjs"
+    ]
+  },
+  "resourceEvidence": {
+    "approvedAggregateMiB": 3072,
+    "nodeHeapMiB": 1024,
+    "availableRamFloorPercent": 10,
+    "pauseThresholds": {
+      "pageReadsPerSecond": 500,
+      "pageWritesPerSecond": 10,
+      "commitPercent": 95
+    },
+    "events": [
+      "01:54:12Z paging584/s; owned browser/server stopped; seven safe recovery samples followed.",
+      "02:07Z paging1998/s route preflight; owned browser/server stopped.",
+      "First later recovery ended with1224/s page reads; no safe recovery claimed.",
+      "Typecheck sequencing error and heap exhaustion described above.",
+      "02:09:10Z through02:09:43Z seven safe samples evaluated explicitly; same-script prelaunch thresholds and512MiB projected reserve passed before each pure test."
+    ],
+    "logs": [
+      "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/resource-samples.ndjson",
+      "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/route-resource-samples.ndjson",
+      "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/recovery-samples.ndjson"
+    ],
+    "browserStopped": true,
+    "devServerStopped": true,
+    "typecheckStopped": true,
+    "heavySlotReleased": true
+  },
+  "reviewFixes": [
+    "Moved selected county focus into visible map area and added selected marker; retain pending focus through resize.",
+    "Separated explicit reset/region actions from county focus.",
+    "Migrated legacy category URL parameter before updates.",
+    "Added coarse-pointer44px targets.",
+    "Replaced export current-activity claims and zero category with dated filtered snapshot and limitations.",
+    "Added evidence timeout/retry with abort protection.",
+    "Corrected nested evidence summary selector.",
+    "Moved tablet region switch above legend."
+  ],
+  "artifacts": {
+    "root": "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b",
+    "baseline": [
+      "baseline-desktop.png",
+      "baseline-mobile.png"
+    ],
+    "screenshots": [
+      "map-desktop.png",
+      "alaska-evidence-desktop.png",
+      "hawaii-desktop.png",
+      "county-mobile-collapsed.png",
+      "county-mobile.png",
+      "directory-mobile.png",
+      "profile-spotted-lanternfly-mobile.png",
+      "profile-acacia-melanoxylon-mobile.png",
+      "about-mobile.png",
+      "research-desktop.png",
+      "evidence-expanded.png"
+    ],
+    "qualification": "Screenshots are dated local implementation evidence. Selected marker/tablet controls and final export changed after screenshots; MAIN must re-render final release candidate."
+  },
+  "unresolved": [
+    "No confirmed sightings storage/moderation, subscription delivery or payment destination. About links only to real existing informational/reporting resources; no fake submission/success/payment flows.",
+    "Canonical base map/catalog URLs are unpublished404; MAIN identified remote main with published assets as a candidate selective release base. Worker did not change base/data or publish.",
+    "Existing species image content is inherited; some catalog imagery is contextual rather than diagnostic.",
+    "No worker production deployment or claim of current deployed UI."
+  ]
+}
