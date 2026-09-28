@@ -11,7 +11,7 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
   const [open, setOpen] = useState<"help" | "colors" | null>(null);
   const id = useId();
   const helpButton = useRef<HTMLButtonElement>(null), colorButton = useRef<HTMLButtonElement>(null);
-  const area = scope === "U.S." ? "the whole U.S." : scope === "Visible counties" ? "the counties in view" : scope;
+  const area = scope === "U.S." ? "the United States" : scope === "Visible counties" ? "the counties in view" : scope;
   const published = datasetDate ? new Date(datasetDate.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) : "";
   return <div className="atlas-legend glass-panel" onKeyDown={event => {
     if (event.key === "Escape" && open) { event.stopPropagation(); (open === "help" ? helpButton : colorButton).current?.focus(); setOpen(null); }
