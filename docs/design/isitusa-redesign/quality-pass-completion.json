@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "jobId": "isitusa-quality-pass-20260928",
+  "leaseId": "lease-isitusa-quality-pass-20260928-1",
+  "state": "source-complete-awaiting-local-verification",
+  "baseSha": "e08e85d7d7fb75e71810d21446bcf9656f002655",
+  "sourceCommit": "21ef7197b76e4379fbafbf67284c915cbef38f6a",
+  "worktree": "C:/Code/project-isitusa-worktrees/isitusa-ui-release",
+  "branch": "codex/isitusa-participation-20260928",
+  "changes": [
+    "Concise About narrative, existing credited kudzu photograph, place/date/source explanation, independent U.S. identity and global ambition, clear participation links.",
+    "Consistent IsItUSA brand, Support navigation, shared non-map public footer component.",
+    "Compact species introduction/search, linked image/name cards, category icons, restrained attribution, loading/error/empty recovery, query/category/page URL persistence.",
+    "Research state selector available while loading/error, plain language status labels, progress-first hierarchy, detailed accounting disclosures, arrow/Home/End keyboard tabs and focusable panel.",
+    "Participation availability/loading/retry states; unavailable forms hidden with useful reporting/exploration alternatives and explicitly planned email options.",
+    "Keyboard county/species combobox, selection replacement, selection limit feedback, search loading reset, 44px removal controls."
+  ],
+  "checks": [
+    {
+      "name": "Scoped source and diff review",
+      "status": "PASSED"
+    },
+    {
+      "name": "git diff --cached --check",
+      "status": "PASSED",
+      "note": "Receipt CRLF corrected to repository LF before source commit"
+    },
+    {
+      "name": "Typecheck, lint, production build",
+      "status": "NOT RUN",
+      "owner": "MAIN sequential verification"
+    },
+    {
+      "name": "Desktop/mobile, keyboard, dark mode and error-state browser QA",
+      "status": "NOT RUN",
+      "owner": "MAIN sequential verification"
+    },
+    {
+      "name": "Impeccable mechanical scan",
+      "status": "NOT RUN",
+      "owner": "MAIN sequential verification"
+    },
+    {
+      "name": "Provider/database/payment/email operation",
+      "status": "NOT RUN",
+      "note": "Services remain unconfigured; this phase authorizes no activation"
+    }
+  ],
+  "mainIntegration": [
+    "Import and render SiteFooter after children within app/layout.tsx; component hides itself on map, admin, auth and preferences. Participation Frame no longer renders a duplicate footer.",
+    "Complete previously proposed isolated SDK dependency and tsconfig/Deno separation; preserve canonical node_modules junction contents.",
+    "Keep analytics off private admin/auth/preferences surfaces, as required by existing participation architecture.",
+    "Run one mechanical design scan with the installed Impeccable detector on changed TSX/CSS, then address meaningful findings.",
+    "Verify species query/category/page survive reload/back, no-results recovery, credits, photograph failures, and 320/390/768/1440 widths.",
+    "Verify research ArrowLeft/Right/Home/End tabs, state switching and network retry, disclosures and source/county links, including AK/HI/CT.",
+    "Verify unavailable /join /report /support /preferences show useful truthful states with no active data-entry/payment controls; no provider calls when unconfigured.",
+    "Run production build only within remaining disk/RAM allowance. No data generation, provider activation, Linux changes, deployment or paid resources."
+  ],
+  "remaining": [
+    "Runtime and rendered appearance require local verification and correction before this can be considered release-ready.",
+    "Existing participation delivery scheduling, retention cleanup, provider setup, real authorization/SQL and payment tests remain separate activation work.",
+    "Existing saved preference selections initially display stored county/species identifiers until a future label-resolution improvement."
+  ],
+  "resourceMonitorStopped": true,
+  "resourceHistory": "docs/design/isitusa-redesign/quality-pass-resources.jsonl",
+  "researchDataChanged": false,
+  "dependenciesChanged": false,
+  "providerWrites": false,
+  "productionChanged": false,
+  "recordedAt": "2026-09-28T10:12:23.759Z",
+  "changedPaths": [
+    "app/about/page.tsx",
+    "app/globals.css",
+    "app/research/page.tsx",
+    "app/species/page.tsx",
+    "docs/design/isitusa-redesign/quality-pass-resources.jsonl",
+    "src/components/participation/join-form.tsx",
+    "src/components/participation/participation.module.css",
+    "src/components/participation/preferences-form.tsx",
+    "src/components/participation/report-form.tsx",
+    "src/components/participation/shared.tsx",
+    "src/components/participation/support-form.tsx",
+    "src/components/research-control-center.tsx",
+    "src/components/site-footer.tsx",
+    "src/components/site-header.tsx",
+    "src/components/species-directory.tsx"
+  ],
+  "currentChangedFileBytes": 180691,
+  "resourceSummary": {
+    "samples": 16,
+    "allSafe": true,
+    "minimumFreeDiskBytes": 265598443520,
+    "last": {
+      "time": "2026-09-28T10:11:04.5008881Z",
+      "freeDiskBytes": 265638354944,
+      "availableRamPercent": 25.94,
+      "commitPercent": 81,
+      "pageReads": 3,
+      "pageWrites": 0,
+      "safe": true
+    }
+  }
+}
