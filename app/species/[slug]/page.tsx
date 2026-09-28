@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -25,7 +26,8 @@ export default async function SpeciesProfilePage({
 }) {
   const resolvedParams = await params;
   const legacyImage = getSpeciesImageAsset(`/species/${resolvedParams.slug}`);
-  if (legacyImage) redirect(legacyImage.full.src);
+  // Verified static asset paths are not represented by generated app-route types.
+  if (legacyImage) redirect(legacyImage.full.src as Route);
   const canonicalSlug = speciesSlugAliases.get(resolvedParams.slug);
   if (canonicalSlug) redirect(`/species/${canonicalSlug}`);
   const species = speciesBySlug.get(resolvedParams.slug);

@@ -1,5 +1,5 @@
 import Stripe from "npm:stripe@22.6.2";
-import { body, checked, enabled, env, HttpError, responseError, service } from "../_shared/runtime.ts";
+import { body, checked, requiredData, enabled, env, HttpError, responseError, service } from "../_shared/runtime.ts";
 Deno.serve(async(req:Request)=>{
  try{
   if(req.method!=="POST")throw new HttpError(405,"Method not allowed.");
@@ -24,7 +24,7 @@ Deno.serve(async(req:Request)=>{
    if(!intentId)return Response.json({received:true});
    const intent=await stripe.paymentIntents.retrieve(intentId),id=intent.metadata?.isitusa_request_id;
    if(!id)return Response.json({received:true});
-   const checkout=checked(await db.from("isitusa_checkout_requests").select("session_id").eq("id",id).single());
+   const checkout=requiredData(await db.from("isitusa_checkout_requests").select("session_id").eq("id",id).single());
    // Preserve provider event history. These cumulative snapshots are never summed.
    const amount=event.type==="charge.refunded"?(object as Stripe.Charge).amount_refunded:(object as Stripe.Dispute).amount;
    const status=event.type==="charge.refunded"?"refund":`dispute:${(object as Stripe.Dispute).status}`;

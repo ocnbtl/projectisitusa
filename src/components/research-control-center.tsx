@@ -1641,7 +1641,7 @@ function ResearchControlCenterContent({
         <p className="mt-3 text-[var(--muted)]">{formatNumber(summary.summary.speciesCount)} catalog species, across {formatNumber(summary.summary.countyCount)} counties and county equivalents. Progress is measured for each species in each county.</p>
         <div className="research-progress">
           <div><label htmlFor="source-progress">Source checks <strong>{formatPercent(summary.summary.researchCoveragePercent)}</strong></label><progress id="source-progress" max={100} value={summary.summary.researchCoveragePercent} /><p>A source has been checked or a finding recorded. More work may still be needed.</p></div>
-          <div><label htmlFor="determination-progress">Reviewed findings <strong>{formatPercent(summary.summary.determinationCoveragePercent)}</strong></label><progress id="determination-progress" max={100} value={summary.summary.determinationCoveragePercent} /><p>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)} of {formatNumber(summary.summary.totalPairs)} county-species questions have a reviewed finding.</p></div>
+          <div><label htmlFor="determination-progress">Reviewed findings <strong>{formatPercent(summary.summary.determinationCoveragePercent)}</strong></label><progress id="determination-progress" max={100} value={summary.summary.determinationCoveragePercent} /><p>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)} of {formatNumber(summary.summary.totalPairs)} county-species questions have a reviewed presence or absence finding.</p></div>
         </div>
         <details className="research-accounting research-counts"><summary>See the research counts</summary>
         <dl className="research-status-strip">
@@ -1689,16 +1689,14 @@ function ResearchControlCenterContent({
         </div>
       </div>
 
-      <div
-        id={`research-panel-${activeView}`}
-        role="tabpanel"
-        tabIndex={0}
-        aria-labelledby={`research-tab-${activeView}`}
-      >
-        {activeView === "county" ? <CountyResearchView summary={summary} /> : null}
-        {activeView === "sources" ? <SourceOperationsView summary={summary} /> : null}
-        {activeView === "queue" ? <QueueView summary={summary} /> : null}
-      </div>
+      {VIEW_OPTIONS.map((view) => (
+        <div key={view.id} id={`research-panel-${view.id}`} role="tabpanel"
+          tabIndex={0} aria-labelledby={`research-tab-${view.id}`} hidden={activeView !== view.id}>
+          {activeView === view.id && view.id === "county" ? <CountyResearchView summary={summary} /> : null}
+          {activeView === view.id && view.id === "sources" ? <SourceOperationsView summary={summary} /> : null}
+          {activeView === view.id && view.id === "queue" ? <QueueView summary={summary} /> : null}
+        </div>
+      ))}
       <details className="research-accounting"><summary>How we measure progress</summary>
       <div
         className={`border-b px-4 py-3 text-sm leading-6 ${

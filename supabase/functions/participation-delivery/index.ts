@@ -1,6 +1,6 @@
 import { Resend } from "npm:resend@6.30.0";
 import { STREAMS } from "../../../src/lib/participation/contracts.ts";
-import { checked, enabled, env, HttpError, responseError, service } from "../_shared/runtime.ts";
+import { checked, requiredData, enabled, env, HttpError, responseError, service } from "../_shared/runtime.ts";
 const escape=(s:string)=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]!));
 Deno.serve(async(req:Request)=>{
  try{
@@ -10,7 +10,7 @@ Deno.serve(async(req:Request)=>{
   if(!items.length)return Response.json({processed:0});
   const item=items[0];
   if(!["confirmation","preferences"].includes(item.kind))throw new HttpError(503,"Campaign and digest delivery is not enabled.");
-  const person=checked(await db.from("isitusa_subscribers").select("suppression_reason").eq("id",item.subscriber_id).single());
+  const person=requiredData(await db.from("isitusa_subscribers").select("suppression_reason").eq("id",item.subscriber_id).single());
   if(["bounce","complaint"].includes(person.suppression_reason)){checked(await db.from("isitusa_outbox").update({state:"suppressed",lease_until:null}).eq("id",item.id));return Response.json({processed:1});}
   const confirmation=item.kind==="confirmation",subject=confirmation?"Confirm your IsItUSA updates":"Your IsItUSA email preferences";
   const selections=confirmation?STREAMS.filter(s=>item.payload.preferences?.streams?.includes(s.id)).map(s=>s.title).join(", "):"";

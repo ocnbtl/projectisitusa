@@ -127,7 +127,8 @@
     "check:epa-nrsa-1819-fish": "node --import tsx scripts/test-epa-nrsa-1819-fish-counts.ts && node --import tsx scripts/test-epa-nrsa-1819-retained-replay.ts",
     "check:epa-nrsa-1314-fish": "node --import tsx scripts/test-epa-nrsa-1314-fish-counts.ts && node --import tsx scripts/test-epa-nrsa-1314-retained-replay.ts",
     "check:ebird-original": "node --import tsx scripts/test-ebird-original-observations.ts && node --import tsx scripts/test-ebird-original-method.ts && npm run check:ebird-selected-original",
-    "check:ebird-selected-original": "node --max-old-space-size=1024 --import tsx scripts/test-ebird-selected-original.ts"
+    "check:ebird-selected-original": "node --max-old-space-size=1024 --import tsx scripts/test-ebird-selected-original.ts",
+    "typecheck:app": "tsc --noEmit --project tsconfig.app.json"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -143,7 +144,8 @@
     "topojson-client": "^3.1.0",
     "us-atlas": "^3.0.1",
     "zipcodes": "^8.0.0",
-    "zod": "^4.1.11"
+    "zod": "^4.1.11",
+    "@supabase/supabase-js": "2.117.2"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "3.1113.0",

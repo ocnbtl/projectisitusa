@@ -48,7 +48,9 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   typedRoutes: true,
+  typescript: { tsconfigPath: "tsconfig.app.json" },
   experimental: {
+    cpus: 1,
     webpackMemoryOptimizations: true,
   },
   async rewrites() {

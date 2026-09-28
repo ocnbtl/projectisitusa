@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "state": "local-source-verified-runtime-resource-blocked",
+  "at": "2026-09-28T10:42:12.673Z",
+  "candidateBase": "67be2a30c2e399f960a05cfe3aa8375353d8c2a7",
+  "artifactRoot": "C:\\Users\\Ocean\\.codex\\visualizations\\2026\\09\\05\\01a06f1e-a9ed-77c2-8c4e-21213ababf8b\\participation-verification-20260928",
+  "passed": [
+    "Six participation contract tests",
+    "Next app typecheck (all app modules and transitive imports; offline tooling separately scoped)",
+    "All five Deno Edge functions typecheck",
+    "Stripe signature fixture: authentic, tampered, wrong secret, expired",
+    "Three SQL fixture suites: authorization, transactions, delivery quota",
+    "Private participation route analytics exclusion regression",
+    "Research deep-link regression",
+    "Impeccable detector: no findings on selected changed UI files",
+    "Research snapshot validation: 3144 counties, 51 jurisdictions, 2504 species, 379332 presence pairs"
+  ],
+  "notVerified": [
+    "UI lint interrupted by paging safeguard",
+    "Production build interrupted during runtime image preparation, before Next compilation",
+    "Desktop/mobile/dark-mode/accessibility browser checks: development preview blocked before launch by disk floor",
+    "Hosted Supabase Auth/Storage/RLS, email, Turnstile, Stripe, wallets, actual provider integration"
+  ],
+  "sqlFixtureScope": {
+    "engine": "PGlite 0.5.8 in-memory PostgreSQL",
+    "scope": "Real local SQL execution with minimal auth/storage fixture schemas. NOT Supabase Auth/Storage integration or deployment verification.",
+    "schema": [
+      "01-core.sql",
+      "02-workflows.sql",
+      "03-support-and-campaigns.sql"
+    ],
+    "tests": [
+      "authorization.sql",
+      "transactions.sql",
+      "delivery-quota.sql"
+    ],
+    "status": "passed",
+    "finishedAt": "2026-09-28T10:22:36.711Z"
+  },
+  "resource": {
+    "maxNewBytes": 1000000000,
+    "minFreeDiskBytes": 265000000000,
+    "latestObservedFreeDiskBytes": 263158460416,
+    "accountedBytesIncluding100MBReserve": 443821507,
+    "buildPageReadsPerSecond": 1441,
+    "allowedPageReadsExclusive": 500,
+    "previewLaunched": false,
+    "remainingOwnedBuildOrPreviewProcesses": 0,
+    "thresholdsUnchanged": true
+  },
+  "production": {
+    "changed": false,
+    "releaseCommit": "46a28485e149039591734e2a2e00a3c1b4c83416",
+    "deployment": "dpl_9SjkgBmkVFgzu88tNxGtBmGoYFnL",
+    "providerWrites": false,
+    "researchDataChanges": false
+  },
+  "dependencyInstallation": {
+    "restoredPlatformMetadata": 4,
+    "newPackages": [
+      "node_modules/@supabase/auth-js",
+      "node_modules/@supabase/functions-js",
+      "node_modules/@supabase/phoenix",
+      "node_modules/@supabase/postgrest-js",
+      "node_modules/@supabase/realtime-js",
+      "node_modules/@supabase/storage-js",
+      "node_modules/@supabase/supabase-js",
+      "node_modules/iceberg-js"
+    ],
+    "existingVersionsChanged": [],
+    "install": "isolated no lifecycle scripts",
+    "bridge": {
+      "path": "C:/Code/project-isitusa/node_modules/@supabase",
+      "target": "C:\\Users\\Ocean\\.codex\\visualizations\\2026\\09\\05\\01a06f1e-a9ed-77c2-8c4e-21213ababf8b\\participation-verification-20260928\\deps\\node_modules\\@supabase"
+    },
+    "at": "2026-09-28T10:27:56.338Z"
+  },
+  "continuation": [
+    "Preserve this artifact directory while the recorded node_modules/@supabase junction targets its isolated SDK installation.",
+    "Resume only after free disk >=265GB and seven stable samples meet unchanged RAM, paging and byte limits. No renewed permission is needed within the already approved local-only phase.",
+    "Do not repeat completed SQL, contract, signature or app checks without relevant source changes. Finish asset preparation and full build; lint and visual QA remain required.",
+    "Use visual-qa.cjs for the local review; label its declared R2 byte-verified CORS adapter. No screenshots currently exist.",
+    "Do not integrate to canonical main or publish until required remaining verification passes. No provider activation, production deployment, paid resources or Linux work is authorized in this phase."
+  ],
+  "evidence": [
+    {
+      "name": "focused-checks.json",
+      "bytes": 233,
+      "sha256": "c954f8a2664a20fe7567295c0526a4c7fecbe57014f68d8cf3fab3beb7716507"
+    },
+    {
+      "name": "sql-report.json",
+      "bytes": 454,
+      "sha256": "7562ddd8df582d514a47a951b97ec1eb693b4153e31243a22f82ae9ac2c9c7cc"
+    },
+    {
+      "name": "dependency-review.json",
+      "bytes": 749,
+      "sha256": "7229552124066f23e77bd9f3f216572003e5dc8e38cf1fd8701a094088dcfbfc"
+    },
+    {
+      "name": "contracts-r1-result.json",
+      "bytes": 444,
+      "sha256": "7bb293aed84a2260d44e3dfed1b6fcb0e9e5c2d3fb46005795099a2643f01ade"
+    },
+    {
+      "name": "webhook-test.stdout",
+      "bytes": 173,
+      "sha256": "348f11e54915bb38b72af712ccee264044c51f34c19c7d324875bf1d877d35e9"
+    },
+    {
+      "name": "source-checks-r1.out.log",
+      "bytes": 3629,
+      "sha256": "5cb0d76daca2d9a6333360be35e699fc3a1f1d9074b333f8f0113217c22608f0"
+    },
+    {
+      "name": "local-build-r1-result.json",
+      "bytes": 447,
+      "sha256": "bea28d5cd8cc110c633365b7cb4009dd600255e90c954d5178450cf64ea8f1ca"
+    },
+    {
+      "name": "local-build-r1.out.log",
+      "bytes": 2979,
+      "sha256": "119ddfb12fdc78ae7beecd46ebc6ffdb66e227e59306979bd10fb3f1d6e42d1c"
+    },
+    {
+      "name": "visual-dev-r1-resources.ndjson",
+      "bytes": 1090,
+      "sha256": "afbebe7a15f478a76a866a49cd1d922edad861ed843e834653766e5d25edbe9e"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": ".cache/participation-app.tsbuildinfo"
+  },
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "src/components/**/*.ts",
+    "src/components/**/*.tsx",
+    "src/lib/ui/**/*.ts",
+    "src/lib/participation/**/*.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "src/types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "supabase",
+    "scripts",
+    "tests"
+  ]
+}

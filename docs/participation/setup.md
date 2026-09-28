@@ -4,9 +4,9 @@ This is an implementation setup guide, not an activated service.
 
 ## 1. Verify the source locally
 
-MAIN installs the pinned browser SDK and creates a lockfile. Exclude supabase/** and tests/participation/webhooks.test.ts from the Next compiler; use Deno checks for those files. Create a migration with supabase migration new, then copy the ordered schema source 01, 02, 03 into it. Never apply the schema source to an unrelated existing project.
+The browser SDK is pinned in package.json and package-lock.json. The Next build uses tsconfig.app.json to check the web application and all transitive imports; the base configuration retains the offline tooling scope. Supabase functions and Deno webhook tests are checked separately with Deno. Create a migration with supabase migration new, then copy the ordered schema source 01, 02, 03 into it. Never apply the schema source to an unrelated existing project.
 
-Run the contract tests, SQL authorization/transaction/quota tests, Deno signature tests, typechecks, production build, and desktop/mobile browser checks. No test in this phase has been executed. Verify SDK behavior, auth.sessions schema, CSP, SQL function overload permissions and RLS advisors before considering any activation.
+Run the contract tests, SQL authorization/transaction/quota tests, Deno signature tests, typechecks, production build, and desktop/mobile browser checks. See local-verification-20260928.json for completed checks and exact limitations. Contract, local PostgreSQL fixture, app/Deno type, signature, analytics privacy, and research deep-link checks passed. Lint, the production build, and browser checks remain incomplete because resource safeguards interrupted or blocked them. Verify SDK behavior, auth.sessions schema, CSP, SQL function overload permissions and RLS advisors before considering any activation.
 
 ## 2. Select a dedicated backend
 
@@ -56,7 +56,7 @@ For Monero, verify receipt inside the receiving wallet. A public explorer cannot
 
 ## 7. Connect and activate only verified parts
 
-MAIN adds the exact backend and Turnstile origins to CSP, integrates navigation, applies IsItUSA operator capitalization/About details, and updates the public prelaunch disclosures to the verified operating contact/retention/refund policy. Only then enable the individual features that passed their tests.
+Navigation, the reading-page footer, and IsItUSA capitalization/About details are integrated in the local candidate. Before activation, MAIN adds the exact backend and Turnstile origins to CSP and updates the public prelaunch disclosures to the verified operating contact/retention/refund policy. Only then enable the individual features that passed their tests.
 
 Keep the existing public research release unchanged throughout. Approving a community sighting queues research review; it does not mutate the map.
 

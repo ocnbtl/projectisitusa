@@ -34,7 +34,7 @@ export function parseResearchDeepLink(search: string): Required<ResearchDeepLink
   };
 }
 
-export function buildResearchHref(link: ResearchDeepLink) {
+export function buildResearchHref(link: ResearchDeepLink): "/research" | `/research?${string}` {
   const parameters = new URLSearchParams();
   const stateCode = normalizedStateCode(link.stateCode);
   const countyFips = normalizedCountyFips(link.countyFips);

@@ -19,6 +19,7 @@ export async function json(req:Request) { try {return JSON.parse(new TextDecoder
 export async function hash(text:string) { const digest=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(text));return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,"0")).join(""); }
 export function newToken() {return Array.from(crypto.getRandomValues(new Uint8Array(32)),b=>b.toString(16).padStart(2,"0")).join("");}
 export function checked<T>(result:{data:T;error:{message:string}|null}):T {if(result.error)throw new Error(result.error.message);return result.data;}
+export function requiredData<T>(result:{data:T;error:{message:string}|null}):NonNullable<T> {const data=checked(result);if(data==null)throw new HttpError(404,"The requested record is unavailable.");return data as NonNullable<T>;}
 export async function staff(req:Request,permission:string) {
  const authorization=req.headers.get("Authorization")??"";
  if(!authorization.startsWith("Bearer "))throw new HttpError(401,"Please sign in.");

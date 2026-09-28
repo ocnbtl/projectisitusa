@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/next";
+import { SiteAnalytics } from "@/components/site-analytics";
+import { SiteFooter } from "@/components/site-footer";
 
 import "./globals.css";
 import { Providers } from "@/components/providers";
@@ -33,9 +34,10 @@ export default function RootLayout({
           <div className="app-frame">
             <SiteHeader />
             {children}
+            <SiteFooter />
           </div>
         </Providers>
-        <Analytics />
+        <SiteAnalytics />
       </body>
     </html>
   );

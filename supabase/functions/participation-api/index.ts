@@ -6,7 +6,7 @@ const donationAmount=(value:unknown)=>userInput(()=>rawAmount(value));
 const normalizeEmail=(value:unknown)=>userInput(()=>rawEmail(value));
 const validatePreferences=(...args:Parameters<typeof rawPreferences>)=>userInput(()=>rawPreferences(...args));
 const validateSighting=(...args:Parameters<typeof rawSighting>)=>userInput(()=>rawSighting(...args));
-import { body, challenge, checked, cors, enabled, env, hash, HttpError, json, newToken, rate, responseError, service, site, staff } from "../_shared/runtime.ts";
+import { body, challenge, checked, requiredData, cors, enabled, env, hash, HttpError, json, newToken, rate, responseError, service, site, staff } from "../_shared/runtime.ts";
 
 Deno.serve(async(req:Request)=>{
  let headers:Record<string,string>={};
@@ -16,14 +16,14 @@ Deno.serve(async(req:Request)=>{
   const action=new URL(req.url).pathname.split("/").pop();
   const db=service();
   if(req.method==="GET"&&action==="config"){
-   const wallets=checked(await db.from("isitusa_wallets").select("id,asset,network,address,verified_at,active").eq("active",true));
+   const wallets=requiredData(await db.from("isitusa_wallets").select("id,asset,network,address,verified_at,active").eq("active",true));
    return Response.json({email:enabled("EMAIL_ENABLED"),reports:enabled("REPORTS_ENABLED"),payments:enabled("PAYMENTS_ENABLED"),wallets:enabled("CRYPTO_ENABLED")&&enabled("CONTACT_READY")?wallets.filter(w=>cryptoUri(w)!==null):[]},{headers});
   }
   if(req.method==="GET"&&action==="catalog"){
    const url=new URL(req.url),kind=url.searchParams.get("kind"),query=(url.searchParams.get("q")??"").trim();
    if(!["county","species"].includes(kind??"")||query.length<2||query.length>80)throw new HttpError(400,"Enter at least two letters.");
    const safe=query.replace(/[%_\\]/g,"");
-   const items=checked(await db.from("isitusa_catalog").select("id,label").eq("kind",kind).ilike("label",`%${safe}%`).order("label").limit(20));
+   const items=requiredData(await db.from("isitusa_catalog").select("id,label").eq("kind",kind).ilike("label",`%${safe}%`).order("label").limit(20));
    return Response.json(items,{headers});
   }
   if(req.method!=="POST")throw new HttpError(405,"Method not allowed.");
@@ -95,8 +95,8 @@ Deno.serve(async(req:Request)=>{
   if(action==="photo"){
    const {client}=await staff(req,"review");
    const path=boundedText(input.path,"a photograph",150);
-   const asset=checked(await client.from("isitusa_assets").select("path").eq("path",path).single());
-   const signed=checked(await client.storage.from("isitusa-sightings").createSignedUrl(asset.path,60));
+   const asset=requiredData(await client.from("isitusa_assets").select("path").eq("path",path).single());
+   const signed=requiredData(await client.storage.from("isitusa-sightings").createSignedUrl(asset.path,60));
    return Response.json({url:signed.signedUrl},{headers});
   }
   if(action==="invite"){
