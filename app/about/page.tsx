@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Globe2, Heart, MapPin, ScanSearch } from "lucide-react";
 import { SpeciesImage } from "@/components/species-image";
+import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 
 export const metadata: Metadata = {
   title: "About IsItUSA",
@@ -20,7 +21,7 @@ export default function AboutPage() {
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <figure className="about-field-image">
-          <SpeciesImage src="/species/kudzu.jpg" alt="Kudzu leaves and a cluster of purple flowers" credit="Forest & Kim Starr / Wikimedia Commons" label="Kudzu" />
+          <SpeciesImage src={getSpeciesImageAsset("/species/kudzu.jpg").full.src} alt="Kudzu leaves and a cluster of purple flowers" credit="Forest & Kim Starr / Wikimedia Commons" label="Kudzu" />
           <figcaption><Link href="/species/kudzu">Get to know kudzu <ArrowUpRight size={15} aria-hidden="true" /></Link></figcaption>
         </figure>
       </header>

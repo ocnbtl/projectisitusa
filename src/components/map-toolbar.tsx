@@ -99,7 +99,7 @@ export function MapToolbar(props: MapToolbarProps) {
   const hasFilters = Boolean(count || props.speciesId || props.query);
   function close() { setFilterOpen(false); filterButton.current?.focus(); }
   return <div className="atlas-toolbar">
-    <div className="atlas-control-row">
+    <div className={"atlas-control-row" + (hasFilters ? " has-applied-filters" : "")}>
       <SearchField kind="place" value={placeSearch} results={placeResults} onChange={setPlaceSearch} onChoose={props.onCountySelect} onSubmit={props.onZipSearch} busy={props.isSearching} />
       <SearchField kind="species" value={speciesSearch} results={speciesResults} onChange={setSpeciesSearch} onChoose={props.onSpeciesSelect} onSubmit={props.onQueryChange} />
       <StatePicker value={props.stateCode} onChange={props.onStateChange} />
@@ -113,12 +113,12 @@ export function MapToolbar(props: MapToolbarProps) {
           <footer><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment);close();}}>Apply filters <ArrowRight size={16}/></button><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment(null);props.onClearFilters();close();}}>Clear filters</button></footer>
         </section>}
       </div>
-    {hasFilters && <div className="atlas-filter-row" aria-label="Applied map filters">
-      {props.categories.map(category => <button key={category} className={"filter-chip category-" + category} onClick={() => props.onCategoryToggle(category)} aria-label={"Remove " + CATEGORY_OPTIONS.find(c=>c.value===category)?.label + " filter"}>{CATEGORY_OPTIONS.find(c=>c.value===category)?.label}<X size={13}/></button>)}
-      {props.environment && <button className="filter-chip" onClick={()=>props.onEnvironmentChange(null)} aria-label="Remove environment filter">{ENVIRONMENT_OPTIONS.find(e=>e.value===props.environment)?.label}<X size={13}/></button>}
-      {selectedSpecies && <button className="filter-chip" onClick={()=>props.onSpeciesSelect(null)} aria-label="Remove species filter">{selectedSpecies.commonName}<X size={13}/></button>}
-      {props.query && <button className="filter-chip" onClick={()=>props.onQueryChange("")} aria-label="Remove search filter">{props.query}<X size={13}/></button>}
-      <button className="clear-all-filters" type="button" onClick={props.onClearFilters} aria-label="Clear all filters" title="Clear all filters"><X size={16}/></button>
+    {hasFilters && <div className="atlas-filter-row" aria-label="Applied map filters"><div className="applied-filter-chips">
+      {props.categories.map(category => <button key={category} className={"filter-chip category-" + category} onClick={() => props.onCategoryToggle(category)} aria-label={"Remove " + CATEGORY_OPTIONS.find(c=>c.value===category)?.label + " filter"}><span>{CATEGORY_OPTIONS.find(c=>c.value===category)?.label}</span><X size={13}/></button>)}
+      {props.environment && <button className="filter-chip" onClick={()=>props.onEnvironmentChange(null)} aria-label="Remove environment filter"><span>{ENVIRONMENT_OPTIONS.find(e=>e.value===props.environment)?.label}</span><X size={13}/></button>}
+      {selectedSpecies && <button className="filter-chip" onClick={()=>props.onSpeciesSelect(null)} aria-label="Remove species filter"><span>{selectedSpecies.commonName}</span><X size={13}/></button>}
+      {props.query && <button className="filter-chip" onClick={()=>props.onQueryChange("")} aria-label="Remove search filter"><span>{props.query}</span><X size={13}/></button>}
+      </div><button className="clear-all-filters" type="button" onClick={props.onClearFilters} aria-label="Clear all filters" title="Clear all filters"><X size={16}/></button>
     </div>}
       </div>
     </div>
