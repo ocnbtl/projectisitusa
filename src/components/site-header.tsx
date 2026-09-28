@@ -35,7 +35,7 @@ export function SiteHeader() {
         <span className="brand-full-name">Invasive Species<br />In The United States of America</span>
       </Link>
       <nav ref={nav} aria-label="Primary">
-        <span aria-hidden="true" className="nav-active-pill" style={{ clipPath: "inset(0 calc(100% - " + pill.width + "px) 0 0 round 10px)", transform: `translateX(${pill.left}px)`, opacity: pill.width ? 1 : 0 }} />
+        <span aria-hidden="true" className="nav-active-pill" style={{ width: pill.width, transform: `translateX(${pill.left}px)`, opacity: pill.width ? 1 : 0 }} />
         {navigation.map(({ href, label }) => <Link key={href} href={href}
           aria-current={pathname === href || href === "/species" && pathname.startsWith("/species/") ? "page" : undefined}
           className={href === "/" ? "map-nav-link" : ""}>{label}</Link>)}
