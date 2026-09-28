@@ -10,7 +10,7 @@ The map remains the primary surface. The public identity is IsItUSA, an independ
 
 Homepage: “Understand the species. Protect the places.” Supporting copy explains the atlas and gives a concrete next step. The logo occupies most of the header height; the full name uses regular weight. The page continues to expose useful county records immediately.
 
-The explicit new brief supersedes the earlier fixed, cool-color map scale. Positive counts use six warm bands at most; zero stays separate. Quantile thresholds retain absolute integer labels. The legend names the state or visible-county scope. This is a count comparison, never an abundance, harm or danger score. Manual national zoom uses county centroids within the map focus bounds; counts are recomputed after gesture completion.
+The explicit new brief supersedes the earlier fixed, cool-color map scale. Positive counts use six warm bands at most; zero stays separate. Quantile thresholds retain absolute integer labels. The legend names the state or visible-county scope. This is a count comparison, never an abundance, harm or danger score. Manual national zoom includes counties whose projected bounds intersect the viewport, including partially visible counties. Counts are recomputed after gesture completion. When the viewport has no positive counts, the scale explicitly falls back to the U.S. scope.
 
 ## Motion and interaction
 

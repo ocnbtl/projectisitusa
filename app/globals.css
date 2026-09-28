@@ -237,7 +237,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
   .atlas-control-row { grid-template-columns:minmax(0,1fr) minmax(0,1fr) 155px auto; }
   .has-county .atlas-toolbar { width:calc(100% - 445px); }
   .has-county .atlas-control-row { grid-template-columns:1fr 1fr; }
-  .has-county .map-search-field { grid-column:1/-1; }
+  .has-county .map-search-field { grid-column:auto; }
   .has-county .atlas-filter-panel { top:194px; }
 }
 @media (max-width:700px) {
@@ -519,7 +519,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .filter-control>.filter-trigger { height:54px; width:100%; justify-content:center; gap:7px; }
 .filter-trigger b { display:grid; place-items:center; background:var(--accent); color:var(--background); border-radius:50%; width:19px; height:19px; font-size:11px; }
 .atlas-filter-panel,.has-county .atlas-filter-panel { top:calc(100% + 10px); right:0; width:410px; max-width:calc(100vw - 28px); padding:16px 20px 20px; max-height:calc(100dvh - 235px); overflow:auto; }
-.atlas-filter-panel fieldset { padding:0; margin:16px 0 22px; border:0; }
+.atlas-filter-panel fieldset { display:block; padding:0; margin:16px 0 22px; border:0; }
 .atlas-filter-panel legend { font-size:12px; font-weight:550; margin-bottom:10px; }
 .filter-options { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 .filter-option { display:flex; align-items:center; gap:9px; min-height:48px; padding:10px; font-size:12px; text-align:left; border:1px solid var(--border); border-radius:10px; transition:background-color 180ms, border-color 180ms; }
