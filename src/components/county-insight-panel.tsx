@@ -212,7 +212,7 @@ function CountyContent({
           {nearbyOpened ? (
             <div className="county-disclosure-content">
               <p className="county-note">
-                Mapped in neighboring counties but missing from this county's map
+                Mapped in neighboring counties but missing from this county&apos;s map
                 records. These records do not establish local presence or absence.
               </p>
               <CountySpeciesList

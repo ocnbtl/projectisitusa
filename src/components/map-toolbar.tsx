@@ -70,7 +70,7 @@ export function MapToolbar(props: MapToolbarProps) {
     {open && normalized.length >= 2 ? <div className="search-results" id={resultsId} role="listbox" aria-label="Search results">
       {zip ? <button type="button" role="option" aria-selected={false} onClick={submit}><MapPin size={17} /><span><strong>Find ZIP {normalized}</strong><small>County lookup</small></span></button> : results.length ? results.map((result, index) => <button id={`${resultsId}-${index}`} key={`${result.kind}-${result.id}`} type="button" role="option" aria-selected={active === index} onMouseDown={event => event.preventDefault()} onClick={() => choose(result)}>
         {result.kind === "county" ? <MapPin size={17} /> : <Sprout size={17} />}<span><strong>{result.label}</strong><small>{result.detail}</small></span><em>{result.kind === "county" ? "County" : "Species"}</em>
-      </button>) : <div className="search-empty"><p>No named locations or species found.</p><button type="button" onClick={() => { props.onQueryChange(search.trim()); setOpen(false); }}>Filter species by "{search}"</button></div>}
+      </button>) : <div className="search-empty"><p>No named locations or species found.</p><button type="button" onClick={() => { props.onQueryChange(search.trim()); setOpen(false); }}>Filter species by &quot;{search}&quot;</button></div>}
     </div> : null}
     <div className="atlas-filter-row">
       <button type="button" className="filter-trigger glass-panel" aria-expanded={filterOpen} aria-controls={filtersId} onClick={() => { setFilterOpen(!filterOpen); setOpen(false); }}><SlidersHorizontal size={16} /> Filters {filterCount ? <span className="filter-count">{filterCount}</span> : null}<ChevronDown size={14} /></button>
