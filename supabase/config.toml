@@ -1,0 +1,26 @@
+# Source configuration only. No project is linked or provisioned.
+project_id = "isitusa-participation"
+[auth]
+site_url = "https://isitusa.com"
+additional_redirect_urls = ["https://isitusa.com/auth/confirm"]
+enable_signup = false
+enable_anonymous_sign_ins = false
+jwt_expiry = 900
+[auth.email]
+enable_signup = false
+enable_confirmations = true
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+[functions.participation-api]
+verify_jwt = false
+# Public routes validate Turnstile; staff routes verify Auth and fresh DB permission.
+[functions.participation-stripe]
+verify_jwt = false
+[functions.participation-resend]
+verify_jwt = false
+[functions.participation-delivery]
+verify_jwt = false
+
+[functions.participation-unsubscribe]
+verify_jwt = false
