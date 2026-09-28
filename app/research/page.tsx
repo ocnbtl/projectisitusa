@@ -5,8 +5,8 @@ import stateResearchConfig from "@/data/research/state-research-config.json";
 import stateRegistry from "@/data/research/state-registry.json";
 
 export const metadata: Metadata = {
-  title: "Research status | Project Isitusa",
-  description: "State and county-equivalent evidence coverage, source operations, and research queue status.",
+  title: "Research | IsItUSA",
+  description: "Follow our progress, explore county evidence, and see the sources behind invasive species records.",
 };
 
 export default function ResearchPage() {

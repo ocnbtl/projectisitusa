@@ -223,7 +223,20 @@ function formatPercent(value: number) {
   return `${value.toFixed(2)}%`;
 }
 
+const PUBLIC_LABELS: Record<string, string> = {
+  "verified-present": "Recorded present",
+  "verified-absent": "Verified absent",
+  "not-detected": "Survey non-detection",
+  "researched-unresolved": "No determination yet",
+  "not-researched": "Not yet researched",
+  "reviewed-no-qualifying-evidence": "No qualifying evidence",
+  "source-screened": "Source checked",
+  "not-started": "Not started",
+  "fungi-diseases": "Fungi & diseases",
+};
+
 function formatLabel(value: string) {
+  if (PUBLIC_LABELS[value]) return PUBLIC_LABELS[value];
   return value
     .replace(/[_-]+/g, " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
@@ -286,7 +299,7 @@ function StatusBadge({ status, label }: { status: string; label?: string }) {
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div className="min-w-0 px-3 py-3 sm:px-4">
-      <dt className="text-[11px] font-medium uppercase text-[var(--muted)]">
+      <dt className="text-xs font-medium text-[var(--muted)]">
         {label}
       </dt>
       <dd className="mt-1 font-[family-name:var(--font-display)] text-lg font-semibold tabular-nums text-[var(--foreground)]">
@@ -873,7 +886,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
   );
   const [countyData, setCountyData] = useState<CountyResearchFile | null>(null);
   const [loadState, setLoadState] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [loadError, setLoadError] = useState<string | null>(null);
+  const [, setLoadError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
   const [query, setQuery] = useState(initialDeepLink.speciesQuery ?? "");
   const deferredQuery = useDeferredValue(query);
@@ -1113,7 +1126,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             County data unavailable
           </h2>
           <p className="mt-2 max-w-lg text-sm leading-6 text-[var(--muted)]">
-            {loadError}
+            We could not load this county's records. Check your connection and try again, or choose another county.
           </p>
           <button
             type="button"
@@ -1565,6 +1578,34 @@ function isResearchSummaryFile(
   );
 }
 
+function ResearchHeader({ availableStates, selectedStateCode, onStateChange, summary }: {
+  availableStates: ResearchStateOption[];
+  selectedStateCode: string;
+  onStateChange: (stateCode: string) => void;
+  summary?: ResearchSummaryFile;
+}) {
+  return (
+    <header className="reading-hero research-heading">
+      <div>
+        <h1>Follow the research.</h1>
+        <p>See what the records tell us, where they come from, and what still needs a closer look.</p>
+        {summary && <a href="#research-explorer" className="text-link">Explore county evidence <ArrowDown size={16} aria-hidden="true" /></a>}
+      </div>
+      <div className="research-state-control">
+        <SelectField label="Choose a state" value={selectedStateCode}
+          options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}
+          onChange={onStateChange} />
+        {summary && <><p>Research through {formatDate(summary.asOf)}</p>
+          <details className="research-publication-details"><summary>About this update</summary>
+            <p>Observation dates appear with each source. An update can include older records.</p>
+            <p>Catalog snapshot: {formatDate(summary.sourceSnapshotDate)}.</p>
+            <p>Generated {formatTimestamp(summary.generatedAt)}.</p>
+          </details></>}
+      </div>
+    </header>
+  );
+}
+
 function ResearchControlCenterContent({
   summary,
   availableStates,
@@ -1593,47 +1634,71 @@ function ResearchControlCenterContent({
 
   return (
     <main id="main-content" className="reading-page research-page">
-      <header className="border-b border-[var(--border)] pb-5 pt-2">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)]">
-              Research you can follow.
-            </h1>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-              See what we know about {summary.stateName}, where the information comes from, and what still needs a closer look.
-            </p>
-          </div>
-          <div className="text-xs leading-5 text-[var(--muted)] sm:text-right">
-            <div className="mb-3 min-w-52 text-left sm:ml-auto">
-              <SelectField
-                label="State"
-                value={summary.stateCode}
-                options={availableStates.map((entry) => ({
-                  value: entry.stateCode,
-                  label: `${entry.stateName} (${entry.stateCode})`,
-                }))}
-                onChange={onStateChange}
-              />
-            </div>
-            <p>Updated {formatDate(summary.asOf)}</p>
-            <details className="research-publication-details"><summary>About this update</summary><p>Records assessed through {formatDate(summary.asOf)}. Observation dates appear with each source.</p><p>Catalog snapshot: {formatDate(summary.sourceSnapshotDate)}.</p><p>Generated {formatTimestamp(summary.generatedAt)}.</p></details>
-
-          </div>
-        </div>
-      </header>
+      <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} summary={summary} />
 
       <section className="research-overview" aria-label="Published research coverage">
         <h2 className="text-2xl font-semibold">Our progress in {summary.stateName}</h2>
-        <p className="mt-3 text-[var(--muted)]">We check {formatNumber(summary.summary.speciesCount)} species across {formatNumber(summary.summary.countyCount)} counties and county equivalents. Each species in each county is a separate research question.</p>
+        <p className="mt-3 text-[var(--muted)]">{formatNumber(summary.summary.speciesCount)} catalog species, across {formatNumber(summary.summary.countyCount)} counties and county equivalents. Progress is measured for each species in each county.</p>
         <div className="research-progress">
-          <div><label htmlFor="source-progress">Sources checked <strong>{formatPercent(summary.summary.researchCoveragePercent)}</strong></label><progress id="source-progress" max={100} value={summary.summary.researchCoveragePercent} /><p>A source has been checked or a finding recorded. More work may still be needed.</p></div>
-          <div><label htmlFor="determination-progress">Presence or absence findings <strong>{formatPercent(summary.summary.determinationCoveragePercent)}</strong></label><progress id="determination-progress" max={100} value={summary.summary.determinationCoveragePercent} /><p>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)} of {formatNumber(summary.summary.totalPairs)} county-species questions have a reviewed finding.</p></div>
+          <div><label htmlFor="source-progress">Source checks <strong>{formatPercent(summary.summary.researchCoveragePercent)}</strong></label><progress id="source-progress" max={100} value={summary.summary.researchCoveragePercent} /><p>A source has been checked or a finding recorded. More work may still be needed.</p></div>
+          <div><label htmlFor="determination-progress">Reviewed findings <strong>{formatPercent(summary.summary.determinationCoveragePercent)}</strong></label><progress id="determination-progress" max={100} value={summary.summary.determinationCoveragePercent} /><p>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)} of {formatNumber(summary.summary.totalPairs)} county-species questions have a reviewed finding.</p></div>
         </div>
+        <details className="research-accounting research-counts"><summary>See the research counts</summary>
         <dl className="research-status-strip">
           {[["Recorded present", summary.summary.verifiedPresent], ["Absence determinations", summary.summary.verifiedAbsent], ["Survey non-detections", summary.summary.notDetected], ["Research unresolved", summary.summary.researchedUnresolved], ["Not researched", summary.summary.notResearched]].map(([label, value]) => <div key={String(label)}><dt>{label}</dt><dd>{formatNumber(Number(value))}</dd></div>)}
         </dl>
         <p className="county-note">Records can be historical. A survey that found nothing is different from an agency finding of absence. Missing information remains an open question.</p>
+        </details>
       </section>
+      <div id="research-explorer" className="research-tabs">
+        <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">
+          {VIEW_OPTIONS.map((view) => {
+            const Icon = view.icon;
+            const isActive = activeView === view.id;
+            return (
+              <button
+                key={view.id}
+                id={`research-tab-${view.id}`}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                tabIndex={isActive ? 0 : -1}
+                aria-controls={`research-panel-${view.id}`}
+                onClick={() => setActiveView(view.id)}
+                onKeyDown={(event) => {
+                  const keys = ["ArrowRight", "ArrowLeft", "Home", "End"];
+                  if (!keys.includes(event.key)) return;
+                  event.preventDefault();
+                  const index = VIEW_OPTIONS.findIndex(option => option.id === view.id);
+                  const next = event.key === "Home" ? 0 : event.key === "End" ? VIEW_OPTIONS.length - 1
+                    : (index + (event.key === "ArrowRight" ? 1 : -1) + VIEW_OPTIONS.length) % VIEW_OPTIONS.length;
+                  setActiveView(VIEW_OPTIONS[next].id);
+                  event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[next]?.focus();
+                }}
+                className={`inline-flex h-10 items-center gap-2 border-b-2 px-3 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] ${
+                  isActive
+                    ? "border-[var(--accent)] text-[var(--foreground)]"
+                    : "border-transparent text-[var(--muted)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                <Icon aria-hidden="true" size={16} />
+                {view.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div
+        id={`research-panel-${activeView}`}
+        role="tabpanel"
+        tabIndex={0}
+        aria-labelledby={`research-tab-${activeView}`}
+      >
+        {activeView === "county" ? <CountyResearchView summary={summary} /> : null}
+        {activeView === "sources" ? <SourceOperationsView summary={summary} /> : null}
+        {activeView === "queue" ? <QueueView summary={summary} /> : null}
+      </div>
       <details className="research-accounting"><summary>How we measure progress</summary>
       <div
         className={`border-b px-4 py-3 text-sm leading-6 ${
@@ -1662,43 +1727,6 @@ function ResearchControlCenterContent({
       </dl>
 
       </details>
-      <div className="overflow-x-auto border-b border-[var(--border)] pt-5">
-        <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">
-          {VIEW_OPTIONS.map((view) => {
-            const Icon = view.icon;
-            const isActive = activeView === view.id;
-            return (
-              <button
-                key={view.id}
-                id={`research-tab-${view.id}`}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                aria-controls={`research-panel-${view.id}`}
-                onClick={() => setActiveView(view.id)}
-                className={`inline-flex h-10 items-center gap-2 border-b-2 px-3 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] ${
-                  isActive
-                    ? "border-[var(--accent)] text-[var(--foreground)]"
-                    : "border-transparent text-[var(--muted)] hover:text-[var(--foreground)]"
-                }`}
-              >
-                <Icon aria-hidden="true" size={16} />
-                {view.label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      <div
-        id={`research-panel-${activeView}`}
-        role="tabpanel"
-        aria-labelledby={`research-tab-${activeView}`}
-      >
-        {activeView === "county" ? <CountyResearchView summary={summary} /> : null}
-        {activeView === "sources" ? <SourceOperationsView summary={summary} /> : null}
-        {activeView === "queue" ? <QueueView summary={summary} /> : null}
-      </div>
     </main>
   );
 }
@@ -1779,25 +1807,19 @@ export function ResearchControlCenter({
   }
 
   return (
-    <main id="main-content" className="mx-auto flex min-h-[420px] w-full max-w-[1600px] items-center justify-center px-4 pb-12 sm:px-6 lg:px-8">
+    <main id="main-content" className="reading-page research-page">
+      <ResearchHeader availableStates={availableStates} selectedStateCode={selectedStateCode} onStateChange={handleStateChange} />
       {loadError ? (
-        <div className="max-w-lg border-y border-[var(--border)] px-4 py-10 text-center">
-          <AlertCircle aria-hidden="true" className="mx-auto text-[var(--danger)]" size={24} />
-          <h1 className="mt-3 font-semibold text-[var(--foreground)]">Research data unavailable</h1>
-          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{loadError}</p>
-          <button
-            type="button"
-            onClick={() => setReloadKey((current) => current + 1)}
-            className="mt-4 inline-flex h-9 items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--surface)] px-3 text-sm font-medium text-[var(--foreground)] hover:border-[var(--accent)]"
-          >
-            <RefreshCw aria-hidden="true" size={15} />
-            Retry
-          </button>
+        <div className="research-state-message" role="alert">
+          <AlertCircle aria-hidden="true" size={26} />
+          <h2>We could not load these records.</h2>
+          <p>Check your connection and try again, or choose another state. Missing results here do not mean a species is absent.</p>
+          <button type="button" onClick={() => setReloadKey(current => current + 1)} className="primary-button inline-flex items-center gap-2"><RefreshCw size={16} aria-hidden="true" />Try again</button>
         </div>
       ) : (
-        <div className="flex items-center text-sm text-[var(--muted)]">
-          <LoaderCircle aria-hidden="true" className="mr-2 animate-spin" size={18} />
-          Loading research status
+        <div className="research-state-message" role="status">
+          <p className="flex items-center gap-2"><LoaderCircle aria-hidden="true" className="animate-spin" size={18} />Loading research for {availableStates.find(state => state.stateCode === selectedStateCode)?.stateName ?? selectedStateCode}...</p>
+          <div className="directory-skeleton" aria-hidden="true"><span /><span /></div>
         </div>
       )}
     </main>
