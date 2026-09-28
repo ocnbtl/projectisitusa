@@ -1126,7 +1126,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             County data unavailable
           </h2>
           <p className="mt-2 max-w-lg text-sm leading-6 text-[var(--muted)]">
-            We could not load this county's records. Check your connection and try again, or choose another county.
+            We could not load this county&apos;s records. Check your connection and try again, or choose another county.
           </p>
           <button
             type="button"
