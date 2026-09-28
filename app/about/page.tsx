@@ -22,7 +22,7 @@ export default function AboutPage() {
         </div>
         <figure className="about-field-image">
           <SpeciesImage src={getSpeciesImageAsset("/species/kudzu.jpg").full.src} alt="Kudzu leaves and a cluster of purple flowers" credit="Forest & Kim Starr / Wikimedia Commons" label="Kudzu" />
-          <figcaption><Link href="/species/kudzu">Get to know kudzu <ArrowUpRight size={15} aria-hidden="true" /></Link></figcaption>
+          <figcaption><Link href="/species/kudzu">Get to know kudzu <ArrowUpRight size={15} aria-hidden="true" /></Link><p className="text-xs text-[var(--muted)]"><a href="https://commons.wikimedia.org/wiki/File:Starr_021012-0015_Pueraria_montana_var._lobata.jpg" target="_blank" rel="noreferrer">Photo by Forest &amp; Kim Starr</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a>. Resized and cropped for display.</p></figcaption>
         </figure>
       </header>
 
