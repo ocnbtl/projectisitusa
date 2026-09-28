@@ -4,6 +4,6 @@
 
 /* Participation uses the same page canvas as the atlas reading pages. */
 .page{width:100%;max-width:none;margin:0;padding:calc(var(--site-header-top) + var(--site-header-height) + 56px) var(--page-gutter) 80px}
-.intro{max-width:none;margin-bottom:48px}.intro h1{max-width:26ch;font-size:clamp(38px,4.5vw,68px);font-weight:500;text-wrap:pretty;line-height:1.1}.intro p{max-width:70ch;font-size:18px;line-height:1.8}
+.intro{max-width:none;margin-bottom:48px}.intro h1{max-width:none;font-size:clamp(38px,4.5vw,68px);font-weight:500;text-wrap:pretty;line-height:1.1}.intro p{max-width:70ch;font-size:18px;line-height:1.8}
 .layout{grid-template-columns:minmax(0,1fr) minmax(260px,.42fr);gap:clamp(40px,7vw,120px)}.layout>div{min-width:0}.aside{border-top:1px solid var(--border);max-width:48ch;padding-top:24px}.aside h2{font-size:22px;font-weight:500}.section h2{font-size:clamp(24px,2.5vw,36px);font-weight:500;margin-bottom:16px}.section>.hint{font-size:16px;line-height:1.85;max-width:70ch;margin-bottom:24px}.notice{max-width:75ch;line-height:1.8;padding:20px 22px}.row{gap:12px 24px}.form{max-width:800px}.footer{margin-top:56px}.intro+.layout{padding-top:32px;border-top:1px solid var(--border)}
 @media(max-width:760px){.page{padding:calc(var(--site-header-top) + var(--site-header-height) + 30px) var(--page-gutter) 56px}.intro{margin-bottom:28px}.intro h1{font-size:38px;max-width:none}.intro p{font-size:16px}.layout{grid-template-columns:1fr;gap:40px}.intro+.layout{padding-top:24px}.section>.hint{font-size:15px}.aside{max-width:none}}
