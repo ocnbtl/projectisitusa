@@ -21,6 +21,7 @@ interface UsCountyMapProps {
   countyMatchCounts: Record<string, number>;
   maxCountyMatchCount: number;
   onCountySelect: (fips: string) => void;
+  sheetExpanded: boolean;
 }
 
 export function getHeatFill(count: number, maxCount: number, hasData: boolean) {
@@ -30,7 +31,7 @@ export function getHeatFill(count: number, maxCount: number, hasData: boolean) {
   return ratio >= .8 ? "var(--county-critical)" : ratio >= .55 ? "var(--county-high)" : ratio >= .3 ? "var(--county-mid)" : "var(--county-low)";
 }
 
-export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceIndex, selectedCountyFips, neighboringCountyFips, countyMatchCounts, maxCountyMatchCount, onCountySelect }: UsCountyMapProps) {
+export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceIndex, selectedCountyFips, neighboringCountyFips, countyMatchCounts, maxCountyMatchCount, onCountySelect, sheetExpanded }: UsCountyMapProps) {
   const container = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 1200, height: 800 });
   const [region, setRegion] = useState<Region>("US");
@@ -39,6 +40,31 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
   const drag = useRef<{ x: number; y: number; startX: number; startY: number; moved: boolean } | null>(null);
   const didDrag = useRef(false);
   const pendingFocus = useRef<string | null>(null);
+  const [focusArea, setFocusArea] = useState({ left: 16, right: 1184, top: 180, bottom: 784 });
+  useEffect(() => {
+    const node = container.current;
+    const parent = node?.parentElement;
+    if (!node || !parent) return;
+    const sheet = parent.querySelector<HTMLElement>(".county-sheet");
+    const toolbar = parent.querySelector<HTMLElement>(".atlas-toolbar");
+    const measure = () => {
+      const rect = node.getBoundingClientRect();
+      const panel = sheet?.getBoundingClientRect();
+      const controls = toolbar?.getBoundingClientRect();
+      const mobile = rect.width <= 700;
+      const top = mobile ? Math.max(150, (controls?.bottom ?? rect.top + 180) - rect.top + 64) : 180;
+      const right = !mobile && panel ? panel.left - rect.left - 16 : rect.width - 16;
+      const bottom = mobile && panel ? panel.top - rect.top - 16 : rect.height - 32;
+      const next = { left: 16, right: Math.max(32, right), top: Math.min(top, bottom - 16), bottom };
+      setFocusArea(old => Object.keys(next).every(key => old[key as keyof typeof old] === next[key as keyof typeof next]) ? old : next);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(node);
+    if (sheet) observer.observe(sheet);
+    if (toolbar) observer.observe(toolbar);
+    return () => observer.disconnect();
+  }, [selectedCountyFips, sheetExpanded]);
 
   useEffect(() => {
     const node = container.current;
@@ -71,7 +97,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     if (!selectedCountyFips) { setView({ x: 0, y: 0, k: 1 }); return; }
     const nextRegion: Region = selectedCountyFips.startsWith("02") ? "AK" : selectedCountyFips.startsWith("15") ? "HI" : "US";
     setRegion(nextRegion);
-  }, [selectedCountyFips]);
+  }, [selectedCountyFips, sheetExpanded]);
   useEffect(() => {
     if (!pendingFocus.current) return;
     const expectedRegion = pendingFocus.current.startsWith("02") ? "AK" : pendingFocus.current.startsWith("15") ? "HI" : "US";
@@ -79,8 +105,8 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     const shape = shapes.find(s => s.fips === pendingFocus.current);
     if (!shape || !shape.center.every(Number.isFinite)) { setView({ x: 0, y: 0, k: 1 }); return; }
     const k = region === "US" ? 2.7 : 1.6;
-    setView({ x: (size.width <= 700 ? size.width / 2 : (size.width - (size.width <= 1100 ? 404 : 444)) / 2) - shape.center[0] * k, y: (size.width <= 700 ? 255 : size.height * .46) - shape.center[1] * k, k });
-  }, [selectedCountyFips, shapes, region, size]);
+    setView({ x: (focusArea.left + focusArea.right) / 2 - shape.center[0] * k, y: (focusArea.top + focusArea.bottom) / 2 - shape.center[1] * k, k });
+  }, [selectedCountyFips, shapes, region, size, focusArea]);
 
   function zoom(factor: number) {
     setView(current => {
@@ -107,7 +133,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
       </g>
     </svg>
     <div className="atlas-regions glass-panel" role="group" aria-label="Map region">
-      {regions.map(([id, label]) => <button key={id} type="button" aria-pressed={region === id} onClick={() => { pendingFocus.current = null; setRegion(id); setView({ x: 0, y: 0, k: 1 }); }}>{label}</button>)}
+      {regions.map(([id, label]) => <button key={id} type="button" aria-label={label} aria-pressed={region === id} onClick={() => { pendingFocus.current = null; setRegion(id); setView({ x: 0, y: 0, k: 1 }); }}><span className="region-label-full">{label}</span><span className="region-label-short" aria-hidden="true">{id === "US" ? "U.S." : label}</span></button>)}
     </div>
     <div className="atlas-zoom glass-panel" role="group" aria-label="Map controls">
       <button type="button" aria-label="Zoom in" onClick={() => zoom(1.4)} disabled={view.k >= 12}><Plus size={19} /></button>

@@ -133,20 +133,21 @@ export function validatePublishedManifest(
 async function loadManifest(
   validatedDelivery: ResearchDataDelivery,
   request: FetchLike,
+  signal: AbortSignal,
 ): Promise<Map<string, PublishedArtifact>> {
   if (validatedDelivery.mode !== "r2") {
     throw new Error("R2 research delivery is not active.");
   }
   const pointerResponse = await request(
     `${validatedDelivery.r2.origin}/${validatedDelivery.r2.pointerPath}`,
-    { cache: "no-store" },
+    { cache: "no-store", signal },
   );
   if (!pointerResponse.ok) {
     throw new Error(`Research release pointer request failed with status ${pointerResponse.status}.`);
   }
   const pointer = validatePublishedPointer(await pointerResponse.json());
   const manifestResponse = await request(`${validatedDelivery.r2.origin}/${pointer.releaseManifestKey}`, {
-    cache: "force-cache",
+    cache: "force-cache", signal,
   });
   const manifestBytes = await verifiedResponseBytes(
     manifestResponse,
@@ -159,15 +160,25 @@ async function loadManifest(
 export function createResearchProjectionFetcher(
   inputDelivery: unknown,
   request: FetchLike = fetch,
+  manifestTimeoutMs = 15000,
 ) {
   const validatedDelivery = validateResearchDataDelivery(inputDelivery);
   let manifestPromise: Promise<Map<string, PublishedArtifact>> | null = null;
 
   function resolvedManifest() {
-    manifestPromise ??= loadManifest(validatedDelivery, request).catch((error) => {
-      manifestPromise = null;
-      throw error;
-    });
+    if (!manifestPromise) {
+      const controller = new AbortController();
+      let timer: ReturnType<typeof setTimeout>;
+      const timeout = new Promise<never>((_, reject) => {
+        timer = setTimeout(() => {
+          controller.abort();
+          reject(new Error("Research release discovery timed out. Please retry."));
+        }, manifestTimeoutMs);
+      });
+      manifestPromise = Promise.race([loadManifest(validatedDelivery, request, controller.signal), timeout])
+        .finally(() => clearTimeout(timer))
+        .catch((error) => { manifestPromise = null; throw error; });
+    }
     return manifestPromise;
   }
 
@@ -184,7 +195,9 @@ export function createResearchProjectionFetcher(
       return response.json() as Promise<unknown>;
     }
 
+    init.signal?.throwIfAborted();
     const manifest = await resolvedManifest();
+    init.signal?.throwIfAborted();
     const logicalPath = `public/generated/research/${relativePath}`;
     const artifact = manifest.get(logicalPath);
     if (!artifact) {

@@ -97,7 +97,23 @@ async function main() {
     /invalid identity/iu,
   );
 
-  console.log("Public R2 projection fetch tests passed.");
+  for (const stallAt of ["pointer", "manifest"] as const) {
+    let stall = true;
+    let observedSignal: AbortSignal | null = null;
+    const retryingFetcher = createResearchProjectionFetcher(delivery, async (input, init) => {
+      const url = String(input);
+      if (stall && (stallAt === "pointer" ? url.endsWith("current.json") : url.endsWith("manifest.json"))) {
+        stall = false;
+        observedSignal = init?.signal ?? null;
+        return new Promise<Response>(() => {});
+      }
+      return request(input);
+    }, 20);
+    await assert.rejects(retryingFetcher("MD/summary.json"), /timed out/iu);
+    assert.equal((observedSignal as AbortSignal | null)?.aborted, true);
+    assert.deepEqual(await retryingFetcher("MD/summary.json"), { stateCode: "MD" });
+  }
+  console.log("Public R2 projection fetch tests passed, including stalled pointer/manifest retry.");
 }
 
 void main();
