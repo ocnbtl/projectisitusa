@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "jobId": "isitusa-atlas-refinement-20260928",
+  "state": "source-frozen-awaiting-hosted-validation",
+  "sourceCommit": "78a0783215084321c3c001d38b3279f066cd104e",
+  "baseCommit": "b1056b039d6b27ec2ce94b8415f6a869113dc4c3",
+  "branch": "codex/isitusa-atlas-refinement-20260928",
+  "worktree": "C:/Code/project-isitusa-worktrees/isitusa-ui-release",
+  "sourcePaths": [
+    "app/about/page.tsx",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/species/[slug]/page.tsx",
+    "app/species/page.tsx",
+    "src/components/map-explorer.tsx",
+    "src/components/map-toolbar.tsx",
+    "src/components/site-header.tsx",
+    "src/components/species-directory.tsx",
+    "src/components/us-county-map.tsx",
+    "src/lib/ui/map-scale.ts",
+    "app/loading.tsx",
+    "docs/design/isitusa-redesign/atlas-refinement/design-and-validation.md",
+    "docs/design/isitusa-redesign/atlas-refinement/editorial-photo-audit.json",
+    "docs/design/isitusa-redesign/atlas-refinement/flag-provenance.json",
+    "docs/design/isitusa-redesign/atlas-refinement/resource-history.json",
+    "docs/design/isitusa-redesign/atlas-refinement/resources.jsonl",
+    "src/components/atlas/logo-loader.tsx",
+    "src/components/atlas/route-transition.tsx",
+    "src/components/atlas/state-picker.tsx",
+    "src/components/atlas/update-notice.tsx",
+    "src/content/site-updates.ts",
+    "src/content/species-editorial.ts",
+    "src/content/state-flags.ts",
+    "src/lib/ui/species-editorial.ts",
+    "tests/ui/atlas-refinement.test.ts"
+  ],
+  "publication": {
+    "productionChanged": false,
+    "pushPerformed": false,
+    "providerChanges": false,
+    "researchDataChanges": false
+  },
+  "checks": {
+    "syntaxParse": "20 initial TS/TSX files passed; subsequent edits passed ESLint",
+    "scopedEslint": "passed; existing eslintrc deprecation warning only",
+    "scaleTests": {
+      "passed": 3,
+      "failed": 0,
+      "command": "node --max-old-space-size=256 --experimental-strip-types --test tests/ui/atlas-refinement.test.ts"
+    },
+    "impeccableDetector": "0 findings after replacing animated width with clip-path",
+    "gitDiffCheck": "passed",
+    "build": "NOT RUN LOCALLY - hosted gate required",
+    "fullTypecheck": "PENDING HOSTED BUILD",
+    "runtimeQA": "PENDING PREVIEW"
+  },
+  "editorial": {
+    "descriptionsIndividuallySourced": 24,
+    "remainingDescriptionReview": 2480,
+    "completeMetadataInventory": 2504,
+    "firstPagePhotosVisuallyScreened": 19,
+    "fullSizeFollowUp": "Asparagus asparagoides, metadata/name match and broad foliage visible",
+    "taxonomicPhotoAuditComplete": false,
+    "imagesWithheld": [
+      "kilifia-acuminata",
+      "pineus-boerneri",
+      "hemichromis-letourneuxi"
+    ],
+    "newPhotoAssets": 0,
+    "missingCatalogImages": 414,
+    "sourceManifestEntries": 2088,
+    "runtimeImages": 2090,
+    "sourceEntriesWithoutExplicitLicense": 490,
+    "limitations": "Screening is not expert identification. No conclusive taxonomic mismatch claimed. Images withheld show collection-slide/ledger content. Complete individual photo audit and replacement images remain queued."
+  },
+  "flags": {
+    "statesAndDC": 51,
+    "source": "Wikimedia Commons gallery and imageinfo API",
+    "bulkDownload": false,
+    "securityPolicyChanged": false,
+    "credits": "Public-domain source links; Maine Enzwell CC BY-SA 4.0 and Mississippi copyrighted-free-use attribution included."
+  },
+  "truthDecisions": [
+    "Most searched ZIP omitted because no verified ranking exists; truthful county suggestions are supplied.",
+    "ZIP searches resolve to county scope, not ZIP-level species counts.",
+    "Today is labeled separately from actual release and research-snapshot dates.",
+    "Warm palette represents counts only; state/visible geographic scope and absolute bands are explicit.",
+    "Registry placeholder summaries are suppressed; existing substantive copy preserved.",
+    "No claims of international acclaim, institutional membership or current global operation."
+  ],
+  "resources": {
+    "maxSourceBytes": 20000000,
+    "approxConservativeChangedBytes": 1582419,
+    "stopBelowDiskBytes": 260000000000,
+    "localBuilds": 0,
+    "installs": 0,
+    "sourceFreezeForPaging": "2026-09-28T16:02:53Z",
+    "mainReleasedFreeze": "2026-09-28T16:06:21Z",
+    "samplerOwner": "MAIN",
+    "request": "Stop sampler attempt2 now that source is frozen."
+  },
+  "requiredPreviewChecks": "See design-and-validation.md",
+  "remainingWork": [
+    "Hosted build/typecheck and release data invariants",
+    "Desktop/mobile browser QA including320px, reduced motion, keyboard, CSP flag loads, navigation loading, pan/zoom and AK/HI/CT/ND counts",
+    "Photo replacements and individual remaining2480 descriptions/photo verification",
+    "Search popularity instrumentation/data before any trending ZIP feature",
+    "Confirm manual release-note date still matches actual publication date"
+  ],
+  "at": "2026-09-28T16:16:00.627Z",
+  "fileDigests": [
+    {
+      "path": "app/about/page.tsx",
+      "bytes": 5906,
+      "sha256": "bae22119481193cd457521cf7012147229daa7c6ce7d48352f8bd19f22fcfd63"
+    },
+    {
+      "path": "app/globals.css",
+      "bytes": 64666,
+      "sha256": "14338627ab5562430a3abf1328a6f4104e0e56392687188c2961723461a29de6"
+    },
+    {
+      "path": "app/layout.tsx",
+      "bytes": 1321,
+      "sha256": "bcfb19681e12ed2fb00b45081162e0217668421612710ffd1636b5f3a0645b5e"
+    },
+    {
+      "path": "app/species/[slug]/page.tsx",
+      "bytes": 9070,
+      "sha256": "2295ebdf1479b7a4f1dc574096ea18747cec9c156bd8fedaf3e777720e8ce4be"
+    },
+    {
+      "path": "app/species/page.tsx",
+      "bytes": 1509,
+      "sha256": "7d0f06bb553622db613a4551e32de0bea1ad1b3492bbcc8f0268bb7955d6977e"
+    },
+    {
+      "path": "src/components/map-explorer.tsx",
+      "bytes": 13411,
+      "sha256": "b23ecc3fafbe4027ff91aef70fdb0dde9185218a4539f0bb5c0f9fa16fd90728"
+    },
+    {
+      "path": "src/components/map-toolbar.tsx",
+      "bytes": 13660,
+      "sha256": "bac4ecb00c17625e7665081fa499be023aa5da08ec34525498befeb71d26d959"
+    },
+    {
+      "path": "src/components/site-header.tsx",
+      "bytes": 2146,
+      "sha256": "7f843841a030a11f0bed63bc047eb7e7e538ec5a14bd09bdcabae327483c71f4"
+    },
+    {
+      "path": "src/components/species-directory.tsx",
+      "bytes": 9932,
+      "sha256": "3ce57a38d2921fa61b4524afa6575238bb71d0862f7d9b59c62f4749d6905fd3"
+    },
+    {
+      "path": "src/components/us-county-map.tsx",
+      "bytes": 13405,
+      "sha256": "5cd89367643b489fdc98436481144a3e8d8619a7dce682350ff25e26925590bd"
+    },
+    {
+      "path": "src/lib/ui/map-scale.ts",
+      "bytes": 1534,
+      "sha256": "0bea2e8c4517ed7862d1b6c652ea49e3311b274040797e1aa53ee67fb179e130"
+    },
+    {
+      "path": "app/loading.tsx",
+      "bytes": 130,
+      "sha256": "3e58c8d9c78f62f62004804f67e6ed6fe98a9c5ce2ba172d2bd25a554d83fa90"
+    },
+    {
+      "path": "docs/design/isitusa-redesign/atlas-refinement/design-and-validation.md",
+      "bytes": 5232,
+      "sha256": "318c2e7946fe5f327c3c1af2dcc4778673f09a878dd0cfd1955d703ef8bfbc9c"
+    },
+    {
+      "path": "docs/design/isitusa-redesign/atlas-refinement/editorial-photo-audit.json",
+      "bytes": 1387222,
+      "sha256": "e30d43dda828044869cd240006b63047c2a3142594b338af3528c4d6f1a3f159"
+    },
+    {
+      "path": "docs/design/isitusa-redesign/atlas-refinement/flag-provenance.json",
+      "bytes": 14188,
+      "sha256": "60201ff8c8d45ae34351d2cc1f813d44ecd71b811606563a17fcd7b32864059f"
+    },
+    {
+      "path": "docs/design/isitusa-redesign/atlas-refinement/resource-history.json",
+      "bytes": 962,
+      "sha256": "60e51db1192ec231aa4f1bb93bcaeb7fdbf845f47a95be539e468a3328b73ffe"
+    },
+    {
+      "path": "docs/design/isitusa-redesign/atlas-refinement/resources.jsonl",
+      "bytes": 166,
+      "sha256": "c76b4ddf216c62eee359f4a509623442e0ac3faad236c72366ed74065b23f149"
+    },
+    {
+      "path": "src/components/atlas/logo-loader.tsx",
+      "bytes": 358,
+      "sha256": "7ba331e754561643c8376d3a841e9ab99e170d3ae89cf0f03cf4d160e65d0df5"
+    },
+    {
+      "path": "src/components/atlas/route-transition.tsx",
+      "bytes": 1746,
+      "sha256": "d838c7fccd73b92268ed7b4ad94e9f3bfbdebf8c06c7b142d5b90014e69e6e02"
+    },
+    {
+      "path": "src/components/atlas/state-picker.tsx",
+      "bytes": 4727,
+      "sha256": "2fa67fdf33749804c454f6d425fc15107bcaaa9d0723f74f18bba6be031946b2"
+    },
+    {
+      "path": "src/components/atlas/update-notice.tsx",
+      "bytes": 2713,
+      "sha256": "5243723907d423b6842191937d5779bd1fdcc6f83b8d76f4c5a5f71a57af1135"
+    },
+    {
+      "path": "src/content/site-updates.ts",
+      "bytes": 418,
+      "sha256": "650daeeabee8f2ffdf2c8b8531b3217b353ff3f33d349ffba6fcd6ab36036404"
+    },
+    {
+      "path": "src/content/species-editorial.ts",
+      "bytes": 11414,
+      "sha256": "7723aec5237cb192b4c49584602d8de58b1576e7fa4f5375538f774baaaa1045"
+    },
+    {
+      "path": "src/content/state-flags.ts",
+      "bytes": 13640,
+      "sha256": "eafd6a52197af064aa3573e8416bd5f1912fca4c6032b4c3e5c4a1b1d608ba6d"
+    },
+    {
+      "path": "src/lib/ui/species-editorial.ts",
+      "bytes": 1017,
+      "sha256": "97de3b872f43d814ddb94e59ebe5a2d42786bfac1c18ffa8e0ba9fbc622bbc9c"
+    },
+    {
+      "path": "tests/ui/atlas-refinement.test.ts",
+      "bytes": 1943,
+      "sha256": "872110605b27e2511dde05d44f7d87a7c3b549b3f186f30ad04c9ce343a50200"
+    }
+  ]
+}
