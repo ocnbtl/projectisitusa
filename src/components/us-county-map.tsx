@@ -3,10 +3,10 @@
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { geoAlbersUsa, geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
-import { Minus, Plus, RotateCcw } from "lucide-react";
+import { Info, Minus, Plus, RotateCcw } from "lucide-react";
 import countyTopology from "@/data/source/county-equivalents-topology.json";
 import type { CountyRecord, ExplorerPresenceIndex } from "@/lib/data/types";
-import { MAP_COUNT_BANDS, mapCountColor } from "@/lib/ui/map-scale";
+import { createMapCountBands, mapCountColor } from "@/lib/ui/map-scale";
 
 type CountyFeature = GeoJSON.Feature<GeoJSON.Polygon | GeoJSON.MultiPolygon>;
 const counties = (feature(countyTopology as never, countyTopology.objects.counties as never) as unknown as GeoJSON.FeatureCollection).features as CountyFeature[];
@@ -30,6 +30,10 @@ interface UsCountyMapProps {
 export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceIndex, stateCode, selectedCountyFips, neighboringCountyFips, countyMatchCounts, onCountySelect, onReset, sheetExpanded, datasetLabel, datasetDate, dataReady }: UsCountyMapProps) {
   const container = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 1200, height: 800 });
+  const group = useRef<SVGGElement>(null);
+  const frame = useRef<number | null>(null);
+  const liveView = useRef({ x: 0, y: 0, k: 1 });
+  const [dragging, setDragging] = useState(false);
   const [view, setView] = useState({ x: 0, y: 0, k: 1 });
   const [hovered, setHovered] = useState<string | null>(null);
   const drag = useRef<{ x: number; y: number; startX: number; startY: number } | null>(null);
@@ -87,6 +91,11 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
   }, [focusedState, focusArea, visibleCounties]);
   const path = useMemo(() => geoPath(projection), [projection]);
   const shapes = useMemo(() => visibleCounties.map(county => ({ fips: fipsOf(county), d: path(county) ?? "", center: path.centroid(county) })), [path, visibleCounties]);
+  const scaleScope = focusedState ?? (view.k > 1.3 ? "Visible counties" : "U.S.");
+  const bands = useMemo(() => {
+    const inView = !focusedState && view.k > 1.3 ? new Set(shapes.filter(s => s.center[0] * view.k + view.x >= focusArea.left && s.center[0] * view.k + view.x <= focusArea.right && s.center[1] * view.k + view.y >= focusArea.top && s.center[1] * view.k + view.y <= focusArea.bottom).map(s => s.fips)) : null;
+    return createMapCountBands(visibleCounties.filter(c => (!inView || inView.has(fipsOf(c))) && Object.hasOwn(presenceIndex, fipsOf(c))).map(c => countyMatchCounts[fipsOf(c)] ?? 0));
+  }, [visibleCounties, presenceIndex, countyMatchCounts, focusedState, shapes, view, focusArea]);
   const selectedShape = shapes.find(shape => shape.fips === selectedCountyFips);
   const neighbors = useMemo(() => new Set(neighboringCountyFips), [neighboringCountyFips]);
 
@@ -99,6 +108,14 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     setView({ x: (focusArea.left + focusArea.right) / 2 - shape.center[0] * k, y: (focusArea.top + focusArea.bottom) / 2 - shape.center[1] * k, k });
   }, [selectedCountyFips, shapes, focusArea]);
 
+  useEffect(() => { liveView.current = view; }, [view]);
+  useEffect(() => () => { if (frame.current !== null) cancelAnimationFrame(frame.current); }, []);
+  function finishDrag() {
+    drag.current = null;
+    if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
+    setView({ ...liveView.current });
+    setDragging(false);
+  }
   function zoom(factor: number) {
     setView(current => {
       const k = Math.min(12, Math.max(1, current.k * factor));
@@ -110,19 +127,45 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     return !dataReady ? "Records loading" : !Object.hasOwn(presenceIndex, fips) ? "Records unavailable in this layer" : `${(countyMatchCounts[fips] ?? 0).toLocaleString()} matching species with records`;
   }
   const focused = hovered ? countyIndex[hovered] : null;
-  return <div ref={container} className="atlas-map" aria-label="Interactive county map">
-    <svg width={size.width} height={size.height} viewBox={`0 0 ${size.width} ${size.height}`} aria-label="County map. Use county search or the state filter to explore by keyboard."
-      onPointerDown={event => { if (event.button !== 0) return; didDrag.current = false; drag.current = { x: event.clientX, y: event.clientY, startX: view.x, startY: view.y }; }}
-      onPointerMove={event => { const current = drag.current; if (!current) return; const dx = event.clientX - current.x, dy = event.clientY - current.y; if (Math.abs(dx) + Math.abs(dy) > 5) { didDrag.current = true; event.currentTarget.setPointerCapture(event.pointerId); setView(v => ({ ...v, x: current.startX + dx, y: current.startY + dy })); } }}
-      onPointerUp={() => { drag.current = null; }} onPointerCancel={() => { drag.current = null; }}>
-      <g transform={`translate(${view.x} ${view.y}) scale(${view.k})`}>
-        {shapes.map(({ fips, d }) => <path key={fips} data-county={fips} data-count={dataReady && Object.hasOwn(presenceIndex, fips) ? countyMatchCounts[fips] ?? 0 : undefined} d={d}
-          fill={mapCountColor(countyMatchCounts[fips] ?? 0, dataReady && Object.hasOwn(presenceIndex, fips))}
-          className={`atlas-county ${fips === selectedCountyFips ? "is-selected" : neighbors.has(fips) ? "is-neighbor" : ""}`}
-          vectorEffect="non-scaling-stroke" onMouseEnter={() => setHovered(fips)} onMouseLeave={() => setHovered(null)}
-          onClick={() => { if (!didDrag.current) onCountySelect(fips); }}>
-          <title>{countyIndex[fips]?.name}, {countyIndex[fips]?.stateCode}: {countLabel(fips)}</title>
-        </path>)}
+  const paths = useMemo(() => shapes.map(({ fips, d }) => {
+    const available = dataReady && Object.hasOwn(presenceIndex, fips);
+    const count = countyMatchCounts[fips] ?? 0;
+    return <path key={fips} data-county={fips} data-count={available ? count : undefined} d={d}
+      fill={mapCountColor(count, available, bands)}
+      className={"atlas-county " + (fips === selectedCountyFips ? "is-selected" : neighbors.has(fips) ? "is-neighbor" : "")}
+      vectorEffect="non-scaling-stroke">
+      <title>{countyIndex[fips]?.name}, {countyIndex[fips]?.stateCode}: {available ? count.toLocaleString() + " matching species with records" : dataReady ? "Records unavailable in this layer" : "Records loading"}</title>
+    </path>;
+  }), [shapes, countyIndex, countyMatchCounts, presenceIndex, dataReady, bands, selectedCountyFips, neighbors]);
+  const emptyFocus = dataReady && (selectedCountyFips || view.k > 1.3) && (selectedCountyFips
+    ? Object.hasOwn(presenceIndex, selectedCountyFips) && (countyMatchCounts[selectedCountyFips] ?? 0) === 0
+    : hovered && Object.hasOwn(presenceIndex, hovered) && (countyMatchCounts[hovered] ?? 0) === 0);
+  return <div ref={container} className={"atlas-map " + (dragging ? "is-dragging" : "")} aria-label="Interactive county map">
+    <svg width={size.width} height={size.height} viewBox={"0 0 " + size.width + " " + size.height} aria-label="County map. Use county search or the state filter to explore by keyboard."
+      onPointerDown={event => {
+        if (event.button !== 0) return;
+        didDrag.current = false;
+        drag.current = { x: event.clientX, y: event.clientY, startX: liveView.current.x, startY: liveView.current.y };
+      }}
+      onPointerMove={event => {
+        const current = drag.current;
+        if (!current) return;
+        const dx = event.clientX - current.x, dy = event.clientY - current.y;
+        if (Math.abs(dx) + Math.abs(dy) <= 5 && !didDrag.current) return;
+        if (!didDrag.current) { didDrag.current = true; setDragging(true); setHovered(null); event.currentTarget.setPointerCapture(event.pointerId); }
+        liveView.current = { ...liveView.current, x: current.startX + dx, y: current.startY + dy };
+        if (frame.current === null) frame.current = requestAnimationFrame(() => {
+          const v = liveView.current;
+          group.current?.setAttribute("transform", "translate(" + v.x + " " + v.y + ") scale(" + v.k + ")");
+          frame.current = null;
+        });
+      }}
+      onPointerUp={finishDrag} onPointerCancel={finishDrag} onLostPointerCapture={() => { if (drag.current) finishDrag(); }}>
+      <g ref={group} className="atlas-map-shapes" transform={"translate(" + view.x + " " + view.y + ") scale(" + view.k + ")"}
+        onPointerOver={event => { if (!drag.current) setHovered((event.target as SVGElement).closest("[data-county]")?.getAttribute("data-county") ?? null); }}
+        onPointerLeave={() => { if (!drag.current) setHovered(null); }}
+        onClick={event => { const fips = (event.target as SVGElement).closest("[data-county]")?.getAttribute("data-county"); if (!didDrag.current && fips) onCountySelect(fips); }}>
+        {paths}
         {selectedShape?.center.every(Number.isFinite) ? <circle data-selected-marker="true" cx={selectedShape.center[0]} cy={selectedShape.center[1]} r={6 / view.k} fill="var(--county-selected)" stroke="var(--surface-strong)" strokeWidth={2 / view.k} pointerEvents="none" /> : null}
       </g>
     </svg>
@@ -132,10 +175,12 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
       <button type="button" aria-label="Show all states" onClick={() => { onReset(); setView({ x: 0, y: 0, k: 1 }); }}><RotateCcw size={17} /></button>
     </div>
     {focused ? <div className="atlas-hover glass-panel"><strong>{focused.name}, {focused.stateCode}</strong><span>{countLabel(focused.countyFips)}</span></div> : null}
+    {emptyFocus ? <div className="map-empty-notice" role="status">No matching records here.<span>Try fewer filters. A gap in the records does not establish absence.</span></div> : null}
     <div className="atlas-legend glass-panel">
-      <div><strong>Species with records</strong><span>{datasetLabel}{datasetDate ? ` · ${datasetDate}` : ""}</span></div>
-      <ol className="map-count-bands" aria-label="Species count ranges">{MAP_COUNT_BANDS.map(band => <li key={band.min}><i style={{ background: band.color }} aria-hidden="true" /><span>{band.label}</span></li>)}</ol>
-      <p><span className="legend-unknown" /> Unavailable <span aria-hidden="true"> / </span> Counts reflect your filters, not abundance or impact. Zero records does not mean absence.</p>
+      <div className="legend-heading"><div><strong>Species with records</strong><span>{scaleScope + " · county scale"}</span></div>
+        <details className="legend-help"><summary aria-label="About map colors"><Info size={17} /></summary><div><strong>Reading this map</strong><p>Colors compare recorded species counts within {scaleScope === "U.S." ? "the United States" : scaleScope} and your filters. Ranges adjust when the view changes.</p><p>Counts do not measure abundance or impact. Zero records does not mean absence. Gray means records are unavailable.</p><p>{datasetLabel}{datasetDate ? " · " + datasetDate : ""}</p></div></details>
+      </div>
+      <ol className="map-count-bands" style={{ gridTemplateColumns: "repeat(" + bands.length + ", minmax(0, 1fr))" }} aria-label={"Species count ranges for " + scaleScope}>{bands.map((band, index) => <li key={index}><i style={{ backgroundColor: band.color }} aria-hidden="true" /><span>{band.label}</span></li>)}</ol>
     </div>
   </div>;
 });

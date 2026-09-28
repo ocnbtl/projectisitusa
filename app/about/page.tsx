@@ -5,6 +5,7 @@ import { SpeciesImage } from "@/components/species-image";
 
 export const metadata: Metadata = {
   title: "About IsItUSA",
+  alternates: { canonical: "https://isitusa.com/about" },
   description: "IsItUSA is an independent initiative based in the United States, making invasive species information easier to find, understand, and use.",
 };
 
@@ -19,7 +20,7 @@ export default function AboutPage() {
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <figure className="about-field-image">
-          <SpeciesImage src="/species/kudzu.jpg" alt="Kudzu vines covering trees" credit="Forest & Kim Starr / Wikimedia Commons" label="Kudzu" />
+          <SpeciesImage src="/species/kudzu.jpg" alt="Kudzu leaves and a cluster of purple flowers" credit="Forest & Kim Starr / Wikimedia Commons" label="Kudzu" />
           <figcaption><Link href="/species/kudzu">Get to know kudzu <ArrowUpRight size={15} aria-hidden="true" /></Link></figcaption>
         </figure>
       </header>

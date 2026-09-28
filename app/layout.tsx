@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { RouteTransition } from "@/components/atlas/route-transition";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Providers>
           <div className="app-frame">
             <SiteHeader />
+            <RouteTransition />
             {children}
             <SiteFooter />
           </div>

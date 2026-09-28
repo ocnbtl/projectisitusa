@@ -10,6 +10,7 @@ import speciesResearchEntrypoints from "@/data/research/species-research-entrypo
 import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 import { speciesBySlug, speciesSlugAliases } from "@/lib/data/species-store";
 import { buildResearchHref } from "@/lib/research/research-deep-link";
+import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editorial";
 import { formatCategoryLabel } from "@/lib/utils";
 
 export const dynamicParams = true;
@@ -30,9 +31,12 @@ export default async function SpeciesProfilePage({
   if (legacyImage) redirect(legacyImage.full.src as Route);
   const canonicalSlug = speciesSlugAliases.get(resolvedParams.slug);
   if (canonicalSlug) redirect(`/species/${canonicalSlug}`);
-  const species = speciesBySlug.get(resolvedParams.slug);
-  if (!species) notFound();
+  const sourceSpecies = speciesBySlug.get(resolvedParams.slug);
+  if (!sourceSpecies) notFound();
+  const species = getDisplaySpecies(sourceSpecies);
 
+  const editorial = getSpeciesEditorial(species);
+  const references = [...editorial.sources, ...species.source].filter((source, i, all) => all.findIndex(item => item.url === source.url) === i);
   const isCurated = species.profileType === "curated";
   const researchEntrypoint = speciesResearchEntrypoints.entries.find(
     (entry) => entry.speciesId === species.id,
@@ -59,9 +63,9 @@ export default async function SpeciesProfilePage({
         <div className="reading-hero profile-heading min-w-0">
           <h1 className="break-words">{species.commonName}</h1>
           <p className="mt-3 text-xl italic leading-8 text-[var(--muted)]">{species.scientificName}</p>
-          {isCurated && species.summary ? <p className="mt-6 max-w-xl text-lg leading-8">{species.summary}</p> : null}
+          {editorial.summary ? <p className="mt-6 max-w-xl text-lg leading-8">{editorial.summary}</p> : null}
           <dl className="profile-facts mt-6 flex flex-wrap gap-x-8 gap-y-4 text-sm">
-            <div><dt className="text-[var(--muted)]">Category</dt><dd className="mt-1">{formatCategoryLabel(species.category)}</dd></div>
+            <div><dt className="text-[var(--muted)]">Category</dt><dd className={"mt-1 category-tag category-" + species.category}>{formatCategoryLabel(species.category)}</dd></div>
             {registry?.family ? <div><dt className="text-[var(--muted)]">Family</dt><dd className="mt-1">{registry.family}</dd></div> : null}
           </dl>
         </div>
@@ -75,7 +79,7 @@ export default async function SpeciesProfilePage({
       <section className="profile-sources reading-section" aria-labelledby="profile-sources-heading">
         <h2 id="profile-sources-heading">Profile references</h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          {species.source.map((source) => (
+          {references.map((source) => (
             <li key={source.url}>
               <a href={source.url} target="_blank" rel="noreferrer" className="text-link inline-flex min-h-11 items-center gap-2">
                 {source.label} <ArrowUpRight size={14} aria-hidden="true" className="shrink-0" />

@@ -6,6 +6,7 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { Bird, Bug, ChevronLeft, ChevronRight, Leaf, Microscope, Search, X } from "lucide-react";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 import type { Species, SpeciesCategory } from "@/lib/data/types";
+import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editorial";
 import { formatCategoryLabel } from "@/lib/utils";
 
 const PAGE_SIZE = 24;
@@ -24,10 +25,7 @@ function isDirectorySpecies(value: unknown): value is Species {
 function DirectoryCard({ species }: { species: Species }) {
   const [imageFailed, setImageFailed] = useState(false);
   const Icon = categoryIcons[species.category];
-  const registry = species.profileType === "registry" ? species.registry : undefined;
-  const summary = registry
-    ? `${registry.family ? `A member of the ${registry.family} family.` : species.displayGroup + "."} ${registry.habitats.length ? `Recorded habitats: ${registry.habitats.slice(0, 2).join(" and ")}.` : `Listed as ${registry.statusLabel.toLowerCase()} in the US-RIIS lower-48 register.`}`
-    : species.summary;
+  const { summary } = getSpeciesEditorial(species);
   return (
     <article className="directory-card">
       <Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-link">
@@ -43,10 +41,10 @@ function DirectoryCard({ species }: { species: Species }) {
         <div className="directory-names">
           <h3>{species.commonName}</h3>
           <p><i>{species.scientificName}</i></p>
-          <span><Icon size={13} aria-hidden="true" />{formatCategoryLabel(species.category)}</span>
+          <span className={"category-" + species.category}><Icon size={13} aria-hidden="true" />{formatCategoryLabel(species.category)}</span>
         </div>
       </Link>
-      <p className="directory-summary">{summary}</p>
+      {summary && <p className="directory-summary">{summary}</p>}
       {species.image && (
         <details className="image-credit">
           <summary aria-label={`Photo credit for ${species.commonName}`}>Photo credit</summary>
@@ -89,7 +87,7 @@ export function SpeciesDirectory() {
     setError(false);
     void loadRuntimeData<unknown>("catalog").then(data => {
       if (!Array.isArray(data) || !data.every(isDirectorySpecies)) throw new Error("Invalid catalog");
-      if (active) setCatalog([...data].sort((a, b) => a.commonName.localeCompare(b.commonName, "en") || a.scientificName.localeCompare(b.scientificName, "en")));
+      if (active) setCatalog(data.map(getDisplaySpecies).sort((a, b) => a.commonName.localeCompare(b.commonName, "en") || a.scientificName.localeCompare(b.scientificName, "en")));
     }).catch(() => { if (active) setError(true); });
     return () => { active = false; };
   }, [loadAttempt]);

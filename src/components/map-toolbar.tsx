@@ -1,142 +1,128 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, ChevronDown, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
-import stateRegistry from "@/data/research/state-registry.json";
+import { ArrowRight, ArrowUpRight, Bird, Bug, Building2, Check, ChevronDown, Fish, Leaf, MapPin, Microscope, Mountain, Search, SlidersHorizontal, Sprout, Trees, Waves, Wheat, X } from "lucide-react";
+import { StatePicker } from "@/components/atlas/state-picker";
+import { UpdateNotice } from "@/components/atlas/update-notice";
 import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
 import type { CountyRecord, EnvironmentTag, ExplorerSpecies, SpeciesCategory } from "@/lib/data/types";
 
 interface MapToolbarProps {
-  counties: Record<string, CountyRecord>;
-  species: ExplorerSpecies[];
-  categories: SpeciesCategory[];
-  environment: EnvironmentTag | null;
-  stateCode: string | null;
-  speciesId: string | null;
-  query: string;
-  zipStatus: string | null;
-  isSearching: boolean;
-  layer: "reviewed" | "legacy";
-  onLayerChange: (layer: "reviewed" | "legacy") => void;
-  onCountySelect: (fips: string) => void;
-  onStateChange: (stateCode: string | null) => void;
-  onSpeciesSelect: (id: string | null) => void;
-  onQueryChange: (query: string) => void;
-  onCategoryToggle: (category: SpeciesCategory) => void;
-  onEnvironmentChange: (environment: EnvironmentTag | null) => void;
-  onZipSearch: (zip: string) => void;
-  onClearFilters: () => void;
+  counties: Record<string, CountyRecord>; species: ExplorerSpecies[];
+  countyCounts: Record<string, number>; speciesCounts: Record<string, number>; dataReady: boolean;
+  datasetDate: string; datasetLabel: string;
+  categories: SpeciesCategory[]; environment: EnvironmentTag | null; stateCode: string | null;
+  speciesId: string | null; query: string; zipStatus: string | null; isSearching: boolean;
+  onCountySelect: (fips: string) => void; onStateChange: (state: string | null) => void;
+  onSpeciesSelect: (id: string | null) => void; onQueryChange: (query: string) => void;
+  onCategoryToggle: (category: SpeciesCategory) => void; onEnvironmentChange: (value: EnvironmentTag | null) => void;
+  onApplyFilters: (categories: SpeciesCategory[], environment: EnvironmentTag | null) => void;
+  onZipSearch: (zip: string) => void; onClearFilters: () => void;
 }
-
-const states = stateRegistry.jurisdictions.filter(state => state.nationalV1Scope).sort((a, b) => a.stateName.localeCompare(b.stateName));
-type SearchResult = { id: string; label: string; detail: string };
-
+type SearchResult = { id: string; label: string; detail: string; image?: string; credit?: string; count?: string };
+const categoryIcons = { plants: Leaf, insects: Bug, wildlife: Bird, "fungi-diseases": Microscope };
+const environmentIcons = { land: Mountain, freshwater: Fish, "marine-coastal": Waves, wetlands: Sprout, forest: Trees, agriculture: Wheat, urban: Building2 };
+function SearchAvatar({ src, kind }: { src?: string; kind: "place" | "species" }) {
+  const [failed, setFailed] = useState(false);
+  const Icon = kind === "place" ? MapPin : Leaf;
+  return <span className="search-avatar">{src && !failed ? <Image src={src} alt="" width={40} height={40} unoptimized onError={() => setFailed(true)} /> : <Icon size={19} />}</span>;
+}
 function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy = false }: {
-  kind: "place" | "species"; results: SearchResult[]; value: string;
-  onChange: (value: string) => void; onChoose: (id: string) => void;
-  onSubmit?: (value: string) => void; busy?: boolean;
+  kind: "place" | "species"; results: SearchResult[]; value: string; onChange: (value: string) => void;
+  onChoose: (id: string) => void; onSubmit?: (value: string) => void; busy?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
-  const [active, setActive] = useState(-1);
-  const root = useRef<HTMLDivElement>(null);
-  const input = useRef<HTMLInputElement>(null);
-  const id = useId();
-  const normalized = value.trim();
-  const isZip = kind === "place" && /^\d{5}$/.test(normalized);
-  const show = open && normalized.length >= 2;
-  const options = isZip ? [{ id: normalized, label: `Find ZIP ${normalized}`, detail: "County lookup" }] : results;
+  const [open, setOpen] = useState(false), [active, setActive] = useState(-1);
+  const root = useRef<HTMLDivElement>(null), input = useRef<HTMLInputElement>(null);
+  const id = useId(), normalized = value.trim(), isZip = kind === "place" && /^\d{5}$/.test(normalized);
+  const options: SearchResult[] = isZip ? [{ id: normalized, label: "Find ZIP " + normalized, detail: "Explore records for its county" }] : results;
+  useEffect(() => { if (open && active >= 0) document.getElementById(id + "-" + active)?.scrollIntoView({ block: "nearest" }); }, [open, active, id]);
   useEffect(() => {
-    if (!show || active < 0) return;
-    const list = document.getElementById(id);
-    const option = document.getElementById(`${id}-${active}`);
-    if (!list || !option) return;
-    const top = option.offsetTop;
-    const bottom = top + option.offsetHeight;
-    if (top < list.scrollTop) list.scrollTop = top;
-    else if (bottom > list.scrollTop + list.clientHeight) list.scrollTop = bottom - list.clientHeight;
-  }, [active, show, id]);
-  useEffect(() => {
-    function close(event: PointerEvent) { if (!root.current?.contains(event.target as Node)) setOpen(false); }
-    document.addEventListener("pointerdown", close);
-    return () => document.removeEventListener("pointerdown", close);
+    function outside(e: PointerEvent) { if (!root.current?.contains(e.target as Node)) setOpen(false); }
+    document.addEventListener("pointerdown", outside); return () => document.removeEventListener("pointerdown", outside);
   }, []);
-  function choose(id: string) {
-    if (isZip) onSubmit?.(id); else onChoose(id);
-    setOpen(false); onChange(""); setActive(-1); input.current?.focus();
+  function choose(result: SearchResult) {
+    if (isZip) onSubmit?.(result.id); else onChoose(result.id);
+    onChange(""); setActive(-1); setOpen(false); input.current?.focus();
   }
   function submit() {
-    if (options[active >= 0 ? active : 0]) choose(options[active >= 0 ? active : 0].id);
-    else if (kind === "species" && normalized.length >= 2) { onSubmit?.(normalized); setOpen(false); }
+    const result = options[active >= 0 ? active : 0];
+    if (result) choose(result); else if (kind === "species" && normalized.length >= 2) { onSubmit?.(normalized); setOpen(false); }
   }
   const Icon = kind === "place" ? MapPin : Sprout;
-  return <div ref={root} className="map-search-field" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}>
-    <form className="atlas-search glass-panel" role="search" aria-label={kind === "place" ? "Find a place" : "Find a species"} onSubmit={event => { event.preventDefault(); submit(); }}>
+  return <div ref={root} className="map-search-field" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false); }}>
+    <form className="atlas-search glass-panel" role="search" aria-label={kind === "place" ? "Find a place" : "Find a species"} onSubmit={e => { e.preventDefault(); submit(); }}>
       <Icon size={18} aria-hidden="true" />
-      <input ref={input} role="combobox" aria-label={kind === "place" ? "Search county or ZIP" : "Search species"} aria-expanded={show} aria-controls={id} aria-autocomplete="list"
-        aria-activedescendant={show && active >= 0 && options[active] ? `${id}-${active}` : undefined}
-        placeholder={kind === "place" ? "County or ZIP" : "Search species"} value={value} autoComplete="off"
-        onChange={event => { onChange(event.target.value); setActive(-1); setOpen(true); }} onFocus={() => setOpen(true)}
-        onKeyDown={event => {
-          if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); setOpen(false); }
-          if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); setOpen(true); setActive(current => options.length ? Math.max(0, Math.min(options.length - 1, current + (event.key === "ArrowDown" ? 1 : -1))) : -1); }
+      <input ref={input} role="combobox" aria-label={kind === "place" ? "Search county or ZIP" : "Search species"} aria-expanded={open} aria-controls={id} aria-autocomplete="list" aria-activedescendant={open && options[active] ? id + "-" + active : undefined}
+        placeholder={kind === "place" ? "County or ZIP" : "Search species"} autoComplete="off" value={value} maxLength={120}
+        onFocus={() => setOpen(true)} onChange={e => { onChange(e.target.value); setActive(-1); setOpen(true); }}
+        onKeyDown={e => {
+          if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); setOpen(false); }
+          if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); setOpen(true); setActive(i => Math.max(0, Math.min(options.length - 1, i + (e.key === "ArrowDown" ? 1 : -1)))); }
         }} />
-      {value ? <button type="button" aria-label={`Clear ${kind} search`} onClick={() => { onChange(""); setActive(-1); input.current?.focus(); }}><X size={16} /></button> : null}
-      <button className="search-submit" type="submit" aria-label={kind === "place" ? "Find county" : "Find species"} disabled={busy || normalized.length < 2}><Search size={17} /></button>
+      {value && <button type="button" aria-label={"Clear " + kind + " search"} onClick={() => { onChange(""); setActive(-1); input.current?.focus(); }}><X size={16} /></button>}
+      <button type="submit" className="search-submit" aria-label={kind === "place" ? "Find county" : "Find species"} disabled={busy || (!normalized && active < 0)}><Search size={17} /></button>
     </form>
-    {show ? <div className="search-results" id={id} role="listbox" aria-label={kind === "place" ? "Matching counties" : "Matching species"}>
-      {options.length ? options.map((result, index) => <button id={`${id}-${index}`} key={result.id} type="button" role="option" aria-selected={active === index} onMouseDown={event => event.preventDefault()} onClick={() => choose(result.id)}>
-        <Icon size={17} aria-hidden="true" /><span><strong>{result.label}</strong><small>{result.detail}</small></span><ArrowUpRight size={15} aria-hidden="true" />
-      </button>) : <div className="search-empty"><p>{kind === "place" ? "No county found. Try the county name with its state abbreviation, or a five-digit ZIP." : "No species found. Try a common or scientific name."}</p></div>}
-    </div> : null}
+    {open && <div className="search-suggestion-panel">
+      <p className="search-suggestion-title">{normalized ? "Search results" : kind === "place" ? "Counties to explore" : "Explore species"}</p>
+      <div className="search-results" id={id} role="listbox" aria-label={kind === "place" ? "Matching counties" : "Matching species"}>
+        {options.map((result,index) => <button id={id + "-" + index} key={result.id} type="button" role="option" aria-selected={active === index} tabIndex={-1} onMouseDown={e => e.preventDefault()} onClick={() => choose(result)}>
+          <SearchAvatar src={result.image} kind={kind} /><span><strong>{result.label}</strong><small className={kind === "species" ? "scientific-name" : ""}>{result.detail}</small>{result.count && <small className="suggestion-count">{result.count}</small>}</span><ArrowUpRight size={15} aria-hidden="true" />
+        </button>)}
+        {!options.length && <div className="search-empty"><p>{kind === "place" ? "Try a county name with its state, or a five-digit ZIP." : "Try a common or scientific name."}</p></div>}
+      </div>
+      {kind === "species" && options.some(option => option.image) && <details className="suggestion-credits"><summary>Photo credits</summary>{options.filter(option => option.image).map(option => <p key={option.id}><strong>{option.label}</strong> · {option.credit}</p>)}</details>}
+      {kind === "place" && !normalized && <p className="search-suggestion-note">Places with many recorded species. ZIP searches open county records.</p>}
+    </div>}
   </div>;
 }
-
 export function MapToolbar(props: MapToolbarProps) {
-  const [placeSearch, setPlaceSearch] = useState("");
-  const [speciesSearch, setSpeciesSearch] = useState("");
-  const [filterOpen, setFilterOpen] = useState(false);
-  const root = useRef<HTMLDivElement>(null);
-  const filterButton = useRef<HTMLButtonElement>(null);
+  const [placeSearch,setPlaceSearch] = useState(""), [speciesSearch,setSpeciesSearch] = useState(""), [filterOpen,setFilterOpen] = useState(false);
+  const [draftCategories,setDraftCategories] = useState(props.categories), [draftEnvironment,setDraftEnvironment] = useState(props.environment);
+  const root = useRef<HTMLDivElement>(null), filterButton = useRef<HTMLButtonElement>(null);
   const filtersId = useId();
-  const selectedSpecies = props.species.find(s => s.id === props.speciesId);
-  const countyResults = useMemo(() => {
-    const query = placeSearch.trim().toLowerCase();
-    if (query.length < 2 || /^\d{5}$/.test(query)) return [];
-    return Object.values(props.counties).filter(c => Number(c.countyFips.slice(0, 2)) < 60 && (!props.stateCode || c.stateCode === props.stateCode))
-      .filter(c => `${c.name} ${c.stateCode}`.toLowerCase().includes(query)).slice(0, 8)
-      .map(c => ({ id: c.countyFips, label: c.name, detail: c.stateCode }));
-  }, [placeSearch, props.counties, props.stateCode]);
+  const placeResults = useMemo(() => {
+    const q = placeSearch.trim().toLowerCase();
+    return Object.values(props.counties).filter(c => (!props.stateCode || c.stateCode === props.stateCode) && (!q || (c.name + " " + c.stateCode).toLowerCase().includes(q)))
+      .sort((a,b) => (props.countyCounts[b.countyFips] ?? 0) - (props.countyCounts[a.countyFips] ?? 0) || a.name.localeCompare(b.name)).slice(0,12)
+      .map(c => ({ id:c.countyFips, label:c.name, detail:c.stateCode, count:props.dataReady && Object.hasOwn(props.countyCounts,c.countyFips) ? props.countyCounts[c.countyFips].toLocaleString() + " species with county records" : props.dataReady ? "Records unavailable" : "Records loading" }));
+  }, [props.counties,props.stateCode,props.countyCounts,props.dataReady,placeSearch]);
   const speciesResults = useMemo(() => {
-    const query = speciesSearch.trim().toLowerCase();
-    return query.length < 2 ? [] : props.species.filter(s => `${s.commonName} ${s.scientificName}`.toLowerCase().includes(query)).slice(0, 8)
-      .map(s => ({ id: s.id, label: s.commonName, detail: s.scientificName }));
-  }, [speciesSearch, props.species]);
+    const q = speciesSearch.trim().toLowerCase();
+    return props.species.filter(s => !q || (s.commonName + " " + s.scientificName).toLowerCase().includes(q))
+      .sort((a,b) => (props.speciesCounts[b.id] ?? 0) - (props.speciesCounts[a.id] ?? 0) || a.commonName.localeCompare(b.commonName)).slice(0,12)
+      .map(s => ({ id:s.id, label:s.commonName, detail:s.scientificName, image:s.image?.thumbnail ?? s.image?.src, credit:s.image?.credit, count:props.dataReady ? (props.speciesCounts[s.id] ?? 0).toLocaleString() + (props.stateCode ? " counties in " + props.stateCode : " U.S. counties") : "County records loading" }));
+  }, [props.species,props.speciesCounts,props.stateCode,props.dataReady,speciesSearch]);
   useEffect(() => {
-    function close(event: PointerEvent) { if (!root.current?.contains(event.target as Node)) setFilterOpen(false); }
-    document.addEventListener("pointerdown", close);
-    return () => document.removeEventListener("pointerdown", close);
+    function outside(e: PointerEvent) { if (!root.current?.contains(e.target as Node)) setFilterOpen(false); }
+    document.addEventListener("pointerdown",outside); return () => document.removeEventListener("pointerdown",outside);
   }, []);
-  const filterCount = props.categories.length + Number(Boolean(props.environment));
-  return <div className="atlas-toolbar" ref={root} onKeyDown={event => { if (event.key === "Escape" && filterOpen) { setFilterOpen(false); filterButton.current?.focus(); } }}>
+  const selectedSpecies = props.species.find(s => s.id === props.speciesId);
+  const count = props.categories.length + Number(Boolean(props.environment));
+  const hasFilters = Boolean(count || props.speciesId || props.query);
+  function close() { setFilterOpen(false); filterButton.current?.focus(); }
+  return <div className="atlas-toolbar">
+    <UpdateNotice datasetDate={props.datasetDate} datasetLabel={props.datasetLabel} />
     <div className="atlas-control-row">
-      <SearchField kind="place" results={countyResults} value={placeSearch} onChange={setPlaceSearch} onChoose={props.onCountySelect} onSubmit={props.onZipSearch} busy={props.isSearching} />
-      <SearchField kind="species" results={speciesResults} value={speciesSearch} onChange={setSpeciesSearch} onChoose={props.onSpeciesSelect} onSubmit={props.onQueryChange} />
-      <label className="map-state-filter glass-panel"><span className="sr-only">Focus on a state</span><select aria-label="Focus on a state" value={props.stateCode ?? ""} onChange={event => props.onStateChange(event.target.value || null)}><option value="">All states</option>{states.map(state => <option key={state.stateCode} value={state.stateCode}>{state.stateName}</option>)}</select></label>
-      <button ref={filterButton} type="button" className="filter-trigger glass-panel" aria-expanded={filterOpen} aria-controls={filtersId} onClick={() => setFilterOpen(!filterOpen)}><SlidersHorizontal size={16} aria-hidden="true" /> Filters {filterCount ? <span className="filter-count">{filterCount}</span> : null}<ChevronDown size={14} aria-hidden="true" /></button>
+      <SearchField kind="place" value={placeSearch} results={placeResults} onChange={setPlaceSearch} onChoose={props.onCountySelect} onSubmit={props.onZipSearch} busy={props.isSearching} />
+      <SearchField kind="species" value={speciesSearch} results={speciesResults} onChange={setSpeciesSearch} onChoose={props.onSpeciesSelect} onSubmit={props.onQueryChange} />
+      <StatePicker value={props.stateCode} onChange={props.onStateChange} />
+      <div ref={root} className="filter-control" onKeyDown={e => { if(e.key === "Escape") {e.stopPropagation();close();} }}>
+        <button ref={filterButton} type="button" className="filter-trigger glass-panel" aria-expanded={filterOpen} aria-controls={filtersId} onClick={() => { if (!filterOpen) {setDraftCategories(props.categories);setDraftEnvironment(props.environment);} setFilterOpen(!filterOpen); }}><SlidersHorizontal size={17} /><span>Filters</span>{count > 0 && <b>{count}</b>}<ChevronDown size={14} /></button>
+        {filterOpen && <section id={filtersId} className="atlas-filter-panel" aria-label="Map filters">
+          <header><h2>Make the map yours</h2><button type="button" aria-label="Close filters" onClick={close}><X size={19} /></button></header>
+          <fieldset><legend>Species groups</legend><div className="filter-options">{CATEGORY_OPTIONS.map(option => {const Icon=categoryIcons[option.value], checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><Icon size={20}/><span>{option.label}</span>{checked && <Check size={14}/>}</button>;})}</div></fieldset>
+          <fieldset><legend>Environment</legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!,Icon=environmentIcons[value];return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment === value} onClick={() => setDraftEnvironment(draftEnvironment === value ? null : value)}><Icon size={20}/><span>{option.label}</span></button>;})}</div></fieldset>
+          <footer><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment);close();}}>Explore these records <ArrowRight size={16}/></button><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment(null);props.onClearFilters();close();}}>Clear filters</button></footer>
+        </section>}
+      </div>
     </div>
-    <div className="atlas-filter-row">
-      {selectedSpecies ? <button className="filter-chip" type="button" onClick={() => props.onSpeciesSelect(null)} aria-label={`Remove ${selectedSpecies.commonName} filter`}>{selectedSpecies.commonName}<X size={14} aria-hidden="true" /></button> : null}
-      {props.query ? <button className="filter-chip" type="button" onClick={() => props.onQueryChange("")} aria-label={`Remove search filter ${props.query}`}>{props.query}<X size={14} aria-hidden="true" /></button> : null}
-      {props.categories.map(category => <button className="filter-chip" type="button" key={category} onClick={() => props.onCategoryToggle(category)} aria-label={`Remove ${CATEGORY_OPTIONS.find(c => c.value === category)?.label} filter`}>{CATEGORY_OPTIONS.find(c => c.value === category)?.label}<X size={14} aria-hidden="true" /></button>)}
-      {props.environment ? <button className="filter-chip" type="button" onClick={() => props.onEnvironmentChange(null)} aria-label="Remove environment filter">{ENVIRONMENT_OPTIONS.find(e => e.value === props.environment)?.label}<X size={14} aria-hidden="true" /></button> : null}
-    </div>
-    {filterOpen ? <section className="atlas-filter-panel" id={filtersId} aria-label="Species filters">
-      <div className="filter-heading"><h2>Refine the map</h2><button type="button" onClick={props.onClearFilters}>Clear filters</button></div>
-      <fieldset><legend>Species groups</legend>{CATEGORY_OPTIONS.map(category => <label key={category.value}><input type="checkbox" checked={props.categories.includes(category.value)} onChange={() => props.onCategoryToggle(category.value)} /><span>{category.label}</span></label>)}</fieldset>
-      <label className="environment-label">Environment<select value={props.environment ?? ""} onChange={event => props.onEnvironmentChange(event.target.value as EnvironmentTag || null)}>{ENVIRONMENT_OPTIONS.map(option => <option key={option.value ?? "all"} value={option.value ?? ""}>{option.label}</option>)}</select></label>
-      <label className="environment-label">Records shown<select value={props.layer} onChange={event => props.onLayerChange(event.target.value as "reviewed" | "legacy")}><option value="reviewed">Reviewed research records</option><option value="legacy">Earlier map records</option></select></label>
-      <button type="button" className="primary-button" onClick={() => { setFilterOpen(false); filterButton.current?.focus(); }}>Show map</button>
-    </section> : null}
-    {props.zipStatus || props.isSearching ? <p className="atlas-search-status" role="status">{props.isSearching ? "Finding your county..." : props.zipStatus}</p> : null}
+    {hasFilters && <div className="atlas-filter-row" aria-label="Applied map filters"><span className="applied-label">Showing</span>
+      {props.categories.map(category => <button key={category} className={"filter-chip category-" + category} onClick={() => props.onCategoryToggle(category)} aria-label={"Remove " + CATEGORY_OPTIONS.find(c=>c.value===category)?.label + " filter"}>{CATEGORY_OPTIONS.find(c=>c.value===category)?.label}<X size={13}/></button>)}
+      {props.environment && <button className="filter-chip" onClick={()=>props.onEnvironmentChange(null)} aria-label="Remove environment filter">{ENVIRONMENT_OPTIONS.find(e=>e.value===props.environment)?.label}<X size={13}/></button>}
+      {selectedSpecies && <button className="filter-chip" onClick={()=>props.onSpeciesSelect(null)} aria-label="Remove species filter">{selectedSpecies.commonName}<X size={13}/></button>}
+      {props.query && <button className="filter-chip" onClick={()=>props.onQueryChange("")} aria-label="Remove search filter">{props.query}<X size={13}/></button>}
+      <button className="clear-all-filters" type="button" onClick={props.onClearFilters}>Clear all <X size={13}/></button>
+    </div>}
+    {props.zipStatus && <p className="atlas-search-status" role="status">{props.zipStatus}</p>}
   </div>;
 }
