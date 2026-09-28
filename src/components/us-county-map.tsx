@@ -2,8 +2,10 @@
 
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { geoAlbersUsa, geoMercator, geoPath } from "d3-geo";
-import { feature } from "topojson-client";
-import { Info, Minus, Plus, RotateCcw } from "lucide-react";
+import { feature, mesh } from "topojson-client";
+import { Minus, Plus, RotateCcw } from "lucide-react";
+import { MapAppearance } from "@/components/atlas/map-appearance";
+import { getMapPalette, MAP_PALETTE_STORAGE_KEY, type MapPaletteId } from "@/lib/ui/map-palettes";
 import countyTopology from "@/data/source/county-equivalents-topology.json";
 import type { CountyRecord, ExplorerPresenceIndex } from "@/lib/data/types";
 import { boundsIntersectView, createMapCountBands, mapCountColor } from "@/lib/ui/map-scale";
@@ -29,6 +31,12 @@ interface UsCountyMapProps {
 
 export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceIndex, stateCode, selectedCountyFips, neighboringCountyFips, countyMatchCounts, onCountySelect, onReset, sheetExpanded, datasetLabel, datasetDate, dataReady }: UsCountyMapProps) {
   const container = useRef<HTMLDivElement>(null);
+  const [paletteId, setPaletteId] = useState<MapPaletteId>("earth");
+  useEffect(() => { try { setPaletteId(getMapPalette(localStorage.getItem(MAP_PALETTE_STORAGE_KEY)).id); } catch { /* Storage is optional. */ } }, []);
+  function choosePalette(value: MapPaletteId) {
+    setPaletteId(value);
+    try { localStorage.setItem(MAP_PALETTE_STORAGE_KEY, value); } catch { /* Keep the choice for this visit. */ }
+  }
   const [size, setSize] = useState({ width: 1200, height: 800 });
   const group = useRef<SVGGElement>(null);
   const frame = useRef<number | null>(null);
@@ -48,20 +56,24 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     const sheet = parent.querySelector<HTMLElement>(".county-sheet");
     const toolbar = parent.querySelector<HTMLElement>(".atlas-toolbar");
     const legend = node.querySelector<HTMLElement>(".atlas-legend");
+    const intro = parent.querySelector<HTMLElement>(".atlas-intro");
     const measure = () => {
       const rect = node.getBoundingClientRect();
       const panel = sheet?.getBoundingClientRect();
       const controls = toolbar?.getBoundingClientRect();
       const legendBounds = legend?.getBoundingClientRect();
+      const legendSummary = legend?.querySelector<HTMLElement>(".legend-summary")?.getBoundingClientRect();
       if (legendBounds && legendBounds.height > 0) parent.style.setProperty("--atlas-legend-clearance", `${rect.bottom - legendBounds.top + 12}px`);
       const mobile = rect.width <= 700;
       const controlTop = Math.max(190, (controls?.bottom ?? rect.top + 180) - rect.top + 12);
       parent.style.setProperty("--atlas-control-top", `${controlTop}px`);
       parent.style.setProperty("--atlas-sheet-clearance", `${controlTop + 88}px`);
-      const top = mobile ? controlTop + (panel ? 54 : focusedState ? 15 : 102) : Math.max(190, controlTop + 15);
+      const introBounds = intro?.getBoundingClientRect();
+      const introVisible = Boolean(introBounds && introBounds.height > 0);
+      const top = mobile ? panel ? controlTop + 54 : introVisible ? introBounds!.bottom - rect.top + 18 : controlTop + 15 : Math.max(190, controlTop + 15);
       const right = !mobile && panel ? panel.left - rect.left - 24 : rect.width - 24;
-      const bottom = mobile ? (panel ? panel.top - rect.top - 16 : legendBounds && legendBounds.height > 0 ? legendBounds.top - rect.top - 16 : rect.height - 162) : rect.height - 90;
-      const left = !mobile && !focusedState && !panel ? 315 : 24;
+      const bottom = mobile ? (panel ? panel.top - rect.top - 16 : legendSummary && legendSummary.height > 0 ? legendSummary.top - rect.top - 28 : rect.height - 162) : rect.height - 90;
+      const left = !mobile && introVisible && !panel ? Math.min(400, rect.width * .36) : 24;
       const next = { left, right: Math.max(left + 80, right), top: Math.min(top, bottom - 40), bottom };
       setFocusArea(old => Object.keys(next).every(key => old[key as keyof typeof old] === next[key as keyof typeof next]) ? old : next);
     };
@@ -71,6 +83,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     if (sheet) observer.observe(sheet);
     if (toolbar) observer.observe(toolbar);
     if (legend) observer.observe(legend);
+    if (intro) observer.observe(intro);
     return () => observer.disconnect();
   }, [selectedCountyFips, sheetExpanded, focusedState]);
 
@@ -90,14 +103,22 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     return !focusedState ? geoAlbersUsa().fitExtent(extent, collection) : geoMercator().rotate(focusedState === "AK" ? [154, 0] : focusedState === "HI" ? [157, 0] : [0, 0]).fitExtent(extent, collection);
   }, [focusedState, focusArea, visibleCounties]);
   const path = useMemo(() => geoPath(projection), [projection]);
+  const stateBoundary = useMemo(() => {
+    const geometries = countyTopology.objects.counties.geometries.filter(geometry => {
+      const fips = String(geometry.id).padStart(5, "0");
+      return countyIndex[fips] && Number(fips.slice(0, 2)) < 60 && (!focusedState || countyIndex[fips].stateCode === focusedState);
+    });
+    const borders = mesh(countyTopology as never, { type: "GeometryCollection", geometries } as never, (a, b) => a === b || String(a.id).padStart(5, "0").slice(0, 2) !== String(b.id).padStart(5, "0").slice(0, 2));
+    return path(borders) ?? "";
+  }, [countyIndex, focusedState, path]);
   const shapes = useMemo(() => visibleCounties.map(county => ({ fips: fipsOf(county), d: path(county) ?? "", center: path.centroid(county), bounds: path.bounds(county) })), [path, visibleCounties]);
   const scale = useMemo(() => {
     const inView = !focusedState && view.k > 1.3 ? new Set(shapes.filter(s => boundsIntersectView(s.bounds, view, { left: 0, right: size.width, top: 0, bottom: size.height })).map(s => s.fips)) : null;
     const allCounts = visibleCounties.filter(c => Object.hasOwn(presenceIndex, fipsOf(c)));
     const values = allCounts.filter(c => !inView || inView.has(fipsOf(c))).map(c => countyMatchCounts[fipsOf(c)] ?? 0);
     const useVisibleScale = inView !== null && values.some(count => count > 0);
-    return { scope: focusedState ?? (useVisibleScale ? "Visible counties" : "U.S."), bands: createMapCountBands(inView && !useVisibleScale ? allCounts.map(c => countyMatchCounts[fipsOf(c)] ?? 0) : values) };
-  }, [visibleCounties, presenceIndex, countyMatchCounts, focusedState, shapes, view, size]);
+    return { scope: focusedState ?? (useVisibleScale ? "Visible counties" : "U.S."), bands: createMapCountBands(inView && !useVisibleScale ? allCounts.map(c => countyMatchCounts[fipsOf(c)] ?? 0) : values, getMapPalette(paletteId).colors) };
+  }, [visibleCounties, presenceIndex, countyMatchCounts, focusedState, shapes, view, size, paletteId]);
   const { bands, scope: scaleScope } = scale;
   const selectedShape = shapes.find(shape => shape.fips === selectedCountyFips);
   const neighbors = useMemo(() => new Set(neighboringCountyFips), [neighboringCountyFips]);
@@ -174,6 +195,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
         onPointerLeave={() => { if (!drag.current) setHovered(null); }}
         onClick={event => { const fips = (event.target as SVGElement).closest("[data-county]")?.getAttribute("data-county"); if (!didDrag.current && fips) onCountySelect(fips); }}>
         {paths}
+        <path className="atlas-state-boundaries" d={stateBoundary} fill="none" vectorEffect="non-scaling-stroke" pointerEvents="none" aria-hidden="true" />
         {selectedShape?.center.every(Number.isFinite) ? <circle data-selected-marker="true" cx={selectedShape.center[0]} cy={selectedShape.center[1]} r={6 / view.k} fill="var(--county-selected)" stroke="var(--surface-strong)" strokeWidth={2 / view.k} pointerEvents="none" /> : null}
       </g>
     </svg>
@@ -183,12 +205,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
       <button type="button" aria-label="Show all states" onClick={() => { onReset(); setView({ x: 0, y: 0, k: 1 }); }}><RotateCcw size={17} /></button>
     </div>
     {focused ? <div className="atlas-hover glass-panel"><strong>{focused.name}, {focused.stateCode}</strong><span>{countLabel(focused.countyFips)}</span></div> : null}
-    {emptyFocus ? <div className="map-empty-notice" role="status">No matching records here.<span>Try fewer filters. A gap in the records does not establish absence.</span></div> : null}
-    <div className="atlas-legend glass-panel">
-      <div className="legend-heading"><div><strong>Species with records</strong><span>{scaleScope + " · county scale"}</span></div>
-        <details className="legend-help"><summary aria-label="About map colors"><Info size={17} /></summary><div><strong>Reading this map</strong><p>Colors compare recorded species counts within {scaleScope === "U.S." ? "the United States" : scaleScope} and your filters. Ranges adjust when the view changes.</p><p>Counts do not measure abundance or impact. Zero records does not mean absence. Gray means records are unavailable.</p><p>{datasetLabel}{datasetDate ? " · " + datasetDate : ""}</p></div></details>
-      </div>
-      <ol className="map-count-bands" style={{ gridTemplateColumns: "repeat(" + bands.length + ", minmax(0, 1fr))" }} aria-label={"Species count ranges for " + scaleScope}>{bands.map((band, index) => <li key={index}><i style={{ backgroundColor: band.color }} aria-hidden="true" /><span>{band.label}</span></li>)}</ol>
-    </div>
+    {emptyFocus ? <div className="map-empty-notice" role="status">No matching records here.<span>Try removing a filter. This does not tell us whether a species is absent.</span></div> : null}
+    <MapAppearance palette={paletteId} onPaletteChange={choosePalette} bands={bands} scope={scaleScope} datasetDate={datasetDate} datasetLabel={datasetLabel} />
   </div>;
 });

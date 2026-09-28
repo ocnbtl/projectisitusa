@@ -7,7 +7,7 @@ type Band = { min: number; max: number; label: string; color: string };
 const source = stripTypeScriptTypes(readFileSync("src/lib/ui/map-scale.ts", "utf8"), { mode: "strip" });
 const { boundsIntersectView, createMapCountBands, mapCountColor } = await import("data:text/javascript;base64," + Buffer.from(source).toString("base64")) as {
   boundsIntersectView: (bounds: [[number,number],[number,number]], view: {x:number;y:number;k:number}, area: {left:number;right:number;top:number;bottom:number}) => boolean;
-  createMapCountBands: (values: number[]) => Band[];
+  createMapCountBands: (values: number[], colors?: readonly string[]) => Band[];
   mapCountColor: (count: number, available: boolean, bands?: Band[]) => string;
 };
 
@@ -40,4 +40,36 @@ test("zoom scope includes intersecting counties whose centroids are outside the 
   assert.equal(boundsIntersectView([[80,20],[500,200]],{x:0,y:0,k:2},area),false);
   assert.equal(boundsIntersectView([[80,20],[500,200]],{x:-100,y:0,k:2},area),true);
   assert.equal(boundsIntersectView([[NaN,20],[500,200]],{x:0,y:0,k:1},area),false);
+});
+
+const paletteSource = stripTypeScriptTypes(readFileSync("src/lib/ui/map-palettes.ts", "utf8"), { mode: "strip" });
+const { MAP_PALETTES, getMapPalette } = await import("data:text/javascript;base64," + Buffer.from(paletteSource).toString("base64")) as {
+  MAP_PALETTES: {id:string; name:string; colors:readonly string[]}[];
+  getMapPalette: (value: unknown) => {id:string; name:string; colors:readonly string[]};
+};
+
+test("every appearance option preserves ranges, zero and unavailable semantics", () => {
+  const counts = [0,1,2,4,8,20,50,100,200,500];
+  const baseline = createMapCountBands(counts);
+  for (const palette of MAP_PALETTES) {
+    const bands = createMapCountBands(counts,palette.colors);
+    assert.deepEqual(bands.map(({min,max,label})=>({min,max,label})),baseline.map(({min,max,label})=>({min,max,label})));
+    assert.equal(mapCountColor(0,true,bands),"var(--county-none)");
+    assert.equal(mapCountColor(0,false,bands),"var(--county-unknown)");
+    assert.ok(bands.slice(1).every(band=>palette.colors.includes(band.color)));
+    assert.equal(new Set(palette.colors).size,6);
+  }
+});
+
+test("stale or invalid stored color preferences safely use the default", () => {
+  for (const value of [null,undefined,"", "old-theme", {}, 42]) assert.equal(getMapPalette(value).id,"earth");
+  for (const palette of MAP_PALETTES) assert.equal(getMapPalette(palette.id).id,palette.id);
+});
+
+test("each positive-count palette progresses from lighter to darker", () => {
+  const luminance = (hex:string) => {
+    const rgb=[1,3,5].map(offset=>parseInt(hex.slice(offset,offset+2),16)/255).map(value=>value<=.04045 ? value/12.92 : ((value+.055)/1.055)**2.4);
+    return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;
+  };
+  for (const palette of MAP_PALETTES) for (let i=1;i<palette.colors.length;i++) assert.ok(luminance(palette.colors[i])<luminance(palette.colors[i-1]));
 });

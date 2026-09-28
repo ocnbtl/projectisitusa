@@ -14,9 +14,9 @@ export default function AboutPage() {
     <main id="main-content" className="reading-page about-page">
       <header className="about-hero">
         <div className="about-hero-copy">
-          <h1>For the places<br />we care about.</h1>
-          <p>Knowing what lives around us is a good place to start caring for it.</p>
-          <p>IsItUSA brings invasive species records into one accessible atlas. Find what has been documented near you, follow the sources, and understand what those records can tell us.</p>
+          <h1>A clearer view of invasive species.</h1>
+          <p>Which invasive species have been found where you live? The answer should be easy to find.</p>
+          <p>IsItUSA brings scattered records together in a map anyone can explore. Look up your county, get to know a species, and see the research behind each record.</p>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <figure className="about-field-image">
@@ -26,44 +26,44 @@ export default function AboutPage() {
       </header>
 
       <section className="about-purpose" aria-labelledby="purpose-heading">
-        <h2 id="purpose-heading">Good information<br />belongs within reach.</h2>
+        <h2 id="purpose-heading">Local questions deserve clear answers.</h2>
         <div>
-          <p>Species records are scattered across research collections, agency websites, and monitoring programs. Finding them is only half the work. Understanding where they apply, when an observation was made, and what remains uncertain matters just as much.</p>
-          <p>We connect those details so you can spend less time searching and more time learning about the places you know.</p>
+          <p>A plant at the edge of a trail. An unfamiliar insect in the garden. A change along a favorite river. These are often the things that make us curious about invasive species.</p>
+          <p>The information is out there, but it can take time to find and understand. We bring together records from researchers, public agencies, and monitoring programs so more people can use them.</p>
         </div>
       </section>
 
       <section className="about-method" aria-labelledby="method-heading">
         <div className="section-introduction">
-          <h2 id="method-heading">Every record has a story.</h2>
-          <p>We keep the details that make it useful.</p>
+          <h2 id="method-heading">Look beyond the dot on the map.</h2>
+          <p>Where a species was found, when it was recorded, and who documented it all matter.</p>
         </div>
         <dl className="record-context">
-          <div><dt><MapPin size={21} aria-hidden="true" /> A place</dt><dd>A county record and a statewide listing have different geographic limits.</dd></div>
-          <div><dt><CalendarDays size={21} aria-hidden="true" /> A date</dt><dd>An observation tells us about a moment in time. Its review date is a separate detail.</dd></div>
-          <div><dt><BookOpen size={21} aria-hidden="true" /> A source</dt><dd>References stay close to the record, so you can look into the evidence yourself.</dd></div>
+          <div><dt><MapPin size={21} aria-hidden="true" /> A place</dt><dd>A record from one county does not tell us what is happening across an entire state.</dd></div>
+          <div><dt><CalendarDays size={21} aria-hidden="true" /> A date</dt><dd>A record may be years old. We keep observation dates separate from the date we reviewed the source.</dd></div>
+          <div><dt><BookOpen size={21} aria-hidden="true" /> A source</dt><dd>Open the original reference to see how a finding was documented and what it says.</dd></div>
         </dl>
-        <div className="about-evidence-note"><ScanSearch size={22} aria-hidden="true" /><p>A gap in the records is an open question. It does not mean a species is absent, and an old record does not confirm it is present today.</p></div>
-        <Link href="/research" className="text-link inline-flex min-h-11 items-center gap-2">Follow the research <ArrowRight size={16} aria-hidden="true" /></Link>
+        <div className="about-evidence-note"><ScanSearch size={22} aria-hidden="true" /><p>An empty spot on the map does not mean a species is absent. An older record does not prove it is still there today.</p></div>
+        <Link href="/research" className="text-link inline-flex min-h-11 items-center gap-2">See how we review records <ArrowRight size={16} aria-hidden="true" /></Link>
       </section>
 
       <section className="about-outlook" aria-labelledby="outlook-heading">
         <Globe2 size={32} strokeWidth={1.5} aria-hidden="true" />
-        <div><h2 id="outlook-heading">Starting locally. Thinking globally.</h2><p>IsItUSA is an independent initiative based in the United States. Our ambition is to make reliable, local species information useful across borders. We are building that foundation here, county by county.</p><p>Today, the atlas covers U.S. counties and county equivalents. Its catalog begins with the US-RIIS lower-48 register, so it is not a complete inventory of every place.</p></div>
+        <div><h2 id="outlook-heading">Built in the U.S. With a wider purpose.</h2><p>Invasive species cross borders. Useful information should, too. IsItUSA is an independent initiative based in the United States, with a long-term ambition to make local species information easier to use around the world.</p><p>We are starting with U.S. counties and county equivalents. Our species catalog begins with the US-RIIS lower-48 register; it is a starting point, not a complete list of every species in every place.</p></div>
       </section>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
-        <div className="section-introduction"><h2 id="help-heading">There is a place for you in this work.</h2><p>Start with your curiosity. Take the next step when you are ready.</p></div>
+        <div className="section-introduction"><h2 id="help-heading">Help make the atlas more useful.</h2><p>Share it with someone, learn how to report a sighting, or see what we are working on next.</p></div>
         <div className="involvement-links">
           <Link href="/report"><span><strong>Share an observation</strong><small>See how to document what you found and where to report it.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/join"><span><strong>Follow what matters to you</strong><small>Learn about county updates, species alerts, and ways to help.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/support"><span><strong>Support the atlas</strong><small>Help make the research and the tools more useful.</small></span><Heart size={22} aria-hidden="true" /></Link>
+          <Link href="/join"><span><strong>See the updates we are planning</strong><small>County news, species alerts, and ways to help. Email signups are coming later.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
+          <Link href="/support"><span><strong>Support the atlas</strong><small>See how you can help while we prepare to accept contributions.</small></span><Heart size={22} aria-hidden="true" /></Link>
         </div>
       </section>
 
       <section className="about-sources" aria-labelledby="sources-heading">
-        <h2 id="sources-heading">Built on work worth crediting.</h2>
-        <p>Our starting sources include the U.S. Register of Introduced and Invasive Species, EDDMapS, and the USGS Nonindigenous Aquatic Species database. Individual records carry their own references.</p>
+        <h2 id="sources-heading">The research we build on.</h2>
+        <p>This atlas draws on the work of researchers, public agencies, and people recording what they find. Our sources include US-RIIS, EDDMapS, and the USGS Nonindigenous Aquatic Species database. You can find the specific references alongside each record.</p>
         <div className="source-links">
           <a href="https://doi.org/10.5066/P9KFFTOD" target="_blank" rel="noreferrer">US-RIIS <ArrowUpRight size={15} aria-hidden="true" /></a>
           <a href="https://www.eddmaps.org/" target="_blank" rel="noreferrer">EDDMapS <ArrowUpRight size={15} aria-hidden="true" /></a>

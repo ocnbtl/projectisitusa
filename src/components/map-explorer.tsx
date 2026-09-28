@@ -12,6 +12,7 @@ import { useSearchParams } from "next/navigation";
 import { ArrowDown, ArrowUp, ArrowUpRight, Compass, X } from "lucide-react";
 import { CountyInsightPanel } from "@/components/county-insight-panel";
 import { LogoLoader } from "@/components/atlas/logo-loader";
+import { UpdateNotice } from "@/components/atlas/update-notice";
 import { MapToolbar } from "@/components/map-toolbar";
 import { UsCountyMap } from "@/components/us-county-map";
 import { type ClientDataStorePayload, getSpeciesForCounty, getSpeciesForCounties, speciesMatchesFilters, useClientDataStore } from "@/lib/data/client-store";
@@ -117,13 +118,14 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
   if (!store) return <main id="main-content" className="atlas-loading"><Compass size={36} /><h1>{error ? "The map could not load" : "Opening the field atlas"}</h1><p role={error ? "alert" : "status"}>{error || "Loading the versioned county and species snapshot..."}</p>{error ? <button type="button" className="primary-button" onClick={retry}>Try again</button> : null}<Link href="/research" className="text-link">Explore research status</Link></main>;
   return <main id="main-content" className={`atlas ${county ? "has-county" : ""} ${stateCode ? "has-state" : ""} ${expanded ? "sheet-expanded" : "sheet-collapsed"}`}>
     <UsCountyMap countyIndex={store.countyIndex} presenceIndex={activePresence} stateCode={stateCode} selectedCountyFips={county?.countyFips ?? null} neighboringCountyFips={county?.neighborFips ?? []} countyMatchCounts={countyMatchCounts} onCountySelect={selectCounty} onReset={() => { cancelZipLookup(); update({ county: null, state: null }); }} sheetExpanded={expanded} datasetLabel={datasetLabel} datasetDate={datasetDate} dataReady={dataReady} />
-    <MapToolbar counties={store.countyIndex} species={displaySpecies} categories={categories} environment={environment} stateCode={stateCode} speciesId={speciesId} query={query} zipStatus={zipStatus} isSearching={searching} countyCounts={countyCounts} speciesCounts={speciesCounts} dataReady={dataReady} datasetDate={datasetDate} datasetLabel={datasetLabel}
+    <UpdateNotice datasetDate={datasetDate} datasetLabel={datasetLabel} />
+    <MapToolbar counties={store.countyIndex} species={displaySpecies} categories={categories} environment={environment} stateCode={stateCode} speciesId={speciesId} query={query} zipStatus={zipStatus} isSearching={searching} countyCounts={countyCounts} speciesCounts={speciesCounts} dataReady={dataReady}
       onApplyFilters={(values, habitat) => update({ categories: values.join(","), environment: habitat, species: null })}
       onStateChange={value => { cancelZipLookup(); update({ state: value, county: null }); }}
       onCountySelect={selectCounty} onSpeciesSelect={id => { cancelZipLookup(); update({ species: id, q: null }); }} onQueryChange={value => { cancelZipLookup(); update({ q: value, species: null }); }}
       onCategoryToggle={category => { const next = categories.includes(category) ? categories.filter(c => c !== category) : [...categories, category]; update({ categories: next.join(","), species: null }); }}
       onEnvironmentChange={value => update({ environment: value })} onZipSearch={searchZip} onClearFilters={() => update({ categories: null, species: null, environment: null, q: null })} />
-    {!county && !stateCode ? <div className="atlas-intro"><h1>Understand the species.<br />{" "}Protect the places.</h1><p>Explore invasive species records across the United States. Start with a place. Follow the evidence.</p><Link href="/species">Discover the species <ArrowUpRight size={16} /></Link></div> : null}
+    {!county && !stateCode ? <div className="atlas-intro"><h1>Know what&apos;s<br />{" "}been found nearby.</h1><p>Explore invasive species recorded in your county, and get to know the plants and animals changing the places you care about.</p><Link href="/species">Meet the species <ArrowUpRight size={16} /></Link></div> : null}
     {!dataReady ? <div className="atlas-data-status" role={dataError ? "alert" : "status"}>{dataError ? <><p>{typeof dataError === "string" ? dataError : "Research records could not be loaded."}</p><button type="button" className="text-link" onClick={reviewed.retry}>Try again</button></> : "Loading reviewed county records..."}</div> : null}
     {countyFips && !county ? <div className="atlas-notice" role="status">This county code is not in the current geography. Search for a county or planning region.<button onClick={() => update({ county: null })}>Clear selection</button></div> : null}
     {county ? <aside className="county-sheet" aria-label={`${county.name} county details`} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); closeCounty(); } }}>

@@ -10,6 +10,8 @@ import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editori
 import { formatCategoryLabel } from "@/lib/utils";
 
 const PAGE_SIZE = 24;
+// Reuse the validated catalog during a visit rather than remounting a loading skeleton.
+let cachedCatalog: Species[] | null = null;
 const categories: SpeciesCategory[] = ["plants", "insects", "wildlife", "fungi-diseases"];
 const categoryIcons = { plants: Leaf, insects: Bug, wildlife: Bird, "fungi-diseases": Microscope };
 
@@ -56,7 +58,7 @@ function DirectoryCard({ species }: { species: Species }) {
 }
 
 export function SpeciesDirectory() {
-  const [catalog, setCatalog] = useState<Species[] | null>(null);
+  const [catalog, setCatalog] = useState<Species[] | null>(() => cachedCatalog);
   const [error, setError] = useState(false);
   const [loadAttempt, setLoadAttempt] = useState(0);
   const [query, setQuery] = useState("");
@@ -83,11 +85,13 @@ export function SpeciesDirectory() {
   }, []);
 
   useEffect(() => {
+    if (cachedCatalog && loadAttempt === 0) return;
     let active = true;
     setError(false);
     void loadRuntimeData<unknown>("catalog").then(data => {
       if (!Array.isArray(data) || !data.every(isDirectorySpecies)) throw new Error("Invalid catalog");
-      if (active) setCatalog(data.map(getDisplaySpecies).sort((a, b) => a.commonName.localeCompare(b.commonName, "en") || a.scientificName.localeCompare(b.scientificName, "en")));
+      cachedCatalog = data.map(getDisplaySpecies).sort((a, b) => a.commonName.localeCompare(b.commonName, "en") || a.scientificName.localeCompare(b.scientificName, "en"));
+      if (active) setCatalog(cachedCatalog);
     }).catch(() => { if (active) setError(true); });
     return () => { active = false; };
   }, [loadAttempt]);

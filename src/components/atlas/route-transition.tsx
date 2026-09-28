@@ -14,7 +14,7 @@ export function RouteTransition() {
     function start() {
       clearTimeout(timeout);
       clearTimeout(expiry);
-      timeout = setTimeout(() => setPendingFrom(pathname), 120);
+      timeout = setTimeout(() => setPendingFrom(pathname), 350);
       expiry = setTimeout(() => setPendingFrom(null), 15000);
     }
     function follow(event: MouseEvent) {
@@ -29,5 +29,5 @@ export function RouteTransition() {
     document.addEventListener("keydown", cancel);
     return () => { clearTimeout(timeout); clearTimeout(expiry); document.removeEventListener("click", follow, true); document.removeEventListener("keydown", cancel); };
   }, [pathname]);
-  return pendingFrom === pathname ? <LogoLoader overlay /> : null;
+  return pendingFrom === pathname ? <LogoLoader overlay immediate /> : null;
 }
