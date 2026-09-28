@@ -137,9 +137,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
   .atlas { min-height:0; }
   .atlas-filter-row { flex-wrap:nowrap; overflow-x:auto; padding-bottom:3px; }
   .atlas-filter-row>* { flex-shrink:0; }
-  .county-sheet { max-height:min(58dvh,calc(100dvh - 290px)); }
-  .has-county .atlas-regions { top:198px; right:14px; left:auto; }
-  .has-county .atlas-zoom { top:198px; left:14px; right:auto; bottom:auto; display:flex; }
+  .county-sheet { max-height:min(58dvh,calc(100dvh - var(--atlas-sheet-clearance,298px))); }
+  .has-county .atlas-regions { top:var(--atlas-control-top,198px); right:14px; left:auto; }
+  .has-county .atlas-zoom { top:var(--atlas-control-top,198px); left:14px; right:auto; bottom:auto; display:flex; }
   .has-county .atlas-regions .region-label-full { display:none; }
   .has-county .atlas-regions .region-label-short { display:inline; }
   .has-county .atlas-zoom button { width:40px; }

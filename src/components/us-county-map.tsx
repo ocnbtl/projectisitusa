@@ -52,7 +52,10 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
       const panel = sheet?.getBoundingClientRect();
       const controls = toolbar?.getBoundingClientRect();
       const mobile = rect.width <= 700;
-      const top = mobile ? Math.max(150, (controls?.bottom ?? rect.top + 180) - rect.top + 64) : 180;
+      const controlTop = Math.max(198, (controls?.bottom ?? rect.top + 180) - rect.top + 10);
+      parent.style.setProperty("--atlas-control-top", `${controlTop}px`);
+      parent.style.setProperty("--atlas-sheet-clearance", `${controlTop + 100}px`);
+      const top = mobile ? controlTop + 64 : 180;
       const right = !mobile && panel ? panel.left - rect.left - 16 : rect.width - 16;
       const bottom = mobile && panel ? panel.top - rect.top - 16 : rect.height - 32;
       const next = { left: 16, right: Math.max(32, right), top: Math.min(top, bottom - 16), bottom };
