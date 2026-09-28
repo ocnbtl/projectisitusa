@@ -5,7 +5,8 @@ import { stripTypeScriptTypes } from "node:module";
 
 type Band = { min: number; max: number; label: string; color: string };
 const source = stripTypeScriptTypes(readFileSync("src/lib/ui/map-scale.ts", "utf8"), { mode: "strip" });
-const { createMapCountBands, mapCountColor } = await import("data:text/javascript;base64," + Buffer.from(source).toString("base64")) as {
+const { boundsIntersectView, createMapCountBands, mapCountColor } = await import("data:text/javascript;base64," + Buffer.from(source).toString("base64")) as {
+  boundsIntersectView: (bounds: [[number,number],[number,number]], view: {x:number;y:number;k:number}, area: {left:number;right:number;top:number;bottom:number}) => boolean;
   createMapCountBands: (values: number[]) => Band[];
   mapCountColor: (count: number, available: boolean, bands?: Band[]) => string;
 };
@@ -31,4 +32,12 @@ test("small state counts use distinct colors and retain exact thresholds", () =>
   const national = createMapCountBands([20,40,80,160,320,640]);
   assert.notDeepEqual(state.map(b=>b.min), national.map(b=>b.min));
   assert.equal(state.at(-1)?.max,5);
+});
+
+test("zoom scope includes intersecting counties whose centroids are outside the viewport", () => {
+  const area = {left:0,right:100,top:0,bottom:100};
+  assert.equal(boundsIntersectView([[80,20],[500,200]],{x:0,y:0,k:1},area),true);
+  assert.equal(boundsIntersectView([[80,20],[500,200]],{x:0,y:0,k:2},area),false);
+  assert.equal(boundsIntersectView([[80,20],[500,200]],{x:-100,y:0,k:2},area),true);
+  assert.equal(boundsIntersectView([[NaN,20],[500,200]],{x:0,y:0,k:1},area),false);
 });

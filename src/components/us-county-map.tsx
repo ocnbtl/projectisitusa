@@ -6,7 +6,7 @@ import { feature } from "topojson-client";
 import { Info, Minus, Plus, RotateCcw } from "lucide-react";
 import countyTopology from "@/data/source/county-equivalents-topology.json";
 import type { CountyRecord, ExplorerPresenceIndex } from "@/lib/data/types";
-import { createMapCountBands, mapCountColor } from "@/lib/ui/map-scale";
+import { boundsIntersectView, createMapCountBands, mapCountColor } from "@/lib/ui/map-scale";
 
 type CountyFeature = GeoJSON.Feature<GeoJSON.Polygon | GeoJSON.MultiPolygon>;
 const counties = (feature(countyTopology as never, countyTopology.objects.counties as never) as unknown as GeoJSON.FeatureCollection).features as CountyFeature[];
@@ -90,12 +90,15 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     return !focusedState ? geoAlbersUsa().fitExtent(extent, collection) : geoMercator().rotate(focusedState === "AK" ? [154, 0] : focusedState === "HI" ? [157, 0] : [0, 0]).fitExtent(extent, collection);
   }, [focusedState, focusArea, visibleCounties]);
   const path = useMemo(() => geoPath(projection), [projection]);
-  const shapes = useMemo(() => visibleCounties.map(county => ({ fips: fipsOf(county), d: path(county) ?? "", center: path.centroid(county) })), [path, visibleCounties]);
-  const scaleScope = focusedState ?? (view.k > 1.3 ? "Visible counties" : "U.S.");
-  const bands = useMemo(() => {
-    const inView = !focusedState && view.k > 1.3 ? new Set(shapes.filter(s => s.center[0] * view.k + view.x >= focusArea.left && s.center[0] * view.k + view.x <= focusArea.right && s.center[1] * view.k + view.y >= focusArea.top && s.center[1] * view.k + view.y <= focusArea.bottom).map(s => s.fips)) : null;
-    return createMapCountBands(visibleCounties.filter(c => (!inView || inView.has(fipsOf(c))) && Object.hasOwn(presenceIndex, fipsOf(c))).map(c => countyMatchCounts[fipsOf(c)] ?? 0));
-  }, [visibleCounties, presenceIndex, countyMatchCounts, focusedState, shapes, view, focusArea]);
+  const shapes = useMemo(() => visibleCounties.map(county => ({ fips: fipsOf(county), d: path(county) ?? "", center: path.centroid(county), bounds: path.bounds(county) })), [path, visibleCounties]);
+  const scale = useMemo(() => {
+    const inView = !focusedState && view.k > 1.3 ? new Set(shapes.filter(s => boundsIntersectView(s.bounds, view, { left: 0, right: size.width, top: 0, bottom: size.height })).map(s => s.fips)) : null;
+    const allCounts = visibleCounties.filter(c => Object.hasOwn(presenceIndex, fipsOf(c)));
+    const values = allCounts.filter(c => !inView || inView.has(fipsOf(c))).map(c => countyMatchCounts[fipsOf(c)] ?? 0);
+    const useVisibleScale = inView !== null && values.some(count => count > 0);
+    return { scope: focusedState ?? (useVisibleScale ? "Visible counties" : "U.S."), bands: createMapCountBands(inView && !useVisibleScale ? allCounts.map(c => countyMatchCounts[fipsOf(c)] ?? 0) : values) };
+  }, [visibleCounties, presenceIndex, countyMatchCounts, focusedState, shapes, view, size]);
+  const { bands, scope: scaleScope } = scale;
   const selectedShape = shapes.find(shape => shape.fips === selectedCountyFips);
   const neighbors = useMemo(() => new Set(neighboringCountyFips), [neighboringCountyFips]);
 

@@ -20,3 +20,12 @@ export function mapCountColor(count: number, hasData: boolean, bands: MapCountBa
   if (!hasData || !Number.isSafeInteger(count) || count < 0) return "var(--county-unknown)";
   return [...bands].reverse().find(band => count >= band.min)?.color ?? "var(--county-none)";
 }
+
+/** Keep intersecting county geometry in the scale even when its center is off-screen. */
+export function boundsIntersectView(bounds: [[number, number], [number, number]], view: { x: number; y: number; k: number }, area: { left: number; right: number; top: number; bottom: number }): boolean {
+  if (!bounds.flat().every(Number.isFinite)) return false;
+  return bounds[1][0] * view.k + view.x >= area.left
+    && bounds[0][0] * view.k + view.x <= area.right
+    && bounds[1][1] * view.k + view.y >= area.top
+    && bounds[0][1] * view.k + view.y <= area.bottom;
+}
