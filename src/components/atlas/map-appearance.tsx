@@ -17,15 +17,15 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
     if (event.key === "Escape" && open) { event.stopPropagation(); (open === "help" ? helpButton : colorButton).current?.focus(); setOpen(null); }
   }}>
     <div id={id + "-help"} className="legend-drawer" data-open={open === "help"} aria-hidden={open !== "help"}>
-      <div><div className="legend-explanation"><h2>What the colors tell you</h2>
-        <p>Each number is a count of different species recorded in a county, using your current filters.</p>
-        <p>The colors currently compare <strong>{area}</strong>. The ranges adjust as you zoom or choose a state, so check the numbers when comparing places.</p>
-        <p>More records do not necessarily mean more damage. Zero means no matching records, not that a species is absent. Gray means a count is unavailable.</p>
-        {published && <p className="legend-data-date">{datasetLabel === "Earlier map records" ? "Earlier data release" : "Data released"}: {published}. Observation dates are listed with each source.</p>}
+      <div><div className="legend-explanation"><h2>Reading the map</h2>
+        <p>Colors show how many species match your filters in each county, not how much harm they cause.</p>
+        <p>Comparing <strong>{area}</strong>. Ranges change as you zoom.</p>
+        <p><strong>0:</strong> no matching records, not proof of absence. <strong>Gray:</strong> unavailable.</p>
+        {published && <p className="legend-data-date">{datasetLabel === "Earlier map records" ? "Earlier data" : "Data"}: {published}. Find observation dates in the sources.</p>}
       </div></div>
     </div>
     <div id={id + "-colors"} className="legend-drawer" data-open={open === "colors"} aria-hidden={open !== "colors"}>
-      <div><div className="legend-palette-panel"><h2>A different view</h2><p>Choose the colors you like. The records stay the same.</p>
+      <div><div className="legend-palette-panel"><h2>Map colors</h2>
         <div className="map-palette-options" role="group" aria-label="Map color palettes">{MAP_PALETTES.map(option => <button key={option.id} type="button" tabIndex={open === "colors" ? 0 : -1} aria-pressed={palette === option.id} onClick={() => onPaletteChange(option.id)}>
           <span className="palette-preview" aria-hidden="true">{option.colors.map(color => <i key={color} style={{ backgroundColor: color }} />)}</span>
           <span>{option.name}</span>{palette === option.id && <Check size={15} aria-hidden="true" />}

@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { geoAlbersUsa, geoMercator, geoPath } from "d3-geo";
 import { feature, mesh } from "topojson-client";
 import { Minus, Plus, RotateCcw } from "lucide-react";
@@ -9,10 +9,13 @@ import { getMapPalette, MAP_PALETTE_STORAGE_KEY, type MapPaletteId } from "@/lib
 import countyTopology from "@/data/source/county-equivalents-topology.json";
 import type { CountyRecord, ExplorerPresenceIndex } from "@/lib/data/types";
 import { boundsIntersectView, createMapCountBands, mapCountColor } from "@/lib/ui/map-scale";
+import { beginMapPointer, cancelMapGesture, createMapGesture, endMapPointer, moveMapPointer, scaleMapAt, type MapView } from "@/lib/ui/map-gestures";
+import { measuredMapViewport, sameMapViewport, type MapViewport } from "@/lib/ui/map-viewport";
 
 type CountyFeature = GeoJSON.Feature<GeoJSON.Polygon | GeoJSON.MultiPolygon>;
 const counties = (feature(countyTopology as never, countyTopology.objects.counties as never) as unknown as GeoJSON.FeatureCollection).features as CountyFeature[];
 const fipsOf = (county: CountyFeature) => String(county.id).padStart(5, "0");
+const EMPTY_VIEWPORT: MapViewport = { width: 1, height: 1, area: { left: 0, right: 1, top: 0, bottom: 1 } };
 
 interface UsCountyMapProps {
   countyIndex: Record<string, CountyRecord>;
@@ -37,24 +40,25 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     setPaletteId(value);
     try { localStorage.setItem(MAP_PALETTE_STORAGE_KEY, value); } catch { /* Keep the choice for this visit. */ }
   }
-  const [size, setSize] = useState({ width: 1200, height: 800 });
+  const [viewport, setViewport] = useState<MapViewport | null>(null);
+  const size = viewport ?? EMPTY_VIEWPORT;
+  const focusArea = size.area;
   const group = useRef<SVGGElement>(null);
   const frame = useRef<number | null>(null);
   const liveView = useRef({ x: 0, y: 0, k: 1 });
   const [dragging, setDragging] = useState(false);
   const [view, setView] = useState({ x: 0, y: 0, k: 1 });
   const [hovered, setHovered] = useState<string | null>(null);
-  const drag = useRef<{ x: number; y: number; startX: number; startY: number } | null>(null);
-  const didDrag = useRef(false);
-  const [focusArea, setFocusArea] = useState({ left: 16, right: 1184, top: 195, bottom: 640 });
+  const gesture = useRef(createMapGesture());
+  const pointerSpace = useRef({ left: 0, top: 0, sx: 1, sy: 1 });
   const focusedState = stateCode ?? (selectedCountyFips ? countyIndex[selectedCountyFips]?.stateCode : null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const node = container.current;
     const parent = node?.parentElement;
     if (!node || !parent) return;
     const sheet = parent.querySelector<HTMLElement>(".county-sheet");
-    const toolbar = parent.querySelector<HTMLElement>(".atlas-toolbar");
+    const toolbar = parent.querySelector<HTMLElement>(".atlas-topbar");
     const legend = node.querySelector<HTMLElement>(".atlas-legend");
     const intro = parent.querySelector<HTMLElement>(".atlas-intro");
     const measure = () => {
@@ -65,17 +69,17 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
       const legendSummary = legend?.querySelector<HTMLElement>(".legend-summary")?.getBoundingClientRect();
       if (legendBounds && legendBounds.height > 0) parent.style.setProperty("--atlas-legend-clearance", `${rect.bottom - legendBounds.top + 12}px`);
       const mobile = rect.width <= 700;
-      const controlTop = Math.max(190, (controls?.bottom ?? rect.top + 180) - rect.top + 12);
+      const controlTop = Math.max(0, (controls?.bottom ?? rect.top + 180) - rect.top + 12);
       parent.style.setProperty("--atlas-control-top", `${controlTop}px`);
       parent.style.setProperty("--atlas-sheet-clearance", `${controlTop + 88}px`);
       const introBounds = intro?.getBoundingClientRect();
       const introVisible = Boolean(introBounds && introBounds.height > 0);
-      const top = mobile ? panel ? controlTop + 54 : introVisible ? introBounds!.bottom - rect.top + 18 : controlTop + 15 : Math.max(190, controlTop + 15);
+      const top = mobile ? panel ? controlTop + 54 : introVisible ? introBounds!.bottom - rect.top + 18 : controlTop + 15 : controlTop + 15;
       const right = !mobile && panel ? panel.left - rect.left - 24 : rect.width - 24;
       const bottom = mobile ? (panel ? panel.top - rect.top - 16 : legendSummary && legendSummary.height > 0 ? legendSummary.top - rect.top - 28 : rect.height - 162) : rect.height - 90;
       const left = !mobile && introVisible && !panel ? Math.min(400, rect.width * .36) : 24;
-      const next = { left, right: Math.max(left + 80, right), top: Math.min(top, bottom - 40), bottom };
-      setFocusArea(old => Object.keys(next).every(key => old[key as keyof typeof old] === next[key as keyof typeof next]) ? old : next);
+      const next = measuredMapViewport(rect.width, rect.height, { left, right: Math.max(left + 80, right), top: Math.min(top, bottom - 40), bottom });
+      if (next) setViewport(old => sameMapViewport(old, next) ? old : next);
     };
     measure();
     const observer = new ResizeObserver(measure);
@@ -84,24 +88,19 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     if (toolbar) observer.observe(toolbar);
     if (legend) observer.observe(legend);
     if (intro) observer.observe(intro);
-    return () => observer.disconnect();
+    let active = true;
+    void document.fonts.ready.then(() => { if (active) measure(); });
+    return () => { active = false; observer.disconnect(); };
   }, [selectedCountyFips, sheetExpanded, focusedState]);
-
-  useEffect(() => {
-    const node = container.current;
-    if (!node) return;
-    const observer = new ResizeObserver(([entry]) => setSize({ width: entry.contentRect.width, height: entry.contentRect.height }));
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
 
   const visibleCounties = useMemo(() => counties.filter(c => countyIndex[fipsOf(c)] && Number(fipsOf(c).slice(0, 2)) < 60 && (!focusedState || countyIndex[fipsOf(c)].stateCode === focusedState)), [countyIndex, focusedState]);
   const projection = useMemo(() => {
+    if (!viewport) return geoAlbersUsa();
     const collection: GeoJSON.FeatureCollection = { type: "FeatureCollection", features: visibleCounties };
     const extent: [[number, number], [number, number]] = [[focusArea.left, focusArea.top], [focusArea.right, focusArea.bottom]];
     // Rotate Alaska before fitting to keep both sides of the Aleutian antimeridian together.
     return !focusedState ? geoAlbersUsa().fitExtent(extent, collection) : geoMercator().rotate(focusedState === "AK" ? [154, 0] : focusedState === "HI" ? [157, 0] : [0, 0]).fitExtent(extent, collection);
-  }, [focusedState, focusArea, visibleCounties]);
+  }, [focusedState, focusArea, visibleCounties, viewport]);
   const path = useMemo(() => geoPath(projection), [projection]);
   const stateBoundary = useMemo(() => {
     const geometries = countyTopology.objects.counties.geometries.filter(geometry => {
@@ -111,7 +110,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     const borders = mesh(countyTopology as never, { type: "GeometryCollection", geometries } as never, (a, b) => a === b || String(a.id).padStart(5, "0").slice(0, 2) !== String(b.id).padStart(5, "0").slice(0, 2));
     return path(borders) ?? "";
   }, [countyIndex, focusedState, path]);
-  const shapes = useMemo(() => visibleCounties.map(county => ({ fips: fipsOf(county), d: path(county) ?? "", center: path.centroid(county), bounds: path.bounds(county) })), [path, visibleCounties]);
+  const shapes = useMemo(() => viewport ? visibleCounties.map(county => ({ fips: fipsOf(county), d: path(county) ?? "", center: path.centroid(county), bounds: path.bounds(county) })) : [], [path, visibleCounties, viewport]);
   const scale = useMemo(() => {
     const inView = !focusedState && view.k > 1.3 ? new Set(shapes.filter(s => boundsIntersectView(s.bounds, view, { left: 0, right: size.width, top: 0, bottom: size.height })).map(s => s.fips)) : null;
     const allCounts = visibleCounties.filter(c => Object.hasOwn(presenceIndex, fipsOf(c)));
@@ -124,11 +123,15 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
   const neighbors = useMemo(() => new Set(neighboringCountyFips), [neighboringCountyFips]);
 
   // Legend reflow changes the fit area, but must not undo a manual zoom or pan.
-  useEffect(() => {
+  useLayoutEffect(() => {
+    cancelMapGesture(gesture.current);
+    if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
+    group.current?.removeAttribute("data-interacting");
+    setDragging(false);
     if (!selectedCountyFips) setView({ x: 0, y: 0, k: 1 });
-  }, [selectedCountyFips, focusedState, size]);
+  }, [selectedCountyFips, focusedState, viewport?.width]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setHovered(null);
     if (!selectedCountyFips) return;
     const shape = shapes.find(s => s.fips === selectedCountyFips);
@@ -137,19 +140,36 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     setView({ x: (focusArea.left + focusArea.right) / 2 - shape.center[0] * k, y: (focusArea.top + focusArea.bottom) / 2 - shape.center[1] * k, k });
   }, [selectedCountyFips, shapes, focusArea]);
 
-  useEffect(() => { liveView.current = view; }, [view]);
+  useLayoutEffect(() => { liveView.current = view; }, [view]);
   useEffect(() => () => { if (frame.current !== null) cancelAnimationFrame(frame.current); }, []);
-  function finishDrag() {
-    drag.current = null;
+  function paintView() {
+    const v = liveView.current;
+    group.current?.setAttribute("transform", "translate(" + v.x + " " + v.y + ") scale(" + v.k + ")");
+  }
+  function pointerPoint(event: ReactPointerEvent<SVGSVGElement>) {
+    const space = pointerSpace.current;
+    return { x: (event.clientX - space.left) * space.sx, y: (event.clientY - space.top) * space.sy };
+  }
+  function finishPointer(event: ReactPointerEvent<SVGSVGElement>, cancelled = false) {
+    if (!gesture.current.pointers.has(event.pointerId)) return;
+    if (!cancelled) {
+      const final = moveMapPointer(gesture.current, event.pointerId, pointerPoint(event));
+      if (final) liveView.current = final;
+    }
+    const county = endMapPointer(gesture.current, event.pointerId, cancelled);
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    if (gesture.current.pointers.size) return;
     if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
+    paintView();
     setView({ ...liveView.current });
+    group.current?.removeAttribute("data-interacting");
     setDragging(false);
+    if (county) onCountySelect(county);
   }
   function zoom(factor: number) {
     setView(current => {
-      const k = Math.min(12, Math.max(1, current.k * factor));
-      const cx = (focusArea.left + focusArea.right) / 2, cy = (focusArea.top + focusArea.bottom) / 2;
-      return { k, x: cx - (cx - current.x) * k / current.k, y: cy - (cy - current.y) * k / current.k };
+      const center = { x: (focusArea.left + focusArea.right) / 2, y: (focusArea.top + focusArea.bottom) / 2 };
+      return scaleMapAt(current, current.k * factor, center);
     });
   }
   function countLabel(fips: string) {
@@ -170,30 +190,42 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     ? Object.hasOwn(presenceIndex, selectedCountyFips) && (countyMatchCounts[selectedCountyFips] ?? 0) === 0
     : hovered && Object.hasOwn(presenceIndex, hovered) && (countyMatchCounts[hovered] ?? 0) === 0);
   return <div ref={container} className={"atlas-map " + (dragging ? "is-dragging" : "")} aria-label="Interactive county map">
-    <svg width={size.width} height={size.height} viewBox={"0 0 " + size.width + " " + size.height} aria-label="County map. Use county search or the state filter to explore by keyboard."
+    <svg viewBox={viewport ? "0 0 " + size.width + " " + size.height : undefined} style={{ visibility: viewport ? "visible" : "hidden" }} aria-label="County map. Drag to move and pinch to zoom. Use county search or the state filter to explore by keyboard."
       onPointerDown={event => {
         if (event.button !== 0) return;
-        didDrag.current = false;
-        drag.current = { x: event.clientX, y: event.clientY, startX: liveView.current.x, startY: liveView.current.y };
+        event.preventDefault();
+        if (!gesture.current.pointers.size) {
+          const rect = event.currentTarget.getBoundingClientRect();
+          pointerSpace.current = { left: rect.left, top: rect.top, sx: size.width / rect.width, sy: size.height / rect.height };
+          // Begin at the visible position even if a button zoom is still animating.
+          const transform = group.current && getComputedStyle(group.current).transform;
+          if (transform && transform !== "none") {
+            const matrix = new DOMMatrix(transform);
+            const current: MapView = { x: matrix.e, y: matrix.f, k: matrix.a };
+            if ([current.x, current.y, current.k].every(Number.isFinite) && current.k > 0) liveView.current = current;
+          }
+          group.current?.setAttribute("data-interacting", "true");
+          paintView();
+          setDragging(true);
+          setHovered(null);
+        }
+        const county = (event.target as SVGElement).closest("[data-county]")?.getAttribute("data-county") ?? null;
+        beginMapPointer(gesture.current, event.pointerId, pointerPoint(event), liveView.current, county);
+        event.currentTarget.setPointerCapture(event.pointerId);
       }}
       onPointerMove={event => {
-        const current = drag.current;
-        if (!current) return;
-        const dx = event.clientX - current.x, dy = event.clientY - current.y;
-        if (Math.abs(dx) + Math.abs(dy) <= 5 && !didDrag.current) return;
-        if (!didDrag.current) { didDrag.current = true; setDragging(true); setHovered(null); event.currentTarget.setPointerCapture(event.pointerId); }
-        liveView.current = { ...liveView.current, x: current.startX + dx, y: current.startY + dy };
+        const next = moveMapPointer(gesture.current, event.pointerId, pointerPoint(event));
+        if (!next) return;
+        liveView.current = next;
         if (frame.current === null) frame.current = requestAnimationFrame(() => {
-          const v = liveView.current;
-          group.current?.setAttribute("transform", "translate(" + v.x + " " + v.y + ") scale(" + v.k + ")");
+          paintView();
           frame.current = null;
         });
       }}
-      onPointerUp={finishDrag} onPointerCancel={finishDrag} onLostPointerCapture={() => { if (drag.current) finishDrag(); }}>
+      onPointerUp={event => finishPointer(event)} onPointerCancel={event => finishPointer(event, true)} onLostPointerCapture={event => finishPointer(event, true)}>
       <g ref={group} className="atlas-map-shapes" transform={"translate(" + view.x + " " + view.y + ") scale(" + view.k + ")"}
-        onPointerOver={event => { if (!drag.current) setHovered((event.target as SVGElement).closest("[data-county]")?.getAttribute("data-county") ?? null); }}
-        onPointerLeave={() => { if (!drag.current) setHovered(null); }}
-        onClick={event => { const fips = (event.target as SVGElement).closest("[data-county]")?.getAttribute("data-county"); if (!didDrag.current && fips) onCountySelect(fips); }}>
+        onPointerOver={event => { if (event.pointerType === "mouse" && !gesture.current.pointers.size) setHovered((event.target as SVGElement).closest("[data-county]")?.getAttribute("data-county") ?? null); }}
+        onPointerLeave={() => { if (!gesture.current.pointers.size) setHovered(null); }}>
         {paths}
         <path className="atlas-state-boundaries" d={stateBoundary} fill="none" vectorEffect="non-scaling-stroke" pointerEvents="none" aria-hidden="true" />
         {selectedShape?.center.every(Number.isFinite) ? <circle data-selected-marker="true" cx={selectedShape.center[0]} cy={selectedShape.center[1]} r={6 / view.k} fill="var(--county-selected)" stroke="var(--surface-strong)" strokeWidth={2 / view.k} pointerEvents="none" /> : null}

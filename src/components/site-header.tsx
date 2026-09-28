@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { BookOpen, Heart, Leaf, Map, Users } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -16,17 +16,19 @@ export function SiteHeader() {
   const pathname = usePathname();
   const nav = useRef<HTMLElement>(null);
   const [pill, setPill] = useState({ left: 0, width: 0 });
-  useEffect(() => {
+  useLayoutEffect(() => {
     const node = nav.current;
     if (!node) return;
     const measure = () => {
       const active = node.querySelector<HTMLElement>('[aria-current="page"]');
       setPill(active ? { left: active.offsetLeft, width: active.offsetWidth } : { left: 0, width: 0 });
     };
+    let active = true;
     measure();
+    void document.fonts.ready.then(() => { if (active) measure(); });
     const observer = new ResizeObserver(measure);
     observer.observe(node);
-    return () => observer.disconnect();
+    return () => { active = false; observer.disconnect(); };
   }, [pathname]);
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
@@ -39,7 +41,12 @@ export function SiteHeader() {
         <span aria-hidden="true" className="nav-active-pill" style={{ width: pill.width, transform: `translateX(${pill.left}px)`, opacity: pill.width ? 1 : 0 }} />
         {navigation.map(({ href, label, icon: Icon }) => <Link key={href} href={href} prefetch={true}
           aria-current={pathname === href || href === "/species" && pathname.startsWith("/species/") ? "page" : undefined}
-          className={href === "/" ? "map-nav-link" : ""}><Icon size={16} aria-hidden="true" /><span>{label}</span></Link>)}
+          className={href === "/" ? "map-nav-link" : ""}
+          onClick={event => {
+            if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+              setPill({ left: event.currentTarget.offsetLeft, width: event.currentTarget.offsetWidth });
+            }
+          }}><Icon size={16} aria-hidden="true" /><span>{label}</span></Link>)}
         <ThemeToggle />
       </nav>
     </header>
