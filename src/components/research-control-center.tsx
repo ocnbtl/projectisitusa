@@ -269,7 +269,7 @@ function formatLineage(lineage: unknown) {
   return String(lineage);
 }
 
-function StatusBadge({ status }: { status: string }) {
+function StatusBadge({ status, label }: { status: string; label?: string }) {
   const normalized = status.toLowerCase();
   const style =
     STATUS_STYLES[normalized] ??
@@ -279,7 +279,7 @@ function StatusBadge({ status }: { status: string }) {
     <span
       className={`inline-flex max-w-full items-center rounded-full border px-2 py-1 text-[11px] font-semibold leading-none ${style}`}
     >
-      <span className="truncate">{formatLabel(status)}</span>
+      <span className="truncate">{label ?? formatLabel(status)}</span>
     </span>
   );
 }
@@ -480,6 +480,7 @@ function CurrentDeterminationLabel({ pair }: { pair: CountyResearchPair }) {
   return (
     <span className="mt-1 block text-xs font-medium text-[var(--foreground)]">
       Current: {temporal.currentLabel}
+      {temporal.attribution ? <span className="mt-1 block font-normal">{temporal.attribution}</span> : null}
     </span>
   );
 }
@@ -508,6 +509,7 @@ function EvidenceDetails({
               <dd className="mt-1 font-medium">{temporal.currentLabel}</dd>
             </div>
           </dl>
+          {temporal.attribution ? <p className="mt-3 text-xs font-medium">{temporal.attribution}</p> : null}
           <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{temporal.explanation}</p>
         </section>
       ) : null}
@@ -738,7 +740,7 @@ function CountyPairTable({
                     </td>
                     <td className="px-3 py-3">
                       <span className="inline-block">
-                      <StatusBadge status={pair.displayStatus} />
+                      <StatusBadge status={pair.displayStatus} label={pair.displayStatus === "verified-absent" ? describeTemporalDetermination(pair)?.pairStatusLabel : undefined} />
                       <CurrentDeterminationLabel pair={pair} />
                     </span>
                     </td>
@@ -802,7 +804,7 @@ function CountyPairTable({
                   </span>
                   <span className="mt-2 flex flex-wrap items-center gap-2">
                     <span className="inline-block">
-                        <StatusBadge status={pair.displayStatus} />
+                        <StatusBadge status={pair.displayStatus} label={pair.displayStatus === "verified-absent" ? describeTemporalDetermination(pair)?.pairStatusLabel : undefined} />
                         <CurrentDeterminationLabel pair={pair} />
                       </span>
                     <span className="text-xs text-[var(--muted)]">
