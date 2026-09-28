@@ -102,9 +102,14 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
   const selectedShape = shapes.find(shape => shape.fips === selectedCountyFips);
   const neighbors = useMemo(() => new Set(neighboringCountyFips), [neighboringCountyFips]);
 
+  // Legend reflow changes the fit area, but must not undo a manual zoom or pan.
+  useEffect(() => {
+    if (!selectedCountyFips) setView({ x: 0, y: 0, k: 1 });
+  }, [selectedCountyFips, focusedState, size]);
+
   useEffect(() => {
     setHovered(null);
-    if (!selectedCountyFips) { setView({ x: 0, y: 0, k: 1 }); return; }
+    if (!selectedCountyFips) return;
     const shape = shapes.find(s => s.fips === selectedCountyFips);
     if (!shape || !shape.center.every(Number.isFinite)) { setView({ x: 0, y: 0, k: 1 }); return; }
     const k = 1.6;
