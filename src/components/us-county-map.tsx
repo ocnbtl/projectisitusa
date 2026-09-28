@@ -43,17 +43,20 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     if (!node || !parent) return;
     const sheet = parent.querySelector<HTMLElement>(".county-sheet");
     const toolbar = parent.querySelector<HTMLElement>(".atlas-toolbar");
+    const legend = node.querySelector<HTMLElement>(".atlas-legend");
     const measure = () => {
       const rect = node.getBoundingClientRect();
       const panel = sheet?.getBoundingClientRect();
       const controls = toolbar?.getBoundingClientRect();
+      const legendBounds = legend?.getBoundingClientRect();
+      if (legendBounds && legendBounds.height > 0) parent.style.setProperty("--atlas-legend-clearance", `${rect.bottom - legendBounds.top + 12}px`);
       const mobile = rect.width <= 700;
       const controlTop = Math.max(190, (controls?.bottom ?? rect.top + 180) - rect.top + 12);
       parent.style.setProperty("--atlas-control-top", `${controlTop}px`);
       parent.style.setProperty("--atlas-sheet-clearance", `${controlTop + 88}px`);
       const top = mobile ? controlTop + (panel ? 54 : focusedState ? 15 : 102) : Math.max(190, controlTop + 15);
       const right = !mobile && panel ? panel.left - rect.left - 24 : rect.width - 24;
-      const bottom = mobile ? (panel ? panel.top - rect.top - 16 : rect.height - 162) : rect.height - 90;
+      const bottom = mobile ? (panel ? panel.top - rect.top - 16 : legendBounds && legendBounds.height > 0 ? legendBounds.top - rect.top - 16 : rect.height - 162) : rect.height - 90;
       const left = !mobile && !focusedState && !panel ? 315 : 24;
       const next = { left, right: Math.max(left + 80, right), top: Math.min(top, bottom - 40), bottom };
       setFocusArea(old => Object.keys(next).every(key => old[key as keyof typeof old] === next[key as keyof typeof next]) ? old : next);
@@ -63,6 +66,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     observer.observe(node);
     if (sheet) observer.observe(sheet);
     if (toolbar) observer.observe(toolbar);
+    if (legend) observer.observe(legend);
     return () => observer.disconnect();
   }, [selectedCountyFips, sheetExpanded, focusedState]);
 

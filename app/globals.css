@@ -281,7 +281,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
   .map-count-bands { margin-top:10px; }
   .atlas-zoom,.has-county .atlas-zoom { display:flex; top:var(--atlas-control-top,224px); left:auto; right:12px; bottom:auto; }
   .atlas-zoom button { width:38px; min-width:38px; height:44px; min-height:44px; }
-  .atlas:not(.has-state):not(.has-county) .atlas-zoom { top:auto; bottom:178px; }
+  .atlas:not(.has-state):not(.has-county) .atlas-zoom { top:auto; bottom:var(--atlas-legend-clearance,206px); }
   .has-county .atlas-zoom { left:12px; right:auto; }
   .atlas-data-status { left:12px; bottom:175px; max-width:calc(100% - 24px); }
   .county-sheet { top:auto; }
