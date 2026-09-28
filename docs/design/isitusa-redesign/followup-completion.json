@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "jobId": "isitusa-map-followup-20260928",
+  "leaseId": "lease-isitusa-map-followup-20260928-1",
+  "baseSha": "0c3272b7bfb4eaf9110d36bcc10ec945275abd1b",
+  "state": "source-checkpoint-awaiting-main-validation",
+  "child": {
+    "identity": "/root/species_about",
+    "status": "completed-source-only",
+    "paths": ["app/about/page.tsx", "app/species/page.tsx", "app/species/[slug]/page.tsx", "src/components/species-directory.tsx"]
+  },
+  "changes": [
+    "Separate county or ZIP and species comboboxes, keyboard navigation, state focus for all 51 configured jurisdictions and URL history.",
+    "Reviewed occurrence index is the default. Earlier map records remain an explicit separate layer. Count bands are fixed across states and filters.",
+    "County colors and lists resolve the same index-local species ordinals by species ID. Missing catalog identity blocks display instead of silently losing records.",
+    "County-origin profile links preserve location. Profiles fetch one chosen county from the application-pinned snapshot, expose observation and review dates, source links and qualified agency findings.",
+    "About describes an independent initiative with global ambition. Decorative eyebrows and repeated missing-content sections removed. Photo credits use accessible native disclosures.",
+    "Research progress separates source-screen coverage from reviewed determination coverage. Full methodological accounting remains available.",
+    "Participation setup guide covers sightings, four email choices, confirmation, county/species preferences and support payments. No services activated."
+  ],
+  "mainDependencies": [
+    "src/lib/data/reviewed-map-store.ts with countyLabels",
+    "src/lib/research/application-research-fetch.ts",
+    "MAIN application snapshot configuration, generated compressed files and default public projection fetch switch"
+  ],
+  "checks": [
+    {"command": "git diff --check", "result": "passed"},
+    {"command": "typecheck and lint", "result": "held for MAIN sequential validation after data generation"},
+    {"command": "desktop/mobile browser QA and production verification", "result": "not yet run for this follow-up"}
+  ],
+  "preservation": {
+    "acquiredResearchModified": false,
+    "sharedSchemasModified": false,
+    "generatedTruthHandEdited": false,
+    "providerWritesByWorker": false,
+    "r2WritesByWorker": false,
+    "paidResourcesEnabled": false,
+    "workerPushOrDeploy": false
+  },
+  "remaining": [
+    "MAIN completes exact-byte snapshot packaging and all-county summary parity.",
+    "Integrate and run bounded typecheck, lint, desktop/mobile interaction and visual checks; fix any failures.",
+    "MAIN selective production release and live verification.",
+    "Email/provider identity, payment recipient and sighting moderation decisions remain necessary before activating participation services."
+  ]
+}

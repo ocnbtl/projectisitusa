@@ -15,11 +15,13 @@ import { MapToolbar } from "@/components/map-toolbar";
 import { UsCountyMap } from "@/components/us-county-map";
 import { type ClientDataStorePayload, getSpeciesForCounty, getSpeciesForCounties, speciesMatchesFilters, useClientDataStore } from "@/lib/data/client-store";
 import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
-import type { EnvironmentTag, SpeciesCategory, SpeciesFilters, ZipLookupResult } from "@/lib/data/types";
+import { useReviewedMapData } from "@/lib/data/reviewed-map-store";
+import type { EnvironmentTag, ExplorerSpecies, SpeciesCategory, SpeciesFilters, ZipLookupResult } from "@/lib/data/types";
 
 export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePayload }) {
   const params = useSearchParams();
   const { store, error, retry } = useClientDataStore(initialStore);
+  const reviewed = useReviewedMapData();
   const [zipStatus, setZipStatus] = useState<string | null>(null);
   const [searching, setSearching] = useState(false);
   const [expanded, setExpanded] = useState(true);
@@ -37,6 +39,11 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
     return () => { window.removeEventListener("popstate", cancelZipLookup); lookupAbort.current?.abort(); };
   }, [cancelZipLookup]);
   const countyFips = params.get("county");
+  const stateParam = params.get("state");
+  const stateCode = countyFips && store?.countyIndex[countyFips]
+    ? store.countyIndex[countyFips].stateCode
+    : store && Object.values(store.countyIndex).some(c => c.stateCode === stateParam) ? stateParam : null;
+  const layer = params.get("layer") === "legacy" ? "legacy" : "reviewed";
   const speciesId = params.get("species");
   const query = params.get("q") ?? "";
   const categoryParam = params.get("categories") ?? params.get("category") ?? "";
@@ -52,26 +59,32 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
     // Native history integrates with Next without duplicate URL state or a server fetch.
     window.history.pushState(null, "", search ? `/?${search}` : "/");
   }, []);
-  const selectCounty = useCallback((fips: string) => { cancelZipLookup(); setExpanded(true); update({ county: fips }); }, [cancelZipLookup, update]);
+  const selectCounty = useCallback((fips: string) => { cancelZipLookup(); setExpanded(true); update({ county: fips, state: store?.countyIndex[fips]?.stateCode ?? null }); }, [cancelZipLookup, update, store]);
   const closeCounty = useCallback(() => {
     cancelZipLookup(); update({ county: null });
-    document.querySelector<HTMLInputElement>('[aria-label="Search county, ZIP, or species"]')?.focus();
+    document.querySelector<HTMLInputElement>('[aria-label="Search county or ZIP"]')?.focus();
   }, [cancelZipLookup, update]);
   const county = store && countyFips ? store.countyIndex[countyFips] ?? null : null;
+  const reviewedSpecies = useMemo(() => reviewed.data && store ? reviewed.data.speciesIds.map(id => store.speciesById.get(id)) : [], [reviewed.data, store]);
+  const missingSpecies = reviewedSpecies.some(species => !species);
+  const dataReady = layer === "legacy" ? Boolean(store) : Boolean(reviewed.data && store && !missingSpecies);
+  const activePresence = useMemo(() => layer === "legacy" ? store?.presenceIndex ?? {} : dataReady ? reviewed.data!.occurrenceByCounty : {}, [layer, store, dataReady, reviewed.data]);
+  const activeSpecies = useMemo(() => (layer === "legacy" ? store?.speciesByOrdinal ?? [] : dataReady ? reviewedSpecies : []) as ExplorerSpecies[], [layer, store, dataReady, reviewedSpecies]);
+  const datasetDate = layer === "legacy" ? store?.datasetSnapshot.snapshotDate ?? "" : reviewed.data?.asOf ?? "";
+  const datasetLabel = layer === "legacy" ? "Earlier map records" : "Reviewed records";
+  const dataError = layer === "reviewed" ? missingSpecies ? "The species catalog and research records do not match. Please reload the page." : reviewed.error : null;
   const countyMatchCounts = useMemo(() => {
-    if (!store) return {} as Record<string, number>;
     const counts: Record<string, number> = {};
-    const matches = store.speciesByOrdinal.map(species => speciesMatchesFilters(species, filters));
-    for (const [fips, ordinals] of Object.entries(store.presenceIndex)) counts[fips] = ordinals.reduce((count, ordinal) => count + Number(matches[ordinal] ?? false), 0);
+    const matches = activeSpecies.map(species => speciesMatchesFilters(species, filters));
+    for (const [fips, ordinals] of Object.entries(activePresence)) counts[fips] = ordinals.reduce((count, ordinal) => count + Number(matches[ordinal] ?? false), 0);
     return counts;
-  }, [store, filters]);
-  const maxCount = useMemo(() => Math.max(0, ...Object.values(countyMatchCounts)), [countyMatchCounts]);
-  const focalSpecies = useMemo(() => store ? getSpeciesForCounty(store.presenceIndex, store.speciesByOrdinal, countyFips, filters) : [], [store, countyFips, filters]);
+  }, [activePresence, activeSpecies, filters]);
+  const focalSpecies = useMemo(() => getSpeciesForCounty(activePresence, activeSpecies, countyFips, filters), [activePresence, activeSpecies, countyFips, filters]);
   const nearbySpecies = useMemo(() => {
     if (!store || !county) return [];
     const focalIds = new Set(focalSpecies.map(s => s.id));
-    return getSpeciesForCounties(store.presenceIndex, store.speciesByOrdinal, county.neighborFips, filters).filter(s => !focalIds.has(s.id));
-  }, [store, county, filters, focalSpecies]);
+    return getSpeciesForCounties(activePresence, activeSpecies, county.neighborFips, filters).filter(s => !focalIds.has(s.id));
+  }, [store, county, filters, focalSpecies, activePresence, activeSpecies]);
   async function searchZip(zip: string) {
     cancelZipLookup();
     const controller = new AbortController();
@@ -83,22 +96,24 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
       const payload = await response.json() as { ok: true; data: ZipLookupResult } | { ok: false; message: string };
       if (sequence !== lookupSequence.current) return;
       if (!response.ok || !payload.ok) { setZipStatus(payload.ok ? "ZIP lookup failed. Try county search." : payload.message); return; }
-      setExpanded(true); update({ county: payload.data.countyFips }); setZipStatus(`${zip}: ${payload.data.countyName}`);
+      setExpanded(true); update({ county: payload.data.countyFips, state: store?.countyIndex[payload.data.countyFips]?.stateCode ?? null }); setZipStatus(`${zip}: ${payload.data.countyName}`);
     } catch { if (sequence === lookupSequence.current) setZipStatus("ZIP lookup is unavailable. Search a county name or try again."); }
     finally { if (sequence === lookupSequence.current) { setSearching(false); lookupAbort.current = null; } }
   }
   if (!store) return <main id="main-content" className="atlas-loading"><Compass size={36} /><h1>{error ? "The map could not load" : "Opening the field atlas"}</h1><p role={error ? "alert" : "status"}>{error || "Loading the versioned county and species snapshot..."}</p>{error ? <button type="button" className="primary-button" onClick={retry}>Try again</button> : null}<Link href="/research" className="text-link">Explore research status</Link></main>;
-  return <main id="main-content" className={`atlas ${county ? "has-county" : ""} ${expanded ? "sheet-expanded" : "sheet-collapsed"}`}>
-    <UsCountyMap countyIndex={store.countyIndex} presenceIndex={store.presenceIndex} selectedCountyFips={county?.countyFips ?? null} neighboringCountyFips={county?.neighborFips ?? []} countyMatchCounts={countyMatchCounts} maxCountyMatchCount={maxCount} onCountySelect={selectCounty} sheetExpanded={expanded} />
-    <MapToolbar counties={store.countyIndex} species={store.allSpecies} categories={categories} environment={environment} speciesId={speciesId} query={query} zipStatus={zipStatus} isSearching={searching}
+  return <main id="main-content" className={`atlas ${county ? "has-county" : ""} ${stateCode ? "has-state" : ""} ${expanded ? "sheet-expanded" : "sheet-collapsed"}`}>
+    <UsCountyMap countyIndex={store.countyIndex} presenceIndex={activePresence} stateCode={stateCode} selectedCountyFips={county?.countyFips ?? null} neighboringCountyFips={county?.neighborFips ?? []} countyMatchCounts={countyMatchCounts} onCountySelect={selectCounty} onReset={() => { cancelZipLookup(); update({ county: null, state: null }); }} sheetExpanded={expanded} datasetLabel={datasetLabel} datasetDate={datasetDate} dataReady={dataReady} />
+    <MapToolbar counties={store.countyIndex} species={store.allSpecies} categories={categories} environment={environment} stateCode={stateCode} speciesId={speciesId} query={query} zipStatus={zipStatus} isSearching={searching} layer={layer} onLayerChange={value => update({ layer: value === "reviewed" ? null : value })}
+      onStateChange={value => { cancelZipLookup(); update({ state: value, county: null }); }}
       onCountySelect={selectCounty} onSpeciesSelect={id => { cancelZipLookup(); update({ species: id, q: null }); }} onQueryChange={value => { cancelZipLookup(); update({ q: value, species: null }); }}
       onCategoryToggle={category => { const next = categories.includes(category) ? categories.filter(c => c !== category) : [...categories, category]; update({ categories: next.join(","), species: null }); }}
       onEnvironmentChange={value => update({ environment: value })} onZipSearch={searchZip} onClearFilters={() => update({ categories: null, species: null, environment: null, q: null })} />
-    {!county ? <div className="atlas-intro"><p className="atlas-eyebrow">A living record of introduced species</p><h1>Get to know <br />your surroundings.</h1><p>Explore a county. Discover its species. <br />See the evidence behind each record.</p><Link href="/species">Browse the species directory <ArrowUpRight size={16} /></Link></div> : null}
+    {!county && !stateCode ? <div className="atlas-intro"><h1>Get to know <br />your surroundings.</h1><p>Find the species recorded near you, <br />and the sources that tell their story.</p><Link href="/species">Meet the species <ArrowUpRight size={16} /></Link></div> : null}
+    {!dataReady ? <div className="atlas-data-status" role={dataError ? "alert" : "status"}>{dataError ? <><p>{typeof dataError === "string" ? dataError : "Research records could not be loaded."}</p><button type="button" className="text-link" onClick={reviewed.retry}>Try again</button></> : "Loading reviewed county records..."}</div> : null}
     {countyFips && !county ? <div className="atlas-notice" role="status">This county code is not in the current geography. Search for a county or planning region.<button onClick={() => update({ county: null })}>Clear selection</button></div> : null}
     {county ? <aside className="county-sheet" aria-label={`${county.name} county details`} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); closeCounty(); } }}>
-      <div className="county-sheet-heading"><div><p>{county.stateCode} / County explorer</p><h2>{county.name}</h2></div><div className="county-sheet-actions"><button className="sheet-toggle icon-button" type="button" aria-label={expanded ? "Collapse county details" : "Expand county details"} aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? <ArrowDown size={18} /> : <ArrowUp size={18} />}</button><button type="button" className="icon-button" aria-label="Close county details" onClick={closeCounty}><X size={19} /></button></div></div>
-      <div className="county-sheet-body"><CountyInsightPanel key={county.countyFips} selectedCounty={county} selectedCountyDetail={store.countyDetails[county.countyFips] ?? null} focalSpecies={focalSpecies} nearbySpecies={nearbySpecies} allSpecies={store.allSpecies} filters={filters} snapshotDate={store.datasetSnapshot.snapshotDate} /></div>
+      <div className="county-sheet-heading"><div><h2>{county.name}<span className="county-state-name">{county.stateCode}</span></h2></div><div className="county-sheet-actions"><button className="sheet-toggle icon-button" type="button" aria-label={expanded ? "Collapse county details" : "Expand county details"} aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? <ArrowDown size={18} /> : <ArrowUp size={18} />}</button><button type="button" className="icon-button" aria-label="Close county details" onClick={closeCounty}><X size={19} /></button></div></div>
+      <div className="county-sheet-body">{dataReady ? <CountyInsightPanel key={`${county.countyFips}-${layer}`} selectedCounty={county} selectedCountyDetail={store.countyDetails[county.countyFips] ?? null} focalSpecies={focalSpecies} nearbySpecies={nearbySpecies} allSpecies={store.allSpecies} filters={filters} snapshotDate={datasetDate} datasetLabel={datasetLabel} layer={layer} temporalExceptions={layer === "reviewed" ? reviewed.data?.temporalExceptions[county.countyFips] : undefined} /> : <p className="county-note">{dataError ? "County records are unavailable. Use Try again to reload them." : "Loading this county's records..."}</p>}</div>
     </aside> : null}
     <div className="atlas-footer"><span>Project Isitusa</span><Link href="/about">Methods & limitations</Link><Link href="/research">Research status <ArrowUpRight size={13} /></Link></div>
   </main>;

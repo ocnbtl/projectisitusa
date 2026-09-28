@@ -32,16 +32,19 @@ interface CountyInsightPanelProps {
   allSpecies: ExplorerSpecies[];
   filters: SpeciesFilters;
   snapshotDate: string;
+  datasetLabel: string;
+  layer: "reviewed" | "legacy";
+  temporalExceptions?: Record<string, { historicalOccurrenceStatus?: string; currentDeterminationStatus?: string; conflict: boolean }>;
 }
 
 const PAGE_SIZE = 12;
 
-function CountySpeciesRow({ species }: { species: ExplorerSpecies }) {
+function CountySpeciesRow({ species, county, exception }: { species: ExplorerSpecies; county?: CountyRecord; exception?: { currentDeterminationStatus?: string; conflict: boolean } }) {
   const [imageFailed, setImageFailed] = useState(false);
 
   return (
     <li>
-      <Link href={`/species/${species.slug}`} prefetch={false} className="county-species-row">
+      <Link href={`/species/${species.slug}${county ? `?state=${county.stateCode}&county=${county.countyFips}` : ""}`} prefetch={false} className="county-species-row">
         <span className="county-species-image">
           {species.image && !imageFailed ? (
             <Image
@@ -63,14 +66,11 @@ function CountySpeciesRow({ species }: { species: ExplorerSpecies }) {
           <strong>{species.commonName}</strong>
           <em>{species.scientificName}</em>
           <span className="county-species-category">{formatCategoryLabel(species.category)}</span>
-          {species.image ? (
-            <span className="county-image-credit" title={species.image.credit}>
-              Image: {species.image.credit}
-            </span>
-          ) : null}
+          {exception?.conflict ? <small>Conflicting evidence: see sources</small> : exception?.currentDeterminationStatus === "officially-absent" || exception?.currentDeterminationStatus === "officially-eradicated" ? <small>Historical record with a later agency finding</small> : null}
         </span>
         <ArrowUpRight aria-hidden="true" size={16} className="shrink-0" />
       </Link>
+      {species.image ? <details className="image-credit county-credit"><summary>Photo credit</summary><p>{species.image.credit}</p></details> : null}
     </li>
   );
 }
@@ -79,10 +79,14 @@ function CountySpeciesList({
   species,
   emptyMessage,
   label,
+  county,
+  temporalExceptions,
 }: {
   species: ExplorerSpecies[];
   emptyMessage: string;
   label: string;
+  county?: CountyRecord;
+  temporalExceptions?: CountyInsightPanelProps["temporalExceptions"];
 }) {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const visibleSpecies = species.slice(0, visibleCount);
@@ -94,7 +98,7 @@ function CountySpeciesList({
   return (
     <>
       <ul className="county-list" aria-label={label}>
-        {visibleSpecies.map((entry) => <CountySpeciesRow key={entry.id} species={entry} />)}
+        {visibleSpecies.map((entry) => <CountySpeciesRow key={entry.id} species={entry} county={county} exception={temporalExceptions?.[entry.id]} />)}
       </ul>
       <p className="county-list-count" aria-live="polite">
         Showing {visibleSpecies.length.toLocaleString()} of {species.length.toLocaleString()}
@@ -120,6 +124,9 @@ function CountyContent({
   allSpecies,
   filters,
   snapshotDate,
+  datasetLabel,
+  layer,
+  temporalExceptions,
 }: CountyInsightPanelProps) {
   const [activeTab, setActiveTab] = useState<"species" | "evidence">("species");
   const [evidenceOpened, setEvidenceOpened] = useState(false);
@@ -175,16 +182,17 @@ function CountyContent({
         tabIndex={0}
       >
         <div className="county-section-heading">
-          <h3>Mapped species</h3>
+          <h3>Species with records</h3>
           <span>{focalSpecies.length.toLocaleString()}</span>
         </div>
         <p className="county-note">
-          County records matching your filters, including historical occurrences.
-          Counts describe documented species, not current presence, abundance, or risk.
+          {datasetLabel} through {formatOccurrenceDate(snapshotDate)}. Records may be historical.
         </p>
         <CountySpeciesList
           key={`county-${filterKey}`}
           species={focalSpecies}
+          county={selectedCounty}
+          temporalExceptions={temporalExceptions}
           label={`Species mapped in ${selectedCounty.name}`}
           emptyMessage="No mapped records match these filters. Missing records do not establish absence."
         />
@@ -193,10 +201,8 @@ function CountyContent({
           <summary>About these map records <ChevronDown aria-hidden="true" size={16} /></summary>
           <div className="county-disclosure-content">
             <p className="county-note">
-              Map snapshot: {formatOccurrenceDate(snapshotDate)}. This compatibility
-              map may include historical occurrences. A mapped record does not
-              establish current presence; the Evidence tab shows the separately
-              published research release.
+              {layer === "reviewed" ? "The map and this species list use the same reviewed county records. Open Evidence for observation dates, source links, and any later agency findings." : "These earlier aggregated map records are separate from the reviewed research shown in Evidence."}
+              {" "}A record does not establish current presence, abundance, or impact. Missing records do not establish absence.
             </p>
           </div>
         </details>
@@ -258,6 +264,7 @@ function CountyContent({
                 nearbySpecies={nearbySpecies}
                 countyCategorySignal={null}
                 snapshotDate={snapshotDate}
+                datasetLabel={datasetLabel}
               />
             </div>
           ) : null}

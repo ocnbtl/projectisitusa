@@ -16,7 +16,6 @@ import {
   Database,
   ExternalLink,
   LoaderCircle,
-  LockKeyhole,
   MapPinned,
   RefreshCw,
   Search,
@@ -181,8 +180,8 @@ const VIEW_OPTIONS: Array<{
   icon: LucideIcon;
 }> = [
   { id: "county", label: "County research", icon: MapPinned },
-  { id: "sources", label: "Source operations", icon: Database },
-  { id: "queue", label: "Research queue", icon: ClipboardList },
+  { id: "sources", label: "Our sources", icon: Database },
+  { id: "queue", label: "Still to investigate", icon: ClipboardList },
 ];
 
 const STATUS_STYLES: Record<string, string> = {
@@ -1144,7 +1143,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                 </p>
               </div>
               <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
-                {formatPercent(countyData.summary.researchCoveragePercent)} full-catalog source-screen coverage
+                {formatPercent(countyData.summary.researchCoveragePercent)} of county-species questions have a source check
               </p>
             </div>
 
@@ -1597,21 +1596,17 @@ function ResearchControlCenterContent({
       <header className="border-b border-[var(--border)] pb-5 pt-2">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div className="flex items-center gap-2 text-xs font-medium text-[var(--muted)]">
-              <LockKeyhole aria-hidden="true" size={14} />
-              The evidence behind the map
-            </div>
             <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)]">
-              How much do we know?
+              Research you can follow.
             </h1>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-              Explore the published county evidence for {summary.stateName}. A source screen can leave a question unresolved; only reviewed evidence supports a determination.
+              See what we know about {summary.stateName}, where the information comes from, and what still needs a closer look.
             </p>
           </div>
           <div className="text-xs leading-5 text-[var(--muted)] sm:text-right">
             <div className="mb-3 min-w-52 text-left sm:ml-auto">
               <SelectField
-                label="Explore a state"
+                label="State"
                 value={summary.stateCode}
                 options={availableStates.map((entry) => ({
                   value: entry.stateCode,
@@ -1620,22 +1615,26 @@ function ResearchControlCenterContent({
                 onChange={onStateChange}
               />
             </div>
-            <p>Research as of {formatDate(summary.asOf)}</p>
-            <p>Registry snapshot {formatDate(summary.sourceSnapshotDate)}</p>
-            <details><summary>Publication details</summary><p>Generated {formatTimestamp(summary.generatedAt)}</p><p>Map and research releases are published separately.</p></details>
+            <p>Updated {formatDate(summary.asOf)}</p>
+            <details className="research-publication-details"><summary>About this update</summary><p>Records assessed through {formatDate(summary.asOf)}. Observation dates appear with each source.</p><p>Catalog snapshot: {formatDate(summary.sourceSnapshotDate)}.</p><p>Generated {formatTimestamp(summary.generatedAt)}.</p></details>
 
           </div>
         </div>
       </header>
 
       <section className="research-overview" aria-label="Published research coverage">
-        <p><strong>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)}</strong> of {formatNumber(summary.summary.totalPairs)} county-species pairs have reviewed presence or absence determinations. Survey non-detections are counted separately.</p>
+        <h2 className="text-2xl font-semibold">Our progress in {summary.stateName}</h2>
+        <p className="mt-3 text-[var(--muted)]">We check {formatNumber(summary.summary.speciesCount)} species across {formatNumber(summary.summary.countyCount)} counties and county equivalents. Each species in each county is a separate research question.</p>
+        <div className="research-progress">
+          <div><label htmlFor="source-progress">Sources checked <strong>{formatPercent(summary.summary.researchCoveragePercent)}</strong></label><progress id="source-progress" max={100} value={summary.summary.researchCoveragePercent} /><p>A source has been checked or a finding recorded. More work may still be needed.</p></div>
+          <div><label htmlFor="determination-progress">Presence or absence findings <strong>{formatPercent(summary.summary.determinationCoveragePercent)}</strong></label><progress id="determination-progress" max={100} value={summary.summary.determinationCoveragePercent} /><p>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)} of {formatNumber(summary.summary.totalPairs)} county-species questions have a reviewed finding.</p></div>
+        </div>
         <dl className="research-status-strip">
           {[["Recorded present", summary.summary.verifiedPresent], ["Absence determinations", summary.summary.verifiedAbsent], ["Survey non-detections", summary.summary.notDetected], ["Research unresolved", summary.summary.researchedUnresolved], ["Not researched", summary.summary.notResearched]].map(([label, value]) => <div key={String(label)}><dt>{label}</dt><dd>{formatNumber(Number(value))}</dd></div>)}
         </dl>
-        <p className="county-note">A record can be historical. Agency findings retain their source, geographic scope and dates. Missing information is not an absence finding.</p>
+        <p className="county-note">Records can be historical. A survey that found nothing is different from an agency finding of absence. Missing information remains an open question.</p>
       </section>
-      <details className="research-accounting"><summary>How scope and research coverage are counted</summary>
+      <details className="research-accounting"><summary>How we measure progress</summary>
       <div
         className={`border-b px-4 py-3 text-sm leading-6 ${
           summary.scope.certificationScope === "bounded-pilot"
@@ -1655,7 +1654,7 @@ function ResearchControlCenterContent({
       </div>
 
       </details>
-      <details className="research-accounting"><summary>Full research accounting and denominators</summary>
+      <details className="research-accounting"><summary>Detailed research counts</summary>
       <dl className="grid grid-cols-2 divide-x divide-y divide-[var(--border)] border-b border-[var(--border)] sm:grid-cols-3 lg:grid-cols-6">
         {stateMetrics.map(([label, value]) => (
           <Metric key={label} label={label} value={value} />
@@ -1780,7 +1779,7 @@ export function ResearchControlCenter({
   }
 
   return (
-    <main className="mx-auto flex min-h-[420px] w-full max-w-[1600px] items-center justify-center px-4 pb-12 sm:px-6 lg:px-8">
+    <main id="main-content" className="mx-auto flex min-h-[420px] w-full max-w-[1600px] items-center justify-center px-4 pb-12 sm:px-6 lg:px-8">
       {loadError ? (
         <div className="max-w-lg border-y border-[var(--border)] px-4 py-10 text-center">
           <AlertCircle aria-hidden="true" className="mx-auto text-[var(--danger)]" size={24} />

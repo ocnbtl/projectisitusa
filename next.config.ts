@@ -73,6 +73,7 @@ const nextConfig: NextConfig = {
     }
 
     return [
+      { source: "/research-snapshots/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/optimized-species/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       {
         source: "/:path*",
@@ -89,6 +90,7 @@ const nextConfig: NextConfig = {
     ],
   },
   outputFileTracingRoot: process.cwd(),
+  outputFileTracingExcludes: { "/*": ["./public/research-snapshots/**"] },
 };
 
 export default nextConfig;

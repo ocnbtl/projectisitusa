@@ -20,11 +20,11 @@ The existing Next.js application provides a county map, county and ZIP lookup, s
 
 ## Brand Commitments
 
-Project Isitusa. Full-screen map, floating glass controls, minimal and functional information design. Existing project logo retained. Plain, specific language.
+Isitusa: Invasive Species In The United States of America. An independent initiative with a global mission, beginning with U.S. county research. Full-screen map, floating controls, minimal and functional information design. Existing logo retained. Warm, specific language without decorative eyebrows or unverified organizational claims.
 
 ## Evidence on Hand
 
-Versioned map and catalog assets; hash-checked published research projections; source citations; curated and registry-only species profiles. Published research and the map snapshot are separate releases.
+Versioned catalog and geography assets; reviewed county research packaged with the application; source citations; curated and registry species profiles. Reviewed map counts and lists use one declared research snapshot. Earlier aggregated map records remain a separate selectable layer. Never merge them silently.
 
 ## Open Decisions
 

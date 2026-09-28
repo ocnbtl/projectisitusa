@@ -21,8 +21,8 @@ export function SpeciesImage({
   if (failed) {
     return (
       <>
-        <div className="flex min-h-[320px] flex-col justify-between bg-[linear-gradient(160deg,rgba(110,181,134,0.16),transparent_55%),linear-gradient(220deg,rgba(240,181,93,0.14),transparent_50%)] p-6">
-          <div className="text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
+        <div className="flex min-h-[240px] flex-col justify-between bg-[var(--background)] p-6">
+          <div className="text-sm text-[var(--muted)]">
             Image unavailable
           </div>
           <div>
@@ -34,9 +34,7 @@ export function SpeciesImage({
             </div>
           </div>
         </div>
-        <div className="border-t border-[var(--border)] px-5 py-4 text-sm text-[var(--muted)]">
-          Intended image credit: {credit}
-        </div>
+        <details className="image-credit profile-image-credit"><summary>Photo credit</summary><p>{credit}</p></details>
       </>
     );
   }
@@ -53,9 +51,7 @@ export function SpeciesImage({
         unoptimized
         onError={() => setFailed(true)}
       />
-      <div className="border-t border-[var(--border)] px-5 py-4 text-sm text-[var(--muted)]">
-        Image credit: {credit}
-      </div>
+      <details className="image-credit profile-image-credit"><summary>Photo credit</summary><p>{credit}</p></details>
     </>
   );
 }

@@ -8,7 +8,7 @@ The map is the workspace. Search, filters, and geographic navigation float above
 
 ## Colors
 
-Pale mineral background (#edf2ef), ink (#173c38), muted pine (#526863), paper (#fbfdfb), and teal (#14675f). County fills use a sequential teal scale. Amber marks selection only, never danger. Dark mode uses deep green surfaces with light text and the same semantic roles.
+Pale mineral background (#edf2ef), ink (#173c38), muted pine (#526863), paper (#fbfdfb), and teal (#14675f). County fills use fixed, labeled count bands spanning pale yellow-green through blue, with brighter equivalents in dark mode. This reveals low and middle count differences without classifying ecological danger. Equal counts retain equal colors across states and filters. Amber marks selection only.
 
 ## Typography
 
@@ -28,7 +28,7 @@ Controls and reading panels use 12-16px corners. Small geographic switches and c
 
 ## Components
 
-Unified location/species search with explicit result types. Filter disclosure, active filter chips, map region switch, zoom/reset controls, sequential legend, county evidence rows, and restrained reading-page navigation.
+Separate county/ZIP and species searches, a state focus selector, filter disclosure with an explicit dataset choice, active filter chips, zoom/reset controls, fixed count-band legend, and county evidence rows. Profiles prioritize county choices, observation dates, reviewed dates and source links. Photo credits use accessible native disclosures. Reading pages have no decorative eyebrow labels.
 
 ## Do's and Don'ts
 

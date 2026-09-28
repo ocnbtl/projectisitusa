@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, Search } from "lucide-react";
+import { Search } from "lucide-react";
 
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 import type { Species, SpeciesCategory } from "@/lib/data/types";
@@ -20,11 +20,15 @@ function isDirectorySpecies(value: unknown): value is Species {
     && typeof entry.commonName === "string"
     && typeof entry.scientificName === "string"
     && typeof entry.displayGroup === "string"
+    && typeof entry.summary === "string"
     && categories.includes(entry.category as SpeciesCategory);
 }
 
 function DirectoryCard({ species }: { species: Species }) {
   const [imageFailed, setImageFailed] = useState(false);
+  const summary = species.profileType === "registry" && species.registry
+    ? `${species.displayGroup}${species.registry.family ? ` in the ${species.registry.family} family` : ""}. ${species.registry.habitats.length ? `Recorded habitats: ${species.registry.habitats.slice(0, 2).join(" and ")}.` : `Listed as ${species.registry.statusLabel.toLowerCase()} by US-RIIS (lower 48).`}`
+    : species.summary;
 
   return (
     <article className="directory-card flex min-w-0 flex-col gap-4 p-5">
@@ -44,15 +48,12 @@ function DirectoryCard({ species }: { species: Species }) {
             />
           ) : (
             <span className="px-3 text-center text-xs leading-5 text-[var(--muted)]">
-              {species.image ? "Image unavailable" : "No profile image"}
+              {species.image ? "Image unavailable" : "No image"}
             </span>
           )}
         </div>
         <div className="min-w-0">
-          <p className="text-xs font-medium text-[var(--muted)]">
-            {formatCategoryLabel(species.category)}
-          </p>
-          <h3 className="mt-1 break-words text-lg font-semibold leading-snug">
+          <h3 className="break-words text-lg font-semibold leading-snug">
             <Link href={`/species/${species.slug}`} prefetch={false} className="text-link">
               {species.commonName}
             </Link>
@@ -60,16 +61,17 @@ function DirectoryCard({ species }: { species: Species }) {
           <p className="mt-1 break-words text-sm italic leading-6 text-[var(--muted)]">
             {species.scientificName}
           </p>
+          <p className="mt-2 text-xs text-[var(--muted)]">{formatCategoryLabel(species.category)}</p>
         </div>
       </div>
-      <div className="mt-auto flex items-center justify-between gap-3 border-t border-[var(--border)] pt-3 text-xs text-[var(--muted)]">
-        <span>{species.profileType === "curated" ? "Field profile" : "Catalog entry"}</span>
-        <ArrowRight size={15} aria-hidden="true" />
-      </div>
+      <p className="directory-summary text-sm leading-6 text-[var(--muted)]">{summary}</p>
       {species.image ? (
-        <p className="break-words text-[11px] leading-4 text-[var(--muted)]">
-          Image: {species.image.credit}
-        </p>
+        <details className="image-credit mt-auto text-xs text-[var(--muted)]">
+          <summary className="inline-flex min-h-11 cursor-pointer items-center underline decoration-[var(--border)] underline-offset-4" aria-label={`Photo credit for ${species.commonName}`}>
+            Photo credit
+          </summary>
+          <p className="break-words pb-2 text-xs leading-5">{species.image.credit}</p>
+        </details>
       ) : null}
     </article>
   );

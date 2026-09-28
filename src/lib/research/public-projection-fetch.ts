@@ -1,4 +1,3 @@
-import delivery from "@/data/research/research-data-delivery.json";
 import {
   type ResearchDataDelivery,
   validateResearchDataDelivery,
@@ -215,4 +214,4 @@ export function createResearchProjectionFetcher(
   };
 }
 
-export const fetchResearchProjectionJson = createResearchProjectionFetcher(delivery);
+export { fetchApplicationResearchJson as fetchResearchProjectionJson } from "./application-research-fetch";

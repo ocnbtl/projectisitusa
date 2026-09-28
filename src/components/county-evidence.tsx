@@ -116,7 +116,7 @@ function hasValidPairShape(value: unknown) {
 }
 
 /** Validate only the existing county contract; never infer research from map presence. */
-function validateCountyProjection(
+export function validateCountyProjection(
   value: unknown,
   county: Pick<CountyRecord, "countyFips" | "stateCode">,
 ): ResearchCountyFile {
@@ -162,7 +162,7 @@ function citationHref(value: string) {
   }
 }
 
-function PairDetails({ pair, species }: { pair: ResolvedResearchPair; species?: ExplorerSpecies }) {
+function PairDetails({ pair, species, county }: { pair: ResolvedResearchPair; species?: ExplorerSpecies; county: CountyRecord }) {
   const temporal = describeTemporalDetermination(pair);
   const [visibleEvidenceCount, setVisibleEvidenceCount] = useState(EVIDENCE_PAGE_SIZE);
 
@@ -254,12 +254,12 @@ function PairDetails({ pair, species }: { pair: ResolvedResearchPair; species?: 
           ? pair.screenedBySourceIds.join(", ")
           : "None recorded"}
       </p>
-      {species ? <Link className="evidence-profile-link" href={`/species/${species.slug}`}>Species profile <ArrowUpRight aria-hidden="true" size={14} /></Link> : null}
+      {species ? <Link className="evidence-profile-link" href={`/species/${species.slug}?state=${county.stateCode}&county=${county.countyFips}`}>Species profile <ArrowUpRight aria-hidden="true" size={14} /></Link> : null}
     </div>
   );
 }
 
-function EvidencePair({ pair, species }: { pair: ResolvedResearchPair; species?: ExplorerSpecies }) {
+function EvidencePair({ pair, species, county }: { pair: ResolvedResearchPair; species?: ExplorerSpecies; county: CountyRecord }) {
   const [open, setOpen] = useState(false);
   const temporal = describeTemporalDetermination(pair);
   const statusLabel = pair.conflict
@@ -285,7 +285,7 @@ function EvidencePair({ pair, species }: { pair: ResolvedResearchPair; species?:
           </span>
           <ChevronDown aria-hidden="true" size={16} />
         </summary>
-        {open ? <PairDetails pair={pair} species={species} /> : null}
+        {open ? <PairDetails pair={pair} species={species} county={county} /> : null}
       </details>
     </li>
   );
@@ -294,16 +294,18 @@ function EvidencePair({ pair, species }: { pair: ResolvedResearchPair; species?:
 function EvidenceList({
   pairs,
   speciesById,
+  county,
 }: {
   pairs: ResolvedResearchPair[];
   speciesById: Map<string, ExplorerSpecies>;
+  county: CountyRecord;
 }) {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const visiblePairs = pairs.slice(0, visibleCount);
   return (
     <>
       <ul className="evidence-list" aria-label="County species research records">
-        {visiblePairs.map((pair) => <EvidencePair key={pair.speciesId} pair={pair} species={speciesById.get(pair.speciesId)} />)}
+        {visiblePairs.map((pair) => <EvidencePair key={pair.speciesId} pair={pair} species={speciesById.get(pair.speciesId)} county={county} />)}
       </ul>
       {pairs.length === 0 ? (
         <p className="county-empty">No catalog species match these filters. This is not evidence of absence.</p>
@@ -415,7 +417,7 @@ export function CountyEvidence({ county, allSpecies, filters }: CountyEvidencePr
               : "This state's research is published separately from the compatibility map."}
             {" "}Expand a species for dates, source scope, and caveats.
           </p>
-          <EvidenceList key={JSON.stringify(filters)} pairs={matchingPairs} speciesById={speciesById} />
+          <EvidenceList key={JSON.stringify(filters)} pairs={matchingPairs} speciesById={speciesById} county={county} />
         </>
       ) : <p className="county-note" role="status">Loading published county evidence...</p>}
       <Link href={researchHref} className="county-research-link">
