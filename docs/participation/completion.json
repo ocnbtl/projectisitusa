@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "jobId": "isitusa-participation-20260928",
+  "leaseId": "lease-isitusa-participation-20260928-1",
+  "implementationState": "IN PROGRESS",
+  "phaseState": "source-checkpoint-ready",
+  "recordedAt": "2026-09-28T07:44:32.9129785Z",
+  "worktree": "C:/Code/project-isitusa-worktrees/isitusa-ui-release",
+  "branch": "codex/isitusa-participation-20260928",
+  "baseSha": "46a28485e149039591734e2a2e00a3c1b4c83416",
+  "sourceCommit": "df94c40d3261e3804b7e9bc174851f86ede28f89",
+  "changedPaths": [
+    "app/admin/page.tsx",
+    "app/auth/confirm/page.tsx",
+    "app/join/page.tsx",
+    "app/preferences/page.tsx",
+    "app/privacy/page.tsx",
+    "app/report/page.tsx",
+    "app/support/page.tsx",
+    "app/terms/page.tsx",
+    "docs/design/isitusa-redesign/participation-setup.md",
+    "docs/participation/architecture.md",
+    "docs/participation/env.example",
+    "docs/participation/resource-observations.jsonl",
+    "docs/participation/setup.md",
+    "src/components/admin/admin.module.css",
+    "src/components/admin/auth-confirm.tsx",
+    "src/components/admin/campaign-drafts.tsx",
+    "src/components/admin/staff-auth.tsx",
+    "src/components/admin/workspace.tsx",
+    "src/components/participation/join-form.tsx",
+    "src/components/participation/participation.module.css",
+    "src/components/participation/preferences-form.tsx",
+    "src/components/participation/report-form.tsx",
+    "src/components/participation/shared.tsx",
+    "src/components/participation/support-form.tsx",
+    "src/lib/participation/client.ts",
+    "src/lib/participation/contracts.ts",
+    "supabase/config.toml",
+    "supabase/functions/_shared/runtime.ts",
+    "supabase/functions/participation-api/index.ts",
+    "supabase/functions/participation-delivery/index.ts",
+    "supabase/functions/participation-resend/index.ts",
+    "supabase/functions/participation-stripe/index.ts",
+    "supabase/functions/participation-unsubscribe/index.ts",
+    "supabase/schema/01-core.sql",
+    "supabase/schema/02-workflows.sql",
+    "supabase/schema/03-support-and-campaigns.sql",
+    "tests/participation/authorization.sql",
+    "tests/participation/contracts.test.ts",
+    "tests/participation/delivery-quota.sql",
+    "tests/participation/transactions.sql",
+    "tests/participation/webhooks.test.ts",
+    "docs/participation/completion.json"
+  ],
+  "checks": [
+    {
+      "evidence": "MAIN reread coalesce, named wallet conflict, attempted_at quota, confirmation/preferences-only delivery",
+      "status": "PASSED",
+      "scope": "Four specifically reported findings corrected in source; not a runtime/security certification",
+      "name": "MAIN manual source review"
+    },
+    {
+      "command": "git diff --cached --check",
+      "status": "PASSED",
+      "limitation": "Source formatting only; initial mixed line-ending findings corrected before commit",
+      "name": "Scoped Git whitespace inspection"
+    },
+    {
+      "source": "tests/participation/contracts.test.ts",
+      "status": "NOT RUN",
+      "name": "Unit contracts"
+    },
+    {
+      "source": "tests/participation/authorization.sql",
+      "status": "NOT RUN",
+      "name": "Database authorization and wallet reactivation"
+    },
+    {
+      "source": "tests/participation/transactions.sql",
+      "status": "NOT RUN",
+      "name": "Consent and payment transactions"
+    },
+    {
+      "source": "tests/participation/delivery-quota.sql",
+      "status": "NOT RUN",
+      "name": "Attempt-time delivery quota"
+    },
+    {
+      "source": "tests/participation/webhooks.test.ts",
+      "status": "NOT RUN",
+      "name": "Provider signature fixtures"
+    },
+    {
+      "reason": "User-approved source-only phase forbids tests/builds/installs/servers/browser suites",
+      "status": "NOT RUN",
+      "name": "Next/Deno typechecks, production build, browser role and responsive verification"
+    },
+    {
+      "reason": "No IsItUSA backend/accounts/domain/mailbox/owner/receiving addresses activated",
+      "status": "NOT RUN",
+      "name": "Provider and live workflow verification"
+    }
+  ],
+  "sourceReviewCorrections": [
+    "Coalesce authorization predicate to false for missing claims",
+    "Use named wallet unique constraint to avoid parameter conflict",
+    "Count actual attempt timestamps under serialized delivery quota",
+    "Separate POST-only unsubscribe and disable digest sending",
+    "Lock subscriber before consuming or superseding consent tokens",
+    "Bound request and image bytes; preserve exact crypto integer amounts as API text",
+    "Support provider-returned SVG data URI for authenticator QR"
+  ],
+  "providerWritesPerformed": false,
+  "emailsSent": 0,
+  "paymentsAttempted": 0,
+  "walletSecretsCreated": false,
+  "databaseMigrationsApplied": false,
+  "productionChanged": false,
+  "resourceObservation": {
+    "time": "2026-09-28T07:44:32.8637205Z",
+    "freeDiskBytes": 267212726272,
+    "availableRamPercent": 32.18,
+    "commitPercent": 87,
+    "pageReads": 3,
+    "pageWrites": 0
+  },
+  "resourceHistory": "docs/participation/resource-observations.jsonl",
+  "resourceMonitorStopped": true,
+  "knownLimitations": [
+    "All runtime behavior remains unverified",
+    "Automatic approved-release matching, county/species digests, scheduling and campaign approval/sending are not implemented",
+    "Retention/deletion and private upload orphan cleanup jobs are not implemented",
+    "Owner identity, Supabase project/org, working contact mailbox, Resend domain/SMTP, Stripe and Turnstile setup remain pending",
+    "Only BTC/XMR/ETH mainnet public address support is authored; no wallets are created and no public addresses supplied",
+    "Wallet syntax validation does not independently prove ownership or full checksum correctness",
+    "Issued private image URLs may remain valid for 60 seconds after access revocation",
+    "Dependencies/locks, Deno typecheck separation, CSP, navigation/About integration and catalog seed are MAIN-owned and pending",
+    "Public prelaunch disclosures need verified contact, retention and refund terms before activation"
+  ],
+  "nextOwner": "MAIN projectisitusa 7",
+  "nextPhase": "Review source; prepare a bounded verification/integration allocation under the resource policy; provider activation remains separate"
+}
