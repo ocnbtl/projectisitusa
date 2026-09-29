@@ -18,6 +18,14 @@ export function scaleMapAt(view: MapView, scale: number, from: MapPoint, to: Map
   return { k, x: to.x - (from.x - view.x) * k / view.k, y: to.y - (from.y - view.y) * k / view.k };
 }
 
+// Convert wheel lines/pages into a bounded pixel step. Small trackpad deltas stay small.
+export function wheelMapView(view: MapView, deltaY: number, deltaMode: number, point: MapPoint, pageHeight: number): MapView {
+  if (!Number.isFinite(deltaY) || !Number.isFinite(pageHeight)) return view;
+  const pixels = deltaY * (deltaMode === 1 ? 16 : deltaMode === 2 ? Math.max(1, pageHeight) : 1);
+  const bounded = Math.max(-120, Math.min(120, pixels));
+  return scaleMapAt(view, view.k * Math.exp(-bounded * 0.0025), point);
+}
+
 function rebase(gesture: MapGesture) {
   gesture.origin = new Map(gesture.pointers);
   gesture.startView = { ...gesture.view };

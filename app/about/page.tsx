@@ -15,9 +15,9 @@ export default function AboutPage() {
     <main id="main-content" className="reading-page about-page">
       <header className="about-hero">
         <div className="about-hero-copy">
-          <h1>A clearer view of invasive species.</h1>
-          <p>Which invasive species have been found where you live? The answer should be easy to find.</p>
-          <p>IsItUSA brings scattered records together in a map anyone can explore. Look up your county, get to know a species, and see the research behind each record.</p>
+          <h1>Making invasive species research useful.</h1>
+          <p>Everyone should be able to find out what has been recorded where they live, and where that information comes from.</p>
+          <p>IsItUSA brings scattered records into one atlas. We connect local places, species profiles, and original sources so you can ask better questions about the places you care for.</p>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <figure className="about-field-image">
@@ -26,23 +26,25 @@ export default function AboutPage() {
         </figure>
       </header>
 
+      <nav className="about-page-nav" aria-label="On this page"><a href="#purpose-heading">Why IsItUSA</a><a href="#method-heading">Our approach</a><a href="#outlook-heading">Where we are headed</a><a href="#help-heading">Get involved <ArrowRight size={16} aria-hidden="true" /></a></nav>
+
       <section className="about-purpose" aria-labelledby="purpose-heading">
-        <h2 id="purpose-heading">Local questions deserve clear answers.</h2>
+        <h2 id="purpose-heading">Useful knowledge should be within reach.</h2>
         <div>
-          <p>A plant at the edge of a trail. An unfamiliar insect in the garden. A change along a favorite river. These are often the things that make us curious about invasive species.</p>
-          <p>The information is out there, but it can take time to find and understand. We bring together records from researchers, public agencies, and monitoring programs so more people can use them.</p>
+          <p>You might be looking after a garden, managing a park, or trying to name a plant beside a trail. Finding reliable information should not require knowing which database to search.</p>
+          <p>We bring together records from researchers, public agencies, and monitoring programs. Our job is to make their work easier to find and understand, while keeping the original evidence in view.</p>
         </div>
       </section>
 
       <section className="about-method" aria-labelledby="method-heading">
         <div className="section-introduction">
-          <h2 id="method-heading">Look beyond the dot on the map.</h2>
-          <p>Where a species was found, when it was recorded, and who documented it all matter.</p>
+          <h2 id="method-heading">Every record needs context.</h2>
+          <p>A map is a starting point. These three details help you understand a finding.</p>
         </div>
         <dl className="record-context">
-          <div><dt><MapPin size={21} aria-hidden="true" /> A place</dt><dd>A record from one county does not tell us what is happening across an entire state.</dd></div>
-          <div><dt><CalendarDays size={21} aria-hidden="true" /> A date</dt><dd>A record may be years old. We keep observation dates separate from the date we reviewed the source.</dd></div>
-          <div><dt><BookOpen size={21} aria-hidden="true" /> A source</dt><dd>Open the original reference to see how a finding was documented and what it says.</dd></div>
+          <div><dt><MapPin size={21} aria-hidden="true" /> Where</dt><dd>A county record describes that county. It does not establish presence across a whole state.</dd></div>
+          <div><dt><CalendarDays size={21} aria-hidden="true" /> When</dt><dd>The date a species was found can be much earlier than our review. We keep those dates separate.</dd></div>
+          <div><dt><BookOpen size={21} aria-hidden="true" /> According to whom</dt><dd>Follow the original source to see what was documented and how the finding was made.</dd></div>
         </dl>
         <div className="about-evidence-note"><ScanSearch size={22} aria-hidden="true" /><p>An empty spot on the map does not mean a species is absent. An older record does not prove it is still there today.</p></div>
         <Link href="/research" className="text-link inline-flex min-h-11 items-center gap-2">See how we review records <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -50,14 +52,14 @@ export default function AboutPage() {
 
       <section className="about-outlook" aria-labelledby="outlook-heading">
         <Globe2 size={32} strokeWidth={1.5} aria-hidden="true" />
-        <div><h2 id="outlook-heading">Built in the U.S. With a wider purpose.</h2><p>Invasive species cross borders. Useful information should, too. IsItUSA is an independent initiative based in the United States, with a long-term ambition to make local species information easier to use around the world.</p><p>We are starting with U.S. counties and county equivalents. Our species catalog begins with the US-RIIS lower-48 register; it is a starting point, not a complete list of every species in every place.</p></div>
+        <div><h2 id="outlook-heading">Starting in the U.S., thinking beyond borders.</h2><p>IsItUSA is an independent initiative based in the United States. Our ambition is to help people use local species information around the world. We are beginning with U.S. counties and county equivalents, building an approach we can keep improving.</p><p>Our catalog starts with the US-RIIS lower-48 register. It is a foundation to build on, not a complete list of every species in every place.</p></div>
       </section>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
         <div className="section-introduction"><h2 id="help-heading">Help make the atlas more useful.</h2><p>Share it with someone, learn how to report a sighting, or see what we are working on next.</p></div>
         <div className="involvement-links">
           <Link href="/report"><span><strong>Share an observation</strong><small>See how to document what you found and where to report it.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/join"><span><strong>See the updates we are planning</strong><small>County news, species alerts, and ways to help. Email signups are coming later.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
+          <Link href="/join"><span><strong>Follow what matters to you</strong><small>We are planning county updates, species alerts, and ways to help. Signups are not open yet.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/support"><span><strong>Support the atlas</strong><small>See how you can help while we prepare to accept contributions.</small></span><Heart size={22} aria-hidden="true" /></Link>
         </div>
       </section>

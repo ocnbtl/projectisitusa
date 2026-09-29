@@ -9,9 +9,40 @@ async function loadModule(path: string) {
   const source = stripTypeScriptTypes(readFileSync(path, "utf8"), { mode: "strip" });
   return import("data:text/javascript;base64," + Buffer.from(source).toString("base64"));
 }
-const { createMapGesture, beginMapPointer, moveMapPointer, endMapPointer, cancelMapGesture, scaleMapAt } = await loadModule("src/lib/ui/map-gestures.ts") as typeof GestureModule;
+const { createMapGesture, beginMapPointer, moveMapPointer, endMapPointer, cancelMapGesture, scaleMapAt, wheelMapView } = await loadModule("src/lib/ui/map-gestures.ts") as typeof GestureModule;
 const { measuredMapViewport, sameMapViewport } = await loadModule("src/lib/ui/map-viewport.ts") as typeof ViewportModule;
 const view = { x: 20, y: -30, k: 2 };
+
+test("wheel zoom preserves the map point under the cursor", () => {
+  const point = { x: 423, y: 219 };
+  const next = wheelMapView(view, -80, 0, point, 800);
+  assert.ok(next.k > view.k);
+  assert.ok(Math.abs((point.x - next.x) / next.k - (point.x - view.x) / view.k) < 1e-10);
+  assert.ok(Math.abs((point.y - next.y) / next.k - (point.y - view.y) / view.k) < 1e-10);
+});
+test("wheel units normalize consistently and small trackpad steps stay small", () => {
+  const point = { x: 100, y: 200 };
+  assert.deepEqual(wheelMapView(view, 1, 1, point, 800), wheelMapView(view, 16, 0, point, 800));
+  assert.deepEqual(wheelMapView(view, 0.02, 2, point, 800), wheelMapView(view, 16, 0, point, 800));
+  assert.ok(Math.abs(wheelMapView(view, 0.5, 0, point, 800).k - view.k) < 0.01);
+});
+test("extreme wheel steps are bounded and zoom stays between one and twelve", () => {
+  const point = { x: 500, y: 300 };
+  assert.deepEqual(wheelMapView(view, -99999, 0, point, 800), wheelMapView(view, -120, 0, point, 800));
+  assert.equal(wheelMapView({ x: 0, y: 0, k: 1 }, 120, 0, point, 800).k, 1);
+  assert.equal(wheelMapView({ x: 0, y: 0, k: 12 }, -120, 0, point, 800).k, 12);
+  assert.equal(wheelMapView(view, NaN, 0, point, 800), view);
+  assert.equal(wheelMapView(view, 10, 0, point, Infinity), view);
+});
+test("a drag starts from the current wheel position without a jump", () => {
+  const point = { x: 350, y: 200 };
+  const wheeled = wheelMapView(view, -80, 0, point, 800);
+  const gesture = createMapGesture();
+  beginMapPointer(gesture, 1, point, wheeled, null);
+  const dragged = moveMapPointer(gesture, 1, { x: 370, y: 230 });
+  assert.deepEqual(dragged, { ...wheeled, x: wheeled.x + 20, y: wheeled.y + 30 });
+  assert.equal(endMapPointer(gesture, 1), null);
+});
 
 test("a tap selects its original county, while a pan never selects one", () => {
   const tap = createMapGesture();

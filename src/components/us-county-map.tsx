@@ -9,13 +9,21 @@ import { getMapPalette, MAP_PALETTE_STORAGE_KEY, type MapPaletteId } from "@/lib
 import countyTopology from "@/data/source/county-equivalents-topology.json";
 import type { CountyRecord, ExplorerPresenceIndex } from "@/lib/data/types";
 import { boundsIntersectView, createMapCountBands, mapCountColor } from "@/lib/ui/map-scale";
-import { beginMapPointer, cancelMapGesture, createMapGesture, endMapPointer, moveMapPointer, scaleMapAt, type MapView } from "@/lib/ui/map-gestures";
+import { beginMapPointer, cancelMapGesture, createMapGesture, endMapPointer, moveMapPointer, scaleMapAt, wheelMapView, type MapView } from "@/lib/ui/map-gestures";
 import { measuredMapViewport, sameMapViewport, type MapViewport } from "@/lib/ui/map-viewport";
 
 type CountyFeature = GeoJSON.Feature<GeoJSON.Polygon | GeoJSON.MultiPolygon>;
 const counties = (feature(countyTopology as never, countyTopology.objects.counties as never) as unknown as GeoJSON.FeatureCollection).features as CountyFeature[];
 const fipsOf = (county: CountyFeature) => String(county.id).padStart(5, "0");
 const EMPTY_VIEWPORT: MapViewport = { width: 1, height: 1, area: { left: 0, right: 1, top: 0, bottom: 1 } };
+
+function visibleMapView(node: SVGGElement | null, fallback: MapView): MapView {
+  const transform = node && getComputedStyle(node).transform;
+  if (!transform || transform === "none") return fallback;
+  const matrix = new DOMMatrix(transform);
+  const current = { x: matrix.e, y: matrix.f, k: matrix.a };
+  return [current.x, current.y, current.k].every(Number.isFinite) && current.k > 0 ? current : fallback;
+}
 
 interface UsCountyMapProps {
   countyIndex: Record<string, CountyRecord>;
@@ -44,7 +52,9 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
   const size = viewport ?? EMPTY_VIEWPORT;
   const focusArea = size.area;
   const group = useRef<SVGGElement>(null);
+  const svg = useRef<SVGSVGElement>(null);
   const frame = useRef<number | null>(null);
+  const wheelTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const liveView = useRef({ x: 0, y: 0, k: 1 });
   const [dragging, setDragging] = useState(false);
   const [view, setView] = useState({ x: 0, y: 0, k: 1 });
@@ -125,6 +135,7 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
   // Legend reflow changes the fit area, but must not undo a manual zoom or pan.
   useLayoutEffect(() => {
     cancelMapGesture(gesture.current);
+    if (wheelTimer.current !== null) { clearTimeout(wheelTimer.current); wheelTimer.current = null; }
     if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
     group.current?.removeAttribute("data-interacting");
     setDragging(false);
@@ -140,8 +151,58 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     setView({ x: (focusArea.left + focusArea.right) / 2 - shape.center[0] * k, y: (focusArea.top + focusArea.bottom) / 2 - shape.center[1] * k, k });
   }, [selectedCountyFips, shapes, focusArea]);
 
-  useLayoutEffect(() => { liveView.current = view; }, [view]);
-  useEffect(() => () => { if (frame.current !== null) cancelAnimationFrame(frame.current); }, []);
+  useLayoutEffect(() => {
+    liveView.current = view;
+    // Pointer and wheel transforms are painted outside React. Even an identity reset
+    // must rewrite the DOM when the previous React transform was already identity.
+    group.current?.setAttribute("transform", `translate(${view.x} ${view.y}) scale(${view.k})`);
+  }, [view]);
+  useEffect(() => () => {
+    if (frame.current !== null) cancelAnimationFrame(frame.current);
+    if (wheelTimer.current !== null) clearTimeout(wheelTimer.current);
+  }, []);
+  useEffect(() => {
+    const node = svg.current;
+    const shapeGroup = group.current;
+    if (!node) return;
+    function paint() {
+      const next = liveView.current;
+      shapeGroup?.setAttribute("transform", `translate(${next.x} ${next.y}) scale(${next.k})`);
+    }
+    function wheel(event: WheelEvent) {
+      // The listener belongs to the SVG, never the controls or document. Browser zoom stays native.
+      if (event.ctrlKey || event.metaKey || event.shiftKey || !event.cancelable || gesture.current.pointers.size || !event.deltaY) return;
+      const rect = node!.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      event.preventDefault();
+      if (wheelTimer.current === null) {
+        liveView.current = visibleMapView(shapeGroup, liveView.current);
+        shapeGroup?.setAttribute("data-interacting", "true");
+        setHovered(null);
+      } else clearTimeout(wheelTimer.current);
+      const point = { x: (event.clientX - rect.left) * size.width / rect.width, y: (event.clientY - rect.top) * size.height / rect.height };
+      liveView.current = wheelMapView(liveView.current, event.deltaY, event.deltaMode, point, rect.height);
+      if (frame.current === null) frame.current = requestAnimationFrame(() => { paint(); frame.current = null; });
+      wheelTimer.current = setTimeout(() => {
+        wheelTimer.current = null;
+        if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
+        paint();
+        shapeGroup?.removeAttribute("data-interacting");
+        setView({ ...liveView.current });
+      }, 160);
+    }
+    node.addEventListener("wheel", wheel, { passive: false });
+    return () => {
+      node.removeEventListener("wheel", wheel);
+      if (wheelTimer.current !== null) {
+        clearTimeout(wheelTimer.current); wheelTimer.current = null;
+        if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
+        paint();
+        shapeGroup?.removeAttribute("data-interacting");
+        setView({ ...liveView.current });
+      }
+    };
+  }, [size.width, size.height]);
   function paintView() {
     const v = liveView.current;
     group.current?.setAttribute("transform", "translate(" + v.x + " " + v.y + ") scale(" + v.k + ")");
@@ -167,10 +228,12 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     if (county) onCountySelect(county);
   }
   function zoom(factor: number) {
-    setView(current => {
-      const center = { x: (focusArea.left + focusArea.right) / 2, y: (focusArea.top + focusArea.bottom) / 2 };
-      return scaleMapAt(current, current.k * factor, center);
-    });
+    if (wheelTimer.current !== null) { clearTimeout(wheelTimer.current); wheelTimer.current = null; }
+    if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
+    group.current?.removeAttribute("data-interacting");
+    const current = visibleMapView(group.current, liveView.current);
+    const center = { x: (focusArea.left + focusArea.right) / 2, y: (focusArea.top + focusArea.bottom) / 2 };
+    setView(scaleMapAt(current, current.k * factor, center));
   }
   function countLabel(fips: string) {
     return !dataReady ? "Records loading" : !Object.hasOwn(presenceIndex, fips) ? "Records unavailable in this layer" : `${(countyMatchCounts[fips] ?? 0).toLocaleString()} matching species with records`;
@@ -190,20 +253,17 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     ? Object.hasOwn(presenceIndex, selectedCountyFips) && (countyMatchCounts[selectedCountyFips] ?? 0) === 0
     : hovered && Object.hasOwn(presenceIndex, hovered) && (countyMatchCounts[hovered] ?? 0) === 0);
   return <div ref={container} className={"atlas-map " + (dragging ? "is-dragging" : "")} aria-label="Interactive county map">
-    <svg viewBox={viewport ? "0 0 " + size.width + " " + size.height : undefined} style={{ visibility: viewport ? "visible" : "hidden" }} aria-label="County map. Drag to move and pinch to zoom. Use county search or the state filter to explore by keyboard."
+    <svg ref={svg} viewBox={viewport ? "0 0 " + size.width + " " + size.height : undefined} style={{ visibility: viewport ? "visible" : "hidden" }} aria-label="County map. Drag to move. Scroll or pinch to zoom. Use county search or the state filter to explore by keyboard."
       onPointerDown={event => {
         if (event.button !== 0) return;
         event.preventDefault();
         if (!gesture.current.pointers.size) {
+          if (wheelTimer.current !== null) { clearTimeout(wheelTimer.current); wheelTimer.current = null; }
+          if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
           const rect = event.currentTarget.getBoundingClientRect();
           pointerSpace.current = { left: rect.left, top: rect.top, sx: size.width / rect.width, sy: size.height / rect.height };
           // Begin at the visible position even if a button zoom is still animating.
-          const transform = group.current && getComputedStyle(group.current).transform;
-          if (transform && transform !== "none") {
-            const matrix = new DOMMatrix(transform);
-            const current: MapView = { x: matrix.e, y: matrix.f, k: matrix.a };
-            if ([current.x, current.y, current.k].every(Number.isFinite) && current.k > 0) liveView.current = current;
-          }
+          liveView.current = visibleMapView(group.current, liveView.current);
           group.current?.setAttribute("data-interacting", "true");
           paintView();
           setDragging(true);
@@ -234,7 +294,12 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
     <div className="atlas-zoom glass-panel" role="group" aria-label="Map controls">
       <button type="button" aria-label="Zoom in" onClick={() => zoom(1.4)} disabled={view.k >= 12}><Plus size={19} /></button>
       <button type="button" aria-label="Zoom out" onClick={() => zoom(1 / 1.4)} disabled={view.k <= 1}><Minus size={19} /></button>
-      <button type="button" aria-label="Show all states" onClick={() => { onReset(); setView({ x: 0, y: 0, k: 1 }); }}><RotateCcw size={17} /></button>
+      <button type="button" aria-label="Show all states" onClick={() => {
+        if (wheelTimer.current !== null) { clearTimeout(wheelTimer.current); wheelTimer.current = null; }
+        if (frame.current !== null) { cancelAnimationFrame(frame.current); frame.current = null; }
+        group.current?.removeAttribute("data-interacting");
+        onReset(); setView({ x: 0, y: 0, k: 1 });
+      }}><RotateCcw size={17} /></button>
     </div>
     {focused ? <div className="atlas-hover glass-panel"><strong>{focused.name}, {focused.stateCode}</strong><span>{countLabel(focused.countyFips)}</span></div> : null}
     {emptyFocus ? <div className="map-empty-notice" role="status">No matching records here.<span>Try removing a filter. This does not tell us whether a species is absent.</span></div> : null}

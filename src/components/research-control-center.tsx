@@ -3,6 +3,7 @@
 import { formatOccurrenceDate } from "@/lib/research/occurrence-date";
 
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
+import { CustomSelect } from "@/components/atlas/custom-select";
 
 import {
   AlertCircle,
@@ -179,9 +180,9 @@ const VIEW_OPTIONS: Array<{
   label: string;
   icon: LucideIcon;
 }> = [
-  { id: "county", label: "County research", icon: MapPinned },
-  { id: "sources", label: "Our sources", icon: Database },
-  { id: "queue", label: "Still to investigate", icon: ClipboardList },
+  { id: "county", label: "County records", icon: MapPinned },
+  { id: "sources", label: "Sources", icon: Database },
+  { id: "queue", label: "Research gaps", icon: ClipboardList },
 ];
 
 const STATUS_STYLES: Record<string, string> = {
@@ -322,32 +323,7 @@ function SelectField({
   onChange: (value: string) => void;
   disabled?: boolean;
 }) {
-  return (
-    <label className="block min-w-0">
-      <span className="mb-1.5 block text-xs font-medium text-[var(--muted)]">
-        {label}
-      </span>
-      <span className="relative block">
-        <select
-          value={value}
-          onChange={(event) => onChange(event.target.value)}
-          disabled={disabled}
-          className="h-10 w-full appearance-none rounded-md border border-[var(--border)] bg-[var(--background)] px-3 pr-9 text-sm text-[var(--foreground)] outline-none focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--ring)] disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <ChevronDown
-          aria-hidden="true"
-          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[var(--muted)]"
-          size={16}
-        />
-      </span>
-    </label>
-  );
+  return <CustomSelect label={label} value={value} options={options} onChange={onChange} disabled={disabled} />;
 }
 
 function SearchField({
@@ -444,20 +420,7 @@ function Pagination({
         {formatNumber(totalItems)}
       </p>
       <div className="flex flex-wrap items-center gap-2">
-        <label className="flex items-center gap-2 text-xs text-[var(--muted)]">
-          Rows
-          <select
-            value={pageSize}
-            onChange={(event) => onPageSizeChange(Number(event.target.value))}
-            className="h-8 rounded-md border border-[var(--border)] bg-[var(--background)] px-2 text-xs text-[var(--foreground)] outline-none focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--ring)]"
-          >
-            {[25, 50, 100].map((size) => (
-              <option key={size} value={size}>
-                {size}
-              </option>
-            ))}
-          </select>
-        </label>
+        <CustomSelect compact label="Rows" value={String(pageSize)} options={[25, 50, 100].map(size => ({ value: String(size), label: String(size) }))} onChange={value => onPageSizeChange(Number(value))} />
         <button
           type="button"
           onClick={() => onPageChange(page - 1)}
@@ -1100,16 +1063,17 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
   return (
     <section aria-labelledby="county-research-heading">
-      <div className="border-b border-[var(--border)] py-5">
-        <div className="max-w-sm">
+      <div className="research-county-choice">
+        <div>
           <SelectField
-            label="County or equivalent"
+            label="Choose a county or equivalent"
             value={selectedCountyFips}
             options={countyOptions}
             onChange={setSelectedCountyFips}
             disabled={countyOptions.length === 0}
           />
         </div>
+        <p>Choose a species below to open its sources and recorded dates.</p>
       </div>
 
       {loadState === "loading" || loadState === "idle" ? (
@@ -1150,10 +1114,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                 >
                   {countyData.countyName}
                 </h2>
-                <p className="mt-1 text-xs text-[var(--muted)]">
-                  FIPS {countyData.countyFips} | Generated{" "}
-                  {formatTimestamp(countyData.generatedAt)}
-                </p>
+                <details className="research-record-details"><summary>About these records</summary><p>County identifier: {countyData.countyFips}. Compiled {formatTimestamp(countyData.generatedAt)}. Check each source for the date of the finding.</p></details>
               </div>
               <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
                 {formatPercent(countyData.summary.researchCoveragePercent)} of county-species questions have a source check
@@ -1587,8 +1548,8 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
   return (
     <header className="reading-hero research-heading">
       <div>
-        <h1>Follow the research.</h1>
-        <p>See what the records tell us, where they come from, and what still needs a closer look.</p>
+        <h1>Check the evidence.</h1>
+        <p>Choose a state and county. See which species have been recorded, read the original sources, and find out what still needs research.</p>
         {summary && <a href="#research-explorer" className="text-link">Explore county evidence <ArrowDown size={16} aria-hidden="true" /></a>}
       </div>
       <div className="research-state-control">
@@ -1636,8 +1597,8 @@ function ResearchControlCenterContent({
     <main id="main-content" className="reading-page research-page">
       <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} summary={summary} />
 
-      <section className="research-overview" aria-label="Published research coverage">
-        <h2 className="text-2xl font-semibold">Our progress in {summary.stateName}</h2>
+      <details className="research-overview" aria-label="Published research coverage">
+        <summary className="research-progress-summary"><span><strong>Research progress in {summary.stateName}</strong><small>See how much we have checked and what remains open.</small></span><span className="research-progress-preview"><span><b>{formatPercent(summary.summary.researchCoveragePercent)}</b> source checks</span><span><b>{formatPercent(summary.summary.determinationCoveragePercent)}</b> reviewed findings</span><ChevronDown size={18} aria-hidden="true" /></span></summary>
         <p className="mt-3 text-[var(--muted)]">{formatNumber(summary.summary.speciesCount)} catalog species, across {formatNumber(summary.summary.countyCount)} counties and county equivalents. Progress is measured for each species in each county.</p>
         <div className="research-progress">
           <div><label htmlFor="source-progress">Source checks <strong>{formatPercent(summary.summary.researchCoveragePercent)}</strong></label><progress id="source-progress" max={100} value={summary.summary.researchCoveragePercent} /><p>A source has been checked or a finding recorded. More work may still be needed.</p></div>
@@ -1649,7 +1610,7 @@ function ResearchControlCenterContent({
         </dl>
         <p className="county-note">Records can be historical. A survey that found nothing is different from an agency finding of absence. Missing information remains an open question.</p>
         </details>
-      </section>
+      </details>
       <div id="research-explorer" className="research-tabs">
         <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">
           {VIEW_OPTIONS.map((view) => {
@@ -1707,11 +1668,11 @@ function ResearchControlCenterContent({
       >
         {summary.scope.certificationScope === "bounded-pilot" ? (
           <p>
-            <strong>Research-only bounded acquisition.</strong> The full denominator covers {formatNumber(summary.scope.catalogSpeciesCount)} catalog species and {formatNumber(summary.summary.totalPairs)} county-species pairs. Existing source work materializes {formatNumber(summary.scope.boundedAcquisitionSpeciesCount)} species, while every omitted eligible pair resolves to not researched. This is not a certified state result.
+            <strong>This state is still being researched.</strong> Progress is measured against all {formatNumber(summary.scope.catalogSpeciesCount)} catalog species in every county: {formatNumber(summary.summary.totalPairs)} species-and-county combinations. The current source work covers a narrower group of {formatNumber(summary.scope.boundedAcquisitionSpeciesCount)} species. Eligible combinations without research remain marked as not researched. This is not a certified state result.
           </p>
         ) : (
           <p>
-            <strong className="text-[var(--foreground)]">State baseline projection.</strong> Accepted county presence deterministically establishes {formatNumber(summary.scope.derivedApplicableSpeciesCount)} state-species applicability decisions. Of {formatNumber(summary.scope.catalogSpeciesCount)} catalog species, {formatNumber(summary.stateSpeciesResearch.fullyAccountedSpeciesCount)} are fully researched or explicitly blocked, {formatNumber(summary.stateSpeciesResearch.partiallyAccountedSpeciesCount)} are partial, and {formatNumber(summary.stateSpeciesResearch.untouchedSpeciesCount)} remain untouched. A defensible researched-unresolved result may pass research accounting, but an untouched species cannot. Certification readiness remains a separate gate.
+            <strong className="text-[var(--foreground)]">What the state totals include.</strong> Reviewed county records establish that {formatNumber(summary.scope.derivedApplicableSpeciesCount)} catalog species are relevant to this state. Of {formatNumber(summary.scope.catalogSpeciesCount)} species, {formatNumber(summary.stateSpeciesResearch.fullyAccountedSpeciesCount)} have completed research accounting or a documented blocker, {formatNumber(summary.stateSpeciesResearch.partiallyAccountedSpeciesCount)} have some research, and {formatNumber(summary.stateSpeciesResearch.untouchedSpeciesCount)} have none yet. Research can finish without resolving a species&apos; status. That is different from never checking, and it does not by itself certify the state&apos;s research.
           </p>
         )}
       </div>

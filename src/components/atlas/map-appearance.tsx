@@ -18,10 +18,9 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
   }}>
     <div id={id + "-help"} className="legend-drawer" data-open={open === "help"} aria-hidden={open !== "help"}>
       <div><div className="legend-explanation"><h2>Reading the map</h2>
-        <p>Colors show how many species match your filters in each county, not how much harm they cause.</p>
-        <p>Comparing <strong>{area}</strong>. Ranges change as you zoom.</p>
-        <p><strong>0:</strong> no matching records, not proof of absence. <strong>Gray:</strong> unavailable.</p>
-        {published && <p className="legend-data-date">{datasetLabel === "Earlier map records" ? "Earlier data" : "Data"}: {published}. Find observation dates in the sources.</p>}
+        <p>Species per county, matching your filters. Counts, not harm.</p>
+        <p><strong>0:</strong> no records, not absence. <strong>Gray:</strong> unavailable.</p>
+        <p className="legend-data-date">Ranges adjust to {area} as you zoom.{published && <> {datasetLabel === "Earlier map records" ? "Earlier data" : "Data"}: {published}; sighting dates are in the sources.</>}</p>
       </div></div>
     </div>
     <div id={id + "-colors"} className="legend-drawer" data-open={open === "colors"} aria-hidden={open !== "colors"}>

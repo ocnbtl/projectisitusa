@@ -876,3 +876,82 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
   .atlas-topbar { left:12px; right:12px; top:calc(var(--site-header-top) + var(--site-header-height) + 10px); }
   .atlas-topbar .atlas-control-row { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
 }
+/* Research and reading journeys: consistent controls, evidence first. */
+.custom-select { min-width:0; }
+.custom-select-label { display:block; margin-bottom:7px; color:var(--muted); font-size:13px; font-weight:550; }
+.custom-select-trigger { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; min-height:48px; padding:10px 14px; border:1px solid var(--border); border-radius:10px; background:var(--surface-strong); color:var(--foreground); text-align:left; font-size:14px; transition:border-color 160ms,background-color 160ms; }
+.custom-select-trigger>span { min-width:0; overflow-wrap:anywhere; }
+.custom-select-trigger>svg { flex-shrink:0; transition:transform 180ms; }
+.custom-select-trigger[aria-expanded=true]>svg { transform:rotate(180deg); }
+.custom-select-trigger:hover:not(:disabled) { border-color:var(--accent); }
+.custom-select-trigger:disabled { opacity:.55; cursor:not-allowed; }
+.custom-select-trigger:focus-visible,.custom-select-options:focus-visible { outline:2px solid var(--ring); outline-offset:3px; }
+.custom-select-compact { display:flex; align-items:center; gap:8px; }
+.custom-select-compact .custom-select-label { margin:0; }
+.custom-select-compact .custom-select-trigger { min-width:84px; }
+.custom-select-popup { position:fixed; z-index:300; display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--border); border-radius:12px; background:var(--surface-strong); color:var(--foreground); box-shadow:0 16px 48px #0b332423; animation:select-appear 160ms ease-out; }
+.custom-select-search { display:flex; flex-shrink:0; align-items:center; gap:8px; padding:8px 12px; border-bottom:1px solid var(--border); color:var(--muted); }
+.custom-select-search input { width:100%; min-width:0; min-height:40px; background:transparent; color:var(--foreground); font-size:16px; outline:none; }
+.custom-select-search:focus-within { box-shadow:inset 0 -2px var(--accent); }
+.custom-select-options { padding:6px; overflow-y:auto; overscroll-behavior:contain; min-height:0; scroll-padding:6px; }
+.custom-select-options [role=option] { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:44px; padding:10px 12px; border-radius:7px; font-size:14px; line-height:1.45; cursor:pointer; }
+.custom-select-options [role=option]>svg { flex-shrink:0; color:var(--accent-strong); }
+.custom-select-options [role=option][data-active=true] { background:var(--background); outline:1px solid var(--accent); outline-offset:-1px; }
+.custom-select-options [role=option][aria-selected=true] { font-weight:600; color:var(--accent-strong); }
+.custom-select-options [role=option][aria-disabled=true] { opacity:.45; cursor:not-allowed; }
+.custom-select-empty { padding:16px 12px; color:var(--muted); font-size:14px; }
+@keyframes select-appear { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
+@keyframes research-panel-appear { from { opacity:.4; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+.research-page .research-heading { margin-bottom:24px; padding-bottom:24px; }
+.research-page details.research-overview { padding:0; border-bottom:1px solid var(--border); }
+.research-progress-summary { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 0; list-style:none; cursor:pointer; }
+.research-progress-summary::-webkit-details-marker { display:none; }
+.research-progress-summary>span:first-child { display:grid; gap:5px; }
+.research-progress-summary strong { font-size:17px; font-weight:550; }
+.research-progress-summary small { color:var(--muted); font-size:13px; }
+.research-progress-preview { display:flex; align-items:center; gap:24px; color:var(--muted); font-size:12px; }
+.research-progress-preview>span { display:grid; gap:3px; }
+.research-progress-preview b { color:var(--foreground); font-size:22px; font-weight:550; font-variant-numeric:tabular-nums; }
+.research-progress-preview>svg { flex-shrink:0; transition:transform 180ms; }
+.research-overview[open] .research-progress-preview>svg { transform:rotate(180deg); }
+.research-overview[open]>.research-progress { animation:research-panel-appear 180ms ease-out; }
+.research-page .research-counts { border-bottom:0; padding-top:0; }
+.research-page [role=tabpanel]:not([hidden]) { animation:research-panel-appear 180ms ease-out; }
+.research-county-choice { display:flex; align-items:flex-end; gap:32px; padding:24px 0; border-bottom:1px solid var(--border); }
+.research-county-choice>div { width:min(100%,380px); flex-shrink:0; }
+.research-county-choice>p { max-width:50ch; font-size:14px; line-height:1.7; color:var(--muted); padding-bottom:8px; }
+.research-record-details { font-size:12px; color:var(--muted); max-width:65ch; }
+.research-record-details summary { min-height:36px; display:flex; align-items:center; gap:6px; cursor:pointer; text-decoration:underline; text-underline-offset:4px; }
+.research-record-details p { line-height:1.75; margin:4px 0 10px; }
+.research-page button[aria-label="Previous page"],.research-page button[aria-label="Next page"] { min-width:44px; min-height:44px; }
+.directory-controls .custom-select-trigger { min-height:52px; font-size:16px; border-radius:12px; }
+.directory-controls .custom-select-label { color:var(--foreground); margin-bottom:8px; }
+.directory-active-filters { display:flex; flex-wrap:wrap; gap:8px; margin:-10px 0 24px; }
+.directory-active-filters>button { display:flex; align-items:center; gap:8px; min-height:40px; padding:7px 12px; max-width:100%; border:1px solid var(--border); border-radius:20px; background:var(--surface-strong); font-size:13px; }
+.directory-active-filters>button>span { overflow-wrap:anywhere; min-width:0; }
+.directory-active-filters>button>svg { flex-shrink:0; }
+.directory-active-filters>.directory-clear-all { background:none; border-color:transparent; text-decoration:underline; text-underline-offset:4px; }
+.directory-profile-link { position:relative; padding-right:24px; }
+.directory-open-icon { position:absolute; right:0; top:3px; color:var(--muted); transition:transform 180ms,color 180ms; }
+.directory-profile-link:hover .directory-open-icon,.directory-profile-link:focus-visible .directory-open-icon { transform:translate(2px,-2px); color:var(--accent-strong); }
+.about-page-nav { display:flex; flex-wrap:wrap; gap:8px 32px; border-block:1px solid var(--border); padding:10px 0; }
+.about-page-nav>a { display:inline-flex; align-items:center; gap:8px; min-height:44px; font-size:14px; color:var(--muted); text-decoration:underline; text-decoration-color:transparent; text-underline-offset:6px; transition:color 160ms,text-decoration-color 160ms; }
+.about-page-nav>a:hover { color:var(--foreground); text-decoration-color:currentColor; }
+.about-page .about-purpose { border-top:0; }
+.about-page h2[id] { scroll-margin-top:calc(var(--site-header-height) + var(--site-header-top) + 32px); }
+.about-page-nav+a:focus-visible,.about-page-nav a:focus-visible,.research-progress-summary:focus-visible,.directory-active-filters button:focus-visible { outline:2px solid var(--ring); outline-offset:4px; }
+@media(max-width:700px) {
+  .research-progress-summary { align-items:flex-start; flex-direction:column; gap:14px; }
+  .research-progress-preview { width:100%; gap:24px; }
+  .research-progress-preview>svg { margin-left:auto; }
+  .research-progress-summary small { font-size:12px; }
+  .research-county-choice { flex-direction:column; align-items:stretch; gap:12px; padding:20px 0; }
+  .research-county-choice>div { width:100%; }
+  .research-county-choice>p { padding:0; font-size:13px; }
+  .about-page-nav { gap:0 24px; }
+  .about-page-nav>a { font-size:13px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .custom-select-popup,.research-overview[open]>.research-progress,.research-page [role=tabpanel]:not([hidden]) { animation:none; }
+  .custom-select-trigger,.custom-select-trigger>svg,.research-progress-preview>svg,.directory-open-icon,.about-page-nav>a { transition:none; }
+}

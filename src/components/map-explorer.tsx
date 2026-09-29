@@ -127,7 +127,7 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
       onEnvironmentChange={value => update({ environment: value })} onZipSearch={searchZip} onClearFilters={() => update({ categories: null, species: null, environment: null, q: null })} />
       <UpdateNotice datasetDate={datasetDate} datasetLabel={datasetLabel} />
     </div>
-    {!county && !stateCode ? <div className="atlas-intro"><h1>Know what&apos;s<br />{" "}been found nearby.</h1><p>Explore invasive species recorded in your county, and get to know the plants and animals changing the places you care about.</p><Link href="/species">Meet the species <ArrowUpRight size={16} /></Link></div> : null}
+    {!county && !stateCode ? <div className="atlas-intro"><h1>Find invasive species<br />{" "}near you.</h1><p>Search your county or ZIP code. Explore recorded species and the sources behind each finding.</p><Link href="/species">Browse the species <ArrowUpRight size={16} /></Link></div> : null}
     {!dataReady ? <div className="atlas-data-status" role={dataError ? "alert" : "status"}>{dataError ? <><p>{typeof dataError === "string" ? dataError : "Research records could not be loaded."}</p><button type="button" className="text-link" onClick={reviewed.retry}>Try again</button></> : "Loading reviewed county records..."}</div> : null}
     {countyFips && !county ? <div className="atlas-notice" role="status">This county code is not in the current geography. Search for a county or planning region.<button onClick={() => update({ county: null })}>Clear selection</button></div> : null}
     {county ? <aside className="county-sheet" aria-label={`${county.name} county details`} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); closeCounty(); } }}>

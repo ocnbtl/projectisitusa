@@ -12,7 +12,7 @@ export default function SpeciesPage() {
   return (
     <main id="main-content" className="reading-page species-page">
       <header className="reading-hero directory-hero">
-        <div><h1>Meet the species.</h1><p>Get to know introduced and invasive species, see where they have been recorded, and learn what makes each one distinctive.</p></div>
+        <div><h1>Get to know the species.</h1><p>Look up a name or browse a group. Each profile brings together a species&apos; story, recorded locations, and the sources you can follow.</p></div>
         <Link href="/" className="text-link inline-flex min-h-11 items-center gap-2">Explore by county <ArrowUpRight size={16} aria-hidden="true" /></Link>
       </header>
       <SpeciesDirectory />

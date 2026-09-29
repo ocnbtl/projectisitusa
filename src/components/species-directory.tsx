@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { Bird, Bug, ChevronLeft, ChevronRight, Leaf, Microscope, Search, X } from "lucide-react";
+import { ArrowUpRight, Bird, Bug, ChevronLeft, ChevronRight, Leaf, Microscope, Search, X } from "lucide-react";
+import { CustomSelect } from "@/components/atlas/custom-select";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 import type { Species, SpeciesCategory } from "@/lib/data/types";
 import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editorial";
@@ -45,6 +46,7 @@ function DirectoryCard({ species }: { species: Species }) {
           <p><i>{species.scientificName}</i></p>
           <span className={"category-" + species.category}><Icon size={13} aria-hidden="true" />{formatCategoryLabel(species.category)}</span>
         </div>
+        <ArrowUpRight className="directory-open-icon" size={18} aria-hidden="true" />
       </Link>
       {summary && <p className="directory-summary">{summary}</p>}
       {species.image && (
@@ -136,15 +138,15 @@ export function SpeciesDirectory() {
             {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label="Clear species search"><X size={18} aria-hidden="true" /></button>}
           </div>
         </div>
-        <label className="directory-category-label" htmlFor="directory-category"><span>Category</span>
-          <select id="directory-category" value={category}
-            onChange={event => { setCategory(event.target.value as SpeciesCategory | "all"); setPage(1); }}
-            aria-controls="directory-results">
-            <option value="all">All categories</option>
-            {categories.map(value => <option key={value} value={value}>{formatCategoryLabel(value)}</option>)}
-          </select>
-        </label>
+        <CustomSelect label="Category" value={category} options={[{ value: "all", label: "All species" }, ...categories.map(value => ({ value, label: formatCategoryLabel(value) }))]}
+          onChange={value => { setCategory(value as SpeciesCategory | "all"); setPage(1); }} />
       </div>
+
+      {hasFilters && <div className="directory-active-filters" aria-label="Active species filters">
+        {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label={`Remove search ${query}`}><Search size={14} aria-hidden="true" /><span>{query}</span><X size={14} aria-hidden="true" /></button>}
+        {category !== "all" && <button type="button" className={"category-" + category} onClick={() => { setCategory("all"); setPage(1); }} aria-label={`Remove ${formatCategoryLabel(category)} filter`}><span>{formatCategoryLabel(category)}</span><X size={14} aria-hidden="true" /></button>}
+        <button type="button" className="directory-clear-all" onClick={resetFilters}>Clear all</button>
+      </div>}
 
       <div id="directory-results" aria-busy={!error && (catalog === null || query !== deferredQuery)}>
         {error ? (
@@ -155,7 +157,7 @@ export function SpeciesDirectory() {
           <>
             <div className="directory-results-heading">
               <h2 ref={resultsHeading} tabIndex={-1}>{matches.length.toLocaleString()} species{hasFilters ? " found" : ""}</h2>
-              <div><p role="status" aria-live="polite" aria-atomic="true">{matches.length ? `${start + 1}-${Math.min(start + PAGE_SIZE, matches.length)} of ${matches.length.toLocaleString()}` : "No matching species"}</p>{hasFilters && <button type="button" onClick={resetFilters} className="text-link">Clear filters</button>}</div>
+              <div><p role="status" aria-live="polite" aria-atomic="true">{matches.length ? `Showing ${start + 1}-${Math.min(start + PAGE_SIZE, matches.length)} of ${matches.length.toLocaleString()}` : "No matching species"}</p></div>
             </div>
             {matches.length ? (
               <div className="directory-grid">{matches.slice(start, start + PAGE_SIZE).map(species => <DirectoryCard key={species.id} species={species} />)}</div>
