@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "jobId": "isitusa-pages-wheel-20260928",
+  "leaseId": "lease-isitusa-pages-wheel-20260928-1",
+  "baseSha": "95062e0ac79331489ba1607ea3b191f0cff296c3",
+  "sourceCommit": "775e5470163da910c9a20aaf353aa59688aa8698",
+  "completedAt": "2026-09-29T01:07:40.6776850Z",
+  "sourceFrozen": true,
+  "files": [
+    {
+      "path": "app/about/page.tsx",
+      "bytes": 6920,
+      "sha256": "aadcc051ffc02082ffdec42f3f40ec9c6ab4b362923c5bfba566cbc60bfe6920"
+    },
+    {
+      "path": "app/globals.css",
+      "bytes": 90223,
+      "sha256": "996af6fd1b1a87c8db828b5830e3d2753c226e5871d4461459bf07ff9bc0a821"
+    },
+    {
+      "path": "app/species/page.tsx",
+      "bytes": 1524,
+      "sha256": "ccbac49977bc7c7bf8c9d6ce57cecfe5dc0d8307128ba3f516c4148e352a6f72"
+    },
+    {
+      "path": "docs/design/isitusa-redesign/isitusa-pages-wheel-20260928/decisions.md",
+      "bytes": 3382,
+      "sha256": "cf6806dbc860b9e93566ad38a1f53b88bab9da39674c5503b2f4fc94bd7f0506"
+    },
+    {
+      "path": "src/components/atlas/custom-select.tsx",
+      "bytes": 7820,
+      "sha256": "086b574569289df86876591388a48575e526905f5c7ef9411ff33b02f769fea1"
+    },
+    {
+      "path": "src/components/atlas/map-appearance.tsx",
+      "bytes": 3603,
+      "sha256": "29906c87eec88faac01c22e046bfb592f762ae025f90d15ca87e8effc7c9870b"
+    },
+    {
+      "path": "src/components/map-explorer.tsx",
+      "bytes": 13530,
+      "sha256": "e2b9570415785aaf24d1798e4bd026079742808c7b9f0a22d1927d0cd4224d30"
+    },
+    {
+      "path": "src/components/participation/participation.module.css",
+      "bytes": 8737,
+      "sha256": "33f6adf434eff61465096d44e517e5992d2b8b2f81febe0b230daf1998e1ef6b"
+    },
+    {
+      "path": "src/components/participation/support-form.tsx",
+      "bytes": 5660,
+      "sha256": "96b5524db0a76246104393a65bbdf5a529d1e0a69b96b0addd9c6da237a36582"
+    },
+    {
+      "path": "src/components/research-control-center.tsx",
+      "bytes": 75564,
+      "sha256": "ffef1e873ff0a7aec94d9f6df3761ceb665e967f07e10f2e070792cc9e807944"
+    },
+    {
+      "path": "src/components/species-directory.tsx",
+      "bytes": 10763,
+      "sha256": "4d9acc10d89a0ca7dd0cb8ba5d5155995f17ef5c6e19f01b473e83d172a99a40"
+    },
+    {
+      "path": "src/components/us-county-map.tsx",
+      "bytes": 20327,
+      "sha256": "5533a67bec6cdbd81e6c69e22ac10ab8881fa98eae4f440ffe86009e328a3ec4"
+    },
+    {
+      "path": "src/lib/ui/map-gestures.ts",
+      "bytes": 3555,
+      "sha256": "bae7b05c430663fda4c8997d7c3880e6471392aa378451c47011067d35f43f7d"
+    },
+    {
+      "path": "src/lib/ui/select-navigation.ts",
+      "bytes": 1183,
+      "sha256": "78bd1c702e4d9d8179b967938e7318d94c2c26b35af25c161b25e849db36bfea"
+    },
+    {
+      "path": "tests/ui/custom-select.test.ts",
+      "bytes": 2301,
+      "sha256": "d7807f32ee16234431f827197e964ed2cc05d9007e551824b7d84d7bf6c0c209"
+    },
+    {
+      "path": "tests/ui/map-interaction.test.ts",
+      "bytes": 7911,
+      "sha256": "8985789aa96508a48e3afab53346556b791e50888753723ddddc5f0ae2c0c556"
+    }
+  ],
+  "totalBytes": null,
+  "tests": {
+    "pureTestsPassed": 27,
+    "pureTestsFailed": 0,
+    "diffCheck": "passed",
+    "scopedEslint": "passed; existing eslintrc deprecation notice only",
+    "pureCommand": "node --max-old-space-size=192 --experimental-strip-types --test --test-concurrency=1 tests/ui/map-interaction.test.ts tests/ui/custom-select.test.ts tests/ui/atlas-refinement.test.ts"
+  },
+  "dataChanges": 0,
+  "providerChanges": 0,
+  "localBuilds": 0,
+  "installs": 0,
+  "remaining": [
+    "MAIN hosted compilation and responsive browser checks",
+    "Wheel reset/state change before idle and height-only resize browser verification",
+    "Custom dropdown mobile bounds, search, Escape, Tab and independent-instance browser verification",
+    "MAIN production publication and live smoke",
+    "Physical device touch and screen-reader hardware testing not performed"
+  ],
+  "resourcesPath": "docs/design/isitusa-redesign/isitusa-pages-wheel-20260928/resources.jsonl",
+  "lastSafeResource": {
+    "at": "2026-09-29T01:07:03.2538524Z",
+    "freeDiskBytes": 256077778944,
+    "availableRamBytes": 6332891136,
+    "totalRamBytes": 33450536960,
+    "commitPercent": 88.0,
+    "pageReads": 3.0,
+    "pageWrites": 0.0,
+    "conservativeChangedSourceBytes": 263003,
+    "sourceLimitBytes": 5000000,
+    "minFreeDiskBytes": 100000000000,
+    "samplerPid": 9172,
+    "safe": true
+  },
+  "designNote": "docs/design/isitusa-redesign/isitusa-pages-wheel-20260928/decisions.md"
+}
