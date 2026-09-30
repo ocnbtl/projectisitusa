@@ -23,7 +23,7 @@ export function UpdateNotice({ datasetDate, datasetLabel }: { datasetDate: strin
       <span>Most recently updated <time dateTime={latest}>{dateLabel(latest)}</time></span>
     </button>
     {open && <section id="atlas-update-list" className="updates-popover" aria-label="Recent updates">
-      <header><h2>What&apos;s new at IsItUSA</h2><button type="button" aria-label="Close updates" onClick={close}><X size={18} /></button></header>
+      <header><h2>What&apos;s new at isitusa</h2><button type="button" aria-label="Close updates" onClick={close}><X size={18} /></button></header>
       <ol>{SITE_UPDATES.map((update, index) => <li key={index}><time dateTime={update.date}>{dateLabel(update.date)}</time><Link href={update.href}><strong>{update.title}</strong><ArrowUpRight size={16} aria-hidden="true" /></Link><p>{update.detail}</p></li>)}
         {datasetDate && <li><time dateTime={datasetDate}>{dateLabel(datasetDate)}</time><Link href="/research"><strong>{datasetLabel === "Earlier map records" ? "Earlier county records" : "The records behind the map"}</strong><BookOpen size={16} aria-hidden="true" /></Link><p>This is the date of the data release. To see when a species was observed, open its county record and follow the source.</p></li>}
       </ol>

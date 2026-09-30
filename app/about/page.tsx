@@ -5,9 +5,9 @@ import { SpeciesImage } from "@/components/species-image";
 import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 
 export const metadata: Metadata = {
-  title: "About IsItUSA",
+  title: "About isitusa",
   alternates: { canonical: "https://isitusa.com/about" },
-  description: "IsItUSA is an independent initiative based in the United States, making invasive species information easier to find, understand, and use.",
+  description: "isitusa is an independent initiative based in the United States, making invasive species information easier to find, understand, and use.",
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
         <div className="about-hero-copy">
           <h1>Making invasive species research useful.</h1>
           <p>Everyone should be able to find out what has been recorded where they live, and where that information comes from.</p>
-          <p>IsItUSA brings scattered records into one atlas. We connect local places, species profiles, and original sources so you can ask better questions about the places you care for.</p>
+          <p>isitusa brings scattered records into one atlas. We connect local places, species profiles, and original sources so you can ask better questions about the places you care for.</p>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <figure className="about-field-image">
@@ -26,7 +26,7 @@ export default function AboutPage() {
         </figure>
       </header>
 
-      <nav className="about-page-nav" aria-label="On this page"><a href="#purpose-heading">Why IsItUSA</a><a href="#method-heading">Our approach</a><a href="#outlook-heading">Where we are headed</a><a href="#help-heading">Get involved <ArrowRight size={16} aria-hidden="true" /></a></nav>
+      <nav className="about-page-nav" aria-label="On this page"><a href="#purpose-heading">Why isitusa</a><a href="#method-heading">Our approach</a><a href="#outlook-heading">Where we are headed</a><a href="#help-heading">Get involved <ArrowRight size={16} aria-hidden="true" /></a></nav>
 
       <section className="about-purpose" aria-labelledby="purpose-heading">
         <h2 id="purpose-heading">Useful knowledge should be within reach.</h2>
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
       <section className="about-outlook" aria-labelledby="outlook-heading">
         <Globe2 size={32} strokeWidth={1.5} aria-hidden="true" />
-        <div><h2 id="outlook-heading">Starting in the U.S., thinking beyond borders.</h2><p>IsItUSA is an independent initiative based in the United States. Our ambition is to help people use local species information around the world. We are beginning with U.S. counties and county equivalents, building an approach we can keep improving.</p><p>Our catalog starts with the US-RIIS lower-48 register. It is a foundation to build on, not a complete list of every species in every place.</p></div>
+        <div><h2 id="outlook-heading">Starting in the U.S., thinking beyond borders.</h2><p>isitusa is an independent initiative based in the United States. Our ambition is to help people use local species information around the world. We are beginning with U.S. counties and county equivalents, building an approach we can keep improving.</p><p>Our catalog starts with the US-RIIS lower-48 register. It is a foundation to build on, not a complete list of every species in every place.</p></div>
       </section>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">

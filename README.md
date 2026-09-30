@@ -1,6 +1,6 @@
-# Project Isitusa
+# isitusa
 
-Project Isitusa is a public-facing Next.js app for exploring Invasive Species in the USA (hence the acronym ISITUSA) through species pages, county-level presence data, and location based discovery.
+isitusa is a public-facing Next.js app for exploring Invasive Species in the USA (hence the acronym ISITUSA) through species pages, county-level presence data, and location based discovery.
 
 ## Why This Matters
 
@@ -71,3 +71,9 @@ This project is open-sourced under the MIT License. See [LICENSE](./LICENSE).
 - Historical ownership-transfer handoff prompt: [docs/handoffs/NEXT-CHAT-PROMPT.md](./docs/handoffs/NEXT-CHAT-PROMPT.md)
 - Source inventory: [docs/source-inventory.md](./docs/source-inventory.md)
 - Profile workflow: [docs/profile-content/workflow.md](./docs/profile-content/workflow.md)
+
+## Brand assets
+
+The approved identity is available at `/brand`. Current originals, checksums,
+email signature, and a downloadable kit live in `public/brand/v2/`.
+See `docs/brand/README.md` for usage. Historical research artifacts are preserved.
