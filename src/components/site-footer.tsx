@@ -10,7 +10,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-main">
-        <div><Link href="/" className="footer-brand" aria-label="isitusa home"><Image src="/brand/v2/isitusa-symbol-name.png" alt="isitusa" width={100} height={122} unoptimized /></Link><p>Get to know the species around you.</p><small>An independent initiative based in the United States.</small></div>
+        <div><Link href="/" className="footer-brand" aria-label="isitusa home"><Image className="brand-art" src="/brand/v3/isitusa-symbol-name.svg" alt="isitusa" width={100} height={133} unoptimized /></Link><p>Get to know the species around you.</p><small>An independent initiative based in the United States.</small></div>
         <nav aria-label="Get involved">
           <Link href="/join">Email updates <ArrowUpRight size={14} aria-hidden="true" /></Link>
           <Link href="/report">Report a sighting <ArrowUpRight size={14} aria-hidden="true" /></Link>

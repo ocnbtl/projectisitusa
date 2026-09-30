@@ -13,21 +13,24 @@ export const metadata: Metadata = {
     "Explore invasive species across the United States with a county map, ZIP search, and practical species profiles.",
   metadataBase: new URL("https://isitusa.com"),
   applicationName: "isitusa",
-  manifest: "/site.webmanifest",
+  manifest: "/brand/v3/site.webmanifest",
   openGraph: {
     type: "website", siteName: "isitusa", title: "isitusa | Invasive species, county by county",
     description: "Explore species records and follow the original sources for your county.",
-    images: [{ url: "/brand/v2/isitusa-symbol.png", width: 2240, height: 2240, alt: "isitusa: bird, leaf, butterfly and mushroom" }],
+    images: [{ url: "/brand/v3/isitusa-symbol.png", width: 1200, height: 1200, alt: "isitusa: bird, leaf, butterfly and mushroom" }],
   },
   twitter: {
     card: "summary", title: "isitusa | Invasive species, county by county",
     description: "Explore species records and follow the original sources for your county.",
-    images: ["/brand/v2/isitusa-symbol.png"],
+    images: ["/brand/v3/isitusa-symbol.png"],
   },
   icons: {
-    icon: [{ url: "/brand/v2/isitusa-symbol.png", type: "image/png", sizes: "2240x2240" }],
-    shortcut: "/brand/v2/isitusa-symbol.png",
-    apple: [{ url: "/brand/v2/isitusa-symbol.png", sizes: "2240x2240" }],
+    icon: [
+      { url: "/brand/v3/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      { url: "/brand/v3/icon-32.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/brand/v3/favicon.svg",
+    apple: [{ url: "/brand/v3/icon-180.png", type: "image/png", sizes: "180x180" }],
   },
 };
 

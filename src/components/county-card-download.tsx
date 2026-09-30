@@ -16,7 +16,7 @@ export function CountyCardDownload({ county, focalSpecies, snapshotDate, dataset
     const controller = new AbortController();
     let active = true;
     const timeout = window.setTimeout(() => controller.abort(), 8000);
-    void fetch("/brand/v2/isitusa-symbol.png", { signal: controller.signal })
+    void fetch("/brand/v3/isitusa-symbol.png", { signal: controller.signal })
       .then(response => { if (!response.ok) throw Error("Logo unavailable"); return response.blob(); })
       .then(blob => new Promise<string>((resolve, reject) => {
         const reader = new FileReader(); reader.onload = () => resolve(String(reader.result));

@@ -34,7 +34,7 @@ export function SiteHeader() {
     <a className="skip-link" href="#main-content">Skip to content</a>
     <header className="site-header glass-panel">
       <Link href="/" className="site-brand" aria-label="isitusa home: Invasive Species In The United States of America">
-        <Image src="/brand/v2/isitusa-symbol.png" alt="" width={70} height={70} priority unoptimized />
+        <Image className="brand-art" src="/brand/v3/isitusa-symbol.svg" alt="" width={70} height={70} priority unoptimized />
         <span className="brand-full-name">Invasive Species In The United States of America</span>
       </Link>
       <nav ref={nav} aria-label="Primary">

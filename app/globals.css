@@ -576,7 +576,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .atlas-footer>a:last-child { margin-left:0; }
 .logo-loading { min-height:60dvh; display:grid; place-items:center; }
 .logo-loading.is-overlay { position:fixed; inset:0; z-index:90; background:var(--background); pointer-events:none; animation:loader-in 150ms ease-out; }
-.logo-loading img { animation:atlas-logo-turn 1.5s linear infinite; width:76px; height:76px; object-fit:contain; border-radius:12px; background:#fff; }
+
 .category-plants { --category-ink:#286342; --category-wash:#e4efdf; }
 .category-insects { --category-ink:#845312; --category-wash:#faeccf; }
 .category-wildlife { --category-ink:#315e8a; --category-wash:#e1edf7; }
@@ -592,7 +592,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .dark .category-insects { --category-ink:#edcc8d; --category-wash:#4b3d20; }
 .dark .category-wildlife { --category-ink:#b7d9f1; --category-wash:#263e53; }
 .dark .category-fungi-diseases { --category-ink:#eac3df; --category-wash:#50334a; }
-@keyframes atlas-logo-turn { to { transform:rotate(360deg); } }
+
 @keyframes loader-in { from { opacity:0; } to { opacity:1; } }
 @keyframes atlas-popover-in { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
 @media(max-width:1100px) {
@@ -648,7 +648,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 }
 @media(prefers-reduced-motion:reduce) {
   .nav-active-pill,.atlas-county,.atlas-map-shapes,.map-count-bands i,.atlas-zoom svg { transition:none!important; }
-  .logo-loading img,.logo-loading.is-overlay,.updates-popover,.state-picker-popover,.search-suggestion-panel,.atlas-filter-panel { animation:none!important; }
+  .nature-loading-icon,.logo-loading.is-overlay,.updates-popover,.state-picker-popover,.search-suggestion-panel,.atlas-filter-panel { animation:none!important; }
 }
 
 .state-flag-credits { font-size:10px; line-height:1.6; color:var(--muted); padding:8px; border-top:1px solid var(--border); } .state-flag-credits summary { cursor:pointer; min-height:30px; display:flex; align-items:center; } .state-flag-credits p { margin-top:8px; } .state-flag-credits a { text-decoration:underline; }
@@ -671,7 +671,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top) + 24px); }
 .site-header { position:fixed; z-index:50; top:var(--site-header-top); left:24px; right:24px; max-width:none; height:var(--site-header-height); margin:0; padding:5px 18px 5px 10px; border-radius:16px; gap:20px; flex-direction:row; }
 .site-brand { min-width:0; flex:1 1 auto; gap:12px; }
-.site-brand img { width:70px; height:70px; flex-shrink:0; object-fit:contain; padding:0; border-radius:12px; background:#fff; }
+.site-brand img { width:70px; height:70px; flex-shrink:0; object-fit:contain; padding:0; border-radius:0; background:transparent; }
 .site-brand .brand-full-name { max-width:none; font-size:clamp(18px,1.55vw,28px); font-weight:400; line-height:1.2; white-space:nowrap; letter-spacing:-.025em; }
 .site-header nav { flex:0 0 auto; gap:3px; height:48px; }
 .site-header nav>a,.site-header nav>a.map-nav-link { display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:10px 12px; min-height:44px; font-size:13px; white-space:nowrap; }
@@ -958,14 +958,14 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 }
 
 /* Approved artwork keeps its white ground and exact green in both themes. */
-.footer-brand { display:inline-flex; background:#fff; border-radius:12px; overflow:hidden; }
+.footer-brand { display:inline-flex; background:transparent; }
 .footer-brand img { display:block; width:100px; height:auto; }
 .brand-kit { width:100%; max-width:none; margin:0; padding:calc(var(--site-header-height) + var(--site-header-top) + 64px) var(--page-gutter) 80px; }
 .brand-kit h1 { font-size:clamp(36px,6vw,64px); letter-spacing:-.045em; line-height:1.1; margin-bottom:20px; }
 .brand-kit-intro { max-width:640px; color:var(--muted); line-height:1.7; }
 .brand-kit-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:40px 0; }
 .brand-kit-card { min-width:0; }
-.brand-kit-art { background:#fff; border-radius:16px; height:clamp(260px,30vw,420px); min-height:0; padding:16px; display:grid; place-items:center; margin-bottom:20px; }
+.brand-kit-art { background:transparent; border-radius:16px; height:clamp(260px,30vw,420px); min-height:0; padding:16px; display:grid; place-items:center; margin-bottom:20px; }
 .brand-kit-art img { display:block; width:100%; height:100%; min-height:0; object-fit:contain; }
 .brand-kit-card h2 { font-size:20px; margin-bottom:8px; }
 .brand-kit-card .text-link,.brand-kit-actions>a { display:inline-flex; align-items:center; gap:8px; min-height:44px; }
@@ -973,3 +973,29 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .brand-kit-note { max-width:720px; line-height:1.7; margin:24px 0; }
 .brand-kit-actions { display:flex; gap:16px; flex-wrap:wrap; margin:24px 0; }
 @media(max-width:700px) { .brand-kit-grid { grid-template-columns:1fr; gap:36px; }.brand-kit-art { max-width:360px; }.brand-kit { padding-top:calc(var(--site-header-height) + var(--site-header-top) + 40px); } }
+
+/* Transparent v3 artwork; the master remains green, the UI turns white on dark surfaces. */
+.dark .brand-art { filter:brightness(0) invert(1); }
+.brand-kit-downloads { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.nature-loading { display:flex; align-items:center; justify-content:center; gap:20px; color:var(--accent-strong); }
+.nature-loading-icon { display:block; width:34px; height:34px; opacity:.2; animation:nature-pop 2.4s cubic-bezier(.22,1,.36,1) infinite; }
+.nature-loading-icon svg { width:100%; height:100%; display:block; }
+.nature-loading-icon:nth-child(2) { animation-delay:.3s; }
+.nature-loading-icon:nth-child(3) { animation-delay:.6s; }
+.nature-loading-icon:nth-child(4) { animation-delay:.9s; }
+@keyframes nature-pop { 0%,70%,100% { opacity:.2; transform:translateY(3px) scale(.8); } 18%,40% { opacity:1; transform:translateY(-4px) scale(1); } }
+.not-found-page { min-height:calc(100dvh - 240px); padding:calc(var(--site-header-height) + var(--site-header-top) + 40px) var(--page-gutter) 80px; text-align:center; display:flex; flex-direction:column; align-items:center; }
+.not-found-landscape { position:relative; width:min(100%,580px); height:clamp(200px,26vw,290px); display:grid; place-items:center; color:var(--accent); isolation:isolate; }
+.not-found-code { font-size:clamp(112px,20vw,200px); font-weight:450; line-height:1; letter-spacing:-.08em; opacity:.24; font-variant-numeric:tabular-nums; padding-right:.08em; }
+.not-found-contour { position:absolute; border:1px solid var(--border); border-radius:45% 55% 62% 38% / 48% 35% 65% 52%; z-index:-1; transform:rotate(-12deg); }
+.contour-one { inset:12% 3%; }.contour-two { inset:21% 11%; }.contour-three { inset:32% 21%; }
+.not-found-landscape>svg { position:absolute; width:38px; height:38px; background:var(--background); border-radius:50%; padding:3px; }
+.not-found-bird { left:19%; top:13%; transform:rotate(-8deg); }.not-found-butterfly { right:13%; top:22%; transform:rotate(12deg); }
+.not-found-leaf { left:13%; bottom:19%; transform:rotate(-15deg); }.not-found-mushroom { right:24%; bottom:8%; }
+.not-found-eyebrow { font-size:11px; letter-spacing:.16em; color:var(--muted); margin:24px 0 14px; }
+.not-found-page h1 { font-size:clamp(28px,5vw,46px); font-weight:500; letter-spacing:-.04em; line-height:1.15; }
+.not-found-description { max-width:440px; color:var(--muted); line-height:1.7; margin:20px 0 28px; }
+.not-found-actions { display:flex; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap; }
+.not-found-actions>a { display:inline-flex; align-items:center; gap:9px; min-height:44px; }
+@media(max-width:700px) { .not-found-page { padding-top:calc(var(--site-header-height) + var(--site-header-top) + 32px); }.nature-loading { gap:16px; }.nature-loading-icon { width:30px; height:30px; } }
+@media(prefers-reduced-motion:reduce) { .nature-loading-icon { animation:none!important; opacity:1; transform:none; } }
