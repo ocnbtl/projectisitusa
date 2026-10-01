@@ -28,8 +28,8 @@ const STATUS_LABELS = {
   "verified-present": "Recorded present",
   "verified-absent": "Verified absent",
   "not-detected": "Survey non-detection",
-  "researched-unresolved": "Research unresolved",
-  "not-researched": "Not researched",
+  "researched-unresolved": "More evidence needed",
+  "not-researched": "Not researched yet",
 } satisfies Record<ResearchPairRecord["displayStatus"], string>;
 
 const STATUS_ORDER: Record<ResearchPairRecord["displayStatus"], number> = {

@@ -17,8 +17,8 @@ export default function SpeciesPage() {
       </header>
       <details className="catalog-note catalog-note-top">
         <summary>Where does this information come from?</summary>
-        <p>We bring together work from public agencies, universities, and monitoring programs, including USGS, USDA, and EDDMapS. County records link back to the evidence we reviewed, so you can see who reported a finding and when.</p>
-        <p>The species catalog starts with the US-RIIS register for the lower 48 states. Our county research also covers Alaska and Hawaii, but the catalog is not a complete inventory of every introduced species there. A catalog entry is not proof of local presence, and a missing record is not proof of absence.</p>
+        <p>Species records are spread across agency websites, research collections, and monitoring programs. We bring them together here, with the original sources close at hand. Open a county finding to see who reported it, when it was recorded, and what the evidence tells us.</p>
+        <p>Our catalog begins with the US-RIIS register for the lower 48 states. We also research Alaska and Hawaii, though the catalog does not yet include every introduced species there. A species listed here may not occur in your county; a gap in the records does not mean it is absent.</p>
         <Link href="/research" className="text-link">Browse county evidence and research progress <ArrowUpRight size={15} aria-hidden="true" /></Link>
       </details>
       <SpeciesDirectory />

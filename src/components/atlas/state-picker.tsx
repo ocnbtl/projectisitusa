@@ -6,7 +6,7 @@ import stateRegistry from "@/data/research/state-registry.json";
 import { STATE_FLAGS } from "@/content/state-flags";
 
 const states = stateRegistry.jurisdictions.filter(state => state.nationalV1Scope).sort((a,b) => a.stateName.localeCompare(b.stateName));
-function Flag({ code }: { code: string }) {
+export function StateFlag({ code }: { code: string }) {
   const [failed, setFailed] = useState(false);
   const asset = STATE_FLAGS[code];
   return asset && !failed ? <Image src={asset.src} alt="" width={27} height={18} unoptimized onError={() => setFailed(true)} /> : <span className="state-code" aria-hidden="true">{code}</span>;
@@ -27,7 +27,7 @@ export function StatePicker({ value, onChange }: { value: string | null; onChang
   function choose(code: string) { onChange(code || null); setOpen(false); button.current?.focus(); }
   return <div ref={root} className="state-picker" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); setOpen(false); button.current?.focus(); } }}>
     <button ref={button} type="button" className="state-picker-trigger glass-panel" aria-label={"Focus on a state: " + (current?.stateName ?? "All states")} aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={() => { setOpen(!open); setQuery(""); setActive(0); }}>
-      {value ? <Flag key={value} code={value} /> : <Globe2 size={20} aria-hidden="true" />}<span>{current?.stateName ?? "All states"}</span><ChevronDown size={15} />
+      {value ? <StateFlag key={value} code={value} /> : <Globe2 size={20} aria-hidden="true" />}<span>{current?.stateName ?? "All states"}</span><ChevronDown size={15} />
     </button>
     {open && <div className="state-picker-popover">
       <label><Search size={16} /><input ref={input} value={query} role="combobox" aria-label="Find a state" aria-autocomplete="list" aria-expanded={open} aria-controls={id} aria-activedescendant={options[active] ? id + "-" + active : undefined} placeholder="Find a state" onChange={e => { setQuery(e.target.value); setActive(0); }} onKeyDown={event => {
@@ -35,7 +35,7 @@ export function StatePicker({ value, onChange }: { value: string | null; onChang
         if (event.key === "Enter" && options[active]) { event.preventDefault(); choose(options[active].code); }
       }} /></label>
       <div id={id} role="listbox" aria-label="States">{options.map((option, index) => <button tabIndex={-1} id={id + "-" + index} key={option.code} type="button" role="option" className={index === active ? "is-focused" : ""} aria-selected={(value ?? "") === option.code} onMouseDown={event => event.preventDefault()} onClick={() => choose(option.code)}>
-        {option.code ? <Flag code={option.code} /> : <Globe2 size={20} aria-hidden="true" />}<span>{option.name}</span>{(value ?? "") === option.code && <Check size={16} />}
+        {option.code ? <StateFlag code={option.code} /> : <Globe2 size={20} aria-hidden="true" />}<span>{option.name}</span>{(value ?? "") === option.code && <Check size={16} />}
       </button>)}{!options.length && <p className="search-empty">No matching state.</p>}</div>
 
     </div>}

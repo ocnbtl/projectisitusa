@@ -1171,3 +1171,67 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .directory-display-controls { margin-bottom:12px; }
 .directory-display-controls .custom-select { flex:0 0 auto; }
 .directory-display-controls .custom-select-label { white-space:nowrap; }
+
+/* Clarity refinement: balanced count scales and bounded reading layouts. */
+@media(min-width:701px) { .atlas-intro { width:calc(100% - 72px); max-width:1050px; } .atlas-intro h1 { white-space:nowrap; font-size:clamp(27px,3vw,42px); max-width:none; } .atlas-intro p { max-width:54ch; } }
+.species-directory { max-width:1840px; }
+.species-directory .directory-search-label { flex:1 1 320px; max-width:580px; }
+.directory-view-switch { border:1px solid var(--border); background:var(--surface); padding:4px; gap:4px; }
+.directory-view-switch button { min-width:90px; border:0; border-radius:8px; }
+.directory-view-switch button[aria-pressed=true] { background:var(--foreground); color:var(--background); }
+.directory-view-switch button:hover:not([aria-pressed=true]) { background:var(--surface-strong); }
+.directory-identity { min-width:0; position:relative; padding-bottom:22px; }
+.directory-identity .image-credit { position:absolute; left:86px; top:calc(100% - 25px); max-width:calc(100% - 86px); font-size:10px; z-index:1; }
+.directory-identity .image-credit summary { min-height:24px; padding:3px 0; }
+.directory-identity .image-credit[open] { background:var(--surface-strong); padding:0 8px 8px; border:1px solid var(--border); border-radius:8px; }
+.directory-identity .image-credit p { max-width:40ch; }
+.directory-view-rows .directory-card { grid-template-columns:minmax(260px,.95fr) minmax(220px,1.05fr); gap:22px; padding:16px 20px; }
+.directory-view-rows .directory-summary { max-width:62ch; }
+.directory-view-compact { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.directory-view-compact .directory-names { display:block; }
+.directory-view-compact .directory-names h3 { font-size:16px; }
+.directory-view-compact .directory-names>p { margin-top:3px; }
+.directory-view-compact .directory-names>span { margin-top:4px; }
+.directory-view-compact .directory-card { padding:12px 16px; }
+.directory-view-compact .directory-identity .image-credit { padding-left:0; left:56px; max-width:calc(100% - 56px); }
+.directory-view-grid .directory-card { display:flex; flex-direction:column; align-items:stretch; }
+.select-option-label { display:flex; gap:10px; align-items:center; min-width:0; }
+.select-option-label img { width:27px; height:18px; object-fit:contain; flex-shrink:0; }
+.county-progress { padding:24px 0 8px; max-width:1000px; }
+.county-progress>div { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
+.county-progress h3 { font-size:18px; font-weight:550; line-height:1.5; }
+.county-progress span { font-size:14px; font-variant-numeric:tabular-nums; color:var(--muted); }
+.county-progress progress { display:block; width:100%; height:8px; margin:14px 0; border:0; border-radius:10px; overflow:hidden; background:var(--surface); accent-color:var(--accent); }
+.county-progress progress::-webkit-progress-bar { background:var(--surface); }
+.county-progress progress::-webkit-progress-value { background:var(--accent); border-radius:10px; }
+.county-progress progress::-moz-progress-bar { background:var(--accent); }
+.county-progress p,.county-scope-note { color:var(--muted); font-size:13px; line-height:1.7; max-width:80ch; }
+.county-finding-overview { grid-template-columns:repeat(5,minmax(0,1fr)); }
+.county-finding-overview button { padding:16px; }
+.county-finding-overview span { min-height:38px; }
+.county-finding-overview strong { font-size:28px; }
+.research-priority-list { list-style:none; padding:0; margin:24px 0; border-top:1px solid var(--border); }
+.research-priority-list>li { display:grid; grid-template-columns:32px minmax(190px,1fr) minmax(200px,.9fr) minmax(240px,1.2fr); gap:24px; padding:24px 12px; border-bottom:1px solid var(--border); align-items:start; }
+.research-priority-list>li:first-child { background:var(--surface); }
+.queue-rank { color:var(--muted); font-size:15px; font-variant-numeric:tabular-nums; padding-top:3px; }
+.queue-species h3 { font-size:19px; font-weight:550; line-height:1.4; }
+.queue-species p,.queue-species small,.queue-reason p,.queue-next p { color:var(--muted); font-size:13px; line-height:1.7; margin-top:5px; overflow-wrap:anywhere; }
+.queue-species small { display:block; margin-top:8px; }
+.queue-reason h4,.queue-next h4 { font-size:13px; font-weight:650; }
+.queue-reason strong { font-weight:550; color:var(--foreground); font-variant-numeric:tabular-nums; }
+.queue-next details { margin-top:8px; font-size:12px; color:var(--muted); }
+.queue-next summary { cursor:pointer; padding:6px 0; }
+.research-queue-empty { padding:40px 0; color:var(--muted); }
+.about-identity { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:36px 28px; text-align:center; border-left:1px solid var(--border); min-height:420px; }
+.about-identity img { width:180px; height:auto; }
+.about-identity p { margin:28px 0 18px; font-size:15px; line-height:1.6; color:var(--foreground); }
+.about-identity>span { font-size:13px; color:var(--muted); }
+@media(min-width:1700px) { .directory-view-rows { grid-template-columns:repeat(2,minmax(0,1fr)); } .directory-view-compact { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:1100px) { .county-finding-overview { grid-template-columns:repeat(3,minmax(0,1fr)); } .research-priority-list>li { grid-template-columns:28px minmax(170px,1fr) minmax(230px,1fr); gap:18px; } .queue-next { grid-column:2/-1; } }
+@media(max-width:700px) { .species-directory .directory-search-label { max-width:none; } .directory-view-rows,.directory-view-compact { grid-template-columns:1fr; } .directory-view-rows .directory-card { grid-template-columns:1fr; gap:8px; padding:16px; } .directory-view-switch button { min-width:78px; } .county-finding-overview { grid-template-columns:repeat(2,minmax(0,1fr)); } .county-finding-overview span { min-height:0; } .county-progress h3 { font-size:16px; } .research-priority-list>li { grid-template-columns:24px minmax(0,1fr); gap:12px; padding:20px 4px; } .queue-reason,.queue-next { grid-column:2; } .about-identity { border-left:0; border-top:1px solid var(--border); min-height:0; padding:36px 20px; } .about-identity img { width:135px; } }
+
+.species-page { max-width:1960px; margin-inline:auto; }
+@media(max-width:700px) { .directory-view-switch button span { display:inline; } .directory-view-switch button { min-width:82px; padding-inline:8px; } }
+
+.directory-identity .image-credit summary { display:flex; align-items:center; gap:4px; }
+.directory-identity .image-credit summary::before { content:none; }

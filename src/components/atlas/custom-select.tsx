@@ -2,12 +2,13 @@
 
 import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { createPortal } from "react-dom";
+import { StateFlag } from "@/components/atlas/state-picker";
 import { Check, ChevronDown, Search } from "lucide-react";
 import { findSelectOption, nextSelectOption, selectSearchText, type SelectOption } from "@/lib/ui/select-navigation";
 
-export function CustomSelect({ label, value, options, onChange, disabled = false, compact = false }: {
+export function CustomSelect({ label, value, options, onChange, disabled = false, compact = false, stateFlags = false }: {
   label: string; value: string; options: SelectOption[]; onChange: (value: string) => void;
-  disabled?: boolean; compact?: boolean;
+  disabled?: boolean; compact?: boolean; stateFlags?: boolean;
 }) {
   const id = useId();
   const trigger = useRef<HTMLButtonElement>(null), popup = useRef<HTMLDivElement>(null);
@@ -101,7 +102,7 @@ export function CustomSelect({ label, value, options, onChange, disabled = false
       aria-labelledby={`${id}-label ${id}-value`} aria-haspopup="dialog" aria-expanded={open} aria-controls={open ? `${id}-popup` : undefined}
       onClick={() => open ? close() : show()} onKeyDown={event => {
         if (["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) { event.preventDefault(); show(event.key); }
-      }}><span id={`${id}-value`}>{selected?.label ?? "Choose an option"}</span><ChevronDown size={16} aria-hidden="true" /></button>
+      }}><span className="select-option-label" id={`${id}-value`}>{stateFlags && selected && <StateFlag key={selected.value} code={selected.value} />}{selected?.label ?? "Choose an option"}</span><ChevronDown size={16} aria-hidden="true" /></button>
     {open && createPortal(<div ref={popup} id={`${id}-popup`} role="dialog" aria-label={label} className="custom-select-popup" style={position} onKeyDown={keyDown}
       onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node) && event.relatedTarget !== trigger.current) setOpen(false); }}>
       {searchable && <div className="custom-select-search"><Search size={16} aria-hidden="true" /><input ref={search} value={query} role="combobox" aria-label={`Search ${label.toLowerCase()}`} aria-expanded="true" aria-autocomplete="list" aria-controls={`${id}-list`} aria-activedescendant={activeId}
@@ -109,7 +110,7 @@ export function CustomSelect({ label, value, options, onChange, disabled = false
       <div ref={list} id={`${id}-list`} role="listbox" aria-label={label} tabIndex={searchable ? -1 : 0} aria-activedescendant={searchable ? undefined : activeId} className="custom-select-options">
         {filtered.map((option, index) => <div key={option.value} id={`${id}-option-${index}`} role="option" aria-selected={option.value === value} aria-disabled={option.disabled || undefined}
           data-option-index={index} data-active={index === active} onPointerMove={event => { if (event.pointerType === "mouse" && !option.disabled) setActive(index); }}
-          onMouseDown={event => event.preventDefault()} onClick={() => choose(index)}><span>{option.label}</span>{option.value === value && <Check size={16} aria-hidden="true" />}</div>)}
+          onMouseDown={event => event.preventDefault()} onClick={() => choose(index)}><span className="select-option-label">{stateFlags && <StateFlag code={option.value} />}{option.label}</span>{option.value === value && <Check size={16} aria-hidden="true" />}</div>)}
         {!filtered.length && <p className="custom-select-empty" role="status">No matches. Try another name.</p>}
       </div>
     </div>, document.body)}

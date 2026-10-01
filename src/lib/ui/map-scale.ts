@@ -11,19 +11,20 @@ export function interpolateMapColor(left: string, right: string, position: numbe
   }).join("");
 }
 
-/** Positive quantile anchors retain exact counts. Colors interpolate between them;
- * zero and unavailable are separate, and the geographic scope is retained.
+/** Linear positive-count anchors: equal count differences occupy equal color space.
+ * Zero and unavailable stay separate; callers retain the current geographic scope.
  */
 export function createMapCountBands(values: number[], palette: readonly string[] = colors): MapCountBand[] {
-  const positive = values.filter(value => Number.isSafeInteger(value) && value > 0).sort((a, b) => a - b);
+  const positive = values.filter(value => Number.isSafeInteger(value) && value > 0);
   const zero = { min: 0, max: 0, label: "0", color: "var(--county-none)" };
   if (!positive.length) return [zero];
-  const anchors = [...new Set([positive[0], ...Array.from({ length: 4 }, (_, i) => positive[Math.floor((positive.length - 1) * (i + 1) / 5)]), positive[positive.length - 1]])];
+  const min = Math.min(...positive), max = Math.max(...positive);
   const stops = palette.length ? palette : colors;
+  const anchors = min === max ? [min] : Array.from({ length: Math.max(2, stops.length) }, (_, index) => min + (max - min) * index / (Math.max(2, stops.length) - 1));
   return [zero, ...anchors.map((count, index) => {
     const position = (anchors.length === 1 ? .5 : index / (anchors.length - 1)) * (stops.length - 1);
     const low = Math.floor(position), high = Math.ceil(position);
-    return { min: count, max: count, label: String(count), color: interpolateMapColor(stops[low], stops[high], position - low) };
+    return { min: count, max: count, label: Number(count.toFixed(1)).toLocaleString("en-US"), color: interpolateMapColor(stops[low], stops[high], position - low) };
   })];
 }
 export const MAP_COUNT_BANDS = createMapCountBands([1, 10, 25, 50, 100, 200]);

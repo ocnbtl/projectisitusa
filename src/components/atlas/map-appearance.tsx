@@ -22,7 +22,7 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
       <div><div className="legend-explanation"><h2>Reading the map</h2>
         <p>Species per county, matching your filters. Counts, not harm.</p>
         <p><strong>0:</strong> no records, not absence. <strong>Gray:</strong> unavailable.</p>
-        <p className="legend-data-date">Colors blend between the count labels below. The scale adjusts to {area} as you zoom.{published && <> {datasetLabel === "Earlier map records" ? "Earlier data" : "Data"}: {published}; sighting dates are in the sources.</>}</p>
+        <p className="legend-data-date">Equal changes in count get equal space on this scale. The scale adjusts to {area} as you zoom.{published && <> {datasetLabel === "Earlier map records" ? "Earlier data" : "Data"}: {published}; sighting dates are in the sources.</>}</p>
       </div></div>
     </div>
     <div id={id + "-colors"} className="legend-drawer" data-open={open === "colors"} aria-hidden={open !== "colors"}>
@@ -39,7 +39,7 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
         <button ref={helpButton} type="button" aria-label="About map colors" aria-expanded={open === "help"} aria-controls={id + "-help"} onClick={() => setOpen(open === "help" ? null : "help")}><Info size={18} aria-hidden="true" /></button>
       </div></div>
       <div className="map-spectrum" aria-label={"Species count scale for " + scope}>
-        {anchors.length > 0 ? <><div className="map-spectrum-bar" style={{ background: spectrum }} aria-hidden="true" /><ol className="map-spectrum-ticks">{anchors.map(band => <li key={band.min}>{band.label}</li>)}</ol></> : <p>No positive counts in this view</p>}
+        {anchors.length > 0 ? <><div className="map-spectrum-bar" style={{ background: spectrum }} aria-hidden="true" /><ol className="map-spectrum-ticks">{(anchors.length > 3 ? [anchors[0], anchors[anchors.length - 1]] : anchors).map(band => <li key={band.min}>{band.label}</li>)}</ol></> : <p>No positive counts in this view</p>}
         <div className="map-spectrum-exceptions"><span><i style={{ background: "var(--county-none)" }} />0 records</span><span><i style={{ background: "var(--county-unknown)" }} />Unavailable</span></div>
       </div>
     </div>

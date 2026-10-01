@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Globe2, Heart, MapPin, ScanSearch } from "lucide-react";
 import { STATE_FLAGS } from "@/content/state-flags";
-import { SpeciesImage } from "@/components/species-image";
-import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About isitusa",
@@ -21,10 +20,11 @@ export default function AboutPage() {
           <p><strong className="brand-wordmark">isitusa</strong> is an independent initiative based in the United States. We bring scattered species records into one atlas, connecting the places you care about with research you can trace to its source.</p>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
-        <figure className="about-field-image">
-          <SpeciesImage src={getSpeciesImageAsset("/species/kudzu.jpg").full.src} alt="Kudzu leaves and a cluster of purple flowers" credit="Forest & Kim Starr / Wikimedia Commons" label="Kudzu" />
-          <figcaption><Link href="/species/kudzu">Get to know kudzu <ArrowUpRight size={15} aria-hidden="true" /></Link><p className="text-xs text-[var(--muted)]"><a href="https://commons.wikimedia.org/wiki/File:Starr_021012-0015_Pueraria_montana_var._lobata.jpg" target="_blank" rel="noreferrer">Photo by Forest &amp; Kim Starr</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a>. Resized and cropped for display.</p></figcaption>
-        </figure>
+        <div className="about-identity" aria-label="About isitusa">
+          <Image className="brand-art" src="/brand/v3/isitusa-symbol-name.svg" alt="isitusa" width={220} height={294} unoptimized priority />
+          <p>Invasive Species In The<br />United States of America</p>
+          <span>Local knowledge. A wider understanding.</span>
+        </div>
       </header>
 
       <nav className="about-page-nav" aria-label="On this page"><a href="#purpose-heading">Why isitusa</a><a href="#method-heading">Our approach</a><a href="#outlook-heading">Where we are headed</a><a href="#help-heading">Get involved <ArrowRight size={16} aria-hidden="true" /></a></nav>
@@ -33,9 +33,11 @@ export default function AboutPage() {
         <h2 id="purpose-heading">Useful knowledge should be within reach.</h2>
         <div>
           <p>You might be looking after a garden, managing a park, or trying to name a plant beside a trail. Finding reliable information should not require knowing which database to search.</p>
-          <p>We bring together records from researchers, public agencies, and monitoring programs. Our job is to make their work easier to find and understand, while keeping the original evidence in view.</p>
+          <p>We bring together records from researchers, public agencies, and monitoring programs. Our job is to make their work easier to find and understand, while keeping the original evidence in view. Whether you are curious about your neighborhood or responsible for a much larger landscape, you should be able to follow a finding back to the people and programs that documented it.</p>
         </div>
       </section>
+
+      <section className="about-purpose" aria-labelledby="commitment-heading"><h2 id="commitment-heading">Built to be useful, and open about its limits.</h2><div><p>We are building isitusa as an independent research initiative. We organize existing knowledge, check what it supports, and make the results easier to explore. Our responsibility is to make the sources, dates, and limits of each finding easy to check.</p><p>The atlas is a work in progress. Some counties have extensive records; others need more research. We show those gaps because knowing what is still unknown is part of understanding a place. As the evidence changes, our findings can change too.</p></div></section>
 
       <section className="about-method" aria-labelledby="method-heading">
         <div className="section-introduction">
