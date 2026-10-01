@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, Bird, Bug, Building2, Check, ChevronDown, Fish, Leaf, MapPin, Microscope, Mountain, Search, SlidersHorizontal, Sprout, Trees, Waves, Wheat, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, Leaf, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
+import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
 import { StatePicker } from "@/components/atlas/state-picker";
 import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
 import type { CountyRecord, EnvironmentTag, ExplorerSpecies, SpeciesCategory } from "@/lib/data/types";
@@ -18,8 +19,7 @@ interface MapToolbarProps {
   onZipSearch: (zip: string) => void; onClearFilters: () => void;
 }
 type SearchResult = { id: string; label: string; detail: string; image?: string; credit?: string; count?: string };
-const categoryIcons = { plants: Leaf, insects: Bug, wildlife: Bird, "fungi-diseases": Microscope };
-const environmentIcons = { land: Mountain, freshwater: Fish, "marine-coastal": Waves, wetlands: Sprout, forest: Trees, agriculture: Wheat, urban: Building2 };
+const categoryOrder: SpeciesCategory[] = ["wildlife", "plants", "insects", "fungi-diseases"];
 function SearchAvatar({ src, kind }: { src?: string; kind: "place" | "species" }) {
   const [failed, setFailed] = useState(false);
   const Icon = kind === "place" ? MapPin : Leaf;
@@ -108,9 +108,9 @@ export function MapToolbar(props: MapToolbarProps) {
         <button ref={filterButton} type="button" aria-label="Filters" className="filter-trigger glass-panel" aria-expanded={filterOpen} aria-controls={filtersId} onClick={() => { if (!filterOpen) {setDraftCategories(props.categories);setDraftEnvironment(props.environment);} setFilterOpen(!filterOpen); }}><SlidersHorizontal size={17} /><span>Filters</span>{count > 0 && <b>{count}</b>}<ChevronDown size={14} /></button>
         {filterOpen && <section id={filtersId} className="atlas-filter-panel" aria-label="Map filters">
           <header><h2>What would you like to see?</h2><button type="button" aria-label="Close filters" onClick={close}><X size={19} /></button></header>
-          <fieldset><legend>Species groups</legend><div className="filter-options">{CATEGORY_OPTIONS.map(option => {const Icon=categoryIcons[option.value], checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><Icon size={20}/><span>{option.label}</span>{checked && <Check size={14}/>}</button>;})}</div></fieldset>
-          <fieldset><legend>Environment</legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!,Icon=environmentIcons[value];return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment === value} onClick={() => setDraftEnvironment(draftEnvironment === value ? null : value)}><Icon size={20}/><span>{option.label}</span></button>;})}</div></fieldset>
-          <footer><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment);close();}}>Apply filters <ArrowRight size={16}/></button><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment(null);props.onClearFilters();close();}}>Clear filters</button></footer>
+          <fieldset><legend className="sr-only">Species groups</legend><div className="filter-options">{categoryOrder.map(value => CATEGORY_OPTIONS.find(option => option.value === value)!).map(option => {const checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><NatureIcon kind={CATEGORY_NATURE[option.value]} width={26} height={26}/><span>{option.label}</span>{checked && <Check size={14}/>}</button>;})}</div></fieldset>
+          <fieldset><legend>Environment</legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!;return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment === value} onClick={() => setDraftEnvironment(draftEnvironment === value ? null : value)}><EnvironmentIcon kind={value} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
+          <footer><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment(null);props.onClearFilters();close();}}>Clear filters</button><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment);close();}}>Apply filters <ArrowRight size={16}/></button></footer>
         </section>}
       </div>
     {hasFilters && <div className="atlas-filter-row" aria-label="Applied map filters"><div className="applied-filter-chips">

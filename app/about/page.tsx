@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Globe2, Heart, MapPin, ScanSearch } from "lucide-react";
+import { STATE_FLAGS } from "@/content/state-flags";
 import { SpeciesImage } from "@/components/species-image";
 import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 
@@ -16,8 +17,8 @@ export default function AboutPage() {
       <header className="about-hero">
         <div className="about-hero-copy">
           <h1>Making invasive species research useful.</h1>
-          <p>Everyone should be able to find out what has been recorded where they live, and where that information comes from.</p>
-          <p>isitusa brings scattered records into one atlas. We connect local places, species profiles, and original sources so you can ask better questions about the places you care for.</p>
+          <p>Everyone should be able to find reliable information about invasive species near them, and see where it comes from.</p>
+          <p><strong className="brand-wordmark">isitusa</strong> is an independent initiative based in the United States. We bring scattered species records into one atlas, connecting the places you care about with research you can trace to its source.</p>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <figure className="about-field-image">
@@ -50,6 +51,8 @@ export default function AboutPage() {
         <Link href="/research" className="text-link inline-flex min-h-11 items-center gap-2">See how we review records <ArrowRight size={16} aria-hidden="true" /></Link>
       </section>
 
+      <section className="about-purpose" aria-labelledby="review-heading"><h2 id="review-heading">How a finding reaches the map.</h2><div><p>We check that the species, county, source, and time period support the claim being made. Sources that are incomplete or ambiguous stay unresolved. Reviewed evidence is kept with the record, including corrections and conflicting findings.</p><p>Presence, survey non-detection, and an explicit finding of absence answer different questions. We keep them separate, along with what still needs checking.</p></div></section>
+
       <section className="about-outlook" aria-labelledby="outlook-heading">
         <Globe2 size={32} strokeWidth={1.5} aria-hidden="true" />
         <div><h2 id="outlook-heading">Starting in the U.S., thinking beyond borders.</h2><p>isitusa is an independent initiative based in the United States. Our ambition is to help people use local species information around the world. We are beginning with U.S. counties and county equivalents, building an approach we can keep improving.</p><p>Our catalog starts with the US-RIIS lower-48 register. It is a foundation to build on, not a complete list of every species in every place.</p></div>
@@ -66,12 +69,15 @@ export default function AboutPage() {
 
       <section className="about-sources" aria-labelledby="sources-heading">
         <h2 id="sources-heading">The research we build on.</h2>
-        <p>This atlas draws on the work of researchers, public agencies, and people recording what they find. Our sources include US-RIIS, EDDMapS, and the USGS Nonindigenous Aquatic Species database. You can find the specific references alongside each record.</p>
+        <p>This atlas draws on the work of researchers, public agencies, and people recording what they find. Our sources include US-RIIS, EDDMapS, the USGS Nonindigenous Aquatic Species database, USDA programs, and state and regional monitoring records. You can find the specific references alongside each record.</p>
         <div className="source-links">
           <a href="https://doi.org/10.5066/P9KFFTOD" target="_blank" rel="noreferrer">US-RIIS <ArrowUpRight size={15} aria-hidden="true" /></a>
           <a href="https://www.eddmaps.org/" target="_blank" rel="noreferrer">EDDMapS <ArrowUpRight size={15} aria-hidden="true" /></a>
           <a href="https://nas.er.usgs.gov/" target="_blank" rel="noreferrer">USGS aquatic species <ArrowUpRight size={15} aria-hidden="true" /></a>
         </div>
+      </section>
+      <section id="map-credits" className="about-sources"><h2>Map artwork credits.</h2>
+      <details className="map-artwork-credits"><summary>Flag sources & credits</summary><a href="https://commons.wikimedia.org/wiki/Flags_of_the_U.S._states_and_territories" target="_blank" rel="noreferrer">Wikimedia Commons gallery</a>{Object.entries(STATE_FLAGS).filter(([,flag]) => flag.license !== "Public domain").map(([code,flag]) => <p key={code}><a href={flag.source} target="_blank" rel="noreferrer">{code} flag</a>: {flag.artist}. {flag.license === "CC BY-SA 4.0" ? <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> : flag.license}. Unmodified.</p>)}</details>
       </section>
     </main>
   );

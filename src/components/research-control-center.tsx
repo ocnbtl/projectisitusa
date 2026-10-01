@@ -180,9 +180,9 @@ const VIEW_OPTIONS: Array<{
   label: string;
   icon: LucideIcon;
 }> = [
-  { id: "county", label: "County records", icon: MapPinned },
+  { id: "county", label: "County findings", icon: MapPinned },
   { id: "sources", label: "Sources", icon: Database },
-  { id: "queue", label: "Research gaps", icon: ClipboardList },
+  { id: "queue", label: "Still checking", icon: ClipboardList },
 ];
 
 const STATUS_STYLES: Record<string, string> = {
@@ -228,10 +228,11 @@ const PUBLIC_LABELS: Record<string, string> = {
   "verified-present": "Recorded present",
   "verified-absent": "Verified absent",
   "not-detected": "Survey non-detection",
-  "researched-unresolved": "No determination yet",
-  "not-researched": "Not yet researched",
+  "researched-unresolved": "Checked, unresolved",
+  "not-researched": "Not yet checked",
   "reviewed-no-qualifying-evidence": "No qualifying evidence",
   "source-screened": "Source checked",
+  stale: "Older record",
   "not-started": "Not started",
   "fungi-diseases": "Fungi & diseases",
 };
@@ -574,9 +575,6 @@ function EvidenceDetails({
                   <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-[var(--muted)]">
                     <span>Scope: {formatLabel(evidence.scope)}</span>
                     <span>Observed: {formatDate(evidence.observedAt)}</span>
-                    <span className="min-w-0 break-all">
-                      Evidence ID: {evidence.evidenceId}
-                    </span>
                   </div>
                   {evidence.caveat ? (
                     <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
@@ -584,12 +582,15 @@ function EvidenceDetails({
                       {evidence.caveat}
                     </p>
                   ) : null}
+                  <details className="research-record-details"><summary>Record details</summary>
+                    <p className="break-all">Evidence ID: {evidence.evidenceId}</p>
                   {lineage ? (
                     <p className="mt-2 break-words text-xs leading-5 text-[var(--muted)]">
                       <span className="font-medium text-[var(--foreground)]">Lineage:</span>{" "}
                       {lineage}
                     </p>
                   ) : null}
+                  </details>
                 </article>
               );
             })}
@@ -649,10 +650,10 @@ function CountyPairTable({
               {[
                 ["Species", "commonName"],
                 ["Category", "category"],
-                ["Pair status", "displayStatus"],
-                ["Research", "researchStatus"],
-                ["Evidence", "evidence"],
-                ["Freshness", "freshnessStatus"],
+                ["Finding", "displayStatus"],
+                ["Checks", "researchStatus"],
+                ["Records", "evidence"],
+                ["Record age", "freshnessStatus"],
               ].map(([label, key]) => (
                 <th key={key} scope="col" className="px-3 py-3">
                   <SortButton
@@ -786,7 +787,7 @@ function CountyPairTable({
                       {formatLabel(pair.category)}
                     </span>
                     <span className="text-xs tabular-nums text-[var(--muted)]">
-                      {formatNumber(pair.evidence.length)} evidence
+                      {formatNumber(pair.evidence.length)} {pair.evidence.length === 1 ? "record" : "records"}
                     </span>
                   </span>
                 </span>
@@ -853,7 +854,10 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
   const [reloadKey, setReloadKey] = useState(0);
   const [query, setQuery] = useState(initialDeepLink.speciesQuery ?? "");
   const deferredQuery = useDeferredValue(query);
-  const [statusFilter, setStatusFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState(() => {
+    const requested = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("status");
+    return requested === "all" || KNOWN_STATUSES.some(status => status === requested) ? requested! : initialDeepLink.speciesQuery ? "all" : "verified-present";
+  });
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [sortKey, setSortKey] = useState<PairSortKey>("commonName");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
@@ -964,8 +968,10 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
       countyFips: selectedCountyFips,
       speciesQuery: query,
     });
-    window.history.replaceState(null, "", href);
-  }, [query, selectedCountyFips, summary.stateCode]);
+    const url = new URL(href, window.location.origin);
+    url.searchParams.set("status", statusFilter);
+    window.history.replaceState(window.history.state, "", url.pathname + url.search);
+  }, [query, statusFilter, selectedCountyFips, summary.stateCode]);
 
   useEffect(() => {
     if (!countyData) return;
@@ -976,7 +982,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
   const availableStatuses = useMemo(() => {
     if (!countyData) return [];
-    return Array.from(new Set(countyData.pairs.map((pair) => pair.displayStatus))).sort(
+    return Array.from(new Set([...KNOWN_STATUSES, ...countyData.pairs.map((pair) => pair.displayStatus)])).sort(
       (left, right) => {
         const leftOrder = STATUS_ORDER.get(left) ?? 99;
         const rightOrder = STATUS_ORDER.get(right) ?? 99;
@@ -1021,13 +1027,6 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
     statusFilter,
   ]);
 
-  const filteredStatusCounts = useMemo(() => {
-    const counts = new Map<string, number>(KNOWN_STATUSES.map((status) => [status, 0]));
-    for (const pair of filteredPairs) {
-      counts.set(pair.displayStatus, (counts.get(pair.displayStatus) ?? 0) + 1);
-    }
-    return counts;
-  }, [filteredPairs]);
 
   const totalPages = Math.max(1, Math.ceil(filteredPairs.length / pageSize));
   const currentPage = Math.min(page, totalPages);
@@ -1073,7 +1072,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             disabled={countyOptions.length === 0}
           />
         </div>
-        <p>Choose a species below to open its sources and recorded dates.</p>
+        <p>What has been recorded here? Open a species to see its sources and dates.</p>
       </div>
 
       {loadState === "loading" || loadState === "idle" ? (
@@ -1116,11 +1115,20 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                 </h2>
                 <details className="research-record-details"><summary>About these records</summary><p>County identifier: {countyData.countyFips}. Compiled {formatTimestamp(countyData.generatedAt)}. Check each source for the date of the finding.</p></details>
               </div>
+            </div>
+
+            <div className="county-finding-overview" aria-label="County research overview">
+              {[
+                { status: "verified-present", label: "Recorded here", count: countyData.summary.verifiedPresent, note: "Includes historical records. Check the dates." },
+                { status: "researched-unresolved", label: "Checked, unresolved", count: countyData.summary.researchedUnresolved, note: "Sources checked; no determination yet." },
+                { status: "not-researched", label: "Not yet checked", count: countyData.summary.notResearched, note: "County-species research still to do." },
+              ].map(item => <button key={item.status} type="button" aria-pressed={statusFilter === item.status} onClick={() => { setStatusFilter(item.status); setQuery(""); setCategoryFilter("all"); }}><span>{item.label}</span><strong>{formatNumber(item.count)}</strong><small>{item.note}</small></button>)}
+            </div>
+            <details className="county-research-detail"><summary>All findings and research progress</summary>
+              <p>These are different research outcomes, not pieces of a single completion score. Non-detection is a survey result; it does not erase a presence record. Absence needs explicit supporting evidence.</p>
               <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
                 {formatPercent(countyData.summary.researchCoveragePercent)} of county-species questions have a source check
               </p>
-            </div>
-
             {countyData.questionAssessment ? (
               <div className="mt-4 rounded-lg border border-[var(--border)] p-3 text-sm">
                 <p className="font-medium">Research questions: {formatNumber(countyData.questionAssessment.assessedQuestionCount)} of {formatNumber(countyData.questionAssessment.requiredQuestionCount)} assessed</p>
@@ -1138,8 +1146,14 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               <Metric label="Not researched" value={formatNumber(countyData.summary.notResearched)} />
               <Metric label="Total pairs" value={formatNumber(countyData.pairs.length)} />
             </dl>
+            </details>
           </div>
 
+          <div className="county-view-tags" role="group" aria-label="County findings view">
+            <button type="button" aria-pressed={statusFilter === "verified-present"} onClick={() => setStatusFilter("verified-present")}>Recorded here</button>
+            <button type="button" aria-pressed={statusFilter === "researched-unresolved"} onClick={() => setStatusFilter("researched-unresolved")}>Checked, unresolved</button>
+            <button type="button" aria-pressed={statusFilter === "all"} onClick={() => setStatusFilter("all")}>All research</button>
+          </div>
           <div className="grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2 lg:grid-cols-[minmax(240px,1.2fr)_minmax(170px,0.8fr)_minmax(170px,0.8fr)_40px]">
             <SearchField
               label="Search"
@@ -1154,7 +1168,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                 { value: "all", label: "All statuses" },
                 ...availableStatuses.map((status) => ({
                   value: status,
-                  label: formatLabel(status),
+                  label: status === "verified-present" ? "Recorded here" : status === "researched-unresolved" ? "Checked, unresolved" : status === "not-researched" ? "Not yet checked" : formatLabel(status),
                 })),
               ]}
               onChange={setStatusFilter}
@@ -1189,11 +1203,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             <span className="font-semibold tabular-nums text-[var(--foreground)]">
               Matching {formatNumber(filteredPairs.length)}
             </span>
-            {KNOWN_STATUSES.map((status) => (
-              <span key={status} className="tabular-nums text-[var(--muted)]">
-                {formatLabel(status)} {formatNumber(filteredStatusCounts.get(status) ?? 0)}
-              </span>
-            ))}
+            <span className="text-[var(--muted)]">{statusFilter === "all" ? "All research outcomes" : statusFilter === "verified-present" ? "Recorded here, including historical findings" : formatLabel(statusFilter)}</span>
           </div>
 
           <div className="py-5">
@@ -1210,7 +1220,8 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               />
             ) : (
               <div className="border-y border-[var(--border)] px-4 py-12 text-center text-sm text-[var(--muted)]">
-                No county pairs match the current filters.
+                <p>No records match these filters. This does not establish that a species is absent.</p>
+                <button type="button" className="text-link mt-3" onClick={clearFilters}>See all county research</button>
               </div>
             )}
             <Pagination
@@ -1260,14 +1271,15 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
             id="source-operations-heading"
             className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
           >
-            Source operations
+            Research sources
           </h2>
           <p className="mt-1 text-sm text-[var(--muted)]">
             {formatNumber(sources.length)} of {formatNumber(summary.sources.length)} sources visible
           </p>
           <p className="mt-2 max-w-3xl text-xs leading-5 text-[var(--muted)]">
-            These rows describe the global source registry. Operational status does not establish
-            source-species applicability or protocol completion for {summary.stateName}.
+            All sources tracked by isitusa. This list covers the atlas as a whole; a listed source
+            may not cover every species or county in {summary.stateName}. Its status does not mean
+            that all required checks are complete. Open county records to see the evidence used.
           </p>
         </div>
       </div>
@@ -1295,11 +1307,11 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
           <thead className="bg-[var(--surface)] text-xs text-[var(--muted)]">
             <tr className="border-b border-[var(--border)]">
               <th className="px-4 py-3 font-semibold" scope="col">Source</th>
-              <th className="px-4 py-3 font-semibold" scope="col">Tier</th>
+              <th className="px-4 py-3 font-semibold" scope="col">Source type</th>
               <th className="px-4 py-3 font-semibold" scope="col">Status</th>
-              <th className="px-4 py-3 font-semibold" scope="col">Last run</th>
-              <th className="px-4 py-3 text-right font-semibold" scope="col">Evidence pairs</th>
-              <th className="px-4 py-3 text-right font-semibold" scope="col">Screened species</th>
+              <th className="px-4 py-3 font-semibold" scope="col">Latest source check</th>
+              <th className="px-4 py-3 text-right font-semibold" scope="col">County–species records</th>
+              <th className="px-4 py-3 text-right font-semibold" scope="col">Species checked</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[var(--border)] bg-[var(--surface-strong)]">
@@ -1314,7 +1326,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
                 <td className="px-4 py-3 text-[var(--muted)]">{formatLabel(String(source.tier))}</td>
                 <td className="px-4 py-3"><StatusBadge status={source.status} /></td>
                 <td className="px-4 py-3 text-xs tabular-nums text-[var(--muted)]">
-                  {formatTimestamp(source.lastRunAt)}
+                  {source.lastRunAt ? formatTimestamp(source.lastRunAt) : "No run recorded"}
                 </td>
                 <td className="px-4 py-3 text-right tabular-nums text-[var(--foreground)]">
                   {formatNumber(source.evidencePairCount)}
@@ -1339,10 +1351,10 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
               <StatusBadge status={source.status} />
             </div>
             <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
-              <div><dt className="text-[var(--muted)]">Tier</dt><dd className="mt-0.5 text-[var(--foreground)]">{formatLabel(String(source.tier))}</dd></div>
-              <div><dt className="text-[var(--muted)]">Last run</dt><dd className="mt-0.5 text-[var(--foreground)]">{formatTimestamp(source.lastRunAt)}</dd></div>
-              <div><dt className="text-[var(--muted)]">Evidence pairs</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.evidencePairCount)}</dd></div>
-              <div><dt className="text-[var(--muted)]">Screened species</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.screenedSpeciesCount)}</dd></div>
+              <div><dt className="text-[var(--muted)]">Source type</dt><dd className="mt-0.5 text-[var(--foreground)]">{formatLabel(String(source.tier))}</dd></div>
+              <div><dt className="text-[var(--muted)]">Latest source check</dt><dd className="mt-0.5 text-[var(--foreground)]">{source.lastRunAt ? formatTimestamp(source.lastRunAt) : "No run recorded"}</dd></div>
+              <div><dt className="text-[var(--muted)]">County–species records</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.evidencePairCount)}</dd></div>
+              <div><dt className="text-[var(--muted)]">Species checked</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.screenedSpeciesCount)}</dd></div>
             </dl>
           </article>
         ))}
@@ -1409,10 +1421,10 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
           id="research-queue-heading"
           className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
         >
-          Research queue
+          What still needs checking
         </h2>
         <p className="mt-1 text-sm text-[var(--muted)]">
-          {formatNumber(queue.length)} of {formatNumber(summary.queue.length)} species visible
+          Species with county checks still to do in {summary.stateName}. {formatNumber(queue.length)} of {formatNumber(summary.queue.length)} species shown.
         </p>
       </div>
 
@@ -1443,20 +1455,16 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
             <table className="w-full min-w-[940px] border-collapse text-left text-sm">
               <thead className="bg-[var(--surface)] text-xs text-[var(--muted)]">
                 <tr className="border-b border-[var(--border)]">
-                  <th className="px-4 py-3 font-semibold" scope="col">Priority</th>
                   <th className="px-4 py-3 font-semibold" scope="col">Species</th>
                   <th className="px-4 py-3 font-semibold" scope="col">Category</th>
-                  <th className="px-4 py-3 text-right font-semibold" scope="col">Not researched</th>
-                  <th className="px-4 py-3 text-right font-semibold" scope="col">Unresolved</th>
-                  <th className="px-4 py-3 font-semibold" scope="col">Missing protocols</th>
+                  <th className="px-4 py-3 text-right font-semibold" scope="col">Counties not yet checked</th>
+                  <th className="px-4 py-3 text-right font-semibold" scope="col">Counties needing more evidence</th>
+                  <th className="px-4 py-3 font-semibold" scope="col">Sources still to check</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--border)] bg-[var(--surface-strong)]">
                 {pageItems.map((item) => (
                   <tr key={item.speciesId} className="hover:bg-[var(--surface)]">
-                    <td className="px-4 py-3 font-semibold tabular-nums text-[var(--foreground)]">
-                      {item.priorityScore.toLocaleString("en-US", { maximumFractionDigits: 2 })}
-                    </td>
                     <td className="px-4 py-3">
                       <p className="font-medium text-[var(--foreground)]">{item.commonName}</p>
                       <p className="mt-0.5 text-xs italic text-[var(--muted)]">{item.scientificName}</p>
@@ -1469,7 +1477,7 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
                       {formatNumber(item.researchedUnresolvedCountyCount)}
                     </td>
                     <td className="max-w-[320px] px-4 py-3 text-xs leading-5 text-[var(--muted)]">
-                      {sourceNames(item.missingProtocolSourceIds)}
+                      <details><summary className="cursor-pointer">View sources and priority</summary><p className="mt-2">{sourceNames(item.missingProtocolSourceIds)}</p><p className="mt-2">Research priority: {item.priorityScore.toLocaleString("en-US", { maximumFractionDigits: 2 })}</p></details>
                     </td>
                   </tr>
                 ))}
@@ -1485,22 +1493,17 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
                     <h3 className="font-medium text-[var(--foreground)]">{item.commonName}</h3>
                     <p className="mt-0.5 truncate text-xs italic text-[var(--muted)]">{item.scientificName}</p>
                   </div>
-                  <div className="shrink-0 text-right">
-                    <p className="text-[10px] uppercase text-[var(--muted)]">Priority</p>
-                    <p className="font-semibold tabular-nums text-[var(--foreground)]">
-                      {item.priorityScore.toLocaleString("en-US", { maximumFractionDigits: 2 })}
-                    </p>
-                  </div>
                 </div>
                 <p className="mt-2 text-xs text-[var(--muted)]">{formatLabel(item.category)}</p>
                 <dl className="mt-3 grid grid-cols-2 gap-4 text-xs">
-                  <div><dt className="text-[var(--muted)]">Not researched</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(item.notResearchedCountyCount)}</dd></div>
-                  <div><dt className="text-[var(--muted)]">Unresolved</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(item.researchedUnresolvedCountyCount)}</dd></div>
+                  <div><dt className="text-[var(--muted)]">Counties not yet checked</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(item.notResearchedCountyCount)}</dd></div>
+                  <div><dt className="text-[var(--muted)]">Counties needing more evidence</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(item.researchedUnresolvedCountyCount)}</dd></div>
                 </dl>
-                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
-                  <span className="font-medium text-[var(--foreground)]">Missing protocols:</span>{" "}
-                  {sourceNames(item.missingProtocolSourceIds)}
-                </p>
+                <details className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                  <summary className="cursor-pointer font-medium text-[var(--foreground)]">Sources still to check</summary>
+                  <p className="mt-2">{sourceNames(item.missingProtocolSourceIds)}</p>
+                  <p className="mt-2">Research priority: {item.priorityScore.toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>
+                </details>
               </article>
             ))}
           </div>
@@ -1548,8 +1551,8 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
   return (
     <header className="reading-hero research-heading">
       <div>
-        <h1>Check the evidence.</h1>
-        <p>Choose a state and county. See which species have been recorded, read the original sources, and find out what still needs research.</p>
+        <h1>Research, county by county.</h1>
+        <p>See what has been recorded near you, what still needs checking, and where the evidence comes from.</p>
         {summary && <a href="#research-explorer" className="text-link">Explore county evidence <ArrowDown size={16} aria-hidden="true" /></a>}
       </div>
       <div className="research-state-control">
@@ -1597,20 +1600,6 @@ function ResearchControlCenterContent({
     <main id="main-content" className="reading-page research-page">
       <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} summary={summary} />
 
-      <details className="research-overview" aria-label="Published research coverage">
-        <summary className="research-progress-summary"><span><strong>Research progress in {summary.stateName}</strong><small>See how much we have checked and what remains open.</small></span><span className="research-progress-preview"><span><b>{formatPercent(summary.summary.researchCoveragePercent)}</b> source checks</span><span><b>{formatPercent(summary.summary.determinationCoveragePercent)}</b> reviewed findings</span><ChevronDown size={18} aria-hidden="true" /></span></summary>
-        <p className="mt-3 text-[var(--muted)]">{formatNumber(summary.summary.speciesCount)} catalog species, across {formatNumber(summary.summary.countyCount)} counties and county equivalents. Progress is measured for each species in each county.</p>
-        <div className="research-progress">
-          <div><label htmlFor="source-progress">Source checks <strong>{formatPercent(summary.summary.researchCoveragePercent)}</strong></label><progress id="source-progress" max={100} value={summary.summary.researchCoveragePercent} /><p>A source has been checked or a finding recorded. More work may still be needed.</p></div>
-          <div><label htmlFor="determination-progress">Reviewed findings <strong>{formatPercent(summary.summary.determinationCoveragePercent)}</strong></label><progress id="determination-progress" max={100} value={summary.summary.determinationCoveragePercent} /><p>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)} of {formatNumber(summary.summary.totalPairs)} county-species questions have a reviewed presence or absence finding.</p></div>
-        </div>
-        <details className="research-accounting research-counts"><summary>See the research counts</summary>
-        <dl className="research-status-strip">
-          {[["Recorded present", summary.summary.verifiedPresent], ["Absence determinations", summary.summary.verifiedAbsent], ["Survey non-detections", summary.summary.notDetected], ["Research unresolved", summary.summary.researchedUnresolved], ["Not researched", summary.summary.notResearched]].map(([label, value]) => <div key={String(label)}><dt>{label}</dt><dd>{formatNumber(Number(value))}</dd></div>)}
-        </dl>
-        <p className="county-note">Records can be historical. A survey that found nothing is different from an agency finding of absence. Missing information remains an open question.</p>
-        </details>
-      </details>
       <div id="research-explorer" className="research-tabs">
         <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">
           {VIEW_OPTIONS.map((view) => {
@@ -1658,6 +1647,20 @@ function ResearchControlCenterContent({
           {activeView === view.id && view.id === "queue" ? <QueueView summary={summary} /> : null}
         </div>
       ))}
+      <details className="research-overview" aria-label="Published research coverage">
+        <summary className="research-progress-summary"><span><strong>Research progress in {summary.stateName}</strong><small>Source checks, reviewed findings, and open questions.</small></span><span className="research-progress-preview"><ChevronDown size={18} aria-hidden="true" /></span></summary>
+        <p className="mt-3 text-[var(--muted)]">{formatNumber(summary.summary.speciesCount)} catalog species, across {formatNumber(summary.summary.countyCount)} counties and county equivalents. Progress is measured for each species in each county.</p>
+        <div className="research-progress">
+          <div><label htmlFor="source-progress">Source checks <strong>{formatPercent(summary.summary.researchCoveragePercent)}</strong></label><progress id="source-progress" max={100} value={summary.summary.researchCoveragePercent} /><p>A source has been checked or a finding recorded. More work may still be needed.</p></div>
+          <div><label htmlFor="determination-progress">Reviewed findings <strong>{formatPercent(summary.summary.determinationCoveragePercent)}</strong></label><progress id="determination-progress" max={100} value={summary.summary.determinationCoveragePercent} /><p>{formatNumber(summary.summary.verifiedPresent + summary.summary.verifiedAbsent)} of {formatNumber(summary.summary.totalPairs)} county-species questions have a reviewed presence or absence finding.</p></div>
+        </div>
+        <details className="research-accounting research-counts"><summary>See the research counts</summary>
+        <dl className="research-status-strip">
+          {[["Recorded present", summary.summary.verifiedPresent], ["Absence determinations", summary.summary.verifiedAbsent], ["Survey non-detections", summary.summary.notDetected], ["Research unresolved", summary.summary.researchedUnresolved], ["Not researched", summary.summary.notResearched]].map(([label, value]) => <div key={String(label)}><dt>{label}</dt><dd>{formatNumber(Number(value))}</dd></div>)}
+        </dl>
+        <p className="county-note">Records can be historical. A survey that found nothing is different from an agency finding of absence. Missing information remains an open question.</p>
+        </details>
+      </details>
       <details className="research-accounting"><summary>How we measure progress</summary>
       <div
         className={`border-b px-4 py-3 text-sm leading-6 ${
