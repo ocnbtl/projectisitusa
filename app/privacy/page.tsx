@@ -1,4 +1,26 @@
 import type { Metadata } from "next";
 import styles from "@/components/participation/participation.module.css";
-export const metadata:Metadata={title:"Privacy | isitusa"};
-export default function Page(){return <main id="main-content" className={styles.page}><header className={styles.intro}><h1>A little information. A clear purpose.</h1><p>isitusa is an independent initiative based in the United States. This notice explains the participation services being prepared for launch.</p></header><div className={styles.prose}><h2>Email updates</h2><p>We store your email address, the counties and species you choose, your selected email categories, and a history of confirmations and preferences. We use this information to send the updates you request. You can change your choices or unsubscribe through a private email link.</p><h2>Observations</h2><p>We store the observation, date, location, photographs, review history, and any contact details you choose to share. Original photographs, exact coordinates, and contact details are private to authorized reviewers. A reviewed county-level record may be published through the research process. Public use of original photographs requires separate permission.</p><h2>Contributions and team accounts</h2><p>Stripe processes card payments. isitusa keeps payment references, amounts, currencies, status, and receipt contact details. We do not store card numbers. Public blockchain transfers may be visible to others; Monero payments require separate verification. Team accounts keep access permissions and an audit history of administrative actions.</p><h2>Service providers</h2><p>The planned services use Supabase for private records, sign-in, and photograph storage; Resend for email; Stripe for card payments; and Cloudflare Turnstile to reduce automated abuse. These providers receive the information necessary to perform their part of the service.</p><h2>Your choices</h2><p>Giving support or submitting an observation does not sign you up for a mailing list. We do not sell the personal information collected through these forms. We will publish a working contact route before opening them. The planned address is contact@isitusa.com; it is not receiving messages yet.</p><p>When these services open, the support contact will also handle requests to access or remove your personal information. Research evidence and financial records may need to be retained separately from mailing preferences.</p><p className={styles.hint}>Prepared September 28, 2026. Participation services remain unavailable until their setup and verification are complete.</p></div></main>;}
+import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
+import { activeStripePaymentLink } from "@/lib/ui/support-destinations";
+
+export const metadata: Metadata = { title: "Privacy | isitusa" };
+export default function Page() {
+  const active = Boolean(activeStripePaymentLink(SUPPORT_DESTINATIONS));
+  const { contactEmail } = SUPPORT_DESTINATIONS.cardSupport;
+  return <main id="main-content" className={styles.page}>
+    <header className={styles.intro}><h1>A little information. A clear purpose.</h1><p>isitusa is an independent initiative based in the United States. This notice describes contributions and the participation services being prepared for launch.</p></header>
+    <div className={styles.prose}>
+      <h2>Contributions</h2>
+      <p>{active ? "Card contributions use Stripe's hosted payment page." : "Card contributions are not open yet. The planned checkout uses Stripe's hosted payment page."} Stripe processes the information you enter at checkout. Authorized project account users can access payment references, amounts, currencies, payment status, and contact details supplied at checkout in Stripe. The public isitusa website does not collect or store your card number, or automatically copy these hosted payment records into its own database.</p>
+      <p>Read <a className="text-link" href="https://stripe.com/privacy" target="_blank" rel="noreferrer">Stripe&apos;s privacy policy</a> for how Stripe handles payment information. Public blockchain transfers may be visible to others; Monero payments require separate verification.</p>
+      <h2>Email updates and observations</h2>
+      <p>Email signup and sighting submission services are being prepared separately. Before they open, this notice will describe the information collected, who can access it, retention, and how to change preferences or request removal. Opening card contributions does not open these other services.</p>
+      <h2>Service providers</h2>
+      <p>Stripe handles hosted checkout. Supabase, Resend, and Cloudflare Turnstile are planned for the separate participation services. The hosted Payment Link does not require an isitusa account or enrollment in those services.</p>
+      <h2>Your choices</h2>
+      <p>Giving support does not sign you up for a mailing list. We do not sell personal information collected through contributions.</p>
+      {active ? <p>For questions about contribution information or requests to access or remove it, email <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a>. Financial records may need to be retained separately from mailing preferences.</p> : <p>We will confirm a working contact route before opening contributions. The planned address is {contactEmail}; it is not confirmed to receive messages yet.</p>}
+      <p className={styles.hint}>Updated October 1, 2026. Each participation service will open only after its setup and verification are complete.</p>
+    </div>
+  </main>;
+}

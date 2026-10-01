@@ -1,4 +1,26 @@
 import type { Metadata } from "next";
 import styles from "@/components/participation/participation.module.css";
-export const metadata:Metadata={title:"Supporting isitusa | isitusa"};
-export default function Page(){return <main id="main-content" className={styles.page}><header className={styles.intro}><h1>Supporting isitusa.</h1><p>Clear expectations before you contribute.</p></header><div className={styles.prose}><h2>Who receives your support</h2><p>isitusa is an independent initiative based in the United States. Contributions support research review, maintenance, and improvements to the public website. isitusa is not currently a registered nonprofit. We do not claim that contributions are tax deductible.</p><h2>Card payments</h2><p>The initial checkout supports one-time contributions in U.S. dollars. Stripe handles payment details and receipts. A return to this website is not a payment confirmation; check your Stripe receipt. Support does not purchase a particular research outcome or change a species determination.</p><h2>Crypto</h2><p>Only use a receiving address published here with its exact asset and network. Transfers cannot be reversed by isitusa. We do not manage your wallet, hold your recovery phrase, or ask for private keys. Monero receipts require private verification; a public transaction identifier alone does not establish receipt.</p><h2>Questions or mistakes</h2><p>Contributions will open after the recipient, working contact address, and refund procedure are verified. The planned support address is contact@isitusa.com; it is not receiving messages yet. No payment option is active while this setup is pending.</p><h2>Email is your choice</h2><p>Contributing does not subscribe you to updates or advocacy messages. You can choose those independently on the email signup page.</p></div></main>;}
+import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
+import { activeStripePaymentLink } from "@/lib/ui/support-destinations";
+
+export const metadata: Metadata = { title: "Supporting isitusa | isitusa" };
+export default function Page() {
+  const active = Boolean(activeStripePaymentLink(SUPPORT_DESTINATIONS));
+  const { contactEmail, refundPolicy } = SUPPORT_DESTINATIONS.cardSupport;
+  return <main id="main-content" className={styles.page}>
+    <header className={styles.intro}><h1>Supporting isitusa.</h1><p>Clear expectations before you contribute.</p></header>
+    <div className={styles.prose}>
+      <h2>Who receives your support</h2>
+      <p>isitusa is an independent initiative based in the United States. Contributions support research review, maintenance, and improvements to the public website. isitusa is not currently a registered nonprofit. We do not claim that contributions are tax deductible.</p>
+      <h2>Card payments</h2>
+      <p>{active ? "One-time contributions are available through Stripe's hosted payment page." : "Card contributions are not open yet. We are preparing a one-time contribution option through Stripe's hosted payment page."} Choose your amount and review the final currency, total, and payment details on Stripe before paying. Support does not purchase a particular research outcome or change a species determination.</p>
+      <p>A return to this website is not a payment confirmation. Check the status shown by Stripe; some payment methods can take longer to complete. This website does not confirm payment from a return URL.</p>
+      <h2>Questions and refunds</h2>
+      {active ? <><p>For contribution questions or refund requests, email <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a>. Include the date, amount, and payment reference if available. Do not send card numbers or passwords.</p><p>{refundPolicy}</p></> : <p>Contributions will open after the payment recipient, support inbox, and refund policy are verified and approved. The planned support address is {contactEmail}; it is not confirmed to receive messages yet. The refund policy will be published before checkout opens.</p>}
+      <h2>Crypto</h2>
+      <p>Only use a receiving address published here with its exact asset and network. Transfers cannot be reversed by isitusa. We do not manage your wallet, hold your recovery phrase, or ask for private keys. Monero receipts require private verification; a public transaction identifier alone does not establish receipt.</p>
+      <h2>Email is your choice</h2>
+      <p>Contributing does not subscribe you to updates or advocacy messages. Email signups have their own availability and consent process.</p>
+    </div>
+  </main>;
+}

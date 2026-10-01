@@ -65,7 +65,7 @@ export default function AboutPage() {
         <div className="involvement-links">
           <Link href="/report"><span><strong>Share an observation</strong><small>See how to document what you found and where to report it.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/join"><span><strong>Follow what matters to you</strong><small>We are planning county updates, species alerts, and ways to help. Signups are not open yet.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/support"><span><strong>Support the atlas</strong><small>See how you can help while we prepare to accept contributions.</small></span><Heart size={22} aria-hidden="true" /></Link>
+          <Link href="/support"><span><strong>Support the atlas</strong><small>See ways to support the research and the atlas.</small></span><Heart size={22} aria-hidden="true" /></Link>
         </div>
       </section>
 
