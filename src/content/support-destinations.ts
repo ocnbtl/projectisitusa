@@ -13,12 +13,19 @@ export const SUPPORT_DESTINATIONS: {
   cardSupport: {
     enabled: false,
     contactEmail: "contact@isitusa.com",
-    contactVerifiedAt: "",
+    contactVerifiedAt: "2026-10-02T00:00:00Z",
     paymentLinkVerifiedAt: "2026-10-01T21:08:34.981639+00:00",
     recipientVerifiedAt: "2026-10-01T21:08:34.981639+00:00",
     refundPolicy: "",
     refundPolicyApprovedAt: "",
     activationApprovedAt: "",
   },
-  wallets: [],
+  wallets: [{
+    id: "ledger-xmr-mainnet",
+    asset: "XMR",
+    network: "Monero mainnet",
+    address: "42VW9od5h4vj1vsR2oNndT65DiuxUm6wiMb144a288a2KnUpMdaCgYqMMFgdhU418rDq3xpaXJEttWJKbspn7JabK6ssj2Y",
+    verified_at: "2026-10-02T00:00:00Z",
+    active: true,
+  }],
 };

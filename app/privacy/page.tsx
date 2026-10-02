@@ -6,7 +6,7 @@ import { activeStripePaymentLink } from "@/lib/ui/support-destinations";
 export const metadata: Metadata = { title: "Privacy | isitusa" };
 export default function Page() {
   const active = Boolean(activeStripePaymentLink(SUPPORT_DESTINATIONS));
-  const { contactEmail } = SUPPORT_DESTINATIONS.cardSupport;
+  const { contactEmail, contactVerifiedAt } = SUPPORT_DESTINATIONS.cardSupport;
   return <main id="main-content" className={styles.page}>
     <header className={styles.intro}><h1>A little information. A clear purpose.</h1><p>isitusa is an independent initiative based in the United States. This notice describes contributions and the participation services being prepared for launch.</p></header>
     <div className={styles.prose}>
@@ -19,8 +19,8 @@ export default function Page() {
       <p>Stripe handles hosted checkout. Supabase, Resend, and Cloudflare Turnstile are planned for the separate participation services. The hosted Payment Link does not require an isitusa account or enrollment in those services.</p>
       <h2>Your choices</h2>
       <p>Giving support does not sign you up for a mailing list. We do not sell personal information collected through contributions.</p>
-      {active ? <p>For questions about contribution information or requests to access or remove it, email <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a>. Financial records may need to be retained separately from mailing preferences.</p> : <p>We will confirm a working contact route before opening contributions. The planned address is {contactEmail}; it is not confirmed to receive messages yet.</p>}
-      <p className={styles.hint}>Updated October 1, 2026. Each participation service will open only after its setup and verification are complete.</p>
+      {contactVerifiedAt ? <p>For questions about contribution information or requests to access or remove it, email <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a>. Financial records may need to be retained separately from mailing preferences.</p> : <p>We will confirm a working contact route before opening contributions. The planned address is {contactEmail}; it is not confirmed to receive messages yet.</p>}
+      <p className={styles.hint}>Updated October 2, 2026. Each participation service will open only after its setup and verification are complete.</p>
     </div>
   </main>;
 }

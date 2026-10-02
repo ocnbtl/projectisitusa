@@ -6,7 +6,7 @@ import { activeStripePaymentLink } from "@/lib/ui/support-destinations";
 export const metadata: Metadata = { title: "Supporting isitusa | isitusa" };
 export default function Page() {
   const active = Boolean(activeStripePaymentLink(SUPPORT_DESTINATIONS));
-  const { contactEmail, refundPolicy } = SUPPORT_DESTINATIONS.cardSupport;
+  const { contactEmail, contactVerifiedAt, refundPolicy } = SUPPORT_DESTINATIONS.cardSupport;
   return <main id="main-content" className={styles.page}>
     <header className={styles.intro}><h1>Supporting isitusa.</h1><p>Clear expectations before you contribute.</p></header>
     <div className={styles.prose}>
@@ -16,7 +16,8 @@ export default function Page() {
       <p>{active ? "One-time contributions are available through Stripe's hosted payment page." : "Card contributions are not open yet. We are preparing a one-time contribution option through Stripe's hosted payment page."} Choose your amount and review the final currency, total, and payment details on Stripe before paying. Support does not purchase a particular research outcome or change a species determination.</p>
       <p>A return to this website is not a payment confirmation. Check the status shown by Stripe; some payment methods can take longer to complete. This website does not confirm payment from a return URL.</p>
       <h2>Questions and refunds</h2>
-      {active ? <><p>For contribution questions or refund requests, email <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a>. Include the date, amount, and payment reference if available. Do not send card numbers or passwords.</p><p>{refundPolicy}</p></> : <p>Contributions will open after the payment recipient, support inbox, and refund policy are verified and approved. The planned support address is {contactEmail}; it is not confirmed to receive messages yet. The refund policy will be published before checkout opens.</p>}
+      {contactVerifiedAt ? <p>For contribution questions or refund requests, email <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a>. Include the date, amount, and payment reference if available. Do not send card numbers, passwords, or recovery words.</p> : <p>A support contact will be published before contributions open.</p>}
+      {active ? <p>{refundPolicy}</p> : <p>Card contributions remain closed while we finalize the refund policy. It will be published before checkout opens.</p>}
       <h2>Crypto</h2>
       <p>Only use a receiving address published here with its exact asset and network. Transfers cannot be reversed by isitusa. We do not manage your wallet, hold your recovery phrase, or ask for private keys. Monero receipts require private verification; a public transaction identifier alone does not establish receipt.</p>
       <h2>Email is your choice</h2>

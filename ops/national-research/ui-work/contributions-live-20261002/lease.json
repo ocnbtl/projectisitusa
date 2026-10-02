@@ -1,0 +1,43 @@
+{
+  "state": "in-progress",
+  "owner": "01a0e59e-58e4-7840-98dd-358f873a449b",
+  "base": "bc5d95aceda2806aacbb667c0fa829a867d2685b",
+  "branch": "codex/contributions-live-20261002",
+  "worktree": "C:\\Users\\Ocean\\.codex\\visualizations\\2026\\09\\28\\01a0e59e-58e4-7840-98dd-358f873a449b\\contributions-worktree",
+  "allowlist": [
+    "src/components/participation/support-form.tsx",
+    "src/components/participation/support.module.css",
+    "src/content/support-destinations.ts",
+    "app/terms/page.tsx",
+    "app/privacy/page.tsx",
+    "ops/national-research/ui-work/contributions-live-20261002/"
+  ],
+  "denylist": [
+    "src/data/",
+    "public/generated/",
+    "supabase/",
+    "main"
+  ],
+  "expectedOutputs": [
+    "scoped source",
+    "readiness evidence",
+    "preview QA",
+    "production verification"
+  ],
+  "retryPolicy": "Diagnose failures; never bypass failed payment or release checks.",
+  "expires": "2026-10-03",
+  "minFreeDiskBytes": 100000000000,
+  "localNextBuilds": false,
+  "installs": false,
+  "dataChanges": false,
+  "r2Writes": false,
+  "paidActivation": false,
+  "deploymentAuthorized": true,
+  "authorization": "User explicitly requested production contributions integration; work isolated from MAIN and research history.",
+  "completionCriteria": [
+    "Verified public destinations only",
+    "No real payments",
+    "Responsive and accessible support UI",
+    "Verified production readback"
+  ]
+}
