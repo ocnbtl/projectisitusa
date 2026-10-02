@@ -11,14 +11,14 @@ export const SUPPORT_DESTINATIONS: {
 } = {
   stripePaymentLink: "https://buy.stripe.com/3cI8wHgLv2520Cc1va43S00",
   cardSupport: {
-    enabled: false,
+    enabled: true,
     contactEmail: "contact@isitusa.com",
     contactVerifiedAt: "2026-10-02T00:00:00Z",
-    paymentLinkVerifiedAt: "2026-10-01T21:08:34.981639+00:00",
-    recipientVerifiedAt: "2026-10-01T21:08:34.981639+00:00",
+    paymentLinkVerifiedAt: "2026-10-02T21:27:16.515718Z",
+    recipientVerifiedAt: "2026-10-02T21:27:16.515718Z",
     refundPolicy: "Refunds require a request through our refund form and an individual review. Submitting a request does not automatically approve or issue a refund. We review the payment details and reason for each request and reply by email. Any approved card refund is returned through the original payment method. This policy does not limit rights required by applicable law.",
     refundPolicyApprovedAt: "2026-10-02T00:00:00Z",
-    activationApprovedAt: "",
+    activationApprovedAt: "2026-10-02T21:27:16.515718Z",
   },
   wallets: [{
     id: "ledger-btc-mainnet",
