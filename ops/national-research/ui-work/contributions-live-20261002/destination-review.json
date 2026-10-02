@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-02T18:32:04.645112+00:00",
+  "checkedAt": "2026-10-02T20:26:00Z",
   "contact": {
     "email": "contact@isitusa.com",
     "verification": "User confirmed inbox working in this chat"
@@ -17,8 +17,40 @@
     "accountTasks": "No active tasks",
     "link": "https://buy.stripe.com/3cI8wHgLv2520Cc1va43S00",
     "linkStatus": "Deactivated",
-    "refundApproval": "Pending user answer",
+    "refundApproval": "User approved required form and individual review, no automatic refunds",
     "activation": "Not performed"
   },
-  "otherCrypto": "BTC ETH SOL XRP awaiting device unlock and physical address confirmation"
+  "otherCrypto": {
+    "BTC": {
+      "address": "bc1q5zy8p32yuufe07wq0k25nuev86faj6zcyeyrk9",
+      "network": "Bitcoin mainnet"
+    },
+    "ETH": {
+      "address": "0x5787c0a1A1b1F7749ca6C67511aCc8187C45820b",
+      "network": "Ethereum mainnet"
+    },
+    "SOL": {
+      "address": "JBCXndw72ZGJj3DGmDCAC6yBCWT4Qe5pLwJPX4Bw3fSk",
+      "network": "Solana mainnet"
+    },
+    "XRP": {
+      "address": "r41L9u6TZPs47pxSScZUG8p5MCoNvaPPnL",
+      "network": "XRP Ledger mainnet",
+      "destinationTag": null
+    }
+  },
+  "otherCryptoVerification": "Each address captured from Ledger Wallet Receive; user confirmed entire address matches Nano X and approved it. No funds transferred.",
+  "resend": {
+    "domain": "alerts.isitusa.com",
+    "status": "verified",
+    "permission": "sending access restricted to alerts.isitusa.com",
+    "storage": "Vercel Production Secret",
+    "deliveryTest": "pending"
+  },
+  "turnstile": {
+    "hostname": "isitusa.com",
+    "mode": "managed",
+    "preclearance": false,
+    "secretStorage": "Vercel Production Secret"
+  }
 }

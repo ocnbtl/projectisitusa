@@ -35,5 +35,9 @@ export function activeStripePaymentLink(destinations: {
 
 /** A valid format is only a guardrail; ownership and network must be verified before publication. */
 export function verifiedPublicWallets(wallets: Wallet[]): Wallet[] {
-  return wallets.filter(wallet => wallet.active && Number.isFinite(Date.parse(wallet.verified_at)) && Boolean(cryptoUri(wallet)));
+  return wallets.filter(wallet => wallet.active && Number.isFinite(Date.parse(wallet.verified_at)) && (
+    Boolean(cryptoUri(wallet)) ||
+    (wallet.asset === "SOL" && wallet.network === "Solana mainnet" && /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(wallet.address)) ||
+    (wallet.asset === "XRP" && wallet.network === "XRP Ledger mainnet" && /^r[1-9A-HJ-NP-Za-km-z]{24,34}$/.test(wallet.address))
+  ));
 }
