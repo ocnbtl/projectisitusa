@@ -51,7 +51,7 @@ export const ENVIRONMENT_OPTIONS: Array<{
   { value: null, label: "Any environment" },
   { value: "land", label: "Land" },
   { value: "freshwater", label: "Freshwater" },
-  { value: "marine-coastal", label: "Marine / coastal" },
+  { value: "marine-coastal", label: "Marine" },
   { value: "wetlands", label: "Wetlands" },
   { value: "forest", label: "Forest" },
   { value: "agriculture", label: "Agriculture" },

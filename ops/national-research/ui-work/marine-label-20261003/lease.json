@@ -1,0 +1,22 @@
+{
+  "state": "implemented",
+  "base": "d2595ef5fbf91bccc2ad51eda548f11f6b24c254",
+  "branch": "codex/marine-label-20261003",
+  "allowlist": [
+    "src/lib/constants.ts",
+    "ops/national-research/ui-work/marine-label-20261003/"
+  ],
+  "denylist": [
+    "src/data/",
+    "public/generated/",
+    "main"
+  ],
+  "scope": "Rename shared Marine / coastal display label to Marine; preserve marine-coastal identifier and species membership.",
+  "deploymentAuthorized": true,
+  "authorization": "User requested live site updates earlier in this session and now requests this label correction.",
+  "expires": "2026-10-04",
+  "checks": [
+    "Exact one-label diff; no data changes",
+    "Production build and rendered filter verification pending"
+  ]
+}
