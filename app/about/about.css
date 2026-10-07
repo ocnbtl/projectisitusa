@@ -1,0 +1,59 @@
+.about-opening { padding:8px 0 40px; }
+.about-opening h1 { margin:0 0 44px; font-size:clamp(32px,3.65vw,68px); font-weight:550; line-height:1.12; letter-spacing:-.035em; text-wrap:balance; }
+.about-introduction { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(40px,5vw,96px); align-items:start; }
+.about-story > p { max-width:65ch; font-size:17px; line-height:1.85; color:var(--muted); margin:0 0 20px; }
+.about-story > .about-lead { max-width:47ch; font-size:clamp(21px,1.75vw,28px); line-height:1.5; color:var(--foreground); margin-bottom:28px; }
+.about-story .brand-wordmark { color:var(--foreground); }
+.about-story > a { margin-top:8px; }
+.about-brand-and-sources { min-width:0; }
+.about-brand-lockup { display:flex; gap:clamp(20px,2vw,40px); align-items:center; justify-content:center; }
+.about-brand-lockup > img { width:clamp(200px,14vw,272px); height:auto; flex:none; }
+.about-brand-lockup .about-brand-name { font-family:var(--font-display); font-size:clamp(18px,1.65vw,30px); line-height:1.4; letter-spacing:-.025em; color:var(--foreground); margin:0; }
+.about-brand-name > span { display:block; white-space:nowrap; }
+.about-source-panel { max-width:680px; margin:40px auto 0; }
+.about-page .about-source-panel h2 { font-size:18px; line-height:1.5; font-weight:550; letter-spacing:0; margin-bottom:20px; text-wrap:pretty; }
+.about-source-logos { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px 16px; list-style:none; padding:0; margin:0; }
+.about-source-logos a { display:flex; flex-direction:column; align-items:center; gap:10px; min-height:44px; text-decoration:none; border-radius:12px; }
+.about-source-circle { width:88px; height:88px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#fff; padding:14px; transition:transform 180ms ease; }
+.about-source-circle img { width:100%; height:100%; object-fit:contain; }
+.about-source-circle.source-logo-usgs { background:#153d38; }
+.about-source-circle.source-logo-shield { padding:12px 22px; }
+.about-source-logos a > span:nth-child(2) { display:flex; align-items:center; gap:3px; font-size:12px; line-height:1.45; text-align:center; color:var(--foreground); }
+.about-source-logos a:hover .about-source-circle { transform:translateY(-3px); }
+.about-source-logos a:hover > span:nth-child(2) { text-decoration:underline; text-underline-offset:4px; }
+.about-source-panel > p { margin:24px 0 6px; max-width:65ch; font-size:12px; line-height:1.75; color:var(--muted); }
+.about-source-panel > a { display:inline-flex; align-items:center; gap:8px; min-height:44px; font-size:13px; }
+.about-page .about-page-nav { border:0; padding:16px 0 20px; gap:8px 32px; }
+.about-page .about-purpose { border:0; padding-block:40px; }
+.about-page .about-method,.about-page .about-help,.about-page .about-outlook { border:0; }
+.about-page .about-method { padding-block:40px; }
+.about-page .about-purpose + .about-purpose { padding-top:16px; }
+@media (min-width:1200px) { .about-opening h1 { white-space:nowrap; } }
+@media (max-width:1199px) {
+  .about-introduction { grid-template-columns:1fr; gap:44px; }
+  .about-story { max-width:820px; }
+  .about-story > .about-lead { max-width:55ch; }
+  .about-brand-and-sources { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  .about-brand-lockup { flex-direction:column; gap:20px; text-align:center; }
+  .about-source-panel { margin:0; }
+  .about-source-circle { width:76px; height:76px; padding:12px; }
+}
+@media (max-width:700px) {
+  .about-opening { padding-top:4px; padding-bottom:20px; }
+  .about-opening h1 { margin-bottom:28px; font-size:clamp(32px,8.2vw,44px); }
+  .about-introduction { gap:40px; }
+  .about-story > p { font-size:16px; line-height:1.8; }
+  .about-story > .about-lead { font-size:21px; }
+  .about-brand-and-sources { display:block; }
+  .about-brand-lockup { flex-direction:row; gap:16px; text-align:left; }
+  .about-brand-lockup > img { width:clamp(112px,32vw,190px); }
+  .about-brand-lockup .about-brand-name { font-size:clamp(13px,3.8vw,24px); }
+  .about-source-panel { margin-top:36px; }
+  .about-source-logos { gap:20px 8px; }
+  .about-source-circle { width:clamp(56px,17vw,84px); height:clamp(56px,17vw,84px); padding:10px; }
+  .about-source-circle.source-logo-shield { padding:10px 18px; }
+  .about-source-logos a > span:nth-child(2) { font-size:11px; }
+  .about-page .about-purpose { padding-block:28px; }
+  .about-page .about-page-nav { padding-bottom:8px; gap:0 22px; }
+}
+@media (prefers-reduced-motion:reduce) { .about-source-circle { transition:none; } .about-source-logos a:hover .about-source-circle { transform:none; } }

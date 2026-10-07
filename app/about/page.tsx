@@ -3,6 +3,18 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Globe2, Heart, MapPin, ScanSearch } from "lucide-react";
 import { STATE_FLAGS } from "@/content/state-flags";
 import Image from "next/image";
+import "./about.css";
+
+const researchSources = [
+  { name: "USGS", description: "U.S. Geological Survey: US-RIIS and aquatic species records", image: "usgs.png", href: "https://nas.er.usgs.gov/", style: "source-logo-usgs" },
+  { name: "USDA", description: "U.S. Department of Agriculture: plant, pest, and forest research", image: "usda.svg", href: "https://www.aphis.usda.gov/", style: "" },
+  { name: "EPA", description: "U.S. Environmental Protection Agency: river and stream surveys", image: "epa.png", href: "https://www.epa.gov/national-aquatic-resource-surveys/nrsa", style: "" },
+  { name: "U.S. Fish & Wildlife", description: "U.S. Fish and Wildlife Service: invasive carp monitoring", image: "fws.svg", href: "https://www.fws.gov/", style: "source-logo-shield" },
+  { name: "EDDMapS", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", href: "https://www.eddmaps.org/", style: "" },
+  { name: "GBIF", description: "Global Biodiversity Information Facility: biodiversity records and collections", image: "gbif.svg", href: "https://www.gbif.org/", style: "" },
+  { name: "iNaturalist", description: "iNaturalist: research-grade observations", image: "inaturalist.svg", href: "https://www.inaturalist.org/", style: "" },
+  { name: "iDigBio", description: "Integrated Digitized Biocollections: museum and herbarium specimens", image: "idigbio.png", href: "https://www.idigbio.org/", style: "" },
+];
 
 export const metadata: Metadata = {
   title: "About isitusa",
@@ -13,17 +25,36 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main id="main-content" className="reading-page about-page">
-      <header className="about-hero">
-        <div className="about-hero-copy">
-          <h1>Making invasive species research useful.</h1>
-          <p>Everyone should be able to find reliable information about invasive species near them, and see where it comes from.</p>
-          <p><strong className="brand-wordmark">isitusa</strong> is an independent initiative based in the United States. We bring scattered species records into one atlas, connecting the places you care about with research you can trace to its source.</p>
-          <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
-        </div>
-        <div className="about-identity" aria-label="About isitusa">
-          <Image className="brand-art" src="/brand/v3/isitusa-symbol-name.svg" alt="isitusa" width={220} height={294} unoptimized priority />
-          <p>Invasive Species In The<br />United States of America</p>
-          <span>Local knowledge. A wider understanding.</span>
+      <header className="about-opening">
+        <h1>Making invasive species research useful.</h1>
+        <div className="about-introduction">
+          <div className="about-story">
+            <p className="about-lead">Everyone should be able to find accurate information about invasive species near them, and see the source it comes from.</p>
+            <p><strong className="brand-wordmark">isitusa</strong> is an independent initiative established in the United States of America by environmentalists. We care about the places we call home, and believe good information should help more people care for them.</p>
+            <p>We bring scattered reports into one useful, intuitive map, connecting the places you care about with reputable research you can trace back to its source. Agency records, scientific collections, and observations become easier to explore together, with the context that gives each finding meaning.</p>
+            <p>Whether you are noticing something new in your backyard or looking after an entire landscape, we want to make the next step clearer: learn what has been recorded, understand what is still uncertain, and know where to look next.</p>
+            <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
+          </div>
+          <div className="about-brand-and-sources">
+            <div className="about-brand-lockup" aria-label="About isitusa">
+              <Image className="brand-art" src="/brand/v3/isitusa-symbol-name.svg" alt="isitusa" width={220} height={294} unoptimized priority />
+              <p className="about-brand-name"><span>Invasive Species</span><span>United States of America</span></p>
+            </div>
+            <section className="about-source-panel" aria-labelledby="source-panel-heading">
+              <h2 id="source-panel-heading">Built on research and records from</h2>
+              <ul className="about-source-logos">
+                {researchSources.map(source => <li key={source.name}>
+                  <a href={source.href} target="_blank" rel="noreferrer" title={source.description}>
+                    <span className={`about-source-circle ${source.style}`}><Image src={`/source-logos/${source.image}`} alt="" width={84} height={64} unoptimized /></span>
+                    <span>{source.name}<ArrowUpRight size={12} aria-hidden="true" /></span>
+                    <span className="sr-only">{source.description}. Opens in a new tab.</span>
+                  </a>
+                </li>)}
+              </ul>
+              <p>These are some of the sources we draw on, alongside state agencies, universities, and regional programs. Source attribution does not imply partnership or endorsement.</p>
+              <a href="#sources-heading" className="text-link">More about our sources <ArrowRight size={15} aria-hidden="true" /></a>
+            </section>
+          </div>
         </div>
       </header>
 
@@ -33,7 +64,7 @@ export default function AboutPage() {
         <h2 id="purpose-heading">Useful knowledge should be within reach.</h2>
         <div>
           <p>You might be looking after a garden, managing a park, or trying to name a plant beside a trail. Finding reliable information should not require knowing which database to search.</p>
-          <p>We bring together records from researchers, public agencies, and monitoring programs. Our job is to make their work easier to find and understand, while keeping the original evidence in view. Whether you are curious about your neighborhood or responsible for a much larger landscape, you should be able to follow a finding back to the people and programs that documented it.</p>
+          <p>Much of the knowledge already exists, but it lives across agency websites, scientific collections, local surveys, and separate databases. We use technology to connect those pieces and make them easier to navigate. The people who collected the evidence remain part of the story: their sources, dates, and findings stay attached to the information you see.</p>
         </div>
       </section>
 
@@ -57,7 +88,7 @@ export default function AboutPage() {
 
       <section className="about-outlook" aria-labelledby="outlook-heading">
         <Globe2 size={32} strokeWidth={1.5} aria-hidden="true" />
-        <div><h2 id="outlook-heading">Starting in the U.S., thinking beyond borders.</h2><p>isitusa is an independent initiative based in the United States. Our ambition is to help people use local species information around the world. We are beginning with U.S. counties and county equivalents, building an approach we can keep improving.</p><p>Our catalog starts with the US-RIIS lower-48 register. It is a foundation to build on, not a complete list of every species in every place.</p></div>
+        <div><h2 id="outlook-heading">Starting in the U.S., thinking beyond borders.</h2><p>Invasive species do not stop at borders. Our work begins with U.S. counties and county equivalents, but our ambition is global: to make local invasive species information easier to access wherever people need it. We want to earn trust through useful tools, transparent research, and a willingness to improve when better evidence comes along.</p><p>Our catalog starts with the US-RIIS lower-48 register. It is a foundation to build on, not a complete list of every species in every place.</p></div>
       </section>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
@@ -71,11 +102,13 @@ export default function AboutPage() {
 
       <section className="about-sources" aria-labelledby="sources-heading">
         <h2 id="sources-heading">The research we build on.</h2>
-        <p>This atlas draws on the work of researchers, public agencies, and people recording what they find. Our sources include US-RIIS, EDDMapS, the USGS Nonindigenous Aquatic Species database, USDA programs, and state and regional monitoring records. You can find the specific references alongside each record.</p>
+        <p>The map is possible because researchers, public agencies, museums, herbaria, and people in the field have spent years documenting the natural world. We bring together selected records from their work. Our catalog begins with US-RIIS; occurrence and monitoring evidence comes from sources including EDDMapS, USGS aquatic species records, USDA programs, EPA surveys, GBIF, iDigBio, and iNaturalist.</p>
+        <p>Different sources answer different questions. A specimen documents a collection, a survey describes what was checked, and a regulatory notice has its own geographic and time limits. We keep those distinctions visible rather than treating every record as the same kind of proof. Visit the research pages for source details, review status, and the references behind individual findings.</p>
         <div className="source-links">
           <a href="https://doi.org/10.5066/P9KFFTOD" target="_blank" rel="noreferrer">US-RIIS <ArrowUpRight size={15} aria-hidden="true" /></a>
           <a href="https://www.eddmaps.org/" target="_blank" rel="noreferrer">EDDMapS <ArrowUpRight size={15} aria-hidden="true" /></a>
           <a href="https://nas.er.usgs.gov/" target="_blank" rel="noreferrer">USGS aquatic species <ArrowUpRight size={15} aria-hidden="true" /></a>
+          <Link href="/research">Explore the research <ArrowRight size={15} aria-hidden="true" /></Link>
         </div>
       </section>
       <section id="map-credits" className="about-sources"><h2>Map artwork credits.</h2>
