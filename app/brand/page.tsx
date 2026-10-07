@@ -22,9 +22,9 @@ export default function BrandPage() {
       <div className="brand-kit-downloads"><a className="text-link" href={`/brand/v3/${asset.file}.svg`} download><ArrowDownToLine size={16} aria-hidden="true" /> Download SVG</a><a className="text-link" href={`/brand/v3/${asset.file}.png`} download>PNG</a></div>
     </section>)}</div>
     <section className="brand-kit-card" aria-labelledby="full-wordmark-heading">
-      <div className="brand-kit-art"><Image className="brand-art" src="/brand/full-name-v1/isitusa-full-name-green.svg" width={2133} height={356} alt="Invasive Species in the United States of America" unoptimized /></div>
+      <div className="brand-kit-art" style={{ height: "auto", maxWidth: "none" }}><Image className="brand-art" src="/brand/full-name-v1/isitusa-full-name-green.svg" width={2133} height={356} style={{ height: "auto" }} alt="Invasive Species in the United States of America" unoptimized /></div>
       <h2 id="full-wordmark-heading">Our full name, in our own lettering.</h2>
-      <p>Custom vector lettering built from the logo's original letter shapes. Two-line and single-line artwork, in green, white, and black. No font installation needed.</p>
+      <p>Custom vector lettering built from the original logo letter shapes. Two-line and single-line artwork, in green, white, and black. No font installation needed.</p>
       <div className="brand-kit-downloads"><a className="text-link" href="/brand/full-name-v1/isitusa-full-name-green.svg" download><ArrowDownToLine size={16} aria-hidden="true" /> Download SVG</a><a className="text-link" href="/brand/full-name-v1/isitusa-full-name-green.png" download>PNG</a><a className="text-link" href="/brand/full-name-v1/isitusa-full-name-kit.zip" download>All versions</a></div>
     </section>
     <h2>Keep it recognizable.</h2>
