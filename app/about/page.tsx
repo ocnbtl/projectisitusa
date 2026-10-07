@@ -38,7 +38,7 @@ export default function AboutPage() {
           <div className="about-brand-and-sources">
             <div className="about-brand-lockup" aria-label="About isitusa">
               <Image className="brand-art" src="/brand/v3/isitusa-symbol-name.svg" alt="isitusa" width={220} height={294} unoptimized priority />
-              <p className="about-brand-name"><span>Invasive Species in the</span>{" "}<span>United States of America</span></p>
+              <Image className="brand-art about-full-name" src="/brand/full-name-v1/isitusa-full-name-green.svg" alt="Invasive Species in the United States of America" width={2133} height={356} unoptimized priority />
             </div>
             <section className="about-source-panel" aria-labelledby="source-panel-heading">
               <h2 id="source-panel-heading">Built on trusted research from fellow protagonists</h2>

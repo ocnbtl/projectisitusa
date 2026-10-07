@@ -1,4 +1,3 @@
-@font-face { font-family:"Lilita One"; src:url("/fonts/lilita-one/LilitaOne-Regular.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
 .about-opening { padding:8px 0 40px; }
 .about-opening h1 { margin:0 0 44px; font-size:clamp(32px,3.65vw,68px); font-weight:550; line-height:1.12; letter-spacing:-.035em; text-wrap:balance; }
 .about-introduction { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(40px,5vw,96px); align-items:start; }
@@ -8,9 +7,8 @@
 .about-story > a { margin-top:8px; }
 .about-brand-and-sources { min-width:0; }
 .about-brand-lockup { display:flex; gap:clamp(20px,2vw,40px); align-items:center; justify-content:center; }
-.about-brand-lockup > img { width:clamp(200px,14vw,272px); height:auto; flex:none; }
-.about-brand-lockup .about-brand-name { font-family:"Lilita One",var(--font-display); font-weight:400; font-size:clamp(18px,1.65vw,30px); line-height:1.35; letter-spacing:0; color:var(--foreground); margin:0; }
-.about-brand-name > span { display:block; white-space:nowrap; }
+.about-brand-lockup > img:first-child { width:clamp(180px,14vw,272px); height:auto; flex:none; }
+.about-brand-lockup > .about-full-name { display:block; flex:1; width:0; min-width:0; height:auto; }
 .about-source-panel { max-width:680px; margin:40px auto 0; }
 .about-page .about-source-panel h2 { font-size:18px; line-height:1.5; font-weight:550; letter-spacing:0; margin-bottom:20px; text-wrap:pretty; }
 .about-source-logos { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px 16px; list-style:none; padding:0; margin:0; }
@@ -36,6 +34,7 @@
   .about-story > .about-lead { max-width:55ch; }
   .about-brand-and-sources { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
   .about-brand-lockup { flex-direction:column; gap:20px; text-align:center; }
+  .about-brand-lockup > .about-full-name { flex:none; width:100%; }
   .about-source-panel { margin:0; }
   .about-source-circle { width:76px; height:76px; padding:12px; }
 }
@@ -47,8 +46,8 @@
   .about-story > .about-lead { font-size:21px; }
   .about-brand-and-sources { display:block; }
   .about-brand-lockup { flex-direction:row; gap:16px; text-align:left; }
-  .about-brand-lockup > img { width:clamp(112px,32vw,190px); }
-  .about-brand-lockup .about-brand-name { font-size:clamp(13px,3.8vw,24px); }
+  .about-brand-lockup > img:first-child { width:clamp(96px,27vw,170px); }
+  .about-brand-lockup > .about-full-name { flex:1; width:0; }
   .about-source-panel { margin-top:36px; }
   .about-source-logos { gap:20px 8px; }
   .about-source-circle { width:clamp(56px,17vw,84px); height:clamp(56px,17vw,84px); padding:10px; }
@@ -56,5 +55,10 @@
   .about-source-logos a > span:nth-child(2) { font-size:11px; }
   .about-page .about-purpose { padding-block:28px; }
   .about-page .about-page-nav { padding-bottom:8px; gap:0 22px; }
+}
+@media (max-width:480px) {
+  .about-brand-lockup { flex-direction:column; gap:24px; }
+  .about-brand-lockup > img:first-child { width:160px; }
+  .about-brand-lockup > .about-full-name { flex:none; width:100%; }
 }
 @media (prefers-reduced-motion:reduce) { .about-source-circle { transition:none; } .about-source-logos a:hover .about-source-circle { transform:none; } }
