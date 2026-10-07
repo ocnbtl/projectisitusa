@@ -38,10 +38,10 @@ export default function AboutPage() {
           <div className="about-brand-and-sources">
             <div className="about-brand-lockup" aria-label="About isitusa">
               <Image className="brand-art" src="/brand/v3/isitusa-symbol-name.svg" alt="isitusa" width={220} height={294} unoptimized priority />
-              <p className="about-brand-name"><span>Invasive Species</span><span>United States of America</span></p>
+              <p className="about-brand-name"><span>Invasive Species in the</span>{" "}<span>United States of America</span></p>
             </div>
             <section className="about-source-panel" aria-labelledby="source-panel-heading">
-              <h2 id="source-panel-heading">Built on research and records from</h2>
+              <h2 id="source-panel-heading">Built on trusted research from fellow protagonists</h2>
               <ul className="about-source-logos">
                 {researchSources.map(source => <li key={source.name}>
                   <a href={source.href} target="_blank" rel="noreferrer" title={source.description}>
@@ -51,8 +51,8 @@ export default function AboutPage() {
                   </a>
                 </li>)}
               </ul>
-              <p>These are some of the sources we draw on, alongside state agencies, universities, and regional programs. Source attribution does not imply partnership or endorsement.</p>
-              <a href="#sources-heading" className="text-link">More about our sources <ArrowRight size={15} aria-hidden="true" /></a>
+              <p>We aggregate data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about. Source attribution does not imply partnership or endorsement.</p>
+              <a href="#sources-heading" className="text-link">More about our data sources <ArrowRight size={15} aria-hidden="true" /></a>
             </section>
           </div>
         </div>

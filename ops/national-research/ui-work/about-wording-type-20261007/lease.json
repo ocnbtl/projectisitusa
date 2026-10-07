@@ -1,0 +1,27 @@
+{
+  "state": "implemented-awaiting-hosted-verification",
+  "baseSHA": "69734ae0d4ce520f052185769a53b2980054a2cf",
+  "branch": "codex/about-trust-20261007",
+  "worktree": "contributions-worktree",
+  "allowlist": [
+    "app/about/page.tsx",
+    "app/about/about.css",
+    "public/fonts/lilita-one/",
+    "ops/national-research/ui-work/about-wording-type-20261007",
+    "/"
+  ],
+  "denylist": [
+    "src/data/",
+    "public/generated/",
+    "main"
+  ],
+  "scope": "User-requested About wording corrections and closest available typeface to the custom logo lettering.",
+  "deploymentAuthorized": true,
+  "authorization": "User explicitly requested these changes be pushed live to production.",
+  "freezeLabel": "frozen-windows-bulk-validation-2026-07-30-r2",
+  "orchestratorSkillSha256": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+  "workerSkillSha256": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+  "expires": "2026-10-08",
+  "retryBudget": 2,
+  "completionRule": "Hosted build Ready; desktop/mobile rendered layout and source assets verified; production readback on exact commit."
+}

@@ -1,3 +1,4 @@
+@font-face { font-family:"Lilita One"; src:url("/fonts/lilita-one/LilitaOne-Regular.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
 .about-opening { padding:8px 0 40px; }
 .about-opening h1 { margin:0 0 44px; font-size:clamp(32px,3.65vw,68px); font-weight:550; line-height:1.12; letter-spacing:-.035em; text-wrap:balance; }
 .about-introduction { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(40px,5vw,96px); align-items:start; }
@@ -8,7 +9,7 @@
 .about-brand-and-sources { min-width:0; }
 .about-brand-lockup { display:flex; gap:clamp(20px,2vw,40px); align-items:center; justify-content:center; }
 .about-brand-lockup > img { width:clamp(200px,14vw,272px); height:auto; flex:none; }
-.about-brand-lockup .about-brand-name { font-family:var(--font-display); font-size:clamp(18px,1.65vw,30px); line-height:1.4; letter-spacing:-.025em; color:var(--foreground); margin:0; }
+.about-brand-lockup .about-brand-name { font-family:"Lilita One",var(--font-display); font-weight:400; font-size:clamp(18px,1.65vw,30px); line-height:1.35; letter-spacing:0; color:var(--foreground); margin:0; }
 .about-brand-name > span { display:block; white-space:nowrap; }
 .about-source-panel { max-width:680px; margin:40px auto 0; }
 .about-page .about-source-panel h2 { font-size:18px; line-height:1.5; font-weight:550; letter-spacing:0; margin-bottom:20px; text-wrap:pretty; }
