@@ -695,9 +695,7 @@ function CountyPairTable({
                     <td className="px-3 py-3">
                       <div className="flex min-w-0 items-start gap-2">
                         <div className="min-w-0">
-                          <p className="truncate font-medium text-[var(--foreground)]" title={pair.commonName}>
-                            {pair.commonName}
-                          </p>
+                          <button type="button" className="research-species-open" aria-expanded={isExpanded} onClick={() => onToggleEvidence(pair.speciesId)} title={pair.commonName}>{pair.commonName}</button>
                           <p className="truncate text-xs italic text-[var(--muted)]" title={pair.scientificName}>
                             {pair.scientificName}
                           </p>
@@ -1076,7 +1074,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             disabled={countyOptions.length === 0}
           />
         </div>
-        <p>What has been recorded here? Open a species to see its sources and dates.</p>
+        <p>Choose a finding, then open a species to read the sources. Historical records do not necessarily describe today.</p>
       </div>
 
       {loadState === "loading" || loadState === "idle" ? (
@@ -1121,11 +1119,6 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               </div>
             </div>
 
-            {progress && <div className="county-progress">
-              <div><h3>Research started for {formatNumber(progress.started)} of {formatNumber(progress.total)} species</h3><span>{progress.percent.toFixed(1)}%</span></div>
-              <progress aria-label="Species with a source check or reviewed finding" value={progress.started} max={progress.total || 1} />
-              <p>Each has at least one source check or reviewed finding. Research may still be incomplete. Choose a finding below to see the species and their evidence.</p>
-            </div>}
             <div className="county-finding-overview" aria-label="County research overview">
               {[
                 { status: "verified-present", label: "Recorded here", count: countyData.summary.verifiedPresent, note: "Includes historical records. Check the dates." },
@@ -1136,7 +1129,13 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               ].map(item => <button key={item.status} type="button" aria-pressed={statusFilter === item.status} onClick={() => { setStatusFilter(item.status); setQuery(""); setCategoryFilter("all"); }}><span>{item.label}</span><strong>{formatNumber(item.count)}</strong><small>{item.note}</small></button>)}
             </div>
             {(countyData.summary.blockedPairs > 0 || countyData.summary.notApplicablePairs > 0) && <p className="county-scope-note">Also in the full catalog: {formatNumber(countyData.summary.blockedPairs)} species awaiting a scope decision and {formatNumber(countyData.summary.notApplicablePairs)} explicitly outside this state’s scope.</p>}
-            <details className="county-research-detail"><summary>All findings and research progress</summary>
+            <details className="county-research-detail"><summary>Research progress and how to read these findings</summary>
+            {progress && <div className="county-progress">
+              <div><h3>Research started for {formatNumber(progress.started)} of {formatNumber(progress.total)} species</h3><span>{progress.percent.toFixed(1)}%</span></div>
+              <progress aria-label="Species with a source check or reviewed finding" value={progress.started} max={progress.total || 1} />
+              <p>Each has at least one source check or reviewed finding. Research may still be incomplete. Choose a finding below to see the species and their evidence.</p>
+            </div>}
+
               <p>The overview assigns each species one finding, with recorded presence taking precedence. A species can also have a survey non-detection or a later official absence finding. Those separate records remain visible in its evidence; they do not erase occurrence history.</p>
               <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
                 {formatPercent(countyData.summary.researchCoveragePercent)} of county-species questions have a source check
@@ -1161,20 +1160,15 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             </details>
           </div>
 
-          <div className="county-view-tags" role="group" aria-label="County findings view">
-            <button type="button" aria-pressed={statusFilter === "verified-present"} onClick={() => setStatusFilter("verified-present")}>Recorded here</button>
-            <button type="button" aria-pressed={statusFilter === "researched-unresolved"} onClick={() => setStatusFilter("researched-unresolved")}>More evidence needed</button>
-            <button type="button" aria-pressed={statusFilter === "all"} onClick={() => setStatusFilter("all")}>All research</button>
-          </div>
           <div className="grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2 lg:grid-cols-[minmax(240px,1.2fr)_minmax(170px,0.8fr)_minmax(170px,0.8fr)_40px]">
             <SearchField
-              label="Search"
+              label="Find a species"
               value={query}
               placeholder="Common name, scientific name, or ID"
               onChange={setQuery}
             />
             <SelectField
-              label="Status"
+              label="Finding"
               value={statusFilter}
               options={[
                 { value: "all", label: "All statuses" },
@@ -1511,9 +1505,9 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
   return (
     <header className="reading-hero research-heading">
       <div>
-        <h1>Research, county by county.</h1>
-        <p>See what has been recorded near you, what still needs checking, and where the evidence comes from.</p>
-        {summary && <a href="#research-explorer" className="text-link">Explore county evidence <ArrowDown size={16} aria-hidden="true" /></a>}
+        <h1>Explore the evidence.</h1>
+        <p>Find a species in your county, read its source records, and see what we still need to learn.</p>
+
       </div>
       <div className="research-state-control">
         <SelectField stateFlags label="Choose a state" value={selectedStateCode}

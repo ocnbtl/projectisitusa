@@ -1235,3 +1235,27 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 
 .directory-identity .image-credit summary { display:flex; align-items:center; gap:4px; }
 .directory-identity .image-credit summary::before { content:none; }
+
+/* Research is a reading workspace: filters and evidence precede accounting. */
+.research-page{max-width:1600px;margin-inline:auto}
+.research-page .research-heading{padding-bottom:18px;margin-bottom:18px;gap:40px}
+.research-page .research-heading h1{font-size:clamp(30px,3vw,44px);letter-spacing:-.03em}
+.research-heading p{margin-top:12px;line-height:1.65;max-width:62ch}
+.research-county-choice{padding:18px 0;align-items:center}
+.research-county-choice>p{padding-bottom:0;max-width:62ch}
+.county-finding-overview{gap:0;margin:18px 0 4px;border-block:1px solid var(--border)}
+.county-finding-overview button{position:relative;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;padding:13px 14px;gap:5px;transition:background 160ms,border-color 160ms}
+.county-finding-overview button[aria-pressed=true]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.county-finding-overview button:hover{background:var(--surface)}
+.county-finding-overview span{min-height:0;font-size:12px}
+.county-finding-overview strong{font-size:23px;letter-spacing:-.02em}
+.county-finding-overview small{display:block;font-size:11px;line-height:1.5;max-width:none}
+.research-species-open{display:block;text-align:left;min-height:32px;max-width:100%;font-weight:600;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:text-decoration-color 160ms}
+.research-species-open:hover{text-decoration-color:currentColor}
+.research-species-open:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+.research-page table td:has(>button[aria-expanded]){padding-inline:0}
+.research-page table td>button[aria-expanded]{min-width:44px;min-height:44px}
+.research-page table td{vertical-align:top}
+.research-page table td:has(.research-species-open){padding-top:7px}
+@media(max-width:700px){.research-page .research-heading h1{font-size:32px}.county-finding-overview{grid-template-columns:1fr 1fr}.county-finding-overview button{padding:12px 8px}.county-finding-overview small{font-size:11px}.research-county-choice{gap:12px}.research-page .research-heading{margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.research-species-open,.county-finding-overview button{transition:none}}
