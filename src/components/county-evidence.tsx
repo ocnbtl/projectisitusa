@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/ui/telemetry";
 
 import Link from "next/link";
 import { ArrowUpRight, ChevronDown, RotateCcw } from "lucide-react";
@@ -215,7 +216,7 @@ function PairDetails({ pair, species, county }: { pair: ResolvedResearchPair; sp
               return (
                 <li key={evidence.evidenceId} className="evidence-citation">
                   {href ? (
-                    <a href={href} target="_blank" rel="noreferrer">
+                    <a href={href} target="_blank" rel="noreferrer" onClick={() => track("source_opened",{surface:"research"})}>
                       {label} <ArrowUpRight aria-hidden="true" size={13} />
                     </a>
                   ) : <strong>{label}</strong>}
@@ -272,7 +273,7 @@ function EvidencePair({ pair, species, county }: { pair: ResolvedResearchPair; s
 
   return (
     <li className="evidence-pair">
-      <details onToggle={(event) => setOpen(event.currentTarget.open)}>
+      <details onToggle={(event) => {setOpen(event.currentTarget.open); if(event.currentTarget.open) track("evidence_opened",{surface:"research",county_id:county.countyFips});}}>
         <summary>
           <span className="evidence-pair-name">
             <strong>{pair.commonName}</strong>

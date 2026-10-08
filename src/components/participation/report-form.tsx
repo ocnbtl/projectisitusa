@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/ui/telemetry";
 import { useState, type FormEvent } from "react";
 import { Camera, Send } from "lucide-react";
 import { request, TURNSTILE_SITE_KEY } from "@/lib/participation/client";
@@ -12,8 +13,8 @@ export function ReportForm(){
  const photos=form.getAll("photos").filter(v=>v instanceof File&&v.size>0) as File[];
  if(photos.length>3||photos.some(p=>p.size>MAX_PHOTO_BYTES))throw new Error("Choose up to three photographs, each under 5 MB.");
  form.set("county_id",county[0].id);form.set("challenge",challenge);form.set("permission",form.get("permission")==="on"?"true":"false");
- setBusy(true);const result=await request<{id:string}>("sighting",form);setReceipt(result.id);
- }catch(err){setError(err instanceof Error?err.message:"Please try again.");}finally{setBusy(false);setChallenge("");setReset(n=>n+1);}}
+ setBusy(true);track("sighting_started",{surface:"report"});const result=await request<{id:string}>("sighting",form);setReceipt(result.id);track("sighting_submitted",{surface:"report"});
+ }catch(err){track("sighting_failed",{surface:"report"});setError(err instanceof Error?err.message:"Please try again.");}finally{setBusy(false);setChallenge("");setReset(n=>n+1);}}
  return <Frame title="What did you find?" description="A clear photo and a few details can make an observation useful. Share what you saw, even if you are not sure of its name." aside={<><h2>A little care goes a long way.</h2><p>Photograph what you can safely see. Avoid touching or moving unfamiliar plants and animals.</p><p>Your contact details, original photographs, and precise location are kept private for review. Accepted observations still need research review before they appear on the map.</p><p>For a report needing an agency response, use <a href="https://www.eddmaps.org/report/" className="text-link">EDDMapS</a> or your state reporting program.</p></>}>
  <ServiceStatus config={config} error={configError} ready={ready} retry={retry}><strong>Direct reporting is not open yet.</strong><p>You can still share your observation with an established reporting program.</p></ServiceStatus>
  {config&&!ready&&<section className={styles.section}><h2>Make your observation useful</h2><ul className={styles.steps}><li>Take a clear photograph from a safe distance.</li><li>Note the date and where you saw it.</li><li>Send your report to a program that can review it.</li></ul><div className={styles.row}><a className={styles.button} href="https://www.eddmaps.org/report/" target="_blank" rel="noreferrer">Report through EDDMapS</a><a className="text-link" href="https://www.invasivespeciesinfo.gov/subject/reporting" target="_blank" rel="noreferrer">Find a reporting program</a></div></section>}

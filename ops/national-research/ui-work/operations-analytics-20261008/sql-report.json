@@ -1,0 +1,19 @@
+{
+  "engine": "PGlite 0.5.8 in-memory PostgreSQL",
+  "scope": "Real local SQL execution with minimal auth/storage fixture schemas. NOT Supabase Auth/Storage integration or deployment verification.",
+  "schema": [
+    "01-core.sql",
+    "02-workflows.sql",
+    "03-support-and-campaigns.sql",
+    "04-capacity.sql",
+    "05-identification.sql"
+  ],
+  "tests": [
+    "authorization.sql",
+    "transactions.sql",
+    "delivery-quota.sql",
+    "roles-capacity.sql"
+  ],
+  "status": "passed",
+  "finishedAt": "2026-10-08T11:00:25.703Z"
+}

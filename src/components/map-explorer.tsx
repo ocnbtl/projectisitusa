@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/ui/telemetry";
 
 /* THESIS: An open field atlas where place leads and evidence stays within reach.
  * OWN-WORLD: Mineral canvas, teal county shading, glass controls, solid reading panels.
@@ -62,7 +63,7 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
     // Native history integrates with Next without duplicate URL state or a server fetch.
     window.history.pushState(null, "", search ? `/?${search}` : "/");
   }, []);
-  const selectCounty = useCallback((fips: string) => { cancelZipLookup(); setExpanded(true); update({ county: fips, state: store?.countyIndex[fips]?.stateCode ?? null }); }, [cancelZipLookup, update, store]);
+  const selectCounty = useCallback((fips: string) => { track("county_selected",{surface:"map",county_id:fips}); cancelZipLookup(); setExpanded(true); update({ county: fips, state: store?.countyIndex[fips]?.stateCode ?? null }); }, [cancelZipLookup, update, store]);
   const closeCounty = useCallback(() => {
     cancelZipLookup(); update({ county: null });
     document.querySelector<HTMLInputElement>('[aria-label="Search county or ZIP"]')?.focus();
@@ -109,8 +110,8 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
       const response = await fetch("/api/lookup/zip", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ zip }), signal: AbortSignal.any([controller.signal, AbortSignal.timeout(15000)]) });
       const payload = await response.json() as { ok: true; data: ZipLookupResult } | { ok: false; message: string };
       if (sequence !== lookupSequence.current) return;
-      if (!response.ok || !payload.ok) { setZipStatus(payload.ok ? "ZIP lookup failed. Try county search." : payload.message); return; }
-      setExpanded(true); update({ county: payload.data.countyFips, state: store?.countyIndex[payload.data.countyFips]?.stateCode ?? null }); setZipStatus(`${zip}: ${payload.data.countyName}`);
+      if (!response.ok || !payload.ok) { track("zip_search_completed",{surface:"map",outcome:"failed"}); setZipStatus(payload.ok ? "ZIP lookup failed. Try county search." : payload.message); return; }
+      track("zip_search_completed",{surface:"map",outcome:"found"}); setExpanded(true); update({ county: payload.data.countyFips, state: store?.countyIndex[payload.data.countyFips]?.stateCode ?? null }); setZipStatus(`${zip}: ${payload.data.countyName}`);
     } catch { if (sequence === lookupSequence.current) setZipStatus("ZIP lookup is unavailable. Search a county name or try again."); }
     finally { if (sequence === lookupSequence.current) { setSearching(false); lookupAbort.current = null; } }
   }
@@ -120,9 +121,9 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
     <UsCountyMap countyIndex={store.countyIndex} presenceIndex={activePresence} stateCode={stateCode} selectedCountyFips={county?.countyFips ?? null} neighboringCountyFips={county?.neighborFips ?? []} countyMatchCounts={countyMatchCounts} onCountySelect={selectCounty} onReset={() => { cancelZipLookup(); update({ county: null, state: null }); }} sheetExpanded={expanded} datasetLabel={datasetLabel} datasetDate={datasetDate} dataReady={dataReady} />
     <div className="atlas-topbar">
     <MapToolbar counties={store.countyIndex} species={displaySpecies} categories={categories} environment={environment} stateCode={stateCode} speciesId={speciesId} query={query} zipStatus={zipStatus} isSearching={searching} countyCounts={countyCounts} speciesCounts={speciesCounts} dataReady={dataReady}
-      onApplyFilters={(values, habitat) => update({ categories: values.join(","), environment: habitat, species: null })}
+      onApplyFilters={(values, habitat) => {track("map_filter_changed",{surface:"map"});update({ categories: values.join(","), environment: habitat, species: null });}}
       onStateChange={value => { cancelZipLookup(); update({ state: value, county: null }); }}
-      onCountySelect={selectCounty} onSpeciesSelect={id => { cancelZipLookup(); update({ species: id, q: null }); }} onQueryChange={value => { cancelZipLookup(); update({ q: value, species: null }); }}
+      onCountySelect={selectCounty} onSpeciesSelect={id => { track("species_opened",{surface:"map",species_id:id??undefined}); cancelZipLookup(); update({ species: id, q: null }); }} onQueryChange={value => { cancelZipLookup(); update({ q: value, species: null }); }}
       onCategoryToggle={category => { const next = categories.includes(category) ? categories.filter(c => c !== category) : [...categories, category]; update({ categories: next.join(","), species: null }); }}
       onEnvironmentChange={value => update({ environment: value })} onZipSearch={searchZip} onClearFilters={() => update({ categories: null, species: null, environment: null, q: null })} />
       <UpdateNotice datasetDate={datasetDate} datasetLabel={datasetLabel} />

@@ -1,0 +1,53 @@
+{
+  "owner": "MAIN-ui",
+  "state": "in-progress",
+  "base": "5701c3db18050083c19a3d892430ce28313d6ac3",
+  "branch": "codex/operations-analytics-20261008",
+  "worktree": "C:\\Users\\Ocean\\.codex\\visualizations\\2026\\09\\05\\01a06f1e-a9ed-77c2-8c4e-21213ababf8b\\support-research-worktree",
+  "minFreeDiskBytes": 90000000000,
+  "newFilesBudgetBytes": 20000000,
+  "localBuilds": false,
+  "installs": false,
+  "researchWrites": false,
+  "r2Writes": false,
+  "productionAuthorized": true,
+  "allowlist": [
+    "src/components",
+    "src/lib/ui",
+    "src/lib/participation",
+    "app/api",
+    "app/privacy",
+    "next.config.ts",
+    "supabase",
+    "docs/participation",
+    "ops/national-research/ui-work/operations-analytics-20261008"
+  ],
+  "denylist": [
+    "src/data",
+    "public/generated",
+    "public/research-snapshots",
+    "main",
+    "public/brand/full-name-v2"
+  ],
+  "expectedOutputs": [
+    "consent-based PostHog analytics and curated dashboard",
+    "dedicated free Supabase backend",
+    "double opt-in email/preferences/unsubscribe",
+    "private MFA staff workspace and least-privilege roles",
+    "private sighting intake and audited review",
+    "provider-verified donation records",
+    "tested hosted release"
+  ],
+  "retryPolicy": "Fail closed on missing credentials, quotas or authorization; preserve existing public research and payment fallbacks.",
+  "expires": "2026-10-12",
+  "completionCriteria": [
+    "permission isolation and email verification",
+    "bounded provider usage",
+    "desktop/mobile reviewed UI",
+    "production readback"
+  ],
+  "skillPins": {
+    "impeccable": "4.3.1",
+    "researchSkills": "unchanged; no research worker dispatched"
+  }
+}

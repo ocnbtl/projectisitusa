@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/ui/telemetry";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Check, ChevronDown, Copy, Info } from "lucide-react";
@@ -21,7 +22,7 @@ export function SupportForm() {
  async function copy(){
   if(!wallet)return;
   const current=++request.current;clearTimeout(timer.current);
-  try{await navigator.clipboard.writeText(wallet.address);if(current!==request.current)return;setCopied(true);setFeedback(`${wallet.asset} address copied. Check the full address in your wallet.`);timer.current=setTimeout(()=>{setCopied(false);setFeedback("");},5000);}
+  try{await navigator.clipboard.writeText(wallet.address);if(current!==request.current)return;setCopied(true);track("crypto_address_copied",{surface:"support",asset:wallet.asset});setFeedback(`${wallet.asset} address copied. Check the full address in your wallet.`);timer.current=setTimeout(()=>{setCopied(false);setFeedback("");},5000);}
   catch{if(current===request.current){setCopied(false);setFeedback("Could not copy. Select and copy the full address above.");}}
  }
  return <main id="main-content" className={s.page}>
@@ -37,7 +38,7 @@ export function SupportForm() {
    </section>
    <section id="contribute" className={s.donation} aria-labelledby="donation-heading">
     <header className={s.donationHeading}><h2 id="donation-heading">Make a contribution</h2><p>Support research that stays open to everyone.</p></header>
-    <div className={s.methodPicker} role="group" aria-label="Payment method"><button type="button" aria-pressed={method==="card"} onClick={()=>setMethod("card")}>Card</button><button type="button" aria-pressed={method==="crypto"} onClick={()=>setMethod("crypto")}>Cryptocurrency</button></div>
+    <div className={s.methodPicker} role="group" aria-label="Payment method"><button type="button" aria-pressed={method==="card"} onClick={()=>{setMethod("card");track("contribution_method_selected",{surface:"support",method:"card"});}}>Card</button><button type="button" aria-pressed={method==="crypto"} onClick={()=>{setMethod("crypto");track("contribution_method_selected",{surface:"support",method:"crypto"});}}>Cryptocurrency</button></div>
     <div hidden={method!=="card"}><DonationCheckout hostedLink={hostedLink}/></div>
     {method==="crypto"&&<div className={s.crypto}>{wallet?<>
      <div className={s.assets} role="group" aria-label="Choose cryptocurrency">{wallets.map(item=><button type="button" key={item.id} aria-label={names[item.asset]} aria-pressed={item.id===wallet.id} onClick={()=>select(item.id)}><img src={`/brand/crypto/${item.asset.toLowerCase()}.svg`} width={26} height={26} alt=""/><span>{item.asset}</span></button>)}</div>

@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/ui/telemetry";
 import { useEffect, useMemo, useState } from "react";
 import { Download } from "lucide-react";
 import type { CountyCategorySignal } from "@/lib/county-detail";
@@ -32,7 +33,7 @@ export function CountyCardDownload({ county, focalSpecies, snapshotDate, dataset
     return `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720"><rect width="1000" height="720" fill="#edf2ef"/><g fill="#173c38" font-family="Segoe UI,Arial,sans-serif">${brandIcon ? `<image href="${brandIcon}" x="55" y="20" width="72" height="72"/>` : ""}<text x="145" y="65" font-size="20">isitusa / COUNTY RECORDS</text><text x="55" y="128" font-size="40" font-weight="600">${xml(county.name.slice(0, 37))}, ${xml(county.stateCode)}</text><text x="55" y="170" font-size="18">${xml(datasetLabel)}: ${xml(snapshotDate || 'Date not supplied')} / FIPS ${xml(county.countyFips)}</text><text x="55" y="215" font-size="24">${focalSpecies.length} mapped species matching the selected filters</text><path d="M55 235H945" stroke="#b9cbc2"/>${rows || '<text x="55" y="285" font-size="21">No matching mapped records in this view.</text>'}<path d="M55 580H945" stroke="#b9cbc2"/><text x="55" y="612" font-size="17">Records may be historical. Counts do not establish current presence, abundance or impact.</text><text x="55" y="640" font-size="17">Missing records do not establish absence. Follow source dates and agency findings on isitusa.</text><text x="55" y="681" font-size="17">isitusa.com/?county=${xml(county.countyFips)} / ${focalSpecies.length > 6 ? 'First 6 matching species shown' : 'Matching species shown above'}</text></g></svg>`;
   }, [county, focalSpecies, snapshotDate, datasetLabel, brandIcon]);
   function save(blob: Blob, extension: string) {
-    const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = `isitusa-${county.countyFips}-records.${extension}`; link.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = `isitusa-${county.countyFips}-records.${extension}`; link.click(); track("county_card_downloaded", {surface:"map", county_id:county.countyFips, format:extension}); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   async function downloadPng() {
     setBusy(true); setError(null);

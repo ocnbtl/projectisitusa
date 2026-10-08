@@ -5,8 +5,15 @@ export const STREAMS = [
   { id: "action", title: "Ways to help", detail: "Occasional restoration opportunities, conservation campaigns, and ways to support the work." },
 ] as const;
 export type Stream = typeof STREAMS[number]["id"];
-export const PERMISSIONS = ["review", "audience", "finance", "team"] as const;
+export const PERMISSIONS = ["review", "review_decide", "audience", "finance", "analytics", "team"] as const;
 export type Permission = typeof PERMISSIONS[number];
+export const ROLE_PRESETS: {name:string; permissions:Permission[]; detail:string}[] = [
+ {name:"Volunteer",permissions:["review"],detail:"Inspect sightings and record preliminary reviews."},
+ {name:"Lead reviewer",permissions:["review","review_decide"],detail:"Accept or reject observations for research review."},
+ {name:"Communications",permissions:["audience","analytics"],detail:"Manage email content and view site usage."},
+ {name:"Operations",permissions:["review","review_decide","audience","finance","analytics"],detail:"Manage day-to-day project operations."},
+ {name:"Team manager",permissions:["review","team"],detail:"Invite volunteers. Only the owner can grant elevated access."},
+];
 export const REVIEW_STATES = ["submitted", "in_review", "needs_info", "accepted", "rejected"] as const;
 export type ReviewState = typeof REVIEW_STATES[number];
 export const STATE_LABELS: Record<ReviewState, string> = {
@@ -23,6 +30,7 @@ export type Sighting = {
   id: string; species_label: string; county_id: string; observed_on: string; location_note: string;
   latitude: number | null; longitude: number | null; notes: string; contact_email: string | null;
   status: ReviewState; version: number; created_at: string; review_note: string | null;
+  matched_species_id: string | null;
   assets?: { path: string; mime: string; bytes: number }[];
 };
 export type Subscriber = { id: string; email: string; confirmed_at: string | null; suppressed_at: string | null; suppression_reason: string | null; preferences: Preferences; created_at: string };

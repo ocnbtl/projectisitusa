@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/ui/telemetry";
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -69,7 +70,7 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
         {temporal?.showInResults ? <div className="profile-agency-finding"><strong>{temporal.currentLabel}</strong>{temporal.attribution ? <p>{temporal.attribution}</p> : null}<p>{temporal.explanation}</p></div> : null}
         <ul className="profile-source-records">{sortedEvidence.slice(0, visibleSources).map(evidence => {
           const url = safeSourceLink(evidence.url);
-          return <li key={evidence.evidenceId}><div className="profile-source-title">{url ? <a href={url} target="_blank" rel="noreferrer" className="text-link">{evidence.sourceLabel || evidence.sourceId}<ArrowUpRight size={15} aria-hidden="true" /></a> : <strong>{evidence.sourceLabel || evidence.sourceId}</strong>}<span>{evidence.assertion === "recorded-present" ? "Occurrence record" : evidence.assertion === "not-detected" ? "Survey non-detection" : "Agency finding"}</span></div>
+          return <li key={evidence.evidenceId}><div className="profile-source-title">{url ? <a href={url} target="_blank" rel="noreferrer" className="text-link" onClick={() => track("source_opened",{surface:"species",source_id:evidence.sourceId,species_id:speciesId})}>{evidence.sourceLabel || evidence.sourceId}<ArrowUpRight size={15} aria-hidden="true" /></a> : <strong>{evidence.sourceLabel || evidence.sourceId}</strong>}<span>{evidence.assertion === "recorded-present" ? "Occurrence record" : evidence.assertion === "not-detected" ? "Survey non-detection" : "Agency finding"}</span></div>
             <dl className="profile-source-dates"><div><dt><CalendarDays size={14} aria-hidden="true" /> Observed</dt><dd>{formatOccurrenceDate(evidence.observedAt)}</dd></div><div><dt>Reviewed</dt><dd>{formatOccurrenceDate(evidence.reviewedAt)}</dd></div><div><dt>Evidence scope</dt><dd>{evidence.scope.replaceAll("-", " ")}</dd></div></dl>
             {evidence.caveat ? <details className="source-context"><summary>Source context</summary><p>{evidence.caveat}</p></details> : null}</li>;
         })}</ul>

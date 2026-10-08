@@ -1,6 +1,20 @@
 # Setup after source verification
 
-This is an implementation setup guide, not an activated service.
+This is an implementation setup guide, not an activated service. Current evidence is recorded in `ops/national-research/ui-work/operations-analytics-20261008/progress.json`; the September completion record is historical.
+
+## Verified checkpoint — October 8, 2026
+
+The dedicated `isitusa` backend is `cnbcqzecxydgpeejeegy` in the Unigentamos Free organization. Schema sources 01–05 are applied. Public and anonymous Auth signup are disabled, and the production Auth site/redirect are `https://isitusa.com` and `https://isitusa.com/auth/confirm`. No owner account has been provisioned yet.
+
+The reference picker contains 2,504 species and 3,144 county equivalents from published site commit `5701c3db18050083c19a3d892430ce28313d6ac3`, filtered to its 51 configured state/DC jurisdictions. Alaska and Hawaii searches pass. This copies labels and IDs only, not occurrence evidence. Staff identification preserves the observer's description, records the matched catalog species in review history, and requires a lead reviewer for acceptance. No review changes the public map.
+
+`participation-api` and `participation-resend` version 1 are deployed. Production's public backend URL/key are saved in Vercel for the next deployment. All public intake flags remain false. Hosted checks confirm foreign-origin rejection, unauthenticated private-action rejection, and disabled signup/report/legacy checkout behavior. Local SQL authorization, transaction, quota, identification and capacity tests pass; five edge functions typecheck with cached dependencies, and contract/signature/privacy tests pass. This does not yet verify owner login, SMTP delivery, payment reconciliation, or a rendered release.
+
+PostHog project 644720 is named `isitusa`. IP anonymization is enabled; replay, automatic clicks, console capture, network/performance capture and exception capture are disabled. Prepared site events require consent and exclude private routes, input text and token-bearing URLs. Private dashboard 2167947 now contains seven Isitusa-specific measures and explains their limits. Its SQL runs successfully, including the explicit text conversion of the event-version property. Ingestion readback, spend-cap verification and the restricted server query key remain pending. Do not interpret an empty dashboard as verified zero usage.
+
+The existing public embedded Stripe checkout supports one-time and monthly contributions independently of the legacy Supabase checkout flag. The older `participation-stripe` receiver does not yet reconcile that flow and must not be activated as a completed finance integration. The public contact mailbox has previously received a verified message; Resend application sending access, custom Auth SMTP, signed delivery webhooks, scheduling, digest/campaign delivery and retention still need completion before email intake opens.
+
+No local builds, installs, research changes or R2 writes are authorized in this resource allocation. Use hosted build verification; stop below 90 GB free and limit new source/review files to 20 MB.
 
 ## 1. Verify the source locally
 

@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/ui/telemetry";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import Script from "next/script";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -25,14 +26,14 @@ export function DonationCheckout({ hostedLink }: { hostedLink: string | null }) 
     let active = true;
     window.Stripe(config.publicKey).initEmbeddedCheckout({ clientSecret }).then(checkout => {
       if (!active || !mount.current) { checkout.destroy(); return; }
-      embedded.current = checkout; checkout.mount(mount.current);
+      embedded.current = checkout; checkout.mount(mount.current); track("checkout_opened", {surface:"support", frequency});
     }).catch(() => { if (active) { setError("The secure form could not load. Check your connection and try again."); setClientSecret(""); } });
     return () => { active = false; embedded.current?.destroy(); embedded.current = null; };
   }, [clientSecret, scriptReady, config?.publicKey]);
   function change() { setConfirming(false); setError(""); setToken(""); setClientSecret(""); attempt.current = ""; }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); if (lock.current || !token || !donationAmount(amount)) return;
-    lock.current = true; setBusy(true); setError("");
+    track("checkout_started", {surface:"support", frequency}); lock.current = true; setBusy(true); setError("");
     if (!attempt.current) attempt.current = crypto.randomUUID();
     try {
       const fields = new FormData(event.currentTarget);
@@ -40,7 +41,7 @@ export function DonationCheckout({ hostedLink }: { hostedLink: string | null }) 
       const result = await response.json();
       if (!response.ok || typeof result.clientSecret !== "string") throw new Error(result.error || "Checkout could not open. Please try again.");
       setClientSecret(result.clientSecret);
-    } catch (failure) { setError(failure instanceof Error && failure.name !== "TimeoutError" ? failure.message : "Checkout took too long. Please try again."); }
+    } catch (failure) { track("checkout_failed", {surface:"support", frequency}); setError(failure instanceof Error && failure.name !== "TimeoutError" ? failure.message : "Checkout took too long. Please try again."); }
     finally { lock.current = false; setBusy(false); setToken(""); setReset(value => value + 1); }
   }
   return <>

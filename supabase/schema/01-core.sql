@@ -10,7 +10,7 @@ create table public.isitusa_staff (
  display_name text not null, is_owner boolean not null default false,
  active boolean not null default true, permissions text[] not null default '{}',
  created_at timestamptz not null default now(),
- check (permissions <@ array['review','audience','finance','team']::text[])
+ check (permissions <@ array['review','review_decide','audience','finance','analytics','team']::text[])
 );
 create table public.isitusa_catalog (
  kind text not null check(kind in ('county','species')), id text not null,
@@ -164,6 +164,7 @@ begin
  if next_status not in ('in_review','needs_info','accepted','rejected') or length(trim(reason))<3 or length(reason)>2000 then raise exception 'Add a review reason'; end if;
  select * into previous from public.isitusa_sightings where id=sighting for update;
  if previous.id is null or previous.version<>expected_version then raise exception 'This sighting changed. Refresh before reviewing.' using errcode='40001'; end if;
+ if (next_status in ('accepted','rejected') or previous.status in ('accepted','rejected')) and not isitusa_private.has_permission('review_decide') then raise exception 'A lead reviewer must make or reopen a final decision' using errcode='42501'; end if;
  if previous.status in ('accepted','rejected') and next_status<>'in_review' then raise exception 'Reopen this sighting before changing its decision'; end if;
  if previous.status=next_status then raise exception 'Choose a different status'; end if;
  update public.isitusa_sightings set status=next_status, review_note=trim(reason), version=version+1 where id=sighting;
@@ -185,7 +186,8 @@ declare target_email text;
 begin
  if not isitusa_private.has_permission('team') then raise exception 'Access denied' using errcode='42501'; end if;
  if target=auth.uid() or exists(select 1 from public.isitusa_staff where user_id=target and is_owner) then raise exception 'Owner and your own access cannot be changed here'; end if;
- if not grants <@ array['review','audience','finance','team']::text[] or length(trim(name))<1 or length(name)>100 then raise exception 'Invalid team settings'; end if;
+ if not exists(select 1 from public.isitusa_staff where user_id=auth.uid() and is_owner and active) and (not grants <@ array['review']::text[] or exists(select 1 from public.isitusa_staff where user_id=target and not permissions <@ array['review']::text[])) then raise exception 'Only the owner can manage elevated access' using errcode='42501'; end if;
+ if not grants <@ array['review','review_decide','audience','finance','analytics','team']::text[] or length(trim(name))<1 or length(name)>100 then raise exception 'Invalid team settings'; end if;
  select email into target_email from auth.users where id=target;
  if target_email is null then raise exception 'Invite this user first'; end if;
  insert into public.isitusa_staff(user_id,email,display_name,permissions,active) values(target,target_email,trim(name),grants,enabled)

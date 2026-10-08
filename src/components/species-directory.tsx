@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Grid2X2, Info, List, Rows3, Search, X } from "lucide-react";
@@ -30,7 +31,7 @@ function DirectoryCard({ species }: { species: Species }) {
   const { summary } = getSpeciesEditorial(species);
   return (
     <article className="directory-card">
-      <div className="directory-identity"><Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-link">
+      <div className="directory-identity"><Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-link" onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}>
         <div className="directory-thumbnail">
           {species.image && !imageFailed ? (
             <Image src={species.image.thumbnail ?? species.image.src} alt={species.image.alt}
@@ -103,6 +104,11 @@ export function SpeciesDirectory() {
       (!selectedCategories.length || selectedCategories.includes(species.category))
       && (!search || `${species.commonName} ${species.scientificName} ${species.displayGroup}`.toLocaleLowerCase("en-US").includes(search)));
   }, [catalog, selectedCategories, deferredQuery]);
+  useEffect(() => {
+    if (!deferredQuery.trim() || !catalog) return;
+    const timer = window.setTimeout(() => track("species_search_completed",{surface:"directory", result_bucket:resultBucket(matches.length), outcome:matches.length ? "found" : "empty"}), 900);
+    return () => window.clearTimeout(timer);
+  }, [deferredQuery, catalog, matches.length]);
   const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
   const currentPage = Math.min(page, totalPages);
   const start = (currentPage - 1) * pageSize;
@@ -160,7 +166,7 @@ export function SpeciesDirectory() {
               <div><p role="status" aria-live="polite" aria-atomic="true">{matches.length ? `Showing ${start + 1}-${Math.min(start + pageSize, matches.length)} of ${matches.length.toLocaleString()}` : "No matching species"}</p></div>
             </div>
             <div className="directory-display-controls">
-              <div className="directory-view-switch" role="group" aria-label="Species layout">{([{ value: "rows", label: "List", Icon: Rows3 }, { value: "compact", label: "Compact", Icon: List }, { value: "grid", label: "Grid", Icon: Grid2X2 }] as const).map(option => <button type="button" key={option.value} aria-label={option.label} title={option.label} aria-pressed={view === option.value} onClick={() => setView(option.value)}><option.Icon size={18} aria-hidden="true" /><span>{option.label}</span></button>)}</div>
+              <div className="directory-view-switch" role="group" aria-label="Species layout">{([{ value: "rows", label: "List", Icon: Rows3 }, { value: "compact", label: "Compact", Icon: List }, { value: "grid", label: "Grid", Icon: Grid2X2 }] as const).map(option => <button type="button" key={option.value} aria-label={option.label} title={option.label} aria-pressed={view === option.value} onClick={() => {setView(option.value);track("directory_view_changed",{surface:"directory",view:option.value});}}><option.Icon size={18} aria-hidden="true" /><span>{option.label}</span></button>)}</div>
               <CustomSelect label="Per page" compact value={String(pageSize)} options={DIRECTORY_PAGE_SIZES.map(value => ({ value: String(value), label: String(value) }))} onChange={value => { setPageSize(Number(value)); setPage(1); }} />
             </div>
             {matches.length ? (

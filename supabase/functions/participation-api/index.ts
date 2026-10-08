@@ -1,5 +1,6 @@
+import { analyticsSnapshot } from "../_shared/analytics.ts";
 import Stripe from "npm:stripe@22.6.2";
-import { boundedText as rawText, cryptoUri, donationAmount as rawAmount, MAX_PHOTOS, photoType, normalizeEmail as rawEmail, validatePreferences as rawPreferences, validateSighting as rawSighting } from "../../../src/lib/participation/contracts.ts";
+import { boundedText as rawText, cryptoUri, donationAmount as rawAmount, MAX_PHOTOS, PERMISSIONS, photoType, normalizeEmail as rawEmail, validatePreferences as rawPreferences, validateSighting as rawSighting } from "../../../src/lib/participation/contracts.ts";
 const userInput=<T>(fn:()=>T):T=>{try{return fn();}catch(error){throw new HttpError(400,error instanceof Error?error.message:"Check the form.");}};
 const boundedText=(...args:Parameters<typeof rawText>)=>userInput(()=>rawText(...args));
 const donationAmount=(value:unknown)=>userInput(()=>rawAmount(value));
@@ -27,6 +28,11 @@ Deno.serve(async(req:Request)=>{
    return Response.json(items,{headers});
   }
   if(req.method!=="POST")throw new HttpError(405,"Method not allowed.");
+  if(action==="analytics"){
+   const {user}=await staff(req,"analytics");
+   await rate("analytics:"+user.id,20,3600);
+   return Response.json(await analyticsSnapshot(),{headers});
+  }
   if(action==="sighting"){
    if(!enabled("REPORTS_ENABLED"))throw new HttpError(503,"Direct reporting is opening soon. You can report through EDDMapS in the meantime.");
    const bytes=await body(req,16*1024*1024);
@@ -40,6 +46,8 @@ Deno.serve(async(req:Request)=>{
    if(validated.contact_email)await rate("report:"+validated.contact_email,5,3600);
    const id=crypto.randomUUID(),files=form.getAll("photos").filter((v):v is File=>v instanceof File&&v.size>0);
    if(files.length>MAX_PHOTOS)throw new HttpError(400,"Choose up to three photographs.");
+   const reserved=checked(await db.rpc("isitusa_reserve_upload",{reservation:id,requested_bytes:files.reduce((total,file)=>total+file.size,0)}));
+   if(!reserved)throw new HttpError(503,"Photo intake has reached its storage allowance. Please use the linked reporting programs while we make room.");
    const photos:{path:string;mime:string;bytes:number}[]=[];
    try{
     for(const file of files){
@@ -51,7 +59,15 @@ Deno.serve(async(req:Request)=>{
      photos.push({path,mime,bytes:data.length});
     }
     checked(await db.rpc("isitusa_submit_sighting",{sighting:id,body:validated,photos}));
-   }catch(error){if(photos.length)await db.storage.from("isitusa-sightings").remove(photos.map(p=>p.path));throw error;}
+   }catch(error){
+    // A timed-out commit may have succeeded. Preserve private files and the reservation
+    // until an owner can reconcile the receipt; an uncertain response must not erase evidence.
+    const existing=await db.from("isitusa_sightings").select("id").eq("id",id).maybeSingle();
+    if(!existing.error&&existing.data)return Response.json({id,received:true},{status:201,headers});
+    throw error;
+   }
+   // A failed reservation release is safe: it only reduces remaining intake capacity.
+   await db.from("isitusa_upload_reservations").delete().eq("id",id);
    return Response.json({id,received:true},{status:201,headers});
   }
   const input=await json(req);
@@ -104,7 +120,9 @@ Deno.serve(async(req:Request)=>{
    if(!enabled("STAFF_INVITES_ENABLED")||!enabled("EMAIL_ENABLED"))throw new HttpError(503,"Staff invitations are not configured yet.");
    const email=normalizeEmail(input.email),name=boundedText(input.name,"a name",100);
    const grants=Array.isArray(input.permissions)?input.permissions:[];
-   if(grants.some(p=>!["review","audience","finance","team"].includes(String(p))))throw new HttpError(400,"Choose valid permissions.");
+   if(grants.some(p=>!PERMISSIONS.some(value=>value===p)))throw new HttpError(400,"Choose valid permissions.");
+   const owner=checked(await client.from("isitusa_staff").select("is_owner").eq("user_id",(await client.auth.getUser()).data.user!.id).single());
+   if(!owner?.is_owner&&grants.some(p=>p!=="review"))throw new HttpError(403,"Only the owner can grant elevated access.");
    const invited=await db.auth.admin.inviteUserByEmail(email,{redirectTo:`${site()}/auth/confirm`});
    if(invited.error||!invited.data.user)throw new HttpError(400,"This invitation could not be sent. Check the address and existing team accounts.");
    const saved=await client.rpc("isitusa_save_staff",{target:invited.data.user.id,grants,enabled:true,name});

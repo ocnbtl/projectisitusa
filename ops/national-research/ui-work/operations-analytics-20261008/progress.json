@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-08",
+  "status": "Backend and public reference catalog verified; credentials and end-to-end release checks pending",
+  "ownerLoginConfirmed": true,
+  "ownerAddressStorage": "User-provided address remains in chat; not committed here.",
+  "supabase": {
+    "organization": "ecuyrhklxgoqbexlhevh",
+    "organizationPlanObserved": "Free",
+    "projectCreated": true,
+    "projectId": "cnbcqzecxydgpeejeegy",
+    "schemaApplied": true,
+    "migrations": [
+      {
+        "version": "20261008083654",
+        "name": "isitusa_private_operations_foundation"
+      },
+      {
+        "version": "20261008083750",
+        "name": "restrict_platform_rls_trigger_execution"
+      },
+      {
+        "version": "20261008110215",
+        "name": "review_species_identification"
+      }
+    ],
+    "securityAdvisors": {
+      "errors": 0,
+      "warnings": 0,
+      "informationalServiceOnlyTables": 7
+    },
+    "rlsTablesVerified": 19,
+    "authAndDeliveryConfigured": false,
+    "functionsDeployed": [
+      "participation-api v3 (SQL comparison fixed; next action coverage expansion pending)",
+      "participation-resend v1"
+    ],
+    "ownerProvisioned": false,
+    "authSettingsVerified": {
+      "publicSignup": false,
+      "anonymousSignIn": false,
+      "emailConfirmation": true,
+      "observed": "2026-10-08",
+      "evidence": "auth-invitation-only.png",
+      "siteUrl": "https://isitusa.com",
+      "redirectUrls": [
+        "https://isitusa.com/auth/confirm"
+      ]
+    },
+    "catalog": {
+      "species": 2504,
+      "counties": 3144,
+      "source": "site:5701c3db18050083c19a3d892430ce28313d6ac3",
+      "publicIdsOnly": true,
+      "alaskaAndHawaiiSearch": "PASS"
+    },
+    "productionPublicConfigSaved": true
+  },
+  "posthog": {
+    "organization": "01a10576-3f7e-0000-9e7c-44785798af53",
+    "project": 644720,
+    "ingestionTokenType": "public only",
+    "dashboard": 2167947,
+    "dashboardCurated": true,
+    "serverReadKeyConfigured": false,
+    "liveCaptureVerified": false,
+    "privacySettings": {
+      "anonymizeIps": true,
+      "autocapture": false,
+      "replay": false,
+      "console": false,
+      "performance": false,
+      "exceptions": false
+    },
+    "dashboardPrivate": true,
+    "dashboardMetrics": 7
+  },
+  "prepared": [
+    "explicit consent-based capture and semantic hooks",
+    "public privacy choices and notice",
+    "aggregate analytics workspace and fixed server queries",
+    "role presets and owner-only elevated grants",
+    "lead reviewer final decision gate",
+    "700 MB upload reservations; ambiguous submissions preserve originals"
+  ],
+  "verification": {
+    "frontendTypecheck": "PASS no emit",
+    "privacyAssertions": 16,
+    "externalCallsDuringTests": 0,
+    "localBuilds": 0,
+    "sqlTests": "PASS: authorization, transactions, delivery-quota, roles-capacity including catalog identification gate and preservation of observer label. In-memory only.",
+    "renderedReview": "pending hosted preview",
+    "freeDiskBytes": 93103312896,
+    "hostedMutationTests": "Automatic approval review rejected hosted fixture tests as high risk requiring explicit authorization. Replaced with isolated local execution, not bypassed.",
+    "edgeTypecheck": "PASS: all five functions, existing cached Deno dependencies; no install",
+    "contractTests": "PASS: 6",
+    "webhookSignatureTests": "PASS: 1 (raw-body integrity, secret and freshness)",
+    "hostedChecks": {
+      "config": 200,
+      "foreignOrigin": 403,
+      "analyticsUnauthenticated": 401,
+      "photoUnauthenticated": 401,
+      "inviteUnauthenticated": 401,
+      "signupDisabled": 503,
+      "sightingDisabled": 503,
+      "legacyCheckoutDisabled": 503
+    },
+    "analyticsSql": "PASS live query execution: four fixed server queries and four headline projections; production ingestion remains unverified"
+  },
+  "remaining": [
+    "Finish hosted integration verification; local fixtures do not verify Supabase Auth/Storage APIs",
+    "Provision owner and verify invitation/MFA",
+    "Configure verified email and signed webhooks",
+    "Implement and verify digest/campaign delivery and retention",
+    "Integrate actual Stripe one-time/recurring records",
+    "Configure PostHog scoped read access and verify production capture; curated private dashboard saved",
+    "Hosted build, rendered review, documentation review, deploy and live verification",
+    "Public frontend configuration saved; CSP authored; new hosted preview and production release still pending."
+  ],
+  "recordedAt": "2026-10-08T11:14:21.423Z",
+  "pendingConfirmation": "Restricted Resend sending key for alerts.isitusa.com and PostHog query-read key for project 644720; save only to Supabase."
+}
