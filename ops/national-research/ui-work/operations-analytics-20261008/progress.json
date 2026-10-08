@@ -31,7 +31,7 @@
     "rlsTablesVerified": 19,
     "authAndDeliveryConfigured": false,
     "functionsDeployed": [
-      "participation-api v4 (numeric version filtering and all 20 action types)",
+      "participation-api v5 (authenticated connection status; existing analytics contracts preserved)",
       "participation-resend v1"
     ],
     "ownerProvisioned": false,
@@ -127,6 +127,30 @@
       "commit": "5ea39f4365c81a2614b0f1e0782c6f379aecf8ab"
     },
     "production": {
+      "deployment": "DQMuen95tcgNjCea8sY7eaY8HmNm",
+      "commit": "96e79f3d05f8eb141adc0106e68b7daedf2f5882",
+      "url": "https://isitusa.com",
+      "immutableUrl": "https://projectisitusa-l913bz6wp-unigentamos.vercel.app",
+      "result": "READY, Production, isitusa.com assigned; 5m5s hosted rebuild",
+      "publicRoutes200": [
+        "/",
+        "/species",
+        "/admin",
+        "/privacy"
+      ],
+      "newLoginAndPrivacy": true,
+      "anonymousAdmin": "Invitation-only form; no private data or fixture",
+      "previewRoute": {
+        "httpStatus": 200,
+        "rendered": "Custom page-not-found; Next streamed notFound marker",
+        "fixtureExposed": false,
+        "note": "Not a transport-level 404; noindex metadata present. Record this limitation rather than claiming HTTP404."
+      },
+      "checkout": "GET200 no-store, one-time/monthly available and portal configured; no transaction",
+      "rollbackDeployment": "GS5VRKAJBNKz2LkMmFY8zXiDp3WT",
+      "screenshot": "internal-production-login.png"
+    },
+    "previousProduction": {
       "deployment": "GS5VRKAJBNKz2LkMmFY8zXiDp3WT",
       "commit": "5ea39f4365c81a2614b0f1e0782c6f379aecf8ab",
       "result": "READY, Production, isitusa.com assigned; 4m24s hosted build",
@@ -157,7 +181,7 @@
     "Integrate actual Stripe one-time/recurring records",
     "Configure PostHog scoped read access and verify production capture; curated private dashboard saved"
   ],
-  "recordedAt": "2026-10-08T12:01:48.229413+00:00",
+  "recordedAt": "2026-10-08T19:54:30.922197+00:00",
   "pendingConfirmation": "Restricted Resend sending key for alerts.isitusa.com and PostHog query-read key for project 644720; save only to Supabase.",
   "publicCatalogAccess": {
     "methods": [
@@ -170,5 +194,14 @@
     "cacheRefresh": "Two exact current bundle paths; source files preserved",
     "addedExactPreviewOrigins": 2,
     "previewMap": "PASS"
+  },
+  "internalWorkspaceContinuation": {
+    "record": "workspace-release.json",
+    "verification": "internal-workspace-verification.md",
+    "appCommit": "96e79f3d05f8eb141adc0106e68b7daedf2f5882",
+    "status": "Released; full operations incomplete",
+    "schemaIncrement": "campaign_draft_editing",
+    "presentationReview": "ship for eight rendered synthetic/login/privacy views only",
+    "fullOperationsComplete": false
   }
 }
