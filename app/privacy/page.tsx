@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
 import styles from "@/components/participation/participation.module.css";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
-import { activeStripePaymentLink } from "@/lib/ui/support-destinations";
 
 export const metadata: Metadata = { title: "Privacy | isitusa" };
 export default function Page() {
-  const active = Boolean(activeStripePaymentLink(SUPPORT_DESTINATIONS));
   const { contactEmail, contactVerifiedAt } = SUPPORT_DESTINATIONS.cardSupport;
   return <main id="main-content" className={styles.page}>
-    <header className={styles.intro}><h1>A little information. A clear purpose.</h1><p>isitusa is an independent initiative based in the United States. This notice describes site analytics, contributions, and the participation services being prepared for launch.</p></header>
+    <header className={styles.intro}><h1>Your information, handled with care.</h1><p>We use information to operate isitusa, improve the atlas and respond when you choose to get involved. Here is what that means for you.</p></header>
     <div className={styles.prose}>
-      <h2>Optional site analytics</h2>
-      <p>With your permission, PostHog records page views and a limited set of actions, such as exploring a county, opening evidence, requesting a signup confirmation, or opening checkout. We use this to improve the atlas. We do not send search text, email addresses, report contents, photographs, precise coordinates, payment details, or private workspace activity to PostHog. Species page addresses are grouped together; URL query strings and fragments are excluded.</p>
-      <p>Analytics is off until you allow it. We store a random browser identifier and a visit identifier in your browser&apos;s local storage to estimate returning visits. These identifiers are not linked to your account, email, or donation. We do not enable session recordings or automatic capture of form fields. IP-based location enrichment is disabled. PostHog still receives the network connection needed to deliver an event; see <a className="text-link" href="https://posthog.com/privacy" target="_blank" rel="noreferrer">PostHog&apos;s privacy policy</a>.</p>
-      <p>Use Privacy choices in the footer or on the map to turn analytics off. This stops future events and removes our analytics identifiers from this browser. It does not erase events already received by PostHog. We respect Global Privacy Control and Do Not Track signals. Declining analytics does not change access to the atlas.</p>
-      <h2>Contributions</h2>
-      <p>{active ? "Card contributions use Stripe checkout, embedded on this website where available or on Stripe's payment page." : "Card contributions are not open yet. The planned checkout uses Stripe's hosted payment page."} Stripe processes the information you enter at checkout. Authorized project account users can access payment references, amounts, currencies, payment status, and contact details supplied at checkout in Stripe. The public isitusa website does not collect or store your card number, or automatically copy these hosted payment records into its own database.</p>
-      <p>Read <a className="text-link" href="https://stripe.com/privacy" target="_blank" rel="noreferrer">Stripe&apos;s privacy policy</a> for how Stripe handles payment information. Public blockchain transfers may be visible to others; Monero payments require separate verification.</p>
-      <h2>Refund requests</h2>
-      <p>The refund request form collects your email, contribution date, amount and currency, payment method, optional payment reference, and reason for the request. We use these details to review the request and reply. Resend delivers requests to our support inbox; Cloudflare Turnstile checks submissions for automated abuse. The form does not issue refunds or subscribe you to updates. Access is limited to those handling contribution support. Request correspondence is kept while needed for review, payment disputes, and applicable recordkeeping; contact us to request access or removal.</p>
-      <h2>Email updates and observations</h2>
-      <p>Email signup and sighting submission services are being prepared separately. Before they open, this notice will describe the information collected, who can access it, retention, and how to change preferences or request removal. Opening card contributions does not open these other services.</p>
-      <h2>Service providers</h2>
-      <p>Stripe handles checkout and recurring contributions. Cloudflare Turnstile verifies checkout requests. Our server sends the selected amount and frequency to Stripe to open checkout; card details go directly to Stripe. Resend delivers refund requests to our support inbox, and Cloudflare Turnstile helps prevent automated abuse. Supabase is planned for the separate participation services. The hosted Payment Link does not require an isitusa account or enrollment in those services.</p>
-      <h2>Your choices</h2>
-      <p>Giving support does not sign you up for a mailing list. We do not sell personal information collected through contributions.</p>
-      {contactVerifiedAt ? <p>For questions about contribution information or requests to access or remove it, email <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a>. Financial records may need to be retained separately from mailing preferences.</p> : <p>We will confirm a working contact route before opening contributions. The planned address is {contactEmail}; it is not confirmed to receive messages yet.</p>}
-      <p className={styles.hint}>Updated October 8, 2026. Each participation service will open only after its setup and verification are complete.</p>
+      <h2>Using the website</h2>
+      <p>You can explore the atlas without an account. Optional analytics helps us understand how people use the website. It stays off unless you allow it, and you can change your choice through Privacy choices on the map or in the footer. We respect browser Do Not Track and Global Privacy Control signals.</p>
+      <details><summary className="text-link">More about analytics</summary><p>PostHog receives page views and selected interactions. Random browser and visit identifiers are stored locally to help estimate usage; they are not linked to your email, account or contribution. We exclude search text, form contents, photographs, precise coordinates, payment details and private workspace activity. Query strings and URL fragments are excluded, and species page addresses are grouped.</p><p>Session recording and automatic form capture are disabled. IP-based location enrichment is disabled, although the provider receives the network connection needed to deliver an event. Turning analytics off stops future events and removes the local identifiers; it does not erase events already received. See <a className="text-link" href="https://posthog.com/privacy" target="_blank" rel="noreferrer">PostHog&apos;s privacy policy</a>.</p></details>
+      <h2>Contributing and contacting us</h2>
+      <p>Stripe handles card contributions and recurring payments. We do not receive or store your card number. Authorized project staff can access the payment and contact information needed to support contributions. Giving does not subscribe you to emails, and we do not sell the personal information collected through contributions.</p>
+      <p>If you request a refund, we use the contact and contribution details you provide to review your request and reply. Correspondence is retained as needed for that process, disputes and applicable recordkeeping. Cryptocurrency transfers may be publicly visible on their networks.</p>
+      <h2>Community and team services</h2>
+      <p>Email updates and direct sighting reports are being prepared. Their forms will explain what you are sharing and your choices before they open. The private team workspace uses invitation-only access, an authenticator and permissions appropriate to each role.</p>
+      <h2>The services behind isitusa</h2>
+      <p>Vercel and Cloudflare help deliver and protect the website. Stripe processes contributions, PostHog supports optional analytics, Resend delivers support messages, and Supabase supports the private workspace. These services receive the information needed for their role. Additional mailing and reporting services are not yet open.</p>
+      <p>Read the privacy information from <a className="text-link" href="https://stripe.com/privacy" target="_blank" rel="noreferrer">Stripe</a>, <a className="text-link" href="https://resend.com/legal/privacy-policy" target="_blank" rel="noreferrer">Resend</a>, <a className="text-link" href="https://supabase.com/privacy" target="_blank" rel="noreferrer">Supabase</a>, <a className="text-link" href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noreferrer">Vercel</a> and <a className="text-link" href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">Cloudflare</a>.</p>
+      <h2>Your choices and questions</h2>
+      {contactVerifiedAt ? <p>Contact <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> to ask about information we hold or request access, correction or removal. Some financial and security records may need to be retained separately.</p> : <p>A verified contact route will be provided before additional services open.</p>}
+      <p className={styles.hint}>isitusa is an independent initiative based in the United States. Updated October 8, 2026.</p>
     </div>
   </main>;
 }

@@ -2,7 +2,8 @@ const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_pro
 const root='C:/Code/project-isitusa';
 const {loadESLint}=require(root+'/node_modules/eslint');
 (async()=>{
- const files=cp.execFileSync('git',['diff','--name-only','5701c3db18050083c19a3d892430ce28313d6ac3','--','app','src','next.config.ts'],{encoding:'utf8'}).trim().split('\n').filter(p=>/\.[jt]sx?$/.test(p));
+ const tracked=cp.execFileSync('git',['diff','--name-only','5701c3db18050083c19a3d892430ce28313d6ac3','--','app','src','next.config.ts'],{encoding:'utf8'}).trim().split('\n').filter(p=>/\.[jt]sx?$/.test(p));
+ const files=[...new Set([...tracked,...cp.execFileSync('git',['ls-files','--others','--exclude-standard','--','app','src'],{encoding:'utf8'}).trim().split('\n').filter(p=>/\.[jt]sx?$/.test(p))])];
  const ESLint=await loadESLint({useFlatConfig:false});
  const eslint=new ESLint({cwd:root,cache:false});let errors=0,warnings=0;
  for(const p of files){

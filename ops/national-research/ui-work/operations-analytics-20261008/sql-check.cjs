@@ -17,9 +17,10 @@ const root=process.cwd();
     GRANT SELECT ON storage.objects TO authenticated;
     ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO anon,authenticated,service_role;
     ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO anon,authenticated,service_role;`);
-  for(const file of ['01-core.sql','02-workflows.sql','03-support-and-campaigns.sql','04-capacity.sql','05-identification.sql']){await db.exec(fs.readFileSync(path.join(root,'supabase/schema',file),'utf8'));report.schema.push(file);console.log('SCHEMA PASS '+file);}
+  for(const file of ['01-core.sql','02-workflows.sql','03-support-and-campaigns.sql','04-capacity.sql','05-identification.sql','06-campaign-editing.sql']){await db.exec(fs.readFileSync(path.join(root,'supabase/schema',file),'utf8'));report.schema.push(file);console.log('SCHEMA PASS '+file);}
   for(const file of ['authorization.sql','transactions.sql','delivery-quota.sql']){await db.exec(fs.readFileSync(path.join(root,'tests/participation',file),'utf8'));report.tests.push(file);console.log('TEST PASS '+file);}
   await db.exec(fs.readFileSync(path.join(__dirname,'roles-capacity.sql'),'utf8'));report.tests.push('roles-capacity.sql');console.log('TEST PASS roles-capacity.sql');
+  await db.exec(fs.readFileSync(path.join(__dirname,'campaign-editing.sql'),'utf8'));report.tests.push('campaign-editing.sql');console.log('TEST PASS campaign-editing.sql');
   report.status='passed';
  }catch(e){report.status='failed';report.error={message:e.message,code:e.code,detail:e.detail,where:e.where,position:e.position};console.error(JSON.stringify(report.error));process.exitCode=1;}
  finally{await db.close();report.finishedAt=new Date().toISOString();fs.writeFileSync(path.join(__dirname,'sql-report.json'),JSON.stringify(report,null,2));}
