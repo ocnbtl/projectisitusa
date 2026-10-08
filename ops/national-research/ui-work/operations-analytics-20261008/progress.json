@@ -1,7 +1,7 @@
 {
   "date": "2026-10-08",
-  "status": "Public analytics preview verified; dark-theme review correction prepared; operations activation pending",
-  "ownerLoginConfirmed": true,
+  "status": "Public consent analytics and privacy release live and verified; full operations activation remains incomplete",
+  "ownerAddressConfirmed": true,
   "ownerAddressStorage": "User-provided address remains in chat; not committed here.",
   "supabase": {
     "organization": "ecuyrhklxgoqbexlhevh",
@@ -97,8 +97,8 @@
     "externalCallsDuringTests": 0,
     "localBuilds": 0,
     "sqlTests": "PASS: authorization, transactions, delivery-quota, roles-capacity including catalog identification gate and preservation of observer label. In-memory only.",
-    "renderedReview": "Light desktop 2560x1255 and mobile 390x844 checked. Fresh reviewer found dark consent surface token; correction prepared.",
-    "freeDiskBytes": 109739323392,
+    "renderedReview": "PASS bounded public scope: light desktop/mobile and corrected dark open/closed consent controls independently reviewed; private authenticated UI not approved.",
+    "freeDiskBytes": 109655474176,
     "hostedMutationTests": "Automatic approval review rejected hosted fixture tests as high risk requiring explicit authorization. Replaced with isolated local execution, not bypassed.",
     "edgeTypecheck": "PASS: all five functions, existing cached Deno dependencies; no install",
     "contractTests": "PASS: 6",
@@ -111,7 +111,8 @@
       "inviteUnauthenticated": 401,
       "signupDisabled": 503,
       "sightingDisabled": 503,
-      "legacyCheckoutDisabled": 503
+      "legacyCheckoutDisabled": 503,
+      "anonymousStaffRead": 401
     },
     "analyticsSql": "PASS live query execution: four fixed server queries and four headline projections; production ingestion remains unverified",
     "lint": {
@@ -121,9 +122,31 @@
       "note": "Existing raw-image performance guidance; private originals are not passed through an image proxy."
     },
     "hostedPreview": {
-      "result": "READY; map, species search, privacy and closed signup/report states inspected; dark-theme review correction requires next build",
-      "deployment": "8HhHvfoytzzXkip5V9QJkT7Kcbtv",
-      "commit": "a817714726bf0fde1d9dd29f49a20952995d6aed"
+      "result": "READY; corrected dark-theme controls inspected and fresh reviewer disposition ship for public analytics/consent only",
+      "deployment": "7u6Hdp7vV1mUa45zTBF5x5MyyjrH",
+      "commit": "5ea39f4365c81a2614b0f1e0782c6f379aecf8ab"
+    },
+    "production": {
+      "deployment": "GS5VRKAJBNKz2LkMmFY8zXiDp3WT",
+      "commit": "5ea39f4365c81a2614b0f1e0782c6f379aecf8ab",
+      "result": "READY, Production, isitusa.com assigned; 4m24s hosted build",
+      "publicRoutes200": [
+        "/",
+        "/species",
+        "/privacy",
+        "/join",
+        "/report",
+        "/admin"
+      ],
+      "privacyNoticeAndBackendCsp": true,
+      "mapRendered": true,
+      "privacyRespectsBrowserTrackingPreference": true,
+      "anonymousAdmin": "Invitation-only login; no private content",
+      "signup": "Closed state rendered",
+      "reports": "Closed state rendered",
+      "checkout": "GET 200, no-store, one-time/monthly available, portal configured; controls rendered; no transaction",
+      "rollbackDeployment": "ABn76EiyuVYBner36JK5Px4Vzuid",
+      "screenshot": "production-map-verified.png"
     }
   },
   "remaining": [
@@ -132,11 +155,9 @@
     "Configure verified email and signed webhooks",
     "Implement and verify digest/campaign delivery and retention",
     "Integrate actual Stripe one-time/recurring records",
-    "Configure PostHog scoped read access and verify production capture; curated private dashboard saved",
-    "Hosted build, rendered review, documentation review, deploy and live verification",
-    "Public frontend configuration saved; CSP authored; new hosted preview and production release still pending."
+    "Configure PostHog scoped read access and verify production capture; curated private dashboard saved"
   ],
-  "recordedAt": "2026-10-08T11:44:18.4324685Z",
+  "recordedAt": "2026-10-08T12:01:48.229413+00:00",
   "pendingConfirmation": "Restricted Resend sending key for alerts.isitusa.com and PostHog query-read key for project 644720; save only to Supabase.",
   "publicCatalogAccess": {
     "methods": [
