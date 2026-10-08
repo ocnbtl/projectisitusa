@@ -1106,60 +1106,6 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
       {countyData && loadState === "success" ? (
         <>
-          <div className="py-5">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <h2
-                  id="county-research-heading"
-                  className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
-                >
-                  {countyData.countyName}
-                </h2>
-                <details className="research-record-details"><summary>About these records</summary><p>County identifier: {countyData.countyFips}. Compiled {formatTimestamp(countyData.generatedAt)}. Check each source for the date of the finding.</p></details>
-              </div>
-            </div>
-
-            <div className="county-finding-overview" aria-label="County research overview">
-              {[
-                { status: "verified-present", label: "Recorded here", count: countyData.summary.verifiedPresent, note: "Includes historical records. Check the dates." },
-                { status: "verified-absent", label: "Official absence finding", count: countyData.summary.verifiedAbsent, note: "Explicit evidence for a stated place and period." },
-                { status: "not-detected", label: "Survey found no detections", count: countyData.summary.notDetected, note: "No presence or absence determination; not proof of absence." },
-                { status: "researched-unresolved", label: "More evidence needed", count: countyData.summary.researchedUnresolved, note: "Sources checked; no determination yet." },
-                { status: "not-researched", label: "Not researched yet", count: countyData.summary.notResearched, note: "Research has not started for these species." },
-              ].map(item => <button key={item.status} type="button" aria-pressed={statusFilter === item.status} onClick={() => { setStatusFilter(item.status); setQuery(""); setCategoryFilter("all"); }}><span>{item.label}</span><strong>{formatNumber(item.count)}</strong><small>{item.note}</small></button>)}
-            </div>
-            {(countyData.summary.blockedPairs > 0 || countyData.summary.notApplicablePairs > 0) && <p className="county-scope-note">Also in the full catalog: {formatNumber(countyData.summary.blockedPairs)} species awaiting a scope decision and {formatNumber(countyData.summary.notApplicablePairs)} explicitly outside this state’s scope.</p>}
-            <details className="county-research-detail"><summary>Research progress and how to read these findings</summary>
-            {progress && <div className="county-progress">
-              <div><h3>Research started for {formatNumber(progress.started)} of {formatNumber(progress.total)} species</h3><span>{progress.percent.toFixed(1)}%</span></div>
-              <progress aria-label="Species with a source check or reviewed finding" value={progress.started} max={progress.total || 1} />
-              <p>Each has at least one source check or reviewed finding. Research may still be incomplete. Choose a finding below to see the species and their evidence.</p>
-            </div>}
-
-              <p>The overview assigns each species one finding, with recorded presence taking precedence. A species can also have a survey non-detection or a later official absence finding. Those separate records remain visible in its evidence; they do not erase occurrence history.</p>
-              <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
-                {formatPercent(countyData.summary.researchCoveragePercent)} of county-species questions have a source check
-              </p>
-            {countyData.questionAssessment ? (
-              <div className="mt-4 rounded-lg border border-[var(--border)] p-3 text-sm">
-                <p className="font-medium">Research questions: {formatNumber(countyData.questionAssessment.assessedQuestionCount)} of {formatNumber(countyData.questionAssessment.requiredQuestionCount)} assessed</p>
-                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-                  {formatNumber(countyData.questionAssessment.fullyAssessedPairCount)} of {formatNumber(countyData.questionAssessment.pairDenominator)} county-species pairs have every required question assessed. Assessment cutoff: {countyData.questionAssessment.assessmentAsOf}.
-                  {" "}Occurrence history, wild observations, establishment and official absence or eradication are assessed separately.
-                </p>
-              </div>
-            ) : null}
-            <dl className="mt-4 grid grid-cols-2 divide-x divide-y divide-[var(--border)] border-y border-[var(--border)] sm:grid-cols-3 lg:grid-cols-6">
-              <Metric label="Verified present" value={formatNumber(countyData.summary.verifiedPresent)} />
-              <Metric label="Verified absent" value={formatNumber(countyData.summary.verifiedAbsent)} />
-              <Metric label="Not detected" value={formatNumber(countyData.summary.notDetected)} />
-              <Metric label="Unresolved" value={formatNumber(countyData.summary.researchedUnresolved)} />
-              <Metric label="Not researched" value={formatNumber(countyData.summary.notResearched)} />
-              <Metric label="Total pairs" value={formatNumber(countyData.pairs.length)} />
-            </dl>
-            </details>
-          </div>
-
           <div className="grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2 lg:grid-cols-[minmax(240px,1.2fr)_minmax(170px,0.8fr)_minmax(170px,0.8fr)_40px]">
             <SearchField
               label="Find a species"
@@ -1204,6 +1150,59 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               </button>
             </div>
           </div>
+
+          <details className="county-research-detail border-b border-[var(--border)] py-2">
+            <summary>County findings and research progress</summary>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2
+                  id="county-research-heading"
+                  className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
+                >
+                  {countyData.countyName}
+                </h2>
+                <details className="research-record-details"><summary>About these records</summary><p>County identifier: {countyData.countyFips}. Compiled {formatTimestamp(countyData.generatedAt)}. Check each source for the date of the finding.</p></details>
+              </div>
+            </div>
+
+            <div className="county-finding-overview" aria-label="County research overview">
+              {[
+                { status: "verified-present", label: "Recorded here", count: countyData.summary.verifiedPresent, note: "Includes historical records. Check the dates." },
+                { status: "verified-absent", label: "Official absence finding", count: countyData.summary.verifiedAbsent, note: "Explicit evidence for a stated place and period." },
+                { status: "not-detected", label: "Survey found no detections", count: countyData.summary.notDetected, note: "No presence or absence determination; not proof of absence." },
+                { status: "researched-unresolved", label: "More evidence needed", count: countyData.summary.researchedUnresolved, note: "Sources checked; no determination yet." },
+                { status: "not-researched", label: "Not researched yet", count: countyData.summary.notResearched, note: "Research has not started for these species." },
+              ].map(item => <button key={item.status} type="button" aria-pressed={statusFilter === item.status} onClick={() => setStatusFilter(item.status)}><span>{item.label}</span><strong>{formatNumber(item.count)}</strong><small>{item.note}</small></button>)}
+            </div>
+            {(countyData.summary.blockedPairs > 0 || countyData.summary.notApplicablePairs > 0) && <p className="county-scope-note">Also in the full catalog: {formatNumber(countyData.summary.blockedPairs)} species awaiting a scope decision and {formatNumber(countyData.summary.notApplicablePairs)} explicitly outside this state’s scope.</p>}
+            {progress && <div className="county-progress">
+              <div><h3>Research started for {formatNumber(progress.started)} of {formatNumber(progress.total)} species</h3><span>{progress.percent.toFixed(1)}%</span></div>
+              <progress aria-label="Species with a source check or reviewed finding" value={progress.started} max={progress.total || 1} />
+              <p>Each has at least one source check or reviewed finding. Research may still be incomplete. Use the finding filter to see species and evidence.</p>
+            </div>}
+
+              <p>The overview assigns each species one finding, with recorded presence taking precedence. A species can also have a survey non-detection or a later official absence finding. Those separate records remain visible in its evidence; they do not erase occurrence history.</p>
+              <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
+                {formatPercent(countyData.summary.researchCoveragePercent)} of county-species questions have a source check
+              </p>
+            {countyData.questionAssessment ? (
+              <div className="mt-4 rounded-lg border border-[var(--border)] p-3 text-sm">
+                <p className="font-medium">Research questions: {formatNumber(countyData.questionAssessment.assessedQuestionCount)} of {formatNumber(countyData.questionAssessment.requiredQuestionCount)} assessed</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {formatNumber(countyData.questionAssessment.fullyAssessedPairCount)} of {formatNumber(countyData.questionAssessment.pairDenominator)} county-species pairs have every required question assessed. Assessment cutoff: {countyData.questionAssessment.assessmentAsOf}.
+                  {" "}Occurrence history, wild observations, establishment and official absence or eradication are assessed separately.
+                </p>
+              </div>
+            ) : null}
+            <dl className="mt-4 grid grid-cols-2 divide-x divide-y divide-[var(--border)] border-y border-[var(--border)] sm:grid-cols-3 lg:grid-cols-6">
+              <Metric label="Verified present" value={formatNumber(countyData.summary.verifiedPresent)} />
+              <Metric label="Verified absent" value={formatNumber(countyData.summary.verifiedAbsent)} />
+              <Metric label="Not detected" value={formatNumber(countyData.summary.notDetected)} />
+              <Metric label="Unresolved" value={formatNumber(countyData.summary.researchedUnresolved)} />
+              <Metric label="Not researched" value={formatNumber(countyData.summary.notResearched)} />
+              <Metric label="Total pairs" value={formatNumber(countyData.pairs.length)} />
+            </dl>
+          </details>
 
           <div className="flex gap-5 overflow-x-auto border-b border-[var(--border)] py-3 text-xs whitespace-nowrap">
             <span className="font-semibold tabular-nums text-[var(--foreground)]">
