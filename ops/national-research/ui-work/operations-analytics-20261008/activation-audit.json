@@ -1,0 +1,63 @@
+{
+  "verifiedAt": "2026-10-08T20:02:52.848396+00:00",
+  "publicRelease": "96e79f3d05f8eb141adc0106e68b7daedf2f5882",
+  "liveCounts": {
+    "authAccounts": 0,
+    "activeOwners": 0,
+    "subscribers": 0,
+    "sightings": 0,
+    "internalContributionRecords": 0,
+    "outboxRows": 0,
+    "sentRows": 0
+  },
+  "workerCompletedThisTurn": {
+    "name": "participation-delivery",
+    "version": 1,
+    "status": "ACTIVE but sending unconfigured and disabled",
+    "hash": "c5776b7484d088739e3a87439056fb7fcd73b74a63854f5d501499a692548595",
+    "cachedTypecheck": "PASS",
+    "GET": 401,
+    "unauthenticatedPOST": 503,
+    "emailsSent": 0
+  },
+  "providerCorrection": "participation-resend readback is v2, not the v1 recorded in older notes",
+  "userActions": [
+    "Specific approval for Resend domain-restricted sending key, PostHog project-restricted query-read key, private backend storage and sole owner provisioning/setup email; asked together this turn",
+    "Owner personally enters password and completes authenticator enrollment when the setup link is ready",
+    "Provide organization mailing address for public newsletter footer; does not block transactional setup"
+  ],
+  "alreadyAuthorized": [
+    "scoped implementation",
+    "ordinary testing using approved owner recipient",
+    "production publishing",
+    "donation-based Stripe fees"
+  ],
+  "engineeringRemaining": [
+    "Configure Auth SMTP and invitation/recovery templates; create owner only after specific grant approval; verify MFA and role isolation",
+    "Configure Resend sender/reply-to, worker secret and schedule, signed bounce/complaint webhook, rate-limit salt and Turnstile backend settings; verify confirmation/preferences/unsubscribe delivery",
+    "Implement campaign approval/sending and published-release county/species digest matching with scheduled processing",
+    "Replace legacy Stripe receiver contract: live checkout metadata purpose=isitusa-contribution, legacy receiver expects isitusa_request_id; add monthly invoice events, exact-once receipts and refund/dispute mapping",
+    "Verify hosted private photo uploads, reviewer/lead permissions, visibility, capacity and retention/recovery before report intake",
+    "Connect aggregate PostHog reporting and verify opted-in production capture without disabling user DNT/GPC"
+  ],
+  "launchSequence": [
+    "owner and staff login",
+    "internal analytics",
+    "one-time/monthly receipt reconciliation",
+    "email signup after supported promised delivery streams work",
+    "moderated report intake",
+    "scheduled publication-driven digests and campaigns"
+  ],
+  "noNewGeneralDeploymentApprovalNeeded": true,
+  "freeDiskBytes": 108276699136,
+  "mailingFrequencyDefaults": {
+    "counties": "weekly when changed",
+    "species": "weekly when changed",
+    "facts": "monthly",
+    "action": "occasional"
+  },
+  "references": [
+    "https://docs.stripe.com/billing/subscriptions/webhooks",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}

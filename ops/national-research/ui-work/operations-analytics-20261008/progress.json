@@ -31,8 +31,9 @@
     "rlsTablesVerified": 19,
     "authAndDeliveryConfigured": false,
     "functionsDeployed": [
-      "participation-api v5 (authenticated connection status; existing analytics contracts preserved)",
-      "participation-resend v1"
+      "participation-api v5",
+      "participation-resend v2 (fresh provider readback)",
+      "participation-delivery v1 (deployed disabled; no schedule or delivery verification)"
     ],
     "ownerProvisioned": false,
     "authSettingsVerified": {
@@ -181,7 +182,7 @@
     "Integrate actual Stripe one-time/recurring records",
     "Configure PostHog scoped read access and verify production capture; curated private dashboard saved"
   ],
-  "recordedAt": "2026-10-08T19:54:30.922197+00:00",
+  "recordedAt": "2026-10-08T20:02:52.848396+00:00",
   "pendingConfirmation": "Restricted Resend sending key for alerts.isitusa.com and PostHog query-read key for project 644720; save only to Supabase.",
   "publicCatalogAccess": {
     "methods": [
@@ -203,5 +204,6 @@
     "schemaIncrement": "campaign_draft_editing",
     "presentationReview": "ship for eight rendered synthetic/login/privacy views only",
     "fullOperationsComplete": false
-  }
+  },
+  "activationAudit": "activation-audit.json"
 }
