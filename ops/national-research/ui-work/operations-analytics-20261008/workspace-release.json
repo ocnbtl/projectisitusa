@@ -1,0 +1,47 @@
+{
+  "scope": "Internal workspace continuation and shorter privacy notice",
+  "sourceBase": "9b04903ff6",
+  "status": "implementation and isolated checks complete; hosted rendered verification pending",
+  "features": [
+    "permission-aware workspace frame and actionable overview",
+    "server-filtered paginated review/audience/finance/team lists",
+    "editable, archivable, restorable email drafts with optimistic concurrency and audit history",
+    "team audit history",
+    "authenticated configuration status distinct from live service health",
+    "refined sign-in, responsive navigation and reduced-motion panel reveal",
+    "compact privacy notice retaining substantive disclosures"
+  ],
+  "backend": {
+    "project": "cnbcqzecxydgpeejeegy",
+    "migration": "campaign_draft_editing",
+    "apiVersion": 5,
+    "apiHash": "3a35018933065460163e774ced494728bc73b92494e86040c8b77a202be6b975",
+    "anonymousConnections": 401,
+    "publicConfig": {
+      "email": false,
+      "reports": false,
+      "payments": false
+    },
+    "securityAdvisor": {
+      "errors": 0,
+      "warnings": 0,
+      "serviceOnlyInformationalTables": 7
+    }
+  },
+  "tests": {
+    "inMemorySql": "PASS including campaign editing, conflicts, revoked access, MFA, archive/restore, audit count and no queued mail",
+    "frontendTypecheck": "PASS no emit",
+    "privacyAssertions": 16,
+    "presentationAssertions": 4,
+    "backendTypecheck": "PASS cached-only after sandbox filesystem escalation",
+    "localBuilds": 0,
+    "installs": 0
+  },
+  "pending": [
+    "Restricted Resend and PostHog service connection approval remains outstanding",
+    "Owner account, Auth SMTP, invitation and MFA enrollment",
+    "Real hosted role, private storage and email end-to-end verification",
+    "Digest/campaign sending, retention and actual Stripe reconciliation remain incomplete"
+  ],
+  "recordedAt": "2026-10-08T19:29:52.894773+00:00"
+}

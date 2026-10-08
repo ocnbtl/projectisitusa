@@ -19,6 +19,17 @@ const moduleCache=new Map(),nativeRequire=require('node:module').createRequire(r
 function load(rel){if(moduleCache.has(rel))return moduleCache.get(rel).exports;const m={exports:{}};moduleCache.set(rel,m);const source=read(root+'/'+rel);const out=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText;
  new Function('require','module','exports',out)(name=>{if(name.endsWith('.css'))return {__esModule:true,default:new Proxy({},{get:(_,p)=>p})};if(name.startsWith('@/')||name.startsWith('.')){const b=name.startsWith('@/')?'src/'+name.slice(2):path.posix.join(path.posix.dirname(rel),name);for(const e of ['.ts','.tsx'])if(read(root+'/'+b+e)!==undefined)return load(b+e);}return nativeRequire(name);},m,m.exports);return m.exports;}
 
+const React=nativeRequire('react'),{renderToStaticMarkup}=nativeRequire('react-dom/server');
+const {WorkspaceFrame,WorkspaceOverview}=load('src/components/admin/workspace-frame.tsx');
+const reviewOnly=p=>p==='review';
+const frame=renderToStaticMarkup(React.createElement(WorkspaceFrame,{name:'Reviewer',owner:false,tab:'overview',can:reviewOnly,loading:false,refreshedAt:null,onTab:()=>{},onRefresh:()=>{},onSignOut:()=>{}},React.createElement(WorkspaceOverview,{counts:{pending:7,confirmed:124,finance:16},can:reviewOnly,onTab:()=>{}})));
+assert.ok(frame.includes('Sightings')&&!frame.includes('Email audience')&&!frame.includes('Contributions')&&!frame.includes('Connections'),'volunteer frame hides higher-access sections');
+assert.ok(!frame.includes('confirmed and not suppressed')&&!frame.includes('recorded receipts'),'overview does not disclose inaccessible counts');
+assert.ok(frame.includes('awaiting review'),'volunteer keeps actionable review queue');
+const unknown=renderToStaticMarkup(React.createElement(WorkspaceOverview,{counts:{},can:reviewOnly,onTab:()=>{}}));
+assert.ok(unknown.includes('Unavailable'),'missing count is not zero');
+console.log(JSON.stringify({workspacePresentationAssertions:4,privateBackendAccess:'not exercised by presentation tests'}));
+
 let checks=0;const check=(value,message)=>{assert.ok(value,message);checks++;};
 const t=load('src/lib/ui/telemetry.ts');
 for(const route of ['/admin','/admin/team','/auth/confirm','/preferences'])check(t.analyticsRoute(route)===null,'private route '+route);
