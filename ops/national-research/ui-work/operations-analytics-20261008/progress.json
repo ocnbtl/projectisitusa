@@ -1,6 +1,6 @@
 {
   "date": "2026-10-08",
-  "status": "Backend and public reference catalog verified; credentials and end-to-end release checks pending",
+  "status": "Public analytics preview verified; dark-theme review correction prepared; operations activation pending",
   "ownerLoginConfirmed": true,
   "ownerAddressStorage": "User-provided address remains in chat; not committed here.",
   "supabase": {
@@ -31,7 +31,7 @@
     "rlsTablesVerified": 19,
     "authAndDeliveryConfigured": false,
     "functionsDeployed": [
-      "participation-api v3 (SQL comparison fixed; next action coverage expansion pending)",
+      "participation-api v4 (numeric version filtering and all 20 action types)",
       "participation-resend v1"
     ],
     "ownerProvisioned": false,
@@ -75,7 +75,13 @@
     "dashboardPrivate": true,
     "dashboardMetrics": 7,
     "planObserved": "Free, capped usage, no credit card required, 1M analytics events/month",
-    "dashboardRendered": true
+    "dashboardRendered": true,
+    "syntheticVerification": {
+      "productionSummaryExcluded": true,
+      "environment": "verification",
+      "events": 22,
+      "allReadBack": true
+    }
   },
   "prepared": [
     "explicit consent-based capture and semantic hooks",
@@ -91,8 +97,8 @@
     "externalCallsDuringTests": 0,
     "localBuilds": 0,
     "sqlTests": "PASS: authorization, transactions, delivery-quota, roles-capacity including catalog identification gate and preservation of observer label. In-memory only.",
-    "renderedReview": "pending hosted preview",
-    "freeDiskBytes": 93103312896,
+    "renderedReview": "Light desktop 2560x1255 and mobile 390x844 checked. Fresh reviewer found dark consent surface token; correction prepared.",
+    "freeDiskBytes": 109739323392,
     "hostedMutationTests": "Automatic approval review rejected hosted fixture tests as high risk requiring explicit authorization. Replaced with isolated local execution, not bypassed.",
     "edgeTypecheck": "PASS: all five functions, existing cached Deno dependencies; no install",
     "contractTests": "PASS: 6",
@@ -115,9 +121,9 @@
       "note": "Existing raw-image performance guidance; private originals are not passed through an image proxy."
     },
     "hostedPreview": {
-      "commit": "75e28fb58bd78c35a16d2e05ac9e63d7250e4bf7",
-      "deployment": "2gbiZCLd2tuJwiJqGpVhrCdXnCsH",
-      "result": "Failed: two JSX apostrophes in privacy notice; repaired and local lint now passes. Rebuild pending."
+      "result": "READY; map, species search, privacy and closed signup/report states inspected; dark-theme review correction requires next build",
+      "deployment": "8HhHvfoytzzXkip5V9QJkT7Kcbtv",
+      "commit": "a817714726bf0fde1d9dd29f49a20952995d6aed"
     }
   },
   "remaining": [
@@ -130,6 +136,18 @@
     "Hosted build, rendered review, documentation review, deploy and live verification",
     "Public frontend configuration saved; CSP authored; new hosted preview and production release still pending."
   ],
-  "recordedAt": "2026-10-08T11:23:20.097Z",
-  "pendingConfirmation": "Restricted Resend sending key for alerts.isitusa.com and PostHog query-read key for project 644720; save only to Supabase."
+  "recordedAt": "2026-10-08T11:44:18.4324685Z",
+  "pendingConfirmation": "Restricted Resend sending key for alerts.isitusa.com and PostHog query-read key for project 644720; save only to Supabase.",
+  "publicCatalogAccess": {
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "bucketSizeGB": 7.98,
+    "dataWrites": 0,
+    "mapChecksum": "PASS",
+    "cacheRefresh": "Two exact current bundle paths; source files preserved",
+    "addedExactPreviewOrigins": 2,
+    "previewMap": "PASS"
+  }
 }

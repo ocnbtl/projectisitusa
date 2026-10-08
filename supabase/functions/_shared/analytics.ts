@@ -1,7 +1,7 @@
 import { env, HttpError } from "./runtime.ts";
 // Fixed aggregate queries only: callers cannot supply SQL, dates, project IDs or properties.
 // The server-only key must be restricted to project 644720 and query/read access.
-const WHERE = "properties.environment = 'production' AND toString(properties.schema_version) = '1'";
+const WHERE = "properties.environment = 'production' AND toFloat(properties.schema_version) = 1";
 const QUERIES = {
   summary: `SELECT uniqIf(distinct_id, event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY) AS monthly, uniqIf(distinct_id, event = '$pageview' AND timestamp >= now() - INTERVAL 7 DAY) AS weekly, uniqIf(distinct_id, event IN ('$pageview','site_active') AND timestamp >= now() - INTERVAL 5 MINUTE) AS active, countIf(event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY) AS pageviews FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND ${WHERE}`,
   daily: `SELECT toDate(timestamp) AS day, uniq(distinct_id) AS visitors, count() AS pageviews FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND event = '$pageview' AND ${WHERE} GROUP BY day ORDER BY day LIMIT 31`,
