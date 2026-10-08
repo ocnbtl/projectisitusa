@@ -20,11 +20,12 @@ export function Workspace(){
  const requestSequence=useRef(0);
  const [session,setSession]=useState<Session|null>(null),[me,setMe]=useState<Staff|null>(null),[tab,setTab]=useState<Tab>("overview"),[rows,setRows]=useState<unknown[]>([]),[loading,setLoading]=useState(false),[error,setError]=useState(""),[message,setMessage]=useState(""),[page,setPage]=useState(0),[more,setMore]=useState(false),[counts,setCounts]=useState<Record<string,number>>({}),[selected,setSelected]=useState<Sighting|null>(null),[config,setConfig]=useState<PublicConfig|null>(null),[adjustments,setAdjustments]=useState<Adjustment[]>([]);
  const can=useCallback((permission:Permission)=>Boolean(me?.is_owner||me?.permissions.includes(permission)),[me]);
- useEffect(()=>{if(!session)return;const {data}=backend().auth.onAuthStateChange((event,next)=>{if(event==="SIGNED_OUT"){setSession(null);setMe(null);setRows([]);setSelected(null);}else if(next)setSession(next);});return()=>data.subscription.unsubscribe();},[Boolean(session)]);
+ const authenticated=Boolean(session),sessionUserId=session?.user.id,accessToken=session?.access_token;
+ useEffect(()=>{if(!authenticated)return;const {data}=backend().auth.onAuthStateChange((event,next)=>{if(event==="SIGNED_OUT"){setSession(null);setMe(null);setRows([]);setSelected(null);}else if(next)setSession(next);});return()=>data.subscription.unsubscribe();},[authenticated]);
  const refresh=useCallback(async()=>{
-  if(!session)return;const requestId=++requestSequence.current;setLoading(true);setError("");setRows([]);setSelected(null);setCounts({});setAdjustments([]);
+  if(!sessionUserId||!accessToken)return;const requestId=++requestSequence.current;setLoading(true);setError("");setRows([]);setSelected(null);setCounts({});setAdjustments([]);
   try{
-   const client=backend(),who=await client.from("isitusa_staff").select("*").eq("user_id",session.user.id).eq("active",true).maybeSingle();
+   const client=backend(),who=await client.from("isitusa_staff").select("*").eq("user_id",sessionUserId).eq("active",true).maybeSingle();
    if(who.error||!who.data)throw new Error("Team access is unavailable. Contact the workspace owner.");
    if(requestId!==requestSequence.current)return;const person=who.data as Staff;setMe(person);
    const allowed=(p:Permission)=>person.is_owner||person.permissions.includes(p);
@@ -47,8 +48,8 @@ export function Workspace(){
    if(result.error)throw result.error;if(requestId!==requestSequence.current)return;setRows(result.data.slice(0,25));setMore(result.data.length>25);
    if(tab==="finance"){const changes=await client.from("isitusa_payment_adjustments").select("*").order("created_at",{ascending:false}).limit(25);if(changes.error)throw changes.error;if(requestId===requestSequence.current)setAdjustments(changes.data);}
   }catch(err){if(requestId===requestSequence.current)setError(err instanceof Error?err.message:"This workspace could not load.");}finally{if(requestId===requestSequence.current)setLoading(false);}
- },[session?.user.id,session?.access_token,tab,page]);
- useEffect(()=>{void refresh();return()=>{requestSequence.current++;};},[refresh]);
+ },[sessionUserId,accessToken,tab,page]);
+ useEffect(()=>{const sequence=requestSequence;void refresh();return()=>{sequence.current++;};},[refresh]);
  if(!session)return <main id="main-content"><StaffAuth onReady={setSession}/></main>;
  return <main id="main-content" className={admin.shell}><header className={admin.top}><div><h1>isitusa workspace</h1><p className={admin.security}>{me?.display_name??"Team member"} · Private team access</p></div><button className={`${styles.button} ${styles.secondary}`} onClick={()=>void backend().auth.signOut()}><LogOut size={16}/>Sign out</button></header>
  <div className={admin.body}><nav className={admin.nav} aria-label="Workspace">{tabs.filter(item=>item.id==="overview"||item.id==="settings"||can(item.id)).map(item=><button key={item.id} aria-current={tab===item.id?"page":undefined} onClick={()=>{setTab(item.id);setPage(0);setMessage("");}}><item.icon size={18} aria-hidden="true"/>{item.name}</button>)}</nav>

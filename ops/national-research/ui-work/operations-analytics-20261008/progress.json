@@ -69,10 +69,13 @@
       "replay": false,
       "console": false,
       "performance": false,
-      "exceptions": false
+      "exceptions": false,
+      "heatmaps": false
     },
     "dashboardPrivate": true,
-    "dashboardMetrics": 7
+    "dashboardMetrics": 7,
+    "planObserved": "Free, capped usage, no credit card required, 1M analytics events/month",
+    "dashboardRendered": true
   },
   "prepared": [
     "explicit consent-based capture and semantic hooks",
@@ -104,7 +107,18 @@
       "sightingDisabled": 503,
       "legacyCheckoutDisabled": 503
     },
-    "analyticsSql": "PASS live query execution: four fixed server queries and four headline projections; production ingestion remains unverified"
+    "analyticsSql": "PASS live query execution: four fixed server queries and four headline projections; production ingestion remains unverified",
+    "lint": {
+      "files": 17,
+      "errors": 0,
+      "warnings": 3,
+      "note": "Existing raw-image performance guidance; private originals are not passed through an image proxy."
+    },
+    "hostedPreview": {
+      "commit": "75e28fb58bd78c35a16d2e05ac9e63d7250e4bf7",
+      "deployment": "2gbiZCLd2tuJwiJqGpVhrCdXnCsH",
+      "result": "Failed: two JSX apostrophes in privacy notice; repaired and local lint now passes. Rebuild pending."
+    }
   },
   "remaining": [
     "Finish hosted integration verification; local fixtures do not verify Supabase Auth/Storage APIs",
@@ -116,6 +130,6 @@
     "Hosted build, rendered review, documentation review, deploy and live verification",
     "Public frontend configuration saved; CSP authored; new hosted preview and production release still pending."
   ],
-  "recordedAt": "2026-10-08T11:14:21.423Z",
+  "recordedAt": "2026-10-08T11:23:20.097Z",
   "pendingConfirmation": "Restricted Resend sending key for alerts.isitusa.com and PostHog query-read key for project 644720; save only to Supabase."
 }

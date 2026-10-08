@@ -29,7 +29,7 @@ export function DonationCheckout({ hostedLink }: { hostedLink: string | null }) 
       embedded.current = checkout; checkout.mount(mount.current); track("checkout_opened", {surface:"support", frequency});
     }).catch(() => { if (active) { setError("The secure form could not load. Check your connection and try again."); setClientSecret(""); } });
     return () => { active = false; embedded.current?.destroy(); embedded.current = null; };
-  }, [clientSecret, scriptReady, config?.publicKey]);
+  }, [clientSecret, scriptReady, config?.publicKey, frequency]);
   function change() { setConfirming(false); setError(""); setToken(""); setClientSecret(""); attempt.current = ""; }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); if (lock.current || !token || !donationAmount(amount)) return;
