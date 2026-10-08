@@ -17,7 +17,7 @@ for(const d of diagnostics)console.log(ts.flattenDiagnosticMessageText(d.message
 if(diagnostics.length)process.exit(1);
 const moduleCache=new Map(),nativeRequire=require('node:module').createRequire(root+'/package.json');
 function load(rel){if(moduleCache.has(rel))return moduleCache.get(rel).exports;const m={exports:{}};moduleCache.set(rel,m);const source=read(root+'/'+rel);const out=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText;
- new Function('require','module','exports',out)(name=>{if(name.endsWith('.css'))return new Proxy({},{get:(_,p)=>p});if(name.startsWith('@/')||name.startsWith('.')){const b=name.startsWith('@/')?'src/'+name.slice(2):path.posix.join(path.posix.dirname(rel),name);for(const e of ['.ts','.tsx'])if(read(root+'/'+b+e)!==undefined)return load(b+e);}return nativeRequire(name);},m,m.exports);return m.exports;}
+ new Function('require','module','exports',out)(name=>{if(name.endsWith('.css'))return {__esModule:true,default:new Proxy({},{get:(_,p)=>p})};if(name.startsWith('@/')||name.startsWith('.')){const b=name.startsWith('@/')?'src/'+name.slice(2):path.posix.join(path.posix.dirname(rel),name);for(const e of ['.ts','.tsx'])if(read(root+'/'+b+e)!==undefined)return load(b+e);}return nativeRequire(name);},m,m.exports);return m.exports;}
 let checks=0;function check(value,label){assert.ok(value,label);checks++;}
 const {donationAmount:a,customerPortal:p,checkoutParameters:c}=load('src/lib/ui/donation-checkout.ts');
 for(const v of ['',0,'0','4.99','1000.01','1e2','-10','NaN','25.001',' 25','25 ',null,{},'Infinity'])check(a(v)===null,'reject amount '+String(v));

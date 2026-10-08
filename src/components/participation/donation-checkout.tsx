@@ -56,6 +56,7 @@ export function DonationCheckout({ hostedLink }: { hostedLink: string | null }) 
     </>}
     {error && <p className={s.error} role="alert">{error}</p>}
     <p className={s.small}>Payment details are handled securely by Stripe. Contributing does not subscribe you to email updates.</p>
+    {config?.portal && <p className={s.small}><a href={config.portal} target="_blank" rel="noopener noreferrer">Manage or cancel monthly giving <ArrowUpRight size={12} aria-hidden="true" /></a></p>}
     {config?.available && hostedLink && <p className={s.small}><a href={hostedLink} target="_blank" rel="noopener noreferrer">Prefer a one-time contribution on Stripe? <ArrowUpRight size={12} aria-hidden="true" /></a></p>}
   </>;
 }
