@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Check, Copy, Info } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, ChevronDown, Copy, Info } from "lucide-react";
 import { cryptoUri } from "@/lib/participation/contracts";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { activeStripePaymentLink, verifiedPublicWallets } from "@/lib/ui/support-destinations";
@@ -27,7 +27,7 @@ export function SupportForm() {
  return <main id="main-content" className={s.page}>
   <div className={s.layout}>
    <section className={s.mission} aria-labelledby="mission-heading">
-    <header className={s.intro}><h1 id="mission-heading">Support the mission<br/>and protect our planet.</h1><p>Your support and contributions enable the research and keep our free, open-source tool operating for everyone.</p><p className={s.missionDetail}>We connect invasive species records to the places people care about. Supporting isitusa helps our independent initiative turn that research into useful local knowledge.</p></header>
+    <header className={s.intro}><h1 id="mission-heading">Support the mission<br/>and protect our planet.</h1><p>Your support and contributions enable the research and keep our free, open-source tool operating for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a><p className={s.missionDetail}>We connect invasive species records to the places people care about. Supporting isitusa helps our independent initiative turn that research into useful local knowledge.</p></header>
     <section className={s.otherWays} aria-labelledby="other-heading"><h2 id="other-heading">Other ways to help</h2>
      <Link href="/report"><div><strong>Document a sighting</strong><p>Learn what to photograph and where to report it.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
      <Link href="/"><div><strong>Share your county&apos;s map</strong><p>Help a neighbor, school, or local group find their records.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
@@ -43,7 +43,7 @@ export function SupportForm() {
      <div className={s.assets} role="group" aria-label="Choose cryptocurrency">{wallets.map(item=><button type="button" key={item.id} aria-label={names[item.asset]} aria-pressed={item.id===wallet.id} onClick={()=>select(item.id)}><img src={`/brand/crypto/${item.asset.toLowerCase()}.svg`} width={26} height={26} alt=""/><span>{item.asset}</span></button>)}</div>
      <div className={s.network}><strong>{names[wallet.asset]}</strong><span>{wallet.network}</span></div><label className={s.addressLabel} htmlFor="contribution-address">Receiving address</label><textarea id="contribution-address" className={s.address} aria-label={`${wallet.asset} receiving address`} readOnly spellCheck={false} value={wallet.address} rows={3} onFocus={e=>e.currentTarget.select()}/>
      <div className={s.addressActions}><button type="button" className={s.primary} onClick={copy}>{copied?<Check size={17} aria-hidden="true"/>:<Copy size={17} aria-hidden="true"/>}{copied?"Address copied":"Copy address"}</button>{cryptoUri(wallet)&&<a href={cryptoUri(wallet)!}>Open wallet <ArrowUpRight size={16} aria-hidden="true"/></a>}</div><p className={s.feedback} role="status">{feedback}</p>
-     <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by isitusa.{wallet.asset==="XRP"?" No destination tag is required.":""}</p></details>
+     <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by isitusa.{wallet.asset==="XRP"?" No destination tag is required.":""}</p></details>
     </>:<p className={s.small}>Receiving addresses are being verified.</p>}</div>}
     <footer className={s.donationFoot}><p>isitusa is an independent initiative, not a registered nonprofit. Contributions are not represented as tax-deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
    </section>
