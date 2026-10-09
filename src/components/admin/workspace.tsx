@@ -19,7 +19,7 @@ type Tab = WorkspaceTab;
 type Review={id:number;previous_status:string;next_status:string;reason:string;created_at:string;matched_species_id:string|null};
 type Adjustment={provider_event:string;payment_reference:string;kind:string;amount_minor:string;currency:string;created_at:string};
 const date=(value:string)=>new Date(value).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});
-export function Workspace(){
+export function Workspace({onboarding=false}:{onboarding?:boolean}={}){
  const requestSequence=useRef(0),draftDirty=useRef(false);
  const setDraftDirty=useCallback((value:boolean)=>{draftDirty.current=value;},[]);
  const [session,setSession]=useState<Session|null>(null),[me,setMe]=useState<Staff|null>(null),[tab,setTab]=useState<Tab>("overview"),[rows,setRows]=useState<unknown[]>([]),[loading,setLoading]=useState(false),[error,setError]=useState(""),[message,setMessage]=useState(""),[page,setPage]=useState(0),[more,setMore]=useState(false),[counts,setCounts]=useState<Record<string,number>>({}),[selected,setSelected]=useState<Sighting|null>(null),[adjustments,setAdjustments]=useState<Adjustment[]>([]);
@@ -66,7 +66,7 @@ export function Workspace(){
   }catch(err){if(requestId===requestSequence.current)setError(err instanceof Error?err.message:"This workspace could not load.");}finally{if(requestId===requestSequence.current){setLoading(false);setRefreshedAt(new Date().toISOString());setDataRevision(n=>n+1);}}
  },[sessionUserId,accessToken,tab,page,search,filter]);
  useEffect(()=>{const sequence=requestSequence;void refresh();return()=>{sequence.current++;};},[refresh]);
- if(!session)return <main id="main-content"><StaffAuth onReady={setSession}/></main>;
+ if(!session)return <main id="main-content"><StaffAuth onReady={setSession} onboarding={onboarding}/></main>;
  const navigate=(next:Tab)=>{if(next===tab)return;if(draftDirty.current&&!window.confirm("Discard your unsaved draft changes?"))return;requestSequence.current++;setTab(next);setPage(0);setMessage("");setSearch("");setSearchInput("");setFilter("all");setSelected(null);setRows([]);setError("");};
  const filters:Record<string,[string,string][]>= {review:[["submitted","Submitted"],["in_review","In review"],["needs_info","More information"],["accepted","Accepted for research"],["rejected","Not accepted"]],audience:[["confirmed","Confirmed"],["pending","Awaiting confirmation"],["suppressed","Suppressed"]],finance:[["stripe","Stripe"],["crypto","Cryptocurrency"]],team:[["active","Active"],["revoked","Revoked"]]};
  return <WorkspaceFrame name={me?.display_name??"Team member"} owner={Boolean(me?.is_owner)} tab={tab} can={can} loading={loading} refreshedAt={refreshedAt} onTab={navigate} onRefresh={()=>{if(!draftDirty.current||window.confirm("Discard your unsaved changes and refresh?"))void refresh();}} onSignOut={()=>{if(!draftDirty.current||window.confirm("Discard your unsaved draft changes and sign out?"))void backend().auth.signOut();}}>
