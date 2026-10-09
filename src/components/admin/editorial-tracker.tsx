@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Search } from "lucide-react";
 import queue from "@/content/editorial-queue.json";
 import baseline from "@/content/editorial-review-baseline.json";
-import { SPECIES_EDITORIAL } from "@/content/species-editorial";
+import { SPECIES_EDITORIAL_DRAFTS as SPECIES_EDITORIAL } from "@/content/species-editorial-drafts";
 import { backend } from "@/lib/participation/client";
 import { REVIEW_STATES, reviewStatus, sourceUrls, type EditorialTask, type ReviewStatus } from "@/lib/ui/editorial-review";
 import { Notice, styles } from "@/components/participation/shared";
@@ -97,7 +97,8 @@ function ProfileReview({ row, task, canReview, preview, unavailable, onDirty, on
   return <article aria-labelledby="profile-review-name">
     <header className={css.profileHeader}><h3 id="profile-review-name">{row.commonName}</h3><p><i>{row.scientificName}</i></p><div className={css.profileMeta}><span>Batch {row.batch} · Profile {row.order}</span><span>{unavailable ? "Reading saved review..." : dirty ? "Unsaved changes" : REVIEW_STATES[status]}</span></div></header>
     <p className={css.description}>{draft || "This profile is waiting for its first sourced description. Use Edit draft below to begin."}</p>
-    {task?.draft && task.draft !== editorial?.summary && <p className={css.caption}>You are reading a private draft. The public profile may have different wording.</p>}
+    {task?.draft && task.draft !== editorial?.summary && <p className={css.caption}>You are reading your saved private draft.</p>}
+    <p className={css.caption}>Prepared for your review. The public profile keeps its current description until a separate publication.</p>
     <a className={css.publicLink} href={`/species/${row.id}`} target="_blank" rel="noopener noreferrer">View public profile <ArrowUpRight size={15} aria-hidden="true"/></a>
     <section className={css.sources}><h4>Read the sources</h4>{editorial && <p className={css.caption}>Research checked {editorial.reviewedAt}. Source checking is separate from your approval.</p>}<ul>{sources.split(/\r?\n/).filter(url => /^https?:\/\//i.test(url.trim())).map((url, index) => { const label = publishedSources.find(source => source.url === url.trim())?.label; let host = "Source link"; try { host = new URL(url.trim()).hostname.replace(/^www\./, ""); } catch {} return <li key={`${url}:${index}`}><a href={url.trim()} target="_blank" rel="noopener noreferrer"><span>{label ?? host}<small>{host}</small></span><ArrowUpRight size={16} aria-hidden="true"/></a></li>; })}</ul>{!sources.trim() && <p className={css.caption}>No sources added yet.</p>}</section>
     <details className={css.disclosure}><summary>Compare with previous description</summary>{previous[row.id] ? <><p className={css.caption}>Before this 200-profile review round.{previous[row.id] === editorial?.summary ? " The wording is unchanged." : ""}</p><p className={css.comparison}>{previous[row.id]}</p></> : <p className={css.comparison}>No earlier separately reviewed description was recorded for this species. This is its first sourced editorial draft in the review series.</p>}</details>

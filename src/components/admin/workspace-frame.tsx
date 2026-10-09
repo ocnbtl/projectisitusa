@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { SPECIES_EDITORIAL } from "@/content/species-editorial";
+import { SPECIES_EDITORIAL_DRAFTS as SPECIES_EDITORIAL } from "@/content/species-editorial-drafts";
 import type { ReactNode } from "react";
 import { BookOpenCheck, MessageCircle, Eye, ArrowRight, ChartNoAxesCombined, ClipboardList, HeartHandshake, LayoutDashboard, LogOut, Mail, NotebookPen, FolderKanban, RefreshCw, Settings2, ShieldCheck, Users } from "lucide-react";
 import type { Permission } from "@/lib/participation/contracts";
