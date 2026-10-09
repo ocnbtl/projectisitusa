@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-09",
+  "sourceCommit": "c93fb0b382edbf16b9566190d7e8569d73abe862",
+  "cause": [
+    "Confirmation content lacked fixed-header clearance",
+    "Password save signed out before MFA continuation"
+  ],
+  "changes": [
+    "Shared responsive account frame",
+    "Email/password/authenticator progress",
+    "Matching password validation",
+    "Retain session after password save",
+    "Same-phone MFA setup key",
+    "Role-specific welcome from existing staff permissions",
+    "Actionable consumed-link recovery"
+  ],
+  "verification": {
+    "typecheck": "PASS no emit",
+    "accountBehavior": "PASS strict effect retention, mismatch, session continuity, MFA transition, role welcome",
+    "hostedPreview": "Ready 9LRbVzhA5c6bxin49ovcoTNfPHe1",
+    "fixture": "Desktop and phone email/password/MFA success and error controls exercised without provider writes",
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "finishReview": "ship; no material fixes",
+    "production": {
+      "status": "Ready",
+      "id": "8VP94cePk6zLvX6khqrktfr6ZTuk",
+      "url": "https://projectisitusa-3eswumw8w-unigentamos.vercel.app",
+      "domain": "https://isitusa.com",
+      "duration": "5m31s"
+    },
+    "live": {
+      "authConfirm": 200,
+      "headerAndPhoneLayout": "visible and readable",
+      "admin": "new sign-in copy and enabled controls",
+      "fixture": "renders custom Page Not Found, no synthetic flow; Next streamed response HTTP200",
+      "anonymousAnalytics": 403,
+      "anonymousConnections": 403,
+      "checkoutAvailable": true,
+      "monthlyAvailable": true
+    }
+  },
+  "limits": [
+    "Actual owner password and MFA enrollment require owner completion",
+    "Fixtures do not prove provider authentication",
+    "No local builds, installs, research or R2 writes"
+  ],
+  "capturePath": ".impeccable/review/account-setup-oct09",
+  "ownerReset": {
+    "passwordSet": false,
+    "activeOwnerPreserved": true,
+    "activeOwners": 1,
+    "unexpiredSessions": 0,
+    "resetScope": "Exact owner UUID and email; no user/staff deletion, no permission or MFA changes",
+    "emailSubject": "Reset your Isitusa password",
+    "resendId": "01a11f8f-4783-7ae7-9fc4-4759f25e1e06",
+    "delivery": "Delivered",
+    "remaining": "Owner sets private password and enrolls/verifies authenticator via newest email"
+  }
+}
