@@ -28,7 +28,10 @@ assert.ok(!frame.includes('confirmed and not suppressed')&&!frame.includes('reco
 assert.ok(frame.includes('awaiting review'),'volunteer keeps actionable review queue');
 const unknown=renderToStaticMarkup(React.createElement(WorkspaceOverview,{counts:{},can:reviewOnly,onTab:()=>{}}));
 assert.ok(unknown.includes('Unavailable'),'missing count is not zero');
-console.log(JSON.stringify({workspacePresentationAssertions:4,privateBackendAccess:'not exercised by presentation tests'}));
+const writerFrame=renderToStaticMarkup(React.createElement(WorkspaceFrame,{name:'Writer',owner:false,tab:'campaigns',can:p=>p==='content',loading:false,refreshedAt:null,onTab:()=>{},onRefresh:()=>{},onSignOut:()=>{}}));
+assert.ok(writerFrame.includes('Email studio')&&writerFrame.includes('Organization work'),'content volunteer can reach authorized drafting surfaces');
+assert.ok(!writerFrame.includes('Email audience')&&!writerFrame.includes('Contributions')&&!writerFrame.includes('Team access')&&!writerFrame.includes('Site usage'),'content volunteer navigation does not expose audience, finance, team or analytics');
+console.log(JSON.stringify({workspacePresentationAssertions:6,privateBackendAccess:'not exercised by presentation tests'}));
 
 let checks=0;const check=(value,message)=>{assert.ok(value,message);checks++;};
 const t=load('src/lib/ui/telemetry.ts');

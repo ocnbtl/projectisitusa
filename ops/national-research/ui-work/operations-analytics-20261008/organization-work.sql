@@ -31,6 +31,10 @@ do $$ declare work_id uuid; campaign_id uuid; begin
  select id into campaign_id from public.isitusa_campaigns where subject='A species story';
  perform public.isitusa_review_campaign(campaign_id,1,'approved','Sources and audience checked');
  begin perform public.isitusa_edit_campaign(campaign_id,2,'facts','Changed after approval','Unchecked copy','draft'); raise exception 'TEST FAILED: approved copy changed'; exception when raise_exception then if sqlerrm like 'TEST FAILED:%' then raise; end if; end;
+ perform public.isitusa_review_campaign(campaign_id,2,'draft','Add an authoritative source.');
+ perform public.isitusa_edit_campaign(campaign_id,3,'facts','A species story','Revised draft with sources.','draft');
+ perform public.isitusa_review_campaign(campaign_id,4,'in_review','');
+ perform pg_temp.work_assert((select review_note='Add an authoritative source.' from public.isitusa_campaigns where id=campaign_id),'feedback preserved through edit and resubmission');
 end $$;
 reset role;
 select pg_temp.work_assert((select count(*)=0 from public.isitusa_outbox),'approval alone never sends email');

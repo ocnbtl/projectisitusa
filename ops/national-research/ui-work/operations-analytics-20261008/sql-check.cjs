@@ -23,6 +23,7 @@ const root=process.cwd();
   await db.exec(fs.readFileSync(path.join(__dirname,'campaign-editing.sql'),'utf8'));report.tests.push('campaign-editing.sql');console.log('TEST PASS campaign-editing.sql');
   await db.exec(fs.readFileSync(path.join(root,'supabase/schema/07-organization-work.sql'),'utf8'));report.schema.push('07-organization-work.sql');
   await db.exec(fs.readFileSync(path.join(root,'supabase/schema/08-work-completion.sql'),'utf8'));report.schema.push('08-work-completion.sql');
+  await db.exec(fs.readFileSync(path.join(root,'supabase/schema/09-campaign-feedback.sql'),'utf8'));report.schema.push('09-campaign-feedback.sql');
   await db.exec(fs.readFileSync(path.join(__dirname,'organization-work.sql'),'utf8'));report.tests.push('organization-work.sql');console.log('TEST PASS organization-work.sql');
   report.status='passed';
  }catch(e){report.status='failed';report.error={message:e.message,code:e.code,detail:e.detail,where:e.where,position:e.position};console.error(JSON.stringify(report.error));process.exitCode=1;}
