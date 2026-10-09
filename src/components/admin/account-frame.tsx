@@ -6,7 +6,7 @@ import admin from "./admin.module.css";
 
 export function AccountFrame({title,description,step,children}:{title:string;description:string;step?:number;children:ReactNode}) {
  const heading=useRef<HTMLHeadingElement>(null);
- useEffect(()=>{if(step!==undefined)heading.current?.focus({preventScroll:true});},[step,title]);
+ useEffect(()=>{if(step!==undefined)heading.current?.focus();},[step,title]);
  return <div className={admin.accountPage}>
   <Link href="/" className={admin.accountBack}><ArrowLeft size={16} aria-hidden="true"/>Back to the atlas</Link>
   {step!==undefined&&<ol className={admin.accountSteps} aria-label="Account setup progress">{["Email","Password","Authenticator"].map((name,index)=><li key={name} aria-current={step===index?"step":undefined} data-complete={step>index}><span aria-hidden="true">{step>index?<Check size={14}/>:index+1}</span>{name}</li>)}</ol>}
