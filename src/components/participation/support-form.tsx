@@ -2,7 +2,7 @@
 import { track } from "@/lib/ui/telemetry";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Check, ChevronDown, Copy, Info } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet } from "lucide-react";
 import { cryptoUri } from "@/lib/participation/contracts";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { activeStripePaymentLink, verifiedPublicWallets } from "@/lib/ui/support-destinations";
@@ -13,7 +13,7 @@ export function SupportForm() {
  const hostedLink=activeStripePaymentLink(SUPPORT_DESTINATIONS);
  // Destinations remain release-reviewed, never replaced by unchecked runtime responses.
  const wallets=verifiedPublicWallets(SUPPORT_DESTINATIONS.wallets);
- const [method,setMethod]=useState("card"),[selected,setSelected]=useState(wallets[0]?.id??"");
+ const [selected,setSelected]=useState(wallets[0]?.id??"");
  const wallet=wallets.find(item=>item.id===selected)??wallets[0];
  const [feedback,setFeedback]=useState(""),[copied,setCopied]=useState(false);
  const request=useRef(0),timer=useRef<ReturnType<typeof setTimeout>>();
@@ -28,7 +28,7 @@ export function SupportForm() {
  return <main id="main-content" className={s.page}>
   <div className={s.layout}>
    <section className={s.mission} aria-labelledby="mission-heading">
-    <header className={s.intro}><h1 id="mission-heading">Support the mission<br/>and protect our planet.</h1><p>Your support and contributions enable the research and keep our free, open-source tool operating for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a><p className={s.missionDetail}>We connect invasive species records to the places people care about. Supporting isitusa helps our independent initiative turn that research into useful local knowledge.</p></header>
+    <header className={s.intro}><h1 id="mission-heading">Support the mission<br/>and protect our planet.</h1><p>Your support and contributions enable the research and keep our free, open-source tool operating for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a></header>
     <section className={s.otherWays} aria-labelledby="other-heading"><h2 id="other-heading">Other ways to help</h2>
      <Link href="/report"><div><strong>Document a sighting</strong><p>Learn what to photograph and where to report it.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
      <Link href="/"><div><strong>Share your county&apos;s map</strong><p>Help a neighbor, school, or local group find their records.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
@@ -38,14 +38,15 @@ export function SupportForm() {
    </section>
    <section id="contribute" className={s.donation} aria-labelledby="donation-heading">
     <header className={s.donationHeading}><h2 id="donation-heading">Make a contribution</h2><p>Support research that stays open to everyone.</p></header>
-    <div className={s.methodPicker} role="group" aria-label="Payment method"><button type="button" aria-pressed={method==="card"} onClick={()=>{setMethod("card");track("contribution_method_selected",{surface:"support",method:"card"});}}>Card</button><button type="button" aria-pressed={method==="crypto"} onClick={()=>{setMethod("crypto");track("contribution_method_selected",{surface:"support",method:"crypto"});}}>Cryptocurrency</button></div>
-    <div hidden={method!=="card"}><DonationCheckout hostedLink={hostedLink}/></div>
-    {method==="crypto"&&<div className={s.crypto}>{wallet?<>
+    <div className={s.paymentOptions}>
+    <section className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Give once</h3><p className={s.panelIntro}>A contribution today helps keep the research open.</p><DonationCheckout hostedLink={hostedLink} frequency="once"/></section>
+    <section className={s.monthlyPanel}><h3><Repeat2 size={22} aria-hidden="true"/> Keep it growing</h3><p className={s.panelIntro}>Monthly support helps us plan the work ahead.</p><DonationCheckout hostedLink={null} frequency="monthly"/></section>
+    <section className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Contribute cryptocurrency</h3><p className={s.panelIntro}>Send directly to a verified receiving address.</p>{wallet?<>
      <div className={s.assets} role="group" aria-label="Choose cryptocurrency">{wallets.map(item=><button type="button" key={item.id} aria-label={names[item.asset]} aria-pressed={item.id===wallet.id} onClick={()=>select(item.id)}><img src={`/brand/crypto/${item.asset.toLowerCase()}.svg`} width={26} height={26} alt=""/><span>{item.asset}</span></button>)}</div>
      <div className={s.network}><strong>{names[wallet.asset]}</strong><span>{wallet.network}</span></div><label className={s.addressLabel} htmlFor="contribution-address">Receiving address</label><textarea id="contribution-address" className={s.address} aria-label={`${wallet.asset} receiving address`} readOnly spellCheck={false} value={wallet.address} rows={3} onFocus={e=>e.currentTarget.select()}/>
      <div className={s.addressActions}><button type="button" className={s.primary} onClick={copy}>{copied?<Check size={17} aria-hidden="true"/>:<Copy size={17} aria-hidden="true"/>}{copied?"Address copied":"Copy address"}</button>{cryptoUri(wallet)&&<a href={cryptoUri(wallet)!}>Open wallet <ArrowUpRight size={16} aria-hidden="true"/></a>}</div><p className={s.feedback} role="status">{feedback}</p>
      <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by isitusa.{wallet.asset==="XRP"?" No destination tag is required.":""}</p></details>
-    </>:<p className={s.small}>Receiving addresses are being verified.</p>}</div>}
+    </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section></div>
     <footer className={s.donationFoot}><p>isitusa is an independent initiative, not a registered nonprofit. Contributions are not represented as tax-deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
    </section>
   </div><p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>

@@ -39,7 +39,7 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
         <button ref={helpButton} type="button" aria-label="About map colors" aria-expanded={open === "help"} aria-controls={id + "-help"} onClick={() => setOpen(open === "help" ? null : "help")}><Info size={18} aria-hidden="true" /></button>
       </div></div>
       <div className="map-spectrum" aria-label={"Species count scale for " + scope}>
-        {anchors.length > 0 ? <><div className="map-spectrum-bar" style={{ background: spectrum }} aria-hidden="true" /><ol className="map-spectrum-ticks">{(anchors.length > 3 ? [anchors[0], anchors[anchors.length - 1]] : anchors).map(band => <li key={band.min}>{band.label}</li>)}</ol></> : <p>No positive counts in this view</p>}
+        {anchors.length > 0 ? <><div className="map-spectrum-bar" style={{ background: spectrum }} aria-hidden="true" /><ol className="map-spectrum-ticks">{anchors.map(band => <li key={band.min}>{band.label}</li>)}</ol></> : <p>No positive counts in this view</p>}
         <div className="map-spectrum-exceptions"><span><i style={{ background: "var(--county-none)" }} />0 records</span><span><i style={{ background: "var(--county-unknown)" }} />Unavailable</span></div>
       </div>
     </div>

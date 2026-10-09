@@ -1,0 +1,43 @@
+{
+  "id": "workspace-experience-20261009",
+  "base": "16e5487104",
+  "branch": "codex/workspace-experience-20261009",
+  "status": "in_progress",
+  "expires": "2026-10-12",
+  "scope": "User-authorized internal workspace and public UI release, targeted campaigns, private team chat, role previews, editorial queue",
+  "allow": [
+    "src/components/",
+    "src/content/",
+    "src/lib/participation/",
+    "app/",
+    "supabase/schema/10-workspace-experience.sql",
+    "public/source-logos/",
+    "ops/national-research/ui-work/workspace-experience-20261009/",
+    "public/brand/full-name-v2/isitusa-full-name-green.svg",
+    "supabase/schema/11-editorial-workflow.sql"
+  ],
+  "deny": [
+    "src/data/research/",
+    "public/generated/",
+    "main",
+    "R2",
+    "wallets",
+    "secrets"
+  ],
+  "freeze": "frozen-windows-bulk-validation-2026-07-30-r2",
+  "orchestrator_hash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+  "worker_hash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+  "budget": {
+    "new_files_bytes": 20000000,
+    "disk_floor_bytes": 90000000000,
+    "local_installs": false,
+    "local_build": false
+  },
+  "completion": [
+    "Type check",
+    "Permission and persistence checks",
+    "Desktop and mobile visual checks",
+    "Hosted production verification"
+  ],
+  "retry": "At most two retries per unchanged failure; record blockers"
+}

@@ -29,8 +29,8 @@ export function SiteAnalytics() {
   const save = (value: AnalyticsChoice) => { setAnalyticsChoice(value); setSettings(false); };
   if (choice !== null && !settings) return pathname === "/" ? <button className={styles.settings} type="button" onClick={() => setSettings(true)}>Privacy choices</button> : null;
   return <section className={styles.notice} aria-label="Optional analytics">
-    <h2>Help us improve the atlas</h2>
+    <h2>Help improve isitusa</h2>
     <p>Allow optional usage analytics to help us improve the website. You can change your choice at any time. <a href="/privacy">Privacy details</a></p>
-    {privacySignal() ? <><p>Your browser has asked us not to track. Analytics stays off.</p><div className={styles.actions}><button type="button" onClick={() => save("no")}>Done</button></div></> : <div className={styles.actions}><button type="button" onClick={() => save("yes")}>Allow analytics</button><button type="button" onClick={() => save("no")}>Keep analytics off</button></div>}
+    {privacySignal() ? <><div className={styles.actions}><button type="button" onClick={() => save("no")}>Done</button></div></> : <div className={styles.actions}><button type="button" onClick={() => save("yes")}>Allow analytics</button><button type="button" onClick={() => save("no")}>Keep analytics off</button></div>}
   </section>;
 }

@@ -508,7 +508,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .state-picker img { object-fit:contain; flex-shrink:0; width:27px; height:18px; }
 .state-code { width:27px; flex-shrink:0; font-size:11px; color:var(--muted); }
 .state-picker-popover { position:absolute; top:calc(100% + 8px); left:0; width:270px; max-width:calc(100vw - 30px); padding:8px; z-index:42; }
-.state-picker-popover label { display:flex; align-items:center; gap:9px; padding:8px; border-bottom:1px solid var(--border); }
+.state-picker-popover label { display:flex; align-items:center; gap:9px; padding:8px;  }
 .state-picker-popover input { min-height:32px; width:100%; min-width:0; background:transparent; outline:none; font-size:14px; }
 .state-picker-popover [role=listbox] { overflow:auto; max-height:min(330px,45dvh); scrollbar-width:thin; }
 .state-picker-popover [role=option] { width:100%; display:flex; align-items:center; gap:12px; text-align:left; font-size:13px; min-height:44px; padding:9px; border-radius:8px; }
@@ -1259,3 +1259,6 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .research-page table td:has(.research-species-open){padding-top:7px}
 @media(max-width:700px){.research-page .research-heading h1{font-size:32px}.county-finding-overview{grid-template-columns:1fr 1fr}.county-finding-overview button{padding:12px 8px}.county-finding-overview small{font-size:11px}.research-county-choice{gap:12px}.research-page .research-heading{margin-bottom:8px}}
 @media(prefers-reduced-motion:reduce){.research-species-open,.county-finding-overview button{transition:none}}
+
+/* Keep the icon and label together in the vertical center. */
+.environment-options .filter-option > span { flex: 0 0 auto; }

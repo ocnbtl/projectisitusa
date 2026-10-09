@@ -1,4 +1,4 @@
-.notice { position: fixed; z-index: 80; bottom: max(16px, env(safe-area-inset-bottom)); left: 20px; width: min(390px, calc(100vw - 40px)); padding: 20px; border-radius: 14px; background: var(--surface-strong); color: var(--foreground); box-shadow: 0 12px 36px #0b302a26; }
+.notice { position: fixed; z-index: 80; bottom: max(16px, env(safe-area-inset-bottom)); right: 20px; width: min(390px, calc(100vw - 40px)); padding: 20px; border-radius: 14px; background: var(--surface-strong); color: var(--foreground); box-shadow: 0 12px 36px #0b302a26; }
 .notice h2 { margin: 0 0 8px; font-size: 1.125rem; font-weight: 650; letter-spacing: -.02em; }
 .notice p { margin: 0 0 14px; font-size: .875rem; line-height: 1.55; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -6,6 +6,6 @@
 .actions button:hover { background: color-mix(in srgb, currentColor 8%, transparent); }
 .actions button:focus-visible, .notice a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .notice a { text-decoration: underline; text-underline-offset: 3px; }
-.settings { position: fixed; z-index: 35; bottom: max(10px, env(safe-area-inset-bottom)); left: 14px; min-height: 44px; padding: 7px 12px; border-radius: 8px; background: var(--surface-strong); color: var(--foreground); font-size: .75rem; box-shadow: 0 3px 12px #0b302a14; }
+.settings { position: fixed; z-index: 35; bottom: max(10px, env(safe-area-inset-bottom)); right: 14px; min-height: 44px; padding: 7px 12px; border-radius: 8px; background: var(--surface-strong); color: var(--foreground); font-size: .75rem; box-shadow: 0 3px 12px #0b302a14; }
 .settings:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .actions button { transition: none; } }

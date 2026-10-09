@@ -10,6 +10,9 @@ const researchSources = [
   { name: "USDA", description: "U.S. Department of Agriculture: plant, pest, and forest research", image: "usda.svg", href: "https://www.aphis.usda.gov/", style: "" },
   { name: "EPA", description: "U.S. Environmental Protection Agency: river and stream surveys", image: "epa.png", href: "https://www.epa.gov/national-aquatic-resource-surveys/nrsa", style: "" },
   { name: "U.S. Fish & Wildlife", description: "U.S. Fish and Wildlife Service: invasive carp monitoring", image: "fws.svg", href: "https://www.fws.gov/", style: "source-logo-shield" },
+  { name: "Forest Service", description: "USDA Forest Service: forest pest detections and invasive plant surveys", image: "usfs.svg", href: "https://www.fs.usda.gov/", style: "source-logo-shield" },
+  { name: "Purdue University", description: "Purdue University and USDA Forest Service: Alien Forest Pest Explorer", image: "purdue.png", href: "https://purr.purdue.edu/publications/4479", style: "" },
+  { name: "New York Botanical Garden", description: "New York Botanical Garden: preserved herbarium specimens", image: "nybg.svg", href: "https://sweetgum.nybg.org/science/vh/", style: "" },
   { name: "EDDMapS", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", href: "https://www.eddmaps.org/", style: "" },
   { name: "GBIF", description: "Global Biodiversity Information Facility: biodiversity records and collections", image: "gbif.svg", href: "https://www.gbif.org/", style: "" },
   { name: "iNaturalist", description: "iNaturalist: research-grade observations", image: "inaturalist.svg", href: "https://www.inaturalist.org/", style: "" },
@@ -38,7 +41,7 @@ export default function AboutPage() {
           <div className="about-brand-and-sources">
             <div className="about-brand-lockup" aria-label="About isitusa">
               <Image className="brand-art" src="/brand/v3/isitusa-symbol-name.svg" alt="isitusa" width={220} height={294} unoptimized priority />
-              <Image className="brand-art about-full-name" src="/brand/full-name-v1/isitusa-full-name-green.svg" alt="Invasive Species in the United States of America" width={2133} height={356} unoptimized priority />
+              <Image className="brand-art about-full-name" src="/brand/full-name-v2/isitusa-full-name-green.svg" alt="Invasive Species In The United States of America" width={2133} height={356} unoptimized priority />
             </div>
             <section className="about-source-panel" aria-labelledby="source-panel-heading">
               <h2 id="source-panel-heading">Built on trusted research from fellow protagonists</h2>
@@ -68,7 +71,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-purpose" aria-labelledby="commitment-heading"><h2 id="commitment-heading">Built to be useful, and open about its limits.</h2><div><p>We are building isitusa as an independent research initiative. We organize existing knowledge, check what it supports, and make the results easier to explore. Our responsibility is to make the sources, dates, and limits of each finding easy to check.</p><p>The atlas is a work in progress. Some counties have extensive records; others need more research. We show those gaps because knowing what is still unknown is part of understanding a place. As the evidence changes, our findings can change too.</p></div></section>
+      <section className="about-purpose" aria-labelledby="commitment-heading"><h2 id="commitment-heading">Built to be useful, and open about its limits.</h2><div><p>We are building isitusa as an independent research initiative. We organize existing knowledge, check what it supports, and make the results easier to explore. Our responsibility is to make the sources, dates, and limits of each finding easy to check.</p><p>This project is a work in progress. Some counties have extensive records; others need more research. We show those gaps because knowing what is still unknown is part of understanding a place. As the evidence changes, our findings can change too.</p></div></section>
 
       <section className="about-method" aria-labelledby="method-heading">
         <div className="section-introduction">
@@ -92,11 +95,11 @@ export default function AboutPage() {
       </section>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
-        <div className="section-introduction"><h2 id="help-heading">Help make the atlas more useful.</h2><p>Share it with someone, learn how to report a sighting, or see what we are working on next.</p></div>
+        <div className="section-introduction"><h2 id="help-heading">Help make the research more useful.</h2><p>Share it with someone, learn how to report a sighting, or see what we are working on next.</p></div>
         <div className="involvement-links">
           <Link href="/report"><span><strong>Share an observation</strong><small>See how to document what you found and where to report it.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/join"><span><strong>Follow what matters to you</strong><small>We are planning county updates, species alerts, and ways to help. Signups are not open yet.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/support"><span><strong>Support the atlas</strong><small>See ways to support the research and the atlas.</small></span><Heart size={22} aria-hidden="true" /></Link>
+          <Link href="/support"><span><strong>Support the mission</strong><small>Help keep research open and useful.</small></span><Heart size={22} aria-hidden="true" /></Link>
         </div>
       </section>
 
