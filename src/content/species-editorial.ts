@@ -1,6 +1,8 @@
 /** Display-only editorial notes; source taxonomy, determinations and occurrence data are unchanged. */
 export interface SpeciesEditorial { summary: string; reviewedAt: string; sources: { label: string; url: string }[] }
+import batchOneCompletion from "./editorial-batch-01-completion.json";
 export const SPECIES_EDITORIAL: Record<string, SpeciesEditorial> = {
+  ...batchOneCompletion,
   "artemisia-absinthium": {
     "summary": "Wormwood’s finely divided, silvery leaves and strong scent make it distinctive. This perennial herb bears small yellow flower heads and can grow into a loose, shrub-like clump.",
     "reviewedAt": "2026-09-28",
