@@ -30,3 +30,11 @@ No research writes, no paid services, no local build/install. Source/review file
 ## October 9 extension
 
 Organization work extends the existing queue and editor composition. A left proposal list opens an opaque, focused editor on the right; mobile stacks the list above the form. Types are articles, events, outreach and partnerships. Volunteers see their own or assigned work. Staff approval is a separate action and never implicitly publishes or forwards a report. Email studio separates drafting from private subscriber data and preserves the reviewed version. Reuse the existing short panel reveal and reduced-motion treatment. No replacement visual world.
+
+## October 9 profile review extension
+
+Mode: Operate/Read. Profile review extends the existing workspace rail and opaque reading panel. Four 50-profile batches, cross-batch name search and review-status filtering lead to a species list and readable draft. The reader presents linked sources, a native disclosure for the previous description, private feedback, optional draft/source edits and a separate authorized approval action. The list stacks above the reader below 760px; prose remains bounded at 65ch. Prepared drafts and public descriptions have separate content sources. Saving or approving a draft does not publish it.
+
+The extension reuses the incumbent color variables, system typography, shared fields/buttons, visible focus and reduced-motion handling. It introduces no new visual identity or system token authority. The fresh finish review recorded `ship` with no material fixes for source revision `2ad0e93a4b`; its scope and evidence are in `ops/national-research/ui-work/profile-review-ui-20261009/finish-review.md`.
+
+For this release, the user's explicit October 9 authorization permits the remote production build and release despite the earlier 90 GB storage threshold. Local production builds and installs remain excluded. This authorization is not evidence that deployment completed; deployment verification belongs to the release record.
