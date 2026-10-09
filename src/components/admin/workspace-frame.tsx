@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { SPECIES_EDITORIAL } from "@/content/species-editorial";
 import type { ReactNode } from "react";
 import { BookOpenCheck, MessageCircle, Eye, ArrowRight, ChartNoAxesCombined, ClipboardList, HeartHandshake, LayoutDashboard, LogOut, Mail, NotebookPen, FolderKanban, RefreshCw, Settings2, ShieldCheck, Users } from "lucide-react";
 import type { Permission } from "@/lib/participation/contracts";
@@ -9,7 +10,7 @@ import admin from "./admin.module.css";
 export const WORKSPACE_TABS = [
   { id: "chat", name: "Team room", icon: MessageCircle, description: "Conversations for everyone on the team." },
   { id: "overview", name: "Overview", icon: LayoutDashboard, description: "A clear view of the work ahead." },
-  { id: "research", name: "Profile research", icon: BookOpenCheck, description: "Descriptions, sources, and the next batch to review." },
+  { id: "research", name: "Profile review", icon: BookOpenCheck, description: "Read the latest descriptions, check their sources and leave your feedback." },
   { id: "review", name: "Sightings", icon: ClipboardList, description: "Review observations, compare evidence and record a decision." },
   { id: "work", name: "Projects & proposals", icon: FolderKanban, description: "Articles, events, outreach and partnerships, with staff approval." },
   { id: "campaigns", name: "Email studio", icon: NotebookPen, description: "Write a useful update, review its sources, and prepare it for delivery." },
@@ -46,7 +47,7 @@ export function WorkspaceOverview({ counts, can, onTab }: { counts: Record<strin
     { permission: "audience", tab: "audience", title: "Keep your community informed", detail: "Prepare an update for the people who have chosen to hear from us.", count: counts.confirmed, unit: "confirmed and not suppressed" },
     { permission: "finance", tab: "finance", title: "Check contribution records", detail: "Read verified receipts and review refund or dispute records separately.", count: counts.finance, unit: "recorded receipts" },
   ] as const;
-  return <div className={admin.overview}><section><h3>Where to begin</h3><div className={admin.taskList}>{tasks.filter(task => can(task.permission)).map(task => <button key={task.tab} className={admin.task} onClick={() => onTab(task.tab)}><span><strong>{task.title}</strong><span>{task.detail}</span></span><span className={admin.taskCount}><b>{task.count === undefined ? "Unavailable" : task.count.toLocaleString()}</b><span>{task.unit}</span></span><ArrowRight size={18} aria-hidden="true"/></button>)}</div>{!tasks.some(task => can(task.permission)) && <p className={admin.empty}>Use the sections in your navigation to get started. Your access is set by the workspace owner.</p>}</section>
+  return <div className={admin.overview}><section><h3>Where to begin</h3><div className={admin.taskList}>{visibleTab("research", can) && <button className={admin.task} onClick={() => onTab("research")}><span><strong>Read the latest species profiles</strong><span>Browse batches, compare descriptions and save private feedback.</span></span><span className={admin.taskCount}><b>{Object.keys(SPECIES_EDITORIAL).length}</b><span>prepared descriptions</span></span><ArrowRight size={18} aria-hidden="true"/></button>}{tasks.filter(task => can(task.permission)).map(task => <button key={task.tab} className={admin.task} onClick={() => onTab(task.tab)}><span><strong>{task.title}</strong><span>{task.detail}</span></span><span className={admin.taskCount}><b>{task.count === undefined ? "Unavailable" : task.count.toLocaleString()}</b><span>{task.unit}</span></span><ArrowRight size={18} aria-hidden="true"/></button>)}</div>{!visibleTab("research", can) && !tasks.some(task => can(task.permission)) && <p className={admin.empty}>Use the sections in your navigation to get started. Your access is set by the workspace owner.</p>}</section>
       <div className={admin.overviewNotes}><section><h3>Evidence comes first.</h3><p>A review decision belongs to an observation. Research review still comes before any change to the public map.</p><a className="text-link" href="/research">Read the research status <ArrowRight size={14} aria-hidden="true"/></a></section><section><h3>Keep access purposeful.</h3><p>Private observations, email choices and contributions are separated by role. Sign out when you finish on a shared device.</p>{can("team") && <button className="text-link" onClick={() => onTab("team")}>Review team access <ArrowRight size={14} aria-hidden="true"/></button>}</section></div>
     </div>;
 }
