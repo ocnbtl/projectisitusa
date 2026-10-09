@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-09",
+  "status": "ready_for_owner_review",
+  "base": "87e50b856376961571237888894dec7fc8fdedd1",
+  "branch": "codex/workspace-experience-20261009",
+  "scope": "Display-only sourced profile editorial, first 200 alphabetical species",
+  "counts": {
+    "baseline": 50,
+    "final": 200,
+    "netNew": 150,
+    "existingRead": 50,
+    "existingSubstantiallyRefined": 11,
+    "remainingQueued": 2304
+  },
+  "sourceLinks": 235,
+  "uniqueSourceUrls": 224,
+  "review": [
+    "All 200 descriptions read for wording and scope",
+    "All 150 new descriptions have source research and caveat notes",
+    "11 existing descriptions substantially revised against primary references",
+    "Exact 50 queue IDs per batch; unique descriptions; source URL structure; git diff --check passed"
+  ],
+  "verification": [
+    "node ops/national-research/ui-work/profiles-first-200-20261009/build-review.cjs",
+    "git diff --check"
+  ],
+  "limits": [
+    "Some sources were available through indexed primary-source text when direct opens failed; details are preserved in batch research notes.",
+    "Profile summaries describe species biology; no county evidence, occurrence or invasive-status determinations changed.",
+    "Typecheck, remote build and publication of the combined 200-profile change are deferred because current resources are below the repository gate. Earlier typecheck covered the first-batch revision only."
+  ],
+  "remainingWork": [
+    "Owner reading of first-200-review.html",
+    "Run combined typecheck and preview build when resource gate permits",
+    "Publish and verify production after those release checks"
+  ],
+  "publication": "Not published; production remains at the previous 50-profile release."
+}
