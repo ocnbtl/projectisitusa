@@ -1,0 +1,102 @@
+{
+  "verifiedAt": "2026-10-09T06:48:01.733087+00:00",
+  "sourceCommit": "3c0a0c2c71a7cf73a58fb01414d03375fb4e7ac5",
+  "owner": {
+    "activeOwners": 1,
+    "invitation": "Resend delivered; Supabase shows accepted and a sign-in",
+    "verifiedMfaFactors": 0,
+    "remaining": "Owner signs in and completes authenticator enrollment; no password or OTP is handled by the agent"
+  },
+  "credentials": {
+    "resend": "Domain-restricted sending key installed in backend and Auth SMTP",
+    "posthog": "Project 644720 query-read key installed; initial value rotated after accidental appearance in tool output; superseded key invalid",
+    "rateLimitSalt": "Installed; no credential values stored in repository"
+  },
+  "authMail": {
+    "from": "team@alerts.isitusa.com",
+    "host": "smtp.resend.com",
+    "port": 465,
+    "templates": [
+      "invite",
+      "recovery"
+    ],
+    "templateLinks": "Explicit token-hash confirmation with correct type"
+  },
+  "backend": {
+    "apiVersion": 10,
+    "apiHash": "58a6ef904b4ac77367f0ab3fcd289447e7da7d7635629f7009d14c0bf64792f7",
+    "migrations": [
+      "organization_work_and_campaign_review",
+      "preserve_approved_work_completion",
+      "preserve_campaign_review_feedback"
+    ],
+    "completionGuardReadback": 1,
+    "anonymousAnalytics": 401,
+    "anonymousConnections": 401,
+    "publicConfig": {
+      "email": false,
+      "reports": false,
+      "payments": false,
+      "wallets": []
+    }
+  },
+  "checks": {
+    "inMemorySql": "PASS schemas01-09; authorization, transactions, quotas, role capacity, draft editing, volunteer/staff review, frozen completion and feedback retention",
+    "frontend": "PASS no emit; 16 privacy assertions and 6 role-presentation assertions",
+    "backend": "PASS cached Deno check",
+    "lint": "25 files, 0 errors, 4 pre-existing image warnings",
+    "advisors": "0 errors, 7 expected deny-all service-table notices; leaked password protection disabled warning (plan availability not changed)",
+    "researchWrites": 0,
+    "r2Writes": 0,
+    "localBuilds": 0,
+    "installs": 0
+  },
+  "preview": {
+    "id": "DTNpjB2xuWWUsTSLDfi3Z2nhvrBv",
+    "url": "https://projectisitusa-co65qmykt-unigentamos.vercel.app",
+    "status": "Ready"
+  },
+  "mailingAddress": "Not provided. No blanket address requirement for account emails. Assess actual campaign primary purpose and provider policy; promotional sending stays closed.",
+  "remaining": [
+    "Hosted MFA private analytics and workflow verification",
+    "Campaign Send, eligible audience preview, unsubscribe checks, signed bounce/complaint handling and bounded scheduling",
+    "Current Stripe checkout and monthly invoice receipt reconciliation",
+    "Full contact CRM and curated verified authority routing",
+    "Public signup and reporting activation after end-to-end tests"
+  ],
+  "designReview": {
+    "initial": "fix: persistent staff feedback and redundant divider",
+    "verdict": "ship",
+    "scope": "Both scored fixes resolved; not authenticated hosted workflow verification",
+    "captures": [
+      "work-desktop.png",
+      "work-mobile.png",
+      "work-mobile-dark.png",
+      "email-final-desktop.png",
+      "email-final-mobile.png"
+    ],
+    "capturePath": ".impeccable/review/operations-oct09",
+    "visualSource": "85ae3f49ecc4ebcfc97b36d9abd93a6a27ca0755",
+    "finalSourceDifference": "3c0a0c2 adds only confirmation before discarding unsaved drafts on Refresh; no markup/CSS changes"
+  },
+  "resources": {
+    "freeDiskBytes": 111562289152,
+    "newCaptureBytes": 842448,
+    "newFilesBudgetBytes": 20000000,
+    "floorBytes": 90000000000
+  },
+  "production": {
+    "id": "4AsJRc8fAyYTxXzVdFUdJdc7wL7Q",
+    "status": "Ready",
+    "source": "3c0a0c2c71a7cf73a58fb01414d03375fb4e7ac5",
+    "domain": "https://isitusa.com",
+    "immutableUrl": "https://projectisitusa-92r7m2895-unigentamos.vercel.app",
+    "buildDuration": "5m45s",
+    "rollbackId": "DQMuen95tcgNjCea8sY7eaY8HmNm",
+    "publicRoutes": "home/admin/support/research return200",
+    "fixture": "production /admin/preview renders custom page-not-found; no fictional workspace",
+    "checkout": "configuration available=true monthly=true; GET only, no payment made",
+    "privateEndpoints": "analytics and connections return401 without authentication",
+    "proof": ".impeccable/review/operations-oct09/production-release-ready.png"
+  }
+}
