@@ -25,4 +25,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Boundaries
 
-No research writes, no paid services, no local build/install. Source/review files <=20 MB; stop below 90 GB free. Existing persistent-credential approval remains pending. A preview-only synthetic workspace may exercise presentation without connecting to live records; production must return 404 for it. Do not claim fixture review verifies hosted identity, mail delivery or payments.
+No research writes, no paid services, no local build/install. Source/review files <=20 MB; stop below 90 GB free. Restricted Resend/PostHog credentials and the sole owner account are authorized. Password and authenticator setup remain user-completed. A preview-only synthetic workspace may exercise presentation without connecting to live records; production must return 404 for it. Do not claim fixture review verifies hosted identity, mail delivery or payments.
+
+## October 9 extension
+
+Organization work extends the existing queue and editor composition. A left proposal list opens an opaque, focused editor on the right; mobile stacks the list above the form. Types are articles, events, outreach and partnerships. Volunteers see their own or assigned work. Staff approval is a separate action and never implicitly publishes or forwards a report. Email studio separates drafting from private subscriber data and preserves the reviewed version. Reuse the existing short panel reveal and reduced-motion treatment. No replacement visual world.

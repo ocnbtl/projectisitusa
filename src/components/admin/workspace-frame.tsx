@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowRight, ChartNoAxesCombined, ClipboardList, HeartHandshake, LayoutDashboard, LogOut, Mail, RefreshCw, Settings2, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, ChartNoAxesCombined, ClipboardList, HeartHandshake, LayoutDashboard, LogOut, Mail, NotebookPen, FolderKanban, RefreshCw, Settings2, ShieldCheck, Users } from "lucide-react";
 import type { Permission } from "@/lib/participation/contracts";
 import { styles } from "@/components/participation/shared";
 import admin from "./admin.module.css";
@@ -9,6 +9,8 @@ import admin from "./admin.module.css";
 export const WORKSPACE_TABS = [
   { id: "overview", name: "Overview", icon: LayoutDashboard, description: "A clear view of the work ahead." },
   { id: "review", name: "Sightings", icon: ClipboardList, description: "Review observations, compare evidence and record a decision." },
+  { id: "work", name: "Organization work", icon: FolderKanban, description: "Articles, events, outreach and partnerships, with staff approval." },
+  { id: "campaigns", name: "Email studio", icon: NotebookPen, description: "Write a useful update, review its sources, and prepare it for delivery." },
   { id: "audience", name: "Email audience", icon: Mail, description: "Follow subscriber choices and prepare the next update." },
   { id: "finance", name: "Contributions", icon: HeartHandshake, description: "Verified receipts, with their original amounts and sources." },
   { id: "analytics", name: "Site activity", icon: ChartNoAxesCombined, description: "Understand how consenting visitors use the atlas." },
@@ -17,6 +19,8 @@ export const WORKSPACE_TABS = [
 ] as const;
 export type WorkspaceTab = typeof WORKSPACE_TABS[number]["id"];
 export function visibleTab(tab: WorkspaceTab, can: (permission: Permission) => boolean) {
+  if (tab === "work") return ["content","events","outreach","approve"].some(p => can(p as Permission));
+  if (tab === "campaigns") return can("content") || can("audience") || can("publish");
   return tab === "overview" || can(tab === "settings" ? "team" : tab);
 }
 export function WorkspaceFrame({ name, owner, tab, can, loading, refreshedAt, onTab, onRefresh, onSignOut, children }: {

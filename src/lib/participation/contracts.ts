@@ -5,13 +5,17 @@ export const STREAMS = [
   { id: "action", title: "Ways to help", detail: "Occasional restoration opportunities, conservation campaigns, and ways to support the work." },
 ] as const;
 export type Stream = typeof STREAMS[number]["id"];
-export const PERMISSIONS = ["review", "review_decide", "audience", "finance", "analytics", "team"] as const;
+export const PERMISSIONS = ["review", "review_decide", "audience", "finance", "analytics", "team", "content", "events", "outreach", "approve", "publish"] as const;
 export type Permission = typeof PERMISSIONS[number];
 export const ROLE_PRESETS: {name:string; permissions:Permission[]; detail:string}[] = [
- {name:"Volunteer",permissions:["review"],detail:"Inspect sightings and record preliminary reviews."},
- {name:"Lead reviewer",permissions:["review","review_decide"],detail:"Accept or reject observations for research review."},
- {name:"Communications",permissions:["audience","analytics"],detail:"Manage email content and view site usage."},
- {name:"Operations",permissions:["review","review_decide","audience","finance","analytics"],detail:"Manage day-to-day project operations."},
+ {name:"Sighting volunteer",permissions:["review"],detail:"Inspect observations and record preliminary reviews. Staff make final decisions."},
+ {name:"Content volunteer",permissions:["content"],detail:"Write articles and email drafts. No mailing-list access or publication rights."},
+ {name:"Events volunteer",permissions:["events"],detail:"Prepare event proposals and work on assigned events for staff review."},
+ {name:"Outreach volunteer",permissions:["outreach"],detail:"Prepare outreach and partnership proposals for staff approval."},
+ {name:"Staff reviewer",permissions:["review","review_decide"],detail:"Make final observation decisions for research review."},
+ {name:"Staff communications",permissions:["content","audience","publish","analytics"],detail:"Review and approve emails, manage subscriber choices, and view site usage."},
+ {name:"Staff operations",permissions:["review","review_decide","content","events","outreach","approve","analytics"],detail:"Assign work and approve articles, events and outreach. Finances stay separate."},
+ {name:"Finance",permissions:["finance"],detail:"Read contribution records and record verified receipts."},
  {name:"Team manager",permissions:["review","team"],detail:"Invite volunteers. Only the owner can grant elevated access."},
 ];
 export const REVIEW_STATES = ["submitted", "in_review", "needs_info", "accepted", "rejected"] as const;

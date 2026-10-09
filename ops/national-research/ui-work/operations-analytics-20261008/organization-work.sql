@@ -1,0 +1,42 @@
+-- In-memory only, rollback-only. Never a hosted fixture.
+begin;
+create function pg_temp.work_assert(value boolean, message text) returns void language plpgsql as $$ begin if value is distinct from true then raise exception 'TEST FAILED: %',message; end if; end $$;
+insert into auth.users(id,email) values ('11111111-2222-4333-8444-111111111111','writer@example.invalid'),('22222222-2222-4333-8444-111111111111','staff@example.invalid');
+insert into auth.sessions(id,user_id) values ('aaaaaaaa-2222-4333-8444-111111111111','11111111-2222-4333-8444-111111111111'),('bbbbbbbb-2222-4333-8444-111111111111','22222222-2222-4333-8444-111111111111');
+insert into public.isitusa_staff(user_id,email,display_name,permissions) values ('11111111-2222-4333-8444-111111111111','writer@example.invalid','Writer',array['content','events']),('22222222-2222-4333-8444-111111111111','staff@example.invalid','Staff',array['approve','publish','audience']);
+insert into public.isitusa_work(id,kind,title,created_by) values ('cccccccc-2222-4333-8444-111111111111','event','Other private record','22222222-2222-4333-8444-111111111111');
+select pg_temp.work_assert(not has_function_privilege('anon','public.isitusa_save_work(uuid,integer,jsonb,text)','execute'),'anonymous work changes denied');
+set local request.jwt.claims='{"sub":"11111111-2222-4333-8444-111111111111","role":"authenticated","aal":"aal2","session_id":"aaaaaaaa-2222-4333-8444-111111111111"}';
+set local role authenticated;
+select pg_temp.work_assert((select count(*)=0 from public.isitusa_work),'volunteer cannot see other private work');
+select pg_temp.work_assert((select count(*)=0 from public.isitusa_subscribers),'writer cannot see subscriber addresses');
+select public.isitusa_save_work(null,null,'{"kind":"event","title":"A proposed event"}','in_review');
+select public.isitusa_campaign('facts','A species story','A draft with sources.');
+do $$ declare work_id uuid; campaign_id uuid; begin
+ select id into work_id from public.isitusa_work where title='A proposed event';
+ begin perform public.isitusa_save_work(work_id,0,'{"kind":"event","title":"A proposed event","review_note":"Self approval"}','approved'); raise exception 'TEST FAILED: volunteer approved own event'; exception when insufficient_privilege then null; end;
+ select id into campaign_id from public.isitusa_campaigns where subject='A species story';
+ perform public.isitusa_review_campaign(campaign_id,0,'in_review','');
+ begin perform public.isitusa_review_campaign(campaign_id,1,'approved','Self approval'); raise exception 'TEST FAILED: volunteer approved own campaign'; exception when insufficient_privilege then null; end;
+end $$;
+reset role;
+set local request.jwt.claims='{"sub":"22222222-2222-4333-8444-111111111111","role":"authenticated","aal":"aal2","session_id":"bbbbbbbb-2222-4333-8444-111111111111"}';
+set local role authenticated;
+do $$ declare work_id uuid; campaign_id uuid; begin
+ select id into work_id from public.isitusa_work where title='A proposed event';
+ perform public.isitusa_save_work(work_id,0,'{"kind":"event","title":"A proposed event","review_note":"Scope and permissions checked"}','approved');
+ begin perform public.isitusa_save_work(work_id,0,'{"kind":"event","title":"Stale update"}','draft'); raise exception 'TEST FAILED: stale work overwrite'; exception when serialization_failure then null; end;
+ begin perform public.isitusa_save_work(work_id,1,'{"kind":"event","title":"Changed without review"}','completed'); raise exception 'TEST FAILED: completion rewrote approved work'; exception when raise_exception then if sqlerrm like 'TEST FAILED:%' then raise; end if; end;
+ perform public.isitusa_save_work(work_id,1,'{"kind":"event","title":"A proposed event","review_note":"Event completed as approved"}','completed');
+ select id into campaign_id from public.isitusa_campaigns where subject='A species story';
+ perform public.isitusa_review_campaign(campaign_id,1,'approved','Sources and audience checked');
+ begin perform public.isitusa_edit_campaign(campaign_id,2,'facts','Changed after approval','Unchecked copy','draft'); raise exception 'TEST FAILED: approved copy changed'; exception when raise_exception then if sqlerrm like 'TEST FAILED:%' then raise; end if; end;
+end $$;
+reset role;
+select pg_temp.work_assert((select count(*)=0 from public.isitusa_outbox),'approval alone never sends email');
+select pg_temp.work_assert((select count(*)=1 from public.isitusa_audit where action='campaign.approved'),'campaign approval audited once');
+set local request.jwt.claims='{"sub":"22222222-2222-4333-8444-111111111111","role":"authenticated","aal":"aal1","session_id":"bbbbbbbb-2222-4333-8444-111111111111"}';
+set local role authenticated;
+select pg_temp.work_assert((select count(*)=0 from public.isitusa_work),'MFA required for work');
+reset role;
+rollback;

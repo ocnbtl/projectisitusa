@@ -130,12 +130,12 @@ Deno.serve(async(req:Request)=>{
   }
   if(action==="invite"){
    const {client}=await staff(req,"team");
-   if(!enabled("STAFF_INVITES_ENABLED")||!enabled("EMAIL_ENABLED"))throw new HttpError(503,"Staff invitations are not configured yet.");
+   if(!enabled("STAFF_INVITES_ENABLED"))throw new HttpError(503,"Staff invitations are not configured yet.");
    const email=normalizeEmail(input.email),name=boundedText(input.name,"a name",100);
    const grants=Array.isArray(input.permissions)?input.permissions:[];
    if(grants.some(p=>!PERMISSIONS.some(value=>value===p)))throw new HttpError(400,"Choose valid permissions.");
    const owner=checked(await client.from("isitusa_staff").select("is_owner").eq("user_id",(await client.auth.getUser()).data.user!.id).single());
-   if(!owner?.is_owner&&grants.some(p=>p!=="review"))throw new HttpError(403,"Only the owner can grant elevated access.");
+   if(!owner?.is_owner&&grants.some(p=>!["review","content","events","outreach"].includes(p)))throw new HttpError(403,"Only the owner can grant elevated access.");
    const invited=await db.auth.admin.inviteUserByEmail(email,{redirectTo:`${site()}/auth/confirm`});
    if(invited.error||!invited.data.user)throw new HttpError(400,"This invitation could not be sent. Check the address and existing team accounts.");
    const saved=await client.rpc("isitusa_save_staff",{target:invited.data.user.id,grants,enabled:true,name});
