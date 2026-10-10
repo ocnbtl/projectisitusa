@@ -18,4 +18,7 @@ Approved service connections saved server-side: sender, support mailbox, deliver
 - App TypeScript check: passed with no emitted files.
 - Font: self-hosted WOFF2, 22,432 bytes; OFL Fraunces derivative with original I/T outlines. Original project emblem retained; no NYBG font/artwork reused.
 - Wordmark and full name use matching outlines; editorial headings use the matching downloadable font. UI/body text remains system sans.
-- Hosted responsive and production verification pending.
+- Hosted preview 359ab82 passed (D3e3gpdTkLKKpwgWZTWNwQEbF1jC). Simulated viewports 390, 1440, and 2452 pixels; light/dark About plus brand and support checked without horizontal overflow. Display font loaded.
+- Nine network-free worker behavior cases passed, covering authorization, retries, failed sends, suppression and delivery.
+- Final source removes obsolete signup-closed copy and updates email artwork to v7; deploy the latter after the v7 asset is live.
+- Production publication and final rendered copy verification pending.

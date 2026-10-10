@@ -104,7 +104,7 @@ export default function AboutPage() {
         <div className="section-introduction"><h2 id="help-heading">Help make the research more useful.</h2><p>Share it with someone, learn how to report a sighting, or see what we are working on next.</p></div>
         <div className="involvement-links">
           <Link href="/report"><span><strong>Share an observation</strong><small>See how to document what you found and where to report it.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/join"><span><strong>Follow what matters to you</strong><small>We are planning county updates, species alerts, and ways to help. Signups are not open yet.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
+          <Link href="/join"><span><strong>Follow what matters to you</strong><small>Choose the updates you would like to receive as our email program grows.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/support"><span><strong>Support the mission</strong><small>Help keep research open and useful.</small></span><Heart size={22} aria-hidden="true" /></Link>
         </div>
       </section>
