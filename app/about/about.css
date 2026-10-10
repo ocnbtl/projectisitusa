@@ -77,3 +77,26 @@
   .about-source-logos li { width:calc(33.333% - 8px); }
   .about-source-logos a > span:nth-child(2) { font-size:12px; }
 }
+
+/* Let source credits use the screen; size wordmarks by shape rather than a square. */
+.about-brand-and-sources { max-width:none; }
+.about-source-panel { max-width:none; width:100%; margin-top:32px; }
+.about-source-logos { display:grid; grid-template-columns:repeat(auto-fit,minmax(152px,1fr)); gap:24px; align-items:start; }
+.about-source-logos li { width:auto; min-width:0; }
+.about-source-mark { width:100%; height:76px; padding:0; }
+.about-source-mark img { width:auto; height:auto; max-width:112px; max-height:72px; }
+.about-source-mark.source-logo-wide img { width:100%; max-width:176px; max-height:64px; }
+.about-source-logos a > span:nth-child(2) { font-size:12px; }
+.about-source-panel > p { max-width:1100px; }
+@media (min-width:1200px) {
+  .about-brand-lockup > img:first-child { width:180px; }
+  .about-opening h1 { margin-bottom:32px; }
+  .about-introduction { gap:40px; }
+}
+@media (max-width:700px) {
+  .about-source-logos { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 20px; }
+  .about-source-mark { height:72px; }
+  .about-source-mark img { max-width:104px; max-height:64px; }
+  .about-source-mark.source-logo-wide img { max-width:176px; max-height:56px; }
+  .about-source-panel > p { font-size:13px; }
+}

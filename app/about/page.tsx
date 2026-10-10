@@ -21,7 +21,7 @@ const researchSources = [
   { name: "University of Wisconsin-Madison", description: "University of Wisconsin-Madison Extension: horticultural research and plant profiles", image: "wisconsin.svg", width: 55.5, height: 87.28, href: "https://hort.extension.wisc.edu/articles/popcorn-cassia-senna-cassia-didymobotrya/", style: "source-logo-shield" },
   { name: "University of Georgia", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", width: 250, height: 61, href: "https://www.eddmaps.org/", style: "source-logo-dark-light" },
   {"name":"University of Minnesota","description":"University of Minnesota Extension: invasive species identification and management guidance","image":"minnesota.svg","width":220,"height":152.7043158,"href":"https://extension.umn.edu/identify-invasive-species/garlic-mustard","style":"source-logo-dark-light"},
-  {"name":"NC State University","description":"NC State Extension Plant Toolbox: plant identification and species profiles","image":"nc-state.svg","width":2006.3,"height":294.9,"href":"https://plants.ces.ncsu.edu/plants/acer-pseudoplatanus/","style":"source-logo-dark-light"},
+  {"name":"NC State University","description":"NC State Extension Plant Toolbox: plant identification and species profiles","image":"nc-state-compact.png","width":300,"height":144,"href":"https://plants.ces.ncsu.edu/plants/acer-pseudoplatanus/","style":"source-logo-dark-light"},
   {"name":"Virginia Tech","description":"Virginia Tech: weed identification resources used in our species profiles","image":"virginia-tech.svg","width":943,"height":466,"href":"https://weedid.cals.vt.edu/profile/476","style":"source-logo-usgs"},
   {"name":"Oregon State University","description":"Oregon State University: landscape plant descriptions and identification","image":"oregon-state.svg","width":250,"height":80,"href":"https://landscapeplants.oregonstate.edu/plants/pinus-halepensis","style":"source-logo-dark-light"},
   { name: "Forest Service", description: "USDA Forest Service: forest pest detections and invasive plant surveys", image: "usfs.svg", width: 182, height: 198, href: "https://www.fs.usda.gov/", style: "source-logo-shield" },
@@ -60,7 +60,7 @@ export default function AboutPage() {
               <ul className="about-source-logos">
                 {researchSources.map(source => <li key={source.name}>
                   <a href={source.href} target="_blank" rel="noreferrer" title={source.description}>
-                    <span className={`about-source-mark ${source.style}`}><Image src={`/source-logos/${source.image}`} alt="" width={source.width} height={source.height} unoptimized /></span>
+                    <span className={`about-source-mark ${source.style} ${source.width / source.height > 2 ? "source-logo-wide" : ""}`}><Image src={`/source-logos/${source.image}`} alt="" width={source.width} height={source.height} unoptimized /></span>
                     <span>{source.name}<ArrowUpRight size={12} aria-hidden="true" /></span>
                     <span className="sr-only">{source.description}. Opens in a new tab.</span>
                   </a>
