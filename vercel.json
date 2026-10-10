@@ -1,4 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "node scripts/should-ignore-vercel-build.mjs"
+  "ignoreCommand": "node scripts/should-ignore-vercel-build.mjs",
+  "installCommand": "npx --yes npm@11.16.0 ci --include=optional"
 }

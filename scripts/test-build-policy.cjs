@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const test = require('node:test');
+const { validate } = require('./check-build-policy.cjs');
+const pkg = { engines: { node: '24.x', npm: '11.16.0' }, packageManager: 'npm@11.16.0', allowScripts: { 'fixture@1.0.0': false } };
+const lock = { packages: { 'node_modules/fixture': { version: '1.0.0', hasInstallScript: true } } };
+test('reviewed version passes', () => validate(pkg, lock));
+test('new script package fails', () => assert.throws(() => validate(pkg, {packages:{...lock.packages,'node_modules/new':{version:'1',hasInstallScript:true}}}), /Unreviewed/));
+test('changed version requires review', () => assert.throws(() => validate(pkg, {packages:{'node_modules/fixture':{version:'2.0.0',hasInstallScript:true}}}), /Unreviewed/));
+test('blanket decisions fail', () => assert.throws(() => validate({...pkg,allowScripts:{...pkg.allowScripts,'*':true}}, lock), /broad or stale/));
+test('unreviewed enabling fails', () => assert.throws(() => validate({...pkg,allowScripts:{'fixture@1.0.0':true}},lock),/Unreviewed/));

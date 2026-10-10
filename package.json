@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "dev:clean": "node scripts/clean-next.mjs && next dev",
-    "build": "node scripts/check-release-coherence.mjs --vercel && node scripts/check-application-research-snapshot.mjs && node scripts/prepare-runtime-assets.mjs && node scripts/prepare-vercel-build.mjs && next build",
+    "build": "npm run check:build-policy && npm run check:native-tools && npm run lint && npm run check:dependency-security && node scripts/check-release-coherence.mjs --vercel && node scripts/check-application-research-snapshot.mjs && node scripts/prepare-runtime-assets.mjs && node scripts/prepare-vercel-build.mjs && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "node scripts/lint-app.cjs",
     "typecheck": "tsc --noEmit",
     "check:data-integrity": "node --import tsx scripts/check-data-integrity.ts",
     "check:vercel-publish": "node scripts/test-release-coherence.mjs && node scripts/test-prepare-vercel-build.mjs && node scripts/test-should-ignore-vercel-build.mjs && node --import tsx scripts/test-public-projection-fetch.ts && node --import tsx scripts/test-research-deep-links.ts && node --import tsx scripts/test-temporal-determination-presentation.ts",
@@ -128,15 +128,18 @@
     "check:epa-nrsa-1314-fish": "node --import tsx scripts/test-epa-nrsa-1314-fish-counts.ts && node --import tsx scripts/test-epa-nrsa-1314-retained-replay.ts",
     "check:ebird-original": "node --import tsx scripts/test-ebird-original-observations.ts && node --import tsx scripts/test-ebird-original-method.ts && npm run check:ebird-selected-original",
     "check:ebird-selected-original": "node --max-old-space-size=1024 --import tsx scripts/test-ebird-selected-original.ts",
-    "typecheck:app": "tsc --noEmit --project tsconfig.app.json"
+    "typecheck:app": "tsc --noEmit --project tsconfig.app.json",
+    "check:build-policy": "node --test scripts/test-build-policy.cjs && node scripts/check-build-policy.cjs",
+    "check:native-tools": "node scripts/check-native-tools.cjs && node scripts/check-dependency-contracts.cjs",
+    "check:dependency-security": "npm audit --omit=dev --audit-level=low"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
-    "csv-parse": "^5.6.0",
+    "csv-parse": "7.0.3",
     "d3-geo": "^3.1.1",
     "lucide-react": "^0.542.0",
-    "next": "15.5.23",
+    "next": "15.5.27",
     "next-themes": "^0.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -156,11 +159,27 @@
     "@types/react-dom": "^18.3.7",
     "@types/topojson-client": "^3.1.4",
     "eslint": "^9.38.0",
-    "eslint-config-next": "^15.5.6",
+    "eslint-config-next": "15.5.27",
     "shapefile": "^0.6.6",
     "tailwindcss": "^4.1.14",
     "topojson-server": "^3.0.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": "24.x",
+    "npm": "11.16.0"
+  },
+  "packageManager": "npm@11.16.0",
+  "allowScripts": {
+    "unrs-resolver@1.11.1": false,
+    "fsevents@2.3.3": false,
+    "esbuild@0.28.2": false
+  },
+  "overrides": {
+    "next": {
+      "sharp": "0.35.5",
+      "postcss": "8.5.29"
+    }
   }
 }

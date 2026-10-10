@@ -1,0 +1,27 @@
+{
+  "task": "build-warning-cleanup",
+  "base": "6430844223639241fbe4815180cfb4f86f1880c3",
+  "branch": "codex/workspace-experience-20261009",
+  "scope": [
+    "package.json",
+    "package-lock.json",
+    "vercel.json",
+    ".npmrc",
+    "scripts/check-build-policy.cjs",
+    "scripts/test-build-policy.cjs",
+    "scripts/check-native-tools.cjs",
+    "src/components/admin/staff-auth.tsx",
+    "src/components/admin/workspace.tsx",
+    "src/components/county-card-download.tsx",
+    "src/components/participation/support-form.tsx",
+    "scripts/lint-app.cjs",
+    "scripts/check-dependency-contracts.cjs"
+  ],
+  "denied": [
+    "research data",
+    "wallet destinations",
+    "secrets"
+  ],
+  "releaseAuthorization": "User explicitly requested implementation and production publication; remote builds only due to low local storage.",
+  "status": "validating"
+}
