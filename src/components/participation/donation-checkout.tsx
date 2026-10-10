@@ -2,7 +2,7 @@
 import { track } from "@/lib/ui/telemetry";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import Script from "next/script";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Challenge, Honeypot } from "./shared";
 import { donationAmount, type DonationFrequency } from "@/lib/ui/donation-checkout";
 import s from "./support.module.css";
@@ -18,13 +18,17 @@ export function useDonationConfig() {
   }, []);
   return { config, checked };
 }
-export function DonationCheckout({ hostedLink, frequency = "once", config, checked }: { hostedLink: string | null; frequency?: DonationFrequency; config: Config | null; checked: boolean }) {
+export function DonationCheckout({ frequency = "once", config, checked, onCheckoutActiveChange }: { frequency?: DonationFrequency; config: Config | null; checked: boolean; onCheckoutActiveChange: (active: boolean) => void }) {
   const [amount, setAmount] = useState("25");
   const [custom, setCustom] = useState(false), [confirming, setConfirming] = useState(false), [token, setToken] = useState("");
   const [reset, setReset] = useState(0), [busy, setBusy] = useState(false), [error, setError] = useState("");
   const [scriptReady, setScriptReady] = useState(false), [clientSecret, setClientSecret] = useState("");
   const mount = useRef<HTMLDivElement>(null), embedded = useRef<Embedded | null>(null), lock = useRef(false), attempt = useRef("");
   const customId = useId(), customInput = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    onCheckoutActiveChange(Boolean(confirming || clientSecret));
+    return () => onCheckoutActiveChange(false);
+  }, [confirming, clientSecret, onCheckoutActiveChange]);
   useEffect(() => {
     if (custom) customInput.current?.focus({ preventScroll: true });
   }, [custom]);
@@ -52,7 +56,7 @@ export function DonationCheckout({ hostedLink, frequency = "once", config, check
     finally { lock.current = false; setBusy(false); setToken(""); setReset(value => value + 1); }
   }
   return <>
-    {config?.available && <Script src="https://js.stripe.com/v3/" onReady={() => setScriptReady(true)} onError={() => setError("Stripe could not load. Check your connection or use the secure Stripe link below.")} />}
+    {config?.available && <Script src="https://js.stripe.com/v3/" onReady={() => setScriptReady(true)} onError={() => setError("Stripe could not load. Please check your connection and reload this page.")} />}
     {clientSecret ? <><div className={s.checkoutHeader}><strong>{frequency === "monthly" ? "Monthly contribution" : "One-time contribution"}</strong><button type="button" onClick={change}>Change amount</button></div><div ref={mount} className={s.checkoutForm} /></> : <>
       {config?.available && (frequency === "once" || config.monthly) ? <>
         <p className={s.amountLabel}>Choose an amount in USD</p><div className={s.amounts} role="group" aria-label={frequency === "monthly" ? "Monthly contribution amount" : "One-time contribution amount"}>{["5", "10", "25", "50"].map(value => <button type="button" key={value} disabled={busy} aria-pressed={!custom && amount === value} onClick={() => { change(); setCustom(false); setAmount(value); }}>${value}</button>)}<button type="button" disabled={busy} aria-pressed={custom} aria-expanded={custom} aria-controls={customId} onClick={() => { change(); setCustom(true); }}>Other</button></div>
@@ -63,10 +67,10 @@ export function DonationCheckout({ hostedLink, frequency = "once", config, check
           </div>
         </div>
         <p className={s.small}>{frequency === "monthly" ? `$${amount || "0"} each month until canceled.` : "One contribution, with no recurring charge."}</p>
-        {!confirming ? <button type="button" className={`${s.primary} ${s.checkoutAction}`} disabled={!donationAmount(amount)} onClick={() => setConfirming(true)}>Continue with ${amount}{frequency === "monthly" ? " / month" : ""}<ArrowRight size={17} aria-hidden="true" /></button> : <form className={s.checkoutForm} onSubmit={submit}><label className={s.small}><input name="consent" type="checkbox" required disabled={busy} /> I agree to the <a href="/terms">contribution terms</a>{frequency === "monthly" ? ` and a recurring charge of $${amount} each month until I cancel` : ""}.</label><Honeypot /><Challenge action="donation_checkout" onToken={setToken} reset={reset} /><button className={s.primary} type="submit" disabled={!token || busy || !scriptReady}>{busy ? "Opening secure checkout..." : "Open secure checkout"}</button></form>}
-      </> : <><p className={s.small}>{checked ? frequency === "monthly" ? "Monthly contributions are not available yet." : hostedLink ? "Choose your own amount for a one-time contribution through Stripe." : "Card contributions are not available yet. You can contribute cryptocurrency below." : "Checking secure checkout..."}</p>{hostedLink && <a className={s.primary} href={hostedLink} target="_blank" rel="noopener noreferrer">Contribute on Stripe <ArrowUpRight size={17} aria-hidden="true" /><span className={s.srOnly}> (opens a new tab)</span></a>}</>}
+        {!confirming ? <button type="button" className={`${s.primary} ${s.checkoutAction}`} disabled={!donationAmount(amount)} onClick={() => setConfirming(true)}>{frequency === "monthly" ? "Give" : "Continue with"} ${amount}{frequency === "monthly" ? " monthly" : ""}<ArrowRight size={17} aria-hidden="true" /></button> : <form className={s.checkoutForm} onSubmit={submit}><label className={s.small}><input name="consent" type="checkbox" required disabled={busy} /> I agree to the <a href="/terms">contribution terms</a>{frequency === "monthly" ? ` and a recurring charge of $${amount} each month until I cancel` : ""}.</label><Honeypot /><Challenge action="donation_checkout" onToken={setToken} reset={reset} /><button className={s.primary} type="submit" disabled={!token || busy || !scriptReady}>{busy ? "Opening secure checkout..." : "Open secure checkout"}</button></form>}
+      </> : <p className={s.small} role="status">{checked ? frequency === "monthly" ? "Monthly contributions are not available right now. Please check back soon." : "Card checkout is temporarily unavailable. Please try again later or contribute cryptocurrency below." : "Checking secure checkout..."}</p>}
     </>}
     {error && <p className={s.error} role="alert">{error}</p>}
-    <p className={s.small}>Payment details are handled securely by Stripe. Contributing does not subscribe you to email updates.</p>
+
   </>;
 }
