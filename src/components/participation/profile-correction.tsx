@@ -12,11 +12,11 @@ export function ProfileCorrection({ speciesId, name }: { speciesId: string; name
     {open && <CorrectionForm speciesId={speciesId} name={name}/>}
   </section>;
 }
-function CorrectionForm({ speciesId, name }: { speciesId: string; name: string }) {
+export function CorrectionForm({ speciesId, name, preview=false }: { speciesId: string; name: string; preview?: boolean }) {
   const {config,error:configError,retry} = useConfig();
   const [challenge,setChallenge]=useState(""),[reset,setReset]=useState(0),[busy,setBusy]=useState(false),[error,setError]=useState(""),[receipt,setReceipt]=useState("");
   async function submit(event:FormEvent<HTMLFormElement>) {
-    event.preventDefault(); if(busy)return;
+    event.preventDefault(); if(busy||preview)return;
     const form=new FormData(event.currentTarget);
     setError("");
     try {
@@ -29,9 +29,9 @@ function CorrectionForm({ speciesId, name }: { speciesId: string; name: string }
     finally{setBusy(false);setChallenge("");setReset(n=>n+1);}
   }
   if(receipt)return <Notice success><strong>Thank you for helping improve this profile.</strong><p>Your suggestion is in our private review queue. A reviewer will check it before anything changes on the website.</p><p className={styles.hint}>Reference: {receipt}</p></Notice>;
-  if(configError)return <Notice error>{configError} <button className="text-link" onClick={retry}>Try again</button></Notice>;
-  if(!config)return <p role="status">Checking availability...</p>;
-  if(!config.corrections)return <Notice>Correction submissions are temporarily unavailable. Please try again later.</Notice>;
+  if(!preview&&configError)return <Notice error>{configError} <button className="text-link" onClick={retry}>Try again</button></Notice>;
+  if(!preview&&!config)return <p role="status">Checking availability...</p>;
+  if(!preview&&!config?.corrections)return <Notice>Correction submissions are temporarily unavailable. Please try again later.</Notice>;
   return <form className={styles.form} onSubmit={submit} data-private aria-busy={busy}>
     <h3>What should we check about {name}?</h3>
     <p className={styles.hint}>Tell us what looks wrong and, if possible, share a reliable source. Please leave out personal information.</p>
@@ -39,8 +39,8 @@ function CorrectionForm({ speciesId, name }: { speciesId: string; name: string }
     <label className={styles.field}>Your suggested correction<textarea name="details" required minLength={20} maxLength={3000} className={styles.textarea}/></label>
     <label className={styles.field}>Source link (optional)<input name="source_url" type="url" maxLength={1500} placeholder="https://" className={styles.input}/></label>
     <label className={styles.choice}><input type="checkbox" name="consent" required/><span>ISIT USA may store and review this suggestion to improve the profile.</span></label>
-    <Honeypot/><Challenge action="correction" onToken={setChallenge} reset={reset}/>
-    <button className={styles.button} disabled={busy||!challenge}><Send size={16} aria-hidden="true"/>{busy?"Sending suggestion...":"Send for review"}</button></fieldset>
+    <Honeypot/>{preview?<p className={styles.hint}>Presentation preview. Security check and submission are disabled.</p>:<Challenge action="correction" onToken={setChallenge} reset={reset}/>}
+    <button className={styles.button} disabled={preview||busy||!challenge}><Send size={16} aria-hidden="true"/>{busy?"Sending suggestion...":"Send for review"}</button></fieldset>
     {error&&<Notice error>{error}</Notice>}
   </form>;
 }

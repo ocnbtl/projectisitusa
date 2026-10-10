@@ -1,4 +1,5 @@
 "use client";
+import { WorkspaceInsightsView } from "./workspace-insights";
 import { useState } from "react";
 import { CampaignDrafts } from "./campaign-drafts";
 import { OrganizationWork } from "./organization-work";
@@ -25,5 +26,5 @@ export function WorkspacePreview({onExit}:{onExit?:()=>void}={}) {
 
 function PreviewRecords({kind}:{kind:"finance"|"team"|"audience"}) {
  const data={finance:{head:["Received","Amount","Reference"],row:["Oct 8, 2026","$25.00 USD","Example receipt - fictional"],actions:["Record a verified crypto receipt"]},team:{head:["Team member","Access","Manage"],row:["Example volunteer","Content volunteer","Edit access"],actions:["Invite someone to help"]},audience:{head:["Email","Choices","Delivery status"],row:["example@example.invalid","County updates, followed species","Confirmed"],actions:["Search subscribers"]}}[kind];
- return <><div className={admin.tableWrap}><table className={admin.table}><thead><tr>{data.head.map(h=><th key={h}>{h}</th>)}</tr></thead><tbody><tr>{data.row.map(c=><td key={c}>{c}</td>)}</tr></tbody></table></div><div className={admin.draftActions} style={{marginTop:20}}>{data.actions.map(a=><button type="button" className={styles.button} disabled key={a}>{a}</button>)}</div><p className={styles.hint}>Sample records. These actions are disabled in role preview.</p></>;
+ return <>{kind!=="team"&&<WorkspaceInsightsView section={kind} data={{checkedAt:"2026-10-10",confirmed:124,pending:7,suppressed:2,joined30:31,receipts:16,receipts30:5,currencies:[{currency:"USD",decimals:2,receipts:16,amount_minor:"42000"}],monthly:[{month:"2026-10",joined:31,currency:"USD",decimals:2,receipts:5,amount_minor:"12500"}],delivery30:[{state:"sent",messages:31}]}}/>}<div className={admin.tableWrap}><table className={admin.table}><thead><tr>{data.head.map(h=><th key={h}>{h}</th>)}</tr></thead><tbody><tr>{data.row.map(c=><td key={c}>{c}</td>)}</tr></tbody></table></div><div className={admin.draftActions} style={{marginTop:20}}>{data.actions.map(a=><button type="button" className={styles.button} disabled key={a}>{a}</button>)}</div><p className={styles.hint}>Sample records. These actions are disabled in role preview.</p></>;
 }

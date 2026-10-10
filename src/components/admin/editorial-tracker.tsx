@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Search } from "lucide-react";
 import queue from "@/content/editorial-queue.json";
 import baseline from "@/content/editorial-review-baseline.json";
+import { EDITORIAL_REVISIONS } from "@/content/species-editorial-revisions";
 import { SPECIES_EDITORIAL_DRAFTS as SPECIES_EDITORIAL } from "@/content/species-editorial-drafts";
 import { backend } from "@/lib/participation/client";
 import { REVIEW_STATES, reviewStatus, sourceUrls, type EditorialTask, type ReviewStatus } from "@/lib/ui/editorial-review";
@@ -11,6 +12,8 @@ import css from "./editorial-review.module.css";
 
 const prepared = queue.filter(row => Boolean(SPECIES_EDITORIAL[row.id]));
 const batches = [...new Set(prepared.map(row => row.batch))];
+const revisionRows = Object.values(EDITORIAL_REVISIONS);
+const revisionReady = revisionRows.filter(row => row.status === "ready_for_review").length;
 const previous = baseline as Record<string, string>;
 export function EditorialTracker({ preview = false, canReview = false, onDirtyChange }: { preview?: boolean; canReview?: boolean; onDirtyChange?: (dirty: boolean) => void }) {
   const [tasks, setTasks] = useState<Record<string, EditorialTask>>({});
@@ -56,6 +59,7 @@ export function EditorialTracker({ preview = false, canReview = false, onDirtyCh
   const nextPending = [...rows.slice(index + 1), ...rows.slice(0, index)].find(row => stateFor(row.id) !== "reviewed");
   return <section className={css.review} aria-label="Species profile review">
     <div className={css.intro}><p>Read at your own pace. Check the sources, leave a note, and mark the descriptions you are happy with.</p><div className={css.progress}><strong>{prepared.length} profiles ready to read</strong><span>{loading ? "Loading your decisions..." : loadError ? "Saved decisions unavailable" : `${approved} approved · ${prepared.length - approved} still to review`}</span></div></div>
+    {revisionRows.length > 0 && <p className={css.caption}>{revisionRows.length} new research candidates: {revisionReady} ready for editorial review and {revisionRows.length-revisionReady} with research gaps. These are separate from your saved draft approvals.</p>}
     {preview && <p className={css.preview} role="note">Preview only. Feedback and approvals here are examples and are not saved.</p>}
     <div className={css.batchBar} aria-label="Profile batches">{batches.map(number => <button key={number} aria-pressed={!catalog && batch === number && !query} onClick={() => change(() => { setBatch(number); setCatalog(false); setQuery(""); })}>Batch {number}<span>{(number - 1) * 50 + 1}-{Math.min(number * 50, prepared.length)}</span></button>)}<button aria-pressed={catalog} onClick={() => change(() => { setCatalog(!catalog); setBatch(1); setQuery(""); })}>{catalog ? "Back to prepared profiles" : "Full catalog"}<span>{catalog ? `${prepared.length} descriptions` : `${queue.length.toLocaleString()} species`}</span></button></div>
     <div className={css.filters}><label><span><Search size={15} aria-hidden="true"/> Find a species</span><input className={styles.input} value={query} onChange={event => change(() => setQuery(event.target.value))} placeholder={catalog ? "Search the full catalog" : "Search all 200 profiles"}/></label><label>Review status<select className={styles.select} value={filter} onChange={event => change(() => setFilter(event.target.value))}><option value="all">All statuses</option>{Object.entries(REVIEW_STATES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>{catalog && <label>Catalog batch<select className={styles.select} value={batch} disabled={Boolean(query.trim())} onChange={event => change(() => setBatch(Number(event.target.value)))}>{Array.from({ length: Math.ceil(queue.length / 50) }, (_, i) => <option key={i} value={i + 1}>Batch {i + 1}</option>)}</select></label>}</div>
@@ -71,6 +75,7 @@ export function EditorialTracker({ preview = false, canReview = false, onDirtyCh
 }
 function ProfileReview({ row, task, canReview, preview, unavailable, onDirty, onSaving, onSaved }: { row: typeof queue[number]; task?: EditorialTask; canReview: boolean; preview: boolean; unavailable: boolean; onDirty: (value: boolean) => void; onSaving: (value: boolean) => void; onSaved: (task: EditorialTask) => void }) {
   const editorial = SPECIES_EDITORIAL[row.id];
+  const revision = EDITORIAL_REVISIONS[row.id];
   const [draft, setDraft] = useState(task?.draft ?? editorial?.summary ?? ""), [notes, setNotes] = useState(task?.notes ?? ""), [sources, setSources] = useState((task?.sources ?? editorial?.sources.map(source => source.url) ?? []).join("\n"));
   const [busy, setBusy] = useState(false), [error, setError] = useState(""), [message, setMessage] = useState(""), [dirty, setDirty] = useState(false);
   const publishedSources = editorial?.sources ?? [];
@@ -96,6 +101,17 @@ function ProfileReview({ row, task, canReview, preview, unavailable, onDirty, on
   }
   return <article aria-labelledby="profile-review-name">
     <header className={css.profileHeader}><h3 id="profile-review-name">{row.commonName}</h3><p><i>{row.scientificName}</i></p><div className={css.profileMeta}><span>Batch {row.batch} · Profile {row.order}</span><span>{unavailable ? "Reading saved review..." : dirty ? "Unsaved changes" : REVIEW_STATES[status]}</span></div></header>
+    {revision && <section className={css.revision} aria-label="New research revision">
+      <h4>New research revision</h4><p className={css.caption}>{revision.status === "ready_for_review" ? "Multiple sources checked. Ready for your editorial review." : "Research still needs a closer look. Read the limitations before using this candidate."} Your saved feedback and approval remain attached to the draft below.</p>
+      <p className={css.description}>{revision.proposedDescription}</p>
+      <details className={css.disclosure}><summary>Sources, identification and research notes</summary>
+        {revision.identification && <><h5>How to identify it</h5><p>{revision.identification}</p></>}
+        {revision.actions && <><h5>What to do</h5><p>{revision.actions}</p></>}
+        <p className={css.caption}>{revision.researchNotes}</p><ul>{revision.sources.map(source => <li key={source.url}><a className="text-link" href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a> <small>Checked {source.accessedAt}</small></li>)}</ul>
+      </details>
+      <button type="button" className={`${styles.button} ${styles.secondary}`} disabled={busy || unavailable || revision.status !== "ready_for_review" || draft === revision.proposedDescription} onClick={() => { if (dirty && !window.confirm("Replace your unsaved description and sources with this research revision? Your feedback will be kept.")) return; edit(() => { setDraft(revision.proposedDescription); setSources(revision.sources.map(source => source.url).join("\n")); }); }}>Use revision in my draft</button>
+    </section>}
+    {revision && <h4>Current review draft</h4>}
     <p className={css.description}>{draft || "This profile is waiting for its first sourced description. Use Edit draft below to begin."}</p>
     {task?.draft && task.draft !== editorial?.summary && <p className={css.caption}>You are reading your saved private draft.</p>}
     <p className={css.caption}>Prepared for your review. The public profile keeps its current description until a separate publication.</p>

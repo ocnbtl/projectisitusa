@@ -37,6 +37,7 @@ Deno.serve(async(req:Request)=>{
    return Response.json({checkedAt:new Date().toISOString(),
     email:{enabled:enabled("EMAIL_ENABLED"),configured:all(["RESEND_API_KEY","RESEND_FROM","SUPPORT_EMAIL","RATE_LIMIT_SALT","TURNSTILE_SECRET_KEY"])},
     reports:{enabled:enabled("REPORTS_ENABLED"),configured:all(["RATE_LIMIT_SALT","TURNSTILE_SECRET_KEY"])},
+    corrections:{enabled:await correctionsReady()},
     analytics:{configured:all(["POSTHOG_READ_KEY","RATE_LIMIT_SALT"])},
     invitations:{enabled:enabled("STAFF_INVITES_ENABLED")},
     reconciliation:{enabled:enabled("CONTRIBUTION_RECONCILIATION_ENABLED")},
