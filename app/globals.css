@@ -961,7 +961,7 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .footer-brand { display:inline-flex; background:transparent; }
 .footer-brand img { display:block; width:100px; height:auto; }
 .brand-kit { width:100%; max-width:none; margin:0; padding:calc(var(--site-header-height) + var(--site-header-top) + 64px) var(--page-gutter) 80px; }
-.brand-kit h1 { font-size:clamp(36px,6vw,64px); letter-spacing:-.045em; line-height:1.1; margin-bottom:20px; }
+.brand-kit h1 { font-size:clamp(36px,6vw,64px); letter-spacing:-.04em; line-height:1.1; margin-bottom:20px; }
 .brand-kit-intro { max-width:640px; color:var(--muted); line-height:1.7; }
 .brand-kit-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:40px 0; }
 .brand-kit-card { min-width:0; }
@@ -1061,7 +1061,7 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .directory-view-compact .directory-summary,.directory-view-compact .directory-image-placeholder small { display:none; }
 .directory-view-compact .image-credit { padding-left:56px; }
 .directory-view-grid { grid-template-columns:repeat(auto-fill,minmax(275px,1fr)); }
-.brand-wordmark { font-family:var(--font-display),sans-serif; font-weight:800; letter-spacing:-.045em; }
+.brand-wordmark { font-family:var(--font-display),sans-serif; font-weight:800; letter-spacing:-.04em; }
 .map-artwork-credits { margin-top:12px; font-size:13px; line-height:1.8; }
 .map-artwork-credits summary { min-height:44px; cursor:pointer; }
 .map-artwork-credits p { margin:8px 0; }
@@ -1262,3 +1262,16 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 
 /* Keep the icon and label together in the vertical center. */
 .environment-options .filter-option > span { flex: 0 0 auto; }
+
+.site-brand img.header-wordmark { width:132px; height:auto; padding:0; border-radius:0; }
+.species-county-map{margin:24px 0 32px;padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:16px}
+.species-county-map svg{display:block;width:100%;max-height:440px}
+.species-county-map path{stroke:var(--surface);stroke-width:.4;vector-effect:non-scaling-stroke}
+.species-county-map .county-unknown{fill:color-mix(in srgb,var(--muted) 18%,var(--surface))}
+.species-county-map .county-recorded{fill:var(--accent);cursor:pointer}
+.species-county-map .county-selected{fill:#c58a2b;cursor:pointer}
+.species-county-map figcaption{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:12px;color:var(--muted);line-height:1.6}
+.species-county-map figcaption span:first-child{display:flex;align-items:center;gap:8px}
+.species-county-map i{display:inline-block;width:12px;height:12px;background:var(--accent);border-radius:3px}
+@media(max-width:600px){.species-county-map{padding:10px}.species-county-map svg{min-height:220px}}
+.profile-section-nav{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:24px;font-size:14px}.profile-section-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:4px}.profile-report-callout{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-block:1px solid var(--border)}.profile-report-callout h3{font-size:22px;margin-bottom:8px}.profile-report-callout p{font-size:15px;color:var(--muted)}.profile-correction form{max-width:780px;padding-top:20px}.profile-correction h3{font-size:23px;line-height:1.4}.profile-correction legend{padding-bottom:12px}@media(max-width:640px){.profile-report-callout{align-items:flex-start;flex-direction:column}.profile-section-nav{gap:4px 20px}}

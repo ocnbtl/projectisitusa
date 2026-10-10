@@ -2,6 +2,8 @@
 .notice h2 { margin: 0 0 8px; font-size: 1.125rem; font-weight: 650; letter-spacing: -.02em; }
 .notice p { margin: 0 0 14px; font-size: .875rem; line-height: 1.55; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.option { display:flex; gap:10px; align-items:center; min-height:44px; margin:0 0 12px; font-size:.875rem; cursor:pointer; }
+.option input { width:18px; height:18px; accent-color:var(--accent); }
 .actions button { min-height: 44px; padding: 9px 14px; border: 1px solid currentColor; border-radius: 8px; font-size: .875rem; font-weight: 600; transition: background-color 150ms ease-out; }
 .actions button:hover { background: color-mix(in srgb, currentColor 8%, transparent); }
 .actions button:focus-visible, .notice a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }

@@ -7,8 +7,11 @@ const QUERIES = {
   daily: `SELECT toDate(timestamp) AS day, uniq(distinct_id) AS visitors, count() AS pageviews FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND event = '$pageview' AND ${WHERE} GROUP BY day ORDER BY day LIMIT 31`,
   pages: `SELECT properties.$pathname AS page, uniq(distinct_id) AS visitors, count() AS pageviews FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND event = '$pageview' AND ${WHERE} GROUP BY page ORDER BY pageviews DESC LIMIT 15`,
   actions: `SELECT event AS action, count() AS uses FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND event IN ('county_selected','map_filter_changed','zip_search_completed','species_search_completed','species_opened','directory_view_changed','evidence_opened','source_opened','county_card_downloaded','signup_requested','signup_request_accepted','signup_request_failed','sighting_started','sighting_submitted','sighting_failed','contribution_method_selected','checkout_started','checkout_opened','checkout_failed','crypto_address_copied') AND ${WHERE} GROUP BY action ORDER BY uses DESC LIMIT 20`,
+  engagement: `SELECT properties.$pathname AS page, sumIf(toFloatOrZero(toString(properties.active_seconds)), event = 'page_engagement') AS seconds, countIf(event = '$pageview') AS views, uniqIf(properties.$session_id, event = 'scroll_depth' AND toFloatOrZero(toString(properties.depth)) >= 75) AS deep_reads FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND event IN ('$pageview','page_engagement','scroll_depth') AND ${WHERE} GROUP BY page ORDER BY seconds DESC LIMIT 30`,
+  species: `SELECT properties.species_id AS species, count() AS opens, uniq(distinct_id) AS visitors FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND event = 'species_opened' AND notEmpty(toString(properties.species_id)) AND ${WHERE} GROUP BY species ORDER BY opens DESC LIMIT 30`,
+  devices: `SELECT properties.viewport AS device, uniq(distinct_id) AS visitors, count() AS views FROM events WHERE timestamp >= now() - INTERVAL 30 DAY AND event = '$pageview' AND ${WHERE} GROUP BY device ORDER BY visitors DESC LIMIT 3`,
 } as const;
-type Snapshot = { checkedAt: string; summary: unknown[][]; daily: unknown[][]; pages: unknown[][]; actions: unknown[][] };
+type Snapshot = { checkedAt: string; summary: unknown[][]; daily: unknown[][]; pages: unknown[][]; actions: unknown[][]; engagement: unknown[][]; species: unknown[][]; devices: unknown[][] };
 let cached: Snapshot | null = null;
 let pending: Promise<Snapshot> | null = null;
 export async function analyticsSnapshot(): Promise<Snapshot> {
@@ -18,7 +21,7 @@ export async function analyticsSnapshot(): Promise<Snapshot> {
     const result = { checkedAt: new Date().toISOString() } as Snapshot;
     // One deadline across all queries stays below the client's 30-second timeout.
     const signal = AbortSignal.timeout(20000);
-    for (const [name, query] of Object.entries(QUERIES)) {
+    await Promise.all(Object.entries(QUERIES).map(async ([name, query]) => {
       const response = await fetch("https://us.posthog.com/api/projects/644720/query/", {
         method: "POST", headers: { Authorization: `Bearer ${env("POSTHOG_READ_KEY")}`, "Content-Type": "application/json" },
         body: JSON.stringify({ query: { kind: "HogQLQuery", query } }), signal,
@@ -27,7 +30,7 @@ export async function analyticsSnapshot(): Promise<Snapshot> {
       const data = await response.json();
       if (!Array.isArray(data.results) || data.results.length > 31 || data.results.some((row: unknown) => !Array.isArray(row) || row.length > 4)) throw new HttpError(503, "Site analytics returned an unexpected response.");
       result[name as keyof typeof QUERIES] = data.results;
-    }
+    }));
     cached = result; return result;
   })();
   try { return await pending; } finally { pending = null; }

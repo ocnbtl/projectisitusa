@@ -4,7 +4,7 @@ import type { Session } from "@supabase/supabase-js";
 import { Search, X } from "lucide-react";
 import { WorkspaceFrame, WorkspaceOverview, WorkspaceLoading, type WorkspaceTab } from "./workspace-frame";
 import { RoleIcon } from "./role-icon";
-import { EditorialTracker } from "./editorial-tracker";
+import { ProfileResearch } from "./profile-research";
 import { TeamChat } from "./team-chat";
 import { WorkspacePreview } from "./workspace-preview";
 import { OrganizationWork } from "./organization-work";
@@ -81,7 +81,7 @@ export function Workspace({onboarding=false}:{onboarding?:boolean}={}){
  return <WorkspaceFrame onPreview={()=>{if(!draftDirty.current||window.confirm("Discard unsaved changes and preview a role?"))setPreviewRole(true);}} name={me?.display_name??"Team member"} owner={Boolean(me?.is_owner)} tab={tab} can={can} loading={loading} refreshedAt={refreshedAt} onTab={navigate} onRefresh={()=>{if(!draftDirty.current||window.confirm("Discard your unsaved changes and refresh?"))void refresh();}} onSignOut={()=>{if(!draftDirty.current||window.confirm("Discard your unsaved draft changes and sign out?"))void backend().auth.signOut();}}>
  {filters[tab]&&<form className={admin.toolbar} onSubmit={event=>{event.preventDefault();setPage(0);setSearch(searchInput.trim());}}><label>Search {tab==="review"?"observations":tab==="audience"?"email addresses":tab==="finance"?"references":"names"}<input className={styles.input} value={searchInput} onChange={event=>setSearchInput(event.target.value)} maxLength={100} autoComplete="off" placeholder={tab==="review"?"Species or observer identification":tab==="finance"?"Payment reference":"Search records"}/></label><label>Show<select className={styles.select} value={filter} onChange={event=>{setPage(0);setFilter(event.target.value);}}><option value="all">All records</option>{filters[tab].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label><button className={`${styles.button} ${styles.secondary}`} type="submit"><Search size={16} aria-hidden="true"/>Search</button>{(search||filter!=="all")&&<button className="text-link" type="button" onClick={()=>{setSearch("");setSearchInput("");setFilter("all");setPage(0);}}>Clear</button>}</form>}
  {error&&<Notice error>{error}</Notice>}{message&&<Notice success>{message}</Notice>}{loading?<WorkspaceLoading/>:!error&&<>
- {tab==="research"&&<EditorialTracker key={dataRevision} canReview={can("approve")} onDirtyChange={setDraftDirty}/>}
+ {tab==="research"&&<ProfileResearch key={dataRevision} canReview={can("approve")} onDirtyChange={setDraftDirty}/>}
  {tab==="chat"&&<TeamChat onDirtyChange={setDraftDirty}/>}
  {tab==="work"&&<OrganizationWork can={can} onDirtyChange={setDraftDirty}/>}
  {tab==="campaigns"&&<CampaignDrafts onDirtyChange={setDraftDirty} refreshSignal={dataRevision} canPublish={can("publish")}/>}

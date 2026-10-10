@@ -40,7 +40,7 @@ export type Sighting = {
 export type Subscriber = { id: string; email: string; confirmed_at: string | null; suppressed_at: string | null; suppression_reason: string | null; preferences: Preferences; created_at: string };
 export type Contribution = { id: string; provider: "stripe" | "crypto"; provider_reference: string; currency: string; amount_minor: string; decimals: number; status: string; supporter_email: string | null; created_at: string; verification_note: string | null };
 export type Wallet = { id: string; asset: string; network: string; address: string; verified_at: string; active: boolean };
-export type PublicConfig = { email: boolean; reports: boolean; payments: boolean; wallets: Wallet[] };
+export type PublicConfig = { email: boolean; reports: boolean; payments: boolean; corrections?: boolean; wallets: Wallet[] };
 export const EMPTY_PREFERENCES: Preferences = { streams: [], counties: [], species: [] };
 
 export function normalizeEmail(value: unknown): string {

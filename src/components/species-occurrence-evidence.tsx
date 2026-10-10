@@ -2,6 +2,7 @@
 import { track } from "@/lib/ui/telemetry";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
@@ -16,6 +17,7 @@ import type { ResearchPairRecord } from "@/lib/research/types";
 function safeSourceLink(value: string) {
   try { const url = new URL(value); return ["https:", "http:"].includes(url.protocol) ? url.href : null; } catch { return null; }
 }
+const SpeciesCountyMap = dynamic(() => import("./species-county-map"), { ssr:false, loading:()=><p role="status">Opening the county map...</p> });
 
 export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId: string; commonName: string }) {
   const { data, error, retry } = useReviewedMapData();
@@ -63,6 +65,7 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
   const researchHref = buildResearchHref({ stateCode: county?.stateCode, countyFips, speciesQuery: speciesId });
   return <section id="records" className="profile-evidence reading-section" aria-labelledby="species-records-title">
     <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county or county equivalent" : "counties and county equivalents"} with reviewed records through {formatOccurrenceDate(data.asOf)}.</p> : null}</div><MapPin size={24} aria-hidden="true" /></div>
+    {data ? <SpeciesCountyMap counties={recordedCounties} selected={countyFips} labels={data.countyLabels} onSelect={setChoice} /> : null}
     {error ? <div role="alert"><p>County records could not be loaded.</p><button type="button" className="text-link min-h-11" onClick={retry}>Try again</button></div> : !data ? <p role="status">Loading records for {commonName}...</p> : countyFips && county ? <>
       <label className="profile-county-select">Choose a recorded location<select value={countyFips} onChange={event => setChoice(event.target.value)}>{options.map(fips => <option key={fips} value={fips}>{data.countyLabels[fips].name}, {data.countyLabels[fips].stateCode}</option>)}</select></label>
       {loadError ? <div role="alert"><p>{loadError}</p><button type="button" className="text-link min-h-11" onClick={() => setAttempt(value => value + 1)}>Try again</button></div> : !loaded || loadedCounty !== countyFips ? <p role="status">Loading the sources for {county.name}...</p> : pair ? <>

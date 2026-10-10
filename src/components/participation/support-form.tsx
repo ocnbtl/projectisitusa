@@ -29,13 +29,13 @@ export function SupportForm() {
  return <main id="main-content" className={s.page}>
   <div className={s.layout}>
    <section className={s.mission} aria-labelledby="mission-heading">
-    <header className={s.intro}><h1 id="mission-heading">Support the mission. Protect our planet.</h1><p>Help make trusted invasive species research easier to find, understand, and use. Your contribution keeps isitusa free for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a></header>
+    <header className={s.intro}><h1 id="mission-heading">Support the mission. Protect our planet.</h1><p>Help make trusted invasive species research easier to find, understand, and use. Your contribution keeps ISIT USA free for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a></header>
     <section className={s.otherWays} aria-labelledby="other-heading"><h2 id="other-heading">Other ways to help</h2>
      <Link href="/report"><div><strong>Document a sighting</strong><p>Learn what to photograph and where to report it.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
      <Link href="/"><div><strong>Share your county&apos;s map</strong><p>Help a neighbor, school, or local group find their records.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
      <Link href="/join"><div><strong>Follow the research</strong><p>Explore plans for county and species updates.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
     </section>
-    <p className={s.missionFoot}>Contributions support the work as a whole. They never influence a research finding. <Link href="/about">About isitusa <ArrowUpRight size={14} aria-hidden="true"/></Link></p>
+    <p className={s.missionFoot}>Contributions support the work as a whole. They never influence a research finding. <Link href="/about">About ISIT USA <ArrowUpRight size={14} aria-hidden="true"/></Link></p>
    </section>
    <section id="contribute" className={s.donation} aria-labelledby="donation-heading">
     <header className={s.donationHeading}><h2 id="donation-heading">Make a contribution</h2><p>Support research that stays open to everyone.</p></header>
@@ -43,18 +43,18 @@ export function SupportForm() {
     <section className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Give once</h3><p className={s.panelIntro}>A contribution today helps keep the research open.</p><DonationCheckout frequency="once" config={config} checked={checked} onCheckoutActiveChange={setOnceCheckoutActive}/></section>
     <section className={s.monthlyPanel}><h3><Repeat2 size={22} aria-hidden="true"/> Fund the next discovery</h3><p className={s.panelIntro}>Help uncover invasive species records, connect people with trusted research, and keep that knowledge free—month after month.</p><DonationCheckout frequency="monthly" config={config} checked={checked} onCheckoutActiveChange={setMonthlyCheckoutActive}/></section>
     {(onceCheckoutActive || monthlyCheckoutActive) && <p className={s.checkoutReassurance}>Payment details are handled securely by Stripe. Contributing does not subscribe you to email updates.</p>}
-    <section className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Contribute cryptocurrency</h3><p className={s.panelIntro}>Support isitusa directly with a verified receiving address dedicated to this project.</p>{wallet?<>
+    <section className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Contribute cryptocurrency</h3><p className={s.panelIntro}>Support ISIT USA directly with a verified receiving address dedicated to this project.</p>{wallet?<>
   {/* eslint-disable-next-line @next/next/no-img-element -- Fixed-size local SVG currency icons do not benefit from raster optimization. */}
      <div className={s.assets} role="group" aria-label="Choose cryptocurrency">{wallets.map(item=><button type="button" key={item.id} aria-label={names[item.asset]} aria-pressed={item.id===wallet.id} onClick={()=>select(item.id)}><img src={`/brand/crypto/${item.asset.toLowerCase()}.svg`} width={26} height={26} alt=""/><span>{item.asset}</span></button>)}</div>
      <div className={s.network}><strong>{names[wallet.asset]}</strong><span>{wallet.network}</span></div><label className={s.addressLabel} htmlFor="contribution-address">Receiving address</label><textarea id="contribution-address" className={s.address} aria-label={`${wallet.asset} receiving address`} readOnly spellCheck={false} value={wallet.address} rows={3} onFocus={e=>e.currentTarget.select()}/>
      <div className={s.addressActions}><button type="button" className={s.primary} onClick={copy}>{copied?<Check size={17} aria-hidden="true"/>:<Copy size={17} aria-hidden="true"/>}{copied?"Address copied":"Copy address"}</button>{cryptoUri(wallet)&&<a href={cryptoUri(wallet)!}>Open wallet <ArrowUpRight size={16} aria-hidden="true"/></a>}</div><p className={s.feedback} role="status">{feedback}</p>
      <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by isitusa.{wallet.asset==="XRP"?" No destination tag is required.":""}</p></details>
     </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section></div>
-    <footer className={s.donationFoot}><p>isitusa is an independent initiative, not a registered nonprofit. Contributions are not represented as tax-deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
+    <footer className={s.donationFoot}><p>ISIT USA is an independent initiative, not a registered nonprofit. Contributions are not represented as tax-deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
    </section>
   </div>
   {config?.portal && <section className={s.supporterPortal} aria-labelledby="supporter-heading">
-   <div><h2 id="supporter-heading">Your monthly giving</h2><p>Already supporting isitusa? Manage your recurring contribution or cancel future payments in your secure billing portal.</p></div>
+   <div><h2 id="supporter-heading">Your monthly giving</h2><p>Already supporting ISIT USA? Manage your recurring contribution or cancel future payments in your secure billing portal.</p></div>
    <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Manage monthly giving <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a><p>Opens Stripe’s secure billing portal.</p></div>
   </section>}
   <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>

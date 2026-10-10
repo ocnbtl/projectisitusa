@@ -1,12 +1,13 @@
-// Explicit PostHog events only. No autocapture, replay, identification, or form values.
+// Explicit aggregate events only. Separately consented replay lives in session-replay.ts.
 export const ANALYTICS_CHOICE_KEY = "isitusa.analytics-choice.v1";
 export const ANALYTICS_CHOICE_EVENT = "isitusa:analytics-choice";
 export const ANALYTICS_SETTINGS_EVENT = "isitusa:analytics-settings";
 const ID_KEY = "isitusa.analytics-id.v1", SESSION_KEY = "isitusa.analytics-session.v1";
-const TOKEN = "phc_BqJFVdN3fJkmLaaaVkDkLbsBgHrLk2v2cbMGTMCCq8dw"; // Public ingestion token, project 644720.
+export const ANALYTICS_TOKEN = "phc_BqJFVdN3fJkmLaaaVkDkLbsBgHrLk2v2cbMGTMCCq8dw"; // Public ingestion token, project 644720.
+export const REPLAY_CHOICE_KEY = "isitusa.replay-choice.v1";
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 export type AnalyticsChoice = "yes" | "no";
-export const EVENTS = ["$pageview", "site_active", "county_selected", "map_filter_changed", "zip_search_completed", "species_search_completed", "species_opened", "directory_view_changed", "evidence_opened", "source_opened", "county_card_downloaded", "signup_requested", "signup_request_accepted", "signup_request_failed", "sighting_started", "sighting_submitted", "sighting_failed", "contribution_method_selected", "checkout_started", "checkout_opened", "checkout_failed", "crypto_address_copied"] as const;
+export const EVENTS = ["$pageview", "site_active", "page_engagement", "scroll_depth", "county_selected", "map_filter_changed", "zip_search_completed", "species_search_completed", "species_opened", "directory_view_changed", "evidence_opened", "source_opened", "county_card_downloaded", "signup_requested", "signup_request_accepted", "signup_request_failed", "sighting_started", "sighting_submitted", "sighting_failed", "contribution_method_selected", "checkout_started", "checkout_opened", "checkout_failed", "crypto_address_copied"] as const;
 export type AnalyticsEvent = typeof EVENTS[number];
 export type EventProperties = Record<string, string | number | boolean | undefined>;
 const ENUMS: Record<string, readonly string[]> = {
@@ -29,6 +30,8 @@ export function safeProperties(properties: EventProperties): EventProperties {
     if (typeof value === "string" && ENUMS[key]?.includes(value)) result[key] = value;
     if (["species_id", "source_id"].includes(key) && typeof value === "string" && /^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,119}$/.test(value)) result[key] = value;
     if (key === "county_id" && typeof value === "string" && /^\d{5}$/.test(value)) result[key] = value;
+    if (key === "active_seconds" && typeof value === "number" && Number.isInteger(value) && value >= 1 && value <= 60) result[key] = value;
+    if (key === "depth" && typeof value === "number" && [25, 50, 75, 100].includes(value)) result[key] = value;
   }
   return result;
 }
@@ -41,15 +44,20 @@ export function analyticsChoice(): AnalyticsChoice | null {
   if (withdrawn || privacySignal()) return "no";
   try { const value = localStorage.getItem(ANALYTICS_CHOICE_KEY); return value === "yes" || value === "no" ? value : null; } catch { return "no"; }
 }
-export function setAnalyticsChoice(value: AnalyticsChoice) {
+export function replayChoice(): boolean {
+  if (analyticsChoice() !== "yes") return false;
+  try { return localStorage.getItem(REPLAY_CHOICE_KEY) === "yes"; } catch { return false; }
+}
+export function setAnalyticsChoice(value: AnalyticsChoice, replay = false) {
   withdrawn = value === "no";
-  try { localStorage.setItem(ANALYTICS_CHOICE_KEY, value); if (value === "no") { localStorage.removeItem(ID_KEY); localStorage.removeItem(SESSION_KEY); } } catch { /* Storage denial disables capture. */ }
+  try { localStorage.setItem(ANALYTICS_CHOICE_KEY, value); localStorage.setItem(REPLAY_CHOICE_KEY, value === "yes" && replay ? "yes" : "no"); if (value === "no") { localStorage.removeItem(ID_KEY); localStorage.removeItem(SESSION_KEY); } } catch { /* Storage denial disables capture. */ }
   window.dispatchEvent(new Event(ANALYTICS_CHOICE_EVENT));
 }
 let minuteStart = 0, minuteCount = 0;
-export function track(event: AnalyticsEvent, properties: EventProperties = {}): void {
+export function track(event: AnalyticsEvent, properties: EventProperties = {}, page?: string): void {
   if (typeof window === "undefined" || analyticsChoice() !== "yes" || !EVENTS.includes(event)) return;
-  const route = analyticsRoute(window.location.pathname);
+  const route = analyticsRoute(page ?? window.location.pathname);
+  if (!analyticsRoute(window.location.pathname)) return;
   if (!route || !["isitusa.com", "www.isitusa.com"].includes(window.location.hostname)) return;
   const now = Date.now();
   if (now - minuteStart >= 60000) { minuteStart = now; minuteCount = 0; }
@@ -63,7 +71,7 @@ export function track(event: AnalyticsEvent, properties: EventProperties = {}): 
     if (session.count >= 500) return;
     session.last = now; session.count++; minuteCount++;
     localStorage.setItem(SESSION_KEY, JSON.stringify(session));
-    const body = JSON.stringify({ api_key: TOKEN, distinct_id: id, event, timestamp: new Date(now).toISOString(), properties: {
+    const body = JSON.stringify({ api_key: ANALYTICS_TOKEN, distinct_id: id, event, timestamp: new Date(now).toISOString(), properties: {
       ...safeProperties(properties), $current_url: "https://isitusa.com" + route, $pathname: route,
       $host: "isitusa.com", $session_id: session.id, $process_person_profile: false, $is_identified: false,
       $geoip_disable: true, $ip: "0.0.0.0", ip: "0.0.0.0", schema_version: 1, environment: "production",

@@ -34,7 +34,7 @@ export function RefundForm() {
     finally { setBusy(false); locked.current = false; setToken(""); setReset(value => value + 1); }
   }
   return <main id="main-content" className={s.page}>
-    <Link href="/support" className={s.back}><ArrowLeft size={16} aria-hidden="true"/> Back to supporting isitusa</Link>
+    <Link href="/support" className={s.back}><ArrowLeft size={16} aria-hidden="true"/> Back to supporting ISIT USA</Link>
     <header className={s.intro}><span><ClipboardCheck size={18} aria-hidden="true"/> Contribution support</span><h1>Request a refund.</h1><p>Tell us what happened and which contribution you are asking about. We review every request individually and reply by email.</p></header>
     <div className={s.layout}><section>
       {receipt ? <div ref={notice} tabIndex={-1} role="status" className={s.notice}><h2>Your request has been submitted.</h2><p>Keep this reference: <strong>{receipt}</strong>.</p><p>This confirms submission for review, not approval or completion of a refund. We will reply to the email you provided.</p></div> : <>
@@ -50,7 +50,7 @@ export function RefundForm() {
             <label>Reason for your request<textarea name="reason" required minLength={10} maxLength={2000} rows={5} placeholder="What would you like us to review?"/></label>
             <p className={s.hint}>Do not include card numbers, passwords, private keys, or recovery words.</p>
             <Honeypot/>
-            <label className={s.consent}><input name="consent" type="checkbox" required/><span>I agree that isitusa may use these details to review my request and contact me about it. <Link href="/privacy">Privacy notice</Link></span></label>
+            <label className={s.consent}><input name="consent" type="checkbox" required/><span>I agree that ISIT USA may use these details to review my request and contact me about it. <Link href="/privacy">Privacy notice</Link></span></label>
             {available && <Challenge action="refund_request" onToken={setToken} reset={reset}/>}
             <button type="submit" disabled={!token || busy}>{busy ? "Submitting request..." : "Submit for review"}<ArrowUpRight size={17} aria-hidden="true"/></button>
           </fieldset>

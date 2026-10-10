@@ -1,11 +1,13 @@
 "use client";
 import { track } from "@/lib/ui/telemetry";
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Camera, Send } from "lucide-react";
 import { request, TURNSTILE_SITE_KEY } from "@/lib/participation/client";
 import { MAX_PHOTO_BYTES, type CatalogItem } from "@/lib/participation/contracts";
 import { CatalogPicker, Challenge, Frame, Honeypot, Notice, ServiceStatus, styles, useConfig } from "./shared";
 export function ReportForm(){
+ const [speciesLabel,setSpeciesLabel]=useState("");
+ useEffect(()=>{const id=new URLSearchParams(window.location.search).get("species");if(id&&/^[a-z0-9-]{1,120}$/.test(id))setSpeciesLabel(id.replaceAll("-"," "));},[]);
  const {config,error:configError,retry}=useConfig(),[county,setCounty]=useState<CatalogItem[]>([]),[challenge,setChallenge]=useState(""),[reset,setReset]=useState(0),[busy,setBusy]=useState(false),[receipt,setReceipt]=useState(""),[error,setError]=useState("");
  const ready=Boolean(config?.reports&&TURNSTILE_SITE_KEY);
  async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();setError("");const form=new FormData(e.currentTarget);try{
@@ -20,11 +22,11 @@ export function ReportForm(){
  {config&&!ready&&<section className={styles.section}><h2>Make your observation useful</h2><ul className={styles.steps}><li>Take a clear photograph from a safe distance.</li><li>Note the date and where you saw it.</li><li>Send your report to a program that can review it.</li></ul><div className={styles.row}><a className={styles.button} href="https://www.eddmaps.org/report/" target="_blank" rel="noreferrer">Report through EDDMapS</a><a className="text-link" href="https://www.invasivespeciesinfo.gov/subject/reporting" target="_blank" rel="noreferrer">Find a reporting program</a></div></section>}
  {ready&&(receipt?<Notice success><strong>Thank you. Your observation has been received.</strong><p>It is waiting for review. This receipt does not confirm the species identification.</p><p className={styles.hint}>Reference: {receipt}</p></Notice>:<form className={styles.form} onSubmit={submit} aria-busy={busy}>
 
- <fieldset disabled={!ready||busy}><div className={styles.grid}><label className={styles.field}>Species name<input name="species_label" maxLength={180} required placeholder="Not sure is fine" className={styles.input}/></label><label className={styles.field}>When did you see it?<input name="observed_on" type="date" required min="1900-01-01" max={new Date().toISOString().slice(0,10)} className={styles.input}/></label></div>
+ <fieldset disabled={!ready||busy}><div className={styles.grid}><label className={styles.field}>Species name<input name="species_label" defaultValue={speciesLabel} maxLength={180} required placeholder="Not sure is fine" className={styles.input}/></label><label className={styles.field}>When did you see it?<input name="observed_on" type="date" required min="1900-01-01" max={new Date().toISOString().slice(0,10)} className={styles.input}/></label></div>
  <CatalogPicker kind="county" value={county} onChange={setCounty} max={1}/><label className={styles.field}>Where in the county?<textarea name="location_note" maxLength={500} required placeholder="A park, trail, waterway, or nearby landmark" className={styles.textarea}/></label>
  <details><summary className={styles.hint}>Add precise coordinates (optional, private)</summary><div className={styles.grid}><label className={styles.field}>Latitude<input name="latitude" type="number" step="any" min="-90" max="90" className={styles.input}/></label><label className={styles.field}>Longitude<input name="longitude" type="number" step="any" min="-180" max="180" className={styles.input}/></label></div></details>
  <label className={styles.field}><span className={styles.row}><Camera size={18} aria-hidden="true"/>Photographs</span><input name="photos" type="file" multiple accept="image/jpeg,image/png,image/webp" className={styles.input}/><span className={styles.hint}>Up to 3 JPEG, PNG, or WebP images, 5 MB each. Original files stay private.</span></label>
  <label className={styles.field}>Anything else you noticed? (optional)<textarea name="notes" maxLength={3000} className={styles.textarea}/></label><label className={styles.field}>Email for follow-up (optional)<input name="contact_email" type="email" maxLength={254} autoComplete="email" className={styles.input}/><span className={styles.hint}>Only for questions about this observation. This does not subscribe you to updates.</span></label>
- <label className={styles.choice}><input name="permission" type="checkbox" required/><span><strong>I can share this observation.</strong><small>I took these photographs or have permission to share them. isitusa may store and review my submission and publish a reviewed county-level record. My original photographs and precise location will stay private unless separate permission is obtained.</small></span></label>
+ <label className={styles.choice}><input name="permission" type="checkbox" required/><span><strong>I can share this observation.</strong><small>I took these photographs or have permission to share them. ISIT USA may store and review my submission and publish a reviewed county-level record. My original photographs and precise location will stay private unless separate permission is obtained.</small></span></label>
  <Honeypot/>{ready&&<Challenge action="sighting" onToken={setChallenge} reset={reset}/>}<button className={styles.button} disabled={!challenge||busy}><Send size={18} aria-hidden="true"/>{busy?"Sending your observation...":"Send observation"}</button></fieldset>{error&&<Notice error>{error}</Notice>}</form>)}</Frame>;
 }

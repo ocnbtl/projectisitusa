@@ -5,7 +5,7 @@ import stateResearchConfig from "@/data/research/state-research-config.json";
 import stateRegistry from "@/data/research/state-registry.json";
 
 export const metadata: Metadata = {
-  title: "Research | isitusa",
+  title: "Research | ISIT USA",
   description: "Follow our progress, explore county evidence, and see the sources behind invasive species records.",
 };
 

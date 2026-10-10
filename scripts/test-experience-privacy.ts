@@ -1,0 +1,54 @@
+import assert from "node:assert/strict";
+import { validateCorrection } from "../src/lib/participation/corrections";
+import { ANALYTICS_CHOICE_KEY, REPLAY_CHOICE_KEY, analyticsChoice, replayChoice, safeProperties, setAnalyticsChoice, track } from "../src/lib/ui/telemetry";
+import { replayRouteAllowed, replayAllowed, stopReplay, syncReplay } from "../src/lib/ui/session-replay";
+
+async function main(){
+const stored=new Map<string,string>();
+const local={getItem:(key:string)=>stored.get(key)??null,setItem:(key:string,value:string)=>stored.set(key,value),removeItem:(key:string)=>stored.delete(key)};
+const loc={hostname:"isitusa.com",pathname:"/about",search:"",hash:""};
+const win={location:loc,innerWidth:1400,dispatchEvent:()=>true,posthog:undefined as unknown};
+Object.assign(globalThis,{window:win,localStorage:local,location:loc});
+Object.defineProperty(globalThis,"navigator",{value:{doNotTrack:"0",globalPrivacyControl:false},configurable:true});
+let script:Record<string,unknown>|undefined;
+Object.assign(globalThis,{document:{createElement:()=>({remove(){}}),head:{appendChild:(node:Record<string,unknown>)=>{script=node;}}}});
+const events:string[]=[];
+Object.assign(globalThis,{fetch:async(_url:string,options:{body:string})=>{events.push(options.body);return new Response("{}");}});
+assert.equal(analyticsChoice(),null);assert.equal(replayChoice(),false);
+stored.set(ANALYTICS_CHOICE_KEY,"yes");
+assert.equal(replayChoice(),false,"Existing analytics consent must not authorize replay");
+for(const path of ["/","/admin","/admin/preview","/auth/confirm","/support","/support/refund","/report","/join","/preferences","/species/../admin"])assert.equal(replayRouteAllowed(path),false,path);
+assert.equal(replayRouteAllowed("/species/acer-pseudoplatanus"),true);
+assert.deepEqual(safeProperties({email:"someone@example.com",search:"private",latitude:39,active_seconds:999,depth:37}),{});
+setAnalyticsChoice("yes",true);assert.equal(replayAllowed(),true);
+loc.search="?email=private";assert.equal(replayAllowed(),false);loc.search="";
+loc.hash="#token";assert.equal(replayAllowed(),false);loc.hash="";
+let starts=0,stops=0;
+const promise=syncReplay();
+assert.ok(script?.integrity);assert.equal(script?.crossOrigin,"anonymous");
+const stub=win.posthog as {_i:[string,Record<string,unknown>,string][]};
+const config=stub._i[0][1];
+assert.equal(config.autocapture,false);assert.equal(config.disable_session_recording,true);assert.equal(config.enable_recording_console_log,false);
+const recording=config.session_recording as Record<string,unknown>;
+assert.equal(recording.maskAllInputs,true);assert.equal(recording.maskTextSelector,"*");assert.equal(recording.recordBody,false);assert.equal(recording.recordHeaders,false);
+assert.ok(String(recording.blockSelector).includes("form"));
+stopReplay();
+(config.loaded as (instance:unknown)=>void)({startSessionRecording(){starts++;},stopSessionRecording(){stops++;},opt_in_capturing(){},opt_out_capturing(){}});
+await promise;
+assert.equal(starts,0,"Withdrawing permission during SDK load must not start recording");
+await syncReplay();assert.equal(starts,1);
+loc.pathname="/admin";await syncReplay();assert.ok(stops>0);
+const before=config.before_send as (value:unknown)=>unknown;
+assert.equal(before({event:"$snapshot",properties:{}}),null,"No private route snapshots");
+track("$pageview");assert.equal(events.length,0,"No private aggregate activity");
+loc.pathname="/about";setAnalyticsChoice("no");assert.equal(stored.get(REPLAY_CHOICE_KEY),"no");assert.equal(replayChoice(),false);
+setAnalyticsChoice("yes",true);
+Object.defineProperty(globalThis,"navigator",{value:{globalPrivacyControl:true},configurable:true});
+assert.equal(analyticsChoice(),"no");assert.equal(replayAllowed(),false);
+const valid={species_id:"acer-pseudoplatanus",categories:["identification"],details:"The leaf description needs a source explaining similar species.",source_url:"https://example.org/source",consent:true};
+assert.equal(validateCorrection(valid).species_id,valid.species_id);
+for(const bad of [{...valid,consent:false},{...valid,categories:["__proto__"]},{...valid,details:"short"},{...valid,source_url:"javascript:alert(1)"},{...valid,source_url:"https://user:secret@example.org"},{...valid,species_id:"../admin"}])assert.throws(()=>validateCorrection(bad));
+console.log("Passed consent migration, replay route exclusions, delayed-load withdrawal, privacy signals, event sanitization and correction validation.");
+
+}
+void main().catch(error=>{console.error(error);process.exitCode=1;});

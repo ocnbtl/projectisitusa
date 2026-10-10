@@ -8,28 +8,30 @@ import { RouteTransition } from "@/components/atlas/route-transition";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Invasive Species in the USA",
+  title: "Invasive Species In The USA (ISIT USA)",
   description:
-    "Explore invasive species across the United States with a county map, ZIP search, and practical species profiles.",
+    "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
   metadataBase: new URL("https://isitusa.com"),
-  applicationName: "isitusa",
-  manifest: "/brand/v3/site.webmanifest",
+  applicationName: "ISIT USA",
+  manifest: "/brand/v4/site.webmanifest",
   openGraph: {
-    type: "website", siteName: "isitusa", title: "isitusa | Invasive species, county by county",
-    description: "Explore species records and follow the original sources for your county.",
-    images: [{ url: "/brand/v3/isitusa-symbol.png", width: 1200, height: 1200, alt: "isitusa: bird, leaf, butterfly and mushroom" }],
+    type: "website", siteName: "ISIT USA", title: "Invasive Species In The USA (ISIT USA)",
+    description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
+    images: [{ url: "/brand/v3/isitusa-symbol.png", width: 1200, height: 1200, alt: "ISIT USA: bird, leaf, butterfly and mushroom" }],
   },
   twitter: {
-    card: "summary", title: "isitusa | Invasive species, county by county",
-    description: "Explore species records and follow the original sources for your county.",
+    card: "summary", title: "Invasive Species In The USA (ISIT USA)",
+    description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
     images: ["/brand/v3/isitusa-symbol.png"],
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "192x192" },
+      { url: "/brand/v3/icon-192.png", type: "image/png", sizes: "192x192" },
       { url: "/brand/v3/favicon.svg", type: "image/svg+xml", sizes: "any" },
       { url: "/brand/v3/icon-32.png", type: "image/png", sizes: "32x32" },
     ],
-    shortcut: "/brand/v3/favicon.svg",
+    shortcut: "/favicon.ico",
     apple: [{ url: "/brand/v3/icon-180.png", type: "image/png", sizes: "180x180" }],
   },
 };
