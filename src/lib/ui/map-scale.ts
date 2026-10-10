@@ -24,7 +24,7 @@ export function createMapCountBands(values: number[], palette: readonly string[]
   return [zero, ...anchors.map((count, index) => {
     const position = (anchors.length === 1 ? .5 : index / (anchors.length - 1)) * (stops.length - 1);
     const low = Math.floor(position), high = Math.ceil(position);
-    return { min: count, max: count, label: Number(count.toFixed(1)).toLocaleString("en-US"), color: interpolateMapColor(stops[low], stops[high], position - low) };
+    return { min: count, max: count, label: Math.round(count).toLocaleString("en-US"), color: interpolateMapColor(stops[low], stops[high], position - low) };
   })];
 }
 export const MAP_COUNT_BANDS = createMapCountBands([1, 10, 25, 50, 100, 200]);
