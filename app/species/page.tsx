@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { SpeciesDirectory } from "@/components/species-directory";
 
 export const metadata: Metadata = {
-  title: "Species | ISIT USA",
+  title: "Species | ISITUSA",
   description: "Look up a species, explore its recorded occurrences, and follow the sources behind its profile.",
 };
 
@@ -22,7 +22,7 @@ export default function SpeciesPage() {
         <Link href="/research" className="text-link">Browse county evidence and research progress <ArrowUpRight size={15} aria-hidden="true" /></Link>
       </details>
       <SpeciesDirectory />
-      <noscript><p className="reading-section">The searchable directory needs JavaScript to load its catalog. You can still read <Link href="/about" className="text-link">about ISIT USA and its sources</Link>.</p></noscript>
+      <noscript><p className="reading-section">The searchable directory needs JavaScript to load its catalog. You can still read <Link href="/about" className="text-link">about ISITUSA and its sources</Link>.</p></noscript>
     </main>
   );
 }

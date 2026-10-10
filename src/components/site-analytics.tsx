@@ -61,7 +61,7 @@ export function SiteAnalytics() {
 // Presentational component shared with the preview-only visual harness.
 export function PrivacyNotice({replay,setReplay,settings=false,browserSignal=false,save}:{replay:boolean;setReplay:(value:boolean)=>void;settings?:boolean;browserSignal?:boolean;save:(value:AnalyticsChoice)=>void}) {
   return <section className={styles.notice} aria-label="Privacy choices" data-private>
-    <h2>Help improve ISIT USA</h2>
+    <h2>Help improve ISITUSA</h2>
     <p>Optional analytics helps us improve the site. Replay shows masked browsing on public information pages. <a href="/privacy">Privacy details</a></p>
     {browserSignal ? <><p>Your browser privacy preference keeps both off.</p><div className={styles.actions}><button type="button" onClick={() => save("no")}>Done</button></div></> : <>
       <label className={styles.option}><input type="checkbox" checked={replay} onChange={event => setReplay(event.target.checked)} />Allow masked session replay</label>

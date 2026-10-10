@@ -4,7 +4,7 @@ import { ArrowRight, Map } from "lucide-react";
 import { NatureIcon } from "@/components/atlas/nature-icon";
 
 export const metadata: Metadata = {
-  title: "Page not found | ISIT USA",
+  title: "Page not found | ISITUSA",
   robots: { index: false, follow: true },
 };
 

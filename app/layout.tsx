@@ -8,19 +8,19 @@ import { RouteTransition } from "@/components/atlas/route-transition";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Invasive Species In The USA (ISIT USA)",
+  title: "Invasive Species In The USA (ISITUSA)",
   description:
     "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
   metadataBase: new URL("https://isitusa.com"),
-  applicationName: "ISIT USA",
-  manifest: "/brand/v4/site.webmanifest",
+  applicationName: "ISITUSA",
+  manifest: "/brand/v5/site.webmanifest",
   openGraph: {
-    type: "website", siteName: "ISIT USA", title: "Invasive Species In The USA (ISIT USA)",
+    type: "website", siteName: "ISITUSA", title: "Invasive Species In The USA (ISITUSA)",
     description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
-    images: [{ url: "/brand/v3/isitusa-symbol.png", width: 1200, height: 1200, alt: "ISIT USA: bird, leaf, butterfly and mushroom" }],
+    images: [{ url: "/brand/v3/isitusa-symbol.png", width: 1200, height: 1200, alt: "ISITUSA: bird, leaf, butterfly and mushroom" }],
   },
   twitter: {
-    card: "summary", title: "Invasive Species In The USA (ISIT USA)",
+    card: "summary", title: "Invasive Species In The USA (ISITUSA)",
     description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
     images: ["/brand/v3/isitusa-symbol.png"],
   },

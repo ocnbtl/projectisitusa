@@ -33,9 +33,9 @@ const researchSources = [
 ];
 
 export const metadata: Metadata = {
-  title: "About ISIT USA",
+  title: "About ISITUSA",
   alternates: { canonical: "https://isitusa.com/about" },
-  description: "ISIT USA is an independent initiative based in the United States, making invasive species information easier to find, understand, and use.",
+  description: "ISITUSA is an independent initiative based in the United States, making invasive species information easier to find, understand, and use.",
 };
 
 export default function AboutPage() {
@@ -44,8 +44,8 @@ export default function AboutPage() {
       <header className="about-opening">
         <div className="about-mission">
           <h1>Making invasive species research useful.</h1>
-          <div className="about-brand-lockup" aria-label="ISIT USA">
-            <Image className="brand-art" src="/brand/v4/symbol-name.svg" alt="ISIT USA" width={840} height={1080} unoptimized priority />
+          <div className="about-brand-lockup" aria-label="ISITUSA">
+            <Image className="brand-art" src="/brand/v5/symbol-name.svg" alt="ISITUSA" width={840} height={1080} unoptimized priority />
             <Image className="brand-art about-full-name" src="/brand/full-name-v2/isitusa-full-name-green.svg" alt="Invasive Species In The United States of America" width={2133} height={356} unoptimized priority />
           </div>
         </div>
@@ -60,14 +60,14 @@ export default function AboutPage() {
       <section className="about-introduction" aria-label="Our purpose">
           <div className="about-story">
             <p className="about-lead">Everyone should be able to find accurate information about invasive species near them, and see the source it comes from.</p>
-            <p><strong className="brand-wordmark">ISIT USA</strong> is an independent initiative established in the United States of America by environmentalists. We care about the places we call home, and believe good information should help more people care for them.</p>
+            <p><strong className="brand-wordmark">ISITUSA</strong> is an independent initiative established in the United States of America by environmentalists. We care about the places we call home, and believe good information should help more people care for them.</p>
             <p>We bring scattered reports into one useful, intuitive map, connecting the places you care about with reputable research you can trace back to its source. Agency records, scientific collections, and observations become easier to explore together, with the context that gives each finding meaning.</p>
             <p>Whether you are noticing something new in your backyard or looking after an entire landscape, we want to make the next step clearer: learn what has been recorded, understand what is still uncertain, and know where to look next.</p>
             <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
           </div>
       </section>
 
-      <nav className="about-page-nav" aria-label="On this page"><a href="#purpose-heading">Why ISIT USA</a><a href="#method-heading">Our approach</a><a href="#outlook-heading">Where we are headed</a><a href="#help-heading">Get involved <ArrowRight size={16} aria-hidden="true" /></a></nav>
+      <nav className="about-page-nav" aria-label="On this page"><a href="#purpose-heading">Why ISITUSA</a><a href="#method-heading">Our approach</a><a href="#outlook-heading">Where we are headed</a><a href="#help-heading">Get involved <ArrowRight size={16} aria-hidden="true" /></a></nav>
 
       <section className="about-purpose" aria-labelledby="purpose-heading">
         <h2 id="purpose-heading">Useful knowledge should be within reach.</h2>
@@ -77,7 +77,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-purpose" aria-labelledby="commitment-heading"><h2 id="commitment-heading">Built to be useful, and open about its limits.</h2><div><p>We are building ISIT USA as an independent research initiative. We organize existing knowledge, check what it supports, and make the results easier to explore. Our responsibility is to make the sources, dates, and limits of each finding easy to check.</p><p>This project is a work in progress. Some counties have extensive records; others need more research. We show those gaps because knowing what is still unknown is part of understanding a place. As the evidence changes, our findings can change too.</p></div></section>
+      <section className="about-purpose" aria-labelledby="commitment-heading"><h2 id="commitment-heading">Built to be useful, and open about its limits.</h2><div><p>We are building ISITUSA as an independent research initiative. We organize existing knowledge, check what it supports, and make the results easier to explore. Our responsibility is to make the sources, dates, and limits of each finding easy to check.</p><p>This project is a work in progress. Some counties have extensive records; others need more research. We show those gaps because knowing what is still unknown is part of understanding a place. As the evidence changes, our findings can change too.</p></div></section>
 
       <section className="about-method" aria-labelledby="method-heading">
         <div className="section-introduction">

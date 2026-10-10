@@ -33,16 +33,16 @@ export function SiteHeader() {
   if (pathname.startsWith("/admin") || pathname.startsWith("/auth/")) return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <header className="site-header glass-panel">
-      <Link href="https://isitusa.com/" className="site-brand" aria-label="ISIT USA public website"><Image className="brand-art" src="/brand/v3/isitusa-symbol.svg" alt="" width={70} height={70} priority unoptimized /><span className="brand-full-name">ISIT USA · Team workspace</span></Link>
+      <Link href="https://isitusa.com/" className="site-brand" aria-label="ISITUSA public website"><Image className="brand-art" src="/brand/v3/isitusa-symbol.svg" alt="" width={70} height={70} priority unoptimized /><span className="brand-full-name">ISITUSA · Team workspace</span></Link>
       <ThemeToggle />
     </header>
   </>;
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <header className="site-header glass-panel">
-      <Link href="/" className="site-brand" aria-label="ISIT USA home: Invasive Species In The United States of America">
+      <Link href="/" className="site-brand" aria-label="ISITUSA home: Invasive Species In The United States of America">
         <Image className="brand-art" src="/brand/v3/isitusa-symbol.svg" alt="" width={70} height={70} priority unoptimized />
-        <Image className="brand-art header-wordmark" src="/brand/v4/wordmark-green.svg" alt="ISIT USA" width={744} height={158} unoptimized priority />
+        <Image className="brand-art header-wordmark" src="/brand/v5/wordmark-green.svg" alt="ISITUSA" width={708} height={158} unoptimized priority />
       </Link>
       <nav ref={nav} aria-label="Primary">
         <span aria-hidden="true" className="nav-active-pill" style={{ width: pill.width, transform: `translateX(${pill.left}px)`, opacity: pill.width ? 1 : 0 }} />

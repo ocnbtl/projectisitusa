@@ -20,7 +20,7 @@ The existing Next.js application provides a county map, county and ZIP lookup, s
 
 ## Brand Commitments
 
-Isitusa: Invasive Species In The United States of America. An independent initiative with a global mission, beginning with U.S. county research. Full-screen map, floating controls, minimal and functional information design. Existing logo retained. Warm, specific language without decorative eyebrows or unverified organizational claims.
+ISITUSA: Invasive Species In The United States of America. An independent initiative with a global mission, beginning with U.S. county research. Full-screen map, floating controls, minimal and functional information design. Existing logo retained. Warm, specific language without decorative eyebrows or unverified organizational claims.
 
 ## Evidence on Hand
 

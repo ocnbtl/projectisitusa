@@ -38,7 +38,7 @@ export function CorrectionForm({ speciesId, name, preview=false }: { speciesId: 
     <fieldset disabled={busy}><legend className={styles.field}>Choose all that apply</legend><div className={styles.choices}>{Object.entries(CORRECTION_CATEGORIES).map(([value,label])=><label className={styles.choice} key={value}><input type="checkbox" name="categories" value={value}/><span>{label}</span></label>)}</div>
     <label className={styles.field}>Your suggested correction<textarea name="details" required minLength={20} maxLength={3000} className={styles.textarea}/></label>
     <label className={styles.field}>Source link (optional)<input name="source_url" type="url" maxLength={1500} placeholder="https://" className={styles.input}/></label>
-    <label className={styles.choice}><input type="checkbox" name="consent" required/><span>ISIT USA may store and review this suggestion to improve the profile.</span></label>
+    <label className={styles.choice}><input type="checkbox" name="consent" required/><span>ISITUSA may store and review this suggestion to improve the profile.</span></label>
     <Honeypot/>{preview?<p className={styles.hint}>Presentation preview. Security check and submission are disabled.</p>:<Challenge action="correction" onToken={setChallenge} reset={reset}/>}
     <button className={styles.button} disabled={preview||busy||!challenge}><Send size={16} aria-hidden="true"/>{busy?"Sending suggestion...":"Send for review"}</button></fieldset>
     {error&&<Notice error>{error}</Notice>}
