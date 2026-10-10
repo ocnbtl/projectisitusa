@@ -1,4 +1,5 @@
 import { analyticsSnapshot } from "../_shared/analytics.ts";
+import { correctionsReady, correctionChallenge, correctionRate } from "../_shared/correction-challenge.ts";
 import { validateCorrection } from "../../../src/lib/participation/corrections.ts";
 import Stripe from "npm:stripe@22.6.2";
 import { boundedText as rawText, cryptoUri, donationAmount as rawAmount, MAX_PHOTOS, PERMISSIONS, photoType, normalizeEmail as rawEmail, validatePreferences as rawPreferences, validateSighting as rawSighting } from "../../../src/lib/participation/contracts.ts";
@@ -19,7 +20,7 @@ Deno.serve(async(req:Request)=>{
   const db=service();
   if(req.method==="GET"&&action==="config"){
    const wallets=requiredData(await db.from("isitusa_wallets").select("id,asset,network,address,verified_at,active").eq("active",true));
-   return Response.json({email:enabled("EMAIL_ENABLED"),reports:enabled("REPORTS_ENABLED"),payments:enabled("PAYMENTS_ENABLED"),corrections:Boolean(Deno.env.get("TURNSTILE_SECRET_KEY")&&Deno.env.get("RATE_LIMIT_SALT")),wallets:enabled("CRYPTO_ENABLED")&&enabled("CONTACT_READY")?wallets.filter(w=>cryptoUri(w)!==null):[]},{headers});
+   return Response.json({email:enabled("EMAIL_ENABLED"),reports:enabled("REPORTS_ENABLED"),payments:enabled("PAYMENTS_ENABLED"),corrections:await correctionsReady(),wallets:enabled("CRYPTO_ENABLED")&&enabled("CONTACT_READY")?wallets.filter(w=>cryptoUri(w)!==null):[]},{headers});
   }
   if(req.method==="GET"&&action==="catalog"){
    const url=new URL(req.url),kind=url.searchParams.get("kind"),query=(url.searchParams.get("q")??"").trim();
@@ -86,11 +87,11 @@ Deno.serve(async(req:Request)=>{
   }
   const input=await json(req);
   if(action==="correction"){
-   await challenge(input.challenge,"correction");
+   await correctionChallenge(input.challenge);
    if(input.website)throw new HttpError(400,"Check the form.");
    const suggestion=userInput(()=>validateCorrection(input));
-   await rate("corrections:global",60,3600);
-   await rate("corrections:species:"+suggestion.species_id,12,3600);
+   await correctionRate("global",60);
+   await correctionRate("species:"+suggestion.species_id,12);
    const species=checked(await db.from("isitusa_catalog").select("id").eq("kind","species").eq("id",suggestion.species_id).maybeSingle());
    if(!species)throw new HttpError(400,"This species profile is unavailable.");
    const id=crypto.randomUUID();
