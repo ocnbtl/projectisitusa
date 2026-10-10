@@ -3,12 +3,16 @@ import { STREAMS } from "../../../src/lib/participation/contracts.ts";
 import { checked, requiredData, enabled, env, HttpError, responseError, service } from "../_shared/runtime.ts";
 const escape=(s:string)=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]!));
 Deno.serve(async(req:Request)=>{
+ let claimed:{id:string;attempts:number}|undefined;
  try{
-  if(req.method!=="POST"||req.headers.get("Authorization")!==`Bearer ${env("DELIVERY_JOB_SECRET")}`)throw new HttpError(401,"Unauthorized.");
-  if(!enabled("EMAIL_ENABLED")||!enabled("CONTACT_READY"))throw new HttpError(503,"Email sending is disabled.");
+  if(req.method!=="POST"||!req.headers.get("Authorization")?.startsWith("Bearer "))throw new HttpError(401,"Unauthorized.");
+  if(req.headers.get("Authorization")!==`Bearer ${env("DELIVERY_JOB_SECRET")}`)throw new HttpError(401,"Unauthorized.");
+  // Delivery can be tested before public intake is opened.
+  if(!enabled("DELIVERY_ENABLED")||!enabled("CONTACT_READY"))throw new HttpError(503,"Email sending is disabled.");
   const db=service(),items=checked(await db.rpc("isitusa_claim_email"));
   if(!items.length)return Response.json({processed:0});
   const item=items[0];
+  claimed={id:item.id,attempts:item.attempts};
   if(!["confirmation","preferences"].includes(item.kind))throw new HttpError(503,"Campaign and digest delivery is not enabled.");
   const person=requiredData(await db.from("isitusa_subscribers").select("suppression_reason").eq("id",item.subscriber_id).single());
   if(["bounce","complaint"].includes(person.suppression_reason)){checked(await db.from("isitusa_outbox").update({state:"suppressed",lease_until:null}).eq("id",item.id));return Response.json({processed:1});}
@@ -22,5 +26,11 @@ Deno.serve(async(req:Request)=>{
   if(result.error){checked(await db.from("isitusa_outbox").update({state:item.attempts>=3?"failed":"queued",error_code:"provider_rejected",lease_until:null}).eq("id",item.id));throw new HttpError(502,"Email delivery will retry.");}
   checked(await db.from("isitusa_outbox").update({state:"sent",provider_id:result.data?.id,sent_at:new Date().toISOString(),lease_until:null,payload:{}}).eq("id",item.id));
   return Response.json({processed:1});
- }catch(error){return responseError(error);}
+ }catch(error){
+  // Network failures must release the lease too; otherwise a third failed
+  // attempt can remain stuck in "sending" indefinitely. The same outbox ID
+  // remains the provider idempotency key when an uncertain send is retried.
+  if(claimed){try{checked(await service().from("isitusa_outbox").update({state:claimed.attempts>=3?"failed":"queued",error_code:"delivery_retry",lease_until:null}).eq("id",claimed.id).eq("state","sending"));}catch{console.error("email lease recovery failed");}}
+  return responseError(error);
+ }
 });
