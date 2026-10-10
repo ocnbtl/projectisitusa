@@ -4,12 +4,12 @@ User authorized implementation and production deployment. Base: 6430844223639241
 
 ## Changes
 - Pin Node 24 major and npm 11.16.0. Vercel uses a clean npm ci with optional platform binaries.
-- Explicitly deny reviewed installation scripts for esbuild 0.28.2, unrs-resolver 1.11.1 and Darwin-only fsevents 2.3.3; enforce strict allowScripts decisions. No blanket script permission.
+- Explicitly deny reviewed installation scripts for esbuild 0.28.2, unrs-resolver 1.11.1 and Darwin-only fsevents 2.3.3 and the existing offline sharp 0.34.5 renderer; enforce strict allowScripts decisions. No blanket script permission.
 - The original esbuild installer validates/downloads optional binaries; unrs uses napi-postinstall to check/retrieve its binary. fsevents builds optional Darwin bindings. Required prebuilt native functionality is exercised before each build. sharp 0.35.5 no longer has an install script.
 - Four line-scoped image lint exceptions preserve direct browser rendering of MFA QR data, private signed observation photos, generated SVG exports and fixed-size currency SVGs. The global image rule remains enabled.
 - Lint fails on warnings/errors and unused exceptions. Direct ESLint API avoids deprecated next lint command.
 - Security review found production advisories. Upgrade Next and its ESLint config to 15.5.27; csv-parse to 7.0.3; use patched sharp 0.35.5 and PostCSS 8.5.29 under Next. Compatible transitive audit fixes and tsx/esbuild updates are recorded in the lockfile.
-- Production dependency audit now reports zero known advisories and gates builds. Full dependency audit retains one upstream braces issue reported through five dev-only dependency entries. It concerns deeply nested glob patterns in lint tooling, not a shipped request handler. No patch exists in braces; do not downgrade Next lint tooling to silence it. Application glob inputs are fixed, not user-controlled.
+- Production dependency audit now reports zero known advisories and gates builds. Full dependency audit retains the offline sharp renderer advisories plus one upstream braces issue reported through five dev-only dependency entries. It concerns deeply nested glob patterns in lint tooling, not a shipped request handler. No patch exists in braces; do not downgrade Next lint tooling to silence it. Application glob inputs are fixed, not user-controlled.
 - CSV upgrade checks preserve quoted multiline records, raw bytes, line numbers, sync/stream equivalence and prototype safety. No research projections are regenerated.
 
 ## Review sources
@@ -23,3 +23,8 @@ User authorized implementation and production deployment. Base: 6430844223639241
 
 ## Validation before remote build
 Five policy regression tests passed. Native tool checks passed with existing canonical Windows dependencies. Scoped application lint passed (161 files; sparse checkout), with a local dependency-resolution notice because this worktree deliberately has no installed node_modules. Fresh Linux installation, updated binaries, complete lint/type/build and runtime checks are required before publication. This is scoped hardening, not a claim of complete security certification.
+
+## Image build compatibility
+The generated runtime image manifest fingerprints sharp and every linked codec. Updating the offline renderer would require regenerating all image derivatives and republishing the fingerprinted R2 application bundles. To preserve verified research releases, the offline renderer is now an explicit devDependency at its existing version (0.34.5). Next resolves a separate patched sharp 0.35.5, verified before each build. Only the offline scripts import the older renderer, with committed image inputs. Its upgrade and data-bundle publication remain a separate maintenance item; no claim is made that development dependencies are free of advisories.
+
+Fresh installation also exposes a text-encoding 0.6.4 deprecation from the offline shapefile importer. The upstream replacement is also deprecated. Retained as an explicit maintenance item rather than hiding npm warnings or changing geographic import semantics.
