@@ -12,12 +12,18 @@ const researchSources = [
   { name: "USDA", description: "U.S. Department of Agriculture: plant, pest, and forest research", image: "usda.svg", width: 219, height: 150, href: "https://www.aphis.usda.gov/", style: "source-logo-dark-light" },
   { name: "EPA", description: "U.S. Environmental Protection Agency: river and stream surveys", image: "epa.png", width: 196, height: 196, href: "https://www.epa.gov/national-aquatic-resource-surveys/nrsa", style: "source-logo-dark-light" },
   { name: "U.S. Fish & Wildlife", description: "U.S. Fish and Wildlife Service: invasive carp monitoring", image: "fws.svg", width: 125, height: 150, href: "https://www.fws.gov/", style: "source-logo-shield" },
+  {"name":"NOAA","description":"National Oceanic and Atmospheric Administration: invasive lionfish and marine species references","image":"noaa.svg","width":74,"height":74,"href":"https://oceanservice.noaa.gov/facts/lionfish-facts.html","style":""},
+  {"name":"National Park Service","description":"National Park Service: invasive plant identification and ecological context","image":"nps.png","width":80,"height":106,"href":"https://www.nps.gov/neri/learn/nature/kudzu.htm","style":"source-logo-shield"},
   { name: "Cornell University", description: "Cornell Integrated Pest Management: invasive insect identification and practical guidance", image: "cornell.png", width: 1600, height: 1603, href: "https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/brown-marmorated-stink-bug", style: "source-logo-dark-light" },
   { name: "Penn State", description: "Penn State Extension: allium leafminer monitoring and management guidance", image: "penn-state.ico", width: 347, height: 347, href: "https://extension.psu.edu/fall-flight-of-allium-leafminer-observed-in-southeast-pa", style: "" },
   { name: "Purdue University", description: "Purdue University and USDA Forest Service: Alien Forest Pest Explorer", image: "purdue.svg", width: 203.8, height: 132, href: "https://purr.purdue.edu/publications/4479", style: "source-logo-usgs" },
   { name: "University of Florida", description: "University of Florida IFAS and Florida Museum: plant research and species identification guides", image: "florida.png", width: 64, height: 64, href: "https://plant-directory.ifas.ufl.edu/plant-directory/dioscorea-bulbifera/", style: "" },
   { name: "University of Wisconsin-Madison", description: "University of Wisconsin-Madison Extension: horticultural research and plant profiles", image: "wisconsin.svg", width: 55.5, height: 87.28, href: "https://hort.extension.wisc.edu/articles/popcorn-cassia-senna-cassia-didymobotrya/", style: "source-logo-shield" },
   { name: "University of Georgia", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", width: 250, height: 61, href: "https://www.eddmaps.org/", style: "source-logo-dark-light" },
+  {"name":"University of Minnesota","description":"University of Minnesota Extension: invasive species identification and management guidance","image":"minnesota.svg","width":220,"height":152.7043158,"href":"https://extension.umn.edu/identify-invasive-species/garlic-mustard","style":"source-logo-dark-light"},
+  {"name":"NC State University","description":"NC State Extension Plant Toolbox: plant identification and species profiles","image":"nc-state.svg","width":2006.3,"height":294.9,"href":"https://plants.ces.ncsu.edu/plants/acer-pseudoplatanus/","style":"source-logo-dark-light"},
+  {"name":"Virginia Tech","description":"Virginia Tech: weed identification resources used in our species profiles","image":"virginia-tech.svg","width":943,"height":466,"href":"https://weedid.cals.vt.edu/profile/476","style":"source-logo-usgs"},
+  {"name":"Oregon State University","description":"Oregon State University: landscape plant descriptions and identification","image":"oregon-state.svg","width":250,"height":80,"href":"https://landscapeplants.oregonstate.edu/plants/pinus-halepensis","style":"source-logo-dark-light"},
   { name: "Forest Service", description: "USDA Forest Service: forest pest detections and invasive plant surveys", image: "usfs.svg", width: 182, height: 198, href: "https://www.fs.usda.gov/", style: "source-logo-shield" },
   { name: "New York Botanical Garden", description: "New York Botanical Garden: preserved herbarium specimens", image: "nybg.svg", width: 524, height: 160, href: "https://sweetgum.nybg.org/science/vh/", style: "source-logo-dark-light" },
   { name: "GBIF", description: "Global Biodiversity Information Facility: biodiversity records and collections", image: "gbif.svg", width: 1061, height: 218, href: "https://www.gbif.org/", style: "source-logo-dark-light" },
@@ -60,7 +66,7 @@ export default function AboutPage() {
                   </a>
                 </li>)}
               </ul>
-              <p>We aggregate data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about. Source attribution does not imply partnership or endorsement.</p>
+              <p>We aggregate public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about. Source attribution does not imply partnership or endorsement.</p>
               <a href="#sources-heading" className="text-link">More about our data sources <ArrowRight size={15} aria-hidden="true" /></a>
             </section>
           </div>
