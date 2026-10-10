@@ -25,35 +25,35 @@ colors:
   dark-accent-strong: "#b0e4ca"
 typography:
   display:
-    fontFamily: '"ISITUSA Field Display", Georgia, serif'
+    fontFamily: '"ISITUSA Canopy", Georgia, serif'
     fontWeight: 800
     letterSpacing: "-0.015em"
   display-about:
-    fontFamily: '"ISITUSA Field Display", Georgia, serif'
+    fontFamily: '"ISITUSA Canopy", Georgia, serif'
     fontSize: "clamp(36px,3.5vw,64px)"
     fontWeight: 800
     lineHeight: 1.08
     letterSpacing: "-0.015em"
   display-about-mobile:
-    fontFamily: '"ISITUSA Field Display", Georgia, serif'
+    fontFamily: '"ISITUSA Canopy", Georgia, serif'
     fontSize: "clamp(36px,9vw,46px)"
     fontWeight: 800
     lineHeight: 1.08
     letterSpacing: "-0.015em"
   headline-about:
-    fontFamily: '"ISITUSA Field Display", Georgia, serif'
+    fontFamily: '"ISITUSA Canopy", Georgia, serif'
     fontSize: "clamp(23px,2vw,36px)"
     fontWeight: 800
     lineHeight: 1.25
     letterSpacing: "-0.01em"
   display-participation:
-    fontFamily: '"ISITUSA Field Display", Georgia, serif'
+    fontFamily: '"ISITUSA Canopy", Georgia, serif'
     fontSize: "clamp(38px,4.5vw,68px)"
     fontWeight: 800
     lineHeight: 1.1
     letterSpacing: "-0.015em"
   display-support:
-    fontFamily: '"ISITUSA Field Display", Georgia, serif'
+    fontFamily: '"ISITUSA Canopy", Georgia, serif'
     fontSize: "clamp(28px,2.45vw,34px)"
     fontWeight: 800
     lineHeight: 1.18
@@ -132,7 +132,7 @@ components:
 
 The map is the workspace. Search, filters, and geographic navigation float above it; evidence is read on an opaque surface. Restrained environmental color and precise cartographic detail support the existing atlas.
 
-Botanical display lettering unifies the ISITUSA acronym, full name, and public editorial headings. Generous curves end in crisp, tapered tips, following the user's NYBG-inspired direction while preserving the established bird/leaf/fungi emblem. Neutral sans text carries navigation, scientific data, forms, and body copy.
+ISITUSA Canopy unifies the ISITUSA acronym, full name, and public editorial headings through one glyph master. Broad sculptural curves meet crisp flared stems and sharp curved terminals, following the user's NYBG-inspired direction while preserving the established bird/leaf/fungi emblem. Neutral sans text carries navigation, scientific data, forms, and body copy.
 
 **Key Characteristics:**
 - Botanical expression in the identity and editorial display type.
@@ -140,7 +140,7 @@ Botanical display lettering unifies the ISITUSA acronym, full name, and public e
 - Forest green, mineral paper, and dark pine surfaces.
 - Existing map, reading, and participation structures preserved.
 
-This document merges the approved identity change into the incumbent system. Source snapshot: `359ab82ab1`, including `app/globals.css`, `app/about/about-experience.css`, participation/support styles, and the v7 brand and font manifests. It records implemented declarations. The 359ab82 preview was reviewed at simulated widths of 390, 1440, and 2452 pixels, including light and dark About views; production publication and final rendered copy verification passed on source 7456ee9, as recorded in `ops/national-research/ui-work/botanical-email-20261010/verification.md`.
+This document merges the approved typography replacement into the incumbent system. Source snapshot: `b548fdf2c6`, including `app/globals.css`, `app/layout.tsx`, `scripts/build-brand-v8.py`, the v8 brand manifest, and the Canopy font README. It records implemented declarations for the hosted-preview work; it does not establish production publication. Existing `.impeccable/review/canopy-*` captures precede this snapshot's expanded A counter and sharp curved S/s/c/e terminals, so they are not final-correction visual proof.
 
 ## Colors
 
@@ -158,12 +158,12 @@ County fills retain fixed, labeled count bands spanning pale yellow-green throug
 
 ## Typography
 
-**Display Font:** ISITUSA Field Display, with Georgia and serif fallbacks.
+**Display Font:** ISITUSA Canopy, with Georgia and serif fallbacks.
 **Body Font:** Avenir Next, Segoe UI, and sans-serif fallbacks.
 
-ISITUSA Field Display is a customized derivative of Fraunces by Undercase Type under SIL Open Font License 1.1. It is not NYBG's proprietary typeface and is not a wholly original font. The build fixes the source axes at optical size 72, weight 800, softness 25, and wonk 0; original flared I and T outlines replace those capitals. Preserve upstream attribution and `public/fonts/isitusa-display/OFL.txt` when distributing the derivative.
+ISITUSA Canopy uses original code-led A-Z and a-z outlines: broad structural strokes, open counters, flared stems, and sharp curved terminals. The glyph master sets a 700-unit cap height and 530-unit lowercase height. Its corrected A has an expanded counter; S/s/c/e carry the sharpened curved terminals. The rejected Fraunces/v7 lettering is not part of this system. Outfit 800 supplies ancillary Unicode characters, punctuation, and font structure under SIL Open Font License 1.1. Preserve its attribution and `public/fonts/isitusa-canopy/OFL.txt` when distributing the font. NYBG supplies visual inspiration only; no proprietary NYBG font files or logo contours are included.
 
-The self-hosted WOFF2 is declared as normal style, weight 800, with `font-display: swap`; the desktop TTF retains `Regular` in its filename but supplies the same fixed display weight. The web subset covers Latin and the punctuation documented in the font README. Do not assume other scripts, italic styles, or a variable weight range. Shared editorial rules use `font-synthesis: none`.
+The self-hosted `/fonts/isitusa-canopy/isitusa-canopy.woff2` is preloaded in the root layout and declared as normal style, weight 800, with `font-display: swap`; `ISITUSACanopy-Regular.ttf` supplies the same fixed display weight. The subset is drawn from the master's supported characters within U+0020-U+017E and U+2000-U+206F, plus the euro and trademark signs. Do not assume other scripts, italic styles, or a variable weight range. Shared editorial rules use `font-synthesis: none`.
 
 ### Hierarchy
 
@@ -173,15 +173,15 @@ The self-hosted WOFF2 is declared as normal style, weight 800, with `font-displa
 - **Reading and brand pages:** Public h1/h2, the atlas introduction, and the footer introduction receive the display family. Source lists and directory results headings explicitly retain the body family. More-specific route selectors retain their own size, weight, and tracking declarations; the shared role is not a claim that every heading computes identically.
 - **Body and labels:** The base body role intentionally has no universal size or line-height; existing surfaces set those values. The About source paragraph role is one observed reading style, limited to 72ch. Scientific names remain italic and measurements use tabular numbers. Avoid repetitive uppercase labels.
 
-**The One Identity Rule.** Spell the acronym `ISITUSA` with no space and the full name `Invasive Species In The United States of America`. Use the same display face for their letterforms and public editorial headings; keep body copy, scientific data, forms, and navigation in the existing system sans.
+**The One Identity Rule.** Spell the acronym `ISITUSA` with no space and the full name `Invasive Species In The United States of America`. Export acronym and full-name artwork from the same Canopy glyph master used by public editorial headings, so A and every repeated letter keep identical outlines across placements. Keep body copy, scientific data, forms, and navigation in the existing system sans.
 
-**The Licensed Basis Rule.** Describe the display face as an OFL Fraunces derivative with original I and T outlines. NYBG is a visual inspiration, not a font source, affiliation, or endorsement.
+**The Licensed Basis Rule.** Describe Canopy as original Latin outlines with Outfit 800 ancillary glyphs and font structure under OFL 1.1. NYBG is a visual inspiration, not a font source, affiliation, or endorsement.
 
 ## Layout
 
 Preserve the edge-to-edge map, floating search and navigation, county panel, mobile bottom sheet, and reading columns. The existing page gutter and recurring spacing values are recorded in frontmatter; the page gutter becomes its mobile value at 700px and below. These are observed values, not a new universal spacing utility system.
 
-About retains its two-column opening and source carousel. At 700px and below, the opening becomes one column and the emblem and full name stack vertically; the emblem is 136px wide and the full-name art preserves its aspect ratio with a 470px maximum width. Preserve the existing source order and carousel accessibility behavior.
+About retains its two-column opening and source carousel. At 700px and below, the opening becomes one column and the symbol-name lockup and full name stack vertically; the lockup is 136px wide and the full-name art preserves its aspect ratio with a 470px maximum width. Preserve the existing source order and carousel accessibility behavior.
 
 Participation stacks at 760px. Support's main columns stack at 1100px and its contribution panels stack at 600px. Do not make these route-specific breakpoints universal.
 
@@ -193,7 +193,7 @@ Keep existing short entrances, focus states, and reduced-motion behavior. The id
 
 ## Shapes
 
-The circular bird/leaf/fungi emblem remains unchanged. Brand v7 changes the letterforms and lockups, not that emblem. Botanical curves and tapered tips belong to the letters; county geometry, controls, and evidence displays stay precise.
+The circular bird/leaf/fungi emblem retains its approved v3 contours. Brand v8 replaces the letterforms and lockups, not that emblem. Sculptural curves, flared stems, and sharp curved terminals belong to the letters; county geometry, controls, and evidence displays stay precise.
 
 Preserve the existing modest corner vocabulary documented in frontmatter. Small switches and chips may use pills; participation tags retain their existing 7px corners. Do not propagate decorative botanical silhouettes into forms or map boundaries.
 
@@ -201,9 +201,9 @@ Preserve the existing modest corner vocabulary documented in frontmatter. Small 
 
 ### Identity artwork
 
-Use `public/brand/v7/wordmark-green.svg`, `wordmark-white.svg`, or `wordmark-black.svg` for the acronym. Use `full-name.svg` for the two-line full name and `symbol-name.svg` for the preserved emblem with the matching acronym. SVG letters are outlined; they do not require the font to be installed. Preserve aspect ratios and the built-in optical pair spacing rather than retyping the logo with ordinary text spacing. PNG exports derive from these SVGs and carry embedded provenance.
+Use `public/brand/v8/wordmark-green.svg`, `wordmark-white.svg`, or `wordmark-black.svg` for the acronym. Use `full-name.svg` for the two-line full name and `symbol-name.svg` for the preserved emblem with the matching acronym. All lettering exports directly from the Canopy glyph master in `scripts/build-brand-v8.py`; SVG letters are outlined and do not require the font to be installed. Preserve aspect ratios and the built-in optical pair spacing rather than retyping the logo with ordinary text spacing. PNG exports derive from these SVGs.
 
-The header continues to combine the original v3 symbol with the v7 wordmark. About combines that symbol with the v7 full name. The footer uses the v7 symbol-name lockup. Existing dark-mode `.brand-art` treatment makes these green assets white.
+The header continues to combine the original v3 symbol with the v8 wordmark. About places the v8 symbol-name lockup beside the v8 full name. The footer uses the same v8 symbol-name lockup. Existing dark-mode `.brand-art` treatment makes these green assets white. The root layout references the v8 web manifest while icons and social-preview imagery retain the v3 emblem.
 
 ### Buttons and fields
 
@@ -220,9 +220,9 @@ Preserve separate county/ZIP and species searches, the state focus selector, exp
 ## Do's and Don'ts
 
 ### Do:
-- Do use the v7 acronym and full-name artwork with the unchanged emblem and preserved aspect ratios.
+- Do use the v8 acronym and full-name artwork from the single Canopy glyph master with the unchanged v3 emblem and preserved aspect ratios.
 - Do keep botanical display type and readable system sans in their defined roles.
-- Do retain the Fraunces attribution and OFL license with distributed font files.
+- Do retain the Outfit attribution and OFL license with distributed Canopy font files.
 - Do show real data and explicit release dates.
 - Do preserve the distinction between map records and research determinations.
 - Do honor reduced motion and keep keyboard focus visible.
@@ -230,7 +230,7 @@ Preserve separate county/ZIP and species searches, the state focus selector, exp
 
 ### Don't:
 - Don't insert a space into ISITUSA or substitute a different capitalization for the full name.
-- Don't describe the derivative as NYBG's font, wholly original type, or institutional endorsement.
+- Don't describe Canopy as NYBG's font, a wholly original font, or institutional endorsement; its Latin outlines are original and its ancillary glyphs and font structure derive from Outfit.
 - Don't stretch the artwork, redraw the established emblem, or use display lettering for dense data and form controls.
 - Don't use hazard colors, ornamental statistics, looping glows, fake forms, or nested glass panels.
 - Don't treat this source extraction as completed rendered QA.

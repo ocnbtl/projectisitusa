@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-10T22:09:05.813Z",
+  "generatedAt": "2026-10-10T23:14:26.828Z",
   "title": "Design System: ISITUSA",
   "extensions": {
     "colorMeta": {
@@ -302,7 +302,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Shared editorial family and weight; surface rules determine size."
+        "purpose": "Shared Canopy family and weight from the same glyph master as the v8 identity artwork; surface rules determine size."
       },
       "display-about": {
         "displayName": "Display About",
@@ -399,9 +399,9 @@
       "name": "Botanical editorial heading",
       "kind": "custom",
       "refersTo": "editorial-heading",
-      "description": "About opening typography; uses the app-loaded display face with its declared fallback. Hosted preview rendering and production font loading were verified; see the botanical-email verification report for the tested scope.",
+      "description": "About opening typography using the app-loaded Canopy face with its declared fallback. Records corrected source b548fdf2c6 for hosted-preview work; existing canopy captures precede its A and S/s/c/e corrections and do not establish final rendered proof or production publication.",
       "html": "<h1 class=\"ds-editorial-heading\">Local knowledge.<br>A wider understanding.</h1>",
-      "css": ".ds-editorial-heading{margin:0 0 40px;color:var(--foreground,#173c38);font-family:var(--font-display,\"ISITUSA Field Display\",Georgia,serif);font-size:clamp(36px,3.5vw,64px);font-weight:800;font-synthesis:none;line-height:1.08;letter-spacing:-.015em;text-wrap:balance}@media(max-width:700px){.ds-editorial-heading{font-size:clamp(36px,9vw,46px);margin-bottom:28px}}"
+      "css": ".ds-editorial-heading{margin:0 0 40px;color:var(--foreground,#173c38);font-family:var(--font-display,\"ISITUSA Canopy\",Georgia,serif);font-size:clamp(36px,3.5vw,64px);font-weight:800;font-synthesis:none;line-height:1.08;letter-spacing:-.015em;text-wrap:balance}@media(max-width:700px){.ds-editorial-heading{font-size:clamp(36px,9vw,46px);margin-bottom:28px}}"
     },
     {
       "name": "Primary action",
@@ -454,7 +454,7 @@
   ],
   "narrative": {
     "northStar": "An open field atlas.",
-    "overview": "The map is the workspace. Search, filters, and geographic navigation float above it; evidence is read on an opaque surface. Restrained environmental color and precise cartographic detail support the existing atlas.\n\nBotanical display lettering unifies the ISITUSA acronym, full name, and public editorial headings. Generous curves end in crisp, tapered tips, following the user's NYBG-inspired direction while preserving the established bird/leaf/fungi emblem. Neutral sans text carries navigation, scientific data, forms, and body copy.",
+    "overview": "The map is the workspace. Search, filters, and geographic navigation float above it; evidence is read on an opaque surface. Restrained environmental color and precise cartographic detail support the existing atlas.\n\nISITUSA Canopy unifies the ISITUSA acronym, full name, and public editorial headings through one glyph master. Broad sculptural curves meet crisp flared stems and sharp curved terminals, following the user's NYBG-inspired direction while preserving the established bird/leaf/fungi emblem. Neutral sans text carries navigation, scientific data, forms, and body copy.",
     "keyCharacteristics": [
       "Botanical expression in the identity and editorial display type.",
       "Precise, readable evidence and interface typography.",
@@ -464,19 +464,19 @@
     "rules": [
       {
         "name": "The One Identity Rule",
-        "body": "Spell the acronym `ISITUSA` with no space and the full name `Invasive Species In The United States of America`. Use the same display face for their letterforms and public editorial headings; keep body copy, scientific data, forms, and navigation in the existing system sans.",
+        "body": "Spell the acronym `ISITUSA` with no space and the full name `Invasive Species In The United States of America`. Export acronym and full-name artwork from the same Canopy glyph master used by public editorial headings, so A and every repeated letter keep identical outlines across placements. Keep body copy, scientific data, forms, and navigation in the existing system sans.",
         "section": "typography"
       },
       {
         "name": "The Licensed Basis Rule",
-        "body": "Describe the display face as an OFL Fraunces derivative with original I and T outlines. NYBG is a visual inspiration, not a font source, affiliation, or endorsement.",
+        "body": "Describe Canopy as original Latin outlines with Outfit 800 ancillary glyphs and font structure under OFL 1.1. NYBG is a visual inspiration, not a font source, affiliation, or endorsement.",
         "section": "typography"
       }
     ],
     "dos": [
-      "Do use the v7 acronym and full-name artwork with the unchanged emblem and preserved aspect ratios.",
+      "Do use the v8 acronym and full-name artwork from the single Canopy glyph master with the unchanged v3 emblem and preserved aspect ratios.",
       "Do keep botanical display type and readable system sans in their defined roles.",
-      "Do retain the Fraunces attribution and OFL license with distributed font files.",
+      "Do retain the Outfit attribution and OFL license with distributed Canopy font files.",
       "Do show real data and explicit release dates.",
       "Do preserve the distinction between map records and research determinations.",
       "Do honor reduced motion and keep keyboard focus visible.",
@@ -484,7 +484,7 @@
     ],
     "donts": [
       "Don't insert a space into ISITUSA or substitute a different capitalization for the full name.",
-      "Don't describe the derivative as NYBG's font, wholly original type, or institutional endorsement.",
+      "Don't describe Canopy as NYBG's font, a wholly original font, or institutional endorsement; its Latin outlines are original and its ancillary glyphs and font structure derive from Outfit.",
       "Don't stretch the artwork, redraw the established emblem, or use display lettering for dense data and form controls.",
       "Don't use hazard colors, ornamental statistics, looping glows, fake forms, or nested glass panels.",
       "Don't treat this source extraction as completed rendered QA."
