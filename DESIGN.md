@@ -140,7 +140,7 @@ Botanical display lettering unifies the ISITUSA acronym, full name, and public e
 - Forest green, mineral paper, and dark pine surfaces.
 - Existing map, reading, and participation structures preserved.
 
-This document merges the approved identity change into the incumbent system. Source snapshot: `359ab82ab1`, including `app/globals.css`, `app/about/about-experience.css`, participation/support styles, and the v7 brand and font manifests. It records implemented declarations. The 359ab82 preview was reviewed at simulated widths of 390, 1440, and 2452 pixels, including light and dark About views; final production checks are recorded in the botanical-email verification report.
+This document merges the approved identity change into the incumbent system. Source snapshot: `359ab82ab1`, including `app/globals.css`, `app/about/about-experience.css`, participation/support styles, and the v7 brand and font manifests. It records implemented declarations. The 359ab82 preview was reviewed at simulated widths of 390, 1440, and 2452 pixels, including light and dark About views; production publication and final rendered copy verification passed on source 7456ee9, as recorded in `ops/national-research/ui-work/botanical-email-20261010/verification.md`.
 
 ## Colors
 
