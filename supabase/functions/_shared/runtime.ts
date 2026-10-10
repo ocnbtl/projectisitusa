@@ -6,7 +6,7 @@ export function service() { return createClient(env("SUPABASE_URL"),env("SUPABAS
 export function site() { const value=env("ISITUSA_SITE_URL"); if (value!=="https://isitusa.com" && value!=="http://localhost:3000") throw new HttpError(503,"Site configuration is not ready."); return value; }
 export function cors(req: Request) {
  const origin=req.headers.get("Origin");
- if (origin!==site()) throw new HttpError(403,"This request must come from IsItUSA.");
+ if (origin!==site() && !(site()==="https://isitusa.com" && origin==="https://team.isitusa.com")) throw new HttpError(403,"This request must come from IsItUSA.");
  return { "Access-Control-Allow-Origin": origin, "Access-Control-Allow-Headers":"authorization, apikey, content-type", "Access-Control-Allow-Methods":"GET, POST, OPTIONS", Vary:"Origin", "Cache-Control":"no-store" };
 }
 export async function body(req: Request, max=65536) {

@@ -30,6 +30,13 @@ export function SiteHeader() {
     observer.observe(node);
     return () => { active = false; observer.disconnect(); };
   }, [pathname]);
+  if (pathname.startsWith("/admin") || pathname.startsWith("/auth/")) return <>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    <header className="site-header glass-panel">
+      <Link href="https://isitusa.com/" className="site-brand" aria-label="isitusa public website"><Image className="brand-art" src="/brand/v3/isitusa-symbol.svg" alt="" width={70} height={70} priority unoptimized /><span className="brand-full-name">isitusa · Team workspace</span></Link>
+      <ThemeToggle />
+    </header>
+  </>;
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <header className="site-header glass-panel">

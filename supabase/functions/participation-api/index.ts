@@ -136,7 +136,7 @@ Deno.serve(async(req:Request)=>{
    if(grants.some(p=>!PERMISSIONS.some(value=>value===p)))throw new HttpError(400,"Choose valid permissions.");
    const owner=checked(await client.from("isitusa_staff").select("is_owner").eq("user_id",(await client.auth.getUser()).data.user!.id).single());
    if(!owner?.is_owner&&grants.some(p=>!["review","content","events","outreach"].includes(p)))throw new HttpError(403,"Only the owner can grant elevated access.");
-   const invited=await db.auth.admin.inviteUserByEmail(email,{redirectTo:`${site()}/auth/confirm`});
+   const invited=await db.auth.admin.inviteUserByEmail(email,{redirectTo:site()==="https://isitusa.com"?"https://team.isitusa.com/auth/confirm":`${site()}/auth/confirm`});
    if(invited.error||!invited.data.user)throw new HttpError(400,"This invitation could not be sent. Check the address and existing team accounts.");
    const saved=await client.rpc("isitusa_save_staff",{target:invited.data.user.id,grants,enabled:true,name});
    if(saved.error)throw new HttpError(409,"An invitation was sent, but access was not granted. An owner must finish the account setup.");

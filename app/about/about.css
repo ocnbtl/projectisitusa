@@ -13,12 +13,14 @@
 .about-page .about-source-panel h2 { font-size:18px; line-height:1.5; font-weight:550; letter-spacing:0; margin-bottom:20px; text-wrap:pretty; }
 .about-source-logos { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px 16px; list-style:none; padding:0; margin:0; }
 .about-source-logos a { display:flex; flex-direction:column; align-items:center; gap:10px; min-height:44px; text-decoration:none; border-radius:12px; }
-.about-source-circle { width:88px; height:88px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#fff; padding:14px; transition:transform 180ms ease; }
-.about-source-circle img { width:100%; height:100%; object-fit:contain; }
-.about-source-circle.source-logo-usgs { background:#153d38; }
-.about-source-circle.source-logo-shield { padding:12px 22px; }
+.about-source-mark { width:88px; height:88px; display:flex; align-items:center; justify-content:center; padding:4px; transition:transform 180ms ease; }
+.about-source-mark img { display:block; width:auto; height:auto; max-width:100%; max-height:100%; object-fit:contain; }
+.about-source-mark.source-logo-usgs img { filter:brightness(0) saturate(100%); }
+.dark .about-source-mark.source-logo-usgs img,
+.dark .about-source-mark.source-logo-dark-light img { filter:brightness(0) invert(1); }
+.about-source-mark.source-logo-shield { padding:4px; }
 .about-source-logos a > span:nth-child(2) { display:flex; align-items:center; gap:3px; font-size:12px; line-height:1.45; text-align:center; color:var(--foreground); }
-.about-source-logos a:hover .about-source-circle { transform:translateY(-3px); }
+.about-source-logos a:hover .about-source-mark { transform:translateY(-3px); }
 .about-source-logos a:hover > span:nth-child(2) { text-decoration:underline; text-underline-offset:4px; }
 .about-source-panel > p { margin:24px 0 6px; max-width:65ch; font-size:12px; line-height:1.75; color:var(--muted); }
 .about-source-panel > a { display:inline-flex; align-items:center; gap:8px; min-height:44px; font-size:13px; }
@@ -36,7 +38,7 @@
   .about-brand-lockup { flex-direction:column; gap:20px; text-align:center; }
   .about-brand-lockup > .about-full-name { flex:none; width:100%; }
   .about-source-panel { margin:0; }
-  .about-source-circle { width:76px; height:76px; padding:12px; }
+  .about-source-mark { width:76px; height:76px; padding:4px; }
 }
 @media (max-width:700px) {
   .about-opening { padding-top:4px; padding-bottom:20px; }
@@ -50,8 +52,8 @@
   .about-brand-lockup > .about-full-name { flex:1; width:0; }
   .about-source-panel { margin-top:36px; }
   .about-source-logos { gap:20px 8px; }
-  .about-source-circle { width:clamp(56px,17vw,84px); height:clamp(56px,17vw,84px); padding:10px; }
-  .about-source-circle.source-logo-shield { padding:10px 18px; }
+  .about-source-mark { width:clamp(56px,17vw,84px); height:clamp(56px,17vw,84px); padding:4px; }
+  .about-source-mark.source-logo-shield { padding:4px; }
   .about-source-logos a > span:nth-child(2) { font-size:11px; }
   .about-page .about-purpose { padding-block:28px; }
   .about-page .about-page-nav { padding-bottom:8px; gap:0 22px; }
@@ -61,12 +63,12 @@
   .about-brand-lockup > img:first-child { width:160px; }
   .about-brand-lockup > .about-full-name { flex:none; width:100%; }
 }
-@media (prefers-reduced-motion:reduce) { .about-source-circle { transition:none; } .about-source-logos a:hover .about-source-circle { transform:none; } }
+@media (prefers-reduced-motion:reduce) { .about-source-mark { transition:none; } .about-source-logos a:hover .about-source-mark { transform:none; } }
 /* A centered identity and source constellation, followed by the story. */
-.about-introduction{grid-template-columns:1fr;gap:56px}.about-brand-and-sources{grid-row:1;width:100%;max-width:1040px;justify-self:center}.about-brand-lockup{max-width:860px;margin-inline:auto}.about-brand-lockup>img:first-child{width:clamp(160px,17vw,230px)}.about-source-panel{max-width:920px;text-align:center;margin-top:44px}.about-source-logos{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 18px}.about-source-logos li{width:120px}.about-source-panel>p{max-width:76ch;margin-inline:auto}.about-story{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;max-width:1100px;margin-inline:auto}.about-story>.about-lead{grid-column:1/-1;max-width:50ch;justify-self:center;text-align:center;margin-bottom:38px}.about-story>a{justify-self:start}.about-opening h1{text-align:center;font-size:clamp(30px,3.25vw,58px)}.about-brand-lockup{animation:about-arrive 700ms cubic-bezier(.16,1,.3,1) both}.about-source-logos li{animation:about-arrive 600ms cubic-bezier(.16,1,.3,1) both;animation-delay:180ms}.about-source-logos li:nth-child(3n+2){animation-delay:240ms}.about-source-logos li:nth-child(3n){animation-delay:300ms}.about-source-circle{transition:transform 220ms cubic-bezier(.16,1,.3,1),box-shadow 220ms}.about-source-logos a:hover .about-source-circle{transform:translateY(-5px);box-shadow:0 10px 25px #173c3418}.record-context>div{position:relative;padding-top:28px;border-top:2px solid var(--accent)}.record-context dt svg{width:32px;height:32px;color:var(--accent)}.about-evidence-note{background:color-mix(in srgb,var(--accent) 7%,var(--surface));border-radius:12px;padding:24px}.about-outlook>svg{width:64px;height:64px;color:var(--accent)}
+.about-introduction{grid-template-columns:1fr;gap:56px}.about-brand-and-sources{grid-row:1;width:100%;max-width:1040px;justify-self:center}.about-brand-lockup{max-width:860px;margin-inline:auto}.about-brand-lockup>img:first-child{width:clamp(160px,17vw,230px)}.about-source-panel{max-width:920px;text-align:center;margin-top:44px}.about-source-logos{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 18px}.about-source-logos li{width:120px}.about-source-panel>p{max-width:76ch;margin-inline:auto}.about-story{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;max-width:1100px;margin-inline:auto}.about-story>.about-lead{grid-column:1/-1;max-width:50ch;justify-self:center;text-align:center;margin-bottom:38px}.about-story>a{justify-self:start}.about-opening h1{text-align:center;font-size:clamp(30px,3.25vw,58px)}.about-brand-lockup{animation:about-arrive 700ms cubic-bezier(.16,1,.3,1) both}.about-source-logos li{animation:about-arrive 600ms cubic-bezier(.16,1,.3,1) both;animation-delay:180ms}.about-source-logos li:nth-child(3n+2){animation-delay:240ms}.about-source-logos li:nth-child(3n){animation-delay:300ms}.about-source-mark{transition:transform 220ms cubic-bezier(.16,1,.3,1)}.about-source-logos a:hover .about-source-mark{transform:translateY(-3px)}.record-context>div{position:relative;padding-top:28px;border-top:2px solid var(--accent)}.record-context dt svg{width:32px;height:32px;color:var(--accent)}.about-evidence-note{background:color-mix(in srgb,var(--accent) 7%,var(--surface));border-radius:12px;padding:24px}.about-outlook>svg{width:64px;height:64px;color:var(--accent)}
 @keyframes about-arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media(max-width:700px){.about-story{grid-template-columns:1fr;gap:0}.about-story>.about-lead{text-align:left;margin-bottom:26px}.about-brand-lockup{gap:18px}.about-brand-lockup>img:first-child{width:30%}.about-source-logos{gap:20px 8px}.about-source-logos li{width:calc(25% - 8px)}.about-source-circle{width:64px;height:64px}.about-page .about-source-panel h2{max-width:28ch;margin-inline:auto}.about-introduction{gap:38px}.about-opening h1{text-align:left}.about-source-panel{margin-top:30px}.about-source-logos a>span:nth-child(2){font-size:10px}.about-source-panel>p{text-align:left}}
-@media(prefers-reduced-motion:reduce){.about-brand-lockup,.about-source-logos li{animation:none}.about-source-circle{transition:none}.about-source-logos a:hover .about-source-circle{transform:none}}
+@media(max-width:700px){.about-story{grid-template-columns:1fr;gap:0}.about-story>.about-lead{text-align:left;margin-bottom:26px}.about-brand-lockup{gap:18px}.about-brand-lockup>img:first-child{width:30%}.about-source-logos{gap:20px 8px}.about-source-logos li{width:calc(25% - 8px)}.about-source-mark{width:64px;height:64px}.about-page .about-source-panel h2{max-width:28ch;margin-inline:auto}.about-introduction{gap:38px}.about-opening h1{text-align:left}.about-source-panel{margin-top:30px}.about-source-logos a>span:nth-child(2){font-size:10px}.about-source-panel>p{text-align:left}}
+@media(prefers-reduced-motion:reduce){.about-brand-lockup,.about-source-logos li{animation:none}.about-source-mark{transition:none}.about-source-logos a:hover .about-source-mark{transform:none}}
 
 /* Keep the expanded source list readable at intermediate and phone widths. */
 .about-brand-and-sources { display:block; }
@@ -76,4 +78,4 @@
   .about-source-logos a > span:nth-child(2) { font-size:12px; }
 }
 
-.about-source-circle.source-logo-smithsonian img { object-fit:cover; }
+.about-source-mark.source-logo-smithsonian img { width:100%; height:100%; object-fit:cover; }

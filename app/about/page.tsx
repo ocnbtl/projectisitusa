@@ -6,23 +6,23 @@ import Image from "next/image";
 import "./about.css";
 
 const researchSources = [
-  { name: "Harvard University", description: "Harvard University Herbaria: preserved plant specimens used in our occurrence research", image: "harvard.png", href: "https://www.huh.harvard.edu/pages/digital-resources", style: "" },
-  { name: "Smithsonian", description: "Smithsonian National Museum of Natural History: preserved specimens used in our occurrence research", image: "smithsonian.png", href: "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a", style: "source-logo-smithsonian" },
-  { name: "USGS", description: "U.S. Geological Survey: US-RIIS and aquatic species records", image: "usgs.png", href: "https://nas.er.usgs.gov/", style: "source-logo-usgs" },
-  { name: "USDA", description: "U.S. Department of Agriculture: plant, pest, and forest research", image: "usda.svg", href: "https://www.aphis.usda.gov/", style: "" },
-  { name: "EPA", description: "U.S. Environmental Protection Agency: river and stream surveys", image: "epa.png", href: "https://www.epa.gov/national-aquatic-resource-surveys/nrsa", style: "" },
-  { name: "U.S. Fish & Wildlife", description: "U.S. Fish and Wildlife Service: invasive carp monitoring", image: "fws.svg", href: "https://www.fws.gov/", style: "source-logo-shield" },
-  { name: "Cornell University", description: "Cornell Integrated Pest Management: invasive insect identification and practical guidance", image: "cornell.svg", href: "https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/brown-marmorated-stink-bug", style: "" },
-  { name: "Penn State", description: "Penn State Extension: allium leafminer monitoring and management guidance", image: "penn-state.ico", href: "https://extension.psu.edu/fall-flight-of-allium-leafminer-observed-in-southeast-pa", style: "" },
-  { name: "Purdue University", description: "Purdue University and USDA Forest Service: Alien Forest Pest Explorer", image: "purdue.png", href: "https://purr.purdue.edu/publications/4479", style: "" },
-  { name: "University of Florida", description: "University of Florida IFAS and Florida Museum: plant research and species identification guides", image: "florida.png", href: "https://plant-directory.ifas.ufl.edu/plant-directory/dioscorea-bulbifera/", style: "" },
-  { name: "University of Wisconsin-Madison", description: "University of Wisconsin-Madison Extension: horticultural research and plant profiles", image: "wisconsin.svg", href: "https://hort.extension.wisc.edu/articles/popcorn-cassia-senna-cassia-didymobotrya/", style: "source-logo-shield" },
-  { name: "University of Georgia", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", href: "https://www.eddmaps.org/", style: "" },
-  { name: "Forest Service", description: "USDA Forest Service: forest pest detections and invasive plant surveys", image: "usfs.svg", href: "https://www.fs.usda.gov/", style: "source-logo-shield" },
-  { name: "New York Botanical Garden", description: "New York Botanical Garden: preserved herbarium specimens", image: "nybg.svg", href: "https://sweetgum.nybg.org/science/vh/", style: "" },
-  { name: "GBIF", description: "Global Biodiversity Information Facility: biodiversity records and collections", image: "gbif.svg", href: "https://www.gbif.org/", style: "" },
-  { name: "iNaturalist", description: "iNaturalist: research-grade observations", image: "inaturalist.svg", href: "https://www.inaturalist.org/", style: "" },
-  { name: "iDigBio", description: "Integrated Digitized Biocollections: museum and herbarium specimens", image: "idigbio.png", href: "https://www.idigbio.org/", style: "" },
+  { name: "Harvard University", description: "Harvard University Herbaria: preserved plant specimens used in our occurrence research", image: "harvard.png", width: 192, height: 192, href: "https://www.huh.harvard.edu/pages/digital-resources", style: "" },
+  { name: "Smithsonian", description: "Smithsonian National Museum of Natural History: preserved specimens used in our occurrence research", image: "smithsonian.png", width: 1200, height: 600, href: "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a", style: "source-logo-smithsonian" },
+  { name: "USGS", description: "U.S. Geological Survey: US-RIIS and aquatic species records", image: "usgs.png", width: 227, height: 86, href: "https://nas.er.usgs.gov/", style: "source-logo-usgs" },
+  { name: "USDA", description: "U.S. Department of Agriculture: plant, pest, and forest research", image: "usda.svg", width: 219, height: 150, href: "https://www.aphis.usda.gov/", style: "source-logo-dark-light" },
+  { name: "EPA", description: "U.S. Environmental Protection Agency: river and stream surveys", image: "epa.png", width: 196, height: 196, href: "https://www.epa.gov/national-aquatic-resource-surveys/nrsa", style: "" },
+  { name: "U.S. Fish & Wildlife", description: "U.S. Fish and Wildlife Service: invasive carp monitoring", image: "fws.svg", width: 125, height: 150, href: "https://www.fws.gov/", style: "source-logo-shield" },
+  { name: "Cornell University", description: "Cornell Integrated Pest Management: invasive insect identification and practical guidance", image: "cornell.png", width: 1600, height: 1603, href: "https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/brown-marmorated-stink-bug", style: "" },
+  { name: "Penn State", description: "Penn State Extension: allium leafminer monitoring and management guidance", image: "penn-state.ico", width: 347, height: 347, href: "https://extension.psu.edu/fall-flight-of-allium-leafminer-observed-in-southeast-pa", style: "" },
+  { name: "Purdue University", description: "Purdue University and USDA Forest Service: Alien Forest Pest Explorer", image: "purdue.png", width: 192, height: 192, href: "https://purr.purdue.edu/publications/4479", style: "" },
+  { name: "University of Florida", description: "University of Florida IFAS and Florida Museum: plant research and species identification guides", image: "florida.png", width: 64, height: 64, href: "https://plant-directory.ifas.ufl.edu/plant-directory/dioscorea-bulbifera/", style: "" },
+  { name: "University of Wisconsin-Madison", description: "University of Wisconsin-Madison Extension: horticultural research and plant profiles", image: "wisconsin.svg", width: 55.5, height: 87.28, href: "https://hort.extension.wisc.edu/articles/popcorn-cassia-senna-cassia-didymobotrya/", style: "source-logo-shield" },
+  { name: "University of Georgia", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", width: 250, height: 61, href: "https://www.eddmaps.org/", style: "" },
+  { name: "Forest Service", description: "USDA Forest Service: forest pest detections and invasive plant surveys", image: "usfs.svg", width: 182, height: 198, href: "https://www.fs.usda.gov/", style: "source-logo-shield" },
+  { name: "New York Botanical Garden", description: "New York Botanical Garden: preserved herbarium specimens", image: "nybg.svg", width: 524, height: 160, href: "https://sweetgum.nybg.org/science/vh/", style: "source-logo-dark-light" },
+  { name: "GBIF", description: "Global Biodiversity Information Facility: biodiversity records and collections", image: "gbif.svg", width: 1061, height: 218, href: "https://www.gbif.org/", style: "source-logo-dark-light" },
+  { name: "iNaturalist", description: "iNaturalist: research-grade observations", image: "inaturalist.svg", width: 1153, height: 210, href: "https://www.inaturalist.org/", style: "source-logo-dark-light" },
+  { name: "iDigBio", description: "Integrated Digitized Biocollections: museum and herbarium specimens", image: "idigbio.png", width: 200, height: 62, href: "https://www.idigbio.org/", style: "" },
 ];
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ export default function AboutPage() {
               <ul className="about-source-logos">
                 {researchSources.map(source => <li key={source.name}>
                   <a href={source.href} target="_blank" rel="noreferrer" title={source.description}>
-                    <span className={`about-source-circle ${source.style}`}><Image src={`/source-logos/${source.image}`} alt="" width={84} height={64} unoptimized /></span>
+                    <span className={`about-source-mark ${source.style}`}><Image src={`/source-logos/${source.image}`} alt="" width={source.width} height={source.height} unoptimized /></span>
                     <span>{source.name}<ArrowUpRight size={12} aria-hidden="true" /></span>
                     <span className="sr-only">{source.description}. Opens in a new tab.</span>
                   </a>
