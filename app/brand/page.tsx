@@ -4,8 +4,8 @@ import { ArrowDownToLine } from "lucide-react";
 export const metadata: Metadata = { title: "Brand kit | ISITUSA", description: "Official ISITUSA artwork for articles, community materials, and project updates.", alternates: { canonical: "/brand" } };
 const assets = [
   { file: "/brand/v3/isitusa-symbol.svg", title: "The symbol", description: "For avatars, icons, and compact spaces.", width: 840, height: 840 },
-  { file: "/brand/v5/symbol-name.svg", title: "Symbol and name", description: "Our emblem paired with the uppercase ISITUSA name.", width: 840, height: 1080 },
-  { file: "/brand/v5/wordmark-green.svg", title: "The wordmark", description: "Custom outlined lettering for headers and horizontal spaces.", width: 708, height: 158 },
+  { file: "/brand/v6/symbol-name.svg", title: "Symbol and name", description: "Our emblem paired with the uppercase ISITUSA name.", width: 840, height: 1080 },
+  { file: "/brand/v6/wordmark-green.svg", title: "The wordmark", description: "Custom outlined lettering for headers and horizontal spaces.", width: 532, height: 116 },
 ];
 export default function BrandPage() {
   return <main id="main-content" className="brand-kit">
@@ -24,6 +24,6 @@ export default function BrandPage() {
     <h2>Keep it recognizable.</h2>
     <p className="brand-kit-note">Write our name as <strong>ISITUSA</strong> and our website as <strong>isitusa.com</strong>. Keep the artwork in its original proportions, with clear space around it. Use green on light backgrounds and white on dark backgrounds.</p>
     <p className="brand-kit-note">Use the logo to identify the project accurately. Its use should not suggest an endorsement, partnership, government affiliation, or nonprofit status.</p>
-    <div className="brand-kit-actions"><a className="text-link" href="/brand/v5/wordmark-white.svg" download>White wordmark</a><a className="text-link" href="/brand/v5/wordmark-black.svg" download>Black wordmark</a></div>
+    <div className="brand-kit-actions"><a className="text-link" href="/brand/v6/wordmark-white.svg" download>White wordmark</a><a className="text-link" href="/brand/v6/wordmark-black.svg" download>Black wordmark</a></div>
   </main>;
 }

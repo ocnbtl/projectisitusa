@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
   metadataBase: new URL("https://isitusa.com"),
   applicationName: "ISITUSA",
-  manifest: "/brand/v5/site.webmanifest",
+  manifest: "/brand/v6/site.webmanifest",
   openGraph: {
     type: "website", siteName: "ISITUSA", title: "Invasive Species In The USA (ISITUSA)",
     description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",

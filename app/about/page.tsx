@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="about-mission">
           <h1>Making invasive species research useful.</h1>
           <div className="about-brand-lockup" aria-label="ISITUSA">
-            <Image className="brand-art" src="/brand/v5/symbol-name.svg" alt="ISITUSA" width={840} height={1080} unoptimized priority />
+            <Image className="brand-art" src="/brand/v6/symbol-name.svg" alt="ISITUSA" width={840} height={1080} unoptimized priority />
             <Image className="brand-art about-full-name" src="/brand/full-name-v2/isitusa-full-name-green.svg" alt="Invasive Species In The United States of America" width={2133} height={356} unoptimized priority />
           </div>
         </div>
