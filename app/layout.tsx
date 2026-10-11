@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
   metadataBase: new URL("https://isitusa.com"),
   applicationName: "ISITUSA",
-  manifest: "/brand/v8/site.webmanifest",
+  manifest: "/brand/v9/site.webmanifest",
   openGraph: {
     type: "website", siteName: "ISITUSA", title: "Invasive Species In The USA (ISITUSA)",
     description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head><link rel="preload" href="/fonts/isitusa-canopy/isitusa-canopy.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head>
+      <head><link rel="preload" href="/fonts/isitusa-botanical/isitusa-botanical.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head>
       <body className="font-[family-name:var(--font-body)] antialiased">
         <Providers>
           <div className="app-frame">

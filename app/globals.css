@@ -4,7 +4,7 @@
 @source "../src/lib/**/*.{js,jsx,ts,tsx,mdx}";
 @custom-variant dark (&:where(.dark, .dark *));
 :root {
-  --font-display:"ISITUSA Canopy",Georgia,serif; --font-body:"Avenir Next","Segoe UI",sans-serif;
+  --font-display:"ISITUSA Botanical",Georgia,serif; --font-body:"Avenir Next","Segoe UI",sans-serif;
   --background:#edf2ef; --foreground:#173c38; --muted:#526863;
   --surface:rgba(251,253,251,.87); --surface-strong:#fbfdfb; --border:#cbd8d1;
   --ring:#19776b; --accent:#14675f; --accent-strong:#07574e; --warning:#885d19; --danger:#a43d34;
@@ -184,7 +184,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .county-sheet { top:112px; }
 .image-credit { font-size:11px; color:var(--muted); }
 .image-credit summary { display:flex; align-items:center; min-height:44px; width:fit-content; text-decoration:underline; text-underline-offset:3px; list-style:none; }
-.image-credit summary::before { content:"ⓘ"; margin-right:5px; font-size:13px; }
+.image-credit summary::before { content:"â“˜"; margin-right:5px; font-size:13px; }
 .image-credit p { font-size:11px; line-height:1.65; overflow-wrap:anywhere; padding:0 0 10px; }
 .profile-image-credit { padding:0 16px; }
 .county-credit { margin-top:-6px; padding-left:64px; }
@@ -1277,9 +1277,10 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .profile-section-nav{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:24px;font-size:14px}.profile-section-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:4px}.profile-report-callout{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-block:1px solid var(--border)}.profile-report-callout h3{font-size:22px;margin-bottom:8px}.profile-report-callout p{font-size:15px;color:var(--muted)}.profile-correction form{max-width:780px;padding-top:20px}.profile-correction h3{font-size:23px;line-height:1.4}.profile-correction legend{padding-bottom:12px}@media(max-width:640px){.profile-report-callout{align-items:flex-start;flex-direction:column}.profile-section-nav{gap:4px 20px}}
 
 /* One editorial voice; data, controls and body copy retain the UI sans. */
-@font-face{font-family:"ISITUSA Canopy";src:url("/fonts/isitusa-canopy/isitusa-canopy.woff2") format("woff2");font-style:normal;font-weight:800;font-display:swap}
+@font-face{font-family:"ISITUSA Botanical";src:url("/fonts/isitusa-botanical/isitusa-botanical.woff2") format("woff2");font-style:normal;font-weight:800;font-display:swap}
+h1,h2,h3,
 :is(.reading-page,.about-page,.brand-kit) h1,
 :is(.reading-page,.about-page,.brand-kit) h2,
-.atlas-intro h1,.footer-introduction p{font-family:var(--font-display);font-weight:800;font-synthesis:none;letter-spacing:-.015em}
+.atlas-intro h1,.footer-introduction p{font-family:var(--font-display);font-weight:800;font-synthesis:none;letter-spacing:0}
 .reading-page .profile-sources h2,.reading-page .directory-results-heading h2{font-family:var(--font-body);font-weight:600;letter-spacing:normal}
 .header-wordmark{width:137px;height:auto}
