@@ -184,7 +184,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .county-sheet { top:112px; }
 .image-credit { font-size:11px; color:var(--muted); }
 .image-credit summary { display:flex; align-items:center; min-height:44px; width:fit-content; text-decoration:underline; text-underline-offset:3px; list-style:none; }
-.image-credit summary::before { content:"ⓘ"; margin-right:5px; font-size:13px; }
+.image-credit summary::before { content:"â“˜"; margin-right:5px; font-size:13px; }
 .image-credit p { font-size:11px; line-height:1.65; overflow-wrap:anywhere; padding:0 0 10px; }
 .profile-image-credit { padding:0 16px; }
 .county-credit { margin-top:-6px; padding-left:64px; }
@@ -1069,10 +1069,10 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .site-footer .footer-main { display:grid; grid-template-columns:minmax(220px,1.5fr) repeat(3,minmax(130px,1fr)); gap:36px; }
 .site-footer .footer-main nav { min-width:0; margin:0; }
 .footer-main nav h2 { font-size:13px; font-weight:650; margin:0 0 10px; color:var(--muted); }
-.site-footer .footer-main nav a { justify-content:flex-start; gap:6px; width:fit-content; font-size:13px; }
+.site-footer .footer-main nav :is(a,button) { display:flex; align-items:center; justify-content:flex-start; gap:6px; width:fit-content; min-height:44px; padding:0; font-family:inherit; font-size:13px; font-weight:400; line-height:1.5; text-align:left; }
 .footer-main nav a>svg { transition:transform 180ms; }
 .footer-main nav a:hover>svg { transform:translate(2px,-2px); }
-.footer-main nav a:hover { color:var(--accent-strong); }
+.footer-main nav :is(a,button):hover { color:var(--accent-strong); }
 .footer-introduction p { font-family:var(--font-display),sans-serif; font-size:25px; line-height:1.25; letter-spacing:-.035em; max-width:260px; margin:18px 0 0; }
 .footer-introduction small { max-width:30ch; }
 .footer-brand { display:inline-block; transition:transform 200ms; }
@@ -1284,3 +1284,10 @@ h1,h2,h3,
 .atlas-intro h1,.footer-introduction p{font-family:var(--font-display);font-weight:800;font-synthesis:none;letter-spacing:0}
 .reading-page .profile-sources h2,.reading-page .directory-results-heading h2{font-family:var(--font-body);font-weight:600;letter-spacing:normal}
 .header-wordmark{width:137px;height:auto}
+
+/* The release notice uses the full name without competing with map controls. */
+.updates-popover header{align-items:flex-start}
+.updates-popover .updates-heading{min-width:0}
+.updates-heading>span{display:block;margin-bottom:6px;font-size:11px;color:var(--muted)}
+.updates-popover .updates-heading h2{font-family:var(--font-display);font-size:21px;font-weight:800;line-height:1.2;letter-spacing:0;text-wrap:balance}
+.updates-popover header>button{flex-shrink:0}
