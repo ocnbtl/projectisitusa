@@ -9,4 +9,15 @@
 - Application lint: 173 files, zero warnings/errors. Scoped git diff whitespace check passed.
 - Impeccable detector reviewed: advisory design-token drift against stale design notes; incumbent palette/type system preserved. No sidecar overhaul included.
 - Full build delegated to existing hosted Vercel pipeline; no local full build under low disk headroom.
-- Hosted preview, responsive checks and production verification pending.
+- Preview FMo27oeqZJqfwdQQKMQFHtcAuGTw READY for 8ed7a20408c3b7e9b793a188747aa4303d3876e5, hosted build 4m20s.
+- Preview wide view: About height 2619px at 2539px viewport, no horizontal overflow. Narrow simulation: 390x844, no horizontal overflow; About title/logo/copy, source section, dark mode and footer inspected.
+- All six Good to know controls now use 13px text and 44px targets. Privacy choices opened the consent region; Done closed it without enabling analytics.
+- Source jump link and dark-mode research text checked.
+- Preview map could not load its data; bounded HEAD requests confirmed data.isitusa.com allows Origin https://isitusa.com and omits allow-origin for the temporary Vercel preview. Existing live map was independently confirmed healthy. No CORS/security expansion made.
+- Hosted install retains existing text-encoding deprecation and six development dependency audit findings; the production-only npm audit gate passed as part of the successful build. Dependencies were not changed by this UI patch.
+- First production release ruzrmYemWo2KUEUEXHKoHguJVQCR READY (4m6s). Live About height 2619px vs baseline 4664px at the same 2452px viewport, approximately 44% shorter. Live footer and October 11 update heading/date verified.
+- Final mobile inspection caught notice overflow at 390x844. Added available-viewport height measurement; lint passed again. Application correction 082a5f4664ad03660c414e399dbf1785a8faf964.
+- Correction preview GAbm3J7Wn1YRhJM8zp17SC3GsD88 READY (4m8s). Final production GxjC4EZAtmShS2H47apzXKzzBxAG READY (4m15s), aliased to isitusa.com, source 082a5f4664ad03660c414e399dbf1785a8faf964.
+- Reloaded production map: healthy county records, October 11 release date and full organization heading in ISITUSA Botanical verified. At simulated 390x844, notice bounds x16..378 and y276.93..827.93, height 551px; all entries reachable through its 311px internal scroll. Escape closes and returns focus to Recent updates. Viewport override reset.
+- Live About rechecked at 390x844: no horizontal overflow, all headings within page width; all six footer information controls remain 13px/44px. This is browser viewport simulation, not physical-device evidence.
+- Live About screenshot saved outside the repository at the task visualization root, about-refinement-live.png.
