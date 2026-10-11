@@ -49,7 +49,7 @@ export function EditorialTracker({ preview = false, canReview = false, onDirtyCh
   }, [preview, retry]);
   const stateFor = (id: string) => reviewStatus(tasks[id], Boolean(SPECIES_EDITORIAL[id]));
   const approved = prepared.filter(row => stateFor(row.id) === "reviewed").length;
-  const rows = (catalog ? queue : prepared).filter(row => (query.trim() ? `${row.commonName} ${row.scientificName}`.toLowerCase().includes(query.trim().toLowerCase()) : row.batch === batch) && (filter === "all" || stateFor(row.id) === filter));
+  const rows = (catalog ? queue : prepared).filter(row => (query.trim() ? `${row.commonName} ${row.scientificName} ${(EDITORIAL_REVISIONS[row.id]?.alternativeNames ?? []).join(" ")} ${(EDITORIAL_REVISIONS[row.id]?.otherScientificNames ?? []).join(" ")}`.toLowerCase().includes(query.trim().toLowerCase()) : row.batch === batch) && (filter === "all" || stateFor(row.id) === filter));
   const active = rows.find(row => row.id === selected) ?? rows[0];
   const index = rows.findIndex(row => row.id === active?.id);
   function change(action: () => void) {
@@ -59,7 +59,7 @@ export function EditorialTracker({ preview = false, canReview = false, onDirtyCh
   const nextPending = [...rows.slice(index + 1), ...rows.slice(0, index)].find(row => stateFor(row.id) !== "reviewed");
   return <section className={css.review} aria-label="Species profile review">
     <div className={css.intro}><p>Read at your own pace. Check the sources, leave a note, and mark the descriptions you are happy with.</p><div className={css.progress}><strong>{prepared.length} profiles ready to read</strong><span>{loading ? "Loading your decisions..." : loadError ? "Saved decisions unavailable" : `${approved} approved · ${prepared.length - approved} still to review`}</span></div></div>
-    {revisionRows.length > 0 && <p className={css.caption}>{revisionRows.length} new research candidates: {revisionReady} ready for editorial review and {revisionRows.length-revisionReady} with research gaps. These are separate from your saved draft approvals.</p>}
+    {revisionRows.length > 0 && <p className={css.caption}>Round 2: {revisionRows.length} descriptions revised using your feedback across all four batches. {revisionReady} are ready for editorial review; {revisionRows.length-revisionReady} still have research gaps. Your saved notes and draft approvals are preserved.</p>}
     {preview && <p className={css.preview} role="note">Preview only. Feedback and approvals here are examples and are not saved.</p>}
     <div className={css.batchBar} aria-label="Profile batches">{batches.map(number => <button key={number} aria-pressed={!catalog && batch === number && !query} onClick={() => change(() => { setBatch(number); setCatalog(false); setQuery(""); })}>Batch {number}<span>{(number - 1) * 50 + 1}-{Math.min(number * 50, prepared.length)}</span></button>)}<button aria-pressed={catalog} onClick={() => change(() => { setCatalog(!catalog); setBatch(1); setQuery(""); })}>{catalog ? "Back to prepared profiles" : "Full catalog"}<span>{catalog ? `${prepared.length} descriptions` : `${queue.length.toLocaleString()} species`}</span></button></div>
     <div className={css.filters}><label><span><Search size={15} aria-hidden="true"/> Find a species</span><input className={styles.input} value={query} onChange={event => change(() => setQuery(event.target.value))} placeholder={catalog ? "Search the full catalog" : "Search all 200 profiles"}/></label><label>Review status<select className={styles.select} value={filter} onChange={event => change(() => setFilter(event.target.value))}><option value="all">All statuses</option>{Object.entries(REVIEW_STATES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>{catalog && <label>Catalog batch<select className={styles.select} value={batch} disabled={Boolean(query.trim())} onChange={event => change(() => setBatch(Number(event.target.value)))}>{Array.from({ length: Math.ceil(queue.length / 50) }, (_, i) => <option key={i} value={i + 1}>Batch {i + 1}</option>)}</select></label>}</div>
@@ -101,9 +101,13 @@ function ProfileReview({ row, task, canReview, preview, unavailable, onDirty, on
   }
   return <article aria-labelledby="profile-review-name">
     <header className={css.profileHeader}><h3 id="profile-review-name">{row.commonName}</h3><p><i>{row.scientificName}</i></p><div className={css.profileMeta}><span>Batch {row.batch} · Profile {row.order}</span><span>{unavailable ? "Reading saved review..." : dirty ? "Unsaved changes" : REVIEW_STATES[status]}</span></div></header>
-    {revision && <section className={css.revision} aria-label="New research revision">
-      <h4>New research revision</h4><p className={css.caption}>{revision.status === "ready_for_review" ? "Multiple sources checked. Ready for your editorial review." : "Research still needs a closer look. Read the limitations before using this candidate."} Your saved feedback and approval remain attached to the draft below.</p>
+    {revision && <section className={css.revision} aria-label="Updated description">
+      <h4>Updated description{revision.revisionNumber ? ` · Round ${revision.revisionNumber}` : ""}</h4>
+      <p className={css.caption}>{revision.revisedAt && <>Revised <time dateTime={revision.revisedAt}>{revision.revisedAt}</time>. </>}Clearer language, consistent names and useful details, based on the existing research. {revision.status === "ready_for_review" ? "Ready for your editorial review." : "Research gaps remain; check the limitations below."} Your saved feedback remains attached to the draft below.</p>
       <p className={css.description}>{revision.proposedDescription}</p>
+      {revision.alternativeNames?.length ? <p className={css.caption}><strong>Other common names:</strong> {revision.alternativeNames.join("; ")}</p> : null}
+      {revision.otherScientificNames?.length ? <p className={css.caption}><strong>Names used in other references:</strong> {revision.otherScientificNames.join("; ")}. See the research notes for differences in classification.</p> : null}
+      {revision.previousDescription && <details className={css.disclosure}><summary>Compare with the previous candidate</summary><p className={css.comparison}>{revision.previousDescription}</p></details>}
       <details className={css.disclosure}><summary>Sources, identification and research notes</summary>
         {revision.identification && <><h5>How to identify it</h5><p>{revision.identification}</p></>}
         {revision.actions && <><h5>What to do</h5><p>{revision.actions}</p></>}

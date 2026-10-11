@@ -3,6 +3,11 @@ import rows from "./species-editorial-revisions.json";
 export type EditorialRevision = {
   speciesId: string;
   proposedDescription: string;
+  previousDescription?: string;
+  revisionNumber?: number;
+  revisedAt?: string;
+  alternativeNames?: string[];
+  otherScientificNames?: string[];
   identification?: string;
   actions?: string;
   sources: { title: string; url: string; accessedAt: string }[];
