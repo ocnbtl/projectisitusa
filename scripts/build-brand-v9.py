@@ -1,6 +1,6 @@
 """ISITUSA Botanical: approved sculptural capitals with a readable OFL companion.
 
-Usage: python scripts/build-brand-v8.py path/to/Chonburi-Regular.ttf
+Usage: python scripts/build-brand-v9.py path/to/Chonburi-Regular.ttf
 All logo placements and the webfont are exported from this one glyph master.
 """
 from pathlib import Path
