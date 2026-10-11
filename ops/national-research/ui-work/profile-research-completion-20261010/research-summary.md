@@ -30,9 +30,9 @@ Description readiness is separate from historical record identity. Examples incl
 - Review corrections removed an unproven import pathway inference for Selenaspidus, an unscoped Europe-introduction phrase for Rapistrum and an unnecessary alligatorweed management inference. Two specialist terms were simplified.
 - Integration asserts the exact 86 formerly flagged IDs, unique IDs, source/evidence linkage, at least two declared independent source groups, and unchanged content for the other 114 candidates.
 - Application lint: 173 files, zero warnings/errors. TypeScript check passed without emitting a local build.
-- Private saved-review baseline: 20 rows; row fingerprint d673e864d1d6b98518dd74b03c04661d. Recheck after deployment.
+- Private saved-review baseline: 20 rows; row fingerprint d673e864d1d6b98518dd74b03c04661d. Post-deployment read-only recheck matched exactly.
 - Local task notes and changes remain under the approved 10 MB exception; complete application builds are hosted on Vercel.
 
 ## Publication boundary
 
-Only the review-candidate JSON and private review UI are changed. The public description module, occurrence projections, shared research data, auth, feedback persistence and approval logic remain unchanged. The internal source/research update is pending hosted deployment verification.
+Only the review-candidate JSON and private review UI are changed. The public description module, occurrence projections, shared research data, auth, feedback persistence and approval logic remain unchanged. The internal update was deployed to production at b75387f; the hosted build is Ready. See verification.md for evidence and the final authenticated workspace check.
