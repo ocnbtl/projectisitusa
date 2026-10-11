@@ -11,4 +11,9 @@
 - Local TypeScript attempt stopped at the imposed 1 GB heap cap. This is not a passing local type check. Hosted build/type checking must pass before production promotion. No local full website build.
 - Saved-review verification: 20 records; latest feedback 2026-10-11 00:26:19.214613+00; fingerprint d673e864d1d6b98518dd74b03c04661d, unchanged from baseline. No database writes.
 - No public occurrence data, public species descriptions, authentication logic or saved feedback changed.
-- Preview and production verification pending.
+- Release commit: 79a48d78172564565da8346c642fbb500133e3dc.
+- Hosted preview AzSsHP8YhTNJrQAusxQuTNivDuKu: READY, 4m 1s. Full hosted build (including type checking) passed. Production dependency audit reported zero vulnerabilities; one existing dependency warning remains.
+- Preview UI: all 12 batches visible, batches 9-12 each contain the expected 50 rows, search finds #485 across batches, its research gap is visible and revision application is disabled, #600 opens with new copy and source notes.
+- Responsive check: simulated 390 x 844 viewport, 375px document width, 313px profile article and 16px text; no horizontal overflow. Readable dark-mode screenshot inspected. Desktop light/dark views inspected. No captured browser warnings/errors.
+- Preview uses synthetic review state. Production team tab currently requires sign-in, so authenticated production feedback interactions have not been reverified. Existing saved feedback was independently checked read-only above.
+- Production deployment 2ekHWV97owFWUuqodzcVZXpKtZnu: READY at 2026-10-11 03:26:51 EDT, 4m 3s, source 79a48d78172564565da8346c642fbb500133e3dc. Vercel explicitly lists isitusa.com and team.isitusa.com in assigned custom domains. Production team sign-in loads successfully. Brave blocked the /admin/preview check with ERR_BLOCKED_BY_CLIENT, so no HTTP-404 claim is made; source still restricts that route to preview builds. Authenticated production workspace remains unverified because the available tab is signed out.
