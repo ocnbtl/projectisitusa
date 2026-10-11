@@ -8,6 +8,10 @@ import batchFiveCompletion from "./editorial-batch-05-completion.json";
 import batchSixCompletion from "./editorial-batch-06-completion.json";
 import batchSevenCompletion from "./editorial-batch-07-completion.json";
 import batchEightCompletion from "./editorial-batch-08-completion.json";
+import batchNineCompletion from "./editorial-batch-09-completion.json";
+import batchTenCompletion from "./editorial-batch-10-completion.json";
+import batchElevenCompletion from "./editorial-batch-11-completion.json";
+import batchTwelveCompletion from "./editorial-batch-12-completion.json";
 export const SPECIES_EDITORIAL_DRAFTS: Record<string, SpeciesEditorial> = {
   ...batchOneCompletion,
   ...batchTwoCompletion,
@@ -17,4 +21,8 @@ export const SPECIES_EDITORIAL_DRAFTS: Record<string, SpeciesEditorial> = {
   ...batchSixCompletion,
   ...batchSevenCompletion,
   ...batchEightCompletion,
+  ...batchNineCompletion,
+  ...batchTenCompletion,
+  ...batchElevenCompletion,
+  ...batchTwelveCompletion,
 };
