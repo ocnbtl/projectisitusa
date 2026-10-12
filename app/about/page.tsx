@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Heart, MapPin, ScanSearch } from "lucide-react";
-import { STATE_FLAGS } from "@/content/state-flags";
+import { SiteCredits } from "@/components/site-credits";
 import Image from "next/image";
 import "./about-experience.css";
 import { AboutSourceCarousel } from "@/components/about-source-carousel";
@@ -43,12 +43,11 @@ export default function AboutPage() {
     <main id="main-content" className="reading-page about-page">
       <header className="about-opening">
         <div className="about-mission">
-          <h1>Making invasive species research useful.</h1>
+          <h1>Accessible invasive species research to protect the places you love</h1>
           <div className="about-brand-lockup" aria-label="ISITUSA">
             <Image className="brand-art" src="/brand/v9/symbol-name.svg" alt="ISITUSA" width={840} height={1080} unoptimized priority />
             <Image className="brand-art about-full-name" src="/brand/v9/full-name.svg" alt="Invasive Species In The United States of America" width={14282} height={2020} unoptimized priority />
           </div>
-          <h2 className="about-mission-heading">Our mission</h2>
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
           <p className="about-mission-copy"><strong className="brand-wordmark">ISITUSA</strong> is an independent initiative established in the United States of America by environmentalists.</p>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -105,9 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="map-credits" className="about-sources"><h2>Map artwork credits.</h2>
-      <details className="map-artwork-credits"><summary>Flag sources & credits</summary><a href="https://commons.wikimedia.org/wiki/Flags_of_the_U.S._states_and_territories" target="_blank" rel="noreferrer">Wikimedia Commons gallery</a>{Object.entries(STATE_FLAGS).filter(([,flag]) => flag.license !== "Public domain").map(([code,flag]) => <p key={code}><a href={flag.source} target="_blank" rel="noreferrer">{code} flag</a>: {flag.artist}. {flag.license === "CC BY-SA 4.0" ? <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> : flag.license}. Unmodified.</p>)}</details>
-      </section>
+      <SiteCredits />
     </main>
   );
 }
