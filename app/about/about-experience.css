@@ -4,7 +4,8 @@
 .about-brand-lockup{display:flex;align-items:center;gap:24px;max-width:720px}
 .about-brand-lockup>img:first-child{width:clamp(92px,7vw,136px);height:auto;flex:none}
 .about-brand-lockup>.about-full-name{width:0;min-width:0;flex:1;height:auto}
-.about-mission>.about-lead{max-width:58ch;font-size:clamp(19px,1.5vw,24px);line-height:1.5;margin:24px 0 12px;text-wrap:pretty}
+.about-page .about-mission-heading{font-size:16px;line-height:1.4;margin:24px 0 8px}
+.about-mission>.about-lead{max-width:58ch;font-size:20px;line-height:1.55;margin:0 0 16px;text-wrap:pretty}
 .about-mission>.about-mission-copy{max-width:70ch;margin:0 0 20px;font-size:16px;line-height:1.75;color:var(--muted)}
 .about-source-panel{min-width:0;animation:about-arrive 700ms 120ms cubic-bezier(.16,1,.3,1) both}
 .about-page .about-source-panel h2{max-width:34ch;margin:0 0 20px;font-family:var(--font-display);font-size:clamp(24px,2vw,34px);line-height:1.25;font-weight:800;letter-spacing:0;text-wrap:balance}
@@ -49,5 +50,5 @@
 @keyframes source-drift{to{transform:translateX(-50%)}}
 @keyframes about-arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(max-width:1000px){.about-opening{gap:32px}.about-brand-lockup{gap:16px}.about-opening h1{font-size:clamp(32px,3.6vw,42px)}}
-@media(max-width:900px){.about-opening{grid-template-columns:1fr;gap:24px;padding-top:8px;padding-bottom:24px}.about-opening h1{font-size:clamp(32px,8vw,44px);margin-bottom:20px}.about-brand-lockup{gap:16px}.about-brand-lockup>img:first-child{width:88px}.about-mission>.about-lead{font-size:20px;margin-top:20px}.about-page .about-source-panel h2{font-size:26px}.source-carousel-set{gap:24px;padding-inline:12px}.source-carousel-set li{width:132px}.about-source-mark.source-logo-wide img{max-width:132px}.about-method .section-introduction,.about-research-grid,.about-page .about-help{grid-template-columns:1fr;gap:24px}.about-method .section-introduction{gap:12px}.about-page .record-context{grid-template-columns:1fr;gap:20px}.about-page .about-method,.about-research-grid,.about-page .about-help{padding-block:24px}.about-page .about-page-nav{gap:0 24px}}
+@media(max-width:900px){.about-opening{grid-template-columns:1fr;gap:24px;padding-top:8px;padding-bottom:24px}.about-opening h1{font-size:clamp(32px,8vw,44px);margin-bottom:20px}.about-brand-lockup{gap:16px}.about-brand-lockup>img:first-child{width:88px}.about-mission>.about-lead{font-size:20px}.about-page .about-source-panel h2{font-size:26px}.source-carousel-set{gap:24px;padding-inline:12px}.source-carousel-set li{width:132px}.about-source-mark.source-logo-wide img{max-width:132px}.about-method .section-introduction,.about-research-grid,.about-page .about-help{grid-template-columns:1fr;gap:24px}.about-method .section-introduction{gap:12px}.about-page .record-context{grid-template-columns:1fr;gap:20px}.about-page .about-method,.about-research-grid,.about-page .about-help{padding-block:24px}.about-page .about-page-nav{gap:0 24px}}
 @media(prefers-reduced-motion:reduce){.about-mission,.about-source-panel,.source-carousel-row{animation:none}.source-carousel-window{overflow:visible;mask-image:none}.source-carousel-row{width:100%;display:block}.source-carousel-set{flex-wrap:wrap;justify-content:center;gap:24px;padding:0}.source-carousel-set[aria-hidden]{display:none}.source-motion-toggle{display:none}}

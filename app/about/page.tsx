@@ -48,8 +48,9 @@ export default function AboutPage() {
             <Image className="brand-art" src="/brand/v9/symbol-name.svg" alt="ISITUSA" width={840} height={1080} unoptimized priority />
             <Image className="brand-art about-full-name" src="/brand/v9/full-name.svg" alt="Invasive Species In The United States of America" width={14282} height={2020} unoptimized priority />
           </div>
-          <p className="about-lead">Everyone should be able to find accurate information about invasive species near them, and see the source it comes from.</p>
-          <p className="about-mission-copy"><strong className="brand-wordmark">ISITUSA</strong> is an independent initiative established in the United States of America by environmentalists. We bring scattered reports into one useful, intuitive map, so you can learn what has been recorded near you and trace each finding to its source.</p>
+          <h2 className="about-mission-heading">Our mission</h2>
+          <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
+          <p className="about-mission-copy"><strong className="brand-wordmark">ISITUSA</strong> is an independent initiative established in the United States of America by environmentalists.</p>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <section className="about-source-panel" aria-labelledby="source-panel-heading">
