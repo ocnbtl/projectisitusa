@@ -16,7 +16,7 @@ export function SiteFooter() {
         <nav aria-label="Get involved"><h2>Get involved</h2><Link href="/report">Document a sighting <ArrowUpRight size={14} aria-hidden="true" /></Link><Link href="/join">Email updates <ArrowUpRight size={14} aria-hidden="true" /></Link><Link href="/support">Support the work <ArrowUpRight size={14} aria-hidden="true" /></Link></nav>
         <nav aria-label="Site information"><h2>Good to know</h2><Link href="/brand">Brand kit</Link><Link href="/privacy">Privacy</Link><button type="button" className="text-left min-h-11" onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>Privacy choices</button><Link href="/terms">Support terms</Link><Link href="/preferences">Email preferences</Link><Link href="/about#credits">Credits</Link></nav>
       </div>
-      <div className="footer-details"><small>An independent initiative based in the United States.</small><a href="#main-content">Back to top â†‘</a></div>
+      <div className="footer-details"><small>An independent initiative based in the United States.</small><a href="#main-content">Back to top {"\u2191"}</a></div>
     </footer>
   );
 }
