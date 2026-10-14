@@ -35,7 +35,12 @@ assert.equal((await decideSafeVercelBuild({}, ".", offline, run)).ignoreBuild, t
 assert.equal((await decideSafeVercelBuild({}, ".", offline, () => { throw new Error("Git unavailable"); })).ignoreBuild, true);
 assert.equal((await decideSafeVercelBuild({}, ".", async () => {}, run)).ignoreBuild, false);
 assert.equal((await decideSafeVercelBuild({}, ".", () => { assert.fail("No requests on docs-only commits"); }, () => ({ ignoreBuild: true }))).ignoreBuild, true);
-assert.ok(JSON.parse(readFileSync(new URL("../package.json", import.meta.url))).scripts.build.startsWith("node scripts/check-release-coherence.mjs --vercel && "), "Build guard precedes asset generation and cannot rely only on the ignore hook");
+const buildSteps = JSON.parse(readFileSync(new URL("../package.json", import.meta.url))).scripts.build.split(" && ");
+const guardIndex = buildSteps.indexOf("node scripts/check-release-coherence.mjs --vercel");
+assert.ok(guardIndex >= 0, "Hosted build must include the release coherence guard");
+for (const command of ["node scripts/prepare-runtime-assets.mjs", "node scripts/prepare-vercel-build.mjs", "next build"]) {
+  assert.ok(buildSteps.indexOf(command) > guardIndex, "Build guard precedes asset generation and compilation");
+}
 
 const tempParent = path.resolve(tmpdir());
 const root = mkdtempSync(path.join(tempParent, "isitusa-release-coherence-"));
