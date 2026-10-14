@@ -238,3 +238,10 @@ Preserve separate county/ZIP and species searches, the state focus selector, exp
 ## Approved botanical refinement
 
 The approved combined concept uses sculptural acronym capitals, open companion headings and readable sans body copy. T repeats the concave shoulder curve of neighboring I and U on both sides. The same five custom capitals are embedded in the heading font and exported to every current wordmark. Other glyphs derive from Chonburi by Cadson Demak with reinforced fine strokes. Do not introduce a separate A or T in any placement. Public heading spacing is neutral, avoiding the previous tight tracking. The existing emblem and functional UI remain unchanged.
+
+
+## Invasive Serif production system (2026-10-14)
+
+This section supersedes the historical Botanical typography and v9 asset guidance above. Invasive Serif is the approved Grove XXIII original Latin display master, packaged without outline, advance-width or GPOS changes. Use weight 700, normal style, native kerning, normal letter spacing and no synthetic bold/italic. Use it for the wordmark and editorial headings. Preserve the existing sans-serif for paragraphs, navigation, scientific names, controls and dense data.
+
+Current assets: `public/brand/v10/` and `public/fonts/invasive-serif/`. The SVG wordmarks use HarfBuzz positioning from the same TTF as the webfont. Rebuild using `scripts/build-invasive-serif.py`, then `scripts/render-brand-v10.mjs`. The embedded source master preserves all 297 encoded characters. Unsupported scripts fall back to the system fonts; this is a single upright display face, not a variable or multi-style family. Preserve the approved v3 emblem and the aspect ratios recorded in the v10 manifest. Historical Chonburi attribution and licenses remain with older assets.

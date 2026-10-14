@@ -4,7 +4,7 @@
 @source "../src/lib/**/*.{js,jsx,ts,tsx,mdx}";
 @custom-variant dark (&:where(.dark, .dark *));
 :root {
-  --font-display:"ISITUSA Botanical",Georgia,serif; --font-body:"Avenir Next","Segoe UI",sans-serif;
+  --font-display:"Invasive Serif",Georgia,serif; --font-body:"Avenir Next","Segoe UI",sans-serif;
   --background:#edf2ef; --foreground:#173c38; --muted:#526863;
   --surface:rgba(251,253,251,.87); --surface-strong:#fbfdfb; --border:#cbd8d1;
   --ring:#19776b; --accent:#14675f; --accent-strong:#07574e; --warning:#885d19; --danger:#a43d34;
@@ -1061,7 +1061,7 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .directory-view-compact .directory-summary,.directory-view-compact .directory-image-placeholder small { display:none; }
 .directory-view-compact .image-credit { padding-left:56px; }
 .directory-view-grid { grid-template-columns:repeat(auto-fill,minmax(275px,1fr)); }
-.brand-wordmark { font-family:var(--font-display),sans-serif; font-weight:800; letter-spacing:-.04em; }
+.brand-wordmark { font-family:var(--font-display),sans-serif; font-weight:700; letter-spacing:normal; }
 .map-artwork-credits { margin-top:12px; font-size:13px; line-height:1.8; }
 .map-artwork-credits summary { min-height:44px; cursor:pointer; }
 .map-artwork-credits p { margin:8px 0; }
@@ -1073,7 +1073,7 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .footer-main nav a>svg { transition:transform 180ms; }
 .footer-main nav a:hover>svg { transform:translate(2px,-2px); }
 .footer-main nav :is(a,button):hover { color:var(--accent-strong); }
-.footer-introduction p { font-family:var(--font-display),sans-serif; font-size:25px; line-height:1.25; letter-spacing:-.035em; max-width:260px; margin:18px 0 0; }
+.footer-introduction p { font-family:var(--font-display),sans-serif; font-size:25px; line-height:1.25; letter-spacing:normal; max-width:260px; margin:18px 0 0; }
 .footer-introduction small { max-width:30ch; }
 .footer-brand { display:inline-block; transition:transform 200ms; }
 .footer-brand:hover { transform:translateY(-3px); }
@@ -1277,11 +1277,11 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 .profile-section-nav{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:24px;font-size:14px}.profile-section-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:4px}.profile-report-callout{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-block:1px solid var(--border)}.profile-report-callout h3{font-size:22px;margin-bottom:8px}.profile-report-callout p{font-size:15px;color:var(--muted)}.profile-correction form{max-width:780px;padding-top:20px}.profile-correction h3{font-size:23px;line-height:1.4}.profile-correction legend{padding-bottom:12px}@media(max-width:640px){.profile-report-callout{align-items:flex-start;flex-direction:column}.profile-section-nav{gap:4px 20px}}
 
 /* One editorial voice; data, controls and body copy retain the UI sans. */
-@font-face{font-family:"ISITUSA Botanical";src:url("/fonts/isitusa-botanical/isitusa-botanical.woff2") format("woff2");font-style:normal;font-weight:800;font-display:swap}
+@font-face{font-family:"Invasive Serif";src:url("/fonts/invasive-serif/invasive-serif.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap}
 h1,h2,h3,
 :is(.reading-page,.about-page,.brand-kit) h1,
 :is(.reading-page,.about-page,.brand-kit) h2,
-.atlas-intro h1,.footer-introduction p{font-family:var(--font-display);font-weight:800;font-synthesis:none;letter-spacing:0}
+.atlas-intro h1,.footer-introduction p{font-family:var(--font-display);font-weight:700;font-synthesis:none;font-kerning:normal;letter-spacing:normal}
 .reading-page .profile-sources h2,.reading-page .directory-results-heading h2{font-family:var(--font-body);font-weight:600;letter-spacing:normal}
 .header-wordmark{width:137px;height:auto}
 
@@ -1289,5 +1289,8 @@ h1,h2,h3,
 .updates-popover header{align-items:flex-start}
 .updates-popover .updates-heading{min-width:0}
 .updates-heading>span{display:block;margin-bottom:6px;font-size:11px;color:var(--muted)}
-.updates-popover .updates-heading h2{font-family:var(--font-display);font-size:21px;font-weight:800;line-height:1.2;letter-spacing:0;text-wrap:balance}
+.updates-popover .updates-heading h2{font-family:var(--font-display);font-size:21px;font-weight:700;line-height:1.2;letter-spacing:normal;text-wrap:balance}
 .updates-popover header>button{flex-shrink:0}
+
+/* Preserve the approved pair spacing wherever editorial headings appear. */
+h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}

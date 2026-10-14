@@ -11,7 +11,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-main">
-        <div className="footer-introduction"><Link href="/" className="footer-brand" aria-label="ISITUSA home"><Image className="brand-art" src="/brand/v9/symbol-name.svg" alt="ISITUSA" width={90} height={116} unoptimized /></Link><p>Accessible invasive species research to protect the places you love</p></div>
+        <div className="footer-introduction"><Link href="/" className="footer-brand" aria-label="ISITUSA home"><Image className="brand-art" src="/brand/v10/symbol-name.svg" alt="ISITUSA" width={90} height={116} unoptimized /></Link><p>Accessible invasive species research to protect the places you love</p></div>
         <nav aria-label="Explore"><h2>Explore</h2><Link href="/">Map</Link><Link href="/species">Species</Link><Link href="/research">Research</Link><Link href="/about">About ISITUSA</Link></nav>
         <nav aria-label="Get involved"><h2>Get involved</h2><Link href="/report">Document a sighting <ArrowUpRight size={14} aria-hidden="true" /></Link><Link href="/join">Email updates <ArrowUpRight size={14} aria-hidden="true" /></Link><Link href="/support">Support the work <ArrowUpRight size={14} aria-hidden="true" /></Link></nav>
         <nav aria-label="Site information"><h2>Good to know</h2><Link href="/brand">Brand kit</Link><Link href="/privacy">Privacy</Link><button type="button" className="text-left min-h-11" onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>Privacy choices</button><Link href="/terms">Support terms</Link><Link href="/preferences">Email preferences</Link><Link href="/about#credits">Credits</Link></nav>
