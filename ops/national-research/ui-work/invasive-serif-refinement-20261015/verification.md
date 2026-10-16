@@ -8,4 +8,6 @@
 - Application lint: 174 files, zero warnings/errors. Typecheck passed. Publication regression checks passed.
 - No changes to research data, public projections, payment, email, or authentication logic.
 - Original master SHA256 301e8b150eac3f11c0a51d8df119caaebe72e857ac40c585b2cdd11ba316d576 preserved.
-- Production verification pending.
+- Production deployment dpl_95nXLd9j6aiQcnoBMqHHLaApZSfh READY at commit 4524f0bfe1523f507648f2e378155e605871f205.
+- Live isitusa.com/about verified in Brave at 2540x1304: Invasive Serif loaded, preload and all four brand image instances use v=1.001; updated logo width 3724; no horizontal overflow or broken brand images. Visual inspection and production-about.png captured.
+- Hosted dependency audit: zero vulnerabilities. Data coherence: zero mismatches. Existing npm cache-dir warnings remain outside this font change.
