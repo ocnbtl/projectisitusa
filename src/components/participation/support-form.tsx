@@ -40,7 +40,7 @@ export function SupportForm() {
    <section id="contribute" className={s.donation} aria-labelledby="donation-heading">
     <header className={s.donationHeading}><h2 id="donation-heading">Make a contribution</h2></header>
     <div className={s.paymentOptions}>
-    <section className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Once</h3><p className={s.panelIntro}>Help make invasive species research easier to find and use.</p><DonationCheckout frequency="once" config={config} checked={checked} onCheckoutActiveChange={setOnceCheckoutActive}/></section>
+    <section className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Once</h3><p className={s.panelIntro}>Make a one-time contribution to help people find, understand, and use invasive species research.</p><DonationCheckout frequency="once" config={config} checked={checked} onCheckoutActiveChange={setOnceCheckoutActive}/></section>
     <section className={s.monthlyPanel}><h3><Repeat2 size={22} aria-hidden="true"/> Recurring</h3><p className={s.panelIntro}>Support ongoing research, species updates, and improvements to ISITUSA each month.</p><DonationCheckout frequency="monthly" config={config} checked={checked} onCheckoutActiveChange={setMonthlyCheckoutActive}/></section>
     {(onceCheckoutActive || monthlyCheckoutActive) && <p className={s.checkoutReassurance}>Payment details are handled securely by Stripe. Contributing does not subscribe you to email updates.</p>}
     <section className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Cryptocurrency</h3><p className={s.panelIntro}>Contribute to ISITUSA using one of our verified cryptocurrency addresses.</p>{wallet?<>
