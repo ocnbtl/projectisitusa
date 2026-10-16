@@ -1504,7 +1504,7 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
   return (
     <header className="reading-hero research-heading">
       <div>
-        <h1>Explore the evidence.</h1>
+        <h1 className="page-heading">Explore the evidence.</h1>
         <p>Find a species in your county, read its source records, and see what we still need to learn.</p>
 
       </div>

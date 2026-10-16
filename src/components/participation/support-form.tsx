@@ -29,7 +29,7 @@ export function SupportForm() {
  return <main id="main-content" className={s.page}>
   <div className={s.layout}>
    <section className={s.mission} aria-labelledby="mission-heading">
-    <header className={s.intro}><h1 id="mission-heading">Support the mission. Protect our planet.</h1><p>Help make trusted invasive species research easier to find, understand, and use. Your contribution keeps ISITUSA free for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a></header>
+    <header className={s.intro}><h1 id="mission-heading" className="page-heading">Support the mission.<span className={s.desktopHeadingContinuation}> Protect our planet.</span></h1><p className={s.mobileMissionLine}>Protect our planet.</p><p>Help make trusted invasive species research easier to find, understand, and use. Your contribution keeps ISITUSA free for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a></header>
     <section className={s.otherWays} aria-labelledby="other-heading"><h2 id="other-heading">Other ways to help</h2>
      <Link href="/report"><div><strong>Document a sighting</strong><p>Learn what to photograph and where to report it.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
      <Link href="/"><div><strong>Share your county&apos;s map</strong><p>Help a neighbor, school, or local group find their records.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>

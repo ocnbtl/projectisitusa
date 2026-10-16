@@ -12,7 +12,7 @@ export default function SpeciesPage() {
   return (
     <main id="main-content" className="reading-page species-page">
       <header className="reading-hero directory-hero">
-        <div><h1>Explore invasive species.</h1><p>Find a species, see where it has been recorded, and read the evidence.</p></div>
+        <div><h1 className="page-heading">Explore invasive species.</h1><p>Find a species, see where it has been recorded, and read the evidence.</p></div>
         <Link href="/" className="text-link inline-flex min-h-11 items-center gap-2">Explore by county <ArrowUpRight size={16} aria-hidden="true" /></Link>
       </header>
       <details className="catalog-note catalog-note-top">

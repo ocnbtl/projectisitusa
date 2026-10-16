@@ -19,7 +19,7 @@ export default function AboutPage() {
     <main id="main-content" className="reading-page about-page">
       <header className="about-opening">
         <div className="about-mission">
-          <h1>Accessible invasive species research to protect the places you love</h1>
+          <h1 className="page-heading">Accessible invasive species research to protect the places you love</h1>
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
           <div className="about-mission-identity">
             <Image className="brand-art" src="/brand/v10/symbol-name.svg?v=1.005" alt="ISITUSA" width={90} height={116} unoptimized />

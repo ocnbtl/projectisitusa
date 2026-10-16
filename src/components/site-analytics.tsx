@@ -54,7 +54,7 @@ export function SiteAnalytics() {
   }, [pathname, choice, privatePage]);
   if (!ready || privatePage) return null;
   const save = (value: AnalyticsChoice) => { setAnalyticsChoice(value, value === "yes" && replay); setSettings(false); };
-  if (choice !== null && !settings) return pathname === "/" ? <button className={styles.settings} type="button" onClick={() => setSettings(true)}>Privacy choices</button> : null;
+  if (choice !== null && !settings) return null;
   return <PrivacyNotice replay={replay} setReplay={setReplay} settings={settings} browserSignal={privacySignal()} save={save}/>;
 }
 

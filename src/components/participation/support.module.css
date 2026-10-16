@@ -44,3 +44,10 @@
 @media(max-width:1100px){.intro{max-width:720px}.intro h1{max-width:28ch}.intro>p{max-width:65ch}}
 @media(max-width:600px){.supporterPortal{grid-template-columns:1fr;gap:18px;margin-top:32px;padding:24px 0}.portalButton{width:100%}.portalAction p{text-align:left}.intro h1{font-size:28px}.paymentOptions h3{font-size:20px}}
 .intro h1,.donationHeading h2,.supporterPortal h2{font-family:var(--font-display);font-weight:700;font-synthesis:none;letter-spacing:normal}
+
+.mobileMissionLine{display:none}
+@media(max-width:700px){
+  .desktopHeadingContinuation{display:none}
+  .intro>.mobileMissionLine{display:block;margin:8px 0 0;font-size:14px;font-weight:600;color:var(--foreground);line-height:1.5}
+  .intro>p:not(.mobileMissionLine){margin-top:10px;font-size:14px;line-height:1.6}
+}

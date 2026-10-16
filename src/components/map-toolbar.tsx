@@ -50,8 +50,8 @@ function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy 
   return <div ref={root} className="map-search-field" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false); }}>
     <form className="atlas-search glass-panel" role="search" aria-label={kind === "place" ? "Find a place" : "Find a species"} onSubmit={e => { e.preventDefault(); submit(); }}>
       <Icon size={18} aria-hidden="true" />
-      <input ref={input} role="combobox" aria-label={kind === "place" ? "Search county or ZIP" : "Search species"} aria-expanded={open} aria-controls={id} aria-autocomplete="list" aria-activedescendant={open && options[active] ? id + "-" + active : undefined}
-        placeholder={kind === "place" ? "County or ZIP" : "Search species"} autoComplete="off" value={value} maxLength={120}
+      <input ref={input} role="combobox" aria-label={kind === "place" ? "Search a county or ZIP" : "Search species"} aria-expanded={open} aria-controls={id} aria-autocomplete="list" aria-activedescendant={open && options[active] ? id + "-" + active : undefined}
+        placeholder={kind === "place" ? "Search a county or ZIP" : "Search species"} autoComplete="off" value={value} maxLength={120}
         onFocus={() => setOpen(true)} onChange={e => { onChange(e.target.value); setActive(-1); setOpen(true); }}
         onKeyDown={e => {
           if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); setOpen(false); }
