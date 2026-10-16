@@ -1,37 +1,73 @@
 import Link from "next/link";
 import { STATE_FLAGS } from "@/content/state-flags";
+import { researchSources } from "@/content/research-source-credits";
 import stateRegistry from "@/data/research/state-registry.json";
+import s from "../../app/credits/credits.module.css";
 
 const stateNames = new Map(stateRegistry.jurisdictions.map(state => [state.stateCode, state.stateName]));
 const flags = Object.entries(STATE_FLAGS).sort(([a], [b]) => (stateNames.get(a) ?? a).localeCompare(stateNames.get(b) ?? b));
-
 function artistCredit(artist: string) {
-  // Older Commons metadata includes template syntax and an appended insignia notice.
   const credit = artist.split("permission=")[0].replace(/Template:|User:/g, "").replace(/Unknown authorUnknown author/g, "Unknown author").replace(/\s+/g, " ").trim();
   return credit && credit !== "N.a" ? credit : "Contributor details are available on the source file page";
 }
 
 export function SiteCredits() {
-  return <section id="credits" className="about-sources about-credits" aria-labelledby="credits-heading">
-    <span id="map-credits" aria-hidden="true" />
-    <h2 id="credits-heading">Credits</h2>
-    <p>ISITUSA brings together the work of researchers, photographers, artists, and open-source contributors. Here is where the materials used across the site come from.</p>
-    <ul className="credit-list">
-      <li><h3>Research and records</h3><p>Our catalog draws on the USGS US-RIIS register. Records and references come from the agencies, universities, collections, and observation platforms listed in <a href="#sources-heading">our data sources</a>. <Link href="/research">Explore the research</Link> for source details; species profiles also list their references.</p></li>
-      <li><h3>Maps and boundaries</h3><p>County maps use the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">U.S. Census Bureau&apos;s cartographic boundaries</a>, 2025 county edition. County-card state outlines use <a href="https://github.com/topojson/us-atlas">U.S. Atlas</a> by Mike Bostock, derived from 2017 Census boundaries (<a href="/credits/us-atlas-LICENSE.txt">license</a>). Map rendering uses <a href="https://github.com/d3/d3-geo">D3 Geo</a> (<a href="/credits/d3-geo-LICENSE.txt">license</a>) and <a href="https://github.com/topojson/topojson-client">TopoJSON</a> (<a href="/credits/topojson-client-LICENSE.txt">license</a>).</p></li>
-      <li><h3>Species photography</h3><p>Images belong to their credited photographers and contributors. Open <Link href="/species">the species directory</Link> or an individual profile and select &ldquo;Photo credit&rdquo; for the attribution supplied with that image. Image permissions vary; consult the original source before reusing a photograph.</p></li>
-      <li><h3>Typography</h3><p>Invasive Serif is our custom botanical display family, used consistently across the wordmark and editorial headings. Body text, scientific names and controls use a readable system sans-serif. Our <Link href="/brand">brand kit</Link> includes the current artwork and font usage notes. Earlier ISITUSA Botanical assets adapted <a href="https://github.com/cadsondemak/Chonburi">Chonburi by Cadson Demak</a> (2015); their <a href="/fonts/isitusa-botanical/OFL.txt">SIL Open Font License</a> remains available with those historical files.</p></li>
-      <li><h3>Interface icons</h3><p><a href="https://lucide.dev/">Lucide</a> icons are created by the Lucide contributors, with portions derived from Cole Bemis&apos;s Feather icons. Their <a href="/credits/lucide-LICENSE.txt">ISC and MIT license notices</a> are available here.</p></li>
-      <li><h3>Organization logos</h3><p>The agency, university, and collection logos above identify sources used in our research. They belong to their respective organizations; their appearance does not imply partnership or endorsement.</p></li>
-    </ul>
-    <details className="flag-credits">
-      <summary>State and district flag artwork ({flags.length} source files)</summary>
-      <p>Flag artwork is served from Wikimedia Commons and displayed at a smaller size. We do not alter the source artwork. Each entry links to its file history, contributors, and usage terms.</p>
-      <ul className="flag-credit-list">{flags.map(([code, flag]) => <li key={code}>
-        <a href={flag.source}>{stateNames.get(code) ?? code} flag</a>
-        <p>{artistCredit(flag.artist)}.</p>
-        <p>{flag.license === "CC BY-SA 4.0" ? <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> : flag.license === "Copyrighted free use" ? <a href={`${flag.source}#Licensing`}>Copyrighted, free use under the source terms</a> : flag.license}. {code === "ME" ? "Enzwell's artwork, with subsequent revisions documented in the linked file history." : null}</p>
+  return <div className={s.body}>
+    <section id="research" className={s.section} aria-labelledby="research-credit-heading">
+      <h2 id="research-credit-heading">Research &amp; records</h2>
+      <p>Our species catalog begins with the <a href="https://doi.org/10.5066/P9KFFTOD">U.S. Geological Survey&apos;s US-RIIS lower-48 register</a>. We combine it with occurrence records, specimen collections, surveys, and identification guidance from the sources below.</p>
+      <p>These are starting points for exploring the work we draw on. Exact references belong to individual species profiles and research records, where the source, date, and context can be read together. <Link href="/research">Explore our research and evidence</Link>.</p>
+      <ul className={s.entries}>{researchSources.map(source => <li key={source.name}>
+        <h3><a href={source.href}>{source.name}</a></h3><p>{source.description}</p>
       </li>)}</ul>
-    </details>
-  </section>;
+      <p className={s.notice}>Source attribution does not imply partnership or endorsement. Data providers and original contributors retain their applicable rights; consult each source for its citation and reuse terms.</p>
+    </section>
+    <section id="maps" className={s.section} aria-labelledby="maps-credit-heading">
+      <h2 id="maps-credit-heading">Maps &amp; boundaries</h2>
+      <div className={s.entry}><h3>U.S. Census Bureau</h3><p>County maps use the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">2025 cartographic boundary files</a>. These supply the county and county-equivalent shapes used to display geographic records.</p></div>
+      <div className={s.entry}><h3>U.S. Atlas, by Mike Bostock</h3><p>State outlines on downloadable county cards use <a href="https://github.com/topojson/us-atlas">U.S. Atlas</a>, derived from 2017 Census boundaries. <a href="/credits/us-atlas-LICENSE.txt">Read the copyright and license notice</a>.</p></div>
+      <p>Mapping libraries are credited under <a href="#software">Open-source tools</a>. The geography supplies a frame for the evidence; a boundary itself does not establish that a species occurs there.</p>
+    </section>
+    <section id="photography" className={s.section} aria-labelledby="photo-credit-heading">
+      <h2 id="photo-credit-heading">Species photography</h2>
+      <p>Photographs help make a species recognizable. They belong to the photographers and contributors identified alongside each image.</p>
+      <p>Open a profile in <Link href="/species">the species directory</Link> and select <strong>Photo credit</strong> to find the attribution supplied for that photograph and its source. We keep these credits with the image so the creator is not separated from their work.</p>
+      <p>Permissions vary by photograph. Follow the original source for its license, required attribution, and reuse conditions.</p>
+    </section>
+    <section id="design" className={s.section} aria-labelledby="design-credit-heading">
+      <h2 id="design-credit-heading">Typography &amp; design</h2>
+      <div className={s.entry}><h3>Invasive Serif &amp; the ISITUSA identity</h3><p>Our custom botanical display lettering appears in the wordmark and editorial headings. Body text, scientific names, and controls use a system sans-serif. The New York Botanical Garden&apos;s identity was a visual inspiration; our font does not include proprietary NYBG font software or outlines. <Link href="/brand">Explore the brand kit</Link> and <a href="/fonts/invasive-serif/README.txt">font usage notes</a>.</p></div>
+      <div className={s.entry}><h3>Organization logos</h3><p>Agency, university, and collection marks on our <Link href="/about">About page</Link> identify research sources. They belong to their respective organizations. Their use does not imply endorsement, affiliation, or permission to reuse those marks elsewhere.</p></div>
+      <details><summary>Earlier typefaces &amp; retained license notices</summary>
+        <p>Earlier brand experiments remain available in historical assets. Their original contributors and licenses are credited here separately from the current Invasive Serif identity.</p>
+        <ul className={s.entries}>
+          <li><h3><a href="https://github.com/cadsondemak/Chonburi">Chonburi, by Cadson Demak</a></h3><p>Adapted for earlier ISITUSA Botanical assets. <a href="/fonts/isitusa-botanical/OFL.txt">SIL Open Font License</a>.</p></li>
+          <li><h3><a href="https://github.com/undercasetype/Fraunces">Fraunces, by Undercase Type</a></h3><p>Adapted for ISITUSA Field Display. <a href="/fonts/isitusa-display/OFL.txt">SIL Open Font License</a>.</p></li>
+          <li><h3><a href="https://github.com/Outfitio/Outfit-Fonts">The Outfit Project Authors</a></h3><p>Ancillary characters and font structure used in the earlier ISITUSA Canopy family. <a href="/fonts/isitusa-canopy/OFL.txt">SIL Open Font License</a>.</p></li>
+          <li><h3>Lilita One, by Juan Montoreano</h3><p>Retained with earlier font assets. <a href="/fonts/lilita-one/OFL.txt">SIL Open Font License and copyright notice</a>.</p></li>
+        </ul>
+      </details>
+    </section>
+    <section id="software" className={s.section} aria-labelledby="software-credit-heading">
+      <h2 id="software-credit-heading">Open-source tools</h2>
+      <ul className={s.entries}>
+        <li><h3><a href="https://github.com/d3/d3-geo">D3 Geo</a></h3><p>Geographic projections and map rendering. <a href="/credits/d3-geo-LICENSE.txt">Copyright and license notice</a>.</p></li>
+        <li><h3><a href="https://github.com/topojson/topojson-client">TopoJSON Client</a></h3><p>Reading and working with our map geometry. <a href="/credits/topojson-client-LICENSE.txt">Copyright and license notice</a>.</p></li>
+        <li><h3><a href="https://lucide.dev/">Lucide contributors</a></h3><p>Interface icons, including work derived from Cole Bemis&apos;s Feather icons. <a href="/credits/lucide-LICENSE.txt">ISC and MIT license notices</a>.</p></li>
+      </ul>
+      <p className={s.notice}>The website is also built with <a href="https://github.com/vercel/next.js">Next.js</a>, <a href="https://github.com/facebook/react">React</a>, and <a href="https://github.com/tailwindlabs/tailwindcss">Tailwind CSS</a>. Their repositories include contributor acknowledgments and license notices.</p>
+    </section>
+    <section id="flags" className={s.section} aria-labelledby="flags-credit-heading">
+      <h2 id="flags-credit-heading">State &amp; district flag artwork</h2>
+      <p>Flag images are served from Wikimedia Commons and displayed at a smaller size without altering the source artwork. The entries below retain the creator and licensing information recorded for each file. Source pages include contributor histories and current usage terms.</p>
+      <details><summary>View all {flags.length} flag credits</summary>
+        <ul className={s.flags}>{flags.map(([code, flag]) => <li key={code}>
+          <h3><a href={flag.source}>{stateNames.get(code) ?? code} flag</a></h3>
+          <p>{artistCredit(flag.artist)}.</p>
+          <p>{flag.license === "CC BY-SA 4.0" ? <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> : flag.license === "Copyrighted free use" ? <a href={`${flag.source}#Licensing`}>Copyrighted, free use under the source terms</a> : flag.license}. {code === "ME" ? "Enzwell's artwork, with subsequent revisions documented in the linked file history." : null}</p>
+        </li>)}</ul>
+      </details>
+      <p className={s.notice}>Missing a credit or spotted an error? Please <a href="mailto:contact@isitusa.com">contact us</a> with the page, resource, and correct attribution so we can review it.</p>
+    </section>
+  </div>;
 }

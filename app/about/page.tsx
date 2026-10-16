@@ -1,36 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Heart, MapPin, ScanSearch } from "lucide-react";
-import { SiteCredits } from "@/components/site-credits";
+import { researchSources } from "@/content/research-source-credits";
 import Image from "next/image";
 import "./about-experience.css";
 import { AboutSourceCarousel } from "@/components/about-source-carousel";
 
-const researchSources = [
-  { name: "Harvard University", description: "Harvard University Herbaria: preserved plant specimens used in our occurrence research", image: "harvard.png", width: 192, height: 192, href: "https://www.huh.harvard.edu/pages/digital-resources", style: "" },
-  { name: "Smithsonian", description: "Smithsonian National Museum of Natural History: preserved specimens used in our occurrence research", image: "smithsonian.svg", width: 148, height: 57, href: "https://collections.nmnh.si.edu/ipt/resource?r=nmnh_extant_dwc-a", style: "source-logo-dark-light" },
-  { name: "USGS", description: "U.S. Geological Survey: US-RIIS and aquatic species records", image: "usgs.png", width: 227, height: 86, href: "https://nas.er.usgs.gov/", style: "source-logo-usgs" },
-  { name: "USDA", description: "U.S. Department of Agriculture: plant, pest, and forest research", image: "usda.svg", width: 219, height: 150, href: "https://www.aphis.usda.gov/", style: "source-logo-dark-light" },
-  { name: "EPA", description: "U.S. Environmental Protection Agency: river and stream surveys", image: "epa.png", width: 196, height: 196, href: "https://www.epa.gov/national-aquatic-resource-surveys/nrsa", style: "source-logo-dark-light" },
-  { name: "U.S. Fish & Wildlife", description: "U.S. Fish and Wildlife Service: invasive carp monitoring", image: "fws.svg", width: 125, height: 150, href: "https://www.fws.gov/", style: "source-logo-shield" },
-  {"name":"NOAA","description":"National Oceanic and Atmospheric Administration: invasive lionfish and marine species references","image":"noaa.svg","width":74,"height":74,"href":"https://oceanservice.noaa.gov/facts/lionfish-facts.html","style":""},
-  {"name":"National Park Service","description":"National Park Service: invasive plant identification and ecological context","image":"nps.png","width":80,"height":106,"href":"https://www.nps.gov/neri/learn/nature/kudzu.htm","style":"source-logo-shield"},
-  { name: "Cornell University", description: "Cornell Integrated Pest Management: invasive insect identification and practical guidance", image: "cornell.png", width: 1600, height: 1603, href: "https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/brown-marmorated-stink-bug", style: "source-logo-dark-light" },
-  { name: "Penn State", description: "Penn State Extension: allium leafminer monitoring and management guidance", image: "penn-state.ico", width: 347, height: 347, href: "https://extension.psu.edu/fall-flight-of-allium-leafminer-observed-in-southeast-pa", style: "" },
-  { name: "Purdue University", description: "Purdue University and USDA Forest Service: Alien Forest Pest Explorer", image: "purdue-light.svg", darkImage: "purdue.svg", width: 203.8, height: 132, href: "https://purr.purdue.edu/publications/4479", style: "" },
-  { name: "University of Florida", description: "University of Florida IFAS and Florida Museum: plant research and species identification guides", image: "florida.png", width: 64, height: 64, href: "https://plant-directory.ifas.ufl.edu/plant-directory/dioscorea-bulbifera/", style: "" },
-  { name: "University of Wisconsin-Madison", description: "University of Wisconsin-Madison Extension: horticultural research and plant profiles", image: "wisconsin.svg", width: 55.5, height: 87.28, href: "https://hort.extension.wisc.edu/articles/popcorn-cassia-senna-cassia-didymobotrya/", style: "source-logo-shield" },
-  { name: "University of Georgia", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", darkImage: "eddmaps-white.png", width: 250, height: 61, href: "https://www.eddmaps.org/", style: "source-logo-eddmaps" },
-  {"name":"University of Minnesota","description":"University of Minnesota Extension: invasive species identification and management guidance","image":"minnesota.svg","width":220,"height":152.7043158,"href":"https://extension.umn.edu/identify-invasive-species/garlic-mustard","style":"source-logo-dark-light source-logo-minnesota"},
-  {"name":"NC State University","description":"NC State Extension Plant Toolbox: plant identification and species profiles","image":"nc-state-compact.png","width":300,"height":144,"href":"https://plants.ces.ncsu.edu/plants/acer-pseudoplatanus/","style":"source-logo-dark-light"},
-  {"name":"Virginia Tech","description":"Virginia Tech: weed identification resources used in our species profiles","image":"virginia-tech.svg","width":943,"height":466,"href":"https://weedid.cals.vt.edu/profile/476","style":"source-logo-usgs"},
-  {"name":"Oregon State University","description":"Oregon State University: landscape plant descriptions and identification","image":"oregon-state.svg","darkImage":"oregon-state-dark.svg","width":250,"height":80,"href":"https://landscapeplants.oregonstate.edu/plants/pinus-halepensis","style":""},
-  { name: "Forest Service", description: "USDA Forest Service: forest pest detections and invasive plant surveys", image: "usfs.svg", width: 182, height: 198, href: "https://www.fs.usda.gov/", style: "source-logo-shield" },
-  { name: "New York Botanical Garden", description: "New York Botanical Garden: preserved herbarium specimens", image: "nybg.svg", width: 524, height: 160, href: "https://sweetgum.nybg.org/science/vh/", style: "source-logo-dark-light" },
-  { name: "GBIF", description: "Global Biodiversity Information Facility: biodiversity records and collections", image: "gbif.svg", darkImage: "gbif-dark.svg", width: 1061, height: 218, href: "https://www.gbif.org/", style: "" },
-  { name: "iNaturalist", description: "iNaturalist: research-grade observations", image: "inaturalist.svg", darkImage: "inaturalist-dark.svg", width: 1153, height: 210, href: "https://www.inaturalist.org/", style: "" },
-  { name: "iDigBio", description: "Integrated Digitized Biocollections: museum and herbarium specimens", image: "idigbio.png", width: 200, height: 62, href: "https://www.idigbio.org/", style: "source-logo-idigbio" },
-];
+
 
 export const metadata: Metadata = {
   title: "About ISITUSA",
@@ -103,7 +79,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SiteCredits />
+      <p id="credits" className="about-credit-note"><span id="map-credits" />We draw on the resources, research, and creations of great people. Learn more about them in our <Link href="/credits">Credits</Link>.</p>
     </main>
   );
 }
