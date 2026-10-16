@@ -7,7 +7,13 @@ Use native kerning and normal tracking. Do not synthesize bold or italic.
 Keep paragraphs, controls, scientific names and dense data in the existing readable sans-serif.
 
 Version 1.001 lowers only the h top serif by 20 units to align with capital T.
-The shoulder, stroke width, other glyph drawings, metrics and kerning are preserved.
+Version 1.002 balances the a between the t letters in States: ta moves from -9
+to +1 units and at from 0 to -10 units. The word's total advance is unchanged.
+All glyph drawings, metrics and other kerning pairs remain as in 1.001.
+Version 1.003 further tightens at from -10 to -16 units, bringing the ending
+tes in States 6 units closer to Sta while preserving the approved ta spacing.
+Version 1.004 tightens at to -40 units following visual review. Relative to
+1.003, tes moves 24 units left; Sta, letter outlines and other pairs are unchanged.
 Logo artwork uses separate optical adjustments of -16 units for U-S and -10 for S-A.
 The source/approved-master.ttf is the immutable drawing and kerning master.
 Repackage with scripts/build-invasive-serif.py and scripts/render-brand-v10.mjs.
