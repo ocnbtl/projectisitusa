@@ -975,7 +975,7 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 @media(max-width:700px) { .brand-kit-grid { grid-template-columns:1fr; gap:36px; }.brand-kit-art { max-width:360px; }.brand-kit { padding-top:calc(var(--site-header-height) + var(--site-header-top) + 40px); } }
 
 /* Transparent v3 artwork; the master remains green, the UI turns white on dark surfaces. */
-.dark .brand-art { filter:brightness(0) saturate(100%) invert(83%) sepia(16%) saturate(562%) hue-rotate(97deg) brightness(95%) contrast(89%); }
+.dark .brand-art { filter:brightness(0) invert(1); }
 .brand-kit-downloads { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
 .nature-loading { display:flex; align-items:center; justify-content:center; gap:20px; color:var(--accent-strong); }
 .nature-loading-icon { display:block; width:26px; height:26px; color:var(--category-ink); opacity:.2; animation:nature-pop 2.4s cubic-bezier(.22,1,.36,1) infinite; }

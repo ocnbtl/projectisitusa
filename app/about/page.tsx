@@ -20,8 +20,8 @@ const researchSources = [
   { name: "Purdue University", description: "Purdue University and USDA Forest Service: Alien Forest Pest Explorer", image: "purdue-light.svg", darkImage: "purdue.svg", width: 203.8, height: 132, href: "https://purr.purdue.edu/publications/4479", style: "" },
   { name: "University of Florida", description: "University of Florida IFAS and Florida Museum: plant research and species identification guides", image: "florida.png", width: 64, height: 64, href: "https://plant-directory.ifas.ufl.edu/plant-directory/dioscorea-bulbifera/", style: "" },
   { name: "University of Wisconsin-Madison", description: "University of Wisconsin-Madison Extension: horticultural research and plant profiles", image: "wisconsin.svg", width: 55.5, height: 87.28, href: "https://hort.extension.wisc.edu/articles/popcorn-cassia-senna-cassia-didymobotrya/", style: "source-logo-shield" },
-  { name: "University of Georgia", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", width: 250, height: 61, href: "https://www.eddmaps.org/", style: "source-logo-dark-light" },
-  {"name":"University of Minnesota","description":"University of Minnesota Extension: invasive species identification and management guidance","image":"minnesota.svg","width":220,"height":152.7043158,"href":"https://extension.umn.edu/identify-invasive-species/garlic-mustard","style":"source-logo-dark-light"},
+  { name: "University of Georgia", description: "University of Georgia: Early Detection and Distribution Mapping System", image: "eddmaps.png", darkImage: "eddmaps-white.png", width: 250, height: 61, href: "https://www.eddmaps.org/", style: "source-logo-eddmaps" },
+  {"name":"University of Minnesota","description":"University of Minnesota Extension: invasive species identification and management guidance","image":"minnesota.svg","width":220,"height":152.7043158,"href":"https://extension.umn.edu/identify-invasive-species/garlic-mustard","style":"source-logo-dark-light source-logo-minnesota"},
   {"name":"NC State University","description":"NC State Extension Plant Toolbox: plant identification and species profiles","image":"nc-state-compact.png","width":300,"height":144,"href":"https://plants.ces.ncsu.edu/plants/acer-pseudoplatanus/","style":"source-logo-dark-light"},
   {"name":"Virginia Tech","description":"Virginia Tech: weed identification resources used in our species profiles","image":"virginia-tech.svg","width":943,"height":466,"href":"https://weedid.cals.vt.edu/profile/476","style":"source-logo-usgs"},
   {"name":"Oregon State University","description":"Oregon State University: landscape plant descriptions and identification","image":"oregon-state.svg","darkImage":"oregon-state-dark.svg","width":250,"height":80,"href":"https://landscapeplants.oregonstate.edu/plants/pinus-halepensis","style":""},
@@ -29,7 +29,7 @@ const researchSources = [
   { name: "New York Botanical Garden", description: "New York Botanical Garden: preserved herbarium specimens", image: "nybg.svg", width: 524, height: 160, href: "https://sweetgum.nybg.org/science/vh/", style: "source-logo-dark-light" },
   { name: "GBIF", description: "Global Biodiversity Information Facility: biodiversity records and collections", image: "gbif.svg", darkImage: "gbif-dark.svg", width: 1061, height: 218, href: "https://www.gbif.org/", style: "" },
   { name: "iNaturalist", description: "iNaturalist: research-grade observations", image: "inaturalist.svg", darkImage: "inaturalist-dark.svg", width: 1153, height: 210, href: "https://www.inaturalist.org/", style: "" },
-  { name: "iDigBio", description: "Integrated Digitized Biocollections: museum and herbarium specimens", image: "idigbio.png", width: 200, height: 62, href: "https://www.idigbio.org/", style: "" },
+  { name: "iDigBio", description: "Integrated Digitized Biocollections: museum and herbarium specimens", image: "idigbio.png", width: 200, height: 62, href: "https://www.idigbio.org/", style: "source-logo-idigbio" },
 ];
 
 export const metadata: Metadata = {
@@ -45,7 +45,10 @@ export default function AboutPage() {
         <div className="about-mission">
           <h1>Accessible invasive species research to protect the places you love</h1>
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
-          <p className="about-mission-copy"><strong className="brand-wordmark">ISITUSA</strong> is an independent initiative established in the United States of America by environmentalists.</p>
+          <div className="about-identity">
+            <Image className="brand-art" src="/brand/v10/symbol-name.svg?v=1.001" alt="ISITUSA" width={90} height={116} unoptimized />
+            <p className="about-mission-copy"><strong className="brand-wordmark">ISITUSA</strong> is an independent initiative established in the United States of America by environmentalists.</p>
+          </div>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <section className="about-source-panel" aria-labelledby="source-panel-heading">

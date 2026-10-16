@@ -1,0 +1,1 @@
+EDDMapS white artwork downloaded unchanged from https://bugwoodcloud.org/CDN/eddmaps/img/EDDMapSLogoHorizontalWhite_Web.png, linked by https://www.eddmaps.org/branding.cfm on 2026-10-16. The official reverse mark retains the MapS letter knockouts; the prior brightness filter erased them. Original light artwork retained. No organization claim or research data changed.

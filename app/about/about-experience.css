@@ -4,7 +4,9 @@
 .about-mission{min-width:0;max-width:680px;animation:about-arrive 600ms cubic-bezier(.16,1,.3,1) both}
 .about-opening h1{font-family:var(--font-display);font-size:clamp(34px,2.6vw,48px);font-weight:700;letter-spacing:normal;line-height:1.12;margin:0 0 24px;text-wrap:pretty}
 .about-mission>.about-lead{max-width:65ch;font-size:18px;line-height:1.65;margin:0 0 16px;text-wrap:pretty}
-.about-mission>.about-mission-copy{max-width:65ch;margin:0 0 24px;font-size:15px;line-height:1.65;color:var(--muted)}
+.about-identity{display:flex;align-items:center;gap:24px;margin:24px 0}
+.about-identity>.brand-art{flex:none;width:90px;height:auto}
+.about-identity>.about-mission-copy{max-width:45ch;margin:0;font-size:15px;line-height:1.65;color:var(--muted)}
 .about-source-panel{min-width:0;padding-top:4px;animation:about-arrive 600ms 100ms cubic-bezier(.16,1,.3,1) both}
 .about-page .about-source-panel h2{max-width:none;margin:0 0 24px;font-family:var(--font-display);font-size:clamp(22px,1.65vw,28px);line-height:1.25;font-weight:700;letter-spacing:normal;text-wrap:wrap}
 .about-source-panel>p{max-width:82ch;margin:16px 0 0;font-size:15px;line-height:1.65;color:var(--muted)}
@@ -30,6 +32,10 @@
 .dark .about-source-mark img.source-image-dark{display:block}
 .dark .about-source-mark.source-logo-usgs img{filter:none}
 .dark .about-source-mark.source-logo-dark-light img{filter:brightness(0) invert(1)}
+/* Account for the transparent padding inside Minnesota's official artwork. */
+.about-source-mark.source-logo-minnesota img{max-width:136px;max-height:88px}
+.dark .about-source-mark.source-logo-idigbio img{filter:brightness(1.8)}
+.dark .about-source-mark.source-logo-eddmaps img{mix-blend-mode:screen}
 .source-motion-toggle{display:flex;align-items:center;gap:8px;min-height:44px;margin:4px 0 0 auto;font-size:12px;color:var(--muted)}
 .source-carousel:has(.source-carousel-set a:focus-visible) .source-carousel-window{overflow:auto;mask-image:none}
 .source-carousel:has(.source-carousel-set a:focus-visible) .source-carousel-row{animation:none;transform:none}
