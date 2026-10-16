@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-export type ResearchSource = { name: string; description: string; image: string; width: number; height: number; href: string; style: string };
+export type ResearchSource = { name: string; description: string; image: string; darkImage?: string; width: number; height: number; href: string; style: string };
 
 export function AboutSourceCarousel({ sources }: { sources: ResearchSource[] }) {
   const host = useRef<HTMLDivElement>(null);
@@ -28,7 +28,8 @@ export function AboutSourceCarousel({ sources }: { sources: ResearchSource[] }) 
           {row.map(source => <li key={source.name}>
             <a href={source.href} target="_blank" rel="noreferrer" tabIndex={copy ? -1 : undefined} title={source.description}>
               <span className={`about-source-mark ${source.style} ${source.width / source.height > 2 ? "source-logo-wide" : ""}`}>
-                <Image src={`/source-logos/${source.image}`} alt="" width={source.width} height={source.height} loading="eager" unoptimized />
+                <Image className={source.darkImage ? "source-image-light" : undefined} src={`/source-logos/${source.image}`} alt="" width={source.width} height={source.height} loading="eager" unoptimized />
+                {source.darkImage && <Image className="source-image-dark" src={`/source-logos/${source.darkImage}`} alt="" width={source.width} height={source.height} loading="eager" unoptimized />}
               </span>
               <span>{source.name}</span>
               <span className="sr-only">{source.description}. Opens in a new tab.</span>

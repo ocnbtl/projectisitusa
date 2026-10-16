@@ -975,7 +975,7 @@ html { scroll-padding-top:calc(var(--site-header-height) + var(--site-header-top
 @media(max-width:700px) { .brand-kit-grid { grid-template-columns:1fr; gap:36px; }.brand-kit-art { max-width:360px; }.brand-kit { padding-top:calc(var(--site-header-height) + var(--site-header-top) + 40px); } }
 
 /* Transparent v3 artwork; the master remains green, the UI turns white on dark surfaces. */
-.dark .brand-art { filter:brightness(0) invert(1); }
+.dark .brand-art { filter:brightness(0) saturate(100%) invert(83%) sepia(16%) saturate(562%) hue-rotate(97deg) brightness(95%) contrast(89%); }
 .brand-kit-downloads { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
 .nature-loading { display:flex; align-items:center; justify-content:center; gap:20px; color:var(--accent-strong); }
 .nature-loading-icon { display:block; width:26px; height:26px; color:var(--category-ink); opacity:.2; animation:nature-pop 2.4s cubic-bezier(.22,1,.36,1) infinite; }
@@ -1294,3 +1294,9 @@ h1,h2,h3,
 
 /* Preserve the approved pair spacing wherever editorial headings appear. */
 h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
+
+/* Full identity remains readable beside the site navigation. */
+.site-brand .header-organization-name{display:flex;flex-direction:column;min-width:0;font-family:var(--font-display);font-weight:700;font-size:clamp(20px,1.7vw,28px);line-height:1.12;letter-spacing:normal;color:var(--foreground);font-synthesis:none}
+.header-organization-name>span{display:block}
+@media(max-width:1100px){.site-brand .header-organization-name{font-size:24px}.site-brand:has(.header-organization-name){justify-content:center}}
+@media(max-width:700px){.site-brand .header-organization-name{font-size:clamp(15px,4.4vw,22px);line-height:1.12}.site-brand:has(.header-organization-name){justify-content:flex-start}.site-brand .header-organization-name>span{white-space:nowrap}}
