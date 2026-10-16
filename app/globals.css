@@ -1295,8 +1295,7 @@ h1,h2,h3,
 /* Preserve the approved pair spacing wherever editorial headings appear. */
 h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
 
-/* Full identity remains readable beside the site navigation. */
-.site-brand .header-organization-name{display:flex;flex-direction:column;min-width:0;font-family:var(--font-display);font-weight:700;font-size:clamp(20px,1.7vw,28px);line-height:1.12;letter-spacing:normal;color:var(--foreground);font-synthesis:none}
-.header-organization-name>span{display:block}
-@media(max-width:1100px){.site-brand .header-organization-name{font-size:24px}.site-brand:has(.header-organization-name){justify-content:center}}
-@media(max-width:700px){.site-brand .header-organization-name{font-size:clamp(15px,4.4vw,22px);line-height:1.12}.site-brand:has(.header-organization-name){justify-content:flex-start}.site-brand .header-organization-name>span{white-space:nowrap}}
+/* Keep the full organization name on one line at every breakpoint. */
+.site-brand .header-organization-name{display:block;min-width:0;white-space:nowrap;font-family:var(--font-display);font-weight:700;font-size:clamp(20px,1.7vw,28px);line-height:1.12;letter-spacing:normal;color:var(--foreground);font-synthesis:none}
+@media(max-width:1100px){.site-brand .header-organization-name{font-size:clamp(16px,2.35vw,24px)}.site-brand:has(.header-organization-name){justify-content:center}}
+@media(max-width:700px){.site-brand .header-organization-name{font-size:clamp(10.5px,3.05vw,20px)}.site-brand:has(.header-organization-name){justify-content:flex-start}}
