@@ -1330,7 +1330,7 @@ h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
   .atlas .map-spectrum-exceptions { gap:10px; font-size:10px; margin-top:5px; }
   .atlas .atlas-legend:has(.legend-drawer[data-open=true]) { width:calc(100% - 84px); }
   .atlas .legend-explanation,.atlas .legend-palette-panel { max-height:220px; }
-  .atlas .atlas-zoom,.atlas.has-state .atlas-zoom,.atlas.has-county .atlas-zoom {
+  .atlas .atlas-zoom,.atlas:not(.has-state):not(.has-county) .atlas-zoom,.atlas.has-state .atlas-zoom,.atlas.has-county .atlas-zoom {
     display:grid; left:auto; right:12px; top:auto;
     bottom:calc(48px + env(safe-area-inset-bottom,0px));
   }
