@@ -14,7 +14,10 @@ Version 1.003 further tightens at from -10 to -16 units, bringing the ending
 tes in States 6 units closer to Sta while preserving the approved ta spacing.
 Version 1.004 tightens at to -40 units following visual review. Relative to
 1.003, tes moves 24 units left; Sta, letter outlines and other pairs are unchanged.
-Logo artwork uses separate optical adjustments of -16 units for U-S and -10 for S-A.
+Version 1.005 unifies wordmark and font spacing: US is -40 and SA is -36 units.
+The logo uses native font kerning, replacing its former separate optical offsets.
+Compared with the 1.004 logo, U-S closes 16 units and S-A closes 12 units.
+States spacing and all glyph outlines and advance metrics are preserved.
 The source/approved-master.ttf is the immutable drawing and kerning master.
 Repackage with scripts/build-invasive-serif.py and scripts/render-brand-v10.mjs.
 NYBG was visual inspiration; no proprietary NYBG font software or outlines are included.

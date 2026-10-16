@@ -22,7 +22,7 @@ export default function AboutPage() {
           <h1>Accessible invasive species research to protect the places you love</h1>
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
           <div className="about-mission-identity">
-            <Image className="brand-art" src="/brand/v10/symbol-name.svg?v=1.001" alt="ISITUSA" width={90} height={116} unoptimized />
+            <Image className="brand-art" src="/brand/v10/symbol-name.svg?v=1.005" alt="ISITUSA" width={90} height={116} unoptimized />
             <p className="about-mission-copy"><strong className="brand-wordmark">ISITUSA</strong> is an independent initiative established in the United States of America by environmentalists.</p>
           </div>
           <Link href="/" className="primary-button inline-flex items-center gap-2">Explore your county <ArrowRight size={18} aria-hidden="true" /></Link>

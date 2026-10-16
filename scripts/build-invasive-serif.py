@@ -23,13 +23,14 @@ if len(sys.argv) > 1:
     shutil.copyfile(sys.argv[1], MASTER)
 font = TTFont(MASTER, recalcTimestamp=False)
 
-def balance_tat(candidate):
-    # Preserve the approved ta gap and bring the following t 30/1000 em closer
-    # than revision 1.002. Glyph outlines and unrelated pairs stay untouched.
+def refine_spacing(candidate):
+    # Preserve approved States spacing and unify uppercase US/SA spacing.
+    # Logo artwork uses the same native pairs; glyph drawings stay untouched.
     cmap = candidate.getBestCmap()
     table = candidate['GPOS'].table.LookupList.Lookup[0].SubTable[0]
     assert table.Format == 1 and table.ValueFormat1 == 4 and table.ValueFormat2 == 0
-    for first, second, before, after in [('t', 'a', -9, 1), ('a', 't', None, -40)]:
+    for first, second, before, after in [('t', 'a', -9, 1), ('a', 't', None, -40),
+                                         ('U', 'S', -8, -40), ('S', 'A', -14, -36)]:
         pairset = table.PairSet[table.Coverage.glyphs.index(cmap[ord(first)])]
         name = cmap[ord(second)]
         matches = [pair for pair in pairset.PairValueRecord if pair.SecondGlyph == name]
@@ -47,7 +48,7 @@ def balance_tat(candidate):
         pairset.PairValueRecord.sort(key=lambda pair: candidate.getGlyphID(pair.SecondGlyph))
         pairset.PairValueCount = len(pairset.PairValueRecord)
 
-balance_tat(font)
+refine_spacing(font)
 # Translate the complete top serif down 20 units, shortening only the straight
 # ascender. Preserve its curves, width, shoulder, sidebearings and all kerning.
 h_name = font.getBestCmap()[ord('h')]
@@ -60,9 +61,9 @@ for point in range(31, 39):
 h_glyph.recalcBounds(font['glyf'])
 assert h_glyph.yMax == font['glyf'][font.getBestCmap()[ord('T')]].yMax == 700
 names = {0: 'Copyright 2026 ISITUSA.', 1: 'Invasive Serif', 2: 'Bold',
-         3: 'ISITUSA:InvasiveSerif-Bold:1.004', 4: 'Invasive Serif Bold',
-         5: 'Version 1.004', 6: 'InvasiveSerif-Bold', 16: 'Invasive Serif',
-         17: 'Bold', 10: 'ISITUSA botanical display lettering. Grove XXIII with approved h ascender and ta/at spacing refinements.'}
+         3: 'ISITUSA:InvasiveSerif-Bold:1.005', 4: 'Invasive Serif Bold',
+         5: 'Version 1.005', 6: 'InvasiveSerif-Bold', 16: 'Invasive Serif',
+         17: 'Bold', 10: 'ISITUSA botanical display lettering. Grove XXIII with approved h ascender and ta/at and uppercase US/SA spacing refinements.'}
 for record in font['name'].names:
     if record.nameID in names:
         record.string = names[record.nameID].encode(record.getEncoding())
@@ -71,7 +72,7 @@ for key, value in names.items():
 font['OS/2'].usWeightClass = 700
 font['OS/2'].fsSelection = (font['OS/2'].fsSelection & ~65) | 32
 font['head'].macStyle = (font['head'].macStyle & ~2) | 1
-font['head'].fontRevision = 1.004
+font['head'].fontRevision = 1.005
 ttf = FONTDIR / 'InvasiveSerif-Bold.ttf'
 font.save(ttf)
 font.flavor = 'woff2'
@@ -90,14 +91,11 @@ def shape(path, text):
 
 gs = font.getGlyphSet()
 order = font.getGlyphOrder()
-def outline(text, logo=False):
+def outline(text):
     x = 0
     paths = []
     bounds = []
     for index, (gid, advance, dx, dy) in enumerate(shape(ttf, text)):
-        # These optical logo adjustments do not affect running-text GPOS.
-        if logo and index in (5, 6):
-            x -= {5: 16, 6: 10}[index]
         name = order[gid]
         pen = SVGPathPen(gs)
         gs[name].draw(pen)
@@ -111,7 +109,7 @@ def outline(text, logo=False):
     return ''.join(paths), (min(b[0] for b in bounds), min(b[1] for b in bounds),
                             max(b[2] for b in bounds), max(b[3] for b in bounds))
 
-letters, (left, bottom, right, top) = outline('ISITUSA', logo=True)
+letters, (left, bottom, right, top) = outline('ISITUSA')
 width, height = right-left+40, top-bottom+40
 for name, color in {'green':'#00583B', 'white':'#FFFFFF', 'black':'#111111'}.items():
     (OUT / f'wordmark-{name}.svg').write_text(
@@ -130,7 +128,7 @@ body = re.search(r'<path.*</svg>', emblem, re.S).group(0).removesuffix('</svg>')
 scale = 800/width
 (OUT / 'symbol-name.svg').write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 1080" fill="#00583B"><title>ISITUSA</title><g fill-rule="evenodd" transform="translate(-110 -90)">{body}</g><g transform="translate({20+(20-left)*scale} {884+(20+top)*scale}) scale({scale} {-scale})">{letters}</g></svg>', encoding='utf8')
 shutil.copyfile(ROOT / 'public/brand/v9/site.webmanifest', OUT / 'site.webmanifest')
-manifest = {'version':10, 'fontRevision':'1.004', 'logoOpticalAdjustments':{'US':-16,'SA':-10}, 'kerningAdjustments':{'ta':{'before':-9,'after':1},'at':{'before':0,'after':-40}}, 'family':'Invasive Serif', 'weight':700,
+manifest = {'version':10, 'fontRevision':'1.005', 'logoOpticalAdjustments':{}, 'logoSpacing':'Native font kerning; no duplicate optical offsets', 'kerningAdjustments':{'ta':{'before':-9,'after':1},'at':{'before':0,'after':-40},'US':{'before':-8,'after':-40},'SA':{'before':-14,'after':-36}}, 'family':'Invasive Serif', 'weight':700,
             'wordmarkWidth':width, 'wordmarkHeight':height,
             'fullNameWidth':fullwidth, 'fullNameHeight':fullheight,
             'masterSha256':hashlib.sha256(MASTER.read_bytes()).hexdigest(),
@@ -140,7 +138,7 @@ manifest = {'version':10, 'fontRevision':'1.004', 'logoOpticalAdjustments':{'US'
 (OUT / 'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n', newline='\n')
 original = TTFont(MASTER)
 expected_spacing = TTFont(MASTER)
-balance_tat(expected_spacing)
+refine_spacing(expected_spacing)
 packaged = TTFont(ttf)
 web = TTFont(FONTDIR / 'invasive-serif.woff2')
 for candidate in [packaged, web]:
@@ -157,11 +155,12 @@ for candidate in [packaged, web]:
     assert candidate['GPOS'].compile(candidate) == expected_spacing['GPOS'].compile(expected_spacing)
     for table in ['hhea', 'prep']:
         assert candidate[table].compile(candidate) == original[table].compile(original)
-samples = ['ISITUSA', 'Your', 'October', 'Yule', 'Yvette', 'Yggdrasil',
+samples = ['Your', 'October', 'Yule', 'Yvette', 'Yggdrasil',
            'Accessible invasive species research to protect the places you love.']
 for text in samples:
     assert shape(MASTER, text) == shape(ttf, text)
+assert sum(p[1] for p in shape(MASTER, 'ISITUSA')) - sum(p[1] for p in shape(ttf, 'ISITUSA')) == 54
 for text in ['States', 'state', 'status', 'United States of America']:
     before, after = shape(MASTER, text), shape(ttf, text)
     assert sum(p[1] for p in before) - sum(p[1] for p in after) == 30, text
-print(json.dumps({**manifest, 'onlyHAscenderChanged':True, 'onlyTaAtKerningChanged':True, 'otherOutlinesMetricsKerningCoveragePreserved':True}))
+print(json.dumps({**manifest, 'onlyHAscenderChanged':True, 'onlyTaAtUsSaKerningChanged':True, 'otherOutlinesMetricsKerningCoveragePreserved':True}))
