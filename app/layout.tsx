@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head><link rel="preload" href="/fonts/invasive-serif/invasive-serif.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head>
+      <head><link rel="preload" href="/fonts/invasive-serif/invasive-serif.woff2?v=1.001" as="font" type="font/woff2" crossOrigin="anonymous" /></head>
       <body className="font-[family-name:var(--font-body)] antialiased">
         <Providers>
           <div className="app-frame">

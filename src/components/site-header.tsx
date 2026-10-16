@@ -42,7 +42,7 @@ export function SiteHeader() {
     <header className="site-header glass-panel">
       <Link href="/" className="site-brand" aria-label="ISITUSA home: Invasive Species In The United States of America">
         <Image className="brand-art" src="/brand/v3/isitusa-symbol.svg" alt="" width={70} height={70} priority unoptimized />
-        <Image className="brand-art header-wordmark" src="/brand/v10/wordmark-green.svg" alt="ISITUSA" width={3750} height={760} unoptimized priority />
+        <Image className="brand-art header-wordmark" src="/brand/v10/wordmark-green.svg?v=1.001" alt="ISITUSA" width={3724} height={760} unoptimized priority />
       </Link>
       <nav ref={nav} aria-label="Primary">
         <span aria-hidden="true" className="nav-active-pill" style={{ width: pill.width, transform: `translateX(${pill.left}px)`, opacity: pill.width ? 1 : 0 }} />

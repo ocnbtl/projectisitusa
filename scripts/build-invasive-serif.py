@@ -1,4 +1,4 @@
-"""Package the approved font without changing its drawings or positioning."""
+"""Package Invasive Serif with the scoped 1.001 h and logo spacing refinements."""
 from pathlib import Path
 import hashlib
 import json
@@ -20,10 +20,21 @@ if len(sys.argv) > 1:
     MASTER.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(sys.argv[1], MASTER)
 font = TTFont(MASTER)
+# Translate the complete top serif down 20 units, shortening only the straight
+# ascender. Preserve its curves, width, shoulder, sidebearings and all kerning.
+h_name = font.getBestCmap()[ord('h')]
+h_glyph = font['glyf'][h_name]
+assert h_glyph.yMax == 720
+for point in range(31, 39):
+    x, y = h_glyph.coordinates[point]
+    assert y >= 610
+    h_glyph.coordinates[point] = (x, y - 20)
+h_glyph.recalcBounds(font['glyf'])
+assert h_glyph.yMax == font['glyf'][font.getBestCmap()[ord('T')]].yMax == 700
 names = {0: 'Copyright 2026 ISITUSA.', 1: 'Invasive Serif', 2: 'Bold',
-         3: 'ISITUSA:InvasiveSerif-Bold:1.000', 4: 'Invasive Serif Bold',
-         5: 'Version 1.000', 6: 'InvasiveSerif-Bold', 16: 'Invasive Serif',
-         17: 'Bold', 10: 'ISITUSA botanical display lettering. Approved Grove XXIII master.'}
+         3: 'ISITUSA:InvasiveSerif-Bold:1.001', 4: 'Invasive Serif Bold',
+         5: 'Version 1.001', 6: 'InvasiveSerif-Bold', 16: 'Invasive Serif',
+         17: 'Bold', 10: 'ISITUSA botanical display lettering. Grove XXIII with the approved h ascender refinement.'}
 for record in font['name'].names:
     if record.nameID in names:
         record.string = names[record.nameID].encode(record.getEncoding())
@@ -50,11 +61,14 @@ def shape(path, text):
 
 gs = font.getGlyphSet()
 order = font.getGlyphOrder()
-def outline(text):
+def outline(text, logo=False):
     x = 0
     paths = []
     bounds = []
-    for gid, advance, dx, dy in shape(ttf, text):
+    for index, (gid, advance, dx, dy) in enumerate(shape(ttf, text)):
+        # Optical logo adjustments only; running-text GPOS remains untouched.
+        if logo and index in (5, 6):
+            x -= {5: 16, 6: 10}[index]
         name = order[gid]
         pen = SVGPathPen(gs)
         gs[name].draw(pen)
@@ -68,7 +82,7 @@ def outline(text):
     return ''.join(paths), (min(b[0] for b in bounds), min(b[1] for b in bounds),
                             max(b[2] for b in bounds), max(b[3] for b in bounds))
 
-letters, (left, bottom, right, top) = outline('ISITUSA')
+letters, (left, bottom, right, top) = outline('ISITUSA', logo=True)
 width, height = right-left+40, top-bottom+40
 for name, color in {'green':'#00583B', 'white':'#FFFFFF', 'black':'#111111'}.items():
     (OUT / f'wordmark-{name}.svg').write_text(
@@ -87,7 +101,7 @@ body = re.search(r'<path.*</svg>', emblem, re.S).group(0).removesuffix('</svg>')
 scale = 800/width
 (OUT / 'symbol-name.svg').write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 1080" fill="#00583B"><title>ISITUSA</title><g fill-rule="evenodd" transform="translate(-110 -90)">{body}</g><g transform="translate({20+(20-left)*scale} {884+(20+top)*scale}) scale({scale} {-scale})">{letters}</g></svg>', encoding='utf8')
 shutil.copyfile(ROOT / 'public/brand/v9/site.webmanifest', OUT / 'site.webmanifest')
-manifest = {'version':10, 'family':'Invasive Serif', 'weight':700,
+manifest = {'version':10, 'fontRevision':'1.001', 'logoOpticalAdjustments':{'US':-16,'SA':-10}, 'family':'Invasive Serif', 'weight':700,
             'wordmarkWidth':width, 'wordmarkHeight':height,
             'fullNameWidth':fullwidth, 'fullNameHeight':fullheight,
             'masterSha256':hashlib.sha256(MASTER.read_bytes()).hexdigest(),
@@ -99,7 +113,14 @@ original = TTFont(MASTER)
 packaged = TTFont(ttf)
 web = TTFont(FONTDIR / 'invasive-serif.woff2')
 for candidate in [packaged, web]:
-    assert candidate['glyf'].compile(candidate) == original['glyf'].compile(original)
+    for name in original.getGlyphOrder():
+        if name != h_name:
+            assert candidate['glyf'][name].compile(candidate['glyf']) == original['glyf'][name].compile(original['glyf']), name
+    old_points = original['glyf'][h_name].coordinates
+    new_points = candidate['glyf'][h_name].coordinates
+    for index, ((ox, oy), (nx, ny)) in enumerate(zip(old_points, new_points)):
+        assert nx == ox and ny == oy - (20 if 31 <= index <= 38 else 0)
+    assert candidate['glyf'][h_name].flags == original['glyf'][h_name].flags
     assert candidate['hmtx'].metrics == original['hmtx'].metrics
     assert candidate.getBestCmap() == original.getBestCmap()
     assert candidate['GPOS'].compile(candidate) == original['GPOS'].compile(original)
@@ -109,4 +130,4 @@ samples = ['ISITUSA', 'Your', 'October', 'Yule', 'Yvette', 'Yggdrasil',
            'Accessible invasive species research to protect the places you love.']
 for text in samples:
     assert shape(MASTER, text) == shape(ttf, text)
-print(json.dumps({**manifest, 'outlinesMetricsKerningCoveragePreserved':True}))
+print(json.dumps({**manifest, 'onlyHAscenderChanged':True, 'otherOutlinesMetricsKerningCoveragePreserved':True}))
