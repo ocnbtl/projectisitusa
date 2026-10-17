@@ -1298,7 +1298,8 @@ h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
 /* Keep the full organization name on one line at every breakpoint. */
 .site-brand .header-organization-name{display:block;min-width:0;white-space:nowrap;font-family:var(--font-display);font-weight:700;font-size:clamp(20px,1.7vw,28px);line-height:1.12;letter-spacing:normal;color:var(--foreground);font-synthesis:none}
 @media(max-width:1100px){.site-brand .header-organization-name{font-size:clamp(16px,2.35vw,24px)}.site-brand:has(.header-organization-name){justify-content:center}}
-@media(max-width:700px){.site-brand .header-organization-name{font-size:clamp(10.5px,3.05vw,20px)}.site-brand:has(.header-organization-name){justify-content:flex-start}}
+/* Fit the full mobile name to the row after the emblem, gap, and edge clearance. */
+@media(max-width:700px){.site-brand .header-organization-name{font-size:clamp(10.5px,calc((100vw - 96px) / 21.6),28px)}.site-brand:has(.header-organization-name){justify-content:flex-start}}
 
 /* Mobile atlas: compact corner controls and one readable heading scale. */
 @media (max-width:700px) {
