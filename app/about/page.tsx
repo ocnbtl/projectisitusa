@@ -43,29 +43,23 @@ export default function AboutPage() {
       <section className="about-method" aria-labelledby="method-heading">
         <div className="section-introduction">
           <h2 id="method-heading">Every record needs context.</h2>
-          <p>A useful map starts long before a point appears on it. We search public agency records, scientific collections, monitoring programs, and observation databases for evidence about each species. Then we examine what a source actually documents, keeping its location, dates, and references together. Incomplete or conflicting evidence stays marked for further review.</p>
+          <p>We bring public evidence together without separating a finding from its context. Each source has its own scope and limits; our job is to make those clear, keep the references traceable, and leave uncertainty visible.</p>
         </div>
         <dl className="record-context">
-          <div><dt><MapPin size={21} aria-hidden="true" /> Where</dt><dd>We look for a named county, a survey location, or coordinates that connect a finding to a place. Evidence about one county stays tied to that county; a statewide mention alone does not tell us which counties have records. When the location is unclear, we leave that uncertainty visible.</dd></div>
-          <div><dt><CalendarDays size={21} aria-hidden="true" /> When</dt><dd>A newly discovered source can describe a much older observation. We distinguish when a species was recorded from when a source was published or reviewed. That helps you tell a historical finding from recent evidence without mistaking an update to our map for a new arrival.</dd></div>
-          <div><dt><BookOpen size={21} aria-hidden="true" /> According to whom</dt><dd>We keep a path back to the original evidence and consider how it was gathered. A preserved specimen, a field survey, and a public observation each offer different context. You can follow the reference to understand the finding, and gaps or disagreements remain open for review.</dd></div>
+          <div><dt><MapPin size={21} aria-hidden="true" /> Where</dt><dd>We connect evidence to the place it actually describes. A statewide mention alone does not establish a record in every county.</dd></div>
+          <div><dt><CalendarDays size={21} aria-hidden="true" /> When</dt><dd>We distinguish the observation date from publication and review dates. A newly added record may describe a much older finding.</dd></div>
+          <div><dt><BookOpen size={21} aria-hidden="true" /> According to whom</dt><dd>We preserve the source and how the evidence was gathered, so you can follow the reference and understand what it supports.</dd></div>
         </dl>
         <div className="about-evidence-note"><ScanSearch size={22} aria-hidden="true" /><p>An empty spot on the map does not mean a species is absent. An older record does not prove it is still there today.</p></div>
-        <Link href="/research" className="text-link inline-flex min-h-11 items-center gap-2">See how we review records <ArrowRight size={16} aria-hidden="true" /></Link>
+        <div className="about-section-actions"><Link href="/approach">See our full approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/species">See the records <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
       </section>
 
       <div className="about-research-grid">
       <section className="about-sources" aria-labelledby="sources-heading">
         <h2 id="sources-heading">The research we build on.</h2>
-        <p>Our species catalog begins with the United States Register of Introduced and Invasive Species (US-RIIS) for the lower 48 states. To explore where species have been recorded, we draw on EDDMapS, the USGS Nonindigenous Aquatic Species database, state agency records, USDA and Forest Service programs, EPA river and stream surveys, and U.S. Fish and Wildlife Service monitoring.</p>
-        <p>Scientific collections add another layer of evidence. GBIF and iDigBio make museum and herbarium records easier to find, alongside collections from institutions such as Harvard, the Smithsonian, and the New York Botanical Garden. Research-grade iNaturalist observations contribute records from people observing the natural world. University extension resources, including Cornell, NC State, and the University of Florida, help explain identification and management in our species profiles.</p>
-        <p>These sources serve different purposes. We preserve the distinction between a recorded occurrence, a survey that did not detect a species, and an official determination of absence. References and dates let you look beyond the map and judge the evidence for yourself.</p>
-        <div className="source-links">
-          <a href="https://doi.org/10.5066/P9KFFTOD" target="_blank" rel="noreferrer">US-RIIS <ArrowUpRight size={15} aria-hidden="true" /></a>
-          <a href="https://www.eddmaps.org/" target="_blank" rel="noreferrer">EDDMapS <ArrowUpRight size={15} aria-hidden="true" /></a>
-          <a href="https://nas.er.usgs.gov/" target="_blank" rel="noreferrer">USGS aquatic species <ArrowUpRight size={15} aria-hidden="true" /></a>
-          <Link href="/research">Explore the research <ArrowRight size={15} aria-hidden="true" /></Link>
-        </div>
+        <p>Our catalog starts with US-RIIS. Agency records, scientific collections, surveys, and community observations help document where species have been found; university and scientific references help explain them. Each source contributes a different part of the picture.</p>
+        <p>Our data-sources paper explains what we use, how the sources differ, and where their limits matter. Credits recognize the people and organizations behind that work.</p>
+        <div className="about-section-actions"><Link href="/data-sources">Read our data-sources paper <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/credits#research">Explore source credits <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
       </section>
       <section className="about-direction" aria-labelledby="outlook-heading">
         <h2 id="outlook-heading">Growing with the evidence.</h2>

@@ -6,6 +6,11 @@ import s from "../../app/credits/credits.module.css";
 
 const stateNames = new Map(stateRegistry.jurisdictions.map(state => [state.stateCode, state.stateName]));
 const flags = Object.entries(STATE_FLAGS).sort(([a], [b]) => (stateNames.get(a) ?? a).localeCompare(stateNames.get(b) ?? b));
+const researchGroups = [
+  { title: "Agencies & public programs", description: "Catalogs, monitoring programs, occurrence records, and subject-specific guidance.", names: ["USGS", "USDA", "Forest Service", "EPA", "U.S. Fish & Wildlife", "NOAA", "National Park Service"] },
+  { title: "Collections & observation networks", description: "Preserved specimens, shared biodiversity records, and documented observations.", names: ["Harvard University", "Smithsonian", "New York Botanical Garden", "University of Georgia", "GBIF", "iNaturalist", "iDigBio"] },
+  { title: "Universities & extension resources", description: "Species identification, ecological context, management references, and specialist datasets.", names: ["Cornell University", "Penn State", "Purdue University", "University of Florida", "University of Wisconsin-Madison", "University of Minnesota", "NC State University", "Virginia Tech", "Oregon State University"] },
+];
 function artistCredit(artist: string) {
   const credit = artist.split("permission=")[0].replace(/Template:|User:/g, "").replace(/Unknown authorUnknown author/g, "Unknown author").replace(/\s+/g, " ").trim();
   return credit && credit !== "N.a" ? credit : "Contributor details are available on the source file page";
@@ -16,10 +21,14 @@ export function SiteCredits() {
     <section id="research" className={s.section} aria-labelledby="research-credit-heading">
       <h2 id="research-credit-heading">Research &amp; records</h2>
       <p>Our species catalog begins with the <a href="https://doi.org/10.5066/P9KFFTOD">U.S. Geological Survey&apos;s US-RIIS lower-48 register</a>. We combine it with occurrence records, specimen collections, surveys, and identification guidance from the sources below.</p>
-      <p>These are starting points for exploring the work we draw on. Exact references belong to individual species profiles and research records, where the source, date, and context can be read together. <Link href="/research">Explore our research and evidence</Link>.</p>
-      <ul className={s.entries}>{researchSources.map(source => <li key={source.name}>
-        <h3><a href={source.href}>{source.name}</a></h3><p>{source.description}</p>
-      </li>)}</ul>
+      <p>These acknowledgments are grouped by contribution, with a direct link and a description of what we use. Individual profiles and records carry the more specific references behind each finding. For source selection, coverage, and limitations, read <Link href="/data-sources">Our data sources</Link>; for the evidence workflow, read <Link href="/approach">Our approach</Link>.</p>
+      {researchGroups.map(group => <div className={s.creditGroup} key={group.title}>
+        <h3>{group.title}</h3><p>{group.description}</p>
+        <ul className={s.entries}>{group.names.map(name => researchSources.find(source => source.name === name)).filter(source => source !== undefined).map(source => <li key={source.name}>
+          <h4><a href={source.href}>{source.name}</a></h4><p>{source.description}</p>
+        </li>)}</ul>
+      </div>)}
+      <p>Additional program-specific evidence pathways, including regional collections and state agency sources, are listed in the <Link href="/data-sources#source-register">full registered-source directory</Link>. The organizations above are selected credits, not an exhaustive inventory of every original record publisher.</p>
       <p className={s.notice}>Source attribution does not imply partnership or endorsement. Data providers and original contributors retain their applicable rights; consult each source for its citation and reuse terms.</p>
     </section>
     <section id="maps" className={s.section} aria-labelledby="maps-credit-heading">

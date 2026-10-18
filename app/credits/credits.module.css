@@ -28,3 +28,11 @@
 .flags p{font-size:14px;line-height:1.65;margin:5px 0}
 @media(max-width:900px){.layout{grid-template-columns:1fr;gap:28px}.contents{position:static;flex-direction:row;flex-wrap:wrap;gap:0 24px;padding-top:12px}.intro{margin-bottom:28px}}
 @media(max-width:600px){.page{padding-top:calc(var(--site-header-height) + var(--site-header-top) + 24px);padding-bottom:48px}.intro h1{font-size:40px}.intro p:first-of-type{font-size:22px}.entries,.flags{grid-template-columns:1fr;gap:22px}.section{padding-block:24px 30px}.contents a{font-size:14px}.section p{font-size:16px}}
+.creditGroup{margin-top:34px;padding-top:24px;border-top:1px solid var(--border)}
+.creditGroup>h3{font-family:var(--font-display);font-size:24px;line-height:1.25;margin-bottom:8px}
+.creditGroup>.entries{margin-top:22px}
+.creditGroup .entries li{padding-bottom:18px;border-bottom:1px solid var(--border)}
+.creditGroup h4{font-size:16px;font-weight:650;line-height:1.45;margin:0 0 6px}
+.creditGroup h4 a{text-decoration:none}
+.creditGroup h4 a:hover{text-decoration:underline}
+@media(max-width:600px){.creditGroup{margin-top:26px;padding-top:20px}.creditGroup>h3{font-size:22px}.creditGroup .entries{gap:18px}}

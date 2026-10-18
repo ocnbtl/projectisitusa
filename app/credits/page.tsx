@@ -13,7 +13,7 @@ export default function CreditsPage() {
     <header className={s.intro}>
       <h1>Credits</h1>
       <p>Good work grows from the work of others.</p>
-      <p>We draw on the resources, research, and creations of people who help us understand the natural world. Here is what we use, who made it, and where to learn more.</p>
+      <p>Meet the people and organizations behind the research, maps, images, and tools we use. Each section explains their contribution and links to the original resource or license.</p>
     </header>
     <div className={s.layout}>
       <nav className={s.contents} aria-label="Credit categories">

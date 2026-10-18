@@ -1,0 +1,36 @@
+.page{max-width:1280px;margin-inline:auto;padding:calc(var(--site-header-height) + var(--site-header-top) + 42px) var(--page-gutter) 80px;color:var(--foreground)}
+.intro{max-width:900px;margin-bottom:40px}
+.intro h1{font-family:var(--font-display);font-size:clamp(36px,4vw,56px);font-weight:700;line-height:1.1;margin:0 0 20px;text-wrap:balance}
+.dek{font-size:clamp(19px,2vw,24px);line-height:1.5;max-width:56ch;margin:0 0 22px}
+.meta{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px;align-items:start}
+.contents{position:sticky;top:calc(var(--site-header-height) + var(--site-header-top) + 20px);max-height:calc(100dvh - var(--site-header-height) - var(--site-header-top) - 40px);overflow-y:auto;border-top:1px solid var(--border);padding-top:16px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.contents p{font-size:14px;font-weight:650;margin:0 0 8px}
+.contents a{display:flex;align-items:center;min-height:44px;padding:8px 4px;font-size:14px;line-height:1.4;color:var(--muted);text-decoration:none}
+.contents a:hover{color:var(--foreground);text-decoration:underline;text-underline-offset:4px}
+.contents .companion{border-top:1px solid var(--border);margin-top:14px;padding-top:18px;color:var(--foreground)}
+.article{min-width:0;max-width:72ch;font-size:17px;line-height:1.8}
+.article section{border-top:1px solid var(--border);padding:28px 0 40px;scroll-margin-top:calc(var(--site-header-height) + var(--site-header-top) + 24px)}
+.article h2{font-family:var(--font-display);font-size:clamp(25px,2.4vw,32px);font-weight:700;line-height:1.2;margin:0 0 18px;text-wrap:balance}
+.article h3{font-size:19px;line-height:1.4;margin:30px 0 10px;font-weight:650}
+.article p{margin:0 0 18px;color:var(--muted)}
+.article strong{color:var(--foreground);font-weight:650}
+.article ul,.article ol{padding-left:24px;margin:16px 0 24px;color:var(--muted)}
+.article li{padding-left:3px;margin-bottom:12px}
+.article a{color:var(--foreground);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}
+.article a:hover{color:var(--accent)}
+.page a:focus-visible,.page summary:focus-visible{outline:2px solid var(--ring);outline-offset:4px;border-radius:2px}
+.article dl{margin:22px 0}
+.article dt{font-weight:650;color:var(--foreground);margin-top:20px}
+.article dd{color:var(--muted);margin:4px 0 0}
+.article details{border-block:1px solid var(--border);padding:12px 0;margin:24px 0}
+.article summary{cursor:pointer;min-height:44px;padding-block:10px;line-height:1.5;font-weight:650}
+.article details ul{list-style:none;padding:0}
+.article details li{padding:18px 0;border-top:1px solid var(--border);margin:0}
+.article details h3{font-size:17px;margin:0 0 8px}
+.article details p{font-size:15px;margin:6px 0}
+.revision{border-top:1px solid var(--border);padding-top:28px}
+.revision p{font-size:15px;line-height:1.75}
+@media(max-width:900px){.layout{grid-template-columns:1fr;gap:30px}.article{max-width:72ch}.contents{position:static;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.contents p,.contents .companion{grid-column:1/-1}.intro{margin-bottom:28px}}
+@media(max-width:600px){.page{padding-top:calc(var(--site-header-height) + var(--site-header-top) + 24px);padding-bottom:48px}.intro h1{font-size:var(--mobile-page-heading-size,28px)}.dek{font-size:18px}.meta{font-size:13px}.article{font-size:16px;line-height:1.75}.article h2{font-size:25px}.article section{padding:24px 0 30px}.contents{gap:0 14px}.contents a{font-size:14px}.article h3{font-size:18px}}
+@media print{.page{padding:0;max-width:none;color:#173c38}.layout{display:block}.contents{display:none}.article{max-width:none;font-size:11pt;line-height:1.55}.article section{break-inside:auto;scroll-margin:0;padding-block:16px}.article h2,.article h3{break-after:avoid}.article p,.article li{orphans:3;widows:3}.page a{color:inherit}.article details{display:none}.intro h1{font-size:28pt}:global(.site-header),:global(.site-footer){display:none!important}}
