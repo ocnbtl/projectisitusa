@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { Route } from "next";
 import Link from "next/link";
 import s from "./research-paper.module.css";
 
@@ -9,7 +10,7 @@ export function MethodReference({ path, children }: { path: string; children: Re
 }
 
 export function ResearchPaper({ title, description, sections, related }: {
-  title: string; description: string; sections: PaperSection[]; related: { href: string; label: string };
+  title: string; description: string; sections: PaperSection[]; related: { href: Route; label: string };
 }) {
   return <main id="main-content" className={s.page}>
     <header className={s.intro}>
