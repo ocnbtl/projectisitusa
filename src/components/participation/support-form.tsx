@@ -2,7 +2,7 @@
 import { track } from "@/lib/ui/telemetry";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet } from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet } from "lucide-react";
 import { cryptoUri } from "@/lib/participation/contracts";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { verifiedPublicWallets } from "@/lib/ui/support-destinations";
@@ -29,21 +29,16 @@ export function SupportForm() {
  return <main id="main-content" className={s.page}>
   <div className={s.layout}>
    <section className={s.mission} aria-labelledby="mission-heading">
-    <header className={s.intro}><h1 id="mission-heading" className="page-heading">Support the mission.<span className={s.desktopHeadingContinuation}> Protect our planet.</span></h1><p className={s.mobileMissionLine}>Protect our planet.</p><p>Help make trusted invasive species research easier to find, understand, and use. Your contribution keeps ISITUSA free for everyone.</p><a className={s.mobileContribution} href="#contribute">Make a contribution <ArrowDown size={16} aria-hidden="true"/></a></header>
-    <section className={s.otherWays} aria-labelledby="other-heading"><h2 id="other-heading">Other ways to help</h2>
-     <Link href="/report"><div><strong>Document a sighting</strong><p>Learn what to photograph and where to report it.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
-     <Link href="/"><div><strong>Share your county&apos;s map</strong><p>Help a neighbor, school, or local group find their records.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
-     <Link href="/join"><div><strong>Follow the research</strong><p>Explore plans for county and species updates.</p></div><ArrowUpRight size={19} aria-hidden="true"/></Link>
-    </section>
-    <p className={s.missionFoot}>Contributions support the work as a whole. They never influence a research finding. <Link href="/about">About ISITUSA <ArrowUpRight size={14} aria-hidden="true"/></Link></p>
+    <header className={s.intro}><h1 id="mission-heading" className="page-heading">Support the mission.</h1><p>ISITUSA is independent, apolitical, and doesn&apos;t accept lobbying money. We&apos;re building a free, open-source tool to help you understand invasive species and protect the places you love. Your contribution keeps it free for everyone.</p></header>
    </section>
    <section id="contribute" className={s.donation} aria-labelledby="donation-heading">
     <header className={s.donationHeading}><h2 id="donation-heading">Make a contribution</h2></header>
+    <nav className={s.contributionLinks} aria-label="Contribution options"><a href="#give-once">Once</a><a href="#give-monthly">Recurring</a><a href="#give-crypto">Cryptocurrency</a></nav>
     <div className={s.paymentOptions}>
-    <section className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Once</h3><p className={s.panelIntro}>Make a one-time contribution to help people find, understand, and use invasive species research.</p><DonationCheckout frequency="once" config={config} checked={checked} onCheckoutActiveChange={setOnceCheckoutActive}/></section>
-    <section className={s.monthlyPanel}><h3><Repeat2 size={22} aria-hidden="true"/> Recurring</h3><p className={s.panelIntro}>Support ongoing research, species updates, and improvements to ISITUSA each month.</p><DonationCheckout frequency="monthly" config={config} checked={checked} onCheckoutActiveChange={setMonthlyCheckoutActive}/></section>
+    <section id="give-once" className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Once</h3><p className={s.panelIntro}>Make a one-time contribution to help people find, understand, and use invasive species research.</p><DonationCheckout frequency="once" config={config} checked={checked} onCheckoutActiveChange={setOnceCheckoutActive}/></section>
+    <section id="give-monthly" className={s.monthlyPanel}><h3><Repeat2 size={22} aria-hidden="true"/> Recurring</h3><p className={s.panelIntro}>Support ongoing research, species updates, and improvements to ISITUSA each month.</p><DonationCheckout frequency="monthly" config={config} checked={checked} onCheckoutActiveChange={setMonthlyCheckoutActive}/></section>
     {(onceCheckoutActive || monthlyCheckoutActive) && <p className={s.checkoutReassurance}>Payment details are handled securely by Stripe. Contributing does not subscribe you to email updates.</p>}
-    <section className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Cryptocurrency</h3><p className={s.panelIntro}>Contribute to ISITUSA using one of our verified cryptocurrency addresses.</p>{wallet?<>
+    <section id="give-crypto" className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Cryptocurrency</h3><p className={s.panelIntro}>Contribute to ISITUSA using one of our verified cryptocurrency addresses.</p>{wallet?<>
   {/* eslint-disable-next-line @next/next/no-img-element -- Fixed-size local SVG currency icons do not benefit from raster optimization. */}
      <div className={s.assets} role="group" aria-label="Choose cryptocurrency">{wallets.map(item=><button type="button" key={item.id} aria-label={names[item.asset]} aria-pressed={item.id===wallet.id} onClick={()=>select(item.id)}><img src={`/brand/crypto/${item.asset.toLowerCase()}.svg`} width={26} height={26} alt=""/><span>{item.asset}</span></button>)}</div>
      <div className={s.network}><strong>{names[wallet.asset]}</strong><span>{wallet.network}</span></div><label className={s.addressLabel} htmlFor="contribution-address">Receiving address</label><textarea id="contribution-address" className={s.address} aria-label={`${wallet.asset} receiving address`} readOnly spellCheck={false} value={wallet.address} rows={3} onFocus={e=>e.currentTarget.select()}/>
@@ -51,6 +46,14 @@ export function SupportForm() {
      <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by isitusa.{wallet.asset==="XRP"?" No destination tag is required.":""}</p></details>
     </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section></div>
     <footer className={s.donationFoot}><p>ISITUSA is an independent initiative, not a registered nonprofit. Contributions are not represented as tax-deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
+   </section>
+   <section className={s.freeHelp} aria-labelledby="other-heading">
+    <div className={s.otherWays}><h2 id="other-heading">Ways you can help for free</h2>
+     <Link href="/report"><strong>Document and report a sighting</strong><ArrowUpRight size={19} aria-hidden="true"/></Link>
+     <Link href="/"><strong>Share your county&apos;s map with your community</strong><ArrowUpRight size={19} aria-hidden="true"/></Link>
+     <Link href="/join"><strong>Get invasive species updates near you</strong><ArrowUpRight size={19} aria-hidden="true"/></Link>
+    </div>
+    <p className={s.missionFoot}>Contributions support the work as a whole. They never influence a research finding. <Link href="/about">About ISITUSA <ArrowUpRight size={14} aria-hidden="true"/></Link></p>
    </section>
   </div>
   {config?.portal && <section className={s.supporterPortal} aria-labelledby="supporter-heading">
