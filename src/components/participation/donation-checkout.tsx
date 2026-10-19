@@ -66,9 +66,8 @@ export function DonationCheckout({ frequency = "once", config, checked, onChecko
             <p id={`${customId}-help`} className={s.customHelp}>Enter $5 to $1,000.</p>
           </div>
         </div>
-        <p className={s.small}>{frequency === "monthly" ? `$${amount || "0"} each month until canceled.` : "One contribution, with no recurring charge."}</p>
         {!confirming ? <button type="button" className={`${s.primary} ${s.checkoutAction}`} disabled={!donationAmount(amount)} onClick={() => setConfirming(true)}>{frequency === "monthly" ? "Give" : "Continue with"} ${amount}{frequency === "monthly" ? " monthly" : ""}<ArrowRight size={17} aria-hidden="true" /></button> : <form className={s.checkoutForm} onSubmit={submit}><label className={s.small}><input name="consent" type="checkbox" required disabled={busy} /> I agree to the <a href="/terms">contribution terms</a>{frequency === "monthly" ? ` and a recurring charge of $${amount} each month until I cancel` : ""}.</label><Honeypot /><Challenge action="donation_checkout" onToken={setToken} reset={reset} /><button className={s.primary} type="submit" disabled={!token || busy || !scriptReady}>{busy ? "Opening secure checkout..." : "Open secure checkout"}</button></form>}
-      </> : <p className={s.small} role="status">{checked ? frequency === "monthly" ? "Monthly contributions are not available right now. Please check back soon." : "Card checkout is temporarily unavailable. Please try again later or contribute cryptocurrency below." : "Checking secure checkout..."}</p>}
+      </> : <p className={s.small} role="status">{checked ? frequency === "monthly" ? "Monthly contributions are not available right now. Please check back soon." : "Card checkout is temporarily unavailable. Please try again later or choose the Cryptocurrency tab." : "Checking secure checkout..."}</p>}
     </>}
     {error && <p className={s.error} role="alert">{error}</p>}
 

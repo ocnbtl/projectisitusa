@@ -7,10 +7,24 @@ import { cryptoUri } from "@/lib/participation/contracts";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { verifiedPublicWallets } from "@/lib/ui/support-destinations";
 import { DonationCheckout, useDonationConfig } from "./donation-checkout";
+import { FreeSupportActions } from "./free-support-actions";
 import s from "./support.module.css";
+const options = [{id:"once",label:"Once"},{id:"monthly",label:"Recurring"},{id:"crypto",label:"Cryptocurrency"},{id:"free",label:"Help for free"}] as const;
+type SupportOption = typeof options[number]["id"];
 const names: Record<string,string> = { BTC:"Bitcoin", ETH:"Ethereum", SOL:"Solana", XRP:"XRP", XMR:"Monero" };
 export function SupportForm() {
  const {config,checked}=useDonationConfig();
+ const [option,setOption]=useState<SupportOption>("once");
+ const tabs=useRef<Array<HTMLButtonElement|null>>([]);
+ function tabKey(event: React.KeyboardEvent<HTMLButtonElement>, index:number){
+  let next=index;
+  if(event.key==="ArrowRight")next=(index+1)%options.length;
+  else if(event.key==="ArrowLeft")next=(index+options.length-1)%options.length;
+  else if(event.key==="Home")next=0;
+  else if(event.key==="End")next=options.length-1;
+  else return;
+  event.preventDefault();setOption(options[next].id);tabs.current[next]?.focus();
+ }
  const [onceCheckoutActive,setOnceCheckoutActive]=useState(false),[monthlyCheckoutActive,setMonthlyCheckoutActive]=useState(false);
  // Destinations remain release-reviewed, never replaced by unchecked runtime responses.
  const wallets=verifiedPublicWallets(SUPPORT_DESTINATIONS.wallets);
@@ -29,36 +43,30 @@ export function SupportForm() {
  return <main id="main-content" className={s.page}>
   <div className={s.layout}>
    <section className={s.mission} aria-labelledby="mission-heading">
-    <header className={s.intro}><h1 id="mission-heading" className="page-heading">Support the mission.</h1><p>ISITUSA is independent, apolitical, and doesn&apos;t accept lobbying money. We&apos;re building a free, open-source tool to help you understand invasive species and protect the places you love. Your contribution keeps it free for everyone.</p></header>
+    <header className={s.intro}><h1 id="mission-heading" className="page-heading">Support the mission.</h1><p>ISITUSA is independent, apolitical, and doesn&apos;t accept lobbying money. We&apos;re building a free, open-source tool to help people understand invasive species and protect the places they love. Your contribution keeps it free for everyone.</p></header>
    </section>
    <section id="contribute" className={s.donation} aria-labelledby="donation-heading">
     <header className={s.donationHeading}><h2 id="donation-heading">Make a contribution</h2></header>
-    <nav className={s.contributionLinks} aria-label="Contribution options"><a href="#give-once">Once</a><a href="#give-monthly">Recurring</a><a href="#give-crypto">Cryptocurrency</a></nav>
+    <div className={s.contributionTabs} role="tablist" aria-label="Ways to support ISITUSA">{options.map((item,index)=><button key={item.id} ref={element=>{tabs.current[index]=element;}} type="button" role="tab" id={`tab-${item.id}`} aria-selected={option===item.id} aria-controls={`give-${item.id}`} tabIndex={option===item.id?0:-1} onClick={()=>setOption(item.id)} onKeyDown={event=>tabKey(event,index)}>{item.label}</button>)}</div>
     <div className={s.paymentOptions}>
-    <section id="give-once" className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Once</h3><p className={s.panelIntro}>Make a one-time contribution to help people find, understand, and use invasive species research.</p><DonationCheckout frequency="once" config={config} checked={checked} onCheckoutActiveChange={setOnceCheckoutActive}/></section>
-    <section id="give-monthly" className={s.monthlyPanel}><h3><Repeat2 size={22} aria-hidden="true"/> Recurring</h3><p className={s.panelIntro}>Support ongoing research, species updates, and improvements to ISITUSA each month.</p><DonationCheckout frequency="monthly" config={config} checked={checked} onCheckoutActiveChange={setMonthlyCheckoutActive}/></section>
-    {(onceCheckoutActive || monthlyCheckoutActive) && <p className={s.checkoutReassurance}>Payment details are handled securely by Stripe. Contributing does not subscribe you to email updates.</p>}
-    <section id="give-crypto" className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Cryptocurrency</h3><p className={s.panelIntro}>Contribute to ISITUSA using one of our verified cryptocurrency addresses.</p>{wallet?<>
+    <section id="give-once" role="tabpanel" aria-labelledby="tab-once" tabIndex={0} hidden={option!=="once"} className={s.oncePanel}><h3><CreditCard size={22} aria-hidden="true"/> Once</h3><p className={s.panelIntro}>Make a one-time contribution to help people find, understand, and use invasive species research.</p><DonationCheckout frequency="once" config={config} checked={checked} onCheckoutActiveChange={setOnceCheckoutActive}/></section>
+    <section id="give-monthly" role="tabpanel" aria-labelledby="tab-monthly" tabIndex={0} hidden={option!=="monthly"} className={s.monthlyPanel}><h3><Repeat2 size={22} aria-hidden="true"/> Recurring</h3><p className={s.panelIntro}>Support ongoing research, species updates, and improvements to ISITUSA each month.</p><DonationCheckout frequency="monthly" config={config} checked={checked} onCheckoutActiveChange={setMonthlyCheckoutActive}/></section>
+    {((option==="once" && onceCheckoutActive) || (option==="monthly" && monthlyCheckoutActive)) && <p className={s.checkoutReassurance}>Payment details are handled securely by Stripe. Contributing does not subscribe you to email updates.</p>}
+    <section id="give-crypto" role="tabpanel" aria-labelledby="tab-crypto" tabIndex={0} hidden={option!=="crypto"} className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Cryptocurrency</h3><p className={s.panelIntro}>Support ISITUSA using one of our verified cryptocurrency addresses.</p>{wallet?<>
   {/* eslint-disable-next-line @next/next/no-img-element -- Fixed-size local SVG currency icons do not benefit from raster optimization. */}
      <div className={s.assets} role="group" aria-label="Choose cryptocurrency">{wallets.map(item=><button type="button" key={item.id} aria-label={names[item.asset]} aria-pressed={item.id===wallet.id} onClick={()=>select(item.id)}><img src={`/brand/crypto/${item.asset.toLowerCase()}.svg`} width={26} height={26} alt=""/><span>{item.asset}</span></button>)}</div>
      <div className={s.network}><strong>{names[wallet.asset]}</strong><span>{wallet.network}</span></div><label className={s.addressLabel} htmlFor="contribution-address">Receiving address</label><textarea id="contribution-address" className={s.address} aria-label={`${wallet.asset} receiving address`} readOnly spellCheck={false} value={wallet.address} rows={3} onFocus={e=>e.currentTarget.select()}/>
      <div className={s.addressActions}><button type="button" className={s.primary} onClick={copy}>{copied?<Check size={17} aria-hidden="true"/>:<Copy size={17} aria-hidden="true"/>}{copied?"Address copied":"Copy address"}</button>{cryptoUri(wallet)&&<a href={cryptoUri(wallet)!}>Open wallet <ArrowUpRight size={16} aria-hidden="true"/></a>}</div><p className={s.feedback} role="status">{feedback}</p>
-     <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by isitusa.{wallet.asset==="XRP"?" No destination tag is required.":""}</p></details>
-    </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section></div>
-    <footer className={s.donationFoot}><p>ISITUSA is an independent initiative, not a registered nonprofit. Contributions are not represented as tax-deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
+     <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by ISITUSA.{wallet.asset==="XRP"?" No destination tag is required.":""}</p><p>Open wallet works with compatible apps. If it does not open, copy the address into your wallet.</p></details>
+    </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section>
+    <section id="give-free" role="tabpanel" aria-labelledby="tab-free" tabIndex={0} hidden={option!=="free"} className={s.freePanel}><h3>Ways you can support for free</h3><FreeSupportActions/><Link className={s.freePageLink} href={{pathname:"/support/free"}}>Explore ways to help <ArrowUpRight size={16} aria-hidden="true"/></Link></section></div>
+    <footer className={s.donationFoot}><p>ISITUSA is an independent initiative. Contributions are not tax deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
    </section>
-   <section className={s.freeHelp} aria-labelledby="other-heading">
-    <div className={s.otherWays}><h2 id="other-heading">Ways you can help for free</h2>
-     <Link href="/report"><strong>Document and report a sighting</strong><ArrowUpRight size={19} aria-hidden="true"/></Link>
-     <Link href="/"><strong>Share your county&apos;s map with your community</strong><ArrowUpRight size={19} aria-hidden="true"/></Link>
-     <Link href="/join"><strong>Get invasive species updates near you</strong><ArrowUpRight size={19} aria-hidden="true"/></Link>
-    </div>
-    <p className={s.missionFoot}>Contributions support the work as a whole. They never influence a research finding. <Link href="/about">About ISITUSA <ArrowUpRight size={14} aria-hidden="true"/></Link></p>
-   </section>
+
   </div>
   {config?.portal && <section className={s.supporterPortal} aria-labelledby="supporter-heading">
-   <div><h2 id="supporter-heading">Your monthly giving</h2><p>Already supporting ISITUSA? Manage your recurring contribution or cancel future payments in your secure billing portal.</p></div>
-   <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Manage monthly giving <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a><p>Opens Stripe’s secure billing portal.</p></div>
+   <div><h2 id="supporter-heading">Your monthly giving</h2><p>Already supporting ISITUSA? Manage or cancel monthly giving securely with Stripe.</p></div>
+   <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Manage monthly giving <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a><p>Opens Stripe&apos;s secure billing portal.</p></div>
   </section>}
   <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>
  </main>;

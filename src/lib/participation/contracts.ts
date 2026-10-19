@@ -113,6 +113,9 @@ export function cryptoUri(wallet: Wallet): string | null {
   if (wallet.asset === "BTC" && wallet.network === "Bitcoin mainnet" && /^(bc1[ac-hj-np-z02-9]{20,90}|[13][a-km-zA-HJ-NP-Z1-9]{25,34})$/.test(wallet.address)) return `bitcoin:${wallet.address}`;
   if (wallet.asset === "XMR" && wallet.network === "Monero mainnet" && /^[48][1-9A-HJ-NP-Za-km-z]{94}$/.test(wallet.address)) return `monero:${wallet.address}`;
   if (wallet.asset === "ETH" && wallet.network === "Ethereum mainnet" && /^0x[a-fA-F0-9]{40}$/.test(wallet.address)) return `ethereum:${wallet.address}@1`;
+  // Native transfer requests; the supporter chooses the amount in their wallet.
+  if (wallet.asset === "SOL" && wallet.network === "Solana mainnet" && /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(wallet.address)) return `solana:${wallet.address}`;
+  if (wallet.asset === "XRP" && wallet.network === "XRP Ledger mainnet" && /^r[1-9A-HJ-NP-Za-km-z]{24,34}$/.test(wallet.address)) return `xrpl://${wallet.address}?network=XRPL`;
   return null;
 }
 export function displayAmount(amount: string, decimals: number, currency: string): string {

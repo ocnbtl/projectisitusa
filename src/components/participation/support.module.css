@@ -45,26 +45,42 @@
 @media(max-width:600px){.supporterPortal{grid-template-columns:1fr;gap:18px;margin-top:32px;padding:24px 0}.portalButton{width:100%}.portalAction p{text-align:left}.intro h1{font-size:28px}.paymentOptions h3{font-size:20px}}
 .intro h1,.donationHeading h2,.supporterPortal h2{font-family:var(--font-display);font-weight:700;font-synthesis:none;letter-spacing:normal}
 
-/* Keep contribution choices ahead of secondary actions on smaller screens. */
-.layout{grid-template-areas:"mission donation" "help donation";grid-template-rows:auto 1fr;row-gap:24px}
-.mission{grid-area:mission}.donation{grid-area:donation}.freeHelp{grid-area:help;min-width:0}
-.freeHelp .otherWays{margin-top:0}
-.otherWays>a{min-height:48px}
-.contributionLinks{display:none}
-.paymentOptions>section{scroll-margin-top:calc(var(--site-header-top) + var(--site-header-height) + 24px)}
-@media(max-width:1100px){
- .layout{grid-template-areas:"mission" "donation" "help";grid-template-rows:auto;gap:28px}
- .freeHelp{padding-top:24px;border-top:1px solid var(--border)}
- .contributionLinks{display:grid;grid-template-columns:.8fr 1fr 1.45fr;gap:8px;margin:0 0 20px}
- .contributionLinks a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 4px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-weight:600;color:var(--foreground);transition:background 160ms ease-out,border-color 160ms ease-out}
- .contributionLinks a:hover{background:var(--surface-strong);border-color:var(--accent)}
- .donationHeading{margin-bottom:12px}
-}
+/* One choice at a time keeps the support flow compact at every size. */
+.layout{grid-template-areas:"mission donation";grid-template-rows:auto;align-items:start}
+.mission{grid-area:mission}.donation{grid-area:donation}
+.intro h1,.donationHeading h2{font-size:clamp(25px,2.2vw,32px);line-height:1.2}
+.contributionTabs{display:grid;grid-template-columns:.7fr 1fr 1.45fr 1.2fr;gap:6px;margin-bottom:14px}
+.contributionTabs button{min-width:0;min-height:44px;padding:9px 5px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-weight:500;color:var(--foreground);transition:background 160ms ease-out,border-color 160ms ease-out}
+.contributionTabs button:hover{border-color:var(--accent)}
+.contributionTabs button[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:var(--background);font-weight:600}
+.paymentOptions{display:block}
+.paymentOptions>section[hidden]{display:none}
+.paymentOptions>section{padding:20px}
+.paymentOptions .monthlyPanel{background:var(--surface-strong);border-color:var(--border)}
+.paymentOptions h3{font-size:19px}
+.panelIntro{margin:8px 0 12px;line-height:1.55}
+.amountLabel{margin:12px 0 8px}.checkoutAction{margin-top:12px}
+.checkoutReassurance{margin-top:12px}
+.donationHeading{margin-bottom:12px}
+.donationFoot{margin-top:14px;padding-top:12px}
+.supporterPortal{margin-top:24px;padding:18px 0;gap:12px 24px}
+.supporterPortal p{line-height:1.5;margin-top:6px;max-width:52ch}
+.portalAction p{margin-top:5px}
+.freeActions{display:grid;margin-top:12px}
+.freeActions>a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;padding:13px 0;border-bottom:1px solid var(--border);font-size:16px;font-weight:400;line-height:1.5}
+.freeActions svg{flex-shrink:0}
+.freePageLink{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:14px;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.freePage{max-width:800px}.freePage .intro h1{max-width:none}.freePage .intro>p{max-width:65ch}
+@media(max-width:1100px){.layout{grid-template-columns:1fr;grid-template-areas:"mission" "donation";gap:22px}.intro{max-width:760px}}
 @media(max-width:700px){
- .page{padding-top:calc(var(--site-header-top) + var(--site-header-height) + 20px)}
- .intro>p{margin-top:12px;font-size:16px;line-height:1.55}
- .layout{gap:24px}
- .contributionLinks{gap:6px;margin-bottom:16px}
- .contributionLinks a{font-size:13px}
- .otherWays strong{font-size:16px;line-height:1.5}
+ .page{padding-top:calc(var(--site-header-top) + var(--site-header-height) + 16px)}
+ .intro>p{margin-top:10px;font-size:15px;line-height:1.5}
+ .layout{gap:18px}
+ .contributionTabs button{font-size:12px;padding-inline:3px}
+ .paymentOptions>section{padding:16px}
+ .supporterPortal{margin-top:20px;padding:16px 0;gap:10px}
+ .supporterPortal h2{font-size:20px}
+ .supporterPortal p{font-size:13px}
+ .questions{margin-top:18px}
 }
+@media(max-width:359px){.contributionTabs{grid-template-columns:1fr 1fr}.contributionTabs button{font-size:13px}}
