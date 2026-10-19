@@ -36,6 +36,7 @@ export type Sighting = {
   latitude: number | null; longitude: number | null; notes: string; contact_email: string | null;
   status: ReviewState; version: number; created_at: string; review_note: string | null;
   matched_species_id: string | null; authority_sharing?: boolean;
+  isitusa_sighting_referrals?: {status:string;authority:string;review_version:number}|null;
   assets?: { path: string; mime: string; bytes: number }[];
 };
 export type Subscriber = { id: string; email: string; confirmed_at: string | null; suppressed_at: string | null; suppression_reason: string | null; preferences: Preferences; created_at: string };
