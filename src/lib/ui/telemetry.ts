@@ -19,7 +19,7 @@ const ENUMS: Record<string, readonly string[]> = {
 };
 export function resultBucket(count: number) { return count < 1 ? "0" : count <= 10 ? "1-10" : count <= 100 ? "11-100" : "101+"; }
 export function analyticsRoute(pathname: string): string | null {
-  if (["/admin", "/auth", "/preferences"].some(p => pathname === p || pathname.startsWith(p + "/"))) return null;
+  if (["/admin", "/auth", "/preferences", "/volunteer"].some(p => pathname === p || pathname.startsWith(p + "/"))) return null;
   if (["/", "/species", "/research", "/about", "/support", "/join", "/report", "/privacy", "/terms", "/brand"].includes(pathname)) return pathname;
   if (/^\/species\/[^/]+\/?$/.test(pathname)) return "/species/[species]";
   return "/not-found";

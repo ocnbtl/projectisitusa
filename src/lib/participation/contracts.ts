@@ -8,6 +8,7 @@ export type Stream = typeof STREAMS[number]["id"];
 export const PERMISSIONS = ["review", "review_decide", "audience", "finance", "analytics", "team", "content", "events", "outreach", "approve", "publish"] as const;
 export type Permission = typeof PERMISSIONS[number];
 export const ROLE_PRESETS: {name:string; permissions:Permission[]; detail:string}[] = [
+ {name:"General volunteer",permissions:[],detail:"Plan design, technology, or other work with the team. Additional access is granted only when needed."},
  {name:"Sighting volunteer",permissions:["review"],detail:"Inspect observations and record preliminary reviews. Staff make final decisions."},
  {name:"Content volunteer",permissions:["content"],detail:"Write articles and email drafts. No mailing-list access or publication rights."},
  {name:"Events volunteer",permissions:["events"],detail:"Prepare event proposals and work on assigned events for staff review."},
@@ -40,7 +41,7 @@ export type Sighting = {
 export type Subscriber = { id: string; email: string; confirmed_at: string | null; suppressed_at: string | null; suppression_reason: string | null; preferences: Preferences; created_at: string };
 export type Contribution = { id: string; provider: "stripe" | "crypto"; provider_reference: string; currency: string; amount_minor: string; decimals: number; status: string; supporter_email: string | null; created_at: string; verification_note: string | null };
 export type Wallet = { id: string; asset: string; network: string; address: string; verified_at: string; active: boolean };
-export type PublicConfig = { email: boolean; reports: boolean; payments: boolean; corrections?: boolean; wallets: Wallet[] };
+export type PublicConfig = { email: boolean; reports: boolean; payments: boolean; corrections?: boolean; volunteers?: boolean; wallets: Wallet[] };
 export const EMPTY_PREFERENCES: Preferences = { streams: [], counties: [], species: [] };
 
 export function normalizeEmail(value: unknown): string {

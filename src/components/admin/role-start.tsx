@@ -1,0 +1,20 @@
+"use client";
+import { BookOpen, ClipboardCheck, FileText, CalendarDays, Megaphone, Users, ShieldCheck, Wallet, ArrowRight, MessageCircle } from "lucide-react";
+import type { Permission } from "@/lib/participation/contracts";
+import type { WorkspaceTab } from "./workspace-frame";
+import css from "./volunteer-applications.module.css";
+
+export function RoleStart({can,onTab,owner=false}:{can:(p:Permission)=>boolean;onTab:(tab:WorkspaceTab)=>void;owner?:boolean}){
+ const guides=[
+  {permission:"team",icon:Users,title:"Welcome the right people",body:"Review volunteer applications, agree on a starting role, and send an invitation. Review access again when someone’s responsibilities change.",tab:"volunteers",action:"Review applications"},
+  {permission:"review",icon:ClipboardCheck,title:can("review_decide")?"Lead observation reviews":"Review sightings carefully",body:can("review_decide")?"Check the identification and evidence before recording a final decision. Acceptance still requires research review before a map change.":"Compare observations with species references, add your reasoning, and ask for missing information. Staff make final decisions.",tab:"review",action:"Open sightings"},
+  {permission:"content",icon:FileText,title:"Make the research easier to understand",body:"Read the profile review queue, follow its sources, and save feedback. Use Projects & proposals for writing assignments and drafts; staff review work before publication.",tab:"research",action:"Open profile review"},
+  {permission:"events",icon:CalendarDays,title:"Turn an event idea into a useful plan",body:"Open your assigned work or propose an event. Include the place, timing, purpose, and what help is needed, then submit it for staff review.",tab:"work",action:"Open projects & proposals"},
+  {permission:"outreach",icon:Megaphone,title:"Build thoughtful community connections",body:"Research a potential collaborator and explain how working together could help. Prepare an outreach proposal for approval before contacting anyone on behalf of ISITUSA.",tab:"work",action:"Open outreach work"},
+  {permission:"approve",icon:ShieldCheck,title:"Keep work moving",body:"Assign projects, give clear feedback, and review proposals. Agree on a useful first task and realistic schedule with each new volunteer.",tab:"work",action:"Review organization work"},
+  {permission:"audience",icon:BookOpen,title:"Respect the people who follow our work",body:"Review subscriber preferences and delivery status. Keep consent separate from volunteer applications and contributions.",tab:"audience",action:"Open email audience"},
+  {permission:"finance",icon:Wallet,title:"Keep contribution records clear",body:"Check verified receipts and review adjustments separately. Giving never changes someone’s email preferences.",tab:"finance",action:"Open contributions"},
+ ] as const;
+ const available=guides.filter(g=>can(g.permission)&&(!owner||["team","approve"].includes(g.permission)));
+ return <section className={css.roleGuide}><h3>{owner?"Your team, ready for the next step.":"Your place on the team."}</h3><p>{owner?"Review applications, give each person a clear role, and connect them with useful work.":"Start with the work below. Your workspace only shows the sections you have permission to use."}</p><ul>{available.map(g=><li key={g.permission}><g.icon size={20} aria-hidden="true"/><div><strong>{g.title}</strong><p>{g.body}</p><button className="text-link" onClick={()=>onTab(g.tab)}>{g.action} <ArrowRight size={14}/></button></div></li>)}<li><MessageCircle size={20} aria-hidden="true"/><div><strong>{available.length?"Introduce yourself and ask questions":"Plan your first contribution"}</strong><p>{available.length?"Say hello in the team room. Agree on your first task, a reviewer, and when you’ll check in.":"Use the team room to discuss your design, technology, or other skills and choose a first task. The owner can arrange additional access once you know what the work needs."}</p><button className="text-link" onClick={()=>onTab("chat")}>Open the team room <ArrowRight size={14}/></button></div></li></ul></section>;
+}

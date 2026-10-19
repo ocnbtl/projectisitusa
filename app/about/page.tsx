@@ -74,7 +74,7 @@ export default function AboutPage() {
           <Link href="/report"><span><strong>Report a sighting</strong><small>Learn what to photograph, which details to record, and where to send your observation for review.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/join"><span><strong>Get invasive species updates</strong><small>Choose the places, species, and stories you want to hear about. Update your preferences whenever you like.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/support"><span><strong>Support the mission</strong><small>Give once or regularly to help keep this free, open source tool available to everyone.</small></span><Heart size={22} aria-hidden="true" /></Link>
-          <a href="mailto:contact@isitusa.com?subject=Volunteering%20with%20ISITUSA"><span><strong>Volunteer with ISITUSA</strong><small>Interested in research, writing, design, or technology? Email us about your skills and how you’d like to help.</small></span><Users size={22} aria-hidden="true" /></a>
+          <Link href={{pathname:"/volunteer"}}><span><strong>Volunteer with ISITUSA</strong><small>Bring your skills and curiosity. Tell us what you enjoy doing and find a role where you can help.</small></span><Users size={22} aria-hidden="true" /></Link>
         </div>
       </section>
 

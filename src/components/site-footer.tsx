@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 const groups = [
   { title: "Explore", links: [{label:"County map",href:"/"},{label:"Species profiles",href:"/species"}] },
   { title: "Our research", links: [{label:"Research overview",href:"/research"},{label:"Our approach",href:"/approach"},{label:"Data sources",href:"/data-sources"},{label:"Credits",href:"/credits"}] },
-  { title: "Get involved", links: [{label:"Report a sighting",href:"/report"},{label:"Email updates",href:"/join"},{label:"Ways to help for free",href:"/support/free"},{label:"Email preferences",href:"/preferences"}] },
+  { title: "Get involved", links: [{label:"Report a sighting",href:"/report"},{label:"Email updates",href:"/join"},{label:"Volunteer",href:"/volunteer"},{label:"Ways to help for free",href:"/support/free"},{label:"Email preferences",href:"/preferences"}] },
   { title: "Contributions", links: [{label:"Support the mission",href:"/support"},{label:"Contribution terms",href:"/terms"},{label:"Request a refund",href:"/support/refund"}] },
   { title: "ISITUSA", links: [{label:"About us",href:"/about"},{label:"Brand kit",href:"/brand"},{label:"Privacy policy",href:"/privacy"}] },
 ] as const;

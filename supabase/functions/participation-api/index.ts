@@ -1,3 +1,4 @@
+import { volunteersReady, submitVolunteer, inviteVolunteer } from "../_shared/volunteers.ts";
 import { analyticsSnapshot } from "../_shared/analytics.ts";
 import { correctionsReady, correctionChallenge, correctionRate } from "../_shared/correction-challenge.ts";
 import { validateCorrection } from "../../../src/lib/participation/corrections.ts";
@@ -20,7 +21,7 @@ Deno.serve(async(req:Request)=>{
   const db=service();
   if(req.method==="GET"&&action==="config"){
    const wallets=requiredData(await db.from("isitusa_wallets").select("id,asset,network,address,verified_at,active").eq("active",true));
-   return Response.json({email:enabled("EMAIL_ENABLED"),reports:enabled("REPORTS_ENABLED"),payments:enabled("PAYMENTS_ENABLED"),corrections:await correctionsReady(),wallets:enabled("CRYPTO_ENABLED")&&enabled("CONTACT_READY")?wallets.filter(w=>cryptoUri(w)!==null):[]},{headers});
+   return Response.json({email:enabled("EMAIL_ENABLED"),reports:enabled("REPORTS_ENABLED"),payments:enabled("PAYMENTS_ENABLED"),corrections:await correctionsReady(),volunteers:await volunteersReady(),wallets:enabled("CRYPTO_ENABLED")&&enabled("CONTACT_READY")?wallets.filter(w=>cryptoUri(w)!==null):[]},{headers});
   }
   if(req.method==="GET"&&action==="catalog"){
    const url=new URL(req.url),kind=url.searchParams.get("kind"),query=(url.searchParams.get("q")??"").trim();
@@ -87,6 +88,8 @@ Deno.serve(async(req:Request)=>{
    return Response.json({id,received:true},{status:201,headers});
   }
   const input=await json(req);
+  if(action==="volunteer")return Response.json(await submitVolunteer(input),{status:201,headers});
+  if(action==="volunteer-invite")return Response.json(await inviteVolunteer(req,input),{headers});
   if(action==="correction"){
    await correctionChallenge(input.challenge);
    if(input.website)throw new HttpError(400,"Check the form.");

@@ -1,0 +1,32 @@
+{
+  "task": "volunteer-portal-20261019",
+  "baseSha": "0cceab6ecb1ddfcb271b1014c7b0241a99016cb9",
+  "branch": "codex/workspace-experience-20261009",
+  "authorization": "User authorized volunteer application, role-based team portal, backend integration and production publication",
+  "scope": [
+    "app/volunteer",
+    "app/api/volunteer",
+    "app/about/page.tsx",
+    "app/privacy/page.tsx",
+    "src/components/site-footer.tsx",
+    "src/components/participation/volunteer*",
+    "src/components/admin",
+    "src/lib/participation",
+    "src/lib/ui/telemetry.ts",
+    "supabase/schema/14-volunteers.sql",
+    "supabase/functions/_shared/volunteers.ts",
+    "supabase/functions/participation-api/index.ts",
+    "tests/participation/volunteers*",
+    "docs/participation/volunteers.md",
+    "ops/national-research/ui-work/volunteer-portal-20261019"
+  ],
+  "deny": [
+    "research data",
+    "payment and wallet logic",
+    "font assets",
+    "main",
+    "unrelated edits"
+  ],
+  "status": "active",
+  "expires": "2026-10-21"
+}

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState, type FormEvent } from "react"
 import type { Session } from "@supabase/supabase-js";
 import { Search, X } from "lucide-react";
 import { WorkspaceFrame, WorkspaceOverview, WorkspaceLoading, type WorkspaceTab } from "./workspace-frame";
+import { VolunteerApplications } from "./volunteer-applications";
 import { RoleIcon } from "./role-icon";
 import { ProfileResearch } from "./profile-research";
 import { TeamChat } from "./team-chat";
@@ -43,6 +44,7 @@ export function Workspace({onboarding=false}:{onboarding?:boolean}={}){
    const allowed=(p:Permission)=>person.is_owner||person.permissions.includes(p);
    if(tab==="research"){if(!allowed("content")&&!allowed("review")&&!allowed("approve"))throw new Error("You do not have access to profile research.");return;}
    if(tab==="chat")return;
+   if(tab==="volunteers"){if(!allowed("team"))throw new Error("You do not have access to volunteer applications.");return;}
    if(tab==="settings"){if(!allowed("team"))throw new Error("You do not have access to connections.");return;}
    if(tab==="overview"){
     const totals:Record<string,number>={};
@@ -54,6 +56,7 @@ export function Workspace({onboarding=false}:{onboarding?:boolean}={}){
     }
     if(allowed("review")){const pending=await client.from("isitusa_sightings").select("id",{count:"exact",head:true}).in("status",["submitted","in_review"]);if(pending.error)throw pending.error;totals.pending=pending.count??0;}
     if(allowed("audience")){const confirmed=await client.from("isitusa_subscribers").select("id",{count:"exact",head:true}).not("confirmed_at","is",null).is("suppressed_at",null);if(confirmed.error)throw confirmed.error;totals.confirmed=confirmed.count??0;}
+    if(allowed("team")){const applications=await client.from("isitusa_volunteer_applications").select("id",{count:"exact",head:true}).in("status",["submitted","in_review","approved"]);if(applications.error)throw applications.error;totals.volunteers=applications.count??0;}
     if(requestId===requestSequence.current)setCounts(totals);return;
    }
    if(tab==="analytics"){if(!allowed("analytics"))throw new Error("You do not have access to site activity.");return;}
@@ -83,11 +86,12 @@ export function Workspace({onboarding=false}:{onboarding?:boolean}={}){
  {filters[tab]&&<form className={admin.toolbar} onSubmit={event=>{event.preventDefault();setPage(0);setSearch(searchInput.trim());}}><label>Search {tab==="review"?"observations":tab==="audience"?"email addresses":tab==="finance"?"references":"names"}<input className={styles.input} value={searchInput} onChange={event=>setSearchInput(event.target.value)} maxLength={100} autoComplete="off" placeholder={tab==="review"?"Species or observer identification":tab==="finance"?"Payment reference":"Search records"}/></label><label>Show<select className={styles.select} value={filter} onChange={event=>{setPage(0);setFilter(event.target.value);}}><option value="all">All records</option>{filters[tab].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label><button className={`${styles.button} ${styles.secondary}`} type="submit"><Search size={16} aria-hidden="true"/>Search</button>{(search||filter!=="all")&&<button className="text-link" type="button" onClick={()=>{setSearch("");setSearchInput("");setFilter("all");setPage(0);}}>Clear</button>}</form>}
  {error&&<Notice error>{error}</Notice>}{message&&<Notice success>{message}</Notice>}{loading?<WorkspaceLoading/>:!error&&<>
  {tab==="research"&&<ProfileResearch key={dataRevision} canReview={can("approve")} onDirtyChange={setDraftDirty}/>}
+ {tab==="volunteers"&&<VolunteerApplications key={dataRevision} token={session.access_token} onTeam={()=>navigate("team")} onDirtyChange={setDraftDirty}/>}
  {tab==="chat"&&<TeamChat onDirtyChange={setDraftDirty}/>}
  {tab==="work"&&<OrganizationWork can={can} onDirtyChange={setDraftDirty}/>}
  {tab==="campaigns"&&<CampaignDrafts onDirtyChange={setDraftDirty} refreshSignal={dataRevision} canPublish={can("publish")}/>}
  {tab==="analytics"&&<SiteUsage key={dataRevision} token={session.access_token}/>}
- {tab==="overview"&&<WorkspaceOverview counts={counts} can={can} onTab={navigate}/>}
+ {tab==="overview"&&<WorkspaceOverview counts={counts} can={can} onTab={navigate} owner={Boolean(me?.is_owner)}/>}
  {((tab==="audience")||(tab==="finance"))&&<WorkspaceInsights key={`${tab}:${dataRevision}`} section={tab}/>}
  {tab==="review"&&<div className={selected?admin.split:undefined}><div>{rows.length?<div className={admin.tableWrap}><table className={admin.table}><thead><tr><th>Observation</th><th>Status</th></tr></thead><tbody>{(rows as Sighting[]).map(row=><tr key={row.id} aria-selected={selected?.id===row.id}><td><button aria-expanded={selected?.id===row.id} onClick={()=>setSelected(row)}>{row.species_label}</button><div className={styles.hint}>{row.county_id} / {date(row.observed_on+"T12:00:00Z")}</div></td><td><span className={admin.pill}>{STATE_LABELS[row.status]}</span></td></tr>)}</tbody></table></div>:<Empty text={search||filter!=="all"?"No observations match these filters.":"No sightings to review yet."}/>}</div>{selected&&<SightingReview key={selected.id} sighting={selected} onClose={()=>setSelected(null)} canDecide={can("review_decide")} session={session} onSaved={()=>{setMessage("Review saved.");void refresh();}}/>}</div>}
  {tab==="audience"&&<>{rows.length?<div className={admin.tableWrap}><table className={admin.table}><thead><tr><th>Email</th><th>Choices</th><th>Delivery status</th></tr></thead><tbody>{(rows as Subscriber[]).map(row=><tr key={row.id}><td>{row.email}<div className={styles.hint}>Added {date(row.created_at)}</div></td><td>{row.preferences.streams.map(stream=>({counties:"My counties",species:"Species I follow",facts:"Species stories",action:"Ways to help"}[stream])).join(", ")||"None confirmed"}<div className={styles.hint}>{row.preferences.counties.length} counties / {row.preferences.species.length} species</div></td><td>{row.suppressed_at?`Suppressed: ${row.suppression_reason}`:row.confirmed_at?"Confirmed":"Awaiting confirmation"}</td></tr>)}</tbody></table></div>:<Empty text={search||filter!=="all"?"No subscribers match these filters.":"No email signups yet."}/>}<p className={styles.hint} style={{marginTop:16}}>Only confirmed, unsuppressed choices are eligible for delivery. Staff cannot opt someone into a category on their behalf.</p></>}
