@@ -2,7 +2,8 @@
 import { track } from "@/lib/ui/telemetry";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet, HandHeart } from "lucide-react";
 import { cryptoUri } from "@/lib/participation/contracts";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { verifiedPublicWallets } from "@/lib/ui/support-destinations";
@@ -30,6 +31,7 @@ export function SupportForm() {
  const wallets=verifiedPublicWallets(SUPPORT_DESTINATIONS.wallets);
  const [selected,setSelected]=useState(wallets[0]?.id??"");
  const wallet=wallets.find(item=>item.id===selected)??wallets[0];
+ const networkLabel=wallet?.asset==="XRP"?"XRP mainnet":wallet?.network;
  const [feedback,setFeedback]=useState(""),[copied,setCopied]=useState(false);
  const request=useRef(0),timer=useRef<ReturnType<typeof setTimeout>>();
  useEffect(()=>()=>{request.current++;clearTimeout(timer.current);},[]);
@@ -55,18 +57,18 @@ export function SupportForm() {
     <section id="give-crypto" role="tabpanel" aria-labelledby="tab-crypto" tabIndex={0} hidden={option!=="crypto"} className={s.crypto}><h3><Wallet size={22} aria-hidden="true"/> Cryptocurrency</h3><p className={s.panelIntro}>Support ISITUSA using one of our verified cryptocurrency addresses.</p>{wallet?<>
   {/* eslint-disable-next-line @next/next/no-img-element -- Fixed-size local SVG currency icons do not benefit from raster optimization. */}
      <div className={s.assets} role="group" aria-label="Choose cryptocurrency">{wallets.map(item=><button type="button" key={item.id} aria-label={names[item.asset]} aria-pressed={item.id===wallet.id} onClick={()=>select(item.id)}><img src={`/brand/crypto/${item.asset.toLowerCase()}.svg`} width={26} height={26} alt=""/><span>{item.asset}</span></button>)}</div>
-     <div className={s.network}><strong>{names[wallet.asset]}</strong><span>{wallet.network}</span></div><label className={s.addressLabel} htmlFor="contribution-address">Receiving address</label><textarea id="contribution-address" className={s.address} aria-label={`${wallet.asset} receiving address`} readOnly spellCheck={false} value={wallet.address} rows={3} onFocus={e=>e.currentTarget.select()}/>
+     <div className={s.network}><strong><Image src={`/brand/crypto/${wallet.asset.toLowerCase()}.svg`} width={22} height={22} alt="" unoptimized/>{names[wallet.asset]}</strong><span>{networkLabel}</span></div><label className={s.addressLabel} htmlFor="contribution-address">Receiving address</label><textarea id="contribution-address" className={s.address} aria-label={`${wallet.asset} receiving address`} readOnly spellCheck={false} value={wallet.address} rows={3} onFocus={e=>e.currentTarget.select()}/>
      <div className={s.addressActions}><button type="button" className={s.primary} onClick={copy}>{copied?<Check size={17} aria-hidden="true"/>:<Copy size={17} aria-hidden="true"/>}{copied?"Address copied":"Copy address"}</button>{cryptoUri(wallet)&&<a href={cryptoUri(wallet)!}>Open wallet <ArrowUpRight size={16} aria-hidden="true"/></a>}</div><p className={s.feedback} role="status">{feedback}</p>
-     <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {wallet.network}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by ISITUSA.{wallet.asset==="XRP"?" No destination tag is required.":""}</p><p>Open wallet works with compatible apps. If it does not open, copy the address into your wallet.</p></details>
+     <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {networkLabel}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by ISITUSA.{wallet.asset==="XRP"?" No destination tag is required.":""}</p><p>Open wallet works with compatible apps. If it does not open, copy the address into your wallet.</p></details>
     </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section>
-    <section id="give-free" role="tabpanel" aria-labelledby="tab-free" tabIndex={0} hidden={option!=="free"} className={s.freePanel}><h3>Ways you can support for free</h3><FreeSupportActions/><Link className={s.freePageLink} href={{pathname:"/support/free"}}>Explore ways to help <ArrowUpRight size={16} aria-hidden="true"/></Link></section></div>
-    <footer className={s.donationFoot}><p>ISITUSA is an independent initiative. Contributions are not tax deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
+    <section id="give-free" role="tabpanel" aria-labelledby="tab-free" tabIndex={0} hidden={option!=="free"} className={s.freePanel}><h3><HandHeart size={22} aria-hidden="true"/>Ways you can support for free</h3><FreeSupportActions/><Link className={s.freePageLink} href={{pathname:"/support/free"}}>Explore ways to help <ArrowUpRight size={16} aria-hidden="true"/></Link></section></div>
+    <footer className={s.donationFoot}><p>ISITUSA is independent. Contributions aren&apos;t tax deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
    </section>
 
   </div>
   {config?.portal && <section className={s.supporterPortal} aria-labelledby="supporter-heading">
-   <div><h2 id="supporter-heading">Your monthly giving</h2><p>Already supporting ISITUSA? Manage or cancel monthly giving securely with Stripe.</p></div>
-   <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Manage monthly giving <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a><p>Opens Stripe&apos;s secure billing portal.</p></div>
+   <div><h2 id="supporter-heading">Manage your support</h2><p>Manage or cancel monthly giving securely through Stripe&apos;s billing portal.</p></div>
+   <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Manage monthly giving <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
   </section>}
   <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>
  </main>;

@@ -1346,3 +1346,33 @@ h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
 
 /* Keep the longer place prompt readable while its submit action is inactive. */
 .atlas-search .search-submit:disabled { display:none; }
+
+/* Five clear footer destinations; native disclosures keep phones concise. */
+.site-footer.footer-refined{border-top:0;padding-top:32px}
+.site-footer.footer-refined .footer-main{grid-template-columns:minmax(220px,.8fr) minmax(0,3fr);gap:40px}
+.footer-navigation{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.footer-mobile-group{display:none}
+.footer-refined .footer-details{margin-top:24px;padding-top:16px;gap:12px}
+.footer-utilities{display:flex;align-items:center;gap:24px}
+.footer-utilities :is(a,button){display:inline-flex;align-items:center;min-height:44px;font-size:12px;font-weight:400}
+.footer-refined :is(a,button,summary):focus-visible{outline:2px solid var(--ring);outline-offset:4px}
+@media(max-width:1100px){.site-footer.footer-refined .footer-main{grid-template-columns:1fr;gap:28px}.footer-refined .footer-introduction{max-width:420px}.footer-navigation{gap:20px}}
+@media(max-width:700px){
+ .site-footer.footer-refined{padding-top:24px}
+ .site-footer.footer-refined .footer-main{gap:20px}
+ .footer-refined .footer-introduction{grid-template-columns:48px minmax(0,1fr);gap:16px}
+ .footer-refined .footer-introduction .footer-brand img{width:48px}
+ .footer-refined .footer-introduction p{font-size:14px;max-width:30ch}
+ .footer-navigation{display:block}
+ .site-footer .footer-main .footer-desktop-group{display:none}
+ .footer-mobile-group{display:block;border-bottom:1px solid var(--border)}
+ .footer-mobile-group summary{display:flex;align-items:center;justify-content:space-between;min-height:48px;gap:12px;cursor:pointer;list-style:none;font-size:14px;font-weight:600}
+ .footer-mobile-group summary::-webkit-details-marker{display:none}
+ .footer-mobile-group summary svg{transition:transform 180ms ease-out}
+ .footer-mobile-group[open] summary svg{transform:rotate(180deg)}
+ .site-footer .footer-main .footer-mobile-group nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;padding:0 0 12px}
+ .site-footer .footer-main .footer-mobile-group nav a{width:100%;font-size:13px;min-height:44px}
+ .footer-refined .footer-details{display:flex;flex-direction:column;align-items:flex-start;margin-top:16px;padding-top:0;gap:4px}
+ .footer-utilities{width:100%;justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){.footer-mobile-group summary svg{transition:none}}

@@ -85,3 +85,16 @@
  .questions{margin-top:18px}
 }
 @media(max-width:359px){.contributionTabs{grid-template-columns:1fr 1fr}.contributionTabs button{font-size:13px}}
+
+/* Compact supporting details, with clear space around the main introduction. */
+.intro>p{margin-top:16px}
+.donationFoot{border:0;padding-top:0;margin-top:12px}
+.donationFoot p,.donationFoot a{font-size:11px;line-height:1.5}
+.donationFoot>div{margin-top:0;gap:0 16px}
+.donationFoot a{min-height:36px}
+.network strong{display:flex;align-items:center;gap:8px}
+.network strong img{flex-shrink:0}
+.supporterPortal{border:0;padding-bottom:0}
+.questions{border:0;font-size:14px;line-height:1.6;margin-top:20px}
+@media(max-width:700px){.freeActions>a{font-size:14px;gap:10px}.freeActions>a:nth-child(2){white-space:nowrap}}
+@media(max-width:359px){.donationFoot p,.donationFoot a{font-size:10px}}
