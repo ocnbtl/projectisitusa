@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Heart, MapPin, ScanSearch } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, CalendarDays, Heart, MapPin, ScanSearch, Users } from "lucide-react";
 import { researchSources } from "@/content/research-source-credits";
 import Image from "next/image";
 import "./about-experience.css";
@@ -30,7 +30,6 @@ export default function AboutPage() {
           <h2 id="source-panel-heading">Built on trusted research from fellow protagonists</h2>
           <AboutSourceCarousel sources={researchSources} />
           <p>We aggregate public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about.</p>
-          <p className="source-disclaimer">Source attribution does not imply partnership or endorsement.</p>
           <a href="#sources-heading" className="text-link">More about our data sources <ArrowRight size={15} aria-hidden="true" /></a>
         </section>
       </header>
@@ -43,37 +42,39 @@ export default function AboutPage() {
       <section className="about-method" aria-labelledby="method-heading">
         <div className="section-introduction">
           <h2 id="method-heading">Every record needs context.</h2>
-          <p>We bring public evidence together without separating a finding from its context. Each source has its own scope and limits; our job is to make those clear, keep the references traceable, and leave uncertainty visible.</p>
+          <p>We look through published research, public records, and observations to help you understand what has been found near you. Alongside each finding, we keep the details that help you make sense of it: where it came from, when it was recorded, and what we still don’t know.</p>
         </div>
         <dl className="record-context">
-          <div><dt><MapPin size={21} aria-hidden="true" /> Where</dt><dd>We connect evidence to the place it actually describes. A statewide mention alone does not establish a record in every county.</dd></div>
-          <div><dt><CalendarDays size={21} aria-hidden="true" /> When</dt><dd>We distinguish the observation date from publication and review dates. A newly added record may describe a much older finding.</dd></div>
-          <div><dt><BookOpen size={21} aria-hidden="true" /> According to whom</dt><dd>We preserve the source and how the evidence was gathered, so you can follow the reference and understand what it supports.</dd></div>
+          <div><dt><MapPin size={21} aria-hidden="true" /> Where</dt><dd>We check which place a record describes before adding it to the map. A species reported somewhere in a state is not automatically recorded in every county.</dd></div>
+          <div><dt><CalendarDays size={21} aria-hidden="true" /> When</dt><dd>We look for when a species was observed, as well as when the record was published or reviewed. Something new to our map may have been found years ago.</dd></div>
+          <div><dt><BookOpen size={21} aria-hidden="true" /> According to whom</dt><dd>We keep a link to the original source and, when available, explain how the finding was documented. You can see who reported it and read the details for yourself.</dd></div>
         </dl>
-        <div className="about-evidence-note"><ScanSearch size={22} aria-hidden="true" /><p>An empty spot on the map does not mean a species is absent. An older record does not prove it is still there today.</p></div>
+        <div className="about-evidence-note"><ScanSearch size={22} aria-hidden="true" /><p><strong>There is more to a place than the records we have.</strong> A blank area may simply mean we haven’t found a record for it yet. An older sighting tells us a species was found there then, but we need newer evidence to know whether it is still there.</p></div>
         <div className="about-section-actions"><Link href="/approach">See our full approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/species">See the records <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
       </section>
 
       <div className="about-research-grid">
       <section className="about-sources" aria-labelledby="sources-heading">
         <h2 id="sources-heading">The research we build on.</h2>
-        <p>Our catalog starts with US-RIIS. Agency records, scientific collections, surveys, and community observations help document where species have been found; university and scientific references help explain them. Each source contributes a different part of the picture.</p>
-        <p>Our data-sources paper explains what we use, how the sources differ, and where their limits matter. Credits recognize the people and organizations behind that work.</p>
+        <p>We draw on public resources from agencies, universities, museums, herbaria, and community science projects. Our species catalog begins with the U.S. Register of Introduced and Invasive Species (US-RIIS), and we bring together additional records and references to build the map and profiles. A single source may provide sightings, photographs, identification details, or information about a species’ effects.</p>
+        <p>Want to look closer? Our data-sources guide explains which resources we use, how we use them, and what they can and cannot tell us. Our credits link to the people, organizations, and collections whose work makes this possible.</p>
         <div className="about-section-actions"><Link href="/data-sources">Read our data-sources paper <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/credits#research">Explore source credits <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
       </section>
       <section className="about-direction" aria-labelledby="outlook-heading">
-        <h2 id="outlook-heading">Growing with the evidence.</h2>
-        <p>Our work starts with U.S. counties and county equivalents. The catalog is a foundation to build on, not a complete list of every species in every place.</p>
-        <p>Invasive species cross borders. We want reliable local information to be easier to find wherever people need it, growing the project as the evidence and our community grow.</p>
+        <h2 id="outlook-heading">What makes a species invasive?</h2>
+        <p>Not every species introduced to a new place is invasive. The term describes a species outside its native range whose introduction causes, or is likely to cause, harm to nature, the economy, or health.</p>
+        <p>Understanding which species are nearby is a starting point. Learning how to recognize them, how they spread, and what local guidance recommends can help you decide what to do next.</p>
+        <a className="about-definition-link" href="https://www.invasivespeciesinfo.gov/what-are-invasive-species" target="_blank" rel="noreferrer">Read the USDA definition <ArrowUpRight size={15} aria-hidden="true" /></a>
       </section>
       </div>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
-        <div className="section-introduction"><h2 id="help-heading">Help make the research more useful.</h2><p>What you notice, learn, and share can help others understand the places around them. Choose a way to take part that works for you.</p></div>
+        <div className="section-introduction"><h2 id="help-heading">Be part of the work.</h2><p>Share what you find, stay informed about the places you love, or help us build a resource more people can use.</p></div>
         <div className="involvement-links">
-          <Link href="/report"><span><strong>Document a sighting</strong><small>Noticed something unfamiliar? Learn what to photograph, which details to record, and how to share a useful observation.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/join"><span><strong>Choose your email updates</strong><small>Follow places and species you care about, discover their stories, and find practical ways to help. You choose what reaches your inbox.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          <Link href="/support"><span><strong>Help keep this research open</strong><small>Contribute once or give regularly to help make invasive species information easier for everyone to find, understand, and use.</small></span><Heart size={22} aria-hidden="true" /></Link>
+          <Link href="/report"><span><strong>Report a sighting</strong><small>Share a photo and the details of what you found so our team can review your observation.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
+          <Link href="/join"><span><strong>Get invasive species updates</strong><small>Choose the places, species, and stories you want to hear about. Update your preferences whenever you like.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
+          <Link href="/support"><span><strong>Support the mission</strong><small>Give once or regularly to help keep this free, open source tool available to everyone.</small></span><Heart size={22} aria-hidden="true" /></Link>
+          <a href="mailto:contact@isitusa.com?subject=Volunteering%20with%20ISITUSA"><span><strong>Volunteer with ISITUSA</strong><small>Interested in research, writing, design, or technology? Email us about your skills and how you’d like to help.</small></span><Users size={22} aria-hidden="true" /></a>
         </div>
       </section>
 
