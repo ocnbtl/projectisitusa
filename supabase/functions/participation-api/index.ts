@@ -1,3 +1,4 @@
+import { sightingsReady, sightingChallenge } from "../_shared/sightings.ts";
 import { volunteersReady, submitVolunteer, inviteVolunteer } from "../_shared/volunteers.ts";
 import { analyticsSnapshot } from "../_shared/analytics.ts";
 import { correctionsReady, correctionChallenge, correctionRate } from "../_shared/correction-challenge.ts";
@@ -21,7 +22,7 @@ Deno.serve(async(req:Request)=>{
   const db=service();
   if(req.method==="GET"&&action==="config"){
    const wallets=requiredData(await db.from("isitusa_wallets").select("id,asset,network,address,verified_at,active").eq("active",true));
-   return Response.json({email:enabled("EMAIL_ENABLED"),reports:enabled("REPORTS_ENABLED"),payments:enabled("PAYMENTS_ENABLED"),corrections:await correctionsReady(),volunteers:await volunteersReady(),wallets:enabled("CRYPTO_ENABLED")&&enabled("CONTACT_READY")?wallets.filter(w=>cryptoUri(w)!==null):[]},{headers});
+   return Response.json({email:enabled("EMAIL_ENABLED"),reports:await sightingsReady(),payments:enabled("PAYMENTS_ENABLED"),corrections:await correctionsReady(),volunteers:await volunteersReady(),wallets:enabled("CRYPTO_ENABLED")&&enabled("CONTACT_READY")?wallets.filter(w=>cryptoUri(w)!==null):[]},{headers});
   }
   if(req.method==="GET"&&action==="catalog"){
    const url=new URL(req.url),kind=url.searchParams.get("kind"),query=(url.searchParams.get("q")??"").trim();
@@ -37,7 +38,7 @@ Deno.serve(async(req:Request)=>{
    const all=(names:string[])=>names.every(present);
    return Response.json({checkedAt:new Date().toISOString(),
     email:{enabled:enabled("EMAIL_ENABLED"),configured:all(["RESEND_API_KEY","RESEND_FROM","SUPPORT_EMAIL","RATE_LIMIT_SALT","TURNSTILE_SECRET_KEY"])},
-    reports:{enabled:enabled("REPORTS_ENABLED"),configured:all(["RATE_LIMIT_SALT","TURNSTILE_SECRET_KEY"])},
+    reports:{enabled:await sightingsReady(),configured:all(["RATE_LIMIT_SALT","TURNSTILE_SECRET_KEY"])},
     corrections:{enabled:await correctionsReady()},
     analytics:{configured:all(["POSTHOG_READ_KEY","RATE_LIMIT_SALT"])},
     invitations:{enabled:enabled("STAFF_INVITES_ENABLED")},
@@ -51,17 +52,21 @@ Deno.serve(async(req:Request)=>{
    return Response.json(await analyticsSnapshot(),{headers});
   }
   if(action==="sighting"){
-   if(!enabled("REPORTS_ENABLED"))throw new HttpError(503,"Direct reporting is opening soon. You can report through EDDMapS in the meantime.");
+   if(!await sightingsReady())throw new HttpError(503,"Direct reporting is opening soon. You can report through EDDMapS in the meantime.");
    const bytes=await body(req,16*1024*1024);
    const form=await new Response(bytes,{headers:{"Content-Type":req.headers.get("Content-Type")??""}}).formData();
-   await challenge(form.get("challenge"),"sighting");
+   await sightingChallenge(form.get("challenge"));
    if(form.get("website"))throw new HttpError(400,"Check your submission.");
    const input=Object.fromEntries(form.entries()) as Record<string,unknown>;
    input.permission=form.get("permission")==="true";
-   const validated=validateSighting(input);
+   const validated={...validateSighting(input),authority_sharing:form.get("authority_sharing")==="true",permission_version:"2026-10-19-sightings-v2"};
    await rate("reports:global",30,3600);
    if(validated.contact_email)await rate("report:"+validated.contact_email,5,3600);
-   const id=crypto.randomUUID(),files=form.getAll("photos").filter((v):v is File=>v instanceof File&&v.size>0);
+   const id=String(form.get("id")??"");
+   if(!/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(id))throw new HttpError(400,"Refresh the form and try again.");
+   const prior=checked(await db.from("isitusa_sightings").select("id").eq("id",id).maybeSingle());
+   if(prior)return Response.json({id,received:true},{status:201,headers});
+   const files=form.getAll("photos").filter((v):v is File=>v instanceof File&&v.size>0);
    if(files.length>MAX_PHOTOS)throw new HttpError(400,"Choose up to three photographs.");
    const reserved=checked(await db.rpc("isitusa_reserve_upload",{reservation:id,requested_bytes:files.reduce((total,file)=>total+file.size,0)}));
    if(!reserved)throw new HttpError(503,"Photo intake has reached its storage allowance. Please use the linked reporting programs while we make room.");
@@ -81,6 +86,10 @@ Deno.serve(async(req:Request)=>{
     // until an owner can reconcile the receipt; an uncertain response must not erase evidence.
     const existing=await db.from("isitusa_sightings").select("id").eq("id",id).maybeSingle();
     if(!existing.error&&existing.data)return Response.json({id,received:true},{status:201,headers});
+    if(!existing.error&&!existing.data){
+     const cleanup=photos.length?await db.storage.from("isitusa-sightings").remove(photos.map(p=>p.path)):{error:null};
+     if(!cleanup.error)await db.from("isitusa_upload_reservations").delete().eq("id",id);
+    }
     throw error;
    }
    // A failed reservation release is safe: it only reduces remaining intake capacity.

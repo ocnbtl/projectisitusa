@@ -9,7 +9,7 @@
 .about-mission-identity>.about-mission-copy{max-width:45ch;margin:0;font-size:15px;line-height:1.65;color:var(--muted)}
 .about-source-panel{min-width:0;padding-top:4px;animation:about-arrive 600ms 100ms cubic-bezier(.16,1,.3,1) both}
 .about-page .about-source-panel h2{max-width:none;margin:0 0 24px;font-family:var(--font-display);font-size:clamp(22px,1.65vw,28px);line-height:1.25;font-weight:700;letter-spacing:normal;text-wrap:wrap}
-.about-source-panel>p{max-width:82ch;margin:16px 0 0;font-size:15px;line-height:1.65;color:var(--muted)}
+.about-source-panel>p{max-width:82ch;margin:4px 0 0;font-size:15px;line-height:1.65;color:var(--muted)}
 .about-source-panel>a{display:inline-flex;gap:8px;align-items:center;min-height:44px;font-size:14px}
 .source-carousel{min-width:0}
 .source-carousel-window{overflow:hidden;padding:8px 0;mask-image:linear-gradient(to right,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
@@ -18,7 +18,7 @@
 .source-carousel[data-running="true"] .source-carousel-row{animation-play-state:running}
 .source-carousel-set{display:flex;gap:48px;align-items:start;list-style:none;margin:0;padding:0 24px;--source-logo-max-width:148px}
 .source-carousel-set li{flex:none;width:max(64px,min(var(--source-width),var(--source-logo-max-width)))}
-.source-carousel-set a{display:flex;align-items:center;flex-direction:column;text-decoration:none;gap:10px;min-height:124px;border-radius:8px}
+.source-carousel-set a{display:flex;align-items:center;flex-direction:column;text-decoration:none;gap:10px;min-height:108px;border-radius:8px}
 .source-carousel-set a>span:nth-child(2){width:max-content;max-width:calc(100% + 32px);color:var(--foreground);font-size:12px;line-height:1.4;text-align:center}
 .source-carousel-set a:hover>span:nth-child(2){text-decoration:underline;text-underline-offset:4px}
 .about-source-mark{width:100%;height:64px;display:flex;align-items:center;justify-content:center}
@@ -47,7 +47,7 @@
 .about-page :is(#method-heading,#sources-heading,#help-heading){scroll-margin-top:calc(var(--site-header-height) + var(--site-header-top) + 24px)}
 .about-page .about-method{padding:32px 0;border-bottom:1px solid var(--border)}
 .about-method .section-introduction{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:24px 48px;align-items:start}
-.about-method .section-introduction p{margin:0;max-width:72ch}
+.about-method .section-introduction p{margin:0;max-width:72ch;font-size:18px;line-height:1.75}
 .about-page .record-context{gap:32px;margin:24px 0}
 .record-context>div{padding-top:0;border:0}
 .record-context dt svg{width:24px;height:24px;color:var(--accent)}
@@ -84,3 +84,8 @@
 .about-help .section-introduction p{max-width:44ch;font-size:16px;line-height:1.7;color:var(--muted);margin-top:14px}
 .about-page .about-help{border-bottom:0}
 @media(max-width:700px){.about-page :is(.about-opening h1,h2,.about-source-panel h2){font-size:var(--mobile-page-heading-size)}.about-page .about-evidence-note{padding:16px;gap:10px}.about-page .involvement-links strong{font-size:17px}}
+
+/* Compact source rail and an optically centered context note. */
+.about-page .about-evidence-note{align-items:center}
+.about-page .about-evidence-note>svg{margin-top:0}
+@media(max-width:700px){.source-carousel-row{animation-duration:55s}.source-carousel-row:nth-child(2){animation-duration:52s}.about-method .section-introduction p{font-size:17px}.about-page .about-evidence-note strong{font-size:15px}}

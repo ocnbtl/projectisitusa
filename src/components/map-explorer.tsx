@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowDown, ArrowUp, ArrowUpRight, Compass, X } from "lucide-react";
+import { CountyObservations } from "@/components/participation/observations";
 import { CountyInsightPanel } from "@/components/county-insight-panel";
 import { LogoLoader } from "@/components/atlas/logo-loader";
 import { UpdateNotice } from "@/components/atlas/update-notice";
@@ -133,8 +134,8 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
     {countyFips && !county ? <div className="atlas-notice" role="status">This county code is not in the current geography. Search for a county or planning region.<button onClick={() => update({ county: null })}>Clear selection</button></div> : null}
     {county ? <aside className="county-sheet" aria-label={`${county.name} county details`} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); closeCounty(); } }}>
       <div className="county-sheet-heading"><div><h2>{county.name}<span className="county-state-name">{county.stateCode}</span></h2></div><div className="county-sheet-actions"><button className="sheet-toggle icon-button" type="button" aria-label={expanded ? "Collapse county details" : "Expand county details"} aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? <ArrowDown size={18} /> : <ArrowUp size={18} />}</button><button type="button" className="icon-button" aria-label="Close county details" onClick={closeCounty}><X size={19} /></button></div></div>
-      <div className="county-sheet-body">{dataReady ? <CountyInsightPanel key={`${county.countyFips}-${layer}`} selectedCounty={county} selectedCountyDetail={store.countyDetails[county.countyFips] ?? null} focalSpecies={focalSpecies} nearbySpecies={nearbySpecies} allSpecies={displaySpecies} filters={filters} snapshotDate={datasetDate} datasetLabel={datasetLabel} layer={layer} temporalExceptions={layer === "reviewed" ? reviewed.data?.temporalExceptions[county.countyFips] : undefined} /> : <p className="county-note">{dataError ? "County records are unavailable. Use Try again to reload them." : "Loading this county's records..."}</p>}</div>
+      <div className="county-sheet-body">{dataReady ? <CountyInsightPanel key={`${county.countyFips}-${layer}`} selectedCounty={county} selectedCountyDetail={store.countyDetails[county.countyFips] ?? null} focalSpecies={focalSpecies} nearbySpecies={nearbySpecies} allSpecies={displaySpecies} filters={filters} snapshotDate={datasetDate} datasetLabel={datasetLabel} layer={layer} temporalExceptions={layer === "reviewed" ? reviewed.data?.temporalExceptions[county.countyFips] : undefined} /> : <p className="county-note">{dataError ? "County records are unavailable. Use Try again to reload them." : "Loading this county's records..."}</p>}<CountyObservations county={county.countyFips}/></div>
     </aside> : null}
-    <div className="atlas-footer"><Link href="/about">Methods & limitations</Link><Link href="/research">Research status <ArrowUpRight size={13} /></Link></div>
+    <div className="atlas-footer"><Link href={{pathname:"/observations"}}>Reviewed sightings</Link><Link href="/about">Methods & limitations</Link><Link href="/research">Research status <ArrowUpRight size={13} /></Link></div>
   </main>;
 }
