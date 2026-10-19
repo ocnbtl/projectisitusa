@@ -62,13 +62,13 @@ export function SupportForm() {
      <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {networkLabel}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by ISITUSA.{wallet.asset==="XRP"?" No destination tag is required.":""}</p><p>Open wallet works with compatible apps. If it does not open, copy the address into your wallet.</p></details>
     </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section>
     <section id="give-free" role="tabpanel" aria-labelledby="tab-free" tabIndex={0} hidden={option!=="free"} className={s.freePanel}><h3><HandHeart size={22} aria-hidden="true"/>Ways you can support for free</h3><FreeSupportActions/><Link className={s.freePageLink} href={{pathname:"/support/free"}}>Explore ways to help <ArrowUpRight size={16} aria-hidden="true"/></Link></section></div>
-    <footer className={s.donationFoot}><p>ISITUSA is independent. Contributions aren&apos;t tax deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
+    <footer className={s.donationFoot}><p>ISITUSA is an independent initiative. Contributions are not tax deductible.</p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
    </section>
 
   </div>
   {config?.portal && <section className={s.supporterPortal} aria-labelledby="supporter-heading">
-   <div><h2 id="supporter-heading">Manage your support</h2><p>Manage or cancel monthly giving securely through Stripe&apos;s billing portal.</p></div>
-   <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Manage monthly giving <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
+   <div><h2 id="supporter-heading">Monthly giving</h2><p>Update or cancel your recurring contribution securely through Stripe.</p></div>
+   <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Open billing portal <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
   </section>}
   <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>
  </main>;

@@ -1,0 +1,29 @@
+{
+  "task": "support-copy-volunteer-20261019",
+  "baseSha": "04e534ca55f72972721f963a7d47e527618dfe8d",
+  "branch": "codex/workspace-experience-20261009",
+  "worktree": "C:\\Users\\Ocean\\.codex\\visualizations\\2026\\09\\28\\01a0e59e-58e4-7840-98dd-358f873a449b\\workspace-experience",
+  "authorization": "User requested Support copy and volunteer link improvements; ongoing production publication authority",
+  "scope": [
+    "src/components/participation/support-form.tsx",
+    "src/components/participation/free-support-actions.tsx",
+    "app/support/free/page.tsx",
+    "ops/national-research/ui-work/support-copy-volunteer-20261019"
+  ],
+  "deny": [
+    "main",
+    "payment logic",
+    "wallet addresses",
+    "research data",
+    "font assets",
+    "unrelated edits"
+  ],
+  "status": "active",
+  "expires": "2026-10-22",
+  "retryPolicy": "Inspect failures before one scoped retry",
+  "completionCriteria": [
+    "Typecheck and lint pass",
+    "Hosted build succeeds",
+    "Verify live mobile and desktop copy, volunteer links, unchanged billing portal destination"
+  ]
+}

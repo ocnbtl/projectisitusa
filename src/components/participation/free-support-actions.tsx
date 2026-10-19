@@ -6,5 +6,6 @@ export function FreeSupportActions(){
   <Link href="/report"><span>Document and report a sighting</span><ArrowUpRight size={19} aria-hidden="true"/></Link>
   <Link href="/"><span>Share your county&apos;s map</span><ArrowUpRight size={19} aria-hidden="true"/></Link>
   <Link href="/join"><span>Get invasive species updates near you</span><ArrowUpRight size={19} aria-hidden="true"/></Link>
+  <Link href={{pathname:"/volunteer"}}><span>Volunteer with ISITUSA</span><ArrowUpRight size={19} aria-hidden="true"/></Link>
  </div>;
 }
