@@ -71,7 +71,7 @@ export default function AboutPage() {
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
         <div className="section-introduction"><h2 id="help-heading">Be part of the work.</h2><p>Share what you find, stay informed about the places you love, or help us build a resource more people can use.</p></div>
         <div className="involvement-links">
-          <Link href="/report"><span><strong>Report a sighting</strong><small>Share a photo and the details of what you found so our team can review your observation.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
+          <Link href="/report"><span><strong>Report a sighting</strong><small>Learn what to photograph, which details to record, and where to send your observation for review.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/join"><span><strong>Get invasive species updates</strong><small>Choose the places, species, and stories you want to hear about. Update your preferences whenever you like.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/support"><span><strong>Support the mission</strong><small>Give once or regularly to help keep this free, open source tool available to everyone.</small></span><Heart size={22} aria-hidden="true" /></Link>
           <a href="mailto:contact@isitusa.com?subject=Volunteering%20with%20ISITUSA"><span><strong>Volunteer with ISITUSA</strong><small>Interested in research, writing, design, or technology? Email us about your skills and how you’d like to help.</small></span><Users size={22} aria-hidden="true" /></a>
