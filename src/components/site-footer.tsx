@@ -22,8 +22,8 @@ export function SiteFooter() {
         <div className="footer-introduction"><Link href="/" className="footer-brand" aria-label="ISITUSA home"><Image className="brand-art" src="/brand/v10/symbol-name.svg?v=1.005" alt="ISITUSA" width={90} height={116} unoptimized /></Link><p>Accessible invasive species research to protect the places you love</p></div>
         <div className="footer-navigation">
           {groups.map(group=><div key={group.title} className="footer-group">
-            <nav className="footer-desktop-group" aria-label={group.title}><h2>{group.title}</h2>{group.links.map(link=><Link key={link.href} href={{pathname:link.href}}><link.icon size={16} aria-hidden="true"/><span>{link.label}</span></Link>)}</nav>
-            <details className="footer-mobile-group"><summary>{group.title}<ChevronDown size={16} aria-hidden="true"/></summary><nav aria-label={group.title}>{group.links.map(link=><Link key={link.href} href={{pathname:link.href}}><link.icon size={16} aria-hidden="true"/><span>{link.label}</span></Link>)}</nav></details>
+            <nav className="footer-desktop-group" aria-label={group.title}><h2>{group.title}</h2>{group.links.map(link=><Link key={link.href} href={{pathname:link.href.split("#")[0],hash:link.href.split("#")[1]}}><link.icon size={16} aria-hidden="true"/><span>{link.label}</span></Link>)}</nav>
+            <details className="footer-mobile-group"><summary>{group.title}<ChevronDown size={16} aria-hidden="true"/></summary><nav aria-label={group.title}>{group.links.map(link=><Link key={link.href} href={{pathname:link.href.split("#")[0],hash:link.href.split("#")[1]}}><link.icon size={16} aria-hidden="true"/><span>{link.label}</span></Link>)}</nav></details>
           </div>)}
         </div>
       </div>
