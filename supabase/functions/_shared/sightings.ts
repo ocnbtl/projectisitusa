@@ -1,7 +1,6 @@
 import { HttpError, challenge } from "./runtime.ts";
 const verifyEndpoint="https://isitusa.com/api/sightings/verify";
 export async function sightingsReady(){
- if(Deno.env.get("TURNSTILE_SECRET_KEY"))return true;
  try{const result=await fetch(verifyEndpoint,{redirect:"error",signal:AbortSignal.timeout(5000)});return result.ok&&(await result.json()).available===true;}catch{return false;}
 }
 export async function sightingChallenge(token:unknown){
