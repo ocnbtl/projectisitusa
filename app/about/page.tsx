@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, CalendarDays, MapPin, ScanSearch } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, CalendarDays, ChevronDown, MapPin, ScanSearch } from "lucide-react";
 import { researchSources } from "@/content/research-source-credits";
 import Image from "next/image";
 import "./about-experience.css";
@@ -27,7 +27,7 @@ export default function AboutPage() {
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
         </div>
         <section className="about-source-panel" aria-labelledby="source-panel-heading">
-          <h2 id="source-panel-heading">Research we trust</h2>
+          <h2 id="source-panel-heading">Built on trusted research</h2>
           <AboutSourceCarousel sources={researchSources} />
           <p>We aggregate public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about.</p>
           <a href="#sources-heading" className="text-link">More about our data sources <ArrowRight size={15} aria-hidden="true" /></a>
@@ -60,12 +60,12 @@ export default function AboutPage() {
         <p>Want to look closer? Our data-sources guide explains which resources we use, how we use them, and what they can and cannot tell us. Our credits link to the people, organizations, and collections whose work makes this possible.</p>
         <div className="about-section-actions"><Link href="/data-sources">Read our data-sources paper <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/credits#research">Explore source credits <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
       </section>
-      <section className="about-direction" aria-labelledby="outlook-heading">
-        <h2 id="outlook-heading">What makes a species invasive?</h2>
+      <details className="about-direction">
+        <summary>What makes a species invasive?<ChevronDown size={18} aria-hidden="true" /></summary>
         <p>Not every species introduced to a new place is invasive. The term describes a species outside its native range whose introduction causes, or is likely to cause, harm to nature, the economy, or health.</p>
         <p>Understanding which species are nearby is a starting point. Learning how to recognize them, how they spread, and what local guidance recommends can help you decide what to do next.</p>
         <a className="about-definition-link" href="https://www.invasivespeciesinfo.gov/what-are-invasive-species" target="_blank" rel="noreferrer">Read the USDA definition <ArrowUpRight size={15} aria-hidden="true" /></a>
-      </section>
+      </details>
       </div>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
