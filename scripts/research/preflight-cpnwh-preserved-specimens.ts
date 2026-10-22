@@ -1,7 +1,7 @@
+import { boundedZipRecords } from "./zip-tools";
 import { createHash } from "node:crypto";
 import { createReadStream, readFileSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { once } from "node:events";
 
 import { parse } from "csv-parse";
 
@@ -9,7 +9,7 @@ import countyRegistryJson from "@/data/research/county-equivalent-registry.json"
 import stateRegistryJson from "@/data/research/state-registry.json";
 import { resolveCountyEquivalent } from "@/lib/research/geography-registry";
 
-import { listZipEntries, readZipEntry, spawnZipEntry } from "./zip-tools";
+import { listZipEntries, readZipEntry } from "./zip-tools";
 import { auditSpecimenArchiveIdentities, parseSpecimenDate, specimenRecordIdentity, specimenRowSha256, specimenRecoveryHold } from "./specimen-record-metadata";
 
 type CatalogSpecies = { id: string; scientificName: string; category: string };
@@ -161,25 +161,14 @@ async function main() {
   let occurrenceBytes = 0;
   const occurrenceHash = createHash("sha256");
 
-  const unzip = spawnZipEntry(archive, "occurrence.txt");
-  let unzipError = "";
-  unzip.stderr.setEncoding("utf8");
-  unzip.stderr.on("data", (chunk: string) => {
-    unzipError += chunk;
-  });
-  unzip.stdout.on("data", (chunk: Buffer) => {
-    occurrenceBytes += chunk.length;
-    occurrenceHash.update(chunk);
-  });
-  const closePromise = once(unzip, "close") as Promise<[number | null, NodeJS.Signals | null]>;
-  const parser = unzip.stdout.pipe(parse({
+  const parser = boundedZipRecords(archive, "occurrence.txt", {
     bom: true,
     columns: true,
     delimiter: "\t",
     quote: null,
     relax_column_count: true,
     skip_empty_lines: true,
-  }));
+  }, (chunk) => { occurrenceBytes += chunk.length; occurrenceHash.update(chunk); });
 
   for await (const raw of parser) {
     const row = raw as CpnwhRow;
@@ -286,8 +275,6 @@ async function main() {
     const key = `${accepted.countyFips}:${accepted.speciesId}`;
     pairRecords.set(key, [...(pairRecords.get(key) ?? []), accepted]);
   }
-  const [exitCode, signal] = await closePromise;
-  assert(exitCode === 0, `Archive extraction failed (${exitCode ?? signal}): ${unzipError.trim()}`);
   const occurrenceSha256 = occurrenceHash.digest("hex");
   let identityAudit: Awaited<ReturnType<typeof auditSpecimenArchiveIdentities>> | undefined;
   if (metadataRecovery) {

@@ -1,7 +1,7 @@
+import { boundedZipRecords } from "./zip-tools";
 import { createHash } from "node:crypto";
 import { createReadStream, readFileSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { once } from "node:events";
 
 import { parse } from "csv-parse";
 
@@ -9,7 +9,7 @@ import countyRegistryJson from "@/data/research/county-equivalent-registry.json"
 import stateRegistryJson from "@/data/research/state-registry.json";
 import { resolveCountyEquivalent } from "@/lib/research/geography-registry";
 
-import { listZipEntries, readZipEntry, spawnZipEntry } from "./zip-tools";
+import { listZipEntries, readZipEntry } from "./zip-tools";
 
 type CatalogSpecies = { id: string; scientificName: string; category: string };
 type CountyProjection = {
@@ -153,24 +153,13 @@ async function main() {
   let occurrenceBytes = 0;
   const occurrenceHash = createHash("sha256");
 
-  const unzip = spawnZipEntry(archive, "occurrences.csv");
-  let unzipError = "";
-  unzip.stderr.setEncoding("utf8");
-  unzip.stderr.on("data", (chunk: string) => {
-    unzipError += chunk;
-  });
-  unzip.stdout.on("data", (chunk: Buffer) => {
-    occurrenceBytes += chunk.length;
-    occurrenceHash.update(chunk);
-  });
-  const closePromise = once(unzip, "close") as Promise<[number | null, NodeJS.Signals | null]>;
-  const parser = unzip.stdout.pipe(parse({
+  const parser = boundedZipRecords(archive, "occurrences.csv", {
     bom: true,
     columns: true,
     delimiter: ",",
     relax_column_count: true,
     skip_empty_lines: true,
-  }));
+  }, (chunk) => { occurrenceBytes += chunk.length; occurrenceHash.update(chunk); });
 
   for await (const raw of parser) {
     const row = raw as TorchRow;
@@ -270,8 +259,6 @@ async function main() {
     const key = `${accepted.countyFips}:${accepted.speciesId}`;
     pairRecords.set(key, [...(pairRecords.get(key) ?? []), accepted]);
   }
-  const [exitCode, signal] = await closePromise;
-  assert(exitCode === 0, `Archive extraction failed (${exitCode ?? signal}): ${unzipError.trim()}`);
   assert((rejectionCounts["duplicate-record-identity-conflict"] ?? 0) === 0, "Conflicting duplicate occurrence identities were found.");
 
   const grossPairs = [...pairRecords.keys()].sort(compareText);

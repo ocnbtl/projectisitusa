@@ -3,7 +3,9 @@ function boundedText(value:unknown,label:string,max:number,required=true){
  if(typeof value!=="string")throw new Error(`Enter ${label}.`);
  const text=value.trim();if((required&&!text)||text.length>max||/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(text))throw new Error(`Check ${label} (up to ${max} characters).`);return text;
 }
-function normalizeEmail(value:unknown){const email=boundedText(value,"your email",254).toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))throw new Error("Enter a valid email address.");return email;}
+function normalizeEmail(value:unknown){const email=boundedText(value,"your email",254).toLowerCase();const [local]=email.split("@");if(!/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/.test(email)||local.length>64)throw new Error("Enter a valid email address.");return email;}
+// Also validate historical rows before turning stored text into an actionable URI.
+export function volunteerMailto(value:unknown):string|null{try{return `mailto:${encodeURIComponent(normalizeEmail(value))}`;}catch{return null;}}
 
 export const VOLUNTEER_INTERESTS = ["Species research", "Writing and editing", "Community events", "Outreach", "Design and accessibility", "Technology", "Something else"] as const;
 export const VOLUNTEER_ROLES = [

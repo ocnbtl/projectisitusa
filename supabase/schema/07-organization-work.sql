@@ -40,8 +40,8 @@ create index isitusa_work_queue on public.isitusa_work(kind,status,updated_at de
 create index isitusa_work_assignee on public.isitusa_work(assigned_to);
 create function isitusa_private.work_access(kind text, author uuid, assignee uuid) returns boolean
 language sql stable security invoker set search_path='' as $$
- select isitusa_private.has_permission('approve') or
- ((author=auth.uid() or assignee=auth.uid()) and isitusa_private.has_permission(case kind when 'article' then 'content' when 'event' then 'events' else 'outreach' end));
+ select coalesce(isitusa_private.has_permission('approve') or
+ ((author=auth.uid() or assignee=auth.uid()) and isitusa_private.has_permission(case kind when 'article' then 'content' when 'event' then 'events' else 'outreach' end)),false);
 $$;
 revoke all on function isitusa_private.work_access(text,uuid,uuid) from public,anon;
 grant execute on function isitusa_private.work_access(text,uuid,uuid) to authenticated;
@@ -58,7 +58,7 @@ begin
  if record_id is not null then
   select * into previous from public.isitusa_work where id=record_id for update;
   if previous.id is null or expected_version is null or previous.version<>expected_version then raise exception 'This record changed. Reload it before saving.' using errcode='40001'; end if;
-  if not isitusa_private.work_access(previous.kind,previous.created_by,previous.assigned_to) then raise exception 'Access denied' using errcode='42501'; end if;
+  if isitusa_private.work_access(previous.kind,previous.created_by,previous.assigned_to) is not true then raise exception 'Access denied' using errcode='42501'; end if;
   if category<>previous.kind then raise exception 'The type of an existing record cannot change'; end if;
  end if;
  assignee:=nullif(fields->>'assigned_to','')::uuid;

@@ -131,9 +131,11 @@
     "typecheck:app": "tsc --noEmit --project tsconfig.app.json",
     "check:build-policy": "node --test scripts/test-build-policy.cjs && node scripts/check-build-policy.cjs",
     "check:native-tools": "node scripts/check-native-tools.cjs && node scripts/check-dependency-contracts.cjs",
-    "check:dependency-security": "npm audit --omit=dev --audit-level=low"
+    "check:dependency-security": "npm audit --omit=dev --audit-level=low",
+    "check:security-boundaries": "node --import tsx scripts/test-participation-security.ts && node --import tsx scripts/test-download-budgets.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "2.117.2",
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "csv-parse": "7.0.3",
@@ -147,11 +149,11 @@
     "topojson-client": "^3.1.0",
     "us-atlas": "^3.0.1",
     "zipcodes": "^8.0.0",
-    "zod": "^4.1.11",
-    "@supabase/supabase-js": "2.117.2"
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "3.1113.0",
+    "@electric-sql/pglite": "0.5.8",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/d3-geo": "^3.1.0",
     "@types/node": "^24.7.2",
@@ -161,11 +163,11 @@
     "eslint": "^9.38.0",
     "eslint-config-next": "15.5.27",
     "shapefile": "^0.6.6",
+    "sharp": "0.34.5",
     "tailwindcss": "^4.1.14",
     "topojson-server": "^3.0.1",
     "tsx": "^4.20.6",
-    "typescript": "^5.9.3",
-    "sharp": "0.34.5"
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": "24.x",
