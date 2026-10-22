@@ -1,0 +1,37 @@
+/* Identity and destinations form one aligned closing composition. */
+footer.site-footer.footer-refined{max-width:1680px;padding-bottom:0}
+footer.site-footer.footer-refined .footer-main{grid-template-columns:minmax(240px,1.4fr) repeat(5,minmax(0,1fr));gap:28px;align-items:start}
+footer.footer-refined .footer-navigation{display:contents}
+footer.footer-refined .footer-introduction{max-width:none;grid-template-columns:64px minmax(0,1fr);gap:16px}
+footer.footer-refined .footer-introduction .footer-brand img{width:64px}
+footer.footer-refined .footer-introduction p{font-size:16px;line-height:1.5}
+footer.footer-refined .footer-details{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:32px}
+footer.footer-refined .footer-utilities{gap:24px}
+.footer-grove{--grove-progress:1;position:relative;height:160px;margin-top:24px;overflow:hidden;isolation:isolate}
+.footer-grove-art{position:absolute;inset:0;width:100%;height:100%;transform:translateY(calc((1 - var(--grove-progress)) * 48px));opacity:calc(.2 + var(--grove-progress) * .8);pointer-events:none}
+.grove-far{fill:color-mix(in srgb,#00583b 22%,var(--background))}
+.grove-near{fill:#00583b}
+.dark .grove-far{fill:#294f40}
+.dark .grove-near{fill:#3a7056}
+.footer-grove-return{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 16px;background:#fff;color:#00583b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
+.footer-grove-return:hover{background:#edf2ef;color:#00583b}
+@media(max-width:1350px) and (min-width:701px){
+ footer.site-footer.footer-refined .footer-main{grid-template-columns:minmax(220px,1.15fr) repeat(3,minmax(0,1fr));gap:28px}
+ footer.footer-refined .footer-introduction{grid-row:span 2}
+}
+@media(max-width:900px) and (min-width:701px){
+ footer.site-footer.footer-refined .footer-main{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+ footer.footer-refined .footer-introduction{grid-row:auto;grid-template-columns:52px minmax(0,1fr)}
+ footer.footer-refined .footer-introduction .footer-brand img{width:52px}
+ footer.footer-refined .footer-introduction p{font-size:14px}
+}
+@media(max-width:700px){
+ footer.site-footer.footer-refined .footer-main{grid-template-columns:1fr;gap:20px}
+ footer.footer-refined .footer-navigation{display:block}
+ footer.footer-refined .footer-introduction{grid-template-columns:60px minmax(0,1fr)}
+ footer.footer-refined .footer-introduction .footer-brand img{width:60px}
+ footer.footer-refined .footer-details{align-items:flex-start;gap:8px;margin-top:20px}
+ footer.footer-refined .footer-utilities{justify-content:flex-start;gap:24px}
+ .footer-grove{height:124px;margin-top:16px}
+}
+@media(prefers-reduced-motion:reduce){.footer-grove-art{transform:none;opacity:1}}

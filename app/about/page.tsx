@@ -27,7 +27,7 @@ export default function AboutPage() {
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
         </div>
         <section className="about-source-panel" aria-labelledby="source-panel-heading">
-          <h2 id="source-panel-heading">Built on trusted research</h2>
+          <h2 id="source-panel-heading">Built on trusted research from across the country</h2>
           <AboutSourceCarousel sources={researchSources} />
           <p>We aggregate public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about.</p>
           <a href="#sources-heading" className="text-link">More about our data sources <ArrowRight size={15} aria-hidden="true" /></a>
@@ -49,7 +49,7 @@ export default function AboutPage() {
           <div><dt><CalendarDays size={21} aria-hidden="true" /> When</dt><dd>We look for when a species was observed, as well as when the record was published or reviewed. Something new to our map may have been found years ago.</dd></div>
           <div><dt><BookOpen size={21} aria-hidden="true" /> According to whom</dt><dd>We keep a link to the original source and, when available, explain how the finding was documented. You can see who reported it and read the details for yourself.</dd></div>
         </dl>
-        <div className="about-evidence-note"><ScanSearch size={22} aria-hidden="true" /><p><strong>Records tell part of the story.</strong> A blank area may simply mean we haven’t found a record for it yet. An older sighting tells us a species was found there then, but we need newer evidence to know whether it is still there.</p></div>
+        <div className="about-evidence-note"><ScanSearch size={80} strokeWidth={1.25} aria-hidden="true" /><p><strong>Records don’t tell the full story.</strong> A blank area may simply mean we haven’t found a record for it yet. An older sighting tells us a species was found there then, but we need newer evidence to know whether it is still there.</p></div>
         <div className="about-section-actions"><Link href="/approach">See our full approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/species">See the records <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
       </section>
 

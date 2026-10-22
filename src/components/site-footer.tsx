@@ -3,12 +3,14 @@ import Link from "next/link";
 import { ANALYTICS_SETTINGS_EVENT } from "@/lib/ui/telemetry";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { FooterGrove } from "@/components/footer-grove";
+import "./site-footer.css";
 import { ChevronDown, Map, Leaf, BookOpen, Route, Database, Award, Camera, Bell, HandHelping, Settings, Heart, FileText, Receipt, Repeat, Info, Palette, Shield, Users, Binoculars } from "lucide-react";
 
 const groups = [
   { title: "Explore", links: [{icon:Map,label:"County map",href:"/"},{icon:Leaf,label:"Species profiles",href:"/species"},{icon:Binoculars,label:"Reviewed sightings",href:"/observations"}] },
   { title: "Our research", links: [{icon:BookOpen,label:"Research overview",href:"/research"},{icon:Route,label:"Our approach",href:"/approach"},{icon:Database,label:"Data sources",href:"/data-sources"},{icon:Award,label:"Credits",href:"/credits"}] },
-  { title: "Get involved", links: [{icon:Bell,label:"Email updates",href:"/join"},{icon:Settings,label:"Email preferences",href:"/preferences"},{icon:Camera,label:"Report a sighting",href:"/report"},{icon:Users,label:"Volunteer",href:"/volunteer"},{icon:HandHelping,label:"Ways to help for free",href:"/support/free"}] },
+  { title: "Get involved", links: [{icon:Bell,label:"Email updates",href:"/join"},{icon:Settings,label:"Email preferences",href:"/preferences"},{icon:HandHelping,label:"Ways to help for free",href:"/support/free"},{icon:Camera,label:"Report a sighting",href:"/report"},{icon:Users,label:"Volunteer",href:"/volunteer"}] },
   { title: "Contributions", links: [{icon:Heart,label:"Support the mission",href:"/support"},{icon:FileText,label:"Contribution terms",href:"/terms"},{icon:Receipt,label:"Request a refund",href:"/support/refund"},{icon:Repeat,label:"Manage monthly giving",href:"/support#supporter-heading"}] },
   { title: "ISITUSA", links: [{icon:Info,label:"About us",href:"/about"},{icon:Palette,label:"Brand kit",href:"/brand"},{icon:Shield,label:"Privacy policy",href:"/privacy"}] },
 ] as const;
@@ -27,7 +29,8 @@ export function SiteFooter() {
           </div>)}
         </div>
       </div>
-      <div className="footer-details"><small>An independent initiative based in the United States.</small><div className="footer-utilities"><a href="mailto:contact@isitusa.com">Contact us</a><button type="button" onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>Privacy choices</button><a href="#main-content">Back to top {"\u2191"}</a></div></div>
+      <div className="footer-details"><small>An independent initiative based in the United States.</small><div className="footer-utilities"><a href="mailto:contact@isitusa.com">Contact us</a><button type="button" onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>Privacy choices</button></div></div>
+      <FooterGrove />
     </footer>
   );
 }

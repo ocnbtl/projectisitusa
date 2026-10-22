@@ -1,7 +1,7 @@
 /* A quiet introduction, followed by the evidence behind it. */
-.reading-page.about-page{width:100%;max-width:1040px;margin-inline:auto;padding-inline:40px;padding-top:calc(var(--site-header-height) + var(--site-header-top) + 40px)}
+.reading-page.about-page{width:100%;max-width:1240px;margin-inline:auto;padding-inline:40px;padding-top:calc(var(--site-header-height) + var(--site-header-top) + 40px)}
 .about-opening{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;align-items:start;padding:0 0 32px}
-.about-mission{min-width:0;max-width:760px;animation:about-arrive 600ms cubic-bezier(.16,1,.3,1) both}
+.about-mission{min-width:0;animation:about-arrive 600ms cubic-bezier(.16,1,.3,1) both}
 .about-opening h1{font-family:var(--font-display);font-size:clamp(34px,2.6vw,48px);font-weight:700;letter-spacing:normal;line-height:1.12;margin:0 0 28px;text-wrap:pretty}
 .about-mission>.about-lead{max-width:65ch;font-size:18px;line-height:1.65;margin:0;text-wrap:pretty}
 .about-mission-identity{display:flex;align-items:center;gap:24px;margin:0 0 24px}
@@ -38,14 +38,16 @@
 .source-carousel:has(.source-carousel-set a:focus-visible) .source-carousel-row{animation:none;transform:none}
 .source-carousel:has(.source-carousel-set a:focus-visible) .source-carousel-set[aria-hidden]{display:none}
 
-.about-page .about-page-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:0;border-block:1px solid var(--border);padding:0;margin:0;gap:0}
-.about-page-nav>a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:14px 20px;font-size:16px;font-weight:600;text-decoration:none;transition:background-color 180ms,color 180ms}
-.about-page-nav>a+a{border-left:1px solid var(--border)}
-.about-page-nav>a:hover{background:var(--surface);color:var(--accent-strong);text-decoration:none}
+.about-page .about-page-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:0;padding:0;margin:0;gap:12px}
+.about-page-nav>a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:14px 20px;border-radius:12px;background:color-mix(in srgb,var(--accent) 12%,var(--background));font-size:16px;font-weight:600;text-decoration:none;transition:background-color 180ms,color 180ms}
+.about-page-nav>a:nth-child(2){background:color-mix(in srgb,var(--accent) 18%,var(--background))}
+.about-page-nav>a:nth-child(3){background:color-mix(in srgb,var(--accent) 24%,var(--background))}
+.about-page-nav>a:hover{background:var(--accent-strong);color:var(--background);text-decoration:none}
 .about-page-nav>a:focus-visible{outline:2px solid var(--accent-strong);outline-offset:-4px;border-radius:4px}
 .about-page-nav>a svg{flex:none;color:var(--accent)}
+.about-page-nav>a:hover svg{color:inherit}
 .about-page :is(#method-heading,#sources-heading,#help-heading){scroll-margin-top:calc(var(--site-header-height) + var(--site-header-top) + 24px)}
-.about-page .about-method{padding:48px 0;border-bottom:1px solid var(--border)}
+.about-page .about-method{padding:48px 0;border:0}
 .about-method .section-introduction{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;max-width:760px}
 .about-method .section-introduction p{margin:0;max-width:72ch;font-size:18px;line-height:1.75}
 .about-page .record-context{grid-template-columns:minmax(0,1fr);gap:24px;margin:32px 0;max-width:800px}
@@ -55,7 +57,7 @@
 .record-context dt svg{width:24px;height:24px;color:var(--accent)}
 .about-page .record-context dd{font-size:16px;line-height:1.7}
 .about-page .about-evidence-note{background:none;border-radius:0;padding:0;margin:0 0 8px}
-.about-research-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding:48px 0;border-bottom:1px solid var(--border)}
+.about-research-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding:48px 0;border:0}
 .about-research-grid .about-sources{padding:0}
 .about-research-grid p{font-size:16px;line-height:1.75;color:var(--muted);max-width:72ch;margin:14px 0 0}
 .about-page .about-help{grid-template-columns:minmax(0,1fr);padding:48px 0;gap:24px;max-width:800px}
@@ -64,7 +66,7 @@
 @media(max-width:700px){.reading-page.about-page{padding-inline:20px;padding-top:calc(var(--site-header-height) + var(--site-header-top) + 24px)}.about-opening{gap:28px;padding:4px 0 24px}.about-mission{display:block}.about-opening h1{margin-bottom:20px}.about-mission-identity{gap:20px;margin-bottom:20px}.about-mission-identity>.brand-art{width:76px}.about-mission-identity>.about-mission-copy{font-size:15px;line-height:1.55}.about-mission>.about-lead{font-size:16px;line-height:1.65}.about-page .about-source-panel h2{font-size:var(--mobile-page-heading-size);line-height:1.2;margin-bottom:16px}.source-carousel-set{gap:40px;padding-inline:20px;--source-logo-max-width:124px}.about-method .section-introduction,.about-research-grid,.about-page .about-help{grid-template-columns:1fr;gap:24px}.about-method .section-introduction{gap:12px}.about-page .record-context{grid-template-columns:1fr;gap:20px}.about-page .record-context>div{grid-template-columns:1fr;gap:8px}.about-page .about-method,.about-research-grid,.about-page .about-help{padding-block:28px}.about-page .about-page-nav{grid-template-columns:1fr;gap:0}.about-page-nav>a{min-height:52px;padding:12px 4px}.about-page-nav>a+a{border-left:0;border-top:1px solid var(--border)}}
 @media(prefers-reduced-motion:reduce){.about-mission,.about-source-panel,.source-carousel-row{animation:none}.source-carousel-window{overflow:visible;mask-image:none}.source-carousel-row{width:100%;display:block}.source-carousel-set{flex-wrap:wrap;justify-content:center;gap:24px;padding:0}.source-carousel-set[aria-hidden]{display:none}}
 
-.about-credit-note{border-top:1px solid var(--border);padding-top:24px;margin-top:0;font-size:16px;line-height:1.75;color:var(--muted);scroll-margin-top:calc(var(--site-header-height) + var(--site-header-top) + 24px)}.about-credit-note a{color:var(--foreground);text-decoration:underline;text-underline-offset:4px}
+.about-credit-note{border:0;padding-top:0;margin-top:0;font-size:16px;line-height:1.75;color:var(--muted);scroll-margin-top:calc(var(--site-header-height) + var(--site-header-top) + 24px)}.about-credit-note a{color:var(--foreground);text-decoration:underline;text-underline-offset:4px}
 .about-section-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px}
 .about-section-actions a{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:11px 16px;border:1px solid var(--border);border-radius:12px;color:var(--foreground);font-size:15px;font-weight:600;line-height:1.5;text-decoration:none;transition:background-color 160ms ease,border-color 160ms ease}
 .about-section-actions a:first-child{background:var(--foreground);border-color:var(--foreground);color:var(--background)}
@@ -77,7 +79,9 @@
 
 /* Keep the About hierarchy aligned with the contribution page. */
 .about-page :is(.about-opening h1,h2,.about-source-panel h2){font-size:clamp(25px,2.2vw,32px);line-height:1.2}
-.about-page .about-evidence-note{max-width:82ch;padding:18px 20px;margin:24px 0 0;background:var(--surface);border-radius:12px}
+.about-page .about-evidence-note{display:grid;grid-template-columns:80px minmax(0,1fr);gap:24px;max-width:900px;padding:0;margin:24px 0 0;background:none;border-radius:0}
+.about-page .about-evidence-note>svg{width:80px;height:80px}
+.about-page .about-evidence-note p{padding:20px 24px;background:var(--surface);border-radius:12px}
 .about-page .about-evidence-note p{font-size:15px;line-height:1.65;margin:0}
 .about-evidence-note strong{display:block;color:var(--foreground);font-weight:600;margin-bottom:4px}
 .about-definition-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:12px;font-size:14px;text-underline-offset:4px}
@@ -91,10 +95,23 @@
 @media(max-width:700px){.source-carousel-row{animation-duration:55s}.source-carousel-row:nth-child(2){animation-duration:52s}.about-method .section-introduction p{font-size:17px}.about-page .about-evidence-note strong{font-size:15px}}
 
 /* Secondary background stays available without competing with the reading path. */
-.about-direction{max-width:760px;border-top:1px solid var(--border);padding-top:8px}
+.about-direction{max-width:760px;border:0;padding-top:8px}
 .about-direction summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;font-size:17px;font-weight:600;cursor:pointer;list-style:none}
 .about-direction summary::-webkit-details-marker{display:none}
 .about-direction summary svg{flex:none;transition:transform 180ms ease-out}
 .about-direction[open] summary svg{transform:rotate(180deg)}
 .about-direction summary:focus-visible{outline:2px solid var(--ring);outline-offset:4px}
 @media(prefers-reduced-motion:reduce){.about-direction summary svg{transition:none}}
+
+/* Let the heading use the full desktop measure; paragraphs retain their own limits. */
+.about-page .about-opening h1{max-width:none;text-wrap:pretty}
+.about-page .involvement-links>a{border:0}
+@media(max-width:700px){
+ .about-page .about-page-nav{gap:8px}
+ .about-page-nav>a{padding:12px 16px}
+ .about-page-nav>a+a{border:0}
+ .about-page .about-evidence-note{grid-template-columns:48px minmax(0,1fr);gap:16px;padding:0}
+ .about-page .about-evidence-note>svg{width:48px;height:48px}
+ .about-page .about-evidence-note p{padding:16px}
+}
+@media(prefers-reduced-motion:reduce){.about-page-nav>a{transition:none}}
