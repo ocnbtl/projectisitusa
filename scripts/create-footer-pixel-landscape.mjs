@@ -204,4 +204,5 @@ async function landscape(width,height,name,mobile=false) {
 }
 await mkdir("public/artwork",{recursive:true});
 await landscape(1800,500,"pixel-woodland-r2-20261022");
+await landscape(3200,640,"pixel-woodland-r2-20261022-wide");
 await landscape(640,420,"pixel-woodland-r2-20261022-mobile",true);
