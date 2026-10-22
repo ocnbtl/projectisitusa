@@ -54,7 +54,7 @@ export default function AboutPage() {
 
       <div className="about-research-grid">
       <section className="about-sources" aria-labelledby="sources-heading">
-        <div className="about-pixel-art pixel-specimen" aria-hidden="true" /><h2 id="sources-heading">The research we build on.</h2>
+        <h2 id="sources-heading">The research we build on.</h2><div className="about-pixel-art pixel-specimen" aria-hidden="true" />
         <p>We draw on public resources from agencies, universities, museums, herbaria, and established observation networks. Our species catalog begins with the U.S. Register of Introduced and Invasive Species (US-RIIS), and we bring together additional records and references to build the map and profiles. A single source may provide sightings, photographs, identification details, or information about a species’ effects.</p>
         <p>Our data sources <Link href="/data-sources" className="text-link">paper</Link> explains which resources we use, how we use them, and what they can and cannot tell us. Our <Link href="/credits" className="text-link">credits</Link> link to the people and organizations whose work makes this possible.</p>
         <div className="about-section-actions"><Link href="/data-sources">Read our data-sources paper <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/credits#research">Explore source credits <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
