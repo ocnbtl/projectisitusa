@@ -40,9 +40,10 @@ export default function AboutPage() {
       </nav>
 
       <section className="about-method" aria-labelledby="method-heading">
-        <div className="about-illustrated-intro"><div className="section-introduction">
+        <div className="about-pixel-panorama pixel-atlas" aria-hidden="true" />
+        <div className="section-introduction">
           <h2 id="method-heading">Every record needs context.</h2>
-          <p>We look through published research, public records, and observations to help you understand what has been found near you. Alongside each finding, we keep the details that help you make sense of it: where it came from, when it was recorded, and what we’re still unsure of.</p></div><div className="about-pixel-art pixel-records" aria-hidden="true" /></div>
+          <p>We look through published research, public records, and observations to help you understand what has been found near you. Alongside each finding, we keep the details that help you make sense of it: where it came from, when it was recorded, and what we’re still unsure of.</p></div>
         <dl className="record-context">
           <div><dt><MapPin size={21} aria-hidden="true" /> Where</dt><dd>We check the specific place a record describes before adding it to our map. A species reported somewhere in a state isn’t automatically recorded in every county.</dd></div>
           <div><dt><CalendarDays size={21} aria-hidden="true" /> When</dt><dd>We look for when a species was observed, as well as when the record was published or reviewed. Something new to our map may have been found years ago.</dd></div>
@@ -54,7 +55,8 @@ export default function AboutPage() {
 
       <div className="about-research-grid">
       <section className="about-sources" aria-labelledby="sources-heading">
-        <h2 id="sources-heading">The research we build on.</h2><div className="about-pixel-art pixel-specimen" aria-hidden="true" />
+        <div className="about-pixel-panorama pixel-herbarium" aria-hidden="true" />
+        <h2 id="sources-heading">The research we build on.</h2>
         <p>We draw on public resources from agencies, universities, museums, herbaria, and established observation networks. Our species catalog begins with the U.S. Register of Introduced and Invasive Species (US-RIIS), and we bring together additional records and references to build the map and profiles. A single source may provide sightings, photographs, identification details, or information about a species’ effects.</p>
         <p>Our data sources <Link href="/data-sources" className="text-link">paper</Link> explains which resources we use, how we use them, and what they can and cannot tell us. Our <Link href="/credits" className="text-link">credits</Link> link to the people and organizations whose work makes this possible.</p>
         <div className="about-section-actions"><Link href="/data-sources">Read our data-sources paper <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/credits#research">Explore source credits <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
@@ -68,7 +70,8 @@ export default function AboutPage() {
       </div>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
-        <div className="about-illustrated-intro"><div className="section-introduction"><h2 id="help-heading">Be part of the work.</h2><p>Share what you find, stay informed about the places you love, or help us build a resource more people can use.</p></div><div className="about-pixel-art pixel-growth" aria-hidden="true" /></div>
+        <div className="about-pixel-panorama pixel-meadow" aria-hidden="true" />
+        <div className="section-introduction"><h2 id="help-heading">Be part of the work.</h2><p>Share what you find, stay informed about the places you love, or help us build a resource more people can use.</p></div>
         <div className="involvement-links">
           <Link href="/report"><span><strong>Report a sighting</strong><small>Share photographs and details directly with our team for identification, review, and a possible referral.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/join"><span><strong>Get invasive species updates</strong><small>Choose the places, species, and stories you want to hear about. Update your preferences whenever you like.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
@@ -77,7 +80,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <aside id="credits" className="about-credit-note"><span id="map-credits" /><div className="credit-branch" aria-hidden="true" /><div><h2>Good work grows together.</h2><p>We draw on the resources, research, and creations of great people.</p><Link href="/credits">Meet them in our credits <ArrowUpRight size={20} aria-hidden="true" /></Link></div></aside>
+      <aside id="credits" className="about-credit-note"><span id="map-credits" /><div><h2>Good work grows together.</h2><p>We draw on the resources, research, and creations of great people.</p><Link href="/credits">Meet them in our credits <ArrowUpRight size={20} aria-hidden="true" /></Link></div></aside>
     </main>
   );
 }

@@ -52,10 +52,10 @@ footer.footer-refined .footer-utilities :is(a,button){font-size:clamp(14px,.8vw,
 .footer-socials a{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);border-radius:50%}
 .footer-socials a:hover{background:var(--accent);color:var(--background)}
 .footer-grove{--root-reveal:0px;background:var(--grove-ink)}
-.footer-grove-world{position:absolute;inset:0;transform:translateY(calc(-1 * var(--root-reveal)));background:var(--background)}
-.footer-soil{position:absolute;top:100%;left:0;right:0;height:340px;background:linear-gradient(to bottom,var(--grove-ink),#314e32 18%,#59412b 60%,#33291f)}
-.footer-roots{position:absolute;inset:0;background:#e0cba5;mask:url('/artwork/woodland-roots-r3.png') center top / max(100%,1100px) 340px no-repeat}
-.dark .footer-soil{background:linear-gradient(to bottom,var(--grove-ink),#41604c 18%,#403327 60%,#201d18)}
+.footer-grove-world{position:absolute;inset:0;background:var(--background)}
+.footer-soil{position:absolute;top:100%;left:0;right:0;height:240px;transform:translateY(calc(-1 * var(--root-reveal)));background:var(--grove-ink) url('/artwork/woodland-soil-r4.png') center top / max(100%,1200px) 240px no-repeat;image-rendering:pixelated}
+.footer-roots{position:absolute;inset:0;background:#e0cba5;mask:url('/artwork/woodland-roots-r4.png') center top / max(100%,1200px) 240px no-repeat;image-rendering:pixelated}
+.dark .footer-soil{background-image:url('/artwork/woodland-soil-r4-dark.png')}
 .dark .footer-roots{background:#b9a68a}
 html.footer-at-end{background:#00583b}
 html.dark.footer-at-end{background:#96d5b5}

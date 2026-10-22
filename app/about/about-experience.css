@@ -123,19 +123,18 @@
 .about-page-nav>a:nth-child(2){background:color-mix(in srgb,var(--accent) 26%,var(--background))}
 .about-page-nav>a:nth-child(3){background:color-mix(in srgb,var(--accent) 42%,var(--background))}
 .about-page-nav>a:hover{background:var(--accent-strong);color:var(--background)}
-.about-illustrated-intro{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:40px;align-items:center}
-.about-pixel-art{width:100%;height:190px;background:var(--accent);mask-position:center;mask-repeat:no-repeat;mask-size:contain;image-rendering:pixelated}
-.pixel-records{mask-image:url('/artwork/about-records-r3.png')}
-.pixel-specimen{mask-image:url('/artwork/about-specimen-r3.png');float:right;width:230px;height:250px;margin:0 0 20px 40px}
-.pixel-growth{mask-image:url('/artwork/about-growth-r3.png')}
+.about-pixel-panorama{position:relative;left:50%;transform:translateX(-50%);width:min(1800px,calc(100vw - 80px));aspect-ratio:36/11;margin:0 0 32px;background:#00583b;mask-position:center;mask-repeat:no-repeat;mask-size:contain;image-rendering:pixelated;pointer-events:none}
+.dark .about-pixel-panorama{background:var(--accent)}
+.pixel-atlas{mask-image:url('/artwork/about-atlas-r4.png')}
+.pixel-herbarium{mask-image:url('/artwork/about-herbarium-r4.png')}
+.pixel-meadow{mask-image:url('/artwork/about-meadow-r4.png')}
 .about-page .about-help{max-width:none}
 .about-page .about-help .involvement-links{max-width:850px}
 .about-research-grid .about-sources{display:flow-root}
 .about-direction{max-width:none;padding:32px 36px;background:color-mix(in srgb,var(--accent) 9%,var(--background));border-radius:16px}
 .about-direction h2{max-width:none;margin:0 0 16px}
 .about-direction p{max-width:76ch}
-.about-page .about-credit-note{position:relative;display:grid;grid-template-columns:200px minmax(0,1fr);align-items:center;gap:40px;margin:24px 0 32px;padding:32px 40px;border:0;background:var(--foreground);color:var(--background);border-radius:16px;overflow:hidden}
-.about-credit-note .credit-branch{height:230px;background:var(--background);mask:url('/artwork/about-specimen-r3.png') center/contain no-repeat;transform:rotate(-25deg)}
+.about-page .about-credit-note{position:relative;display:block;margin:24px 0 32px;padding:clamp(32px,4vw,64px);border:0;background:var(--foreground);color:var(--background);border-radius:16px;overflow:hidden}
 .about-credit-note h2{color:inherit;margin:0 0 14px}
 .about-credit-note p{margin:0 0 16px;max-width:46ch;color:inherit;font-size:17px;line-height:1.65}
 .about-credit-note a{display:inline-flex;align-items:center;gap:12px;color:inherit;min-height:44px}
@@ -144,13 +143,9 @@
 .about-section-actions{margin-top:24px}
 @media(max-width:700px){
  .about-page .about-source-panel h2{font-size:var(--mobile-page-heading-size);white-space:normal}
- .about-illustrated-intro{grid-template-columns:minmax(0,1fr) 78px;gap:14px;align-items:start}
- .about-illustrated-intro .about-pixel-art{height:100px;margin-top:36px}
- .about-method .about-illustrated-intro{display:block}
+ .about-pixel-panorama{width:calc(100vw - 24px);aspect-ratio:2/1;margin-bottom:24px;mask-size:cover}
  .about-method .section-introduction h2{margin:0 0 16px}
  .about-method .section-introduction p{font-size:17px;line-height:1.7}
- .about-method .pixel-records{width:110px;height:72px;margin:12px 0 0 auto}
- .pixel-specimen{width:90px;height:138px;margin:0 0 12px 14px}
  .about-page .about-method,.about-research-grid,.about-page .about-help{padding-block:32px}
  .about-research-grid{gap:32px}
  .about-page .record-context{margin:24px 0}
@@ -158,8 +153,7 @@
  .about-section-actions a{min-height:46px}
  .about-direction{padding:24px 20px}
  .about-direction h2{margin-bottom:14px}
- .about-page .about-credit-note{grid-template-columns:68px 1fr;gap:16px;margin:8px 0 16px;padding:24px 20px}
- .about-credit-note .credit-branch{height:160px;mask-size:180px;transform:rotate(-18deg)}
+ .about-page .about-credit-note{margin:8px 0 16px;padding:28px 24px}
  .about-credit-note p{font-size:15px}
  .about-credit-note a{font-size:14px}
 }

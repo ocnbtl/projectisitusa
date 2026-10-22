@@ -34,7 +34,8 @@ export function FooterGrove() {
     }
     function pull(delta: number) {
       if (reduced.matches || !visible || !atEnd() || delta <= 0) return;
-      const limit = Math.min(220, element!.offsetHeight * .55);
+      // Only the soil rises. Keep the complete skyline stationary above it.
+      const limit = Math.min(190, element!.offsetHeight * .38);
       target = Math.min(limit, target + Math.min(delta, 100) * .55);
       lastInput = performance.now();
       if (!frame) frame = requestAnimationFrame(paint);
