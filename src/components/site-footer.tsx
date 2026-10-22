@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FooterGrove } from "@/components/footer-grove";
 import "./site-footer.css";
+import { FooterSocials } from "@/components/footer-socials";
 import { ArrowUp, ChevronDown, Map, Leaf, BookOpen, Route, Database, Award, Camera, Bell, HandHelping, Settings, Heart, FileText, Receipt, Repeat, Info, Palette, Shield, Users, Binoculars } from "lucide-react";
 
 const groups = [
@@ -29,7 +30,7 @@ export function SiteFooter() {
           </div>)}
         </div>
       </div>
-      <div className="footer-details"><small>An independent initiative based in the United States.</small><div className="footer-utilities"><a href="mailto:contact@isitusa.com">Contact us</a><button type="button" onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>Privacy choices</button><a href="#main-content" className="footer-return">Back to top <ArrowUp size={16} aria-hidden="true" /></a></div></div>
+      <div className="footer-details"><FooterSocials /><div className="footer-utilities"><a href="mailto:contact@isitusa.com">Contact us</a><button type="button" onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>Privacy choices</button><a href="#main-content" className="footer-return">Back to top <ArrowUp size={16} aria-hidden="true" /></a></div></div>
       <FooterGrove />
     </footer>
   );

@@ -122,34 +122,50 @@ async function landscape(width,height,name,mobile=false) {
     line(cx-unit*.6,base,cx+lean-unit*.4,top+h*.2,Math.max(.55,unit*.7),tone-.22);
   }
   function broadleaf(cx,base,h,tone,kind=0) {
-    const lean=(random()-.5)*h*.15;
+    // Unequal leaders, fine twigs and leaf sprays form each crown. There is no
+    // enclosing crown ellipse: the spaces between limbs remain part of the sky.
+    const habit=Math.floor(random()*4);
+    const lean=(random()-.5)*h*.3;
     const branchSegments=[];
     const leaves=[];
     function branch(x,y,length,angle,depth,thickness) {
-      const endX=x+Math.cos(angle)*length,endY=y+Math.sin(angle)*length;
-      branchSegments.push([x,y,endX,endY,thickness]);
+      const bend=(random()-.5)*.38;
+      const midX=x+Math.cos(angle)*length*.48,midY=y+Math.sin(angle)*length*.48;
+      const endX=midX+Math.cos(angle+bend)*length*.52,endY=midY+Math.sin(angle+bend)*length*.52;
+      branchSegments.push([x,y,midX,midY,thickness],[midX,midY,endX,endY,thickness*.78]);
       if(depth<=0) {
-        const size=h*(kind===1?.08:.105)*(.7+random()*.6);
-        leaves.push([endX,endY,size,size*(.72+random()*.35),Math.floor(random()*10000)]);
+        const size=h*(.015+random()*.018);
+        leaves.push([endX,endY,size,angle+bend,Math.floor(random()*10000)]);
         return;
       }
       if(depth<=2) {
-        const size=h*(kind===1?.085:.12)*(.75+random()*.55);
-        const along=.45+random()*.4;
-        leaves.push([x+(endX-x)*along,y+(endY-y)*along,size,size*(kind===1?1.15:.92),Math.floor(random()*10000)]);
+        for(let n=0;n<3;n++) {
+          const along=.3+random()*.7;
+          leaves.push([x+(endX-x)*along,y+(endY-y)*along,h*(.012+random()*.019),angle+bend,Math.floor(random()*10000)]);
+        }
       }
-      const spread=.26+random()*.48;
-      branch(endX,endY,length*(.62+random()*.13),angle-spread,depth-1,thickness*.66);
-      branch(endX,endY,length*(.62+random()*.14),angle+spread,depth-1,thickness*.66);
-      if(depth===2&&random()>.4)branch(endX,endY,length*.6,angle+(random()-.5)*.3,depth-1,thickness*.5);
+      const spread=(habit===2?.18:.28)+random()*.44;
+      branch(endX,endY,length*(.58+random()*.23),angle-spread+bend,depth-1,thickness*.62);
+      branch(endX,endY,length*(.52+random()*.29),angle+spread*.8+bend,depth-1,thickness*.61);
+      if(depth<=3&&random()>.5)branch(endX,endY,length*.64,angle+bend*.5,depth-1,thickness*.48);
     }
-    branch(cx,base,h*.32,-Math.PI/2+lean/h,4,h*.045);
-    // Unequal secondary limbs give mature trees a crown below the highest twigs.
-    branch(cx+lean*.25,base-h*.34,h*.23,-Math.PI*.72,3,h*.026);
-    branch(cx+lean*.25,base-h*.40,h*.21,-Math.PI*.29,3,h*.025);
-    for(const [x,y,rx,ry,seed] of leaves)leafCloud(x,y,rx*(kind===1?.65:1.05),ry,tone,seed);
+    branch(cx,base,h*(habit===2?.35:.28),-Math.PI/2+lean/h,5,h*.036);
+    branch(cx+lean*.18,base-h*.26,h*(.17+random()*.08),-Math.PI*(.65+random()*.15),4,h*.022);
+    branch(cx+lean*.23,base-h*.37,h*(.17+random()*.09),-Math.PI*(.23+random()*.16),4,h*.019);
+    if(habit===1)branch(cx,base-h*.16,h*.22,-Math.PI*.88,3,h*.018);
+    // Separate, directionally arranged leaflets leave a finely broken silhouette.
+    for(const [x,y,size,angle,seed] of leaves) {
+      const leafRandom=rng(seed);
+      for(let n=0;n<8;n++) {
+        const a=angle+(leafRandom()-.5)*2.6;
+        const reach=size*(.2+leafRandom()*1.5);
+        const lx=x+Math.cos(a)*reach,ly=y+Math.sin(a)*reach;
+        const r=size*(.35+leafRandom()*.5);
+        leafCloud(lx,ly,r*(kind===1?.55:1),r*(.45+leafRandom()*.55),tone+(leafRandom()-.5)*.18,seed+n);
+      }
+    }
     for(const [x,y,ex,ey,w] of branchSegments) {
-      line(x,y,ex,ey,w,tone+.09);
+      line(x,y,ex,ey,Math.max(.5,w),tone+.06);
       if(w>unit*1.7)line(x-unit*.65,y,ex-unit*.4,ey,Math.max(.6,w*.2),tone-.30);
     }
     for(let i=0;i<7;i++) {
@@ -203,6 +219,6 @@ async function landscape(width,height,name,mobile=false) {
   console.log(JSON.stringify({name,...info}));
 }
 await mkdir("public/artwork",{recursive:true});
-await landscape(1800,500,"pixel-woodland-r2-20261022");
-await landscape(3200,640,"pixel-woodland-r2-20261022-wide");
-await landscape(640,420,"pixel-woodland-r2-20261022-mobile",true);
+await landscape(1800,500,"pixel-woodland-r3-20261022");
+await landscape(3200,640,"pixel-woodland-r3-20261022-wide");
+await landscape(640,420,"pixel-woodland-r3-20261022-mobile",true);
