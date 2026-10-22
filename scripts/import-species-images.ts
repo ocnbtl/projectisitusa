@@ -1,3 +1,9 @@
+import { publicHttpsDownload } from "./public-https-download";
+import { createRequire } from "node:module";
+// Use the same patched image processor checked by check-native-tools. The
+// separately pinned build-time renderer owns existing immutable asset recipes.
+const load = createRequire(`${process.cwd()}/package.json`);
+const sharp = createRequire(load.resolve("next/package.json"))("sharp") as typeof import("sharp");
 import { existsSync, readFileSync } from "node:fs";
 import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
@@ -153,7 +159,7 @@ function parseArgs(): ImportArgs {
   return {
     offset: getNumberArg("--offset", 0),
     limit: getNumberArg("--limit", DEFAULT_LIMIT),
-    concurrency: Math.max(1, getNumberArg("--concurrency", DEFAULT_CONCURRENCY)),
+    concurrency: Math.min(8, Math.max(1, Math.floor(getNumberArg("--concurrency", DEFAULT_CONCURRENCY)))),
     retryUnresolved: args.includes("--retry-unresolved"),
   };
 }
@@ -194,14 +200,9 @@ function getRegistrySpecies() {
 async function fetchJson<T>(url: string): Promise<T | null> {
   for (let attempt = 1; attempt <= 5; attempt += 1) {
     try {
-      const response = await fetch(url, {
-        headers: {
-          "User-Agent": "Project Isitusa species image importer",
-          Accept: "application/json",
-        },
-      });
+      const response = await publicHttpsDownload(url, { maxBytes: 4 * 1024 ** 2, accept: "application/json" });
 
-      if (!response.ok) {
+      if (response.status < 200 || response.status >= 300) {
         if (TRANSIENT_HTTP_STATUSES.has(response.status) && attempt < 5) {
           await new Promise((resolve) =>
             setTimeout(resolve, 700 * attempt + Math.round(Math.random() * 250)),
@@ -210,7 +211,7 @@ async function fetchJson<T>(url: string): Promise<T | null> {
         }
         return null;
       }
-      return (await response.json()) as T;
+      return JSON.parse(response.body.toString("utf8")) as T;
     } catch (error) {
       if (attempt === 5) return null;
       await new Promise((resolve) =>
@@ -251,15 +252,9 @@ async function downloadImage(
 ): Promise<{ localPath: string } | null> {
   for (let attempt = 1; attempt <= 5; attempt += 1) {
     try {
-      const response = await fetch(url, {
-        headers: {
-          "User-Agent": "Project Isitusa species image importer",
-          Accept: "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        },
-      });
-
-      const contentType = response.headers.get("content-type");
-      if (!response.ok) {
+      const response = await publicHttpsDownload(url, { maxBytes: 20 * 1024 ** 2, accept: "image/jpeg,image/png,image/webp" });
+      const contentType = response.contentType.split(";")[0].trim().toLowerCase();
+      if (response.status < 200 || response.status >= 300) {
         if (TRANSIENT_HTTP_STATUSES.has(response.status) && attempt < 5) {
           await new Promise((resolve) =>
             setTimeout(resolve, 700 * attempt + Math.round(Math.random() * 250)),
@@ -269,14 +264,16 @@ async function downloadImage(
         return null;
       }
 
-      if (!contentType?.startsWith("image/")) {
+      if (!["image/jpeg", "image/png", "image/webp"].includes(contentType)) {
         return null;
       }
 
       const extension = getFileExtension(contentType, response.url);
       const fileName = `${slug}${extension}`;
       const filePath = resolve(imageOutputDir, fileName);
-      const body = Buffer.from(await response.arrayBuffer());
+      const body = response.body;
+      const metadata = await sharp(body, { limitInputPixels: 40_000_000, failOn: "error" }).metadata();
+      if (!metadata.width || !metadata.height || metadata.width * metadata.height > 40_000_000 || !["jpeg", "png", "webp"].includes(metadata.format ?? "")) return null;
 
       await writeFile(filePath, body);
       return {

@@ -149,7 +149,7 @@ create policy assets_read on public.isitusa_assets for select to authenticated u
 create policy reviews_read on public.isitusa_reviews for select to authenticated using(isitusa_private.has_permission('review'));
 create policy contributions_read on public.isitusa_contributions for select to authenticated using(isitusa_private.has_permission('finance'));
 create policy wallets_read on public.isitusa_wallets for select to authenticated using(isitusa_private.has_permission('finance'));
-create policy audit_read on public.isitusa_audit for select to authenticated using(isitusa_private.has_permission('team'));
+create policy audit_read on public.isitusa_audit for select to authenticated using(isitusa_private.has_permission('team') and (action not in ('crypto.receipt','wallet.address') or isitusa_private.has_permission('finance')));
 grant all on public.isitusa_staff, public.isitusa_catalog, public.isitusa_subscribers, public.isitusa_consent_events,
  public.isitusa_tokens, public.isitusa_sightings, public.isitusa_assets, public.isitusa_reviews,
  public.isitusa_contributions, public.isitusa_wallets, public.isitusa_checkout_requests,
