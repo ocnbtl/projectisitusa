@@ -1,5 +1,5 @@
+import { boundedZipRecords } from "./zip-tools";
 import { execFileSync } from "node:child_process";
-import { once } from "node:events";
 import {
   existsSync,
   readFileSync,
@@ -513,40 +513,20 @@ export async function streamNationalNasOccurrences(
   archivePath: string,
   onRecord?: (record: NasArchiveOccurrence, index: number) => void | Promise<void>,
 ) {
-  const unzip = spawnZipEntry(archivePath, "occurrence.txt");
-  const closePromise = once(unzip, "close") as Promise<[number | null, NodeJS.Signals | null]>;
-  let stderr = "";
-  unzip.stderr.on("data", (chunk: Buffer) => {
-    if (stderr.length < 16_384) stderr += chunk.toString("utf8");
-  });
   let headerValidated = false;
-  const parser = unzip.stdout.pipe(parse({
+  const records = boundedZipRecords(archivePath, "occurrence.txt", {
     columns: (header: string[]) => {
-      assert(
-        stableJson(header) === stableJson([...USGS_NAS_OCCURRENCE_HEADER]),
-        "USGS NAS occurrence header changed.",
-      );
+      assert(stableJson(header) === stableJson([...USGS_NAS_OCCURRENCE_HEADER]), "USGS NAS occurrence header changed.");
       headerValidated = true;
       return header;
     },
-    delimiter: "\t",
-    quote: false,
-    relax_column_count: false,
-    skip_empty_lines: true,
-  })) as AsyncIterable<NasArchiveOccurrence>;
+    delimiter: "\t", quote: false, relax_column_count: false, skip_empty_lines: true,
+  });
   let count = 0;
-  try {
-    for await (const record of parser) {
-      count += 1;
-      if (onRecord) await onRecord(record, count);
-    }
-  } catch (error) {
-    unzip.kill("SIGTERM");
-    await closePromise.catch(() => undefined);
-    throw error;
+  for await (const raw of records) {
+    count += 1;
+    if (onRecord) await onRecord(raw as NasArchiveOccurrence, count);
   }
-  const [exitCode] = await closePromise;
-  assert(exitCode === 0, `USGS NAS archive extraction failed: ${stderr.trim() || exitCode}.`);
   assert(headerValidated, "USGS NAS archive did not contain an occurrence header.");
   return count;
 }

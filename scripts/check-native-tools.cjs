@@ -11,10 +11,10 @@ const load = createRequire(path.join(root, 'package.json'));
   const png = await sharp({ create: { width: 2, height: 2, channels: 3, background: '#ffffff' } }).png().toBuffer();
   const meta = await sharp(png).metadata();
   assert.equal(meta.width, 2); assert.equal(meta.format, 'png');
-  const runtimeLoad = createRequire(load.resolve('next/package.json'));
-  const runtimeSharp = runtimeLoad('sharp');
-  assert.equal(runtimeSharp.versions.sharp, '0.35.5', 'The request-time image processor must use the patched version');
-  assert.equal((await runtimeSharp(png).webp().toBuffer()).length > 0, true);
+  // Actual build and request-time processors run in separate Node processes.
+  // Windows cannot safely load their different libvips DLL versions together.
+  require('node:child_process').execFileSync(process.execPath,
+    [path.join(__dirname, 'check-runtime-image-processor.cjs'), root], { stdio: 'inherit' });
   const resolved = new (load('unrs-resolver').ResolverFactory)().sync(root, './package.json');
   assert.ok(resolved.path?.endsWith('package.json'), 'Native resolver must work');
   console.log('Native tool checks passed: esbuild transform, offline PNG encode/decode, patched request-time WebP processing, and native path resolution.');
