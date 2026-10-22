@@ -125,9 +125,9 @@
 .about-page-nav>a:hover{background:var(--accent-strong);color:var(--background)}
 .about-pixel-panorama{position:relative;left:50%;transform:translateX(-50%);width:min(1800px,calc(100vw - 80px));aspect-ratio:36/11;margin:0 0 32px;background:#00583b;mask-position:center;mask-repeat:no-repeat;mask-size:contain;image-rendering:pixelated;pointer-events:none}
 .dark .about-pixel-panorama{background:var(--accent)}
-.pixel-atlas{mask-image:url('/artwork/about-atlas-r4.png')}
-.pixel-herbarium{mask-image:url('/artwork/about-herbarium-r4.png')}
-.pixel-meadow{mask-image:url('/artwork/about-meadow-r4.png')}
+.pixel-atlas{mask-image:url('/artwork/about-atlas-r5.png')}
+.pixel-herbarium{mask-image:url('/artwork/about-herbarium-r5.png')}
+.pixel-meadow{mask-image:url('/artwork/about-meadow-r5.png')}
 .about-page .about-help{max-width:none;display:block}
 .about-page .about-help .involvement-links{max-width:850px}
 .about-research-grid .about-sources{display:flow-root;min-width:0}
@@ -157,3 +157,7 @@
  .about-credit-note p{font-size:15px}
  .about-credit-note a{font-size:14px}
 }
+
+.pixel-atlas,.pixel-meadow{mask-size:cover}
+.pixel-atlas{mask-position:center 46%}
+.pixel-meadow{mask-position:center 60%}

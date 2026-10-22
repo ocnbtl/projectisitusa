@@ -80,3 +80,11 @@ footer.site-footer.footer-refined::after{content:"";display:block;height:env(saf
  .footer-grove{height:300px}
 }
 @media(prefers-reduced-motion:reduce){.footer-grove-world{transform:none!important}.footer-soil{display:none}}
+
+/* Soil extends below the same scene instead of sliding over the tree trunks. */
+.footer-grove{--landscape-height:clamp(230px,27.778vw,500px);height:calc(var(--landscape-height) + var(--root-reveal));overflow-anchor:none}
+.footer-grove-world{height:var(--landscape-height);bottom:auto}
+.footer-soil{transform:none;background-size:100% 240px}
+.footer-roots{mask-image:url('/artwork/woodland-roots-r5.png');mask-size:100% 240px}
+@media(min-width:1800px){.footer-grove{--landscape-height:clamp(420px,20vw,640px)}.footer-roots{mask-image:url('/artwork/woodland-roots-r5-wide.png')}}
+@media(max-width:700px){.footer-grove{--landscape-height:300px}.footer-roots{mask-image:url('/artwork/woodland-roots-r5-mobile.png')}}
