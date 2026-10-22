@@ -27,7 +27,7 @@ export default function AboutPage() {
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
         </div>
         <section className="about-source-panel" aria-labelledby="source-panel-heading">
-          <h2 id="source-panel-heading">Built on trusted research from across the country</h2>
+          <h2 id="source-panel-heading">Rooted in research</h2>
           <AboutSourceCarousel sources={researchSources} />
           <p>We aggregate public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about.</p>
           <a href="#sources-heading" className="text-link">More about our data sources <ArrowRight size={15} aria-hidden="true" /></a>
