@@ -2,13 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ArrowUp } from "lucide-react";
-
-// Repeated, stepped geometry keeps the forest crisp at every screen size.
-const tree = "M0 0 12 20H7L23 44H16L33 70H5V90H-5V70H-33L-16 44H-23L-7 20H-12Z";
-const layers = [
-  { name: "far", count: 25, offset: -15, step: 62, base: 155, scale: .78 },
-  { name: "near", count: 19, offset: 20, step: 83, base: 184, scale: 1.08 },
-];
+import Image from "next/image";
 
 export function FooterGrove() {
   const root = useRef<HTMLDivElement>(null);
@@ -45,22 +39,17 @@ export function FooterGrove() {
       if (reduced.matches) { stop(); element?.style.removeProperty("--grove-progress"); }
       else if (!listening) { observer.unobserve(element!); observer.observe(element!); }
     }
+    if (!reduced.matches) paint();
     observer.observe(element);
     reduced.addEventListener("change", preferenceChanged);
     return () => { stop(); observer.disconnect(); reduced.removeEventListener("change", preferenceChanged); };
   }, []);
 
   return <div ref={root} className="footer-grove">
-    <svg className="footer-grove-art" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-      {layers.map((layer, layerIndex) => <g key={layer.name} className={"grove-" + layer.name}>
-        {Array.from({ length: layer.count }, (_, index) => {
-          const scale = layer.scale * (1 + (index % 4) * .09);
-          const x = layer.offset + index * layer.step;
-          return <path key={index} d={tree} transform={`translate(${x} ${layer.base - 90 * scale - (index % 3) * 7}) scale(${scale})`} />;
-        })}
-        <rect x="0" y={layerIndex ? 177 : 151} width="1440" height="49" />
-      </g>)}
-    </svg>
+    <div className="footer-grove-art" aria-hidden="true"><picture>
+      <source media="(max-width: 700px)" srcSet="/artwork/forest-footer-20261022-mobile.webp" />
+      <Image src="/artwork/forest-footer-20261022.webp" alt="" fill sizes="100vw" unoptimized />
+    </picture></div>
     <a href="#main-content" className="footer-grove-return">Back to the top <ArrowUp size={16} aria-hidden="true" /></a>
   </div>;
 }

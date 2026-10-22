@@ -2,7 +2,7 @@
  * Add an entry when a visitor-facing change ships; keep research dates separate.
  */
 export const SITE_UPDATES = [
-  { date: "2026-10-22", title: "More ways to see the map", detail: "Monochrome and Spectrum add two new map palettes. The About page has clearer section links, and the footer brings our resources together with a forest-inspired finish.", href: "/about" },
+  { date: "2026-10-22", title: "More ways to see the map", detail: "Monochrome and Spectrum add two new map palettes, with all six choices together on phones. Clearer About links and a full-width, textured woodland footer make it easier to explore the project.", href: "/about" },
   { date: "2026-10-20", title: "A clearer introduction to ISITUSA", detail: "Our About page now follows one reading path through who we are, our mission, and the research behind the tool. Footer links keep email updates and preferences together.", href: "/about" },
   { date: "2026-10-19", title: "More room for the map on mobile", detail: "Compact search, filters, and recent updates leave more space for the map. County and ZIP lookup, species search, and map controls stay close at hand.", href: "/" },
   { date: "2026-10-19", title: "New ways to take part", detail: "Tell us your skills and availability through the volunteer application, explore the sighting-report page, or choose a contribution option in the more compact Support page.", href: "/volunteer" },

@@ -3,6 +3,7 @@ import { useId, useRef, useState } from "react";
 import { Check, Info, Palette } from "lucide-react";
 import { MAP_PALETTES, type MapPaletteId } from "@/lib/ui/map-palettes";
 import type { MapCountBand } from "@/lib/ui/map-scale";
+import "./map-appearance.css";
 
 export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetDate, datasetLabel }: {
   palette: MapPaletteId; onPaletteChange: (value: MapPaletteId) => void;
