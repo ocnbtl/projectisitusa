@@ -161,3 +161,6 @@
 .pixel-atlas,.pixel-meadow{mask-size:cover}
 .pixel-atlas{mask-position:center 46%}
 .pixel-meadow{mask-position:center 60%}
+/* Let the cropped landscapes dissolve into the page instead of ending at a hard edge. */
+.pixel-atlas{mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 88%,transparent),url('/artwork/about-atlas-r5.png');mask-size:100% 100%,cover;mask-position:center,center 46%;mask-composite:intersect}
+.pixel-meadow{mask-image:linear-gradient(to bottom,transparent,#000 8%,#000 88%,transparent),url('/artwork/about-meadow-r5.png');mask-size:100% 100%,cover;mask-position:center,center 60%;mask-composite:intersect}

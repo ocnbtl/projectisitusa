@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import ts from 'typescript';
+import assert from 'node:assert/strict';
+const js=ts.transpileModule(fs.readFileSync('src/components/footer-grove.tsx','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
+let effect,now=0,counter=0;const frames=new Map(),events=new Map(),props={};
+const html={scrollHeight:2000,classList:{contains:()=>false,toggle(){},remove(){}}};
+const element={get offsetHeight(){return 300+parseFloat(props['--root-reveal']||0)},style:{setProperty(k,v){props[k]=v;html.scrollHeight=2000+parseFloat(v)}}};
+const win={innerHeight:800,scrollY:1200,scrollBy({top}){this.scrollY=Math.min(html.scrollHeight-800,Math.max(0,this.scrollY+top));},matchMedia:()=>({matches:false,addEventListener(){},removeEventListener(){}}),addEventListener:(k,v)=>events.set(k,v),removeEventListener:k=>events.delete(k)};
+const ctx={exports:{},require:n=>n==='react'?{useRef:()=>({current:element}),useEffect:f=>effect=f}:{jsx:()=>null,jsxs:()=>null},window:win,document:{documentElement:html,querySelector:()=>({content:'#edf2ef'})},getComputedStyle:()=>({getPropertyValue:()=> '#00583b'}),IntersectionObserver:class{constructor(cb){this.cb=cb}observe(){this.cb([{isIntersecting:true}])}disconnect(){}},MutationObserver:class{observe(){}disconnect(){}},requestAnimationFrame:f=>{frames.set(++counter,f);return counter},cancelAnimationFrame:id=>frames.delete(id),performance:{now:()=>now},HTMLElement:class{}};
+vm.runInNewContext(js,ctx);ctx.exports.FooterGrove();const cleanup=effect();
+const tick=ms=>{for(let t=0;t<ms;t+=16){now+=16;for(const [id,f]of [...frames]){frames.delete(id);f(now);}}};
+events.get('wheel')({deltaY:1000,deltaMode:0});tick(160);
+assert(parseFloat(props['--root-reveal'])>40);assert(Math.abs(html.scrollHeight-800-win.scrollY)<.1);
+tick(2400);assert.equal(props['--root-reveal'],'0px');assert(Math.abs(win.scrollY-1200)<.1);
+events.get('wheel')({deltaY:1000,deltaMode:0});tick(160);events.get('wheel')({deltaY:-100,deltaMode:0});win.scrollY=900;tick(2000);assert.equal(win.scrollY,900);cleanup();assert.equal(frames.size,0);
+console.log('Dynamic document height: bottom anchoring, return, upward escape, and cleanup passed.');
