@@ -19,7 +19,7 @@ export function checkoutDestination(value: unknown): string | null {
 }
 export function checkoutParameters(amount: number, frequency: DonationFrequency) {
   const params = new URLSearchParams({
-    mode: frequency === "monthly" ? "subscription" : "payment", ui_mode: "hosted",
+    mode: frequency === "monthly" ? "subscription" : "payment", ui_mode: "hosted_page",
     success_url: "https://isitusa.com/support", cancel_url: "https://isitusa.com/support",
     "payment_method_types[0]": "card",
     "line_items[0][quantity]": "1", "line_items[0][price_data][currency]": "usd",

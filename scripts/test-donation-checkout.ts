@@ -18,7 +18,7 @@ function mock(account: object = { id: "acct_1ULqjk0sMVuUFG7H", charges_enabled: 
     if (url.endsWith("/account")) return Response.json(account, { status, headers: { "request-id": "req_account" } });
     assert.equal(url, "https://api.stripe.com/v1/checkout/sessions");
     form = init?.body as URLSearchParams;
-    assert.equal(form.get("ui_mode"), "hosted");
+    assert.equal(form.get("ui_mode"), "hosted_page");
     assert.equal(form.has("redirect_on_completion"), false);
     assert.equal(form.get("success_url"), "https://isitusa.com/support");
     assert.equal(form.get("cancel_url"), "https://isitusa.com/support");
