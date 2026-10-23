@@ -91,18 +91,19 @@ footer.site-footer.footer-refined::after{content:"";display:block;height:env(saf
 
 /* Open ink screening carries the woodland's dot language into the earth.
    The root mask keeps the exact trunk coordinates of the landscape above. */
-.footer-grove{--soil-base:#d5d9bd;--soil-ink:#59412b;--soil-grain:#846744}
+.footer-grove{--soil-base:#d5d9bd;--soil-ink:#59412b;--soil-grain:#846744;--soil-depth:180px}
 .dark .footer-grove{--soil-base:#202d27;--soil-ink:#b9a68a;--soil-grain:#6f5d44}
 /* Color and ink density change together, without a green/brown seam. */
-.footer-soil,.dark .footer-soil{background:linear-gradient(180deg,var(--grove-ink),var(--soil-base) 180px);background-image:linear-gradient(180deg,var(--grove-ink),var(--soil-base) 180px)}
+.footer-soil,.dark .footer-soil{background:linear-gradient(180deg,var(--grove-ink),var(--soil-base) var(--soil-depth))}
 .footer-soil::before{content:"";position:absolute;inset:0;pointer-events:none;
- background:linear-gradient(180deg,var(--grove-ink),var(--soil-ink) 160px,var(--soil-grain));
+ background:linear-gradient(180deg,var(--background),var(--soil-ink) var(--soil-depth),var(--soil-grain));
  mask:url('/artwork/soil-screen-r6.svg') center top / max(100%,900px) 240px no-repeat}
 .footer-soil::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;
  background:linear-gradient(180deg,transparent,var(--soil-grain) 180px);
  mask:url('/artwork/soil-screen-r6.svg') 31% bottom / max(100%,1100px) 270px no-repeat;transform:scaleX(-1)}
 .footer-roots{z-index:1;background:linear-gradient(180deg,color-mix(in srgb,var(--grove-ink) 82%,var(--soil-ink)),var(--soil-ink) 110px)}
 .dark .footer-roots{background:linear-gradient(180deg,var(--grove-ink),#c9b897 150px)}
+@media(max-width:700px){.footer-grove{--soil-depth:110px}}
 /* The body is Safari's canvas fallback; changing html alone leaves a pale strip. */
 html.footer-at-end,html.dark.footer-at-end,html.footer-at-end body{background-color:var(--footer-edge,#00583b)}
 html.footer-at-end body{transition:none}

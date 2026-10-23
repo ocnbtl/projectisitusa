@@ -29,7 +29,7 @@ export function FooterGrove() {
         return [0, 2, 4].map(index => parseInt(hex.slice(index, index + 2), 16));
       };
       const forest = channels("--grove-ink"), soil = channels("--soil-base");
-      const depth = Math.min(1, offset / 180);
+      const depth = Math.min(1, offset / parseFloat(css.getPropertyValue("--soil-depth")));
       const edge = `rgb(${forest.map((value, index) => Math.round(value + (soil[index] - value) * depth)).join(", ")})`;
       html.style.setProperty("--footer-edge", edge);
       meta.content = bottom ? edge : css.getPropertyValue("--background").trim();
