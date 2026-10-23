@@ -18,10 +18,14 @@ export function FooterGrove() {
     if (!existingMeta) { meta.name = "theme-color"; document.head.appendChild(meta); }
     const atEnd = () => document.documentElement.scrollHeight - window.innerHeight - window.scrollY <= 4;
     function syncEdge() {
-      const bottom = visible && atEnd();
+      // Safari's changing toolbars and fractional scrolling can leave a few pixels
+      // between its visible edge and the document's mathematical scroll limit.
+      const bottom = visible && element!.getBoundingClientRect().bottom <= window.innerHeight + 48;
       html.classList.toggle("footer-at-end", bottom);
       const css = getComputedStyle(element!);
-      meta.content = css.getPropertyValue(bottom ? "--grove-ink" : "--background").trim();
+      const edge = css.getPropertyValue(offset > 6 ? "--soil-base" : "--grove-ink").trim();
+      html.style.setProperty("--footer-edge", edge);
+      meta.content = bottom ? edge : css.getPropertyValue("--background").trim();
     }
     function paint(time: number) {
       const dt = Math.min(32, time - (lastTime || time - 16));
@@ -32,6 +36,7 @@ export function FooterGrove() {
       offset += (target - offset) * (1 - Math.exp(-dt / (target ? 90 : 170)));
       if (offset < .15 && target === 0) offset = 0;
       element!.style.setProperty("--root-reveal", offset.toFixed(2) + "px");
+      syncEdge();
       // Preserve the bottom anchor only during a deliberate downward pull.
       // Upward scrolling is always free to leave the effect immediately.
       if (pinned) window.scrollBy({ top: offset - previousOffset, behavior: "instant" });
@@ -73,6 +78,7 @@ export function FooterGrove() {
       if (reduced.matches) {
         cancelAnimationFrame(frame); frame = 0; offset = target = 0;
         element!.style.setProperty("--root-reveal", "0px");
+        syncEdge();
       }
     }
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; syncEdge(); });
@@ -85,6 +91,8 @@ export function FooterGrove() {
     themeObserver.observe(html, { attributes: true, attributeFilter: ["class"] });
     window.addEventListener("scroll", syncEdge, { passive: true });
     window.addEventListener("resize", syncEdge, { passive: true });
+    window.visualViewport?.addEventListener("resize", syncEdge, { passive: true });
+    window.visualViewport?.addEventListener("scroll", syncEdge, { passive: true });
     window.addEventListener("wheel", wheel, { passive: true });
     window.addEventListener("touchstart", touchStart, { passive: true });
     window.addEventListener("touchmove", touchMove, { passive: true });
@@ -95,11 +103,13 @@ export function FooterGrove() {
     return () => {
       observer.disconnect(); themeObserver.disconnect(); cancelAnimationFrame(frame);
       window.removeEventListener("scroll", syncEdge); window.removeEventListener("resize", syncEdge);
+      window.visualViewport?.removeEventListener("resize", syncEdge); window.visualViewport?.removeEventListener("scroll", syncEdge);
       window.removeEventListener("wheel", wheel); window.removeEventListener("touchstart", touchStart);
       window.removeEventListener("touchmove", touchMove); window.removeEventListener("touchend", touchEnd);
       window.removeEventListener("touchcancel", touchEnd); window.removeEventListener("keydown", keyboard);
       reduced.removeEventListener("change", preferenceChanged);
       html.classList.remove("footer-at-end");
+      html.style.removeProperty("--footer-edge");
       if (existingMeta) meta.content = previousColor; else meta.remove();
     };
   }, []);

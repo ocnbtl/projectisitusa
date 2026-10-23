@@ -88,3 +88,22 @@ footer.site-footer.footer-refined::after{content:"";display:block;height:env(saf
 .footer-roots{mask-image:url('/artwork/woodland-roots-r5.png');mask-size:100% 240px}
 @media(min-width:1800px){.footer-grove{--landscape-height:clamp(420px,20vw,640px)}.footer-roots{mask-image:url('/artwork/woodland-roots-r5-wide.png')}}
 @media(max-width:700px){.footer-grove{--landscape-height:300px}.footer-roots{mask-image:url('/artwork/woodland-roots-r5-mobile.png')}}
+
+/* Open ink screening carries the woodland's dot language into the earth.
+   The root mask keeps the exact trunk coordinates of the landscape above. */
+.footer-grove{--soil-base:#d5d9bd;--soil-ink:#59412b;--soil-grain:#846744}
+.dark .footer-grove{--soil-base:#202d27;--soil-ink:#b9a68a;--soil-grain:#6f5d44}
+.footer-soil,.dark .footer-soil{background:var(--soil-base);background-image:none}
+.footer-soil::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(180deg,var(--grove-ink),var(--soil-ink) 38%,var(--soil-grain));
+ mask-image:radial-gradient(circle at 1px 1px,#000 .8px,transparent 1px),radial-gradient(circle at 3px 3px,#000 .65px,transparent .9px);
+ mask-size:4px 4px;mask-repeat:repeat}
+.footer-soil::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.48;
+ background:radial-gradient(ellipse at 23% 38%,transparent 10%,var(--soil-ink) 56%,transparent 82%),radial-gradient(ellipse at 79% 83%,var(--soil-grain),transparent 68%);
+ mask:radial-gradient(circle at 1px 1px,#000 .6px,transparent .9px) 0 0/3px 3px repeat}
+.footer-roots{z-index:1;background:#59412b}
+.dark .footer-roots{background:#c9b897}
+/* The body is Safari's canvas fallback; changing html alone leaves a pale strip. */
+html.footer-at-end,html.dark.footer-at-end,html.footer-at-end body{background-color:var(--footer-edge,#00583b)}
+.app-frame{background:var(--background)}
+footer.site-footer.footer-refined::after{background:var(--footer-edge,var(--grove-ink))}

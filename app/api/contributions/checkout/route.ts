@@ -1,4 +1,4 @@
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { checkoutParameters, customerPortal, donationAmount } from "@/lib/ui/donation-checkout";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,7 +17,7 @@ export function GET() {
 }
 export async function POST(request: Request) {
   const config = configuration();
-  if (!config.available) return reply({ error: "On-site checkout is unavailable. You can still use our secure Stripe link." }, 503);
+  if (!config.available) return reply({ error: "Card checkout is temporarily unavailable. Please try again later or contact contact@isitusa.com." }, 503);
   if (!["https://isitusa.com", "https://www.isitusa.com"].includes(request.headers.get("origin") ?? "")) return reply({ error: "Please contribute from isitusa.com." }, 403);
   if (!request.headers.get("content-type")?.startsWith("application/json")) return reply({ error: "Invalid request format." }, 415);
   let input: Record<string, unknown>;
@@ -37,20 +37,34 @@ export async function POST(request: Request) {
   if (!amount || !["once", "monthly"].includes(String(frequency)) || typeof input.token !== "string" || input.token.length > 2048 || !input.token ||
     typeof input.attempt !== "string" || !/^[a-f0-9-]{36}$/.test(input.attempt) || input.website || input.consent !== true) return reply({ error: "Choose an amount from $5 to $1,000 and complete the security check." }, 400);
   if (frequency === "monthly" && !config.portal) return reply({ error: "Monthly giving is not available yet. Please choose a one-time contribution." }, 503);
+  const supportReference = randomUUID();
+  let stage = "security_check", providerStatus: number | undefined, providerRequest: string | undefined, providerCode: string | undefined;
+  const safeCode = (value: unknown) => typeof value === "string" && /^[A-Za-z0-9_.\[\]-]{1,100}$/.test(value) ? value : undefined;
   try {
     const challenge = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: input.token }), signal: AbortSignal.timeout(10000) });
     const check = await challenge.json();
     if (!challenge.ok || check.success !== true || check.action !== "donation_checkout" || !originHosts.has(check.hostname)) return reply({ error: "Please complete the security check again." }, 400);
     const headers = { Authorization: `Bearer ${config.secret}` };
     // Fail closed if a key belongs to a different recipient account.
+    stage = "recipient_check";
     const accountResponse = await fetch("https://api.stripe.com/v1/account", { headers, cache: "no-store", signal: AbortSignal.timeout(10000) });
+    providerStatus = accountResponse.status; providerRequest = safeCode(accountResponse.headers.get("request-id"));
     const account = await accountResponse.json();
+    providerCode = safeCode(account.error?.code ?? account.error?.type);
     if (!accountResponse.ok || account.id !== "acct_1ULqjk0sMVuUFG7H" || account.charges_enabled !== true) throw new Error("Recipient unavailable");
     const params = checkoutParameters(amount, frequency as "once" | "monthly");
     const key = createHash("sha256").update(`${input.attempt}:${amount}:${frequency}`).digest("hex");
+    stage = "session_create"; providerStatus = undefined; providerRequest = undefined; providerCode = undefined;
     const response = await fetch("https://api.stripe.com/v1/checkout/sessions", { method: "POST", headers: { ...headers, "Content-Type": "application/x-www-form-urlencoded", "Idempotency-Key": `isitusa-${key}` }, body: params, signal: AbortSignal.timeout(15000) });
+    providerStatus = response.status; providerRequest = safeCode(response.headers.get("request-id"));
     const session = await response.json();
+    providerCode = safeCode(session.error?.code ?? session.error?.type);
     if (!response.ok || session.livemode !== true || typeof session.client_secret !== "string" || !session.client_secret.startsWith("cs_live_")) throw new Error("Checkout unavailable");
     return reply({ clientSecret: session.client_secret });
-  } catch { return reply({ error: "Checkout could not open. Please try again, or use our secure Stripe link. No payment was submitted by this step." }, 502); }
+  } catch {
+    // Only diagnostic identifiers enter server logs, never tokens, keys, request
+    // bodies, Stripe response bodies, client secrets or contributor details.
+    console.error("contribution_checkout_failed", { supportReference, stage, providerStatus, providerRequest, providerCode });
+    return reply({ error: `Checkout could not open. No payment was submitted. Please try again, or contact contact@isitusa.com with reference ${supportReference}.` }, 502);
+  }
 }
