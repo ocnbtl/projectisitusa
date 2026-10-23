@@ -35,19 +35,23 @@
 .profile-correction-illustrated { display:grid; grid-template-columns:minmax(0,1fr) minmax(180px,.6fr); gap:28px; align-items:center; padding-block:20px; }
 .profile-correction-illustrated > .editorial-art { grid-column:2; grid-row:1; aspect-ratio:1; max-width:300px; justify-self:end; }
 .profile-correction-illustrated > div:not(.editorial-art) { grid-column:1; grid-row:1; min-width:0; }
-.profile-correction-illustrated:has(form) { grid-template-columns:1fr; }
-.profile-correction-illustrated:has(form) > .editorial-art { display:none; }
+.profile-correction-illustrated:has([aria-expanded="true"]) { grid-template-columns:1fr; }
+.profile-correction-illustrated:has([aria-expanded="true"]) > .editorial-art { display:none; }
 .volunteer-skills-art { width:100%; aspect-ratio:1; margin:0 0 12px; }
 @media(max-width:700px) {
  .illustrated-intro { grid-template-columns:minmax(0,1fr); gap:0; margin-bottom:24px; }
  .illustrated-intro > .editorial-art { width:100%; max-width:460px; height:240px; justify-self:center; margin-top:4px; }
  .illustrated-intro-compact > .editorial-art { height:200px; max-width:420px; }
- .profile-sources-illustrated { grid-template-columns:minmax(0,1fr) 110px; gap:8px; }
+ .profile-sources-illustrated { grid-template-columns:minmax(0,1fr); gap:8px; }
+ .profile-sources-illustrated > .editorial-art { grid-row:1; height:180px; width:260px; max-width:100%; justify-self:center; }
+ .profile-sources-illustrated > div:not(.editorial-art) { grid-row:2; }
  .profile-report-callout:has(.profile-report-art) { grid-template-columns:minmax(0,1fr); gap:0; }
  .profile-report-callout:has(.profile-report-art) > .editorial-art { grid-row:auto; max-width:280px; height:200px; justify-self:center; }
- .profile-correction-illustrated { grid-template-columns:minmax(0,1fr) 120px; gap:10px; }
- .profile-correction-illustrated > .editorial-art { max-width:150px; }
- .profile-correction-illustrated:has(form) > div:not(.editorial-art) { grid-column:1; }
+ .profile-correction-illustrated { grid-template-columns:minmax(0,1fr); gap:0; }
+ .profile-correction-illustrated > .editorial-art { grid-column:1; grid-row:1; width:280px; max-width:100%; height:180px; justify-self:center; }
+ .profile-correction-illustrated > div:not(.editorial-art) { grid-column:1; grid-row:2; }
+ .profile-correction-illustrated:has([aria-expanded="true"]) > div:not(.editorial-art) { grid-row:1; }
+ .profile-correction-illustrated .profile-correction > button { text-align:left; }
  .volunteer-skills-art { max-width:340px; height:210px; margin-inline:auto; }
 }
 @media print { .illustrated-intro { display:block; } .illustrated-intro > .editorial-art,.profile-report-art,.profile-reference-art,.profile-correction-illustrated > .editorial-art,.volunteer-skills-art { display:none; } .profile-correction-illustrated,.profile-sources-illustrated,.profile-report-callout:has(.profile-report-art) { display:block; } }
