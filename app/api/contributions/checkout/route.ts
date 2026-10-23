@@ -1,5 +1,5 @@
 import { createHash, randomUUID } from "node:crypto";
-import { checkoutParameters, customerPortal, donationAmount } from "@/lib/ui/donation-checkout";
+import { checkoutDestination, checkoutParameters, customerPortal, donationAmount } from "@/lib/ui/donation-checkout";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 const originHosts = new Set(["isitusa.com", "www.isitusa.com"]);
@@ -60,8 +60,9 @@ export async function POST(request: Request) {
     providerStatus = response.status; providerRequest = safeCode(response.headers.get("request-id"));
     const session = await response.json();
     providerCode = safeCode(session.error?.code ?? session.error?.type);
-    if (!response.ok || session.livemode !== true || typeof session.client_secret !== "string" || !session.client_secret.startsWith("cs_live_")) throw new Error("Checkout unavailable");
-    return reply({ clientSecret: session.client_secret });
+    const url = checkoutDestination(session.url);
+    if (!response.ok || session.livemode !== true || !url) throw new Error("Checkout unavailable");
+    return reply({ url });
   } catch {
     // Only diagnostic identifiers enter server logs, never tokens, keys, request
     // bodies, Stripe response bodies, client secrets or contributor details.

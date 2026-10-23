@@ -8,10 +8,20 @@ export function customerPortal(value: string | undefined): string | null {
   if (!value || !/^https:\/\/billing\.stripe\.com\/p\/login\/[A-Za-z0-9]+$/.test(value)) return null;
   return value;
 }
+export function checkoutDestination(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" && url.hostname === "checkout.stripe.com" &&
+      !url.username && !url.password && !url.port &&
+      /^\/c\/pay\/cs_live_[A-Za-z0-9]+$/.test(url.pathname) ? value : null;
+  } catch { return null; }
+}
 export function checkoutParameters(amount: number, frequency: DonationFrequency) {
   const params = new URLSearchParams({
-    mode: frequency === "monthly" ? "subscription" : "payment", ui_mode: "embedded_page",
-    redirect_on_completion: "never", "payment_method_types[0]": "card",
+    mode: frequency === "monthly" ? "subscription" : "payment", ui_mode: "hosted",
+    success_url: "https://isitusa.com/support", cancel_url: "https://isitusa.com/support",
+    "payment_method_types[0]": "card",
     "line_items[0][quantity]": "1", "line_items[0][price_data][currency]": "usd",
     "line_items[0][price_data][unit_amount]": String(amount),
     "line_items[0][price_data][product_data][name]": frequency === "monthly" ? "Monthly support for ISITUSA" : "Support for ISITUSA",
