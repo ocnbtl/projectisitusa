@@ -1,10 +1,10 @@
-import { IllustratedIntro, type EditorialSubject } from "@/components/editorial-art";
+import { EditorialArt, IllustratedIntro, type EditorialSubject } from "@/components/editorial-art";
 import type { ReactNode } from "react";
 import type { Route } from "next";
 import Link from "next/link";
 import s from "./research-paper.module.css";
 
-export type PaperSection = { id: string; title: string; content: ReactNode };
+export type PaperSection = { id: string; title: string; content: ReactNode; artwork?: EditorialSubject };
 export const methodologyRevision = "f68ff185397fa6fd850a7cd9fc7ded851767e877";
 export function MethodReference({ path, children }: { path: string; children: ReactNode }) {
   return <a href={`https://github.com/ocnbtl/projectisitusa/blob/${methodologyRevision}/${path}`}>{children}</a>;
@@ -27,7 +27,7 @@ export function ResearchPaper({ title, description, sections, related, artwork }
       </nav>
       <article className={s.article} aria-label={title}>
         {sections.map(section => <section key={section.id} id={section.id} aria-labelledby={`${section.id}-heading`}>
-          <h2 id={`${section.id}-heading`}>{section.title}</h2>{section.content}
+          {section.artwork ? <div className={s.sectionOpening}><EditorialArt subject={section.artwork}/><h2 id={`${section.id}-heading`}>{section.title}</h2></div> : <h2 id={`${section.id}-heading`}>{section.title}</h2>}{section.content}
         </section>)}
         <aside className={s.revision} aria-label="Document history">
           <h2>About this edition</h2>

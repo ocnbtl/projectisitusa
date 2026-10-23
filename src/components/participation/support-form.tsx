@@ -73,6 +73,6 @@ export function SupportForm() {
    <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Open billing portal <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
   </section>}
   <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>
-  <EditorialArt subject="support" className={s.closingArt}/>
+  <EditorialArt subject="message" className={s.closingArt}/>
  </main>;
 }

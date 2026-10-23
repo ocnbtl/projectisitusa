@@ -79,7 +79,7 @@ export default async function SpeciesProfilePage({
       </header>
       <nav className="profile-section-nav" aria-label="On this profile"><a href="#profile-sources-heading">References</a><a href="#occurrences">Recorded occurrences</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-correction">Suggest a correction</a></nav>
 
-      <section className="profile-sources reading-section" aria-labelledby="profile-sources-heading">
+      <section className="profile-sources reading-section profile-sources-illustrated" aria-labelledby="profile-sources-heading"><div>
         <h2 id="profile-sources-heading">Profile references</h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
           {references.map((source) => (
@@ -95,7 +95,7 @@ export default async function SpeciesProfilePage({
             Registry reference: {registry.authorityUrl ? <a href={registry.authorityUrl} target="_blank" rel="noreferrer" className="text-link">{registry.authority}</a> : registry.authority}
           </p>
         ) : null}
-      </section>
+      </div><EditorialArt subject="bibliography" className="profile-reference-art"/></section>
 
       <div id="occurrences" className="scroll-mt-24">
         <Suspense fallback={<p role="status" className="reading-section text-sm text-[var(--muted)]">Opening recorded occurrences...</p>}>
@@ -146,8 +146,8 @@ export default async function SpeciesProfilePage({
         ) : null}
 
         {!action && <section id="actions" className="reading-section scroll-mt-24"><h2>What you can do</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">If you think you have found this species, record where and when you saw it and take clear photographs from a safe distance. Confirm its identity and local guidance before handling, moving or attempting to control it.</p></section>}
-        <div className="profile-report-callout"><EditorialArt subject="sighting" className="profile-report-art"/><div><h3>Found this species?</h3><p>Document what you saw and help improve the picture of your area.</p></div><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="text-link inline-flex min-h-11 items-center gap-2">Submit a sighting <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
-        <div id="profile-correction" className="scroll-mt-24"><ProfileCorrection speciesId={species.id} name={species.commonName}/></div>
+        <div className="profile-report-callout"><EditorialArt subject="notebook" className="profile-report-art"/><div><h3>Found this species?</h3><p>Document what you saw and help improve the picture of your area.</p></div><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="text-link inline-flex min-h-11 items-center gap-2">Submit a sighting <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
+        <div id="profile-correction" className="profile-correction-illustrated scroll-mt-24"><EditorialArt subject="revision"/><div><ProfileCorrection speciesId={species.id} name={species.commonName}/></div></div>
         {registry ? (
           <details className="reading-section border-t border-[var(--border)]">
             <summary className="min-h-11 cursor-pointer py-3 text-base font-medium">Registry details</summary>

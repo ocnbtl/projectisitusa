@@ -1,5 +1,5 @@
 "use client";
-import { IllustratedIntro } from "@/components/editorial-art";
+import { EditorialArt, IllustratedIntro } from "@/components/editorial-art";
 
 import Link from "next/link";
 import { useRef, useState, type FormEvent } from "react";
@@ -45,7 +45,7 @@ export function VolunteerForm(){
      <button type="submit" className={styles.button} disabled={busy||!config?.volunteers||!token}>{busy?"Sending your application…":"Send application"}<ArrowRight size={16} aria-hidden="true"/></button>
     </form>
    </section>
-   <aside className={css.aside}><h2>A place to contribute.</h2><p>We’re building a small team around careful research, clear writing, community connections, and a useful open source tool.</p><ol><li><strong>Tell us about yourself</strong><span>Share your interests, skills, and availability.</span></li><li><strong>Find the right fit together</strong><span>A team member reviews your application and discusses a role with you.</span></li><li><strong>Get a clear starting point</strong><span>If it’s a fit, you’ll receive a workspace invitation, role guidance, and access to the tools you need.</span></li></ol><p className={styles.hint}>Already on the team? <a className="text-link" href="https://team.isitusa.com">Open your workspace</a>.</p></aside>
+   <aside className={css.aside}><EditorialArt subject="skills" className="volunteer-skills-art"/><h2>A place to contribute.</h2><p>We’re building a small team around careful research, clear writing, community connections, and a useful open source tool.</p><ol><li><strong>Tell us about yourself</strong><span>Share your interests, skills, and availability.</span></li><li><strong>Find the right fit together</strong><span>A team member reviews your application and discusses a role with you.</span></li><li><strong>Get a clear starting point</strong><span>If it’s a fit, you’ll receive a workspace invitation, role guidance, and access to the tools you need.</span></li></ol><p className={styles.hint}>Already on the team? <a className="text-link" href="https://team.isitusa.com">Open your workspace</a>.</p></aside>
   </div>}
  </main>;
 }

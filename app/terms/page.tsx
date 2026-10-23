@@ -9,7 +9,7 @@ export default function Page() {
   const active = Boolean(activeStripePaymentLink(SUPPORT_DESTINATIONS));
   const { contactEmail, contactVerifiedAt, refundPolicy } = SUPPORT_DESTINATIONS.cardSupport;
   return <main id="main-content" className={styles.page}>
-    <IllustratedIntro subject="support"><header className={styles.intro}><h1>Supporting ISITUSA.</h1><p>Thank you for helping keep invasive species research open to everyone. Here is how contributions, monthly giving, and refunds work.</p></header></IllustratedIntro>
+    <IllustratedIntro subject="terms"><header className={styles.intro}><h1>Supporting ISITUSA.</h1><p>Thank you for helping keep invasive species research open to everyone. Here is how contributions, monthly giving, and refunds work.</p></header></IllustratedIntro>
     <div className={styles.prose}>
       <h2>Who receives your support</h2>
       <p>ISITUSA is an independent initiative based in the United States. Contributions support research review, maintenance, and improvements to the public website. Contributions are not tax deductible.</p>
