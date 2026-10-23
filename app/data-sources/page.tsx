@@ -89,5 +89,5 @@ const sections: PaperSection[] = [
 ];
 
 export default function DataSourcesPage() {
-  return <ResearchPaper title="Our data sources" description="The records, collections, and research behind ISITUSA, with a clear account of what each can tell us." sections={sections} related={{ href: "/approach", label: "Read our approach paper" }} />;
+  return <ResearchPaper artwork="archive" title="Our data sources" description="The records, collections, and research behind ISITUSA, with a clear account of what each can tell us." sections={sections} related={{ href: "/approach", label: "Read our approach paper" }} />;
 }

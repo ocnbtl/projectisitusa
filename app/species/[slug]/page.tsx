@@ -1,3 +1,4 @@
+import { EditorialArt } from "@/components/editorial-art";
 import type { Route } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -145,7 +146,7 @@ export default async function SpeciesProfilePage({
         ) : null}
 
         {!action && <section id="actions" className="reading-section scroll-mt-24"><h2>What you can do</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">If you think you have found this species, record where and when you saw it and take clear photographs from a safe distance. Confirm its identity and local guidance before handling, moving or attempting to control it.</p></section>}
-        <div className="profile-report-callout"><div><h3>Found this species?</h3><p>Document what you saw and help improve the picture of your area.</p></div><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="text-link inline-flex min-h-11 items-center gap-2">Submit a sighting <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
+        <div className="profile-report-callout"><EditorialArt subject="sighting" className="profile-report-art"/><div><h3>Found this species?</h3><p>Document what you saw and help improve the picture of your area.</p></div><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="text-link inline-flex min-h-11 items-center gap-2">Submit a sighting <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
         <div id="profile-correction" className="scroll-mt-24"><ProfileCorrection speciesId={species.id} name={species.commonName}/></div>
         {registry ? (
           <details className="reading-section border-t border-[var(--border)]">

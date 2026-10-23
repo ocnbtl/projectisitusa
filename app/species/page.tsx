@@ -1,3 +1,4 @@
+import { IllustratedIntro } from "@/components/editorial-art";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
 export default function SpeciesPage() {
   return (
     <main id="main-content" className="reading-page species-page">
-      <header className="reading-hero directory-hero">
+      <IllustratedIntro subject="catalog" compact><header className="reading-hero directory-hero">
         <div><h1 className="page-heading">Explore invasive species.</h1><p>Find a species, see where it has been recorded, and read the evidence.</p></div>
         <Link href="/" className="text-link inline-flex min-h-11 items-center gap-2">Explore by county <ArrowUpRight size={16} aria-hidden="true" /></Link>
-      </header>
+      </header></IllustratedIntro>
       <details className="catalog-note catalog-note-top">
         <summary>Where does this information come from?</summary>
         <p>Species records are spread across agency websites, research collections, and monitoring programs. We bring them together here, with the original sources close at hand. Open a county finding to see who reported it, when it was recorded, and what the evidence tells us.</p>

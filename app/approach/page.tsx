@@ -80,5 +80,5 @@ const sections: PaperSection[] = [
 ];
 
 export default function ApproachPage() {
-  return <ResearchPaper title="Our approach" description="How a public record becomes useful evidence, and how we keep its context intact along the way." sections={sections} related={{ href: "/data-sources", label: "Read the data-sources paper" }} />;
+  return <ResearchPaper artwork="atlas" title="Our approach" description="How a public record becomes useful evidence, and how we keep its context intact along the way." sections={sections} related={{ href: "/data-sources", label: "Read the data-sources paper" }} />;
 }

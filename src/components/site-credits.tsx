@@ -45,6 +45,7 @@ export function SiteCredits() {
     </section>
     <section id="design" className={s.section} aria-labelledby="design-credit-heading">
       <h2 id="design-credit-heading">Typography &amp; design</h2>
+        <div className={s.entry}><h3>ISITUSA editorial illustrations</h3><p>Our decorative fieldwork, botanical, and stewardship illustrations were created for ISITUSA with OpenAI image generation, then prepared as stippled ink masks in our brand palette. They are artwork, not specimen photographs, identification guides, or evidence of an occurrence.</p></div>
       <div className={s.entry}><h3>Invasive Serif &amp; the ISITUSA identity</h3><p>Our custom botanical display lettering appears in the wordmark and editorial headings. Body text, scientific names, and controls use a system sans-serif. The New York Botanical Garden&apos;s identity was a visual inspiration; our font does not include proprietary NYBG font software or outlines. <Link href="/brand">Explore the brand kit</Link> and <a href="/fonts/invasive-serif/README.txt">font usage notes</a>.</p></div>
       <div className={s.entry}><h3>Organization logos</h3><p>Agency, university, and collection marks on our <Link href="/about">About page</Link> identify research sources. They belong to their respective organizations. Their use does not imply endorsement, affiliation, or permission to reuse those marks elsewhere.</p></div>
       <details><summary>Earlier typefaces &amp; retained license notices</summary>

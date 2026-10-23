@@ -1,9 +1,21 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import "./editorial-art.css";
 
-type EditorialSubject = "field" | "specimen" | "participate" | "research" | "support";
+const editions = {
+  field: "r6", specimen: "r6", participate: "r6", research: "r6", support: "r6",
+  atlas: "r7", archive: "r7", volunteer: "r7", sighting: "r7", catalog: "r7",
+  correspondence: "r7", stewardship: "r7", acknowledgments: "r7",
+} as const;
+export type EditorialSubject = keyof typeof editions;
 
-/** Decorative plates use transparent ink masks, so the page itself is their paper. */
+/** Decorative ink only: never a species photograph, evidence, or form control. */
 export function EditorialArt({ subject, className = "" }: { subject: EditorialSubject; className?: string }) {
-  return <div aria-hidden="true" className={`editorial-art editorial-art-${subject} ${className}`} style={{ "--art-source": `url('/artwork/editorial-${subject}-r6.png')` } as CSSProperties} />;
+  return <div aria-hidden="true" className={`editorial-art editorial-art-${subject} ${className}`} style={{ "--art-source": `url('/artwork/editorial-${subject}-${editions[subject]}.png')` } as CSSProperties} />;
+}
+
+export function IllustratedIntro({ subject, compact = false, children }: { subject: EditorialSubject; compact?: boolean; children: ReactNode }) {
+  return <div className={`illustrated-intro${compact ? " illustrated-intro-compact" : ""}`}>
+    <div className="illustrated-intro-copy">{children}</div>
+    <EditorialArt subject={subject} />
+  </div>;
 }

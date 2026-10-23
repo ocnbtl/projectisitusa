@@ -1,4 +1,6 @@
 "use client";
+import { IllustratedIntro } from "@/components/editorial-art";
+
 import Link from "next/link";
 import { useRef, useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2, Users } from "lucide-react";
@@ -23,7 +25,7 @@ export function VolunteerForm(){
   finally{setBusy(false);setToken("");setReset(v=>v+1);}
  }
  return <main id="main-content" className={`${styles.page} ${css.page}`}>
-  <header className={css.intro}><span className={css.eyebrow}><Users size={18} aria-hidden="true"/>Give your time and skills</span><h1>Volunteer with ISITUSA.</h1><p>Help more people understand invasive species and protect the places they love. Tell us what you enjoy doing, what you can bring, and how much time works for you.</p></header>
+  <IllustratedIntro subject="volunteer" compact><header className={css.intro}><span className={css.eyebrow}><Users size={18} aria-hidden="true"/>Give your time and skills</span><h1>Volunteer with ISITUSA.</h1><p>Help more people understand invasive species and protect the places they love. Tell us what you enjoy doing, what you can bring, and how much time works for you.</p></header></IllustratedIntro>
   {receipt?<div ref={success} tabIndex={-1} className={css.receipt}><CheckCircle2 size={32} aria-hidden="true"/><h2>Thank you for raising your hand.</h2><p>Your application is in our team’s review queue. We’ll read it and contact you by email to discuss a possible role. You don’t need an account yet.</p><p className={styles.hint}>Your reference: {receipt}</p><Link className={styles.button} href="/about">Back to About <ArrowRight size={16}/></Link></div>:<div className={css.layout}>
    <section aria-labelledby="application-heading"><h2 id="application-heading">Tell us about yourself.</h2><p className={css.lead}>You don’t need a particular degree or a perfect résumé. Specific examples of what you like to do help us find a useful place for you.</p>
     <ServiceStatus config={config} error={configError} ready={Boolean(config?.volunteers)} retry={retry}>Applications are temporarily unavailable. Please check back soon.</ServiceStatus>

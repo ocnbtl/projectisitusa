@@ -1,3 +1,4 @@
+import { IllustratedIntro } from "@/components/editorial-art";
 import type { Metadata } from "next";
 import styles from "@/components/participation/participation.module.css";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
@@ -6,7 +7,7 @@ export const metadata: Metadata = { title: "Privacy | ISITUSA" };
 export default function Page() {
   const { contactEmail, contactVerifiedAt } = SUPPORT_DESTINATIONS.cardSupport;
   return <main id="main-content" className={styles.page}>
-    <header className={styles.intro}><h1>Your information, handled with care.</h1><p>We use information to operate ISITUSA, improve the atlas and respond when you choose to get involved. Here is what that means for you.</p></header>
+    <IllustratedIntro subject="stewardship"><header className={styles.intro}><h1>Your information, handled with care.</h1><p>We use information to operate ISITUSA, improve the atlas and respond when you choose to get involved. Here is what that means for you.</p></header></IllustratedIntro>
     <div className={styles.prose}>
       <h2>Using the website</h2>
       <p>You can explore the atlas without an account. Optional analytics helps us understand how people use the website. It stays off unless you allow it, and you can change your choice through Privacy choices in the footer of our information pages. We respect browser Do Not Track and Global Privacy Control signals.</p>

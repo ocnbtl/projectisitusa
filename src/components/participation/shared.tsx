@@ -1,4 +1,6 @@
 "use client";
+import { IllustratedIntro, type EditorialSubject } from "@/components/editorial-art";
+
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import Script from "next/script";
 import { BookOpen, CheckCircle2, HeartHandshake, Info, Leaf, MapPin, Search, X } from "lucide-react";
@@ -6,8 +8,8 @@ import { configured, request, TURNSTILE_SITE_KEY } from "@/lib/participation/cli
 import { STREAMS, type CatalogItem, type Preferences, type PublicConfig } from "@/lib/participation/contracts";
 import styles from "./participation.module.css";
 export { styles };
-export function Frame({title,description,children,aside}:{title:string;description:string;children:ReactNode;aside?:ReactNode}) {
- return <main id="main-content" className={styles.page}><header className={styles.intro}><h1>{title}</h1><p>{description}</p></header>{aside?<div className={styles.layout}><div>{children}</div><aside className={styles.aside}>{aside}</aside></div>:children}</main>;
+export function Frame({title,description,children,aside,artwork}:{title:string;description:string;children:ReactNode;aside?:ReactNode;artwork?:EditorialSubject}) {
+ return <main id="main-content" className={styles.page}>{artwork?<IllustratedIntro subject={artwork} compact><header className={styles.intro}><h1>{title}</h1><p>{description}</p></header></IllustratedIntro>:<header className={styles.intro}><h1>{title}</h1><p>{description}</p></header>}{aside?<div className={styles.layout}><div>{children}</div><aside className={styles.aside}>{aside}</aside></div>:children}</main>;
 }
 export function Notice({children,error=false,success=false}:{children:ReactNode;error?:boolean;success?:boolean}) {const Icon=success?CheckCircle2:Info;return <div role={error?"alert":"status"} className={`${styles.notice} ${error?styles.error:""}`}><Icon size={20} aria-hidden="true" style={{flexShrink:0,marginTop:2}}/><div>{children}</div></div>;}
 export function useConfig() {

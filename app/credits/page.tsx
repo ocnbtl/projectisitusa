@@ -1,3 +1,4 @@
+import { IllustratedIntro } from "@/components/editorial-art";
 import type { Metadata } from "next";
 import { SiteCredits } from "@/components/site-credits";
 import s from "./credits.module.css";
@@ -10,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function CreditsPage() {
   return <main id="main-content" className={s.page}>
-    <header className={s.intro}>
+    <IllustratedIntro subject="acknowledgments"><header className={s.intro}>
       <h1>Credits</h1>
       <p>Good work grows from the work of others.</p>
       <p>Meet the people and organizations behind the research, maps, images, and tools we use. Each section explains their contribution and links to the original resource or license.</p>
-    </header>
+    </header></IllustratedIntro>
     <div className={s.layout}>
       <nav className={s.contents} aria-label="Credit categories">
         <a href="#research">Research &amp; records</a>

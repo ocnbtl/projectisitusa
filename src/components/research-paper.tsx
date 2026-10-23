@@ -1,3 +1,4 @@
+import { IllustratedIntro, type EditorialSubject } from "@/components/editorial-art";
 import type { ReactNode } from "react";
 import type { Route } from "next";
 import Link from "next/link";
@@ -9,15 +10,15 @@ export function MethodReference({ path, children }: { path: string; children: Re
   return <a href={`https://github.com/ocnbtl/projectisitusa/blob/${methodologyRevision}/${path}`}>{children}</a>;
 }
 
-export function ResearchPaper({ title, description, sections, related }: {
-  title: string; description: string; sections: PaperSection[]; related: { href: Route; label: string };
+export function ResearchPaper({ title, description, sections, related, artwork }: {
+  artwork: EditorialSubject; title: string; description: string; sections: PaperSection[]; related: { href: Route; label: string };
 }) {
   return <main id="main-content" className={s.page}>
-    <header className={s.intro}>
+    <IllustratedIntro subject={artwork}><header className={s.intro}>
       <h1>{title}</h1>
       <p className={s.dek}>{description}</p>
       <p className={s.meta}>An ISITUSA white paper · Version 1.0 · <time dateTime="2026-10-18">October 18, 2026</time></p>
-    </header>
+    </header></IllustratedIntro>
     <div className={s.layout}>
       <nav className={s.contents} aria-label="Paper contents">
         <p>In this paper</p>

@@ -1,4 +1,6 @@
 "use client";
+import { IllustratedIntro } from "@/components/editorial-art";
+
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowLeft, ArrowUpRight, ClipboardCheck } from "lucide-react";
@@ -35,7 +37,7 @@ export function RefundForm() {
   }
   return <main id="main-content" className={s.page}>
     <Link href="/support" className={s.back}><ArrowLeft size={16} aria-hidden="true"/> Back to supporting ISITUSA</Link>
-    <header className={s.intro}><span><ClipboardCheck size={18} aria-hidden="true"/> Contribution support</span><h1>Request a refund.</h1><p>Tell us what happened and which contribution you are asking about. We review every request individually and reply by email.</p></header>
+    <IllustratedIntro subject="stewardship" compact><header className={s.intro}><span><ClipboardCheck size={18} aria-hidden="true"/> Contribution support</span><h1>Request a refund.</h1><p>Tell us what happened and which contribution you are asking about. We review every request individually and reply by email.</p></header></IllustratedIntro>
     <div className={s.layout}><section>
       {receipt ? <div ref={notice} tabIndex={-1} role="status" className={s.notice}><h2>Your request has been submitted.</h2><p>Keep this reference: <strong>{receipt}</strong>.</p><p>This confirms submission for review, not approval or completion of a refund. We will reply to the email you provided.</p></div> : <>
         {available !== true && <p role="status" className={s.notice}>{available === null ? "Checking form availability..." : "The refund request form is temporarily unavailable. Please try again later, or contact contact@isitusa.com for help submitting your request."}</p>}
