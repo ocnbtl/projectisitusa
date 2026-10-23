@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useId, useState } from "react";
 import { ANALYTICS_SETTINGS_EVENT } from "@/lib/ui/telemetry";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -12,9 +13,22 @@ const groups = [
   { title: "Explore", links: [{icon:Map,label:"County map",href:"/"},{icon:Leaf,label:"Species profiles",href:"/species"},{icon:Binoculars,label:"Reviewed sightings",href:"/observations"}] },
   { title: "Our research", links: [{icon:BookOpen,label:"Research overview",href:"/research"},{icon:Route,label:"Our approach",href:"/approach"},{icon:Database,label:"Data sources",href:"/data-sources"},{icon:Award,label:"Credits",href:"/credits"}] },
   { title: "Get involved", links: [{icon:Bell,label:"Email updates",href:"/join"},{icon:Settings,label:"Email preferences",href:"/preferences"},{icon:HandHelping,label:"Ways to help for free",href:"/support/free"},{icon:Camera,label:"Report a sighting",href:"/report"},{icon:Users,label:"Volunteer",href:"/volunteer"}] },
-  { title: "Contributions", links: [{icon:Heart,label:"Support the mission",href:"/support"},{icon:FileText,label:"Contribution terms",href:"/terms"},{icon:Receipt,label:"Request a refund",href:"/support/refund"},{icon:Repeat,label:"Manage monthly giving",href:"/support#supporter-heading"}] },
+  { title: "Contributions", links: [{icon:Heart,label:"Support the mission",href:"/support"},{icon:FileText,label:"Contribution terms",href:"/terms"},{icon:Receipt,label:"Request a refund",href:"/support/refund"},{icon:Repeat,label:"Manage your monthly support",href:"/support#supporter-heading"}] },
   { title: "ISITUSA", links: [{icon:Info,label:"About us",href:"/about"},{icon:Palette,label:"Brand kit",href:"/brand"},{icon:Shield,label:"Privacy policy",href:"/privacy"}] },
 ] as const;
+
+function FooterMobileGroup({ group }: { group: (typeof groups)[number] }) {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
+  return <div className="footer-mobile-group" data-open={open}>
+    <button className="footer-mobile-toggle" type="button" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(!open)}>
+      {group.title}<ChevronDown size={16} aria-hidden="true" />
+    </button>
+    <div id={panelId} className="footer-mobile-panel" aria-hidden={!open} inert={!open}>
+      <div><nav aria-label={group.title}>{group.links.map(link => <Link key={link.href} href={{ pathname: link.href.split("#")[0], hash: link.href.split("#")[1] }}><link.icon size={16} aria-hidden="true" /><span>{link.label}</span></Link>)}</nav></div>
+    </div>
+  </div>;
+}
 
 export function SiteFooter() {
   const pathname = usePathname();
@@ -26,7 +40,7 @@ export function SiteFooter() {
         <div className="footer-navigation">
           {groups.map(group=><div key={group.title} className="footer-group">
             <nav className="footer-desktop-group" aria-label={group.title}><h2>{group.title}</h2>{group.links.map(link=><Link key={link.href} href={{pathname:link.href.split("#")[0],hash:link.href.split("#")[1]}}><link.icon size={16} aria-hidden="true"/><span>{link.label}</span></Link>)}</nav>
-            <details className="footer-mobile-group"><summary>{group.title}<ChevronDown size={16} aria-hidden="true"/></summary><nav aria-label={group.title}>{group.links.map(link=><Link key={link.href} href={{pathname:link.href.split("#")[0],hash:link.href.split("#")[1]}}><link.icon size={16} aria-hidden="true"/><span>{link.label}</span></Link>)}</nav></details>
+            <FooterMobileGroup group={group} />
           </div>)}
         </div>
       </div>

@@ -23,7 +23,14 @@ export function FooterGrove() {
       const bottom = visible && element!.getBoundingClientRect().bottom <= window.innerHeight + 48;
       html.classList.toggle("footer-at-end", bottom);
       const css = getComputedStyle(element!);
-      const edge = css.getPropertyValue(offset > 6 ? "--soil-base" : "--grove-ink").trim();
+      // Match the exposed depth of the CSS soil gradient, including Safari's canvas.
+      const channels = (name: string) => {
+        const hex = css.getPropertyValue(name).trim().replace("#", "");
+        return [0, 2, 4].map(index => parseInt(hex.slice(index, index + 2), 16));
+      };
+      const forest = channels("--grove-ink"), soil = channels("--soil-base");
+      const depth = Math.min(1, offset / 180);
+      const edge = `rgb(${forest.map((value, index) => Math.round(value + (soil[index] - value) * depth)).join(", ")})`;
       html.style.setProperty("--footer-edge", edge);
       meta.content = bottom ? edge : css.getPropertyValue("--background").trim();
     }

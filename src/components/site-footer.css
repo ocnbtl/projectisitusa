@@ -93,18 +93,27 @@ footer.site-footer.footer-refined::after{content:"";display:block;height:env(saf
    The root mask keeps the exact trunk coordinates of the landscape above. */
 .footer-grove{--soil-base:#d5d9bd;--soil-ink:#59412b;--soil-grain:#846744}
 .dark .footer-grove{--soil-base:#202d27;--soil-ink:#b9a68a;--soil-grain:#6f5d44}
-.footer-soil,.dark .footer-soil{background:var(--soil-base);background-image:none}
+/* Color and ink density change together, without a green/brown seam. */
+.footer-soil,.dark .footer-soil{background:linear-gradient(180deg,var(--grove-ink),var(--soil-base) 180px);background-image:linear-gradient(180deg,var(--grove-ink),var(--soil-base) 180px)}
 .footer-soil::before{content:"";position:absolute;inset:0;pointer-events:none;
- background:linear-gradient(180deg,var(--grove-ink),var(--soil-ink) 38%,var(--soil-grain));
- mask-image:radial-gradient(circle at 1px 1px,#000 .8px,transparent 1px),radial-gradient(circle at 3px 3px,#000 .65px,transparent .9px);
- mask-size:4px 4px;mask-repeat:repeat}
-.footer-soil::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.48;
- background:radial-gradient(ellipse at 23% 38%,transparent 10%,var(--soil-ink) 56%,transparent 82%),radial-gradient(ellipse at 79% 83%,var(--soil-grain),transparent 68%);
- mask:radial-gradient(circle at 1px 1px,#000 .6px,transparent .9px) 0 0/3px 3px repeat}
-.footer-roots{z-index:1;background:#59412b}
-.dark .footer-roots{background:#c9b897}
+ background:linear-gradient(180deg,var(--grove-ink),var(--soil-ink) 160px,var(--soil-grain));
+ mask:url('/artwork/soil-screen-r6.svg') center top / max(100%,900px) 240px no-repeat}
+.footer-soil::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;
+ background:linear-gradient(180deg,transparent,var(--soil-grain) 180px);
+ mask:url('/artwork/soil-screen-r6.svg') 31% bottom / max(100%,1100px) 270px no-repeat;transform:scaleX(-1)}
+.footer-roots{z-index:1;background:linear-gradient(180deg,color-mix(in srgb,var(--grove-ink) 82%,var(--soil-ink)),var(--soil-ink) 110px)}
+.dark .footer-roots{background:linear-gradient(180deg,var(--grove-ink),#c9b897 150px)}
 /* The body is Safari's canvas fallback; changing html alone leaves a pale strip. */
 html.footer-at-end,html.dark.footer-at-end,html.footer-at-end body{background-color:var(--footer-edge,#00583b)}
 html.footer-at-end body{transition:none}
 .app-frame{background:var(--background)}
 footer.site-footer.footer-refined::after{background:var(--footer-edge,var(--grove-ink))}
+
+footer.footer-refined .footer-utilities>a[href^="mailto:"]{text-decoration:none}
+.footer-mobile-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:52px;padding:12px 0;border:0;border-radius:0;background:transparent;color:inherit;font:inherit;font-size:15px;font-weight:600;text-align:left;cursor:pointer}
+.footer-mobile-toggle svg{transition:transform 320ms cubic-bezier(.22,1,.36,1)}
+.footer-mobile-group[data-open="true"] .footer-mobile-toggle svg{transform:rotate(180deg)}
+.footer-mobile-panel{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows 320ms cubic-bezier(.22,1,.36,1),opacity 240ms ease,visibility 0s 320ms}
+.footer-mobile-panel>div{min-height:0;overflow:hidden}
+.footer-mobile-group[data-open="true"] .footer-mobile-panel{grid-template-rows:1fr;opacity:1;visibility:visible;transition-delay:0s}
+@media(prefers-reduced-motion:reduce){.footer-mobile-panel,.footer-mobile-toggle svg{transition:none}}

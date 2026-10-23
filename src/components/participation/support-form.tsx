@@ -69,7 +69,7 @@ export function SupportForm() {
 
   </div>
   {config?.portal && <section className={s.supporterPortal} aria-labelledby="supporter-heading">
-   <div><h2 id="supporter-heading">Monthly giving</h2><p>Update or cancel your recurring contribution securely through Stripe.</p></div>
+   <div><h2 id="supporter-heading">Manage your monthly support</h2><p>Update or cancel your recurring contribution securely through Stripe.</p></div>
    <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Open billing portal <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
   </section>}
   <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>
