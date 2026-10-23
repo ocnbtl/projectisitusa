@@ -14,7 +14,7 @@ export function checkoutDestination(value: unknown): string | null {
     const url = new URL(value);
     return url.protocol === "https:" && url.hostname === "checkout.stripe.com" &&
       !url.username && !url.password && !url.port &&
-      /^\/c\/pay\/cs_live_[A-Za-z0-9]+$/.test(url.pathname) ? value : null;
+      /^\/(?:c|g)\/pay\/cs_live_[A-Za-z0-9]+$/.test(url.pathname) ? value : null;
   } catch { return null; }
 }
 export function checkoutParameters(amount: number, frequency: DonationFrequency) {
