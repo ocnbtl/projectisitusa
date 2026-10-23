@@ -18,6 +18,9 @@
 .illustrated-intro { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr); align-items:center; gap:clamp(24px,4vw,64px); margin-bottom:40px; }
 .illustrated-intro-copy { min-width:0; }
 .illustrated-intro-copy > header { margin-bottom:0; }
+.illustrated-intro-copy > .directory-hero { display:block; }
+.illustrated-intro-copy > .directory-hero > .text-link { margin-top:12px; }
+.illustrated-intro-copy .directory-hero h1 { font-size:clamp(30px,3.4vw,48px); }
 .illustrated-intro > .editorial-art { max-width:460px; justify-self:end; }
 .illustrated-intro-compact > .editorial-art { max-width:340px; }
 .profile-report-art { width:100%; max-width:220px; margin-inline:auto; flex-shrink:0; }
