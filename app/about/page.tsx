@@ -4,6 +4,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, CalendarDays, MapPin, Sc
 import { researchSources } from "@/content/research-source-credits";
 import Image from "next/image";
 import "./about-experience.css";
+import { EditorialArt } from "@/components/editorial-art";
 import { AboutSourceCarousel } from "@/components/about-source-carousel";
 
 
@@ -40,7 +41,7 @@ export default function AboutPage() {
       </nav>
 
       <section className="about-method" aria-labelledby="method-heading">
-        <div className="about-pixel-panorama pixel-atlas" aria-hidden="true" />
+        <EditorialArt subject="field" />
         <div className="section-introduction">
           <h2 id="method-heading">Every record needs context.</h2>
           <p>We look through published research, public records, and observations to help you understand what has been found near you. Alongside each finding, we keep the details that help you make sense of it: where it came from, when it was recorded, and what we’re still unsure of.</p></div>
@@ -55,11 +56,13 @@ export default function AboutPage() {
 
       <div className="about-research-grid">
       <section className="about-sources" aria-labelledby="sources-heading">
-        <div className="about-pixel-panorama pixel-herbarium" aria-hidden="true" />
+        <EditorialArt subject="specimen" />
+        <div className="about-source-copy">
         <h2 id="sources-heading">The research we build on.</h2>
         <p>We draw on public resources from agencies, universities, museums, herbaria, and established observation networks. Our species catalog begins with the U.S. Register of Introduced and Invasive Species (US-RIIS), and we bring together additional records and references to build the map and profiles. A single source may provide sightings, photographs, identification details, or information about a species’ effects.</p>
         <p>Our data sources <Link href="/data-sources" className="text-link">paper</Link> explains which resources we use, how we use them, and what they can and cannot tell us. Our <Link href="/credits" className="text-link">credits</Link> link to the people and organizations whose work makes this possible.</p>
         <div className="about-section-actions"><Link href="/data-sources">Read our data-sources paper <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/credits#research">Explore source credits <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
+        </div>
       </section>
       <section className="about-direction" aria-labelledby="invasive-heading">
         <h2 id="invasive-heading">What makes a species invasive?</h2>
@@ -70,13 +73,15 @@ export default function AboutPage() {
       </div>
 
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
-        <div className="about-pixel-panorama pixel-meadow" aria-hidden="true" />
+        <EditorialArt subject="participate" />
+        <div className="about-help-copy">
         <div className="section-introduction"><h2 id="help-heading">Be part of the work.</h2><p>Share what you find, stay informed about the places you love, or help us build a resource more people can use.</p></div>
         <div className="involvement-links">
           <Link href="/report"><span><strong>Report a sighting</strong><small>Share photographs and details directly with our team for identification, review, and a possible referral.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/join"><span><strong>Get invasive species updates</strong><small>Choose the places, species, and stories you want to hear about. Update your preferences whenever you like.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href="/support"><span><strong>Support the mission</strong><small>Give once or regularly to help keep this free, open source tool available to everyone.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
           <Link href={{pathname:"/volunteer"}}><span><strong>Volunteer with ISITUSA</strong><small>Bring your skills and curiosity. Tell us what you enjoy doing and find a role where you can help.</small></span><ArrowUpRight size={22} aria-hidden="true" /></Link>
+        </div>
         </div>
       </section>
 

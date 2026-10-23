@@ -10,6 +10,7 @@ import { verifiedPublicWallets } from "@/lib/ui/support-destinations";
 import { DonationCheckout, useDonationConfig } from "./donation-checkout";
 import { FreeSupportActions } from "./free-support-actions";
 import s from "./support.module.css";
+import { EditorialArt } from "@/components/editorial-art";
 const options = [{id:"once",label:"Once"},{id:"monthly",label:"Recurring"},{id:"crypto",label:"Cryptocurrency"},{id:"free",label:"Help for free"}] as const;
 type SupportOption = typeof options[number]["id"];
 const names: Record<string,string> = { BTC:"Bitcoin", ETH:"Ethereum", SOL:"Solana", XRP:"XRP", XMR:"Monero" };
@@ -46,6 +47,7 @@ export function SupportForm() {
   <div className={s.layout}>
    <section className={s.mission} aria-labelledby="mission-heading">
     <header className={s.intro}><h1 id="mission-heading" className="page-heading">Support the mission.</h1><p>ISITUSA is independent, apolitical, and doesn&apos;t accept lobbying money. We&apos;re building a free, open-source tool to help people understand invasive species and protect the places they love. Your contribution keeps it free for everyone.</p></header>
+    <EditorialArt subject="support" className={s.missionArt}/>
    </section>
    <section id="contribute" className={s.donation} aria-labelledby="donation-heading">
     <header className={s.donationHeading}><h2 id="donation-heading">Make a contribution</h2></header>
@@ -71,5 +73,6 @@ export function SupportForm() {
    <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Open billing portal <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
   </section>}
   <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>
+  <EditorialArt subject="support" className={s.closingArt}/>
  </main>;
 }

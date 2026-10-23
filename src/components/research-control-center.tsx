@@ -1,5 +1,6 @@
 "use client";
 
+import { EditorialArt } from "@/components/editorial-art";
 import { countyResearchProgress } from "@/lib/ui/county-progress";
 import { formatOccurrenceDate } from "@/lib/research/occurrence-date";
 
@@ -1503,11 +1504,10 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
 }) {
   return (
     <header className="reading-hero research-heading">
-      <div>
+      <div className="research-heading-copy"><div>
         <h1 className="page-heading">Explore the evidence.</h1>
         <p>Find a species in your county, read its source records, and see what we still need to learn.</p>
-
-      </div>
+      </div><EditorialArt subject="research" /></div>
       <div className="research-state-control">
         <SelectField stateFlags label="Choose a state" value={selectedStateCode}
           options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}

@@ -1,0 +1,15 @@
+/* The complete irregular silhouette remains visible at every width. No cover crops. */
+.editorial-art {
+  width:100%; aspect-ratio:3/2; min-width:0;
+  background:#00583b;
+  mask-image:var(--art-source); mask-position:center;
+  mask-repeat:no-repeat; mask-size:contain;
+  pointer-events:none; user-select:none;
+}
+.dark .editorial-art { background:var(--accent); }
+.research-heading .research-heading-copy { display:grid; grid-template-columns:minmax(0,1fr) 200px; align-items:center; gap:24px; flex:1; }
+.research-heading-copy .editorial-art { max-width:240px; }
+@media(max-width:1100px) {
+  .research-heading .research-heading-copy { grid-template-columns:minmax(0,1fr); }
+  .research-heading-copy .editorial-art { display:none; }
+}
