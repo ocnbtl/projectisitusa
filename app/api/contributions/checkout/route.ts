@@ -44,7 +44,8 @@ export async function POST(request: Request) {
     const challenge = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: input.token }), signal: AbortSignal.timeout(10000) });
     const check = await challenge.json();
     if (!challenge.ok || check.success !== true || check.action !== "donation_checkout" || !originHosts.has(check.hostname)) return reply({ error: "Please complete the security check again." }, 400);
-    const headers = { Authorization: `Bearer ${config.secret}` };
+    // Pin the reviewed contract so account-default upgrades cannot silently break checkout.
+    const headers = { Authorization: `Bearer ${config.secret}`, "Stripe-Version": "2026-08-26.dahlia" };
     // Fail closed if a key belongs to a different recipient account.
     stage = "recipient_check";
     const accountResponse = await fetch("https://api.stripe.com/v1/account", { headers, cache: "no-store", signal: AbortSignal.timeout(10000) });

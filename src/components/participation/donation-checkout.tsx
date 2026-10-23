@@ -7,7 +7,7 @@ import { Challenge, Honeypot } from "./shared";
 import { donationAmount, type DonationFrequency } from "@/lib/ui/donation-checkout";
 import s from "./support.module.css";
 type Embedded = { mount: (element: HTMLElement) => void; destroy: () => void };
-declare global { interface Window { Stripe?: (key: string) => { initEmbeddedCheckout: (options: { clientSecret: string }) => Promise<Embedded> } } }
+declare global { interface Window { Stripe?: (key: string) => { createEmbeddedCheckoutPage: (options: { clientSecret: string }) => Promise<Embedded> } } }
 type Config = { available: boolean; monthly: boolean; publicKey: string | null; portal: string | null };
 export function useDonationConfig() {
   const [config, setConfig] = useState<Config | null>(null), [checked, setChecked] = useState(false);
@@ -35,7 +35,7 @@ export function DonationCheckout({ frequency = "once", config, checked, onChecko
   useEffect(() => {
     if (!clientSecret || !scriptReady || !config?.publicKey || !mount.current || !window.Stripe) return;
     let active = true;
-    window.Stripe(config.publicKey).initEmbeddedCheckout({ clientSecret }).then(checkout => {
+    window.Stripe(config.publicKey).createEmbeddedCheckoutPage({ clientSecret }).then(checkout => {
       if (!active || !mount.current) { checkout.destroy(); return; }
       embedded.current = checkout; checkout.mount(mount.current); track("checkout_opened", {surface:"support", frequency});
     }).catch(() => { if (active) { setError("The secure form could not load. Check your connection and try again."); setClientSecret(""); } });
@@ -56,7 +56,7 @@ export function DonationCheckout({ frequency = "once", config, checked, onChecko
     finally { lock.current = false; setBusy(false); setToken(""); setReset(value => value + 1); }
   }
   return <>
-    {config?.available && <Script src="https://js.stripe.com/v3/" onReady={() => setScriptReady(true)} onError={() => setError("Stripe could not load. Please check your connection and reload this page.")} />}
+    {config?.available && <Script src="https://js.stripe.com/dahlia/stripe.js" onReady={() => setScriptReady(true)} onError={() => setError("Stripe could not load. Please check your connection and reload this page.")} />}
     {clientSecret ? <><div className={s.checkoutHeader}><strong>{frequency === "monthly" ? "Monthly contribution" : "One-time contribution"}</strong><button type="button" onClick={change}>Change amount</button></div><div ref={mount} className={s.checkoutForm} /></> : <>
       {config?.available && (frequency === "once" || config.monthly) ? <>
         <p className={s.amountLabel}>Choose an amount in USD</p><div className={s.amounts} role="group" aria-label={frequency === "monthly" ? "Monthly contribution amount" : "One-time contribution amount"}>{["5", "10", "25", "50"].map(value => <button type="button" key={value} disabled={busy} aria-pressed={!custom && amount === value} onClick={() => { change(); setCustom(false); setAmount(value); }}>${value}</button>)}<button type="button" disabled={busy} aria-pressed={custom} aria-expanded={custom} aria-controls={customId} onClick={() => { change(); setCustom(true); }}>Other</button></div>

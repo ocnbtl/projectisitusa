@@ -13,9 +13,12 @@ function mock(account: object = { id: "acct_1ULqjk0sMVuUFG7H", charges_enabled: 
   globalThis.fetch = async (input, init) => {
     const url = String(input); calls.push(url);
     if (url.includes("siteverify")) return Response.json({ success: true, action: "donation_checkout", hostname: "isitusa.com" });
+    assert.equal(new Headers(init?.headers).get("Stripe-Version"), "2026-08-26.dahlia");
     if (url.endsWith("/account")) return Response.json(account, { status, headers: { "request-id": "req_account" } });
     assert.equal(url, "https://api.stripe.com/v1/checkout/sessions");
     form = init?.body as URLSearchParams;
+    assert.equal(form.get("ui_mode"), "embedded_page", "Dahlia rejects the retired embedded enum");
+    assert.equal(form.get("redirect_on_completion"), "never");
     return Response.json(sessionStatus === 200 ? { livemode: true, client_secret: "cs_live_mock_secret" } : { error: { type: "invalid_request_error", message: "private-provider-message" } }, { status: sessionStatus, headers: { "request-id": "req_session" } });
   };
 }
