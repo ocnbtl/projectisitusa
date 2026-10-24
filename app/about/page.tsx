@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className="about-source-copy">
         <h2 id="sources-heading">The research we build on.</h2>
         <p>We draw on public resources from agencies, universities, museums, herbaria, and established observation networks. Our catalog, map, and species profiles bring together the U.S. Register of Introduced and Invasive Species (US-RIIS), agency records, scientific references, and other public resources. A single source may provide sightings, photographs, identification details, or information about a species’ effects.</p>
-        <p>Our data sources <Link href="/data-sources" className="text-link">paper</Link> explains which resources we use, how we use them, and what they can/cannot tell us. Our <Link href="/credits" className="text-link">credits</Link> link to the people and organizations whose work makes this possible.</p>
+        <p>Our data sources <Link href="/data-sources" className="text-link">paper</Link> explains in depth which resources we use, how we use them, and what they can/cannot tell us. Our <Link href="/credits" className="text-link">credits</Link> link to the people and organizations whose work makes this possible.</p>
         <div className="about-section-actions"><Link href="/data-sources">Read our data sources paper <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/credits#research">Meet our sources <ArrowRight size={16} aria-hidden="true" /></Link></div>
         </div>
       </section>
