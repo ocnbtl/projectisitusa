@@ -9,6 +9,7 @@ const editions = {
   waypoint: "r8", footsteps: "r8", layers: "r8", time: "r8",
   collections: "r8", survey: "r8", notebook: "r8", revision: "r8",
   bibliography: "r8", skills: "r8", message: "r8",
+  prism: "r9", weave: "r9",
 } as const;
 export type EditorialSubject = keyof typeof editions;
 

@@ -14,7 +14,9 @@ export function checkoutDestination(value: unknown): string | null {
     const url = new URL(value);
     return url.protocol === "https:" && url.hostname === "checkout.stripe.com" &&
       !url.username && !url.password && !url.port &&
-      /^\/(?:c|g)\/pay\/cs_live_[A-Za-z0-9]+$/.test(url.pathname) ? value : null;
+      // Stripe owns the single-letter layout prefix (observed c, f and g).
+      // Keep the exact trusted origin and live-session path, not a layout allowlist.
+      /^\/[a-z]\/pay\/cs_live_[A-Za-z0-9]+$/.test(url.pathname) ? value : null;
   } catch { return null; }
 }
 export function checkoutParameters(amount: number, frequency: DonationFrequency) {

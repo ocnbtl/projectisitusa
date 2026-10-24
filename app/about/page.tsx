@@ -28,7 +28,7 @@ export default function AboutPage() {
           <p className="about-lead">Our mission is to make invasive species research accessible, understandable, and useful to everyone. We connect people with accurate information about the species near them, helping communities take informed action to protect native biodiversity and the places they love.</p>
         </div>
         <section className="about-source-panel" aria-labelledby="source-panel-heading">
-          <h2 id="source-panel-heading">Built on trusted research from fellow protagonists</h2>
+          <h2 id="source-panel-heading">Data gathered from trusted researchers</h2>
           <AboutSourceCarousel sources={researchSources} />
           <p>ISITUSA aggregates public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about.</p>
         </section>

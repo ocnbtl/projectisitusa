@@ -80,7 +80,7 @@ const sections: PaperSection[] = [
     </details>
     <p>This evidence registry does not replace the separate state-list registry, individual profile bibliographies, photo credits, or software licenses. Those materials serve different purposes and retain their own attribution.</p>
   </> },
-  { id: "reuse", title: "Attribution, reuse, and the gaps between sources", content: <>
+  { id: "reuse", artwork: "weave", title: "Attribution, reuse, and the gaps between sources", content: <>
     <p>Open access is not the same as unrestricted reuse. The project&apos;s <Ref path="LICENSE">MIT license</Ref> covers its licensed software and documentation; it does not relicense third-party records, photographs, organization marks, or map artwork. A photograph&apos;s rights can differ from the metadata attached to it. Check the original resource&apos;s license and attribution requirements before reusing it.</p>
     <p>Credits identify contributors, while citations identify the evidence behind a particular claim. A provider homepage is useful orientation, but the original record, dataset version, or source document is the stronger reference when evaluating a finding. Where legacy data lacks that exact connection, we disclose the limitation rather than inventing provenance.</p>
     <p>The same observation may pass through several institutions. Conversely, a well-known institution may have little relevant evidence for a particular county. We assess what the specific source supports rather than treating reputation or the number of logos as a substitute for coverage.</p>

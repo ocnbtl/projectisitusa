@@ -46,7 +46,14 @@ async function main() { try {
   mock(); const monthly = await POST(request()); assert.equal(monthly.status, 200); assert.deepEqual(await monthly.json(), { url: "https://checkout.stripe.com/g/pay/cs_live_mock#provider-state" }); assert.equal((form as unknown as URLSearchParams).get("mode"), "subscription"); assert.equal((form as unknown as URLSearchParams).get("line_items[0][price_data][unit_amount]"), "2500"); assert.equal((form as unknown as URLSearchParams).get("line_items[0][price_data][recurring][interval]"), "month");
   mock(); assert.equal((await POST(request({ frequency: "once" }))).status, 200); assert.equal((form as unknown as URLSearchParams).get("mode"), "payment");
   assert.equal(checkoutDestination("https://checkout.stripe.com/c/pay/cs_live_mock#state"), "https://checkout.stripe.com/c/pay/cs_live_mock#state");
-  for (const url of ["https://checkout.stripe.com.evil.example/g/pay/cs_live_mock", "https://checkout.stripe.com/g/pay/cs_test_mock", "https://checkout.stripe.com/g/pay/cs_live_mock/extra", "https://checkout.stripe.com/x/pay/cs_live_mock"]) assert.equal(checkoutDestination(url), null);
+  // Stripe selects the hosted layout prefix. A subscription returned /f/pay/
+  // while the same production integration returned /g/pay/ for one-time giving.
+  for (const prefix of ["c", "f", "g", "x"]) {
+    const url = `https://checkout.stripe.com/${prefix}/pay/cs_live_mock#provider-state`;
+    assert.equal(checkoutDestination(url), url);
+    mock(undefined, 200, 200, url); assert.equal((await POST(request())).status, 200);
+  }
+  for (const url of ["https://checkout.stripe.com.evil.example/f/pay/cs_live_mock", "https://checkout.stripe.com/f/pay/cs_test_mock", "https://checkout.stripe.com/g/pay/cs_live_mock/extra", "https://checkout.stripe.com/account/pay/cs_live_mock", "https://checkout.stripe.com:8443/f/pay/cs_live_mock", "https://someone@checkout.stripe.com/f/pay/cs_live_mock", "https://checkout.stripe.com/f/pay/cs_live_mock%2fextra"]) assert.equal(checkoutDestination(url), null);
   console.log("Checkout regression checks passed: origin, consent, amount, recipient, activation, permissions, sanitized diagnostics, once and monthly.");
 } finally {
   globalThis.fetch = originalFetch; console.error = originalError;

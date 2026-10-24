@@ -38,9 +38,12 @@ declare global {interface Window {turnstile?:Turnstile}}
 export function Challenge({action,onToken,reset}:{action:string;onToken:(token:string)=>void;reset:number}){
  const container=useRef<HTMLDivElement>(null),callback=useRef(onToken),[ready,setReady]=useState(false),[error,setError]=useState(false);
  callback.current=onToken;
- useEffect(()=>{if(!ready||!container.current||!window.turnstile)return;callback.current("");const id=window.turnstile.render(container.current,{sitekey:TURNSTILE_SITE_KEY,action,callback:(token:string)=>{setError(false);callback.current(token);},"expired-callback":()=>callback.current(""),"error-callback":()=>{callback.current("");setError(true);}});return()=>{window.turnstile?.remove(id);};},[ready,action,reset]);
+ // Next Script calls onLoad (but not onReady) for a second subscriber while
+ // the same download is pending. Handle both, plus an already available API.
+ useEffect(()=>{if(window.turnstile)setReady(true);},[]);
+ useEffect(()=>{if(!ready||!container.current||!window.turnstile)return;callback.current("");const id=window.turnstile.render(container.current,{sitekey:TURNSTILE_SITE_KEY,action,callback:(token:string)=>{setError(false);callback.current(token);},"expired-callback":()=>callback.current(""),"error-callback":()=>{callback.current("");setError(true);}});return()=>{window.turnstile?.remove(id);callback.current("");};},[ready,action,reset]);
  if(!TURNSTILE_SITE_KEY)return null;
- return <><Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" onReady={()=>setReady(true)} onError={()=>setError(true)}/><div ref={container}/>{error&&<p role="alert" className={styles.error}>The security check could not load. Refresh this page to try again.</p>}</>;
+ return <><Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" onLoad={()=>setReady(true)} onReady={()=>setReady(true)} onError={()=>setError(true)}/><div ref={container}/>{error&&<p role="alert" className={styles.error}>The security check could not load. Refresh this page to try again.</p>}</>;
 }
 export function CatalogPicker({kind,value,onChange,max=20}:{kind:"county"|"species";value:CatalogItem[];onChange:(items:CatalogItem[])=>void;max?:number}){
  const id=useId(),[query,setQuery]=useState(""),[items,setItems]=useState<CatalogItem[]>([]),[error,setError]=useState(""),[loading,setLoading]=useState(false),[open,setOpen]=useState(false),[activeIndex,setActiveIndex]=useState(-1);
