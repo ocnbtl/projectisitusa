@@ -2,140 +2,123 @@
 
 import { useEffect, useRef } from "react";
 
-/** Extend the ground below the artwork, preserving its complete coordinate system. */
+/** Native scrolling reveals the soil without changing the document under the user. */
 export function FooterGrove() {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const element = root.current;
-    if (!element) return;
+    const world = element?.querySelector<HTMLElement>(".footer-grove-world");
+    if (!element || !world) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let frame = 0, offset = 0, target = 0, lastInput = 0, lastTime = 0;
-    let touching = false, touchY = 0, visible = false, leaving = false;
-    let lastScrollY = window.scrollY, arrivalShown = false;
     const html = document.documentElement;
     const existingMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
     const meta = existingMeta ?? document.createElement("meta");
     const previousColor = meta.content;
     if (!existingMeta) { meta.name = "theme-color"; document.head.appendChild(meta); }
-    const atEnd = () => document.documentElement.scrollHeight - window.innerHeight - window.scrollY <= 4;
-    const inView = () => {
-      const rect = element!.getBoundingClientRect();
-      return visible || (rect.top < window.innerHeight && rect.bottom > 0);
-    };
+    let edgeFrame = 0, returnFrame = 0, idleTimer = 0;
+    let pressing = false, returning = false, returnedThisVisit = false;
+    let expectedY = window.scrollY;
+
+    function geometry() {
+      const rect = world!.getBoundingClientRect();
+      const ground = rect.bottom + window.scrollY;
+      return { baseline: Math.max(0, ground - window.innerHeight), depth: Math.max(0, window.innerHeight - rect.bottom) };
+    }
     function syncEdge() {
-      // Safari's changing toolbars and fractional scrolling can leave a few pixels
-      // between its visible edge and the document's mathematical scroll limit.
-      const bottom = visible && element!.getBoundingClientRect().bottom <= window.innerHeight + 48;
+      edgeFrame = 0;
+      const rect = element!.getBoundingClientRect();
+      const bottom = rect.top < window.innerHeight && world!.getBoundingClientRect().bottom <= window.innerHeight + 48;
       html.classList.toggle("footer-at-end", bottom);
       const css = getComputedStyle(element!);
-      // Match the exposed depth of the CSS soil gradient, including Safari's canvas.
       const channels = (name: string) => {
         const hex = css.getPropertyValue(name).trim().replace("#", "");
         return [0, 2, 4].map(index => parseInt(hex.slice(index, index + 2), 16));
       };
       const forest = channels("--grove-ink"), soil = channels("--soil-base");
-      const depth = Math.min(1, offset / parseFloat(css.getPropertyValue("--soil-depth")));
+      const depth = Math.min(1, geometry().depth / parseFloat(css.getPropertyValue("--soil-depth")));
       const edge = `rgb(${forest.map((value, index) => Math.round(value + (soil[index] - value) * depth)).join(", ")})`;
       html.style.setProperty("--footer-edge", edge);
       meta.content = bottom ? edge : css.getPropertyValue("--background").trim();
     }
-    function paint(time: number) {
-      const dt = Math.min(32, time - (lastTime || time - 16));
-      lastTime = time;
-      if (!touching && time - lastInput > 650) target = 0;
-      const pinned = !leaving && atEnd();
-      const previousOffset = offset;
-      offset += (target - offset) * (1 - Math.exp(-dt / (target ? 90 : 170)));
-      if (offset < .15 && target === 0) offset = 0;
-      element!.style.setProperty("--root-reveal", offset.toFixed(2) + "px");
-      syncEdge();
-      // Preserve the bottom anchor only during a deliberate downward pull.
-      // Upward scrolling is always free to leave the effect immediately.
-      if (pinned) window.scrollBy({ top: offset - previousOffset, behavior: "instant" });
-      if (offset > .15 || target > 0) frame = requestAnimationFrame(paint);
-      else { frame = 0; lastTime = 0; element!.style.setProperty("--root-reveal", "0px"); }
+    function queueEdge() { if (!edgeFrame) edgeFrame = requestAnimationFrame(syncEdge); }
+    function cancelReturn() {
+      window.clearTimeout(idleTimer); idleTimer = 0;
+      cancelAnimationFrame(returnFrame); returnFrame = 0; returning = false;
     }
-    function pull(delta: number) {
-      if (reduced.matches || !inView() || !atEnd() || delta <= 0) return;
-      leaving = false;
-      const limit = Math.min(190, (element!.offsetHeight - offset) * .38);
-      target = Math.min(limit, target + Math.min(delta, 100) * .55);
-      lastInput = performance.now();
-      if (!frame) frame = requestAnimationFrame(paint);
+    function returnToGround() {
+      idleTimer = 0;
+      const { baseline, depth } = geometry();
+      if (pressing || reduced.matches || returnedThisVisit || depth <= 1) return;
+      const startY = window.scrollY;
+      const started = performance.now();
+      // One return per visit prevents middle-button autoscroll from bouncing forever.
+      returnedThisVisit = true; returning = true;
+      function settle(time: number) {
+        const progress = Math.min(1, (time - started) / 850);
+        // Zero velocity and acceleration at both ends, including the idle handoff.
+        const ease = progress ** 3 * (10 + progress * (-15 + progress * 6));
+        expectedY = startY + (baseline - startY) * ease;
+        window.scrollTo({ top: expectedY, behavior: "instant" });
+        queueEdge();
+        if (progress < 1) returnFrame = requestAnimationFrame(settle);
+        else { returnFrame = 0; returning = false; }
+      }
+      returnFrame = requestAnimationFrame(settle);
+    }
+    function scheduleReturn() {
+      window.clearTimeout(idleTimer);
+      if (!pressing && !reduced.matches && !returnedThisVisit && geometry().depth > 1) {
+        idleTimer = window.setTimeout(returnToGround, 1100);
+      }
     }
     function scrolling() {
-      const y = window.scrollY, downward = y > lastScrollY;
-      lastScrollY = y;
-      syncEdge();
-      const remaining = html.scrollHeight - window.innerHeight - y;
-      if (remaining > 240 + offset) arrivalShown = false;
-      // Middle-button autoscroll and momentum scrolling have no wheel event.
-      // Give each arrival one full peek; animation-driven scrolling cannot rearm it.
-      if (downward && !frame && !arrivalShown && atEnd() && inView() && !reduced.matches) {
-        arrivalShown = true;
-        pull(340);
-        target = Math.min(190, (element!.offsetHeight - offset) * .38);
+      queueEdge();
+      const { baseline } = geometry();
+      if (window.scrollY < baseline - 160) returnedThisVisit = false;
+      if (returning) {
+        // Ignore our own return events; scrollbar/autoscroll input always takes over.
+        if (Math.abs(window.scrollY - expectedY) < 2) return;
+        cancelReturn();
       }
+      scheduleReturn();
     }
-    function wheel(event: WheelEvent) {
-      if (event.ctrlKey) return;
-      if (event.deltaY < 0) { target = 0; leaving = true; return; }
-      pull(event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1));
-    }
-    function touchStart(event: TouchEvent) {
-      touching = event.touches.length === 1;
-      touchY = event.touches[0]?.clientY ?? 0;
-    }
-    function touchMove(event: TouchEvent) {
-      if (!touching || event.touches.length !== 1) return;
-      const y = event.touches[0].clientY;
-      const delta = touchY - y;
-      touchY = y;
-      if (delta < 0) { target = 0; leaving = true; }
-      else pull(delta * 1.6);
-    }
-    function touchEnd() { touching = false; target = 0; }
+    function wheel() { cancelReturn(); scheduleReturn(); }
+    function pointerStart() { pressing = true; cancelReturn(); }
+    function pointerEnd() { pressing = false; scheduleReturn(); }
     function keyboard(event: KeyboardEvent) {
-      if (event.target instanceof HTMLElement && event.target.closest("input,textarea,select,button,a,[contenteditable]")) return;
-      if (["PageDown", "End", "ArrowDown"].includes(event.key)) pull(110);
-      if (["PageUp", "Home", "ArrowUp"].includes(event.key)) { target = 0; leaving = true; }
-    }
-    function preferenceChanged() {
-      if (reduced.matches) {
-        cancelAnimationFrame(frame); frame = 0; offset = target = 0;
-        element!.style.setProperty("--root-reveal", "0px");
-        syncEdge();
+      if (["PageDown", "PageUp", "Home", "End", "ArrowDown", "ArrowUp", " "].includes(event.key)) {
+        cancelReturn(); scheduleReturn();
       }
     }
-    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; syncEdge(); });
+    function resized() { cancelReturn(); queueEdge(); scheduleReturn(); }
+    const observer = new IntersectionObserver(queueEdge);
     observer.observe(element);
     let dark = html.classList.contains("dark");
     const themeObserver = new MutationObserver(() => {
       const next = html.classList.contains("dark");
-      if (dark !== next) { dark = next; syncEdge(); }
+      if (dark !== next) { dark = next; queueEdge(); }
     });
     themeObserver.observe(html, { attributes: true, attributeFilter: ["class"] });
     window.addEventListener("scroll", scrolling, { passive: true });
-    window.addEventListener("resize", syncEdge, { passive: true });
-    window.visualViewport?.addEventListener("resize", syncEdge, { passive: true });
-    window.visualViewport?.addEventListener("scroll", syncEdge, { passive: true });
     window.addEventListener("wheel", wheel, { passive: true });
-    window.addEventListener("touchstart", touchStart, { passive: true });
-    window.addEventListener("touchmove", touchMove, { passive: true });
-    window.addEventListener("touchend", touchEnd, { passive: true });
-    window.addEventListener("touchcancel", touchEnd, { passive: true });
+    window.addEventListener("pointerdown", pointerStart, { passive: true });
+    window.addEventListener("pointerup", pointerEnd, { passive: true });
+    window.addEventListener("pointercancel", pointerEnd, { passive: true });
     window.addEventListener("keydown", keyboard);
-    reduced.addEventListener("change", preferenceChanged);
+    window.addEventListener("resize", resized, { passive: true });
+    window.visualViewport?.addEventListener("resize", resized, { passive: true });
+    window.visualViewport?.addEventListener("scroll", queueEdge, { passive: true });
+    reduced.addEventListener("change", resized);
+    queueEdge();
     return () => {
-      observer.disconnect(); themeObserver.disconnect(); cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", scrolling); window.removeEventListener("resize", syncEdge);
-      window.visualViewport?.removeEventListener("resize", syncEdge); window.visualViewport?.removeEventListener("scroll", syncEdge);
-      window.removeEventListener("wheel", wheel); window.removeEventListener("touchstart", touchStart);
-      window.removeEventListener("touchmove", touchMove); window.removeEventListener("touchend", touchEnd);
-      window.removeEventListener("touchcancel", touchEnd); window.removeEventListener("keydown", keyboard);
-      reduced.removeEventListener("change", preferenceChanged);
-      html.classList.remove("footer-at-end");
-      html.style.removeProperty("--footer-edge");
+      observer.disconnect(); themeObserver.disconnect(); cancelReturn(); cancelAnimationFrame(edgeFrame);
+      window.removeEventListener("scroll", scrolling); window.removeEventListener("wheel", wheel);
+      window.removeEventListener("pointerdown", pointerStart); window.removeEventListener("pointerup", pointerEnd);
+      window.removeEventListener("pointercancel", pointerEnd); window.removeEventListener("keydown", keyboard);
+      window.removeEventListener("resize", resized);
+      window.visualViewport?.removeEventListener("resize", resized); window.visualViewport?.removeEventListener("scroll", queueEdge);
+      reduced.removeEventListener("change", resized);
+      html.classList.remove("footer-at-end"); html.style.removeProperty("--footer-edge");
       if (existingMeta) meta.content = previousColor; else meta.remove();
     };
   }, []);
