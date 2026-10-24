@@ -20,6 +20,7 @@ export function FooterGrove() {
     let reveal = 0, velocity = 0, target = 0, lastFrame = 0;
     let lastInput = -1000, inputSpeed = .5, returnFrequency = 14, returning = false;
     let mouseHeld = false, keyHeld = false;
+    let mouseAnchor = 0;
     let previousY = window.scrollY, previousWidth = window.innerWidth, touchY: number | null = null;
     const atEnd = () => html.scrollHeight - window.innerHeight - window.scrollY <= 3;
     const limit = () => 240; // Match the complete soil/root artwork, including its bottom edge.
@@ -126,7 +127,13 @@ export function FooterGrove() {
     }
     function touchEnd() { touchY = null; if (!held()) close(); }
     function mouseDown(event: MouseEvent) {
-      if (event.button === 1 && !interactive(event.target)) mouseHeld = true;
+      if (event.button === 1 && !interactive(event.target)) { mouseHeld = true; mouseAnchor = event.clientY; }
+    }
+    function mouseMove(event: MouseEvent) {
+      if (!mouseHeld || !atEnd()) return;
+      const distance = event.clientY - mouseAnchor;
+      if (distance < -4) close();
+      else if (distance > 4) impulse(distance * 3);
     }
     function mouseUp(event: MouseEvent) { if (event.button === 1) { mouseHeld = false; if (!held()) close(); } }
     function keyboard(event: KeyboardEvent) {
@@ -165,6 +172,7 @@ export function FooterGrove() {
     window.addEventListener("keyup", keyUp);
     window.addEventListener("mousedown", mouseDown, { passive: true });
     window.addEventListener("mouseup", mouseUp, { passive: true });
+    window.addEventListener("mousemove", mouseMove, { passive: true });
     window.addEventListener("blur", cancelGesture);
     window.addEventListener("resize", resized, { passive: true });
     window.visualViewport?.addEventListener("resize", resized, { passive: true });
@@ -176,7 +184,7 @@ export function FooterGrove() {
       window.removeEventListener("scroll", scrolling); window.removeEventListener("wheel", wheel);
       window.removeEventListener("touchstart", touchStart); window.removeEventListener("touchmove", touchMove);
       window.removeEventListener("touchend", touchEnd); window.removeEventListener("touchcancel", touchEnd); window.removeEventListener("keydown", keyboard);
-      window.removeEventListener("keyup", keyUp); window.removeEventListener("mousedown", mouseDown); window.removeEventListener("mouseup", mouseUp); window.removeEventListener("blur", cancelGesture);
+      window.removeEventListener("keyup", keyUp); window.removeEventListener("mousedown", mouseDown); window.removeEventListener("mouseup", mouseUp); window.removeEventListener("mousemove", mouseMove); window.removeEventListener("blur", cancelGesture);
       window.removeEventListener("resize", resized);
       window.visualViewport?.removeEventListener("resize", resized); window.visualViewport?.removeEventListener("scroll", queueEdge);
       reduced.removeEventListener("change", resized);

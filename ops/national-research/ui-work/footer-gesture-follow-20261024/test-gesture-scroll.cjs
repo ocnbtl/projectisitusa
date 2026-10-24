@@ -29,7 +29,7 @@ const wheel=fixture();wheel.scroll(2200);wheel.step(1600);for(let i=0;i<30;i++){
 function speedRun(gap){const f=fixture();f.scroll(2200);f.step(1600);f.touch(700,'touchstart');for(let y=650;y>=350;y-=50){f.step(gap);f.touch(y)}f.step(800);assert.ok(f.value()>239);f.listeners.touchend();f.step(240);const remaining=f.value();f.step(2000);assert.equal(f.value(),0);f.cleanup();return remaining}
 const slow=speedRun(80),fast=speedRun(16);assert.ok(fast<slow*.65,`Fast gesture must return faster: ${fast} vs ${slow}`);
 const keys=fixture();keys.scroll(2200);keys.step(1600);keys.listeners.keydown({key:'End'});keys.step(1600);assert.ok(keys.value()>95);keys.listeners.keyup({key:'End'});keys.step(1600);assert.equal(keys.value(),0);keys.cleanup();
-const mouse=fixture();mouse.scroll(2200);mouse.step(1600);mouse.listeners.mousedown({button:1});mouse.wheel(400);mouse.step(2000);assert.ok(mouse.value()>239);mouse.listeners.mouseup({button:1});mouse.step(1600);assert.equal(mouse.value(),0);mouse.cleanup();
+const mouse=fixture();mouse.scroll(2200);mouse.step(1600);mouse.listeners.mousedown({button:1,clientY:300});mouse.listeners.mousemove({clientY:450});mouse.step(2000);assert.ok(mouse.value()>239);mouse.listeners.mouseup({button:1});mouse.step(1600);assert.equal(mouse.value(),0);mouse.cleanup();
 const blur=fixture();blur.scroll(2200);blur.touch(700,'touchstart');blur.touch(350);blur.step(1000);blur.listeners.blur();blur.step(1600);assert.equal(blur.value(),0);blur.cleanup();
 const motion=fixture(true);motion.scroll(2200);motion.wheel();motion.step(1000);assert.equal(motion.value(),0);motion.cleanup();
 const change=fixture();change.scroll(2200);change.step(80);change.reduced.matches=true;change.reduced.change();assert.equal(change.value(),0);change.cleanup();
