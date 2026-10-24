@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-/** A brief elastic reveal at the forest edge; never extra scrollable page content. */
+/** A gesture-driven elastic reveal, outside the resting page's scroll range. */
 export function FooterGrove() {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -16,10 +16,14 @@ export function FooterGrove() {
     const previousColor = meta.content;
     if (!existingMeta) { meta.name = "theme-color"; document.head.appendChild(meta); }
     let edgeFrame = 0, motionFrame = 0;
-    let reveal = 0, velocity = 0, peak = 0, started = 0, lastFrame = 0;
+    const footer = element.closest<HTMLElement>("footer");
+    let reveal = 0, velocity = 0, target = 0, lastFrame = 0;
+    let lastInput = -1000, inputSpeed = .5, returnFrequency = 14, returning = false;
+    let mouseHeld = false, keyHeld = false;
     let previousY = window.scrollY, previousWidth = window.innerWidth, touchY: number | null = null;
     const atEnd = () => html.scrollHeight - window.innerHeight - window.scrollY <= 3;
-    const limit = () => Math.min(140, world!.getBoundingClientRect().height * .3);
+    const limit = () => 240; // Match the complete soil/root artwork, including its bottom edge.
+    const held = () => touchY !== null || mouseHeld || keyHeld;
     function syncEdge() {
       edgeFrame = 0;
       const rect = element!.getBoundingClientRect();
@@ -39,45 +43,64 @@ export function FooterGrove() {
     function queueEdge() { if (!edgeFrame) edgeFrame = requestAnimationFrame(syncEdge); }
     function paint() {
       element!.style.setProperty("--root-reveal", `${reveal.toFixed(3)}px`);
+      footer?.style.setProperty("--footer-pull", `${reveal.toFixed(3)}px`);
       queueEdge();
     }
     function reset() {
       cancelAnimationFrame(motionFrame); motionFrame = 0;
-      reveal = 0; velocity = 0; peak = 0;
+      reveal = 0; velocity = 0; target = 0; returning = false;
       element!.removeAttribute("data-revealing"); paint();
     }
     function animate(time: number) {
-      // Input changes the spring's target, never its position or the scrollbar.
-      // Turn back after 140ms even if the finger/wheel is still moving.
-      const target = time - started < 140 ? peak : 0;
+      // Wheel/trackpad events have no release event. A short quiet interval ends
+      // that gesture; explicit finger/button/key holds never use this timeout.
+      if (!returning && !held() && time - lastInput > 130) close();
+      const frequency = returning ? returnFrequency : 30;
       let remaining = Math.min(32, time - lastFrame) / 1000;
       lastFrame = time;
       while (remaining > 0) {
         const step = Math.min(remaining, .008);
-        velocity += ((target - reveal) * 520 - velocity * 42) * step;
+        velocity += ((target - reveal) * frequency * frequency - velocity * 2 * frequency) * step;
         reveal += velocity * step;
+        if (reveal > limit()) { reveal = limit(); velocity = Math.min(0, velocity); }
+        if (reveal < 0) { reveal = 0; velocity = Math.max(0, velocity); }
         remaining -= step;
       }
       if (reduced.matches || (target === 0 && reveal < .15 && Math.abs(velocity) < 3)) { reset(); return; }
-      paint(); motionFrame = requestAnimationFrame(animate);
+      paint();
+      if (!returning && held() && Math.abs(target - reveal) < .1 && Math.abs(velocity) < 1) { motionFrame = 0; return; }
+      motionFrame = requestAnimationFrame(animate);
     }
-    function impulse(distance: number) {
-      if (distance <= 0 || reduced.matches || !atEnd()) return;
-      const now = performance.now();
-      if (motionFrame && now - started >= 140) return;
-      peak = Math.min(limit(), Math.max(48, peak, distance * .8));
+    function start() {
       if (!motionFrame) {
-        started = now; lastFrame = now;
+        lastFrame = performance.now();
         element!.setAttribute("data-revealing", "true");
         motionFrame = requestAnimationFrame(animate);
       }
     }
-    function close() { if (motionFrame) started = performance.now() - 140; }
+    function impulse(distance: number) {
+      if (distance <= 0 || reduced.matches || !atEnd()) return;
+      const now = performance.now();
+      const gap = now - lastInput;
+      const speed = Math.min(3, distance / Math.max(16, Math.min(80, gap)));
+      inputSpeed = gap > 180 ? speed : inputSpeed * .55 + speed * .45;
+      if (returning) target = reveal;
+      returning = false;
+      target = Math.min(limit(), target + distance * .72);
+      lastInput = now; start();
+    }
+    function close() {
+      if (returning || (target === 0 && reveal === 0)) return;
+      // Preserve the current position/velocity when changing direction. A brisk
+      // gesture returns more briskly, within comfortable critically damped bounds.
+      returnFrequency = 11 + Math.min(3, inputSpeed) * 4;
+      target = 0; returning = true; start();
+    }
     function scrolling() {
       queueEdge();
       const delta = window.scrollY - previousY;
       previousY = window.scrollY;
-      if (delta > 0) impulse(delta);
+      if (delta > 0 && performance.now() - lastInput > 80 && !returning) impulse(Math.min(80, delta));
       else if (delta < 0) close();
     }
     function interactive(target: EventTarget | null) {
@@ -90,23 +113,38 @@ export function FooterGrove() {
     }
     function touchStart(event: TouchEvent) {
       touchY = event.touches.length === 1 && !interactive(event.target) ? event.touches[0].clientY : null;
+      if (touchY === null) { close(); return; }
+      if (atEnd() && reveal > 0) { target = reveal; returning = false; lastInput = performance.now(); start(); }
     }
     function touchMove(event: TouchEvent) {
-      if (touchY === null || event.touches.length !== 1) { touchY = null; return; }
+      if (touchY === null || event.touches.length !== 1) { touchEnd(); return; }
       const next = event.touches[0].clientY, delta = touchY - next;
       touchY = next;
-      if (delta < 0) close(); else impulse(delta * 2);
+      if (delta < 0 && (target > 0 || reveal > 0)) {
+        target = Math.max(0, target + delta * .72); lastInput = performance.now(); start();
+      } else impulse(delta);
     }
-    function touchEnd() { touchY = null; }
+    function touchEnd() { touchY = null; if (!held()) close(); }
+    function mouseDown(event: MouseEvent) {
+      if (event.button === 1 && !interactive(event.target)) mouseHeld = true;
+    }
+    function mouseUp(event: MouseEvent) { if (event.button === 1) { mouseHeld = false; if (!held()) close(); } }
     function keyboard(event: KeyboardEvent) {
       if (event.defaultPrevented || interactive(event.target)) return;
       if (["PageUp", "Home", "ArrowUp"].includes(event.key) || (event.key === " " && event.shiftKey)) close();
-      else if (["PageDown", "End", "ArrowDown", " "].includes(event.key)) impulse(event.key === "ArrowDown" ? 48 : 140);
+      else if (["PageDown", "End", "ArrowDown", " "].includes(event.key)) {
+        if (event.target instanceof Element && event.target.closest('a,button')) return;
+        keyHeld = true; impulse(event.key === "ArrowDown" ? 48 : 140);
+      }
     }
+    function keyUp(event: KeyboardEvent) {
+      if (["PageDown", "End", "ArrowDown", " "].includes(event.key)) { keyHeld = false; if (!held()) close(); }
+    }
+    function cancelGesture() { touchY = null; mouseHeld = false; keyHeld = false; close(); }
     function resized() {
       // Safari's address bar can resize the viewport during a swipe; do not snap the scene shut.
-      if (reduced.matches || window.innerWidth !== previousWidth) reset();
-      else { peak = Math.min(peak, limit()); queueEdge(); }
+      if (reduced.matches || window.innerWidth !== previousWidth) { cancelGesture(); reset(); }
+      else queueEdge();
       previousWidth = window.innerWidth; previousY = window.scrollY;
     }
     const observer = new IntersectionObserver(queueEdge);
@@ -124,6 +162,10 @@ export function FooterGrove() {
     window.addEventListener("touchend", touchEnd, { passive: true });
     window.addEventListener("touchcancel", touchEnd, { passive: true });
     window.addEventListener("keydown", keyboard);
+    window.addEventListener("keyup", keyUp);
+    window.addEventListener("mousedown", mouseDown, { passive: true });
+    window.addEventListener("mouseup", mouseUp, { passive: true });
+    window.addEventListener("blur", cancelGesture);
     window.addEventListener("resize", resized, { passive: true });
     window.visualViewport?.addEventListener("resize", resized, { passive: true });
     window.visualViewport?.addEventListener("scroll", queueEdge, { passive: true });
@@ -134,10 +176,12 @@ export function FooterGrove() {
       window.removeEventListener("scroll", scrolling); window.removeEventListener("wheel", wheel);
       window.removeEventListener("touchstart", touchStart); window.removeEventListener("touchmove", touchMove);
       window.removeEventListener("touchend", touchEnd); window.removeEventListener("touchcancel", touchEnd); window.removeEventListener("keydown", keyboard);
+      window.removeEventListener("keyup", keyUp); window.removeEventListener("mousedown", mouseDown); window.removeEventListener("mouseup", mouseUp); window.removeEventListener("blur", cancelGesture);
       window.removeEventListener("resize", resized);
       window.visualViewport?.removeEventListener("resize", resized); window.visualViewport?.removeEventListener("scroll", queueEdge);
       reduced.removeEventListener("change", resized);
       element.style.removeProperty("--root-reveal"); element.removeAttribute("data-revealing");
+      footer?.style.removeProperty("--footer-pull");
       html.classList.remove("footer-at-end"); html.style.removeProperty("--footer-edge");
       if (existingMeta) meta.content = previousColor; else meta.remove();
     };
