@@ -81,9 +81,13 @@ footer.site-footer.footer-refined::after{content:"";display:block;height:env(saf
 }
 @media(prefers-reduced-motion:reduce){.footer-grove-world{transform:none!important}.footer-soil{display:none}}
 
-/* Soil extends below the same scene instead of sliding over the tree trunks. */
-.footer-grove{--landscape-height:clamp(230px,27.778vw,500px);--root-space:min(190px,calc(var(--landscape-height) * .38));height:calc(var(--landscape-height) + var(--root-space));overflow-anchor:none}
-.footer-grove-world{height:var(--landscape-height);bottom:auto}
+/* Reserve the reveal above the forest, not below the page's scroll boundary.
+   The entire scene moves together; the mountain tops and trunk/root joins stay intact. */
+.footer-grove{--landscape-height:clamp(230px,27.778vw,500px);--root-space:min(140px,calc(var(--landscape-height) * .3));height:calc(var(--landscape-height) + var(--root-space));margin-top:calc(-1 * var(--root-space));overflow-anchor:none;background:var(--background);pointer-events:none}
+.footer-grove-world{top:var(--root-space);height:var(--landscape-height);bottom:auto;transform:translate3d(0,calc(-1 * var(--root-reveal)),0)}
+.footer-grove[data-revealing] .footer-grove-world{will-change:transform}
+footer.footer-refined :is(.footer-main,.footer-details){position:relative;z-index:1}
+html.footer-at-end{overscroll-behavior-y:none}
 .footer-soil{transform:none;background-size:100% 240px}
 .footer-roots{mask-image:url('/artwork/woodland-roots-r5.png');mask-size:100% 240px}
 @media(min-width:1800px){.footer-grove{--landscape-height:clamp(420px,20vw,640px)}.footer-roots{mask-image:url('/artwork/woodland-roots-r5-wide.png')}}

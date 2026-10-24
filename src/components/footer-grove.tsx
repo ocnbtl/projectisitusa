@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-/** Native scrolling reveals the soil without changing the document under the user. */
+/** A brief elastic reveal at the forest edge; never extra scrollable page content. */
 export function FooterGrove() {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -15,15 +15,11 @@ export function FooterGrove() {
     const meta = existingMeta ?? document.createElement("meta");
     const previousColor = meta.content;
     if (!existingMeta) { meta.name = "theme-color"; document.head.appendChild(meta); }
-    let edgeFrame = 0, returnFrame = 0, idleTimer = 0;
-    let pressing = false, returning = false, returnedThisVisit = false;
-    let expectedY = window.scrollY;
-
-    function geometry() {
-      const rect = world!.getBoundingClientRect();
-      const ground = rect.bottom + window.scrollY;
-      return { baseline: Math.max(0, ground - window.innerHeight), depth: Math.max(0, window.innerHeight - rect.bottom) };
-    }
+    let edgeFrame = 0, motionFrame = 0;
+    let reveal = 0, velocity = 0, peak = 0, started = 0, lastFrame = 0;
+    let previousY = window.scrollY, previousWidth = window.innerWidth, touchY: number | null = null;
+    const atEnd = () => html.scrollHeight - window.innerHeight - window.scrollY <= 3;
+    const limit = () => Math.min(140, world!.getBoundingClientRect().height * .3);
     function syncEdge() {
       edgeFrame = 0;
       const rect = element!.getBoundingClientRect();
@@ -35,62 +31,84 @@ export function FooterGrove() {
         return [0, 2, 4].map(index => parseInt(hex.slice(index, index + 2), 16));
       };
       const forest = channels("--grove-ink"), soil = channels("--soil-base");
-      const depth = Math.min(1, geometry().depth / parseFloat(css.getPropertyValue("--soil-depth")));
+      const depth = Math.min(1, reveal / parseFloat(css.getPropertyValue("--soil-depth")));
       const edge = `rgb(${forest.map((value, index) => Math.round(value + (soil[index] - value) * depth)).join(", ")})`;
       html.style.setProperty("--footer-edge", edge);
       meta.content = bottom ? edge : css.getPropertyValue("--background").trim();
     }
     function queueEdge() { if (!edgeFrame) edgeFrame = requestAnimationFrame(syncEdge); }
-    function cancelReturn() {
-      window.clearTimeout(idleTimer); idleTimer = 0;
-      cancelAnimationFrame(returnFrame); returnFrame = 0; returning = false;
+    function paint() {
+      element!.style.setProperty("--root-reveal", `${reveal.toFixed(3)}px`);
+      queueEdge();
     }
-    function returnToGround() {
-      idleTimer = 0;
-      const { baseline, depth } = geometry();
-      if (pressing || reduced.matches || returnedThisVisit || depth <= 1) return;
-      const startY = window.scrollY;
-      const started = performance.now();
-      // One return per visit prevents middle-button autoscroll from bouncing forever.
-      returnedThisVisit = true; returning = true;
-      function settle(time: number) {
-        const progress = Math.min(1, (time - started) / 850);
-        // Zero velocity and acceleration at both ends, including the idle handoff.
-        const ease = progress ** 3 * (10 + progress * (-15 + progress * 6));
-        expectedY = startY + (baseline - startY) * ease;
-        window.scrollTo({ top: expectedY, behavior: "instant" });
-        queueEdge();
-        if (progress < 1) returnFrame = requestAnimationFrame(settle);
-        else { returnFrame = 0; returning = false; }
+    function reset() {
+      cancelAnimationFrame(motionFrame); motionFrame = 0;
+      reveal = 0; velocity = 0; peak = 0;
+      element!.removeAttribute("data-revealing"); paint();
+    }
+    function animate(time: number) {
+      // Input changes the spring's target, never its position or the scrollbar.
+      // Turn back after 140ms even if the finger/wheel is still moving.
+      const target = time - started < 140 ? peak : 0;
+      let remaining = Math.min(32, time - lastFrame) / 1000;
+      lastFrame = time;
+      while (remaining > 0) {
+        const step = Math.min(remaining, .008);
+        velocity += ((target - reveal) * 520 - velocity * 42) * step;
+        reveal += velocity * step;
+        remaining -= step;
       }
-      returnFrame = requestAnimationFrame(settle);
+      if (reduced.matches || (target === 0 && reveal < .15 && Math.abs(velocity) < 3)) { reset(); return; }
+      paint(); motionFrame = requestAnimationFrame(animate);
     }
-    function scheduleReturn() {
-      window.clearTimeout(idleTimer);
-      if (!pressing && !reduced.matches && !returnedThisVisit && geometry().depth > 1) {
-        idleTimer = window.setTimeout(returnToGround, 1100);
+    function impulse(distance: number) {
+      if (distance <= 0 || reduced.matches || !atEnd()) return;
+      const now = performance.now();
+      if (motionFrame && now - started >= 140) return;
+      peak = Math.min(limit(), Math.max(48, peak, distance * .8));
+      if (!motionFrame) {
+        started = now; lastFrame = now;
+        element!.setAttribute("data-revealing", "true");
+        motionFrame = requestAnimationFrame(animate);
       }
     }
+    function close() { if (motionFrame) started = performance.now() - 140; }
     function scrolling() {
       queueEdge();
-      const { baseline } = geometry();
-      if (window.scrollY < baseline - 160) returnedThisVisit = false;
-      if (returning) {
-        // Ignore our own return events; scrollbar/autoscroll input always takes over.
-        if (Math.abs(window.scrollY - expectedY) < 2) return;
-        cancelReturn();
-      }
-      scheduleReturn();
+      const delta = window.scrollY - previousY;
+      previousY = window.scrollY;
+      if (delta > 0) impulse(delta);
+      else if (delta < 0) close();
     }
-    function wheel() { cancelReturn(); scheduleReturn(); }
-    function pointerStart() { pressing = true; cancelReturn(); }
-    function pointerEnd() { pressing = false; scheduleReturn(); }
+    function interactive(target: EventTarget | null) {
+      return target instanceof Element && Boolean(target.closest('input,textarea,select,[contenteditable="true"],[role="dialog"],dialog'));
+    }
+    function wheel(event: WheelEvent) {
+      if (event.ctrlKey || event.defaultPrevented || interactive(event.target)) return;
+      if (event.deltaY < 0) { close(); return; }
+      impulse(event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1));
+    }
+    function touchStart(event: TouchEvent) {
+      touchY = event.touches.length === 1 && !interactive(event.target) ? event.touches[0].clientY : null;
+    }
+    function touchMove(event: TouchEvent) {
+      if (touchY === null || event.touches.length !== 1) { touchY = null; return; }
+      const next = event.touches[0].clientY, delta = touchY - next;
+      touchY = next;
+      if (delta < 0) close(); else impulse(delta * 2);
+    }
+    function touchEnd() { touchY = null; }
     function keyboard(event: KeyboardEvent) {
-      if (["PageDown", "PageUp", "Home", "End", "ArrowDown", "ArrowUp", " "].includes(event.key)) {
-        cancelReturn(); scheduleReturn();
-      }
+      if (event.defaultPrevented || interactive(event.target)) return;
+      if (["PageUp", "Home", "ArrowUp"].includes(event.key) || (event.key === " " && event.shiftKey)) close();
+      else if (["PageDown", "End", "ArrowDown", " "].includes(event.key)) impulse(event.key === "ArrowDown" ? 48 : 140);
     }
-    function resized() { cancelReturn(); queueEdge(); scheduleReturn(); }
+    function resized() {
+      // Safari's address bar can resize the viewport during a swipe; do not snap the scene shut.
+      if (reduced.matches || window.innerWidth !== previousWidth) reset();
+      else { peak = Math.min(peak, limit()); queueEdge(); }
+      previousWidth = window.innerWidth; previousY = window.scrollY;
+    }
     const observer = new IntersectionObserver(queueEdge);
     observer.observe(element);
     let dark = html.classList.contains("dark");
@@ -101,9 +119,10 @@ export function FooterGrove() {
     themeObserver.observe(html, { attributes: true, attributeFilter: ["class"] });
     window.addEventListener("scroll", scrolling, { passive: true });
     window.addEventListener("wheel", wheel, { passive: true });
-    window.addEventListener("pointerdown", pointerStart, { passive: true });
-    window.addEventListener("pointerup", pointerEnd, { passive: true });
-    window.addEventListener("pointercancel", pointerEnd, { passive: true });
+    window.addEventListener("touchstart", touchStart, { passive: true });
+    window.addEventListener("touchmove", touchMove, { passive: true });
+    window.addEventListener("touchend", touchEnd, { passive: true });
+    window.addEventListener("touchcancel", touchEnd, { passive: true });
     window.addEventListener("keydown", keyboard);
     window.addEventListener("resize", resized, { passive: true });
     window.visualViewport?.addEventListener("resize", resized, { passive: true });
@@ -111,13 +130,14 @@ export function FooterGrove() {
     reduced.addEventListener("change", resized);
     queueEdge();
     return () => {
-      observer.disconnect(); themeObserver.disconnect(); cancelReturn(); cancelAnimationFrame(edgeFrame);
+      observer.disconnect(); themeObserver.disconnect(); cancelAnimationFrame(motionFrame); cancelAnimationFrame(edgeFrame);
       window.removeEventListener("scroll", scrolling); window.removeEventListener("wheel", wheel);
-      window.removeEventListener("pointerdown", pointerStart); window.removeEventListener("pointerup", pointerEnd);
-      window.removeEventListener("pointercancel", pointerEnd); window.removeEventListener("keydown", keyboard);
+      window.removeEventListener("touchstart", touchStart); window.removeEventListener("touchmove", touchMove);
+      window.removeEventListener("touchend", touchEnd); window.removeEventListener("touchcancel", touchEnd); window.removeEventListener("keydown", keyboard);
       window.removeEventListener("resize", resized);
       window.visualViewport?.removeEventListener("resize", resized); window.visualViewport?.removeEventListener("scroll", queueEdge);
       reduced.removeEventListener("change", resized);
+      element.style.removeProperty("--root-reveal"); element.removeAttribute("data-revealing");
       html.classList.remove("footer-at-end"); html.style.removeProperty("--footer-edge");
       if (existingMeta) meta.content = previousColor; else meta.remove();
     };
