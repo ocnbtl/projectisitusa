@@ -18,6 +18,10 @@ export function FooterGrove() {
     const previousColor = meta.content;
     if (!existingMeta) { meta.name = "theme-color"; document.head.appendChild(meta); }
     const atEnd = () => document.documentElement.scrollHeight - window.innerHeight - window.scrollY <= 4;
+    const inView = () => {
+      const rect = element!.getBoundingClientRect();
+      return visible || (rect.top < window.innerHeight && rect.bottom > 0);
+    };
     function syncEdge() {
       // Safari's changing toolbars and fractional scrolling can leave a few pixels
       // between its visible edge and the document's mathematical scroll limit.
@@ -52,7 +56,7 @@ export function FooterGrove() {
       else { frame = 0; lastTime = 0; element!.style.setProperty("--root-reveal", "0px"); }
     }
     function pull(delta: number) {
-      if (reduced.matches || !visible || !atEnd() || delta <= 0) return;
+      if (reduced.matches || !inView() || !atEnd() || delta <= 0) return;
       leaving = false;
       const limit = Math.min(190, (element!.offsetHeight - offset) * .38);
       target = Math.min(limit, target + Math.min(delta, 100) * .55);
@@ -67,7 +71,7 @@ export function FooterGrove() {
       if (remaining > 240 + offset) arrivalShown = false;
       // Middle-button autoscroll and momentum scrolling have no wheel event.
       // Give each arrival one full peek; animation-driven scrolling cannot rearm it.
-      if (downward && !frame && !arrivalShown && visible && atEnd() && !reduced.matches) {
+      if (downward && !frame && !arrivalShown && atEnd() && inView() && !reduced.matches) {
         arrivalShown = true;
         pull(340);
         target = Math.min(190, (element!.offsetHeight - offset) * .38);
