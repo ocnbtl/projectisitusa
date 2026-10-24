@@ -22,6 +22,7 @@ function mock(account: object = { id: "acct_1ULqjk0sMVuUFG7H", charges_enabled: 
     assert.equal(form.has("redirect_on_completion"), false);
     assert.equal(form.get("success_url"), "https://isitusa.com/support");
     assert.equal(form.get("cancel_url"), "https://isitusa.com/support");
+    assert.equal(form.get("custom_text[submit][message]"), "Contributions support ISITUSA's independent research.");
     return Response.json(sessionStatus === 200 ? { livemode: true, url: destination } : { error: { type: "invalid_request_error", message: "private-provider-message" } }, { status: sessionStatus, headers: { "request-id": "req_session" } });
   };
 }

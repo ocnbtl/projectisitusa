@@ -5,7 +5,7 @@ import { MAP_PALETTES, type MapPaletteId } from "@/lib/ui/map-palettes";
 import type { MapCountBand } from "@/lib/ui/map-scale";
 import "./map-appearance.css";
 
-export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetDate, datasetLabel }: {
+export function MapAppearance({ palette, onPaletteChange, bands, scope }: {
   palette: MapPaletteId; onPaletteChange: (value: MapPaletteId) => void;
   bands: MapCountBand[]; scope: string; datasetDate: string; datasetLabel: string;
 }) {
@@ -14,16 +14,13 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
   const anchors = bands.filter(band => band.min > 0);
   const spectrum = anchors.length > 1 ? "linear-gradient(to right, " + anchors.map(band => band.color).join(", ") + ")" : anchors[0]?.color ?? "var(--county-none)";
   const helpButton = useRef<HTMLButtonElement>(null), colorButton = useRef<HTMLButtonElement>(null);
-  const area = scope === "U.S." ? "the United States" : scope === "Visible counties" ? "the counties in view" : scope;
-  const published = datasetDate ? new Date(datasetDate.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) : "";
   return <div className="atlas-legend glass-panel" onKeyDown={event => {
     if (event.key === "Escape" && open) { event.stopPropagation(); (open === "help" ? helpButton : colorButton).current?.focus(); setOpen(null); }
   }}>
     <div id={id + "-help"} className="legend-drawer" data-open={open === "help"} aria-hidden={open !== "help"}>
       <div><div className="legend-explanation"><h2>Reading the map</h2>
-        <p>Species per county, matching your filters. Counts, not harm.</p>
-        <p><strong>0:</strong> no records, not absence. <strong>Gray:</strong> unavailable.</p>
-        <p className="legend-data-date">Equal changes in count get equal space on this scale. The scale adjusts to {area} as you zoom.{published && <> {datasetLabel === "Earlier map records" ? "Earlier data" : "Data"}: {published}; sighting dates are in the sources.</>}</p>
+        <p>The colors show how many species have been recorded in each county, based on the filters you choose. They show the number of recorded species, not how much harm those species cause.</p>
+        <p>A county with more records may simply have been studied more closely. A count of zero means we have no matching records to show, not that a species is absent. Gray counties have no data available in this map layer.</p>
       </div></div>
     </div>
     <div id={id + "-colors"} className="legend-drawer" data-open={open === "colors"} aria-hidden={open !== "colors"}>
@@ -41,7 +38,6 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope, datasetD
       </div></div>
       <div className="map-spectrum" aria-label={"Species count scale for " + scope}>
         {anchors.length > 0 ? <><div className="map-spectrum-bar" style={{ background: spectrum }} aria-hidden="true" /><ol className="map-spectrum-ticks">{anchors.map(band => <li key={band.min}>{band.label}</li>)}</ol></> : <p>No positive counts in this view</p>}
-        <div className="map-spectrum-exceptions"><span><i style={{ background: "var(--county-none)" }} />0 records</span><span><i style={{ background: "var(--county-unknown)" }} />Unavailable</span></div>
       </div>
     </div>
   </div>;

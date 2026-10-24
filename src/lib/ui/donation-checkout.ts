@@ -28,7 +28,7 @@ export function checkoutParameters(amount: number, frequency: DonationFrequency)
     "line_items[0][price_data][unit_amount]": String(amount),
     "line_items[0][price_data][product_data][name]": frequency === "monthly" ? "Monthly support for ISITUSA" : "Support for ISITUSA",
     "metadata[purpose]": "isitusa-contribution", "metadata[frequency]": frequency,
-    "custom_text[submit][message]": "Contributions support ISITUSA's independent research and free tool. We do not claim tax-deductible status.",
+    "custom_text[submit][message]": "Contributions support ISITUSA's independent research.",
   });
   if (frequency === "monthly") {
     params.set("line_items[0][price_data][recurring][interval]", "month");

@@ -30,7 +30,7 @@ export default function AboutPage() {
         <section className="about-source-panel" aria-labelledby="source-panel-heading">
           <h2 id="source-panel-heading">Data gathered from trusted researchers</h2>
           <AboutSourceCarousel sources={researchSources} />
-          <p>ISITUSA aggregates public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about.</p>
+          <p className="about-source-summary">ISITUSA aggregates public data from state agencies, universities, scientific collections, and the federal government to defend our planet and protect the places we care about.</p>
         </section>
       </header>
       <nav className="about-page-nav" aria-label="On this page">
@@ -84,7 +84,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <aside id="credits" className="about-credit-note"><span id="map-credits" /><div><h2>Knowledge is a shared effort.</h2><p>We draw on the resources, research, and creations of great people.</p><Link href="/credits">Meet them in our credits <ArrowUpRight size={20} aria-hidden="true" /></Link></div></aside>
+      <aside id="credits" className="about-credit-note"><span id="map-credits" /><div><h2>Knowledge is a shared effort.</h2><p>We draw on the resources, research, and creations of great people. <Link href="/credits">Meet them in our credits <ArrowUpRight size={16} aria-hidden="true" /></Link></p></div></aside>
     </main>
   );
 }

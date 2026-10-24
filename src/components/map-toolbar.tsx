@@ -81,6 +81,13 @@ export function MapToolbar(props: MapToolbarProps) {
   const toolbarRoot = useRef<HTMLDivElement>(null), searchButton = useRef<HTMLButtonElement>(null);
   const [searchOpen, setSearchOpen] = useState(false), [searchKind, setSearchKind] = useState<"place" | "species">("place");
   const [draftState, setDraftState] = useState(props.stateCode);
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width:700px)");
+    const update = () => setMobile(query.matches);
+    update(); query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
   useEffect(() => {
     function outside(event: PointerEvent) { if (!toolbarRoot.current?.contains(event.target as Node)) setSearchOpen(false); }
     document.addEventListener("pointerdown", outside);
@@ -111,7 +118,7 @@ export function MapToolbar(props: MapToolbarProps) {
   return <div ref={toolbarRoot} className="atlas-toolbar">
     <div className={"atlas-control-row" + (hasFilters ? " has-applied-filters" : "")}>
       <button ref={searchButton} type="button" className="mobile-map-search-button" aria-label="Search the map" title="Search" aria-expanded={searchOpen} aria-controls={searchId} onClick={() => {setSearchOpen(!searchOpen);setFilterOpen(false);}}><Search size={20} aria-hidden="true" /></button>
-      <div id={searchId} className="map-search-panel" data-open={searchOpen} data-kind={searchKind} onKeyDown={event => { if(event.key === "Escape") {event.stopPropagation();closeSearch();} }}>
+      <div id={searchId} className="map-search-panel" data-open={searchOpen} data-kind={searchKind} inert={mobile && !searchOpen} onKeyDown={event => { if(event.key === "Escape") {event.stopPropagation();closeSearch();} }}>
         <header className="mobile-search-heading"><h2>Search the map</h2><button type="button" aria-label="Close search" onClick={closeSearch}><X size={19}/></button></header>
         <div className="mobile-search-modes" aria-label="Search type">
           <button type="button" aria-pressed={searchKind === "place"} onClick={() => setSearchKind("place")}><MapPin size={17}/>County or ZIP</button>
@@ -124,14 +131,14 @@ export function MapToolbar(props: MapToolbarProps) {
       <div className="filter-cluster">
       <div ref={root} className="filter-control" onKeyDown={e => { if(e.key === "Escape") {e.stopPropagation();close();} }}>
         <button ref={filterButton} type="button" aria-label="Filters" className="filter-trigger glass-panel" aria-expanded={filterOpen} aria-controls={filtersId} onClick={() => { if (!filterOpen) {setDraftCategories(props.categories);setDraftEnvironment(props.environment);setDraftState(props.stateCode);} setSearchOpen(false);setFilterOpen(!filterOpen); }}><SlidersHorizontal size={17} /><span>Filters</span>{count > 0 && <b>{count}</b>}{props.stateCode && <span className="mobile-state-indicator">{props.stateCode}</span>}<ChevronDown size={14} /></button>
-        {filterOpen && <section id={filtersId} className="atlas-filter-panel" aria-label="Map filters">
+        <section id={filtersId} className="atlas-filter-panel" data-open={filterOpen} aria-hidden={!filterOpen} inert={!filterOpen} aria-label="Map filters">
           <header><h2>What would you like to see?</h2><button type="button" aria-label="Close filters" onClick={close}><X size={19} /></button></header>
           <div className="mobile-state-filter"><p>State</p><StatePicker value={draftState} onChange={setDraftState}/></div>
           {(selectedSpecies || props.query) && <div className="mobile-selected-search"><span>{selectedSpecies?.commonName ?? props.query}</span><button type="button" aria-label="Remove species search" onClick={() => {props.onSpeciesSelect(null);props.onQueryChange("");}}><X size={16}/></button></div>}
           <fieldset><legend className="sr-only">Species groups</legend><div className="filter-options">{categoryOrder.map(value => CATEGORY_OPTIONS.find(option => option.value === value)!).map(option => {const checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><NatureIcon kind={CATEGORY_NATURE[option.value]} width={26} height={26}/><span>{option.label}</span>{checked && <Check size={14}/>}</button>;})}</div></fieldset>
           <fieldset><legend>Environment</legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!;return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment === value} onClick={() => setDraftEnvironment(draftEnvironment === value ? null : value)}><EnvironmentIcon kind={value} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
           <footer><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment(null);setDraftState(null);props.onClearFilters();close();}}>Clear filters</button><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment,draftState);close();}}>Apply filters <ArrowRight size={16}/></button></footer>
-        </section>}
+        </section>
       </div>
     {hasFilters && <div className="atlas-filter-row" aria-label="Applied map filters"><div className="applied-filter-chips">
       {props.categories.map(category => <button key={category} className={"filter-chip category-" + category} onClick={() => props.onCategoryToggle(category)} aria-label={"Remove " + CATEGORY_OPTIONS.find(c=>c.value===category)?.label + " filter"}><span>{CATEGORY_OPTIONS.find(c=>c.value===category)?.label}</span><X size={13}/></button>)}

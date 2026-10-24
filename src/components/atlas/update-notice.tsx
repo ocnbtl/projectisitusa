@@ -33,6 +33,7 @@ export function UpdateNotice({ datasetDate, datasetLabel }: { datasetDate: strin
     <button ref={trigger} className="updates-trigger" type="button" aria-label="Recent updates" aria-expanded={open} aria-controls="atlas-update-list" onClick={() => setOpen(!open)}>
       <span className="updates-bell"><Bell size={17} aria-hidden="true" /></span>
       <span className="updates-summary">Most recently updated <time dateTime={latest}>{dateLabel(latest)}</time></span>
+      <span className="updates-compact">Updated <time dateTime={latest}>{latest.slice(5, 7)}/{latest.slice(8, 10)}/{latest.slice(2, 4)}</time></span>
     </button>
     {open && <section id="atlas-update-list" className="updates-popover" style={{ maxHeight: availableHeight }} aria-label="Recent updates">
       <header><div className="updates-heading"><span>What&apos;s new</span><h2>Invasive Species in the United States of America</h2></div><button type="button" aria-label="Close updates" onClick={close}><X size={18} /></button></header>

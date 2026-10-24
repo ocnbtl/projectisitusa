@@ -2,6 +2,8 @@
  * Add an entry when a visitor-facing change ships; keep research dates separate.
  */
 export const SITE_UPDATES = [
+  { date: "2026-10-24", title: "A smoother way to explore and support", detail: "Mobile search and filters open smoothly, the map key explains its colors more clearly, and checkout uses our ISITUSA name. Refined About spacing and a responsive woodland footer bring the pages together.", href: "/" },
+  { date: "2026-10-23", title: "New illustrations and improved checkout", detail: "Two original illustrations give our research papers more room to breathe. One-time and recurring contributions now open Stripe's current checkout layouts reliably.", href: "/approach" },
   { date: "2026-10-22", title: "More ways to see the map", detail: "Monochrome and Spectrum add two new map palettes, with all six choices together on phones. Clearer About links and an original pixel woodland that follows your light or dark theme make it easier to explore the project.", href: "/about" },
   { date: "2026-10-20", title: "A clearer introduction to ISITUSA", detail: "Our About page now follows one reading path through who we are, our mission, and the research behind the tool. Footer links keep email updates and preferences together.", href: "/about" },
   { date: "2026-10-19", title: "More room for the map on mobile", detail: "Compact search, filters, and recent updates leave more space for the map. County and ZIP lookup, species search, and map controls stay close at hand.", href: "/" },

@@ -11,6 +11,7 @@ export function FooterGrove() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0, offset = 0, target = 0, lastInput = 0, lastTime = 0;
     let touching = false, touchY = 0, visible = false, leaving = false;
+    let lastScrollY = window.scrollY, arrivalShown = false;
     const html = document.documentElement;
     const existingMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
     const meta = existingMeta ?? document.createElement("meta");
@@ -37,7 +38,7 @@ export function FooterGrove() {
     function paint(time: number) {
       const dt = Math.min(32, time - (lastTime || time - 16));
       lastTime = time;
-      if (!touching && time - lastInput > 360) target = 0;
+      if (!touching && time - lastInput > 650) target = 0;
       const pinned = !leaving && atEnd();
       const previousOffset = offset;
       offset += (target - offset) * (1 - Math.exp(-dt / (target ? 90 : 170)));
@@ -57,6 +58,20 @@ export function FooterGrove() {
       target = Math.min(limit, target + Math.min(delta, 100) * .55);
       lastInput = performance.now();
       if (!frame) frame = requestAnimationFrame(paint);
+    }
+    function scrolling() {
+      const y = window.scrollY, downward = y > lastScrollY;
+      lastScrollY = y;
+      syncEdge();
+      const remaining = html.scrollHeight - window.innerHeight - y;
+      if (remaining > 240 + offset) arrivalShown = false;
+      // Middle-button autoscroll and momentum scrolling have no wheel event.
+      // Give each arrival one full peek; animation-driven scrolling cannot rearm it.
+      if (downward && !frame && !arrivalShown && visible && atEnd() && !reduced.matches) {
+        arrivalShown = true;
+        pull(340);
+        target = Math.min(190, (element!.offsetHeight - offset) * .38);
+      }
     }
     function wheel(event: WheelEvent) {
       if (event.ctrlKey) return;
@@ -96,7 +111,7 @@ export function FooterGrove() {
       if (dark !== next) { dark = next; syncEdge(); }
     });
     themeObserver.observe(html, { attributes: true, attributeFilter: ["class"] });
-    window.addEventListener("scroll", syncEdge, { passive: true });
+    window.addEventListener("scroll", scrolling, { passive: true });
     window.addEventListener("resize", syncEdge, { passive: true });
     window.visualViewport?.addEventListener("resize", syncEdge, { passive: true });
     window.visualViewport?.addEventListener("scroll", syncEdge, { passive: true });
@@ -109,7 +124,7 @@ export function FooterGrove() {
     reduced.addEventListener("change", preferenceChanged);
     return () => {
       observer.disconnect(); themeObserver.disconnect(); cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", syncEdge); window.removeEventListener("resize", syncEdge);
+      window.removeEventListener("scroll", scrolling); window.removeEventListener("resize", syncEdge);
       window.visualViewport?.removeEventListener("resize", syncEdge); window.visualViewport?.removeEventListener("scroll", syncEdge);
       window.removeEventListener("wheel", wheel); window.removeEventListener("touchstart", touchStart);
       window.removeEventListener("touchmove", touchMove); window.removeEventListener("touchend", touchEnd);

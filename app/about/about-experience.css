@@ -223,3 +223,17 @@
  .about-page .about-help .involvement-links>a{padding:16px}
 }
 @media(prefers-reduced-motion:reduce){.about-page .about-help .involvement-links>a{transition:none}}
+
+/* One outlined summary and a tighter, consistent desktop reading rhythm. */
+.about-source-panel>.about-source-summary{max-width:none;padding:18px 22px;border:1px solid var(--border);border-radius:12px;background:transparent;margin-top:12px}
+.about-credit-note p{max-width:none;margin-bottom:0}
+.about-credit-note p a{display:inline;min-height:0;white-space:nowrap;font-size:inherit}
+.about-credit-note p a svg{display:inline;vertical-align:-3px;margin-left:4px}
+@media(min-width:901px){
+ .about-page .about-method{padding-block:48px 28px}
+ .about-research-grid{padding-block:24px;gap:32px}
+ .about-page .about-help{padding-block:32px 40px}
+ .about-help>.editorial-art{margin-top:0}
+ .about-page .about-credit-note{max-width:1160px;margin-top:12px;padding:32px 40px}
+ .about-credit-note p{font-size:16px;line-height:1.65}
+}
