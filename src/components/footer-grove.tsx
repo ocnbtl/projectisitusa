@@ -43,8 +43,12 @@ export function FooterGrove() {
     }
     function queueEdge() { if (!edgeFrame) edgeFrame = requestAnimationFrame(syncEdge); }
     function paint() {
-      element!.style.setProperty("--root-reveal", `${reveal.toFixed(3)}px`);
-      footer?.style.setProperty("--footer-pull", `${reveal.toFixed(3)}px`);
+      // Keep the fine dot masks on the same physical-pixel grid while moving.
+      // Quantize only the painted position; spring position/velocity stay continuous.
+      const pixelRatio = window.devicePixelRatio || 1;
+      const painted = `${Math.round(reveal * pixelRatio) / pixelRatio}px`;
+      element!.style.setProperty("--root-reveal", painted);
+      footer?.style.setProperty("--footer-pull", painted);
       queueEdge();
     }
     function reset() {

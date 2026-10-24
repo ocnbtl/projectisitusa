@@ -85,7 +85,8 @@ footer.site-footer.footer-refined::after{content:"";display:block;height:env(saf
    The entire scene moves together; the mountain tops and trunk/root joins stay intact. */
 .footer-grove{--landscape-height:clamp(230px,27.778vw,500px);--root-space:240px;height:calc(var(--landscape-height) + var(--root-space));margin-top:calc(-1 * var(--root-space));overflow-anchor:none;background:var(--background);pointer-events:none}
 .footer-grove-world{top:var(--root-space);height:var(--landscape-height);bottom:auto;transform:translate3d(0,calc(-1 * var(--root-reveal)),0)}
-.footer-grove[data-revealing] .footer-grove-world{will-change:transform}
+/* Keep the masked artwork on one stable layer through motion and rest. */
+.footer-grove-world{will-change:transform;backface-visibility:hidden}
 footer.footer-refined :is(.footer-main,.footer-details){position:relative;z-index:1;transform:translate3d(0,calc(-1 * var(--footer-pull,0px)),0)}
 html.footer-at-end{overscroll-behavior-y:none}
 .footer-soil{transform:none;background-size:100% 240px}
