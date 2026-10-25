@@ -3,7 +3,7 @@
 .brand-kit-page h1{font-size:var(--section-heading-size);line-height:1.2;margin:0 0 16px}
 .brand-kit-page h2{font-size:var(--section-heading-size);line-height:1.2;margin:0 0 16px}
 .brand-kit-page h3{font-size:20px;line-height:1.3;margin:0 0 10px}
-.brand-kit-page p{font-size:16px;line-height:1.75;color:var(--muted);margin:0 0 16px;max-width:70ch}
+.brand-kit-page p{font-size:16px;line-height:1.75;color:var(--muted);margin:0 0 16px;max-width:70ch;text-wrap:pretty}
 .brand-kit-header>p{max-width:none;font-size:16px;text-wrap:pretty}
 .brand-kit-nav{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:24px}
 .brand-kit-nav a{display:inline-flex;align-items:center;gap:12px;min-height:44px;color:var(--foreground);text-decoration:none}
@@ -31,8 +31,8 @@
 .brand-kit-colors dd{font-size:16px;color:var(--muted)}
 .brand-kit-colors span{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);flex-shrink:0}
 .brand-swatch-green{background:#00583b}.brand-swatch-white{background:#fff}.brand-swatch-black{background:#111}
-.brand-kit-permission{max-width:80ch}
-.brand-kit-permission p{font-size:16px;max-width:none}
+.brand-kit-permission{max-width:none}
+.brand-kit-page #colors>p,.brand-kit-permission p{font-size:16px;max-width:none;text-wrap:pretty}
 .brand-kit-guidance a,.brand-kit-permission a{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
 .brand-kit-page a:focus-visible{outline:2px solid var(--ring);outline-offset:5px;border-radius:3px}
 @media(max-width:1000px){
@@ -71,7 +71,6 @@
 .brand-kit-page .brand-kit-art[data-artwork="white"]{background:#183b35}
 .brand-kit-card-copy{display:flex;flex-direction:column;flex:1;min-width:0}
 .brand-kit-page .brand-kit-color-options{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:0;border:0}
-.brand-kit-color-options legend{font-size:14px;color:var(--muted);margin-bottom:8px;padding:0}
 .brand-kit-color-choice{position:relative;display:inline-flex;cursor:pointer}
 .brand-kit-color-choice input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer}
 .brand-kit-color-choice span{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:14px;line-height:1.2;color:var(--foreground);background:var(--background)}

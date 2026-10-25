@@ -39,8 +39,7 @@ export function LogoAssetCard({ id, greenFile, greenPng, title, description, wid
     <div className="brand-kit-card-copy">
       <h3 id={`${id}-heading`}>{title}</h3>
       <p>{description}</p>
-      <fieldset className="brand-kit-color-options">
-        <legend>Artwork color</legend>
+      <fieldset className="brand-kit-color-options" aria-label={`Artwork color for ${title.toLowerCase()}`}>
         {colors.map(option => <label className="brand-kit-color-choice" key={option.id}>
           <input type="radio" name={`${id}-color`} value={option.id} checked={color.id === option.id} onChange={() => setSelectedColor(option)} aria-label={`${option.label} ${title.toLowerCase()}`} />
           <span><i style={{ backgroundColor: option.hex }} aria-hidden="true" />{option.label}</span>
