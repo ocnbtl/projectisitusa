@@ -237,3 +237,12 @@
  .about-page .about-credit-note{max-width:1160px;margin-top:12px;padding:32px 40px}
  .about-credit-note p{font-size:16px;line-height:1.65}
 }
+
+/* Match the method section's landscape plate and compact section rhythm. */
+@media(min-width:901px){
+ .about-sources>.editorial-art,.about-help>.editorial-art{aspect-ratio:3/2}
+ .about-research-grid{padding-block:20px 0;gap:48px}
+ .about-page .about-help{padding-block:48px 28px}
+ .about-help>.editorial-art{align-self:center}
+ .about-page .about-credit-note{margin-top:20px}
+}
