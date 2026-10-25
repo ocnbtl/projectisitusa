@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import { ArrowDownToLine } from "lucide-react";
 
@@ -22,7 +23,12 @@ type AssetProps = {
 };
 
 export function LogoAssetCard({ id, greenFile, greenPng, title, description, width, height, fullWidth }: AssetProps) {
-  const [color, setColor] = useState<(typeof colors)[number]>(colors[0]);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [selectedColor, setSelectedColor] = useState<(typeof colors)[number] | null>(null);
+  useEffect(() => { setMounted(true); }, []);
+  // Keep server/client hydration consistent, then follow the theme until a color is chosen.
+  const color = selectedColor ?? colors[mounted && resolvedTheme === "dark" ? 2 : 0];
   const stem = `/brand/v10/${id}-${color.id}`;
   const svg = color.id === "green" ? greenFile : `${stem}.svg`;
   const png = color.id === "green" ? greenPng : `${stem}.png`;
@@ -36,7 +42,7 @@ export function LogoAssetCard({ id, greenFile, greenPng, title, description, wid
       <fieldset className="brand-kit-color-options">
         <legend>Artwork color</legend>
         {colors.map(option => <label className="brand-kit-color-choice" key={option.id}>
-          <input type="radio" name={`${id}-color`} value={option.id} checked={color.id === option.id} onChange={() => setColor(option)} aria-label={`${option.label} ${title.toLowerCase()}`} />
+          <input type="radio" name={`${id}-color`} value={option.id} checked={color.id === option.id} onChange={() => setSelectedColor(option)} aria-label={`${option.label} ${title.toLowerCase()}`} />
           <span><i style={{ backgroundColor: option.hex }} aria-hidden="true" />{option.label}</span>
         </label>)}
       </fieldset>
