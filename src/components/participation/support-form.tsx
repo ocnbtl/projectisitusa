@@ -3,7 +3,7 @@ import { track } from "@/lib/ui/telemetry";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet, HandHeart, ArrowRight, MessageCircle, Map, Users, Share2 } from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet, HandHeart, ArrowRight, MessageCircle, Mail, Map, Users, Share2 } from "lucide-react";
 import { cryptoUri } from "@/lib/participation/contracts";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { verifiedPublicWallets } from "@/lib/ui/support-destinations";
@@ -82,12 +82,12 @@ export function SupportForm() {
    <div><h2 id="supporter-heading">Manage your monthly support</h2><p>Update or cancel your recurring contribution securely through Stripe.</p></div>
    <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Open billing portal <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
   </section>}
-  <section className={s.contactCard} aria-labelledby="contribution-questions"><h2 id="contribution-questions"><MessageCircle size={24} aria-hidden="true"/><span>Questions about contributing?</span></h2><p>Whether you need a hand with a contribution or want to ask about the work, we&apos;re happy to help. Reach us at <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a>.</p></section>
+  <section className={s.contactCard} aria-labelledby="contribution-questions"><h2 id="contribution-questions"><Mail size={24} aria-hidden="true"/><span>Questions about contributing?</span></h2><p>Whether you need a hand with a contribution or want to ask about the work, we&apos;re happy to help. Reach us at <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p></section>
   </div>
   <section id="help-for-free" className={s.spreadSection} aria-labelledby="spread-heading">
    <div className={s.spreadIntro}><div><h2 id="spread-heading">Help more people find ISITUSA.</h2><p>Help someone discover what has been recorded near them. Send a friend their county map, share a species profile with your local group, or introduce ISITUSA to an organization in your community. Each introduction helps more people find and use the research we bring together.</p><button type="button" className={s.shareButton} onClick={shareSite}><Share2 size={18} aria-hidden="true"/>Share ISITUSA<ArrowRight size={18} aria-hidden="true"/></button><p className={s.shareStatus} role="status">{shareStatus}</p></div><EditorialArt subject="message" className={s.messageArt}/></div>
    <div className={s.spreadCards}>
-    <article><h3><Map size={23} aria-hidden="true"/><span>Share a place you care about.</span></h3><p>Send your county&apos;s map to a friend or neighbor. It gives you a place to start: which species have been recorded nearby, what they look like, and where to learn more.</p><Link href="/">Find your county<ArrowRight size={17} aria-hidden="true"/></Link></article>
+    <article><h3><Map size={23} aria-hidden="true"/><span>Share a place you care about.</span></h3><p>Send your county&apos;s map to a friend or neighbor. It gives them a place to start: which species have been recorded nearby, what they look like, and where to learn more.</p><Link href="/">Find your county<ArrowRight size={17} aria-hidden="true"/></Link></article>
     <article><h3><Users size={23} aria-hidden="true"/><span>Introduce us to your community.</span></h3><p>If you&apos;re part of a garden club, school, park group, or conservation organization, show them around ISITUSA. You may know someone who could use the map in a lesson, a local project, or their next walk outdoors.</p><Link href="/about">Share what we do<ArrowRight size={17} aria-hidden="true"/></Link></article>
     <article><h3><MessageCircle size={23} aria-hidden="true"/><span>Pass along what you learn.</span></h3><p>Found a species profile worth sharing? Add a link to your group chat or social feed and tell people what caught your attention. A familiar place or a personal observation can make the research feel closer to home.</p>{socialProfiles.some(profile=>profile.url)?<><p>Follow ISITUSA for more to explore and share.</p><FooterSocials/></>:<p>You can also sign up for local updates and share the ones your friends would find useful.</p>}<Link href="/join">Get updates near you<ArrowRight size={17} aria-hidden="true"/></Link></article>
    </div>

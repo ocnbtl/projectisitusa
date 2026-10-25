@@ -10,7 +10,7 @@ import { track } from "@/lib/ui/telemetry";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { ArrowDown, ArrowUp, ArrowUpRight, Compass, X } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowRight, ArrowUpRight, Compass, X } from "lucide-react";
 import { CountyObservations } from "@/components/participation/observations";
 import { CountyInsightPanel } from "@/components/county-insight-panel";
 import { LogoLoader } from "@/components/atlas/logo-loader";
@@ -129,7 +129,7 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
       onEnvironmentChange={value => update({ environment: value })} onZipSearch={searchZip} onClearFilters={() => {cancelZipLookup();update({ categories: null, species: null, environment: null, q: null, state: null, county: null });}} />
       <UpdateNotice datasetDate={datasetDate} datasetLabel={datasetLabel} />
     </div>
-    {!county && !stateCode ? <div className="atlas-intro"><h1 className="page-heading">Find invasive species near you.</h1><p>See which invasive species have been recorded in your county, with sources you can check for yourself.</p><Link href="/species">Browse the species <ArrowUpRight size={16} /></Link></div> : null}
+    {!county && !stateCode ? <div className="atlas-intro"><h1 className="page-heading">Find invasive species near you.</h1><p>Search for your county or a species, then narrow the map with filters. Explore the records, follow the research, and <Link href="/about">learn how ISITUSA brings it together</Link>.</p><div className="atlas-intro-actions"><Link href="/species">Browse by species <ArrowRight size={16} aria-hidden="true"/></Link><Link href="/research">Browse by area <ArrowRight size={16} aria-hidden="true"/></Link></div></div> : null}
     {!dataReady ? <div className="atlas-data-status" role={dataError ? "alert" : "status"}>{dataError ? <><p>{typeof dataError === "string" ? dataError : "Research records could not be loaded."}</p><button type="button" className="text-link" onClick={reviewed.retry}>Try again</button></> : "Loading reviewed county records..."}</div> : null}
     {countyFips && !county ? <div className="atlas-notice" role="status">This county code is not in the current geography. Search for a county or planning region.<button onClick={() => update({ county: null })}>Clear selection</button></div> : null}
     {county ? <aside className="county-sheet" aria-label={`${county.name} county details`} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); closeCounty(); } }}>

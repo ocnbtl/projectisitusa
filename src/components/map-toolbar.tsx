@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, Check, ChevronDown, Leaf, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown, Leaf, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
 import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
-import { StatePicker } from "@/components/atlas/state-picker";
+import { StatePicker, StateFlag } from "@/components/atlas/state-picker";
 import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
 import type { CountyRecord, EnvironmentTag, ExplorerSpecies, SpeciesCategory } from "@/lib/data/types";
 
@@ -18,10 +18,11 @@ interface MapToolbarProps {
   onApplyFilters: (categories: SpeciesCategory[], environment: EnvironmentTag | null, state: string | null) => void;
   onZipSearch: (zip: string) => void; onClearFilters: () => void;
 }
-type SearchResult = { id: string; label: string; detail: string; image?: string; credit?: string; count?: string };
+type SearchResult = { id: string; label: string; detail: string; image?: string; credit?: string; count?: string; stateCode?: string };
 const categoryOrder: SpeciesCategory[] = ["wildlife", "plants", "insects", "fungi-diseases"];
-function SearchAvatar({ src, kind }: { src?: string; kind: "place" | "species" }) {
+function SearchAvatar({ src, kind, stateCode }: { src?: string; kind: "place" | "species"; stateCode?: string }) {
   const [failed, setFailed] = useState(false);
+  if (kind === "place" && stateCode) return <span className="search-avatar search-state-flag"><StateFlag code={stateCode}/></span>;
   const Icon = kind === "place" ? MapPin : Leaf;
   return <span className="search-avatar">{src && !failed ? <Image src={src} alt="" width={40} height={40} unoptimized onError={() => setFailed(true)} /> : <Icon size={19} />}</span>;
 }
@@ -64,7 +65,7 @@ function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy 
       <p className="search-suggestion-title">{normalized ? "Search results" : kind === "place" ? "Explore a county" : "Get to know a species"}</p>
       <div className="search-results" id={id} role="listbox" aria-label={kind === "place" ? "Matching counties" : "Matching species"}>
         {options.map((result,index) => <button id={id + "-" + index} key={result.id} type="button" role="option" aria-selected={active === index} tabIndex={-1} onMouseDown={e => e.preventDefault()} onClick={() => choose(result)}>
-          <SearchAvatar src={result.image} kind={kind} /><span><strong>{result.label}</strong><small className={kind === "species" ? "scientific-name" : ""}>{result.detail}</small>{result.count && <small className="suggestion-count">{result.count}</small>}</span><ArrowUpRight size={15} aria-hidden="true" />
+          <SearchAvatar src={result.image} kind={kind} stateCode={result.stateCode} /><span><strong>{result.label}</strong>{result.detail && <small className={kind === "species" ? "scientific-name" : ""}>{result.detail}</small>}{result.count && <small className="suggestion-count">{result.count}</small>}</span><ArrowUpRight size={15} aria-hidden="true" />
         </button>)}
         {!options.length && <div className="search-empty"><p>{kind === "place" ? "Try a county name with its state, or a five-digit ZIP." : "Try a common or scientific name."}</p></div>}
       </div>
@@ -99,7 +100,7 @@ export function MapToolbar(props: MapToolbarProps) {
     const q = placeSearch.trim().toLowerCase();
     return Object.values(props.counties).filter(c => (!props.stateCode || c.stateCode === props.stateCode) && (!q || (c.name + " " + c.stateCode).toLowerCase().includes(q)))
       .sort((a,b) => (props.countyCounts[b.countyFips] ?? 0) - (props.countyCounts[a.countyFips] ?? 0) || a.name.localeCompare(b.name)).slice(0,12)
-      .map(c => ({ id:c.countyFips, label:c.name, detail:c.stateCode, count:props.dataReady && Object.hasOwn(props.countyCounts,c.countyFips) ? props.countyCounts[c.countyFips].toLocaleString() + " species recorded" : props.dataReady ? "Records unavailable" : "Records loading" }));
+      .map(c => ({ id:c.countyFips, label:`${c.name}, ${c.stateCode}`, detail:"", stateCode:c.stateCode, count:props.dataReady && Object.hasOwn(props.countyCounts,c.countyFips) ? props.countyCounts[c.countyFips].toLocaleString() + " species recorded" : props.dataReady ? "Records unavailable" : "Records loading" }));
   }, [props.counties,props.stateCode,props.countyCounts,props.dataReady,placeSearch]);
   const speciesResults = useMemo(() => {
     const q = speciesSearch.trim().toLowerCase();
@@ -135,7 +136,7 @@ export function MapToolbar(props: MapToolbarProps) {
           <header><h2>What would you like to see?</h2><button type="button" aria-label="Close filters" onClick={close}><X size={19} /></button></header>
           <div className="mobile-state-filter"><p>State</p><StatePicker value={draftState} onChange={setDraftState}/></div>
           {(selectedSpecies || props.query) && <div className="mobile-selected-search"><span>{selectedSpecies?.commonName ?? props.query}</span><button type="button" aria-label="Remove species search" onClick={() => {props.onSpeciesSelect(null);props.onQueryChange("");}}><X size={16}/></button></div>}
-          <fieldset><legend className="sr-only">Species groups</legend><div className="filter-options">{categoryOrder.map(value => CATEGORY_OPTIONS.find(option => option.value === value)!).map(option => {const checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><NatureIcon kind={CATEGORY_NATURE[option.value]} width={26} height={26}/><span>{option.label}</span>{checked && <Check size={14}/>}</button>;})}</div></fieldset>
+          <fieldset><legend>Species groups</legend><div className="filter-options">{categoryOrder.map(value => CATEGORY_OPTIONS.find(option => option.value === value)!).map(option => {const checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><NatureIcon kind={CATEGORY_NATURE[option.value]} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
           <fieldset><legend>Environment</legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!;return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment === value} onClick={() => setDraftEnvironment(draftEnvironment === value ? null : value)}><EnvironmentIcon kind={value} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
           <footer><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment(null);setDraftState(null);props.onClearFilters();close();}}>Clear filters</button><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment,draftState);close();}}>Apply filters <ArrowRight size={16}/></button></footer>
         </section>

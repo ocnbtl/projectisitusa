@@ -18,6 +18,7 @@ export default function BrandPage() {
       <nav className="brand-kit-nav" aria-label="Brand kit sections">
         <a href="#logos">Logos <ArrowDown size={17} aria-hidden="true" /></a>
         <a href="#typography">Typography <ArrowDown size={17} aria-hidden="true" /></a>
+        <a href="#colors">Colors <ArrowDown size={17} aria-hidden="true" /></a>
         <a href="#using-our-brand">Guidelines <ArrowDown size={17} aria-hidden="true" /></a>
       </nav>
     </header>
@@ -41,6 +42,12 @@ export default function BrandPage() {
       <div className="brand-kit-specimen" aria-label="Invasive Serif type sample"><p>For the places<br />we love.</p><span>Aa Bb Cc &amp; 0123456789</span></div>
     </section>
 
+    <section id="colors" className="brand-kit-section" aria-labelledby="colors-heading">
+      <h2 id="colors-heading">Our colors.</h2>
+      <p>Use these exact colors when reproducing the logo. Choose the version that stands out clearly against your background.</p>
+      <dl className="brand-kit-colors"><div><dt><span className="brand-swatch-green" aria-hidden="true" /> Brand green</dt><dd>#00583B</dd></div><div><dt><span className="brand-swatch-white" aria-hidden="true" /> White</dt><dd>#FFFFFF</dd></div><div><dt><span className="brand-swatch-black" aria-hidden="true" /> Black</dt><dd>#111111</dd></div></dl>
+    </section>
+
     <section id="using-our-brand" className="brand-kit-section" aria-labelledby="usage-heading">
       <div className="brand-kit-section-intro"><h2 id="usage-heading">Keep it recognizable.</h2><p>A little care with the name, spacing, and color helps people recognize the project wherever they find it.</p></div>
       <div className="brand-kit-guidance">
@@ -48,8 +55,8 @@ export default function BrandPage() {
         <div><h3>Give the artwork room.</h3><p>Keep its original proportions and leave clear space around it. Avoid stretching, cropping, or adding effects that change the lettering or symbol.</p></div>
         <div><h3>Choose a clear contrast.</h3><p>Use green on a light background and white on a dark one. Keep the artwork easy to distinguish from nearby text and images.</p></div>
       </div>
-      <dl className="brand-kit-colors"><div><dt><span className="brand-swatch-green" aria-hidden="true" /> Brand green</dt><dd>#00583B</dd></div><div><dt><span className="brand-swatch-white" aria-hidden="true" /> White</dt><dd>#FFFFFF</dd></div><div><dt><span className="brand-swatch-black" aria-hidden="true" /> Black</dt><dd>#111111</dd></div></dl>
-      <div className="brand-kit-permission"><p>Please use these assets to identify ISITUSA accurately, without suggesting a partnership, endorsement, government affiliation, or nonprofit status.</p><p>Need help choosing an asset, or have a question about using the font? Reach us at <a href="mailto:contact@isitusa.com">contact@isitusa.com</a>.</p></div>
+
+      <div className="brand-kit-permission"><p>Please use these assets to identify ISITUSA accurately, without suggesting a partnership, endorsement, government affiliation, or nonprofit status.</p><p>Need help choosing an asset, or have a question about using the font? Reach us at <a href="mailto:contact@isitusa.com">contact@isitusa.com</a></p></div>
     </section>
   </main>;
 }

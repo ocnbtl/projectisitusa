@@ -48,7 +48,7 @@
 /* One choice at a time keeps the support flow compact at every size. */
 .layout{grid-template-areas:"mission donation";grid-template-rows:auto;align-items:start}
 .mission{grid-area:mission}.donation{grid-area:donation}
-.intro h1,.donationHeading h2{font-size:clamp(25px,2.2vw,32px);line-height:1.2}
+.intro h1,.donationHeading h2{font-size:var(--section-heading-size);line-height:1.2}
 .contributionTabs{display:grid;grid-template-columns:.7fr 1fr 1.45fr 1.2fr;gap:6px;margin-bottom:14px}
 .contributionTabs button{min-width:0;min-height:44px;padding:9px 5px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-weight:500;color:var(--foreground);transition:background 160ms ease-out,border-color 160ms ease-out}
 .contributionTabs button:hover{border-color:var(--accent)}
@@ -118,9 +118,9 @@
 .contactCard p{font-size:14px;line-height:1.65;color:var(--muted);max-width:58ch;margin:14px 0 0}
 .contactCard p a{color:var(--foreground);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .spreadSection{margin-top:48px;scroll-margin-top:calc(var(--site-header-height) + 32px)}
-.spreadIntro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:clamp(20px,5vw,72px)}
-.spreadIntro h2,.takePart h2{font-family:var(--font-display);font-size:clamp(26px,2.6vw,36px);line-height:1.18;margin:8px 0 18px;max-width:26ch}
-.spreadIntro p:not(.shareStatus),.takePart p{font-size:16px;line-height:1.75;color:var(--muted);max-width:60ch}
+.spreadIntro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:clamp(20px,3vw,32px)}
+.spreadIntro h2,.takePart h2{font-family:var(--font-display);font-size:var(--section-heading-size);line-height:1.2;margin:8px 0 18px;max-width:26ch}
+.spreadIntro p:not(.shareStatus),.takePart p{font-size:16px;line-height:1.75;color:var(--muted);max-width:none;text-wrap:pretty}
 .shareButton{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--accent);border-radius:9px;min-height:46px;padding:10px 18px;margin-top:22px;font-size:14px;font-weight:600}
 .shareButton:hover{background:var(--surface-strong)}
 .shareStatus{font-size:13px;line-height:1.5;color:var(--muted);margin:10px 0 0}
@@ -133,7 +133,7 @@
 .spreadCards p{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 14px}
 .spreadCards article>a{display:flex;align-items:center;gap:10px;min-height:44px;margin-top:auto;font-size:14px;font-weight:500}
 .spreadCards a svg,.partActions svg{flex-shrink:0}
-.takePart{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(24px,5vw,72px);margin:36px 0 0}
+.takePart{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(24px,3vw,32px);margin:36px 0 0}
 .footstepsArt{width:100%;max-width:440px;justify-self:center}
 .partActions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .partActions a{display:flex;align-items:center;gap:16px;border:1px solid var(--border);border-radius:9px;padding:12px 16px;min-height:46px;font-size:14px}
@@ -168,4 +168,13 @@
  .messageArt[data-art-edition]{width:min(100%,360px);aspect-ratio:3/2}
  .takePart{grid-template-columns:1fr;gap:16px}
  .footstepsArt[data-art-edition]{width:min(100%,300px);aspect-ratio:3/2}
+}
+
+/* Keep each illustration close to the copy it accompanies. */
+@media(min-width:901px){
+ .spreadIntro{grid-template-columns:minmax(0,1fr) 380px;max-width:1160px;margin-inline:auto}
+ .takePart{grid-template-columns:300px minmax(0,1fr);max-width:1160px;margin-inline:auto}
+ .spreadIntro h2,.takePart h2{max-width:none}
+ .messageArt{mask-position:left center;-webkit-mask-position:left center}
+ .footstepsArt{mask-position:right center;-webkit-mask-position:right center}
 }
