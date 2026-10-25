@@ -1,7 +1,7 @@
 "use client";
 import { track } from "@/lib/ui/telemetry";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Challenge, Honeypot } from "./shared";
 import { checkoutDestination, donationAmount, type DonationFrequency } from "@/lib/ui/donation-checkout";
 import s from "./support.module.css";
@@ -56,7 +56,7 @@ export function DonationCheckout({ frequency = "once", active = true, config, ch
             <p id={`${customId}-help`} className={s.customHelp}>Enter $5 to $1,000.</p>
           </div>
         </div>
-        {!confirming ? <button type="button" className={`${s.primary} ${s.checkoutAction}`} disabled={!donationAmount(amount)} onClick={() => setConfirming(true)}>{frequency === "monthly" ? "Give" : "Continue with"} ${amount}{frequency === "monthly" ? " monthly" : ""}<ArrowRight size={17} aria-hidden="true" /></button> : <form className={s.checkoutForm} onSubmit={submit}><label className={s.small}><input name="consent" type="checkbox" required disabled={busy} /> I agree to the <a href="/terms">contribution terms</a>{frequency === "monthly" ? ` and a recurring charge of $${amount} each month until I cancel` : ""}.</label><Honeypot />{active && <Challenge action="donation_checkout" onToken={setToken} reset={reset} />}<button className={s.primary} type="submit" disabled={!token || busy}>{busy ? "Opening secure checkout..." : "Open secure checkout"}</button></form>}
+        {!confirming ? <button type="button" className={`${s.primary} ${s.checkoutAction}`} disabled={!donationAmount(amount)} onClick={() => setConfirming(true)}>{frequency === "monthly" ? "Give" : "Continue with"} ${amount}{frequency === "monthly" ? " monthly" : ""}<ArrowRight size={17} aria-hidden="true" /></button> : <form className={s.checkoutForm} onSubmit={submit}><label className={s.small}><input name="consent" type="checkbox" required disabled={busy} /> I agree to the <a href="/terms">contribution terms</a>{frequency === "monthly" ? ` and a recurring charge of $${amount} each month until I cancel` : ""}.</label><Honeypot />{active && <><Challenge action="donation_checkout" onToken={setToken} reset={reset} appearance="interaction-only" /><p className={s.securityStatus} role="status"><ShieldCheck size={16} aria-hidden="true"/>{token?"Ready for secure checkout":"Checking your secure connection…"}</p></>}<button className={s.primary} type="submit" disabled={!token || busy}>{busy ? "Opening secure checkout..." : "Open secure checkout"}</button></form>}
       </> : <p className={s.small} role="status">{checked ? frequency === "monthly" ? "Monthly contributions are not available right now. Please check back soon." : "Card checkout is temporarily unavailable. Please try again later or choose the Cryptocurrency tab." : "Checking secure checkout..."}</p>}
     </>}
     {error && <p className={s.error} role="alert">{error}</p>}

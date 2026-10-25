@@ -12,7 +12,7 @@ import { ArrowUp, ChevronDown, Map, Leaf, BookOpen, Route, Database, Award, Came
 const groups = [
   { title: "Explore", links: [{icon:Map,label:"County map",href:"/"},{icon:Leaf,label:"Species profiles",href:"/species"},{icon:Binoculars,label:"Reviewed sightings",href:"/observations"}] },
   { title: "Our research", links: [{icon:BookOpen,label:"Research overview",href:"/research"},{icon:Route,label:"Our approach",href:"/approach"},{icon:Database,label:"Data sources",href:"/data-sources"},{icon:Award,label:"Credits",href:"/credits"}] },
-  { title: "Get involved", links: [{icon:Bell,label:"Email updates",href:"/join"},{icon:Settings,label:"Email preferences",href:"/preferences"},{icon:HandHelping,label:"Ways to help for free",href:"/support/free"},{icon:Camera,label:"Report a sighting",href:"/report"},{icon:Users,label:"Volunteer",href:"/volunteer"}] },
+  { title: "Get involved", links: [{icon:Bell,label:"Email updates",href:"/join"},{icon:Settings,label:"Email preferences",href:"/preferences"},{icon:HandHelping,label:"Ways to help for free",href:"/support#help-for-free"},{icon:Camera,label:"Report a sighting",href:"/report"},{icon:Users,label:"Volunteer",href:"/volunteer"}] },
   { title: "Contributions", links: [{icon:Heart,label:"Support the mission",href:"/support"},{icon:FileText,label:"Contribution terms",href:"/terms"},{icon:Receipt,label:"Request a refund",href:"/support/refund"},{icon:Repeat,label:"Manage your monthly support",href:"/support#supporter-heading"}] },
   { title: "ISITUSA", links: [{icon:Info,label:"About us",href:"/about"},{icon:Palette,label:"Brand kit",href:"/brand"},{icon:Shield,label:"Privacy policy",href:"/privacy"}] },
 ] as const;

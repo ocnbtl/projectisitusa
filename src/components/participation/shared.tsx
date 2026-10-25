@@ -35,13 +35,13 @@ export function PlannedUpdates(){
 
 type Turnstile={render:(container:HTMLElement,options:Record<string,unknown>)=>string;remove:(id:string)=>void};
 declare global {interface Window {turnstile?:Turnstile}}
-export function Challenge({action,onToken,reset}:{action:string;onToken:(token:string)=>void;reset:number}){
+export function Challenge({action,onToken,reset,appearance="always"}:{action:string;onToken:(token:string)=>void;reset:number;appearance?:"always"|"interaction-only"}){
  const container=useRef<HTMLDivElement>(null),callback=useRef(onToken),[ready,setReady]=useState(false),[error,setError]=useState(false);
  callback.current=onToken;
  // Next Script calls onLoad (but not onReady) for a second subscriber while
  // the same download is pending. Handle both, plus an already available API.
  useEffect(()=>{if(window.turnstile)setReady(true);},[]);
- useEffect(()=>{if(!ready||!container.current||!window.turnstile)return;callback.current("");const id=window.turnstile.render(container.current,{sitekey:TURNSTILE_SITE_KEY,action,callback:(token:string)=>{setError(false);callback.current(token);},"expired-callback":()=>callback.current(""),"error-callback":()=>{callback.current("");setError(true);}});return()=>{window.turnstile?.remove(id);callback.current("");};},[ready,action,reset]);
+ useEffect(()=>{if(!ready||!container.current||!window.turnstile)return;callback.current("");const id=window.turnstile.render(container.current,{sitekey:TURNSTILE_SITE_KEY,action,appearance,theme:document.documentElement.classList.contains("dark")?"dark":"light",callback:(token:string)=>{setError(false);callback.current(token);},"expired-callback":()=>callback.current(""),"error-callback":()=>{callback.current("");setError(true);}});return()=>{window.turnstile?.remove(id);callback.current("");};},[ready,action,reset,appearance]);
  if(!TURNSTILE_SITE_KEY)return null;
  return <><Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" onLoad={()=>setReady(true)} onReady={()=>setReady(true)} onError={()=>setError(true)}/><div ref={container}/>{error&&<p role="alert" className={styles.error}>The security check could not load. Refresh this page to try again.</p>}</>;
 }

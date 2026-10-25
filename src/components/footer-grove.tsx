@@ -19,12 +19,15 @@ export function FooterGrove() {
     const footer = element.closest<HTMLElement>("footer");
     let reveal = 0, velocity = 0, target = 0, lastFrame = 0;
     let lastInput = -1000, inputSpeed = .5, returnFrequency = 14, returning = false;
-    let mouseHeld = false, keyHeld = false;
+    let mouseHeld = false, autoScroll = false, keyHeld = false;
+    let scrollTime = performance.now(), scrollSpeed = 0, wasAtEnd = false;
+    let mouseDistance = 0;
     let mouseAnchor = 0;
     let previousY = window.scrollY, previousWidth = window.innerWidth, touchY: number | null = null;
     const atEnd = () => html.scrollHeight - window.innerHeight - window.scrollY <= 3;
+    wasAtEnd = atEnd();
     const limit = () => 240; // Match the complete soil/root artwork, including its bottom edge.
-    const held = () => touchY !== null || mouseHeld || keyHeld;
+    const held = () => touchY !== null || mouseHeld || autoScroll || keyHeld;
     function syncEdge() {
       edgeFrame = 0;
       const rect = element!.getBoundingClientRect();
@@ -103,20 +106,33 @@ export function FooterGrove() {
     }
     function scrolling() {
       queueEdge();
-      const delta = window.scrollY - previousY;
-      previousY = window.scrollY;
-      if (delta > 0 && performance.now() - lastInput > 80 && !returning) impulse(Math.min(80, delta));
-      else if (delta < 0) close();
+      const now = performance.now(), delta = window.scrollY - previousY;
+      const elapsed = Math.max(8, now - scrollTime), end = atEnd();
+      // The final delta is truncated at the edge. Preserve the approach velocity
+      // so a released touch fling or native auto-scroll can carry into the roots.
+      const incomingSpeed = now - scrollTime < 160 ? scrollSpeed : 0;
+      if (delta > 0) {
+        scrollSpeed = delta / elapsed;
+        if (end && !wasAtEnd && now - lastInput > 80) {
+          const arrivalSpeed = Math.min(3, Math.max(scrollSpeed, incomingSpeed));
+          impulse(Math.max(Math.min(80, delta), arrivalSpeed * 180));
+          inputSpeed = arrivalSpeed;
+          if ((mouseHeld || autoScroll) && mouseDistance > 4) impulse(mouseDistance * 3);
+        }
+      } else if (delta < 0) { scrollSpeed = 0; close(); }
+      previousY = window.scrollY; scrollTime = now; wasAtEnd = end;
     }
     function interactive(target: EventTarget | null) {
       return target instanceof Element && Boolean(target.closest('input,textarea,select,[contenteditable="true"],[role="dialog"],dialog'));
     }
     function wheel(event: WheelEvent) {
       if (event.ctrlKey || event.defaultPrevented || interactive(event.target)) return;
+      autoScroll = false;
       if (event.deltaY < 0) { close(); return; }
       impulse(event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1));
     }
     function touchStart(event: TouchEvent) {
+      autoScroll = false;
       touchY = event.touches.length === 1 && !interactive(event.target) ? event.touches[0].clientY : null;
       if (touchY === null) { close(); return; }
       if (atEnd() && reveal > 0) { target = reveal; returning = false; lastInput = performance.now(); start(); }
@@ -131,16 +147,28 @@ export function FooterGrove() {
     }
     function touchEnd() { touchY = null; if (!held()) close(); }
     function mouseDown(event: MouseEvent) {
-      if (event.button === 1 && !interactive(event.target)) { mouseHeld = true; mouseAnchor = event.clientY; }
+      // Observe native middle-click auto-scroll without preventing browser scrolling.
+      if (autoScroll) { autoScroll = false; mouseHeld = false; close(); return; }
+      if (event.button === 1 && !interactive(event.target)) {
+        mouseHeld = true; mouseAnchor = event.clientY; mouseDistance = 0;
+      }
     }
     function mouseMove(event: MouseEvent) {
-      if (!mouseHeld || !atEnd()) return;
-      const distance = event.clientY - mouseAnchor;
-      if (distance < -4) close();
-      else if (distance > 4) impulse(distance * 3);
+      if (!mouseHeld && !autoScroll) return;
+      mouseDistance = event.clientY - mouseAnchor;
+      if (!atEnd()) return;
+      if (mouseDistance < -4) close();
+      else if (mouseDistance > 4) impulse(mouseDistance * 3);
     }
-    function mouseUp(event: MouseEvent) { if (event.button === 1) { mouseHeld = false; if (!held()) close(); } }
+    function mouseUp(event: MouseEvent) {
+      if (event.button !== 1 || !mouseHeld) return;
+      // A click enters toggle mode; a held-button drag ends on release.
+      autoScroll = Math.abs(mouseDistance) <= 4;
+      mouseHeld = false;
+      if (!held()) close();
+    }
     function keyboard(event: KeyboardEvent) {
+      if (autoScroll) { autoScroll = false; close(); }
       if (event.defaultPrevented || interactive(event.target)) return;
       if (["PageUp", "Home", "ArrowUp"].includes(event.key) || (event.key === " " && event.shiftKey)) close();
       else if (["PageDown", "End", "ArrowDown", " "].includes(event.key)) {
@@ -151,12 +179,12 @@ export function FooterGrove() {
     function keyUp(event: KeyboardEvent) {
       if (["PageDown", "End", "ArrowDown", " "].includes(event.key)) { keyHeld = false; if (!held()) close(); }
     }
-    function cancelGesture() { touchY = null; mouseHeld = false; keyHeld = false; close(); }
+    function cancelGesture() { touchY = null; mouseHeld = false; autoScroll = false; keyHeld = false; close(); }
     function resized() {
       // Safari's address bar can resize the viewport during a swipe; do not snap the scene shut.
       if (reduced.matches || window.innerWidth !== previousWidth) { cancelGesture(); reset(); }
       else queueEdge();
-      previousWidth = window.innerWidth; previousY = window.scrollY;
+      previousWidth = window.innerWidth; previousY = window.scrollY; wasAtEnd = atEnd(); scrollTime = performance.now(); scrollSpeed = 0;
     }
     const observer = new IntersectionObserver(queueEdge);
     observer.observe(element);

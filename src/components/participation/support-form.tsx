@@ -3,11 +3,13 @@ import { track } from "@/lib/ui/telemetry";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet, HandHeart } from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, Copy, Info, CreditCard, Repeat2, Wallet, HandHeart, ArrowRight, MessageCircle, Map, Users, Share2 } from "lucide-react";
 import { cryptoUri } from "@/lib/participation/contracts";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { verifiedPublicWallets } from "@/lib/ui/support-destinations";
 import { DonationCheckout, useDonationConfig } from "./donation-checkout";
+import { FooterSocials } from "@/components/footer-socials";
+import { socialProfiles } from "@/content/social-profiles";
 import { FreeSupportActions } from "./free-support-actions";
 import s from "./support.module.css";
 import { EditorialArt } from "@/components/editorial-art";
@@ -17,6 +19,13 @@ const names: Record<string,string> = { BTC:"Bitcoin", ETH:"Ethereum", SOL:"Solan
 export function SupportForm() {
  const {config,checked}=useDonationConfig();
  const [option,setOption]=useState<SupportOption>("once");
+ const [shareStatus,setShareStatus]=useState("");
+ async function shareSite(){
+  try{
+   if(navigator.share){await navigator.share({title:"ISITUSA",text:"Find invasive species recorded near you, with sources you can explore.",url:"https://isitusa.com"});setShareStatus("");}
+   else{await navigator.clipboard.writeText("https://isitusa.com");setShareStatus("Website link copied. Share it with someone who cares about the places you love.");}
+  }catch(error){if(!(error instanceof DOMException && error.name==="AbortError"))setShareStatus("You can copy this link instead: https://isitusa.com");}
+ }
  const tabs=useRef<Array<HTMLButtonElement|null>>([]);
  function tabKey(event: React.KeyboardEvent<HTMLButtonElement>, index:number){
   let next=index;
@@ -63,16 +72,26 @@ export function SupportForm() {
      <div className={s.addressActions}><button type="button" className={s.primary} onClick={copy}>{copied?<Check size={17} aria-hidden="true"/>:<Copy size={17} aria-hidden="true"/>}{copied?"Address copied":"Copy address"}</button>{cryptoUri(wallet)&&<a href={cryptoUri(wallet)!}>Open wallet <ArrowUpRight size={16} aria-hidden="true"/></a>}</div><p className={s.feedback} role="status">{feedback}</p>
      <details className={s.networkHelp}><summary><Info size={16} aria-hidden="true"/><span>Send only {wallet.asset} on {networkLabel}.</span><ChevronDown className={s.disclosureChevron} size={14} aria-hidden="true"/></summary><p>Check the full address before sending. Crypto transfers cannot be reversed by ISITUSA.{wallet.asset==="XRP"?" No destination tag is required.":""}</p><p>Open wallet works with compatible apps. If it does not open, copy the address into your wallet.</p></details>
     </>:<p className={s.small}>Receiving addresses are being verified.</p>}</section>
-    <section id="give-free" role="tabpanel" aria-labelledby="tab-free" tabIndex={0} hidden={option!=="free"} className={s.freePanel}><h3><HandHeart size={22} aria-hidden="true"/>Ways you can support for free</h3><FreeSupportActions/><Link className={s.freePageLink} href={{pathname:"/support/free"}}>Explore ways to help <ArrowUpRight size={16} aria-hidden="true"/></Link></section></div>
+    <section id="give-free" role="tabpanel" aria-labelledby="tab-free" tabIndex={0} hidden={option!=="free"} className={s.freePanel}><h3><HandHeart size={22} aria-hidden="true"/>Ways you can support for free</h3><FreeSupportActions/><Link className={s.freePageLink} href="#help-for-free">More ways to spread the word <ArrowRight size={16} aria-hidden="true"/></Link></section></div>
     <footer className={s.donationFoot}><p><span>ISITUSA is an independent initiative.</span>{" "}<span>Contributions are not tax deductible.</span></p><div><Link href="/terms">Contribution terms</Link><Link href="/support/refund">Request a refund</Link><Link href="/privacy">Privacy</Link></div></footer>
    </section>
 
   </div>
+  <div className={s.supportDetails}>
   {config?.portal && <section className={s.supporterPortal} aria-labelledby="supporter-heading">
    <div><h2 id="supporter-heading">Manage your monthly support</h2><p>Update or cancel your recurring contribution securely through Stripe.</p></div>
    <div className={s.portalAction}><a className={s.portalButton} href={config.portal} target="_blank" rel="noopener noreferrer">Open billing portal <ArrowUpRight size={18} aria-hidden="true"/><span className={s.srOnly}> (opens a new tab)</span></a></div>
   </section>}
-  <p className={s.questions}>Questions about contributing? <a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}</a></p>
-  <EditorialArt subject="message" className={s.closingArt}/>
+  <section className={s.contactCard} aria-labelledby="contribution-questions"><MessageCircle size={24} aria-hidden="true"/><h2 id="contribution-questions">Questions about contributing?</h2><p>Whether you need a hand with a contribution or want to ask about the work, we&apos;re happy to help.</p><a href={`mailto:${SUPPORT_DESTINATIONS.cardSupport.contactEmail}`}>{SUPPORT_DESTINATIONS.cardSupport.contactEmail}<ArrowRight size={17} aria-hidden="true"/></a></section>
+  </div>
+  <section id="help-for-free" className={s.spreadSection} aria-labelledby="spread-heading">
+   <div className={s.spreadIntro}><div><p className={s.eyebrow}>Support doesn&apos;t have to cost a thing</p><h2 id="spread-heading">Help someone discover what&apos;s nearby.</h2><p>One of the most useful things you can do for ISITUSA is tell someone about it. A conversation with a neighbor, a link in a group chat, or a map shared with your community can help more people learn about invasive species where they live.</p><button type="button" className={s.shareButton} onClick={shareSite}><Share2 size={18} aria-hidden="true"/>Share ISITUSA<ArrowRight size={18} aria-hidden="true"/></button><p className={s.shareStatus} role="status">{shareStatus}</p></div><EditorialArt subject="message" className={s.messageArt}/></div>
+   <div className={s.spreadCards}>
+    <article><Map size={25} aria-hidden="true"/><h3>Start with your local map.</h3><p>Look up your county and share what you find with neighbors, friends, or a local group. Point them to the sources, too—it&apos;s an invitation to learn about a place you share.</p><Link href="/">Find your county<ArrowRight size={17} aria-hidden="true"/></Link></article>
+    <article><Users size={25} aria-hidden="true"/><h3>Bring it to your community.</h3><p>Know a teacher, garden club, park group, or conservation organization? Show them ISITUSA and how it could support their conversations, field trips, or local research.</p><Link href="/about">Introduce the project<ArrowRight size={17} aria-hidden="true"/></Link></article>
+    <article><MessageCircle size={25} aria-hidden="true"/><h3>Keep the conversation going.</h3><p>Share a useful species profile or something you&apos;ve learned. When you share or repost our work on social media, include a link so others can explore the evidence for themselves.</p>{socialProfiles.some(profile=>profile.url)?<><p>Follow ISITUSA and pass along the updates that matter to you.</p><FooterSocials/></>:<p>Our social channels are on the way. For now, sign up for updates about the species and places you care about.</p>}<Link href="/join">Get updates near you<ArrowRight size={17} aria-hidden="true"/></Link></article>
+   </div>
+  </section>
+  <section className={s.takePart} aria-labelledby="take-part-heading"><EditorialArt subject="footsteps" className={s.footstepsArt}/><div><p className={s.eyebrow}>Your time and curiosity matter, too</p><h2 id="take-part-heading">Be part of the work.</h2><p>Have an observation to share or skills you&apos;d like to put to use? Help us make local information more useful to the next person who needs it.</p><div className={s.partActions}><Link href="/report">Report a sighting<ArrowRight size={18} aria-hidden="true"/></Link><Link href={{pathname:"/volunteer"}}>Volunteer with us<ArrowRight size={18} aria-hidden="true"/></Link></div></div></section>
  </main>;
 }
