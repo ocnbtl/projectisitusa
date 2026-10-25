@@ -20,9 +20,6 @@
 .brand-kit-page .brand-kit-downloads a:hover{background:color-mix(in srgb,var(--accent) 12%,var(--background));border-color:var(--accent-strong);text-decoration:none}
 .brand-kit-full-name{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center}
 .brand-kit-full-name .brand-kit-art{height:190px;margin:0}
-.brand-kit-variants{margin-top:28px;display:flex;align-items:center;justify-content:flex-start;gap:24px}
-.brand-kit-variants>p{max-width:68ch;margin:0}
-.brand-kit-variants .brand-kit-downloads{flex-shrink:0}
 .brand-kit-type{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:32px;border-block:1px solid var(--border)}
 .brand-kit-specimen{padding:32px;background:color-mix(in srgb,var(--accent) 9%,var(--background));border-radius:12px}
 .brand-kit-specimen p{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,4vw,56px);line-height:1.15;color:var(--foreground);margin:0 0 24px}
@@ -43,7 +40,6 @@
  .brand-kit-page .brand-kit-art{height:190px;padding:20px}
  .brand-kit-full-name{grid-template-columns:1fr;gap:20px}
  .brand-kit-full-name .brand-kit-art{height:170px}
- .brand-kit-variants{display:block}.brand-kit-variants>p{margin-bottom:12px}
  .brand-kit-type{gap:28px}
  .brand-kit-guidance{grid-template-columns:1fr;gap:12px}
  .brand-kit-colors>div{grid-template-columns:1fr;gap:6px}
@@ -70,3 +66,17 @@
 }
 
 @media(prefers-reduced-motion:reduce){.brand-kit-page .brand-kit-downloads a{transition:none}}
+
+/* Artwork color is independent of the site's light/dark theme. */
+.brand-kit-page .brand-kit-art[data-artwork="white"]{background:#183b35}
+.brand-kit-card-copy{display:flex;flex-direction:column;flex:1;min-width:0}
+.brand-kit-page .brand-kit-color-options{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:0;border:0}
+.brand-kit-color-options legend{font-size:14px;color:var(--muted);margin-bottom:8px;padding:0}
+.brand-kit-color-choice{position:relative;display:inline-flex;cursor:pointer}
+.brand-kit-color-choice input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer}
+.brand-kit-color-choice span{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:14px;line-height:1.2;color:var(--foreground);background:var(--background)}
+.brand-kit-color-choice i{display:block;width:14px;height:14px;border-radius:50%;border:1px solid #7d9690;flex-shrink:0}
+.brand-kit-color-choice input:checked+span{border-color:var(--accent-strong);box-shadow:inset 0 0 0 1px var(--accent-strong);background:color-mix(in srgb,var(--accent) 10%,var(--background))}
+.brand-kit-color-choice input:focus-visible+span{outline:2px solid var(--ring);outline-offset:4px}
+.brand-kit-color-choice:hover span{border-color:var(--accent-strong)}
+@media(min-width:701px) and (max-width:1000px){.brand-kit-page .brand-kit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-kit-page .brand-kit-card-wide{grid-column:1/-1}.brand-kit-card-wide .brand-kit-art{height:170px}}
