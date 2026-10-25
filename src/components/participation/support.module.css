@@ -159,3 +159,13 @@
  .takePart{margin-top:48px}
  .spreadIntro h2,.takePart h2{margin-top:0}
 }
+
+/* Narrow tablets need the same readable column widths as phones. */
+@media(min-width:601px) and (max-width:740px){
+ .supportDetails{grid-template-columns:1fr;gap:16px}
+ .supportDetails .supporterPortal,.contactCard{padding:24px}
+ .spreadIntro{grid-template-columns:1fr;gap:16px}
+ .messageArt[data-art-edition]{width:min(100%,360px);aspect-ratio:3/2}
+ .takePart{grid-template-columns:1fr;gap:16px}
+ .footstepsArt[data-art-edition]{width:min(100%,300px);aspect-ratio:3/2}
+}
