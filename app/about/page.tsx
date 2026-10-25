@@ -66,7 +66,7 @@ export default function AboutPage() {
       <section className="about-direction" aria-labelledby="invasive-heading">
         <h2 id="invasive-heading">What makes a species invasive?</h2>
         <p>Not every species introduced to a new place is invasive. The term describes a species outside its native range whose introduction causes, or is likely to cause, harm to nature, the economy, or health.</p>
-        <p>Understanding which species are nearby is a good starting point. Learn how to recognize them and how they spread, then check advice from your state or local experts before taking action.</p>
+        <p>Understanding which species are nearby is a good starting point. Recognizing them, understanding how they spread, and exploring the guidance in our species profiles can help you decide what to do next.</p>
         <a className="about-definition-link" href="https://www.invasivespeciesinfo.gov/what-are-invasive-species" target="_blank" rel="noreferrer">Read the USDA definition <ArrowUpRight size={15} aria-hidden="true" /></a>
       </section>
       </div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
       <section id="help" className="about-help scroll-mt-8" aria-labelledby="help-heading">
         <EditorialArt subject="participate" />
         <div className="about-help-copy">
-        <div className="section-introduction"><h2 id="help-heading">Be part of the work.</h2><p>Share what you find, stay informed about the places you love, or help us build a resource more people can use.</p></div>
+        <div className="section-introduction"><h2 id="help-heading">Be a part of the change.</h2><p>Share what you find, stay informed about the places you love, or help us build a resource more people can use.</p></div>
         <div className="involvement-links">
           <Link href="/report"><span><strong>Report a sighting</strong><small>Share photographs and details directly with our team for identification, review, and a possible referral.</small></span><ArrowRight size={22} aria-hidden="true" /></Link>
           <Link href="/join"><span><strong>Get invasive species updates</strong><small>Choose the places, species, and stories you want to hear about. Update your preferences whenever you like.</small></span><ArrowRight size={22} aria-hidden="true" /></Link>

@@ -127,3 +127,21 @@ footer.footer-refined .footer-utilities>a[href^="mailto:"]{text-decoration:none}
 .footer-mobile-panel>div{min-height:0;overflow:hidden}
 .footer-mobile-group[data-open="true"] .footer-mobile-panel{grid-template-rows:1fr;opacity:1;visibility:visible;transition-delay:0s}
 @media(prefers-reduced-motion:reduce){.footer-mobile-panel,.footer-mobile-toggle svg{transition:none}}
+
+/* Footer destinations use the same scale as the About body copy. */
+footer.site-footer .footer-main nav :is(a,button),
+footer.site-footer .footer-main .footer-mobile-group nav a,
+footer.footer-refined .footer-utilities :is(a,button){font-size:16px;line-height:1.5}
+footer.footer-refined .footer-navigation{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(250px,1.35fr) minmax(0,.8fr);gap:24px}
+@media(min-width:701px) and (max-width:1800px){
+ footer.site-footer.footer-refined .footer-main{grid-template-columns:1fr;gap:36px}
+ footer.footer-refined .footer-introduction{max-width:580px}
+}
+@media(min-width:901px) and (max-width:1100px){footer.footer-refined .footer-navigation{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}}
+@media(min-width:701px) and (max-width:900px){footer.footer-refined .footer-navigation{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media(max-width:700px){
+ footer.footer-refined .footer-utilities{grid-template-columns:minmax(0,1fr) auto;gap:0 16px}
+ footer.footer-refined .footer-utilities>a[href^="mailto:"]{grid-column:1;grid-row:1}
+ footer.footer-refined .footer-utilities>button{grid-column:1;grid-row:2;justify-self:start}
+ footer.footer-refined .footer-utilities .footer-return{grid-column:2;grid-row:1 / 3;align-self:center}
+}

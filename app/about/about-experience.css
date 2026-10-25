@@ -246,3 +246,10 @@
  .about-help>.editorial-art{align-self:center}
  .about-page .about-credit-note{margin-top:20px}
 }
+
+/* Keep short summaries balanced and make the arrow carry the hover cue. */
+.about-source-panel>.about-source-summary{text-wrap:balance}
+.about-page .involvement-links>a:is(:hover,:focus-visible),.about-page .involvement-links>a:is(:hover,:focus-visible) strong{text-decoration:none}
+.about-page .involvement-links>a>svg{transition:transform 220ms cubic-bezier(.22,1,.36,1);transform-origin:center}
+.about-page .involvement-links>a:is(:hover,:focus-visible)>svg{transform:rotate(-45deg)}
+@media(prefers-reduced-motion:reduce){.about-page .involvement-links>a>svg{transition:none}}
