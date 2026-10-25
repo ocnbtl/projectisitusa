@@ -23,26 +23,39 @@ export function FooterGrove() {
     let scrollTime = performance.now(), scrollSpeed = 0, wasAtEnd = false;
     let mouseDistance = 0;
     let mouseAnchor = 0;
-    let previousY = window.scrollY, previousWidth = window.innerWidth, touchY: number | null = null;
-    const atEnd = () => html.scrollHeight - window.innerHeight - window.scrollY <= 3;
+    const scrollLimit = () => Math.max(0, html.scrollHeight - window.innerHeight);
+    // Safari exposes rubber-band travel in scrollY. It is not a new gesture.
+    const scrollPosition = () => Math.max(0, Math.min(scrollLimit(), window.scrollY));
+    let previousY = scrollPosition(), previousWidth = window.innerWidth, previousHeight = window.innerHeight, touchY: number | null = null;
+    const atEnd = () => scrollLimit() - scrollPosition() <= 3;
     wasAtEnd = atEnd();
     const limit = () => 240; // Match the complete soil/root artwork, including its bottom edge.
     const held = () => touchY !== null || mouseHeld || autoScroll || keyHeld;
-    function syncEdge() {
-      edgeFrame = 0;
-      const rect = element!.getBoundingClientRect();
-      const bottom = rect.top < window.innerHeight && world!.getBoundingClientRect().bottom <= window.innerHeight + 48;
-      html.classList.toggle("footer-at-end", bottom);
+    let palette = { forest: [0, 88, 59], soil: [213, 217, 189], depth: 180, background: "#edf3ef" };
+    let lastEdge = "";
+    function readPalette() {
       const css = getComputedStyle(element!);
       const channels = (name: string) => {
         const hex = css.getPropertyValue(name).trim().replace("#", "");
         return [0, 2, 4].map(index => parseInt(hex.slice(index, index + 2), 16));
       };
-      const forest = channels("--grove-ink"), soil = channels("--soil-base");
-      const depth = Math.min(1, reveal / parseFloat(css.getPropertyValue("--soil-depth")));
+      palette = { forest: channels("--grove-ink"), soil: channels("--soil-base"), depth: parseFloat(css.getPropertyValue("--soil-depth")), background: css.getPropertyValue("--background").trim() };
+    }
+    function syncEdge() {
+      edgeFrame = 0;
+      const rect = element!.getBoundingClientRect();
+      const bottom = rect.top < window.innerHeight && rect.bottom <= window.innerHeight + 48;
+      // Arm before arriving, rather than switching native bounce policy mid-swipe.
+      html.classList.toggle("footer-scroll-ready", rect.top < window.innerHeight + 200);
+      html.classList.toggle("footer-at-end", bottom);
+      const { forest, soil } = palette;
+      const depth = Math.min(1, reveal / palette.depth);
       const edge = `rgb(${forest.map((value, index) => Math.round(value + (soil[index] - value) * depth)).join(", ")})`;
-      html.style.setProperty("--footer-edge", edge);
-      meta.content = bottom ? edge : css.getPropertyValue("--background").trim();
+      if (edge !== lastEdge) { html.style.setProperty("--footer-edge", edge); lastEdge = edge; }
+      // Safari's toolbar is browser chrome, not part of our animation layer.
+      // Repainting its theme every frame makes it flash during a quick reveal.
+      const chromeColor = bottom ? `rgb(${forest.join(", ")})` : palette.background;
+      if (meta.content !== chromeColor) meta.content = chromeColor;
     }
     function queueEdge() { if (!edgeFrame) edgeFrame = requestAnimationFrame(syncEdge); }
     function paint() {
@@ -106,21 +119,31 @@ export function FooterGrove() {
     }
     function scrolling() {
       queueEdge();
-      const now = performance.now(), delta = window.scrollY - previousY;
+      const position = scrollPosition();
+      const now = performance.now(), delta = position - previousY;
       const elapsed = Math.max(8, now - scrollTime), end = atEnd();
       // The final delta is truncated at the edge. Preserve the approach velocity
       // so a released touch fling or native auto-scroll can carry into the roots.
       const incomingSpeed = now - scrollTime < 160 ? scrollSpeed : 0;
       if (delta > 0) {
         scrollSpeed = delta / elapsed;
-        if (end && !wasAtEnd && now - lastInput > 80) {
+        if (end && !wasAtEnd && now - lastInput > 80 && !reduced.matches) {
           const arrivalSpeed = Math.min(3, Math.max(scrollSpeed, incomingSpeed));
-          impulse(Math.max(Math.min(80, delta), arrivalSpeed * 180));
-          inputSpeed = arrivalSpeed;
+          // Released momentum gets one continuous spring arc, not a timed
+          // open-then-close target switch. Active fingers already drive impulse.
+          if (!held()) {
+            inputSpeed = arrivalSpeed;
+            target = 0; returning = true; returnFrequency = 9 + arrivalSpeed;
+            velocity = Math.max(velocity, arrivalSpeed * 1800);
+            lastInput = now; start();
+          }
           if ((mouseHeld || autoScroll) && mouseDistance > 4) impulse(mouseDistance * 3);
         }
-      } else if (delta < 0) { scrollSpeed = 0; close(); }
-      previousY = window.scrollY; scrollTime = now; wasAtEnd = end;
+      } else if (delta < 0 && !end) { scrollSpeed = 0; close(); }
+      previousY = position; scrollTime = now;
+      // Small edge/toolbar fluctuations cannot repeatedly inject momentum.
+      if (end) wasAtEnd = true;
+      else if (scrollLimit() - position > 32) wasAtEnd = false;
     }
     function interactive(target: EventTarget | null) {
       return target instanceof Element && Boolean(target.closest('input,textarea,select,[contenteditable="true"],[role="dialog"],dialog'));
@@ -142,6 +165,8 @@ export function FooterGrove() {
       const next = event.touches[0].clientY, delta = touchY - next;
       touchY = next;
       if (delta < 0 && (target > 0 || reveal > 0)) {
+        if (returning) target = reveal;
+        returning = false;
         target = Math.max(0, target + delta * .72); lastInput = performance.now(); start();
       } else impulse(delta);
     }
@@ -183,9 +208,14 @@ export function FooterGrove() {
     function resized() {
       // Safari's address bar can resize the viewport during a swipe; do not snap the scene shut.
       if (reduced.matches || window.innerWidth !== previousWidth) {
-        cancelGesture(); reset(); previousY = window.scrollY; wasAtEnd = atEnd();
+        cancelGesture(); reset(); previousY = scrollPosition(); wasAtEnd = atEnd();
         scrollTime = performance.now(); scrollSpeed = 0;
-      } else queueEdge();
+      } else if (window.innerHeight !== previousHeight) {
+        // A browser-toolbar adjustment is geometry, not a velocity sample.
+        previousY = scrollPosition();
+        if (atEnd()) wasAtEnd = true;
+      }
+      readPalette(); queueEdge(); previousHeight = window.innerHeight;
       previousWidth = window.innerWidth;
     }
     const observer = new IntersectionObserver(queueEdge);
@@ -193,7 +223,7 @@ export function FooterGrove() {
     let dark = html.classList.contains("dark");
     const themeObserver = new MutationObserver(() => {
       const next = html.classList.contains("dark");
-      if (dark !== next) { dark = next; queueEdge(); }
+      if (dark !== next) { dark = next; readPalette(); queueEdge(); }
     });
     themeObserver.observe(html, { attributes: true, attributeFilter: ["class"] });
     window.addEventListener("scroll", scrolling, { passive: true });
@@ -212,7 +242,7 @@ export function FooterGrove() {
     window.visualViewport?.addEventListener("resize", resized, { passive: true });
     window.visualViewport?.addEventListener("scroll", queueEdge, { passive: true });
     reduced.addEventListener("change", resized);
-    queueEdge();
+    readPalette(); queueEdge();
     return () => {
       observer.disconnect(); themeObserver.disconnect(); cancelAnimationFrame(motionFrame); cancelAnimationFrame(edgeFrame);
       window.removeEventListener("scroll", scrolling); window.removeEventListener("wheel", wheel);
@@ -224,7 +254,7 @@ export function FooterGrove() {
       reduced.removeEventListener("change", resized);
       element.style.removeProperty("--root-reveal"); element.removeAttribute("data-revealing");
       footer?.style.removeProperty("--footer-pull");
-      html.classList.remove("footer-at-end"); html.style.removeProperty("--footer-edge");
+      html.classList.remove("footer-at-end", "footer-scroll-ready"); html.style.removeProperty("--footer-edge");
       if (existingMeta) meta.content = previousColor; else meta.remove();
     };
   }, []);
