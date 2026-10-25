@@ -1483,11 +1483,6 @@ h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
 .atlas .atlas-intro h1{font-size:var(--section-heading-size);line-height:1.2}
 .atlas .atlas-intro>p{max-width:46ch;text-wrap:pretty}
 .atlas-intro>p>a{display:inline;margin:0;min-height:0;font-size:inherit;color:var(--foreground);text-decoration:underline;text-underline-offset:3px}
-.atlas-intro-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.atlas-intro-actions>a{display:inline-flex;margin:0;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);font-size:14px;line-height:1.4;color:var(--foreground);text-decoration:none}
-.atlas-intro-actions>a:first-child{background:var(--accent);border-color:var(--accent);color:var(--background)}
-.atlas-intro-actions>a:hover{border-color:var(--foreground)}
-.atlas-intro-actions>a:focus-visible{outline:2px solid var(--ring);outline-offset:4px}
 .search-state-flag{border-radius:4px;background:transparent;overflow:visible;flex-shrink:0}
 .search-state-flag img{width:32px;height:22px;object-fit:contain;border-radius:0}
 .atlas-filter-panel fieldset{margin-block:22px}
@@ -1498,9 +1493,6 @@ h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
 @media(max-width:700px){
  :root{--section-heading-size:var(--mobile-page-heading-size)}
  .atlas .atlas-intro>p{max-width:none;font-size:12px;line-height:1.5}
- .atlas-intro-actions{gap:8px;margin-top:10px}
- .atlas-intro-actions>a{gap:6px;padding:8px;font-size:12px}
- .atlas-intro-actions svg{width:14px;height:14px}
  .atlas-topbar .atlas-filter-panel .mobile-state-filter{margin:18px 0 24px}
  .atlas-topbar .atlas-filter-panel fieldset{margin:24px 0}
  .atlas-topbar .atlas-filter-panel legend{margin-bottom:10px}
