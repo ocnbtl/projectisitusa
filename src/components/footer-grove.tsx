@@ -149,7 +149,7 @@ export function FooterGrove() {
     function mouseDown(event: MouseEvent) {
       // Observe native middle-click auto-scroll without preventing browser scrolling.
       if (autoScroll) { autoScroll = false; mouseHeld = false; close(); return; }
-      if (event.button === 1 && !interactive(event.target)) {
+      if (event.button === 1 && !interactive(event.target) && !(event.target instanceof Element && event.target.closest('a,button'))) {
         mouseHeld = true; mouseAnchor = event.clientY; mouseDistance = 0;
       }
     }
@@ -182,9 +182,11 @@ export function FooterGrove() {
     function cancelGesture() { touchY = null; mouseHeld = false; autoScroll = false; keyHeld = false; close(); }
     function resized() {
       // Safari's address bar can resize the viewport during a swipe; do not snap the scene shut.
-      if (reduced.matches || window.innerWidth !== previousWidth) { cancelGesture(); reset(); }
-      else queueEdge();
-      previousWidth = window.innerWidth; previousY = window.scrollY; wasAtEnd = atEnd(); scrollTime = performance.now(); scrollSpeed = 0;
+      if (reduced.matches || window.innerWidth !== previousWidth) {
+        cancelGesture(); reset(); previousY = window.scrollY; wasAtEnd = atEnd();
+        scrollTime = performance.now(); scrollSpeed = 0;
+      } else queueEdge();
+      previousWidth = window.innerWidth;
     }
     const observer = new IntersectionObserver(queueEdge);
     observer.observe(element);
