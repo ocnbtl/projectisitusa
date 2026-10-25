@@ -18,20 +18,20 @@ export default function BrandPage() {
       <nav className="brand-kit-nav" aria-label="Brand kit sections">
         <a href="#logos">Logos <ArrowDown size={17} aria-hidden="true" /></a>
         <a href="#typography">Typography <ArrowDown size={17} aria-hidden="true" /></a>
-        <a href="#using-our-brand">Using our brand <ArrowDown size={17} aria-hidden="true" /></a>
+        <a href="#using-our-brand">Guidelines <ArrowDown size={17} aria-hidden="true" /></a>
       </nav>
     </header>
 
     <section id="logos" className="brand-kit-section" aria-labelledby="logos-heading">
       <div className="brand-kit-section-intro"><h2 id="logos-heading">Choose a logo.</h2><p>SVG files stay sharp at any size. Choose PNG when your editor needs an image file. These previews show the green artwork on a light background.</p></div>
-      <div className="brand-kit-grid">{assets.map(asset => <article key={asset.file} className="brand-kit-card">
+      <div className="brand-kit-grid">{assets.map(asset => <article key={asset.file} className={`brand-kit-card${asset.width > asset.height * 2 ? " brand-kit-card-wide" : ""}`}>
         <div className="brand-kit-art"><Image className="brand-art" src={asset.file} width={asset.width} height={asset.height} alt={`ISITUSA ${asset.title.toLowerCase()}`} unoptimized /></div>
         <h3>{asset.title}</h3><p>{asset.description}</p>
         <div className="brand-kit-downloads"><a href={asset.file} download aria-label={`Download ${asset.title.toLowerCase()} as SVG`}><ArrowDownToLine size={17} aria-hidden="true" /> SVG</a>{asset.png && <a href={asset.png} download aria-label={`Download ${asset.title.toLowerCase()} as PNG`}><ArrowDownToLine size={17} aria-hidden="true" /> PNG</a>}</div>
       </article>)}</div>
       <article className="brand-kit-full-name" aria-labelledby="full-wordmark-heading">
         <div className="brand-kit-art"><Image className="brand-art" src="/brand/v10/full-name.svg?v=1.004" width={11150} height={1874} alt="Invasive Species In The United States of America" unoptimized /></div>
-        <div><h3 id="full-wordmark-heading">The full name</h3><p>Use our full name when readers are meeting the project for the first time. This file keeps the lettering and spacing intact.</p><div className="brand-kit-downloads"><a href="/brand/v10/full-name.svg?v=1.004" download><ArrowDownToLine size={17} aria-hidden="true" /> Full name SVG</a><a href="/brand/v10/full-name.png" download><ArrowDownToLine size={17} aria-hidden="true" /> Full name PNG</a></div></div>
+        <div><h3 id="full-wordmark-heading">The full name</h3><p>Use our full name when readers are meeting the project for the first time. This file keeps the lettering and spacing intact.</p><div className="brand-kit-downloads"><a href="/brand/v10/full-name.svg?v=1.004" download aria-label="Download full name as SVG"><ArrowDownToLine size={17} aria-hidden="true" /> SVG</a><a href="/brand/v10/full-name.png" download aria-label="Download full name as PNG"><ArrowDownToLine size={17} aria-hidden="true" /> PNG</a></div></div>
       </article>
       <div className="brand-kit-variants"><p>Working with a different background? Use the white wordmark on dark backgrounds, or the black version for a single-color print layout.</p><div className="brand-kit-downloads"><a href="/brand/v10/wordmark-white.svg?v=1.005" download><ArrowDownToLine size={17} aria-hidden="true" /> White SVG</a><a href="/brand/v10/wordmark-black.svg?v=1.005" download><ArrowDownToLine size={17} aria-hidden="true" /> Black SVG</a></div></div>
     </section>
