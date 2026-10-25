@@ -1,5 +1,5 @@
 /* Identity and destinations form one aligned closing composition. */
-footer.site-footer.footer-refined{--footer-gutter:clamp(20px,3vw,64px);--grove-ink:#00583b;width:100%;max-width:none;margin:0;padding:48px 0 0;background:var(--background);color:var(--foreground);border:0}
+footer.site-footer.footer-refined{--footer-gutter:clamp(20px,3vw,64px);--grove-ink:#00583b;width:100%;max-width:none;margin:0;padding:48px 0 0;background:var(--background);color:var(--foreground);border:0;overflow:visible}
 .dark footer.site-footer.footer-refined{--grove-ink:var(--accent)}
 footer.site-footer.footer-refined .footer-main{width:min(1680px,calc(100% - var(--footer-gutter) * 2));margin-inline:auto;grid-template-columns:minmax(240px,1.4fr) repeat(5,minmax(0,1fr));gap:28px;align-items:start}
 footer.footer-refined .footer-navigation{display:contents}
@@ -88,6 +88,9 @@ footer.site-footer.footer-refined::after{content:"";display:block;height:env(saf
 /* Keep the masked artwork on one stable layer through motion and rest. */
 .footer-grove-world{will-change:transform;backface-visibility:hidden}
 footer.footer-refined :is(.footer-main,.footer-details){position:relative;z-index:1;transform:translate3d(0,calc(-1 * var(--footer-pull,0px)),0)}
+/* Follow the current route's content without translating the fixed header.
+   The grove alone clips the artwork; the navigation can cross the footer edge. */
+.app-frame:has(>footer .footer-grove[data-revealing])>main{translate:0 calc(-1 * var(--footer-page-pull,0px))}
 html.footer-scroll-ready{overscroll-behavior-y:none}
 .footer-soil{transform:none;background-size:100% 240px}
 .footer-roots{mask-image:url('/artwork/woodland-roots-r5.png');mask-size:100% 240px}

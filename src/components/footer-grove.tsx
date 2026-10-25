@@ -17,6 +17,7 @@ export function FooterGrove() {
     if (!existingMeta) { meta.name = "theme-color"; document.head.appendChild(meta); }
     let edgeFrame = 0, motionFrame = 0;
     const footer = element.closest<HTMLElement>("footer");
+    const frame = footer?.parentElement;
     let reveal = 0, velocity = 0, target = 0, lastFrame = 0;
     let lastInput = -1000, inputSpeed = .5, returnFrequency = 14, returning = false;
     let mouseHeld = false, autoScroll = false, keyHeld = false;
@@ -65,6 +66,9 @@ export function FooterGrove() {
       const painted = `${Math.round(reveal * pixelRatio) / pixelRatio}px`;
       element!.style.setProperty("--root-reveal", painted);
       footer?.style.setProperty("--footer-pull", painted);
+      // The preceding content travels with the footer, preserving the gap above
+      // its links. Keep the fixed header and the scroll boundary stationary.
+      frame?.style.setProperty("--footer-page-pull", painted);
       queueEdge();
     }
     function reset() {
@@ -254,6 +258,7 @@ export function FooterGrove() {
       reduced.removeEventListener("change", resized);
       element.style.removeProperty("--root-reveal"); element.removeAttribute("data-revealing");
       footer?.style.removeProperty("--footer-pull");
+      frame?.style.removeProperty("--footer-page-pull");
       html.classList.remove("footer-at-end", "footer-scroll-ready"); html.style.removeProperty("--footer-edge");
       if (existingMeta) meta.content = previousColor; else meta.remove();
     };
