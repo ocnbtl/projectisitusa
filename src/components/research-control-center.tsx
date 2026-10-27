@@ -1358,7 +1358,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
         </table>
       </div>
 
-      <div className="mt-5 divide-y divide-[var(--border)] border-y border-[var(--border)] bg-[var(--surface-strong)] md:hidden">
+      <div className="research-source-mobile mt-5 divide-y divide-[var(--border)] border-y border-[var(--border)] bg-[var(--surface-strong)] md:hidden">
         {sources.map((source) => (
           <article key={source.id} className="px-3 py-4">
             <div className="flex items-start justify-between gap-3">
@@ -1518,7 +1518,7 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
     <header className="reading-hero research-heading">
       <div className="research-heading-copy"><div>
         <h1 className="page-heading">Explore the research.</h1>
-        <p>Follow a finding back to its source. Explore county records, the evidence behind them, and the questions we are still working through.</p>
+        <p>Explore county findings, trace their sources, and see where more research is needed.</p>
         <nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav>
       </div><EditorialArt subject="research" /></div>
       <div className="research-state-control">

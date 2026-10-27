@@ -1,7 +1,7 @@
 /* Research and species share the site's reading rhythm, with compact working controls. */
 .reading-page.research-page,.reading-page.species-page{max-width:1440px;margin-inline:auto;padding-inline:clamp(20px,4vw,64px)}
 .research-page .research-heading{display:block;border:0;padding:0;margin:0 0 24px}
-.research-page .research-heading-copy,.species-page>.illustrated-intro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,.65fr);align-items:center;gap:clamp(24px,4vw,64px);margin:0 0 28px}
+.research-page .research-heading .research-heading-copy,.species-page>.illustrated-intro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,.65fr);align-items:center;gap:clamp(24px,4vw,64px);margin:0 0 28px}
 .research-page .research-heading-copy>.editorial-art,.species-page>.illustrated-intro>.editorial-art{width:100%;height:210px;max-width:300px;justify-self:center;margin:0;aspect-ratio:auto}
 .research-page .research-heading h1,.species-page .directory-hero h1{font-size:var(--section-heading-size);line-height:1.2;margin:0 0 14px}
 .research-page .research-heading-copy p,.species-page .directory-hero p{font-size:16px;line-height:1.7;max-width:62ch;margin:0;text-wrap:pretty}
@@ -97,7 +97,7 @@
  .research-tabs [role=tab] small{display:none}
 }
 @media(max-width:700px){
- .research-page .research-heading-copy,.species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) 92px;gap:12px;margin-bottom:20px}
+ .research-page .research-heading .research-heading-copy,.species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) 92px;gap:12px;margin-bottom:20px}
  .research-page .research-heading-copy>.editorial-art,.species-page>.illustrated-intro>.editorial-art{width:92px;height:132px;max-width:100%;margin:0}
  .research-page .research-heading h1,.species-page .directory-hero h1{font-size:var(--mobile-page-heading-size);margin-bottom:10px}
  .research-page .research-heading-copy p,.species-page .directory-hero p{font-size:15px;line-height:1.6}
@@ -150,3 +150,6 @@
  .research-mobile-sort>.custom-select{flex:1;min-width:0}
  .research-mobile-sort>button{display:flex;align-items:center;gap:6px;min-height:48px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-size:14px}
 }
+
+.species-page .directory-category-tags button[aria-pressed=true]{color:var(--category-ink);background:var(--category-wash);border-color:var(--category-ink)}
+.research-page #research-panel-sources>section>div:first-child p:last-child,.research-page #research-panel-queue>section>div:first-child p{font-size:15px;line-height:1.7}
