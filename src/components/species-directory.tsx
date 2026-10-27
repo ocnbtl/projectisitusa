@@ -145,7 +145,7 @@ export function SpeciesDirectory() {
             {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label="Clear species search"><X size={18} aria-hidden="true" /></button>}
           </div>
         </div>
-        <div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div>
+        <div className="directory-category-field"><span>Filter by category</span><div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div></div>
       </div>
 
       {hasFilters && <div className="directory-active-filters" aria-label="Active species filters">
@@ -161,13 +161,14 @@ export function SpeciesDirectory() {
           <div className="directory-loading"><p role="status">Loading the species catalog...</p><div className="directory-skeleton" aria-hidden="true"><span /><span /><span /></div></div>
         ) : (
           <>
-            <div className="directory-results-heading">
+            <div className="directory-results-toolbar"><div className="directory-results-heading">
               <h2 ref={resultsHeading} tabIndex={-1}>{matches.length.toLocaleString()} species{hasFilters ? " found" : ""}</h2>
               <div><p role="status" aria-live="polite" aria-atomic="true">{matches.length ? `Showing ${start + 1}-${Math.min(start + pageSize, matches.length)} of ${matches.length.toLocaleString()}` : "No matching species"}</p></div>
             </div>
             <div className="directory-display-controls">
               <div className="directory-view-switch" role="group" aria-label="Species layout">{([{ value: "rows", label: "List", Icon: Rows3 }, { value: "compact", label: "Compact", Icon: List }, { value: "grid", label: "Grid", Icon: Grid2X2 }] as const).map(option => <button type="button" key={option.value} aria-label={option.label} title={option.label} aria-pressed={view === option.value} onClick={() => {setView(option.value);track("directory_view_changed",{surface:"directory",view:option.value});}}><option.Icon size={18} aria-hidden="true" /><span>{option.label}</span></button>)}</div>
               <CustomSelect label="Per page" compact value={String(pageSize)} options={DIRECTORY_PAGE_SIZES.map(value => ({ value: String(value), label: String(value) }))} onChange={value => { setPageSize(Number(value)); setPage(1); }} />
+            </div>
             </div>
             {matches.length ? (
               <div className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} />)}</div>

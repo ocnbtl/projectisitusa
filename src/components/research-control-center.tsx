@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { EditorialArt } from "@/components/editorial-art";
 import { countyResearchProgress } from "@/lib/ui/county-progress";
 import { formatOccurrenceDate } from "@/lib/research/occurrence-date";
@@ -10,6 +11,7 @@ import { CustomSelect } from "@/components/atlas/custom-select";
 import {
   AlertCircle,
   ArrowDown,
+  ArrowRight,
   ArrowUp,
   ChevronDown,
   ChevronLeft,
@@ -180,11 +182,12 @@ const NUMBER_FORMATTER = new Intl.NumberFormat("en-US");
 const VIEW_OPTIONS: Array<{
   id: ControlCenterView;
   label: string;
+  description: string;
   icon: LucideIcon;
 }> = [
-  { id: "county", label: "County findings", icon: MapPinned },
-  { id: "sources", label: "Sources", icon: Database },
-  { id: "queue", label: "Still checking", icon: ClipboardList },
+  { id: "county", label: "County findings", description: "Records and their evidence", icon: MapPinned },
+  { id: "sources", label: "Sources", description: "Where the information comes from", icon: Database },
+  { id: "queue", label: "Still checking", description: "Questions that need more research", icon: ClipboardList },
 ];
 
 const STATUS_STYLES: Record<string, string> = {
@@ -635,7 +638,7 @@ function CountyPairTable({
 }) {
   return (
     <>
-      <div className="hidden overflow-hidden rounded-md border border-[var(--border)] md:block">
+      <div className="research-evidence-table hidden md:block">
         <table className="w-full table-fixed border-collapse text-left text-sm">
           <colgroup>
             <col className="w-11" />
@@ -746,7 +749,7 @@ function CountyPairTable({
         </table>
       </div>
 
-      <div className="divide-y divide-[var(--border)] border-y border-[var(--border)] bg-[var(--surface-strong)] md:hidden">
+      <div className="research-evidence-mobile">
         {pairs.map((pair) => {
           const isExpanded = expandedSpeciesIds.has(pair.speciesId);
           return (
@@ -1075,7 +1078,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             disabled={countyOptions.length === 0}
           />
         </div>
-        <p>Choose a finding, then open a species to read the sources. Historical records do not necessarily describe today.</p>
+        <p>Open a species below to see the original sources and observation dates. A past record does not always tell us what is there today.</p>
       </div>
 
       {loadState === "loading" || loadState === "idle" ? (
@@ -1107,7 +1110,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
       {countyData && loadState === "success" ? (
         <>
-          <div className="grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2 lg:grid-cols-[minmax(240px,1.2fr)_minmax(170px,0.8fr)_minmax(170px,0.8fr)_40px]">
+          <div className="research-filter-bar">
             <SearchField
               label="Find a species"
               value={query}
@@ -1205,13 +1208,24 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             </dl>
           </details>
 
-          <div className="flex gap-5 overflow-x-auto border-b border-[var(--border)] py-3 text-xs whitespace-nowrap">
+          <div className="research-results-count">
             <span className="font-semibold tabular-nums text-[var(--foreground)]">
               Matching {formatNumber(filteredPairs.length)}
             </span>
             <span className="text-[var(--muted)]">{statusFilter === "all" ? "All research outcomes" : statusFilter === "verified-present" ? "Recorded here, including historical findings" : formatLabel(statusFilter)}</span>
           </div>
 
+          <div className="research-mobile-sort">
+            <SelectField label="Sort findings" value={sortKey} options={[
+              {value:"commonName",label:"Species name"}, {value:"category",label:"Category"},
+              {value:"displayStatus",label:"Finding"}, {value:"researchStatus",label:"Research checks"},
+              {value:"evidence",label:"Number of records"}, {value:"freshnessStatus",label:"Record age"},
+            ]} onChange={value => { setSortKey(value as PairSortKey); setPage(1); }} />
+            <button type="button" onClick={() => { setSortDirection(direction => direction === "asc" ? "desc" : "asc"); setPage(1); }} aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}>
+              {sortDirection === "asc" ? <ArrowUp size={18} aria-hidden="true" /> : <ArrowDown size={18} aria-hidden="true" />}
+              {sortDirection === "asc" ? "Ascending" : "Descending"}
+            </button>
+          </div>
           <div className="py-5">
             {pagePairs.length ? (
               <CountyPairTable
@@ -1283,14 +1297,12 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
             {formatNumber(sources.length)} of {formatNumber(summary.sources.length)} sources visible
           </p>
           <p className="mt-2 max-w-3xl text-xs leading-5 text-[var(--muted)]">
-            All sources tracked by isitusa. This list covers the atlas as a whole; a listed source
-            may not cover every species or county in {summary.stateName}. Its status does not mean
-            that all required checks are complete. Open county records to see the evidence used.
+            These are the sources tracked across ISITUSA. Each covers different places and species, so a listing here does not mean it has records for every county in {summary.stateName}. Open a county finding to see the sources used for that record.
           </p>
         </div>
       </div>
 
-      <div className="mt-5 grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2">
+      <div className="research-secondary-filters mt-5 grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2">
         <SearchField
           label="Search"
           value={query}
@@ -1308,7 +1320,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
         />
       </div>
 
-      <div className="mt-5 hidden overflow-x-auto rounded-md border border-[var(--border)] md:block">
+      <div className="research-source-table mt-5 hidden overflow-x-auto rounded-md border border-[var(--border)] md:block">
         <table className="w-full min-w-[880px] border-collapse text-left text-sm">
           <thead className="bg-[var(--surface)] text-xs text-[var(--muted)]">
             <tr className="border-b border-[var(--border)]">
@@ -1438,7 +1450,7 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
         </p>
       </div>
 
-      <div className="mt-5 grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2">
+      <div className="research-secondary-filters mt-5 grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2">
         <SearchField
           label="Search"
           value={query}
@@ -1505,19 +1517,20 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
   return (
     <header className="reading-hero research-heading">
       <div className="research-heading-copy"><div>
-        <h1 className="page-heading">Explore the evidence.</h1>
-        <p>Find a species in your county, read its source records, and see what we still need to learn.</p>
+        <h1 className="page-heading">Explore the research.</h1>
+        <p>Follow a finding back to its source. Explore county records, the evidence behind them, and the questions we are still working through.</p>
+        <nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav>
       </div><EditorialArt subject="research" /></div>
       <div className="research-state-control">
         <SelectField stateFlags label="Choose a state" value={selectedStateCode}
           options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}
           onChange={onStateChange} />
-        {summary && <><p>Research through {formatDate(summary.asOf)}</p>
+        {summary && <div className="research-update-note"><p>Research through {formatDate(summary.asOf)}</p>
           <details className="research-publication-details"><summary>About this update</summary>
             <p>Observation dates appear with each source. An update can include older records.</p>
             <p>Catalog snapshot: {formatDate(summary.sourceSnapshotDate)}.</p>
             <p>Generated {formatTimestamp(summary.generatedAt)}.</p>
-          </details></>}
+          </details></div>}
       </div>
     </header>
   );
@@ -1585,7 +1598,7 @@ function ResearchControlCenterContent({
                 }`}
               >
                 <Icon aria-hidden="true" size={16} />
-                {view.label}
+                <span><strong>{view.label}</strong><small>{view.description}</small></span>
               </button>
             );
           })}

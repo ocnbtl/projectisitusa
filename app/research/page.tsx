@@ -1,3 +1,4 @@
+import "@/components/discovery-pages.css";
 import type { Metadata } from "next";
 
 import { ResearchControlCenter } from "@/components/research-control-center";
