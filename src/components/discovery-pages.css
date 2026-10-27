@@ -3,7 +3,7 @@
 .research-page .research-heading{display:block;border:0;padding:0;margin:0 0 24px}
 .research-page .research-heading .research-heading-copy,.species-page>.illustrated-intro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,.65fr);align-items:center;gap:clamp(24px,4vw,64px);margin:0 0 28px}
 .research-page .research-heading-copy>.editorial-art,.species-page>.illustrated-intro>.editorial-art{width:100%;height:210px;max-width:300px;justify-self:center;margin:0;aspect-ratio:auto}
-.research-page .research-heading h1,.species-page .directory-hero h1{font-size:var(--section-heading-size);line-height:1.2;margin:0 0 14px}
+.research-page .research-heading h1,.species-page .directory-hero h1.page-heading{font-size:var(--section-heading-size);line-height:1.2;margin:0 0 14px}
 .research-page .research-heading-copy p,.species-page .directory-hero p{font-size:16px;line-height:1.7;max-width:62ch;margin:0;text-wrap:pretty}
 .species-page .directory-hero{display:block;padding:0;border:0;margin:0}
 .discovery-reading-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:12px}
@@ -99,7 +99,7 @@
 @media(max-width:700px){
  .research-page .research-heading .research-heading-copy,.species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) 92px;gap:12px;margin-bottom:20px}
  .research-page .research-heading-copy>.editorial-art,.species-page>.illustrated-intro>.editorial-art{width:92px;height:132px;max-width:100%;margin:0}
- .research-page .research-heading h1,.species-page .directory-hero h1{font-size:var(--mobile-page-heading-size);margin-bottom:10px}
+ .research-page .research-heading h1,.species-page .directory-hero h1.page-heading{font-size:var(--mobile-page-heading-size);margin-bottom:10px}
  .research-page .research-heading-copy p,.species-page .directory-hero p{font-size:15px;line-height:1.6}
  .discovery-reading-links{gap:0 16px;margin-top:8px}
  .discovery-reading-links a{font-size:13px}
