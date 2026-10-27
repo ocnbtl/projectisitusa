@@ -1,3 +1,4 @@
+import "@/components/species-profile.css";
 import { EditorialArt } from "@/components/editorial-art";
 import type { Route } from "next";
 import Link from "next/link";
@@ -54,7 +55,7 @@ export default async function SpeciesProfilePage({
 
   return (
     <main id="main-content" className="reading-page species-profile">
-      <nav aria-label="Species navigation" className="mb-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+      <nav aria-label="Species navigation" className="profile-back-nav">
         <Link href="/species" className="text-link inline-flex min-h-11 items-center gap-2">
           <ArrowLeft size={16} aria-hidden="true" /> All species
         </Link>
@@ -63,39 +64,23 @@ export default async function SpeciesProfilePage({
 
       <header className={`profile-layout ${species.image ? "" : "profile-without-image"} grid items-start gap-8 lg:gap-12`}>
         <div className="reading-hero profile-heading min-w-0">
-          <h1 className="break-words">{species.commonName}</h1>
-          <p className="mt-3 text-xl italic leading-8 text-[var(--muted)]">{species.scientificName}</p>
-          {editorial.summary ? <p className="mt-6 max-w-xl text-lg leading-8">{editorial.summary}</p> : null}
+          <h1 className="profile-title break-words">{species.commonName}</h1>
+          <p className="profile-scientific-name">{species.scientificName}</p>
+          {editorial.summary ? <p className="profile-description">{editorial.summary}</p> : null}
           <dl className="profile-facts mt-6 flex flex-wrap gap-x-8 gap-y-4 text-sm">
             <div><dt className="text-[var(--muted)]">Category</dt><dd className={"mt-1 category-tag category-" + species.category}>{formatCategoryLabel(species.category)}</dd></div>
             {registry?.family ? <div><dt className="text-[var(--muted)]">Family</dt><dd className="mt-1">{registry.family}</dd></div> : null}
           </dl>
         </div>
         {species.image ? (
-          <div className="profile-image overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+          <div className="profile-image">
             <SpeciesImage src={species.image.src} alt={species.image.alt} credit={species.image.credit} label={species.commonName} />
           </div>
         ) : null}
       </header>
-      <nav className="profile-section-nav" aria-label="On this profile"><a href="#profile-sources-heading">References</a><a href="#occurrences">Recorded occurrences</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-correction">Suggest a correction</a></nav>
+      <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Recorded occurrences</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a><a href="#profile-correction">Suggest a correction</a></nav>
 
-      <section className="profile-sources reading-section profile-sources-illustrated" aria-labelledby="profile-sources-heading"><div>
-        <h2 id="profile-sources-heading">Profile references</h2>
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          {references.map((source) => (
-            <li key={source.url}>
-              <a href={source.url} target="_blank" rel="noreferrer" className="text-link inline-flex min-h-11 items-center gap-2">
-                {source.label} <ArrowUpRight size={14} aria-hidden="true" className="shrink-0" />
-              </a>
-            </li>
-          ))}
-        </ul>
-        {registry?.authority ? (
-          <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-            Registry reference: {registry.authorityUrl ? <a href={registry.authorityUrl} target="_blank" rel="noreferrer" className="text-link">{registry.authority}</a> : registry.authority}
-          </p>
-        ) : null}
-      </div><EditorialArt subject="bibliography" className="profile-reference-art"/></section>
+
 
       <div id="occurrences" className="scroll-mt-24">
         <Suspense fallback={<p role="status" className="reading-section text-sm text-[var(--muted)]">Opening recorded occurrences...</p>}>
@@ -131,7 +116,7 @@ export default async function SpeciesProfilePage({
               </ol>
             ) : null}
             {action.contactName || action.contactInstructions || action.contactUrl ? (
-              <div className="mt-6 border-l-2 border-[var(--accent)] pl-5">
+              <div className="profile-authority-guidance">
                 {action.contactName ? <h3 className="font-semibold">{action.contactName}</h3> : null}
                 {action.contactInstructions ? <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{action.contactInstructions}</p> : null}
                 {action.contactUrl ? (
@@ -146,6 +131,23 @@ export default async function SpeciesProfilePage({
         ) : null}
 
         {!action && <section id="actions" className="reading-section scroll-mt-24"><h2>What you can do</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">If you think you have found this species, record where and when you saw it and take clear photographs from a safe distance. Confirm its identity and local guidance before handling, moving or attempting to control it.</p></section>}
+      <section className="profile-sources reading-section profile-sources-illustrated" aria-labelledby="profile-sources-heading"><div>
+        <h2 id="profile-sources-heading">Profile references</h2>
+        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          {references.map((source) => (
+            <li key={source.url}>
+              <a href={source.url} target="_blank" rel="noreferrer" className="text-link inline-flex min-h-11 items-center gap-2">
+                {source.label} <ArrowUpRight size={14} aria-hidden="true" className="shrink-0" />
+              </a>
+            </li>
+          ))}
+        </ul>
+        {registry?.authority ? (
+          <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+            Registry reference: {registry.authorityUrl ? <a href={registry.authorityUrl} target="_blank" rel="noreferrer" className="text-link">{registry.authority}</a> : registry.authority}
+          </p>
+        ) : null}
+      </div><EditorialArt subject="bibliography" className="profile-reference-art"/></section>
         <div className="profile-report-callout"><EditorialArt subject="notebook" className="profile-report-art"/><div><h3>Found this species?</h3><p>Document what you saw and help improve the picture of your area.</p></div><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="text-link inline-flex min-h-11 items-center gap-2">Submit a sighting <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
         <div id="profile-correction" className="profile-correction-illustrated scroll-mt-24"><EditorialArt subject="revision"/><div><ProfileCorrection speciesId={species.id} name={species.commonName}/></div></div>
         {registry ? (

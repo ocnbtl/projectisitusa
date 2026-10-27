@@ -65,8 +65,11 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
   const researchHref = buildResearchHref({ stateCode: county?.stateCode, countyFips, speciesQuery: speciesId });
   return <section id="records" className="profile-evidence reading-section" aria-labelledby="species-records-title">
     <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county or county equivalent" : "counties and county equivalents"} with reviewed records through {formatOccurrenceDate(data.asOf)}.</p> : null}</div><MapPin size={24} aria-hidden="true" /></div>
-    {data ? <SpeciesCountyMap counties={recordedCounties} selected={countyFips} labels={data.countyLabels} onSelect={setChoice} /> : null}
+    <div className="profile-record-layout">
+    <div className="profile-map-panel">{data ? <SpeciesCountyMap counties={recordedCounties} selected={countyFips} labels={data.countyLabels} onSelect={setChoice} /> : null}</div>
+    <div className="profile-record-panel">
     {error ? <div role="alert"><p>County records could not be loaded.</p><button type="button" className="text-link min-h-11" onClick={retry}>Try again</button></div> : !data ? <p role="status">Loading records for {commonName}...</p> : countyFips && county ? <>
+      <h3 className="profile-county-heading">Records for {county.name}, {county.stateCode}</h3>
       <label className="profile-county-select">Choose a recorded location<select value={countyFips} onChange={event => setChoice(event.target.value)}>{options.map(fips => <option key={fips} value={fips}>{data.countyLabels[fips].name}, {data.countyLabels[fips].stateCode}</option>)}</select></label>
       {loadError ? <div role="alert"><p>{loadError}</p><button type="button" className="text-link min-h-11" onClick={() => setAttempt(value => value + 1)}>Try again</button></div> : !loaded || loadedCounty !== countyFips ? <p role="status">Loading the sources for {county.name}...</p> : pair ? <>
         <p className="profile-record-status">{pair.conflict ? "Conflicting evidence" : pair.displayStatus === "verified-present" ? "Recorded occurrence" : pair.displayStatus === "verified-absent" ? temporal?.pairStatusLabel ?? "Agency absence finding" : pair.displayStatus === "not-detected" ? "Not detected in the documented survey" : "Research remains open"}</p>
@@ -81,6 +84,7 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
         {!pair.evidence.length ? <p>No source citations are attached to this county entry.</p> : null}
       </> : <p>No explicit research record is published for this species in {county.name}. This does not establish absence.</p>}
     </> : <p>No reviewed county occurrence is recorded in this update. That leaves an open question, rather than a finding of absence.</p>}
+    </div></div>
     <div className="profile-evidence-footer"><p>Observation dates can be historical. A record does not establish presence today.</p><Link href={researchHref} className="text-link">Explore county research <ArrowUpRight size={15} aria-hidden="true" /></Link></div>
   </section>;
 }

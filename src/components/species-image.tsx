@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Info } from "lucide-react";
 import { useState } from "react";
 
 interface SpeciesImageProps {
@@ -34,7 +35,7 @@ export function SpeciesImage({
             </div>
           </div>
         </div>
-        <details className="image-credit profile-image-credit"><summary>Photo credit</summary><p>{credit}</p></details>
+        <details className="image-credit profile-image-credit"><summary><Info size={14} aria-hidden="true" />Photo credit</summary><p>{credit}</p></details>
       </>
     );
   }
@@ -51,7 +52,7 @@ export function SpeciesImage({
         unoptimized
         onError={() => setFailed(true)}
       />
-      <details className="image-credit profile-image-credit"><summary>Photo credit</summary><p>{credit}</p></details>
+      <details className="image-credit profile-image-credit"><summary><Info size={14} aria-hidden="true" />Photo credit</summary><p>{credit}</p></details>
     </>
   );
 }
