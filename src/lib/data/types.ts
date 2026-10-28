@@ -325,7 +325,7 @@ export interface SpeciesFilters {
   categories?: SpeciesCategory[] | null;
   speciesId?: string | null;
   status?: SpeciesStatus | null;
-  environment?: EnvironmentTag | null;
+  environment?: EnvironmentTag | EnvironmentTag[] | null;
   availability?: SpeciesAvailability | null;
   query?: string | null;
 }

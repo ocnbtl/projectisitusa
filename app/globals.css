@@ -1498,6 +1498,18 @@ h1,h2,h3,h4,h5,h6{font-synthesis:none;font-kerning:normal}
  .atlas-topbar .atlas-filter-panel legend{margin-bottom:10px}
  .atlas-topbar .atlas-filter-panel .filter-options:not(.environment-options){grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
  .atlas-topbar .atlas-filter-panel .filter-options:not(.environment-options) .filter-option{min-height:54px}
- .atlas-topbar .atlas-filter-panel .environment-options{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ .atlas-topbar .atlas-filter-panel .environment-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
  .atlas-topbar .atlas-filter-panel .environment-options .filter-option{min-height:62px;padding:8px 3px;font-size:11px}
+}
+
+/* Keep filter labels intact, with equal tap targets instead of cramped text. */
+.atlas-filter-panel legend small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:4px}
+.atlas-filter-panel .filter-option{min-width:0;gap:8px;padding:10px 12px;line-height:1.3}
+.atlas-filter-panel .filter-option>span{white-space:nowrap}
+.atlas-filter-panel .filter-options.environment-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.atlas-filter-panel .environment-options .filter-option{min-height:64px;font-size:12px;padding:8px 6px}
+.atlas-filter-panel .filter-option>svg{width:22px;height:22px}
+@media(max-width:380px){
+ .atlas-topbar .atlas-filter-panel .filter-options:not(.environment-options) .filter-option{flex-direction:column;justify-content:center;gap:6px;padding:9px 6px;min-height:66px;text-align:center;font-size:12px}
+ .atlas-topbar .atlas-filter-panel .filter-options:not(.environment-options) .filter-option>span{flex:0 0 auto}
 }

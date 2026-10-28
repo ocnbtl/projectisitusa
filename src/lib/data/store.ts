@@ -1,3 +1,4 @@
+import { matchesEnvironment } from "@/lib/data/environment-filters";
 import presence from "@/data/generated/presence.json";
 import { countyIndex } from "@/lib/data/county-store";
 import { allSpecies, speciesById } from "@/lib/data/species-store";
@@ -40,10 +41,7 @@ export function speciesMatchesFilters(species: Species, filters?: SpeciesFilters
     return false;
   }
   if (filters?.status && species.registry?.status !== filters.status) return false;
-  if (
-    filters?.environment &&
-    !species.registry?.environmentTags.includes(filters.environment)
-  ) {
+  if (!matchesEnvironment(species, filters?.environment)) {
     return false;
   }
   if (filters?.availability === "mapped" && !speciesHasCountyData(species)) {

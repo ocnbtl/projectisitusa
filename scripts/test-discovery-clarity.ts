@@ -5,12 +5,16 @@ import { ENVIRONMENT_OPTIONS } from "../src/lib/constants";
 
 for (const option of ENVIRONMENT_OPTIONS) {
   const state = readDirectoryState(`?environment=${option.value ?? ""}&q=fern&category=plants&view=grid&page=2`);
-  assert.equal(state.environment, option.value);
+  assert.deepEqual(state.environment, option.value ? [option.value] : []);
   assert.deepEqual(state.categories, ["plants"]);
   assert.equal(state.query, "fern");
   assert.equal(state.page, 2);
 }
-assert.equal(readDirectoryState("?environment=unknown").environment, null);
+assert.deepEqual(readDirectoryState("?environment=unknown").environment, []);
+assert.deepEqual(readDirectoryState("?environment=forest,land&environment=forest,unknown,wetlands").environment, ["land", "wetlands", "forest"]);
+assert.equal(matchesEnvironment({}, []), true);
+assert.equal(matchesEnvironment({ registry: { environmentTags: ["freshwater"] } }, ["land", "freshwater"]), true, "Match any selected environment");
+assert.equal(matchesEnvironment({ registry: { environmentTags: ["marine-coastal"] } }, ["land", "freshwater"]), false);
 assert.equal(matchesEnvironment({}, null), true, "Unknown habitats remain visible in the unfiltered catalog");
 assert.equal(matchesEnvironment({}, "forest"), false, "Do not infer habitat where none is recorded");
 assert.equal(matchesEnvironment({ registry: { environmentTags: ["forest", "wetlands"] } }, "wetlands"), true);

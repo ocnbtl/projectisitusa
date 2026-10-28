@@ -5,17 +5,18 @@ import { ArrowRight, ArrowUpRight, ChevronDown, Leaf, MapPin, Search, SlidersHor
 import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
 import { StatePicker, StateFlag } from "@/components/atlas/state-picker";
 import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
+import { toggleEnvironment } from "@/lib/data/environment-filters";
 import type { CountyRecord, EnvironmentTag, ExplorerSpecies, SpeciesCategory } from "@/lib/data/types";
 
 interface MapToolbarProps {
   counties: Record<string, CountyRecord>; species: ExplorerSpecies[];
   countyCounts: Record<string, number>; speciesCounts: Record<string, number>; dataReady: boolean;
-  categories: SpeciesCategory[]; environment: EnvironmentTag | null; stateCode: string | null;
+  categories: SpeciesCategory[]; environment: EnvironmentTag[]; stateCode: string | null;
   speciesId: string | null; query: string; zipStatus: string | null; isSearching: boolean;
   onCountySelect: (fips: string) => void; onStateChange: (state: string | null) => void;
   onSpeciesSelect: (id: string | null) => void; onQueryChange: (query: string) => void;
-  onCategoryToggle: (category: SpeciesCategory) => void; onEnvironmentChange: (value: EnvironmentTag | null) => void;
-  onApplyFilters: (categories: SpeciesCategory[], environment: EnvironmentTag | null, state: string | null) => void;
+  onCategoryToggle: (category: SpeciesCategory) => void; onEnvironmentChange: (value: EnvironmentTag[]) => void;
+  onApplyFilters: (categories: SpeciesCategory[], environment: EnvironmentTag[], state: string | null) => void;
   onZipSearch: (zip: string) => void; onClearFilters: () => void;
 }
 type SearchResult = { id: string; label: string; detail: string; image?: string; credit?: string; count?: string; stateCode?: string };
@@ -113,7 +114,7 @@ export function MapToolbar(props: MapToolbarProps) {
     document.addEventListener("pointerdown",outside); return () => document.removeEventListener("pointerdown",outside);
   }, []);
   const selectedSpecies = props.species.find(s => s.id === props.speciesId);
-  const count = props.categories.length + Number(Boolean(props.environment));
+  const count = props.categories.length + props.environment.length;
   const hasFilters = Boolean(count || props.speciesId || props.query);
   function close() { setFilterOpen(false); filterButton.current?.focus(); }
   return <div ref={toolbarRoot} className="atlas-toolbar">
@@ -137,13 +138,13 @@ export function MapToolbar(props: MapToolbarProps) {
           <div className="mobile-state-filter"><p>State</p><StatePicker value={draftState} onChange={setDraftState}/></div>
           {(selectedSpecies || props.query) && <div className="mobile-selected-search"><span>{selectedSpecies?.commonName ?? props.query}</span><button type="button" aria-label="Remove species search" onClick={() => {props.onSpeciesSelect(null);props.onQueryChange("");}}><X size={16}/></button></div>}
           <fieldset><legend>Species groups</legend><div className="filter-options">{categoryOrder.map(value => CATEGORY_OPTIONS.find(option => option.value === value)!).map(option => {const checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><NatureIcon kind={CATEGORY_NATURE[option.value]} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
-          <fieldset><legend>Environment</legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!;return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment === value} onClick={() => setDraftEnvironment(draftEnvironment === value ? null : value)}><EnvironmentIcon kind={value} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
-          <footer><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment(null);setDraftState(null);props.onClearFilters();close();}}>Clear filters</button><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment,draftState);close();}}>Apply filters <ArrowRight size={16}/></button></footer>
+          <fieldset><legend>Environments <small>Choose any that apply</small></legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!;return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment.includes(value)} onClick={() => setDraftEnvironment(current => toggleEnvironment(current, value))}><EnvironmentIcon kind={value} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
+          <footer><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment([]);setDraftState(null);props.onClearFilters();close();}}>Clear filters</button><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment,draftState);close();}}>Apply filters <ArrowRight size={16}/></button></footer>
         </section>
       </div>
     {hasFilters && <div className="atlas-filter-row" aria-label="Applied map filters"><div className="applied-filter-chips">
       {props.categories.map(category => <button key={category} className={"filter-chip category-" + category} onClick={() => props.onCategoryToggle(category)} aria-label={"Remove " + CATEGORY_OPTIONS.find(c=>c.value===category)?.label + " filter"}><span>{CATEGORY_OPTIONS.find(c=>c.value===category)?.label}</span><X size={13}/></button>)}
-      {props.environment && <button className="filter-chip" onClick={()=>props.onEnvironmentChange(null)} aria-label="Remove environment filter"><span>{ENVIRONMENT_OPTIONS.find(e=>e.value===props.environment)?.label}</span><X size={13}/></button>}
+      {props.environment.map(value => <button key={value} className="filter-chip" onClick={()=>props.onEnvironmentChange(props.environment.filter(item => item !== value))} aria-label={"Remove " + ENVIRONMENT_OPTIONS.find(e=>e.value===value)?.label + " environment filter"}><span>{ENVIRONMENT_OPTIONS.find(e=>e.value===value)?.label}</span><X size={13}/></button>)}
       {selectedSpecies && <button className="filter-chip" onClick={()=>props.onSpeciesSelect(null)} aria-label="Remove species filter"><span>{selectedSpecies.commonName}</span><X size={13}/></button>}
       {props.query && <button className="filter-chip" onClick={()=>props.onQueryChange("")} aria-label="Remove search filter"><span>{props.query}</span><X size={13}/></button>}
       </div><button className="clear-all-filters" type="button" onClick={props.onClearFilters} aria-label="Clear all filters" title="Clear all filters"><X size={16}/></button>

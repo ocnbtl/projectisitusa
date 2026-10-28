@@ -13,6 +13,7 @@ import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editori
 import { formatCategoryLabel } from "@/lib/utils";
 
 import { ENVIRONMENT_OPTIONS } from "@/lib/constants";
+import { toggleEnvironment } from "@/lib/data/environment-filters";
 import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
 import { DIRECTORY_CATEGORIES, DIRECTORY_PAGE_SIZES, matchesEnvironment, readDirectoryState, type DirectoryView } from "@/lib/ui/species-directory-state";
 // Reuse the validated catalog during a visit rather than remounting a loading skeleton.
@@ -65,7 +66,7 @@ export function SpeciesDirectory() {
   const [loadAttempt, setLoadAttempt] = useState(0);
   const [query, setQuery] = useState("");
   const [selectedCategories, setCategories] = useState<SpeciesCategory[]>([]);
-  const [environment, setEnvironment] = useState<EnvironmentTag | null>(null);
+  const [environment, setEnvironment] = useState<EnvironmentTag[]>([]);
   const [pageSize, setPageSize] = useState<number>(24);
   const [view, setView] = useState<DirectoryView>("rows");
   const [page, setPage] = useState(1);
@@ -113,14 +114,14 @@ export function SpeciesDirectory() {
   const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
   const currentPage = Math.min(page, totalPages);
   const start = (currentPage - 1) * pageSize;
-  const hasFilters = Boolean(query || selectedCategories.length || environment);
+  const hasFilters = Boolean(query || selectedCategories.length || environment.length);
 
   useEffect(() => {
     if (!locationReady || !catalog) return;
     const url = new URL(window.location.href);
     if (deferredQuery.trim()) url.searchParams.set("q", deferredQuery.trim()); else url.searchParams.delete("q");
     if (selectedCategories.length) url.searchParams.set("category", selectedCategories.join(",")); else url.searchParams.delete("category");
-    if (environment) url.searchParams.set("environment", environment); else url.searchParams.delete("environment");
+    if (environment.length) url.searchParams.set("environment", environment.join(",")); else url.searchParams.delete("environment");
     if (pageSize !== 24) url.searchParams.set("size", String(pageSize)); else url.searchParams.delete("size");
     if (view !== "rows") url.searchParams.set("view", view); else url.searchParams.delete("view");
     if (currentPage > 1) url.searchParams.set("page", String(currentPage)); else url.searchParams.delete("page");
@@ -128,7 +129,7 @@ export function SpeciesDirectory() {
     if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, "", next);
   }, [catalog, selectedCategories, currentPage, pageSize, view, deferredQuery, locationReady, environment]);
 
-  function resetFilters() { setQuery(""); setCategories([]); setEnvironment(null); setPage(1); searchInput.current?.focus(); }
+  function resetFilters() { setQuery(""); setCategories([]); setEnvironment([]); setPage(1); searchInput.current?.focus(); }
   function changePage(nextPage: number) {
     setPage(nextPage);
     resultsHeading.current?.focus({ preventScroll: true });
@@ -150,12 +151,12 @@ export function SpeciesDirectory() {
         <div className="directory-category-field"><span>Category</span><div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div></div>
       </div>
 
-      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environment</span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-pressed={environment === option.value} onClick={() => { setEnvironment(option.value); setPage(1); }}>{option.value && <EnvironmentIcon kind={option.value} width={20} height={20}/>}<span>{option.label}</span></button>)}</div></div></div>
+      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environments <small>Choose any that apply</small></span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-pressed={option.value ? environment.includes(option.value) : !environment.length} onClick={() => { const value = option.value; setEnvironment(current => value ? toggleEnvironment(current, value) : []); setPage(1); }}>{option.value && <EnvironmentIcon kind={option.value} width={20} height={20}/>}<span>{option.label}</span></button>)}</div></div></div>
 
       {hasFilters && <div className="directory-active-filters" aria-label="Active species filters">
         {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label={`Remove search ${query}`}><Search size={14} aria-hidden="true" /><span>{query}</span><X size={14} aria-hidden="true" /></button>}
         {selectedCategories.map(category => <button type="button" key={category} className={"category-" + category} onClick={() => { setCategories(current => current.filter(value => value !== category)); setPage(1); }} aria-label={`Remove ${formatCategoryLabel(category)} filter`}><span>{formatCategoryLabel(category)}</span><X size={14} aria-hidden="true" /></button>)}
-        {environment && <button type="button" onClick={() => { setEnvironment(null); setPage(1); }} aria-label="Remove environment filter">{ENVIRONMENT_OPTIONS.find(option => option.value === environment)?.label}<X size={14} aria-hidden="true"/></button>}
+        {environment.map(value => <button key={value} type="button" onClick={() => { setEnvironment(current => current.filter(item => item !== value)); setPage(1); }} aria-label={"Remove " + ENVIRONMENT_OPTIONS.find(option => option.value === value)?.label + " environment filter"}>{ENVIRONMENT_OPTIONS.find(option => option.value === value)?.label}<X size={14} aria-hidden="true"/></button>)}
         <button type="button" className="directory-clear-all" onClick={resetFilters}>Clear all</button>
       </div>}
 

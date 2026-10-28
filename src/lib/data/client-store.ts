@@ -1,3 +1,4 @@
+import { matchesEnvironment } from "@/lib/data/environment-filters";
 "use client";
 
 import { useEffect, useState } from "react";
@@ -120,10 +121,7 @@ export function speciesMatchesFilters(species: ExplorerSpecies, filters?: Specie
     return false;
   }
   if (filters?.status && species.registry?.status !== filters.status) return false;
-  if (
-    filters?.environment &&
-    !species.registry?.environmentTags.includes(filters.environment)
-  ) {
+  if (!matchesEnvironment(species, filters?.environment)) {
     return false;
   }
   if (filters?.availability === "mapped" && !speciesHasCountyData(species)) {

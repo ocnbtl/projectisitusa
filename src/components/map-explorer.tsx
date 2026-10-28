@@ -19,9 +19,10 @@ import { MapToolbar } from "@/components/map-toolbar";
 import { UsCountyMap } from "@/components/us-county-map";
 import { type ClientDataStorePayload, getSpeciesForCounty, getSpeciesForCounties, speciesMatchesFilters, useClientDataStore } from "@/lib/data/client-store";
 import { getDisplaySpecies } from "@/lib/ui/species-editorial";
-import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
+import { CATEGORY_OPTIONS } from "@/lib/constants";
+import { readEnvironments } from "@/lib/data/environment-filters";
 import { useReviewedMapData } from "@/lib/data/reviewed-map-store";
-import type { EnvironmentTag, ExplorerSpecies, SpeciesCategory, SpeciesFilters, ZipLookupResult } from "@/lib/data/types";
+import type { ExplorerSpecies, SpeciesCategory, SpeciesFilters, ZipLookupResult } from "@/lib/data/types";
 
 export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePayload }) {
   const params = useSearchParams();
@@ -53,7 +54,8 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
   const query = params.get("q") ?? "";
   const categoryParam = params.get("categories") ?? params.get("category") ?? "";
   const categories = useMemo(() => categoryParam.split(",").filter((value): value is SpeciesCategory => CATEGORY_OPTIONS.some(option => option.value === value)), [categoryParam]);
-  const environment = ENVIRONMENT_OPTIONS.some(option => option.value === params.get("environment")) ? params.get("environment") as EnvironmentTag | null : null;
+  const environmentParam = params.getAll("environment").join(",");
+  const environment = useMemo(() => readEnvironments(new URLSearchParams({ environment: environmentParam })), [environmentParam]);
   const filters = useMemo<SpeciesFilters>(() => ({ categories, speciesId, environment, query: speciesId ? null : query }), [categories, speciesId, environment, query]);
   const update = useCallback((patch: Record<string, string | null>) => {
     const next = new URLSearchParams(window.location.search);
@@ -122,11 +124,11 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
     <UsCountyMap countyIndex={store.countyIndex} presenceIndex={activePresence} stateCode={stateCode} selectedCountyFips={county?.countyFips ?? null} neighboringCountyFips={county?.neighborFips ?? []} countyMatchCounts={countyMatchCounts} onCountySelect={selectCounty} onReset={() => { cancelZipLookup(); update({ county: null, state: null }); }} sheetExpanded={expanded} datasetLabel={datasetLabel} datasetDate={datasetDate} dataReady={dataReady} />
     <div className="atlas-topbar">
     <MapToolbar counties={store.countyIndex} species={displaySpecies} categories={categories} environment={environment} stateCode={stateCode} speciesId={speciesId} query={query} zipStatus={zipStatus} isSearching={searching} countyCounts={countyCounts} speciesCounts={speciesCounts} dataReady={dataReady}
-      onApplyFilters={(values, habitat, state) => {track("map_filter_changed",{surface:"map"});cancelZipLookup();update({ categories: values.join(","), environment: habitat, species: null, state, county: state !== stateCode ? null : countyFips });}}
+      onApplyFilters={(values, habitat, state) => {track("map_filter_changed",{surface:"map"});cancelZipLookup();update({ categories: values.join(","), environment: habitat.join(","), species: null, state, county: state !== stateCode ? null : countyFips });}}
       onStateChange={value => { cancelZipLookup(); update({ state: value, county: null }); }}
       onCountySelect={selectCounty} onSpeciesSelect={id => { track("species_opened",{surface:"map",species_id:id??undefined}); cancelZipLookup(); update({ species: id, q: null }); }} onQueryChange={value => { cancelZipLookup(); update({ q: value, species: null }); }}
       onCategoryToggle={category => { const next = categories.includes(category) ? categories.filter(c => c !== category) : [...categories, category]; update({ categories: next.join(","), species: null }); }}
-      onEnvironmentChange={value => update({ environment: value })} onZipSearch={searchZip} onClearFilters={() => {cancelZipLookup();update({ categories: null, species: null, environment: null, q: null, state: null, county: null });}} />
+      onEnvironmentChange={value => update({ environment: value.join(",") })} onZipSearch={searchZip} onClearFilters={() => {cancelZipLookup();update({ categories: null, species: null, environment: null, q: null, state: null, county: null });}} />
       <UpdateNotice datasetDate={datasetDate} datasetLabel={datasetLabel} />
     </div>
     {!county && !stateCode ? <div className="atlas-intro"><h1 className="page-heading">Find invasive species near you.</h1><p>Explore <Link href="/research">local records</Link> and <Link href="/species">practical guidance</Link> to understand invasive species near you.</p></div> : null}

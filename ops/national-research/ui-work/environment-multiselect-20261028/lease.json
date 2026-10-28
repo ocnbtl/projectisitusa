@@ -1,0 +1,15 @@
+{
+  "task": "environment-multiselect-20261028",
+  "baseSha": "8f00539332251f0502a3c83d88692550ebfbad90",
+  "branch": "codex/environment-multiselect-20261028",
+  "worktree": "C:/Users/Ocean/.codex/visualizations/2026/09/28/01a0e59e-58e4-7840-98dd-358f873a449b/workspace-experience",
+  "status": "validated-local",
+  "authorization": "User requests multi-environment selection and responsive filter controls on map and species pages, with production release.",
+  "scope": ["app/globals.css", "src/components/discovery-pages.css", "src/components/map-explorer.tsx", "src/components/map-toolbar.tsx", "src/components/species-directory.tsx", "src/lib/data/environment-filters.ts", "src/lib/data/types.ts", "src/lib/data/store.ts", "src/lib/data/client-store.ts", "src/lib/ui/species-directory-state.ts", "scripts/test-discovery-clarity.ts", "ops/national-research/ui-work/environment-multiselect-20261028/lease.json"],
+  "deny": ["editorial candidates and research notes", "saved reviews", "research data and projections", "credentials", "payments", "unrelated changes"],
+  "releaseIsolation": "Build a scoped tree with the verified production commit as parent. Do not include the local editorial commit or working-tree drafts.",
+  "completionCriteria": ["OR matching for selected environments on both pages", "Single links remain valid", "Clear and individual removal preserve other selections", "No wrapping or overflow in filter labels", "Hosted build and live browser verification"],
+  "retryPolicy": "Diagnose before retry; no access-rule changes",
+  "expires": "2026-10-30",
+  "skillHashes": {"orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757", "worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"}
+}
