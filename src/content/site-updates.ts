@@ -1,7 +1,9 @@
 /** Dates describe published releases, not the visitor's current date.
  * Add an entry when a visitor-facing change ships; keep research dates separate.
  */
-export const SITE_UPDATES = [
+import release from "./site-release.generated.json";
+export const SITE_RELEASE_ID = release.revision;
+const EARLIER_UPDATES = [
   { date: "2026-10-24", title: "A smoother way to explore and support", detail: "Mobile search and filters open smoothly, the map key explains its colors more clearly, and checkout uses our ISITUSA name. Refined About spacing and a responsive woodland footer bring the pages together.", href: "/" },
   { date: "2026-10-23", title: "New illustrations and improved checkout", detail: "Two original illustrations give our research papers more room to breathe. One-time and recurring contributions now open Stripe's current checkout layouts reliably.", href: "/approach" },
   { date: "2026-10-22", title: "More ways to see the map", detail: "Monochrome and Spectrum add two new map palettes, with all six choices together on phones. Clearer About links and an original pixel woodland that follows your light or dark theme make it easier to explore the project.", href: "/about" },
@@ -13,3 +15,5 @@ export const SITE_UPDATES = [
   { date: "2026-10-10", title: "More ways to explore and contribute", detail: "Explore species profiles and their county records, suggest a correction, or choose how you would like to support the work.", href: "/species" },
   { date: "2026-10-01", title: "A clearer way to explore", detail: "A continuous map color scale, flexible species views, and county research pages that lead with recorded findings. The research release date is shown separately below.", href: "/research" },
 ] as const;
+export const SITE_UPDATES = [release, ...EARLIER_UPDATES.filter(update => update.date !== release.date)]
+  .sort((a, b) => b.date.localeCompare(a.date));

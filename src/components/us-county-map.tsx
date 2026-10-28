@@ -85,9 +85,10 @@ export const UsCountyMap = memo(function UsCountyMap({ countyIndex, presenceInde
       const introBounds = intro?.getBoundingClientRect();
       const introVisible = Boolean(introBounds && introBounds.height > 0);
       const top = mobile ? panel ? controlTop + 54 : introVisible ? introBounds!.bottom - rect.top + 18 : controlTop + 15 : controlTop + 15;
-      const right = !mobile && panel ? panel.left - rect.left - 24 : rect.width - 24;
+      const landingInset = mobile && !focusedState && !panel ? 8 : 24;
+      const right = !mobile && panel ? panel.left - rect.left - 24 : rect.width - landingInset;
       const bottom = mobile ? (panel ? panel.top - rect.top - 16 : legendSummary && legendSummary.height > 0 ? legendSummary.top - rect.top - 28 : rect.height - 162) : rect.height - 90;
-      const left = !mobile && introVisible && !panel ? Math.min(400, rect.width * .36) : 24;
+      const left = !mobile && introVisible && !panel ? Math.min(400, rect.width * .36) : landingInset;
       const next = measuredMapViewport(rect.width, rect.height, { left, right: Math.max(left + 80, right), top: Math.min(top, bottom - 40), bottom });
       if (next) setViewport(old => sameMapViewport(old, next) ? old : next);
     };

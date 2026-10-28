@@ -19,8 +19,8 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope }: {
   }}>
     <div id={id + "-help"} className="legend-drawer" data-open={open === "help"} aria-hidden={open !== "help"}>
       <div><div className="legend-explanation"><h2>Reading the map</h2>
-        <p>The colors show how many species have been recorded in each county, based on the filters you choose. They show the number of recorded species, not how much harm those species cause.</p>
-        <p>A county with more records may simply have been studied more closely. A count of zero means we have no matching records to show, not that a species is absent. Gray counties have no data available in this map layer.</p>
+        <p>Colors show how many species have been recorded in each county with your filters, not the harm they cause. More records can reflect more research.</p>
+        <p>Zero means no matching records, not confirmed absence. Gray means data isn’t available.</p>
       </div></div>
     </div>
     <div id={id + "-colors"} className="legend-drawer" data-open={open === "colors"} aria-hidden={open !== "colors"}>

@@ -6,6 +6,7 @@ export type EditorialRevision = {
   previousDescription?: string;
   revisionNumber?: number;
   revisedAt?: string;
+  researchDepth?: "full_profile";
   alternativeNames?: string[];
   otherScientificNames?: string[];
   identification?: string;
