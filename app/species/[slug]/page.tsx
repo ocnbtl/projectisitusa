@@ -88,7 +88,7 @@ export default async function SpeciesProfilePage({
         </Suspense>
       </div>
 
-      <div className="profile-reading profile-content">
+      <div className="profile-reading profile-content"><div className="profile-biography">
         {identification.length > 0 ? (
           <section id="identification" className="reading-section scroll-mt-24">
             <h2>How to recognize it</h2>
@@ -106,7 +106,7 @@ export default async function SpeciesProfilePage({
           </section>
         ) : null}
 
-        {action ? (
+        </div>{action ? (
           <section id="actions" className="reading-section scroll-mt-24">
             <h2>What you can do</h2>
             <p className="mt-4 text-base leading-7">{action.summary}</p>

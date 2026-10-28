@@ -486,7 +486,7 @@ function EvidenceDetails({ pair, sourceLabels, questionCoverage }: {
       <EvidenceNote note={evidence.caveat}/>
       <details className="research-record-details"><summary>Record details</summary><p>Evidence ID: {evidence.evidenceId}</p>{formatLineage(evidence.lineage) && <p>Record history: {formatLineage(evidence.lineage)}</p>}</details>
       </article></li>)}</ol> : <p>No source records are attached yet. This remains an open research question.</p>}
-    {pair.evidence.length > 3 && <button type="button" className="text-link research-more-sources" onClick={() => setVisibleCount(visibleCount < pair.evidence.length ? visibleCount + 3 : 3)}>{visibleCount < pair.evidence.length ? `Show ${Math.min(3, pair.evidence.length - visibleCount)} more source records` : "Show fewer source records"}<ChevronDown size={16} aria-hidden="true"/></button>}
+    {pair.evidence.length > 3 && <button type="button" className="text-link research-more-sources" onClick={() => setVisibleCount(visibleCount < pair.evidence.length ? visibleCount + 3 : 3)}>{visibleCount < pair.evidence.length ? `Show ${Math.min(3, pair.evidence.length - visibleCount)} more source ${pair.evidence.length - visibleCount === 1 ? "record" : "records"}` : "Show fewer source records"}<ChevronDown size={16} aria-hidden="true"/></button>}
       {questionCoverage ? (
         <details className="research-review-details"><summary>Questions we are checking</summary>
           <div className="flex flex-wrap items-center justify-between gap-2">
@@ -512,7 +512,7 @@ function EvidenceDetails({ pair, sourceLabels, questionCoverage }: {
         </details>
       ) : null}
 
-    <details className="research-review-details"><summary>Review status and source checks</summary><dl className="research-review-grid">{[["Finding",pair.determinationStatus],["Survey",pair.surveyStatus],["Research",pair.researchStatus],["Record age",pair.freshnessStatus],["Sources disagree",pair.conflict ? "Yes" : "No"]].map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{formatLabel(value)}</dd></div>)}</dl><p>Sources checked: {pair.screenedBySourceIds.length ? pair.screenedBySourceIds.map(id => sourceLabels.get(id) ?? id).join(", ") : "No source checks recorded yet"}.</p></details>
+    <details className="research-review-details"><summary>Review status and source checks</summary>{temporal && <div><p><strong>Occurrence history:</strong> {temporal.historyLabel}</p>{!temporal.showInResults && <><p><strong>Current agency finding:</strong> {temporal.currentLabel}</p><p>{temporal.explanation}</p></>}</div>}<dl className="research-review-grid">{[["Finding",pair.determinationStatus],["Survey",pair.surveyStatus],["Research",pair.researchStatus],["Record age",pair.freshnessStatus],["Sources disagree",pair.conflict ? "Yes" : "No"]].map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{formatLabel(value)}</dd></div>)}</dl><p>Sources checked: {pair.screenedBySourceIds.length ? pair.screenedBySourceIds.map(id => sourceLabels.get(id) ?? id).join(", ") : "No source checks recorded yet"}.</p></details>
   </div>;
 }
 
@@ -1056,18 +1056,6 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
           <details className="county-research-detail border-b border-[var(--border)] py-2">
             <summary><span>At a glance: {countyData.countyName}</span><span>{formatNumber(countyData.summary.verifiedPresent)} species recorded<ChevronDown size={16} aria-hidden="true"/></span></summary>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <h2
-                  id="county-research-heading"
-                  className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
-                >
-                  {countyData.countyName}
-                </h2>
-                <details className="research-record-details"><summary>About these records</summary><p>County identifier: {countyData.countyFips}. Compiled {formatTimestamp(countyData.generatedAt)}. Check each source for the date of the finding.</p></details>
-              </div>
-            </div>
-
             <div className="county-finding-overview" aria-label="County research overview">
               {[
                 { status: "verified-present", label: "Recorded here", count: countyData.summary.verifiedPresent, note: "Includes historical records. Check the dates." },
@@ -1077,14 +1065,14 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                 { status: "not-researched", label: "Not researched yet", count: countyData.summary.notResearched, note: "Research has not started for these species." },
               ].map(item => <button key={item.status} type="button" aria-pressed={statusFilter === item.status} onClick={() => setStatusFilter(item.status)}><span>{item.label}</span><strong>{formatNumber(item.count)}</strong><small>{item.note}</small></button>)}
             </div>
-            {(countyData.summary.blockedPairs > 0 || countyData.summary.notApplicablePairs > 0) && <p className="county-scope-note">Also in the full catalog: {formatNumber(countyData.summary.blockedPairs)} species awaiting a scope decision and {formatNumber(countyData.summary.notApplicablePairs)} explicitly outside this stateâ€™s scope.</p>}
+            {(countyData.summary.blockedPairs > 0 || countyData.summary.notApplicablePairs > 0) && <p className="county-scope-note">Also in the full catalog: {formatNumber(countyData.summary.blockedPairs)} species awaiting a scope decision and {formatNumber(countyData.summary.notApplicablePairs)} explicitly outside this state’s scope.</p>}
             {progress && <div className="county-progress">
               <div><h3>Research started for {formatNumber(progress.started)} of {formatNumber(progress.total)} species</h3><span>{progress.percent.toFixed(1)}%</span></div>
               <progress aria-label="Species with a source check or reviewed finding" value={progress.started} max={progress.total || 1} />
               <p>We have checked at least one source or reviewed a finding for these species. There may still be more to investigate.</p>
             </div>}
 
-              <details className="research-record-details"><summary>How these counts work</summary><p>Each species appears once in these counts. If it has ever been recorded here, it stays in “Recorded here,” even if a later survey did not find it or an agency reports it absent. Open its records to see the full history.</p>
+              <details className="research-record-details"><summary>How these counts work</summary><p>County identifier: {countyData.countyFips}. Compiled {formatTimestamp(countyData.generatedAt)}. Check each source for the date of the finding.</p><p>Each species appears once in these counts. If it has ever been recorded here, it stays in “Recorded here,” even if a later survey did not find it or an agency reports it absent. Open its records to see the full history.</p>
 
             {countyData.questionAssessment ? (
               <div className="mt-4 rounded-lg border border-[var(--border)] p-3 text-sm">
@@ -1219,7 +1207,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
               <th className="px-4 py-3 font-semibold" scope="col">Source type</th>
               <th className="px-4 py-3 font-semibold" scope="col">Status</th>
               <th className="px-4 py-3 font-semibold" scope="col">Latest source check</th>
-              <th className="px-4 py-3 text-right font-semibold" scope="col">Countyâ€“species records</th>
+              <th className="px-4 py-3 text-right font-semibold" scope="col">County–species records</th>
               <th className="px-4 py-3 text-right font-semibold" scope="col">Species checked</th>
             </tr>
           </thead>
@@ -1262,7 +1250,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
             <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
               <div><dt className="text-[var(--muted)]">Source type</dt><dd className="mt-0.5 text-[var(--foreground)]">{formatLabel(String(source.tier))}</dd></div>
               <div><dt className="text-[var(--muted)]">Latest source check</dt><dd className="mt-0.5 text-[var(--foreground)]">{source.lastRunAt ? formatTimestamp(source.lastRunAt) : "No run recorded"}</dd></div>
-              <div><dt className="text-[var(--muted)]">Countyâ€“species records</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.evidencePairCount)}</dd></div>
+              <div><dt className="text-[var(--muted)]">County–species records</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.evidencePairCount)}</dd></div>
               <div><dt className="text-[var(--muted)]">Species checked</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.screenedSpeciesCount)}</dd></div>
             </dl>
           </article>

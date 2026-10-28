@@ -1,6 +1,7 @@
 "use client";
 import { track } from "@/lib/ui/telemetry";
 
+import { EVIDENCE_LABELS } from "@/lib/ui/research-copy";
 import { EvidenceNote } from "@/components/evidence-note";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -78,14 +79,14 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
         <ul className="profile-source-records">{sortedEvidence.slice(0, visibleSources).map(evidence => {
           const url = safeSourceLink(evidence.url);
           return <li key={evidence.evidenceId}><div className="profile-source-title">{url ? <a href={url} target="_blank" rel="noreferrer" className="text-link" onClick={() => track("source_opened",{surface:"species",source_id:evidence.sourceId,species_id:speciesId})}>{evidence.sourceLabel || evidence.sourceId}<ArrowUpRight size={15} aria-hidden="true" /></a> : <strong>{evidence.sourceLabel || evidence.sourceId}</strong>}<span>{evidence.assertion === "recorded-present" ? "Occurrence record" : evidence.assertion === "not-detected" ? "Survey non-detection" : "Agency finding"}</span></div>
-            <dl className="profile-source-dates"><div><dt><CalendarDays size={14} aria-hidden="true" /> Observed</dt><dd>{formatOccurrenceDate(evidence.observedAt)}</dd></div><div><dt>Reviewed</dt><dd>{formatOccurrenceDate(evidence.reviewedAt)}</dd></div><div><dt>Evidence scope</dt><dd>{evidence.scope.replaceAll("-", " ")}</dd></div></dl>
+            <dl className="profile-source-dates"><div><dt><CalendarDays size={14} aria-hidden="true" /> Observed</dt><dd>{formatOccurrenceDate(evidence.observedAt)}</dd></div><div><dt>Reviewed</dt><dd>{formatOccurrenceDate(evidence.reviewedAt)}</dd></div><div><dt>Where it applies</dt><dd>{EVIDENCE_LABELS[evidence.scope] ?? evidence.scope.replaceAll("-", " ")}</dd></div></dl>
             {evidence.caveat ? <details className="source-context"><summary>About this source</summary><EvidenceNote note={evidence.caveat}/></details> : null}</li>;
         })}</ul>
         {pair.evidence.length > visibleSources ? <button type="button" className="text-link min-h-11" onClick={() => setVisibleSources(count => count + 3)}>Show more sources ({pair.evidence.length - visibleSources})</button> : null}
         {!pair.evidence.length ? <p>No source citations are attached to this county entry.</p> : null}
-      </> : <p>No explicit research record is published for this species in {county.name}. This does not establish absence.</p>}
+      </> : <p>We have not published a finding for this species in {county.name} yet. That does not mean the species is absent.</p>}
     </> : <p>No reviewed county occurrence is recorded in this update. That leaves an open question, rather than a finding of absence.</p>}
     </div></div>
-    <div className="profile-evidence-footer"><p>Observation dates can be historical. A record does not establish presence today.</p><Link href={researchHref} className="text-link">Explore county research <ArrowUpRight size={15} aria-hidden="true" /></Link></div>
+    <div className="profile-evidence-footer"><p>An older record tells us the species was found there then, but not whether it is still there today.</p><Link href={researchHref} className="text-link">Explore county research <ArrowUpRight size={15} aria-hidden="true" /></Link></div>
   </section>;
 }

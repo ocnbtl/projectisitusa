@@ -230,3 +230,11 @@
  .research-source-facts>div:last-child{grid-column:1/-1}
  .research-review-details .research-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+.species-page .directory-search-input input::placeholder{color:var(--muted);opacity:1}
+@media(max-width:700px){
+ .research-page .research-filter-bar{position:relative;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .research-page .research-filter-bar>label:first-child{padding-right:52px}
+ .research-page .research-filter-bar>div:last-child{position:absolute;top:36px;right:12px}
+ .research-page .research-filter-bar button[aria-label="Clear county filters"]{height:44px}
+}
