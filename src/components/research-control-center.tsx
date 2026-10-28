@@ -966,7 +966,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
   }
 
   return (
-    <section aria-labelledby="county-research-heading">
+    <section aria-label="County findings">
       <div className="research-county-choice">
         <div>
           <SelectField
