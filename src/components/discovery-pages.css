@@ -153,3 +153,80 @@
 
 .species-page .directory-category-tags button[aria-pressed=true]{color:var(--category-ink);background:var(--category-wash);border-color:var(--category-ink)}
 .research-page #research-panel-sources>section>div:first-child p:last-child,.research-page #research-panel-queue>section>div:first-child p{font-size:15px;line-height:1.7}
+
+/* Habitat filters share the map's tags; records lead, review metadata follows. */
+.species-page .directory-controls{margin-bottom:16px}
+.directory-environment-field{margin:0 0 20px}
+.directory-environment-field>span{display:block;font-size:14px;font-weight:500;margin-bottom:8px}
+.directory-environment-field>div{display:flex;flex-wrap:wrap;gap:6px}
+.directory-environment-field button{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--foreground)}
+.directory-environment-field button[aria-pressed=true]{background:var(--foreground);color:var(--background);border-color:var(--foreground)}
+.directory-environment-field button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.research-page .research-heading-copy>.editorial-art{height:150px}
+.research-page .research-heading .research-heading-copy{margin-bottom:16px}
+.research-page .research-state-control,.research-page .research-county-choice{display:grid;grid-template-columns:minmax(200px,320px) minmax(0,1fr);align-items:center;gap:12px 24px;padding:0;background:none;border:0;border-radius:0}
+.research-page .research-county-choice{padding:12px 0 18px}
+.research-page .research-county-choice>div{width:auto;max-width:none}
+.research-page .research-state-control .custom-select-trigger,.research-page .research-county-choice .custom-select-trigger{min-height:48px;background:var(--surface)}
+.research-page .research-county-choice p{font-size:14px}
+.research-page .research-tabs [role=tab]{min-height:62px;padding:10px 14px}
+.research-page .research-filter-bar{padding:14px 16px;border:1px solid var(--border);background:var(--surface);gap:12px}
+.research-page .research-results-count{padding-top:16px}
+.research-page .county-research-detail{border:0;background:var(--surface);border-radius:10px;padding:0 16px}
+.research-page .county-research-detail>summary{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:52px;font-size:14px;list-style:none;cursor:pointer}
+.research-page .county-research-detail>summary::-webkit-details-marker{display:none}
+.research-page .county-research-detail>summary>span:last-child{display:flex;align-items:center;gap:12px;color:var(--muted)}
+.research-page .county-research-detail[open]>summary svg{transform:rotate(180deg)}
+.research-page .county-research-detail[open]{padding-bottom:16px}
+.research-page .county-research-detail h2{font-size:20px;margin-top:8px}
+.research-page .county-finding-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-top:12px}
+.research-page .county-finding-overview>button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 0;text-align:left;border:0;border-bottom:1px solid var(--border);border-radius:0;background:none;min-height:72px}
+.research-page .county-finding-overview>button>span{font-size:14px}
+.research-page .county-finding-overview>button>strong{font-size:20px;line-height:1.2;grid-column:2;grid-row:1/3;align-self:center}
+.research-page .county-finding-overview>button>small{grid-column:1;font-size:13px;line-height:1.5}
+.research-page .county-finding-overview>button[aria-pressed=true]{color:var(--accent-strong);border-bottom-color:var(--accent-strong)}
+.research-page .county-progress{margin:16px 0;padding:0;border:0;background:none}
+.research-page .county-progress h3{font-size:14px}
+.research-page .county-progress p,.research-page .county-scope-note{font-size:13px;line-height:1.6}
+.research-expanded-records{padding:20px 24px;background:var(--background);font-size:14px;line-height:1.65;overflow-wrap:anywhere}
+.research-expanded-records .research-finding-explanation{margin:0 0 18px;max-width:85ch;color:var(--foreground);font-size:15px;line-height:1.7}
+.research-source-heading{display:flex;align-items:baseline;gap:16px;margin-bottom:4px}
+.research-source-heading h3{font-size:17px;font-weight:600;margin:0}
+.research-source-heading>span{font-size:13px;color:var(--muted)}
+.research-source-list{list-style:none;margin:0;padding:0}
+.research-source-list>li{padding:16px 0;border-top:1px solid var(--border)}
+.research-source-list article>header{display:flex;align-items:baseline;justify-content:space-between;gap:8px 24px}
+.research-source-list h4{font-family:var(--font-body);font-size:15px;font-weight:600;line-height:1.6;margin:0}
+.research-source-list h4 a{display:inline-flex;align-items:baseline;gap:6px;color:var(--accent-strong);text-decoration:underline;text-underline-offset:3px}
+.research-source-list h4 svg{flex-shrink:0}
+.research-source-list article>header>span{font-size:13px;color:var(--muted);flex-shrink:0}
+.research-source-facts{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:12px;margin:12px 0;font-size:14px}
+.research-source-facts dt{font-size:12px;color:var(--muted);margin-bottom:2px}
+.research-source-facts dd{margin:0}
+.evidence-source-note>p{font-size:14px;line-height:1.7;margin:8px 0;color:var(--muted);max-width:90ch}
+.research-record-details{font-size:13px;line-height:1.65;color:var(--muted);margin-top:6px}
+.research-record-details>summary{cursor:pointer;min-height:36px;padding-block:6px}
+.research-record-details p{margin:6px 0;overflow-wrap:anywhere}
+.research-review-details{border-top:1px solid var(--border);margin-top:14px;padding-top:4px}
+.research-review-details>summary{cursor:pointer;min-height:44px;padding:10px 0;font-size:14px;font-weight:500}
+.research-review-details .research-review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:12px 0}
+.research-more-sources{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:14px}
+.research-agency-context{margin-bottom:20px;padding:16px;background:var(--surface);border-radius:10px}
+@media(max-width:700px){
+ .directory-environment-field button{padding:8px 10px;font-size:12px;gap:4px}
+ .research-page .research-state-control,.research-page .research-county-choice{grid-template-columns:minmax(0,1fr);gap:8px}
+ .research-page .research-county-choice p{margin:0}
+ .research-page .research-tabs [role=tab]{min-height:56px;padding:8px;gap:6px}
+ .research-page .research-tabs [role=tab] strong{font-size:13px}
+ .research-page .research-filter-bar{padding:12px;gap:10px 8px}
+ .research-page .county-research-detail>summary{flex-wrap:wrap;gap:2px;padding-block:10px}
+ .research-page .county-research-detail>summary>span:last-child{width:100%;justify-content:space-between;font-size:13px}
+ .research-page .county-finding-overview{grid-template-columns:minmax(0,1fr);margin-top:4px}
+ .research-expanded-records{padding:16px}
+ .research-expanded-records .research-finding-explanation{font-size:14px}
+ .research-source-list article>header{display:block}
+ .research-source-list article>header>span{display:block;margin-top:2px}
+ .research-source-facts{grid-template-columns:repeat(2,minmax(0,1fr));font-size:13px}
+ .research-source-facts>div:last-child{grid-column:1/-1}
+ .research-review-details .research-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

@@ -3,7 +3,7 @@ import { EditorialArt } from "@/components/editorial-art";
 import type { Route } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ArrowRight } from "lucide-react";
 import { notFound, redirect } from "next/navigation";
 
 import { SpeciesImage } from "@/components/species-image";
@@ -78,7 +78,7 @@ export default async function SpeciesProfilePage({
           </div>
         ) : null}
       </header>
-      <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Recorded occurrences</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a><a href="#profile-correction">Suggest a correction</a></nav>
+      <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Map & records</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a></nav>
 
 
 
@@ -96,7 +96,7 @@ export default async function SpeciesProfilePage({
               {identification.map((item) => <li key={item} className="py-4 text-base leading-7">{item}</li>)}
             </ul>
           </section>
-        ) : <section id="identification" className="reading-section scroll-mt-24"><h2>How to recognize it</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">We are still preparing a reviewed identification guide for this species. The references above can help you compare distinguishing features and similar species. A photograph alone may not be enough for a confident identification.</p></section>}
+        ) : <section id="identification" className="reading-section scroll-mt-24"><h2>How to recognize it</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">We are still preparing a reviewed identification guide for this species. The profile references can help you compare distinguishing features and similar species. A photograph alone may not be enough for a confident identification.</p></section>}
 
         {species.origin || species.whyItMatters ? (
           <section id="background" className="reading-section scroll-mt-24">
@@ -131,7 +131,7 @@ export default async function SpeciesProfilePage({
         ) : null}
 
         {!action && <section id="actions" className="reading-section scroll-mt-24"><h2>What you can do</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">If you think you have found this species, record where and when you saw it and take clear photographs from a safe distance. Confirm its identity and local guidance before handling, moving or attempting to control it.</p></section>}
-      <section className="profile-sources reading-section profile-sources-illustrated" aria-labelledby="profile-sources-heading"><div>
+      <div className="profile-resource-footer"><section className="profile-sources reading-section" aria-labelledby="profile-sources-heading"><div>
         <h2 id="profile-sources-heading">Profile references</h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
           {references.map((source) => (
@@ -147,9 +147,12 @@ export default async function SpeciesProfilePage({
             Registry reference: {registry.authorityUrl ? <a href={registry.authorityUrl} target="_blank" rel="noreferrer" className="text-link">{registry.authority}</a> : registry.authority}
           </p>
         ) : null}
-      </div><EditorialArt subject="bibliography" className="profile-reference-art"/></section>
-        <div className="profile-report-callout"><EditorialArt subject="notebook" className="profile-report-art"/><div><h3>Found this species?</h3><p>Document what you saw and help improve the picture of your area.</p></div><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="text-link inline-flex min-h-11 items-center gap-2">Submit a sighting <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
-        <div id="profile-correction" className="profile-correction-illustrated scroll-mt-24"><EditorialArt subject="revision"/><div><ProfileCorrection speciesId={species.id} name={species.commonName}/></div></div>
+      </div></section>
+        <section className="profile-participate" aria-labelledby="profile-help-title">
+          <div className="profile-participate-intro"><div><h2 id="profile-help-title">Found this species?</h2><p>Share a photo and location for our team to review, or explore the records near you.</p></div><EditorialArt subject="notebook" className="profile-report-art"/></div>
+          <div className="profile-action-buttons"><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="primary-button">Report a sighting <ArrowRight size={16} aria-hidden="true"/></Link><Link href={researchHref} className="secondary-button">County research <ArrowRight size={16} aria-hidden="true"/></Link></div>
+          <div id="profile-correction"><ProfileCorrection speciesId={species.id} name={species.commonName}/></div>
+        </section></div>
         {registry ? (
           <details className="reading-section border-t border-[var(--border)]">
             <summary className="min-h-11 cursor-pointer py-3 text-base font-medium">Registry details</summary>
@@ -162,9 +165,7 @@ export default async function SpeciesProfilePage({
             </dl>
           </details>
         ) : null}
-        <Link href={researchHref} className="text-link mt-5 inline-flex min-h-11 items-center gap-2">
-          Continue in county research <ArrowUpRight size={15} aria-hidden="true" />
-        </Link>
+
       </div>
     </main>
   );

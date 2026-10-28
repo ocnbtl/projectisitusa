@@ -127,3 +127,46 @@
 .species-profile .profile-correction-illustrated:has([aria-expanded="true"]){grid-template-columns:minmax(0,1fr)}
 .species-profile .profile-report-callout{border:0}
 .species-profile .profile-reading>details summary{display:list-item;padding-block:10px}
+
+/* Compact profile reading and a single, purposeful closing section. */
+.species-profile .profile-image>img{height:clamp(220px,22vw,290px)}
+.species-profile .profile-evidence{margin:28px 0 32px}
+.species-profile .profile-record-heading{margin-bottom:18px}
+.species-profile .profile-source-records>li{padding:14px 0}
+.species-profile .profile-reading{gap:28px 40px;align-items:start}
+.species-profile .profile-reading p,.species-profile .profile-reading li{font-size:15px;line-height:1.7}
+.species-profile #identification li{padding-block:10px}
+.species-profile .profile-reading>#identification{grid-column:1;grid-row:1}
+.species-profile .profile-reading>#background{grid-column:1;grid-row:2}
+.species-profile .profile-reading>#actions{grid-column:2;grid-row:1/3;max-width:none}
+.species-profile .profile-reading:has(#identification):not(:has(#background))>#identification{grid-column:1}
+.species-profile .profile-authority-guidance{margin-top:18px;padding:16px}
+.species-profile .profile-resource-footer{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:32px;padding-top:24px;border-top:1px solid var(--border)}
+.species-profile .profile-resource-footer .profile-sources{padding:0;border:0;margin:0}
+.species-profile .profile-resource-footer h2{font-family:var(--font-display);font-size:22px;font-weight:500;line-height:1.3;margin:0 0 12px}
+.species-profile .profile-sources ul{display:flex;flex-direction:column;gap:0;margin:0}
+.species-profile .profile-participate{min-width:0;background:var(--surface);border-radius:14px;padding:20px}
+.species-profile .profile-participate-intro{display:grid;grid-template-columns:minmax(0,1fr) 100px;align-items:center;gap:16px}
+.species-profile .profile-participate-intro p{margin:0;font-size:14px}
+.species-profile .profile-participate .profile-report-art{height:104px;width:100px;margin:0}
+.species-profile .profile-action-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.species-profile .profile-action-buttons a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 14px;font-size:14px;border-radius:8px}
+.species-profile .profile-action-buttons a svg{flex-shrink:0}
+.species-profile .profile-correction{margin-top:14px;padding:0;border:0}
+.species-profile .profile-correction>button{min-height:44px;font-size:14px}
+.species-profile .profile-reading>details{margin-top:0;padding:6px 16px}
+.species-profile .profile-section-nav a:last-child{grid-column:auto}
+@media(max-width:700px){
+ .species-profile .profile-layout{gap:18px}
+ .species-profile .profile-image>img{height:auto;max-height:230px}
+ .species-profile .profile-heading .profile-description,.species-profile .profile-reading p,.species-profile .profile-reading li{font-size:14px;line-height:1.7}
+ .species-profile .profile-reading{gap:24px}
+ .species-profile .profile-reading>#identification,.species-profile .profile-reading>#background,.species-profile .profile-reading>#actions{grid-column:1;grid-row:auto}
+ .species-profile .profile-resource-footer{grid-template-columns:minmax(0,1fr);gap:20px;padding-top:20px}
+ .species-profile .profile-resource-footer h2{font-size:20px}
+ .species-profile .profile-participate{padding:16px}
+ .species-profile .profile-participate-intro{grid-template-columns:minmax(0,1fr) 64px;gap:8px}
+ .species-profile .profile-participate .profile-report-art{width:64px;height:90px}
+ .species-profile .profile-action-buttons a{flex:1 1 160px}
+ .species-profile .profile-evidence{margin:24px 0 28px}
+}

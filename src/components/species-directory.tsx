@@ -7,12 +7,13 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Grid2X2, Info, List, Rows3, Search, X } from "lucide-react";
 import { CustomSelect } from "@/components/atlas/custom-select";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
-import type { Species, SpeciesCategory } from "@/lib/data/types";
+import type { EnvironmentTag, Species, SpeciesCategory } from "@/lib/data/types";
 import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editorial";
 import { formatCategoryLabel } from "@/lib/utils";
 
-import { NatureIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
-import { DIRECTORY_CATEGORIES, DIRECTORY_PAGE_SIZES, readDirectoryState, type DirectoryView } from "@/lib/ui/species-directory-state";
+import { ENVIRONMENT_OPTIONS } from "@/lib/constants";
+import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
+import { DIRECTORY_CATEGORIES, DIRECTORY_PAGE_SIZES, matchesEnvironment, readDirectoryState, type DirectoryView } from "@/lib/ui/species-directory-state";
 // Reuse the validated catalog during a visit rather than remounting a loading skeleton.
 let cachedCatalog: Species[] | null = null;
 const categories = DIRECTORY_CATEGORIES;
@@ -66,6 +67,7 @@ export function SpeciesDirectory() {
   const [loadAttempt, setLoadAttempt] = useState(0);
   const [query, setQuery] = useState("");
   const [selectedCategories, setCategories] = useState<SpeciesCategory[]>([]);
+  const [environment, setEnvironment] = useState<EnvironmentTag | null>(null);
   const [pageSize, setPageSize] = useState<number>(24);
   const [view, setView] = useState<DirectoryView>("rows");
   const [page, setPage] = useState(1);
@@ -77,7 +79,7 @@ export function SpeciesDirectory() {
   useEffect(() => {
     function readLocation() {
       const state = readDirectoryState(window.location.search);
-      setQuery(state.query); setCategories(state.categories); setPage(state.page);
+      setEnvironment(state.environment); setQuery(state.query); setCategories(state.categories); setPage(state.page);
       setPageSize(state.pageSize); setView(state.view);
       setLocationReady(true);
     }
@@ -102,8 +104,9 @@ export function SpeciesDirectory() {
     const search = deferredQuery.trim().toLocaleLowerCase("en-US");
     return (catalog ?? []).filter(species =>
       (!selectedCategories.length || selectedCategories.includes(species.category))
+      && matchesEnvironment(species, environment)
       && (!search || `${species.commonName} ${species.scientificName} ${species.displayGroup}`.toLocaleLowerCase("en-US").includes(search)));
-  }, [catalog, selectedCategories, deferredQuery]);
+  }, [catalog, selectedCategories, deferredQuery, environment]);
   useEffect(() => {
     if (!deferredQuery.trim() || !catalog) return;
     const timer = window.setTimeout(() => track("species_search_completed",{surface:"directory", result_bucket:resultBucket(matches.length), outcome:matches.length ? "found" : "empty"}), 900);
@@ -112,21 +115,22 @@ export function SpeciesDirectory() {
   const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
   const currentPage = Math.min(page, totalPages);
   const start = (currentPage - 1) * pageSize;
-  const hasFilters = Boolean(query || selectedCategories.length);
+  const hasFilters = Boolean(query || selectedCategories.length || environment);
 
   useEffect(() => {
     if (!locationReady || !catalog) return;
     const url = new URL(window.location.href);
     if (deferredQuery.trim()) url.searchParams.set("q", deferredQuery.trim()); else url.searchParams.delete("q");
     if (selectedCategories.length) url.searchParams.set("category", selectedCategories.join(",")); else url.searchParams.delete("category");
+    if (environment) url.searchParams.set("environment", environment); else url.searchParams.delete("environment");
     if (pageSize !== 24) url.searchParams.set("size", String(pageSize)); else url.searchParams.delete("size");
     if (view !== "rows") url.searchParams.set("view", view); else url.searchParams.delete("view");
     if (currentPage > 1) url.searchParams.set("page", String(currentPage)); else url.searchParams.delete("page");
     const next = url.pathname + url.search + url.hash;
     if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, "", next);
-  }, [catalog, selectedCategories, currentPage, pageSize, view, deferredQuery, locationReady]);
+  }, [catalog, selectedCategories, currentPage, pageSize, view, deferredQuery, locationReady, environment]);
 
-  function resetFilters() { setQuery(""); setCategories([]); setPage(1); searchInput.current?.focus(); }
+  function resetFilters() { setQuery(""); setCategories([]); setEnvironment(null); setPage(1); searchInput.current?.focus(); }
   function changePage(nextPage: number) {
     setPage(nextPage);
     resultsHeading.current?.focus({ preventScroll: true });
@@ -148,9 +152,12 @@ export function SpeciesDirectory() {
         <div className="directory-category-field"><span>Filter by category</span><div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div></div>
       </div>
 
+      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environment</span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-pressed={environment === option.value} onClick={() => { setEnvironment(option.value); setPage(1); }}>{option.value && <EnvironmentIcon kind={option.value} width={20} height={20}/>}<span>{option.label}</span></button>)}</div></div>
+
       {hasFilters && <div className="directory-active-filters" aria-label="Active species filters">
         {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label={`Remove search ${query}`}><Search size={14} aria-hidden="true" /><span>{query}</span><X size={14} aria-hidden="true" /></button>}
         {selectedCategories.map(category => <button type="button" key={category} className={"category-" + category} onClick={() => { setCategories(current => current.filter(value => value !== category)); setPage(1); }} aria-label={`Remove ${formatCategoryLabel(category)} filter`}><span>{formatCategoryLabel(category)}</span><X size={14} aria-hidden="true" /></button>)}
+        {environment && <button type="button" onClick={() => { setEnvironment(null); setPage(1); }} aria-label="Remove environment filter">{ENVIRONMENT_OPTIONS.find(option => option.value === environment)?.label}<X size={14} aria-hidden="true"/></button>}
         <button type="button" className="directory-clear-all" onClick={resetFilters}>Clear all</button>
       </div>}
 
@@ -173,7 +180,7 @@ export function SpeciesDirectory() {
             {matches.length ? (
               <div className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} />)}</div>
             ) : (
-              <div className="directory-empty"><Search size={28} aria-hidden="true" /><h3>No match for that search.</h3><p>Try a shorter name or search all categories.</p><button type="button" onClick={resetFilters} className="primary-button">Start a new search</button></div>
+              <div className="directory-empty"><Search size={28} aria-hidden="true" /><h3>No match for that search.</h3><p>Try a shorter name, or clear a category or environment filter.</p><button type="button" onClick={resetFilters} className="primary-button">Start a new search</button></div>
             )}
             {totalPages > 1 && (
               <nav aria-label="Species pages" className="directory-pagination">

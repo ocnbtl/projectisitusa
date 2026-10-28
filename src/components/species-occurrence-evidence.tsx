@@ -1,6 +1,7 @@
 "use client";
 import { track } from "@/lib/ui/telemetry";
 
+import { EvidenceNote } from "@/components/evidence-note";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
@@ -64,7 +65,7 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
   const temporal = pair ? describeTemporalDetermination(pair) : null;
   const researchHref = buildResearchHref({ stateCode: county?.stateCode, countyFips, speciesQuery: speciesId });
   return <section id="records" className="profile-evidence reading-section" aria-labelledby="species-records-title">
-    <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county or county equivalent" : "counties and county equivalents"} with reviewed records through {formatOccurrenceDate(data.asOf)}.</p> : null}</div><MapPin size={24} aria-hidden="true" /></div>
+    <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county" : "counties"} with reviewed records through {formatOccurrenceDate(data.asOf)}.</p> : null}</div><MapPin size={24} aria-hidden="true" /></div>
     <div className="profile-record-layout">
     <div className="profile-map-panel">{data ? <SpeciesCountyMap counties={recordedCounties} selected={countyFips} labels={data.countyLabels} onSelect={setChoice} /> : null}</div>
     <div className="profile-record-panel">
@@ -78,7 +79,7 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
           const url = safeSourceLink(evidence.url);
           return <li key={evidence.evidenceId}><div className="profile-source-title">{url ? <a href={url} target="_blank" rel="noreferrer" className="text-link" onClick={() => track("source_opened",{surface:"species",source_id:evidence.sourceId,species_id:speciesId})}>{evidence.sourceLabel || evidence.sourceId}<ArrowUpRight size={15} aria-hidden="true" /></a> : <strong>{evidence.sourceLabel || evidence.sourceId}</strong>}<span>{evidence.assertion === "recorded-present" ? "Occurrence record" : evidence.assertion === "not-detected" ? "Survey non-detection" : "Agency finding"}</span></div>
             <dl className="profile-source-dates"><div><dt><CalendarDays size={14} aria-hidden="true" /> Observed</dt><dd>{formatOccurrenceDate(evidence.observedAt)}</dd></div><div><dt>Reviewed</dt><dd>{formatOccurrenceDate(evidence.reviewedAt)}</dd></div><div><dt>Evidence scope</dt><dd>{evidence.scope.replaceAll("-", " ")}</dd></div></dl>
-            {evidence.caveat ? <details className="source-context"><summary>Source context</summary><p>{evidence.caveat}</p></details> : null}</li>;
+            {evidence.caveat ? <details className="source-context"><summary>About this source</summary><EvidenceNote note={evidence.caveat}/></details> : null}</li>;
         })}</ul>
         {pair.evidence.length > visibleSources ? <button type="button" className="text-link min-h-11" onClick={() => setVisibleSources(count => count + 3)}>Show more sources ({pair.evidence.length - visibleSources})</button> : null}
         {!pair.evidence.length ? <p>No source citations are attached to this county entry.</p> : null}
