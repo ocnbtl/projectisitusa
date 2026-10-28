@@ -28,7 +28,7 @@ function isDirectorySpecies(value: unknown): value is Species {
     && categories.includes(entry.category as SpeciesCategory);
 }
 
-function DirectoryCard({ species }: { species: Species }) {
+function DirectoryCard({ species, view }: { species: Species; view: DirectoryView }) {
   const [imageFailed, setImageFailed] = useState(false);
   const { summary } = getSpeciesEditorial(species);
   return (
@@ -36,8 +36,8 @@ function DirectoryCard({ species }: { species: Species }) {
       <div className="directory-identity"><Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-link" onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}>
         <div className="directory-thumbnail">
           {species.image && !imageFailed ? (
-            <Image src={species.image.thumbnail ?? species.image.src} alt={species.image.alt}
-              width={112} height={112} sizes="112px" unoptimized loading="lazy"
+            <Image src={view === "grid" ? species.image.src : species.image.thumbnail ?? species.image.src} alt={species.image.alt}
+              width={view === "grid" ? 450 : 112} height={view === "grid" ? 450 : 112} sizes={view === "grid" ? "450px" : "112px"} unoptimized loading="lazy"
               onError={() => setImageFailed(true)} />
           ) : (
             <span className="directory-image-placeholder"><NatureIcon kind={CATEGORY_NATURE[species.category]} width={30} height={30} /><small>{species.image ? "Photo unavailable" : "No photo yet"}</small></span>
@@ -54,7 +54,7 @@ function DirectoryCard({ species }: { species: Species }) {
         <div className="directory-photo-credit"><PhotoCredit name={species.commonName} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license}/></div>
       )}
       </div>
-      {summary && <p className="directory-summary">{summary}</p>}
+      {view === "rows" && summary && <p className="directory-summary">{summary}</p>}
     </article>
   );
 }
@@ -176,7 +176,7 @@ export function SpeciesDirectory() {
             </div>
             </div>
             {matches.length ? (
-              <div className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} />)}</div>
+              <div className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} view={view} />)}</div>
             ) : (
               <div className="directory-empty"><Search size={28} aria-hidden="true" /><h3>No match for that search.</h3><p>Try a shorter name, or clear a category or environment filter.</p><button type="button" onClick={resetFilters} className="primary-button">Start a new search</button></div>
             )}
