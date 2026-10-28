@@ -8,10 +8,8 @@ import { notFound, redirect } from "next/navigation";
 import { SpeciesImage } from "@/components/species-image";
 import { SpeciesOccurrenceEvidence } from "@/components/species-occurrence-evidence";
 import { ProfileCorrection } from "@/components/participation/profile-correction";
-import speciesResearchEntrypoints from "@/data/research/species-research-entrypoints.json";
 import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 import { speciesBySlug, speciesSlugAliases } from "@/lib/data/species-store";
-import { buildResearchHref } from "@/lib/research/research-deep-link";
 import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editorial";
 import { formatCategoryLabel } from "@/lib/utils";
 
@@ -40,14 +38,6 @@ export default async function SpeciesProfilePage({
   const editorial = getSpeciesEditorial(species);
   const references = [...editorial.sources, ...species.source].filter((source, i, all) => all.findIndex(item => item.url === source.url) === i);
   const isCurated = species.profileType === "curated";
-  const researchEntrypoint = speciesResearchEntrypoints.entries.find(
-    (entry) => entry.speciesId === species.id,
-  );
-  const researchHref = buildResearchHref({
-    stateCode: researchEntrypoint?.stateCode,
-    countyFips: researchEntrypoint?.countyFips,
-    speciesQuery: species.id,
-  });
   const identification = species.whatToLookFor ?? [];
   const action = isCurated ? species.action : undefined;
   const registry = species.registry;
@@ -148,8 +138,8 @@ export default async function SpeciesProfilePage({
         ) : null}
       </div></section>
         <section className="profile-participate" aria-labelledby="profile-help-title">
-          <div className="profile-participate-intro"><div><h2 id="profile-help-title">Found this species?</h2><p>Share a photo and location for our team to review, or explore the records near you.</p></div></div>
-          <div className="profile-action-buttons"><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="primary-button">Report a sighting <ArrowRight size={16} aria-hidden="true"/></Link><Link href={researchHref} className="secondary-button">County research <ArrowRight size={16} aria-hidden="true"/></Link></div>
+          <div className="profile-participate-intro"><div><h2 id="profile-help-title">Found this species?</h2><p>Share a photo and location for our team to review.</p></div></div>
+          <div className="profile-action-buttons"><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="primary-button">Report a sighting <ArrowRight size={16} aria-hidden="true"/></Link></div>
           <div id="profile-correction"><ProfileCorrection speciesId={species.id} name={species.commonName}/></div>
         </section></div>
         {registry ? (
