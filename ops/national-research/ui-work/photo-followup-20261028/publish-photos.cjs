@@ -1,0 +1,35 @@
+// Only explicitly reviewed candidates are published. Research catalogs remain untouched.
+const fs=require('fs'),path=require('path'),crypto=require('crypto'),{createRequire}=require('module');const sharp=createRequire(require.resolve('next/package.json'))('sharp');sharp.concurrency(1);const dir=__dirname;
+const read=n=>JSON.parse(fs.readFileSync(path.join(dir,n))),write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n'),hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const ids=[650859104,214572955,503528977,21020563,149130227,177303727,2726996,265257435,657798188,404547941,564537995,430252472,613068215];
+const selected=read('candidates.json').filter(p=>ids.includes(p.photoId));
+selected.push(...read('extra-sources.json').filter(p=>!['oak-wilt','beech-leaf-disease','cichlasoma-urophthalma'].includes(p.id)),read('hieracium.json'),read('tapinoma.json'),...read('commons-selected.json').filter(p=>['lamprosema-charesalis','liberibacter-asiaticus'].includes(p.id)),...read('commons-symptoms.json'));
+const fish=read('fish-alternates.json').find(p=>p.photoId===487391870);fish.key='fish-487391870';fish.taxonomyEvidence='https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=453';selected.push(fish);
+const beech=read('extra-sources.json').find(p=>p.id==='beech-leaf-disease');selected.push({...beech,id:'litylenchus-crenatae-ssp-mccannii',taxonomyEvidence:'https://www.nps.gov/articles/000/bld-mistaken-identity.htm',description:'Beech leaf disease symptoms associated with Litylenchus crenatae mccannii; symptom photograph, not a nematode portrait.'});
+const specialAlt={
+ 'hypomesus-nipponensis':'Collected Japanese smelt (Hypomesus nipponensis) showing their silvery bodies.',
+ 'stigmaeopsis-celarius':'Bamboo leaf showing feeding damage and webbing attributed to Stigmaeopsis celarius in the source observation.',
+ 'liberibacter-asiaticus':'Citrus greening symptoms on pomelo caused by Candidatus Liberibacter asiaticus.',
+ 'potato-mop-top-virus':'Potato tuber showing internal symptoms attributed to potato mop-top virus by USDA.',
+ 'pseudogymnoascus-destructans':'Little brown bat with white-nose syndrome, the disease caused by Pseudogymnoascus destructans.',
+ 'litylenchus-crenatae-ssp-mccannii':'Beech leaves showing characteristic symptoms of beech leaf disease associated with Litylenchus crenatae mccannii.',
+ 'fusarium-kuroshium':'Published culture and microscope photographs of Fusarium kuroshium (Jiang, Masuya and Kajimura, 2021, Figure 2).',
+ 'phytophthora-quercina':'Microscope photograph of a Phytophthora quercina sporangium, ex-type CPHST BL 110.',
+ 'phytophthora-tentaculata':'Microscope photograph of a Phytophthora tentaculata sporangium, ex-type CPHST BL 29.',
+ 'phytophthora-pseudocryptogea':'Laboratory cultures of Phytophthora pseudocryptogea from the IDphy identification collection.',
+ 'spotted-lanternfly':'Adult spotted lanternfly (Lycorma delicatula) on a wooden rail.',
+ 'tapinoma-litorale':'Magnified side view of Tapinoma litorale specimen CASENT0105858, with a 0.5 mm scale bar.'
+};
+const aliases={'lamprosema-charesalis':'https://faunaofindia.nic.in/PDFVolumes/records/077/01-04/0293-0342.pdf'};
+const norm=s=>/public[ -]domain/i.test(s)?'public-domain':/^CC BY-SA/i.test(s)?'cc-by-sa':/^CC BY/i.test(s)?'cc-by':s;
+async function run(){const additions=JSON.parse(fs.readFileSync('src/content/species-photo-additions.json')),credits=JSON.parse(fs.readFileSync('src/content/species-photo-credits.json')),catalog=JSON.parse(fs.readFileSync('src/data/generated/species.json')),provenance=[];
+for(const p of selected){if(p.error||!p.key)throw Error('Unusable candidate '+p.id);const s=catalog.find(s=>s.id===p.id);if(!s)throw Error('Unknown species');const raw=fs.readFileSync(path.join(dir,p.key+'.webp')),stem=p.id+'-review-20261028',src='/species-photos/'+stem+'.webp',thumbnail='/species-photos/'+stem+'-thumb.webp';const full=await sharp(raw).resize(450,450,{fit:'inside',withoutEnlargement:true}).webp({quality:76}).toBuffer(),thumb=await sharp(raw).resize(112,112,{fit:'inside',withoutEnlargement:true}).webp({quality:70}).toBuffer();fs.writeFileSync('public'+src,full);fs.writeFileSync('public'+thumbnail,thumb);const license=norm(p.license);let credit=p.credit.replace(/^NNPS /,'NPS ');if(p.license!==license)credit+=' — '+p.license;
+additions[p.id]={src,thumbnail,alt:specialAlt[p.id]||'Source photograph of '+s.commonName+' ('+s.scientificName+').',credit,sourceUrl:p.sourceUrl,license};
+provenance.push({...p,scientificName:s.scientificName,src,thumbnail,license,credit,taxonomyEvidence:p.taxonomyEvidence||aliases[p.id],candidateSha256:hash(raw),outputSha256:hash(full),thumbnailSha256:hash(thumb),reviewedAt:new Date().toISOString(),changes:'Resized and converted to WebP; thumbnail resized separately. No content edits or crops.',visualReview:'approved',reviewNote:specialAlt[p.id]||'Subject is visible and appropriate; source identifies the exact taxon or a documented synonym.'});}
+const legacy=read('legacy-comparisons.json').filter(p=>p.mae<10);legacy.push(...read('legacy-extra-comparisons.json').map(p=>({...p.source,mae:p.mae})));
+for(const p of legacy){credits[p.id]={sourceUrl:p.sourceUrl,credit:p.id==='feral-swine'?'CSIRO — CC BY 3.0':p.credit+' — '+p.license,license:p.licenseUrl||norm(p.license)};}
+write('src/content/species-photo-additions.json',additions);write('src/content/species-photo-credits.json',credits);write(path.join(dir,'photo-provenance.json'),provenance);
+write(path.join(dir,'legacy-resolutions.json'),[...legacy.map(p=>({...p,status:'source-recovered',verification:'Visual comparison of both images and normalized-pixel comparison; existing file is a resized/recompressed derivative, not a byte-identical original.'})),{id:'spotted-lanternfly',status:'replaced-incorrect-subject',reason:'Old file shows people during an outreach visit, not an adult lanternfly. Original file preserved; presentation now uses an identified adult.',replacement:provenance.find(p=>p.id==='spotted-lanternfly')}]);
+const taxa=read('taxonomy.json'),inat=read('alternate-names.json'),commons=read('commons-followup.json');write(path.join(dir,'photo-outcomes.json'),taxa.map(t=>({id:t.id,scientificName:t.name,outcome:provenance.some(p=>p.id===t.id)?'published':'unresolved',sourceUrl:provenance.find(p=>p.id===t.id)?.sourceUrl,taxonomyQuery:t.matchUrl,inaturalistStatus:inat.find(x=>x.id===t.id)?.status,commonsStatus:commons.find(x=>x.id===t.id)?.error?'rate-limited':commons.find(x=>x.id===t.id)?.candidates.length?'candidates-screened':'no-results',reason:provenance.some(p=>p.id===t.id)?'Verified source, reuse terms, taxon and visual suitability.':'No additional image passed the identity, permission and visual-suitability checks in this pass; retain the existing photo gap.'})));
+console.log({published:provenance.length,newGapsFilled:provenance.filter(p=>taxa.some(t=>t.id===p.id)).length,legacyResolved:legacy.length+1,addedBytes:provenance.reduce((n,p)=>n+fs.statSync('public'+p.src).size+fs.statSync('public'+p.thumbnail).size,0)});}
+run();

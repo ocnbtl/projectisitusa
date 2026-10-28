@@ -6,8 +6,10 @@ import type { Species } from "../src/lib/data/types";
 
 const read = (file: string) => JSON.parse(readFileSync(file, "utf8"));
 const folder = "ops/national-research/ui-work/species-detail-polish-20261028/";
-const provenance = read(folder + "photo-provenance.json");
+const followup = "ops/national-research/ui-work/photo-followup-20261028/";
+const provenance = [...read(folder + "photo-provenance.json"), ...read(followup + "photo-provenance.json")];
 const outcomes = read(folder + "photo-outcomes.json");
+const followupOutcomes = read(followup + "photo-outcomes.json");
 const additions = read("src/content/species-photo-additions.json");
 const catalog: Species[] = read("src/data/generated/species.json");
 const missing = catalog.filter(s => !s.image || PHOTO_REVIEW_HOLDS.has(s.id));
@@ -15,6 +17,18 @@ assert.equal(outcomes.length, missing.length);
 assert.deepEqual(new Set(outcomes.map((x: { id: string }) => x.id)), new Set(missing.map(s => s.id)));
 assert.equal(new Set(provenance.map((x: { id: string }) => x.id)).size, provenance.length);
 assert.equal(Object.keys(additions).length, provenance.length);
+assert.deepEqual(new Set(followupOutcomes.map((x: { id: string }) => x.id)), new Set(outcomes.filter((x: { outcome: string }) => x.outcome === "unresolved").map((x: { id: string }) => x.id)));
+for (const outcome of followupOutcomes) {
+  assert.equal(Boolean(additions[outcome.id]), outcome.outcome === "published");
+}
+const credits = read("src/content/species-photo-credits.json");
+const legacy = read(followup + "legacy-resolutions.json");
+assert.equal(legacy.length, 6);
+for (const resolution of legacy) {
+  const image = additions[resolution.id] ?? credits[resolution.id];
+  assert.match(image.sourceUrl, /^https:\/\//);
+  assert.ok(image.credit && image.license);
+}
 for (const p of provenance) {
   assert.equal(p.visualReview, "approved");
   assert.ok(["cc0", "cc-by", "cc-by-sa", "public-domain"].includes(p.license));
@@ -25,6 +39,7 @@ for (const p of provenance) {
     assert.ok(existsSync("public" + asset), asset);
   }
   assert.equal(createHash("sha256").update(readFileSync("public" + p.src)).digest("hex"), p.outputSha256);
+  if (p.thumbnailSha256) assert.equal(createHash("sha256").update(readFileSync("public" + p.thumbnail)).digest("hex"), p.thumbnailSha256);
   assert.equal(additions[p.id].sourceUrl, p.sourceUrl);
 }
 for (const species of catalog) {
