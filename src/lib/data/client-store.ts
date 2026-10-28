@@ -1,6 +1,6 @@
-import { matchesEnvironment } from "@/lib/data/environment-filters";
 "use client";
 
+import { matchesEnvironment } from "@/lib/data/environment-filters";
 import { useEffect, useState } from "react";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 
