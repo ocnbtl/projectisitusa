@@ -3,7 +3,7 @@ import { track } from "@/lib/ui/telemetry";
 
 import { EVIDENCE_LABELS } from "@/lib/ui/research-copy";
 import { EvidenceNote } from "@/components/evidence-note";
-import Link from "next/link";
+import { ContextPopover } from "./context-popover";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -13,7 +13,6 @@ import { useReviewedMapData } from "@/lib/data/reviewed-map-store";
 import { fetchResearchProjectionJson } from "@/lib/research/public-projection-fetch";
 import { formatOccurrenceDate, occurrenceDateBounds } from "@/lib/research/occurrence-date";
 import { describeTemporalDetermination } from "@/lib/research/temporal-determination-presentation";
-import { buildResearchHref } from "@/lib/research/research-deep-link";
 import type { ResearchPairRecord } from "@/lib/research/types";
 
 function safeSourceLink(value: string) {
@@ -64,9 +63,8 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
 
   const sortedEvidence = useMemo(() => [...(pair?.evidence ?? [])].sort((a, b) => (occurrenceDateBounds(b.observedAt)?.end ?? -Infinity) - (occurrenceDateBounds(a.observedAt)?.end ?? -Infinity) || a.evidenceId.localeCompare(b.evidenceId)), [pair]);
   const temporal = pair ? describeTemporalDetermination(pair) : null;
-  const researchHref = buildResearchHref({ stateCode: county?.stateCode, countyFips, speciesQuery: speciesId });
   return <section id="records" className="profile-evidence reading-section" aria-labelledby="species-records-title">
-    <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county" : "counties"} with reviewed records through {formatOccurrenceDate(data.asOf)}.</p> : null}</div><MapPin size={24} aria-hidden="true" /></div>
+    <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county" : "counties"} with reviewed records through {formatOccurrenceDate(data.asOf)}.</p> : null}</div><MapPin size={24} aria-hidden="true" /><ContextPopover label="Understanding these records"><p>Shaded counties have reviewed records of this species. An unshaded county means we have no reviewed record to show, not that the species is absent.</p><p>A record tells us where the species was found at that time. Check the observation dates to understand how recent the evidence is.</p></ContextPopover></div>
     <div className="profile-record-layout">
     <div className="profile-map-panel">{data ? <SpeciesCountyMap counties={recordedCounties} selected={countyFips} labels={data.countyLabels} onSelect={setChoice} /> : null}</div>
     <div className="profile-record-panel">
@@ -87,6 +85,5 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
       </> : <p>We have not published a finding for this species in {county.name} yet. That does not mean the species is absent.</p>}
     </> : <p>No reviewed county occurrence is recorded in this update. That leaves an open question, rather than a finding of absence.</p>}
     </div></div>
-    <div className="profile-evidence-footer"><p>An older record tells us the species was found there then, but not whether it is still there today.</p><Link href={researchHref} className="text-link">Explore county research <ArrowUpRight size={15} aria-hidden="true" /></Link></div>
   </section>;
 }

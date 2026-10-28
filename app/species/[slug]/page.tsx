@@ -1,5 +1,4 @@
 import "@/components/species-profile.css";
-import { EditorialArt } from "@/components/editorial-art";
 import type { Route } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -74,7 +73,7 @@ export default async function SpeciesProfilePage({
         </div>
         {species.image ? (
           <div className="profile-image">
-            <SpeciesImage src={species.image.src} alt={species.image.alt} credit={species.image.credit} label={species.commonName} />
+            <SpeciesImage src={species.image.src} alt={species.image.alt} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license} label={species.commonName} />
           </div>
         ) : null}
       </header>
@@ -149,13 +148,14 @@ export default async function SpeciesProfilePage({
         ) : null}
       </div></section>
         <section className="profile-participate" aria-labelledby="profile-help-title">
-          <div className="profile-participate-intro"><div><h2 id="profile-help-title">Found this species?</h2><p>Share a photo and location for our team to review, or explore the records near you.</p></div><EditorialArt subject="notebook" className="profile-report-art"/></div>
+          <div className="profile-participate-intro"><div><h2 id="profile-help-title">Found this species?</h2><p>Share a photo and location for our team to review, or explore the records near you.</p></div></div>
           <div className="profile-action-buttons"><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="primary-button">Report a sighting <ArrowRight size={16} aria-hidden="true"/></Link><Link href={researchHref} className="secondary-button">County research <ArrowRight size={16} aria-hidden="true"/></Link></div>
           <div id="profile-correction"><ProfileCorrection speciesId={species.id} name={species.commonName}/></div>
         </section></div>
         {registry ? (
-          <details className="reading-section border-t border-[var(--border)]">
-            <summary className="min-h-11 cursor-pointer py-3 text-base font-medium">Registry details</summary>
+          <details className="profile-registry">
+            <summary className="min-h-11 cursor-pointer py-3 text-base font-medium">Catalog &amp; classification</summary>
+            <p className="profile-registry-note">The US-RIIS register describes this species in the lower 48 states. These classifications provide background; the map above shows the county records we have reviewed.</p>
             <dl className="mt-4 grid gap-5 text-sm sm:grid-cols-2">
               <div><dt className="text-[var(--muted)]">US-RIIS status, lower-48 snapshot</dt><dd className="mt-1">{registry.statusLabel}</dd></div>
               <div><dt className="text-[var(--muted)]">Establishment means</dt><dd className="mt-1">{registry.establishmentMeans}</dd></div>

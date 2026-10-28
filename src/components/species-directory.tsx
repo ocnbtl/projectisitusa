@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Grid2X2, Info, List, Rows3, Search, X } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
 import { CustomSelect } from "@/components/atlas/custom-select";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 import type { EnvironmentTag, Species, SpeciesCategory } from "@/lib/data/types";
@@ -31,7 +32,7 @@ function DirectoryCard({ species }: { species: Species }) {
   const [imageFailed, setImageFailed] = useState(false);
   const { summary } = getSpeciesEditorial(species);
   return (
-    <article className="directory-card">
+    <article className={`directory-card ${!species.image || imageFailed ? "directory-without-photo" : ""}`}>
       <div className="directory-identity"><Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-link" onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}>
         <div className="directory-thumbnail">
           {species.image && !imageFailed ? (
@@ -50,10 +51,7 @@ function DirectoryCard({ species }: { species: Species }) {
         <ArrowUpRight className="directory-open-icon" size={18} aria-hidden="true" />
       </Link>
       {species.image && (
-        <details className="image-credit">
-          <summary aria-label={`Photo credit for ${species.commonName}`}><Info size={12} aria-hidden="true" />Photo credit</summary>
-          <p>{species.image.credit}</p>
-        </details>
+        <div className="directory-photo-credit"><PhotoCredit name={species.commonName} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license}/></div>
       )}
       </div>
       {summary && <p className="directory-summary">{summary}</p>}
@@ -139,7 +137,7 @@ export function SpeciesDirectory() {
 
   return (
     <section className="species-directory" aria-label="Search the species catalog">
-      <div className="directory-controls">
+      <div className="directory-filter-panel"><div className="directory-controls">
         <div className="directory-search-label">
           <label htmlFor="directory-search">Search species</label>
           <div className="directory-search-input"><Search size={19} aria-hidden="true" />
@@ -149,10 +147,10 @@ export function SpeciesDirectory() {
             {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label="Clear species search"><X size={18} aria-hidden="true" /></button>}
           </div>
         </div>
-        <div className="directory-category-field"><span>Filter by category</span><div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div></div>
+        <div className="directory-category-field"><span>Category</span><div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div></div>
       </div>
 
-      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environment</span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-pressed={environment === option.value} onClick={() => { setEnvironment(option.value); setPage(1); }}>{option.value && <EnvironmentIcon kind={option.value} width={20} height={20}/>}<span>{option.label}</span></button>)}</div></div>
+      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environment</span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-pressed={environment === option.value} onClick={() => { setEnvironment(option.value); setPage(1); }}>{option.value && <EnvironmentIcon kind={option.value} width={20} height={20}/>}<span>{option.label}</span></button>)}</div></div></div>
 
       {hasFilters && <div className="directory-active-filters" aria-label="Active species filters">
         {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label={`Remove search ${query}`}><Search size={14} aria-hidden="true" /><span>{query}</span><X size={14} aria-hidden="true" /></button>}

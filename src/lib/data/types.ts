@@ -105,6 +105,8 @@ export interface Species {
     thumbnail?: string;
     alt: string;
     credit: string;
+    sourceUrl?: string;
+    license?: string;
   };
   origin?: string;
   whatToLookFor?: string[];
@@ -151,6 +153,8 @@ export interface ExplorerSpecies {
     thumbnail?: string;
     alt: string;
     credit: string;
+    sourceUrl?: string;
+    license?: string;
   };
   registry?: Pick<
     SpeciesRegistry,

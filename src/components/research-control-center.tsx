@@ -351,7 +351,7 @@ function SearchField({
   disabled?: boolean;
 }) {
   return (
-    <label className="block min-w-0">
+    <label className="research-search-field block min-w-0">
       <span className="mb-1.5 block text-xs font-medium text-[var(--muted)]">
         {label}
       </span>
@@ -1011,7 +1011,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
         <>
           <div className="research-filter-bar" role="group" aria-label="Filter county species">
             <SearchField
-              label="Find a species"
+              label="Search species"
               value={query}
               placeholder="Common or scientific name"
               onChange={setQuery}
@@ -1404,7 +1404,7 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
         <SelectField stateFlags label="Choose a state" value={selectedStateCode}
           options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}
           onChange={onStateChange} />
-        {summary && <div className="research-update-note"><p>Research through {formatDate(summary.asOf)}</p>
+        {summary && <div className="research-update-note"><p>Research through <time dateTime={summary.asOf}>{formatDate(summary.asOf)}</time></p>
           <details className="research-publication-details"><summary>About this update</summary>
             <p>Observation dates appear with each source. An update can include older records.</p>
             <p>Catalog snapshot: {formatDate(summary.sourceSnapshotDate)}.</p>

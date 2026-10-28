@@ -21,6 +21,6 @@ export default function SpeciesCountyMap({ counties, selected, labels, onSelect 
         <title>{labels[county.id]?.name ?? county.id}, {labels[county.id]?.stateCode}: {recorded.has(county.id)?"reviewed occurrence":"no reviewed occurrence in this snapshot"}</title>
       </path>)}
     </svg>
-    <figcaption><span><i aria-hidden="true" /> Reviewed occurrence</span><span className="species-map-selected-key"><i aria-hidden="true" /> Selected county</span><span>Unshaded does not mean absent. Records may be historical.</span></figcaption>
+    <figcaption><span><i aria-hidden="true" /> Reviewed occurrence</span><span className="species-map-selected-key"><i aria-hidden="true" /> Selected county</span></figcaption>
   </figure>;
 }

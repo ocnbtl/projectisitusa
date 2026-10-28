@@ -238,3 +238,83 @@
  .research-page .research-filter-bar>div:last-child{position:absolute;top:36px;right:12px}
  .research-page .research-filter-bar button[aria-label="Clear county filters"]{height:44px}
 }
+
+/* A shared search surface, restrained attribution and denser catalog choices. */
+.species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) 180px;gap:24px}
+.species-page .directory-hero p{max-width:none;text-wrap:pretty}
+.species-page .catalog-note-top[open]{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;padding:12px 20px 18px}
+.species-page .catalog-note-top>summary,.species-page .catalog-note-top>a{grid-column:1/-1}
+.species-page .catalog-note-top p{max-width:none;margin:10px 0;font-size:14px}
+.species-page .directory-filter-panel{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;padding:20px;border:1px solid var(--border);border-radius:14px;background:var(--surface);margin-bottom:20px}
+.species-page .directory-controls{display:contents}
+.species-page .directory-search-label{grid-column:1/-1}
+.species-page .directory-search-label>label,.species-page .directory-category-field>span,.species-page .directory-environment-field>span{font-size:14px;font-weight:500;color:var(--foreground);margin:0 0 8px;display:block}
+.species-page .directory-search-input{max-width:none;min-height:48px;border-radius:8px;background:var(--background)}
+.species-page .directory-category-tags{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.species-page .directory-category-tags button{justify-content:flex-start;min-height:44px;padding:8px 12px}
+.species-page .directory-environment-field{margin:0}
+.species-page .directory-environment-field button{background:var(--background);font-size:13px}
+.species-page .directory-environment-field button[aria-pressed=true]{background:var(--foreground)}
+.species-page .directory-grid{align-items:start}
+.species-page .directory-identity{position:relative;min-width:0}
+.species-page .directory-card .directory-profile-link{padding-right:36px}
+.species-page .directory-open-icon{display:none}
+.species-page .directory-photo-credit{position:absolute;top:0;right:-6px;z-index:1}
+.species-page .directory-photo-credit .context-popover-trigger>button{min-width:36px;min-height:44px;padding:6px}
+.species-page .directory-view-compact .directory-card{padding:12px;min-height:0}
+.species-page .directory-view-compact .directory-profile-link{grid-template-columns:56px minmax(0,1fr);gap:10px;align-items:center;min-height:64px}
+.species-page .directory-view-compact .directory-names{display:block}
+.species-page .directory-view-compact .directory-names h3{font-size:17px;line-height:1.3}
+.species-page .directory-view-compact .directory-names>p{font-size:12px;line-height:1.4;margin-top:3px}
+.species-page .directory-view-compact .directory-names>span{display:none}
+.species-page .directory-view-compact .directory-summary{display:none}
+.species-page .directory-view-grid .directory-card{padding:16px;gap:12px}
+.species-page .directory-view-grid .directory-profile-link{padding:0}
+.species-page .directory-view-grid .directory-thumbnail{height:160px;margin-bottom:12px}
+.species-page .directory-view-grid .directory-photo-credit{top:116px;right:0;background:var(--surface);border-radius:8px}
+.species-page .directory-view-grid .directory-without-photo .directory-profile-link{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start}
+.species-page .directory-view-grid .directory-without-photo .directory-thumbnail{width:44px;height:44px;margin:0;background:var(--surface-strong)}
+.species-page .directory-view-grid .directory-without-photo .directory-image-placeholder small{display:none}
+.species-page .directory-view-grid .directory-summary{font-size:14px;line-height:1.65;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.species-page .directory-view-grid .directory-names h3{font-size:19px}
+.research-page .research-state-control{align-items:end}
+.research-page .research-update-note{justify-self:start;gap:8px 16px;min-height:48px;padding:0 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+.research-page .research-update-note time{font-weight:600;color:var(--foreground)}
+.research-page .research-publication-details>summary{gap:6px;font-size:13px}
+.research-page .research-update-note:has(details[open]){padding:10px 14px;align-self:start}
+.research-page .research-search-field>span:first-child{font-size:14px;color:var(--foreground);margin-bottom:8px}
+.research-page .research-search-field input{height:48px;border-radius:8px;padding-left:40px;font-size:16px;background:var(--background)}
+.research-page .county-finding-overview{gap:10px;margin-top:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.research-page .county-finding-overview>button{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--background);min-height:86px}
+.research-page .county-finding-overview>button[aria-pressed=true]{border-color:var(--accent-strong);background:var(--surface-strong)}
+.research-page .county-progress{max-width:none;margin-block:18px}
+.research-page .county-progress p{max-width:none}
+.research-page .research-status-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;border:0}
+.research-page .research-status-strip>div{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.research-page .research-source-list{display:grid;gap:12px}
+.research-page .research-source-list>li{padding:16px;border:0;background:var(--surface);border-radius:12px}
+.research-page .research-expanded-records .research-source-heading{margin-bottom:12px}
+.research-page .research-review-details{border:0;margin-top:12px}
+.research-page .research-evidence-mobile>div{border:1px solid var(--border)}
+@media(max-width:1100px){
+ .species-page .directory-filter-panel{grid-template-columns:minmax(0,1fr)}
+ .species-page .directory-category-tags{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .research-page .county-finding-overview,.research-page .research-status-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+ .species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) 72px;gap:12px}
+ .species-page .catalog-note-top[open]{display:block;padding:10px 14px 16px}
+ .species-page .directory-filter-panel{padding:14px;gap:16px}
+ .species-page .directory-category-tags{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .species-page .directory-environment-field button{font-size:12px;padding:8px;gap:4px}
+ .species-page .directory-view-compact .directory-names h3{font-size:16px}
+ .species-page .directory-view-compact .directory-photo-credit .context-popover-trigger>button{min-width:44px}
+ .species-page .directory-card .directory-profile-link{padding-right:36px}
+ .research-page .research-update-note{justify-self:stretch;padding:0 12px;gap:0 8px}
+ .research-page .research-update-note>p{font-size:13px}
+ .research-page .county-finding-overview>button{grid-template-columns:minmax(0,1fr);gap:4px;padding:12px}
+ .research-page .county-finding-overview>button>strong{grid-column:1;grid-row:1;font-size:22px}
+ .research-page .county-finding-overview>button>span{font-size:13px}
+ .research-page .county-finding-overview>button>small{font-size:12px}
+ .research-page .research-source-list>li{padding:12px}
+}
