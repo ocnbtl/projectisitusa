@@ -2,15 +2,19 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Bell, BookOpen, X } from "lucide-react";
-import { SITE_UPDATES } from "@/content/site-updates";
+import { SITE_RELEASE_ID, SITE_UPDATES } from "@/content/site-updates";
 
 const dateLabel = (date: string) => new Date(date.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 
 export function UpdateNotice({ datasetDate, datasetLabel }: { datasetDate: string; datasetLabel: string }) {
   const [open, setOpen] = useState(false);
+  const [unread, setUnread] = useState(false);
   const [availableHeight, setAvailableHeight] = useState<number>();
   const root = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    try { setUnread(localStorage.getItem("isitusa.seen-site-release") !== SITE_RELEASE_ID); } catch { /* Optional preference storage. */ }
+  }, []);
   useEffect(() => {
     function outside(event: PointerEvent) { if (!root.current?.contains(event.target as Node)) setOpen(false); }
     document.addEventListener("pointerdown", outside);
@@ -29,9 +33,16 @@ export function UpdateNotice({ datasetDate, datasetLabel }: { datasetDate: strin
   }, [open]);
   const latest = [...SITE_UPDATES.map(update => update.date), datasetDate.slice(0, 10)].sort().at(-1)!;
   function close() { setOpen(false); trigger.current?.focus(); }
+  function toggle() {
+    setOpen(!open);
+    if (!open) {
+      setUnread(false);
+      try { localStorage.setItem("isitusa.seen-site-release", SITE_RELEASE_ID); } catch { /* The notice still works without storage. */ }
+    }
+  }
   return <div ref={root} className="atlas-updates" onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); close(); } }}>
-    <button ref={trigger} className="updates-trigger" type="button" aria-label="Recent updates" aria-expanded={open} aria-controls="atlas-update-list" onClick={() => setOpen(!open)}>
-      <span className="updates-bell"><Bell size={17} aria-hidden="true" /></span>
+    <button ref={trigger} className="updates-trigger" type="button" aria-label="Recent updates" aria-describedby={unread ? "atlas-unread-update" : undefined} aria-expanded={open} aria-controls="atlas-update-list" onClick={toggle}>
+      <span className="updates-bell" data-unread={unread}><Bell size={17} aria-hidden="true" />{unread && <span id="atlas-unread-update" className="sr-only">New site update</span>}</span>
       <span className="updates-summary">Most recently updated <time dateTime={latest}>{dateLabel(latest)}</time></span>
       <span className="updates-compact">Updated <time dateTime={latest}>{latest.slice(5, 7)}/{latest.slice(8, 10)}/{latest.slice(2, 4)}</time></span>
     </button>

@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { createSiteRelease } from './prepare-site-release.mjs';
+const notes = { date: '2026-10-28', title: 'Reviewed release', detail: 'Reviewed summary', href: '/' };
+const sameDay = createSiteRelease({ timestamp: '2026-10-29T01:00:00Z', revision: 'release-a', paths: [], notes });
+assert.equal(sameDay.date, '2026-10-28');
+assert.equal(sameDay.title, notes.title);
+const next = createSiteRelease({ timestamp: '2026-10-30T12:00:00Z', revision: 'release-b', paths: ['src/components/map-toolbar.tsx'], notes });
+assert.equal(next.date, '2026-10-30');
+assert.match(next.detail, /map exploration/);
+assert.notEqual(next.title, notes.title);
+assert.equal(next.revision, 'release-b');
+assert.throws(() => createSiteRelease({ timestamp: 'invalid', revision: '', paths: [], notes }));
+console.log('Release notice date, reviewed copy, automatic fallback and invalid timestamp checks passed.');

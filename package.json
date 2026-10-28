@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:clean": "node scripts/clean-next.mjs && next dev",
-    "build": "npm run check:build-policy && npm run check:native-tools && npm run lint && npm run check:dependency-security && node scripts/check-release-coherence.mjs --vercel && node scripts/check-application-research-snapshot.mjs && node scripts/prepare-runtime-assets.mjs && node scripts/prepare-vercel-build.mjs && next build",
+    "build": "npm run check:build-policy && npm run check:native-tools && npm run lint && npm run check:dependency-security && node scripts/check-release-coherence.mjs --vercel && node scripts/check-application-research-snapshot.mjs && node scripts/prepare-runtime-assets.mjs && node scripts/prepare-vercel-build.mjs && node scripts/prepare-site-release.mjs && next build",
     "start": "next start",
     "lint": "node scripts/lint-app.cjs",
     "typecheck": "tsc --noEmit",
