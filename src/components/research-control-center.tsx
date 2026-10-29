@@ -736,7 +736,7 @@ function isCountyResearchFile(value: unknown): value is CountyResearchFile {
   );
 }
 
-function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
+function CountyResearchView({ summary, availableStates, onStateChange }: { summary: ResearchSummaryFile; availableStates: ResearchStateOption[]; onStateChange: (stateCode: string) => void }) {
   const countyOptions = useMemo(
     () =>
       [...summary.counties]
@@ -968,6 +968,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
   return (
     <section aria-label="County findings">
       <div className="research-county-choice">
+        <SelectField stateFlags label="Choose a state" value={summary.stateCode} options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))} onChange={onStateChange} />
         <div>
           <SelectField
             label="Choose a county"
@@ -977,7 +978,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             disabled={countyOptions.length === 0}
           />
         </div>
-        <p>Open a species below to see the original sources and observation dates. A past record does not always tell us what is there today.</p>
+        <p className="research-location-guidance">Choose a place, then open a species to explore its records and sources. Older observations tell us what was found then, rather than what is there today.</p>
       </div>
 
       {loadState === "loading" || loadState === "idle" ? (
@@ -1017,18 +1018,6 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               onChange={setQuery}
             />
             <SelectField
-              label="Finding"
-              value={statusFilter}
-              options={[
-                { value: "all", label: "All statuses" },
-                ...availableStatuses.map((status) => ({
-                  value: status,
-                  label: status === "verified-present" ? "Recorded here" : status === "researched-unresolved" ? "More evidence needed" : status === "not-researched" ? "Not researched yet" : formatLabel(status),
-                })),
-              ]}
-              onChange={setStatusFilter}
-            />
-            <SelectField
               label="Category"
               value={categoryFilter}
               options={[
@@ -1040,16 +1029,28 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               ]}
               onChange={setCategoryFilter}
             />
-            <div className="flex items-end">
+            <SelectField
+              label="Finding"
+              value={statusFilter}
+              options={[
+                { value: "all", label: "All statuses" },
+                ...availableStatuses.map((status) => ({
+                  value: status,
+                  label: status === "verified-present" ? "Recorded here" : status === "researched-unresolved" ? "More evidence needed" : status === "not-researched" ? "Not researched yet" : formatLabel(status),
+                })),
+              ]}
+              onChange={setStatusFilter}
+            />
+            <div className="research-reset-control">
               <button
                 type="button"
                 onClick={clearFilters}
                 disabled={!hasActiveFilters}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-35"
+                className="research-reset-button"
                 aria-label="Clear county filters"
                 title="Clear filters"
               >
-                <X aria-hidden="true" size={17} />
+                <X aria-hidden="true" size={15} /><span>Remove filters</span>
               </button>
             </div>
           </div>
@@ -1176,7 +1177,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
             {formatNumber(sources.length)} of {formatNumber(summary.sources.length)} sources visible
           </p>
           <p className="mt-2 max-w-3xl text-xs leading-5 text-[var(--muted)]">
-            These are the sources tracked across ISITUSA. Each covers different places and species, so a listing here does not mean it has records for every county in {summary.stateName}. Open a county finding to see the sources used for that record.
+            Explore the agencies, collections, and research behind our records. Their coverage varies by place and species; open a county finding to see which sources support it.
           </p>
         </div>
       </div>
@@ -1325,7 +1326,7 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
           Next research priorities
         </h2>
         <p className="mt-1 text-sm text-[var(--muted)]">
-          The published research queue for {summary.stateName}, ordered by remaining county checks and missing source reviews. This is a priority list, not a live work schedule. {formatNumber(queue.length)} species match your filters.
+          These species need further research in {summary.stateName}, based on county checks and sources still to review. This list shows priorities, rather than work currently underway. {formatNumber(queue.length)} species match your filters.
         </p>
       </div>
 
@@ -1401,11 +1402,11 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, sum
         <nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav>
       </div><EditorialArt subject="research" /></div>
       <div className="research-state-control">
-        <SelectField stateFlags label="Choose a state" value={selectedStateCode}
+        {!summary && <SelectField stateFlags label="Choose a state" value={selectedStateCode}
           options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}
-          onChange={onStateChange} />
-        {summary && <div className="research-update-note"><p>Research through <time dateTime={summary.asOf}>{formatDate(summary.asOf)}</time></p>
-          <details className="research-publication-details"><summary>About this update</summary>
+          onChange={onStateChange} />}
+        {summary && <div className="research-update-note">
+          <details className="research-publication-details"><summary><span>Research through <time dateTime={summary.asOf}>{formatDate(summary.asOf)}</time></span><span className="research-update-label">About this update <ChevronDown size={15} aria-hidden="true"/></span></summary>
             <p>Observation dates appear with each source. An update can include older records.</p>
             <p>Catalog snapshot: {formatDate(summary.sourceSnapshotDate)}.</p>
             <p>Generated {formatTimestamp(summary.generatedAt)}.</p>
@@ -1487,7 +1488,8 @@ function ResearchControlCenterContent({
       {VIEW_OPTIONS.map((view) => (
         <div key={view.id} id={`research-panel-${view.id}`} role="tabpanel"
           tabIndex={0} aria-labelledby={`research-tab-${view.id}`} hidden={activeView !== view.id}>
-          {activeView === view.id && view.id === "county" ? <CountyResearchView summary={summary} /> : null}
+          {activeView === view.id && view.id === "county" ? <CountyResearchView summary={summary} availableStates={availableStates} onStateChange={onStateChange} /> : null}
+          {activeView === view.id && view.id !== "county" && <div className="research-other-state"><SelectField stateFlags label="Choose a state" value={summary.stateCode} options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))} onChange={onStateChange} /></div>}
           {activeView === view.id && view.id === "sources" ? <SourceOperationsView summary={summary} /> : null}
           {activeView === view.id && view.id === "queue" ? <QueueView summary={summary} /> : null}
         </div>

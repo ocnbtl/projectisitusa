@@ -330,3 +330,65 @@
  .species-page .directory-environment-field button{flex-direction:column;justify-content:center;min-height:62px;padding:8px 4px;gap:5px;font-size:11px}
  .species-page .directory-environment-field button:first-child{grid-column:span 3;min-height:44px}
 }
+
+/* A readable introduction and aligned controls, from a phone to a wide monitor. */
+.research-page .research-heading .research-heading-copy,.species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) minmax(240px,29%);gap:24px;margin-bottom:24px}
+.research-page .research-heading-copy>.editorial-art,.species-page>.illustrated-intro>.editorial-art{display:block;width:100%;height:240px;max-width:380px;margin:0;justify-self:center}
+.research-page .research-heading-copy p,.species-page .directory-hero p{max-width:none;text-wrap:pretty}
+.species-page .catalog-note-top[open]{display:block;padding:12px 20px 20px}
+.species-page .catalog-note-top p{max-width:none;line-height:1.7}
+.species-page .catalog-research-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--accent-strong);font-size:14px}
+.species-page .catalog-research-link svg{flex:0 0 auto}
+.species-page .catalog-research-link:hover span{text-decoration:underline;text-underline-offset:4px}
+.species-page .directory-filter-panel{grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:start}
+.species-page .directory-environment-field>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.species-page .directory-environment-field button{justify-content:center;min-height:48px;font-size:13px;padding:8px 6px}
+.species-page .directory-active-filters .directory-clear-all,.research-page .research-reset-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 12px;border:1px solid color-mix(in srgb,var(--danger) 30%,transparent);border-radius:8px;background:color-mix(in srgb,var(--danger) 9%,var(--surface));color:var(--danger);font-size:13px;line-height:1.4;text-decoration:none;white-space:nowrap}
+.species-page .directory-active-filters .directory-clear-all:hover,.research-page .research-reset-button:hover:not(:disabled){background:color-mix(in srgb,var(--danger) 16%,var(--surface))}
+.research-page .research-reset-button:disabled{opacity:.45;cursor:not-allowed}
+.research-page .research-state-control{display:block;margin:0 0 20px}
+.research-page .research-update-note,.research-page .research-update-note:has(details[open]){display:block;width:fit-content;max-width:100%;min-height:0;padding:0 14px}
+.research-page .research-publication-details>summary{display:flex;align-items:center;flex-wrap:wrap;gap:6px 24px;min-height:44px;padding-block:8px;list-style:none;font-size:14px}
+.research-page .research-publication-details>summary::-webkit-details-marker{display:none}
+.research-update-label{display:inline-flex;align-items:center;gap:6px;color:var(--accent-strong);font-size:13px}
+.research-publication-details[open] .research-update-label svg{transform:rotate(180deg)}
+.research-page .research-publication-details>p{margin:6px 0 12px;font-size:13px;line-height:1.6}
+.research-page .research-county-choice{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px 20px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);margin:8px 0 16px}
+.research-page .research-county-choice .research-location-guidance{grid-column:1/-1;max-width:none;margin:0;font-size:14px;line-height:1.6}
+.research-page .research-other-state{max-width:360px;margin:20px 0 8px}
+.research-page .research-filter-bar{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:12px 16px;padding:18px}
+.research-page .research-filter-bar .research-reset-control{position:static;grid-column:1/-1;justify-self:start}
+.research-page .research-filter-bar button[aria-label="Clear county filters"]{width:auto;height:auto;min-height:40px}
+.research-page .research-filter-bar .custom-select-trigger{min-height:48px;background:var(--background);font-size:14px}
+.research-page .research-filter-bar>label:first-child{grid-column:auto;padding-right:0}
+.research-page .research-tabs [role=tab]{padding:14px;align-items:center}
+.research-page .research-tabs [role=tab] span{min-width:0}
+.research-page .research-tabs [role=tab] small{line-height:1.45;text-wrap:pretty}
+.research-page [role=tabpanel]>section>div:first-child p{max-width:none;text-wrap:pretty}
+.research-page .research-secondary-filters{padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);align-items:end}
+.research-page .research-secondary-filters .custom-select-trigger{min-height:48px;background:var(--background)}
+@media(min-width:1400px){
+ .research-page .research-tabs [role=tab]{padding:16px 18px}
+}
+@media(max-width:1100px){
+ .species-page .directory-filter-panel{grid-template-columns:minmax(0,1fr)}
+ .research-page .research-heading .research-heading-copy,.species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) 240px;gap:20px}
+ .research-page .research-heading-copy>.editorial-art,.species-page>.illustrated-intro>.editorial-art{height:200px}
+ .research-page .research-filter-bar{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .research-page .research-filter-bar>label:first-child{grid-column:1/-1}
+}
+@media(max-width:700px){
+ .research-page .research-heading .research-heading-copy,.species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr);gap:8px;margin-bottom:20px}
+ .research-page .research-heading-copy>.editorial-art,.species-page>.illustrated-intro>.editorial-art{height:160px;width:min(100%,300px)}
+ .species-page .directory-environment-field>div{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .species-page .directory-environment-field button{min-height:62px;font-size:12px}
+ .species-page .directory-environment-field button:first-child{grid-column:1/-1;min-height:44px}
+ .species-page .catalog-note-top[open]{padding:10px 14px 16px}
+ .research-page .research-county-choice{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px;gap:12px}
+ .research-page .research-county-choice .custom-select-trigger{padding-inline:10px;font-size:14px}
+ .research-page .research-filter-bar{padding:14px;gap:12px}
+ .research-page .research-update-note{width:100%;padding:0 12px}
+ .research-page .research-publication-details>summary{justify-content:space-between;gap:4px 12px;font-size:13px}
+ .research-page .research-tabs [role=tab]{padding:10px 5px}
+ .research-page .research-secondary-filters{padding:14px}
+}
