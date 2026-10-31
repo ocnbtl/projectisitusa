@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import "@/components/species-names.css";
+import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-names";
 import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
@@ -29,7 +31,7 @@ function isDirectorySpecies(value: unknown): value is Species {
     && categories.includes(entry.category as SpeciesCategory);
 }
 
-function DirectoryCard({ species, view }: { species: Species; view: DirectoryView }) {
+function DirectoryCard({ species, view, query }: { species: Species; view: DirectoryView; query: string }) {
   const [imageFailed, setImageFailed] = useState(false);
   const { summary } = getSpeciesEditorial(species);
   return (
@@ -47,6 +49,7 @@ function DirectoryCard({ species, view }: { species: Species; view: DirectoryVie
         <div className="directory-names">
           <h3>{species.commonName}</h3>
           <p><i>{species.scientificName}</i></p>
+          {matchedSpeciesName(species, query) && <p className="directory-name-match">{matchedSpeciesName(species, query)}</p>}
           <span className={"category-" + species.category}><NatureIcon kind={CATEGORY_NATURE[species.category]} width={17} height={17} />{formatCategoryLabel(species.category)}</span>
         </div>
         <ArrowUpRight className="directory-open-icon" size={18} aria-hidden="true" />
@@ -104,7 +107,7 @@ export function SpeciesDirectory() {
     return (catalog ?? []).filter(species =>
       (!selectedCategories.length || selectedCategories.includes(species.category))
       && matchesEnvironment(species, environment)
-      && (!search || `${species.commonName} ${species.scientificName} ${species.displayGroup}`.toLocaleLowerCase("en-US").includes(search)));
+      && (!search || speciesNameMatches(species, search)));
   }, [catalog, selectedCategories, deferredQuery, environment]);
   useEffect(() => {
     if (!deferredQuery.trim() || !catalog) return;
@@ -177,7 +180,7 @@ export function SpeciesDirectory() {
             </div>
             </div>
             {matches.length ? (
-              <div className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} view={view} />)}</div>
+              <div className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} view={view} query={deferredQuery} />)}</div>
             ) : (
               <div className="directory-empty"><Search size={28} aria-hidden="true" /><h3>No match for that search.</h3><p>Try a shorter name, or clear a category or environment filter.</p><button type="button" onClick={resetFilters} className="primary-button">Start a new search</button></div>
             )}

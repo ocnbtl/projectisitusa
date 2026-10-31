@@ -2,6 +2,8 @@
 
 import { matchesEnvironment } from "@/lib/data/environment-filters";
 import { useEffect, useState } from "react";
+import { getDisplaySpecies } from "@/lib/ui/species-editorial";
+import { speciesNameMatches } from "@/lib/data/species-names";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 
 import type {
@@ -45,6 +47,7 @@ export interface ClientDataStore {
 let storePromise: Promise<ClientDataStore> | null = null;
 let cachedStore: ClientDataStore | null = null;
 export function createClientDataStore(payload: ClientDataStorePayload): ClientDataStore {
+  payload = { ...payload, allSpecies: payload.allSpecies.map(getDisplaySpecies) };
   return {
     allSpecies: payload.allSpecies,
     speciesById: new Map(payload.allSpecies.map((item) => [item.id, item])),
@@ -131,11 +134,7 @@ export function speciesMatchesFilters(species: ExplorerSpecies, filters?: Specie
     return false;
   }
   if (filters?.query) {
-    const query = filters.query.toLowerCase();
-    const haystack = [species.commonName, species.scientificName, species.displayGroup]
-      .join(" ")
-      .toLowerCase();
-    if (!haystack.includes(query)) return false;
+    if (!speciesNameMatches(species, filters.query)) return false;
   }
   return true;
 }

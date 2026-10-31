@@ -1,4 +1,5 @@
 import photoCredits from "@/content/species-photo-credits.json";
+import { approvedSpeciesDisplayName } from "@/lib/data/species-display-name";
 import photoAdditions from "@/content/species-photo-additions.json";
 import { SPECIES_EDITORIAL } from "@/content/species-editorial";
 import type { Species, ExplorerSpecies } from "@/lib/data/types";
@@ -13,6 +14,7 @@ export function getSpeciesEditorial(species: Pick<Species | ExplorerSpecies, "id
  * Source assets and their occurrence records are preserved for provenance review. */
 export const PHOTO_REVIEW_HOLDS = new Set(["kilifia-acuminata", "pineus-boerneri", "hemichromis-letourneuxi"]);
 export function getDisplaySpecies<T extends Species | ExplorerSpecies>(species: T): T {
+  species = { ...species, commonName: approvedSpeciesDisplayName(species.id, species.scientificName, species.commonName) };
   const addition = (photoAdditions as Record<string, NonNullable<Species["image"]>>)[species.id];
   if (addition) return { ...species, image: addition };
   if (PHOTO_REVIEW_HOLDS.has(species.id)) return { ...species, image: undefined };

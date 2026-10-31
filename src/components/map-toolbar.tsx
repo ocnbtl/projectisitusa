@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-names";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, ChevronDown, Leaf, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
 import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
@@ -105,9 +106,9 @@ export function MapToolbar(props: MapToolbarProps) {
   }, [props.counties,props.stateCode,props.countyCounts,props.dataReady,placeSearch]);
   const speciesResults = useMemo(() => {
     const q = speciesSearch.trim().toLowerCase();
-    return props.species.filter(s => !q || (s.commonName + " " + s.scientificName).toLowerCase().includes(q))
+    return props.species.filter(s => !q || speciesNameMatches(s, q))
       .sort((a,b) => (props.speciesCounts[b.id] ?? 0) - (props.speciesCounts[a.id] ?? 0) || a.commonName.localeCompare(b.commonName)).slice(0,12)
-      .map(s => ({ id:s.id, label:s.commonName, detail:s.scientificName, image:s.image?.thumbnail ?? s.image?.src, credit:s.image?.credit, count:props.dataReady ? (props.speciesCounts[s.id] ?? 0).toLocaleString() + (props.stateCode ? " counties in " + props.stateCode : " counties across the U.S.") : "County records loading" }));
+      .map(s => ({ id:s.id, label:s.commonName, detail:[s.scientificName, matchedSpeciesName(s, q)].filter(Boolean).join(" · "), image:s.image?.thumbnail ?? s.image?.src, credit:s.image?.credit, count:props.dataReady ? (props.speciesCounts[s.id] ?? 0).toLocaleString() + (props.stateCode ? " counties in " + props.stateCode : " counties across the U.S.") : "County records loading" }));
   }, [props.species,props.speciesCounts,props.stateCode,props.dataReady,speciesSearch]);
   useEffect(() => {
     function outside(e: PointerEvent) { if (!root.current?.contains(e.target as Node)) setFilterOpen(false); }

@@ -1,5 +1,7 @@
 import "@/components/species-profile.css";
-import type { Route } from "next";
+import type { Route, Metadata } from "next";
+import { SpeciesNames } from "@/components/species-names";
+import { getSpeciesNames, speciesStructuredData } from "@/lib/data/species-names";
 import Link from "next/link";
 import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight, ArrowRight } from "lucide-react";
@@ -18,6 +20,17 @@ export const dynamicParams = true;
 // Profiles remain cached on first request; the full catalog is not pre-rendered.
 export function generateStaticParams() {
   return [];
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const source = speciesBySlug.get(speciesSlugAliases.get(slug) ?? slug);
+  if (!source) return {};
+  const species = getDisplaySpecies(source);
+  const names = getSpeciesNames(species.id).names.filter(entry => entry.kind === "common").slice(0,3).map(entry => entry.name);
+  const title = getSpeciesNames(species.id).warning || species.commonName === species.scientificName ? species.scientificName : species.commonName + " (" + species.scientificName + ")";
+  const description = "Explore " + title + (names.length ? ", also known as " + names.join(", ") : "") + ". Find identification guidance, recorded occurrences and naming references.";
+  return { title: title + " | ISITUSA", description, alternates: { canonical: "/species/" + species.slug }, openGraph: { title, description, url: "/species/" + species.slug } };
 }
 
 export default async function SpeciesProfilePage({
@@ -44,6 +57,7 @@ export default async function SpeciesProfilePage({
 
   return (
     <main id="main-content" className="reading-page species-profile">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speciesStructuredData(species)).replace(/</g, "\\u003c") }} />
       <nav aria-label="Species navigation" className="profile-back-nav">
         <Link href="/species" className="text-link inline-flex min-h-11 items-center gap-2">
           <ArrowLeft size={16} aria-hidden="true" /> All species
@@ -55,6 +69,7 @@ export default async function SpeciesProfilePage({
         <div className="reading-hero profile-heading min-w-0">
           <h1 className="profile-title break-words">{species.commonName}</h1>
           <p className="profile-scientific-name">{species.scientificName}</p>
+          {getSpeciesNames(species.id).warning && <p className="profile-name-warning">This catalog name needs clarification.<a href="#species-names-title">Read the naming note</a></p>}
           {editorial.summary ? <p className="profile-description">{editorial.summary}</p> : null}
           <dl className="profile-facts mt-6 flex flex-wrap gap-x-8 gap-y-4 text-sm">
             <div><dt className="text-[var(--muted)]">Category</dt><dd className={"mt-1 category-tag category-" + species.category}>{formatCategoryLabel(species.category)}</dd></div>
@@ -67,6 +82,7 @@ export default async function SpeciesProfilePage({
           </div>
         ) : null}
       </header>
+      <SpeciesNames speciesId={species.id} />
       <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Map & records</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a></nav>
 
 
