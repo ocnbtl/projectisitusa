@@ -1,7 +1,7 @@
 import records from "@/content/species-names.json";
 import { approvedSpeciesDisplayName } from "@/lib/data/species-display-name";
 
-export type SpeciesName = { name: string; kind: "common" | "reference" | "misapplied"; explanation?: string; scientific?: boolean };
+export type SpeciesName = { name: string; kind: "common" | "reference" | "misapplied"; explanation?: string; scientific?: boolean; sourceUrl?: string };
 export type SpeciesNames = { names: SpeciesName[]; sources: { title: string; url: string }[]; warning?: string };
 type NamedSpecies = { id: string; commonName: string; scientificName: string; displayGroup?: string };
 const namesById = records as Record<string, SpeciesNames>;

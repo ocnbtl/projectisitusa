@@ -213,3 +213,23 @@
  .species-profile .profile-resource-footer .profile-sources,.species-profile .profile-participate{padding:16px}
  .species-profile .profile-reading>details.profile-registry{padding:10px 16px}
 }
+
+
+/* Keep the profile central and supporting names beneath the photo. */
+.reading-page.species-profile{max-width:1280px}
+.species-profile .profile-layout{grid-template-columns:minmax(0,1fr) minmax(240px,340px);align-items:start;gap:clamp(28px,4vw,56px)}
+.species-profile .profile-layout.profile-without-image{grid-template-columns:minmax(0,1fr);max-width:80ch;margin-inline:auto}
+.species-profile .profile-heading{align-self:start}
+.species-profile .profile-sidebar{display:grid;gap:16px;min-width:0}
+.species-profile .profile-sidebar .profile-image>img{height:clamp(200px,20vw,270px)}
+.species-profile .profile-section-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;padding:8px 12px}
+.species-profile .profile-section-nav a{display:flex;align-items:center;justify-content:center;padding:8px 12px;min-height:44px;line-height:1.5;border-radius:8px}
+.species-profile .profile-action-buttons{display:grid;grid-template-columns:minmax(0,1fr)}
+.species-profile .profile-action-buttons a,.species-profile .profile-correction>button{box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 14px;border-radius:8px;font-size:14px;line-height:1.5;text-align:center}
+.species-profile .profile-correction>button svg{flex-shrink:0}
+@media(max-width:700px){
+ .species-profile .profile-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+ .species-profile .profile-sidebar .profile-image>img{height:auto;max-height:230px}
+ .species-profile .profile-section-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:8px}
+ .species-profile .profile-section-nav a{padding:8px;font-size:13px}
+}

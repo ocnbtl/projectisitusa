@@ -54,6 +54,7 @@ export default async function SpeciesProfilePage({
   const identification = species.whatToLookFor ?? [];
   const action = isCurated ? species.action : undefined;
   const registry = species.registry;
+  const hasNames = getSpeciesNames(species.id).names.length > 0;
 
   return (
     <main id="main-content" className="reading-page species-profile">
@@ -65,7 +66,7 @@ export default async function SpeciesProfilePage({
         <Link href={`/?species=${species.id}`} className="text-link inline-flex min-h-11 items-center">Find on the map</Link>
       </nav>
 
-      <header className={`profile-layout ${species.image ? "" : "profile-without-image"} grid items-start gap-8 lg:gap-12`}>
+      <header className={`profile-layout ${species.image || hasNames ? "" : "profile-without-image"} grid items-start gap-8 lg:gap-12`}>
         <div className="reading-hero profile-heading min-w-0">
           <h1 className="profile-title break-words">{species.commonName}</h1>
           <p className="profile-scientific-name">{species.scientificName}</p>
@@ -76,13 +77,15 @@ export default async function SpeciesProfilePage({
             {registry?.family ? <div><dt className="text-[var(--muted)]">Family</dt><dd className="mt-1">{registry.family}</dd></div> : null}
           </dl>
         </div>
+        {species.image || hasNames ? <aside className="profile-sidebar" aria-label="Photo and other names">
         {species.image ? (
           <div className="profile-image">
             <SpeciesImage src={species.image.src} alt={species.image.alt} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license} label={species.commonName} />
           </div>
         ) : null}
+        <SpeciesNames speciesId={species.id} />
+        </aside> : null}
       </header>
-      <SpeciesNames speciesId={species.id} />
       <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Map & records</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a></nav>
 
 
