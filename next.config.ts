@@ -23,7 +23,7 @@ const securityHeaders = [
       "worker-src 'self' blob: data:",
       "frame-src https://challenges.cloudflare.com https://js.stripe.com https://*.js.stripe.com https://checkout.stripe.com https://hooks.stripe.com",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://upload.wikimedia.org https://*.stripe.com https://cnbcqzecxydgpeejeegy.supabase.co",
+      "img-src 'self' data: blob: https://upload.wikimedia.org https://thumb.wikimedia.org https://inaturalist-open-data.s3.amazonaws.com/photos/ https://*.stripe.com https://cnbcqzecxydgpeejeegy.supabase.co",
       "font-src 'self' data:",
       `connect-src 'self' https://cnbcqzecxydgpeejeegy.supabase.co https://us.i.posthog.com https://us-assets.i.posthog.com https://data.isitusa.com https://challenges.cloudflare.com https://api.stripe.com https://checkout.stripe.com${isDevelopment ? " ws: http: https:" : ""}`,
       "manifest-src 'self'",
@@ -94,6 +94,16 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "thumb.wikimedia.org",
+        pathname: "/wikipedia/commons/thumb/**",
+      },
+      {
+        protocol: "https",
+        hostname: "inaturalist-open-data.s3.amazonaws.com",
+        pathname: "/photos/**",
       },
     ],
   },

@@ -39,3 +39,4 @@ for (const [file, value] of Object.entries(outputs)) {
   else fs.writeFileSync(file, content);
 }
 console.log(`${check ? "Verified" : "Prepared"} ${catalog.length} public profiles; ${outputs["src/content/species-publication.json"].qualifiedProfiles} retain documented evidence limits.`);
+await import("./build-species-name-search.mjs");

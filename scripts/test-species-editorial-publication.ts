@@ -9,6 +9,7 @@ const revisions = read("src/content/species-editorial-revisions.json");
 const summaries = read("src/content/editorial-published.json");
 const profiles = read("src/content/species-profile-published.json");
 const publication = read("src/content/species-publication.json");
+const searchIndex = read("src/content/species-name-search.json");
 const byId = new Map(revisions.map((row: any) => [row.speciesId, row]));
 assert.equal(catalog.length, 2504);
 assert.equal(Object.keys(profiles).length, catalog.length);
@@ -27,6 +28,7 @@ for (const species of catalog) {
   assert.ok(profile.sources.length > 0);
   assert.deepEqual(profile.sources, [...new Map(revision.sources.map((source: any) => [source.url, { label: source.title, url: source.url }])).values()]);
   const names = getSpeciesNames(species.id);
+  assert.deepEqual(searchIndex[species.id] ?? [], names.names.map(name => name.kind === "misapplied" ? [name.name, 1] : name.name), `${species.id}: exact search-index parity`);
   const structured = speciesStructuredData({ ...species, slug: species.id });
   for (const name of names.names) {
     assert.ok(speciesNameMatches(species, name.name), `${species.id}: search misses ${name.name}`);
@@ -42,6 +44,12 @@ for (const species of catalog) {
   if (names.warning) assert.equal(structured.disambiguatingDescription, names.warning);
 }
 assert.equal(publication.profiles, catalog.length);
+const snakehead = catalog.find((species: any) => species.id === "channa-aurolineata");
+const snakeheadNames = getSpeciesNames(snakehead.id).names;
+assert.equal(snakeheadNames.find(name => name.name === "Channa marulius")?.kind, "misapplied");
+assert.equal(matchedSpeciesName(snakehead, "Channa marulius"), "Name clarification: Channa marulius");
+assert.ok(!snakeheadNames.some(name => name.name === "Channa pseudomarulius"));
+assert.ok(!getSpeciesNames("xanthomonas-citri").names.some(name => name.name === "Xanthomonas cissicola"));
 assert.equal(publication.qualifiedProfiles, revisions.filter((row: any) => row.status === "research_gap").length);
 const timing = performance.now();
 for (const query of ["japanese knotweed", "launaea", "sandalwood", "running myrtle", "psyllid"]) {

@@ -3,7 +3,7 @@
 import { matchesEnvironment } from "@/lib/data/environment-filters";
 import { useEffect, useState } from "react";
 import { getDisplaySpecies } from "@/lib/ui/species-editorial";
-import { speciesNameMatches } from "@/lib/data/species-names";
+import { speciesNameMatches } from "@/lib/data/species-name-search";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 
 import type {

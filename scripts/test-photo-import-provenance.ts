@@ -74,6 +74,10 @@ commons("missing file", fixture({}, {}, { missing: true }), false);
 commons("different file title", fixture({}, {}, { title: "File:Other.jpg" }), false);
 commons("different original filename", fixture({}, { url: original.replace("Example_bird", "Other") }), false);
 commons("different thumbnail", fixture({}, { thumburl: thumbnail.replaceAll("Example_bird", "Other") }), false);
+
+commons("official Commons thumbnail host", fixture({}, { thumburl: thumbnail.replace("upload.wikimedia.org", "thumb.wikimedia.org") }), true);
+commons("thumbnail hostname lookalike", fixture({}, { thumburl: thumbnail.replace("upload.wikimedia.org", "thumb.wikimedia.org.evil.example") }), false);
+commons("different file on official thumbnail host", fixture({}, { thumburl: thumbnail.replace("upload.wikimedia.org", "thumb.wikimedia.org").replaceAll("Example_bird", "Other") }), false);
 commons("different file page", fixture({}, { descriptionurl: filePage.replace("Example_bird", "Other") }), false);
 commons("non-image MIME", fixture({}, { mime: "application/pdf" }), false);
 commons("failed metadata request", null, false);

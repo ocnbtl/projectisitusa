@@ -67,9 +67,10 @@ export function commonsPhotoProvenance(requestedFile: string, response: unknown)
   const info = object(page.imageinfo[0]);
   if (!info || "filehidden" in info || !["image/jpeg", "image/png", "image/webp"].includes(String(info.mime))) return null;
   const original = httpsUrl(info.url, "upload.wikimedia.org");
-  const media = httpsUrl(info.thumburl ?? info.url, "upload.wikimedia.org");
+  const media = httpsUrl(info.thumburl ?? info.url);
   const source = httpsUrl(info.descriptionurl, "commons.wikimedia.org");
-  if (!original || !media || !source || !source.pathname.startsWith("/wiki/File:")) return null;
+  if (!original || !media || !["upload.wikimedia.org", "thumb.wikimedia.org"].includes(media.hostname)
+    || !source || !source.pathname.startsWith("/wiki/File:")) return null;
   try {
     if (fileName(decodeURIComponent(source.pathname.slice("/wiki/".length))) !== fileName(page.title)
       || !original.pathname.startsWith("/wikipedia/commons/")

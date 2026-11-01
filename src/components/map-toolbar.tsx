@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-names";
+import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-name-search";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, ChevronDown, Leaf, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
 import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";

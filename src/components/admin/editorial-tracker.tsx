@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Search } from "lucide-react";
 import sourceQueue from "@/content/editorial-queue.json";
 import publication from "@/content/species-publication.json";
-import { speciesNameMatches } from "@/lib/data/species-names";
+import { speciesNameMatches } from "@/lib/data/species-name-search";
 import { approvedSpeciesDisplayName } from "@/lib/data/species-display-name";
 import baseline from "@/content/editorial-review-baseline.json";
 import { EDITORIAL_REVISIONS } from "@/content/species-editorial-revisions";

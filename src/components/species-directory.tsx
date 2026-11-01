@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import "@/components/species-names.css";
-import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-names";
+import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-name-search";
 import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";

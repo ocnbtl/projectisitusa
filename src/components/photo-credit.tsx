@@ -2,9 +2,9 @@ import { ContextPopover } from "./context-popover";
 
 export function PhotoCredit({ credit, sourceUrl, license, name }: { credit: string; sourceUrl?: string; license?: string; name: string }) {
   const safeUrl = sourceUrl && /^https:\/\//.test(sourceUrl) ? sourceUrl : undefined;
-  const ccLicense = license?.match(/creativecommons\.org\/licenses\/(by(?:-sa|-nd)?)\/([\d.]+)/i);
+  const ccLicense = license?.match(/creativecommons\.org\/licenses\/(by(?:-sa|-nd)?)\/([\d.]+)(?:\/([a-z]{2})(?=\/|$))?/i);
   const gfdl = license === "https://www.gnu.org/licenses/old-licenses/fdl-1.2.html";
-  const licenseLabel = ccLicense ? `CC ${ccLicense[1].toUpperCase()} ${ccLicense[2]}`
+  const licenseLabel = ccLicense ? `CC ${ccLicense[1].toUpperCase()} ${ccLicense[2]}${ccLicense[3] ? ` ${ccLicense[3].toUpperCase()}` : ""}`
     : /creativecommons\.org\/publicdomain\/zero|^cc0$/i.test(license ?? "") ? "CC0"
     : /^public[- ]domain$/i.test(license ?? "") ? "Public domain"
     : gfdl ? "GNU Free Documentation License 1.2"
