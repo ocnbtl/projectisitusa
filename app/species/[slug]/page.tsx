@@ -12,7 +12,8 @@ import { SpeciesOccurrenceEvidence } from "@/components/species-occurrence-evide
 import { ProfileCorrection } from "@/components/participation/profile-correction";
 import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 import { speciesBySlug, speciesSlugAliases } from "@/lib/data/species-store";
-import { getDisplaySpecies, getSpeciesEditorial } from "@/lib/ui/species-editorial";
+import { getPublishedSpeciesProfile } from "@/lib/data/species-published-profile";
+import { getDisplaySpecies, getSpeciesEditorial, getSpeciesPhotoNote } from "@/lib/ui/species-editorial";
 import { formatCategoryLabel } from "@/lib/utils";
 
 export const dynamicParams = true;
@@ -49,16 +50,17 @@ export default async function SpeciesProfilePage({
   const species = getDisplaySpecies(sourceSpecies);
 
   const editorial = getSpeciesEditorial(species);
-  const references = [...editorial.sources, ...species.source].filter((source, i, all) => all.findIndex(item => item.url === source.url) === i);
+  const published = getPublishedSpeciesProfile(species.id);
+  const references = (published?.sources ?? [...editorial.sources, ...species.source]).filter((source, i, all) => all.findIndex(item => item.url === source.url) === i);
   const isCurated = species.profileType === "curated";
-  const identification = species.whatToLookFor ?? [];
+  const identification = published?.identification ?? species.whatToLookFor ?? [];
   const action = isCurated ? species.action : undefined;
   const registry = species.registry;
   const hasNames = getSpeciesNames(species.id).names.length > 0;
 
   return (
     <main id="main-content" className="reading-page species-profile">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speciesStructuredData(species)).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...speciesStructuredData(species), ...(editorial.summary ? { description: editorial.summary } : {}) }).replace(/</g, "\\u003c") }} />
       <nav aria-label="Species navigation" className="profile-back-nav">
         <Link href="/species" className="text-link inline-flex min-h-11 items-center gap-2">
           <ArrowLeft size={16} aria-hidden="true" /> All species
@@ -81,6 +83,7 @@ export default async function SpeciesProfilePage({
         {species.image ? (
           <div className="profile-image">
             <SpeciesImage src={species.image.src} alt={species.image.alt} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license} label={species.commonName} />
+            {getSpeciesPhotoNote(species.id) && <p className="px-4 pb-4 text-sm text-[var(--muted)]">{getSpeciesPhotoNote(species.id)}</p>}
           </div>
         ) : null}
         <SpeciesNames speciesId={species.id} />
@@ -100,13 +103,13 @@ export default async function SpeciesProfilePage({
         {identification.length > 0 ? (
           <section id="identification" className="reading-section scroll-mt-24">
             <h2>How to recognize it</h2>
-            <ul className="mt-4 divide-y divide-[var(--border)]">
+            {published ? identification.map((item, index) => <p key={index} className="mt-4 text-base leading-7">{item}</p>) : <ul className="mt-4 divide-y divide-[var(--border)]">
               {identification.map((item) => <li key={item} className="py-4 text-base leading-7">{item}</li>)}
-            </ul>
+            </ul>}
           </section>
         ) : <section id="identification" className="reading-section scroll-mt-24"><h2>How to recognize it</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">We are still preparing a reviewed identification guide for this species. The profile references can help you compare distinguishing features and similar species. A photograph alone may not be enough for a confident identification.</p></section>}
 
-        {species.origin || species.whyItMatters ? (
+        {!published && (species.origin || species.whyItMatters) ? (
           <section id="background" className="reading-section scroll-mt-24">
             <h2>Background & impact</h2>
             {species.origin ? <p className="mt-4 text-base leading-8 text-[var(--muted)]">{species.origin}</p> : null}
@@ -114,7 +117,12 @@ export default async function SpeciesProfilePage({
           </section>
         ) : null}
 
-        </div>{action ? (
+        </div>{published ? (
+          <section id="actions" className="reading-section scroll-mt-24">
+            <h2>What you can do</h2>
+            {published.actions.map((paragraph, index) => <p key={index} className="mt-4 text-base leading-7">{paragraph}</p>)}
+          </section>
+        ) : action ? (
           <section id="actions" className="reading-section scroll-mt-24">
             <h2>What you can do</h2>
             <p className="mt-4 text-base leading-7">{action.summary}</p>
@@ -138,7 +146,7 @@ export default async function SpeciesProfilePage({
           </section>
         ) : null}
 
-        {!action && <section id="actions" className="reading-section scroll-mt-24"><h2>What you can do</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">If you think you have found this species, record where and when you saw it and take clear photographs from a safe distance. Confirm its identity and local guidance before handling, moving or attempting to control it.</p></section>}
+        {!published && !action && <section id="actions" className="reading-section scroll-mt-24"><h2>What you can do</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">If you think you have found this species, record where and when you saw it and take clear photographs from a safe distance. Confirm its identity and local guidance before handling, moving or attempting to control it.</p></section>}
       <div className="profile-resource-footer"><section className="profile-sources reading-section" aria-labelledby="profile-sources-heading"><div>
         <h2 id="profile-sources-heading">Profile references</h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">

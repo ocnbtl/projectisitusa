@@ -1,4 +1,5 @@
 import photoCredits from "@/content/species-photo-credits.json";
+import photoReview from "@/content/species-photo-review.json";
 import { approvedSpeciesDisplayName } from "@/lib/data/species-display-name";
 import photoAdditions from "@/content/species-photo-additions.json";
 import { SPECIES_EDITORIAL } from "@/content/species-editorial";
@@ -13,11 +14,19 @@ export function getSpeciesEditorial(species: Pick<Species | ExplorerSpecies, "id
 /** Collection-slide / ledger images fail the public identification-photo purpose.
  * Source assets and their occurrence records are preserved for provenance review. */
 export const PHOTO_REVIEW_HOLDS = new Set(["kilifia-acuminata", "pineus-boerneri", "hemichromis-letourneuxi"]);
+// These holds apply to the currently displayed image, including later additions.
+// Original assets and credits remain intact for provenance review.
+export const PHOTO_PROVENANCE_HOLDS = new Set<string>(photoReview.holds);
+export function getSpeciesPhotoNote(id: string): string | undefined {
+  return (photoReview.notes as Record<string, string>)[id];
+}
 export function getDisplaySpecies<T extends Species | ExplorerSpecies>(species: T): T {
   species = { ...species, commonName: approvedSpeciesDisplayName(species.id, species.scientificName, species.commonName) };
+  if (PHOTO_PROVENANCE_HOLDS.has(species.id)) return { ...species, image: undefined };
   const addition = (photoAdditions as Record<string, NonNullable<Species["image"]>>)[species.id];
   if (addition) return { ...species, image: addition };
   if (PHOTO_REVIEW_HOLDS.has(species.id)) return { ...species, image: undefined };
   const credit = (photoCredits as Record<string, { sourceUrl: string; license?: string; credit?: string }>)[species.id];
-  return species.image && credit ? { ...species, image: { ...species.image, ...credit } } : species;
+  const note = getSpeciesPhotoNote(species.id);
+  return species.image && credit ? { ...species, image: { ...species.image, ...credit, ...(note ? { alt: note, credit: `${credit.credit ?? species.image.credit}. ${note}` } : {}) } } : species;
 }

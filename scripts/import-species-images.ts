@@ -9,6 +9,7 @@ import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
 import { isCommerciallySafeImageLicense, isCommerciallySafeManifestEntry } from "@/lib/data/image-license";
+import { assessGbifMediaRights } from "@/lib/data/gbif-media-rights";
 import { speciesSeed } from "@/data/source/species";
 import type {
   SpeciesImageChunkRecord,
@@ -42,6 +43,8 @@ interface CandidateImageResult {
   credit: string;
   sourceLabel: string;
   sourceUrl: string;
+  sourceMediaUrl?: string;
+  licenseScope?: "media";
   license?: string;
   provider: SpeciesImageProvider;
 }
@@ -552,14 +555,16 @@ async function findGbifImage(
   }>(occurrenceUrl.toString());
 
   for (const occurrence of occurrenceResponse?.results ?? []) {
+    const verbatim = await fetchJson<unknown>(`https://api.gbif.org/v1/occurrence/${occurrence.key}/verbatim`);
+    if (!verbatim) continue;
     for (const media of occurrence.media ?? []) {
       const mediaUrl = media.identifier;
       if (!mediaUrl) continue;
       if (media.type && media.type !== "StillImage") continue;
       if (media.format && !media.format.startsWith("image/")) continue;
-      if (!isCommerciallySafeImageLicense("gbif", media.license ?? occurrence.license)) {
-        continue;
-      }
+      // Occurrence/data licensing does not establish rights to the photograph.
+      const rights = assessGbifMediaRights(media, verbatim);
+      if (!rights.allowed) continue;
 
       const downloaded = await downloadImage(mediaUrl, slugify(species.scientificName));
       if (!downloaded) continue;
@@ -573,7 +578,9 @@ async function findGbifImage(
           "GBIF occurrence contributor",
         sourceLabel: "GBIF occurrence media",
         sourceUrl: `https://www.gbif.org/occurrence/${occurrence.key}`,
-        license: media.license ?? occurrence.license,
+        sourceMediaUrl: rights.sourceMediaUrl,
+        licenseScope: rights.licenseScope,
+        license: rights.license,
         provider: "gbif",
       };
     }
@@ -655,6 +662,8 @@ async function resolveImageForSpecies(
         credit: gbifMatch.credit,
         sourceLabel: gbifMatch.sourceLabel,
         sourceUrl: gbifMatch.sourceUrl,
+        sourceMediaUrl: gbifMatch.sourceMediaUrl,
+        licenseScope: gbifMatch.licenseScope,
         license: gbifMatch.license,
         provider: gbifMatch.provider,
         downloadedAt: checkedAt,

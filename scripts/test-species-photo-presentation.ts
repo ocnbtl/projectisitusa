@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { getDisplaySpecies, PHOTO_REVIEW_HOLDS } from "../src/lib/ui/species-editorial";
+import { getDisplaySpecies, PHOTO_REVIEW_HOLDS, PHOTO_PROVENANCE_HOLDS } from "../src/lib/ui/species-editorial";
+import { approvedSpeciesDisplayName } from "../src/lib/data/species-display-name";
 import type { Species } from "../src/lib/data/types";
 
 const read = (file: string) => JSON.parse(readFileSync(file, "utf8"));
@@ -48,8 +49,9 @@ for (const species of catalog) {
   assert.equal(JSON.stringify(species), before, "Presentation must not mutate catalog evidence");
   const { image: originalImage, ...originalFacts } = species;
   const { image: displayedImage, ...displayedFacts } = display;
-  assert.deepEqual(displayedFacts, originalFacts, "Photo changes must preserve all species facts");
-  if (additions[species.id]) assert.deepEqual(displayedImage, additions[species.id]);
+  assert.deepEqual(displayedFacts, { ...originalFacts, commonName: approvedSpeciesDisplayName(species.id, species.scientificName, species.commonName) }, "Photo changes must preserve all species facts and approved naming corrections");
+  if (PHOTO_PROVENANCE_HOLDS.has(species.id)) assert.equal(displayedImage, undefined);
+  else if (additions[species.id]) assert.deepEqual(displayedImage, additions[species.id]);
   else if (PHOTO_REVIEW_HOLDS.has(species.id)) assert.equal(displayedImage, undefined);
   else assert.equal(displayedImage?.src, originalImage?.src);
 }

@@ -244,6 +244,9 @@ export interface SpeciesImageManifestEntry {
   credit: string;
   sourceLabel: string;
   sourceUrl: string;
+  /** Original media identity and its own rights, distinct from occurrence data. */
+  sourceMediaUrl?: string;
+  licenseScope?: "media";
   license?: string;
   provider: SpeciesImageProvider;
   downloadedAt: string;
