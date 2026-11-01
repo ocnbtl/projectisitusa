@@ -3,7 +3,8 @@ import { approvedSpeciesDisplayName } from "@/lib/data/species-display-name";
 
 type NamedSpecies = { id: string; commonName: string; scientificName: string; displayGroup?: string };
 type SearchName = string | [string, 1];
-const namesById = records as Record<string, SearchName[]>;
+// JSON imports widen tuples; publication validation checks this generated shape.
+const namesById = records as unknown as Record<string, SearchName[]>;
 const normalize = (value: string) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("en-US").replace(/[’']/g, "").replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
 const label = (name: SearchName) => typeof name === "string" ? name : name[0];
 
