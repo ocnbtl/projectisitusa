@@ -50,6 +50,9 @@ assert.equal(snakeheadNames.find(name => name.name === "Channa marulius")?.kind,
 assert.equal(matchedSpeciesName(snakehead, "Channa marulius"), "Name clarification: Channa marulius");
 assert.ok(!snakeheadNames.some(name => name.name === "Channa pseudomarulius"));
 assert.ok(!getSpeciesNames("xanthomonas-citri").names.some(name => name.name === "Xanthomonas cissicola"));
+for (const id of ["channa-aurolineata", "xanthomonas-citri"]) {
+  assert.ok(getSpeciesNames(id).sources.every(source => !source.url.startsWith("https://www.gbif.org/species/")), `${id}: rejected taxonomy references retained`);
+}
 assert.equal(publication.qualifiedProfiles, revisions.filter((row: any) => row.status === "research_gap").length);
 const timing = performance.now();
 for (const query of ["japanese knotweed", "launaea", "sandalwood", "running myrtle", "psyllid"]) {
