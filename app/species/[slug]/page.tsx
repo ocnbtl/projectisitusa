@@ -13,6 +13,7 @@ import { ProfileCorrection } from "@/components/participation/profile-correction
 import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
 import { speciesBySlug, speciesSlugAliases } from "@/lib/data/species-store";
 import { getPublishedSpeciesProfile } from "@/lib/data/species-published-profile";
+import { getRegistryReference } from "@/lib/data/species-registry-reference";
 import { getDisplaySpecies, getSpeciesEditorial, getSpeciesPhotoNote } from "@/lib/ui/species-editorial";
 import { formatCategoryLabel } from "@/lib/utils";
 
@@ -56,6 +57,7 @@ export default async function SpeciesProfilePage({
   const identification = published?.identification ?? species.whatToLookFor ?? [];
   const action = isCurated ? species.action : undefined;
   const registry = species.registry;
+  const registryReference = registry?.authorityUrl ? getRegistryReference(registry.authorityUrl) : undefined;
   const hasNames = getSpeciesNames(species.id).names.length > 0;
 
   return (
@@ -160,7 +162,7 @@ export default async function SpeciesProfilePage({
         </ul>
         {registry?.authority ? (
           <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-            Registry reference: {registry.authorityUrl ? <a href={registry.authorityUrl} target="_blank" rel="noreferrer" className="text-link">{registry.authority}</a> : registry.authority}
+            Registry reference: {registryReference?.url ? <a href={registryReference.url} target="_blank" rel="noreferrer" className="text-link">{registry.authority}</a> : registry.authority}{registryReference?.note ? <span> {registryReference.note}</span> : null}
           </p>
         ) : null}
       </div></section>

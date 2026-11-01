@@ -8,8 +8,9 @@ import { existsSync, readFileSync } from "node:fs";
 import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
-import { isCommerciallySafeImageLicense, isCommerciallySafeManifestEntry } from "@/lib/data/image-license";
+import { isCommerciallySafeManifestEntry } from "@/lib/data/image-license";
 import { assessGbifMediaRights } from "@/lib/data/gbif-media-rights";
+import { commonsPhotoProvenance, inaturalistPhotoProvenance } from "@/lib/data/photo-import-provenance";
 import { speciesSeed } from "@/data/source/species";
 import type {
   SpeciesImageChunkRecord,
@@ -242,13 +243,6 @@ function getFileExtension(
   return fallback;
 }
 
-function normalizeINaturalistPhotoUrl(photoUrl: string) {
-  if (photoUrl.includes("/square.")) {
-    return photoUrl.replace("/square.", "/medium.");
-  }
-  return photoUrl;
-}
-
 async function downloadImage(
   url: string,
   slug: string,
@@ -353,22 +347,22 @@ async function findWikidataImage(
     const imageFile = getWikidataStringClaim(entity, "P18");
     if (!imageFile) continue;
 
-    const downloaded = await downloadImage(
-      `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
-        imageFile,
-      )}?width=1400`,
-      slugify(species.scientificName),
-    );
+    const infoUrl = new URL("https://commons.wikimedia.org/w/api.php");
+    infoUrl.search = new URLSearchParams({
+      action: "query", format: "json", formatversion: "2", prop: "imageinfo",
+      titles: `File:${imageFile}`, iiprop: "url|mime|extmetadata", iilimit: "1",
+      iiurlwidth: "1400", iiextmetadatalanguage: "en",
+    }).toString();
+    const provenance = commonsPhotoProvenance(imageFile, await fetchJson<unknown>(infoUrl.toString()));
+    if (!provenance) continue;
+    const downloaded = await downloadImage(provenance.sourceMediaUrl, slugify(species.scientificName));
 
     if (!downloaded) continue;
 
     return {
       ...downloaded,
-      credit: "Wikimedia Commons",
+      ...provenance,
       sourceLabel: "Wikidata / Wikimedia Commons",
-      sourceUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(
-        imageFile.replace(/ /g, "_"),
-      )}`,
       provider: "wikidata-commons",
     };
   }
@@ -389,6 +383,7 @@ async function findINaturalistImage(
         matched_term?: string;
         rank?: string;
         default_photo?: {
+          id?: number;
           attribution?: string;
           license_code?: string;
           large_url?: string;
@@ -412,6 +407,7 @@ async function findINaturalistImage(
         rank?: string;
         preferred_common_name?: string;
         default_photo?: {
+          id?: number;
           attribution?: string;
           license_code?: string;
           large_url?: string;
@@ -422,11 +418,7 @@ async function findINaturalistImage(
     }>(queryUrl.toString());
 
     for (const result of response?.results ?? []) {
-      const photoUrl =
-        result.default_photo?.large_url ??
-        result.default_photo?.medium_url ??
-        result.default_photo?.url;
-      if (!photoUrl || !INAT_ACCEPTED_RANKS.has(result.rank ?? "")) continue;
+      if (!inaturalistPhotoProvenance(result.default_photo) || !INAT_ACCEPTED_RANKS.has(result.rank ?? "")) continue;
 
       const normalizedResultName = normalizeName(result.name);
       const normalizedMatchedTerm = normalizeName(result.matched_term ?? "");
@@ -455,23 +447,18 @@ async function findINaturalistImage(
     }
   }
 
-  const photoUrl =
-    bestMatch?.default_photo?.large_url ??
-    bestMatch?.default_photo?.medium_url ??
-    bestMatch?.default_photo?.url;
-  const license = bestMatch?.default_photo?.license_code;
+  const provenance = inaturalistPhotoProvenance(bestMatch?.default_photo);
 
   if (
     !bestMatch ||
-    !photoUrl ||
-    bestMatch.score < 95 ||
-    !isCommerciallySafeImageLicense("inaturalist", license)
+    !provenance ||
+    bestMatch.score < 95
   ) {
     return null;
   }
 
   const downloaded = await downloadImage(
-    normalizeINaturalistPhotoUrl(photoUrl),
+    provenance.sourceMediaUrl,
     slugify(species.scientificName),
   );
 
@@ -479,10 +466,8 @@ async function findINaturalistImage(
 
   return {
     ...downloaded,
-    credit: bestMatch.default_photo?.attribution || "iNaturalist contributor",
+    ...provenance,
     sourceLabel: "iNaturalist",
-    sourceUrl: `https://www.inaturalist.org/taxa/${bestMatch.id}`,
-    license,
     provider: "inaturalist",
   };
 }
@@ -620,6 +605,8 @@ async function resolveImageForSpecies(
         credit: wikidataMatch.credit,
         sourceLabel: wikidataMatch.sourceLabel,
         sourceUrl: wikidataMatch.sourceUrl,
+        sourceMediaUrl: wikidataMatch.sourceMediaUrl,
+        licenseScope: wikidataMatch.licenseScope,
         license: wikidataMatch.license,
         provider: wikidataMatch.provider,
         downloadedAt: checkedAt,
@@ -641,6 +628,8 @@ async function resolveImageForSpecies(
         credit: inatMatch.credit,
         sourceLabel: inatMatch.sourceLabel,
         sourceUrl: inatMatch.sourceUrl,
+        sourceMediaUrl: inatMatch.sourceMediaUrl,
+        licenseScope: inatMatch.licenseScope,
         license: inatMatch.license,
         provider: inatMatch.provider,
         downloadedAt: checkedAt,
