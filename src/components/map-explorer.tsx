@@ -69,7 +69,7 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
   const selectCounty = useCallback((fips: string) => { track("county_selected",{surface:"map",county_id:fips}); cancelZipLookup(); setExpanded(true); update({ county: fips, state: store?.countyIndex[fips]?.stateCode ?? null }); }, [cancelZipLookup, update, store]);
   const closeCounty = useCallback(() => {
     cancelZipLookup(); update({ county: null });
-    document.querySelector<HTMLInputElement>('[aria-label="Search county or ZIP"]')?.focus();
+    document.querySelector<HTMLElement>(window.matchMedia("(max-width:700px)").matches ? '.mobile-map-search-button' : '[aria-label="Search a county or ZIP"]')?.focus({ preventScroll: true });
   }, [cancelZipLookup, update]);
   const county = store && countyFips ? store.countyIndex[countyFips] ?? null : null;
   const reviewedSpecies = useMemo(() => reviewed.data && store ? reviewed.data.speciesIds.map(id => store.speciesById.get(id)) : [], [reviewed.data, store]);
@@ -138,6 +138,6 @@ export function MapExplorer({ initialStore }: { initialStore?: ClientDataStorePa
       <div className="county-sheet-heading"><div><h2>{county.name}<span className="county-state-name">{county.stateCode}</span></h2></div><div className="county-sheet-actions"><button className="sheet-toggle icon-button" type="button" aria-label={expanded ? "Collapse county details" : "Expand county details"} aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? <ArrowDown size={18} /> : <ArrowUp size={18} />}</button><button type="button" className="icon-button" aria-label="Close county details" onClick={closeCounty}><X size={19} /></button></div></div>
       <div className="county-sheet-body">{dataReady ? <CountyInsightPanel key={`${county.countyFips}-${layer}`} selectedCounty={county} selectedCountyDetail={store.countyDetails[county.countyFips] ?? null} focalSpecies={focalSpecies} nearbySpecies={nearbySpecies} allSpecies={displaySpecies} filters={filters} snapshotDate={datasetDate} datasetLabel={datasetLabel} layer={layer} temporalExceptions={layer === "reviewed" ? reviewed.data?.temporalExceptions[county.countyFips] : undefined} /> : <p className="county-note">{dataError ? "County records are unavailable. Use Try again to reload them." : "Loading this county's records..."}</p>}<CountyObservations county={county.countyFips}/></div>
     </aside> : null}
-    <div className="atlas-footer"><Link href={{pathname:"/observations"}}>Reviewed sightings</Link><Link href="/about">Methods & limitations</Link><Link href="/research">Research status <ArrowUpRight size={13} /></Link></div>
+    <div className="atlas-footer"><Link href="/about">Methods & limitations</Link><Link href="/research">Research status <ArrowUpRight size={13} /></Link></div>
   </main>;
 }

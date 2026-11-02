@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-name-search";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, ChevronDown, Leaf, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, Globe2, Leaf, MapPin, Search, SlidersHorizontal, Sprout, X } from "lucide-react";
 import { NatureIcon, EnvironmentIcon, CATEGORY_NATURE } from "@/components/atlas/nature-icon";
 import { StatePicker, StateFlag } from "@/components/atlas/state-picker";
 import { CATEGORY_OPTIONS, ENVIRONMENT_OPTIONS } from "@/lib/constants";
@@ -43,13 +43,14 @@ function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy 
   }, []);
   function choose(result: SearchResult) {
     if (isZip) onSubmit?.(result.id); else onChoose(result.id);
-    onChange(""); setActive(-1); setOpen(false); input.current?.focus();
+    onChange(""); setActive(-1); setOpen(false);
+    if (!window.matchMedia("(max-width:700px)").matches) input.current?.focus({ preventScroll: true });
   }
   function submit() {
     const result = options[active >= 0 ? active : 0];
     if (result) choose(result); else if (kind === "species" && normalized.length >= 2) { onSubmit?.(normalized); setOpen(false); }
   }
-  const Icon = kind === "place" ? MapPin : Sprout;
+  const Icon = Search;
   return <div ref={root} className="map-search-field" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false); }}>
     <form className="atlas-search glass-panel" role="search" aria-label={kind === "place" ? "Find a place" : "Find a species"} onSubmit={e => { e.preventDefault(); submit(); }}>
       <Icon size={18} aria-hidden="true" />
@@ -64,7 +65,6 @@ function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy 
       <button type="submit" className="search-submit" aria-label={kind === "place" ? "Find county" : "Find species"} disabled={busy || (!normalized && active < 0)}><Search size={17} /></button>
     </form>
     {open && <div className="search-suggestion-panel">
-      <p className="search-suggestion-title">{normalized ? "Search results" : kind === "place" ? "Explore a county" : "Get to know a species"}</p>
       <div className="search-results" id={id} role="listbox" aria-label={kind === "place" ? "Matching counties" : "Matching species"}>
         {options.map((result,index) => <button id={id + "-" + index} key={result.id} type="button" role="option" aria-selected={active === index} tabIndex={-1} onMouseDown={e => e.preventDefault()} onClick={() => choose(result)}>
           <SearchAvatar src={result.image} kind={kind} stateCode={result.stateCode} /><span><strong>{result.label}</strong>{result.detail && <small className={kind === "species" ? "scientific-name" : ""}>{result.detail}</small>}{result.count && <small className="suggestion-count">{result.count}</small>}</span><ArrowUpRight size={15} aria-hidden="true" />
@@ -72,7 +72,6 @@ function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy 
         {!options.length && <div className="search-empty"><p>{kind === "place" ? "Try a county name with its state, or a five-digit ZIP." : "Try a common or scientific name."}</p></div>}
       </div>
       {kind === "species" && options.some(option => option.image) && <details className="suggestion-credits"><summary>About these photos</summary>{options.filter(option => option.image).map(option => <p key={option.id}><strong>{option.label}</strong> · {option.credit}</p>)}</details>}
-      {kind === "place" && !normalized && <p className="search-suggestion-note">A few counties with plenty to explore. Enter a ZIP to find its county.</p>}
     </div>}
   </div>;
 }
@@ -96,8 +95,8 @@ export function MapToolbar(props: MapToolbarProps) {
     document.addEventListener("pointerdown", outside);
     return () => document.removeEventListener("pointerdown", outside);
   }, []);
-  function closeSearch() { setSearchOpen(false); searchButton.current?.focus(); }
-  function chooseSearch(action: () => void) { action(); setSearchOpen(false); if (window.matchMedia("(max-width:700px)").matches) requestAnimationFrame(() => searchButton.current?.focus()); }
+  function closeSearch() { setSearchOpen(false); searchButton.current?.focus({ preventScroll: true }); }
+  function chooseSearch(action: () => void) { action(); setSearchOpen(false); if (window.matchMedia("(max-width:700px)").matches) requestAnimationFrame(() => searchButton.current?.focus({ preventScroll: true })); }
   const placeResults = useMemo(() => {
     const q = placeSearch.trim().toLowerCase();
     return Object.values(props.counties).filter(c => (!props.stateCode || c.stateCode === props.stateCode) && (!q || (c.name + " " + c.stateCode).toLowerCase().includes(q)))
@@ -117,7 +116,7 @@ export function MapToolbar(props: MapToolbarProps) {
   const selectedSpecies = props.species.find(s => s.id === props.speciesId);
   const count = props.categories.length + props.environment.length;
   const hasFilters = Boolean(count || props.speciesId || props.query);
-  function close() { setFilterOpen(false); filterButton.current?.focus(); }
+  function close() { setFilterOpen(false); filterButton.current?.focus({ preventScroll: true }); }
   return <div ref={toolbarRoot} className="atlas-toolbar">
     <div className={"atlas-control-row" + (hasFilters ? " has-applied-filters" : "")}>
       <button ref={searchButton} type="button" className="mobile-map-search-button" aria-label="Search the map" title="Search" aria-expanded={searchOpen} aria-controls={searchId} onClick={() => {setSearchOpen(!searchOpen);setFilterOpen(false);}}><Search size={20} aria-hidden="true" /></button>
@@ -139,7 +138,7 @@ export function MapToolbar(props: MapToolbarProps) {
           <div className="mobile-state-filter"><p>State</p><StatePicker value={draftState} onChange={setDraftState}/></div>
           {(selectedSpecies || props.query) && <div className="mobile-selected-search"><span>{selectedSpecies?.commonName ?? props.query}</span><button type="button" aria-label="Remove species search" onClick={() => {props.onSpeciesSelect(null);props.onQueryChange("");}}><X size={16}/></button></div>}
           <fieldset><legend>Species groups</legend><div className="filter-options">{categoryOrder.map(value => CATEGORY_OPTIONS.find(option => option.value === value)!).map(option => {const checked=draftCategories.includes(option.value); return <button key={option.value} type="button" className={"filter-option category-" + option.value} aria-pressed={checked} onClick={() => setDraftCategories(checked ? draftCategories.filter(c=>c!==option.value) : [...draftCategories,option.value])}><NatureIcon kind={CATEGORY_NATURE[option.value]} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
-          <fieldset><legend>Environments <small>Choose any that apply</small></legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.filter(option => option.value).map(option => {const value=option.value!;return <button key={value} type="button" className="filter-option" aria-pressed={draftEnvironment.includes(value)} onClick={() => setDraftEnvironment(current => toggleEnvironment(current, value))}><EnvironmentIcon kind={value} width={26} height={26}/><span>{option.label}</span></button>;})}</div></fieldset>
+          <fieldset className="map-environments"><legend>Environments <small role="status">{draftEnvironment.length ? `${draftEnvironment.length} selected` : "All selected"}</small></legend><div className="filter-options environment-options">{ENVIRONMENT_OPTIONS.map(option => {const value=option.value;const checked=value ? draftEnvironment.includes(value) : !draftEnvironment.length;return <button key={value ?? "all"} type="button" className="filter-option" aria-label={value ? option.label : "All environments"} aria-pressed={checked} onClick={() => setDraftEnvironment(current => value ? toggleEnvironment(current, value) : [])}>{value ? <EnvironmentIcon kind={value} width={20} height={20}/> : checked ? <Check size={20} aria-hidden="true"/> : <Globe2 size={20} aria-hidden="true"/>}<span>{value ? option.label : "All"}</span></button>;})}</div></fieldset>
           <footer><button type="button" className="filter-clear-button" onClick={() => {setDraftCategories([]);setDraftEnvironment([]);setDraftState(null);props.onClearFilters();close();}}>Clear filters</button><button type="button" className="primary-button" onClick={() => {props.onApplyFilters(draftCategories,draftEnvironment,draftState);close();}}>Apply filters <ArrowRight size={16}/></button></footer>
         </section>
       </div>
