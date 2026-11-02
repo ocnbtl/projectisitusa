@@ -7,7 +7,7 @@ import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
+import { ArrowUpRight, Check, Globe2, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
 import { CustomSelect } from "@/components/atlas/custom-select";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 import type { EnvironmentTag, Species, SpeciesCategory } from "@/lib/data/types";
@@ -154,7 +154,7 @@ export function SpeciesDirectory() {
         <div className="directory-category-field"><span>Category</span><div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div></div>
       </div>
 
-      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environments <small>Choose any that apply</small></span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-pressed={option.value ? environment.includes(option.value) : !environment.length} onClick={() => { const value = option.value; setEnvironment(current => value ? toggleEnvironment(current, value) : []); setPage(1); }}>{option.value && <EnvironmentIcon kind={option.value} width={20} height={20}/>}<span>{option.label}</span></button>)}</div></div></div>
+      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environments <small role="status">{environment.length ? `${environment.length} selected` : "All environments"}</small></span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-label={option.value ? option.label : "All environments"} aria-pressed={option.value ? environment.includes(option.value) : !environment.length} onClick={() => { const value = option.value; setEnvironment(current => value ? toggleEnvironment(current, value) : []); setPage(1); }}>{option.value ? <EnvironmentIcon kind={option.value} width={20} height={20}/> : !environment.length ? <Check size={20} aria-hidden="true"/> : <Globe2 size={20} aria-hidden="true"/>}<span>{option.value ? option.label : "All"}</span></button>)}</div></div></div>
 
       {hasFilters && <div className="directory-active-filters" aria-label="Active species filters">
         {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label={`Remove search ${query}`}><Search size={14} aria-hidden="true" /><span>{query}</span><X size={14} aria-hidden="true" /></button>}
