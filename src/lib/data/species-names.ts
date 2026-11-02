@@ -1,4 +1,5 @@
 import records from "@/content/species-names.json";
+import { readableSpeciesNameNote } from "./species-name-copy";
 import { approvedSpeciesDisplayName } from "@/lib/data/species-display-name";
 export { matchedSpeciesName, speciesNameMatches } from "./species-name-search";
 
@@ -7,7 +8,15 @@ export type SpeciesNames = { names: SpeciesName[]; sources: { title: string; url
 type NamedSpecies = { id: string; commonName: string; scientificName: string; displayGroup?: string };
 const namesById = records as Record<string, SpeciesNames>;
 export function getSpeciesNames(id: string): SpeciesNames {
-  return namesById[id] ?? { names: [], sources: [] };
+  const record = namesById[id];
+  if (!record) return { names: [], sources: [] };
+  return {
+    ...record,
+    names: record.names.map(entry => entry.explanation
+      ? { ...entry, explanation: readableSpeciesNameNote(entry.explanation) }
+      : entry),
+    ...(record.warning ? { warning: readableSpeciesNameNote(record.warning) } : {}),
+  };
 }
 export function speciesStructuredData(species: NamedSpecies & { slug: string }) {
   const record = getSpeciesNames(species.id);

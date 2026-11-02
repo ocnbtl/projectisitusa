@@ -8,7 +8,7 @@ import { Challenge, Honeypot, Notice, styles, useConfig } from "./shared";
 export function ProfileCorrection({ speciesId, name }: { speciesId: string; name: string }) {
   const [open, setOpen] = useState(false);
   return <section className="profile-correction reading-section" aria-label="Suggest a profile correction">
-    <button type="button" className="text-link inline-flex min-h-11 items-center gap-2" aria-expanded={open} onClick={() => setOpen(value => !value)}><MessageSquareText size={18} aria-hidden="true"/>{open ? "Close correction form" : "Something not quite right? Suggest a correction"}</button>
+    <button type="button" className="text-link inline-flex min-h-11 items-center gap-2" aria-expanded={open} onClick={() => setOpen(value => !value)}><MessageSquareText size={18} aria-hidden="true"/>{open ? "Close correction form" : "Suggest a correction"}</button>
     {open && <CorrectionForm speciesId={speciesId} name={name}/>}
   </section>;
 }
