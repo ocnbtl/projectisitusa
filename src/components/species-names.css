@@ -9,13 +9,28 @@
 .species-names-content{min-width:0;display:grid;gap:14px;padding:4px 0 0}.species-names h3{font-family:inherit;font-size:12px;font-weight:600;color:var(--muted);margin:0 0 6px}
 .species-name-list{display:flex;flex-wrap:wrap;gap:4px 12px;list-style:none;margin:0;padding:0;font-size:13px;line-height:1.6}
 .species-name-list li{overflow-wrap:anywhere}.species-name-list li:not(:last-child)::after{content:","}
-.species-name-notes{display:grid;gap:4px}.species-name-note{min-width:0}.species-name-note summary{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:44px;cursor:pointer;font-size:13px;line-height:1.5;overflow-wrap:anywhere;border-radius:6px;padding:6px;margin:0 -6px}.species-name-note summary::-webkit-details-marker{display:none}.species-name-note summary:hover{background:color-mix(in srgb,var(--foreground) 5%,transparent)}.species-names summary:focus-visible{outline:2px solid var(--foreground);outline-offset:3px}.species-name-note summary>svg{flex-shrink:0}.species-name-kind{font-size:11px;line-height:1.5;color:var(--muted)}
+.species-name-notes{display:grid;gap:2px;list-style:none;padding:0;margin:0}
+.species-name-note{min-width:0}
+.species-name-toggle{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;width:100%;min-height:44px;padding:8px 6px;border:0;border-radius:6px;background:transparent;color:var(--foreground);font:inherit;font-size:13px;line-height:1.5;text-align:left;cursor:pointer;text-decoration:none}
+.species-name-label{min-width:0;overflow-wrap:anywhere}
+.species-name-kind{display:block;margin-top:2px;font-size:11px;line-height:1.5;color:var(--muted)}
+.species-name-toggle:hover,.species-name-toggle[aria-expanded=true]{background:color-mix(in srgb,var(--foreground) 5%,transparent)}
+.species-name-toggle>svg{flex-shrink:0}
+.species-name-toggle[aria-expanded=true]>svg{transform:rotate(180deg)}
+.species-names :is(summary,button,a):focus-visible{outline:2px solid var(--foreground);outline-offset:3px}
+.species-name-pagination{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 6px;font-size:12px;color:var(--muted)}
+.species-name-pagination>div{display:flex;gap:6px}
+.species-name-pagination button{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--foreground);cursor:pointer}
+.species-name-pagination button:disabled{opacity:.4;cursor:default}
+.species-name-pagination button:not(:disabled):hover{background:var(--surface-strong)}
+.species-name-note[hidden],.species-name-explanation[hidden]{display:none}
 .species-name-explanation{border-left:2px solid var(--border);padding:6px 12px;margin:4px 0 8px}.species-name-explanation a,.species-name-references a{font-size:13px;line-height:1.6;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}.species-name-explanation a{display:inline-flex;align-items:center;margin-top:4px;min-height:44px}.species-name-references{font-size:13px;color:var(--muted);scroll-margin-top:160px}.species-name-references summary{cursor:pointer;min-height:44px;align-content:center}.species-name-references ul{margin:0;padding-left:18px}.species-name-references li{padding:5px 0}
 .profile-name-warning{font-family:inherit;font-size:14px;line-height:1.65;border-left:3px solid var(--border);padding:10px 14px;margin:14px 0;color:var(--muted)}.profile-name-warning a{display:inline-block;text-decoration:underline;text-underline-offset:3px;margin-left:5px}
 .directory-name-match{font-size:12px!important;line-height:1.5!important;color:var(--muted);overflow-wrap:anywhere}
-@media(prefers-reduced-motion:no-preference){.species-name-note[open] .species-name-explanation{animation:name-note-in .16s ease-out}@keyframes name-note-in{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}}
+@media(prefers-reduced-motion:no-preference){.species-name-explanation:not([hidden]){animation:name-note-in .16s ease-out}@keyframes name-note-in{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}}
 
-/* A long historical synonym list must not take over the profile. */
-.species-names-content{max-height:26rem;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding-right:6px}
+/* Page-sized notes keep the sidebar compact without a nested scrolling surface. */
+.species-names-content{gap:12px;padding:4px 2px 0;overflow:visible}
+.species-name-list a{display:inline-block;padding-block:3px}
 
 .species-name-list a{text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px}.species-name-list a:hover{text-decoration-color:currentColor}
