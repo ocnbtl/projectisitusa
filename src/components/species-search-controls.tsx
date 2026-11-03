@@ -9,7 +9,7 @@ export function SpeciesSearchControls({
 }: {
   value: string;
   onChange: (value: string) => void;
-  inputRef?: RefObject<HTMLInputElement | null>;
+  inputRef?: RefObject<HTMLInputElement>;
   filterCount: number;
   children: ReactNode;
   onReset: () => void;
