@@ -33,7 +33,7 @@
 .species-page .directory-view-grid .directory-image-placeholder{height:100%}
 @media(min-width:701px) and (max-width:1200px){.species-page .directory-view-compact{grid-template-columns:1fr}}
 @media(max-width:1100px) and (min-width:701px){
- .species-page .directory-view-rows .refined-species-card{grid-template-columns:80px minmax(0,1fr) 36px;grid-template-areas:"photo names credit" "photo meta action" "summary summary summary"}
+ .species-page .directory-view-rows .refined-species-card{grid-template-columns:80px minmax(0,1fr) auto;grid-template-areas:"photo names credit" "photo meta action" "summary summary summary"}
  .species-page .directory-view-rows .directory-card-photo{height:80px}
 }
 @media(max-width:700px){
