@@ -82,7 +82,7 @@
 .species-page .directory-view-grid .image-credit{margin-left:0}
 .species-page .directory-view-compact{grid-template-columns:repeat(2,minmax(0,1fr))}
 .species-page .directory-view-compact .directory-card{padding:16px}
-.species-page .directory-view-compact .directory-profile-link{grid-template-columns:56px minmax(0,1fr);gap:12px}
+.species-page .directory-view-compact .directory-profile-link{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px}
 .species-page .directory-view-compact .directory-thumbnail{width:56px;height:56px}
 .species-page .directory-view-compact .directory-names h3{font-size:18px}
 .species-page .directory-view-compact .image-credit{margin-left:68px}
@@ -491,7 +491,7 @@
 }
 @media(max-width:700px){
  .species-page>.illustrated-intro{grid-template-columns:minmax(0,1fr) minmax(120px,.7fr);gap:14px 12px;margin-bottom:16px}
- .species-page>.illustrated-intro .directory-hero{display:contents}
+ .species-page>.illustrated-intro>.illustrated-intro-copy,.species-page>.illustrated-intro .directory-hero{display:contents}
  .species-page .directory-intro-copy{grid-column:1;grid-row:1;align-self:center}
  .species-page>.illustrated-intro>.editorial-art{grid-column:2;grid-row:1}
  .species-page .directory-hero .catalog-note-top{grid-column:1/-1;grid-row:2;max-width:none;margin:0;padding:8px 12px}
