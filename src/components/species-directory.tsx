@@ -3,6 +3,7 @@
 import Image from "next/image";
 import "@/components/species-names.css";
 import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-name-search";
+import { SpeciesSearchControls } from "./species-search-controls";
 import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
@@ -34,6 +35,8 @@ function isDirectorySpecies(value: unknown): value is Species {
 function DirectoryCard({ species, view, query }: { species: Species; view: DirectoryView; query: string }) {
   const [imageFailed, setImageFailed] = useState(false);
   const { summary } = getSpeciesEditorial(species);
+  const countyCount = species.registry?.mappedCountyCount;
+  const countyLabel = countyCount === undefined ? "County records not available" : countyCount === 0 ? "No county records yet" : `${countyCount.toLocaleString()} ${countyCount === 1 ? "county" : "counties"}`;
   return (
     <article className={`directory-card ${!species.image || imageFailed ? "directory-without-photo" : ""}`}>
       <div className="directory-identity"><Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-link" onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}>
@@ -50,7 +53,7 @@ function DirectoryCard({ species, view, query }: { species: Species; view: Direc
           <h3>{species.commonName}</h3>
           <p><i>{species.scientificName}</i></p>
           {matchedSpeciesName(species, query) && <p className="directory-name-match">{matchedSpeciesName(species, query)}</p>}
-          <span className={"category-" + species.category}><NatureIcon kind={CATEGORY_NATURE[species.category]} width={17} height={17} />{formatCategoryLabel(species.category)}</span>
+          <div className="directory-card-meta"><span className={"category-" + species.category}><NatureIcon kind={CATEGORY_NATURE[species.category]} width={17} height={17} />{formatCategoryLabel(species.category)}</span><small className="directory-county-count">{countyLabel}</small></div>
         </div>
         <ArrowUpRight className="directory-open-icon" size={18} aria-hidden="true" />
       </Link>
@@ -141,20 +144,13 @@ export function SpeciesDirectory() {
 
   return (
     <section className="species-directory" aria-label="Search the species catalog">
-      <div className="directory-filter-panel"><div className="directory-controls">
-        <div className="directory-search-label">
-          <label htmlFor="directory-search">Search species</label>
-          <div className="directory-search-input"><Search size={19} aria-hidden="true" />
-            <input ref={searchInput} id="directory-search" type="search" value={query} maxLength={200}
-              onChange={event => { setQuery(event.target.value); setPage(1); }}
-              placeholder="Common or scientific name" aria-controls="directory-results" />
-            {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label="Clear species search"><X size={18} aria-hidden="true" /></button>}
-          </div>
-        </div>
+      <SpeciesSearchControls value={query} onChange={value => { setQuery(value); setPage(1); }}
+        inputRef={searchInput} filterCount={selectedCategories.length + environment.length}
+        onReset={resetFilters} hasFilters={hasFilters}>
         <div className="directory-category-field"><span>Category</span><div className="directory-category-tags" role="group" aria-label="Species categories">{categories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={selectedCategories.includes(category)} onClick={() => { setCategories(current => current.includes(category) ? current.filter(value => value !== category) : [...current, category]); setPage(1); }}><NatureIcon kind={CATEGORY_NATURE[category]} width={23} height={23} /><span>{formatCategoryLabel(category)}</span></button>)}</div></div>
-      </div>
 
-      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environments <small role="status">{environment.length ? `${environment.length} selected` : "All environments"}</small></span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-label={option.value ? option.label : "All environments"} aria-pressed={option.value ? environment.includes(option.value) : !environment.length} onClick={() => { const value = option.value; setEnvironment(current => value ? toggleEnvironment(current, value) : []); setPage(1); }}>{option.value ? <EnvironmentIcon kind={option.value} width={20} height={20}/> : !environment.length ? <Check size={20} aria-hidden="true"/> : <Globe2 size={20} aria-hidden="true"/>}<span>{option.value ? option.label : "All"}</span></button>)}</div></div></div>
+      <div className="directory-environment-field" role="group" aria-label="Filter by environment"><span>Environments <small role="status">{environment.length ? `${environment.length} selected` : "All environments"}</small></span><div>{ENVIRONMENT_OPTIONS.map(option => <button key={option.value ?? "all"} type="button" aria-label={option.value ? option.label : "All environments"} aria-pressed={option.value ? environment.includes(option.value) : !environment.length} onClick={() => { const value = option.value; setEnvironment(current => value ? toggleEnvironment(current, value) : []); setPage(1); }}>{option.value ? <EnvironmentIcon kind={option.value} width={20} height={20}/> : !environment.length ? <Check size={20} aria-hidden="true"/> : <Globe2 size={20} aria-hidden="true"/>}<span>{option.value ? option.label : "All"}</span></button>)}</div></div>
+      </SpeciesSearchControls>
 
       {hasFilters && <div className="directory-active-filters" aria-label="Active species filters">
         {query && <button type="button" onClick={() => { setQuery(""); setPage(1); searchInput.current?.focus(); }} aria-label={`Remove search ${query}`}><Search size={14} aria-hidden="true" /><span>{query}</span><X size={14} aria-hidden="true" /></button>}

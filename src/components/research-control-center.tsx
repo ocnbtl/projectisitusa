@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SpeciesSearchControls } from "./species-search-controls";
 import { EvidenceNote } from "@/components/evidence-note";
 import { EVIDENCE_LABELS, findingDescription } from "@/lib/ui/research-copy";
 import { EditorialArt } from "@/components/editorial-art";
@@ -970,14 +971,14 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
       <div className="research-county-choice">
         <div>
           <SelectField
-            label="Choose a county"
+            label="2. Choose a county"
             value={selectedCountyFips}
             options={countyOptions}
             onChange={setSelectedCountyFips}
             disabled={countyOptions.length === 0}
           />
         </div>
-        <p>Open a species below to see the original sources and observation dates. A past record does not always tell us what is there today.</p>
+        <p>Then search the county’s species below. Open a finding to read its sources and observation dates.</p>
       </div>
 
       {loadState === "loading" || loadState === "idle" ? (
@@ -1009,13 +1010,9 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
       {countyData && loadState === "success" ? (
         <>
-          <div className="research-filter-bar" role="group" aria-label="Filter county species">
-            <SearchField
-              label="Search species"
-              value={query}
-              placeholder="Common or scientific name"
-              onChange={setQuery}
-            />
+          <SpeciesSearchControls value={query} onChange={setQuery}
+            filterCount={Number(statusFilter !== "all") + Number(categoryFilter !== "all")}
+            onReset={clearFilters} hasFilters={hasActiveFilters}>
             <SelectField
               label="Finding"
               value={statusFilter}
@@ -1040,19 +1037,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               ]}
               onChange={setCategoryFilter}
             />
-            <div className="flex items-end">
-              <button
-                type="button"
-                onClick={clearFilters}
-                disabled={!hasActiveFilters}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-35"
-                aria-label="Clear county filters"
-                title="Clear filters"
-              >
-                <X aria-hidden="true" size={17} />
-              </button>
-            </div>
-          </div>
+          </SpeciesSearchControls>
 
           <details className="county-research-detail border-b border-[var(--border)] py-2">
             <summary><span>At a glance: {countyData.countyName}</span><span>{formatNumber(countyData.summary.verifiedPresent)} species recorded<ChevronDown size={16} aria-hidden="true"/></span></summary>
@@ -1387,29 +1372,22 @@ function isResearchSummaryFile(
   );
 }
 
-function ResearchHeader({ availableStates, selectedStateCode, onStateChange, summary }: {
+function ResearchHeader({ availableStates, selectedStateCode, onStateChange }: {
   availableStates: ResearchStateOption[];
   selectedStateCode: string;
   onStateChange: (stateCode: string) => void;
-  summary?: ResearchSummaryFile;
 }) {
   return (
     <header className="reading-hero research-heading">
       <div className="research-heading-copy"><div>
         <h1 className="page-heading">Explore the research.</h1>
-        <p>Explore county findings, trace their sources, and see where more research is needed.</p>
-        <nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav>
-      </div><EditorialArt subject="research" /></div>
+        <p>Choose a state, then a county to explore species records and the sources behind them.</p>
+        </div><aside className="research-hero-aside"><EditorialArt subject="research" /><nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav></aside></div>
       <div className="research-state-control">
-        <SelectField stateFlags label="Choose a state" value={selectedStateCode}
+        <SelectField stateFlags label="1. Choose a state" value={selectedStateCode}
           options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}
           onChange={onStateChange} />
-        {summary && <div className="research-update-note"><p>Research through <time dateTime={summary.asOf}>{formatDate(summary.asOf)}</time></p>
-          <details className="research-publication-details"><summary>About this update</summary>
-            <p>Observation dates appear with each source. An update can include older records.</p>
-            <p>Catalog snapshot: {formatDate(summary.sourceSnapshotDate)}.</p>
-            <p>Generated {formatTimestamp(summary.generatedAt)}.</p>
-          </details></div>}
+
       </div>
     </header>
   );
@@ -1443,7 +1421,7 @@ function ResearchControlCenterContent({
 
   return (
     <main id="main-content" className="reading-page research-page">
-      <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} summary={summary} />
+      <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} />
 
       <div id="research-explorer" className="research-tabs">
         <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">

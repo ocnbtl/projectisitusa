@@ -15,7 +15,6 @@ export default function SpeciesPage() {
     <main id="main-content" className="reading-page species-page">
       <IllustratedIntro subject="catalog" compact><header className="reading-hero directory-hero">
         <div><h1 className="page-heading">Explore species.</h1><p>Learn what to look for, how species spread, and where they have been recorded.</p></div>
-        <div className="discovery-reading-links"><Link href="/">Explore the map <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
       </header></IllustratedIntro>
       <details className="catalog-note catalog-note-top">
         <summary>Where does this information come from?</summary>
