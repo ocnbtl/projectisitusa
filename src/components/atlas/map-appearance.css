@@ -6,3 +6,15 @@
  .atlas .map-palette-options button>span:nth-child(2){flex:none;white-space:nowrap}
  .atlas .map-palette-options button>svg{position:absolute;top:5px;right:5px;width:14px;height:14px;padding:1px;border-radius:50%;background:var(--surface-strong);color:var(--foreground)}
 }
+
+/* Fixed-width surfaces animate on the compositor; text never rewraps mid-reveal. */
+.atlas .atlas-legend,.atlas .atlas-legend:has(.legend-drawer[data-open=true]){width:330px;transition:none;overflow:visible}
+.atlas .atlas-legend .legend-drawer{position:absolute;left:0;bottom:calc(100% + 10px);width:330px;max-width:calc(100vw - 32px);display:block;grid-template-rows:none;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px) scale(.97);transform-origin:bottom left;border:1px solid var(--border);border-radius:14px;background:var(--surface-strong);box-shadow:0 10px 32px color-mix(in srgb,var(--foreground) 12%,transparent);transition:opacity 280ms ease,transform 420ms cubic-bezier(.22,1,.36,1),visibility 0s 420ms}
+.atlas .atlas-legend .legend-drawer[data-open=true]{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1);transition:opacity 300ms ease,transform 420ms cubic-bezier(.22,1,.36,1),visibility 0s}
+.atlas .atlas-legend .legend-drawer>div{overflow:visible}
+.atlas .atlas-legend .legend-explanation,.atlas .atlas-legend .legend-palette-panel{padding:14px;margin:0;border:0}
+@media(max-width:700px){
+ .atlas .atlas-legend,.atlas .atlas-legend:has(.legend-drawer[data-open=true]){width:min(260px,calc(100% - 84px))}
+ .atlas .atlas-legend .legend-drawer{width:min(330px,calc(100vw - 40px))}
+}
+@media(prefers-reduced-motion:reduce){.atlas .atlas-legend .legend-drawer{transition:none;transform:none}}

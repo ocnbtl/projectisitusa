@@ -236,3 +236,37 @@
 
 /* Keep the correction action readable on narrow phones without shrinking its text. */
 .species-profile .profile-correction>button{white-space:nowrap}
+
+/* Carry the directory's image, label and reference rhythm into each profile. */
+.species-profile .profile-back-nav{margin-bottom:16px}
+.species-profile .profile-heading .profile-scientific-name{margin-top:8px;font-size:17px}
+.species-profile .profile-heading .profile-description{margin-top:16px;line-height:1.7}
+.species-profile .profile-heading .profile-facts{margin-top:16px;gap:12px 24px}
+.species-profile .profile-image{border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden}
+.species-profile .profile-sidebar .profile-image>img{object-fit:contain;width:100%;height:clamp(220px,23vw,310px);padding:10px}
+.species-profile .profile-photo-credit{justify-content:space-between;gap:10px;padding:6px 12px;background:var(--surface-strong);font-size:12px;line-height:1.4}
+.species-profile .profile-photo-credit>span:not(.context-popover-trigger){order:-1}
+.species-profile .profile-photo-credit .context-popover-trigger>button{width:40px;min-height:40px;justify-content:center;border-radius:50%;border:1px solid var(--border)}
+.species-profile .profile-section-nav{margin-block:20px}
+.species-profile .profile-reading{gap:24px 32px}
+.species-profile .profile-reading p{margin-top:12px}
+.species-profile .profile-resource-footer{align-items:start}
+.species-profile .profile-sources li a{line-height:1.5;padding-block:7px}
+.species-profile .profile-source-dates dd{margin-top:3px}
+@media(max-width:700px){
+ .reading-page.species-profile{padding-inline:16px}
+ .species-profile .profile-back-nav{margin-bottom:12px;font-size:13px}
+ .species-profile .profile-layout{gap:16px}
+ .species-profile .profile-heading .profile-title{font-size:26px;line-height:1.2}
+ .species-profile .profile-heading .profile-scientific-name{font-size:15px;margin-top:6px}
+ .species-profile .profile-heading .profile-description{margin-top:12px}
+ .species-profile .profile-heading .profile-facts{font-size:12px;margin-top:14px;gap:10px 20px}
+ .species-profile .profile-sidebar{gap:12px}
+ .species-profile .profile-sidebar .profile-image>img{height:220px;max-height:none;padding:8px}
+ .species-profile .profile-section-nav{margin-block:16px}
+ .species-profile .profile-evidence{margin:20px 0 24px}
+ .species-profile .profile-reading{gap:22px}
+ .species-profile .profile-record-panel{padding:12px}
+ .species-profile .profile-resource-footer{gap:14px}
+ .species-profile .profile-reading>details.profile-registry{padding:8px 14px}
+}

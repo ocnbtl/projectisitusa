@@ -7,7 +7,7 @@ import { SpeciesSearchControls } from "./species-search-controls";
 import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import { useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, Check, Globe2, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
 import { CustomSelect } from "@/components/atlas/custom-select";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
@@ -38,11 +38,11 @@ function DirectoryCard({ species, view, query }: { species: Species; view: Direc
   const countyCount = species.registry?.mappedCountyCount;
   const countyLabel = countyCount === undefined ? "County records not available" : countyCount === 0 ? "No county records yet" : `${countyCount.toLocaleString()} ${countyCount === 1 ? "county" : "counties"}`;
   return (
-    <article className={`directory-card refined-species-card ${!species.image || imageFailed ? "directory-without-photo" : ""}`}>
+    <article data-species-card={species.id} className={`directory-card refined-species-card ${!species.image || imageFailed ? "directory-without-photo" : ""}`}>
       <Link href={`/species/${species.slug}`} prefetch={false} className="directory-card-photo" aria-label={`View ${species.commonName} profile`} onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}>
         <div className="directory-thumbnail">
-          {species.image && !imageFailed ? <Image src={view === "grid" ? species.image.src : species.image.thumbnail ?? species.image.src} alt={species.image.alt}
-            width={view === "grid" ? 450 : 112} height={view === "grid" ? 450 : 112} sizes={view === "grid" ? "450px" : "112px"} unoptimized loading="lazy" onError={() => setImageFailed(true)} />
+          {species.image && !imageFailed ? <Image src={view !== "compact" ? species.image.src : species.image.thumbnail ?? species.image.src} alt={species.image.alt}
+            width={450} height={450} sizes={view === "grid" ? "450px" : "160px"} unoptimized loading="lazy" onError={() => setImageFailed(true)} />
             : <span className="directory-image-placeholder"><NatureIcon kind={CATEGORY_NATURE[species.category]} width={30} height={30}/><small>{species.image ? "Photo unavailable" : "No photo yet"}</small></span>}
         </div>
       </Link>
@@ -72,6 +72,37 @@ export function SpeciesDirectory() {
   const deferredQuery = useDeferredValue(query);
   const resultsHeading = useRef<HTMLHeadingElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
+
+  const cards = useRef<HTMLDivElement>(null);
+  const previousRects = useRef<Map<string, DOMRect> | null>(null);
+  const layoutAnimations = useRef<Animation[]>([]);
+  function changeView(next: DirectoryView) {
+    if (next === view) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    previousRects.current = reduced ? null : new Map(
+      Array.from(cards.current?.querySelectorAll<HTMLElement>("[data-species-card]") ?? [])
+        .map(card => [card.dataset.speciesCard!, card.getBoundingClientRect()]));
+    layoutAnimations.current.forEach(animation => animation.cancel());
+    layoutAnimations.current = [];
+    setView(next);
+    track("directory_view_changed", { surface: "directory", view: next });
+  }
+  useLayoutEffect(() => {
+    const before = previousRects.current;
+    previousRects.current = null;
+    if (!before || !cards.current) return;
+    cards.current.querySelectorAll<HTMLElement>("[data-species-card]").forEach(card => {
+      const from = before.get(card.dataset.speciesCard!);
+      const to = card.getBoundingClientRect();
+      if (!from || !to.width || !to.height || (from.top > innerHeight && to.top > innerHeight)) return;
+      const animation = card.animate([
+        { transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`, transformOrigin: "top left" },
+        { transform: "none", transformOrigin: "top left" },
+      ], { duration: 480, easing: "cubic-bezier(.22,1,.36,1)" });
+      layoutAnimations.current.push(animation);
+    });
+  }, [view]);
+  useEffect(() => () => layoutAnimations.current.forEach(animation => animation.cancel()), []);
 
   useEffect(() => {
     function readLocation() {
@@ -163,12 +194,12 @@ export function SpeciesDirectory() {
               <div><p role="status" aria-live="polite" aria-atomic="true">{matches.length ? `Showing ${start + 1}-${Math.min(start + pageSize, matches.length)} of ${matches.length.toLocaleString()}` : "No matching species"}</p></div>
             </div>
             <div className="directory-display-controls">
-              <div className="directory-view-switch" role="group" aria-label="Species layout">{([{ value: "rows", label: "List", Icon: Rows3 }, { value: "compact", label: "Compact", Icon: List }, { value: "grid", label: "Grid", Icon: Grid2X2 }] as const).map(option => <button type="button" key={option.value} aria-label={option.label} title={option.label} aria-pressed={view === option.value} onClick={() => {setView(option.value);track("directory_view_changed",{surface:"directory",view:option.value});}}><option.Icon size={18} aria-hidden="true" /><span>{option.label}</span></button>)}</div>
+              <div className="directory-view-switch" data-view={view} role="group" aria-label="Species layout">{([{ value: "rows", label: "List", Icon: Rows3 }, { value: "compact", label: "Compact", Icon: List }, { value: "grid", label: "Grid", Icon: Grid2X2 }] as const).map(option => <button type="button" key={option.value} aria-label={option.label} title={option.label} aria-pressed={view === option.value} onClick={() => changeView(option.value)}><option.Icon size={18} aria-hidden="true" /><span>{option.label}</span></button>)}</div>
               <CustomSelect label="Per page" compact value={String(pageSize)} options={DIRECTORY_PAGE_SIZES.map(value => ({ value: String(value), label: String(value) }))} onChange={value => { setPageSize(Number(value)); setPage(1); }} />
             </div>
             </div>
             {matches.length ? (
-              <div className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} view={view} query={deferredQuery} />)}</div>
+              <div ref={cards} className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} view={view} query={deferredQuery} />)}</div>
             ) : (
               <div className="directory-empty"><Search size={28} aria-hidden="true" /><h3>No match for that search.</h3><p>Try a shorter name, or clear a category or environment filter.</p><button type="button" onClick={resetFilters} className="primary-button">Start a new search</button></div>
             )}

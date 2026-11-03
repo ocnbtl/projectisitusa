@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState, type ReactNode, type RefObject } from "react";
+import { useId, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { ChevronDown, Search, SlidersHorizontal, X } from "lucide-react";
 
 /** Shared immediate-search controls; secondary filters stay out of the reading path. */
@@ -16,9 +16,11 @@ export function SpeciesSearchControls({
   hasFilters: boolean;
 }) {
   const id = useId();
+  const disclosure = useRef<HTMLDivElement>(null);
   const localInput = useRef<HTMLInputElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
+  useLayoutEffect(() => { if (disclosure.current) disclosure.current.inert = !open; }, [open]);
   const field = inputRef ?? localInput;
   function close() {
     setOpen(false);
@@ -45,7 +47,7 @@ export function SpeciesSearchControls({
         </button>
       </div>
       <div id={id + "-filters"} className="species-filter-disclosure" data-open={open}
-        aria-hidden={!open} inert={!open} onKeyDown={event => { if (event.key === "Escape") { event.preventDefault(); close(); } }}>
+        aria-hidden={!open} ref={disclosure} onKeyDown={event => { if (event.key === "Escape") { event.preventDefault(); close(); } }}>
         <div><div className="species-filter-content">
           {children}
           <p className="species-filter-hint">Filters update results as you choose.</p>

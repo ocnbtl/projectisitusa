@@ -1,5 +1,5 @@
 "use client";
-import { useId, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useId, useRef, useState } from "react";
 import { Check, Info, Palette } from "lucide-react";
 import { MAP_PALETTES, type MapPaletteId } from "@/lib/ui/map-palettes";
 import type { MapCountBand } from "@/lib/ui/map-scale";
@@ -14,7 +14,21 @@ export function MapAppearance({ palette, onPaletteChange, bands, scope }: {
   const anchors = bands.filter(band => band.min > 0);
   const spectrum = anchors.length > 1 ? "linear-gradient(to right, " + anchors.map(band => band.color).join(", ") + ")" : anchors[0]?.color ?? "var(--county-none)";
   const helpButton = useRef<HTMLButtonElement>(null), colorButton = useRef<HTMLButtonElement>(null);
-  return <div className="atlas-legend glass-panel" onKeyDown={event => {
+  const legend = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    legend.current?.querySelectorAll<HTMLElement>(".legend-drawer").forEach(drawer => {
+      drawer.inert = drawer.dataset.open !== "true";
+    });
+  }, [open]);
+  useEffect(() => {
+    if (!open) return;
+    function outside(event: PointerEvent) {
+      if (!legend.current?.contains(event.target as Node)) setOpen(null);
+    }
+    document.addEventListener("pointerdown", outside);
+    return () => document.removeEventListener("pointerdown", outside);
+  }, [open]);
+  return <div ref={legend} className="atlas-legend glass-panel" onKeyDown={event => {
     if (event.key === "Escape" && open) { event.stopPropagation(); (open === "help" ? helpButton : colorButton).current?.focus(); setOpen(null); }
   }}>
     <div id={id + "-help"} className="legend-drawer" data-open={open === "help"} aria-hidden={open !== "help"}>
