@@ -22,14 +22,14 @@ export function StatePicker({ value, onChange }: { value: string | null; onChang
     document.addEventListener("pointerdown", outside);
     return () => document.removeEventListener("pointerdown", outside);
   }, []);
-  useEffect(() => { if (open) input.current?.focus(); }, [open]);
+  useEffect(() => { if (open) input.current?.focus({ preventScroll: true }); }, [open]);
   useEffect(() => { if (open) document.getElementById(id + "-" + active)?.scrollIntoView({ block: "nearest" }); }, [active, open, id]);
-  function choose(code: string) { onChange(code || null); setOpen(false); button.current?.focus(); }
-  return <div ref={root} className="state-picker" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); setOpen(false); button.current?.focus(); } }}>
+  function choose(code: string) { onChange(code || null); setOpen(false); button.current?.focus({ preventScroll: true }); }
+  return <div ref={root} className="state-picker" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }} onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); setOpen(false); button.current?.focus({ preventScroll: true }); } }}>
     <button ref={button} type="button" className="state-picker-trigger glass-panel" aria-label={"Focus on a state: " + (current?.stateName ?? "All states")} aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={() => { setOpen(!open); setQuery(""); setActive(0); }}>
       {value ? <StateFlag key={value} code={value} /> : <Globe2 size={20} aria-hidden="true" />}<span>{current?.stateName ?? "All states"}</span><ChevronDown size={15} />
     </button>
-    {open && <div className="state-picker-popover">
+    <div className="state-picker-popover" data-open={open} aria-hidden={!open} inert={!open}>
       <label><Search size={16} /><input ref={input} value={query} role="combobox" aria-label="Find a state" aria-autocomplete="list" aria-expanded={open} aria-controls={id} aria-activedescendant={options[active] ? id + "-" + active : undefined} placeholder="Find a state" onChange={e => { setQuery(e.target.value); setActive(0); }} onKeyDown={event => {
         if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); setActive(i => Math.max(0, Math.min(options.length - 1, i + (event.key === "ArrowDown" ? 1 : -1)))); }
         if (event.key === "Enter" && options[active]) { event.preventDefault(); choose(options[active].code); }
@@ -38,6 +38,6 @@ export function StatePicker({ value, onChange }: { value: string | null; onChang
         {option.code ? <StateFlag code={option.code} /> : <Globe2 size={20} aria-hidden="true" />}<span>{option.name}</span>{(value ?? "") === option.code && <Check size={16} />}
       </button>)}{!options.length && <p className="search-empty">No matching state.</p>}</div>
 
-    </div>}
+    </div>
   </div>;
 }

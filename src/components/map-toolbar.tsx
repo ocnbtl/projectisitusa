@@ -1,4 +1,5 @@
 "use client";
+import "./atlas/disclosure-motion.css";
 import Image from "next/image";
 import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-name-search";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
@@ -64,7 +65,7 @@ function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy 
       {value && <button type="button" aria-label={"Clear " + kind + " search"} onClick={() => { onChange(""); setActive(-1); input.current?.focus(); }}><X size={16} /></button>}
       <button type="submit" className="search-submit" aria-label={kind === "place" ? "Find county" : "Find species"} disabled={busy || (!normalized && active < 0)}><Search size={17} /></button>
     </form>
-    {open && <div className="search-suggestion-panel">
+    <div className="search-suggestion-panel" data-open={open} aria-hidden={!open} inert={!open}>
       <div className="search-results" id={id} role="listbox" aria-label={kind === "place" ? "Matching counties" : "Matching species"}>
         {options.map((result,index) => <button id={id + "-" + index} key={result.id} type="button" role="option" aria-selected={active === index} tabIndex={-1} onMouseDown={e => e.preventDefault()} onClick={() => choose(result)}>
           <SearchAvatar src={result.image} kind={kind} stateCode={result.stateCode} /><span><strong>{result.label}</strong>{result.detail && <small className={kind === "species" ? "scientific-name" : ""}>{result.detail}</small>}{result.count && <small className="suggestion-count">{result.count}</small>}</span><ArrowUpRight size={15} aria-hidden="true" />
@@ -72,7 +73,7 @@ function SearchField({ kind, results, value, onChange, onChoose, onSubmit, busy 
         {!options.length && <div className="search-empty"><p>{kind === "place" ? "Try a county name with its state, or a five-digit ZIP." : "Try a common or scientific name."}</p></div>}
       </div>
       {kind === "species" && options.some(option => option.image) && <details className="suggestion-credits"><summary>About these photos</summary>{options.filter(option => option.image).map(option => <p key={option.id}><strong>{option.label}</strong> · {option.credit}</p>)}</details>}
-    </div>}
+    </div>
   </div>;
 }
 export function MapToolbar(props: MapToolbarProps) {

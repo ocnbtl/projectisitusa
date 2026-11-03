@@ -1,0 +1,27 @@
+/* Shared entrance and exit rhythm across map controls, at every width. */
+.atlas-topbar :is(.atlas-filter-panel,.updates-popover,.search-suggestion-panel,.state-picker-popover)[data-open]{
+ animation:none;transform-origin:top left;
+ transition:transform 440ms cubic-bezier(.4,0,.2,1),opacity 320ms ease 60ms,border-radius 440ms ease,visibility 0s 440ms;
+}
+.atlas-topbar :is(.atlas-filter-panel,.updates-popover,.search-suggestion-panel,.state-picker-popover)[data-open=false]{
+ visibility:hidden;opacity:0;pointer-events:none;transform:translateY(-12px) scale(.94,.96);border-radius:20px;
+}
+.atlas-topbar :is(.atlas-filter-panel,.updates-popover,.search-suggestion-panel,.state-picker-popover)[data-open=true]{
+ visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0) scale(1);border-radius:14px;
+ transition:transform 480ms cubic-bezier(.22,1,.36,1),opacity 300ms ease,border-radius 480ms ease,visibility 0s;
+}
+.atlas-topbar .atlas-filter-panel[data-open],.atlas-topbar .updates-popover[data-open]{transform-origin:top right}
+@media(max-width:700px){
+ .atlas-topbar :is(.map-search-panel,.atlas-filter-panel,.updates-popover)[data-open=false]{transform:translateY(-12px) scale(.88,.92)}
+ .atlas-topbar .map-search-panel{transform-origin:22px -22px}
+ .atlas-topbar .atlas-filter-panel{transform-origin:92px -22px}
+ .atlas-topbar .updates-popover{transform-origin:calc(100% - 22px) -22px}
+ .atlas-topbar :is(.search-suggestion-panel,.mobile-state-filter .state-picker-popover)[data-open]{
+  transform:none;border-radius:0;transition:max-height 440ms cubic-bezier(.22,1,.36,1),opacity 300ms ease,margin 440ms ease,padding 440ms ease,visibility 0s 440ms;
+ }
+ .atlas-topbar :is(.search-suggestion-panel,.mobile-state-filter .state-picker-popover)[data-open=false]{max-height:0;margin-block:0;padding-block:0;overflow:hidden}
+ .atlas-topbar :is(.search-suggestion-panel,.mobile-state-filter .state-picker-popover)[data-open=true]{max-height:380px;transition-delay:0s}
+}
+@media(prefers-reduced-motion:reduce){
+ .atlas-topbar :is(.map-search-panel,.atlas-filter-panel,.updates-popover,.search-suggestion-panel,.state-picker-popover)[data-open]{transition:none!important;transform:none}
+}

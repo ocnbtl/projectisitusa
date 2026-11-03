@@ -14,14 +14,14 @@ export default function SpeciesPage() {
   return (
     <main id="main-content" className="reading-page species-page">
       <IllustratedIntro subject="catalog" compact><header className="reading-hero directory-hero">
-        <div><h1 className="page-heading">Explore species.</h1><p>Learn what to look for, how species spread, and where they have been recorded.</p></div>
-      </header></IllustratedIntro>
+        <div className="directory-intro-copy"><h1 className="page-heading">Explore species.</h1><p>Learn what to look for, how species spread, and where they have been recorded.</p></div>
       <details className="catalog-note catalog-note-top">
         <summary>Where does this information come from?</summary>
         <p>We gather species information from public agencies, universities, scientific collections, and observation programs. Each profile brings those references together so you can learn about a species and follow the evidence behind it. County records show where it was reported and when.</p>
         <p>The US-RIIS register helps us organize the catalog for the lower 48 states. We also research Alaska and Hawaii, where the catalog is still growing. A species listed here may not live near you, and missing records do not establish that it is absent.</p>
         <Link href="/research" className="text-link">Browse county evidence and research progress <ArrowUpRight size={15} aria-hidden="true" /></Link>
       </details>
+      </header></IllustratedIntro>
       <SpeciesDirectory />
       <noscript><p className="reading-section">The searchable directory needs JavaScript to load its catalog. You can still read <Link href="/about" className="text-link">about ISITUSA and its sources</Link>.</p></noscript>
     </main>

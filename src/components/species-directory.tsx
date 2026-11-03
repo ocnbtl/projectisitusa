@@ -8,7 +8,7 @@ import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Check, Globe2, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Globe2, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
 import { CustomSelect } from "@/components/atlas/custom-select";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 import type { EnvironmentTag, Species, SpeciesCategory } from "@/lib/data/types";
@@ -62,6 +62,7 @@ function DirectoryCard({ species, view, query }: { species: Species; view: Direc
       )}
       </div>
       {view === "rows" && summary && <p className="directory-summary">{summary}</p>}
+      <Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-action" aria-label={`View profile for ${species.commonName}`} onClick={() => track("species_opened", {surface:"directory",species_id:species.id})}><span>View profile</span><ArrowRight size={16} aria-hidden="true" /></Link>
     </article>
   );
 }
