@@ -1,4 +1,5 @@
 "use client";
+import "./update-notice.css";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Bell, BookOpen, X } from "lucide-react";
@@ -48,8 +49,7 @@ export function UpdateNotice({ datasetDate, datasetLabel }: { datasetDate: strin
       <span className="updates-compact">Updated <time dateTime={latest}>{latest.slice(5, 7)}/{latest.slice(8, 10)}/{latest.slice(2, 4)}</time></span>
     </button>
     <section ref={node => { if (node) node.inert = !open; }} id="atlas-update-list" className="updates-popover" data-open={open} aria-hidden={!open} style={{ maxHeight: availableHeight }} aria-label="Recent updates">
-      <header><div className="updates-heading"><h2>What&apos;s new with ISITUSA</h2></div><button type="button" aria-label="Close updates" onClick={close}><X size={18} /></button></header>
-      <p className="updates-latest">Most recently updated <time dateTime={latest}>{dateLabel(latest)}</time></p>
+      <header><div className="updates-heading"><h2>What&apos;s new with ISITUSA</h2><p className="updates-latest">Most recently updated <time dateTime={latest}>{dateLabel(latest)}</time></p></div><button type="button" aria-label="Close updates" onClick={close}><X size={18} /></button></header>
       <ol>{SITE_UPDATES.map((update, index) => <li key={index}><time dateTime={update.date}>{dateLabel(update.date)}</time><Link href={{ pathname: update.href }}><strong>{update.title}</strong><ArrowUpRight size={16} aria-hidden="true" /></Link><p>{update.detail}</p></li>)}
         {datasetDate && <li><time dateTime={datasetDate}>{dateLabel(datasetDate)}</time><Link href="/research"><strong>{datasetLabel === "Earlier map records" ? "Earlier county records" : "The records behind the map"}</strong><BookOpen size={16} aria-hidden="true" /></Link><p>This is the date of the data release. To see when a species was observed, open its county record and follow the source.</p></li>}
       </ol>

@@ -48,9 +48,10 @@ export function SpeciesSearchControls({
         aria-hidden={!open} inert={!open} onKeyDown={event => { if (event.key === "Escape") { event.preventDefault(); close(); } }}>
         <div><div className="species-filter-content">
           {children}
+          <p className="species-filter-hint">Filters update results as you choose.</p>
           <footer>
             <button type="button" className="species-filter-reset" disabled={!hasFilters} onClick={onReset}>Clear all filters</button>
-            <button type="button" className="species-filter-done" onClick={close}>Done<ChevronDown size={16} aria-hidden="true" /></button>
+            <button type="button" className="species-filter-done" onClick={close}>Show results<ChevronDown size={16} aria-hidden="true" /></button>
           </footer>
         </div></div>
       </div>

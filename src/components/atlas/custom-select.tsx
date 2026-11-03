@@ -100,7 +100,8 @@ export function CustomSelect({ label, value, options, onChange, disabled = false
     <span id={`${id}-label`} className="custom-select-label">{label}</span>
     <button ref={trigger} type="button" className="custom-select-trigger" disabled={disabled || !options.some(option => !option.disabled)}
       aria-labelledby={`${id}-label ${id}-value`} aria-haspopup="dialog" aria-expanded={open} aria-controls={open ? `${id}-popup` : undefined}
-      onClick={() => open ? close() : show()} onKeyDown={event => {
+      onPointerDown={event => { if (open) event.preventDefault(); }}
+      onClick={() => open ? close(true) : show()} onKeyDown={event => {
         if (["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) { event.preventDefault(); show(event.key); }
       }}><span className="select-option-label" id={`${id}-value`}>{stateFlags && selected && <StateFlag key={selected.value} code={selected.value} />}{selected?.label ?? "Choose an option"}</span><ChevronDown size={16} aria-hidden="true" /></button>
     {open && createPortal(<div ref={popup} id={`${id}-popup`} role="dialog" aria-label={label} className="custom-select-popup" style={position} onKeyDown={keyDown}

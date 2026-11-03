@@ -8,7 +8,7 @@ import { PhotoCredit } from "./photo-credit";
 import { track, resultBucket } from "@/lib/ui/telemetry";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, Check, Globe2, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
+import { ArrowRight, Check, Globe2, ChevronLeft, ChevronRight, Grid2X2, List, Rows3, Search, X } from "lucide-react";
 import { CustomSelect } from "@/components/atlas/custom-select";
 import { loadRuntimeData } from "@/lib/data/runtime-fetch";
 import type { EnvironmentTag, Species, SpeciesCategory } from "@/lib/data/types";
@@ -38,31 +38,22 @@ function DirectoryCard({ species, view, query }: { species: Species; view: Direc
   const countyCount = species.registry?.mappedCountyCount;
   const countyLabel = countyCount === undefined ? "County records not available" : countyCount === 0 ? "No county records yet" : `${countyCount.toLocaleString()} ${countyCount === 1 ? "county" : "counties"}`;
   return (
-    <article className={`directory-card ${!species.image || imageFailed ? "directory-without-photo" : ""}`}>
-      <div className="directory-identity"><Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-link" onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}>
+    <article className={`directory-card refined-species-card ${!species.image || imageFailed ? "directory-without-photo" : ""}`}>
+      <Link href={`/species/${species.slug}`} prefetch={false} className="directory-card-photo" aria-label={`View ${species.commonName} profile`} onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}>
         <div className="directory-thumbnail">
-          {species.image && !imageFailed ? (
-            <Image src={view === "grid" ? species.image.src : species.image.thumbnail ?? species.image.src} alt={species.image.alt}
-              width={view === "grid" ? 450 : 112} height={view === "grid" ? 450 : 112} sizes={view === "grid" ? "450px" : "112px"} unoptimized loading="lazy"
-              onError={() => setImageFailed(true)} />
-          ) : (
-            <span className="directory-image-placeholder"><NatureIcon kind={CATEGORY_NATURE[species.category]} width={30} height={30} /><small>{species.image ? "Photo unavailable" : "No photo yet"}</small></span>
-          )}
+          {species.image && !imageFailed ? <Image src={view === "grid" ? species.image.src : species.image.thumbnail ?? species.image.src} alt={species.image.alt}
+            width={view === "grid" ? 450 : 112} height={view === "grid" ? 450 : 112} sizes={view === "grid" ? "450px" : "112px"} unoptimized loading="lazy" onError={() => setImageFailed(true)} />
+            : <span className="directory-image-placeholder"><NatureIcon kind={CATEGORY_NATURE[species.category]} width={30} height={30}/><small>{species.image ? "Photo unavailable" : "No photo yet"}</small></span>}
         </div>
-        <div className="directory-names">
-          <h3>{species.commonName}</h3>
-          <p><i>{species.scientificName}</i></p>
-          {matchedSpeciesName(species, query) && <p className="directory-name-match">{matchedSpeciesName(species, query)}</p>}
-          <div className="directory-card-meta"><span className={"category-" + species.category}><NatureIcon kind={CATEGORY_NATURE[species.category]} width={17} height={17} />{formatCategoryLabel(species.category)}</span><small className="directory-county-count">{countyLabel}</small></div>
-        </div>
-        <ArrowUpRight className="directory-open-icon" size={18} aria-hidden="true" />
       </Link>
-      {species.image && (
-        <div className="directory-photo-credit"><PhotoCredit name={species.commonName} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license}/></div>
-      )}
+      <div className="directory-card-names">
+        <Link href={`/species/${species.slug}`} prefetch={false} onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}><h3>{species.commonName}</h3><p><i>{species.scientificName}</i></p></Link>
+        {matchedSpeciesName(species, query) && <p className="directory-name-match">{matchedSpeciesName(species, query)}</p>}
       </div>
+      <div className="directory-card-meta"><span className={"category-" + species.category}><NatureIcon kind={CATEGORY_NATURE[species.category]} width={15} height={15}/>{formatCategoryLabel(species.category)}</span><small className="directory-county-count">{countyLabel}</small></div>
+      {species.image && <div className="directory-card-credit"><PhotoCredit name={species.commonName} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license}/></div>}
       {view === "rows" && summary && <p className="directory-summary">{summary}</p>}
-      <Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-action" aria-label={`View profile for ${species.commonName}`} onClick={() => track("species_opened", {surface:"directory",species_id:species.id})}><span>View profile</span><ArrowRight size={16} aria-hidden="true" /></Link>
+      <Link href={`/species/${species.slug}`} prefetch={false} className="directory-profile-action" aria-label={`View profile for ${species.commonName}`} onClick={() => track("species_opened",{surface:"directory",species_id:species.id})}><span><span className="directory-action-verb">View </span>profile</span><ArrowRight size={16} aria-hidden="true"/></Link>
     </article>
   );
 }

@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import "./discovery-refinement.css";
+import { NatureIcon, CATEGORY_NATURE } from "./atlas/nature-icon";
 import { SpeciesSearchControls } from "./species-search-controls";
 import { EvidenceNote } from "@/components/evidence-note";
 import { EVIDENCE_LABELS, findingDescription } from "@/lib/ui/research-copy";
@@ -34,6 +36,8 @@ import {
 import {
   Fragment,
   useDeferredValue,
+  useLayoutEffect,
+  useRef,
   useEffect,
   useMemo,
   useState,
@@ -579,7 +583,7 @@ function CountyPairTable({
               const isExpanded = expandedSpeciesIds.has(pair.speciesId);
               return (
                 <Fragment key={pair.speciesId}>
-                  <tr className="align-middle hover:bg-[var(--surface)]">
+                  <tr data-sort-item={pair.speciesId} className="align-middle hover:bg-[var(--surface)]">
                     <td className="px-2 py-3 text-center">
                       <button
                         type="button"
@@ -653,7 +657,7 @@ function CountyPairTable({
         {pairs.map((pair) => {
           const isExpanded = expandedSpeciesIds.has(pair.speciesId);
           return (
-            <div key={pair.speciesId}>
+            <div key={pair.speciesId} data-sort-item={pair.speciesId}>
               <button
                 type="button"
                 onClick={() => onToggleEvidence(pair.speciesId)}
@@ -766,6 +770,8 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [sortKey, setSortKey] = useState<PairSortKey>("commonName");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const sortResults = useRef<HTMLDivElement>(null);
+  const sortOrigins = useRef<Map<string, number> | null>(null);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
   const [expandedSpeciesIds, setExpandedSpeciesIds] = useState<Set<string>>(
@@ -942,7 +948,30 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
   );
   const hasActiveFilters = query.length > 0 || statusFilter !== "all" || categoryFilter !== "all";
 
+  function rememberSortPositions() {
+    const positions = new Map<string, number>();
+    sortResults.current?.querySelectorAll<HTMLElement>("[data-sort-item]").forEach(node => {
+      if (node.getBoundingClientRect().height) positions.set(node.dataset.sortItem!, node.getBoundingClientRect().top);
+    });
+    sortOrigins.current = positions;
+  }
+  useLayoutEffect(() => {
+    const positions = sortOrigins.current;
+    sortOrigins.current = null;
+    if (!positions || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const animations: Animation[] = [];
+    sortResults.current?.querySelectorAll<HTMLElement>("[data-sort-item]").forEach((node, index) => {
+      const rect = node.getBoundingClientRect();
+      if (!rect.height) return;
+      const before = positions.get(node.dataset.sortItem!);
+      const distance = before === undefined ? (sortDirection === "asc" ? -12 : 12) : Math.max(-80, Math.min(80, before - rect.top));
+      animations.push(node.animate([{ transform: `translateY(${distance}px)`, opacity: before === undefined ? .25 : .7 }, { transform: "translateY(0)", opacity: 1 }], { duration: 340, delay: Math.min(index, 5) * 15, easing: "cubic-bezier(.22,1,.36,1)" }));
+    });
+    return () => animations.forEach(animation => animation.cancel());
+  }, [sortKey, sortDirection]);
+
   function handleSort(key: PairSortKey) {
+    rememberSortPositions();
     if (sortKey === key) {
       setSortDirection((current) => (current === "asc" ? "desc" : "asc"));
       return;
@@ -978,7 +1007,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             disabled={countyOptions.length === 0}
           />
         </div>
-        <p>Then search the county’s species below. Open a finding to read its sources and observation dates.</p>
+
       </div>
 
       {loadState === "loading" || loadState === "idle" ? (
@@ -1013,30 +1042,13 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
           <SpeciesSearchControls value={query} onChange={setQuery}
             filterCount={Number(statusFilter !== "all") + Number(categoryFilter !== "all")}
             onReset={clearFilters} hasFilters={hasActiveFilters}>
-            <SelectField
-              label="Finding"
-              value={statusFilter}
-              options={[
-                { value: "all", label: "All statuses" },
-                ...availableStatuses.map((status) => ({
-                  value: status,
-                  label: status === "verified-present" ? "Recorded here" : status === "researched-unresolved" ? "More evidence needed" : status === "not-researched" ? "Not researched yet" : formatLabel(status),
-                })),
-              ]}
-              onChange={setStatusFilter}
-            />
-            <SelectField
-              label="Category"
-              value={categoryFilter}
-              options={[
-                { value: "all", label: "All categories" },
-                ...availableCategories.map((category) => ({
-                  value: category,
-                  label: formatLabel(category),
-                })),
-              ]}
-              onChange={setCategoryFilter}
-            />
+            <fieldset className="research-filter-group"><legend>Finding</legend><div className="research-finding-options">
+              {[{value:"all",label:"All findings"}, ...availableStatuses.map(status => ({value:status,label:status === "verified-present" ? "Recorded here" : status === "researched-unresolved" ? "More evidence needed" : status === "not-researched" ? "Not researched yet" : formatLabel(status)}))].map(option => <button key={option.value} type="button" aria-pressed={statusFilter === option.value} onClick={() => setStatusFilter(option.value)}>{option.label}</button>)}
+            </div></fieldset>
+            <fieldset className="research-filter-group"><legend>Category</legend><div className="research-category-options">
+              <button type="button" aria-pressed={categoryFilter === "all"} onClick={() => setCategoryFilter("all")}>All</button>
+              {availableCategories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={categoryFilter === category} onClick={() => setCategoryFilter(current => current === category ? "all" : category)}>{category in CATEGORY_NATURE && <NatureIcon kind={CATEGORY_NATURE[category as keyof typeof CATEGORY_NATURE]} width={18} height={18}/>}<span>{formatLabel(category)}</span></button>)}
+            </div></fieldset>
           </SpeciesSearchControls>
 
           <details className="county-research-detail border-b border-[var(--border)] py-2">
@@ -1084,13 +1096,13 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
               {value:"commonName",label:"Species name"}, {value:"category",label:"Category"},
               {value:"displayStatus",label:"Finding"}, {value:"researchStatus",label:"Research checks"},
               {value:"evidence",label:"Number of records"}, {value:"freshnessStatus",label:"Record age"},
-            ]} onChange={value => { setSortKey(value as PairSortKey); setPage(1); }} />
-            <button type="button" onClick={() => { setSortDirection(direction => direction === "asc" ? "desc" : "asc"); setPage(1); }} aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}>
-              {sortDirection === "asc" ? <ArrowUp size={18} aria-hidden="true" /> : <ArrowDown size={18} aria-hidden="true" />}
+            ]} onChange={value => { rememberSortPositions(); setSortKey(value as PairSortKey); setPage(1); }} />
+            <button type="button" data-direction={sortDirection} onClick={() => { rememberSortPositions(); setSortDirection(direction => direction === "asc" ? "desc" : "asc"); setPage(1); }} aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}>
+              <ArrowUp className="research-sort-direction-icon" size={18} aria-hidden="true" />
               {sortDirection === "asc" ? "Ascending" : "Descending"}
             </button>
           </div>
-          <div className="py-5">
+          <div ref={sortResults} className="research-sort-results py-5">
             {pagePairs.length ? (
               <CountyPairTable
                 pairs={pagePairs}
