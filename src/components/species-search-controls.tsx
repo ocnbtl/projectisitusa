@@ -32,7 +32,7 @@ export function SpeciesSearchControls({
           <Search size={19} aria-hidden="true" />
           <input ref={field} id={id} type="search" value={value} maxLength={200}
             onChange={event => onChange(event.target.value)}
-            placeholder="Common or scientific name" />
+            placeholder="Search species" />
           {value && <button type="button" aria-label="Clear species search" onClick={() => {
             onChange(""); field.current?.focus({ preventScroll: true });
           }}><X size={18} aria-hidden="true" /></button>}
