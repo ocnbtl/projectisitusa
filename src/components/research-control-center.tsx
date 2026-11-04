@@ -1626,7 +1626,7 @@ export function ResearchControlCenter({
         </div>
       ) : (
         <div className="research-state-message" role="status">
-          <p className="flex items-center gap-2"><LoaderCircle aria-hidden="true" className="animate-spin" size={18} />Loading research for {availableStates.find(state => state.stateCode === selectedStateCode)?.stateName ?? selectedStateCode}...</p>
+          <p className="flex items-center gap-2"><LoaderCircle aria-hidden="true" className="animate-spin" size={18} />Loading research for {selectedStateCode === "ALL" ? "all states" : availableStates.find(state => state.stateCode === selectedStateCode)?.stateName ?? selectedStateCode}...</p>
           <div className="directory-skeleton" aria-hidden="true"><span /><span /></div>
         </div>
       )}

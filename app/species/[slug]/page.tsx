@@ -1,4 +1,3 @@
-import "@/components/profile-refinements.css";
 import "@/components/species-profile.css";
 import "@/components/profile-refinements.css";
 import type { Route, Metadata } from "next";
