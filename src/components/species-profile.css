@@ -270,3 +270,77 @@
  .species-profile .profile-resource-footer{gap:14px}
  .species-profile .profile-reading>details.profile-registry{padding:8px 14px}
 }
+
+/* Classification supports the profile; reading and records keep independent columns. */
+.reading-page.species-profile{max-width:1480px}
+.species-profile .profile-layout{grid-template-columns:minmax(0,1fr) minmax(280px,400px);gap:clamp(24px,3vw,44px)}
+.species-profile .profile-heading .profile-description{font-size:15px;line-height:1.65}
+.species-profile .profile-section-nav{width:fit-content;justify-content:flex-start;margin:16px 0;padding:4px;background:var(--surface);border:1px solid var(--border);border-radius:12px;gap:2px}
+.species-profile .profile-section-nav a{font-size:13px;padding:8px 10px}
+.profile-identity-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.species-profile .profile-identity-panels .species-names,.profile-taxonomy{border:1px solid var(--border);border-radius:12px;padding:14px;background:var(--surface);min-width:0}
+.species-profile .profile-taxonomy-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.species-profile .profile-taxonomy-heading h2{font-family:var(--font-body);font-size:14px;font-weight:600;line-height:1.5;margin:0}
+.profile-taxonomy-heading>span{font-size:12px;padding:3px 8px;background:var(--surface-strong);border-radius:6px}
+.species-profile .profile-taxonomy-preview{font-size:13px;color:var(--muted);line-height:1.6;margin:6px 0}
+.profile-taxonomy-preview strong{font-weight:500;color:var(--foreground)}
+.profile-taxonomy-disclosure>summary{font-size:13px;min-height:44px;align-content:center;cursor:pointer;line-height:1.5}
+.species-profile .profile-taxonomy-note{font-size:12px;line-height:1.65;color:var(--muted);margin:8px 0;overflow-wrap:anywhere}
+.profile-taxonomy-note a,a.profile-taxonomy-note{text-decoration:underline;text-underline-offset:3px}
+.profile-taxonomy-ranks{margin:12px 0;display:grid;gap:8px}
+.profile-taxonomy-ranks>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;font-size:12px;line-height:1.6}
+.profile-taxonomy-ranks dt,.taxonomy-unlisted{color:var(--muted)}
+.profile-taxonomy-ranks dd{margin:0;overflow-wrap:anywhere}
+.species-profile .profile-photo-credit{justify-content:flex-start;gap:6px;padding:4px 12px}
+.profile-gallery-slide>img{display:block;width:100%;height:clamp(260px,25vw,360px);object-fit:contain;padding:8px}
+.profile-gallery-window{overflow:hidden}
+.profile-gallery-controls{display:flex;justify-content:center;align-items:center;gap:12px;padding:8px}
+.profile-gallery-controls button{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--foreground)}
+.profile-gallery-controls span{font-size:13px;color:var(--muted)}
+.profile-gallery-controls button:hover{background:var(--surface-strong)}
+.species-profile .profile-main-columns{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,3vw,44px);align-items:start;margin-top:28px}
+.species-profile .profile-main-columns>*{min-width:0}
+.species-profile .profile-main-columns .profile-evidence{margin:0}
+.species-profile .profile-main-columns .profile-record-layout{grid-template-columns:minmax(0,1fr);gap:16px}
+.species-profile .profile-reading{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.species-profile .profile-reading p,.species-profile .profile-reading li{font-size:14px;line-height:1.75}
+.species-profile .profile-biography .reading-section{margin:0;padding:0;border:0}
+.species-profile .profile-resource-footer{margin-top:28px}
+.species-profile .species-county-map{padding:12px}
+.species-profile .species-county-map>svg{display:block;width:100%;height:auto;max-height:none;border-radius:8px;overflow:hidden;outline-offset:3px}
+.species-map-tools{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.species-map-tools>div{display:flex;gap:6px}
+.species-map-tools button{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);border-radius:8px;background:var(--background);color:var(--foreground)}
+.species-profile .species-map-tools button svg{width:17px;height:17px}
+.species-map-tools button:hover:not(:disabled){background:var(--surface-strong)}
+.species-map-tools button:disabled{opacity:.4}
+.species-profile .species-map-hint{font-size:12px;line-height:1.6;color:var(--muted);margin:10px 0 0}
+.species-profile .profile-undated-note{font-size:12px;line-height:1.6;color:var(--muted);margin-top:10px}
+.profile-source-profile{display:inline-flex;align-items:center;gap:6px;font-size:13px;min-height:44px}
+@media(min-width:701px) and (max-width:1150px){
+ .species-profile .profile-main-columns{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .species-profile .profile-reading{grid-template-columns:minmax(0,1fr)}
+ .species-profile .profile-reading>#actions{grid-column:1;grid-row:auto}
+ .profile-identity-panels{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:700px){
+ .species-profile .profile-layout{grid-template-columns:minmax(0,1fr)}
+ .species-profile .profile-section-nav{width:100%;display:flex;flex-wrap:wrap}
+ .species-profile .profile-section-nav a{flex:1 1 auto;font-size:12px}
+ .profile-identity-panels{gap:10px}
+ .species-profile .profile-identity-panels .species-names,.profile-taxonomy{padding:12px}
+ .profile-taxonomy-ranks>div{grid-template-columns:minmax(0,1fr);gap:1px}
+ .profile-gallery-slide>img{height:260px}
+ .species-profile .profile-main-columns{grid-template-columns:minmax(0,1fr);gap:24px;margin-top:24px}
+ .species-profile .profile-main-columns>.profile-reading{grid-row:1}
+ .species-profile .profile-reading{grid-template-columns:minmax(0,1fr);gap:24px}
+ .species-profile .profile-reading>#actions{grid-column:1;grid-row:auto}
+ .species-profile .profile-resource-footer{margin-top:24px}
+}
+@media(max-width:380px){.profile-identity-panels{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:no-preference){
+ .profile-gallery-slide{animation:profile-photo-in 320ms cubic-bezier(.22,1,.36,1)}
+ .profile-gallery-slide[data-direction="-1"]{animation-name:profile-photo-back}
+ @keyframes profile-photo-in{from{opacity:.5;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
+ @keyframes profile-photo-back{from{opacity:.5;transform:translateX(-18px)}to{opacity:1;transform:translateX(0)}}
+}

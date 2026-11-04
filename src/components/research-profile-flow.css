@@ -1,0 +1,38 @@
+.research-page .research-heading-copy{align-items:center}
+.research-page .research-heading-copy>div{min-width:0}
+.research-page .research-heading-copy .discovery-reading-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;justify-content:flex-start}
+.research-page .research-heading-copy .discovery-reading-links a{min-height:44px;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface);font-size:14px}
+.research-page .research-place-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:20px;border:1px solid var(--border);border-radius:14px;background:var(--surface);margin:20px 0 24px;max-width:900px}
+.research-page .research-place-steps>div{min-width:0;width:100%;max-width:none}
+.research-page .county-at-a-glance{margin:24px 0 28px}
+.research-page .county-at-a-glance>h2{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;font-family:var(--font-display);font-size:24px;margin:0 0 16px}
+.research-page .county-at-a-glance>h2>span{font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--muted)}
+.research-page .county-finding-overview{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.research-page .county-finding-overview button{padding:16px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.research-page .county-finding-overview button strong{font-size:26px;margin-block:8px}
+.research-page .county-finding-overview small{font-size:13px;line-height:1.55;max-width:none}
+.research-page .county-progress{padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-top:16px;max-width:none}
+.research-page .county-progress>div{align-items:center;gap:20px}
+.research-page .county-progress>div>span{font-family:var(--font-display);font-size:30px;line-height:1.2;color:var(--foreground);white-space:nowrap}
+.research-page .county-progress progress{width:100%;height:12px;border-radius:12px;margin:12px 0;overflow:hidden;accent-color:var(--accent-strong)}
+.research-page .county-progress p{max-width:none;line-height:1.6;font-size:14px}
+.research-disclosure{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows 380ms cubic-bezier(.22,1,.36,1),opacity 260ms ease}
+.research-disclosure[data-open=true]{grid-template-rows:1fr;opacity:1}
+.research-disclosure>div{min-height:0;overflow:hidden}
+.research-expanded-row>td{padding:0!important;border:0!important}
+.research-page .research-disclosure p{max-width:none}
+.research-page .research-disclosure .max-w-3xl{max-width:none}
+@media(max-width:1000px){.research-page .county-finding-overview{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){
+ .research-page .research-place-steps{gap:12px;padding:14px;grid-template-columns:minmax(0,1fr);margin-block:16px}
+ .research-page .county-at-a-glance{margin:20px 0}
+ .research-page .county-at-a-glance>h2{font-size:21px}
+ .research-page .county-finding-overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .research-page .county-finding-overview button{padding:12px}
+ .research-page .county-finding-overview small{font-size:12px}
+ .research-page .county-progress{padding:14px}
+ .research-page .county-progress>div>span{font-size:26px}
+ .research-page .research-heading-copy .discovery-reading-links{gap:8px;margin-top:12px}
+ .research-page .research-heading-copy .discovery-reading-links a{font-size:13px;padding:8px 12px}
+}
+@media(prefers-reduced-motion:reduce){.research-disclosure{transition:none}}

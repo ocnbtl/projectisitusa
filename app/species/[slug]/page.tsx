@@ -7,7 +7,8 @@ import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight, ArrowRight } from "lucide-react";
 import { notFound, redirect } from "next/navigation";
 
-import { SpeciesImage } from "@/components/species-image";
+import { ProfileGallery } from "@/components/profile-gallery";
+import { SpeciesTaxonomy } from "@/components/species-taxonomy";
 import { SpeciesOccurrenceEvidence } from "@/components/species-occurrence-evidence";
 import { ProfileCorrection } from "@/components/participation/profile-correction";
 import { getSpeciesImageAsset } from "@/lib/data/species-image-assets";
@@ -15,7 +16,7 @@ import { speciesBySlug, speciesSlugAliases } from "@/lib/data/species-store";
 import { getPublishedSpeciesProfile } from "@/lib/data/species-published-profile";
 import { getRegistryReference } from "@/lib/data/species-registry-reference";
 import { getDisplaySpecies, getSpeciesEditorial, getSpeciesPhotoNote } from "@/lib/ui/species-editorial";
-import { formatCategoryLabel } from "@/lib/utils";
+
 
 export const dynamicParams = true;
 
@@ -58,7 +59,7 @@ export default async function SpeciesProfilePage({
   const action = isCurated ? species.action : undefined;
   const registry = species.registry;
   const registryReference = registry?.authorityUrl ? getRegistryReference(registry.authorityUrl) : undefined;
-  const hasNames = getSpeciesNames(species.id).names.length > 0;
+
 
   return (
     <main id="main-content" className="reading-page species-profile">
@@ -70,34 +71,31 @@ export default async function SpeciesProfilePage({
         <Link href={`/?species=${species.id}`} className="text-link inline-flex min-h-11 items-center">Find on the map</Link>
       </nav>
 
-      <header className={`profile-layout ${species.image || hasNames ? "" : "profile-without-image"} grid items-start gap-8 lg:gap-12`}>
+      <header className={`profile-layout ${species.image ? "" : "profile-without-image"} grid items-start gap-8 lg:gap-12`}>
         <div className="reading-hero profile-heading min-w-0">
           <h1 className="profile-title break-words">{species.commonName}</h1>
           <p className="profile-scientific-name">{species.scientificName}</p>
           {getSpeciesNames(species.id).warning && <p className="profile-name-warning">This catalog name needs clarification.<a href="#species-names-title">Read the naming note</a></p>}
           {editorial.summary ? <p className="profile-description">{editorial.summary}</p> : null}
-          <dl className="profile-facts mt-6 flex flex-wrap gap-x-8 gap-y-4 text-sm">
-            <div><dt className="text-[var(--muted)]">Category</dt><dd className={"mt-1 category-tag category-" + species.category}>{formatCategoryLabel(species.category)}</dd></div>
-            {registry?.family ? <div><dt className="text-[var(--muted)]">Family</dt><dd className="mt-1">{registry.family}</dd></div> : null}
-          </dl>
+      <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Map & records</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a></nav>
+          <div className="profile-identity-panels"><SpeciesTaxonomy species={species} /><SpeciesNames speciesId={species.id} /></div>
         </div>
-        {species.image || hasNames ? <aside className="profile-sidebar" aria-label="Photo and other names">
+        {species.image ? <aside className="profile-sidebar" aria-label="Species photographs">
         {species.image ? (
           <div className="profile-image">
-            <SpeciesImage src={species.image.src} alt={species.image.alt} credit={species.image.credit} sourceUrl={species.image.sourceUrl} license={species.image.license} label={species.commonName} />
+            <ProfileGallery images={[species.image]} label={species.commonName} />
             {getSpeciesPhotoNote(species.id) && <p className="px-4 pb-4 text-sm text-[var(--muted)]">{getSpeciesPhotoNote(species.id)}</p>}
           </div>
         ) : null}
-        <SpeciesNames speciesId={species.id} />
         </aside> : null}
       </header>
-      <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Map & records</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a></nav>
 
 
 
-      <div id="occurrences" className="scroll-mt-24">
+
+      <div className="profile-main-columns"><div id="occurrences" className="scroll-mt-24">
         <Suspense fallback={<p role="status" className="reading-section text-sm text-[var(--muted)]">Opening recorded occurrences...</p>}>
-          <SpeciesOccurrenceEvidence speciesId={species.id} commonName={species.commonName} />
+          <SpeciesOccurrenceEvidence speciesId={species.id} commonName={species.commonName} authorityUrl={registryReference?.url ?? undefined} />
         </Suspense>
       </div>
 
@@ -149,7 +147,7 @@ export default async function SpeciesProfilePage({
         ) : null}
 
         {!published && !action && <section id="actions" className="reading-section scroll-mt-24"><h2>What you can do</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">If you think you have found this species, record where and when you saw it and take clear photographs from a safe distance. Confirm its identity and local guidance before handling, moving or attempting to control it.</p></section>}
-      <div className="profile-resource-footer"><section className="profile-sources reading-section" aria-labelledby="profile-sources-heading"><div>
+      </div></div><div className="profile-resource-footer"><section className="profile-sources reading-section" aria-labelledby="profile-sources-heading"><div>
         <h2 id="profile-sources-heading">Profile references</h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
           {references.map((source) => (
@@ -171,21 +169,7 @@ export default async function SpeciesProfilePage({
           <div className="profile-action-buttons"><Link href={`/report?species=${encodeURIComponent(species.id)}`} className="primary-button">Report a sighting <ArrowRight size={16} aria-hidden="true"/></Link></div>
           <div id="profile-correction"><ProfileCorrection speciesId={species.id} name={species.commonName}/></div>
         </section></div>
-        {registry ? (
-          <details className="profile-registry">
-            <summary className="min-h-11 cursor-pointer py-3 text-base font-medium">Catalog &amp; classification</summary>
-            <p className="profile-registry-note">The US-RIIS register describes this species in the lower 48 states. These classifications provide background; the map above shows the county records we have reviewed.</p>
-            <dl className="mt-4 grid gap-5 text-sm sm:grid-cols-2">
-              <div><dt className="text-[var(--muted)]">US-RIIS status, lower-48 snapshot</dt><dd className="mt-1">{registry.statusLabel}</dd></div>
-              <div><dt className="text-[var(--muted)]">Establishment means</dt><dd className="mt-1">{registry.establishmentMeans}</dd></div>
-              {registry.introDateNumber ? <div><dt className="text-[var(--muted)]">Introduction year noted in registry</dt><dd className="mt-1">{registry.introDateNumber}</dd></div> : null}
-              {registry.habitats.length ? <div><dt className="text-[var(--muted)]">Recorded habitats</dt><dd className="mt-1">{registry.habitats.join(", ")}</dd></div> : null}
-              {registry.pathways.length ? <div><dt className="text-[var(--muted)]">Recorded introduction pathways</dt><dd className="mt-1">{registry.pathways.join(", ")}</dd></div> : null}
-            </dl>
-          </details>
-        ) : null}
 
-      </div>
     </main>
   );
 }

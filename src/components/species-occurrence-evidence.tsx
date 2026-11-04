@@ -20,7 +20,7 @@ function safeSourceLink(value: string) {
 }
 const SpeciesCountyMap = dynamic(() => import("./species-county-map"), { ssr:false, loading:()=><p role="status">Opening the county map...</p> });
 
-export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId: string; commonName: string }) {
+export function SpeciesOccurrenceEvidence({ speciesId, commonName, authorityUrl }: { speciesId: string; commonName: string; authorityUrl?: string }) {
   const { data, error, retry } = useReviewedMapData();
   const params = useSearchParams();
   const [choice, setChoice] = useState<string | null>(null);
@@ -64,7 +64,7 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
   const sortedEvidence = useMemo(() => [...(pair?.evidence ?? [])].sort((a, b) => (occurrenceDateBounds(b.observedAt)?.end ?? -Infinity) - (occurrenceDateBounds(a.observedAt)?.end ?? -Infinity) || a.evidenceId.localeCompare(b.evidenceId)), [pair]);
   const temporal = pair ? describeTemporalDetermination(pair) : null;
   return <section id="records" className="profile-evidence reading-section" aria-labelledby="species-records-title">
-    <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county" : "counties"} with reviewed records through {formatOccurrenceDate(data.asOf)}.</p> : null}</div><MapPin size={24} aria-hidden="true" /><ContextPopover label="Understanding these records"><p>Shaded counties have reviewed records of this species. An unshaded county means we have no reviewed record to show, not that the species is absent.</p><p>A record tells us where a species was found, not whether it is still there today. Check the observation date for context.</p></ContextPopover></div>
+    <div className="profile-record-heading"><div><h2 id="species-records-title">Where it has been recorded</h2>{data ? <p>{recordedCounties.length.toLocaleString()} {recordedCounties.length === 1 ? "county" : "counties"} with reviewed occurrence records.</p> : null}</div><MapPin size={24} aria-hidden="true" /><ContextPopover label="Understanding these records"><p>Shaded counties have reviewed records of this species. An unshaded county means we have no reviewed record to show, not that the species is absent.</p><p>A record tells us where a species was found, not whether it is still there today. Some distribution sources do not provide an observation date. Review dates tell you when we checked the evidence, not when the species was seen.</p>{data && <p>County evidence snapshot: {formatOccurrenceDate(data.asOf)}. Profile and taxonomy updates are separate from this evidence snapshot.</p>}</ContextPopover></div>
     <div className="profile-record-layout">
     <div className="profile-map-panel">{data ? <SpeciesCountyMap counties={recordedCounties} selected={countyFips} labels={data.countyLabels} onSelect={setChoice} /> : null}</div>
     <div className="profile-record-panel">
@@ -77,7 +77,9 @@ export function SpeciesOccurrenceEvidence({ speciesId, commonName }: { speciesId
         <ul className="profile-source-records">{sortedEvidence.slice(0, visibleSources).map(evidence => {
           const url = safeSourceLink(evidence.url);
           return <li key={evidence.evidenceId}><div className="profile-source-title">{url ? <a href={url} target="_blank" rel="noreferrer" className="text-link" onClick={() => track("source_opened",{surface:"species",source_id:evidence.sourceId,species_id:speciesId})}>{evidence.sourceLabel || evidence.sourceId}<ArrowUpRight size={15} aria-hidden="true" /></a> : <strong>{evidence.sourceLabel || evidence.sourceId}</strong>}<span>{evidence.assertion === "recorded-present" ? "Occurrence record" : evidence.assertion === "not-detected" ? "Survey non-detection" : "Agency finding"}</span></div>
-            <dl className="profile-source-dates"><div><dt><CalendarDays size={14} aria-hidden="true" /> Observed</dt><dd>{formatOccurrenceDate(evidence.observedAt)}</dd></div><div><dt>Reviewed</dt><dd>{formatOccurrenceDate(evidence.reviewedAt)}</dd></div><div><dt>Where it applies</dt><dd>{EVIDENCE_LABELS[evidence.scope] ?? evidence.scope.replaceAll("-", " ")}</dd></div></dl>
+            <dl className="profile-source-dates"><div><dt><CalendarDays size={14} aria-hidden="true" /> Observation date</dt><dd>{evidence.observedAt ? formatOccurrenceDate(evidence.observedAt) : "Not provided by this source"}</dd></div><div><dt>Reviewed</dt><dd>{formatOccurrenceDate(evidence.reviewedAt)}</dd></div><div><dt>Where it applies</dt><dd>{EVIDENCE_LABELS[evidence.scope] ?? evidence.scope.replaceAll("-", " ")}</dd></div></dl>
+            {!evidence.observedAt && evidence.assertion === "recorded-present" && <p className="profile-undated-note">This source documents a county occurrence without an individual observation date.</p>}
+            {evidence.sourceId === "usda-nrcs-plants" && authorityUrl?.includes("usda.gov") && <a className="text-link profile-source-profile" href={authorityUrl} target="_blank" rel="noreferrer">View the USDA species profile <ArrowUpRight size={14} aria-hidden="true"/></a>}
             {evidence.caveat ? <details className="source-context"><summary>About this source</summary><EvidenceNote note={evidence.caveat}/></details> : null}</li>;
         })}</ul>
         {pair.evidence.length > visibleSources ? <button type="button" className="text-link min-h-11" onClick={() => setVisibleSources(count => count + 3)}>Show more sources ({pair.evidence.length - visibleSources})</button> : null}

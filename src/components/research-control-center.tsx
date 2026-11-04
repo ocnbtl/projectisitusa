@@ -1,4 +1,6 @@
 "use client";
+import "./research-profile-flow.css";
+import { ResearchDisclosure } from "./research-disclosure";
 
 import Link from "next/link";
 import "./discovery-refinement.css";
@@ -487,7 +489,7 @@ function EvidenceDetails({ pair, sourceLabels, questionCoverage }: {
     <div className="research-source-heading"><h3>Source records</h3><span>{pair.evidence.length.toLocaleString()} {pair.evidence.length === 1 ? "record" : "records"}</span></div>
     {pair.evidence.length ? <ol className="research-source-list">{pair.evidence.slice(0, visibleCount).map(evidence => <li key={evidence.evidenceId}>
       <article><header><h4>{evidence.url ? <a href={evidence.url} target="_blank" rel="noreferrer">{evidence.sourceLabel || sourceLabels.get(evidence.sourceId) || evidence.sourceId}<ExternalLink size={14} aria-hidden="true"/></a> : evidence.sourceLabel || evidence.sourceId}</h4><span>{formatLabel(evidence.assertion)}</span></header>
-      <dl className="research-source-facts"><div><dt>Observed</dt><dd>{formatDate(evidence.observedAt)}</dd></div><div><dt>Reviewed</dt><dd>{formatDate(evidence.reviewedAt)}</dd></div><div><dt>Where it applies</dt><dd>{formatLabel(evidence.scope)}</dd></div></dl>
+      <dl className="research-source-facts"><div><dt>Observation date</dt><dd>{evidence.observedAt ? formatDate(evidence.observedAt) : "Not provided by this source"}</dd></div><div><dt>Reviewed</dt><dd>{formatDate(evidence.reviewedAt)}</dd></div><div><dt>Where it applies</dt><dd>{formatLabel(evidence.scope)}</dd></div></dl>
       <EvidenceNote note={evidence.caveat}/>
       <details className="research-record-details"><summary>Record details</summary><p>Evidence ID: {evidence.evidenceId}</p>{formatLineage(evidence.lineage) && <p>Record history: {formatLineage(evidence.lineage)}</p>}</details>
       </article></li>)}</ol> : <p>No source records are attached yet. This remains an open research question.</p>}
@@ -639,13 +641,7 @@ function CountyPairTable({
                       {formatLabel(pair.freshnessStatus)}
                     </td>
                   </tr>
-                  {isExpanded ? (
-                    <tr>
-                      <td colSpan={7} className="p-0">
-                        <EvidenceDetails pair={pair} sourceLabels={sourceLabels} questionCoverage={questionCoverage} />
-                      </td>
-                    </tr>
-                  ) : null}
+                  <tr className="research-expanded-row"><td colSpan={7} className="p-0"><ResearchDisclosure open={isExpanded}><EvidenceDetails pair={pair} sourceLabels={sourceLabels} questionCoverage={questionCoverage} /></ResearchDisclosure></td></tr>
                 </Fragment>
               );
             })}
@@ -701,9 +697,7 @@ function CountyPairTable({
                   </span>
                 </span>
               </button>
-              {isExpanded ? (
-                <EvidenceDetails pair={pair} sourceLabels={sourceLabels} questionCoverage={questionCoverage} />
-              ) : null}
+              <ResearchDisclosure open={isExpanded}><EvidenceDetails pair={pair} sourceLabels={sourceLabels} questionCoverage={questionCoverage} /></ResearchDisclosure>
             </div>
           );
         })}
@@ -741,7 +735,7 @@ function isCountyResearchFile(value: unknown): value is CountyResearchFile {
   );
 }
 
-function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
+function CountyResearchView({ summary, availableStates, onStateChange }: { summary: ResearchSummaryFile; availableStates: ResearchStateOption[]; onStateChange: (code: string) => void }) {
   const countyOptions = useMemo(
     () =>
       [...summary.counties]
@@ -997,7 +991,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
   return (
     <section aria-label="County findings">
-      <div className="research-county-choice">
+      <div className="research-county-choice research-place-steps"><div><SelectField stateFlags label="1. Choose a state" value={summary.stateCode} options={availableStates.map(entry => ({value:entry.stateCode,label:entry.stateName}))} onChange={onStateChange}/></div>
         <div>
           <SelectField
             label="2. Choose a county"
@@ -1039,26 +1033,16 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
       {countyData && loadState === "success" ? (
         <>
-          <SpeciesSearchControls value={query} onChange={setQuery}
-            filterCount={Number(statusFilter !== "all") + Number(categoryFilter !== "all")}
-            onReset={clearFilters} hasFilters={hasActiveFilters}>
-            <fieldset className="research-filter-group"><legend>Finding</legend><div className="research-finding-options">
-              {[{value:"all",label:"All findings"}, ...availableStatuses.map(status => ({value:status,label:status === "verified-present" ? "Recorded here" : status === "researched-unresolved" ? "More evidence needed" : status === "not-researched" ? "Not researched yet" : formatLabel(status)}))].map(option => <button key={option.value} type="button" aria-pressed={statusFilter === option.value} onClick={() => setStatusFilter(option.value)}>{option.label}</button>)}
-            </div></fieldset>
-            <fieldset className="research-filter-group"><legend>Category</legend><div className="research-category-options">
-              <button type="button" aria-pressed={categoryFilter === "all"} onClick={() => setCategoryFilter("all")}>All</button>
-              {availableCategories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={categoryFilter === category} onClick={() => setCategoryFilter(current => current === category ? "all" : category)}>{category in CATEGORY_NATURE && <NatureIcon kind={CATEGORY_NATURE[category as keyof typeof CATEGORY_NATURE]} width={18} height={18}/>}<span>{formatLabel(category)}</span></button>)}
-            </div></fieldset>
-          </SpeciesSearchControls>
 
-          <details className="county-research-detail border-b border-[var(--border)] py-2">
-            <summary><span>At a glance: {countyData.countyName}</span><span>{formatNumber(countyData.summary.verifiedPresent)} species recorded<ChevronDown size={16} aria-hidden="true"/></span></summary>
+
+          <section className="county-at-a-glance" aria-labelledby="county-glance-title">
+            <h2 id="county-glance-title">At a glance <span>{countyData.countyName}</span></h2>
             <div className="county-finding-overview" aria-label="County research overview">
               {[
                 { status: "verified-present", label: "Recorded here", count: countyData.summary.verifiedPresent, note: "Includes historical records. Check the dates." },
                 { status: "verified-absent", label: "Official absence finding", count: countyData.summary.verifiedAbsent, note: "Explicit evidence for a stated place and period." },
-                { status: "not-detected", label: "Survey found no detections", count: countyData.summary.notDetected, note: "No presence or absence determination; not proof of absence." },
-                { status: "researched-unresolved", label: "More evidence needed", count: countyData.summary.researchedUnresolved, note: "Sources checked; no determination yet." },
+                { status: "not-detected", label: "Not found in a survey", count: countyData.summary.notDetected, note: "A survey looked but did not find it. It could still occur elsewhere or at another time." },
+                { status: "researched-unresolved", label: "More evidence needed", count: countyData.summary.researchedUnresolved, note: "We have checked sources, but cannot yet say whether it has been recorded here." },
                 { status: "not-researched", label: "Not researched yet", count: countyData.summary.notResearched, note: "Research has not started for these species." },
               ].map(item => <button key={item.status} type="button" aria-pressed={statusFilter === item.status} onClick={() => setStatusFilter(item.status)}><span>{item.label}</span><strong>{formatNumber(item.count)}</strong><small>{item.note}</small></button>)}
             </div>
@@ -1066,7 +1050,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             {progress && <div className="county-progress">
               <div><h3>Research started for {formatNumber(progress.started)} of {formatNumber(progress.total)} species</h3><span>{progress.percent.toFixed(1)}%</span></div>
               <progress aria-label="Species with a source check or reviewed finding" value={progress.started} max={progress.total || 1} />
-              <p>We have checked at least one source or reviewed a finding for these species. There may still be more to investigate.</p>
+              <p>We have checked a source or reviewed a finding for these species. This shows where research has started, not where it is complete.</p>
             </div>}
 
               <details className="research-record-details"><summary>How these counts work</summary><p>County identifier: {countyData.countyFips}. Compiled {formatTimestamp(countyData.generatedAt)}. Check each source for the date of the finding.</p><p>Each species appears once in these counts. If it has ever been recorded here, it stays in “Recorded here,” even if a later survey did not find it or an agency reports it absent. Open its records to see the full history.</p>
@@ -1082,8 +1066,19 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             ) : null}
 
             </details>
-          </details>
+          </section>
 
+          <SpeciesSearchControls value={query} onChange={setQuery}
+            filterCount={Number(statusFilter !== "all") + Number(categoryFilter !== "all")}
+            onReset={clearFilters} hasFilters={hasActiveFilters}>
+            <fieldset className="research-filter-group"><legend>Finding</legend><div className="research-finding-options">
+              {[{value:"all",label:"All findings"}, ...availableStatuses.map(status => ({value:status,label:status === "verified-present" ? "Recorded here" : status === "researched-unresolved" ? "More evidence needed" : status === "not-researched" ? "Not researched yet" : formatLabel(status)}))].map(option => <button key={option.value} type="button" aria-pressed={statusFilter === option.value} onClick={() => setStatusFilter(option.value)}>{option.label}</button>)}
+            </div></fieldset>
+            <fieldset className="research-filter-group"><legend>Category</legend><div className="research-category-options">
+              <button type="button" aria-pressed={categoryFilter === "all"} onClick={() => setCategoryFilter("all")}>All</button>
+              {availableCategories.map(category => <button key={category} type="button" className={"category-" + category} aria-pressed={categoryFilter === category} onClick={() => setCategoryFilter(current => current === category ? "all" : category)}>{category in CATEGORY_NATURE && <NatureIcon kind={CATEGORY_NATURE[category as keyof typeof CATEGORY_NATURE]} width={18} height={18}/>}<span>{formatLabel(category)}</span></button>)}
+            </div></fieldset>
+          </SpeciesSearchControls>
           <div className="research-results-count">
             <span className="font-semibold tabular-nums text-[var(--foreground)]">
               {formatNumber(filteredPairs.length)} species
@@ -1384,7 +1379,8 @@ function isResearchSummaryFile(
   );
 }
 
-function ResearchHeader({ availableStates, selectedStateCode, onStateChange }: {
+function ResearchHeader({ availableStates, selectedStateCode, onStateChange, hideState = false }: {
+  hideState?: boolean;
   availableStates: ResearchStateOption[];
   selectedStateCode: string;
   onStateChange: (stateCode: string) => void;
@@ -1394,13 +1390,13 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange }: {
       <div className="research-heading-copy"><div>
         <h1 className="page-heading">Explore the research.</h1>
         <p>Choose a state, then a county to explore species records and the sources behind them.</p>
-        </div><aside className="research-hero-aside"><EditorialArt subject="research" /><nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav></aside></div>
-      <div className="research-state-control">
+        <nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav></div><aside className="research-hero-aside"><EditorialArt subject="research" /></aside></div>
+      {!hideState && <div className="research-state-control">
         <SelectField stateFlags label="1. Choose a state" value={selectedStateCode}
           options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}
           onChange={onStateChange} />
 
-      </div>
+      </div>}
     </header>
   );
 }
@@ -1433,7 +1429,7 @@ function ResearchControlCenterContent({
 
   return (
     <main id="main-content" className="reading-page research-page">
-      <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} />
+      <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} hideState={activeView === "county"} />
 
       <div id="research-explorer" className="research-tabs">
         <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">
@@ -1477,7 +1473,7 @@ function ResearchControlCenterContent({
       {VIEW_OPTIONS.map((view) => (
         <div key={view.id} id={`research-panel-${view.id}`} role="tabpanel"
           tabIndex={0} aria-labelledby={`research-tab-${view.id}`} hidden={activeView !== view.id}>
-          {activeView === view.id && view.id === "county" ? <CountyResearchView summary={summary} /> : null}
+          {activeView === view.id && view.id === "county" ? <CountyResearchView summary={summary} availableStates={availableStates} onStateChange={onStateChange} /> : null}
           {activeView === view.id && view.id === "sources" ? <SourceOperationsView summary={summary} /> : null}
           {activeView === view.id && view.id === "queue" ? <QueueView summary={summary} /> : null}
         </div>
