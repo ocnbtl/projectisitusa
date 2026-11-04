@@ -311,7 +311,7 @@
 .species-map-tools{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 .species-map-tools>div{display:flex;gap:6px}
 .species-map-tools button{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);border-radius:8px;background:var(--background);color:var(--foreground)}
-.species-profile .species-map-tools button svg{width:17px;height:17px}
+.species-profile .species-map-tools button svg{display:block;width:17px;height:17px;min-width:17px;min-height:17px;max-width:17px;max-height:17px;flex:none}
 .species-profile .species-map-tools button svg path{stroke:currentColor;stroke-width:2;fill:none}
 .species-map-tools button:hover:not(:disabled){background:var(--surface-strong)}
 .species-map-tools button:disabled{opacity:.4}
