@@ -1,5 +1,7 @@
 "use client";
 import "./research-profile-flow.css";
+import "./research-refinements.css";
+import { ResearchSourceRibbon } from "./research-source-ribbon";
 import { ResearchDisclosure } from "./research-disclosure";
 
 import Link from "next/link";
@@ -139,6 +141,7 @@ export interface ResearchSummaryFile {
     researchCoveragePercent: number;
   }>;
   sources: Array<{
+    stateCodes?: string[];
     id: string;
     label: string;
     authority: string;
@@ -194,9 +197,9 @@ const VIEW_OPTIONS: Array<{
   description: string;
   icon: LucideIcon;
 }> = [
-  { id: "county", label: "County findings", description: "Records and their evidence", icon: MapPinned },
+  { id: "county", label: "County findings", description: "Species recorded by county", icon: MapPinned },
   { id: "sources", label: "Sources", description: "Where the information comes from", icon: Database },
-  { id: "queue", label: "Still checking", description: "Questions that need more research", icon: ClipboardList },
+  { id: "queue", label: "Still checking", description: "Species awaiting further checks", icon: ClipboardList },
 ];
 
 const STATUS_STYLES: Record<string, string> = {
@@ -991,10 +994,10 @@ function CountyResearchView({ summary, availableStates, onStateChange }: { summa
 
   return (
     <section aria-label="County findings">
-      <div className="research-county-choice research-place-steps"><div><SelectField stateFlags label="1. Choose a state" value={summary.stateCode} options={availableStates.map(entry => ({value:entry.stateCode,label:entry.stateName}))} onChange={onStateChange}/></div>
+      <div className="research-county-choice research-place-steps">
         <div>
           <SelectField
-            label="2. Choose a county"
+            label="Choose a county"
             value={selectedCountyFips}
             options={countyOptions}
             onChange={setSelectedCountyFips}
@@ -1140,6 +1143,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
   const sources = useMemo(() => {
     const normalizedQuery = deferredQuery.trim().toLowerCase();
     return summary.sources
+      .filter(source=>source.evidencePairCount>0 || source.screenedSpeciesCount>0)
       .filter((source) => {
         if (statusFilter !== "all" && source.status !== statusFilter) return false;
         if (!normalizedQuery) return true;
@@ -1165,14 +1169,15 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
             Research sources
           </h2>
           <p className="mt-1 text-sm text-[var(--muted)]">
-            {formatNumber(sources.length)} of {formatNumber(summary.sources.length)} sources visible
+            <strong className="research-source-total">{formatNumber(summary.sources.filter(source=>source.evidencePairCount>0||source.screenedSpeciesCount>0).length)}</strong> sources used {summary.stateCode === "ALL" ? "across the states" : "in "+summary.stateName}
           </p>
           <p className="mt-2 max-w-3xl text-xs leading-5 text-[var(--muted)]">
-            These are the sources tracked across ISITUSA. Each covers different places and species, so a listing here does not mean it has records for every county in {summary.stateName}. Open a county finding to see the sources used for that record.
+            These sources have contributed county evidence or completed species checks in {summary.stateName}. A source check does not always produce a finding. Open a county record for its specific references.
           </p>
         </div>
       </div>
 
+      <ResearchSourceRibbon sources={sources}/>
       <div className="research-secondary-filters mt-5 grid gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2">
         <SearchField
           label="Search"
@@ -1200,7 +1205,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
               <th className="px-4 py-3 font-semibold" scope="col">Status</th>
               <th className="px-4 py-3 font-semibold" scope="col">Latest source check</th>
               <th className="px-4 py-3 text-right font-semibold" scope="col">County–species records</th>
-              <th className="px-4 py-3 text-right font-semibold" scope="col">Species checked</th>
+              <th className="px-4 py-3 text-right font-semibold" scope="col">{summary.stateCode==="ALL"?"State–species checks":"Species checked"}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[var(--border)] bg-[var(--surface-strong)]">
@@ -1209,7 +1214,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
                 <td className="px-4 py-3">
                   <p className="font-medium text-[var(--foreground)]">{source.label}</p>
                   <p className="mt-0.5 text-xs text-[var(--muted)]">
-                    {source.authority} | {source.id}
+                    {source.authority}{source.stateCodes && <span className="source-state-list">Used in {source.stateCodes.join(", ")}</span>}
                   </p>
                 </td>
                 <td className="px-4 py-3 text-[var(--muted)]">{formatLabel(String(source.tier))}</td>
@@ -1243,7 +1248,7 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
               <div><dt className="text-[var(--muted)]">Source type</dt><dd className="mt-0.5 text-[var(--foreground)]">{formatLabel(String(source.tier))}</dd></div>
               <div><dt className="text-[var(--muted)]">Latest source check</dt><dd className="mt-0.5 text-[var(--foreground)]">{source.lastRunAt ? formatTimestamp(source.lastRunAt) : "No run recorded"}</dd></div>
               <div><dt className="text-[var(--muted)]">County–species records</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.evidencePairCount)}</dd></div>
-              <div><dt className="text-[var(--muted)]">Species checked</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.screenedSpeciesCount)}</dd></div>
+              <div><dt className="text-[var(--muted)]">{summary.stateCode==="ALL"?"State–species checks":"Species checked"}</dt><dd className="mt-0.5 tabular-nums text-[var(--foreground)]">{formatNumber(source.screenedSpeciesCount)}</dd></div>
             </dl>
           </article>
         ))}
@@ -1317,7 +1322,7 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
           Next research priorities
         </h2>
         <p className="mt-1 text-sm text-[var(--muted)]">
-          The published research queue for {summary.stateName}, ordered by remaining county checks and missing source reviews. This is a priority list, not a live work schedule. {formatNumber(queue.length)} species match your filters.
+          These species in {summary.stateName} still need county checks or further source review. The list shows research priorities, not a live work schedule. {formatNumber(queue.length)} species match your filters.
         </p>
       </div>
 
@@ -1389,11 +1394,11 @@ function ResearchHeader({ availableStates, selectedStateCode, onStateChange, hid
     <header className="reading-hero research-heading">
       <div className="research-heading-copy"><div>
         <h1 className="page-heading">Explore the research.</h1>
-        <p>Choose a state, then a county to explore species records and the sources behind them.</p>
+        <p>Explore county findings, see the sources we have checked, or follow the research still ahead.</p>
         <nav className="discovery-reading-links" aria-label="Research guides"><Link href="/approach">Our approach <ArrowRight size={16} aria-hidden="true" /></Link><Link href="/data-sources">Our data sources <ArrowRight size={16} aria-hidden="true" /></Link></nav></div><aside className="research-hero-aside"><EditorialArt subject="research" /></aside></div>
       {!hideState && <div className="research-state-control">
         <SelectField stateFlags label="1. Choose a state" value={selectedStateCode}
-          options={availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))}
+          options={[{value:"ALL",label:"All states"},...availableStates.map(entry => ({ value: entry.stateCode, label: entry.stateName }))]}
           onChange={onStateChange} />
 
       </div>}
@@ -1410,7 +1415,8 @@ function ResearchControlCenterContent({
   availableStates: ResearchStateOption[];
   onStateChange: (stateCode: string) => void;
 }) {
-  const [activeView, setActiveView] = useState<ControlCenterView>("county");
+  const [activeView, setActiveView] = useState<ControlCenterView>(() => { if (typeof window === "undefined") return "county"; const view=new URLSearchParams(window.location.search).get("view"); return view==="sources"||view==="queue"?view:"county"; });
+  useEffect(()=>{const url=new URL(window.location.href);url.searchParams.set("view",activeView);window.history.replaceState(null,"",url);},[activeView]);
   const stateMetrics = [
     ["Catalog species", formatNumber(summary.summary.speciesCount)],
     ["Counties", formatNumber(summary.summary.countyCount)],
@@ -1429,7 +1435,7 @@ function ResearchControlCenterContent({
 
   return (
     <main id="main-content" className="reading-page research-page">
-      <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} hideState={activeView === "county"} />
+      <ResearchHeader availableStates={availableStates} selectedStateCode={summary.stateCode} onStateChange={onStateChange} hideState />
 
       <div id="research-explorer" className="research-tabs">
         <div className="flex min-w-max gap-1" role="tablist" aria-label="Research views">
@@ -1470,10 +1476,11 @@ function ResearchControlCenterContent({
         </div>
       </div>
 
+      <div className="research-shared-state"><SelectField stateFlags label="Choose a state" value={summary.stateCode} options={[{value:"ALL",label:"All states"},...availableStates.map(entry=>({value:entry.stateCode,label:entry.stateName}))]} onChange={onStateChange}/></div>
       {VIEW_OPTIONS.map((view) => (
         <div key={view.id} id={`research-panel-${view.id}`} role="tabpanel"
           tabIndex={0} aria-labelledby={`research-tab-${view.id}`} hidden={activeView !== view.id}>
-          {activeView === view.id && view.id === "county" ? <CountyResearchView summary={summary} availableStates={availableStates} onStateChange={onStateChange} /> : null}
+          {activeView === view.id && view.id === "county" ? summary.stateCode === "ALL" ? <NationalCountyView summary={summary} availableStates={availableStates} onStateChange={onStateChange}/> : <CountyResearchView summary={summary} availableStates={availableStates} onStateChange={onStateChange} /> : null}
           {activeView === view.id && view.id === "sources" ? <SourceOperationsView summary={summary} /> : null}
           {activeView === view.id && view.id === "queue" ? <QueueView summary={summary} /> : null}
         </div>
@@ -1492,7 +1499,7 @@ function ResearchControlCenterContent({
         <p className="county-note">Records can be historical. A survey that found nothing is different from an agency finding of absence. Missing information remains an open question.</p>
         </details>
       </details>
-      <details className="research-accounting"><summary>How we measure progress</summary>
+      {summary.stateCode !== "ALL" && <><details className="research-accounting"><summary>How we measure progress</summary>
       <div
         className={`border-b px-4 py-3 text-sm leading-6 ${
           summary.scope.certificationScope === "bounded-pilot"
@@ -1519,7 +1526,7 @@ function ResearchControlCenterContent({
         ))}
       </dl>
 
-      </details>
+      </details></>}
     </main>
   );
 }
@@ -1533,7 +1540,7 @@ export function ResearchControlCenter({
     () => new Set(availableStates.map((entry) => entry.stateCode)),
     [availableStates],
   );
-  const defaultStateCode = availableStates[0]?.stateCode ?? "AL";
+  const defaultStateCode = "ALL";
   const [selectedStateCode, setSelectedStateCode] = useState(defaultStateCode);
   const [deepLinkReady, setDeepLinkReady] = useState(false);
   const [summary, setSummary] = useState<ResearchSummaryFile | null>(null);
@@ -1549,13 +1556,16 @@ export function ResearchControlCenter({
   }, [allowedStateCodes]);
 
   function handleStateChange(stateCode: string) {
-    if (!allowedStateCodes.has(stateCode)) return;
+    if (stateCode !== "ALL" && !allowedStateCodes.has(stateCode)) return;
     setSelectedStateCode(stateCode);
     const current = parseResearchDeepLink(window.location.search);
-    window.history.replaceState(null, "", buildResearchHref({
-      stateCode,
+    const activeView=new URLSearchParams(window.location.search).get("view");
+    const nextUrl=new URL(buildResearchHref({
+      stateCode: stateCode === "ALL" ? undefined : stateCode,
       speciesQuery: current.speciesQuery,
-    }));
+    }),window.location.origin);
+    if(activeView)nextUrl.searchParams.set("view",activeView);
+    window.history.replaceState(null,"",nextUrl);
   }
 
   useEffect(() => {
@@ -1567,6 +1577,11 @@ export function ResearchControlCenter({
       setLoadError(null);
 
       try {
+        if(selectedStateCode==="ALL"){
+          const parts:ResearchSummaryFile[]=[];let next=0;
+          await Promise.all(Array.from({length:3},async()=>{while(next<availableStates.length){const state=availableStates[next++];const value=await fetchResearchProjectionJson(state.stateCode+"/summary.json",{signal:controller.signal});if(!isResearchSummaryFile(value,state.stateCode))throw Error("A state summary could not be verified.");parts.push(value);}}));
+          if(!controller.signal.aborted)setSummary(combineStateSummaries(parts));return;
+        }
         const data: unknown = await fetchResearchProjectionJson(
           `${encodeURIComponent(selectedStateCode)}/summary.json`,
           { cache: "no-store", signal: controller.signal },
@@ -1574,7 +1589,7 @@ export function ResearchControlCenter({
         if (!isResearchSummaryFile(data, selectedStateCode)) {
           throw new Error("Research summary has an invalid data shape.");
         }
-        setSummary(data);
+        if(!controller.signal.aborted)setSummary(data);
       } catch (error) {
         if (controller.signal.aborted) return;
         if (error instanceof Error && error.name === "AbortError") return;
@@ -1586,7 +1601,7 @@ export function ResearchControlCenter({
 
     void loadSummary();
     return () => controller.abort();
-  }, [deepLinkReady, reloadKey, selectedStateCode]);
+  }, [deepLinkReady, reloadKey, selectedStateCode, availableStates]);
 
   if (summary) {
     return (
@@ -1617,4 +1632,26 @@ export function ResearchControlCenter({
       )}
     </main>
   );
+}
+
+
+function combineStateSummaries(parts:ResearchSummaryFile[]):ResearchSummaryFile {
+ if(!parts.length)throw Error("No state summaries are available.");
+ const first=parts[0];
+ if(parts.some(part=>part.asOf!==first.asOf||part.summary.speciesCount!==first.summary.speciesCount))throw Error("The state summaries belong to different updates. Please try again shortly.");
+ const sum=(key:keyof ResearchSummaryFile["summary"])=>parts.reduce((n,p)=>n+(typeof p.summary[key]==="number"?Number(p.summary[key]):0),0);
+ const sources=new Map<string,ResearchSummaryFile["sources"][number]>(),queue=new Map<string,ResearchSummaryFile["queue"][number]>();
+ for(const part of parts){
+  for(const source of part.sources){if(!source.evidencePairCount&&!source.screenedSpeciesCount)continue;const prior=sources.get(source.id);sources.set(source.id,prior?{...prior,evidencePairCount:prior.evidencePairCount+source.evidencePairCount,screenedSpeciesCount:prior.screenedSpeciesCount+source.screenedSpeciesCount,stateCodes:[...(prior.stateCodes??[]),part.stateCode].sort(),lastRunAt:!prior.lastRunAt?source.lastRunAt:!source.lastRunAt?prior.lastRunAt:prior.lastRunAt>source.lastRunAt?prior.lastRunAt:source.lastRunAt,status:prior.status===source.status?prior.status:"varies-by-state"}:{...source,stateCodes:[part.stateCode]});}
+  for(const row of part.queue){const prior=queue.get(row.speciesId);queue.set(row.speciesId,prior?{...prior,notResearchedCountyCount:prior.notResearchedCountyCount+row.notResearchedCountyCount,researchedUnresolvedCountyCount:prior.researchedUnresolvedCountyCount+row.researchedUnresolvedCountyCount,missingProtocolSourceIds:[...new Set([...prior.missingProtocolSourceIds,...row.missingProtocolSourceIds])],priorityScore:prior.priorityScore+row.priorityScore}:{...row});}
+ }
+ const total=sum("totalPairs");
+ return {...first,stateCode:"ALL",stateName:"all states",counties:parts.flatMap(part=>part.counties.map(county=>({...county,name:county.name+", "+part.stateCode}))).sort((a,b)=>a.name.localeCompare(b.name)),sources:[...sources.values()],queue:[...queue.values()],summary:{...first.summary,countyCount:sum("countyCount"),totalPairs:total,resolvablePairCount:sum("resolvablePairCount"),notApplicablePairCount:sum("notApplicablePairCount"),blockedPairCount:sum("blockedPairCount"),verifiedPresent:sum("verifiedPresent"),verifiedAbsent:sum("verifiedAbsent"),notDetected:sum("notDetected"),researchedUnresolved:sum("researchedUnresolved"),notResearched:sum("notResearched"),conflictCount:sum("conflictCount"),determinationCoveragePercent:total?(sum("verifiedPresent")+sum("verifiedAbsent"))/total*100:0,researchCoveragePercent:total?parts.reduce((n,p)=>n+p.summary.researchCoveragePercent*p.summary.totalPairs,0)/total:0}};
+}
+function NationalCountyView({summary,availableStates,onStateChange}:{summary:ResearchSummaryFile;availableStates:ResearchStateOption[];onStateChange:(state:string)=>void}){
+ const [query,setQuery]=useState(""),[page,setPage]=useState(1),[pageSize,setPageSize]=useState(25);
+ const rows=summary.counties.filter(row=>row.name.toLowerCase().includes(query.toLowerCase()));
+ const current=Math.min(page,Math.max(1,Math.ceil(rows.length/pageSize)));
+ function openCounty(county:ResearchSummaryFile["counties"][number]){const state=county.name.slice(-2);onStateChange(state);const url=new URL(window.location.href);url.searchParams.set("county",county.countyFips);window.history.replaceState(null,"",url);}
+ return <section className="national-county-view"><div className="national-counts"><div><strong>{availableStates.length}</strong><span>states & district</span></div><div><strong>{formatNumber(summary.summary.countyCount)}</strong><span>counties</span></div><div><strong>{formatNumber(summary.summary.verifiedPresent)}</strong><span>county–species findings</span></div></div><p>Explore all counties below, or choose a state to narrow the view. Findings may include historical records.</p><SearchField label="Find a county" placeholder="County name or state abbreviation" value={query} onChange={value=>{setQuery(value);setPage(1);}}/><div className="national-county-grid">{rows.slice((current-1)*pageSize,current*pageSize).map(row=><button type="button" key={row.countyFips} onClick={()=>openCounty(row)}><strong>{row.name}</strong><span>{formatNumber(row.verifiedPresent)} species recorded</span><ArrowRight size={17} aria-hidden="true"/></button>)}</div>{!rows.length&&<p>No counties match this search.</p>}<Pagination page={current} pageSize={pageSize} totalItems={rows.length} onPageChange={setPage} onPageSizeChange={size=>{setPageSize(size);setPage(1);}}/></section>;
 }

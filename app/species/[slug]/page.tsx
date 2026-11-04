@@ -1,4 +1,6 @@
+import "@/components/profile-refinements.css";
 import "@/components/species-profile.css";
+import "@/components/profile-refinements.css";
 import type { Route, Metadata } from "next";
 import { SpeciesNames } from "@/components/species-names";
 import { getSpeciesNames, speciesStructuredData } from "@/lib/data/species-names";
@@ -78,7 +80,7 @@ export default async function SpeciesProfilePage({
           {getSpeciesNames(species.id).warning && <p className="profile-name-warning">This catalog name needs clarification.<a href="#species-names-title">Read the naming note</a></p>}
           {editorial.summary ? <p className="profile-description">{editorial.summary}</p> : null}
       <nav className="profile-section-nav" aria-label="On this profile"><a href="#occurrences">Map & records</a><a href="#identification">Identification</a><a href="#actions">What to do</a><a href="#profile-sources-heading">References</a></nav>
-          <div className="profile-identity-panels"><SpeciesTaxonomy species={species} /><SpeciesNames speciesId={species.id} /></div>
+          
         </div>
         {species.image ? <aside className="profile-sidebar" aria-label="Species photographs">
         {species.image ? (
@@ -89,6 +91,7 @@ export default async function SpeciesProfilePage({
         ) : null}
         </aside> : null}
       </header>
+      <div className="profile-identity-panels"><SpeciesTaxonomy species={species} /><SpeciesNames speciesId={species.id} /></div>
 
 
 
@@ -103,9 +106,7 @@ export default async function SpeciesProfilePage({
         {identification.length > 0 ? (
           <section id="identification" className="reading-section scroll-mt-24">
             <h2>How to recognize it</h2>
-            {published ? identification.map((item, index) => <p key={index} className="mt-4 text-base leading-7">{item}</p>) : <ul className="mt-4 divide-y divide-[var(--border)]">
-              {identification.map((item) => <li key={item} className="py-4 text-base leading-7">{item}</li>)}
-            </ul>}
+            <ul className="profile-guidance-list">{identification.map((item,index)=><li key={index}>{item}</li>)}</ul>
           </section>
         ) : <section id="identification" className="reading-section scroll-mt-24"><h2>How to recognize it</h2><p className="mt-4 text-base leading-8 text-[var(--muted)]">We are still preparing a reviewed identification guide for this species. The profile references can help you compare distinguishing features and similar species. A photograph alone may not be enough for a confident identification.</p></section>}
 
@@ -120,7 +121,7 @@ export default async function SpeciesProfilePage({
         </div>{published ? (
           <section id="actions" className="reading-section scroll-mt-24">
             <h2>What you can do</h2>
-            {published.actions.map((paragraph, index) => <p key={index} className="mt-4 text-base leading-7">{paragraph}</p>)}
+            <ul className="profile-guidance-list profile-actions-list">{published.actions.map((paragraph,index)=><li key={index}>{paragraph}</li>)}</ul>
           </section>
         ) : action ? (
           <section id="actions" className="reading-section scroll-mt-24">
@@ -173,3 +174,4 @@ export default async function SpeciesProfilePage({
     </main>
   );
 }
+

@@ -38,10 +38,11 @@ export default function SpeciesCountyMap({ counties, selected, labels, onSelect 
       {shapes.map(county => <path key={county.id} data-county={county.id} d={county.path} vectorEffect="non-scaling-stroke"
         className={county.id===selected?"county-selected":recorded.has(county.id)?"county-recorded":"county-unknown"}
         onClick={view.scale===1&&recorded.has(county.id)?()=>onSelect(county.id):undefined}>
-        <title>{labels[county.id]?.name ?? county.id}, {labels[county.id]?.stateCode}: {recorded.has(county.id)?"reviewed occurrence":"no reviewed occurrence in this snapshot"}</title>
+        <title>{labels[county.id]?.name ?? county.id}, {labels[county.id]?.stateCode}: {recorded.has(county.id)?"present in records (may be historical)":"no reviewed occurrence in this snapshot"}</title>
       </path>)}</g>
     </svg>
-    <figcaption><span><i aria-hidden="true" /> Reviewed occurrence</span><span className="species-map-selected-key"><i aria-hidden="true" /> Selected county</span></figcaption>
+    <figcaption><span><i aria-hidden="true" /> Present in records</span><span className="species-map-selected-key"><i aria-hidden="true" /> Selected county</span></figcaption>
     <p className="species-map-hint">Zoom in, then drag to explore. Choose a shaded county to read its records.</p>
   </figure>;
 }
+

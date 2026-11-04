@@ -1,0 +1,54 @@
+/* Profile reading rhythm and a photograph that belongs to the introduction. */
+.species-profile .profile-layout{grid-template-columns:minmax(0,1.2fr) minmax(300px,.85fr);gap:clamp(20px,3vw,42px);align-items:center}
+.species-profile .profile-heading{padding:0;margin:0}
+.species-profile .profile-description{font-size:15px;line-height:1.75;max-width:72ch}
+.species-profile .profile-gallery-slide>img{height:clamp(290px,29vw,430px);width:100%;object-fit:contain}
+.species-profile .profile-identity-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0 26px;align-items:start}
+.species-profile .profile-identity-panels>section{margin:0;padding:16px 18px;border:1px solid var(--border);background:var(--surface);border-radius:16px;min-width:0}
+.species-profile .profile-identity-panels h2{font-size:17px;margin:0}
+.species-profile .species-names-preview,.profile-taxonomy-preview{font-size:13px;line-height:1.6;margin:6px 0 8px}
+.profile-disclosure>button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;min-height:44px;font-size:13px;padding:8px 0;color:var(--foreground)}
+.profile-disclosure>button>svg{margin-left:auto;flex:none;transition:transform 350ms cubic-bezier(.22,1,.36,1)}
+.profile-disclosure[data-open=true]>button>svg{transform:rotate(180deg)}
+.profile-disclosure>button>small{background:var(--surface-strong);padding:2px 7px;border-radius:20px}
+.profile-disclosure-reveal{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows 400ms cubic-bezier(.22,1,.36,1),opacity 250ms ease}
+.profile-disclosure[data-open=true]>.profile-disclosure-reveal{grid-template-rows:1fr;opacity:1}
+.profile-disclosure-reveal>div{overflow:hidden;min-height:0}
+.profile-disclosure-body{padding:4px 0 12px}
+.profile-taxonomy-links{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px;margin:12px 0}
+.profile-taxonomy-links a{text-decoration:underline;text-underline-offset:3px}
+.species-profile .profile-main-columns{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(18px,2.8vw,36px);margin-top:0;align-items:start}
+.species-profile .profile-reading{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.species-profile .profile-reading>#actions{grid-column:auto;grid-row:auto}
+.species-profile .profile-biography .reading-section,.species-profile .profile-reading>#actions{padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--surface);margin:0}
+.species-profile .profile-reading h2,.species-profile .profile-record-heading h2{font-size:clamp(19px,1.6vw,23px);line-height:1.3}
+.species-profile .profile-guidance-list{display:grid;gap:16px;margin-top:16px;padding:0;list-style:none}
+.species-profile .profile-guidance-list>li{position:relative;padding-left:17px;font-size:14px;line-height:1.75}
+.profile-guidance-list>li:before{content:"";position:absolute;left:0;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.profile-gallery-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 12px 12px}
+.profile-photo-inspect{display:inline-flex;gap:8px;align-items:center;min-height:44px;padding:8px 14px;border:1px solid var(--border);border-radius:10px;font-size:13px;background:var(--surface);transition:background 200ms}
+.profile-photo-inspect:hover{background:var(--surface-strong)}
+.photo-examiner{position:fixed;inset:0;margin:auto;width:min(1100px,96vw);max-width:96vw;max-height:94dvh;padding:16px;border:1px solid var(--border);border-radius:18px;color:var(--foreground);background:var(--background);overflow:auto}
+.photo-examiner::backdrop{background:rgb(0 0 0/.8)}
+.photo-examiner-header,.photo-examiner-tools{display:flex;align-items:center;gap:10px}
+.photo-examiner-header{justify-content:space-between;margin-bottom:12px}
+.photo-examiner-header h2{font-size:20px}
+.photo-examiner button{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid var(--border);border-radius:9px}
+.photo-examiner button:disabled{opacity:.4}
+.photo-examiner-canvas{height:min(65dvh,690px);overflow:hidden;display:grid;place-items:center;border-radius:10px;background:var(--surface)}
+.photo-examiner-canvas img{width:100%;height:100%;object-fit:contain;user-select:none;max-width:none;pointer-events:none}
+.photo-examiner-tools{margin-top:12px;flex-wrap:wrap;font-size:13px}
+.photo-examiner-tools output{min-width:48px;text-align:center;font-variant-numeric:tabular-nums}
+.photo-examiner-credit{font-size:12px;line-height:1.6;margin:8px 0 0}
+.photo-examiner-credit a{text-decoration:underline}
+.profile-record-status[data-status]{width:fit-content;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:600;border:1px solid var(--border);background:var(--surface)}
+.profile-record-status[data-status=verified-present]{background:color-mix(in srgb,var(--accent) 16%,var(--background));color:var(--foreground)}
+.profile-record-status[data-status=verified-absent]{background:color-mix(in srgb,#b9493c 13%,var(--background))}
+.profile-record-status[data-status=not-detected]{background:color-mix(in srgb,#538bb6 15%,var(--background))}
+.profile-record-status[data-status=researched-unresolved],.profile-record-status[data-status=conflict]{background:color-mix(in srgb,#c18c32 16%,var(--background))}
+.profile-status-context{font-size:12px;line-height:1.6;color:var(--muted);margin:8px 0 14px}
+@media(max-width:800px){.species-profile .profile-layout{grid-template-columns:minmax(0,1fr)}.species-profile .profile-gallery-slide>img{height:clamp(260px,65vw,420px)}.species-profile .profile-main-columns{grid-template-columns:minmax(0,1fr)}.species-profile .profile-main-columns>.profile-reading{grid-row:1}.species-profile .profile-identity-panels{gap:10px}.species-profile .profile-identity-panels>section{padding:12px}.species-profile .profile-reading h2{font-size:20px}.photo-examiner{padding:12px}.photo-examiner-canvas{height:60dvh}}
+@media(max-width:480px){.species-profile .profile-identity-panels{grid-template-columns:minmax(0,1fr)}.species-profile .profile-reading .reading-section{padding:16px}.photo-examiner-header h2{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.profile-disclosure-reveal,.profile-disclosure>button>svg{transition:none}}
+
+.species-profile .profile-layout.profile-without-image{grid-template-columns:minmax(0,1fr)}

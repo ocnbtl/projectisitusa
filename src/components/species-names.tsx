@@ -1,3 +1,4 @@
+import { ProfileDisclosure } from "./profile-disclosure";
 import { SpeciesNameNotes } from "./species-name-notes";
 import { getSpeciesNames } from "@/lib/data/species-names";
 import "./species-names.css";
@@ -11,8 +12,7 @@ export function SpeciesNames({ speciesId }: { speciesId: string }) {
   return <section className="species-names" aria-labelledby="species-names-title">
     <h2 id="species-names-title">Other names</h2>
     {preview.length > 0 && <p className="species-names-preview">{preview.map((entry, index) => <span key={entry.name}>{index > 0 && ", "}{entry.scientific ? <i>{entry.name}</i> : entry.name}</span>)}{common.length > preview.length && <span> +{common.length - preview.length} more</span>}</p>}
-    <details className="species-names-disclosure" open={Boolean(record.warning)}>
-      <summary>{record.warning ? "Naming note & references" : "All names & references"}<span className="species-names-count">{record.names.length}</span></summary>
+    <ProfileDisclosure title={record.warning ? "Naming note & references" : "All names & references"} defaultOpen={Boolean(record.warning)} count={record.names.length}>
     <div className="species-names-content">
       {record.warning && <p className="species-names-description">{record.warning}</p>}
       <p className="species-names-description">Names can vary between places and sources. These notes explain how each name relates to this profile.</p>
@@ -20,6 +20,7 @@ export function SpeciesNames({ speciesId }: { speciesId: string }) {
       {qualified.length > 0 && <div><h3>About these names</h3><SpeciesNameNotes key={speciesId} speciesId={speciesId} names={qualified} /></div>}
       <details id="species-name-references" className="species-name-references"><summary>Sources for these names <span>({record.sources.length})</span></summary><ul>{record.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}</ul></details>
     </div>
-    </details>
+    </ProfileDisclosure>
   </section>;
 }
+
