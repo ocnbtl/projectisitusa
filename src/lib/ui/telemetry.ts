@@ -6,8 +6,20 @@ const ID_KEY = "isitusa.analytics-id.v1", SESSION_KEY = "isitusa.analytics-sessi
 export const ANALYTICS_TOKEN = "phc_BqJFVdN3fJkmLaaaVkDkLbsBgHrLk2v2cbMGTMCCq8dw"; // Public ingestion token, project 644720.
 export const REPLAY_CHOICE_KEY = "isitusa.replay-choice.v1";
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const SESSION_UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+// RFC 9562 UUIDv7: 48-bit creation time and cryptographically random remainder.
+// Keep existing anonymous browser IDs; only incompatible session IDs rotate.
+export function newSessionId(now: number): string {
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  let timestamp = now;
+  for (let i = 5; i >= 0; i--) { bytes[i] = timestamp % 256; timestamp = Math.floor(timestamp / 256); }
+  bytes[6] = (bytes[6] & 15) | 112;
+  bytes[8] = (bytes[8] & 63) | 128;
+  const hex = Array.from(bytes, b => b.toString(16).padStart(2, "0")).join("");
+  return hex.slice(0, 8) + "-" + hex.slice(8, 12) + "-" + hex.slice(12, 16) + "-" + hex.slice(16, 20) + "-" + hex.slice(20);
+}
 export type AnalyticsChoice = "yes" | "no";
-export const EVENTS = ["$pageview", "site_active", "page_engagement", "scroll_depth", "county_selected", "map_filter_changed", "zip_search_completed", "species_search_completed", "species_opened", "directory_view_changed", "evidence_opened", "source_opened", "county_card_downloaded", "signup_requested", "signup_request_accepted", "signup_request_failed", "sighting_started", "sighting_submitted", "sighting_failed", "contribution_method_selected", "checkout_started", "checkout_opened", "checkout_failed", "crypto_address_copied"] as const;
+export const EVENTS = ["$pageview", "$pageleave", "$web_vitals", "site_active", "page_engagement", "scroll_depth", "county_selected", "map_filter_changed", "zip_search_completed", "species_search_completed", "species_opened", "directory_view_changed", "evidence_opened", "source_opened", "county_card_downloaded", "signup_requested", "signup_request_accepted", "signup_request_failed", "sighting_started", "sighting_submitted", "sighting_failed", "contribution_method_selected", "checkout_started", "checkout_opened", "checkout_failed", "crypto_address_copied"] as const;
 export type AnalyticsEvent = typeof EVENTS[number];
 export type EventProperties = Record<string, string | number | boolean | undefined>;
 const ENUMS: Record<string, readonly string[]> = {
@@ -31,6 +43,9 @@ export function safeProperties(properties: EventProperties): EventProperties {
     if (["species_id", "source_id"].includes(key) && typeof value === "string" && /^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,119}$/.test(value)) result[key] = value;
     if (key === "county_id" && typeof value === "string" && /^\d{5}$/.test(value)) result[key] = value;
     if (key === "active_seconds" && typeof value === "number" && Number.isInteger(value) && value >= 1 && value <= 60) result[key] = value;
+    if (/^\$web_vitals_(LCP|INP|CLS)_value$/.test(key) && typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= (key.includes("CLS") ? 10 : 600000)) result[key] = value;
+    if (key === "$prev_pageview_duration" && typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 86400) result[key] = value;
+    if (key === "$prev_pageview_pathname" && typeof value === "string" && analyticsRoute(value)) result[key] = analyticsRoute(value)!;
     if (key === "depth" && typeof value === "number" && [25, 50, 75, 100].includes(value)) result[key] = value;
   }
   return result;
@@ -65,9 +80,9 @@ export function track(event: AnalyticsEvent, properties: EventProperties = {}, p
   try {
     let id = localStorage.getItem(ID_KEY);
     if (!id || !UUID.test(id)) { id = crypto.randomUUID(); localStorage.setItem(ID_KEY, id); }
-    let session: { id: string; last: number; count: number } | null = null;
+    let session: { id: string; last: number; count: number; started: number } | null = null;
     try { session = JSON.parse(localStorage.getItem(SESSION_KEY) || "null"); } catch { /* Replace malformed state. */ }
-    if (!session || !UUID.test(session.id) || !Number.isFinite(session.last) || !Number.isFinite(session.count) || now - session.last > 1800000) session = { id: crypto.randomUUID(), last: now, count: 0 };
+    if (!session || !SESSION_UUID.test(session.id) || !Number.isFinite(session.last) || !Number.isFinite(session.started) || !Number.isFinite(session.count) || now < session.last || now - session.last > 1800000 || now - session.started >= 86400000) session = { id: newSessionId(now), last: now, started: now, count: 0 };
     if (session.count >= 500) return;
     session.last = now; session.count++; minuteCount++;
     localStorage.setItem(SESSION_KEY, JSON.stringify(session));

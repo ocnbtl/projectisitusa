@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useReportWebVitals } from "next/web-vitals";
 import { usePathname } from "next/navigation";
 import { ANALYTICS_CHOICE_EVENT, ANALYTICS_SETTINGS_EVENT, analyticsChoice, analyticsRoute, privacySignal, replayChoice, setAnalyticsChoice, track, type AnalyticsChoice } from "@/lib/ui/telemetry";
 import { stopReplay, syncReplay } from "@/lib/ui/session-replay";
@@ -10,7 +11,22 @@ export function SiteAnalytics() {
   const [choice, setChoice] = useState<AnalyticsChoice | null>(null);
   const [replay, setReplay] = useState(false), [revision, setRevision] = useState(0);
   const [ready, setReady] = useState(false), [settings, setSettings] = useState(false);
-  const lastPage = useRef<string | null>(null);
+  const visit = useRef<{ path: string; started: number; left: boolean } | null>(null);
+  const documentPage = useRef<string | null>(null);
+  const documentChanged = useRef(false);
+  useEffect(() => {
+    if (documentPage.current === null) documentPage.current = pathname;
+    else if (documentPage.current !== pathname) documentChanged.current = true;
+  }, [pathname]);
+  const reportVital = useCallback((metric: { name: string; value: number }) => {
+    // Web Vitals describe a document, not subsequent client-side routes.
+    // Send values only: no DOM elements, resource URLs, or attribution payloads.
+    if (documentChanged.current || location.pathname !== documentPage.current) return;
+    if (["LCP", "INP", "CLS"].includes(metric.name)) {
+      track("$web_vitals", { ["$web_vitals_" + metric.name + "_value"]: metric.value });
+    }
+  }, []);
+  useReportWebVitals(reportVital);
   const privatePage = analyticsRoute(pathname) === null;
   useEffect(() => {
     const sync = () => { setChoice(analyticsChoice()); setReplay(replayChoice()); setReady(true); setRevision(n => n + 1); };
@@ -30,8 +46,25 @@ export function SiteAnalytics() {
     return () => { stopReplay(); document.removeEventListener("click", navigation, true); window.removeEventListener("popstate", stopBeforeNavigation); window.removeEventListener("pagehide", stopBeforeNavigation); window.removeEventListener("hashchange", stopBeforeNavigation); };
   }, [pathname, revision]);
   useEffect(() => {
-    if (choice !== "yes" || privatePage) { lastPage.current = null; return; }
-    if (lastPage.current !== pathname) { track("$pageview"); lastPage.current = pathname; }
+    if (choice !== "yes" || privatePage) { visit.current = null; return; }
+    const start = () => {
+      if (!visit.current || visit.current.path !== pathname || visit.current.left) {
+        track("$pageview", {}, pathname);
+        visit.current = { path: pathname, started: Date.now(), left: false };
+      }
+    };
+    start();
+    const leave = () => {
+      const current = visit.current;
+      if (!current || current.path !== pathname || current.left) return;
+      current.left = true;
+      track("$pageleave", {
+        $prev_pageview_pathname: pathname,
+        $prev_pageview_duration: Math.min(86400, Math.max(0, (Date.now() - current.started) / 1000)),
+      }, pathname);
+    };
+    const hide = () => { flush(); leave(); };
+    const show = (event: PageTransitionEvent) => { if (event.persisted) start(); };
     let lastActivity = Date.now(), seconds = 0, ticks = 0;
     const depths = new Set<number>();
     const active = () => { lastActivity = Date.now(); };
@@ -49,8 +82,9 @@ export function SiteAnalytics() {
       if (++ticks % 6 === 0) flush();
       if (ticks % 12 === 0 && document.visibilityState === "visible" && Date.now() - lastActivity < 60000) track("site_active");
     }, 5000);
+    window.addEventListener("pagehide", hide); window.addEventListener("pageshow", show);
     window.addEventListener("pointerdown", active, { passive: true }); window.addEventListener("keydown", active); window.addEventListener("scroll", scroll, { passive: true }); document.addEventListener("visibilitychange", visibility);
-    return () => { flush(); clearInterval(timer); window.removeEventListener("pointerdown", active); window.removeEventListener("keydown", active); window.removeEventListener("scroll", scroll); document.removeEventListener("visibilitychange", visibility); };
+    return () => { flush(); if (location.pathname !== pathname) leave(); window.removeEventListener("pagehide", hide); window.removeEventListener("pageshow", show); clearInterval(timer); window.removeEventListener("pointerdown", active); window.removeEventListener("keydown", active); window.removeEventListener("scroll", scroll); document.removeEventListener("visibilitychange", visibility); };
   }, [pathname, choice, privatePage]);
   if (!ready || privatePage) return null;
   const save = (value: AnalyticsChoice) => { setAnalyticsChoice(value, value === "yes" && replay); setSettings(false); };

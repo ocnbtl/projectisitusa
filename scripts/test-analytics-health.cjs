@@ -1,0 +1,52 @@
+const fs = require('node:fs'), path = require('node:path'), vm = require('node:vm'), assert = require('node:assert/strict');
+const ts = require('typescript');
+const root = path.join(__dirname, '..');
+let now = Date.now();
+const storage = new Map(), sent = [], listeners = new Map();
+const add = (name, fn) => { if (!listeners.has(name)) listeners.set(name, new Set()); listeners.get(name).add(fn); };
+const remove = (name, fn) => listeners.get(name)?.delete(fn);
+const fire = (name, event = {}) => [...(listeners.get(name) || [])].forEach(fn => fn(event));
+const location = { hostname: 'isitusa.com', pathname: '/about' };
+const window = { location, innerWidth: 390, addEventListener: add, removeEventListener: remove, setInterval: () => 1, dispatchEvent: () => {} };
+const document = { visibilityState: 'visible', addEventListener: add, removeEventListener: remove, documentElement: { scrollHeight: 1000 } };
+const navigator = { doNotTrack: '0' };
+const localStorage = { getItem: key => storage.get(key) ?? null, setItem: (key, value) => storage.set(key, value), removeItem: key => storage.delete(key) };
+const globals = { window, document, navigator, location, localStorage, crypto: require('node:crypto').webcrypto, Date: class extends Date { static now() { return now; } }, clearInterval() {}, fetch: async (url, options) => { sent.push({ url, ...JSON.parse(options.body) }); }, innerHeight: 800, scrollY: 0 };
+function load(file, imports = {}) {
+  const result = ts.transpileModule(fs.readFileSync(path.join(root, file), 'utf8'), { fileName: file, reportDiagnostics: true, compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX } });
+  assert.equal(result.diagnostics.filter(d => d.category === ts.DiagnosticCategory.Error).length, 0, file);
+  const context = { ...globals, exports: {}, require: name => { assert.ok(name in imports, name); return imports[name]; } };
+  vm.runInNewContext(result.outputText, context); return context.exports;
+}
+const telemetry = load('src/lib/ui/telemetry.ts');
+const consent = telemetry.ANALYTICS_CHOICE_KEY, sessionKey = 'isitusa.analytics-session.v1';
+telemetry.track('$pageview'); assert.equal(sent.length, 0);
+storage.set(consent, 'yes');
+storage.set(sessionKey, JSON.stringify({ id: crypto.randomUUID(), last: now, count: 1 }));
+telemetry.track('$pageview');
+assert.match(sent[0].properties.$session_id, /^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab]/);
+assert.equal(parseInt(sent[0].properties.$session_id.replaceAll('-', '').slice(0, 12), 16), now);
+const anonymousId = sent[0].distinct_id, session = sent[0].properties.$session_id;
+now += 1000; telemetry.track('site_active'); assert.equal(sent.at(-1).properties.$session_id, session);
+now += 1800001; telemetry.track('site_active'); assert.notEqual(sent.at(-1).properties.$session_id, session); assert.equal(sent.at(-1).distinct_id, anonymousId);
+const active = JSON.parse(storage.get(sessionKey)); active.started = now - 86400000; storage.set(sessionKey, JSON.stringify(active)); telemetry.track('site_active'); assert.notEqual(sent.at(-1).properties.$session_id, active.id);
+for (const route of ['/admin', '/auth/callback', '/preferences', '/volunteer']) { location.pathname = route; const n = sent.length; telemetry.track('$pageview'); assert.equal(sent.length, n); }
+location.pathname = '/about'; navigator.globalPrivacyControl = true; let count = sent.length; telemetry.track('$pageview'); assert.equal(sent.length, count); navigator.globalPrivacyControl = false;
+location.hostname = 'localhost'; telemetry.track('$pageview'); assert.equal(sent.length, count); location.hostname = 'isitusa.com';
+assert.deepEqual(Object.keys(telemetry.safeProperties({ email: 'secret', search: 'secret', $web_vitals_LCP_event: 'private DOM', $web_vitals_LCP_value: 1200, $web_vitals_CLS_value: NaN })), ['$web_vitals_LCP_value']);
+assert.equal(telemetry.safeProperties({ $prev_pageview_pathname: '/species/example' }).$prev_pageview_pathname, '/species/[species]');
+sent.length = 0; now += 60001;
+let refs = [], refIndex = 0, effects = [], reportVital;
+const react = { useRef: initial => refs[refIndex++] ||= { current: initial }, useState: initial => [initial === null ? 'yes' : initial, () => {}], useEffect: fn => effects.push(fn), useLayoutEffect: () => {}, useCallback: fn => fn };
+const component = load('src/components/site-analytics.tsx', { react, 'react/jsx-runtime': { jsx() {}, jsxs() {} }, 'next/navigation': { usePathname: () => location.pathname }, 'next/web-vitals': { useReportWebVitals: fn => reportVital = fn }, '@/lib/ui/telemetry': telemetry, '@/lib/ui/session-replay': { stopReplay() {}, syncReplay() {} }, './analytics-consent.module.css': {} });
+function render() { refIndex = 0; effects = []; component.SiteAnalytics(); return effects.map(fn => fn()); }
+let cleanup = render(); assert.equal(sent.filter(x => x.event === '$pageview').length, 1);
+cleanup.at(-1)(); cleanup = render(); assert.equal(sent.filter(x => x.event === '$pageview').length, 1, 'Strict remount must not duplicate pageviews'); assert.equal(sent.filter(x => x.event === '$pageleave').length, 0);
+reportVital({ name: 'LCP', value: 1000 }); assert.equal(sent.at(-1).properties.$web_vitals_LCP_value, 1000);
+now += 2500; location.pathname = '/species'; cleanup.forEach(fn => fn?.()); cleanup = render();
+const leave = sent.find(x => x.event === '$pageleave'); assert.equal(leave.properties.$pathname, '/about'); assert.equal(leave.properties.$prev_pageview_duration, 2.5);
+count = sent.length; reportVital({ name: 'LCP', value: 2000 }); assert.equal(sent.length, count, 'Do not misattribute document vitals after SPA navigation');
+fire('pagehide'); fire('pagehide'); assert.equal(sent.filter(x => x.event === '$pageleave').length, 2, 'Only one leave per page visit');
+fire('pageshow', { persisted: true }); assert.equal(sent.filter(x => x.event === '$pageview').length, 3, 'Restored documents start a new page visit');
+storage.set(consent, 'no'); count = sent.length; fire('pagehide'); assert.equal(sent.length, count, 'Withdrawal stops leave tracking');
+console.log('PASS: UUIDv7 migration and timestamps, session reuse/expiry, stable anonymous IDs, consent/private-route/host guards, safe properties, pageview/leave lifecycle, bfcache, Strict Mode and vitals attribution. All requests mocked; zero real events.');
