@@ -7,6 +7,7 @@ import { SpeciesSourcesNote } from "@/components/species-sources-note";
 import { SpeciesDirectory } from "@/components/species-directory";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://isitusa.com/species" },
   title: "Species | ISITUSA",
   description: "Look up a species, explore its recorded occurrences, and follow the sources behind its profile.",
 };

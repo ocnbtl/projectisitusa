@@ -36,6 +36,29 @@ export const metadata: Metadata = {
   },
 };
 
+const siteIdentity = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://isitusa.com/#organization",
+      name: "ISITUSA",
+      alternateName: "Invasive Species In The United States of America",
+      url: "https://isitusa.com",
+      logo: "https://isitusa.com/brand/v3/isitusa-symbol.png",
+      description: "An independent initiative making invasive species research accessible, understandable, and useful.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://isitusa.com/#website",
+      name: "ISITUSA",
+      url: "https://isitusa.com",
+      inLanguage: "en",
+      publisher: { "@id": "https://isitusa.com/#organization" },
+    },
+  ],
+};
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -59,6 +82,7 @@ export default function RootLayout({
             <SiteFooter />
           </div>
         </Providers>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteIdentity).replace(/</g, "\\u003c") }} />
         <SiteAnalytics />
       </body>
     </html>
