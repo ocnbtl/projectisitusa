@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import type { Route } from "next";
+import { directoryPagePath } from "@/lib/ui/species-directory-pagination";
 import "@/components/species-names.css";
 import { speciesNameMatches, matchedSpeciesName } from "@/lib/data/species-name-search";
 import { SpeciesSearchControls } from "./species-search-controls";
@@ -58,8 +60,9 @@ function DirectoryCard({ species, view, query }: { species: Species; view: Direc
   );
 }
 
-export function SpeciesDirectory() {
-  const [catalog, setCatalog] = useState<Species[] | null>(() => cachedCatalog);
+export function SpeciesDirectory({ initialSpecies, initialPage, totalSpecies }: { initialSpecies: Species[]; initialPage: number; totalSpecies: number }) {
+  // The first render must match the server, even after visiting another page.
+  const [catalog, setCatalog] = useState<Species[] | null>(null);
   const [error, setError] = useState(false);
   const [loadAttempt, setLoadAttempt] = useState(0);
   const [query, setQuery] = useState("");
@@ -67,7 +70,7 @@ export function SpeciesDirectory() {
   const [environment, setEnvironment] = useState<EnvironmentTag[]>([]);
   const [pageSize, setPageSize] = useState<number>(24);
   const [view, setView] = useState<DirectoryView>("rows");
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(initialPage);
   const [locationReady, setLocationReady] = useState(false);
   const deferredQuery = useDeferredValue(query);
   const resultsHeading = useRef<HTMLHeadingElement>(null);
@@ -107,6 +110,7 @@ export function SpeciesDirectory() {
   useEffect(() => {
     function readLocation() {
       const state = readDirectoryState(window.location.search);
+      if (!new URLSearchParams(window.location.search).has("page")) state.page = Number(window.location.pathname.match(/^\/species\/page\/(\d+)$/)?.[1] ?? 1);
       setEnvironment(state.environment); setQuery(state.query); setCategories(state.categories); setPage(state.page);
       setPageSize(state.pageSize); setView(state.view);
       setLocationReady(true);
@@ -114,10 +118,10 @@ export function SpeciesDirectory() {
     readLocation();
     window.addEventListener("popstate", readLocation);
     return () => window.removeEventListener("popstate", readLocation);
-  }, []);
+  }, [initialPage]);
 
   useEffect(() => {
-    if (cachedCatalog && loadAttempt === 0) return;
+    if (cachedCatalog && loadAttempt === 0) { setCatalog(cachedCatalog); return; }
     let active = true;
     setError(false);
     void loadRuntimeData<unknown>("catalog").then(data => {
@@ -140,7 +144,8 @@ export function SpeciesDirectory() {
     const timer = window.setTimeout(() => track("species_search_completed",{surface:"directory", result_bucket:resultBucket(matches.length), outcome:matches.length ? "found" : "empty"}), 900);
     return () => window.clearTimeout(timer);
   }, [deferredQuery, catalog, matches.length]);
-  const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
+  const resultCount = catalog ? matches.length : totalSpecies;
+  const totalPages = Math.max(1, Math.ceil(resultCount / pageSize));
   const currentPage = Math.min(page, totalPages);
   const start = (currentPage - 1) * pageSize;
   const hasFilters = Boolean(query || selectedCategories.length || environment.length);
@@ -153,11 +158,25 @@ export function SpeciesDirectory() {
     if (environment.length) url.searchParams.set("environment", environment.join(",")); else url.searchParams.delete("environment");
     if (pageSize !== 24) url.searchParams.set("size", String(pageSize)); else url.searchParams.delete("size");
     if (view !== "rows") url.searchParams.set("view", view); else url.searchParams.delete("view");
-    if (currentPage > 1) url.searchParams.set("page", String(currentPage)); else url.searchParams.delete("page");
+    // Unfiltered pages have stable, independently rendered URLs. Filtered
+    // combinations retain the existing shareable query state.
+    url.pathname = hasFilters || pageSize !== 24 ? "/species" : directoryPagePath(currentPage);
+    if ((hasFilters || pageSize !== 24) && currentPage > 1) url.searchParams.set("page", String(currentPage)); else url.searchParams.delete("page");
     const next = url.pathname + url.search + url.hash;
     if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, "", next);
-  }, [catalog, selectedCategories, currentPage, pageSize, view, deferredQuery, locationReady, environment]);
+  }, [catalog, selectedCategories, currentPage, pageSize, view, deferredQuery, locationReady, environment, hasFilters]);
 
+  function pageHref(nextPage: number) {
+    const params = new URLSearchParams();
+    if (deferredQuery.trim()) params.set("q", deferredQuery.trim());
+    if (selectedCategories.length) params.set("category", selectedCategories.join(","));
+    if (environment.length) params.set("environment", environment.join(","));
+    if (pageSize !== 24) params.set("size", String(pageSize));
+    if (view !== "rows") params.set("view", view);
+    if ((hasFilters || pageSize !== 24) && nextPage > 1) params.set("page", String(nextPage));
+    const pathname = hasFilters || pageSize !== 24 ? "/species" : directoryPagePath(nextPage);
+    return pathname + (params.size ? "?" + params.toString() : "") + "#directory-results";
+  }
   function resetFilters() { setQuery(""); setCategories([]); setEnvironment([]); setPage(1); searchInput.current?.focus(); }
   function changePage(nextPage: number) {
     setPage(nextPage);
@@ -182,32 +201,33 @@ export function SpeciesDirectory() {
         <button type="button" className="directory-clear-all" onClick={resetFilters}>Clear all</button>
       </div>}
 
-      <div id="directory-results" aria-busy={!error && (catalog === null || query !== deferredQuery)}>
-        {error ? (
+      {error && initialSpecies.length > 0 && <p role="status">Search could not load. You can still browse the pages below. <button type="button" className="text-link" onClick={() => setLoadAttempt(attempt => attempt + 1)}>Retry search</button></p>}
+      <div id="directory-results" aria-busy={!error && ((!initialSpecies.length && catalog === null) || query !== deferredQuery)}>
+        {error && !initialSpecies.length ? (
           <div role="alert" className="directory-empty"><Search size={26} aria-hidden="true" /><h2>We could not load the species.</h2><p>Check your connection, then give it another try.</p><button type="button" onClick={() => setLoadAttempt(attempt => attempt + 1)} className="primary-button">Try again</button></div>
-        ) : catalog === null ? (
+        ) : !catalog && !initialSpecies.length ? (
           <div className="directory-loading"><p role="status">Loading the species catalog...</p><div className="directory-skeleton" aria-hidden="true"><span /><span /><span /></div></div>
         ) : (
           <>
             <div className="directory-results-toolbar"><div className="directory-results-heading">
-              <h2 ref={resultsHeading} tabIndex={-1}>{matches.length.toLocaleString()} species{hasFilters ? " found" : ""}</h2>
-              <div><p role="status" aria-live="polite" aria-atomic="true">{matches.length ? `Showing ${start + 1}-${Math.min(start + pageSize, matches.length)} of ${matches.length.toLocaleString()}` : "No matching species"}</p></div>
+              <h2 ref={resultsHeading} tabIndex={-1}>{resultCount.toLocaleString()} species{hasFilters ? " found" : ""}</h2>
+              <div><p role="status" aria-live="polite" aria-atomic="true">{resultCount ? `Showing ${start + 1}-${Math.min(start + pageSize, resultCount)} of ${resultCount.toLocaleString()}` : "No matching species"}</p></div>
             </div>
             <div className="directory-display-controls">
               <div className="directory-view-switch" data-view={view} role="group" aria-label="Species layout">{([{ value: "rows", label: "List", Icon: Rows3 }, { value: "compact", label: "Compact", Icon: List }, { value: "grid", label: "Grid", Icon: Grid2X2 }] as const).map(option => <button type="button" key={option.value} aria-label={option.label} title={option.label} aria-pressed={view === option.value} onClick={() => changeView(option.value)}><option.Icon size={18} aria-hidden="true" /><span>{option.label}</span></button>)}</div>
               <CustomSelect label="Per page" compact value={String(pageSize)} options={DIRECTORY_PAGE_SIZES.map(value => ({ value: String(value), label: String(value) }))} onChange={value => { setPageSize(Number(value)); setPage(1); }} />
             </div>
             </div>
-            {matches.length ? (
-              <div ref={cards} className={"directory-grid directory-view-" + view}>{matches.slice(start, start + pageSize).map(species => <DirectoryCard key={species.id} species={species} view={view} query={deferredQuery} />)}</div>
+            {resultCount ? (
+              <div ref={cards} className={"directory-grid directory-view-" + view}>{(catalog ? matches.slice(start, start + pageSize) : initialSpecies).map(species => <DirectoryCard key={species.id} species={species} view={view} query={deferredQuery} />)}</div>
             ) : (
               <div className="directory-empty"><Search size={28} aria-hidden="true" /><h3>No match for that search.</h3><p>Try a shorter name, or clear a category or environment filter.</p><button type="button" onClick={resetFilters} className="primary-button">Start a new search</button></div>
             )}
             {totalPages > 1 && (
               <nav aria-label="Species pages" className="directory-pagination">
-                <button type="button" disabled={currentPage === 1} onClick={() => changePage(currentPage - 1)}><ChevronLeft size={17} aria-hidden="true" />Previous</button>
+                {currentPage === 1 ? <button type="button" disabled><ChevronLeft size={17} aria-hidden="true" />Previous</button> : <Link prefetch={false} href={pageHref(currentPage - 1) as Route} onClick={event => { if (catalog && (hasFilters || pageSize !== 24) && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) { event.preventDefault(); changePage(currentPage - 1); } }}><ChevronLeft size={17} aria-hidden="true" />Previous</Link>}
                 <span>Page {currentPage} of {totalPages}</span>
-                <button type="button" disabled={currentPage === totalPages} onClick={() => changePage(currentPage + 1)}>Next<ChevronRight size={17} aria-hidden="true" /></button>
+                {currentPage === totalPages ? <button type="button" disabled>Next<ChevronRight size={17} aria-hidden="true" /></button> : <Link prefetch={false} href={pageHref(currentPage + 1) as Route} onClick={event => { if (catalog && (hasFilters || pageSize !== 24) && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) { event.preventDefault(); changePage(currentPage + 1); } }}>Next<ChevronRight size={17} aria-hidden="true" /></Link>}
               </nav>
             )}
           </>
@@ -216,3 +236,4 @@ export function SpeciesDirectory() {
     </section>
   );
 }
+
