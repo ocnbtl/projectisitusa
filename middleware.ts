@@ -8,6 +8,11 @@ export function middleware(request: NextRequest) {
     return new Response("Not found", { status: 404, headers: { "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow" } });
   }
   const destination = teamDestination(hostname, pathname);
+  if (!destination && pathname === "/species/page/1") {
+    const canonical = request.nextUrl.clone();
+    canonical.pathname = "/species";
+    return NextResponse.redirect(canonical, 308);
+  }
   const response = destination ? NextResponse.redirect(new URL(destination), 307) : NextResponse.next();
   if (hostname === "team.isitusa.com" || pathname.startsWith("/admin") || pathname.startsWith("/auth/")) {
     response.headers.set("X-Robots-Tag", "noindex, nofollow");
