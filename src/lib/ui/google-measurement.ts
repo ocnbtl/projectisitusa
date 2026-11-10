@@ -1,6 +1,8 @@
 const origin = "https://isitusa.com";
 const measurementId = process.env.NEXT_PUBLIC_ISITUSA_GA4_ID || "";
 const choiceKey = "isitusa.google-analytics-choice.v1";
+const analyticsChoiceKey = "isitusa.analytics-choice.v1";
+const siteOnlyKey = "isitusa.analytics-choice.site-only.v1";
 const exclusionKey = "isitusa.analytics-exclude.v1";
 const cookiePrefix = "isitusa_ga4";
 const framePath = "/measurement/ga4.html";
@@ -33,6 +35,8 @@ let pending: MeasurementEvent[] = [];
 let lastPath: string | null = null;
 let previousPage = "";
 let explicitlyWithdrawn = false;
+let defaultAllowed = false;
+let eligibilityCheck: Promise<void> | undefined;
 const outcomeReceipts = new Set<string>();
 
 export const googleMeasurementConfigured = /^G-[A-Z0-9]{6,16}$/.test(measurementId);
@@ -64,11 +68,45 @@ export function googleAnalyticsChoice() {
   if (typeof window === "undefined" || explicitlyWithdrawn || !googleMeasurementConfigured) return false;
   if (navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return false;
   try {
-    return localStorage.getItem("isitusa.analytics-choice.v1") === "yes" &&
-      localStorage.getItem(choiceKey) === "yes";
+    const saved = localStorage.getItem(choiceKey);
+    if (saved === "yes" || saved === "no") return saved === "yes";
+    return defaultAllowed && !legacyAllOff();
   } catch {
     return false;
   }
+}
+
+function legacyAllOff() {
+  return localStorage.getItem(siteOnlyKey) !== "yes" && localStorage.getItem(analyticsChoiceKey) === "no";
+}
+
+export function preserveLegacyGoogleChoice() {
+  // The previous interface used this setting as a master opt-out. Preserve
+  // that decision before reusing the existing setting for PostHog alone.
+  if (legacyAllOff() && localStorage.getItem(choiceKey) === null) localStorage.setItem(choiceKey, "no");
+  localStorage.setItem(siteOnlyKey, "yes");
+}
+
+export function resolveGoogleAnalyticsDefault() {
+  if (typeof window === "undefined" || !googleMeasurementConfigured ||
+      location.origin !== origin || !googlePage(location.pathname) || staffExcluded() ||
+      navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
+  try {
+    if (localStorage.getItem(choiceKey) !== null || legacyAllOff()) return;
+  } catch {
+    return;
+  }
+  if (!eligibilityCheck) {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 2500);
+    eligibilityCheck = fetch("/measurement/default", {
+      cache: "no-store", credentials: "omit", redirect: "error", signal: controller.signal,
+    })
+      .then(response => { defaultAllowed = response.status === 204; })
+      .catch(() => { /* Fail closed if eligibility cannot be confirmed. */ })
+      .finally(() => window.clearTimeout(timeout));
+  }
+  return eligibilityCheck;
 }
 
 function staffExcluded() {
@@ -139,7 +177,7 @@ function send(event: MeasurementEvent) {
     element.src = framePath;
     element.addEventListener("load", () => {
       if (frame !== element || !mayMeasure()) return;
-      element.contentWindow?.postMessage({ type: "isitusa-ga4-start", measurementId }, origin);
+      element.contentWindow?.postMessage({ type: "isitusa-ga4-start", measurementId, defaultAllowed }, origin);
       ready = true;
       for (const item of pending) post(item);
       pending = [];

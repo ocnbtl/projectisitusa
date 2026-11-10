@@ -18,29 +18,36 @@
   ]);
   const validReferrer = /^(https:\/\/(?:google\.(?:com|ca|co\.uk|com\.au)|bing\.com|duckduckgo\.com|search\.yahoo\.com|search\.brave\.com|chatgpt\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|facebook\.com|instagram\.com|tiktok\.com|x\.com|reddit\.com)\/|https:\/\/isitusa\.com(?:\/[a-z-]+){0,2}\/?)$/;
   let id = "";
+  let defaultAllowed = false;
   let configured = false;
   let referrer = "";
   function gtag() {
     window.dataLayer.push(arguments);
   }
-  function enabled() {
+  function enabled(allowDefault) {
     try {
-      return !navigator.webdriver && navigator.doNotTrack !== "1" && !navigator.globalPrivacyControl &&
-        localStorage.getItem("isitusa.analytics-choice.v1") === "yes" &&
-        localStorage.getItem("isitusa.google-analytics-choice.v1") === "yes" &&
-        localStorage.getItem("isitusa.analytics-exclude.v1") !== "yes";
+      if (navigator.webdriver || navigator.doNotTrack === "1" || navigator.globalPrivacyControl ||
+          localStorage.getItem("isitusa.analytics-exclude.v1") === "yes") return false;
+      const saved = localStorage.getItem("isitusa.google-analytics-choice.v1");
+      if (saved === "yes" || saved === "no") return saved === "yes";
+      const legacyAllOff = localStorage.getItem("isitusa.analytics-choice.site-only.v1") !== "yes" &&
+        localStorage.getItem("isitusa.analytics-choice.v1") === "no";
+      return allowDefault && !legacyAllOff;
     } catch {
       return false;
     }
   }
   window.addEventListener("message", ({ source, origin, data }) => {
-    if (source !== window.parent || origin !== location.origin || !enabled()) return;
+    if (source !== window.parent || origin !== location.origin) return;
     if (data?.type === "isitusa-ga4-start" && !id && /^G-[A-Z0-9]{6,16}$/.test(data.measurementId)) {
+      if (!enabled(data.defaultAllowed === true)) return;
       id = data.measurementId;
+      defaultAllowed = data.defaultAllowed === true;
       return;
     }
     const event = data?.event;
-    if (!id || data?.type !== "isitusa-ga4-event" || !eventNames.has(event?.name) || !pages.has(event.page)) return;
+    if (!id || !enabled(defaultAllowed) || data?.type !== "isitusa-ga4-event" ||
+        !eventNames.has(event?.name) || !pages.has(event.page)) return;
     if (!configured && event.name !== "page_view") return;
     const parameters = {
       send_to: id,

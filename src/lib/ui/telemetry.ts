@@ -1,4 +1,4 @@
-import { trackGoogleEvent } from "./google-measurement";
+import { preserveLegacyGoogleChoice, trackGoogleEvent } from "./google-measurement";
 
 // Explicit aggregate events only. Separately consented replay lives in session-replay.ts.
 export const ANALYTICS_CHOICE_KEY = "isitusa.analytics-choice.v1";
@@ -67,16 +67,22 @@ export function replayChoice(): boolean {
 }
 export function setAnalyticsChoice(value: AnalyticsChoice, replay = false) {
   withdrawn = value === "no";
-  try { localStorage.setItem(ANALYTICS_CHOICE_KEY, value); localStorage.setItem(REPLAY_CHOICE_KEY, value === "yes" && replay ? "yes" : "no"); if (value === "no") { localStorage.removeItem(ID_KEY); localStorage.removeItem(SESSION_KEY); } } catch { /* Storage denial disables capture. */ }
+  try {
+    preserveLegacyGoogleChoice();
+    localStorage.setItem(ANALYTICS_CHOICE_KEY, value);
+    localStorage.setItem(REPLAY_CHOICE_KEY, value === "yes" && replay ? "yes" : "no");
+    if (value === "no") { localStorage.removeItem(ID_KEY); localStorage.removeItem(SESSION_KEY); }
+  } catch { /* Storage denial disables capture. */ }
   window.dispatchEvent(new Event(ANALYTICS_CHOICE_EVENT));
 }
 let minuteStart = 0, minuteCount = 0;
 export function track(event: AnalyticsEvent, properties: EventProperties = {}, page?: string, receipt?: string): void {
-  if (typeof window === "undefined" || analyticsChoice() !== "yes" || !EVENTS.includes(event)) return;
+  if (typeof window === "undefined" || !EVENTS.includes(event)) return;
+  trackGoogleEvent(event, properties, receipt);
+  if (analyticsChoice() !== "yes") return;
   const route = analyticsRoute(page ?? window.location.pathname);
   if (!analyticsRoute(window.location.pathname)) return;
   if (!route || !["isitusa.com", "www.isitusa.com"].includes(window.location.hostname)) return;
-  trackGoogleEvent(event, properties, receipt);
   const now = Date.now();
   if (now - minuteStart >= 60000) { minuteStart = now; minuteCount = 0; }
   if (minuteCount >= 30) return;

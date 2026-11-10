@@ -1,4 +1,5 @@
 import { IllustratedIntro } from "@/components/editorial-art";
+import { PrivacyChoicesButton } from "@/components/site-analytics";
 import type { Metadata } from "next";
 import styles from "@/components/participation/participation.module.css";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
@@ -9,9 +10,16 @@ export default function Page() {
   return <main id="main-content" className={styles.page}>
     <IllustratedIntro subject="custody"><header className={styles.intro}><h1>Your information, handled with care.</h1><p>We use information to operate ISITUSA, improve the atlas and respond when you choose to get involved. Here is what that means for you.</p></header></IllustratedIntro>
     <div className={styles.prose}>
-      <h2>Using the website</h2>
-      <p>You can explore the atlas without an account. Optional analytics helps us understand how people use the website. It stays off unless you allow it, and you can change your choice through Privacy choices in the footer of our information pages. We respect browser Do Not Track and Global Privacy Control signals.</p>
-      <details><summary className="text-link">More about analytics</summary><p>PostHog receives page views and selected interactions. Random browser and visit identifiers are stored locally to help estimate usage; they are not linked to your email, account or contribution. We exclude search text, form contents, photographs, precise coordinates, payment details and private workspace activity. Query strings and URL fragments are excluded, and species page addresses are grouped.</p><p>Session replay is a separate, optional choice. If you allow it, PostHog records masked page layouts, scrolling and pointer activity on public About, Research, Species and Brand pages. All text and inputs are masked, forms and dialogs are blocked, and we exclude the map, payments, reporting, signup, authentication and private workspace pages. Console logs, network payloads, canvas and embedded frames are not recorded. Replay uses temporary in-memory identifiers and is retained for 30 days. IP-based location enrichment is disabled, although the provider receives the network connection needed to deliver an event. Turning analytics off also stops replay and removes the local analytics identifiers; it does not erase events already received. See <a className="text-link" href="https://posthog.com/privacy" target="_blank" rel="noreferrer">PostHog&apos;s privacy policy</a>.</p><p>If you separately allow Google Analytics, Google receives grouped page views, broad referral sources and a limited set of actions, such as opening research evidence or submitting a sighting. Google Analytics uses cookies to distinguish browsers and visits. We leave out search terms, private pages, query strings, form contents and receipt numbers. You can turn Google Analytics off through Privacy choices. See <a className="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google&apos;s privacy policy</a>.</p></details>
+      <h2>Analytics</h2>
+      <p>You can explore the atlas without an account. We count visits and a few actions to understand how people use it.</p>
+      <p>Google Analytics starts on for U.S. visits. Elsewhere, it starts off. We respect Do Not Track and Global Privacy Control.</p>
+      <p><PrivacyChoicesButton className="text-link" /></p>
+      <details>
+        <summary className="text-link">What we collect</summary>
+        <p>Google Analytics uses cookies to count visits, see where readers found us, and measure actions such as opening a source. PostHog site analytics is optional and uses random browser and visit IDs.</p>
+        <p>We keep search terms, form details, precise locations, and private workspace activity out of analytics. Masked session replay is optional and covers public information pages only. It masks text and inputs, skips forms, and is kept for 30 days.</p>
+        <p>You can change your choices anytime. Turning analytics off stops future collection. Read the privacy policies for <a className="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google</a> and <a className="text-link" href="https://posthog.com/privacy" target="_blank" rel="noreferrer">PostHog</a>.</p>
+      </details>
       <h2>Contributing and contacting us</h2>
       <p>Stripe handles card contributions and recurring payments. We do not receive or store your card number. Authorized project staff can access the payment and contact information needed to support contributions. Giving does not subscribe you to emails, and we do not sell the personal information collected through contributions.</p>
       <p>If you request a refund, we use the contact and contribution details you provide to review your request and reply. Correspondence is retained as needed for that process, disputes and applicable recordkeeping. Cryptocurrency transfers may be publicly visible on their networks.</p>
@@ -23,7 +31,7 @@ export default function Page() {
       <p>Read the privacy information from <a className="text-link" href="https://stripe.com/privacy" target="_blank" rel="noreferrer">Stripe</a>, <a className="text-link" href="https://resend.com/legal/privacy-policy" target="_blank" rel="noreferrer">Resend</a>, <a className="text-link" href="https://supabase.com/privacy" target="_blank" rel="noreferrer">Supabase</a>, <a className="text-link" href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noreferrer">Vercel</a> and <a className="text-link" href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">Cloudflare</a>.</p>
       <h2>Your choices and questions</h2>
       {contactVerifiedAt ? <p>Contact <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> to ask about information we hold or request access, correction or removal. Some financial and security records may need to be retained separately.</p> : <p>A verified contact route will be provided before additional services open.</p>}
-      <p className={styles.hint}>ISITUSA is an independent initiative based in the United States. Updated November 9, 2026.</p>
+      <p className={styles.hint}>ISITUSA is an independent initiative based in the United States. Updated November 10, 2026.</p>
     </div>
   </main>;
 }
