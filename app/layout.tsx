@@ -7,21 +7,22 @@ import { Providers } from "@/components/providers";
 import { RouteTransition } from "@/components/atlas/route-transition";
 import { SiteHeader } from "@/components/site-header";
 
+const siteDescription = "Find invasive species recorded near you. Search by county or ZIP code, check the original sources, and learn what to look for and how to report a sighting.";
+
 export const metadata: Metadata = {
   title: "Invasive Species In The USA (ISITUSA)",
-  description:
-    "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
+  description: siteDescription,
   metadataBase: new URL("https://isitusa.com"),
   applicationName: "ISITUSA",
   manifest: "/brand/v10/site.webmanifest",
   openGraph: {
     type: "website", siteName: "ISITUSA", title: "Invasive Species In The USA (ISITUSA)",
-    description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
+    description: siteDescription,
     images: [{ url: "/brand/v3/isitusa-symbol.png", width: 1200, height: 1200, alt: "ISITUSA: bird, leaf, butterfly and mushroom" }],
   },
   twitter: {
     card: "summary", title: "Invasive Species In The USA (ISITUSA)",
-    description: "Get to know the invasive species near you. Explore local records, learn what to look for, and find practical ways to care for the places you love.",
+    description: siteDescription,
     images: ["/brand/v3/isitusa-symbol.png"],
   },
   icons: {

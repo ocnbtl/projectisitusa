@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 import styles from "@/components/participation/participation.module.css";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 
-export const metadata: Metadata = { title: "Privacy | ISITUSA" };
+export const metadata: Metadata = {
+  title: "Privacy | ISITUSA",
+  alternates: { canonical: "https://isitusa.com/privacy" },
+};
 export default function Page() {
   const { contactEmail, contactVerifiedAt } = SUPPORT_DESTINATIONS.cardSupport;
   return <main id="main-content" className={styles.page}>

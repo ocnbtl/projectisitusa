@@ -4,7 +4,10 @@ import styles from "@/components/participation/participation.module.css";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
 import { activeStripePaymentLink } from "@/lib/ui/support-destinations";
 
-export const metadata: Metadata = { title: "Supporting ISITUSA | ISITUSA" };
+export const metadata: Metadata = {
+  title: "Supporting ISITUSA | ISITUSA",
+  alternates: { canonical: "https://isitusa.com/terms" },
+};
 export default function Page() {
   const active = Boolean(activeStripePaymentLink(SUPPORT_DESTINATIONS));
   const { contactEmail, contactVerifiedAt, refundPolicy } = SUPPORT_DESTINATIONS.cardSupport;
