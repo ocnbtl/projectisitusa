@@ -131,7 +131,7 @@ export function SiteAnalytics() {
 
 type PrivacyPreferences = { site: boolean; google?: boolean; replay: boolean };
 
-function PrivacyNotice({ initialSite, initialReplay, google, googleChecking, browserSignal, onDismiss, onSave }: {
+export function PrivacyNotice({ initialSite, initialReplay, google, googleChecking, browserSignal, onDismiss, onSave }: {
   initialSite: boolean;
   initialReplay: boolean;
   google?: boolean;
