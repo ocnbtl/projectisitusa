@@ -1,3 +1,5 @@
+import { trackGoogleEvent } from "./google-measurement";
+
 // Explicit aggregate events only. Separately consented replay lives in session-replay.ts.
 export const ANALYTICS_CHOICE_KEY = "isitusa.analytics-choice.v1";
 export const ANALYTICS_CHOICE_EVENT = "isitusa:analytics-choice";
@@ -69,11 +71,12 @@ export function setAnalyticsChoice(value: AnalyticsChoice, replay = false) {
   window.dispatchEvent(new Event(ANALYTICS_CHOICE_EVENT));
 }
 let minuteStart = 0, minuteCount = 0;
-export function track(event: AnalyticsEvent, properties: EventProperties = {}, page?: string): void {
+export function track(event: AnalyticsEvent, properties: EventProperties = {}, page?: string, receipt?: string): void {
   if (typeof window === "undefined" || analyticsChoice() !== "yes" || !EVENTS.includes(event)) return;
   const route = analyticsRoute(page ?? window.location.pathname);
   if (!analyticsRoute(window.location.pathname)) return;
   if (!route || !["isitusa.com", "www.isitusa.com"].includes(window.location.hostname)) return;
+  trackGoogleEvent(event, properties, receipt);
   const now = Date.now();
   if (now - minuteStart >= 60000) { minuteStart = now; minuteCount = 0; }
   if (minuteCount >= 30) return;

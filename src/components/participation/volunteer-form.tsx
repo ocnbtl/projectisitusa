@@ -6,6 +6,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2, Users } from "lucide-react";
 import { AVAILABILITY, VOLUNTEER_INTERESTS, validateVolunteer } from "@/lib/participation/volunteers";
 import { request } from "@/lib/participation/client";
+import { trackGoogleEvent } from "@/lib/ui/google-measurement";
 import { Challenge, Honeypot, Notice, ServiceStatus, styles, useConfig } from "./shared";
 import css from "./volunteer.module.css";
 
@@ -20,8 +21,8 @@ export function VolunteerForm(){
    const values=validateVolunteer({...Object.fromEntries(form),interests,consent:form.get("consent")==="on"});
    requestId.current??=crypto.randomUUID();
    const result=await request<{id:string}>("volunteer",{...values,consent:true,id:requestId.current,challenge:token,website:form.get("website")});
-   setReceipt(result.id);requestAnimationFrame(()=>success.current?.focus());
-  }catch(err){setError(err instanceof Error?err.message:"Your application could not be sent. Please try again.");}
+   setReceipt(result.id);trackGoogleEvent("volunteer_submitted",{surface:"volunteer"},result.id);requestAnimationFrame(()=>success.current?.focus());
+  }catch(err){trackGoogleEvent("volunteer_failed",{surface:"volunteer"});setError(err instanceof Error?err.message:"Your application could not be sent. Please try again.");}
   finally{setBusy(false);setToken("");setReset(v=>v+1);}
  }
  return <main id="main-content" className={`${styles.page} ${css.page}`}>

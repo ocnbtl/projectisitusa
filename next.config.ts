@@ -21,7 +21,7 @@ const securityHeaders = [
       "object-src 'none'",
       `script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com https://challenges.cloudflare.com https://js.stripe.com https://*.js.stripe.com https://checkout.stripe.com${isDevelopment ? " 'unsafe-eval'" : ""}`,
       "worker-src 'self' blob: data:",
-      "frame-src https://challenges.cloudflare.com https://js.stripe.com https://*.js.stripe.com https://checkout.stripe.com https://hooks.stripe.com",
+      "frame-src 'self' https://challenges.cloudflare.com https://js.stripe.com https://*.js.stripe.com https://checkout.stripe.com https://hooks.stripe.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://upload.wikimedia.org https://thumb.wikimedia.org https://inaturalist-open-data.s3.amazonaws.com/photos/ https://*.stripe.com https://cnbcqzecxydgpeejeegy.supabase.co",
       "font-src 'self' data:",
@@ -86,6 +86,25 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        source: "/measurement/ga4.html",
+        headers: [
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          {
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'none'",
+              "frame-ancestors 'self'",
+              "base-uri 'none'",
+              "form-action 'none'",
+              "script-src 'self' https://www.googletagmanager.com",
+              "connect-src https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
+              "img-src https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
+            ].join("; "),
+          },
+        ],
       },
     ];
   },
