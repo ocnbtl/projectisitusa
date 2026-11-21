@@ -2,9 +2,9 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useReportWebVitals } from "next/web-vitals";
 import { usePathname } from "next/navigation";
-import { ANALYTICS_CHOICE_EVENT, analyticsChoice, analyticsRoute, privacySignal, replayChoice, setAnalyticsChoice, track, type AnalyticsChoice } from "@/lib/ui/telemetry";
-import { stopReplay, syncReplay } from "@/lib/ui/session-replay";
-import { googleAnalyticsChoice, googleMeasurementConfigured, resolveGoogleAnalyticsDefault, setGoogleAnalyticsChoice, syncGooglePage } from "@/lib/ui/google-measurement";
+import { ANALYTICS_CHOICE_EVENT, analyticsChoice, analyticsRoute, privacySignal, replayChoice, heatmapChoice, setAnalyticsChoice, track, type AnalyticsChoice } from "@/lib/ui/telemetry";
+import { stopOptionalCapture, syncReplay } from "@/lib/ui/session-replay";
+import { googleAnalyticsChoice, googleMeasurementConfigured, measurementPolicyHardBlocked, resolveGoogleAnalyticsDefault, setGoogleAnalyticsChoice, syncGooglePage } from "@/lib/ui/google-measurement";
 import { optionalAnalyticsExcluded } from "@/lib/ui/analytics-privacy";
 import styles from "./analytics-consent.module.css";
 
@@ -57,13 +57,13 @@ export function SiteAnalytics() {
   // Stop before observers can snapshot a newly rendered private/form route.
   useLayoutEffect(() => {
     void syncReplay();
-    const stopBeforeNavigation = () => stopReplay();
+    const stopBeforeNavigation = () => stopOptionalCapture();
     const navigation = (event: Event) => { if (event.target instanceof Element && event.target.closest("a[href]")) stopBeforeNavigation(); };
     document.addEventListener("click", navigation, true);
     window.addEventListener("popstate", stopBeforeNavigation);
     window.addEventListener("pagehide", stopBeforeNavigation);
     window.addEventListener("hashchange", stopBeforeNavigation);
-    return () => { stopReplay(); document.removeEventListener("click", navigation, true); window.removeEventListener("popstate", stopBeforeNavigation); window.removeEventListener("pagehide", stopBeforeNavigation); window.removeEventListener("hashchange", stopBeforeNavigation); };
+    return () => { stopOptionalCapture(); document.removeEventListener("click", navigation, true); window.removeEventListener("popstate", stopBeforeNavigation); window.removeEventListener("pagehide", stopBeforeNavigation); window.removeEventListener("hashchange", stopBeforeNavigation); };
   }, [pathname, revision]);
   useEffect(() => {
     if (choice !== "yes" || privatePage) { visit.current = null; return; }
@@ -123,37 +123,38 @@ export function PrivacyControls() {
     return () => { active = false; window.removeEventListener(ANALYTICS_CHOICE_EVENT, sync); window.removeEventListener("storage", sync); };
   }, []);
   void version;
-  const save = ({site, replay, google}: PrivacyPreferences) => {
+  const save = ({site, replay, google, heatmaps=false}: PrivacyPreferences) => {
     if (google !== undefined) setGoogleAnalyticsChoice(google);
-    setAnalyticsChoice(site ? "yes" : "no", replay);
-    stopReplay();
+    setAnalyticsChoice(site ? "yes" : "no", replay, heatmaps);
+    stopOptionalCapture();
     syncGooglePage(location.pathname);
     setMessage("Your choices apply now and are saved in this browser.");
   };
   return <section id="privacy-choices" className={styles.notice} aria-labelledby="privacy-choices-title" data-private>
     <h2 id="privacy-choices-title">Your Privacy Choices</h2>
     <p>Control each service separately. Changes apply immediately and stay saved in this browser.</p>
-    {!ready ? <p role="status">Checking your saved choices...</p> : <PrivacyNotice initialSite={analyticsChoice()==="yes"} initialReplay={replayChoice()} google={googleMeasurementConfigured?googleAnalyticsChoice():undefined} googleChecking={false} browserSignal={privacySignal() || optionalAnalyticsExcluded()} onDismiss={()=>{}} onSave={save}/>}
+    {!ready ? <p role="status">Checking your saved choices...</p> : <PrivacyNotice initialSite={analyticsChoice()==="yes"} initialReplay={replayChoice()} initialHeatmaps={heatmapChoice()} google={googleMeasurementConfigured?googleAnalyticsChoice():undefined} googleChecking={false} browserSignal={privacySignal() || optionalAnalyticsExcluded() || measurementPolicyHardBlocked()} onDismiss={()=>{}} onSave={save}/>}
     <p role="status" aria-live="polite">{message}</p>
     <noscript>Optional analytics cannot run without JavaScript.</noscript>
   </section>;
 }
 
-type PrivacyPreferences = { site: boolean; google?: boolean; replay: boolean };
+type PrivacyPreferences = { site: boolean; google?: boolean; replay: boolean; heatmaps?: boolean };
 
 // Shared with the synthetic preview. This is an inline section, never a dialog.
-export function PrivacyNotice({initialSite,initialReplay,google,googleChecking,browserSignal,onSave}: {
-  initialSite:boolean; initialReplay:boolean; google?:boolean; googleChecking:boolean;
+export function PrivacyNotice({initialSite,initialReplay,initialHeatmaps=false,google,googleChecking,browserSignal,onSave}: {
+  initialSite:boolean; initialReplay:boolean; initialHeatmaps?:boolean; google?:boolean; googleChecking:boolean;
   browserSignal:boolean; onDismiss:()=>void; onSave:(choices:PrivacyPreferences)=>void;
 }) {
   return <div className={styles.controls}>
     {browserSignal && <p>A privacy signal or staff exclusion keeps optional analytics and replay off in this browser.</p>}
     <fieldset disabled={browserSignal || googleChecking}>
       <legend>Optional measurement</legend>
-      {google!==undefined && <label className={styles.option}><input type="checkbox" checked={!browserSignal && google} onChange={e=>onSave({site:initialSite,replay:initialReplay,google:e.target.checked})}/><span>Google Analytics<small>Counts visits and public browsing actions. Starts on only for eligible confirmed U.S. visits.</small></span></label>}
-      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialSite} onChange={e=>onSave({site:e.target.checked,replay:initialReplay})}/><span>Site analytics<small>Measures public browsing with random browser and visit IDs. Starts on only for eligible confirmed U.S. visits.</small></span></label>
-      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialReplay} onChange={e=>onSave({site:initialSite,replay:e.target.checked})}/><span>Masked session replay<small>Recordings are limited to About and Brand. Inputs and private content are excluded. Starts on only for eligible confirmed U.S. visits.</small></span></label>
+      {google!==undefined && <label className={styles.option}><input type="checkbox" checked={!browserSignal && google} onChange={e=>onSave({site:initialSite,replay:initialReplay,heatmaps:initialHeatmaps,google:e.target.checked})}/><span>Google Analytics<small>Counts visits and public browsing actions. Starts on only for eligible confirmed U.S. visits.</small></span></label>}
+      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialSite} onChange={e=>onSave({site:e.target.checked,replay:initialReplay,heatmaps:initialHeatmaps})}/><span>Site analytics<small>Measures public browsing with random browser and visit IDs. Starts on only for eligible confirmed U.S. visits.</small></span></label>
+      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialReplay} onChange={e=>onSave({site:initialSite,replay:e.target.checked,heatmaps:initialHeatmaps})}/><span>Masked session replay<small>Recordings are limited to About and Brand. Inputs and private content are excluded. Starts on only for eligible confirmed U.S. visits.</small></span></label>
+      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialHeatmaps} onChange={e=>onSave({site:initialSite,replay:initialReplay,heatmaps:e.target.checked})}/><span>Heatmaps<small>Counts pointer positions on About and Brand only, without text or element identifiers. Starts on only for eligible confirmed U.S. visits.</small></span></label>
     </fieldset>
-    <div className={styles.actions}><button type="button" onClick={()=>onSave({site:false,replay:false,google:false})}>Turn all off</button></div>
+    <div className={styles.actions}><button type="button" onClick={()=>onSave({site:false,replay:false,heatmaps:false,google:false})}>Turn all off</button></div>
   </div>;
 }

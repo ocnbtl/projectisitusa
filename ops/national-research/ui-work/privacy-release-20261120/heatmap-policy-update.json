@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-20",
+  "state": "candidate-awaiting-hosted-QA",
+  "productionApproved": false,
+  "parent": "2b119291deb7bdcceac1b7dbcc1be3960c66b2c0",
+  "changes": [
+    "Independent heatmaps on exact form-free /about and /brand only, respecting provider configuration",
+    "Reconstructed closed heatmap point envelope; no raw UA, timezone, text, URL queries or dynamic identifiers",
+    "All grants await recognized private/no-store policy response: 204 eligible,403 explicit consent required,451 hard privacy signal block; failed/unknown responses block capture",
+    "Saved declines, browser/header GPC/DNT and staff marker override defaults/grants",
+    "Optional SDK fetch is best-effort one-shot; collector failures locally acknowledged to suppress retry, current gates checked at send time, in-flight requests aborted on feature stop, vendor beacons discarded"
+  ],
+  "localTests": {
+    "lint": "8 changed TypeScript files:0 errors,0 warnings",
+    "policy": "12 exact middleware source cases; saved grants blocked before lookup and on451/failed/malformed responses",
+    "heatmaps": "Strict real-SDK point fixture, synthetic canary rejection, provider remote-on/off and independent stops passed",
+    "transport": "Synthetic503 one send and local ACK, denied queued replay/heatmaps, in-flight replay abort, vendor beacon suppression, unrelated fetch preserved passed",
+    "general": "Source/in-memory fresh/decline/routes/forms/queries/signals/delayed-SDK cases passed"
+  },
+  "hostedEvidenceRelayedByLinx": {
+    "realSDK": "Actual Chrome with current explicit provider bool emitted330-character decoded heatmap with10expected keys/two points; readable Brand kit replay; planted name/URL/identifier/text absent",
+    "limitation": "This evidence predates the newly added one-shot transport. It is not approval of final candidate."
+  },
+  "requiredBeforeRelease": [
+    "Hosted build of exact candidate",
+    "Actual outgoing desktop/mobile real-SDK payloads through new transport, including collector503 then withdrawal, retry interval and navigation",
+    "Cross-tab withdrawal and header-only GPC/DNT with saved grants",
+    "Real deployment region response and unknown/prior-consent cases",
+    "Vercel optional analytics endpoint egress review",
+    "Reverify exact current production binding and recoverable rollback immediately before promotion"
+  ],
+  "providerChanges": false,
+  "researchChanges": false,
+  "localBuilds": false,
+  "notes": [
+    "Replay provider is ON for canonical origin; heatmaps provider remains OFF until safely validated by operator. No provider switches changed here.",
+    "Local browser access/startup unavailable. Real browser evidence must be supplied by authorized Linx operator.",
+    "Git push unavailable in this session; operator uses existing approved Git session.",
+    "Disposable149MB npm metadata cache remains after automatic deletion review rejected; no alternative deletion attempted."
+  ]
+}

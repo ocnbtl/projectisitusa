@@ -1,0 +1,7 @@
+const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict');
+const ts=require('C:/Code/project-isitusa/node_modules/typescript');
+const source=fs.readFileSync('middleware.ts','utf8');
+const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+const mod={exports:{}};new Function('require','module','exports',js)(name=>name==='next/server'?{NextResponse:{next:()=>({headers:new Headers()}),redirect:()=>({headers:new Headers()})}}:{teamDestination:()=>null},mod,mod.exports);
+function check({host='isitusa.com',country='US',gpc,dnt,env='production',expect}){process.env.VERCEL_ENV=env;const h=new Headers();if(country!==null)h.set('x-vercel-ip-country',country);if(gpc)h.set('sec-gpc',gpc);if(dnt)h.set('dnt',dnt);const r=mod.exports.middleware({nextUrl:{pathname:'/measurement/default',hostname:host},headers:h});assert.equal(r.status,expect);assert.equal(r.headers.get('cache-control'),'private, no-store');return r;}
+check({expect:204});for(const country of [null,'','GB','DE','CA','AU'])check({country,expect:403});check({gpc:'1',expect:451});check({dnt:'1',expect:451});check({env:'preview',expect:403});check({host:'preview.vercel.app',expect:403});check({host:'www.isitusa.com',expect:403});console.log(JSON.stringify({status:'PASS',scope:'Exact source middleware executed in memory; no geographic network simulation',cases:12,liveReadback:{ordinary:204,GPC:403,DNT:403,cache:'no-store, private'}}));

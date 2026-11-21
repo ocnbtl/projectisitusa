@@ -35,7 +35,7 @@ let pending: MeasurementEvent[] = [];
 let lastPath: string | null = null;
 let previousPage = "";
 let explicitlyWithdrawn = false;
-let defaultAllowed = false;
+let defaultAllowed = false, policyKnown = false, policyBlocked = false;
 let eligibilityCheck: Promise<void> | undefined;
 const outcomeReceipts = new Set<string>();
 
@@ -66,7 +66,7 @@ export function safeGoogleReferrer(value: string) {
 }
 
 export function googleAnalyticsChoice() {
-  if (typeof window === "undefined" || explicitlyWithdrawn || !googleMeasurementConfigured || optionalAnalyticsExcluded()) return false;
+  if (typeof window === "undefined" || explicitlyWithdrawn || !googleMeasurementConfigured || !measurementPolicyAllowsCapture()) return false;
   if (navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return false;
   try {
     const saved = localStorage.getItem(choiceKey);
@@ -79,9 +79,14 @@ export function googleAnalyticsChoice() {
 
 // One host-verified eligibility result; saved vendor declines remain independent.
 export function eligiblePublicDefault(): boolean {
-  if (typeof window === "undefined" || optionalAnalyticsExcluded() || navigator.doNotTrack === "1" || (navigator as Navigator & {globalPrivacyControl?:boolean}).globalPrivacyControl) return false;
+  if (!measurementPolicyAllowsCapture()) return false;
   try { return defaultAllowed && !legacyAllOff(); } catch { return false; }
 }
+
+export function measurementPolicyAllowsCapture():boolean {
+  return typeof window!=="undefined" && policyKnown && !policyBlocked && !optionalAnalyticsExcluded() && navigator.doNotTrack!=="1" && !(navigator as Navigator & {globalPrivacyControl?:boolean}).globalPrivacyControl;
+}
+export function measurementPolicyHardBlocked():boolean {return policyKnown && policyBlocked;}
 
 function legacyAllOff() {
   return localStorage.getItem(siteOnlyKey) !== "yes" && localStorage.getItem(analyticsChoiceKey) === "no";
@@ -99,7 +104,7 @@ export function resolveGoogleAnalyticsDefault({ settingsOnly = false }: { settin
       location.origin !== origin || (!googlePage(location.pathname) && !(settingsOnly && location.pathname === "/privacy")) || optionalAnalyticsExcluded() ||
       navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
   try {
-    if (legacyAllOff()) return;
+    localStorage.getItem(choiceKey);
   } catch {
     return;
   }
@@ -109,7 +114,12 @@ export function resolveGoogleAnalyticsDefault({ settingsOnly = false }: { settin
     eligibilityCheck = fetch("/measurement/default", {
       cache: "no-store", credentials: "omit", redirect: "error", signal: controller.signal,
     })
-      .then(response => { defaultAllowed = response.status === 204; })
+      .then(response => {
+        const policy=response.headers.get("X-Isitusa-Measurement-Policy");
+        policyKnown=(response.status===204 && policy==="eligible") || (response.status===403 && policy==="consent-required") || (response.status===451 && policy==="blocked");
+        policyBlocked=response.status===451 && policy==="blocked";
+        defaultAllowed=policyKnown && response.status===204;
+      })
       .catch(() => { /* Fail closed if eligibility cannot be confirmed. */ })
       .finally(() => window.clearTimeout(timeout));
   }

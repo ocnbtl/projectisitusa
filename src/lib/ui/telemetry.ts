@@ -1,5 +1,5 @@
 import { isPrivateAnalyticsRoute, optionalAnalyticsExcluded } from "./analytics-privacy";
-import { eligiblePublicDefault, preserveLegacyGoogleChoice, trackGoogleEvent } from "./google-measurement";
+import { eligiblePublicDefault, measurementPolicyAllowsCapture, preserveLegacyGoogleChoice, trackGoogleEvent } from "./google-measurement";
 
 // Explicit aggregate events only. Separately consented replay lives in session-replay.ts.
 export const ANALYTICS_CHOICE_KEY = "isitusa.analytics-choice.v1";
@@ -8,6 +8,7 @@ export const ANALYTICS_SETTINGS_EVENT = "isitusa:analytics-settings";
 const ID_KEY = "isitusa.analytics-id.v1", SESSION_KEY = "isitusa.analytics-session.v1";
 export const ANALYTICS_TOKEN = "phc_BqJFVdN3fJkmLaaaVkDkLbsBgHrLk2v2cbMGTMCCq8dw"; // Public ingestion token, project 644720.
 export const REPLAY_CHOICE_KEY = "isitusa.replay-choice.v1";
+export const HEATMAP_CHOICE_KEY = "isitusa.heatmap-choice.v1";
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const SESSION_UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 // RFC 9562 UUIDv7: 48-bit creation time and cryptographically random remainder.
@@ -56,23 +57,35 @@ export function safeProperties(properties: EventProperties): EventProperties {
 export function privacySignal(): boolean {
   return typeof navigator !== "undefined" && (navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true);
 }
-let withdrawn = false, replayWithdrawn = false;
+let withdrawn = false, replayWithdrawn = false, heatmapWithdrawn = false;
 export function analyticsChoice(): AnalyticsChoice | null {
   if (typeof window === "undefined") return null;
   if (withdrawn || privacySignal() || optionalAnalyticsExcluded()) return "no";
-  try { const value = localStorage.getItem(ANALYTICS_CHOICE_KEY); return value === "yes" || value === "no" ? value : eligiblePublicDefault() ? "yes" : null; } catch { return "no"; }
+  try { const value = localStorage.getItem(ANALYTICS_CHOICE_KEY); if(!measurementPolicyAllowsCapture())return value==="no"?"no":null; return value === "yes" || value === "no" ? value : eligiblePublicDefault() ? "yes" : null; } catch { return "no"; }
 }
 export function replayChoice(): boolean {
-  if (typeof window === "undefined" || privacySignal() || optionalAnalyticsExcluded() || replayWithdrawn) return false;
+  if (typeof window === "undefined" || privacySignal() || optionalAnalyticsExcluded() || !measurementPolicyAllowsCapture() || replayWithdrawn) return false;
   try { const value = localStorage.getItem(REPLAY_CHOICE_KEY); return value === "yes" || value === "no" ? value === "yes" : eligiblePublicDefault(); } catch { return false; }
 }
-export function setAnalyticsChoice(value: AnalyticsChoice, replay = false) {
+export function heatmapChoice(): boolean {
+  if (typeof window === "undefined" || privacySignal() || optionalAnalyticsExcluded() || !measurementPolicyAllowsCapture() || heatmapWithdrawn) return false;
+  try {
+    const value=localStorage.getItem(HEATMAP_CHOICE_KEY);
+    if(value==="yes"||value==="no")return value==="yes";
+    // Earlier Turn all off choices must not become a new heatmap grant.
+    if([ANALYTICS_CHOICE_KEY,REPLAY_CHOICE_KEY,"isitusa.google-analytics-choice.v1"].some(key=>localStorage.getItem(key)==="no"))return false;
+    return eligiblePublicDefault();
+  } catch { return false; }
+}
+export function setAnalyticsChoice(value: AnalyticsChoice, replay = false, heatmaps = false) {
   withdrawn = value === "no";
+  heatmapWithdrawn = !heatmaps;
   try {
     preserveLegacyGoogleChoice();
     replayWithdrawn = !replay;
     localStorage.setItem(ANALYTICS_CHOICE_KEY, value);
     localStorage.setItem(REPLAY_CHOICE_KEY, replay ? "yes" : "no");
+    localStorage.setItem(HEATMAP_CHOICE_KEY, heatmaps ? "yes" : "no");
     if (value === "no") { localStorage.removeItem(ID_KEY); localStorage.removeItem(SESSION_KEY); }
   } catch { /* Storage denial disables capture. */ }
   window.dispatchEvent(new Event(ANALYTICS_CHOICE_EVENT));

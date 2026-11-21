@@ -20,7 +20,7 @@ export default function Page() {
       <details>
         <summary className="text-link">What we collect</summary>
         <p>Google Analytics uses cookies to count visits, see where readers found us, and measure actions such as opening a source. PostHog site analytics is optional and uses random browser and visit IDs.</p>
-        <p>We keep search terms, form details, precise locations, and private workspace activity out of analytics. Masked session replay is optional and covers public information pages only. It masks text and inputs, skips forms, and is kept for 30 days.</p>
+        <p>We keep search terms, form details, precise locations, and private workspace activity out of analytics. Masked session replay and heatmaps are optional and limited to About and Brand. Heatmaps retain only bounded pointer coordinates and fixed interaction types, without text, element identifiers or device metadata. It masks text and inputs, skips forms, and is kept for 30 days.</p>
         <p>You can change your choices anytime. Turning analytics off stops future collection. Read the privacy policies for <a className="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google</a> and <a className="text-link" href="https://posthog.com/privacy" target="_blank" rel="noreferrer">PostHog</a>.</p>
       </details>
       <h2>Contributing and contacting us</h2>
