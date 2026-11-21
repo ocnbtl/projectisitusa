@@ -144,7 +144,7 @@ export function PrivacyNotice({initialSite,initialReplay,google,googleChecking,b
   browserSignal:boolean; onDismiss:()=>void; onSave:(choices:PrivacyPreferences)=>void;
 }) {
   return <div className={styles.controls}>
-    {browserSignal && <p>Your browser's privacy signal is active. Optional analytics and replay are off.</p>}
+    {browserSignal && <p>Your browser&apos;s privacy signal is active. Optional analytics and replay are off.</p>}
     <fieldset disabled={browserSignal || googleChecking}>
       <legend>Optional measurement</legend>
       {google!==undefined && <label className={styles.option}><input type="checkbox" checked={!browserSignal && google} onChange={e=>onSave({site:initialSite,replay:initialReplay,google:e.target.checked})}/><span>Google Analytics<small>Counts visits and public browsing actions. Starts on only for eligible confirmed U.S. visits.</small></span></label>}
