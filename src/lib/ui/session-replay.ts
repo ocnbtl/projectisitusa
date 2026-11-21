@@ -1,7 +1,7 @@
 import { abortOptionalRequests, installOptionalTransport } from "./capture-transport";
 import { cleanHeatmap, type CaptureEvent } from "./heatmap-privacy";
 import { maskReplayText } from "./replay-public-text";
-import { ANALYTICS_TOKEN, analyticsChoice, analyticsRoute, replayChoice, heatmapChoice } from "./telemetry";
+import { ANALYTICS_TOKEN, EVENTS, analyticsChoice, analyticsRoute, replayChoice, heatmapChoice } from "./telemetry";
 
 // Only public information pages. No atlas location searches, checkout, intake,
 // subscriptions, authentication or team pages enter a recording.
@@ -73,7 +73,7 @@ function applyCapture(instance:ReplayClient){
 export async function syncReplay() {
   permitted=replayAllowed();heatmapsPermitted=heatmapAllowed();
   if(!permitted && !heatmapsPermitted){stopOptionalCapture();return;}
-  installOptionalTransport({aggregate:()=>analyticsChoice()==="yes",replay:()=>permitted && replayAllowed(),heatmaps:()=>heatmapsPermitted && providerHeatmapsEnabled && heatmapAllowed()});
+  installOptionalTransport({token:ANALYTICS_TOKEN,aggregateEvents:EVENTS,aggregate:()=>analyticsChoice()==="yes",replay:()=>permitted && replayAllowed(),heatmaps:()=>heatmapsPermitted && providerHeatmapsEnabled && heatmapAllowed()});
   if(client){applyCapture(client);return;}
   if (!loading) loading = new Promise<void>((resolve, reject) => {
     const configuration = {

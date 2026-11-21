@@ -1,7 +1,7 @@
 // The optional SDK gets a best-effort, one-shot transport. Failed telemetry is
 // intentionally discarded, never retried after a later privacy withdrawal.
 type Kind = "replay" | "heatmaps";
-type Gates = Record<Kind, () => boolean> & {aggregate?: () => boolean};
+type Gates = Record<Kind, () => boolean> & {token?:string; aggregate?: () => boolean; aggregateEvents?:readonly string[]};
 const active = new Map<AbortController, Kind>();
 let installed = false;
 let gates: Gates;
@@ -42,11 +42,23 @@ export function installOptionalTransport(checks: Gates) {
         try {raw=JSON.parse(encoded);} catch {raw=JSON.parse(atob(encoded));}
       }
     } catch { return acknowledge(); }
-    if (raw && typeof raw === "object" && "api_key" in raw) {
-      return gates.aggregate?.() && new URL(url,location.href).pathname === "/i/v0/e/"
+    // Pinned SDK1.438.7 uses {api_key,batch,sent_at} for timestamp-mode batch.
+    // Classify its events, never mistake the public ingestion key for a feature.
+    if (raw && typeof raw === "object" && "api_key" in raw && !("batch" in raw)) {
+      const record=raw as Record<string,unknown>;
+      const aggregate=Object.keys(record).sort().join(",")==="api_key,distinct_id,event,properties,timestamp"
+        && record.api_key===gates.token && typeof record.event==="string"
+        && gates.aggregateEvents?.includes(record.event);
+      return aggregate && gates.aggregate?.() && new URL(url,location.href).pathname === "/i/v0/e/"
         ? original(input,init) : acknowledge();
     }
-    const events = Array.isArray(raw) ? raw : [raw];
+    let payload=raw;
+    if (raw && typeof raw === "object" && "batch" in raw) {
+      const envelope=raw as Record<string,unknown>;
+      if (Object.keys(envelope).sort().join(",")!=="api_key,batch,sent_at" || envelope.api_key!==gates.token || !Array.isArray(envelope.batch)) return acknowledge();
+      payload=envelope.batch;
+    }
+    const events = Array.isArray(payload) ? payload : [payload];
     if (!events.length || events.length > 100) return acknowledge();
     let kind: Kind | undefined;
     for (const event of events) {
