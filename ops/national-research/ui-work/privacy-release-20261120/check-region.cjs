@@ -7,9 +7,9 @@ check({});for(const region of 'CA CT DE FL IL MD MA MI MT NV NH PA WA'.split(' '
 for(const region of [null,'','ZZ','us-ca','ca'])check({region,bits:'110'});
 for(const region of 'AB BC MB NB NL NS NT NU ON PE SK YT'.split(' '))check({country:'CA',region,bits:'110'});
 for(const region of [null,'','QC','ZZ','CA-QC','qc'])check({country:'CA',region,bits:'000'});
-for(const country of 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB CH TR BR CN'.split(' '))check({country,bits:'000'});
+for(const country of 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB CH TR BR CN GF GP MQ YT RE MF AX'.split(' '))check({country,bits:'000'});
 for(const country of [null,'','XX','ZZ','us','USA','U1']){check({country,bits:'000'});assert.equal(policy.regionalDefaults(country,'OH').known,false);}
-for(const country of policy.ISO_COUNTRIES){assert.equal(policy.regionalDefaults(country,null).known,true);if(!['US','CA','AU','NZ'].includes(country))check({country,bits:'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB CH TR BR CN'.split(' ').includes(country)?'000':'111'});}
+for(const country of policy.ISO_COUNTRIES){assert.equal(policy.regionalDefaults(country,null).known,true);if(!['US','CA','AU','NZ'].includes(country))check({country,bits:'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB CH TR BR CN GF GP MQ YT RE MF AX'.split(' ').includes(country)?'000':'111'});}
 check({country:'AU'});check({country:'NZ'});
 check({gpc:'1',bits:'000',status:451});check({dnt:'1',bits:'000',status:451});check({env:'preview',bits:'000'});check({host:'preview.vercel.app',bits:'000'});check({host:'www.isitusa.com',bits:'000'});
 console.log(JSON.stringify({status:'PASS',scope:'Exact source middleware; synthetic geography only',cases,isoCountries:249,groups:['US reviewed state vs unknown','Canada QC/unknown vs other provinces','EEA/GB/CH prior choice','Known country with concrete exceptions distinct from invalid/unknown'],externalRequests:0}));
