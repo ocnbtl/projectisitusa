@@ -12,7 +12,16 @@ function publicCaptureRouteAllowed(): boolean {
   return typeof window !== "undefined"
     && ["isitusa.com", "www.isitusa.com"].includes(location.hostname)
     && !location.search && !location.hash && replayRouteAllowed(location.pathname)
-    && !document.querySelector("main form, main input, main textarea, main select, main [contenteditable], main iframe, main [data-private]");
+    && !document.querySelector("main form, main textarea, main select, main [contenteditable], main iframe, main [data-private]")
+    && publicInputsAllowed();
+}
+function publicInputsAllowed():boolean {
+  if (!document.querySelector("main input")) return true;
+  if (location.pathname!=="/brand" || typeof document.querySelectorAll!=="function") return false;
+  const inputs=Array.from(document.querySelectorAll<HTMLInputElement>("main input"));
+  const names=new Set(["symbol-color","symbol-name-color","wordmark-color","full-name-color"]);
+  const colors=new Set(["green","black","white"]);
+  return inputs.length>0 && inputs.length<=12 && inputs.every(input=>input.type==="radio" && names.has(input.name) && colors.has(input.value));
 }
 export function replayAllowed():boolean {return publicCaptureRouteAllowed() && replayChoice();}
 export function heatmapAllowed():boolean {return publicCaptureRouteAllowed() && heatmapChoice();}

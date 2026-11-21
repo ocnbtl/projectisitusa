@@ -65,7 +65,7 @@ export function analyticsChoice(): AnalyticsChoice | null {
 }
 export function replayChoice(): boolean {
   if (typeof window === "undefined" || privacySignal() || optionalAnalyticsExcluded() || !measurementPolicyAllowsCapture() || replayWithdrawn) return false;
-  try { const value = localStorage.getItem(REPLAY_CHOICE_KEY); return value === "yes" || value === "no" ? value === "yes" : eligiblePublicDefault(); } catch { return false; }
+  try { const value = localStorage.getItem(REPLAY_CHOICE_KEY); return value === "yes" || value === "no" ? value === "yes" : eligiblePublicDefault("replay"); } catch { return false; }
 }
 export function heatmapChoice(): boolean {
   if (typeof window === "undefined" || privacySignal() || optionalAnalyticsExcluded() || !measurementPolicyAllowsCapture() || heatmapWithdrawn) return false;
@@ -74,7 +74,7 @@ export function heatmapChoice(): boolean {
     if(value==="yes"||value==="no")return value==="yes";
     // Earlier Turn all off choices must not become a new heatmap grant.
     if([ANALYTICS_CHOICE_KEY,REPLAY_CHOICE_KEY,"isitusa.google-analytics-choice.v1"].some(key=>localStorage.getItem(key)==="no"))return false;
-    return eligiblePublicDefault();
+    return eligiblePublicDefault("heatmaps");
   } catch { return false; }
 }
 export function setAnalyticsChoice(value: AnalyticsChoice, replay = false, heatmaps = false) {

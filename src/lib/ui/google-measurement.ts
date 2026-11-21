@@ -35,7 +35,7 @@ let pending: MeasurementEvent[] = [];
 let lastPath: string | null = null;
 let previousPage = "";
 let explicitlyWithdrawn = false;
-let defaultAllowed = false, policyKnown = false, policyBlocked = false;
+let defaultAllowed = false, replayDefaultAllowed = false, heatmapDefaultAllowed = false, policyKnown = false, policyBlocked = false;
 let eligibilityCheck: Promise<void> | undefined;
 const outcomeReceipts = new Set<string>();
 
@@ -78,9 +78,9 @@ export function googleAnalyticsChoice() {
 }
 
 // One host-verified eligibility result; saved vendor declines remain independent.
-export function eligiblePublicDefault(): boolean {
+export function eligiblePublicDefault(feature:"aggregate"|"replay"|"heatmaps"="aggregate"): boolean {
   if (!measurementPolicyAllowsCapture()) return false;
-  try { return defaultAllowed && !legacyAllOff(); } catch { return false; }
+  try { return (feature==="replay"?replayDefaultAllowed:feature==="heatmaps"?heatmapDefaultAllowed:defaultAllowed) && !legacyAllOff(); } catch { return false; }
 }
 
 export function measurementPolicyAllowsCapture():boolean {
@@ -118,7 +118,12 @@ export function resolveGoogleAnalyticsDefault({ settingsOnly = false }: { settin
         const policy=response.headers.get("X-Isitusa-Measurement-Policy");
         policyKnown=(response.status===204 && policy==="eligible") || (response.status===403 && policy==="consent-required") || (response.status===451 && policy==="blocked");
         policyBlocked=response.status===451 && policy==="blocked";
-        defaultAllowed=policyKnown && response.status===204;
+        const bits=response.headers.get("X-Isitusa-Measurement-Defaults");
+        const validBits=typeof bits==="string" && /^[01]{3}$/.test(bits);
+        // A partial/older/malformed response cannot silently grant all features.
+        defaultAllowed=policyKnown && response.status===204 && validBits && bits[0]==="1";
+        heatmapDefaultAllowed=policyKnown && response.status===204 && validBits && bits[1]==="1";
+        replayDefaultAllowed=policyKnown && response.status===204 && validBits && bits[2]==="1";
       })
       .catch(() => { /* Fail closed if eligibility cannot be confirmed. */ })
       .finally(() => window.clearTimeout(timeout));

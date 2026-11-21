@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { regionalDefaults } from "./src/lib/ui/measurement-region";
 import { teamDestination } from "./src/lib/team-routing";
 
 export function middleware(request: NextRequest) {
@@ -7,14 +8,13 @@ export function middleware(request: NextRequest) {
     // Read country at the hosting edge. Return only eligibility, and never cache
     // this response across visitors or enable the default on deployment previews.
     const blocked = request.headers.get("sec-gpc") === "1" || request.headers.get("dnt") === "1";
-    const enabled = !blocked && hostname === "isitusa.com" &&
-      process.env.VERCEL_ENV === "production" &&
-      request.headers.get("x-vercel-ip-country") === "US" &&
-      request.headers.get("sec-gpc") !== "1" &&
-      request.headers.get("dnt") !== "1";
+    const trusted = hostname === "isitusa.com" && process.env.VERCEL_ENV === "production";
+    const defaults = regionalDefaults(trusted ? request.headers.get("x-vercel-ip-country") : null, trusted ? request.headers.get("x-vercel-ip-country-region") : null);
+    const bits = blocked ? "000" : `${Number(defaults.aggregate)}${Number(defaults.heatmaps)}${Number(defaults.replay)}`;
+    const enabled = bits !== "000";
     return new Response(null, {
       status: blocked ? 451 : enabled ? 204 : 403,
-      headers: { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow", "X-Isitusa-Measurement-Policy": blocked ? "blocked" : enabled ? "eligible" : "consent-required" },
+      headers: { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow", "X-Isitusa-Measurement-Defaults": bits, "X-Isitusa-Measurement-Policy": blocked ? "blocked" : enabled ? "eligible" : "consent-required" },
     });
   }
   // Reject the synthetic harness on every production hostname before streaming.

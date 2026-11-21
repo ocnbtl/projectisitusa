@@ -15,7 +15,7 @@ export default function Page() {
     <div className={styles.prose}>
       <h2>Analytics</h2>
       <p>You can explore the atlas without an account. We count visits and a few actions to understand how people use it.</p>
-      <p>Optional analytics and the limited public-page replay start on only when our hosting service confirms an eligible U.S. visit. Elsewhere, or when eligibility is unavailable, they start off. Saved opt-outs, Do Not Track, Global Privacy Control and staff exclusions take priority.</p>
+      <p>Our hosting service checks regional eligibility before optional analytics starts. Minimized analytics and public-page heatmaps can start on in eligible U.S. and Canadian regions and for reviewed visits from Australia and New Zealand. Session replay requires your choice in Canada, in selected U.S. states, and when your U.S. state is unknown. Other regions start off unless their eligibility has been reviewed. Saved opt-outs, Do Not Track, Global Privacy Control and staff exclusions take priority.</p>
       <PrivacyControls />
       <details>
         <summary className="text-link">What we collect</summary>

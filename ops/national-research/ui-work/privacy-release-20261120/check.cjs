@@ -10,7 +10,7 @@ global.localStorage={getItem:k=>stored.get(k)??null,setItem:(k,v)=>stored.set(k,
 Object.defineProperty(global,'navigator',{configurable:true,value:{doNotTrack:'0',globalPrivacyControl:false}});
 let hasForm=false,script;
 global.document={querySelector:()=>hasForm?{}:null,createElement:()=>({remove(){}}),head:{appendChild:n=>{script=n;}}};
-global.fetch=async(url,options)=>{if(url==="/measurement/default")return new Response(null,{status:204,headers:{"X-Isitusa-Measurement-Policy":"eligible"}});sent.push({url,body:options?.body});return new Response(null,{status:403});};
+global.fetch=async(url,options)=>{if(url==="/measurement/default")return new Response(null,{status:204,headers:{"X-Isitusa-Measurement-Policy":"eligible","X-Isitusa-Measurement-Defaults":"111"}});sent.push({url,body:options?.body});return new Response(null,{status:403});};
 const mask=load('src/lib/ui/replay-public-text.ts').maskReplayText;assert.equal(mask('Brand kit.'),'Brand kit.');for(const text of ['synthetic@example.invalid','CANARY_PRIVATE','123 Test Street','555-123-4567','https://example.invalid/?token=private'])assert.ok(!mask(text).includes(text));assert.notEqual(mask('Brand kit.',{closest:()=>({})}),'Brand kit.');
 const t=load('src/lib/ui/telemetry.ts'),r=load('src/lib/ui/session-replay.ts'),g=load('src/lib/ui/google-measurement.ts');
 assert.equal(t.analyticsChoice(),null);assert.equal(t.replayChoice(),false);
