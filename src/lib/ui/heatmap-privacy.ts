@@ -4,7 +4,7 @@ const anonymousId = /^(?:\$device:)?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]
 const types = new Set(["click", "mousemove"]);
 export type CaptureEvent = {event:string; properties:Record<string,unknown>; timestamp?:unknown; uuid?:unknown};
 export function cleanHeatmap(event:CaptureEvent, path:string, token:string):CaptureEvent|null {
-  if (event.event!=="$$heatmap" || !["/about","/brand"].includes(path)) return null;
+  if (event.event!=="$$heatmap" || !["/about","/brand","/approach"].includes(path)) return null;
   const data=event.properties.$heatmap_data;
   if (!data || typeof data!=="object" || Array.isArray(data) || Object.keys(data).length!==1) return null;
   const canonical="https://isitusa.com"+path;

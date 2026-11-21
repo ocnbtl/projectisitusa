@@ -18,6 +18,18 @@ radios[0].value='CANARY';assert.equal(r.replayAllowed(),false,'unreviewed values
 loc.pathname='/about';assert.equal(r.replayAllowed(),false,'radio exemption only applies to Brand');loc.pathname='/brand';
 document.querySelector=()=>({});assert.equal(r.replayAllowed(),false,'forms/private markers still reject entire page');
 document.querySelector=baseQuery;
+for(const route of ['/about','/brand','/approach','/data-sources','/credits']){
+ loc.pathname=route;assert.equal(r.replayAllowed(),true,route);
+ assert.equal(r.heatmapAllowed(),['/about','/brand','/approach'].includes(route),route);
+ const fixture={event:'$$heatmap',properties:{$heatmap_data:{['https://isitusa.com'+route]:points}}};
+ assert.equal(!!cleanHeatmap(fixture,route,'PUBLIC_TEST_TOKEN'),['/about','/brand','/approach'].includes(route));
+}
+loc.pathname='/brand';
+const mask=load('src/lib/ui/replay-public-text.ts').maskReplayText;
+for(const text of ['Our approach','Start with a bounded question','Our data sources','Different sources answer different questions','Credits','Good work grows from the work of others.']){
+ assert.equal(mask(text),text);assert.notEqual(mask(text,{closest:()=>({})}),text,'private ancestor still wins');
+}
+for(const canary of ['CANARY_DYNAMIC_PAPER','ocean+synthetic@example.invalid','https://example.invalid/?token=CANARY'])assert.ok(!mask(canary).includes(canary));
 let starts=0,stops=0,configs=[],remote;const client={get_property(){return true},on(name,fn){remote=fn},set_config(c){configs.push(c)},startSessionRecording(){starts++},stopSessionRecording(){stops++},opt_in_capturing(){},opt_out_capturing(){}};
 await (async()=>{t.setAnalyticsChoice('no',false,true);assert.equal(t.analyticsChoice(),'no');assert.equal(t.replayChoice(),false);assert.equal(t.heatmapChoice(),true);const pending=r.syncReplay();const config=window.posthog._i[0][1];config.loaded(client);await pending;assert.equal(starts,0,'heatmaps alone never starts replay');assert.equal(configs.at(-1).capture_heatmaps,true,'known remote allow and app gate enable heatmaps');remote({ok:true,config:{heatmaps:false}});assert.equal(configs.at(-1).capture_heatmaps,false);assert.equal(config.before_send(event),null,'remote off blocks egress');remote({ok:true,config:{heatmaps:true}});assert.equal(configs.at(-1).capture_heatmaps,true);assert.ok(config.before_send(event));assert.equal(config.before_send({event:'$snapshot',properties:{}}),null);
 t.setAnalyticsChoice('no',true,false);await r.syncReplay();assert.equal(starts,1);assert.equal(configs.at(-1).capture_heatmaps,false);assert.equal(config.before_send(event),null,'independent heatmap decline immediate');assert.ok(config.before_send({event:'$snapshot',properties:{}}));r.stopHeatmaps();assert.ok(config.before_send({event:'$snapshot',properties:{}}),'stopping heatmaps keeps replay');t.setAnalyticsChoice('no',false,true);await r.syncReplay();r.stopReplay();assert.ok(config.before_send(event),'stopping replay keeps heatmaps');loc.search='?token=CANARY';assert.equal(config.before_send(event),null);loc.search='';navigator.globalPrivacyControl=true;assert.equal(config.before_send(event),null);assert.equal(t.heatmapChoice(),false);navigator.globalPrivacyControl=false;t.setAnalyticsChoice('no',false,false);assert.equal(config.before_send(event),null);assert.equal(saved.get(t.HEATMAP_CHOICE_KEY),'no');console.log(JSON.stringify({status:'PASS',shape:'Real pinned SDK point fixture',canaries:'UA,timezone,device,title,query,unknown point fields dropped',independence:'heatmaps-only, replay-only, individual stops, immediate withdrawal',provider:'remote gate preserved',externalRequests:0}));})().catch(e=>{console.error(e);process.exitCode=1;});

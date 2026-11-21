@@ -6,7 +6,7 @@ import { ANALYTICS_TOKEN, analyticsChoice, analyticsRoute, replayChoice, heatmap
 // Only public information pages. No atlas location searches, checkout, intake,
 // subscriptions, authentication or team pages enter a recording.
 export function replayRouteAllowed(path: string): boolean {
-  return ["/about", "/brand"].includes(path);
+  return ["/about", "/brand", "/approach", "/data-sources", "/credits"].includes(path);
 }
 function publicCaptureRouteAllowed(): boolean {
   return typeof window !== "undefined"
@@ -24,7 +24,8 @@ function publicInputsAllowed():boolean {
   return inputs.length>0 && inputs.length<=12 && inputs.every(input=>input.type==="radio" && names.has(input.name) && colors.has(input.value));
 }
 export function replayAllowed():boolean {return publicCaptureRouteAllowed() && replayChoice();}
-export function heatmapAllowed():boolean {return publicCaptureRouteAllowed() && heatmapChoice();}
+export function heatmapRouteAllowed(path:string):boolean {return ["/about","/brand","/approach"].includes(path);}
+export function heatmapAllowed():boolean {return publicCaptureRouteAllowed() && heatmapRouteAllowed(location.pathname) && heatmapChoice();}
 
 type ReplayClient = {
   set_config(options:Record<string,unknown>):void;

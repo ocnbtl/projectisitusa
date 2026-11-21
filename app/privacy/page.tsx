@@ -15,12 +15,12 @@ export default function Page() {
     <div className={styles.prose}>
       <h2>Analytics</h2>
       <p>You can explore the atlas without an account. We count visits and a few actions to understand how people use it.</p>
-      <p>Our hosting service checks regional eligibility before optional analytics starts. Minimized analytics and public-page heatmaps can start on in eligible U.S. and Canadian regions and for reviewed visits from Australia and New Zealand. Session replay requires your choice in Canada, in selected U.S. states, and when your U.S. state is unknown. Other regions start off unless their eligibility has been reviewed. Saved opt-outs, Do Not Track, Global Privacy Control and staff exclusions take priority.</p>
+      <p>Our hosting service checks regional eligibility before optional analytics starts. Minimized analytics and public-page heatmaps can start on where regional rules permit. Session replay requires your choice in Canada, in selected U.S. states, and when your U.S. state is unknown. Regions with an identified prior-consent requirement, or an unknown country, start off. Saved opt-outs, Do Not Track, Global Privacy Control and staff exclusions take priority.</p>
       <PrivacyControls />
       <details>
         <summary className="text-link">What we collect</summary>
         <p>Google Analytics uses cookies to count visits, see where readers found us, and measure actions such as opening a source. PostHog site analytics is optional and uses random browser and visit IDs.</p>
-        <p>We keep search terms, form details, precise locations, and private workspace activity out of analytics. Masked session replay and heatmaps are optional and limited to About and Brand. Heatmaps retain only bounded pointer coordinates and fixed interaction types, without text, element identifiers or device metadata. It masks text and inputs, skips forms, and is kept for 30 days.</p>
+        <p>We keep search terms, form details, precise locations, and private workspace activity out of analytics. Masked session replay is optional and limited to About, Brand, Approach, Data sources and Credits. Heatmaps are optional and limited to About, Brand and Approach. Heatmaps retain only bounded pointer coordinates and fixed interaction types, without text, element identifiers or device metadata. Replay masks unreviewed text and inputs, skips forms, and is kept for 30 days.</p>
         <p>You can change your choices anytime. Turning analytics off stops future collection. Read the privacy policies for <a className="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google</a> and <a className="text-link" href="https://posthog.com/privacy" target="_blank" rel="noreferrer">PostHog</a>.</p>
       </details>
       <h2>Contributing and contacting us</h2>
