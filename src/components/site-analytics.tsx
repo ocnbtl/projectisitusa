@@ -35,6 +35,8 @@ export function SiteAnalytics() {
   const privatePage = analyticsRoute(pathname) === null;
   useEffect(() => {
     const sync = () => {
+      // Abort queued/in-flight visual data synchronously, including another tab.
+      stopOptionalCapture();
       setChoice(analyticsChoice());
       syncGooglePage(location.pathname);
       setRevision(n => n + 1);
