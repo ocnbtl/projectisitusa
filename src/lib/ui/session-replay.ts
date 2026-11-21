@@ -30,7 +30,7 @@ export function heatmapAllowed():boolean {return publicCaptureRouteAllowed() && 
 type ReplayClient = {
   set_config(options:Record<string,unknown>):void;
   get_property?(name:string):unknown;
-  on?(name:string,callback:(result:{ok?:boolean;config?:{heatmaps?:boolean}})=>void):unknown;
+  on?(name:string,callback:(result:{ok?:boolean;config?:{heatmaps?:unknown}})=>void):unknown;
   startSessionRecording(): void;
   stopSessionRecording(): void;
   opt_in_capturing(options?: Record<string, unknown>): void;
@@ -39,7 +39,26 @@ type ReplayClient = {
 type ReplayWindow = Window & { posthog?: ReplayClient | (unknown[] & { _i: unknown[]; __SV: number; people: unknown[] }) };
 let client: ReplayClient | undefined;
 let loading: Promise<void> | undefined;
-let permitted = false, heatmapsPermitted = false, providerHeatmapsEnabled = false;
+let permitted = false, heatmapsPermitted = false;
+let providerHeatmapsConfig:unknown=false;
+export function providerHeatmapsAllowed(config:unknown,path:string):boolean {
+  if (!heatmapRouteAllowed(path)) return false;
+  if (config===true) return true; // Legacy provider shape, still locally bounded.
+  if (!config || typeof config!=="object" || Array.isArray(config)) return false;
+  const rule=config as Record<string,unknown>;
+  if (Object.keys(rule).sort().join(",")!=="captureMode,urlAllowlist,urlAllowlistEnforced"
+    || rule.captureMode!=="url_allowlist" || typeof rule.urlAllowlistEnforced!=="boolean"
+    || !Array.isArray(rule.urlAllowlist) || rule.urlAllowlist.length<1 || rule.urlAllowlist.length>3) return false;
+  for (const entry of rule.urlAllowlist) {
+    if (typeof entry!=="string") return false;
+    try {const url=new URL(entry);if(url.origin!=="https://isitusa.com" || url.search || url.hash || entry!==url.origin+url.pathname)return false;}
+    catch {return false;}
+  }
+  // Provider explicitly reports that it does not enforce its list. Intersect it
+  // with our independent three-route limit on every config, send and navigation.
+  return rule.urlAllowlist.includes("https://isitusa.com"+path);
+}
+function providerHeatmapsEnabled():boolean {return providerHeatmapsAllowed(providerHeatmapsConfig,location.pathname);}
 
 export function stopReplay() {
   permitted = false;
@@ -66,14 +85,15 @@ function applyCapture(instance:ReplayClient){
   instance.opt_in_capturing({captureEventName:false});
   // The pinned SDK ignores undefined set_config values. Use an explicit boolean
   // only after its actual remote configuration admits heatmaps.
-  const heatmapsActive=heatmapsPermitted && providerHeatmapsEnabled;
+  const heatmapsActive=heatmapsPermitted && providerHeatmapsEnabled();
+  if(!heatmapsActive)abortOptionalRequests("heatmaps");
   instance.set_config({enable_heatmaps:heatmapsActive,capture_heatmaps:heatmapsActive});
   if(permitted)instance.startSessionRecording();else instance.stopSessionRecording();
 }
 export async function syncReplay() {
   permitted=replayAllowed();heatmapsPermitted=heatmapAllowed();
   if(!permitted && !heatmapsPermitted){stopOptionalCapture();return;}
-  installOptionalTransport({token:ANALYTICS_TOKEN,aggregateEvents:EVENTS,aggregate:()=>analyticsChoice()==="yes",replay:()=>permitted && replayAllowed(),heatmaps:()=>heatmapsPermitted && providerHeatmapsEnabled && heatmapAllowed()});
+  installOptionalTransport({token:ANALYTICS_TOKEN,aggregateEvents:EVENTS,aggregate:()=>analyticsChoice()==="yes",replay:()=>permitted && replayAllowed(),heatmaps:()=>heatmapsPermitted && providerHeatmapsEnabled() && heatmapAllowed()});
   if(client){applyCapture(client);return;}
   if (!loading) loading = new Promise<void>((resolve, reject) => {
     const configuration = {
@@ -98,7 +118,7 @@ export async function syncReplay() {
       },
       before_send: (event: CaptureEvent | null) => {
         if(!event)return null;
-        if(event.event==="$$heatmap")return heatmapsPermitted && providerHeatmapsEnabled && heatmapAllowed()?cleanHeatmap(event,location.pathname,ANALYTICS_TOKEN):null;
+        if(event.event==="$$heatmap")return heatmapsPermitted && providerHeatmapsEnabled() && heatmapAllowed()?cleanHeatmap(event,location.pathname,ANALYTICS_TOKEN):null;
         if(event.event!=="$snapshot" || !permitted || !replayAllowed())return null;
         for (const key of Object.keys(event.properties)) {
           if (/url|pathname|referr|initial|utm_/i.test(key)) delete event.properties[key];
@@ -111,11 +131,10 @@ export async function syncReplay() {
       },
       loaded: (instance: ReplayClient) => {
         client = instance;
-        providerHeatmapsEnabled=instance.get_property?.("$heatmaps_enabled_server_side")===true;
+        providerHeatmapsConfig=instance.get_property?.("$heatmaps_enabled_server_side");
         // Public on() API, with the event and property verified in pinned1.438.7.
         instance.on?.("extensionsRemoteConfig", result=>{
-          if(!result.ok || typeof result.config?.heatmaps!=="boolean")return;
-          providerHeatmapsEnabled=result.config.heatmaps;
+          providerHeatmapsConfig=result.ok ? result.config?.heatmaps : false;
           applyCapture(instance);
         });
         applyCapture(instance);
