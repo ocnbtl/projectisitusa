@@ -30,7 +30,8 @@
   "blockers": [
     "Local Vercel connector returns404; authenticated dashboard evidence supplied by Linx",
     "This chat Computer Use access to Brave denied",
-    "Production promotion forbidden until preview desktop/mobile and actual synthetic outgoing payload tests pass"
+    "Production promotion forbidden until preview desktop/mobile and actual synthetic outgoing payload tests pass",
+    "Preview push blocked by sandbox MSYS credential-helper startup failure; no credentials changed"
   ],
   "noChangesTo": [
     "credentials",
@@ -38,5 +39,8 @@
     "billing",
     "research data",
     "R2"
-  ]
+  ],
+  "candidateCommit": "d885129",
+  "previewPush": "FAILED: Git credential helper could not start in sandbox; no remote branch created",
+  "production": "NOT DEPLOYED"
 }
