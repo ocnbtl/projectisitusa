@@ -1,10 +1,9 @@
-import { isPrivateAnalyticsRoute } from "./analytics-privacy";
+import { isPrivateAnalyticsRoute, optionalAnalyticsExcluded } from "./analytics-privacy";
 const origin = "https://isitusa.com";
 const measurementId = process.env.NEXT_PUBLIC_ISITUSA_GA4_ID || "";
 const choiceKey = "isitusa.google-analytics-choice.v1";
 const analyticsChoiceKey = "isitusa.analytics-choice.v1";
 const siteOnlyKey = "isitusa.analytics-choice.site-only.v1";
-const exclusionKey = "isitusa.analytics-exclude.v1";
 const cookiePrefix = "isitusa_ga4";
 const framePath = "/measurement/ga4.html";
 const pages = new Map([
@@ -67,7 +66,7 @@ export function safeGoogleReferrer(value: string) {
 }
 
 export function googleAnalyticsChoice() {
-  if (typeof window === "undefined" || explicitlyWithdrawn || !googleMeasurementConfigured) return false;
+  if (typeof window === "undefined" || explicitlyWithdrawn || !googleMeasurementConfigured || optionalAnalyticsExcluded()) return false;
   if (navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return false;
   try {
     const saved = localStorage.getItem(choiceKey);
@@ -89,9 +88,9 @@ export function preserveLegacyGoogleChoice() {
   localStorage.setItem(siteOnlyKey, "yes");
 }
 
-export function resolveGoogleAnalyticsDefault() {
+export function resolveGoogleAnalyticsDefault({ settingsOnly = false }: { settingsOnly?: boolean } = {}) {
   if (typeof window === "undefined" || !googleMeasurementConfigured ||
-      location.origin !== origin || !googlePage(location.pathname) || staffExcluded() ||
+      location.origin !== origin || (!googlePage(location.pathname) && !(settingsOnly && location.pathname === "/privacy")) || optionalAnalyticsExcluded() ||
       navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
   try {
     if (localStorage.getItem(choiceKey) !== null || legacyAllOff()) return;
@@ -111,20 +110,9 @@ export function resolveGoogleAnalyticsDefault() {
   return eligibilityCheck;
 }
 
-function staffExcluded() {
-  try {
-    if (new URLSearchParams(location.search).get("analytics") === "off") {
-      localStorage.setItem(exclusionKey, "yes");
-    }
-    return navigator.webdriver || localStorage.getItem(exclusionKey) === "yes";
-  } catch {
-    return true;
-  }
-}
-
 function mayMeasure() {
   return typeof window !== "undefined" && location.origin === origin &&
-    !staffExcluded() && googleAnalyticsChoice() && googlePage(location.pathname) !== null;
+    !optionalAnalyticsExcluded() && googleAnalyticsChoice() && googlePage(location.pathname) !== null;
 }
 
 export function stopGoogleMeasurement() {

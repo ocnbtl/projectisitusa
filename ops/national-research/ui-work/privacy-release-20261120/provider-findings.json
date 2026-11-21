@@ -1,0 +1,30 @@
+{
+  "scope": "Follow-up fixes on a62eaf22d2a7d026cb3319e73155f333aa003e57",
+  "fixes": [
+    "Privacy page may resolve confirmed-US eligibility for display only; googlePage privacy remains excluded; no frame created",
+    "Shared existing analytics=off / isitusa.analytics-exclude.v1 marker and webdriver exclusion apply to GA4, PostHog aggregate and replay even after explicit choices"
+  ],
+  "tests": {
+    "check.cjs": "PASS including aggregate/replay staff marker cases",
+    "check-default-display.cjs": "PASS eligibility204 display, no collection frame, saved decline, staff override",
+    "lint": "8 changed TS/TSX files, zero errors and warnings"
+  },
+  "vendorEvidence": {
+    "source": "Linx authenticated host QA operator, November20",
+    "PostHogPublicConfig": {
+      "sessionRecording": false,
+      "heatmaps": false
+    },
+    "realSdkSnapshots": 0,
+    "fixtureWork": "Operator testing local capture-enabled project-config fixture; no provider changes/submissions",
+    "interpretation": "Concrete current provider feature availability blocker. Not a claim of a blanket legal prior-consent requirement."
+  },
+  "defaultDisposition": "GA4 existing confirmedUS default preserved. Replay and heatmap production activation remains unapproved pending actual payload tests and deliberate provider availability changes. No credentials, permissions, billing or vendor settings changed.",
+  "remaining": [
+    "Capture-enabled isolated raw snapshot and heatmap egress inspection",
+    "Cross-tab browser withdrawal",
+    "Fresh desktop/mobile rendering",
+    "Host/CDN injected script endpoints",
+    "Production smoke tests after exact candidate approved"
+  ]
+}

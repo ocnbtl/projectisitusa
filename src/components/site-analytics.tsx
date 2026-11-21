@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ANALYTICS_CHOICE_EVENT, analyticsChoice, analyticsRoute, privacySignal, replayChoice, setAnalyticsChoice, track, type AnalyticsChoice } from "@/lib/ui/telemetry";
 import { stopReplay, syncReplay } from "@/lib/ui/session-replay";
 import { googleAnalyticsChoice, googleMeasurementConfigured, resolveGoogleAnalyticsDefault, setGoogleAnalyticsChoice, syncGooglePage } from "@/lib/ui/google-measurement";
+import { optionalAnalyticsExcluded } from "@/lib/ui/analytics-privacy";
 import styles from "./analytics-consent.module.css";
 
 export function PrivacyChoicesButton({ className }: { className?: string }) {
@@ -43,7 +44,7 @@ export function SiteAnalytics() {
   }, []);
   useLayoutEffect(() => { syncGooglePage(pathname); }, [pathname]);
   useEffect(() => {
-    const check = resolveGoogleAnalyticsDefault();
+    const check = resolveGoogleAnalyticsDefault({ settingsOnly: pathname === "/privacy" });
     if (!check) return;
     let current = true;
     void check.then(() => {
@@ -114,10 +115,12 @@ export function PrivacyControls() {
   const [message, setMessage] = useState("");
   useEffect(() => {
     const sync = () => { setReady(true); setVersion(v => v + 1); };
-    sync();
+    const check = resolveGoogleAnalyticsDefault({ settingsOnly: true });
+    let active = true;
+    if (check) void check.then(() => { if (active) sync(); }); else sync();
     window.addEventListener(ANALYTICS_CHOICE_EVENT, sync);
     window.addEventListener("storage", sync);
-    return () => { window.removeEventListener(ANALYTICS_CHOICE_EVENT, sync); window.removeEventListener("storage", sync); };
+    return () => { active = false; window.removeEventListener(ANALYTICS_CHOICE_EVENT, sync); window.removeEventListener("storage", sync); };
   }, []);
   void version;
   const save = ({site, replay, google}: PrivacyPreferences) => {
@@ -130,7 +133,7 @@ export function PrivacyControls() {
   return <section id="privacy-choices" className={styles.notice} aria-labelledby="privacy-choices-title" data-private>
     <h2 id="privacy-choices-title">Your Privacy Choices</h2>
     <p>Control each service separately. Changes apply immediately and stay saved in this browser.</p>
-    {!ready ? <p role="status">Checking your saved choices...</p> : <PrivacyNotice initialSite={analyticsChoice()==="yes"} initialReplay={replayChoice()} google={googleMeasurementConfigured?googleAnalyticsChoice():undefined} googleChecking={false} browserSignal={privacySignal()} onDismiss={()=>{}} onSave={save}/>}
+    {!ready ? <p role="status">Checking your saved choices...</p> : <PrivacyNotice initialSite={analyticsChoice()==="yes"} initialReplay={replayChoice()} google={googleMeasurementConfigured?googleAnalyticsChoice():undefined} googleChecking={false} browserSignal={privacySignal() || optionalAnalyticsExcluded()} onDismiss={()=>{}} onSave={save}/>}
     <p role="status" aria-live="polite">{message}</p>
     <noscript>Optional analytics cannot run without JavaScript.</noscript>
   </section>;
@@ -144,7 +147,7 @@ export function PrivacyNotice({initialSite,initialReplay,google,googleChecking,b
   browserSignal:boolean; onDismiss:()=>void; onSave:(choices:PrivacyPreferences)=>void;
 }) {
   return <div className={styles.controls}>
-    {browserSignal && <p>Your browser&apos;s privacy signal is active. Optional analytics and replay are off.</p>}
+    {browserSignal && <p>A privacy signal or staff exclusion keeps optional analytics and replay off in this browser.</p>}
     <fieldset disabled={browserSignal || googleChecking}>
       <legend>Optional measurement</legend>
       {google!==undefined && <label className={styles.option}><input type="checkbox" checked={!browserSignal && google} onChange={e=>onSave({site:initialSite,replay:initialReplay,google:e.target.checked})}/><span>Google Analytics<small>Counts visits and public browsing actions. Starts on only for eligible confirmed U.S. visits.</small></span></label>}
