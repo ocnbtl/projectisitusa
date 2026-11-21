@@ -1,5 +1,5 @@
 import { IllustratedIntro } from "@/components/editorial-art";
-import { PrivacyChoicesButton } from "@/components/site-analytics";
+import { PrivacyControls } from "@/components/site-analytics";
 import type { Metadata } from "next";
 import styles from "@/components/participation/participation.module.css";
 import { SUPPORT_DESTINATIONS } from "@/content/support-destinations";
@@ -16,7 +16,7 @@ export default function Page() {
       <h2>Analytics</h2>
       <p>You can explore the atlas without an account. We count visits and a few actions to understand how people use it.</p>
       <p>Google Analytics starts on for U.S. visits. Elsewhere, it starts off. We respect Do Not Track and Global Privacy Control.</p>
-      <p><PrivacyChoicesButton className="text-link" /></p>
+      <PrivacyControls />
       <details>
         <summary className="text-link">What we collect</summary>
         <p>Google Analytics uses cookies to count visits, see where readers found us, and measure actions such as opening a source. PostHog site analytics is optional and uses random browser and visit IDs.</p>
@@ -34,7 +34,7 @@ export default function Page() {
       <p>Read the privacy information from <a className="text-link" href="https://stripe.com/privacy" target="_blank" rel="noreferrer">Stripe</a>, <a className="text-link" href="https://resend.com/legal/privacy-policy" target="_blank" rel="noreferrer">Resend</a>, <a className="text-link" href="https://supabase.com/privacy" target="_blank" rel="noreferrer">Supabase</a>, <a className="text-link" href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noreferrer">Vercel</a> and <a className="text-link" href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">Cloudflare</a>.</p>
       <h2>Your choices and questions</h2>
       {contactVerifiedAt ? <p>Contact <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> to ask about information we hold or request access, correction or removal. Some financial and security records may need to be retained separately.</p> : <p>A verified contact route will be provided before additional services open.</p>}
-      <p className={styles.hint}>ISITUSA is an independent initiative based in the United States. Updated November 10, 2026.</p>
+      <p className={styles.hint}>ISITUSA is an independent initiative based in the United States. Updated November 20, 2026.</p>
     </div>
   </main>;
 }

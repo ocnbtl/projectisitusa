@@ -2,24 +2,19 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useReportWebVitals } from "next/web-vitals";
 import { usePathname } from "next/navigation";
-import { ANALYTICS_CHOICE_EVENT, ANALYTICS_SETTINGS_EVENT, analyticsChoice, analyticsRoute, privacySignal, replayChoice, setAnalyticsChoice, track, type AnalyticsChoice } from "@/lib/ui/telemetry";
+import { ANALYTICS_CHOICE_EVENT, analyticsChoice, analyticsRoute, privacySignal, replayChoice, setAnalyticsChoice, track, type AnalyticsChoice } from "@/lib/ui/telemetry";
 import { stopReplay, syncReplay } from "@/lib/ui/session-replay";
 import { googleAnalyticsChoice, googleMeasurementConfigured, resolveGoogleAnalyticsDefault, setGoogleAnalyticsChoice, syncGooglePage } from "@/lib/ui/google-measurement";
 import styles from "./analytics-consent.module.css";
 
 export function PrivacyChoicesButton({ className }: { className?: string }) {
-  return <button type="button" className={className}
-    onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>
-    Privacy choices
-  </button>;
+  return <a href="/privacy#privacy-choices" className={className}>Your Privacy Choices</a>;
 }
 
 export function SiteAnalytics() {
   const pathname = usePathname();
   const [choice, setChoice] = useState<AnalyticsChoice | null>(null);
   const [revision, setRevision] = useState(0);
-  const [settings, setSettings] = useState(false);
-  const [googleChecking, setGoogleChecking] = useState(false);
   const visit = useRef<{ path: string; started: number; left: boolean } | null>(null);
   const documentPage = useRef<string | null>(null);
   const documentChanged = useRef(false);
@@ -43,20 +38,18 @@ export function SiteAnalytics() {
       syncGooglePage(location.pathname);
       setRevision(n => n + 1);
     };
-    const open = () => setSettings(true);
-    sync(); window.addEventListener(ANALYTICS_CHOICE_EVENT, sync); window.addEventListener("storage", sync); window.addEventListener(ANALYTICS_SETTINGS_EVENT, open);
-    return () => { window.removeEventListener(ANALYTICS_CHOICE_EVENT, sync); window.removeEventListener("storage", sync); window.removeEventListener(ANALYTICS_SETTINGS_EVENT, open); };
+    sync(); window.addEventListener(ANALYTICS_CHOICE_EVENT, sync); window.addEventListener("storage", sync);
+    return () => { window.removeEventListener(ANALYTICS_CHOICE_EVENT, sync); window.removeEventListener("storage", sync); };
   }, []);
   useLayoutEffect(() => { syncGooglePage(pathname); }, [pathname]);
   useEffect(() => {
     const check = resolveGoogleAnalyticsDefault();
-    if (!check) { setGoogleChecking(false); return; }
+    if (!check) return;
     let current = true;
-    setGoogleChecking(true);
     void check.then(() => {
       if (!current) return;
       syncGooglePage(location.pathname);
-      setGoogleChecking(false);
+      window.dispatchEvent(new Event(ANALYTICS_CHOICE_EVENT));
     });
     return () => { current = false; };
   }, [pathname]);
@@ -112,67 +105,52 @@ export function SiteAnalytics() {
     window.addEventListener("pointerdown", active, { passive: true }); window.addEventListener("keydown", active); window.addEventListener("scroll", scroll, { passive: true }); document.addEventListener("visibilitychange", visibility);
     return () => { flush(); if (location.pathname !== pathname) leave(); window.removeEventListener("pagehide", hide); window.removeEventListener("pageshow", show); clearInterval(timer); window.removeEventListener("pointerdown", active); window.removeEventListener("keydown", active); window.removeEventListener("scroll", scroll); document.removeEventListener("visibilitychange", visibility); };
   }, [pathname, choice, privatePage]);
-  if (!settings || privatePage) return null;
-  const save = ({ site, google, replay }: PrivacyPreferences) => {
-    if (googleMeasurementConfigured && google !== undefined) setGoogleAnalyticsChoice(google);
-    setAnalyticsChoice(site ? "yes" : "no", site && replay);
-    setSettings(false);
+  return null;
+}
+
+export function PrivacyControls() {
+  const [ready, setReady] = useState(false);
+  const [version, setVersion] = useState(0);
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    const sync = () => { setReady(true); setVersion(v => v + 1); };
+    sync();
+    window.addEventListener(ANALYTICS_CHOICE_EVENT, sync);
+    window.addEventListener("storage", sync);
+    return () => { window.removeEventListener(ANALYTICS_CHOICE_EVENT, sync); window.removeEventListener("storage", sync); };
+  }, []);
+  void version;
+  const save = ({site, replay, google}: PrivacyPreferences) => {
+    if (google !== undefined) setGoogleAnalyticsChoice(google);
+    setAnalyticsChoice(site ? "yes" : "no", replay);
+    stopReplay();
+    syncGooglePage(location.pathname);
+    setMessage("Your choices apply now and are saved in this browser.");
   };
-  return <PrivacyNotice
-    initialSite={choice === "yes"}
-    initialReplay={replayChoice()}
-    google={googleMeasurementConfigured ? googleAnalyticsChoice() : undefined}
-    googleChecking={googleChecking}
-    browserSignal={privacySignal()}
-    onDismiss={() => setSettings(false)}
-    onSave={save}
-  />;
+  return <section id="privacy-choices" className={styles.notice} aria-labelledby="privacy-choices-title" data-private>
+    <h2 id="privacy-choices-title">Your Privacy Choices</h2>
+    <p>Control each service separately. Changes apply immediately and stay saved in this browser.</p>
+    {!ready ? <p role="status">Checking your saved choices...</p> : <PrivacyNotice initialSite={analyticsChoice()==="yes"} initialReplay={replayChoice()} google={googleMeasurementConfigured?googleAnalyticsChoice():undefined} googleChecking={false} browserSignal={privacySignal()} onDismiss={()=>{}} onSave={save}/>}
+    <p role="status" aria-live="polite">{message}</p>
+    <noscript>Optional analytics cannot run without JavaScript.</noscript>
+  </section>;
 }
 
 type PrivacyPreferences = { site: boolean; google?: boolean; replay: boolean };
 
-export function PrivacyNotice({ initialSite, initialReplay, google, googleChecking, browserSignal, onDismiss, onSave }: {
-  initialSite: boolean;
-  initialReplay: boolean;
-  google?: boolean;
-  googleChecking: boolean;
-  browserSignal: boolean;
-  onDismiss: () => void;
-  onSave: (choices: PrivacyPreferences) => void;
+// Shared with the synthetic preview. This is an inline section, never a dialog.
+export function PrivacyNotice({initialSite,initialReplay,google,googleChecking,browserSignal,onSave}: {
+  initialSite:boolean; initialReplay:boolean; google?:boolean; googleChecking:boolean;
+  browserSignal:boolean; onDismiss:()=>void; onSave:(choices:PrivacyPreferences)=>void;
 }) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const [site, setSite] = useState(initialSite);
-  const [replay, setReplay] = useState(initialReplay);
-  const [googleDraft, setGoogleDraft] = useState<boolean>();
-  const googleChecked = googleDraft ?? google ?? false;
-
-  useEffect(() => {
-    const element = dialog.current;
-    element?.showModal();
-    return () => element?.close();
-  }, []);
-
-  return <dialog ref={dialog} className={styles.notice} aria-labelledby="privacy-choices-title" data-private
-    onCancel={event => { event.preventDefault(); onDismiss(); }}>
-    <div className={styles.title}>
-      <h2 id="privacy-choices-title">Privacy choices</h2>
-      <button type="button" className={styles.close} aria-label="Close privacy choices" onClick={onDismiss}>×</button>
-    </div>
-    {browserSignal ? <p>Your browser keeps optional analytics off.</p> : <>
-      {google !== undefined && <>
-        <label className={styles.option}>
-          <input type="checkbox" checked={googleChecked} disabled={googleChecking} onChange={event => setGoogleDraft(event.target.checked)} />
-          Google Analytics
-        </label>
-        <p className={styles.hint}>Uses cookies to measure visits.</p>
-      </>}
-      <label className={styles.option}><input type="checkbox" checked={site} onChange={event => setSite(event.target.checked)} />Site analytics</label>
-      <label className={styles.option}><input type="checkbox" checked={site && replay} disabled={!site} onChange={event => setReplay(event.target.checked)} />Masked session replay</label>
-      <div className={styles.actions}>
-        <button type="button" disabled={googleChecking} onClick={() => onSave({ site, replay, google: googleDraft })}>Save choices</button>
-        <button type="button" onClick={() => onSave({ site: false, replay: false, google: false })}>Turn all off</button>
-      </div>
-    </>}
-    <a href="/privacy">Privacy policy</a>
-  </dialog>;
+  return <div className={styles.controls}>
+    {browserSignal && <p>Your browser's privacy signal is active. Optional analytics and replay are off.</p>}
+    <fieldset disabled={browserSignal || googleChecking}>
+      <legend>Optional measurement</legend>
+      {google!==undefined && <label className={styles.option}><input type="checkbox" checked={!browserSignal && google} onChange={e=>onSave({site:initialSite,replay:initialReplay,google:e.target.checked})}/><span>Google Analytics<small>Counts visits and public browsing actions. Starts on only for eligible confirmed U.S. visits.</small></span></label>}
+      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialSite} onChange={e=>onSave({site:e.target.checked,replay:initialReplay})}/><span>Site analytics<small>Measures public browsing with random browser and visit IDs. Starts off.</small></span></label>
+      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialReplay} onChange={e=>onSave({site:initialSite,replay:e.target.checked})}/><span>Masked session replay<small>Optional recordings are limited to About and Brand. Inputs and private content are excluded. Starts off.</small></span></label>
+    </fieldset>
+    <div className={styles.actions}><button type="button" onClick={()=>onSave({site:false,replay:false,google:false})}>Turn all off</button></div>
+  </div>;
 }

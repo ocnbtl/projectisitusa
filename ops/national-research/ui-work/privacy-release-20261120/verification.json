@@ -1,0 +1,42 @@
+{
+  "status": "PREVIEW CANDIDATE - NOT RELEASED",
+  "baseSha": "04f505da351885c3f6a6f3cb7763fa644eba0619",
+  "baseTree": "eab86385d54ccbdf5af0e604e3b4f9d08f927845",
+  "checks": {
+    "diffWhitespace": "PASS",
+    "syntaxTranspilation": "PASS changed TSX files",
+    "logicAndSyntheticAggregatePayload": "PASS check.cjs; all network intercepted",
+    "fullTypecheck": "Pending hosted build",
+    "desktopMobile": "Pending",
+    "outgoingReplayPayload": "Pending",
+    "hostAnalytics": "Pending dashboard verification"
+  },
+  "defaults": {
+    "GA4": "Existing confirmed-US edge gate preserved; saved declines and privacy signals respected",
+    "PostHog": "Explicit opt-in retained until expansion verified",
+    "replay": "Explicit opt-in retained; about and brand only",
+    "heatmaps": "Disabled; no unverified expansion"
+  },
+  "replay": "Reviewed exact public-copy allowlist before capture; all other text and inputs masked; media blocked; full outgoing payload still must be inspected",
+  "officialIcon": {
+    "page": "https://oag.ca.gov/privacy/ccpa/icons-download",
+    "asset": "https://oag.ca.gov/sites/all/files/agweb/images/privacy/privacyoptions.svg",
+    "sha256": "86f2eb97cc1f3909c12e4512de9e267215d94ac5aaee9393d0f007f18c34e8ba"
+  },
+  "sourceDocs": [
+    "https://posthog.com/docs/libraries/js/reference",
+    "https://posthog.com/docs/session-replay/privacy"
+  ],
+  "blockers": [
+    "Local Vercel connector returns404; authenticated dashboard evidence supplied by Linx",
+    "This chat Computer Use access to Brave denied",
+    "Production promotion forbidden until preview desktop/mobile and actual synthetic outgoing payload tests pass"
+  ],
+  "noChangesTo": [
+    "credentials",
+    "permissions",
+    "billing",
+    "research data",
+    "R2"
+  ]
+}

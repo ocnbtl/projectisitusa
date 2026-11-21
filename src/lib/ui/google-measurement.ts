@@ -1,3 +1,4 @@
+import { isPrivateAnalyticsRoute } from "./analytics-privacy";
 const origin = "https://isitusa.com";
 const measurementId = process.env.NEXT_PUBLIC_ISITUSA_GA4_ID || "";
 const choiceKey = "isitusa.google-analytics-choice.v1";
@@ -42,6 +43,7 @@ const outcomeReceipts = new Set<string>();
 export const googleMeasurementConfigured = /^G-[A-Z0-9]{6,16}$/.test(measurementId);
 
 export function googlePage(pathname: string) {
+  if (isPrivateAnalyticsRoute(pathname)) return null;
   const path = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
   const title = pages.get(path);
   if (title) return { page: path, title };

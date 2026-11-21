@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useId, useState } from "react";
-import { ANALYTICS_SETTINGS_EVENT } from "@/lib/ui/telemetry";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FooterGrove } from "@/components/footer-grove";
@@ -44,7 +43,7 @@ export function SiteFooter() {
           </div>)}
         </div>
       </div>
-      <div className="footer-details"><FooterSocials /><div className="footer-utilities"><a href="mailto:contact@isitusa.com">Contact us</a><button type="button" onClick={() => window.dispatchEvent(new Event(ANALYTICS_SETTINGS_EVENT))}>Privacy choices</button><a href="#main-content" className="footer-return">Back to top <ArrowUp size={16} aria-hidden="true" /></a></div></div>
+      <div className="footer-details"><FooterSocials /><div className="footer-utilities"><a href="mailto:contact@isitusa.com">Contact us</a><Link href="/privacy#privacy-choices" className="footer-privacy-choices"><img src="/privacy/california-privacy-options.svg" width={30} height={14} alt="California Consumer Privacy Act (CCPA) Opt-Out Icon"/>Your Privacy Choices</Link><a href="#main-content" className="footer-return">Back to top <ArrowUp size={16} aria-hidden="true" /></a></div></div>
       <FooterGrove />
     </footer>
   );

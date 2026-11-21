@@ -1,3 +1,4 @@
+import { isPrivateAnalyticsRoute } from "./analytics-privacy";
 import { preserveLegacyGoogleChoice, trackGoogleEvent } from "./google-measurement";
 
 // Explicit aggregate events only. Separately consented replay lives in session-replay.ts.
@@ -33,7 +34,7 @@ const ENUMS: Record<string, readonly string[]> = {
 };
 export function resultBucket(count: number) { return count < 1 ? "0" : count <= 10 ? "1-10" : count <= 100 ? "11-100" : "101+"; }
 export function analyticsRoute(pathname: string): string | null {
-  if (["/admin", "/auth", "/preferences", "/volunteer"].some(p => pathname === p || pathname.startsWith(p + "/"))) return null;
+  if (isPrivateAnalyticsRoute(pathname)) return null;
   if (["/", "/species", "/research", "/about", "/support", "/join", "/report", "/privacy", "/terms", "/brand", "/approach", "/data-sources", "/credits", "/observations"].includes(pathname)) return pathname;
   if (/^\/species\/[^/]+\/?$/.test(pathname)) return "/species/[species]";
   return "/not-found";
@@ -55,22 +56,23 @@ export function safeProperties(properties: EventProperties): EventProperties {
 export function privacySignal(): boolean {
   return typeof navigator !== "undefined" && (navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true);
 }
-let withdrawn = false;
+let withdrawn = false, replayWithdrawn = false;
 export function analyticsChoice(): AnalyticsChoice | null {
   if (typeof window === "undefined") return null;
   if (withdrawn || privacySignal()) return "no";
   try { const value = localStorage.getItem(ANALYTICS_CHOICE_KEY); return value === "yes" || value === "no" ? value : null; } catch { return "no"; }
 }
 export function replayChoice(): boolean {
-  if (analyticsChoice() !== "yes") return false;
+  if (typeof window === "undefined" || privacySignal() || replayWithdrawn) return false;
   try { return localStorage.getItem(REPLAY_CHOICE_KEY) === "yes"; } catch { return false; }
 }
 export function setAnalyticsChoice(value: AnalyticsChoice, replay = false) {
   withdrawn = value === "no";
   try {
     preserveLegacyGoogleChoice();
+    replayWithdrawn = !replay;
     localStorage.setItem(ANALYTICS_CHOICE_KEY, value);
-    localStorage.setItem(REPLAY_CHOICE_KEY, value === "yes" && replay ? "yes" : "no");
+    localStorage.setItem(REPLAY_CHOICE_KEY, replay ? "yes" : "no");
     if (value === "no") { localStorage.removeItem(ID_KEY); localStorage.removeItem(SESSION_KEY); }
   } catch { /* Storage denial disables capture. */ }
   window.dispatchEvent(new Event(ANALYTICS_CHOICE_EVENT));

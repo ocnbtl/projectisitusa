@@ -1,14 +1,16 @@
+import { maskReplayText } from "./replay-public-text";
 import { ANALYTICS_TOKEN, analyticsRoute, replayChoice } from "./telemetry";
 
 // Only public information pages. No atlas location searches, checkout, intake,
 // subscriptions, authentication or team pages enter a recording.
 export function replayRouteAllowed(path: string): boolean {
-  return ["/about", "/research", "/species", "/brand"].includes(path) || /^\/species\/[a-z0-9-]+\/?$/.test(path);
+  return ["/about", "/brand"].includes(path);
 }
 export function replayAllowed(): boolean {
   return typeof window !== "undefined" && replayChoice()
     && ["isitusa.com", "www.isitusa.com"].includes(location.hostname)
-    && !location.search && !location.hash && replayRouteAllowed(location.pathname);
+    && !location.search && !location.hash && replayRouteAllowed(location.pathname)
+    && !document.querySelector("main form, main input, main textarea, main select, main [contenteditable], main iframe, main [data-private]");
 }
 type ReplayClient = {
   startSessionRecording(): void;
@@ -45,8 +47,8 @@ export async function syncReplay() {
       persistence: "memory", opt_out_capturing_by_default: true,
       ip: false, save_referrer: false, save_campaign_params: false,
       session_recording: {
-        maskAllInputs: true, maskTextSelector: "*", maskAllElementAttributes: true,
-        blockSelector: "form, input, textarea, select, iframe, [contenteditable], [data-private], [role=dialog]",
+        maskAllInputs: true, maskTextSelector: "*", maskTextFn: maskReplayText, maskAllElementAttributes: true,
+        blockSelector: "form, input, textarea, select, iframe, img, video, audio, object, embed, [contenteditable], [data-private], [role=dialog]",
         recordCrossOriginIframes: false, recordCanvas: false,
         recordHeaders: false, recordBody: false, recordPerformance: false,
         maskCapturedNetworkRequestFn: (request: { name?: string }) => {
