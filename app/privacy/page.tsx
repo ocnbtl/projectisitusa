@@ -15,7 +15,7 @@ export default function Page() {
     <div className={styles.prose}>
       <h2>Analytics</h2>
       <p>You can explore the atlas without an account. We count visits and a few actions to understand how people use it.</p>
-      <p>Google Analytics starts on for U.S. visits. Elsewhere, it starts off. We respect Do Not Track and Global Privacy Control.</p>
+      <p>Optional analytics and the limited public-page replay start on only when our hosting service confirms an eligible U.S. visit. Elsewhere, or when eligibility is unavailable, they start off. Saved opt-outs, Do Not Track, Global Privacy Control and staff exclusions take priority.</p>
       <PrivacyControls />
       <details>
         <summary className="text-link">What we collect</summary>

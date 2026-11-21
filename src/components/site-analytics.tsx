@@ -151,8 +151,8 @@ export function PrivacyNotice({initialSite,initialReplay,google,googleChecking,b
     <fieldset disabled={browserSignal || googleChecking}>
       <legend>Optional measurement</legend>
       {google!==undefined && <label className={styles.option}><input type="checkbox" checked={!browserSignal && google} onChange={e=>onSave({site:initialSite,replay:initialReplay,google:e.target.checked})}/><span>Google Analytics<small>Counts visits and public browsing actions. Starts on only for eligible confirmed U.S. visits.</small></span></label>}
-      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialSite} onChange={e=>onSave({site:e.target.checked,replay:initialReplay})}/><span>Site analytics<small>Measures public browsing with random browser and visit IDs. Starts off.</small></span></label>
-      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialReplay} onChange={e=>onSave({site:initialSite,replay:e.target.checked})}/><span>Masked session replay<small>Optional recordings are limited to About and Brand. Inputs and private content are excluded. Starts off.</small></span></label>
+      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialSite} onChange={e=>onSave({site:e.target.checked,replay:initialReplay})}/><span>Site analytics<small>Measures public browsing with random browser and visit IDs. Starts on only for eligible confirmed U.S. visits.</small></span></label>
+      <label className={styles.option}><input type="checkbox" checked={!browserSignal && initialReplay} onChange={e=>onSave({site:initialSite,replay:e.target.checked})}/><span>Masked session replay<small>Recordings are limited to About and Brand. Inputs and private content are excluded. Starts on only for eligible confirmed U.S. visits.</small></span></label>
     </fieldset>
     <div className={styles.actions}><button type="button" onClick={()=>onSave({site:false,replay:false,google:false})}>Turn all off</button></div>
   </div>;

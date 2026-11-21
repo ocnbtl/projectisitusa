@@ -71,10 +71,16 @@ export function googleAnalyticsChoice() {
   try {
     const saved = localStorage.getItem(choiceKey);
     if (saved === "yes" || saved === "no") return saved === "yes";
-    return defaultAllowed && !legacyAllOff();
+    return eligiblePublicDefault();
   } catch {
     return false;
   }
+}
+
+// One host-verified eligibility result; saved vendor declines remain independent.
+export function eligiblePublicDefault(): boolean {
+  if (typeof window === "undefined" || optionalAnalyticsExcluded() || navigator.doNotTrack === "1" || (navigator as Navigator & {globalPrivacyControl?:boolean}).globalPrivacyControl) return false;
+  try { return defaultAllowed && !legacyAllOff(); } catch { return false; }
 }
 
 function legacyAllOff() {
@@ -89,11 +95,11 @@ export function preserveLegacyGoogleChoice() {
 }
 
 export function resolveGoogleAnalyticsDefault({ settingsOnly = false }: { settingsOnly?: boolean } = {}) {
-  if (typeof window === "undefined" || !googleMeasurementConfigured ||
+  if (typeof window === "undefined" ||
       location.origin !== origin || (!googlePage(location.pathname) && !(settingsOnly && location.pathname === "/privacy")) || optionalAnalyticsExcluded() ||
       navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
   try {
-    if (localStorage.getItem(choiceKey) !== null || legacyAllOff()) return;
+    if (legacyAllOff()) return;
   } catch {
     return;
   }

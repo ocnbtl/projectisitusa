@@ -1,0 +1,31 @@
+{
+  "base": "cbfe19fd2116ab42514781fb4f2b13e5146c6ce7",
+  "defaults": "Fresh site analytics and replay preferences use the same confirmed-US host eligibility result; saved per-vendor declines, legacy all-off, GPC/DNT/staff exclusions override; absent/denied/error eligibility stays off. Explicit prior opt-ins retain their existing semantics.",
+  "replayScope": [
+    "/about",
+    "/brand"
+  ],
+  "collectionOnPrivacy": false,
+  "tests": [
+    "mock204 default site yes/replay yes",
+    "mock403 default site unresolved/replay false",
+    "saved declines",
+    "independent GA4 opt-in cannot override site decline",
+    "staff override after explicit opt-in",
+    "no measurement frame on privacy",
+    "check.cjs PASS",
+    "8 modified TS/TSX lint zero errors/warnings"
+  ],
+  "providerCorrection": {
+    "reportedBy": "Linx authenticated operator",
+    "project": "644720 isitusa",
+    "canonicalOriginRecording": "ON; 100% legacy sample, domainhttps://isitusa.com,30-dayretention",
+    "consoleCanvasNetwork": "OFF",
+    "earlierFalseConfig": "Noncanonical no-referrer response; not proof that production recording was disabled",
+    "heatmaps": false,
+    "changesMade": "None"
+  },
+  "payloadEvidence": "Linx reports intercepted real pinned SDK decoded snapshot2778characters with Brand kit. readable and no synthetic text/title/href query canaries; private-element fixture prevented startup. Canonical-origin realconfig rerun and full hosted candidate remain pending.",
+  "release": "NOT approved. Host operator must test exact combined candidate before promotion.",
+  "dependency": "Next/eslintconfig15.5.29 patched; lockfile audit0vulnerabilities; existing native/audit/coherence gates unchanged."
+}

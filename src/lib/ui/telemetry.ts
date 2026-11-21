@@ -1,5 +1,5 @@
 import { isPrivateAnalyticsRoute, optionalAnalyticsExcluded } from "./analytics-privacy";
-import { preserveLegacyGoogleChoice, trackGoogleEvent } from "./google-measurement";
+import { eligiblePublicDefault, preserveLegacyGoogleChoice, trackGoogleEvent } from "./google-measurement";
 
 // Explicit aggregate events only. Separately consented replay lives in session-replay.ts.
 export const ANALYTICS_CHOICE_KEY = "isitusa.analytics-choice.v1";
@@ -60,11 +60,11 @@ let withdrawn = false, replayWithdrawn = false;
 export function analyticsChoice(): AnalyticsChoice | null {
   if (typeof window === "undefined") return null;
   if (withdrawn || privacySignal() || optionalAnalyticsExcluded()) return "no";
-  try { const value = localStorage.getItem(ANALYTICS_CHOICE_KEY); return value === "yes" || value === "no" ? value : null; } catch { return "no"; }
+  try { const value = localStorage.getItem(ANALYTICS_CHOICE_KEY); return value === "yes" || value === "no" ? value : eligiblePublicDefault() ? "yes" : null; } catch { return "no"; }
 }
 export function replayChoice(): boolean {
   if (typeof window === "undefined" || privacySignal() || optionalAnalyticsExcluded() || replayWithdrawn) return false;
-  try { return localStorage.getItem(REPLAY_CHOICE_KEY) === "yes"; } catch { return false; }
+  try { const value = localStorage.getItem(REPLAY_CHOICE_KEY); return value === "yes" || value === "no" ? value === "yes" : eligiblePublicDefault(); } catch { return false; }
 }
 export function setAnalyticsChoice(value: AnalyticsChoice, replay = false) {
   withdrawn = value === "no";
